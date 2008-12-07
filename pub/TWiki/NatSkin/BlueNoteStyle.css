@@ -21,7 +21,7 @@ html {
   margin:0;
   padding:0;
 }
-.foswikiEmulatedLink,
+.twikiEmulatedLink,
 a:active, a {
   color:#0055b5;
   text-decoration:none;
@@ -578,7 +578,7 @@ fieldset .twikiFormSteps {
   margin:0px -1em;
   padding:0px 1em;
 }
-.natSideBar .foswikiCurrentTopicLink {
+.natSideBar .twikiCurrentTopicLink {
   color:#9C3063;
   background:#fff;
 }
