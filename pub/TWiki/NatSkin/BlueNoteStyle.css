@@ -4,10 +4,9 @@
 /* html elements */
 html {
   line-height:140%;
-  color:#444444;
+  color:#444;
   font-size:13px;
   font-family:arial,Helvetica,sans-serif;
-  background:#f0f0f0;
 }
 .natHtml {
   background-color:white;
@@ -17,15 +16,18 @@ html {
   _background:#ddd; /* IE6 */
 }
 .natBody {
-  line-height:160%;
+  line-height:140%;
   margin:0;
   padding:0;
 }
 .twikiEmulatedLink,
-a:active, a {
+.foswikiEmulatedLink,
+a:active, 
+a {
   color:#0055b5;
-  text-decoration:none;
   font-weight:normal;
+  text-decoration:none;
+  text-decoration:underline;
 }
 a:hover {
   color:#ffffff;
@@ -45,12 +47,17 @@ pre {
   font-size:98%;
 }
 
+p {
+  margin:1.0em 0em 0em;
+}
+
+
 h1 { font-size:160%; margin-top:1em;margin-bottom:0.2em;padding-bottom:0.1em; }
-h2 { font-size:140%; margin-top:1em;margin-bottom:0.5em;}
-h3 { font-size:130%; margin-top:1em;margin-bottom:0.0em;}
-h4 { font-size:130%; margin-top:1em;margin-bottom:0.0em;}
-h5 { font-size:130%; margin-top:1em;margin-bottom:0.0em;}
-h6 { font-size:130%; margin-top:1em;margin-bottom:0.0em;}
+h2 { font-size:135%; margin-top:1em;margin-bottom:0.5em;}
+h3 { font-size:125%; margin-top:1em;margin-bottom:0.5em;}
+h4 { font-size:120%; margin-top:1em;margin-bottom:0.0em;}
+h5 { font-size:110%; margin-top:1em;margin-bottom:0.0em;}
+h6 { font-size:105%; margin-top:1em;margin-bottom:0.0em;}
 h1, h2, h3, h4, h5, h6 {
   line-height:normal;
 }
@@ -61,22 +68,27 @@ h1 a:hover, h2 a:hover, h3 a:hover,
 h4 a:hover, h5 a:hover, h6 a:hover {
   font-weight:normal;
   background:none;
-  color:#0055b5;
+  color:#222;
+  text-decoration:none;
 }
 
-h1 {
+h1,
+h1 a,
+h1 a:hover {
+  color:#444;
   color:#0055b5;
+  color:#222;
 }
-.natViewBody h1 {
+.natViewBody h1,
+.natCompareBody h1 {
   border-bottom:1px #ddd solid;
 }
 h2 {
   padding-bottom:1px;
-  /*border-bottom:2px solid green;*/
-  color:#9C3063;
+  border-bottom:1px solid #ddd;
 }
 ul, ol {
-  margin:0.5em 0em;
+  margin:0.25em 0em 1em;
   padding:0em 0em 0em 1em;
 }
 ol ol,
@@ -131,16 +143,20 @@ dl dd {
 .natTopicActions {
   float:right;
 }
+#natTopicActionTooltip {
+  color:#808080;
+  font-size:95%;
+}
 .natTopicAction:hover,
 .natTopicAction {
   float:left;
-  display:block;
   width:16px;
   height:16px;
   padding:2px;
   margin-left:5px;
 }
-.natTopicActions span {
+.natTopicActions span span,
+.natTopicActions a span {
   display:none;
 }
 .natMainHeaderContents {
@@ -159,59 +175,137 @@ dl dd {
 .natLoginBody .natLoginMessage {
   padding:20px;
 }
+.natLoginBody .foswikiFormSteps,
 .natLoginBody .twikiFormSteps {
   margin:1em 0em;
-  padding:1.3em 1.5em;
-  background:#f6f6f6;
+  padding:16px 19px;
+  background-color:#f6f6f6;
+  background-image:url(login_keys.png);
+  background-repeat:no-repeat;
+  background-position:2.5em 3em;
+  border-top:1px solid #d6d6d6;
+  border-bottom:1px solid #d6d6d6;
+}
+.natLoginBody #natLogonBanner {
+  background:#e5e5e5;
+  margin:-16px -19px 19px;
+  padding:13px 19px;
+  border-bottom:2px solid #e0e0e0;
+}
+.natLoginBody .twikiFormStep {
+  margin:0em 1em 1em 150px;
+}
+.natLoginBody .twikiFormLast {
+  margin:2em 1em 0em 150px;
 }
 
-/* twiki styles */
+/* base styles */
+.foswikiBroadcastMessage,
 .twikiBroadcastMessage {
   margin:0em 0em 1em;
 }
 
+/* tables */
+.foswikiTable,
 .twikiTable {
   border:1px #dedede solid;
   line-height:140%;
   border-spacing:0px;
-  margin:5px 0px;
+  margin:0.25em 0em;
 }
-.twikiTable th a,
-.twikiTable th a:hover,
-.twikiTable th {
-  background:#9CBAEF;
-}
+.foswikiTable td,
 .twikiTable td {
   background:#f9f9f9;
 }
+.foswikiTable th,
+.foswikiTable td,
 .twikiTable th,
 .twikiTable td {
   padding:0.3em 0.7em;
   border:1px #dedede solid;
 }
+
+.foswikiTable th,
+.foswikiTable th a,
+.foswikiTable th a:hover,
+.foswikiTable th font,
+.foswikiTable th h2,
+.foswikiTable th h3,
+.foswikiTable th h4,
+.foswikiTable th span,
+.twikiTable th,
+.twikiTable th a,
+.twikiTable th a:hover,
+.twikiTable th font,
+.twikiTable th h2,
+.twikiTable th h3,
+.twikiTable th h4,
+.twikiTable th span {
+  color:#444;
+  font-weight:bold;
+  text-decoration:none;
+  background:#9CBAEF;
+  color:white;
+}
+.foswikiTable th a:hover,
+.foswikiTable th a:hover font,
+.twikiTable th a:hover,
+.twikiTable th a:hover font {
+  text-decoration:underline;
+}
+.foswikiTable th h4,
+.twikiTable th h4 {
+  margin:0px;
+}
+
+th.foswikiSortedDescendingCol,
+th.foswikiSortedAscendingCol,
+th.twikiSortedDescendingCol,
+th.twikiSortedAscendingCol {
+  background:#8DA8D8;
+}
+.foswikiTable td.foswikiSortedDescendingCol,
+.foswikiTable td.foswikiSortedAscendingCol,
+.twikiTable td.twikiSortedDescendingCol,
+.twikiTable td.twikiSortedAscendingCol {
+  background:#f4f4f4;
+}
+
+
+/* tables in forms */
+.foswikiPageForm .foswikiTable td,
+.foswikiFormSteps .foswikiTable td,
+.foswikiPageForm .foswikiTable th,
+.foswikiFormSteps .foswikiTable th,
 .twikiPageForm .twikiTable td,
 .twikiFormSteps .twikiTable td,
 .twikiPageForm .twikiTable th,
 .twikiFormSteps .twikiTable th {
   border:0px;
 }
-.twikiTable th a {
-  text-decoration:none;
-  font-weight:bold;
-}
+.foswikiPageForm .foswikiTable,
+.foswikiFormSteps .foswikiTable,
 .twikiPageForm .twikiTable,
 .twikiFormSteps .twikiTable {
   border:1px solid #F2D9A3;
 }
+.foswikiPageForm .foswikiTable td,
+.foswikiFormSteps .foswikiTable td,
 .twikiPageForm .twikiTable td,
 .twikiFormSteps .twikiTable td {
   border-bottom:1px solid #F2D9A3;
   vertical-align:middle;
 }
+.foswikiFormSteps .foswikiTable td,
+.foswikiPageForm .foswikiTable td,
 .twikiFormSteps .twikiTable td,
 .twikiPageForm .twikiTable td {
   background:transparent;
 }
+.foswikiFormSteps .foswikiTable th,
+.foswikiFormSteps .foswikiTable th a,
+.foswikiPageForm .foswikiTable th,
+.foswikiPageForm .foswikiTable th a,
 .twikiFormSteps .twikiTable th,
 .twikiFormSteps .twikiTable th a,
 .twikiPageForm .twikiTable th,
@@ -219,65 +313,38 @@ dl dd {
   background:#FEEFCD;
   color:#444;
 }
+.foswikiFormSteps .foswikiTable th,
+.foswikiPageForm .foswikiTable th,
 .twikiFormSteps .twikiTable th,
 .twikiPageForm .twikiTable th {
   border-bottom:0px;
   vertical-align:top;
 }
-.twikiTable th,
-.twikiTable th h2,
-.twikiTable th h3,
-.twikiTable th h4,
-.twikiTable th a,
-.twikiTable th span,
-.twikiTable th font {
-  color:#444444;
-  font-weight:bold;
-}
-.twikiTable th h4 {
-  margin:0px;
-}
-
-th.twikiSortedDescendingCol,
-th.twikiSortedAscendingCol {
-  background:#8DA8D8;
-}
-.twikiTable td.twikiSortedDescendingCol,
-.twikiTable td.twikiSortedAscendingCol {
-  background:#f4f4f4;
-}
-
-/* twikiDiff */
+/* diff */
+.foswikiDiffTable,
 .twikiDiffTable {
   border:1px solid #ddd;
   background:#f6f6f6;
 }
+.foswikiDiffTable td,
+.foswikiDiffTable th,
 .twikiDiffTable td,
 .twikiDiffTable th {
   border:0px;
 }
+.foswikiDiffTable th,
 .twikiDiffTable th {
   border-bottom:1px solid #ddd;
 }
 
-.twikiDiffChangedHeader { }
-.twikiDiffChangedMarker { }
-.twikiDiffChangedText { }
-
-.twikiDiffDeletedHeader { }
-.twikiDiffDeletedMarker { }
+.foswikiDiffDeletedText,
 .twikiDiffDeletedText {
  background:#FFD7D7;
 }
 
-.twikiDiffAddedHeader { }
-.twikiDiffAddedMarker { }
-.twikiDiffAddedText { }
 
-.twikiDiffUnchangedText { }
-
-
-/* twiki page form */
+/* forms */
+.foswikiPageForm,
 .twikiPageForm {
   margin:1em 0px;
   padding:1em;
@@ -285,22 +352,24 @@ th.twikiSortedAscendingCol {
   border-bottom:1px solid #ddd;
   background:#FEF8EB;
 }
+.natSideBar .foswikiPageForm,
 .natSideBar .twikiPageForm {
   margin:-1px -1em 0em;
   border:0px;
-  border-top:1px solid #9C3063;
-  border-bottom:1px solid #9C3063;
   /*background:#CECFCE;*/
 }
+.foswikiPageForm table,
 .twikiPageForm table {
   margin:0px;
 }
 
+.foswikiPageForm th,
 .twikiPageForm th {
-  color:#444444;
+  color:#444;
 }
+.foswikiPageForm th a,
 .twikiPageForm th a {
-  color:#444444;
+  color:#444;
   text-decoration:none;
   font-weight:bold;
 }
@@ -320,25 +389,36 @@ legend {
   font-size:110%;
 }
 
+fieldset .foswikiFormSteps,
 fieldset .twikiFormSteps {
   border:0px;
 }
 
+.foswikiFormSteps,
 .twikiFormSteps {
   border-top:1px solid #ddd;
   border-bottom:1px solid #ddd;
   background:#FEF8EB;
   padding:1.0em;
 }
+.foswikiFormStep,
 .twikiFormStep {
   margin:0em 0em 1em;
 }
+.foswikiFormLast,
 .twikiFormLast {
   margin-bottom:0em;
 }
+.foswikiFormStep hr,
 .twikiFormStep hr {
   margin:1.5em -1.5em;
 }
+.foswikiFormSteps h2,
+.foswikiFormSteps h3,
+.foswikiFormSteps h4,
+.foswikiFormSteps h2 a,
+.foswikiFormSteps h3 a,
+.foswikiFormSteps h4 a,
 .twikiFormSteps h2,
 .twikiFormSteps h3,
 .twikiFormSteps h4,
@@ -349,34 +429,77 @@ fieldset .twikiFormSteps {
   font-weight:bold;
   color:inherit;
 }
+.foswikiFormSteps h2,
 .twikiFormSteps h2 { font-size:130%; }
+
+.foswikiFormSteps h3,
 .twikiFormSteps h3 { font-size:100%; }
+
+.foswikiFormSteps h4,
+.foswikiFormSteps h5,
+.foswikiFormSteps h6,
 .twikiFormSteps h4,
 .twikiFormSteps h5,
-.twikiFormSteps h6 { font-size:100%; }
+.twikiFormSteps h6 { 
+  font-size:100%; 
+}
 
+.foswikiFormSteps h2,
 .twikiFormSteps h2 {
   border-bottom:0px;
+  color:#b0321b;
   color:#9C3063;
 }
+
+.foswikiFormSteps h3,
 .twikiFormSteps h3 {
   margin:0em 0em 0.2em;
 }
+
+.foswikiFormOptions .foswikiCheckbox,
 .twikiFormOptions .twikiCheckbox {
   margin:0em 0.2em 0em;
 }
 
+.foswikiFormSteps .jqTabContents,
+.foswikiFormSteps ul.jqTabGroup li.current,
 .twikiFormSteps .jqTabContents,
 .twikiFormSteps ul.jqTabGroup li.current {
   background:#FEF1D6;
 }
+
+.foswikiFormSteps .jqTabContents,
 .twikiFormSteps .jqTabContents {
   padding:1.0em;
 }
+
+.foswikiFormDescription,
 .twikiFormDescription {
   margin:0.2em 0em;
   color:#828282;
 }
+
+.jqTabContents .foswikiFormSteps,
+.jqTabContents .twikiFormSteps {
+  margin:-8px;
+  padding:1em 1.5em;
+  background:transparent;
+  border:0px;
+}
+
+.jqTabContents .foswikiFormStep,
+.jqTabContents .twikiFormStep {
+  background:#FEF8EB;
+  /*background:#f6f6f6;*/
+  border-top:1px solid #ddd;
+  margin:0em;
+  padding:1em 1.5em;
+}
+.jqTabContents .foswikiFormLast,
+.jqTabContents .twikiFormLast {
+  border-bottom:1px solid #ddd;
+}
+
 
 /* helpers */
 .natErrorMsg {
@@ -419,6 +542,7 @@ fieldset .twikiFormSteps {
   width:287px;
   height:74px;
   margin:13px;
+  text-decoration:none;
   /* ie 6 */
   _margin-left:23px; /
 }
@@ -438,21 +562,23 @@ fieldset .twikiFormSteps {
 /* topic actions */
 .natGreeter {
   text-align:right;
-  padding:0em 1.2em 0.3em 0em;
+  padding:0em 0.3em 0.3em 0em;
 }
 .natGreeter a {
-  color:#444444;
+  color:#444;
+  text-decoration:none;
 }
 .natGreeter a:hover {
   color:#ffffff;
 }
 
+.natUserAction {
+  font-size:95%;
+}
 .natUserAction:hover,
 .natUserAction:active,
 .natUserAction {
   font-weight:normal;
-}
-.natTopicActions {
 }
 .natDisabledUserAction span,
 .natDisabledTopicAction span {
@@ -462,10 +588,15 @@ fieldset .twikiFormSteps {
 .natTopicAction,
 .natTopicAction:hover {
   color:black;
+  text-decoration:none;
 }
 .natTopicAction:hover,
 .natTopicActions a:hover {
   background-color:#efefef;
+}
+.natDisabledTopicAction:hover,
+.natDisabledTopicActions a:hover {
+  background-color:inherit;
 }
 
 /* sidebar */
@@ -476,6 +607,9 @@ fieldset .twikiFormSteps {
   background-position:0% 100%;
   /* ie 6 */
   _background-image:none;
+}
+.natSideBar a {
+  text-decoration:none;
 }
 .natSideBarContents  {
   margin:0em;
@@ -553,17 +687,6 @@ fieldset .twikiFormSteps {
   border-bottom:1px solid #c2c4c4;
 }
 
-.natSideBar .treeview a {
-  display:inline;
-  padding:0px;
-  margin:0px;
-}
-.natSideBar .jqTreeview {
-  padding:1em 0em;
-}
-.natSideBar .treeview li {
-  border-bottom:0px;
-}
 .natSideBar li {
   line-height:2.0em;
   margin:0px;
@@ -578,7 +701,8 @@ fieldset .twikiFormSteps {
   margin:0px -1em;
   padding:0px 1em;
 }
-.natSideBar .twikiCurrentTopicLink {
+.natSideBar .twikiCurrentTopicLink,
+.natSideBar .foswikiCurrentTopicLink {
   color:#9C3063;
   background:#fff;
 }
@@ -620,7 +744,7 @@ fieldset .twikiFormSteps {
 .natSearchBoxPos1 a {
   margin:1px 5px;
   padding:0px;
-  background-image:url(magnifier.png);
+  background-image:url(../FamFamFamSilkIcons/magnifier.png);
   background-repeat:no-repeat;
   display:block;
   height:16px;
@@ -628,7 +752,7 @@ fieldset .twikiFormSteps {
 }
 .natSearchBoxPos1 a:hover {
   background-color:inherit;
-  background-image:url(magnifier.png);
+  background-image:url(../FamFamFamSilkIcons/magnifier.png);
   background-repeat:no-repeat;
 }
 .natSearchBoxPos2,
@@ -638,14 +762,23 @@ fieldset .twikiFormSteps {
 
 
 /* main area */
-.natBreadCrumbs .natSep,
+.natBreadCrumbs {
+  font-size:95%;
+  line-height:135%;
+}
+.natBreadCrumbs,
+.natBreadCrumbs .natSep {
+  color:#808080;
+}
 .natBreadCrumbs a {
   color:#73AA31;
+  text-decoration:none;
 }
 .natBreadCrumbs a:hover {
   color:white;
 }
 
+.natMainContents .twikiNewLink,
 .natMainContents .foswikiNewLink {
   background-color:#eee;
   color:#9C3063;
@@ -655,19 +788,51 @@ fieldset .twikiFormSteps {
 .natMainFooterContents {
   margin:0em;
 }
-.natRevision a,
+.natMainFooterContents .natRevision {
+  margin:2em 0em 0em;
+}
 .natRevision {
-  font-size:13px;
+  margin:0em 0em 1.5em;
+  font-size:95%;
+}
+.clsTopicInfo {
+  margin:0em 0em 2em 0em;
+  font-size:95%;
+}
+.clsTopicInfo .natRevision {
+  margin:0px;
+  font-size:100%;
+}
+.clsTopicSummary,
+.clsTopicInfo {
+  line-height:135%;
+}
+.clsTopicSummary,
+.clsTopicInfo, 
+.natRevision {
   color:#808080;
 }
+h1 .clsTopicSummary {
+  font-size:12.35px;
+  color:#808080;
+}
+.clsTopicInfo h1 {
+  font-size:170%;
+  line-height:135%;
+}
+.clsTopicInfo a,
+.natRevision a,
+.natMainContents .clsTopicInfo a {
+  color:#808080;
+}
+.natMainContents .clsTopicInfo h1 a {
+  color:#222;
+  text-decoration:none;
+}
+.clsTopicInfo a:hover,
 .natRevision a:hover {
   color:white;
-}
-.natMainContents .natRevision {
-  margin-bottom:1.5em;
-}
-.natMainFooterContents .natRevision {
-  margin-top:2em;
+  text-decoration:none;
 }
 .natSyndicate {
   display:inline;
@@ -692,12 +857,13 @@ fieldset .twikiFormSteps {
 
 /* forms */
 .natTopicForm {
-  margin:2.0em 0em 0em;
+  margin:1.5em 0em 0em;
 }
 .natTopicAttachments .natTopicAction:hover,
 .natTopicForm .natTopicAction:hover {
   background-color:#FEE7B5;
 }
+.natTopicForm  .foswikiFormStep,
 .natTopicForm  .twikiFormStep {
   margin:0.3em 0em;
   padding:0em;
@@ -710,23 +876,13 @@ fieldset .twikiFormSteps {
   width:20%;
 }
 
-.twikiEditForm {
-  margin:-8px;
-  padding:1em 1.5em;
-  background:transparent;
-  border:0px;
-}
-.twikiEditForm .twikiFormStep {
-  background:#FEF8EB;
-  /*background:#f6f6f6;*/
-  border-top:1px solid #ddd;
-  margin:0em;
-  padding:1em 1.5em;
-}
-
 /* attachments */
 .natTopicAttachments {
-  margin:2.0em 0em 0em;
+  margin:1.5em 0em 0em;
+  padding:1em 1em 1.5em;
+}
+.natTopicAttachments a {
+  text-decoration:none;
 }
 .natTopicAttachments .natDisabledTopicAction:hover,
 .natTopicAttachments .natViewTopicAction:hover,
@@ -744,6 +900,10 @@ fieldset .twikiFormSteps {
 .natTopicAttachments .natTopicActions a:hover {
   background-color:#FEE8B8;
 }
+.natTopicAttachments .twikiFormStep,
+.natTopicAttachments .foswikiFormStep {
+  margin:1.25em 0em 0em;
+}
 
 /* search tables */
 .natSearchRevision,
@@ -756,18 +916,20 @@ fieldset .twikiFormSteps {
 }
 
 /* TOC */
+.foswikiToc,
 .twikiToc {
   margin:1em 0em 0em 0.2em;
   padding:0em;
 }
+.foswikiTocTitle,
 .twikiTocTitle {
-  margin:0em 0em 0.5em 0em;
+  margin:0em 0em 0.25em 0em;
   padding:0em;
-  font-size:130%;
-  color:#0055b5;
-  color:#9C3063;
+  font-size:125%;
+  color:#222;
   display:block;
 }
+.foswikiToc ul,
 .twikiToc ul {
   list-style:none;
   padding:0.5em 0em;
@@ -775,11 +937,13 @@ fieldset .twikiFormSteps {
   border-top:1px solid #eee;
   border-left:4px solid #eee;
 }
+.foswikiToc ul ul,
 .twikiToc ul ul {
   padding:0em 0em 0em .5em;
   margin-top:0px;
   border:0px;
 }
+.foswikiToc li,
 .twikiToc li {
   margin-left:1em;
   padding-left:1em;
@@ -788,16 +952,18 @@ fieldset .twikiFormSteps {
   background-repeat:no-repeat;
   background-repeat:no-repeat;
 }
+.foswikiToc a,
 .twikiToc a {
   background-image:none;
+  text-decoration:none;
 }
 
 /* supported plugins and applications */
 
 /* Blogging */
 .alt {
-  margin:0.5em 0em;
-  padding:1.0em 1.5em;
+  margin:1em 0em;
+  padding:1.0em;
   background:#f8f8f8;
   border-top:1px #ddd solid;
   border-bottom:1px #ddd solid;
@@ -827,7 +993,7 @@ fieldset .twikiFormSteps {
 .blogSideBarHeader h2,
 .blogSideBarHeader a {
   font-size:14px;
-  color:#444444;
+  color:#444;
   font-weight:normal !important;
 }
 .blogSideBarHeader {
@@ -867,7 +1033,7 @@ fieldset .twikiFormSteps {
   font-weight:normal;
 }
 .blogCommentNr {
-  color:#444444;
+  color:#444;
   margin-right:1em;
 }
 .blogCommentCount {
@@ -928,6 +1094,13 @@ fieldset .twikiFormSteps {
   font-size:100%;
   font-weight:bold;
 }
+.fltMakeIndexWrapper .clsTopicInfo {
+  color:#808080;
+}
+.fltMakeIndexWrapper .clsSubCategories a,
+.fltMakeIndexWrapper .clsSubCategories {
+  color:#808080;
+}
 .natMainContents .fltMakeIndexWrapper ul {
   list-style-type:none;
   margin:0px 7px 7px 0px;
@@ -935,15 +1108,6 @@ fieldset .twikiFormSteps {
 }
 .natMainContents .fltMakeIndexWrapper li {
   padding:7px 0px;
-}
-.clsTopicInfo h1 {
-  border-bottom:0px;
-}
-.clsTopicInfo .natRevision {
-  margin-bottom:0em;
-}
-.clsTopicInfoSep {
-  border-bottom:1px #ddd solid;
 }
 
 /* HistoryPlugin */
@@ -960,24 +1124,45 @@ fieldset .twikiFormSteps {
 .mceContentBody {
   font-size:95%;
 }
-.mceContentBody,
-.mceEditor td,
-.mceEditorIframe {
-  background:#f0f0f0;
-}
 .mceContentBody h1 {
   margin-top:0px;
 }
 .mceEditor {
   background:transparent !important;
+  border:0px !important;
 }
 .mceEditor td {
-  padding:5px;
+  padding:10px 5px 0px;
   border:2px inset #ddd;
 }
 td.mceToolbarTop,
 td.mceStatusbarBottom {
   padding:2px 5px 2px 5px;
   background:transparent;
+  border:0px;
+}
+td.mceToolbarTop {
+  padding:5px 5px 15px 5px;
+}
+.WYSIWYG_PROTECTED {
+  background:#f6f6f6;
+  color:#444;
+  font-family:"Bitstream Vera Sans Mono", "Andale Mono", monospace;
+}
+
+/* jqTreeview */
+.natSideBar .jqTreeview {
+  padding:0.3em 0em;
+  margin:0em -0.5em 0em;
+}
+.natSideBar .treeview a:hover,
+.natSideBar .treeview a {
+  display:inline;
+  padding:0px;
+  margin:0px;
+}
+.natSideBar .jqTreeview ul,
+.natSideBar .jqTreeview ol,
+.natSideBar .treeview li {
   border:0px;
 }

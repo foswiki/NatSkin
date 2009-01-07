@@ -5,9 +5,9 @@ Sidebar navigation in the %WEB% web. See also the %SYSTEMWEB%.TWikiWebLinks
 
 %STARTINCLUDE%<!-- main.weblinks -->
    * [[%SYSTEMWEB%.WelcomeGuest][%MAKETEXT{"Welcome"}%]]
-   * [[%TWIKIREGISTRATION%][%MAKETEXT{"Registration"}%]] %IFDEFINEDTHEN{"%IFEXISTS{"%MAINWEB%.%WIKIUSERSTOPIC%"}%" as="1" glue="off"}%
-   * [[%MAINWEB%.%WIKIUSERSTOPIC%][%MAKETEXT{"Users"}%]] %FIDEFINED%
-   * [[%MAINWEB%.WikiGroups][%MAKETEXT{"Groups"}%]]
+   * [[%USERREGISTRATION%][%MAKETEXT{"Registration"}%]] %IFDEFINEDTHEN{"%IFEXISTS{"%USERSWEB%.%WIKIUSERSTOPIC%"}%" as="1" glue="off"}%
+   * [[%USERSWEB%.%WIKIUSERSTOPIC%][%MAKETEXT{"Users"}%]] %FIDEFINED%
+   * [[%USERSWEB%.WikiGroups][%MAKETEXT{"Groups"}%]]
    * [[%SYSTEMWEB%.ChangePassword][%MAKETEXT{"Password"}%]]%WEBCOMPONENT{"TWikiWebLinks"}% 
 <!-- //main.weblinks -->%STOPINCLUDE%
 

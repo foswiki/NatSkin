@@ -8,21 +8,28 @@
 %TMPL:DEF{"title"}%%TOPICTITLE% %MAKETEXT{"([_1] vs. [_2])" args="%REVTITLE2%, %REVTITLE1%"}% - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Difference:"}% %TOPICTITLE% %MAKETEXT{"([_1] vs. [_2])" args="%REVTITLE2%, %REVTITLE1%"}%</h1>%TMPL:END%
 %TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
+%TMPL:DEF{"contentheader"}%<!-- contentheader -->
+%TMPL:P{"topicactions"}%<!-- topicactions// -->
+%TMPL:P{"breadcrumbs"}%<!-- breadcrumbs //-->
+<!-- // contentheader -->%TMPL:END%
 %TMPL:DEF{"content"}%<!-- content -->
+%TMPL:P{"beforetext"}%<!-- beforetext// -->
 %TMPL:P{"contenttitle"}%<!-- pagetitle // -->
-%REPEAT%<table class="twikiTable twikiDiffTable" cellspacing="0" cellpadding="0">
+%TMPL:P{"text"}%<!-- text// -->
+%TMPL:P{"aftertext"}%<!-- aftertext// -->
+<!-- //content -->%TMPL:END%
+%TMPL:DEF{"text"}%<!-- text -->
+%REPEAT%<div class="overflow"><table class="foswikiDiffTable twikiDiffTable" cellspacing="0" cellpadding="0">
 <th>
 <a href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?rev=%REVTITLE1%">%TOPIC% %REVTITLE1% - %REVINFO1%</a>
 </th>
 <tr><td style="padding-left:0px; padding-right:0px; border:0px">
 %TEXT%
 </td></tr>
-</table>
+</table></div>
 <br clear="all" />%REPEAT%
-<div class="natRevision">
-<table class="twikiTable">
+<table class="foswikiTable twikiTable">
 %TAIL%
 </table>
-</div>
-<!-- //content -->%TMPL:END%
+<!-- //text -->%TMPL:END%
 %REPEAT%<tr><td>%MAKETEXT{"Revision"}% %REVTITLE%</td><td>%REVINFO%</td></tr>

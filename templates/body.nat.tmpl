@@ -117,6 +117,7 @@
       </table> 
 <!-- //sidebar off-->%TMPL:END%
 %TMPL:DEF{"bottombar"}%<!-- bottombar -->
+<noautolink>
 <div class="natCopyRight">%WEBCOPYRIGHT%</div>
 <div class="natSyndicate">
   %IFDEFINEDTHEN{"$percntWEBSYNDICATION$percnt"}%
@@ -126,6 +127,7 @@
     <a class="natFeedIcon" href="%SCRIPTURL{"view"}%/%WEB%/WebRss">RSS</a><a class="natFeedIcon" href="%SCRIPTURL{"view"}%/%WEB%/WebAtom">ATOM</a>
   %FIDEFINED%
 </div>
+</noautolink>
 <!-- //bottombar -->%TMPL:END%
 %TMPL:DEF{"defaultbody"}%<!-- defaulbody -->
 %TMPL:P{"broadcast"}%<!-- broadcast// -->

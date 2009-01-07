@@ -1,0 +1,22 @@
+<!-- template: styles.nat.tmpl -->
+%TMPL:DEF{"defaultstyles"}%<!-- defaultstyles -->
+<style type="text/css">
+/* ie6 png fix */
+* html img, 
+* html .jqButtonIcon, 
+* html .natUserAction,
+* html .natTopicAction {
+  behavior:url(%PUBURLPATH%/%SYSTEMWEB%/NatSkin/iepngfix.htc);
+}
+* html .jqButton .jqButtonIcon {
+  margin-top:3px;
+  line-height:1.2em;
+}
+</style>
+<script type="text/javascript">
+  blankImg = '%PUBURLPATH%/%SYSTEMWEB%/NatSkin/blank.gif';
+</script>
+<!-- //defaultstyles -->%TMPL:END%
+%TMPL:DEF{"styles"}%<!-- styles -->
+%TMPL:P{"defaultstyles"}%<!-- defaultstyles // -->
+<!-- //styles -->%TMPL:END%

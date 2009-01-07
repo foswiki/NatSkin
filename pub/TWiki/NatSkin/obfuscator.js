@@ -1,4 +1,4 @@
-// (c)opyright 2006 MichaelDaum@WikiRing.com
+// (c)opyright 2006-2009 Michael Daum http://michaeldaumconsulting.com
 function wremo(emoas, linkText, id) {
   var elem = document.getElementById(id);
   if (elem) {

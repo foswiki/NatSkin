@@ -1,7 +1,7 @@
 %{ These templates define the form attached at the bottom of viewed page. }%
 %{ Header definition for topic attachments and top table in attach screen }%
 %TMPL:DEF{FORM:display:header}% <!-- form:display:header -->
-<div class="natTopicForm twikiFormSteps">
+<div class="natTopicForm foswikiFormSteps twikiFormSteps">
 %USERACTIONS{format="$editform"}%
 <h2 >[[%A_TITLE%]]
 %TWISTYBUTTON{
@@ -17,11 +17,11 @@
   start="show" 
   remember="off" 
   mode="div"
-}%<table class="twikiTable">%TMPL:END%
+}%<table class="foswikiTable twikiTable">%TMPL:END%
 %TMPL:DEF{FORM:display:row}% <!-- form:display:row -->
 <tr>
-  <th class="twikiTableFirstCol"> %A_TITLE%: </th>
-  <td class="twikiFormValue"> %A_VALUE% </td>
+  <th class="foswikiTableFirstCol twikiTableFirstCol"> %A_TITLE%: </th>
+  <td class="foswikiFormValue twikiFormValue"> %A_VALUE% </td>
 </tr>%TMPL:END%
 %TMPL:DEF{FORM:display:footer}% <!-- form:display:footer -->
 </table>%ENDTWISTY%</div>%TMPL:END%

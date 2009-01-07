@@ -2,20 +2,21 @@
 %TMPL:DEF{"title"}%%TOPICTITLE% (%MAKETEXT{"History"}%) - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"heading"}%%MAKETEXT{"Compare Revisions of [_1]" args="<nop>%TOPIC%"}% (r%HISTORY_REV1% - r%HISTORY_REV2%)%TMPL:END%
 %TMPL:DEF{"headingstyle"}%natNoteHeading%TMPL:END%
-%TMPL:DEF{"diffbin"}%%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%%TMPL:END% 
-%TMPL:DEF{"compare"}%compare%TMPL:END%
-%TMPL:DEF{"rdiff"}%rdiff%TMPL:END%
-%TMPL:DEF{"renderoptions"}%%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="renderoptions_crap_enabled" else="renderoptions_crap_disabled"}%%TMPL:END%
-%TMPL:DEF{"renderoptions_crap_enabled"}%
-  <option value="interweave">%MAKETEXT{"Interweave"}%</option>
-  <option value="sidebyside">%MAKETEXT{"Side-by-side"}</option>
-%TMPL:END%
-%TMPL:DEF{"renderoptions_crap_disabled"}%<!-- renderoptions_crap_disabled -->
-  <option value="sidebyside">%MAKETEXT{"Side-by-side"}%</option>
-  <option value="sequential">%MAKETEXT{"Sequential"}%</option>
-  <option value="debug">%MAKETEXT{"Debug"}%</option>
-<!-- //renderoptions_crap_disabled -->%TMPL:END%
 %TMPL:DEF{"javascript"}%%TMPL:P{"defaultjavascript"}%%TMPL:P{"oopshistoryjavascript"}%%TMPL:END%
+%TMPL:DEF{"formstart"}%%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="formstart_compare" else="formstart_rdiff"}%%TMPL:END%
+%TMPL:DEF{"formstart_compare"}%<!-- formstart_compare -->
+<div class="twikiFormSteps">
+<form name="main" action="%SCRIPTURLPATH{"compare"}%/%WEB%/%TOPIC%">
+  <input type="hidden" name="render" value="interweave" />
+  <input type="hidden" name="type" value="history">
+<!-- //formstart_compare -->%TMPL:END%
+%TMPL:DEF{"formstart_rdiff"}%<!-- formstart_rdiff -->
+<div class="twikiFormSteps">
+<form name="main" action="%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPIC%">
+  <input type="hidden" name="render" value="sequential" />
+  <input type="hidden" name="type" value="history">
+<!-- //formstart_rdiff -->%TMPL:END%
+%TMPL:DEF{"formend"}%</form></div>%TMPL:END%
 %TMPL:DEF{"oopshistoryjavascript"}%<!-- oopshistoryjavascript -->
 <script type="text/javascript">
 /* updates the radio buttons in a way to prevent illegal selections */
@@ -52,17 +53,33 @@ $(function() {
   <th align="right">%MAKETEXT{"Revision"}%</th>
   <th>%MAKETEXT{"Date"}%</th>
   <th>%MAKETEXT{"Author"}%</th>
+  <th>%MAKETEXT{"Action"}%</th>
 </tr>
 %~~ HISTORY{
 ~~~   format="
 ~~~     <tr>
 ~~~       <td align=\"right\">
-~~~         <a href=\"%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?rev=1.$rev\" title=\"View this revision\">$rev</a>
+~~~         $rev
 ~~~         <input $checked1 type=\"radio\" name=\"rev1\" value=\"$rev\">
 ~~~         <input $checked2 type=\"radio\" name=\"rev2\" value=\"$rev\">
 ~~~       </td>
 ~~~       <td>$date</td>
 ~~~       <td>$percntIFEXISTS{\"$wikiusername\" then=\"[[$wikiusername][$wikiname]]\" else=\"<nop>$wikiname\"}$percnt</td>
+~~~      <td>
+~~~      $percntBUTTON{\"View\" 
+~~~        icon=\"eye\" 
+~~~        href=\"%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?rev=$rev\" 
+~~~        title=\"%MAKETEXT{"View revision [_1]" args="$rev"}%\"
+~~~        class=\"natHistoryAction\"
+~~~      }$percnt
+~~~      $percntBUTTON{\"Restore\"
+~~~        icon=\"arrow_refresh\"
+~~~        href=\"%SCRIPTURLPATH{"manage"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%&action=restoreRevision&rev=$rev\" 
+~~~        title=\"%MAKETEXT{"Restore revision [_1]" args="$rev"}%\"
+~~~        class=\"natHistoryAction\"
+~~~      }$percnt
+~~~      $percntCLEAR$percnt
+~~~      </td>
 ~~~     </tr>" 
 ~~~   rev1="%URLPARAM{"rev1"}%" 
 ~~~   rev2="%URLPARAM{"rev2"}%" 
@@ -74,35 +91,35 @@ $(function() {
 ~~~        $percntIFDEFINEDTHEN{\"$next{'test'}\" as=\"test\" glue=\"off\"}$percnt
 *~~        </a>
 ~~~        <a href=\"$next{'%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory&nrev=$nrev'}\">
-*~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/go_start.gif\" 
+*~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/NatSkin/control-start.png\" 
 ~~~               alt=\"%MAKETEXT{show last revisions}%\"
 ~~~               title=\"%MAKETEXT{show last revisions}%\" />
 *~~        </a>
-~~~        <a href=\"$next{'%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory&rev1=$rev1&nrev=$nrev'}\">
-*~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/go_back.gif\" 
+~~~        <a href=\"$next{'%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory&rev2=$rev2&nrev=$nrev'}\">
+*~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/NatSkin/control-left.png\" 
 ~~~               alt=\"%MAKETEXT{show later revisions}%\"
 ~~~               title=\"%MAKETEXT{show later revisions}%\" />
 *~~        </a>
 ~~~        $percntELSEDEFINED$percnt
-~~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/blank.gif\" 
+~~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/NatSkin/control-start-gray.png\" 
 ~~~               alt=\"%MAKETEXT{blank}%\" />
-~~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/blank.gif\" 
+~~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/NatSkin/control-left-gray.png\" 
 ~~~               alt=\"%MAKETEXT{blank}%\" />
 ~~~        $percntFIDEFINED$percnt
 ~~~        $percntIFDEFINEDTHEN{\"$previous{'test'}\" as=\"test\" glue=\"off\"}$percnt
-~~~        <a href=\"$previous{'%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory&rev1=$rev1&nrev=$nrev'}\">
-*~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/go_forward.gif\" 
+~~~        <a href=\"$previous{'%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory&rev2=$rev2&nrev=$nrev'}\">
+*~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/NatSkin/control-right.png\" 
 ~~~               alt=\"%MAKETEXT{show earlier revisions}%\"
 ~~~               title=\"%MAKETEXT{show earlier revisions}%\" />
 *~~        </a>
 ~~~        <a href=\"$previous{'%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory&rev1=1&nrev=$nrev'}\">
-*~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/go_end.gif\" 
+*~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/NatSkin/control-end.png\" 
 ~~~               alt=\"%MAKETEXT{show first revisions}%\"
 ~~~               title=\"%MAKETEXT{show first revisions}%\" />
 ~~~        $percntELSEDEFINED$percnt
-~~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/blank.gif\" 
+~~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/NatSkin/control-right-gray.png\" 
 ~~~               alt=\"%MAKETEXT{blank}%\" />
-~~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/blank.gif\" 
+~~~          <img src=\"%PUBURLPATH%/%SYSTEMWEB%/NatSkin/control-end-gray.png\" 
 ~~~               alt=\"%MAKETEXT{blank}%\" />
 ~~~        $percntFIDEFINED$percnt
 ~~~      </td>
@@ -159,11 +176,7 @@ $(function() {
 </table>
 <!-- //table_rcp_enabled -->%TMPL:END%
 %TMPL:DEF{"message"}%<!-- message -->
-<div class="twikiFormSteps">
-<form name="main" action="%SCRIPTURLPATH{"%TMPL:P{"diffbin"}%"}%/%WEB%/%TOPIC%">
-  <input type="hidden" name="render" value="sidebyside" />
-  <input type="hidden" name="type" value="history">
+%TMPL:P{"formstart"}%<!-- formstart// -->
 %TMPL:P{"rev_table"}%<!-- rev_table// -->
-</form>
-</div>
+%TMPL:P{"formend"}%<!-- formend// -->
 <!-- //message -->%TMPL:END%

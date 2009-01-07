@@ -4,8 +4,9 @@ Default site-level configuration for the !WebTopicActions !WebComponent
 
 %STARTINCLUDE%<!-- twikiwebtopicactions -->
 %USERACTIONS{
-  restrictedactions="new, attach, move, delete, diff, more, raw"
-  format="<div class='natTopicActions'>$edit$sep$new$sep$attach$sep$raw$sep$delete$sep$diff$sep$print$sep$more</div>"
+  restrictedactions="new, attach, move, delete, history, more, raw"
+  format="$edit$sep$attach$sep$new$sep$raw$sep$delete$sep$history$sep$print$sep$more"
+  history="$edit$sep$raw$sep$history$sep$first$sep$prev$sep$next$sep$last$sep$done"
 }%
 <!-- //twikiwebtopicactions -->%STOPINCLUDE%
 

@@ -16,14 +16,15 @@ Default sidebar implementation
    * [[Sandbox.WebHome][Sandbox]]
 </div>
 %TMPL:P{context="natskin_sidebar_pos2" then="searchbox_pos2"}%<!-- -->
-%IFDEFINEDTHEN{"%IFACCESS{"%MAINWEB%.AdminGroup" type="change"}%" as="1"}%
+%IFDEFINEDTHEN{"%IFACCESS{"%USERSWEB%.AdminGroup" type="change"}%" as="1"}%
 <div class="natSidebarSection" natSideBarAdminLinks">
 <h2 >Admin</h2>
    * [[%SCRIPTURL{"configure"}%][%MAKETEXT{"Configure [_1]" args="<nop>%WIKITOOLNAME%"}%]]
    * [[%BASEWEB%.WebPreferences][%MAKETEXT{"Web Preferences"}%]]
    * [[%LOCALSITEPREFS%][%MAKETEXT{"Site Preferences"}%]]
    * [[%SYSTEMWEB%.InstalledPlugins][%MAKETEXT{"Installed Plugins"}%]]
-   * [[%SYSTEMWEB%.ManagingWebs][%MAKETEXT{"Managing Webs"}%]]
+   * [[%SYSTEMWEB%.ManagingWebs][%MAKETEXT{"Add Web"}%]]
+   * [[%SCRIPTURL{"rename"}%/%BASEWEB%/%BASETOPIC%?action=renameweb][Rename Web]]
 </div>
 %FIDEFINED%
 <!-- //twiki.twikiwebsidebar -->%STOPINCLUDE%

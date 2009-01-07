@@ -38,7 +38,7 @@ exclude this term from the hit set.
 
 ---++ Examples
 | *Search* | *Description* |
-| <nop>WikiUsers | if the current web is the %MAINWEB% go to the <nop>WikiUsers  |
+| <nop>WikiUsers | if the current web is the %USERSWEB% go to the <nop>WikiUsers  |
 |                 | if the current web is the %SYSTEMWEB% go to the <nop>UsersGuide |
 | g:WikiUsers | list all topics in all webs whose name match "WikiUsers" |
 | g:copyright -webpref | list all topics that contain the word "copyright" but not "webpref" |

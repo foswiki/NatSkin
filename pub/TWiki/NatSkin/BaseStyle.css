@@ -1,22 +1,27 @@
 /* Base Style */
-
-/* twiki base */
+/* base */
+.foswikiMakeVisible,
+.foswikiMakeVisibleInline,
+.foswikiMakeVisibleBlock,
 .twikiMakeVisible,
 .twikiMakeVisibleInline,
 .twikiMakeVisibleBlock {
   display:none;
 }
 
+.foswikiLeft,
 .twikiLeft {
   float:left;
   position:relative;
 }
+.foswikiRight,
 .twikiRight {
   position:relative;
   float:right;
   display:inline;
   margin:0;
 }
+.foswikiClear,
 .twikiClear {
   margin:0;
   padding:0;
@@ -26,22 +31,29 @@
   display:block;
   border:0px;
 }
+.foswikiHidden,
 .twikiHidden {
   display:none;
 }
+.foswikiSmall,
 .twikiSmall {
   font-size:90%; 
 }
+.foswikiSmallish,
 .twikiSmallish {
   font-size:95%;
 }
 
-.twikiGrayText {
+.twikiGrayText,
+.foswikiGrayText {
   color:#8E9195;
 }
-.twikiGrayText a {
+.twikiGrayText a,
+.foswikiGrayText a {
   color:#7B7E81;
 }
+.foswikiSmallish i,
+.foswikiSmall i,
 .twikiSmallish i,
 .twikiSmall i {
   font-style:normal; /* no italics for fonts that are already small */
@@ -52,11 +64,13 @@
   background:white;
 }
 .twikiEmulatedLink,
+.foswikiEmulatedLink,
 a {
   text-decoration:none; 
   color:#0065CD;
 }
 .twikiEmulatedLink:hover,
+.foswikiEmulatedLink:hover,
 a:hover { 
   text-decoration:underline; 
   color:#777;
@@ -84,8 +98,8 @@ html {
 
 input, textarea, select, body { 
   font-size:100%;
-  line-height:normal;
 }
+.foswikiCheckbox,
 .twikiCheckbox {
   margin:0px 3px 0px 0px;
 }
@@ -98,6 +112,8 @@ h6 { font-size:110%; margin-top:10px; margin-bottom:0px; }
 
 h1 .twikiEmulatedLink, h2 .twikiEmulatedLink, h3 .twikiEmulatedLink,
 h4 .twikiEmulatedLink, h5 .twikiEmulatedLink, h3 .twikiEmulatedLink,
+h1 .foswikiEmulatedLink, h2 .foswikiEmulatedLink, h3 .foswikiEmulatedLink,
+h4 .foswikiEmulatedLink, h5 .foswikiEmulatedLink, h3 .foswikiEmulatedLink,
 h1, h2, h3, h4, h5, h6,
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
 h1 a:hover, h2 a:hover, h3 a:hover,
@@ -120,7 +136,7 @@ dt {
 pre, code,
 .twikiTextareaRawView,
 .natEditTextArea {
-  font-family:"Bitstream Vera Sans Mono", "Andale Mono", Courier, monospace;
+  font-family:"Bitstream Vera Sans Mono", "Andale Mono", monospace;
 }
 
 pre {
@@ -200,6 +216,7 @@ form {
   width:58em;
   margin:0px auto;
 }
+.natOopsMessage .foswikiFormSteps,
 .natOopsMessage .twikiFormSteps {
   margin-bottom:2em;
 }
@@ -216,6 +233,13 @@ form {
   text-align:center;
   padding-top:5px;
 }
+.natPreviewBody .natMainContents {
+  background-image:url('previewbg.png');
+}
+.natCompareBody .natMainContents,
+.natViewHistoryBody .natMainContents {
+  background-image:url('oldrevisionbg.png');
+}
 .natTopRight,
 .natSideBarHeader,
 .natSideBar {
@@ -225,7 +249,6 @@ form {
   padding-bottom:5px;
 }
 .natSideBarContents {
-  min-height:50em;
   overflow:hidden;
 }
 
@@ -250,7 +273,6 @@ form {
  * page layout fall appart ... sort of.
  */
 .natMainContents {
-  min-height:50em;
   overflow:hidden;
   clear:both;
 }
@@ -336,12 +358,16 @@ form {
 .natNotes p {
   margin-top:0px;
 }
-.natSideBar .twikiCurrentTopicLink {
+.natSideBar .twikiCurrentTopicLink,
+.natSideBar .foswikiCurrentTopicLink {
   color:red;
 }
 .natSideBar h1 .twikiCurrentTopicLink,
 .natSideBar h2 .twikiCurrentTopicLink,
-.natSideBar h3 .twikiCurrentTopicLink {
+.natSideBar h3 .twikiCurrentTopicLink,
+.natSideBar h1 .foswikiCurrentTopicLink,
+.natSideBar h2 .foswikiCurrentTopicLink,
+.natSideBar h3 .foswikiCurrentTopicLink {
   color:inherit;
 }
 .natSideBarWebs table {
@@ -386,7 +412,8 @@ form {
 .natEditTopicInfo table td {
   padding:0em 0.5em 0.5em 0em;
 }
-.natEditBody table th.twikiFirstCol {
+.natEditBody table th.twikiFirstCol,
+.natEditBody table th.foswikiFirstCol {
   width:10em;
 }
 
@@ -409,13 +436,15 @@ form {
 .natSearchRenameContents table {
   width:100%;
 }
-.natSearchRenameContents .twikiTopRow {
+.natSearchRenameContents .twikiTopRow,
+.natSearchRenameContents .foswikiTopRow {
   white-space:pre;
   text-align:left;
   vertical-align:top;
   padding:5px;
 }
-.natSearchRenameContents .twikiSummary {
+.natSearchRenameContents .twikiSummary,
+.natSearchRenameContents .foswikiSummary {
   padding:5px;
   text-align:left;
   vertical-align:top;
@@ -452,10 +481,12 @@ form {
 .natSearch {
   font-weight:bold;
 }
-.twikiNew {
+.twikiNew,
+.foswikiNew {
   text-transform:lowercase;
 }
 .twikiNew,
+.foswikiNew,
 .natSearchNewTopic {
   color:red; 
   font-style:italic;
@@ -472,7 +503,7 @@ form {
   padding:5px;
   margin-top:2ex;
   margin-bottom:2ex;
-  font-family:"Bitstream Vera Sans Mono", "Andale Mono", Courier, monospace;
+  font-family:"Bitstream Vera Sans Mono", "Andale Mono", monospace;
   color:red;
 }
 
@@ -484,14 +515,18 @@ form {
 .natNoteHeading {
   color:green;
 }
+.foswikiSubmit,
 .twikiSubmit,
 .natOkButton {
   color:green;
 }
 .foswikiButton,
+.twikiButton,
+.foswikiButton,
 .natAltButton {
   color:blue;
 }
+.foswikiButtonCancel,
 .twikiButtonCancel,
 .natCancelButton {
   color:red;
@@ -512,9 +547,14 @@ form {
 .natTopicActions .natSep {
   display:none;
 }
+#natTopicActionTooltip {
+  display:none;
+  text-align:right;
+  float:left;
+}
 .natHomePageUserAction:hover,
 .natHomePageUserAction {
-  background-image:url(user.png);
+  background-image:url(../FamFamFamSilkIcons/user.png);
   background-repeat:no-repeat;
   background-position:0% 0%;
   padding:1px 2px 1px 20px;
@@ -536,61 +576,133 @@ form {
   padding:2px 5px 5px 22px;
   color:black;
 }
+.natDisabledTopicAction {
+  display:none;
+}
 
 .natViewTopicAction:hover,
 .natViewTopicAction {
-  background-image:url(eye.png);
+  background-image:url(../FamFamFamSilkIcons/eye.png);
 }
 .natNewTopicAction:hover,
 .natNewTopicAction {
-  background-image:url(page_white_add.png);
+  background-image:url(../FamFamFamSilkIcons/page_white_add.png);
 }
 .natEditTopicAction:hover,
 .natEditTopicAction,
 .natEditTextTopicAction:hover,
 .natEditTextTopicAction {
-  background-image:url(pencil.png);
+  background-image:url(../FamFamFamSilkIcons/pencil.png);
 }
 .natEditFormTopicAction:hover,
 .natEditFormTopicAction {
-  background-image:url(application_form_edit.png);
-  background-image:url(pencil.png);
+  background-image:url(../FamFamFamSilkIcons/application_form_edit.png);
 }
 .natAttachTopicAction:hover,
 .natAttachTopicAction {
-  background-image:url(attach.png);
+  background-image:url(../FamFamFamSilkIcons/attach.png);
 }
 .natPrintTopicAction:hover,
 .natPrintTopicAction {
-  background-image:url(printer.png);
+  background-image:url(../FamFamFamSilkIcons/printer.png);
 }
 .natPdfTopicAction:hover,
 .natPdfTopicAction {
-  background-image:url(pdf.png);
+  background-image:url(../FamFamFamSilkIcons/page_white_acrobat.png);
 }
-.natDiffTopicAction:hover,
-.natDiffTopicAction {
-  background-image:url(page_white_stack.png);
+.natHistoryTopicAction:hover,
+.natHistoryTopicAction {
+  background-image:url(../FamFamFamSilkIcons/page_white_stack.png);
 }
 .natRawTopicAction:hover,
 .natRawTopicAction {
-  background-image:url(text_align_left.png);
+  background-image:url(../FamFamFamSilkIcons/text_align_left.png);
 }
 .natDeleteTopicAction:hover,
 .natDeleteTopicAction {
-  background-image:url(bin.png);
+  background-image:url(../FamFamFamSilkIcons/bin.png);
 }
 .natMoveTopicAction:hover,
 .natMoveTopicAction {
-  background-image:url(page_white_go.png);
+  background-image:url(../FamFamFamSilkIcons/page_white_go.png);
 }
 .natMoreTopicAction:hover,
 .natMoreTopicAction {
-  background-image:url(wrench.png);
+  background-image:url(../FamFamFamSilkIcons/wrench.png);
 }
 .natHelpTopicAction:hover,
 .natHelpTopicAction {
-  background-image:url(help.png);
+  background-image:url(../FamFamFamSilkIcons/help.png);
+}
+
+.natFirstTopicAction:hover,
+.natFirstTopicAction {
+  background-image:url(control-start.png);
+}
+
+.natFirstTopicAction.natDisabledTopicAction:hover,
+.natFirstTopicAction.natDisabledTopicAction {
+  background-image:url(control-start-gray.png);
+  display:inline;
+}
+
+.natLastTopicAction:hover,
+.natLastTopicAction {
+  background-image:url(control-end.png);
+}
+
+.natLastTopicAction.natDisabledTopicAction:hover,
+.natLastTopicAction.natDisabledTopicAction {
+  background-image:url(control-end-gray.png);
+  display:inline;
+}
+
+
+.natPrevTopicAction:hover,
+.natPrevTopicAction {
+  background-image:url(control-left.png);
+}
+
+.natPrevTopicAction.natDisabledTopicAction:hover,
+.natPrevTopicAction.natDisabledTopicAction {
+  background-image:url(control-left-gray.png);
+  display:inline;
+}
+
+.natNextTopicAction:hover,
+.natNextTopicAction {
+  background-image:url(control-right.png);
+}
+
+.natNextTopicAction.natDisabledTopicAction:hover,
+.natNextTopicAction.natDisabledTopicAction {
+  background-image:url(control-right-gray.png);
+  display:inline;
+}
+
+.natDoneTopicAction:hover,
+.natDoneTopicAction {
+  background-image:url(control-eject.png);
+}
+
+.natDiffTopicAction:hover,
+.natDiffTopicAction {
+  background-image:url(../FamFamFamSilkIcons/page_white_stack.png);
+}
+
+.natDiffTopicAction.natDisabledTopicAction:hover,
+.natDiffTopicAction.natDisabledTopicAction {
+  background-image:url(../FamFamFamSilkIcons/page_white_stack.png);
+}
+
+.natHistoryAction, 
+.natHistoryAction:hover, 
+.natHistoryAction span {
+  background:transparent;
+  margin:0px;
+}
+.natHistoryAction {
+  color:inherit;
 }
 
 /* helpers */
@@ -617,7 +729,6 @@ form {
 
 .natTopicAttachments table {
   width:100%;
-  margin-bottom:1.5em;
 }
 .natTopicAttachments td {
   vertical-align:top;
@@ -672,15 +783,18 @@ a.natFeedIcon {
   color:#444;
 }
 
-/* twiki styles */
+/* base styles */
+.twikiNewLink,
 .foswikiNewLink {
   color:blue;
   background:#eeeeee;
 }
 
-.twikiAlert {
+.twikiAlert,
+.foswikiAlert {
   color:red;
 }
+.foswikiBroadcastMessage,
 .twikiBroadcastMessage {
   text-align:left;
   background:yellow;
@@ -688,17 +802,26 @@ a.natFeedIcon {
   border-bottom:2px solid orange;
   padding:0.5em 1em;
 }
+.foswikiBroadcastMessage .foswikiLink,
+.foswikiBroadcastMessage .foswikiLink,
+.foswikiBroadcastMessage a,
 .twikiBroadcastMessage .twikiLink,
+.twikiBroadcastMessage .foswikiLink,
 .twikiBroadcastMessage a {
   color:red;
 }
+.foswikiBroadcastMessage .foswikiLink:hover,
+.foswikiBroadcastMessage .foswikiLink:hover,
+.foswikiBroadcastMessage a:hover,
 .twikiBroadcastMessage .twikiLink:hover,
+.twikiBroadcastMessage .foswikiLink:hover,
 .twikiBroadcastMessage a:hover {
   color:black;
   background:orange;
 }
 
-/* twiki tables */
+/* tables */
+.foswikiTable,
 .twikiTable {
   margin-top:1px;
   empty-cells:show;
@@ -707,29 +830,29 @@ a.natFeedIcon {
   border-collapse:collapse;
 }
 
+.foswikiTable th, 
+.foswikiTable td,
 .twikiTable th, 
 .twikiTable td {
   padding:2px 5px;
   border:0px;
 }
 
+.foswikiTable th,
 .twikiTable th {
   font-weight:bold;
   text-align:left;
   background:#1875D5;
 }
 
+.foswikiTable th img,
 .twikiTable th img {
   vertical-align:middle;
   margin-left:2px;
   margin:0px 2px;
 }
 
-.twikiDiffTable td {
-  border:0px;
-}
-
-/* twiki forms */
+/* forms */
 /* SMELL: 
  *
  * display:inline-block is implemented by Safari+Konqueror, but not by FF+IE.
@@ -740,6 +863,7 @@ a.natFeedIcon {
  *
  * See http://www.quirksmode.org/css/display.html
  */
+.foswikiPageForm,
 .twikiPageForm {
   /*
   display:inline-block; 
@@ -747,8 +871,10 @@ a.natFeedIcon {
   display:compact; 
   */
 }
+.foswikiPageForm th,
 .twikiPageForm th,
-.twikiPageForm .twikiFirstCol {
+.twikiPageForm .twikiFirstCol,
+.twikiPageForm .foswikiFirstCol {
   font-weight:bold;
 }
 .natTopicEditForm .natTopicFormTitle,
@@ -764,9 +890,11 @@ a.natFeedIcon {
   width:100%;
   border-collapse:collapse;
 }
+.foswikiPageForm form,
 .twikiPageForm form {
   margin:0px;
 }
+.foswikiPageForm table table,
 .twikiPageForm table table {
   border:0px;
 }
@@ -808,39 +936,52 @@ legend {
   font-size:100%;
   font-weight:bold;
 }
+.foswikiFormSteps,
 .twikiFormSteps {
   padding:1em;
 }
+.foswikiFormStep,
 .twikiFormStep {
   margin:0em 0em 1em;
 }
+.foswikiFormStep hr,
 .twikiFormStep hr {
   margin:1em 0em;
 }
+.foswikiFormLast,
 .twikiFormLast {
   margin-bottom:0em;
 }
+.foswikiFormSteps h2,
+.foswikiFormSteps h3,
+.foswikiFormSteps h4,
 .twikiFormSteps h2,
 .twikiFormSteps h3,
 .twikiFormSteps h4 {
   font-weight:bold;
 }
+.foswikiFormStep p,
 .twikiFormStep p {
   margin:0.35em 0em;
 }
+.foswikiFormOptions,
 .twikiFormOptions {
   margin:0.35em 0em;
   line-height:160%;
 }
+.foswikiFormStep.foswikiFormButtons,
 .twikiFormStep.twikiFormButtons {
   margin-top:2em;
 }
+.foswikiFormButtons.foswikiFormLast,
 .twikiFormButtons.twikiFormLast {
   margin-top:20px;
 }
+.foswikiFormOptions .foswikiCheckbox,
 .twikiFormOptions .twikiCheckbox {
   margin:0px 8px 0px 0px;
 }
+.foswikiFormButtons input,
 .twikiFormButtons input {
   padding:3px 5px;
 }
@@ -849,6 +990,7 @@ legend {
 }
 
 
+span.foswikiErrorSummary,
 span.twikiErrorSummary,
 label.error {
   color:red;
@@ -856,61 +998,84 @@ label.error {
   line-height:normal;
 }
 
-/* twikiDiff */
+/* diff */
+.foswikiDiffTable,
 .twikiDiffTable { 
   border:1px solid #ccc;
   margin-bottom:2em;
   width:100%;
 }
+.foswikiDiffTable table,
 .twikiDiffTable table {
   border:0px;
 }
 
+.foswikiDiffTable td,
+.twikiDiffTable td {
+  border:0px;
+}
+
+.foswikiDiffTable th,
 .twikiDiffTable th {
   background:#dddddd;
 }
+.foswikiDiffLineNumberHeader th,
 .twikiDiffLineNumberHeader th { 
   background:#eeeeee;
 }
 
+td.foswikiDiffChangedHeader,
+td.foswikiDiffAddedHeader,
 td.twikiDiffChangedHeader,
 td.twikiDiffAddedHeader { 
   background:#D0FFD0;
   border-top:1px solid #ccc;
   border-bottom:1px solid #ccc;
 }
+.foswikiDiffAddedMarker,
 .twikiDiffAddedMarker { 
   background:#aaaadd;
 }
+.foswikiDiffAddedText,
 .twikiDiffAddedText { 
   background:#ccccff;
 }
+.foswikiDiffChangedMarker,
+.foswikiDiffChangedText,
 .twikiDiffChangedMarker,
 .twikiDiffChangedText { 
 }
 
+.foswikiDiffDeletedHeader,
 .twikiDiffDeletedHeader { }
+
+.foswikiDiffDeletedMarker,
 .twikiDiffDeletedMarker { 
   background:#dd7777;
 }
+.foswikiDiffDeletedText,
 .twikiDiffDeletedText { 
  background:#ff9999;
 }
 
+td.foswikiDiffChangedText,
 td.twikiDiffChangedText {
   color:red;
 }
-.twikiWebIndent {
+.twikiWebIndent,
+.foswikiWebIndent {
   margin:0 0 0 1em;
 }
 
 /* TOC */
+.foswikiToc,
 .twikiToc {
   margin-top:5px;
   margin-bottom:5px;
   padding-top:5px;
   padding-bottom:5px;
 }
+.foswikiToc img,
 .twikiToc img {
   display:none;
 }
@@ -1151,15 +1316,9 @@ img.alignleft {
 }
 
 /* classification plugin */
-.clsTopicInfo a {
-  text-decoration:none;
-  background-image:none;
-}
-.clsTopicInfo .twikiCurrentTopicLink {
+.clsTopicInfo .twikiCurrentTopicLink,
+.clsTopicInfo .foswikiCurrentTopicLink {
   color:inherit;
-}
-.clsTopicInfoSep {
-  margin-bottom:21px;
 }
 
 /* jquery treeview */
@@ -1172,4 +1331,33 @@ img.alignleft {
   background:white;
   padding:5px;
   border:1px solid #ddd;
+}
+
+/* compare revisions addon */
+.craCompareAdd {
+  background-color:#cfc;
+}
+.craCompareChange2 {
+  background-color:#cfc;
+}
+.craCompareDelete {
+  background-color:#fcc;
+  text-decoration:line-through;
+}
+.craCompareChange1 {
+  background-color:#fcc;
+  text-decoration:line-through;
+}
+table.craSideBySide {
+  border:none;
+  border-collapse:collapse;
+}
+table.craSideBySide .craCell {
+  vertical-align:top;
+  width:50%;
+  padding:6px;
+}
+.craTableCellSeparator {
+  width:1px;
+  background-color:#666;
 }

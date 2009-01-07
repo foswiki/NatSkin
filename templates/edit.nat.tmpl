@@ -7,12 +7,6 @@
 %TMPL:INCLUDE{"edittoolbar"}%<!-- edittoolbar// -->
 %TMPL:DEF{"bodyclass"}%natEditBody%TMPL:END%
 %TMPL:DEF{"meta"}% %HTTP_EQUIV_ON_EDIT% %TMPL:END%
-%TMPL:DEF{"title"}%%TOPICTITLE% - (%MAKETEXT{"edit"}%) - %WIKITOOLNAME%%TMPL:END%
+%TMPL:DEF{"title"}%%TOPIC% - %WEBLINK{format="$web"}% - (%IF{"defined 'rev'" then="%MAKETEXT{"restore"}%" else="%MAKETEXT{"edit"}%"}%) - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contentheader"}%%TMPL:END%
-%TMPL:DEF{"pagetitle"}%<!-- pagetitle -->
-%IFDEFINEDTHEN{"%IFEXISTS{"%WEB%.%TOPIC%"}%" as="1"}%
-[[%WEB%.%TOPIC%][%WEBLINK{format="$web"}%.%TOPIC%]] (%MAKETEXT{"edit"}%)
-%ELSEDEFINED%
-<nop>%WEBLINK{format="$web"}%.%TOPIC% (%MAKETEXT{"new"}%)
-%FIDEFINED%
 <!-- //pagetitle -->%TMPL:END%

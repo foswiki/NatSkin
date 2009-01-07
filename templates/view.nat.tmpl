@@ -5,7 +5,7 @@
 %TMPL:INCLUDE{"viewjavascript"}%<!-- viewjavascript// -->
 %TMPL:INCLUDE{"viewstyles"}%<!-- viewstyles// -->
 %TMPL:INCLUDE{"searchbox"}%<!-- searchbox// -->
-%TMPL:DEF{"bodyclass"}%natViewBody%TMPL:END%
+%TMPL:DEF{"bodyclass"}%natViewBody%IFSKINSTATE{history="1" then=" natViewHistoryBody"}%%TMPL:END%
 %TMPL:DEF{"title"}%%HTMLTITLE%%TMPL:END%
 %TMPL:DEF{"meta"}%%HTTP_EQUIV_ON_VIEW%
 %IFACCESS{"%WEB%.%TOPIC%" type="change" as="1" then="<link rel=\"alternate\" type=\"application/x-wiki\" title=\"Edit this page!\" href=\"%SCRIPTURL{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%\" />" glue="off" else=""}%
@@ -17,7 +17,8 @@
 %TMPL:P{"text"}%<!-- text// -->
 %TMPL:P{"rawbutton"}%<!-- rawbutton // -->
 %TMPL:P{"aftertext"}%<!-- aftertext// -->
-%TMPL:P{"form"}%<!-- form // -->
+%IF{"$'DISPLAYFORM'='off'" else="$percntTMPL:P{\"form\"}$percnt"}%<!-- meta:form // -->
+%IF{"$'DISPLAYATTACHMENTS'='off'" else="$percntMETA{\"attachments\"}$percnt"}%<!-- meta:attachments// -->
 <!-- //content -->%TMPL:END%
 %TMPL:DEF{"rawbutton"}%%IFDEFINED{"%URLPARAM{"raw"}%" then="<div class='natButtonBox' style='text-align:right'><input type='button' class='natOkButton' onclick=\"window.location.href='%SCRIPTURL{view}%/%WEB%/%TOPIC%';\" value='Back' /></div>" else="<!-- -->" glue="off"}%%TMPL:END%
 %TMPL:DEF{"text"}%%TEXT%%TMPL:END%
@@ -28,12 +29,14 @@
 </div>
 <!-- //breadcrumbs -->%TMPL:END%
 %TMPL:DEF{"contentheader"}%<!-- contentheader -->
-%TMPL:P{context="natskin_topicactions_on" then="topicactions"}%<!-- topicactions// -->
+%TMPL:P{"topicactions"}%<!-- topicactions// -->
 %TMPL:P{"breadcrumbs"}%<!-- breadcrumbs //-->
 <!-- // contentheader -->%TMPL:END%
-%TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Changed by [_1] on [_2]" args="<span class='natRevisionAuthor'> %REVINFO{"$wikiusername"}% </span>, <a class='natRevisionDate' href='%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPIC%?type=last;render=sidebyside' title='%MAKETEXT{"show last change"}%'>%REVINFO{"$date - $hour:$min"}%</a>"}% </div>%TMPL:END%
+%TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Changed by [_1] on [_2]" args="<span class='natRevisionAuthor'> %REVINFO{"$wikiusername" rev="%CURREV%"}% </span>, <a class='natRevisionDate' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"$date - $hour:$min - r$rev" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
+%TMPL:DEF{"rdiff"}%%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPIC%?type=last;render=sequential%TMPL:END%
+%TMPL:DEF{"compare"}%%SCRIPTURLPATH{"compare"}%/%WEB%/%TOPIC%?type=last;render=interweave%TMPL:END%
+
 %TMPL:DEF{"contentfooter"}%<!-- content footer -->
-%META{"attachments"}%<!-- meta:attachments// -->
 %TMPL:P{"revinfo"}%<!-- revinfo //-->
 <!-- //content footer -->%TMPL:END%
 %TMPL:DEF{"broadcast"}%<!-- broadcast -->

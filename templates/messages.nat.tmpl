@@ -24,7 +24,7 @@
  args="%SYSTEMWEB%.LoginName,%WIKIWEBMASTER%"}%
 
 %MAKETEXT{"See [_1] for a list of existing users or register as new user in [_2]."
-args="%USERSWEB%.%WIKIUSERSTOPIC%,%TWIKIREGISTRATION%"}%
+args="%USERSWEB%.%WIKIUSERSTOPIC%,%USERREGISTRATION%"}%
 %TMPL:END%
 %TMPL:DEF{"topic_exists"}%<!-- uses goback def -->
 ---+++ %MAKETEXT{"The [_1] topic already exists" args="\"%TOPIC%\""}%
@@ -310,7 +310,7 @@ template that doesn't exist." args="%PARAM2%"}%
 %TMPL:P{"logon"}%
 
 %MAKETEXT{"See also:"}% %USERSWEB%.WikiGroups, %SYSTEMWEB%.AccessControl,
-%TWIKIREGISTRATION%
+%USERREGISTRATION%
 %TMPL:END%
 %TMPL:DEF{"only_group"}% <!-- -->
 %MAKETEXT{"Only members of the [_1] are allowed to perform this action." args="%PARAM1%"}%
@@ -318,7 +318,7 @@ template that doesn't exist." args="%PARAM2%"}%
 %TMPL:P{"logon"}%
 
 %MAKETEXT{"See also:"}% %USERSWEB%.WikiGroups, %SYSTEMWEB%.AccessControl,
-%TWIKIREGISTRATION%
+%USERREGISTRATION%
 %TMPL:END%
 %TMPL:DEF{"no_such_web"}% <!-- -->
 ---++ %MAKETEXT{"The [_1] web does not exist" args="\"%WEB%\""}%

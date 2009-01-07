@@ -117,14 +117,25 @@ allways open an extra window.
 
 ---++ Skin Info
 |  Skin Author: | Michael Daum |
-|  Copyright &copy;: | 2003-2008, Michael Daum http://michaeldaumconsulting.com |
+|  Copyright &copy;: | 2003-2009, Michael Daum http://michaeldaumconsulting.com |
 |  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
-|  Skin Version: | v3.0-pre28 |
+|  Skin Version: | v3.0-pre29 |
 |  Dependencies: | NatSkinPlugin |
 |  Description: | Driven by cascading stylesheets, Comes with 12 alternative styles, <nop>MoveableType and Wordpress Look-n-Feel |
 |  Base Name: | nat |
 |  Screenshot: | <div style="overflow:hidden;height:200px"><a href="%ATTACHURL%/BlueNoteStyle.jpeg"><img src="%ATTACHURL%/BlueNoteStyle.jpeg" title="Clean"/></a></div> |
 |  Change&nbsp;History: | <!-- specify latest version first -->&nbsp; |
+|  07 Jan 2009: | added tape-recorder-like history browser; \
+                  added suppport for <nop>CompareRevisionsAddOn; \
+                  added support for twiki _and_ foswiki css classes; \
+                  improved typographics in <nop>BlueNoteStyle; \
+                  removed copies of famfamfam icons - using <nop>FamFamFamContrib instead; \
+                  moved all javascript from template to js file; \
+                  added hover tios to improve usability of topic actions; \
+                  fixed oopsmore; \
+                  added IE6 png workaround; \
+                  improved login screen; \
+                  added "show on screen" feature |
 |  18 Nov 2008: | fixes for IE6; \
                   new interim logo for foswiki; \
                   using jquery buttons where possible |
@@ -163,7 +174,7 @@ allways open an extra window.
                   improved usability of renaming/trashing topics and attachments, \
                   also autoadding a overflow wrapper for <nop>MediaWikiTables, \
                   improved usability of selecting/changing <nop>DataForms using the new NATFORMLIST tag, \
-                  woring around text not being hidden when editing the <nop>TWikiForm with <nop>TinyMCE |
+                  woring around text not being hidden when editing the <nop>DataForm with <nop>TinyMCE |
 |  02 Oct 2007: | added support for <nop>HistoryPlugin, <nop>TinyMCEPlugin |
 |  21 Sep 2007: | removed own <nop>NatEdit implementation, \
                   improved move/rename usability, \

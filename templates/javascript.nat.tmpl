@@ -3,53 +3,9 @@
 %TMPL:P{"jqueryjavascript"}%
 <script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/JavascriptFiles/foswiki.js"></script>
 <script type="text/javascript" src="%PUBURL%/%SYSTEMWEB%/JQueryPlugin/jquery.superfish.js" ></script>
+<script type="text/javascript" src="%PUBURL%/%SYSTEMWEB%/NatSkin/natskin.js" ></script>
 <script type="text/javascript"> 
 $(function() { 
-  if (true) { // remove empty attachment comments
-    $("#natTopicAttachments .natAttachmentComment").each(function(){
-      var text = $(this).text();
-      //alert("text='"+text+"' char="+text.charCodeAt(0));
-      if ((text.length == 1 && text.charCodeAt(0) == 160)) {
-        $(this).hide();
-      }
-    });
-  }
-  /* tooltips */
-  if (true) {
-    $(".natAttachmentActions a").tooltip({
-      delay:350,
-      track:true,
-      showURL:false,
-      extraClass:'twiki',
-      showBody:': '
-    });
-
-    /* tooltip img previews */
-    $(".natAttachmentName a").each(function() {
-      if ($(this).attr('href').match(/jpe?g|gif|png|bmp/i)) {
-        $(this).tooltip({
-          delay:350,
-          track:true,
-          showURL:false,
-          bodyHandler: function() { 
-            var img = $("<img/>").attr({
-              src: this.href
-            }); 
-            return $("<div class='imgTooltip'></div>").append(img);
-          }
-        });
-      }
-    });
-  }
-  /* horiz menu */
-  if (true) {
-    $(".natWebButtonsContents > ul").
-      superfish({}).
-      find("li:has(ul)").
-      addClass("hasSubMenu");
-    $(".natWebButtonsContents").css('display', 'block');
-  }
-  /* params for ie6 png fixes */
   %TMPL:P{"onloadscript"}% 
 }); 
 </script>

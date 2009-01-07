@@ -9,7 +9,7 @@
 %TMPL:DEF{"contenttitle"}%<h1 class="natLoginHeading"><span>%TMPL:P{"heading"}%</span></h1>%TMPL:END%
 %TMPL:DEF{"bodyclass"}%natLoginBody%TMPL:END%
 %TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
-%TMPL:DEF{"LOG_IN_BANNER"}%%MAKETEXT{"Please enter your username and password"}%.%TMPL:END%
+%TMPL:DEF{"LOG_IN_BANNER"}%%MAKETEXT{"Welcome, please login:"}%%TMPL:END%
 %TMPL:DEF{"LOGGED_IN_BANNER"}%%MAKETEXT{"[_1] is currently logged in" args="%USERSWEB%.%WIKINAME%"}%.%TMPL:END%
 %TMPL:DEF{"NEW_USER_NOTE"}%%MAKETEXT{"Enter a new username and password to change identity"}%.%TMPL:END%
 %TMPL:DEF{"UNRECOGNISED_USER"}%%MAKETEXT{"Unrecognised user and/or password."}%%TMPL:END%
@@ -18,7 +18,7 @@
 <h2 id="natLogonBanner">%BANNER%</h2>
 %NOTE%<!-- note// -->
 %TMPL:P{"logon"}%<!-- logon// -->
-%TMPL:P{"seealso"}%<!-- seealso/ -->
+%TMPL:P{"seealso"}%<!-- seealso// -->
 </div>
 <!-- //message-->%TMPL:END%
 %TMPL:DEF{"content"}%<!-- content -->
@@ -37,6 +37,6 @@
 %TMPL:DEF{"seealso"}%<!-- seealso -->
 <div class="twikiFormStep twikiFormLast">
 [[%SYSTEMWEB%.ResetPassword][%MAKETEXT{"Did you forget your password?"}%]] %BR%
-[[%TWIKIREGISTRATION%][%MAKETEXT{"Do you want to become a registered user?"}%]]
+[[%USERREGISTRATION%][%MAKETEXT{"Do you want to become a registered user?"}%]]
 </div>
 <!-- //seealso -->%TMPL:END%

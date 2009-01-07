@@ -50,7 +50,7 @@
 
 %TMPL:DEF{"formbuttons"}%<!-- formbuttons -->
 <div class='twikiFormStep twikiFormButtons twikiFormLast'>
-%TMPL:P{"submit"}%%TMPL:P{"reset"}%%TMPL:P{"cancel"}%%CLEAR%
+%TMPL:P{"submit"}%%TMPL:P{"cancel"}%%CLEAR%
 </div>
 <!-- //formbuttons -->%TMPL:END%
 
@@ -89,10 +89,6 @@
 %TMPL:DEF{"submit"}%<!-- submit -->
 %BUTTON{type="submit" icon="tick" value="%MAKETEXT{"OK"}%"}%
 <!-- //submit -->%TMPL:END%
-
-%TMPL:DEF{"reset"}%<!-- reset -->
-%BUTTON{type="reset" icon="application_form" value="%MAKETEXT{"Reset"}%"}%
-<!-- //reset -->%TMPL:END%
 
 %TMPL:DEF{"cancel"}%<!-- cancel -->
 %BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" target="%URLPARAM{"origurl" default="%BASEWEB%.%BASETOPIC%"}%"}%

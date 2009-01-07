@@ -2,10 +2,9 @@
 ---+!! %TOPIC%
 Navigation links in the %SYSTEMWEB% web.
 
-%STARTINCLUDE%<!-- twiki.weblinks -->
+%STARTINCLUDE%<!-- system.weblinks -->
    * [[TwentyMinuteTutorial][Tutorial]]
    * [[UsersGuide][Users Guide]]
    * [[FrequentlyAskedQuestions][FAQ]]
-   * [[Installed Plugins]]
    * [[ReferenceManual][Reference Manual]]
-<!-- //twiki.weblinks -->%STOPINCLUDE%
+<!-- //system.weblinks -->%STOPINCLUDE%

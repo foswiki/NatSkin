@@ -1,3 +1,4 @@
+// (c)opyright 2008-2009 Michael Daum http://michaeldaumconsulting.com
 /* toggle the attachment editor */
 var lastElem;
 function toggleAttachmentEditor(elem, state) {

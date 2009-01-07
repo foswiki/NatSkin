@@ -28,7 +28,7 @@
     <h3>%MAKETEXT{"New topic name"}%:</h3>
     %TMPL:P{"newtopic"}%
 
-    <input type="checkbox" class="twikiCheckbox" name="nonwikiword" id="nonwikiword" %NONWIKIWORDFLAG% />
+    <input type="checkbox" class="twikiCheckbox" name="nonwikiword" id="nonwikiword" %IF{"$ 'URLPARAM{nonwikiword}'='on'" then="checked='checked'"}% />
     <label for="nonwikiword">%MAKETEXT{"Allow non <nop>WikiWord for the new topic name"}%</label>
   </div>
   <div class="twikiFormStep twikiFormButtons twikiFormLast">
