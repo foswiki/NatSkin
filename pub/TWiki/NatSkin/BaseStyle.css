@@ -556,7 +556,7 @@ form {
 }
 .natHomePageUserAction:hover,
 .natHomePageUserAction {
-  background-image:url(../FamFamFamSilkIcons/user.png);
+  background-image:url(icons/user.png);
   background-repeat:no-repeat;
   background-position:0% 0%;
   padding:1px 2px 1px 20px;
@@ -584,117 +584,117 @@ form {
 
 .natViewTopicAction:hover,
 .natViewTopicAction {
-  background-image:url(../FamFamFamSilkIcons/eye.png);
+  background-image:url(icons/eye.png);
 }
 .natNewTopicAction:hover,
 .natNewTopicAction {
-  background-image:url(../FamFamFamSilkIcons/page_white_add.png);
+  background-image:url(icons/page_white_add.png);
 }
 .natEditTopicAction:hover,
 .natEditTopicAction,
 .natEditTextTopicAction:hover,
 .natEditTextTopicAction {
-  background-image:url(../FamFamFamSilkIcons/pencil.png);
+  background-image:url(icons/pencil.png);
 }
 .natEditFormTopicAction:hover,
 .natEditFormTopicAction {
-  background-image:url(../FamFamFamSilkIcons/application_form_edit.png);
+  background-image:url(icons/application_form_edit.png);
 }
 .natAttachTopicAction:hover,
 .natAttachTopicAction {
-  background-image:url(../FamFamFamSilkIcons/attach.png);
+  background-image:url(icons/attach.png);
 }
 .natPrintTopicAction:hover,
 .natPrintTopicAction {
-  background-image:url(../FamFamFamSilkIcons/printer.png);
+  background-image:url(icons/printer.png);
 }
 .natPdfTopicAction:hover,
 .natPdfTopicAction {
-  background-image:url(../FamFamFamSilkIcons/page_white_acrobat.png);
+  background-image:url(icons/page_white_acrobat.png);
 }
 .natHistoryTopicAction:hover,
 .natHistoryTopicAction {
-  background-image:url(../FamFamFamSilkIcons/page_white_stack.png);
+  background-image:url(icons/page_white_stack.png);
 }
 .natRawTopicAction:hover,
 .natRawTopicAction {
-  background-image:url(../FamFamFamSilkIcons/text_align_left.png);
+  background-image:url(icons/text_align_left.png);
 }
 .natDeleteTopicAction:hover,
 .natDeleteTopicAction {
-  background-image:url(../FamFamFamSilkIcons/bin.png);
+  background-image:url(icons/bin.png);
 }
 .natMoveTopicAction:hover,
 .natMoveTopicAction {
-  background-image:url(../FamFamFamSilkIcons/page_white_go.png);
+  background-image:url(icons/page_white_go.png);
 }
 .natMoreTopicAction:hover,
 .natMoreTopicAction {
-  background-image:url(../FamFamFamSilkIcons/wrench.png);
+  background-image:url(icons/wrench.png);
 }
 .natHelpTopicAction:hover,
 .natHelpTopicAction {
-  background-image:url(../FamFamFamSilkIcons/help.png);
+  background-image:url(icons/help.png);
 }
 
 .natFirstTopicAction:hover,
 .natFirstTopicAction {
-  background-image:url(control-start.png);
+  background-image:url(icons/control-start.png);
 }
 
 .natFirstTopicAction.natDisabledTopicAction:hover,
 .natFirstTopicAction.natDisabledTopicAction {
-  background-image:url(control-start-gray.png);
+  background-image:url(icons/control-start-gray.png);
   display:inline;
 }
 
 .natLastTopicAction:hover,
 .natLastTopicAction {
-  background-image:url(control-end.png);
+  background-image:url(icons/control-end.png);
 }
 
 .natLastTopicAction.natDisabledTopicAction:hover,
 .natLastTopicAction.natDisabledTopicAction {
-  background-image:url(control-end-gray.png);
+  background-image:url(icons/control-end-gray.png);
   display:inline;
 }
 
 
 .natPrevTopicAction:hover,
 .natPrevTopicAction {
-  background-image:url(control-left.png);
+  background-image:url(icons/control-left.png);
 }
 
 .natPrevTopicAction.natDisabledTopicAction:hover,
 .natPrevTopicAction.natDisabledTopicAction {
-  background-image:url(control-left-gray.png);
+  background-image:url(icons/control-left-gray.png);
   display:inline;
 }
 
 .natNextTopicAction:hover,
 .natNextTopicAction {
-  background-image:url(control-right.png);
+  background-image:url(icons/control-right.png);
 }
 
 .natNextTopicAction.natDisabledTopicAction:hover,
 .natNextTopicAction.natDisabledTopicAction {
-  background-image:url(control-right-gray.png);
+  background-image:url(icons/control-right-gray.png);
   display:inline;
 }
 
 .natDoneTopicAction:hover,
 .natDoneTopicAction {
-  background-image:url(control-eject.png);
+  background-image:url(icons/control-eject.png);
 }
 
 .natDiffTopicAction:hover,
 .natDiffTopicAction {
-  background-image:url(../FamFamFamSilkIcons/page_white_stack.png);
+  background-image:url(icons/page_white_stack.png);
 }
 
 .natDiffTopicAction.natDisabledTopicAction:hover,
 .natDiffTopicAction.natDisabledTopicAction {
-  background-image:url(../FamFamFamSilkIcons/page_white_stack.png);
+  background-image:url(icons/page_white_stack.png);
 }
 
 .natHistoryAction, 

@@ -487,16 +487,16 @@ fieldset .twikiFormSteps {
   border:0px;
 }
 
-.jqTabContents .foswikiFormStep,
-.jqTabContents .twikiFormStep {
+.jqTabContents .foswikiFormSteps .foswikiFormStep,
+.jqTabContents .twikiFormSteps .twikiFormStep {
   background:#FEF8EB;
   /*background:#f6f6f6;*/
   border-top:1px solid #ddd;
   margin:0em;
   padding:1em 1.5em;
 }
-.jqTabContents .foswikiFormLast,
-.jqTabContents .twikiFormLast {
+.jqTabContents .foswikiFormSteps .foswikiFormLast,
+.jqTabContents .twikiFormSteps .twikiFormLast {
   border-bottom:1px solid #ddd;
 }
 
@@ -744,7 +744,7 @@ fieldset .twikiFormSteps {
 .natSearchBoxPos1 a {
   margin:1px 5px;
   padding:0px;
-  background-image:url(../FamFamFamSilkIcons/magnifier.png);
+  background-image:url(icons/magnifier.png);
   background-repeat:no-repeat;
   display:block;
   height:16px;
@@ -752,7 +752,7 @@ fieldset .twikiFormSteps {
 }
 .natSearchBoxPos1 a:hover {
   background-color:inherit;
-  background-image:url(../FamFamFamSilkIcons/magnifier.png);
+  background-image:url(icons/magnifier.png);
   background-repeat:no-repeat;
 }
 .natSearchBoxPos2,
@@ -880,6 +880,10 @@ h1 .clsTopicSummary {
 .natTopicAttachments {
   margin:1.5em 0em 0em;
   padding:1em 1em 1.5em;
+}
+.jqTabContents .natTopicAttachments {
+  margin:0px;
+  padding:0px;
 }
 .natTopicAttachments a {
   text-decoration:none;
