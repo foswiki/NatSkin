@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" date="1225902695" format="1.1" version="$Rev$"}%
+%META:TOPICINFO{author="ProjectContributor" date="1231402179" format="1.1" version="1.2"}%
 ---+!! %TOPIC%
 Navigation links in the %SYSTEMWEB% web.
 
@@ -7,4 +7,5 @@ Navigation links in the %SYSTEMWEB% web.
    * [[UsersGuide][Users Guide]]
    * [[FrequentlyAskedQuestions][FAQ]]
    * [[ReferenceManual][Reference Manual]]
+   * [[Macros]]
 <!-- //system.weblinks -->%STOPINCLUDE%

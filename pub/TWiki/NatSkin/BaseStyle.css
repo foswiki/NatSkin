@@ -250,6 +250,7 @@ form {
 }
 .natSideBarContents {
   overflow:hidden;
+  min-height:40em;
 }
 
 *:first-child+html .natSideBarHeaderContents { /* IE7 fix to draw the borders */
@@ -275,6 +276,7 @@ form {
 .natMainContents {
   overflow:hidden;
   clear:both;
+  min-height:40em;
 }
 
 /* topbar */
@@ -393,7 +395,7 @@ form {
 }
 .natEditBody .natSideBarContents, 
 .natEditBody .natMainContents {
-  min-height:0px;
+  min-height:auto;
 }
 .natEditBody .natMainHeaderContents,
 .natEditBody .natMainFooterContents,

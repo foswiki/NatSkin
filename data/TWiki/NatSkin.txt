@@ -110,16 +110,16 @@ allways open an extra window.
    * NatSkinPlugin
 
 ---++ Installation Instructions
-   * Get the <nop>NatSkinPlugin supplementary package and install it.
-   * Download the !NatSkin ZIP file
-   * Unzip it in your twiki installation directory. 
-   * Test if installed: [[%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?skin=nat&style=Kubrick][click here]]
+%$INSTALL_INSTRUCTIONS%
+
+   * Test if installed: [[%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?skin=nat][click here]]
+   * Set the SKIN variable in your %USERWEB%.SitePreferences to =nat= 
 
 ---++ Skin Info
 |  Skin Author: | Michael Daum |
 |  Copyright &copy;: | 2003-2009, Michael Daum http://michaeldaumconsulting.com |
 |  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
-|  Skin Version: | v3.0-pre29 |
+|  Skin Version: | v3.0-pre30 |
 |  Dependencies: | NatSkinPlugin |
 |  Description: | Driven by cascading stylesheets, Comes with 12 alternative styles, <nop>MoveableType and Wordpress Look-n-Feel |
 |  Base Name: | nat |
@@ -144,7 +144,7 @@ allways open an extra window.
                   moving revinfo to first h1 in content area |
 |  11 Nov 2008: | rewrite of data forms using divs instead of tables; \
                   lots of usability fixes |
-|  05 Nov 2008: | redesigned header bar using a default nextwiki logo; \
+|  05 Nov 2008: | redesigned header bar using a default foswiki logo; \
                   redesigned topic actions making it all icons ; \
                   added superfish dropmenu support to webbuttons ; \
                   moved user actions out of the topbar and placing them above it; \
@@ -192,9 +192,9 @@ allways open an extra window.
                   numerous markup and css fixes, \
                   better attachment table at bottom of topics |
 |  21 May 2007: | Bugs:Item3969 - 8bit email fix (TWiki:Main.WillNorris) |
-|  08 Mar 2007: | fixed sidebar navigation in IE; fixed twikiPageForms width for FF |
+|  08 Mar 2007: | fixed sidebar navigation in IE; fixed page forms width for FF |
 |  06 Mar 2007: | fixed renameweb; nicened all rename dialogs; \
-                  don't stretch twikiTables to 100% width by default; \
+                  don't stretch tables to 100% width by default; \
                   added some default TWiki styles (twikiLeft, twikiRight, etc); \
                   some javascript fixes calculating the height of the edit textarea; \
                   simplified topic actions using the new USERACTIONS tag |
@@ -250,7 +250,7 @@ allways open an extra window.
                   normalized some css class naming; \
                   added <nop>ImagePlugin css support |
 |  21 Aug 2006: | complete rework of fonts in all styles not to rely on font preference settings in \
-                  browsers; enhanced twikiTable appearance; \
+                  browsers; enhanced tables appearance; \
                   added support for Foswiki:Extensions.ImagePlugin in natedit; \
                   fixed sidebar in !PatternStyle + searchbox in position 1; \
                   fixed oopsmore's button style on different locales; \
