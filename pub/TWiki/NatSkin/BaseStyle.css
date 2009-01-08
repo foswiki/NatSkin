@@ -578,10 +578,6 @@ form {
   padding:2px 5px 5px 22px;
   color:black;
 }
-.natDisabledTopicAction {
-  display:none;
-}
-
 .natViewTopicAction:hover,
 .natViewTopicAction {
   background-image:url(icons/eye.png);
@@ -706,6 +702,11 @@ form {
 .natHistoryAction {
   color:inherit;
 }
+
+.natDisabledTopicAction {
+  display:none;
+}
+
 
 /* helpers */
 .natAction {

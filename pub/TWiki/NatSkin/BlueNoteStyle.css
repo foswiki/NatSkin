@@ -51,7 +51,6 @@ p {
   margin:1.0em 0em 0em;
 }
 
-
 h1 { font-size:160%; margin-top:1em;margin-bottom:0.2em;padding-bottom:0.1em; }
 h2 { font-size:135%; margin-top:1em;margin-bottom:0.5em;}
 h3 { font-size:125%; margin-top:1em;margin-bottom:0.5em;}
@@ -177,26 +176,30 @@ dl dd {
 }
 .natLoginBody .foswikiFormSteps,
 .natLoginBody .twikiFormSteps {
-  margin:1em 0em;
-  padding:16px 19px;
+  margin:0em 0em 1em;
+  padding:1em 0em;
   background-color:#f6f6f6;
   background-image:url(login_keys.png);
   background-repeat:no-repeat;
-  background-position:2.5em 3em;
-  border-top:1px solid #d6d6d6;
+  background-position:1.3em 0em;
+  border-top:0px;
   border-bottom:1px solid #d6d6d6;
 }
-.natLoginBody #natLogonBanner {
+#natLogonBanner {
   background:#e5e5e5;
-  margin:-16px -19px 19px;
+  color:#9C3063;
+  font-weight:bold;
+  margin:0px;
   padding:13px 19px;
   border-bottom:2px solid #e0e0e0;
 }
+.natLoginBody .foswikiFormStep,
 .natLoginBody .twikiFormStep {
-  margin:0em 1em 1em 150px;
+  margin:0em 1em 1em 12em;
 }
 .natLoginBody .twikiFormLast {
-  margin:2em 1em 0em 150px;
+  margin:2em 1em 1em 12em;
+  _margin:2em 1em 0em 12em; /* IE 6 fix */
 }
 
 /* base styles */

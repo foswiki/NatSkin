@@ -1,9 +1,14 @@
 <!-- template: styles.nat.tmpl -->
 %TMPL:DEF{"defaultstyles"}%<!-- defaultstyles -->
+<script type="text/javascript">
+  blankImg = '%PUBURLPATH%/%TWIKIWEB%/NatSkin/blank.gif';
+</script>
 <style type="text/css">
 /* ie6 png fix */
-* html img, 
-* html .jqButtonIcon, 
+* html .natWebLogo, 
+* html .natLogin .twikiFormSteps, 
+* html .natLogin .foswikiFormSteps, 
+* html .jqButtonIcon,
 * html .natUserAction,
 * html .natTopicAction {
   behavior:url(%PUBURLPATH%/%TWIKIWEB%/NatSkin/iepngfix.htc);
@@ -13,9 +18,6 @@
   line-height:1.2em;
 }
 </style>
-<script type="text/javascript">
-  blankImg = '%PUBURLPATH%/%TWIKIWEB%/NatSkin/blank.gif';
-</script>
 <!-- //defaultstyles -->%TMPL:END%
 %TMPL:DEF{"styles"}%<!-- styles -->
 %TMPL:P{"defaultstyles"}%<!-- defaultstyles // -->
