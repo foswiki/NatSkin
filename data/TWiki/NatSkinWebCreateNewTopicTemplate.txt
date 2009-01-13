@@ -99,8 +99,8 @@
 
 %TMPL:DEF{"javascript"}%<!-- javascript -->
 %TMPL:P{"defaultjavascript"}%
-<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/jquery.wikiword.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/jquery.validate.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/JQueryPlugin/jquery.wikiword.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%TWIKIWEB%/JQueryPlugin/jquery.validate.js"></script>
 <script type="text/javascript">
 $(function() {
   $("#topic").wikiword("#topictitle");

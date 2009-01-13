@@ -93,10 +93,10 @@ pub/TWiki/NatSkin/login_keys.png 0644
 pub/TWiki/NatSkin/menuarrow.gif 0644
 pub/TWiki/NatSkin/menucorner.gif 0644
 pub/TWiki/NatSkin/natskin.js 0644
-pub/TWiki/NatSkin/nextwiki-header-notrans.png 0644
-pub/TWiki/NatSkin/nextwiki-header.png 0644
-pub/TWiki/NatSkin/nextwiki-header-tile.png 0644
-pub/TWiki/NatSkin/nextwiki-logo.png 0644
+pub/TWiki/NatSkin/foswiki-header-notrans.png 0644
+pub/TWiki/NatSkin/foswiki-header.png 0644
+pub/TWiki/NatSkin/foswiki-header-tile.png 0644
+pub/TWiki/NatSkin/foswiki-logo.png 0644
 pub/TWiki/NatSkin/obfuscator.js 0644
 pub/TWiki/NatSkin/oldrevisionbg.png 0644
 pub/TWiki/NatSkin/oopsmore_diff_debug.gif 0644

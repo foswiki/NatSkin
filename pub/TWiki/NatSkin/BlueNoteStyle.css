@@ -517,14 +517,14 @@ fieldset .twikiFormSteps {
   color:white;
 }
 .natTopRight {
-  background:url(nextwiki-header-tile.png) repeat-x;
+  background:url(foswiki-header-tile.png) repeat-x;
 }
 .natTopLeft.natTopRight {
   padding:0px;
   background:inherit;
 }
 .natTopLeftContents {
-  background:url(nextwiki-header-tile.png) repeat-x;
+  background:url(foswiki-header-tile.png) repeat-x;
   height:100px;
   margin:0px 0px 0px 50px;
   padding:0em;
@@ -532,12 +532,12 @@ fieldset .twikiFormSteps {
   _margin:0px;
 }
 .natWebTitle {
-  background:url(nextwiki-header.png) no-repeat;
+  background:url(foswiki-header.png) no-repeat;
   padding:0em;
   margin:0px 0px 0px -50px;
   height:100px;
   /* ie6 */
-  _background:url(nextwiki-header-notrans.png) no-repeat;
+  _background:url(foswiki-header-notrans.png) no-repeat;
   _margin:0px 0px 0px 0px;
 }
 .natWebTitle a {
