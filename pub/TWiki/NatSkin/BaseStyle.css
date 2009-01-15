@@ -141,6 +141,7 @@ pre, code,
 
 pre {
   overflow:auto;
+  margin:0px;
 }
 .DISnatBody > pre { /* hide from IE */
   /*\*/ overflow:auto !important; /* */ overflow:scroll; /* for Mac Safari */
@@ -160,16 +161,15 @@ form {
 }
 
 /* debug
-.natBody, .natBodyContents			{ border: 1px solid green }
+.natBody, .natBodyContents { border: 1px solid green }
 .natWebTitle, .natSearchBox,
 .natTopBar, .natTopBarContents, 
 .natTopLeft, .natTopRight, 
 .natTopLeftContents, .natTopRightContents, 
 .natWebButtons, .natWebButtonsContents
-
-						{ border: 1px solid blue }
+{ border: 1px solid blue }
 .natMiddle, 
-.natSideBar, natSideBarContents			{ border: 1px solid red }
+.natSideBar, .natSideBarContents { border: 1px solid red }
 .natMain, .natMainContents, .natMainHeaderContents
 .natSideBar, .natSideBarContents,
 .natMainFooterContents {
@@ -560,6 +560,7 @@ form {
   background-repeat:no-repeat;
   background-position:0% 0%;
   padding:1px 2px 1px 20px;
+  _padding:0px 0px 0px 10px;
 }
 .natLoginUserAction,
 .natRegisterUserAction,
@@ -578,6 +579,11 @@ form {
   padding:2px 5px 5px 22px;
   color:black;
 }
+
+.natDisabledTopicAction {
+  display:none;
+}
+
 .natViewTopicAction:hover,
 .natViewTopicAction {
   background-image:url(icons/eye.png);
@@ -638,8 +644,8 @@ form {
   background-image:url(icons/control-start.png);
 }
 
-.natFirstTopicAction.natDisabledTopicAction:hover,
-.natFirstTopicAction.natDisabledTopicAction {
+.natFirstTopicActionDisabled:hover,
+.natFirstTopicActionDisabled {
   background-image:url(icons/control-start-gray.png);
   display:inline;
 }
@@ -649,8 +655,8 @@ form {
   background-image:url(icons/control-end.png);
 }
 
-.natLastTopicAction.natDisabledTopicAction:hover,
-.natLastTopicAction.natDisabledTopicAction {
+.natLastTopicActionDisabled:hover,
+.natLastTopicActionDisabled {
   background-image:url(icons/control-end-gray.png);
   display:inline;
 }
@@ -661,8 +667,8 @@ form {
   background-image:url(icons/control-left.png);
 }
 
-.natPrevTopicAction.natDisabledTopicAction:hover,
-.natPrevTopicAction.natDisabledTopicAction {
+.natPrevTopicActionDisabled:hover,
+.natPrevTopicActionDisabled {
   background-image:url(icons/control-left-gray.png);
   display:inline;
 }
@@ -672,8 +678,8 @@ form {
   background-image:url(icons/control-right.png);
 }
 
-.natNextTopicAction.natDisabledTopicAction:hover,
-.natNextTopicAction.natDisabledTopicAction {
+.natNextTopicActionDisabled:hover,
+.natNextTopicActionDisabled {
   background-image:url(icons/control-right-gray.png);
   display:inline;
 }
@@ -688,11 +694,6 @@ form {
   background-image:url(icons/page_white_stack.png);
 }
 
-.natDiffTopicAction.natDisabledTopicAction:hover,
-.natDiffTopicAction.natDisabledTopicAction {
-  background-image:url(icons/page_white_stack.png);
-}
-
 .natHistoryAction, 
 .natHistoryAction:hover, 
 .natHistoryAction span {
@@ -701,10 +702,6 @@ form {
 }
 .natHistoryAction {
   color:inherit;
-}
-
-.natDisabledTopicAction {
-  display:none;
 }
 
 
@@ -1127,7 +1124,6 @@ img.center {
   margin-top:3px;
   margin-bottom:3px;
 }
-	
 img.alignright {
   padding: 3px;
   margin-left:7px;

@@ -132,13 +132,22 @@ dl dd {
   padding:2.0em 1.5em 2.0em 1em;
 }
 .natMain {
-  padding:2em;
   background-image:url(button-bg.png);
   background-repeat:repeat-x;
   background-position:0% 100%;
   /* ie 6 */
   _background-image:none;
 }
+.natMainHeaderContents {
+  margin:2em 2em 1.5em;
+}
+.natMainFooterContents {
+  margin:1.5em 2em 2em;
+}
+.natMainContents {
+  margin:1.5em 2em;
+}
+
 .natTopicActions {
   float:right;
 }
@@ -157,12 +166,6 @@ dl dd {
 .natTopicActions span span,
 .natTopicActions a span {
   display:none;
-}
-.natMainHeaderContents {
-  padding:0em 0em 1.5em;
-}
-.natEditBody .natMain {
-  padding:1.0em;
 }
 .natTopRight,
 .natSideBarHeader,
@@ -788,9 +791,6 @@ fieldset .twikiFormSteps {
 }
 
 /* bottom */
-.natMainFooterContents {
-  margin:0em;
-}
 .natMainFooterContents .natRevision {
   margin:2em 0em 0em;
 }
