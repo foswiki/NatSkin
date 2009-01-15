@@ -43,7 +43,7 @@
     <input type="radio" id="searchthis" name="template" value="backlinksweb" checked />
     <label for="searchthis">%MAKETEXT{"Search in current web"}%</label>
 
-    <input type="radio" id="searchall" name="template" value="backlinksallweb" />
+    <input type="radio" id="searchall" name="template" value="backlinksallwebs" />
     <label for="searchall">%MAKETEXT{"Search in all public webs"}%</label>
   </div>
   <div class="twikiFormStep twikiFormButtons twikiFormLast">

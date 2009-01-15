@@ -1,9 +1,24 @@
 %TMPL:INCLUDE{"search"}%<!-- template:backlinksweb.nat.tmpl -->
 %TMPL:DEF{"title"}%%TOPICTITLE% - (%MAKETEXT{"backlinks"}%) - %WIKITOOLNAME%%TMPL:END%
-%TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Backlinks to '[_1]' in the '[_2]' Web" args="%TOPIC%, <nop>%WEB%"}%</h1>%TMPL:END%
+%TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Backlinks to [_1] in the [_2] Web" args="<nop>%TOPIC%, <nop>%WEB%"}%</h1>%TMPL:END%
 %TMPL:DEF{"content"}%<!-- content -->
+%TMPL:P{"beforetext"}%<!-- beforetext// -->
 %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
-<input type="button" value="%MAKETEXT{"OK"}%" accesskey="o" class="natOkButton" onclick="window.location.href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%';" title="Return to <nop>%TOPIC%">
-<input type="button" value="%MAKETEXT{"Global"}%" accesskey="a" class="natAltButton" onclick="window.location.href='%SCRIPTURLPATH{"oops"}%/%WEB%/%TOPIC%?template=backlinksallwebs';" title="Search for backlinks in all webs">
+<div class="foswikiFormSteps twikiFormSteps">
+<div class="foswikiFormStep twikiFormStep foswikiFormLast twikiFormLast">
+%BUTTON{"%MAKETEXT{"Done"}%" icon="tick" target="%WEB%.%TOPIC%" title="Return to <nop>%TOPIC%"}%
+%BUTTON{"%MAKETEXT{"Global Search"}%" icon="find" target="%SCRIPTURLPATH{"oops"}%/%WEB%/%TOPIC%?template=backlinksallwebs" title="%MAKETEXT{"Search for backlinks in all webs"}%"}%
+%CLEAR%
+</div>
+</div>
 %SEARCH{web="%WEB%" search="%TOPIC%([^A-Za-z0-9]|$)|%SPACEOUT{"%TOPIC%" separator=" *"}%([^A-Za-z0-9]|$)|%WEB%.%TOPIC%([^A-Za-z0-9]|$)|%WEB%.%SPACEOUT{"%TOPIC%" separator=" *"}%([^A-Za-z0-9]|$)" type="regex" scope="text" nosearch="on" excludetopic="%TOPIC%"}%
+%TMPL:P{"aftertext"}%<!-- aftertext// -->
 <!-- //content -->%TMPL:END%
+%TMPL:DEF{"contentheader"}%<!-- contentheader -->
+%TMPL:P{"breadcrumbs"}%<!-- breadcrumbs //-->
+<!-- // contentheader -->%TMPL:END%
+%TMPL:DEF{"breadcrumbs"}%<!-- breadcrumbs -->
+<div class="natBreadCrumbs">
+  %MAKETEXT{"You are here:"}%<span class='natSep'>&nbsp; </span>%IFDEFINED{"$percntTHISBREADCRUMBS$percnt" then="$test" else="$percntBREADCRUMBS{separator=\"<span class='natSep'>&nbsp;&#187; </span>\"}$percnt"}%
+</div>
+<!-- //breadcrumbs -->%TMPL:END%

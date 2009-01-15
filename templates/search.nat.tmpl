@@ -1,7 +1,5 @@
 %TMPL:INCLUDE{"searchbase"}%<!-- template: search.nat.tmpl -->
 %TMPL:DEF{"searchbox_top"}%%TMPL:END%
-%TMPL:DEF{"contentheader_container"}%%TMPL:END%
-%TMPL:DEF{"contentfooter_container"}%%TMPL:END%
 %TMPL:DEF{"topictitle_dbcache"}%%GETTOPICTITLE{"%TOPICNAME%"}%%TMPL:END%
 %TMPL:DEF{"topictitle_nodbcache"}%%TOPICNAME%%TMPL:END%
 %TMPL:DEF{"topictitle"}%%TMPL:P{context="DBCachePluginEnabled" then="topictitle_dbcache" else="topictitle_nodbcache"}%%TMPL:END%

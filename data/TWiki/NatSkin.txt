@@ -125,13 +125,15 @@ are listed there.
 |  Skin Author: | Michael Daum |
 |  Copyright &copy;: | 2003-2009, Michael Daum http://michaeldaumconsulting.com |
 |  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
-|  Skin Version: | v3.0-pre35 |
+|  Skin Version: | v3.0-pre36 |
 |  Dependencies: | NatSkinPlugin |
 |  Description: | Driven by cascading stylesheets, Comes with 12 alternative styles, <nop>MoveableType and Wordpress Look-n-Feel |
 |  Base Name: | nat |
 |  Screenshot: | <div style="overflow:hidden;height:200px"><a href="%ATTACHURL%/BlueNoteStyle.jpeg"><img src="%ATTACHURL%/BlueNoteStyle.jpeg" title="Clean"/></a></div> |
 |  Change&nbsp;History: | <!-- specify latest version first -->&nbsp; |
-|  15 Jan 2009: | more IE6 workarounds; fixed "placing" topics into the Trash web |
+|  15 Jan 2009: | more IE6 workarounds; \
+                  fixed "placing" topics into the Trash web; \
+                  fixed and improved backlinks to topic |
 |  13 Jan 2009: | fixed web topic creator |
 |  08 Jan 2009: | fixed the IE6 PNG fix; fixed login screen for IE6 |
 |  07 Jan 2009: | added tape-recorder-like history browser; \

@@ -1,10 +1,24 @@
 %TMPL:INCLUDE{"search"}%<!-- template: backlinksallwebs.nat.tmpl -->
 %TMPL:DEF{"title"}%%TOPICTITLE% - %MAKETEXT{"(backlinks)"}% - %WIKITOOLNAME%%TMPL:END%
-%TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Backlinks to '[_1]' in all Webs" args="%TOPIC%"}%</h1>%TMPL:END%
+%TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Backlinks to [_1] in all Webs" args="<nop>%TOPIC%"}%</h1>%TMPL:END%
 %TMPL:DEF{"content"}%<!-- content -->
+%TMPL:P{"beforetext"}%<!-- beforetext// -->
 %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
-<input type="button" value="%MAKETEXT{"OK"}%" accesskey="o" class="natOkButton" onclick="window.location.href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%';" title="Return to <nop>%TOPIC%">
-<input type="button" value="%MAKETEXT{"Local" args="<nop>%WEB%"}%" accesskey="a" class="natAltButton" onclick="window.location.href='%SCRIPTURLPATH{"oops"}%/%WEB%/%TOPIC%?template=backlinksallwebs';" title="Search for backlinks in the '<nop>%WEB%' web only">
+<div class="foswikiFormSteps twikiFormSteps">
+<div class="foswikiFormStep twikiFormStep foswikiFormLast twikiFormLast">
+%BUTTON{"%MAKETEXT{"Done"}%" icon="tick" target="%WEB%.%TOPIC%" title="Return to <nop>%TOPIC%"}%
+%BUTTON{"%MAKETEXT{"Local Search"}%" icon="find" target="%SCRIPTURLPATH{"oops"}%/%WEB%/%TOPIC%?template=backlinksweb" title="%MAKETEXT{"Search for backlinks in the [_1] web only" args="<nop>%WEB%"}%"}%
+%CLEAR%
+</div>
+</div>
 %SEARCH{web="all" search="%WEB%.%TOPIC%([^A-Za-z0-9]|$)|%WEB%.%SPACEOUT{"%TOPIC%" separator=" *"}%([^A-Za-z0-9]|$)" type="regex" scope="text" nosearch="on" excludetopic="%TOPIC%"}%
+%TMPL:P{"aftertext"}%<!-- aftertext// -->
 <!-- //content -->%TMPL:END%
-
+%TMPL:DEF{"contentheader"}%<!-- contentheader -->
+%TMPL:P{"breadcrumbs"}%<!-- breadcrumbs //-->
+<!-- // contentheader -->%TMPL:END%
+%TMPL:DEF{"breadcrumbs"}%<!-- breadcrumbs -->
+<div class="natBreadCrumbs">
+  %MAKETEXT{"You are here:"}%<span class='natSep'>&nbsp; </span>%IFDEFINED{"$percntTHISBREADCRUMBS$percnt" then="$test" else="$percntBREADCRUMBS{separator=\"<span class='natSep'>&nbsp;&#187; </span>\"}$percnt"}%
+</div>
+<!-- //breadcrumbs -->%TMPL:END%

@@ -1,13 +1,13 @@
 <!-- template: topbar.nat.tmpl -->
 %TMPL:DEF{"defaulttopbar"}%<!-- defaulttopbar -->
 <tr>
-  <td class="natTopBar natTopLeft %IFSKINSTATE{action="oops" then="natTopRight"}%" valign="top">
+  <td class="natTopBar natTopLeft" valign="top">
     <div class="natTopLeftContents">
       <div class="natWebTitle"><a href="%NATWEBLOGOURL%" title="%WEBLOGOALT%" accesskey="h"><span>%NATWEBLOGO%</span></a></div>
       <div class="natWebSlogan">%SITEMAPWHAT%</div>
     </div>
   </td>
-  <td class="natTopBar natTopRight" valign="top" style="%IFSKINSTATE{action="oops" then="display:none"}%" width="250px">
+  <td class="natTopBar natTopRight" valign="top" width="250px">
     <div class="natTopRightContents">
 %TMPL:P{context="natskin_searchbox_top" then="searchbox_top"}%<!-- searchbox_top// -->
   </td>
