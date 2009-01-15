@@ -35,16 +35,6 @@ To get a first impression check out the NatSkinStyleBrowser:
    * switch on/off navigations tabs above the main area, the so called <nop>WebButtons
    * the position of the search box can be set to one of four predefined positions
 
----++ Acknowledgement
-This is a rework of the 
-Foswiki:Extensions/CopyCatSkin by TWiki:Main/MattWilkie. It is used at the 
-[[http://nats-www.informatik.uni-hamburg.de/Main/WebHome][Natural Language Systems Division]] 
-(NATS) of the University of Hamburg, Germany. 
-
-The NatSkinPlugin is inspired by the Foswiki:Extensions/GnuSkin by
-TWiki:Main/JoachimNilsson. The Foswiki:Extensions/PhotonSkin by
-TWiki:Main/EstebanManchado (<nop>PhotonSearch) renamed to =natsearch= .
-
 ---++ Feature Overview
 *Conditional markup and skin states:* 
 
@@ -125,7 +115,7 @@ are listed there.
 |  Skin Author: | Michael Daum |
 |  Copyright &copy;: | 2003-2009, Michael Daum http://michaeldaumconsulting.com |
 |  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
-|  Skin Version: | v3.0-pre36 |
+|  Skin Version: | v3.0-pre37 |
 |  Dependencies: | NatSkinPlugin |
 |  Description: | Driven by cascading stylesheets, Comes with 12 alternative styles, <nop>MoveableType and Wordpress Look-n-Feel |
 |  Base Name: | nat |
@@ -133,7 +123,9 @@ are listed there.
 |  Change&nbsp;History: | <!-- specify latest version first -->&nbsp; |
 |  15 Jan 2009: | more IE6 workarounds; \
                   fixed "placing" topics into the Trash web; \
-                  fixed and improved backlinks to topic |
+                  fixed and improved backlinks to topic; \
+                  natsearch docu updates; \
+                  copied the NatSkinPlugin DEPENDENCIES up the food chain to NatSkin |
 |  13 Jan 2009: | fixed web topic creator |
 |  08 Jan 2009: | fixed the IE6 PNG fix; fixed login screen for IE6 |
 |  07 Jan 2009: | added tape-recorder-like history browser; \
