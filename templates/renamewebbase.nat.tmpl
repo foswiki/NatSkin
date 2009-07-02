@@ -10,36 +10,36 @@
 %TMPL:DEF{"title"}%%WEB% (%MAKETEXT{"rename web"}%) - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Rename the <nop>[_1] Web" args="%WEB%"}%</h1>%TMPL:END%
 %TMPL:DEF{"webaction"}%%MAKETEXT{"Rename"}%%TMPL:END%
-%TMPL:DEF{"onloadscript"}%document.renameweb.newsubweb.focus();%TMPL:END%
 %TMPL:DEF{"buttons"}%<!-- buttons -->
-  %BUTTON{type="submit" value="%MAKETEXT{"Rename"}%" icon="tick"}%
+  %BUTTON{type="save" value="%MAKETEXT{"Rename"}%" icon="tick"}%
   %BUTTON{type="button" value="%MAKETEXT{"Cancel"}%" icon="cross" target="%WEB%.%TOPIC%"}%
   %CLEAR%
 <!-- //buttons -->%TMPL:END%
 %TMPL:DEF{"content"}%<!-- content -->
+%JQREQUIRE{"focus"}%<!-- jqFocus -->
 %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
-<form method="post" name="renameweb" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%">
+<form name="renameweb" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
 <input type="hidden" name="action" value="renameweb" />
 <input type="hidden" name="confirm" value="getlock" />
-<div class="twikiFormSteps">
-  <div class="twikiFormStep">
+<div class="foswikiFormSteps">
+  <div class="foswikiFormStep">
     <h3>%MAKETEXT{"New web name"}%:</h3>
     %TMPL:P{"newsubweb"}%
   </div>
-  <div class="twikiFormStep">
+  <div class="foswikiFormStep">
     <h3>%MAKETEXT{"New parent web"}%:</h3>
     %TMPL:P{"newparentweb"}%
 
-    <input type="checkbox" class="twikiCheckbox" name="totrash" id="totrash" onclick="document.renameweb.newparentweb.value = (this.checked)?'Trash':'';this.blur();">&nbsp;
+    <input type="checkbox" class="foswikiCheckbox" name="totrash" id="totrash" onclick="document.renameweb.newparentweb.value = (this.checked)?'Trash':'';this.blur();">&nbsp;
     <label for="totrash">
       %MAKETEXT{"Move to Trash"}%
     </label>
   </div>
-  <div class="twikiFormStep twikiFormButtons twikiFormLast">
+  <div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
     %TMPL:P{"buttons"}%<!-- buttons// -->
   </div>
-  <div class="twikiFormStep"><hr /></div>
-  <div class="twikiFormStep">
+  <div class="foswikiFormStep"><hr /></div>
+  <div class="foswikiFormStep">
     <h3>%MAKETEXT{"Update links in the '[_2]' web" args="<nop>%TOPIC%,<nop>%WEB%"}%:</h3>
     <div class="natSearchRenameContents">
 %LOCAL_SEARCH%
@@ -52,7 +52,7 @@
     </div>
 %FIDEFINED%
   </div>
-  <div class="twikiFormStep twikiFormButtons twikiFormLast">
+  <div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
     %BUTTON{"%MAKETEXT{"Set all"}%" onclick="checkAll('renameweb', true);" title="%MAKETEXT{"Select all topics"}%" icon="add"}%
     %BUTTON{"%MAKETEXT{"Clear all"}%" onclick="checkAll('renameweb', false);" title="%MAKETEXT{"Clear selection"}%" icon="delete"}%
 %IFDEFINEDTHEN{"%URLPARAM{"currentwebonly"}%" as="on"}%
@@ -60,8 +60,8 @@
 %FIDEFINED%
     %CLEAR%
   </div>
-  <div class="twikiFormStep"><hr /></div>
-  <div class="twikiFormStep">
+  <div class="foswikiFormStep"><hr /></div>
+  <div class="foswikiFormStep">
     <h3>%MAKETEXT{"Locked Topics"}%:</h3>
     *%MAKETEXT{"No permission:"}%* 
     <div class="natSearchRenameContents">

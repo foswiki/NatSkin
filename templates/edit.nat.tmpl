@@ -5,8 +5,307 @@
 %TMPL:INCLUDE{"editstyles"}%<!-- editstyles// -->
 %TMPL:INCLUDE{"edithelp"}%<!-- edithelp// -->
 %TMPL:INCLUDE{"edittoolbar"}%<!-- edittoolbar// -->
+%TMPL:DEF{"useractions"}%%TMPL:END%
+%TMPL:DEF{"topbar"}%%TMPL:END%
+%TMPL:DEF{"webbuttons"}%%TMPL:END%
 %TMPL:DEF{"bodyclass"}%natEditBody%TMPL:END%
 %TMPL:DEF{"meta"}% %HTTP_EQUIV_ON_EDIT% %TMPL:END%
 %TMPL:DEF{"title"}%%TOPIC% - %WEBLINK{format="$web"}% - (%IF{"defined 'rev'" then="%MAKETEXT{"restore"}%" else="%MAKETEXT{"edit"}%"}%) - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contentheader"}%%TMPL:END%
-<!-- //pagetitle -->%TMPL:END%
+%TMPL:DEF{"moresettings"}%<!-- moresettings -->
+<div class="foswikiFormSteps">
+  <h2>Show on screen</h2>
+  <div class="foswikiFormStep foswikiFormLast">
+    <input type='hidden' name='Default+DISPLAYFORM' value="%GETVAR{"DISPLAYFORM" scope="web" default="on"}%" />
+    <input type='hidden' name='Default+DISPLAYATTACHMENTS' value="%GETVAR{"DISPLAYATTACHMENTS" scope="web" default="on"}%" />
+    <input type='hidden' name='Default+DISPLAYCOMMENTS' value="%GETVAR{"DISPLAYCOMMENTS" scope="web" default="on"}%" />
+    <input type='hidden' name='Default+DISPLAYTOPICACTIONS' value="%GETVAR{"DISPLAYTOPICACTIONS" scope="web" default="on"}%" />
+    <input type='hidden' name='Default+DISPLAYREVISIONINFO' value="%GETVAR{"DISPLAYREVISIONINFO" scope="web" default="on"}%" />
+    <input type='hidden' name='Default+DISPLAYBREADCRUMBS' value="%GETVAR{"DISPLAYBREADCRUMBS" scope="web" default="on"}%" />
+    <table>
+      <tr>
+        <th>%MAKETEXT{"Data form"}%</th>
+        <td><input type='radio' class='foswikiRadio' id="displayform_on" name='Local+DISPLAYFORM' value="on" %IF{"$'DISPLAYFORM'='on' OR isempty 'DISPLAYFORM'" then="checked='checked'"}% /></td>
+        <td><label for="displayform_on">%MAKETEXT{"on"}%</label></td>
+        <td><input type='radio' class='foswikiRadio' id="displayform_off" name='Local+DISPLAYFORM' value="off" %IF{"$'DISPLAYFORM'='off'" then="checked='checked'"}% /></td>
+        <td><label for="displayform_off">%MAKETEXT{"off"}%</label></td>
+      </tr>
+      <tr>
+        <th>%MAKETEXT{"Attachments"}%</th>
+        <td><input type="radio" class="foswikiRadio" id="displayattachments_on" name="Local+DISPLAYATTACHMENTS" value="on" %IF{"$'DISPLAYATTACHMENTS'='on' OR isempty 'DISPLAYATTACHMENTS'" then="checked='checked'"}% /></td>
+        <td><label for="displayattachments_on">%MAKETEXT{"on"}%</label></td>
+        <td><input type='radio' class="foswikiRadio" id="displayattachments_off" name='Local+DISPLAYATTACHMENTS' value="off" %IF{"$'DISPLAYATTACHMENTS'='off'" then="checked='checked'"}% /></td>
+        <td><label for="displayattachments_off">%MAKETEXT{"off"}%</label></td>
+      </tr>
+      <tr>
+        <th>%MAKETEXT{"Comments"}%</th>
+        <td><input type="radio" class="foswikiRadio" id="displaycomments_on" name="Local+DISPLAYCOMMENTS" value="on" %IF{"$'DISPLAYCOMMENTS'='on' OR isempty 'DISPLAYCOMMENTS'" then="checked='checked'"}% /></td>
+        <td><label for="displaycomments_on">%MAKETEXT{"on"}%</label></td>
+        <td><input type='radio' class="foswikiRadio" id="displaycomments_off" name='Local+DISPLAYCOMMENTS' value="off" %IF{"$'DISPLAYCOMMENTS'='off'" then="checked='checked'"}% /></td>
+        <td><label for="displaycomments_off">%MAKETEXT{"off"}%</label></td>
+      </tr>
+      <tr>
+        <th>%MAKETEXT{"Topic actions"}%</th>
+        <td><input type="radio" class="foswikiRadio" id="displaytopicactions_on" name="Local+DISPLAYTOPICACTIONS" value="on" %IF{"$'DISPLAYTOPICACTIONS'='on' OR isempty 'DISPLAYTOPICACTIONS'" then="checked='checked'"}% /></td>
+        <td><label for="displaytopicactions_on">%MAKETEXT{"on"}%</label></td>
+        <td><input type='radio' class="foswikiRadio" id="displaytopicactions_off" name='Local+DISPLAYTOPICACTIONS' value="off" %IF{"$'DISPLAYTOPICACTIONS'='off'" then="checked='checked'"}% /></td>
+        <td><label for="displaytopicactions_off">%MAKETEXT{"off"}%</label></td>
+      </tr>
+      <tr>
+        <th>%MAKETEXT{"Revision information"}%</th>
+        <td><input type="radio" class="foswikiRadio" id="displayrevisioninfo_on" name="Local+DISPLAYREVISIONINFO" value="on" %IF{"$'DISPLAYREVISIONINFO'='on' OR isempty 'DISPLAYREVISIONINFO'" then="checked='checked'"}% /></td>
+        <td><label for="displayrevisioninfo_on">%MAKETEXT{"on"}%</label></td>
+        <td><input type='radio' class="foswikiRadio" id="displayrevisioninfo_off" name='Local+DISPLAYREVISIONINFO' value="off" %IF{"$'DISPLAYREVISIONINFO'='off'" then="checked='checked'"}% /></td>
+        <td><label for="displayrevisioninfo_off">%MAKETEXT{"off"}%</label></td>
+      </tr>
+      <tr>
+        <th>%MAKETEXT{"Breadcrumbs navigation"}%</th>
+        <td><input type="radio" class="foswikiRadio" id="displaybreadcrumbs_on" name="Local+DISPLAYBREADCRUMBS" value="on" %IF{"$'DISPLAYBREADCRUMBS'='on' OR isempty 'DISPLAYBREADCRUMBS'" then="checked='checked'"}% /></td>
+        <td><label for="displaybreadcrumbs_on">%MAKETEXT{"on"}%</label></td>
+        <td><input type='radio' class="foswikiRadio" id="displaybreadcrumbs_off" name='Local+DISPLAYBREADCRUMBS' value="off" %IF{"$'DISPLAYBREADCRUMBS'='off'" then="checked='checked'"}% /></td>
+        <td><label for="displaybreadcrumbs_off">%MAKETEXT{"off"}%</label></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<!-- //moresettings -->%TMPL:END%
+
+%TMPL:DEF{"moretabs"}%<!-- moretabs -->
+%TAB{"Permissions"}%
+<noautolink>
+<div class="foswikiFormSteps" id="permissionsForm">
+  <input type="hidden" class="permset_change" id="allow_change" name="Set+ALLOWTOPICCHANGE" value="%GETVAR{"ALLOWTOPICCHANGE" default="undefined"}%" />
+  <input type="hidden" class="permset_change" id="deny_change" name="Set+DENYTOPICCHANGE" value="%GETVAR{"DENYTOPICCHANGE" default="undefined"}%" />
+  <input type="hidden" class="permset_view" id="allow_view" name="Set+ALLOWTOPICVIEW" value="%GETVAR{"ALLOWTOPICVIEW" default="undefined"}%" />
+  <input type="hidden" class="permset_view" id="deny_view" name="Set+DENYTOPICVIEW" value="%GETVAR{"DENYTOPICVIEW" default="undefined"}%" />
+  <input type="hidden" name="Default+ALLOWTOPICCHANGE" value="undefined" />
+  <input type="hidden" name="Default+ALLOWTOPICVIEW" value="undefined" />
+  <input type="hidden" name="Default+DENYTOPICCHANGE" value="undefined" />
+  <input type="hidden" name="Default+DENYTOPICVIEW" value="undefined" />
+  <h2>%MAKETEXT{"Permissions"}%</h2>
+  <div class="foswikiFormStep">
+    <h3>%MAKETEXT{"Users who may view"}%:</h3>
+      <input type="hidden" name="Default+PERMSET_VIEW" value="default" />
+      <input type="radio" class="foswikiRadio" id="default_view" name="Local+PERMSET_VIEW" value="default" %IF{"$'PERMSET_VIEW'='default' OR isempty 'PERMSET_VIEW'" then="checked='checked'"}% /> 
+      <label for="default_view" title='%MAKETEXT{"default as defined in the [_1]" args="<nop>%WEBPREFSTOPIC%"}%'>%MAKETEXT{"Default"}%</label>
+
+      <input type="radio" class="foswikiRadio" id="everybody_view" name="Local+PERMSET_VIEW" value="everybody" %IF{"$'PERMSET_VIEW'='everybody'" then="checked='checked'"}% /> 
+      <label for="everybody_view" title="%MAKETEXT{"public view access"}%">%MAKETEXT{"Everybody"}%</label>
+
+      <input type="radio" class="foswikiRadio" id="registered_users_view" name="Local+PERMSET_VIEW" value="registeredusers" %IF{"$'PERMSET_VIEW'='registeredusers'" then="checked='checked'"}% /> 
+      <label for="registered_users_view" title='%MAKETEXT{"restrict read access to users that have an account on this site"}%'>%MAKETEXT{"Registered users"}%</label>
+
+      <input type="radio" class="foswikiRadio" id="just_author_view" name="Local+PERMSET_VIEW" value="justauthor" %IF{"$'PERMSET_VIEW'='justauthor'" then="checked='checked'"}% />
+      <label for="just_author_view" title='%MAKETEXT{"restrict access to [_1]" args="%SPACEOUT{"%WIKINAME%"}%"}%'>%MAKETEXT{"Just me"}%</label>
+
+      <input type="radio" class="foswikiRadio" id="nobody_view" name="Local+PERMSET_VIEW" value="nobody" %IF{"$'PERMSET_VIEW'='nobody'" then="checked='checked'"}% /> 
+      <label for="nobody_view" title='%MAKETEXT{"strictly deny any access to this topic"}%'>%MAKETEXT{"Nobody"}%</label>
+
+      <table class="foswikiLayoutTable">
+        <tr>
+          <td>
+            <input type="radio" class="foswikiRadio" id="details_view_toggle" name="Local+PERMSET_VIEW" value="details" %IF{"$'PERMSET_VIEW'='details'" then="checked='checked'"}% />
+          </td>
+          <td>
+            <label for="details_view_toggle" title='%MAKETEXT{"specify a list of users and/or groups"}%'>&nbsp;%MAKETEXT{"Specific users/groups"}%</label>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <div id="details_view_container" %IF{"$'PERMSET_VIEW'!='details'" then="style='display:none'"}%>
+              <input type="text" size="40" id="details_view" name="Local+PERMSET_VIEW_DETAILS" value="%GETVAR{"PERMSET_VIEW_DETAILS"}%" />
+              <input type="hidden" name="Default+PERMSET_VIEW_DETAILS" value="" />
+            </div>
+          </td>
+        </tr>
+      </table>
+  </div>
+  <div class="foswikiFormStep foswikiFormLast">
+    <h3>%MAKETEXT{"Users who may edit"}%:</h3>
+      <input type="hidden" name="Default+PERMSET_CHANGE" value="default" />
+      <input type="radio" class="foswikiRadio" id="default_change" name="Local+PERMSET_CHANGE" value="default" %IF{"$'PERMSET_CHANGE'='default' OR isempty 'PERMSET_CHANGE'" then="checked='checked'"}% /> 
+      <label for="default_change" title='%MAKETEXT{"default as defined in the [_1]" args="<nop>%WEBPREFSTOPIC%"}%'>%MAKETEXT{"Default"}%</label>
+
+      <input type="radio" class="foswikiRadio" id="registered_users_change" name="Local+PERMSET_CHANGE"  value="registeredusers" %IF{"$'PERMSET_CHANGE'='registeredusers'" then="checked='checked'"}% /> 
+      <label for="registered_users_change" title='%MAKETEXT{"restrict write access to users that have an account on this site"}%'>%MAKETEXT{"Registered users"}%</label>
+
+      <input type="radio" class="foswikiRadio" id="just_author_change" name="Local+PERMSET_CHANGE" value="justauthor" %IF{"$'PERMSET_CHANGE'='justauthor'" then="checked='checked'"}% />
+      <label for="just_author_change" title='%MAKETEXT{"restrict access to [_1]" args="%SPACEOUT{"%WIKINAME%"}%"}%'>%MAKETEXT{"Just me"}%</label>
+
+      <input type="radio" class="foswikiRadio" id="nobody_change" name="Local+PERMSET_CHANGE" value="nobody" %IF{"$'PERMSET_CHANGE'='nobody'" then="checked='checked'"}% /> 
+      <label for="nobody_change" title='%MAKETEXT{"strictly deny write access to this topic"}%'>%MAKETEXT{"Nobody"}%</label>
+
+      <table class="foswikiLayoutTable">
+        <tr>
+          <td>
+            <input type="radio" class="foswikiRadio" id="details_change_toggle" name="Local+PERMSET_CHANGE" value="details" %IF{"$'PERMSET_CHANGE'='details'" then="checked='checked'"}% />
+          </td>
+          <td>
+            <label for="details_change_toggle" title='%MAKETEXT{"specify a list of users and/or groups"}%'>&nbsp;%MAKETEXT{"Specific users/groups"}%</label>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <div id="details_change_container" %IF{"$'PERMSET_CHANGE'!='details'" then="style='display:none'"}%>
+              <input type="text" size="40" id="details_change" name="Local+PERMSET_CHANGE_DETAILS" value="%GETVAR{"PERMSET_CHANGE_DETAILS"}%" />
+              <input type="hidden" name="Default+PERMSET_CHANGE_DETAILS" value="" />
+            </div>
+          </td>
+        </tr>
+      </table>
+  </div>
+
+  %T% %MAKETEXT{
+    "Note that granting and restricting access to a larger set of topics is best done on web level in [_1]." 
+    args="<a href='%SCRIPTURLPATH{"view"}%/%WEB%/%WEBPREFSTOPIC%' target='_blank'>%WEBPREFSTOPIC%</a>"
+  }%
+</div>
+</noautolink>
+<literal>
+<script type="text/javascript">
+(function($) {
+  function setPermission(type, rules) {
+    $(".permset_"+type).each(function() { 
+      $(this).val("undefined");
+    });
+    for (var key in rules) {
+      var val = rules[key];
+      $.log("setting #"+key+"_"+type+"="+val); 
+      $("#"+key+"_"+type).val(val);
+    }
+  }
+
+  function switchOnDetails(type) {
+    $("#details_"+type+"_container").slideDown(300);
+    var names = [];
+    $("input[name='Local+PERMSET_"+type.toUpperCase()+"_DETAILS']").each(function() {
+      var val = $(this).val();
+      if (val) 
+        names.push(val);
+    });
+    names = names.join(', ');
+    $.log("switchOnDetails - names="+names);
+    setPermission(type, {
+      allow: names
+    });
+  }
+
+  function switchOffDetails(type) {
+    $("#details_"+type+"_container").slideUp(300);
+    setPermission(type, {
+      allow: ""
+    });
+  }
+
+  function setPermissionSet(permSet) {
+    switch(permSet) {
+      /* change rules */
+      case 'default_change':
+        switchOffDetails("change");
+        setPermission("change", {
+        });
+        break;
+      case 'nobody_change':
+        switchOffDetails("change");
+        setPermission("change", {
+          allow: ' ',
+          deny: undefined
+        });
+        break;
+      case 'registered_users_change':
+        switchOffDetails("change");
+        setPermission("change", {
+          deny: "%USERINFO{"guest" format="$wikiname"}%"
+        });
+        break;
+      case 'just_author_change':
+        switchOffDetails("change");
+        setPermission("change", {
+          allow: "%WIKINAME%"
+        });
+        break;
+      case 'details_change':
+      case 'details_change_toggle':
+        switchOnDetails("change");
+        break;
+      /* view rules */
+      case 'default_view':
+        switchOffDetails("view");
+        setPermission("view");
+        break;
+      case 'everybody_view':
+        switchOffDetails("view");
+        setPermission("view", {
+          deny: ' '
+        });
+        break;
+      case 'nobody_view':
+        switchOffDetails("view");
+        setPermission("view", {
+          allow: ' ',
+          deny: undefined
+        });
+        break;
+      case 'registered_users_view':
+        switchOffDetails("view");
+        setPermission("view", {
+          deny: "%USERINFO{"guest" format="$wikiname"}%"
+        });
+        break;
+      case 'just_author_view':
+        switchOffDetails("view");
+        setPermission("view", {
+          allow: "%WIKINAME%"
+        });
+        break;
+      case 'details_view':
+      case 'details_view_toggle':
+        switchOnDetails("view");
+        break;
+      default:
+        alert("unregistered permission-set '"+permSet+"'");
+        break;
+    };
+  }
+
+  $(function() {
+    if (0) { /* debugging */
+      $(".permset_view, .permset_change").each(function() {
+        $(this).wrap("<div></div>").parent().prepend("<b>"+$(this).attr('name')+": </b>");
+      });
+    }
+    $("#details_change, #details_view").textboxlist({
+      onSelect: function(input) {
+        var currentValues = input.currentValues;
+        $.log("currentValues="+currentValues);
+        $(input).debug();
+        $.log("inputName="+input.inputName);
+        var type = (input.inputName=="Local+PERMSET_CHANGE_DETAILS")?"change":"view";
+        setPermission(type, {
+          allow: currentValues.join(", ")
+        });
+      },
+      autocomplete:"%SCRIPTURL{"view"}%/%SYSTEMWEB%/JQueryAjaxHelper?section=user;contenttype=text/plain;skin=text",
+      autocompleteOpts: {
+        autoFill: false,
+        matchCase: false,
+        multiple: true,
+        formatItem: function(row, index, max, search) {
+          return "<table width='100%'><tr><td width='60px'><img width='50' src='"+row[2]+"' /></td><td>"+row[0]+"<br />"+row[1]+"</td></tr></table>";
+        }
+      }
+    });
+    $("input[type=radio], input[type=checkbox]").click(function() {
+      $(this).blur();
+    });
+    $("#permissionsForm input[type=radio]").click(function() {
+      setPermissionSet($(this).attr('id'));
+    });
+  });
+})(jQuery);
+</script>
+</literal>
+%ENDTAB%
+<!-- //moretabs -->%TMPL:END%

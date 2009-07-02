@@ -1,19 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="%LANG%" lang="%LANG%">
+%TMPL:INCLUDE{"view"}%<!-- template:view.print.nat.tmpl -->
+%TMPL:DEF{"bodyclass"}%natPrintBody%TMPL:END%
+%TMPL:DEF{"defaultbody"}%%TMPL:P{"content_container"}%%TMPL:END%
+%TMPL:DEF{"head"}%<!-- head -->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=%CHARSET%" />
-<title>%HTMLTITLE% - (%MAKETEXT{"printable"}%)</title>
-<meta http-equiv="Content-Style-Type" content="text/css" /> 
-<meta name="generator" content="Foswiki/NatSkin" /> %TMPL:P{"meta"}%
-<base href="%SCRIPTURL{view}%/%WEB%/%TOPIC%"></base>
-<link rel="icon" href="%FAVICON%" type="image/x-icon" /> 
-<link rel="shortcut icon" href="%FAVICON%" type="image/x-icon" />
-<!-- 
-
-  Disable the conditional around GETSKINSTYLE when firefox has fixed printing of pages
-  that import css. See https://bugzilla.mozilla.org/show_bug.cgi?id=154892 
--->
-%IFDEFINED{"%URLPARAM{"css"}%" as="on" then="$percntGETSKINSTYLE$percnt"}%
+<meta http-equiv="Content-Type" content="%CONTENTTYPE%; charset=%CHARSET%">
+<title>%TMPL:P{"title"}% - (%MAKETEXT{"printable"}%)</title>
+%TMPL:P{"meta"}%
+<link rel="icon" href="%FAVICON%" type="image/x-icon"> 
+<link rel="shortcut icon" href="%FAVICON%" type="image/x-icon">
 %TMPL:P{"styles"}%
 <style type="text/css">
 object#player,
@@ -25,25 +19,5 @@ object#player,
 }
 </style>
 %TMPL:P{"javascript"}%
-%WEBCOMPONENT{"WebHtmlHead"}%
-</head>
-<body class="natBody natPrintBody">
-<div class="natBodyContents">
-  <div class="natMiddle natMain">
-    <div class="natMainContents">
-%TMPL:P{"content"}%
-    </div>
-  <div class="natMainFooterContents">
-%IFDEFINED{"$percntMETA{\"attachments\"}$percnt" then="<div class=\"natTopicAttachments\"> $test </div>"}%
-  </div>
-  </div>
-</div>
-</body>
-</html>
-%TMPL:DEF{"content"}%%TEXT% 
-%META{"form"}% 
-%TMPL:END%
-<!-- template: view.print.nat.tmpl -->
-%TMPL:INCLUDE{"strings"}%
-%TMPL:INCLUDE{"styles"}%
-%TMPL:INCLUDE{"printjavascript"}%
+%WEBCOMPONENT{"HtmlHead"}%
+<!-- //head --></head>%TMPL:END%

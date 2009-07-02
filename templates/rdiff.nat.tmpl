@@ -5,8 +5,8 @@
 %TMPL:INCLUDE{"rdiffjavascript"}%<!-- rdiffjavascript// -->
 %TMPL:INCLUDE{"rdiffstyles"}%<!-- rdiffstyles// -->
 %TMPL:DEF{"bodyclass"}%natRdiffBody%TMPL:END%
-%TMPL:DEF{"title"}%%TOPICTITLE% %MAKETEXT{"([_1] vs. [_2])" args="%REVTITLE2%, %REVTITLE1%"}% - %WIKITOOLNAME%%TMPL:END%
-%TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Difference:"}% %TOPICTITLE% %MAKETEXT{"([_1] vs. [_2])" args="%REVTITLE2%, %REVTITLE1%"}%</h1>%TMPL:END%
+%TMPL:DEF{"title"}%%TOPIC% %MAKETEXT{"([_1] vs. [_2])" args="%REVTITLE2%, %REVTITLE1%"}% - %WIKITOOLNAME%%TMPL:END%
+%TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Difference:"}% %TMPL:P{"topictitle"}% %MAKETEXT{"([_1] vs. [_2])" args="%REVTITLE2%, %REVTITLE1%"}%</h1>%TMPL:END%
 %TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
 %TMPL:DEF{"contentheader"}%<!-- contentheader -->
 %TMPL:P{"topicactions"}%<!-- topicactions// -->
@@ -19,7 +19,7 @@
 %TMPL:P{"aftertext"}%<!-- aftertext// -->
 <!-- //content -->%TMPL:END%
 %TMPL:DEF{"text"}%<!-- text -->
-%REPEAT%<div class="overflow"><table class="foswikiDiffTable twikiDiffTable" cellspacing="0" cellpadding="0">
+%REPEAT%<div class="overflow"><table class="foswikiDiffTable" cellspacing="0" cellpadding="0">
 <th>
 <a href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?rev=%REVTITLE1%">%TOPIC% %REVTITLE1% - %REVINFO1%</a>
 </th>
@@ -28,7 +28,7 @@
 </td></tr>
 </table></div>
 <br clear="all" />%REPEAT%
-<table class="foswikiTable twikiTable">
+<table class="foswikiTable">
 %TAIL%
 </table>
 <!-- //text -->%TMPL:END%

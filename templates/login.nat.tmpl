@@ -15,7 +15,7 @@
 %TMPL:DEF{"UNRECOGNISED_USER"}%%MAKETEXT{"Unrecognised user and/or password."}%%TMPL:END%
 %TMPL:DEF{"message"}%<!-- message -->
 <h2 id="natLogonBanner">%BANNER%</h2>
-<div class="twikiFormSteps">
+<div class="foswikiFormSteps">
 %NOTE%<!-- note// -->
 %TMPL:P{"logon"}%<!-- logon// -->
 %TMPL:P{"seealso"}%<!-- seealso// -->
@@ -31,12 +31,12 @@
 </div> 
 <!-- //content -->%TMPL:END%
 %TMPL:DEF{"contact"}%<!-- contact -->
-<div class="twikiGrayText natContact"> 
+<div class="foswikiGrayText natContact"> 
 %MAKETEXT{"Contact [_1] if you have any questions." args="<a href='mailto:%WIKIWEBMASTER%?subject=%ENCODE{\"%WIKITOOLNAME%: Request for support\"}%&&body=%ENCODE{\"Hello, I have got a question ...\"}%'>%WIKIWEBMASTER%</a>"}%
 </div> 
 <!-- //contact -->%TMPL:END%
 %TMPL:DEF{"seealso"}%<!-- seealso -->
-<div class="twikiFormStep twikiFormLast">
+<div class="foswikiFormStep foswikiFormLast">
 [[%SYSTEMWEB%.ResetPassword][%MAKETEXT{"Did you forget your password?"}%]] %BR%
 [[%USERREGISTRATION%][%MAKETEXT{"Do you want to become a registered user?"}%]]
 </div>

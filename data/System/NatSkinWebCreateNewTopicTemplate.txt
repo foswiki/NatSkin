@@ -1,0 +1,122 @@
+%META:TOPICINFO{author="ProjectContributor" date="1131431859" format="1.1" version="$Rev: 1963 $"}%
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{"content"}%%TMPL:P{"createform"}%%TMPL:END%
+
+%TMPL:DEF{"createform"}%<!-- createform -->
+%TMPL:P{"formstartstep"}%<!-- formstartstep// -->
+%TMPL:P{"formtitle"}%<!-- formtitle// -->
+%TMPL:P{"topictitlestep"}%<!-- topictitlestep// -->
+%TMPL:P{"DIStopicnamestep"}%%TMPL:P{"hiddentopicnamestep"}%
+%TMPL:P{"topictemplatestep"}%<!-- topictemplatestep// -->
+%TMPL:P{"formbuttons"}%<!-- formbuttons// -->
+%TMPL:P{"formendstep"}%<!-- topictemplatestep// -->
+<!-- //createform -->%TMPL:END%
+
+%TMPL:DEF{"formtitle"}%<!-- formtitle -->
+<h2 >%MAKETEXT{"Create New Topic in the [_1] Web" args="<nop>%BASEWEB%"}%</h2>
+<!-- //formtitle -->%TMPL:END%
+
+%TMPL:DEF{"newtopictitle"}%%URLPARAM{"newtopictitle"}%%TMPL:END%
+%TMPL:DEF{"newtopic"}%%URLPARAM{"newtopic"}%%TMPL:END%
+
+%TMPL:DEF{"viewjavascript"}%<!-- viewjavascript -->
+%JQREQUIRE{"validate"}%
+<!-- //viewjavascript -->%TMPL:END%
+
+%{ do not show the following elements }%
+%TMPL:DEF{"topicactions"}%%TMPL:END%
+
+%TMPL:DEF{"formstartstep"}%<!-- formstartstep -->
+<div class='foswikiFormSteps'>%TMPL:P{"formstart"}%
+<!-- //formstartstep -->%TMPL:END%
+
+%TMPL:DEF{"formendstep"}%<!-- formendstep -->
+%TMPL:P{"formend"}%
+</div>
+<!-- //formendstep -->%TMPL:END%
+
+%TMPL:DEF{"topictitlestep"}%<!-- topictitlestep -->
+<div class='foswikiFormStep'>
+<h3 >%MAKETEXT{"Title:"}%</h3>
+%TMPL:P{"topictitle"}%
+</div>
+<!-- //topictitlestep -->%TMPL:END%
+
+%TMPL:DEF{"topicnamestep"}%<!-- topicnamestep -->
+<div class='foswikiFormStep'>
+<h3 >%MAKETEXT{"Name:"}%</h3>
+%TMPL:P{"topicname"}%%TMPL:P{"nonwikiword"}%
+</div>
+<!-- //topicnamestep -->%TMPL:END%
+
+%TMPL:DEF{"hiddentopicnamestep"}%<!-- hiddentopicnamestep -->
+<input type="hidden" name="topic" id="topic" value="%TMPL:P{"newtopic"}%"/>
+<!-- //hiddentopicnamestep -->
+
+%TMPL:DEF{"topictemplatestep"}%<!-- topictemplatestep -->
+<div class='foswikiFormStep'>
+<h3 >%MAKETEXT{"Template:"}%</h3>
+%TMPL:P{"topictemplate"}%
+</div>
+<!-- //topictemplate -->%TMPL:END%
+
+%TMPL:DEF{"formbuttons"}%<!-- formbuttons -->
+<div class='foswikiFormStep foswikiFormButtons foswikiFormLast'>
+%TMPL:P{"submit"}%%TMPL:P{"cancel"}%%CLEAR%
+</div>
+<!-- //formbuttons -->%TMPL:END%
+
+%TMPL:DEF{"formstart"}%<!-- formstart -->
+<form name="newTopicForm" id="newTopicForm" action="%SCRIPTURLPATH{edit}%/%BASEWEB%/">
+<input type="hidden" name="t" value="%GMTIME{"$epoch"}%" />
+<input type="hidden" name="onlynewtopic" value="on" />
+<input type="hidden" name="topicparent" value="%URLPARAM{"topicparent"}%" />
+<!-- //formstart -->%TMPL:END%
+
+
+%TMPL:DEF{"topictitle"}%<!-- topictitle -->
+<input type="text" class="foswikiInputField required" name="TopicTitle" id="topictitle" size="40" value="%TMPL:P{"newtopictitle"}%" />
+<div class="foswikiFormDescription">
+%MAKETEXT{"Free form title text."}%
+</div>
+<!--//topictitle -->%TMPL:END%
+
+%TMPL:DEF{"topicname"}%<!-- topicname -->
+<input type="text" class="foswikiInputField" name="topic" id="topic" size="40" value="%TMPL:P{"newtopic"}%" />
+<div class="foswikiFormDescription">
+<nop>WikiWord the new page is associated with.
+</div>
+<!--//topicname -->%TMPL:END%
+
+%TMPL:DEF{"topictemplate"}%<!-- topictemplate -->
+<select name="templatetopic" class="foswikiSelect">
+%IF{"'%URLPARAM{"templatetopic"}%'" then='<option selected="selected">%URLPARAM{"templatetopic"}%</option>'}%
+<option value="">%MAKETEXT{"Default template"}%</option>%SEARCH{".*Template$" scope="topic" excludetopic="WebTopicEditTemplate,WebCreateNewTopicTemplate,*ViewTemplate" type="regex" nonoise="on" format="<option>$topic</option>"}%</select> 
+<div class="foswikiFormDescription">
+%MAKETEXT{"Initialize the new topic using a template."}%
+</div>
+<!-- //topictemplate -->%TMPL:END%
+
+%TMPL:DEF{"submit"}%<!-- submit -->
+%BUTTON{type="submit" icon="tick" value="%MAKETEXT{"OK"}%"}%
+<!-- //submit -->%TMPL:END%
+
+%TMPL:DEF{"cancel"}%<!-- cancel -->
+%BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" target="%URLPARAM{"origurl" default="%BASEWEB%.%BASETOPIC%"}%"}%
+<!-- //cancel -->%TMPL:END%
+
+
+%TMPL:DEF{"formend"}%</form>%TMPL:END%
+
+%TMPL:DEF{"javascript"}%<!-- javascript -->
+%TMPL:P{"defaultjavascript"}%
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/jquery.wikiword.js"></script>
+<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/jquery.validate.js"></script>
+<script type="text/javascript">
+$(function() {
+  $("#topic").wikiword("#topictitle");
+  $("#newTopicForm").validate();
+});
+</script>
+<!-- javascript -->%TMPL:END%

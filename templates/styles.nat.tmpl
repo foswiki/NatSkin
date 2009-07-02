@@ -1,17 +1,18 @@
 <!-- template: styles.nat.tmpl -->
 %TMPL:DEF{"defaultstyles"}%<!-- defaultstyles -->
+<!-- ie6 png fix -->
 <script type="text/javascript">
-  blankImg = '%PUBURLPATH%/%TWIKIWEB%/NatSkin/blank.gif';
+//<![CDATA[
+blankImg = '%PUBURLPATH%/%SYSTEMWEB%/NatSkin/blank.gif';
+//]]>
 </script>
 <style type="text/css">
-/* ie6 png fix */
-* html .natWebLogo, 
-* html .natLogin .twikiFormSteps, 
+/* ie6 png transperency fix for css backgrounds */
 * html .natLogin .foswikiFormSteps, 
 * html .jqButtonIcon,
 * html .natUserAction,
 * html .natTopicAction {
-  behavior:url(%PUBURLPATH%/%TWIKIWEB%/NatSkin/iepngfix.htc);
+  behavior:url(%PUBURLPATH%/%SYSTEMWEB%/NatSkin/iepngfix.htc);
 }
 * html .jqButton .jqButtonIcon {
   margin-top:3px;

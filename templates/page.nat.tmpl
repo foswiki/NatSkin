@@ -1,23 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+%TMPL:P{"page"}%<!-- page //-->
+%TMPL:DEF{"page"}%<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html class="natHtml" xmlns="http://www.w3.org/1999/xhtml" xml:lang="%LANG%" lang="%LANG%">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=%CHARSET%" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
+%TMPL:P{"head"}%<!-- head// -->
+%TMPL:P{"body"}%<!-- body // -->
+</html>
+<!-- template: page.nat.tmpl -->
+%TMPL:END%
+%TMPL:DEF{"head"}%<head>
+<meta http-equiv="Content-Type" content="%CONTENTTYPE%; charset=%CHARSET%">
 <title>%TMPL:P{"title"}%</title>
-<meta name="generator" content="Foswiki/NatSkin" /> %TMPL:P{"meta"}%
-%IFDEFINEDTHEN{"%FAVICON%"}%
-<link rel="icon" href="%FAVICON%" type="image/x-icon" />
-<link rel="shortcut icon" href="%FAVICON%" type="image/x-icon" />
-%FIDEFINED%
+<meta name="date" content="%REVINFO{"$http"}%"> 
+%TMPL:P{"meta"}%
+<link rel="icon" href="%FAVICON%" type="image/x-icon">
+<link rel="shortcut icon" href="%FAVICON%" type="image/x-icon">
+%RENDERHEAD%
 %GETSKINSTYLE%
 %TMPL:P{"styles"}%
 %TMPL:P{"javascript"}%
-%WEBCOMPONENT{"WebHtmlHead"}%
-</head>
-<body class="%TMPL:P{"defaultbodyclass"}% %TMPL:P{"bodyclass"}% %IFSKINSTATE{sidebar="left" then="natBodyLeft" else="natBodyRight"}% %IFSKINSTATE{border="thin" then="natBodyThin"}% %IFSKINSTATE{border="on" then="natBodyBorder"}%">%TMPL:P{"body"}%</body>
-</html>
-<!-- template: page.nat.tmpl -->
-%TMPL:INCLUDE{"strings"}%
+%WEBCOMPONENT{"HtmlHead"}%
+</head>%TMPL:END%
+%TMPL:INCLUDE{"foswiki"}%
+%TMPL:INCLUDE{"head"}%
 %TMPL:INCLUDE{"body"}%
 %TMPL:INCLUDE{"sidebar"}%
 %TMPL:INCLUDE{"topbar"}%

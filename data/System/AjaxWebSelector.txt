@@ -1,0 +1,223 @@
+%META:TOPICINFO{author="ProjectContributor" date="1243950128" format="1.1" reprev="1.4" version="1.4"}%
+---+!! %TOPIC%
+%TOC%
+
+%JQREQUIRE{"chili"}%
+---++ Webs
+<verbatim class="tml">
+%STARTSECTION{"webs"}%
+<literal>
+%FLEXWEBLIST{
+  subwebs="none"
+  header="[{"
+  format="$n$indent   id:'$web',$n$indent   name:'$name',$n$indent   parent:'$parent',$n$indent   depth: $depth,$n$indent   color:'$color',$n$indent   description:'$sitemapuseto',$n$indent   nrsubwebs: $nrsubwebs,$n$indent   url: '$url'$n$indent" 
+  subheader=",   subwebs:$n$indent   [{"
+  separator="},{" 
+  subseparator="},{" 
+  subfooter="}]$n$indent"
+  footer="}]$n"
+}%
+</literal>
+%ENDSECTION{"webs"}%
+</verbatim>
+
+---++ Webselector
+<verbatim class="tml">
+%STARTINCLUDE%<!-- webselector -->
+%JQREQUIRE{"gradient"}% %JQREQUIRE{"simplemodal"}%<!-- jqrequire// -->
+<style type="text/css">@import url(%ATTACHURLPATH%/webselector.css);</style>
+<script type="text/javascript" src="%ATTACHURLPATH%/webselector.js"></script>
+<div id="weblist" class="foswikiFormSteps" style="display:none">
+---++ Select a web
+<table><tr>
+  <td>
+    <input type="text" class="foswikiInputField" id="webName" size="30" />
+    <input type="hidden" id="webId" />
+    <input type="hidden" id="webUrl" />
+  </td>
+  <td>
+    %BUTTON{"Go" icon="page_white_go" id="webGo"}%
+  </td>
+</tr></table>
+<div class="container"></div>
+</div>
+</div>
+<!-- //webselector -->%STOPINCLUDE%
+</verbatim>
+
+---++ Webselector.css
+<verbatim class="css">
+%STARTATTACH{"webselector.css"}%
+.weblet {
+  float:left;
+  padding:10px;
+  margin:0px 10px 10px 0px;
+  border:1px solid #ddd;
+  width:100px;
+  height:100px;
+  position:relative;
+  font-size:95%;
+  overflow:hidden;
+}
+.weblet h2 {
+  margin:0px;
+  border:0px;
+}
+.weblet .parent {
+  font-size:95%;
+  font-style:italic;
+}
+.weblet .desc {
+  margin-top:0.1em;
+}
+.weblet .more {
+  margin-top:0.1em;
+}
+.weblet .more a {
+  text-decoration:none;
+}
+#weblist .container {
+  margin-top:10px;
+  width:550px;
+  height:390px;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+.weblet h2 {
+  margin-top:0px;
+  font-size:105%;
+  font-weight:bold;
+  color:#222;
+}
+.weblet.selected {
+  border:1px solid red;
+}
+%ENDATTACH%
+</verbatim>
+
+---++ Webselector.js
+<verbatim class="js">
+%STARTATTACH{"webselector.js"}%
+(function($) {
+webSelector = {
+   show: function() {
+    $("#weblist").modal({
+      persist:true, 
+      onShow: webSelector.init
+    });
+    $(window).trigger("resize");
+    return false;
+  },
+
+  spaceOutWikiWord: function(wikiWord) {
+    return wikiWord.replace(/([a-z])([A-Z0-9]+)/g, "$1 $2");
+  },
+
+  addWeblets: function(webs, $container) {
+    for (var i in webs) {
+      var web = webs[i];
+      var color = web.color;
+      if (color == '') 
+        color = 'dddddd';
+      color = color.replace(/#/g, '');
+      var webName = webSelector.spaceOutWikiWord(web.name);
+
+      var $weblet = $("<div class='weblet' id='"+web.id+"'>"+
+        "<h2>"+webName+"</h2>"+
+        (web.parent?"<div class='parent'> In "+web.parent+"</div>":"")+
+        "<div class='desc'>"+web.description+"</div>"+
+        (web.nrsubwebs?"<div class='more'><a href='#'>more &#187;</a></div>":"")+
+        "<input type='hidden' name='webUrl' value='"+web.url+"' />"+
+        "<input type='hidden' name='webName' value='"+web.name+"' />"+
+        "</div>").
+        appendTo($container);
+      $weblet.gradient({to:'ffffff', from:color});
+      webSelector.addWeblets(web.subwebs, $container);
+    }
+  },
+
+  selectWeblet: function(elem) {
+    var webId = '', webName= '', webUrl = '';
+    if (elem) {
+      if ($(elem).hasClass("selected")) {
+        return webSelector.goWeb();
+      }
+      webId = $(elem).attr('id');
+      webName = $(elem).find("input[name=webName]").val();
+      webUrl = $(elem).find("input[name=webUrl]").val();    
+    }
+    $("#webId").val(webId);
+    $("#webName").val(webName);
+    $("#webUrl").val(webUrl);
+    $("#weblist .weblet").removeClass("selected");
+    if (elem)
+      $(elem).addClass("selected");
+  },
+
+  goWeb: function() {
+    var webUrl = $("#webUrl").val();
+    if (webUrl) {
+      window.location.href = webUrl;
+    }
+    return false;
+  },
+
+  init: function() {
+    if (typeof(webSelector.webs) == 'undefined') {
+      var $container = $("#weblist .container");
+      var url = "%SCRIPTURL{view}%/%WEB%/%TOPIC%?section=webs;skin=text;contenttype=text/plain";
+      $.getJSON(url, function(data) {
+        webSelector.webs = data;
+        webSelector.addWeblets(data, $container);
+        $(".weblet").click(function() {
+          webSelector.selectWeblet(this);
+        });
+        $("#webGo").click(webSelector.goWeb);
+      });
+
+      $("#webName").keyup(function(e) {
+        var webName = $(this).val();
+        var count = 0;
+        var foundWeblet;
+        if (webName) {
+          $(".weblet").each(function() {
+            var thisName = $(this).find("input[name=webName]").val();
+            if (thisName.indexOf(webName) == 0) {
+              $(this).show();
+              count++;
+              foundWeblet = this;
+            } else {
+              $(this).hide();
+            }
+          });
+        } else {
+          $(".weblet").show();
+          webSelector.selectWeblet();
+        }
+        if (count == 1 && e.which == 13) {
+          webSelector.selectWeblet(foundWeblet);
+          webSelector.goWeb();
+        }
+      });
+    }
+
+    window.setTimeout(function() {
+      $("#webName").focus();
+    }, 100);
+  }
+}
+})(jQuery);
+%ENDATTACH%
+</verbatim>
+
+---++ Test
+%<nop>INCLUDE{"%TOPIC%"}%
+
+<div>
+%BUTTON{"Goto webspace" onclick="webSelector.show();" icon="page_white_go"}%
+%CLEAR%
+</div>
+
+%META:FILEATTACHMENT{name="webselector.css" attachment="webselector.css" attr="" author="micha" comment="Generated by !AttachContentPlugin" date="1243950128" path="webselector.css" size="649" version="8"}%
+%META:FILEATTACHMENT{name="webselector.js" attachment="webselector.js" attr="" author="micha" comment="Generated by !AttachContentPlugin" date="1243950128" path="webselector.js" size="3199" version="29"}%
+%META:TOPICMOVED{by="micha" date="1243614912" from="Sandbox.AjaxWebSelector" to="System.AjaxWebSelector"}%

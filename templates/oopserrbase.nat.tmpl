@@ -6,7 +6,7 @@
  args="<nop>%WIKITOOLNAME%"}%
 
 <noautolink>
-<form enctype="text/plain" method="post" name="ErrorMail" action="mailto:%WIKIWEBMASTER%?subject=%ENCODE{"%WIKITOOLNAME%: %TMPL:P{"heading"}%"}%">
+<form enctype="text/plain" name="ErrorMail" action="mailto:%WIKIWEBMASTER%?subject=%ENCODE{"%WIKITOOLNAME%: %TMPL:P{"heading"}%"}%" method="post">
 %TMPL:P{"formvariables"}%
 <textarea name="How to reproduce" id="description" wrap="virtual" cols="60" rows="5">%MAKETEXT{"... don't know, it just happended."}%</textarea>'
 <input type="submit" class="natOkButton" value='%MAKETEXT{"OK"}%'>&nbsp;

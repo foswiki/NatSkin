@@ -1,9 +1,2 @@
 <!-- template: viewtopicaction.nat.tmpl -->
-%TMPL:DEF{"usersurl"}%<a class='natUserAction' href='%SCRIPTURLPATH{"view"}%/%USERSWEB%/%WIKIUSERSTOPIC%' title='%TMPL:P{"USERS_HELP"}%'>%TMPL:P{"USERS"}%</a>
-%TMPL:DEF{"topicactions_top"}%<!-- topicactions_top -->
-%USERACTIONS{
-  guest="<div class='natGreeter natGuestGreeter'>$login$sep%TMPL:P{"usersurl"}%$sep$register</div>"
-  format="<div class='natGreeter natUserGreeter'>$user$sep%TMPL:P{"usersurl"}%$sep$logout</div>"
-}%
-<!-- //topicactions_top -->%TMPL:END%
-%TMPL:DEF{"topicactions"}%<div class="natTopicActions" id="natTopicActions"><span id="natTopicActionTooltip"></span>%WEBCOMPONENT{"WebTopicActions"}%</div>%TMPL:END%
+%TMPL:DEF{"topicactions"}%<div class="natTopicActions" id="natTopicActions"><span id="natTopicActionTooltip"></span>%WEBCOMPONENT{"TopicActions"}%</div>%TMPL:END%

@@ -1,11 +1,11 @@
 %TMPL:INCLUDE{"search"}%<!-- template:backlinksweb.nat.tmpl -->
-%TMPL:DEF{"title"}%%TOPICTITLE% - (%MAKETEXT{"backlinks"}%) - %WIKITOOLNAME%%TMPL:END%
+%TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"backlinks"}%) - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Backlinks to [_1] in the [_2] Web" args="<nop>%TOPIC%, <nop>%WEB%"}%</h1>%TMPL:END%
 %TMPL:DEF{"content"}%<!-- content -->
 %TMPL:P{"beforetext"}%<!-- beforetext// -->
 %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
-<div class="foswikiFormSteps twikiFormSteps">
-<div class="foswikiFormStep twikiFormStep foswikiFormLast twikiFormLast">
+<div class="foswikiFormSteps">
+<div class="foswikiFormStep foswikiFormLast">
 %BUTTON{"%MAKETEXT{"Done"}%" icon="tick" target="%WEB%.%TOPIC%" title="Return to <nop>%TOPIC%"}%
 %BUTTON{"%MAKETEXT{"Global Search"}%" icon="find" target="%SCRIPTURLPATH{"oops"}%/%WEB%/%TOPIC%?template=backlinksallwebs" title="%MAKETEXT{"Search for backlinks in all webs"}%"}%
 %CLEAR%
@@ -17,8 +17,3 @@
 %TMPL:DEF{"contentheader"}%<!-- contentheader -->
 %TMPL:P{"breadcrumbs"}%<!-- breadcrumbs //-->
 <!-- // contentheader -->%TMPL:END%
-%TMPL:DEF{"breadcrumbs"}%<!-- breadcrumbs -->
-<div class="natBreadCrumbs">
-  %MAKETEXT{"You are here:"}%<span class='natSep'>&nbsp; </span>%IFDEFINED{"$percntTHISBREADCRUMBS$percnt" then="$test" else="$percntBREADCRUMBS{separator=\"<span class='natSep'>&nbsp;&#187; </span>\"}$percnt"}%
-</div>
-<!-- //breadcrumbs -->%TMPL:END%

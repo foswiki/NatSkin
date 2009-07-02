@@ -5,7 +5,7 @@
 %TMPL:INCLUDE{"oopsjavascript"}%<!-- oopsjavascript// -->
 %TMPL:INCLUDE{"oopsstyles"}%<!-- oopsstyles// -->
 %TMPL:DEF{"bodyclass"}%natOopsBody%TMPL:END%
-%TMPL:DEF{"title"}%%TOPICTITLE% (%MAKETEXT{"oops"}%) - %WIKITOOLNAME%%TMPL:END%
+%TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"oops"}%) - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1 class="%TMPL:P{"headingstyle"}%">%TMPL:P{"heading"}%</h1>
 %TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
 %TMPL:DEF{"headingstyle"}%natOopsHeading%TMPL:END%
@@ -17,8 +17,8 @@
 %MAKETEXT{"Please go <a href=\"javascript:history.back()\">back</a> in your browser and try again."}%
 
 <form class="natOopsButtons" name="ButtonBox" action="%WIKILOGOURL%">
-  %BUTTON{"%MAKETEXT{"OK"}%" icon="tick" onclick="history.back()"}%
-  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WIKILOGOURL%" icon="cross"}%
+  %BUTTON{"%MAKETEXT{"Retry"}%" icon="tick" onclick="history.back()"}%
+  %BUTTON{"%MAKETEXT{"Abort"}%" target="%WIKILOGOURL%" icon="cross"}%
   %CLEAR%
 </form> 
 <!-- //goback -->%TMPL:END%

@@ -1,11 +1,13 @@
 <!-- template: attachjavascript.nat.tmpl -->
 %TMPL:DEF{"attachjavascript"}%<!-- attachjavascript -->
-<script type="text/javascript" src="%PUBURL%/%TWIKIWEB%/NatSkin/attach.js"></script>
-%JQSCRIPT{"jquery.validate"}%
+<script type="text/javascript" src="%PUBURL%/%SYSTEMWEB%/NatSkin/attach.js"></script>
+%JQREQUIRE{"validate"}%
 <script type="text/javascript">
-$(function() {
-  $("#main").validate();
+//<![CDATA[
+jQuery(function() {
+  jQuery("#main").validate();
 });
+//]]>
 </script>
 <!-- //attachjavascript -->%TMPL:END%
 %TMPL:DEF{"javascript"}%<!-- javascript -->

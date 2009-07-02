@@ -1,4 +1,5 @@
 %TMPL:INCLUDE{"edit"}%<!-- template: preview.nat.tmpl -->
+%TMPL:INCLUDE{"topbar"}%<!-- topbar// -->
 %TMPL:INCLUDE{"previewbody"}%<!-- previewbody// -->
 %TMPL:INCLUDE{"previewtopicactions"}%<!-- previewtopicactions// -->
 %TMPL:INCLUDE{"previewsidebar"}%<!-- previewsidebar// -->
@@ -7,36 +8,15 @@
 %TMPL:INCLUDE{"previewtoolbar"}%<!-- previewtoolbar// -->
 %TMPL:DEF{"bodyclass"}%natPreviewBody%TMPL:END%
 %TMPL:DEF{"meta"}% %HTTP_EQUIV_ON_PREVIEW% %TMPL:END%
-%TMPL:DEF{"title"}%%TOPICTITLE% (%MAKETEXT{"preview"}%) - %WIKITOOLNAME%%TMPL:END%
+%TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"preview"}%) - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contentheader"}%%TMPL:P{"breadcrumbs"}%%TMPL:END%
-%TMPL:DEF{"breadcrumbs"}%<!-- breadcrumbs -->
-<div class="natBreadCrumbs">
-  %MAKETEXT{"You are here:"}%<span class='natSep'>&nbsp; </span>%IFDEFINED{"$percntTHISBREADCRUMBS$percnt" then="$test" else="$percntBREADCRUMBS{separator=\"<span class='natSep'>&nbsp;&#187; </span>\"}$percnt"}%
-</div>
-<!-- //breadcrumbs -->%TMPL:END%
 %TMPL:DEF{"content"}%%TMPL:P{"content_natskin"}%%TMPL:END%
 %TMPL:DEF{"content_natskin"}%<!-- content_natskin -->
 %TMPL:P{"previewtoolbar"}%<!-- previewtoolbar// -->
 %TEXT%
 %META{"form"}%
-<form id="EditForm" name="EditForm" method="post" action="%SCRIPTURLPATH{"save"}%/%WEB%/%TOPIC%">
-  <input type="hidden" name="action_addform" value="" />
-  <input type="hidden" name="action_cancel" value="" />
-  <input type="hidden" name="action_checkpoint" value="" />
-  <input type="hidden" name="action_preview" value="" />
-  <input type="hidden" name="action_replaceform" value="" />
-  <input type="hidden" name="action_save" value="" />
-  <input type="hidden" name="submitChangeForm" value="" />
-  %FORMFIELDS% 
-  <input type="hidden" name="formtemplate" value="%FORMTEMPLATE%" />
-  <input type="hidden" name="originalrev" value="%URLPARAM{"originalrev"}%" />
-  <input type="hidden" name="redirectto" value="%REDIRECTTO%" />
-  <input type="hidden" name="topicparent" value="%TOPICPARENT%" />
-  <input type="hidden" name="templatetopic" value="%URLPARAM{"templatetopic" default="%TEMPLATETOPIC%"}%" />
-  <input type="hidden" name="cover" value="%URLPARAM{"cover"}%" />
-  <input type="hidden" name="cmd" value="%CMD%" />
-  <input type="hidden" name="nowysiwyg" value="%URLPARAM{"nowysiwyg"}%" />
-  <input type="hidden" name="rev" value="%URLPARAM{"rev"}%" />
-  <input type="hidden" name="text" value="%HIDDENTEXT%" />
-</form>
+%TMPL:P{"hiddenform"}%<!-- hiddenform// -->
 <!-- //content_natskin-->%TMPL:END%
+%TMPL:DEF{"webbuttons"}%<div class="natWebButtonsContents"> 
+%WEBCOMPONENT{"Buttons"}% <!-- webbuttons -->
+</div>%TMPL:END%

@@ -1,7 +1,7 @@
 <!-- template: sidebar.nat.tmpl -->
-%TMPL:DEF{"webleftbar"}%%WEBCOMPONENT{"WebLeftBar"}%%TMPL:END%
-%TMPL:DEF{"webrightbar"}%%WEBCOMPONENT{"WebRightBar"}%%TMPL:END%
-%TMPL:DEF{"websidebar"}%%WEBCOMPONENT{"WebSideBar"}%%TMPL:END%
+%TMPL:DEF{"webleftbar"}%%WEBCOMPONENT{"LeftBar"}%%TMPL:END%
+%TMPL:DEF{"webrightbar"}%%WEBCOMPONENT{"RightBar"}%%TMPL:END%
+%TMPL:DEF{"websidebar"}%%WEBCOMPONENT{"SideBar"}%%TMPL:END%
 %TMPL:DEF{"pattern_sidebar"}%<h2 class="natSideBarTitle" style="background:%WEBBGCOLOR%">%BASEWEB%</h2>%TMPL:P{context="natskin_searchbox_pos1" then="searchbox_pos1"}%%TMPL:P{"webleftbar"}%%TMPL:END%
 %TMPL:DEF{"nat_sidebar"}%%TMPL:P{context="natskin_searchbox_pos1" then="searchbox_pos1"}%%TMPL:P{"websidebar"}%%TMPL:END%
 %TMPL:DEF{"defaultsidebar"}%%TMPL:P{context="natskin_style_pattern" then="pattern_sidebar" else="nat_sidebar"}%%TMPL:P{context="natskin_searchbox_pos3" then="searchbox_pos3"}%%TMPL:END%

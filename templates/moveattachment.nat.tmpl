@@ -4,73 +4,92 @@
 %TMPL:INCLUDE{"moveattachmenttopicactions"}%<!-- moveattachmenttopicactions// -->
 %TMPL:INCLUDE{"moveattachmentjavascript"}%<!-- moveattachmentjavascript// -->
 %TMPL:INCLUDE{"moveattachmentstyles"}%<!-- moveattachmentstyles// -->
+%TMPL:DEF{"contentheader"}%%TMPL:P{"breadcrumbs"}%%TMPL:END%
 %TMPL:DEF{"bodyclass"}%natMoveAttachmentBody%TMPL:END%
-%TMPL:DEF{"title"}%%TOPICTITLE% (%MAKETEXT{"move attachment"}%) - %WIKITOOLNAME%%TMPL:END%
+%TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"move attachment"}%) - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<!-- contenttitle-->
-<h1>
-%IFDEFINEDTHEN{"%URLPARAM{"newweb"}%" as="%TRASHWEB%"}%
-%MAKETEXT{"Delete attachment \"[_1]\"" args="<nop>%FILENAME%"}%
-%ELSEDEFINED%
-%MAKETEXT{"Move attachment \"[_1]\"" args="<nop>%FILENAME%"}%
-%FIDEFINED%
-</h1>
+<h1>%IF{"$'URLPARAM{newweb}'='%TRASHWEB%'"
+  then="%MAKETEXT{"Delete attachment '[_1]'" args="<nop>%FILENAME%"}%"
+  else="%MAKETEXT{"Move attachment '[_1]'" args="<nop>%FILENAME%"}%"
+}%</h1>
 <!-- //contenttitle -->%TMPL:END%
 %TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
-%TMPL:DEF{"onloadscript"}%document.rename.newtopic.focus();%TMPL:END%
 %TMPL:DEF{"content"}%<!-- content -->
+%JQREQUIRE{"focus"}%<!-- jqfocus -->
 %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
-<form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%">
-%IFDEFINEDTHEN{"%URLPARAM{"newweb"}%" as="%TRASHWEB%"}%
-<h3>Are you sure?</h3>
-
-<input type="hidden" name="newweb" value="%TRASHWEB%" />
-<input type="hidden" name="newtopic" value="TrashAttachment" />
-<input type="submit" class="natOkButton" value='%MAKETEXT{"Yes"}%' />&nbsp;
-<input type="button" class="natCancelButton" value='%MAKETEXT{"No"}%' onclick="window.location.href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%'">
-%ELSEDEFINED%
-<div class="foswikiFormSteps twikiFormSteps">
-<div class="foswikiFormStep twikiFormStep">
-  <h3>%MAKETEXT{"From"}%:</h3>
-  <span class="twikiAlert"><nop>%WEB%.%TOPIC%</span>
-</div>
-<div class="foswikiFormStep twikiFormStep">
-  <h3>%MAKETEXT{"Move attachment to web:"}%</h3>
-  <select name="newweb" onchange="if (document.rename.newweb.value == '%TRASHWEB%') { document.rename.newtopic.value = 'TrashAttachment'; document.rename.totrash.checked = true; } else { document.rename.totrash.checked = false; }"> 
-    %WEBLIST{"<option $marker value='$name'>$name</option>" webs="%TRASHWEB%,%NEW_WEB%,public" selection="%NEW_WEB%" separator=" "}% 
-  </select>
-
-  <label for="totrash">
-    <input type="checkbox" class="foswikiCheckbox twikiCheckbox" name="totrash" id="totrash" onclick="var elem = document.rename.newweb; if (elem.value == '%TRASHWEB%') { elem.value = '%WEB%'; document.rename.newtopic.value = '%TOPIC%'; document.rename.totrash.checked = false; } else { elem.value = '%TRASHWEB%'; document.rename.newtopic.value = 'TrashAttachment'; document.rename.totrash.checked = true; }">
-    %MAKETEXT{"Move to %TRASHWEB%"}%
-  </label>
-</div>
-<div class="foswikiFormStep twikiFormStep">
-  <h3>%MAKETEXT{"To topic:"}%</h3>
-  <input type="text" name="newtopic" value="%TOPIC%" size="40"/>
-</div>
-<div class="foswikiFormStep twikiFormStep">
-</div>
-<div class="foswikiFormStep twikiFormStep foswikiFormButtons twikiFormButtons foswikiFormLast twikiFormLast">
-  %BUTTON{"%MAKETEXT{"OK"}%" type="submit" icon="tick"}%
-  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WEB%.%TOPIC%" icon="cross"}%
-  %CLEAR%
-</div>
-</div>
-%FIDEFINED%
+<form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
+%IF{"$'URLPARAM{newweb}'='%TRASHWEB%'" 
+  then="$percntTMPL:P{\"content_trash\"}$percnt" 
+  else="$percntTMPL:P{\"content_move\"}$percnt" 
+}%
 <input type="hidden" name="attachment" value="%FILENAME%" />
+<input type="hidden" name="newattachment" value="%NEW_FILENAME%" />
 <input type="hidden" name="changeRefs" value="0" />
 </div>
 </form>
 <!-- //content -->%TMPL:END%
 %TMPL:DEF{"notes"}%<!-- notes -->
-%IFDEFINEDTHEN{"%URLPARAM{"newweb"}%" as="%TRASHWEB%"}%
+%IF{"$'URLPARAM{newweb}'='%TRASHWEB%'" 
+  then="$percntTMPL:P{\"notes_trash\"}$percnt" 
+  else="$percntTMPL:P{\"notes_move\"}$percnt" 
+}%
+<p> 
+  %MAKETEXT{"Note that any URLs that refer to the attachment will be broken after this move."}%
+</p>
+<!-- //notes -->%TMPL:END%
+%TMPL:DEF{"content_trash"}%<!-- content_trash -->
+<input type="hidden" name="newweb" value="%TRASHWEB%" />
+<input type="hidden" name="newtopic" value="TrashAttachment" />
+<div class="foswikiFormSteps">
+  <div class="foswikiFormStep">
+  <h2>Are you sure?</h2>
+  </div>
+  <div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
+  %BUTTON{"%MAKETEXT{"Yes"}%" icon="tick" type="save"}%
+  %BUTTON{"%MAKETEXT{"No"}%" icon="cross" target="%WEB%.%TOPIC%"}%
+  %CLEAR%
+  </div>
+</div>
+<!-- //content_trash -->%TMPL:END%
+%TMPL:DEF{"content_move"}%<!-- content_move -->
+<div class="foswikiFormSteps">
+<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"From"}%:</h3>
+  <span class="foswikiAlert"><nop>%WEB%.%TOPIC%</span>
+</div>
+<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"Move attachment to web:"}%</h3>
+  <select name="newweb" onchange="if (document.rename.newweb.value == '%TRASHWEB%') { document.rename.newtopic.value = 'TrashAttachment'; document.rename.totrash.checked = true; } else { document.rename.totrash.checked = false; }"> 
+    %FLEXWEBLIST{"<option $marker value='$name'>$name</option>" webs="%TRASHWEB%,%NEW_WEB%,publiccurrent" selection="%IFDEFINED{"%NEW_WEB%" then="$test" else="%WEB%"}%" marker=" selected " separator=" "}% 
+  </select>
+
+  <label for="totrash">
+    <input type="checkbox" class="foswikiCheckbox" name="totrash" id="totrash" onclick="var elem = document.rename.newweb; if (elem.value == '%TRASHWEB%') { elem.value = '%WEB%'; document.rename.newtopic.value = '%TOPIC%'; document.rename.totrash.checked = false; } else { elem.value = '%TRASHWEB%'; document.rename.newtopic.value = 'TrashAttachment'; document.rename.totrash.checked = true; }">
+    %MAKETEXT{"Move to %TRASHWEB%"}%
+  </label>
+</div>
+<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"To topic:"}%</h3>
+  <input type="text" name="newtopic" value="%TOPIC%" size="40" class="jqFocus" />
+</div>
+<div class="foswikiFormStep">
+</div>
+<div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
+  %BUTTON{"%MAKETEXT{"OK"}%" type="save" icon="tick"}%
+  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WEB%.%TOPIC%" icon="cross"}%
+  %CLEAR%
+</div>
+</div>
+<!-- //content_move -->%TMPL:END%
+%TMPL:DEF{"notes_trash"}%<!-- notes_trash -->
 <p>
   %MAKETEXT{"When the file is deleted, it is moved to the %TRASHWEB% web and attached to the %TRASHWEB%.TrashAttachment topic."}%
 </p>
 <p> 
   %MAKETEXT{"The attachment and its history will be moved as well."}%
 </p>
-%ELSEDEFINED%
+<!-- //notes_trash -->%TMPL:END%
+%TMPL:DEF{"notes_move"}%<!-- notes_move -->
 <p>
   %MAKETEXT{"To delete an attachment move it to the [_1] topic." args="%TRASHWEB%.TrashAttachment"}%
 </p>
@@ -83,8 +102,4 @@
 <p> 
   %MAKETEXT{"The new topic chosen must already exist."}%
 </p>
-%FIDEFINED%
-<p> 
-  %MAKETEXT{"Note that any URLs that refer to the attachment will be broken after this move."}%
-</p>
-<!-- //notes -->%TMPL:END%
+<!-- //notes_move -->%TMPL:END%

@@ -1,4 +1,4 @@
-%TMPL:INCLUDE{"attach"}%<!-- template: oo2twiki.nat.tmpl -->
+%TMPL:INCLUDE{"attach"}%<!-- template: oo2foswiki.nat.tmpl -->
 %TMPL:DEF{"title"}%%TOPIC% (import) - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"attachaction"}% <!-- attachaction -->
 <input type="submit" class="natOkButton" title="Upload selected file" value='%MAKETEXT{"Upload file"}%' />
@@ -24,9 +24,9 @@ size and complexity of the uploaded document.%ENDCOLOR%
 %TMPL:DEF{"content"}%<!-- content -->
 <h2>%MAKETEXT{"Import <nop>OpenOffice Document"}%</h2>
 
-<div class="twikiPageForm">
+<div class="foswikiPageForm">
 <form name="main" enctype="multipart/form-data" action="%SCRIPTURLPATH{"convert"}%/%WEB%/%TOPIC%" method="post">
-<input type="hidden" class="twikiCheckbox" name="hidefile" value="0" /> 
+<input type="hidden" class="foswikiCheckbox" name="hidefile" value="0" /> 
 <table>
  <tr>
   <th align="right">

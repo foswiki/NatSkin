@@ -1,4 +1,4 @@
-%TMPL:INCLUDE{"messages"}%
+%TMPL:INCLUDE{"messages"}%<!-- template: messages.nat.tmpl -->
 %TMPL:DEF{"remove_user_done"}%<!-- removes contact note -->
 ---+++ %MAKETEXT{"User Account [_1] Deleted" args="<nop>%PARAM1%"}%
 %MAKETEXT{"Your user name has been removed from the Authentication System."}%
@@ -18,7 +18,7 @@
 ---+++ %MAKETEXT{"Unrecognized action command [_1]" args="'%PARAM1%'"}%
 %TMPL:P{"goback"}%
 %TMPL:END%
-%TMPL:DEF{"notwikiuser"}%<!-- fixes duplicate definition of notwikiuser in messages.tmpl -->
+%TMPL:DEF{"nofoswikiuser"}%<!-- fixes duplicate definition of nofoswikiuser in messages.tmpl -->
 ---+++ %MAKETEXT{"Can't find user \"[_1]\"." args="<nop>%PARAM1%"}%
 %MAKETEXT{"Please make sure you spelled the [_1] correctly and try again. If you get stuck, please mail [_2]."
  args="%SYSTEMWEB%.LoginName,%WIKIWEBMASTER%"}%
@@ -113,9 +113,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 %TMPL:END%
 %TMPL:DEF{"confirm"}%<!-- BlackListPlugin support -->
 ---+++ %MAKETEXT{"Thank you for registering"}%
-%MAKETEXT{"Your activation code has been sent to [_1].  Either click on the
-link in your email or enter the code in the box below to activate your membership.
-(This code is of the form \"YourName.xxxxxxxxxx\")" args="%PARAM1%"}%
+%MAKETEXT{"Your activation code has been sent to [_1].  Either click on the link in your email or enter the code in the box below to activate your membership.  (This code is of the form \"YourName.xxxxxxxxxx\")" args="%PARAM1%"}%
 
 <form action="%SCRIPTURLPATH{"register"}%" method="post">
 <!--input type="hidden" name="rx" value="%BLACKLISTPLUGIN{action="magic"}%" /-->
@@ -126,7 +124,7 @@ link in your email or enter the code in the box below to activate your membershi
 
 %TMPL:END%
 %TMPL:DEF{"missing_fields"}%<!-- better dialog, uses goback def -->
----+++ %MAKETEXT{"Missing Fields =<span class=\"twikiAlert\">**</span>="}%
+---+++ %MAKETEXT{"Missing Fields =<span class=\"foswikiAlert\">**</span>="}%
 <noautolink>
 %MAKETEXT{"The required field [_1] was not filled in." args="*%PARAM1%*"}%
 </noautolink>
@@ -219,7 +217,7 @@ link in your email or enter the code in the box below to activate your membershi
 ---+++ %MAKETEXT{"Topic Save Error"}%
 %MAKETEXT{"Could not save [_1]." args="<nop>%WEB%.%TOPIC%"}%
 
-%MAKETEXT{"The required field =<span class=\"twikiAlert\">**</span>= *[_1]* was not filled in." args="%PARAM1%"}%
+%MAKETEXT{"The required field =<span class=\"foswikiAlert\">**</span>= *[_1]* was not filled in." args="%PARAM1%"}%
 
 %TMPL:P{"goback"}%
 %TMPL:END%
@@ -284,8 +282,7 @@ You may be able to get your <nop>%WIKITOOLNAME% administrator to change the sett
 <div %PARAM5%>
 %MAKETEXT{"Continue and try to rename web?"}%
 
-
-<form class="natOopsButtons" name="ButtonBox" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%HOMETOPIC%">
+<form class="natOopsButtons" name="ButtonBox" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%HOMETOPIC%" method="post">
   <input type="hidden" name="action" value="renameweb">
   <input type="hidden" name="confirm" value="continue">
   <input type="submit" class="natOkButton" value='%MAKETEXT{"OK"}%'>&nbsp;
@@ -366,4 +363,29 @@ template that doesn't exist." args="%PARAM2%"}%
    * %MAKETEXT{"You are also listed in the [_1] topic" args="%USERSWEB%.%WIKIUSERSTOPIC%"}%
    * %MAKETEXT{"You can try out this site hands-on in the [[Sandbox.WebHome][Sandbox]] web."}%
 %PARAM1%
+%TMPL:END%
+%TMPL:DEF{"move_err"}%
+---+++ %MAKETEXT{"Attachment move failed"}%
+%IF{
+  "'%URLPARAM{param1}%.%URLPARAM{param2}%'='%TRASHWEB%.TrashAttachment'"
+  then="%MAKETEXT{"During deletion of attachment =[_1]= an error was found. Please notify your [_2] administrator." args="%URLPARAM{attachment}%, <nop>%WIKITOOLNAME%"}%"
+  else="%MAKETEXT{"During move of attachment [_1] to [_2] an error was found. Please notify your [_3] administrator." args="%PARAM3%, <nop>%PARAM1%.<nop>%PARAM2%, <nop>%WIKITOOLNAME%"}%"
+}%
+
+
+<div class="alt">
+%PARAM4%
+</div>
+
+%TMPL:P{"goback"}%
+%TMPL:END%
+%TMPL:DEF{"delete_err"}%
+---+++ %MAKETEXT{"Attachment delete failed"}%
+%MAKETEXT{"During deletion of attachment =[_1]= an error was found. Please notify your [_2] administrator." args="%URLPARAM{attachment}%, <nop>%WIKITOOLNAME%"}%
+
+<div class="alt">
+%PARAM4%
+</div>
+
+%TMPL:P{"goback"}%
 %TMPL:END%

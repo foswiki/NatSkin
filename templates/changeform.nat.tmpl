@@ -6,52 +6,32 @@
 %TMPL:INCLUDE{"changeformstyles"}%<!-- changeformstyles// -->
 %TMPL:DEF{"bodyclass"}%natChangeFormBody%TMPL:END%
 %TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
-%TMPL:DEF{"title"}%%TOPICTITLE% (%MAKETEXT{"edit"}%) - %WIKITOOLNAME%%TMPL:END%
+%TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"edit"}%) - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Choose a new form for [_1]" args="[[%TOPIC%]]"}%</h1>%TMPL:END%
 %TMPL:DEF{"content"}%<!-- content -->
 %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
-<div class="twikiPageForm">
-<form name="EditForm" method="post" action="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$year$mo$day$hours$minutes$seconds"}%">
-  <input type="hidden" name="topicparent" value="%TOPICPARENT%" />
-  <input type="hidden" name="redirectto" value="%REDIRECTTO%" />
-%TEXT%
-  <input type="hidden" name="skin" value="%URLPARAM{"skin"}%" />
-  <input type="hidden" name="cover" value="%URLPARAM{"cover"}%" />
 <noautolink>
+<form name="EditForm" method="post" action="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$year$mo$day$hours$minutes$seconds"}%">
+<input type="hidden" name="topicparent" value="%TOPICPARENT%" />
+<input type="hidden" name="redirectto" value="%REDIRECTTO%" />
+%TEXT%
+<input type="hidden" name="skin" value="%URLPARAM{"skin"}%" />
+<input type="hidden" name="cover" value="%URLPARAM{"cover"}%" />
+<div class="foswikiFormSteps">
+<div class="foswikiFormStep">
 <table cellspacing="5" class="natChangeForm">
-%~~ NATFORMLIST{
-~~~   separator=" "
-~~~   format="
-~~~     <tr>
-~~~     <td>
-~~~       <input type=\"radio\" 
-~~~              name=\"formtemplate\" 
-~~~              id=\"formtemplateelem$index\"
-~~~              $checked
-~~~              value=\"$name\" />
-~~~     </td>
-~~~     <td style=\"padding-right:10px\">
-~~~       <label for=\"formtemplateelem$index\">
-~~~         <nop>$formTopic
-~~~       </label></td>
-~~~     <td>
-~~~     $percntIFDEFINEDTHEN{\"$name\" as=\"none\"}$percnt
-~~~       remove the current form (caution: possible data loss)
-~~~     $percntELSEDEFINED$percnt
-~~~       $percntFORMFIELD{\"Summary\" topic=\"$formWeb.$formTopic\"}$percnt
-~~~       (<a href=\"%SCRIPTURLPATH{"view"}%/$formWeb/$formTopic\" target=\"_blank\">?</a>)
-~~~     $percntFIDEFINED$percnt
-~~~     </td></tr>"
-~~~ }%
-<tr><td>&nbsp;</td>
-<td colspan="2">
-<p>
-  %BUTTON{"%MAKETEXT{"OK"}%" accesskey="o" type="submit" icon="tick"}%
+%NATFORMLIST{
+  separator=" "
+  format="<tr><td><input type='radio' name='formtemplate' id='formtemplateelem$index' $checked value='$name' /></td><td style='padding-right:10px'><label for='formtemplateelem$index'><nop>$formTopic</label></td><td>$percntIF{\"'$name'='none'\" then=\"remove the current form (caution: possible data loss)\" else=\"$percntFORMFIELD{\"Summary\" topic=\"$formWeb.$formTopic\"}$percnt (<a href='%SCRIPTURLPATH{"view"}%/$formWeb/$formTopic' target='_blank'>?</a>)\"}$percnt</td></tr>"
+}%
+</table>
+</div>
+<div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
+  %BUTTON{"%MAKETEXT{"OK"}%" accesskey="o" type="save" icon="tick"}%
   %BUTTON{"%MAKETEXT{"Cancel"}%" accesskey="c" onclick="history.back()" icon="cross"}%
   %CLEAR%
-</td></tr>
-</table>
-</form>
 </div>
+</div>
+</form>
 </noautolink>
 <!-- //content -->%TMPL:END%

@@ -1,4 +1,46 @@
 %TMPL:INCLUDE{"rename"}%<!-- template: renamedelete.nat.tmpl -->
-%TMPL:DEF{"title"}%%TOPICTITLE% (%MAKETEXT{"delete"}%) - %WIKITOOLNAME%%TMPL:END%
+%TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"delete"}%) - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"webaction"}%%MAKETEXT{"Delete"}%%TMPL:END%
-%TMPL:DEF{"newweb"}%<input type="hidden" name="newweb" value="%TRASHWEB%" /> <span class="twikiAlert">%TRASHWEB%</span> %TMPL:END%
+%TMPL:DEF{"buttons"}%<!-- buttons -->
+%BUTTON{type="save" "%MAKETEXT{"Delete"}%" icon="bin"}%
+%BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" target="%WEB%.%TOPIC%"}%
+%CLEAR%
+<!-- //buttons -->%TMPL:END%
+%TMPL:DEF{"content"}%<!-- content -->
+%TMPL:P{"beforetext"}%<!-- beforetext// -->
+%TMPL:P{"contenttitle"}%<!-- contenttitle// -->
+<form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
+<input type="hidden" name="newweb" value="%TRASHWEB%" />
+<input type="hidden" name="newtopic" value="%NEW_TOPIC%" />
+<input type="hidden" name="nonwikiword" value="on" />
+<!--input type="hidden" name="confirm" value="on"-->
+<div class="foswikiFormSteps">
+  <div class="foswikiFormStep">
+    <h3>Move this topic into the <span class="foswikiAlert"> [[%TRASHWEB%.WebHome][%TRASHWEB% web]] </span></h3>
+    The topic will be renamed to _%TRASHWEB%.%NEW_TOPIC%_.
+  </div>
+  <div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
+    %TMPL:P{"buttons"}%
+  </div>
+  <div class="foswikiFormStep"><hr /></div>
+  <div class="foswikiFormStep">
+    <h3>%MAKETEXT{"Update links in the '[_2]' web" args="<nop>%TOPIC%,<nop>%WEB%"}%:</h3>
+    <div class="natSearchRenameContents">%LOCAL_SEARCH%</div>
+  </div>
+  %IFDEFINEDTHEN{"%URLPARAM{"currentwebonly"}%" as="on"}%%ELSEDEFINED%
+  <div class="foswikiFormStep">
+    <h3>%MAKETEXT{"Update links in all web"}%:</h3>
+    <div class="natSearchRenameContents">%GLOBAL_SEARCH%</div>
+  </div>
+  %FIDEFINED%
+  <div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
+    %BUTTON{"%MAKETEXT{"Set all"}%" icon="add" onclick="checkAll('rename', true);" title="%MAKETEXT{"Select all topics"}%"}%
+    %BUTTON{"%MAKETEXT{"Clear all"}%" icon="delete" onclick="checkAll('rename', false);" title="%MAKETEXT{"Clear selection"}%"}%
+    %IF{"$'URLPARAM{currentwebonly}'='on'"
+      then="$percntBUTTON{\"%MAKETEXT{"Search in all webs"}%\" icon=\"find\" target=\"%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?newweb=%URLPARAM{"newweb"}%\" title=\"%MAKETEXT{"Search for backlinks in all webs"}%\"}$percnt"
+    }%
+    %CLEAR%
+  </div>
+</div>
+</form>
+<!-- //content -->%TMPL:END%

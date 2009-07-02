@@ -1,0 +1,11 @@
+Foswiki::Contrib::FamFamFamContrib,>=2075,perl,Required.
+Foswiki::Plugins::BreadCrumbsPlugin,>=4318,perl,Required
+Foswiki::Plugins::FilterPlugin,>=3491,perl,Required
+Foswiki::Plugins::FlexWebListPlugin,>=3493,perl,Required
+Foswiki::Plugins::GluePlugin,>=3494,perl,Required
+Foswiki::Plugins::IfDefinedPlugin,>=3637,perl,Required
+Foswiki::Plugins::SetVariablePlugin,>=4287,perl,Required
+Foswiki::Plugins::UploadPlugin,>=1340,perl,Required
+Foswiki::Plugins::NatEditPlugin,>=1993,perl,Required
+Foswiki::Plugins::JQueryPlugin,>=3740,perl,Required
+Foswiki::Plugins::NatSkinPlugin,>=0,perl,Required.

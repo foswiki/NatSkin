@@ -1,0 +1,183 @@
+<!-- template: foswiki.nat.tmpl -->
+%TMPL:DEF{"LOG_IN"}%%MAKETEXT{"Log In"}%%TMPL:END%
+%TMPL:DEF{"LOG_IN_HELP"}%%MAKETEXT{"Log in to [_1]." args="<nop>%WIKITOOLNAME%"}%%TMPL:END%
+%TMPL:DEF{"LOG_IN_ACTION"}%<a class="natUserAction natLoginUserAction" rel="nofollow" href="%$url%" accesskey="l" title="%TMPL:P{"LOG_IN_HELP"}%"><span>%TMPL:P{"LOG_IN"}%</span></a>%TMPL:END%
+%TMPL:DEF{"LOG_IN_ACTION_RESTRICTED"}%<span class="natUserAction natLoginUserAction natDisabledUserAction"><span>%TMPL:P{"LOG_IN"}%</span></span>%TMPL:END%
+
+%TMPL:DEF{"LOG_OUT"}%%MAKETEXT{"Log Out"}%%TMPL:END%
+%TMPL:DEF{"LOG_OUT_HELP"}%%MAKETEXT{"Log out [_1]" args="<nop>%WIKINAME%"}%%TMPL:END%
+%TMPL:DEF{"LOG_OUT_ACTION"}%<a class="natUserAction natLogoutUserAction" rel="nofollow" href="%$url%" accesskey="l" title="%TMPL:P{"LOG_OUT_HELP"}%"><span>%TMPL:P{"LOG_OUT"}%</span></a>%TMPL:END%
+%TMPL:DEF{"LOG_OUT_ACTION_RESTRICTED"}%<span class="natUserAction natLogoutUserAction natDisabledUserAction"><span>%TMPL:P{"LOG_OUT"}%</span></span>%TMPL:END%
+
+%TMPL:DEF{"VIEW"}%%MAKETEXT{"View"}%%TMPL:END%
+%TMPL:DEF{"VIEW_HELP"}%%MAKETEXT{"View formatted topic"}%%TMPL:END%
+%TMPL:DEF{"VIEW_ACTION"}%<a class="natTopicAction natViewTopicAction" rel="nofollow" href="%$url%" accesskey="r" title="%TMPL:P{"VIEW_HELP"}%"><span>%TMPL:P{"VIEW"}%</span></a>%TMPL:END%
+%TMPL:DEF{"VIEW_ACTION_RESTRICTED"}%<span class="natTopicAction natViewTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"VIEW"}%</span></span>%TMPL:END%
+
+%TMPL:DEF{"RAW"}%%MAKETEXT{"Raw"}%%TMPL:END%
+%TMPL:DEF{"RAW_HELP"}%%MAKETEXT{"View raw topic text"}%%TMPL:END%
+%TMPL:DEF{"RAW_ACTION"}%<a class="natTopicAction natRawTopicAction" rel="nofollow" href="%$url%" accesskey="r" title="%TMPL:P{"RAW_HELP"}%"><span>%TMPL:P{"RAW"}%</span></a>%TMPL:END%
+%TMPL:DEF{"RAW_ACTION_RESTRICTED"}%<span class="natTopicAction natRawTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"RAW"}%</span></span>%TMPL:END%
+
+%TMPL:DEF{"EDIT"}%%MAKETEXT{"Edit"}%%TMPL:END%
+%TMPL:DEF{"EDIT_HELP"}%%MAKETEXT{"Edit this topic"}%%TMPL:END%
+%TMPL:DEF{"EDIT_ACTION_RESTRICTED"}%<span class="natTopicAction natEditTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"EDIT"}%</span></span>%TMPL:END%
+%TMPL:DEF{"EDIT_ACTION"}%<a class="natTopicAction natEditTopicAction" rel="nofollow" href="%$url%" accesskey="e" title="%TMPL:P{"EDIT_HELP"}%"><span>%TMPL:P{"EDIT"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"EDITFORM"}%%MAKETEXT{"Edit form"}%%TMPL:END%
+%TMPL:DEF{"EDITFORM_HELP"}%%MAKETEXT{"Edit data form of this topic"}%%TMPL:END%
+%TMPL:DEF{"EDITFORM_ACTION_RESTRICTED"}%<span class="natTopicAction natEditFormTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"EDITFORM"}%</span></span>%TMPL:END%
+%TMPL:DEF{"EDITFORM_ACTION"}%<a class="natTopicAction natEditFormTopicAction" rel="nofollow" href="%$url%" accesskey="e" title="%TMPL:P{"EDITFORM_HELP"}%"><span>%TMPL:P{"EDITFORM"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"EDITTEXT"}%%MAKETEXT{"Edit text"}%%TMPL:END%
+%TMPL:DEF{"EDITTEXT_HELP"}%%MAKETEXT{"Edit text data of this topic"}%%TMPL:END%
+%TMPL:DEF{"EDITTEXT_ACTION_RESTRICTED"}%<span class="natTopicAction natEditTextTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"EDITTEXT"}%</span></span>%TMPL:END%
+%TMPL:DEF{"EDITTEXT_ACTION"}%
+%TMPL:END%
+
+%TMPL:DEF{"RESTORE"}%%MAKETEXT{"Restore"}%%TMPL:END%
+%TMPL:DEF{"RESTORE_HELP"}%%MAKETEXT{"rdit this version of the topic"}%%TMPL:END%
+%TMPL:DEF{"RESTORE_ACTION_RESTRICTED"}%<span class="natTopicAction natRestoreTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"RESTORE"}%</span></span>%TMPL:END%
+%TMPL:DEF{"RESTORE_ACTION"}%<a class="natTopicAction natRestoreTopicAction" rel="nofollow" href="%$url%" accesskey="e" title="%TMPL:P{"RESTORE_HELP"}%"><span>%TMPL:P{"RESTORE"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"ATTACH"}%%MAKETEXT{"Attach"}%%TMPL:END%
+%TMPL:DEF{"ATTACH_HELP"}%%MAKETEXT{"Attach files and manage existing attachments"}%%TMPL:END%
+%TMPL:DEF{"ATTACH_ACTION_RESTRICTED"}%<span class="natTopicAction natAttachTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"ATTACH"}%</span></span>%TMPL:END%
+%TMPL:DEF{"ATTACH_ACTION"}%<a class="natTopicAction natAttachTopicAction" rel="nofollow" href="%$url%" accesskey="a" title="%TMPL:P{"ATTACH_HELP"}%"><span>%TMPL:P{"ATTACH"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"DELETE"}%%MAKETEXT{"Delete"}%%TMPL:END%
+%TMPL:DEF{"DELETE_HELP"}%%MAKETEXT{"Delete this topic"}%%TMPL:END%
+%TMPL:DEF{"DELETE_ACTION_RESTRICTED"}%<span class="natTopicAction natDeleteTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"DELETE"}%</span></span>%TMPL:END%
+%TMPL:DEF{"DELETE_ACTION"}%<a class="natTopicAction natDeleteTopicAction" rel="nofollow" href="%$url%" accesskey="t" title="%TMPL:P{"DELETE_HELP"}%"><span>%TMPL:P{"DELETE"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"MOVE"}%%MAKETEXT{"Move"}%%TMPL:END%
+%TMPL:DEF{"MOVE_HELP"}%%MAKETEXT{"Move or rename this topic"}%%TMPL:END%
+%TMPL:DEF{"MOVE_ACTION_RESTRICTED"}%<span class="natTopicAction natMoveTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"MOVE"}%</span></span>%TMPL:END%
+%TMPL:DEF{"MOVE_ACTION"}%<a class="natTopicAction natMoveTopicAction" rel="nofollow" href="%$url%" accesskey="m" title="%TMPL:P{"MOVE_HELP"}%"><span>%TMPL:P{"MOVE"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"HISTORY"}%%MAKETEXT{"History"}%%TMPL:END%
+%TMPL:DEF{"HISTORY_HELP"}%%MAKETEXT{"View topic history"}%%TMPL:END%
+%TMPL:DEF{"HISTORY_ACTION_RESTRICTED"}%<span class="natTopicAction natHistoryTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"HISTORY"}%</span></span>%TMPL:END%
+%TMPL:DEF{"HISTORY_ACTION"}%<a class="natTopicAction natHistoryTopicAction" rel="nofollow" href="%$url%" accesskey="d" title="%TMPL:P{"HISTORY_HELP"}%"><span>%TMPL:P{"HISTORY"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"MORE"}%%MAKETEXT{"Tools"}%%TMPL:END%
+%TMPL:DEF{"MORE_HELP"}%%MAKETEXT{"More actions"}%%TMPL:END%
+%TMPL:DEF{"MORE_ACTION_RESTRICTED"}%<span class="natTopicAction natMoreTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"MORE"}%</span></span>%TMPL:END%
+%TMPL:DEF{"MORE_ACTION"}%<a class="natTopicAction natMoreTopicAction" rel="nofollow" href="%$url%" accesskey="x" title="%TMPL:P{"MORE_HELP"}%"><span>%TMPL:P{"MORE"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"NEW"}%%MAKETEXT{"New"}%%TMPL:END%
+%TMPL:DEF{"NEW_HELP"}%%MAKETEXT{"Create New Topic"}%%TMPL:END%
+%TMPL:DEF{"NEW_ACTION_RESTRICTED"}%<span class="natTopicAction natNewTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"NEW"}%</span></span>%TMPL:END%
+%TMPL:DEF{"NEW_ACTION"}%<a class="natTopicAction natNewTopicAction" rel="nofollow" href="%$url%" accesskey="n" title="%TMPL:P{"NEW_HELP"}%"><span>%TMPL:P{"NEW"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"PRINT"}%%MAKETEXT{"Print"}%%TMPL:END%
+%TMPL:DEF{"PRINT_HELP"}%%MAKETEXT{"Print this topic"}%%TMPL:END%
+%TMPL:DEF{"PRINT_ACTION_RESTRICTED"}%<span class="natTopicAction natPrintTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"PRINT"}%</span></span>%TMPL:END%
+%TMPL:DEF{"PRINT_ACTION"}%<a class="natTopicAction natPrintTopicAction" rel="nofollow" href="%$url%" accesskey="p" title="%TMPL:P{"PRINT_HELP"}%"><span>%TMPL:P{"PRINT"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"REGISTER"}%%MAKETEXT{"Register"}%%TMPL:END%
+%TMPL:DEF{"REGISTER_HELP"}%%MAKETEXT{"Create a user account on [_1]." args="<nop>%WIKITOOLNAME%"}%%TMPL:END%
+%TMPL:DEF{"REGISTER_ACTION_RESTRICTED"}%<span class="natUserAction natRegisterUserAction natDisabledUserAction"><span>%TMPL:P{"REGISTER"}%</span></span>%TMPL:END%
+%TMPL:DEF{"REGISTER_ACTION"}%<a class="natUserAction natRegisterUserAction" rel="nofollow" href="%$url%" accesskey="r" title="%TMPL:P{"REGISTER_HELP"}%"><span>%TMPL:P{"REGISTER"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"HELP"}%%MAKETEXT{"Help"}%%TMPL:END%
+%TMPL:DEF{"HELP_HELP"}%%MAKETEXT{"Get help"}%"%TMPL:END%
+%TMPL:DEF{"HELP_ACTION_RESTRICTED"}%<span class="natTopicAction natHelpTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"HELP"}%</span></span>%TMPL:END%
+%TMPL:DEF{"HELP_ACTION"}%<a class="natTopicAction natHelpTopicAction" rel="nofollow" href="%$url%" title="%TMPL:P{"HELP_HELP"}%"><span>%TMPL:P{"HELP"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"PDF"}%%MAKETEXT{"Pdf"}%%TMPL:END%
+%TMPL:DEF{"PDF_HELP"}%%MAKETEXT{"Export this topic as PDF"}%%TMPL:END%
+%TMPL:DEF{"PDF_ACTION_RESTRICTED"}%<span class="natTopicAction natPdfTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"PDF"}%</span></span>%TMPL:END%
+%TMPL:DEF{"PDF_ACTION"}%<a class="natTopicAction natPdfTopicAction" rel="nofollow" href="%$url%" accesskey="p" title="%TMPL:P{"PDF_HELP"}%"><span>%TMPL:P{"PDF"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"USERS"}%%MAKETEXT{"Users"}%%TMPL:END%
+%TMPL:DEF{"USERS_HELP"}%%MAKETEXT{"See the directory of all registered users"}%%TMPL:END%
+%TMPL:DEF{"USERS_ACTION_RESTRICTED"}%%TMPL:END%
+%TMPL:DEF{"USERS_ACTION"}%<a class='natUserAction natUsersAction' href='%SCRIPTURLPATH{"view"}%/%USERSWEB%/%WIKIUSERSTOPIC%' title='%TMPL:P{"USERS_HELP"}%'>%TMPL:P{"USERS"}%</a>%TMPL:END%
+
+%TMPL:DEF{"ACCOUNT"}%%SPACEOUT{"%WIKINAME%"}%%TMPL:END%
+%TMPL:DEF{"ACCOUNT_HELP"}%%MAKETEXT{"Go to your homepage"}%%TMPL:END%
+%TMPL:DEF{"ACCOUNT_ACTION_RESTRICTED"}%<span class="natUserAction natAccountAction natDisabledTopicAction"><span>%TMPL:P{"ACCOUNT"}%</span></span>%TMPL:END%
+%TMPL:DEF{"ACCOUNT_ACTION"}%<a class="natUserAction natAccountAction" rel="nofollow" href="%$url%" title="%TMPL:P{"ACCOUNT_HELP"}%"><span>%TMPL:P{"ACCOUNT"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"FIRST"}%%MAKETEXT{"First"}%%TMPL:END%
+%TMPL:DEF{"FIRST_HELP"}%%MAKETEXT{"View first revision of this topic"}%%TMPL:END%
+%TMPL:DEF{"FIRST_ACTION_RESTRICTION"}%<span class="natTopicAction natFirstTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"FIRST"}%</span></span>%TMPL:END%
+%TMPL:DEF{"FIRST_ACTION"}%<a class="natTopicAction natFirstTopicAction" rel="nofollow" href="%$url%" accesskey="f" title="%TMPL:P{"FIRST_HELP"}%"><span>%TMPL:P{"FIRST"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"NEXT"}%%MAKETEXT{"Next"}%%TMPL:END%
+%TMPL:DEF{"NEXT_HELP"}%%MAKETEXT{"View next revision of this topic"}%%TMPL:END%
+%TMPL:DEF{"NEXT_ACTION_RESTRICTED"}%<span class="natTopicAction natNextTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"NEXT"}%</span></span>%TMPL:END%
+%TMPL:DEF{"NEXT_ACTION"}%<a class="natTopicAction natNextTopicAction" rel="nofollow" href="%$url%" accesskey="n" title="%TMPL:P{"NEXT_HELP"}%"><span>%TMPL:P{"NEXT"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"PREV"}%%MAKETEXT{"Previous"}%%TMPL:END%
+%TMPL:DEF{"PREV_HELP"}%%MAKETEXT{"View previous revision of this topic"}%%TMPL:END%
+%TMPL:DEF{"PREV_ACTION_RESTRICTED"}%<span class="natTopicAction natPrevTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"PREV"}%</span></span>%TMPL:END%
+%TMPL:DEF{"PREV_ACTION"}%<a class="natTopicAction natPrevTopicAction" rel="nofollow" href="%$url%" accesskey="p" title="%TMPL:P{"PREV_HELP"}%"><span>%TMPL:P{"PREV"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"LAST"}%%MAKETEXT{"Last"}%%TMPL:END%
+%TMPL:DEF{"LAST_HELP"}%%MAKETEXT{"View last revision of this topic"}%%TMPL:END%
+%TMPL:DEF{"LAST_ACTION_RESTRICTED"}%<span class="natTopicAction natLastTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"LAST"}%</span></span>%TMPL:END%
+%TMPL:DEF{"LAST_ACTION"}%<a class="natTopicAction natLastTopicAction" rel="nofollow" href="%$url%" accesskey="l" title="%TMPL:P{"LAST_HELP"}%"><span>%TMPL:P{"LAST"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"DIFF"}%%MAKETEXT{"Diff"}%%TMPL:END%
+%TMPL:DEF{"DIFF_HELP"}%%MAKETEXT{"Show last change"}%%TMPL:END%
+%TMPL:DEF{"DIFF_ACTION_RESTRICTED"}%<span class="natTopicAction natDiffTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"DIFF"}%</span></span>%TMPL:END%
+%TMPL:DEF{"DIFF_ACTION"}%<a class="natTopicAction natDiffTopicAction" rel="nofollow" href="%$url%" accesskey="d" title="%TMPL:P{"DIFF_HELP"}%"><span>%TMPL:P{"DIFF"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"CLOSE"}%%MAKETEXT{"Close"}%%TMPL:END%
+%TMPL:DEF{"CLOSE_HELP"}%%MAKETEXT{"Close this dialog"}%%TMPL:END%
+%TMPL:DEF{"CLOSE_ACTION_RESTRICTED"}%<span class="natTopicAction natCloseTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"CLOSE"}%</span></span>%TMPL:END%
+%TMPL:DEF{"CLOSE_ACTION"}%<a class="natTopicAction natCloseTopicAction" rel="nofollow" href="%$url%" accesskey="x" title="%TMPL:P{"CLOSE_HELP"}%"><span>%TMPL:P{"CLOSE"}%</span></a>%TMPL:END%
+
+%TMPL:DEF{"NOTHING_FOUND"}%%MAKETEXT{"Nothing found. Try again!"}%%TMPL:END%
+
+%TMPL:DEF{"breadcrumbs"}%<!-- breadcrumb -->
+<div class="natBreadCrumbs">
+%MAKETEXT{"You are here:"}%<span class='natSep'>&nbsp; </span>%TMPL:P{context="ClassificationPluginEnabled" then="breadcrumbs_classificationplugin" else="breadcrumbs_standard"}%
+</div>
+<!-- //breadcrumbs -->%TMPL:END%
+
+%TMPL:DEF{"useractions"}%<!-- useractions -->
+%USERACTIONS{
+  guest="<div class='natGreeter natGuestGreeter'>$login$sep$users$sep$register</div>"
+  format="<div class='natGreeter natUserGreeter'>$account$sep$users$sep$logout</div>"
+}%
+<!-- //useractions -->%TMPL:END%
+
+%TMPL:DEF{"breadcrumbs_standard"}%%BREADCRUMBS{separator="<span class='natSep'>&nbsp;&#187; </span>"}%%TMPL:END%
+
+%TMPL:DEF{"breadcrumbs_classificationplugin"}%%CATINFO{
+  cat="%URLPARAM{"catname" default="%BASEWEB%.%BASETOPIC%"}%" 
+  header="$percntBREADCRUMBS{recurse=\"topicoff\" separator=\"<span class='natSep'>&nbsp;&#187; </span>\"}$percnt<span class='natSep'>&nbsp;&#187; </span>" format="$breadcrumb" separator="<span class='natSep'>&nbsp;&#187; </span>"
+  null="$percntTMPL:P{\"breadcrumbs_standard\"}$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"hiddenform"}%<!-- hiddenform -->
+<form id="EditForm" name="EditForm" action="%SCRIPTURLPATH{"save"}%/%WEB%/%TOPIC%" method="post">
+  <input type="hidden" name="action_addform" value="" />
+  <input type="hidden" name="action_cancel" value="" />
+  <input type="hidden" name="action_checkpoint" value="" />
+  <input type="hidden" name="action_preview" value="" />
+  <input type="hidden" name="action_replaceform" value="" />
+  <input type="hidden" name="action_save" value="" />
+  <input type="hidden" name="submitChangeForm" value="" />
+  %FORMFIELDS% 
+  <input type="hidden" name="formtemplate" value="%FORMTEMPLATE%" />
+  <input type="hidden" name="originalrev" value="%URLPARAM{"originalrev"}%" />
+  <input type="hidden" name="redirectto" value="%REDIRECTTO%" />
+  <input type="hidden" name="topicparent" value="%TOPICPARENT%" />
+  <input type="hidden" name="templatetopic" value="%URLPARAM{"templatetopic" default="%TEMPLATETOPIC%"}%" />
+  <input type="hidden" name="cover" value="%URLPARAM{"cover"}%" />
+  <input type="hidden" name="cmd" value="%CMD%" />
+  <input type="hidden" name="nowysiwyg" value="%URLPARAM{"nowysiwyg"}%" />
+  <input type="hidden" name="rev" value="%URLPARAM{"rev"}%" />
+  <input type="hidden" name="text" value="%HIDDENTEXT%" />
+</form>
+<!-- //hiddenform-->%TMPL:END%
+
+%TMPL:DEF{"spacer"}%<img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/blank.gif' class='natSpacer' />%TMPL:END%
+
+%TMPL:DEF{"topictitle"}%%TMPL:P{context="DBCachePluginEnabled" then="topictitle_dbcache" else="topictitle_default"}%%TMPL:END%
+%TMPL:DEF{"topictitle_default"}%default %IF{"defined 'TOPICTITLE'" then="%TOPICTITLE%" else="%BASETOPIC%"}%%TMPL:END%
+%TMPL:DEF{"topictitle_dbcache"}%dbcache %GETTOPICTITLE{encode="entity"}%%TMPL:END%

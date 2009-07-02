@@ -1,0 +1,5 @@
+%META:TOPICINFO{author="ProjectContributor" date="1132161897" format="1.1" version="$Rev: 1340 $"}%
+%STARTINCLUDE%<!-- siterightbar -->
+<h2 >Recent Changes</h2>
+%SEARCH{".*" regex="on" scope="topic" nonoise="on" format="   * [[$web.$topic][$topic]]" limit="20" order="modified" reverse="on"}%
+<!-- //siterightbar -->%STOPINCLUDE%

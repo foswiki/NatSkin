@@ -1,0 +1,22 @@
+%TMPL:INCLUDE{"page"}%<!-- template: validate.nat.tmpl-->
+%TMPL:DEF{"bodyclass"}%natValidateBody%TMPL:END%
+%TMPL:DEF{"content"}%<!-- content -->
+<div id="foswikiLogin">
+  <div class="foswikiFormSteps">
+    <form action='%SCRIPTURLPATH{"login"}%/%WEB%/%TOPIC%' name='loginform' method='post'>
+      <input type="hidden" name="origurl" value="%ORIGURL%" />
+      <literal>
+        %QUERYPARAMS{encoding="entity" format="<input type='hidden' name='$name' value='$value' />"}%
+      </literal>
+      <div class="foswikiFormStep">
+        <h2 >%MAKETEXT{"User validation required to save"}%</h2>
+        %MAKETEXT{"[_1] received a request from your browser which has an expired validation key. This may be because someone is trying to post using your session. Please indicate whether you want [_1] to process this request." args="<nop>%WIKITOOLNAME%"}%
+      </div>
+      <div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
+        <input name="response" tabindex='4' type='submit' class='foswikiSubmit' value='OK' />
+        <input name="response" tabindex='5' type='submit' class='foswikiSubmit' value='Cancel' />
+      </div>
+    </form>
+  </div>
+</div>
+<!-- //content -->%TMPL:END%

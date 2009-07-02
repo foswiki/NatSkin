@@ -1,0 +1,26 @@
+%META:TOPICINFO{author="ProjectContributor" date="1238416975" format="1.1" version="1.2"}%
+---+!! %TOPIC%
+Default sidebar implementation
+
+%STARTINCLUDE%<!-- sitesidebar -->
+<h2 >%WEBLINK%</h2>
+%WEBCOMPONENT{"Links"}%
+<h2 >Tools</h2>
+   * [[WebTopicList][%MAKETEXT{"Index"}%]]
+   * [[WebChanges][%MAKETEXT{"Changes"}%]]
+   * [[WebNotify][%MAKETEXT{"Notifications"}%]]
+   * [[WebStatistics][%MAKETEXT{"Statistics"}%]]
+   * [[Sandbox.WebHome][Sandbox]]
+%TMPL:P{context="natskin_sidebar_pos2" then="searchbox_pos2"}%<!-- -->
+%IFDEFINEDTHEN{"%IFACCESS{"%USERSWEB%.AdminGroup" type="change"}%" as="1"}%
+<div class="natSidebarSection natSideBarAdminLinks">
+<h2 >Admin</h2>
+   * [[%SCRIPTURL{"configure"}%][%MAKETEXT{"Configure [_1]" args="<nop>%WIKITOOLNAME%"}%]]
+   * [[%BASEWEB%.WebPreferences][%MAKETEXT{"Web Preferences"}%]]
+   * [[%LOCALSITEPREFS%][%MAKETEXT{"Site Preferences"}%]]
+   * [[%SYSTEMWEB%.InstalledPlugins][%MAKETEXT{"Installed Plugins"}%]]
+   * [[%SYSTEMWEB%.WebCreateNewWeb][%MAKETEXT{"Add Web"}%]]
+   * [[%SCRIPTURL{"rename"}%/%BASEWEB%/%BASETOPIC%?action=renameweb][Rename Web]]
+</div>
+%FIDEFINED%
+<!-- //sitesidebar -->%STOPINCLUDE%
