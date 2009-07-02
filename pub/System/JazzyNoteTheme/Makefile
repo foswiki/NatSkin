@@ -1,7 +1,7 @@
 TARGET= \
-  BlueNoteBorder.css \
-  BlueNoteButtons.css \
-  BlueNoteStyle.css \
-  BlueNoteThin.css
+  JazzyNoteBorder.css \
+  JazzyNoteButtons.css \
+  JazzyNoteStyle.css \
+  JazzyNoteThin.css
 
 -include ../NatSkin/Makefile.include
