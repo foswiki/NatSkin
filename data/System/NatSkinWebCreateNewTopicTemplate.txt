@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" date="1131431859" format="1.1" version="$Rev: 1963 $"}%
+%META:TOPICINFO{author="mdaum" date="1242222409" format="1.1" reprev="1.2" version="1.2"}%
 %TMPL:INCLUDE{"view"}%
 
 %TMPL:DEF{"content"}%%TMPL:P{"createform"}%%TMPL:END%
@@ -7,8 +7,18 @@
 %TMPL:P{"formstartstep"}%<!-- formstartstep// -->
 %TMPL:P{"formtitle"}%<!-- formtitle// -->
 %TMPL:P{"topictitlestep"}%<!-- topictitlestep// -->
-%TMPL:P{"DIStopicnamestep"}%%TMPL:P{"hiddentopicnamestep"}%
+%TWISTY{
+  showlink="%MAKETEXT{"Show advanced options"}%" 
+  hidelink="%MAKETEXT{"Hide advanced options"}%"
+  showimgleft="%ICONURLPATH{toggleopen-small}%"
+  hideimgleft="%ICONURLPATH{toggleclose-small}%"
+  mode="div"
+}%
+---
+%TMPL:P{"topicnamestep"}%%TMPL:P{"DIShiddentopicnamestep"}%<!-- topicnamestep// -->
+%TMPL:P{"topicparentstep"}%%TMPL:P{"DIShiddentopicparentstep"}%<!-- topicparentstep// -->
 %TMPL:P{"topictemplatestep"}%<!-- topictemplatestep// -->
+%ENDTWISTY%
 %TMPL:P{"formbuttons"}%<!-- formbuttons// -->
 %TMPL:P{"formendstep"}%<!-- topictemplatestep// -->
 <!-- //createform -->%TMPL:END%
@@ -19,10 +29,6 @@
 
 %TMPL:DEF{"newtopictitle"}%%URLPARAM{"newtopictitle"}%%TMPL:END%
 %TMPL:DEF{"newtopic"}%%URLPARAM{"newtopic"}%%TMPL:END%
-
-%TMPL:DEF{"viewjavascript"}%<!-- viewjavascript -->
-%JQREQUIRE{"validate"}%
-<!-- //viewjavascript -->%TMPL:END%
 
 %{ do not show the following elements }%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
@@ -50,6 +56,17 @@
 </div>
 <!-- //topicnamestep -->%TMPL:END%
 
+%TMPL:DEF{"topicparentstep"}%<!-- topicparentstep -->
+<div class="foswikiFormStep">
+<h3 >%MAKETEXT{"Parent:"}%</h3>
+%TMPL:P{"topicparent"}%
+</div>
+<!-- //topicparentstep -->%TMPL:END%
+
+%TMPL:DEF{"hiddentopicparentstep"}%<!-- hiddentopicparentstep -->
+<input type="hidden" name="topicparent" value="%URLPARAM{"topicparent" default="%TOPIC%"}%" />
+<!-- //hiddentopicparentstep -->%TMPL:END%
+
 %TMPL:DEF{"hiddentopicnamestep"}%<!-- hiddentopicnamestep -->
 <input type="hidden" name="topic" id="topic" value="%TMPL:P{"newtopic"}%"/>
 <!-- //hiddentopicnamestep -->
@@ -71,28 +88,59 @@
 <form name="newTopicForm" id="newTopicForm" action="%SCRIPTURLPATH{edit}%/%BASEWEB%/">
 <input type="hidden" name="t" value="%GMTIME{"$epoch"}%" />
 <input type="hidden" name="onlynewtopic" value="on" />
-<input type="hidden" name="topicparent" value="%URLPARAM{"topicparent"}%" />
 <!-- //formstart -->%TMPL:END%
 
 
 %TMPL:DEF{"topictitle"}%<!-- topictitle -->
-<input type="text" class="foswikiInputField required" name="TopicTitle" id="topictitle" size="40" value="%TMPL:P{"newtopictitle"}%" />
+<input type="text" class="foswikiInputField jqFocus required" name="TopicTitle" id="topictitle" size="60" value="%TMPL:P{"newtopictitle"}%" />
 <div class="foswikiFormDescription">
-%MAKETEXT{"Free form title text."}%
+%MAKETEXT{"Free form topic title text. The actual topic _name_ will be derived from the title automatically.
+You can specify a different topic name in the advanced options below."}%
 </div>
 <!--//topictitle -->%TMPL:END%
 
 %TMPL:DEF{"topicname"}%<!-- topicname -->
-<input type="text" class="foswikiInputField" name="topic" id="topic" size="40" value="%TMPL:P{"newtopic"}%" />
+<input type="text" class="foswikiInputField" name="topic" id="topic" size="60" value="%TMPL:P{"newtopic"}%" />
 <div class="foswikiFormDescription">
-<nop>WikiWord the new page is associated with.
+Topic name the new page is associated with, preferably a <nop>WikiWord.
 </div>
 <!--//topicname -->%TMPL:END%
 
+%TMPL:DEF{"topicparent"}%<!-- topicparent -->
+%INCLUDE{
+  "%SYSTEMWEB%.JQueryAjaxHelper"
+  section="topicselector"
+  INPUT_NAME="topicparent"
+  INPUT_VALUE="%URLPARAM{"topicparent" default="%TOPIC%"}%"
+}%
+<div class="foswikiFormDescription">
+Topic name that the newly created topic will be a child of.
+</div>
+<!-- //topicparent -->%TMPL:END%
+
+%TMPL:DEF{"topictemplate"}%<!-- topictemplate -->
+<input type="text" class="foswikiInputField name="templatetopic" id="templatetopic" size="60" value="%URLPARAM{"templatetopic"}%" />
+<div class="foswikiFormDescription">
+%MAKETEXT{"Initialize the new topic using a template. If you leave this empty, a default template will be used."}%
+</div>
+<!-- //topictemplate -->%TMPL:END%
+
 %TMPL:DEF{"topictemplate"}%<!-- topictemplate -->
 <select name="templatetopic" class="foswikiSelect">
-%IF{"'%URLPARAM{"templatetopic"}%'" then='<option selected="selected">%URLPARAM{"templatetopic"}%</option>'}%
-<option value="">%MAKETEXT{"Default template"}%</option>%SEARCH{".*Template$" scope="topic" excludetopic="WebTopicEditTemplate,WebCreateNewTopicTemplate,*ViewTemplate" type="regex" nonoise="on" format="<option>$topic</option>"}%</select> 
+%IF{"'%URLPARAM{"templatetopic"}%'" 
+  then='<option selected="selected">%URLPARAM{"templatetopic"}%</option>'
+}%
+<option value="">%MAKETEXT{"Default template"}%</option>
+%SEARCH{
+  "name~'*Template'" 
+  scope="topic" 
+  web="%BASEWEB%" 
+  excludetopic="WebTopicEditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate" 
+  type="query" 
+  nonoise="on" 
+  format="<option value=\"$web.$topic\">$topic</option>"
+}%
+</select>
 <div class="foswikiFormDescription">
 %MAKETEXT{"Initialize the new topic using a template."}%
 </div>
@@ -111,12 +159,16 @@
 
 %TMPL:DEF{"javascript"}%<!-- javascript -->
 %TMPL:P{"defaultjavascript"}%
-<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/jquery.wikiword.js"></script>
-<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/jquery.validate.js"></script>
+%JQREQUIRE{"wikiword"}%
+%JQREQUIRE{"validate"}%
+%JQREQUIRE{"autocomplete"}%
+%JQREQUIRE{"focus"}%
 <script type="text/javascript">
-$(function() {
-  $("#topic").wikiword("#topictitle");
-  $("#newTopicForm").validate();
-});
+(function($) {
+  $(function() {
+    $("#newTopicForm").validate();
+    $("#topic").wikiword("#topictitle");
+  });
+})(jQuery);
 </script>
 <!-- javascript -->%TMPL:END%
