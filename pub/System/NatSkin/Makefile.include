@@ -1,0 +1,17 @@
+GZIP=gzip
+
+.SUFFIXES: .js .css
+.PHONY: subdirs $(SUBDIRS)
+
+all: subdirs $(TARGET) $(TARGET:.js=.js.gz) $(TARGET:.css=.css.gz)
+	@echo -n ""
+
+%.gz: %
+	@echo compressing $< to $@
+	@$(GZIP) -c $< > $@
+
+subdirs: $(SUBDIRS)
+
+$(SUBDIRS):
+	@$(MAKE) --no-print-directory -C $@
+

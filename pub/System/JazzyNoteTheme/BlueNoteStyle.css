@@ -667,7 +667,7 @@ fieldset .foswikiFormSteps {
 .natSearchBoxPos1 a {
   margin:1px 5px;
   padding:0px;
-  background-image:url(icons/magnifier.png);
+  background-image:url(../NatSkin/icons/magnifier.png);
   background-repeat:no-repeat;
   display:block;
   height:16px;
@@ -675,7 +675,7 @@ fieldset .foswikiFormSteps {
 }
 .natSearchBoxPos1 a:hover {
   background-color:inherit;
-  background-image:url(icons/magnifier.png);
+  background-image:url(../NatSkin/icons/magnifier.png);
   background-repeat:no-repeat;
 }
 .natSearchBoxPos2,
