@@ -30,11 +30,6 @@ This is the list of variables to configure the skin style:
 | switch on/of the tab buttons above the topic area | off |
 | STYLESIDEBAR (stylesidebar) | left, right, both, off \
 | configure where the sidebar is to be displayed | left |
-| STYLESEARCHBOX (stylesearchbox) | top, pos1, pos2, pos3, off \
-| configure where the searchbox is to be displayed: \
-  in the topbar (top), at the top of the sidebar (pos1), \
-  in the middle of the sidebar (pos2), \
-  at the bottom of the sidebar (pos3) or off | top |
       
 There are a couple of special url parameters:
    * =togglesidebar=: disable the sidebar for this request only. 

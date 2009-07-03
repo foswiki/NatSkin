@@ -11,7 +11,6 @@ Default sidebar implementation
    * [[WebNotify][%MAKETEXT{"Notifications"}%]]
    * [[WebStatistics][%MAKETEXT{"Statistics"}%]]
    * [[Sandbox.WebHome][Sandbox]]
-%TMPL:P{context="natskin_sidebar_pos2" then="searchbox_pos2"}%<!-- -->
 %IFDEFINEDTHEN{"%IFACCESS{"%USERSWEB%.AdminGroup" type="change"}%" as="1"}%
 <div class="natSidebarSection natSideBarAdminLinks">
 <h2 >Admin</h2>
@@ -19,7 +18,7 @@ Default sidebar implementation
    * [[%BASEWEB%.WebPreferences][%MAKETEXT{"Web Preferences"}%]]
    * [[%LOCALSITEPREFS%][%MAKETEXT{"Site Preferences"}%]]
    * [[%SYSTEMWEB%.InstalledPlugins][%MAKETEXT{"Installed Plugins"}%]]
-   * [[%SYSTEMWEB%.WebCreateNewWeb][%MAKETEXT{"Add Web"}%]]
+   * [[%SYSTEMWEB%.WebCreateNewWeb][%MAKETEXT{"Create Web"}%]]
    * [[%SCRIPTURL{"rename"}%/%BASEWEB%/%BASETOPIC%?action=renameweb][Rename Web]]
 </div>
 %FIDEFINED%

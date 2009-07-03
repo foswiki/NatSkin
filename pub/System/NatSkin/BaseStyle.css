@@ -240,7 +240,8 @@ form {
   min-height:40em;
 }
 
-*:first-child+html .natSideBarHeaderContents { /* IE7 fix to draw the borders */
+*:first-child+html 
+.natSideBarHeaderContents { /* IE7 fix to draw the borders */
   height:1em;
 }
 .natSideBarHeaderContents {
@@ -282,7 +283,6 @@ form {
 .natTopRight form {
   padding:0px;
   margin:0px;
-  margin-bottom:5px;
 }
 
 .natWebTitle {
@@ -301,19 +301,6 @@ form {
   margin:0px 0px 0px 2px;
   padding:0px 0px 0px 5px;
   text-decoration:none;
-}
-.natSearchBoxTop a {
-  display:none;
-}
-.natSearchBox form {
-  margin:0px;
-  display:inline;
-}
-
-.natSearchBoxPos1 input,
-.natSearchBoxPos2 input,
-.natSearchBoxPos3 input {
-  width:98%;
 }
 
 /* sidebar */
@@ -929,9 +916,14 @@ legend {
 }
 .foswikiFormSteps hr {
   margin:1em 0em;
+  _display:none; /* IE6 fix hide hr, they are non stylable and plain uggly */
 }
 .foswikiFormSteps .foswikiFormLast hr {
   margin-bottom:1em;
+}
+*:first-child+html 
+.foswikiFormSteps hr { /* IE7 fix hide hr, they are non stylable and plain uggly */
+  display:none;
 }
 .foswikiFormLast {
   margin-bottom:0em;

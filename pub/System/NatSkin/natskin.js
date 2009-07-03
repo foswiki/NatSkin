@@ -5,24 +5,20 @@
 
   /* ie6 png transperency fix for img tags */
   if ($.browser.msie && $.browser.version < 7) {
-    runOnLoad(
-      function() {
-        window.setTimeout(function() {
-          $("img[src$='png']").each(function () {
-            var img = $(this);
-            var width = img.width() || 16;
-            var height = img.height() || 16;
-            //alert(width);
-            img.css({
-              "width": width,
-              "height": height, 
-              "filter": "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + img.attr("src") + "', sizingMethod='scale')"
-            });
-            img.attr("src", blankImg);
-          });
-        }, 10);
-      }
-    );
+    window.setTimeout(function() {
+      $("img[src$='png']").each(function () {
+        var img = $(this);
+        var width = img.width() || 16;
+        var height = img.height() || 16;
+        //alert(width);
+        img.css({
+          "width": width,
+          "height": height, 
+          "filter": "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + img.attr("src") + "', sizingMethod='scale')"
+        });
+        img.attr("src", blankImg);
+      });
+    }, 10);
   }
 
   /* move revinfo */

@@ -129,9 +129,6 @@ allways open an extra window.
 ---++ Dependencies
 %$DEPENDENCIES%
 
-Please have a look at the dependencies of the NatSkinPlugin. Most additional packages
-are listed there.
-
 ---++ Skin Info
 |  Skin Author: | Michael Daum |
 |  Copyright &copy;: | 2003-2009, Michael Daum http://michaeldaumconsulting.com |

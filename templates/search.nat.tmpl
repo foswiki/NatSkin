@@ -1,8 +1,7 @@
 %TMPL:INCLUDE{"searchbase"}%<!-- template: search.nat.tmpl -->
-%TMPL:DEF{"searchbox_top"}%%TMPL:END%
+%TMPL:DEF{"searchbox"}%%TMPL:END%
 %TMPL:DEF{"topictitle_dbcache"}%<noautolink>%GETTOPICTITLE{"%TOPICNAME%"}%</noautolink>%TMPL:END%
-%TMPL:DEF{"topictitle_nodbcache"}%%TOPICNAME%%TMPL:END%
-%TMPL:DEF{"topictitle"}%%TMPL:P{context="DBCachePluginEnabled" then="topictitle_dbcache" else="topictitle_nodbcache"}%%TMPL:END%
+%TMPL:DEF{"topictitle_default"}%%TOPICNAME%%TMPL:END%
 %TMPL:DEF{"seealso"}%[[WebSearchAdvanced][%MAKETEXT{"Advanced Search"}%]]%TMPL:END%
 %TMPL:DEF{"searchhit"}%<!-- searchhit -->
   <a class="natSearchTarget" href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPICNAME%">%TMPL:P{"topictitle"}%</a>

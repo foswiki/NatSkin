@@ -179,5 +179,5 @@
 %TMPL:DEF{"spacer"}%<img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/blank.gif' class='natSpacer' />%TMPL:END%
 
 %TMPL:DEF{"topictitle"}%%TMPL:P{context="DBCachePluginEnabled" then="topictitle_dbcache" else="topictitle_default"}%%TMPL:END%
-%TMPL:DEF{"topictitle_default"}%default %IF{"defined 'TOPICTITLE'" then="%TOPICTITLE%" else="%BASETOPIC%"}%%TMPL:END%
-%TMPL:DEF{"topictitle_dbcache"}%dbcache %GETTOPICTITLE{encode="entity"}%%TMPL:END%
+%TMPL:DEF{"topictitle_default"}%%IF{"defined 'TOPICTITLE'" then="%TOPICTITLE%" else="%BASETOPIC%"}%%TMPL:END%
+%TMPL:DEF{"topictitle_dbcache"}%%GETTOPICTITLE{encode="entity"}%%TMPL:END%

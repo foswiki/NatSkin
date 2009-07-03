@@ -24,10 +24,10 @@
 (function($) {
 function updateRadio () {
   var vals = [];
-  $(".natHistoryTable input[@checked]").each(function () {
+  $(".natHistoryTable input[checked]").each(function () {
     vals[$(this).attr('name')] = parseInt($(this).val(), 10);
   });
-  $(".natHistoryTable input[@type='radio']").each(function() {
+  $(".natHistoryTable input[type='radio']").each(function() {
     $(this).attr('disabled', 'disabled');
     var rev = $(this).attr('name');
     var val = parseInt($(this).val(), 10);
@@ -42,8 +42,8 @@ function updateRadio () {
 }
 $(function() {
   updateRadio();
-  $(".natHistoryTable input[@name='rev1']:first").attr('disabled','disabled').attr('value', '0');
-  $(".natHistoryTable input[@name='rev2']:last").attr('disabled','disabled').attr('value', '0');
+  $(".natHistoryTable input[name='rev1']:first").attr('disabled','disabled').attr('value', '0');
+  $(".natHistoryTable input[name='rev2']:last").attr('disabled','disabled').attr('value', '0');
   $(".natHistoryTable input").click(updateRadio);
 });
 })(jQuery);
@@ -59,76 +59,64 @@ $(function() {
   <th>%MAKETEXT{"Author"}%</th>
   <th>%MAKETEXT{"Action"}%</th>
 </tr>
-%~~ HISTORY{
-~~~   format="
-~~~     <tr>
-~~~       <td align='right'>
-~~~         $rev
-~~~         <input $checked1 type='radio' name='rev2' value='$rev'>
-~~~         <input $checked2 type='radio' name='rev1' value='$rev'>
-~~~       </td>
-~~~       <td>$date</td>
-~~~       <td>$percntIFEXISTS{\"$wikiusername\" then=\"[[$wikiusername][$wikiname]]\" else=\"<nop>$wikiname\"}$percnt</td>
-~~~      <td>
-~~~      $percntBUTTON{\"View\" 
-~~~        icon=\"eye\" 
-~~~        href=\"%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?rev=$rev\" 
-~~~        title=\"%MAKETEXT{"View revision [_1]" args="$rev"}%\"
-~~~        class=\"natHistoryAction\"
-~~~      }$percnt
-~~~      $percntBUTTON{\"Restore\"
-~~~        icon=\"arrow_refresh\"
-~~~        href=\"%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%;rev=$rev\" 
-~~~        title=\"%MAKETEXT{"Restore revision [_1]" args="$rev"}%\"
-~~~        class=\"natHistoryAction\"
-~~~      }$percnt
-~~~      $percntCLEAR$percnt
-~~~      </td>
-~~~     </tr>" 
-~~~   rev1="%URLPARAM{"rev1"}%" 
-~~~   rev2="%URLPARAM{"rev2"}%" 
-~~~   nrev="%URLPARAM{"nrev"}%" 
-~~~  header=""
-~~~  footer="
-~~~    <tr>
-~~~      <td colspan='3' align='center'>
-~~~        $percntIFDEFINEDTHEN{\"$next{'test'}\" as=\"test\" glue=\"off\"}$percnt
-*~~        </a>
-~~~        <a href='$next{'%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;nrev=$nrev'}'>
-*~~          <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start.png' 
-~~~               alt='%MAKETEXT{show last revisions}%'
-~~~               title='%MAKETEXT{show last revisions}%' />
-*~~        </a>
-~~~        <a href='$next{'%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;rev2=$rev2;nrev=$nrev'}'>
-*~~          <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-left.png' 
-~~~               alt='%MAKETEXT{show later revisions}%'
-~~~               title='%MAKETEXT{show later revisions}%' />
-*~~        </a>
-~~~        $percntELSEDEFINED$percnt
-~~~          <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start-gray.png' 
-~~~               alt='%MAKETEXT{blank}%' />
-~~~          <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-left-gray.png' 
-~~~               alt='%MAKETEXT{blank}%' />
-~~~        $percntFIDEFINED$percnt
-~~~        $percntIFDEFINEDTHEN{\"$previous{'test'}\" as=\"test\" glue=\"off\"}$percnt
-~~~        <a href='$previous{'%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;rev2=$rev2;nrev=$nrev'}'>
-*~~          <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-right.png' 
-~~~               alt='%MAKETEXT{show earlier revisions}%'
-~~~               title='%MAKETEXT{show earlier revisions}%' />
-*~~        </a>
-~~~        <a href='$previous{'%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;rev1=1;nrev=$nrev'}'>
-*~~          <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-end.png' 
-~~~               alt='%MAKETEXT{show first revisions}%'
-~~~               title='%MAKETEXT{show first revisions}%' />
-~~~        $percntELSEDEFINED$percnt
-~~~          <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-right-gray.png' 
-~~~               alt='%MAKETEXT{blank}%' />
-~~~          <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-end-gray.png' 
-~~~               alt='%MAKETEXT{blank}%' />
-~~~        $percntFIDEFINED$percnt
-~~~      </td>
-~~~    </tr>"
-~~~ }%
+%HISTORY{
+  format="
+    <tr>
+      <td align='right'>
+        $rev
+        <input $checked1 type='radio' name='rev2' value='$rev'>
+        <input $checked2 type='radio' name='rev1' value='$rev'>
+      </td>
+      <td>$date</td>
+      <td>$percntIFEXISTS{\"$wikiusername\" then=\"[[$wikiusername][$wikiname]]\" else=\"<nop>$wikiname\"}$percnt</td>
+     <td>
+     $percntBUTTON{\"View\" 
+       icon=\"eye\" 
+       href=\"%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?rev=$rev\" 
+       title=\"%MAKETEXT{"View revision [_1]" args="$rev"}%\"
+       class=\"natHistoryAction\"
+     }$percnt
+     $percntBUTTON{\"Restore\"
+       icon=\"arrow_refresh\"
+       href=\"%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%;rev=$rev\" 
+       title=\"%MAKETEXT{"Restore revision [_1]" args="$rev"}%\"
+       class=\"natHistoryAction\"
+     }$percnt
+     $percntCLEAR$percnt
+     </td>
+    </tr>" 
+  rev1="%URLPARAM{"rev1"}%" 
+  rev2="%URLPARAM{"rev2"}%" 
+  nrev="%URLPARAM{"nrev"}%" 
+ header=""
+ footer="
+   <tr>
+     <td colspan='3' align='center'>
+       $percntIFDEFINEDTHEN{\"$next{'test'}\" as=\"test\"}$percnt
+       <a href='$next{'%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;nrev=$nrev'}'>
+         <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start.png' alt='%MAKETEXT{show last revisions}%' title='%MAKETEXT{show last revisions}%' />
+       </a>
+       <a href='$next{'%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;rev2=$rev2;nrev=$nrev'}'>
+         <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-left.png' alt='%MAKETEXT{show later revisions}%' title='%MAKETEXT{show later revisions}%' />
+       </a>
+       $percntELSEDEFINED$percnt
+         <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start-gray.png' alt='%MAKETEXT{blank}%' />
+         <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-left-gray.png' alt='%MAKETEXT{blank}%' />
+       $percntFIDEFINED$percnt
+       $percntIFDEFINEDTHEN{\"$previous{'test'}\" as=\"test\"}$percnt
+       <a href='$previous{'%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;rev2=$rev2;nrev=$nrev'}'>
+         <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-right.png' alt='%MAKETEXT{show earlier revisions}%' title='%MAKETEXT{show earlier revisions}%' />
+       </a>
+       <a href='$previous{'%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;rev1=1;nrev=$nrev'}'>
+         <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-end.png' alt='%MAKETEXT{show first revisions}%' title='%MAKETEXT{show first revisions}%' />
+       </a>
+       $percntELSEDEFINED$percnt
+         <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-right-gray.png' alt='%MAKETEXT{blank}%' />
+         <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-end-gray.png' alt='%MAKETEXT{blank}%' />
+       $percntFIDEFINED$percnt
+     </td>
+   </tr>"
+}%
 <tr>
     <td colspan="3">
       %BUTTON{"%MAKETEXT{Compare}%" icon="tick" type="submit"}%
@@ -145,32 +133,32 @@ $(function() {
     <th>%MAKETEXT{"Author"}%</th>
     <th>%MAKETEXT{"Comment"}%</th>
   </tr>
-%~~ HISTORY{
-~~~   format="
-~~~     <tr>
-~~~       <td align='right'>
-~~~         <a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?rev=1.$rev'>$rev</a>
-~~~         <input type='radio' name='rev1' value='$rev'>
-~~~         <input type='radio' name='rev2' value='$rev'>
-~~~       </td>
-~~~       <td>$date</td>
-~~~       <td>%IFEXISTS{"$wikiusername" then="[[$wikiusername][$wikiname]]" else="<nop>$wikiname"}%</td>
-~~~       <td>%REVCOMMENT[$rev]%</td>
-~~~     </tr>" 
-~~~   rev1="%URLPARAM{"rev1"}%" 
-~~~   rev2="%URLPARAM{"rev2"}%" 
-~~~   nrev="%URLPARAM{"nrev"}%" 
-~~~   header=""
-~~~   footer="
-~~~    <tr>
-~~~      <td colspan='3'>
-~~~        $previous{'first' url='%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;rev1=1;nrev=$nrev'}
-~~~        $previous{'earlier' url='%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;rev1=$rev1;nrev=$nrev'} 
-~~~        $next{'later' url='%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;rev1=$rev1;nrev=$nrev'} 
-~~~        $next{'last' url='%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;nrev=$nrev'}
-~~~      </td>
-~~~    </tr>"
-~~~ }%
+%HISTORY{
+  format="
+    <tr>
+      <td align='right'>
+        <a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?rev=1.$rev'>$rev</a>
+        <input type='radio' name='rev1' value='$rev'>
+        <input type='radio' name='rev2' value='$rev'>
+      </td>
+      <td>$date</td>
+      <td>%IFEXISTS{"$wikiusername" then="[[$wikiusername][$wikiname]]" else="<nop>$wikiname"}%</td>
+      <td>%REVCOMMENT[$rev]%</td>
+    </tr>" 
+  rev1="%URLPARAM{"rev1"}%" 
+  rev2="%URLPARAM{"rev2"}%" 
+  nrev="%URLPARAM{"nrev"}%" 
+  header=""
+  footer="
+   <tr>
+     <td colspan='3'>
+       $previous{'first' url='%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;rev1=1;nrev=$nrev'}
+       $previous{'earlier' url='%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;rev1=$rev1;nrev=$nrev'} 
+       $next{'later' url='%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;rev1=$rev1;nrev=$nrev'} 
+       $next{'last' url='%SCRIPTURLPATH{oops}%/%WEB%/%TOPIC%?template=oopshistory;nrev=$nrev'}
+     </td>
+   </tr>"
+}%
 <tr>
     <td colspan="3" align='center'>
       %BUTTON{"%MAKETEXT{Compare}%" icon="tick" type="submit"}%

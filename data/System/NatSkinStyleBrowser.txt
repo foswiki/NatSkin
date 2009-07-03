@@ -71,14 +71,6 @@ See the %SYSTEMWEB%.NatSkinPlugin documentation on how to use style settings in 
       <li> <input type="radio" class="foswikiRadiobox" id="buttonson" name="stylebuttons" value="on" %IF{"context natskin_buttons_on" then="checked='checked'"}% /><label for="buttonson">%MAKETEXT{"Web Buttons On"}%</label></li>
       <li> <input type="radio" class="foswikiRadiobox" id="buttonsoff" name="stylebuttons" value="off" %IF{"context natskin_buttons_off" then="checked='checked'"}% /><label for="buttonsoff">%MAKETEXT{"Web Buttons Off"}%</label></li>
     </ul>
-    
-    <ul>
-      <li> <input type="radio" class="foswikiRadiobox" id="searchboxtop" name="stylesearchbox" value="top" %IF{"context natskin_searchbox_top" then="checked='checked'"}% /><label for="searchboxtop">%MAKETEXT{"Searchbox in topbar"}%</label></li>
-      <li> <input type="radio" class="foswikiRadiobox" id="searchboxpos1" name="stylesearchbox" value="pos1" %IF{"context natskin_searchbox_pos1" then="checked='checked'"}% /><label for="searchboxpos1">%MAKETEXT{"Searchbox in pos. 1"}%</label></li>
-      <li> <input type="radio" class="foswikiRadiobox" id="searchboxpos2" name="stylesearchbox" value="pos2" %IF{"context natskin_searchbox_pos2" then="checked='checked'"}% /><label for="searchboxpos2">%MAKETEXT{"Searchbox in pos. 2"}%</label></li>
-      <li> <input type="radio" class="foswikiRadiobox" id="searchboxpos3" name="stylesearchbox" value="pos3" %IF{"context natskin_searchbox_pos3" then=" checked='checked'"}% /><label for="searchboxpos3">%MAKETEXT{"Searchbox in pos. 3"}%</label></li>
-      <li> <input type="radio" class="foswikiRadiobox" id="searchboxoff" name="stylesearchbox" value="off" %IF{"context natskin_searchbox_off" then=" checked='checked'"}% /><label for="searchboxoff">%MAKETEXT{"Searchbox off"}%</label></li>
-    </ul>
   </div>
   <div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
     %BUTTON{"%MAKETEXT{"OK"}%" type="submit" icon="tick"}%

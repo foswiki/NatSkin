@@ -501,14 +501,8 @@ the =natBottomBar= will be classified as =natBottomBarBoth=.
 | defaultsidebar.nat.tmpl, %BR% \
   defaulttopbar.nat.tmpl \
 | |
-| =natSearchBoxPos1= \
-| defaultsidebar.nat.tmpl \
-| |
-| =natSearchBoxPos3= \
-| defaultsidebar.nat.tmpl \
-| |
-| =natSearchBoxTop= \
-| defaulttopbar.nat.tmpl \
+| =natSearchBox= \
+| searchbox.nat.tmpl \
 | |
 | =natSearchHit= \
 | changes.nat.tmpl, %BR% \

@@ -2,8 +2,8 @@
 %TMPL:DEF{"webleftbar"}%%WEBCOMPONENT{"LeftBar"}%%TMPL:END%
 %TMPL:DEF{"webrightbar"}%%WEBCOMPONENT{"RightBar"}%%TMPL:END%
 %TMPL:DEF{"websidebar"}%%WEBCOMPONENT{"SideBar"}%%TMPL:END%
-%TMPL:DEF{"pattern_sidebar"}%<h2 class="natSideBarTitle" style="background:%WEBBGCOLOR%">%BASEWEB%</h2>%TMPL:P{context="natskin_searchbox_pos1" then="searchbox_pos1"}%%TMPL:P{"webleftbar"}%%TMPL:END%
-%TMPL:DEF{"nat_sidebar"}%%TMPL:P{context="natskin_searchbox_pos1" then="searchbox_pos1"}%%TMPL:P{"websidebar"}%%TMPL:END%
-%TMPL:DEF{"defaultsidebar"}%%TMPL:P{context="natskin_style_pattern" then="pattern_sidebar" else="nat_sidebar"}%%TMPL:P{context="natskin_searchbox_pos3" then="searchbox_pos3"}%%TMPL:END%
+%TMPL:DEF{"pattern_sidebar"}%<h2 class="natSideBarTitle" style="background:%WEBBGCOLOR%">%BASEWEB%</h2>%TMPL:P{"webleftbar"}%%TMPL:END%
+%TMPL:DEF{"nat_sidebar"}%%TMPL:P{"websidebar"}%%TMPL:END%
+%TMPL:DEF{"defaultsidebar"}%%TMPL:P{context="natskin_style_pattern" then="pattern_sidebar" else="nat_sidebar"}%%TMPL:END%
 %TMPL:DEF{"sidebar"}%%TMPL:P{"defaultsidebar"}%%TMPL:END%
 %TMPL:DEF{"rightsidebar"}%%TMPL:P{context="natskin_sidebar_both" then="webrightbar" else="sidebar"}%%TMPL:END%

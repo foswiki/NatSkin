@@ -652,37 +652,43 @@ fieldset .foswikiFormSteps {
   padding-left:0px;
 }
 
-.natSearchBox table {
-  width:100%;
-}
 .natSearchBox input {
   color:#0055b5;
   margin:0px;
   border:thin inset;
   padding:1px;
+  width:14em;
+  _width:12em; /* IE6 fix */
 }
-.natSearchBoxPos1 a span {
+*:first-child+html 
+.natSearchBox input { /* IE7 fix */
+  width:12em;
+}
+.natSearchBox a {
   display:none;
 }
-.natSearchBoxPos1 a {
-  margin:1px 5px;
+
+/*
+.natSearchBox a span {
+  display:none;
+}
+.natSearchBox a {
+  margin:5px;
   padding:0px;
-  background-image:url(../NatSkin/icons/magnifier.png);
-  background-repeat:no-repeat;
   display:block;
   height:16px;
   width:16px;
 }
-.natSearchBoxPos1 a:hover {
+.natSearchBox a,
+.natSearchBox a:hover {
   background-color:inherit;
   background-image:url(../NatSkin/icons/magnifier.png);
   background-repeat:no-repeat;
 }
-.natSearchBoxPos2,
-.natSearchBoxPos3 {
-  padding:1em 0px;
+.natSearchBox a:hover {
+  background-position:0px -16px;
 }
-
+*/
 
 /* main area */
 .natBreadCrumbs {
