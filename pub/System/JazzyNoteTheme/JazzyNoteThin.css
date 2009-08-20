@@ -1,6 +1,6 @@
 /* thin variant for clean */
 .natBodyContents {
-  padding-top:2em;
+  padding-top:1.38em; /* times 13 = 18px */
 }
 .natSideBarHeaderRight,
 .natWebButtonsRight,

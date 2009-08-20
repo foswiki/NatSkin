@@ -10,7 +10,7 @@
   _background-image:none;
 }
 .natWebButtons {
-  padding-left:2em;
+  padding-left:2.3076em; /* 30px */
 }
 .natBodyLeft .natWebButtons,
 .natBodyBoth .natWebButtons {
@@ -27,7 +27,7 @@
 
 .natWebButtons li a {
   margin:0px;
-  line-height:2.0em;
+  line-height:2.3076em;
   padding-left:1.0em;
   padding-right:1.0em;
   font-weight:bold;
@@ -64,11 +64,7 @@
   margin:0;
   padding:0;
   list-style:none;
-  line-height:2em; /* to be added to top:... rules */
-}
-.superfish,
-.superfish li {
-  height:2em;
+  line-height:2.3076em; /* to be added to top:... rules */
 }
 .superfish li li {
   height:auto;
@@ -104,7 +100,7 @@ embed, object {
 ul.superfish li.sfHover ul 
 {
   left:-1px;
-  top:2em; /* VARIABLE */
+  top:2.3076em; /* VARIABLE */
 }
 
 /**** third tier **************************/
@@ -143,7 +139,7 @@ ul.superfish a {
   display:block;
   width:100%;
   /* ie 6 */
-  _padding:0em 2em; 
+  _padding:0em 2.3076em; 
   _width:auto;
 }
 
@@ -213,5 +209,5 @@ ul.superfish li li a {
   padding:0em 1em;
   /* ie 6 */
   _background:inherit;
-  _padding:0em 2em; 
+  _padding:0em 2.3076em; 
 }

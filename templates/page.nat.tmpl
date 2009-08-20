@@ -1,18 +1,17 @@
-%TMPL:P{"page"}%<!-- page //-->
-%TMPL:DEF{"page"}%<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+%TMPL:P{"page"}%<!-- template: page.nat.tmpl -->
+%TMPL:DEF{"page"}%<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html class="natHtml" xmlns="http://www.w3.org/1999/xhtml" xml:lang="%LANG%" lang="%LANG%">
-%TMPL:P{"head"}%<!-- head// -->
-%TMPL:P{"body"}%<!-- body // -->
+%TMPL:P{"head"}%
+%TMPL:P{"body"}%
 </html>
-<!-- template: page.nat.tmpl -->
 %TMPL:END%
 %TMPL:DEF{"head"}%<head>
-<meta http-equiv="Content-Type" content="%CONTENTTYPE%; charset=%CHARSET%">
+<meta http-equiv="Content-Type" content="%CONTENTTYPE%; charset=%CHARSET%" />
 <title>%TMPL:P{"title"}%</title>
-<meta name="date" content="%REVINFO{"$http"}%"> 
+<meta name="date" content="%REVINFO{"$http"}%" /> 
 %TMPL:P{"meta"}%
-<link rel="icon" href="%FAVICON%" type="image/x-icon">
-<link rel="shortcut icon" href="%FAVICON%" type="image/x-icon">
+<link rel="icon" href="%FAVICON%" type="image/x-icon" />
+<link rel="shortcut icon" href="%FAVICON%" type="image/x-icon" />
 %RENDERHEAD%
 %GETSKINSTYLE%
 %TMPL:P{"styles"}%

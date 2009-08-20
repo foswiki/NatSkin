@@ -59,7 +59,7 @@
   </div>
   %ENDTWISTY%
   <div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
-    %BUTTON{"%MAKETEXT{"Submit"}%" icon="add" type="submit"}%
+    %BUTTON{"%MAKETEXT{"Submit"}%" icon="add" type="save"}%
     %CLEAR%
   </div>
 </div>

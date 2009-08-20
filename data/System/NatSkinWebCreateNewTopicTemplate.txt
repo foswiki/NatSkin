@@ -1,7 +1,11 @@
-%META:TOPICINFO{author="ProjectContributor" date="1242222409" format="1.1" reprev="1.2" version="1.2"}%
+%META:TOPICINFO{author="ProjectContributor" date="1247678045" format="1.1" reprev="1.7" version="1.7"}%
 %TMPL:INCLUDE{"view"}%
+%TMPL:DEF{"rightsidebar"}%%TMPL:END%
+%TMPL:DEF{"contentheader_container"}%%TMPL:END%
 
-%TMPL:DEF{"content"}%%TMPL:P{"createform"}%%TMPL:END%
+%TMPL:DEF{"content"}%<!-- content -->
+%TMPL:P{"createform"}%
+<!-- //content -->%TMPL:END%
 
 %TMPL:DEF{"createform"}%<!-- createform -->
 %TMPL:P{"formstartstep"}%<!-- formstartstep// -->
@@ -45,7 +49,7 @@
 %TMPL:DEF{"topictitlestep"}%<!-- topictitlestep -->
 <div class='foswikiFormStep'>
 <h3 >%MAKETEXT{"Title:"}%</h3>
-%TMPL:P{"topictitle"}%
+%TMPL:P{"topictitleinput"}%
 </div>
 <!-- //topictitlestep -->%TMPL:END%
 
@@ -91,13 +95,13 @@
 <!-- //formstart -->%TMPL:END%
 
 
-%TMPL:DEF{"topictitle"}%<!-- topictitle -->
+%TMPL:DEF{"topictitleinput"}%<!-- topictitleinput -->
 <input type="text" class="foswikiInputField jqFocus required" name="TopicTitle" id="topictitle" size="60" value="%TMPL:P{"newtopictitle"}%" />
 <div class="foswikiFormDescription">
 %MAKETEXT{"Free form topic title text. The actual topic _name_ will be derived from the title automatically.
 You can specify a different topic name in the advanced options below."}%
 </div>
-<!--//topictitle -->%TMPL:END%
+<!--//topictitleinput -->%TMPL:END%
 
 %TMPL:DEF{"topicname"}%<!-- topicname -->
 <input type="text" class="foswikiInputField" name="topic" id="topic" size="60" value="%TMPL:P{"newtopic"}%" />
@@ -147,7 +151,7 @@ Topic name that the newly created topic will be a child of.
 <!-- //topictemplate -->%TMPL:END%
 
 %TMPL:DEF{"submit"}%<!-- submit -->
-%BUTTON{type="submit" icon="tick" value="%MAKETEXT{"OK"}%"}%
+%BUTTON{type="submit" icon="tick" value="%MAKETEXT{"Submit"}%"}%
 <!-- //submit -->%TMPL:END%
 
 %TMPL:DEF{"cancel"}%<!-- cancel -->
@@ -163,12 +167,17 @@ Topic name that the newly created topic will be a child of.
 %JQREQUIRE{"validate"}%
 %JQREQUIRE{"autocomplete"}%
 %JQREQUIRE{"focus"}%
-<script type="text/javascript">
+%ADDTOHEAD{
+"WIKIWORD::INIT"
+text="
+<script type='text/javascript'>
 (function($) {
   $(function() {
-    $("#newTopicForm").validate();
-    $("#topic").wikiword("#topictitle");
+    $('#newTopicForm').validate();
+    $('#topic').wikiword('#topictitle');
   });
 })(jQuery);
-</script>
+</script>"
+requires="JQUERYPLUGIN::WIKIWORD"
+}%
 <!-- javascript -->%TMPL:END%

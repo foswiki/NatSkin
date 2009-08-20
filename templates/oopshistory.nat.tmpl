@@ -17,42 +17,14 @@
   <input type="hidden" name="type" value="history">
 <!-- //formstart_rdiff -->%TMPL:END%
 %TMPL:DEF{"formend"}%</form></div>%TMPL:END%
-%TMPL:DEF{"oopshistoryjavascript"}%<!-- oopshistoryjavascript -->
-<script type="text/javascript">
-//<![CDATA[
-/* updates the radio buttons in a way to prevent illegal selections */
-(function($) {
-function updateRadio () {
-  var vals = [];
-  $(".natHistoryTable input[checked]").each(function () {
-    vals[$(this).attr('name')] = parseInt($(this).val(), 10);
-  });
-  $(".natHistoryTable input[type='radio']").each(function() {
-    $(this).attr('disabled', 'disabled');
-    var rev = $(this).attr('name');
-    var val = parseInt($(this).val(), 10);
-    if (val > 0) {
-      if ((rev == 'rev2' && val > vals['rev1']) ||
-          (rev == 'rev1' && val < vals['rev2'])) {
-        $(this).removeAttr('disabled');
-      }
-    }
-  });
-  $(this).focus();
-}
-$(function() {
-  updateRadio();
-  $(".natHistoryTable input[name='rev1']:first").attr('disabled','disabled').attr('value', '0');
-  $(".natHistoryTable input[name='rev2']:last").attr('disabled','disabled').attr('value', '0');
-  $(".natHistoryTable input").click(updateRadio);
-});
-})(jQuery);
-//]]>
-</script>
-<!-- //oopshistoryjavascript -->%TMPL:END%
+%TMPL:DEF{"oopshistoryjavascript"}%%ADDTOHEAD{
+  "NATSKIN::HISTORY"
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/history.js'></script>"
+  requires="JQUERYPLUGIN::FOSWIKI"
+}%%TMPL:END%
 %TMPL:DEF{"rev_table"}%%TMPL:P{context="RevCommentPluginEnabled" then="table_rcp_enabled" else="table_rcp_disabled"}%%TMPL:END%
 %TMPL:DEF{"table_rcp_disabled"}%<!-- table_rcp_disabled -->
-<table class="natHistoryTable" border="0" cellpadding="5">
+<table class="foswikiLayoutTable">
 <tr>
   <th align="right">%MAKETEXT{"Revision"}%</th>
   <th>%MAKETEXT{"Date"}%</th>
@@ -60,12 +32,11 @@ $(function() {
   <th>%MAKETEXT{"Action"}%</th>
 </tr>
 %HISTORY{
-  format="
-    <tr>
+  format="<tr>
       <td align='right'>
         $rev
-        <input $checked1 type='radio' name='rev2' value='$rev'>
-        <input $checked2 type='radio' name='rev1' value='$rev'>
+        <input $checked1 type='radio' name='rev2' value='$rev' />
+        <input $checked2 type='radio' name='rev1' value='$rev' />
       </td>
       <td>$date</td>
       <td>$percntIFEXISTS{\"$wikiusername\" then=\"[[$wikiusername][$wikiname]]\" else=\"<nop>$wikiname\"}$percnt</td>
@@ -126,7 +97,7 @@ $(function() {
 </table>
 <!-- //table_rcp_disabled -->%TMPL:END%
 %TMPL:DEF{"table_rcp_enabled"}%<!-- table_rcp_enabled -->
-<table class="natHistoryTable" border="0" cellpadding="5">
+<table class="foswikiLayoutTable">
   <tr>
     <th>%MAKETEXT{"Revision"}%</th>
     <th>%MAKETEXT{"Date"}%</th>

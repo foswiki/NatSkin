@@ -1,5 +1,6 @@
 TARGET= \
   attach.js \
+  history.js \
   BaseBorder.css \
   BaseButtons.css \
   BaseStyle.css \

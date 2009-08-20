@@ -5,7 +5,7 @@
 <div class="natAttachmentEditor" style="display:none">
 <form name="attach" action="%SCRIPTURLPATH{"upload"}%/%WEB%/%TOPIC%" method="post">
   <input type="hidden" name="filename" id="filename" value="%A_FILE%" />
-  <input type="hidden" name="redirectto" value="%SCRIPTURL{"attach"}%/%WEB%/%TOPIC%?tab=2#%A_FILE%" />
+  <input type="hidden" name="redirectto" value="%SCRIPTURL{"attach"}%/%WEB%/%TOPIC%?tab=2#%ENCODE{%A_FILE%}%" />
   <input type="hidden" name="changeproperties" value="on" />
   <div class="foswikiFormStep">
     <h3>Comment:</h3>
@@ -47,7 +47,7 @@
   <tr>
     <td class="natAttachmentIcon">%A_ICON%</td> 
     <td class="natAttachmentInfo">
-      <div class="natAttachmentName"><a href="%PUBURL%/%WEB%/%TOPIC%/%A_FILE%" class="{web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%)</div>
+      <div class="natAttachmentName"><a href="%PUBURLPATH%/%WEB%/%TOPIC%/%ENCODE{%A_FILE%}%" class="{web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%)</div>
       %MAKETEXT{"version [_1] uploaded by [_2] on [_3]" args="%A_REV%,%A_USER%, %A_DATE%"}%
       <div class="natAttachmentComment"><noautolink>%A_COMMENT%</noautolink></div>
     </td>
@@ -64,7 +64,7 @@
   <tr>
     <td class="natAttachmentIcon">%A_ICON%</td> 
     <td class="natAttachmentInfo">
-      <div class="natAttachmentName"><a href="%PUBURL%/%WEB%/%TOPIC%/%A_FILE%" class="{web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%) </div>
+      <div class="natAttachmentName"><a href="%PUBURLPATH%/%WEB%/%TOPIC%/%ENCODE{%A_FILE%}%" class="{web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%) </div>
       %MAKETEXT{"version [_1] uploaded by [_2] on [_3]" args="%A_REV%,%A_USER%, %A_DATE%"}%
       %IF{"'%A_ATTRS%'='h'" then=", <span class='foswikiAlert'>hidden</span>"}%
       <div class="natAttachmentComment"><noautolink>%A_COMMENT%</noautolink></div>
@@ -73,8 +73,8 @@
     <td class="natAttachmentActions">
       <a href="#" title='%MAKETEXT{"Edit properties of this attachment"}%' rel='nofollow' onclick="toggleAttachmentEditor(this); return false;"><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/pencil.png" border="0" width="16" height="16" /></a>
       <!-- a href="#" title='%MAKETEXT{"View revisions of this attachment"}%' rel='nofollow' onclick="toggleAttachmentHistory(this); return false;"><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/time.png" border="0" width="16" height="16" /></a-->
-      <a href="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?attachment=%A_FILE%" title='%MAKETEXT{"move this attachment to a different topic"}%' rel='nofollow'><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/page_white_go.png" border="0" width="16" height="16" /></a> 
-      <a href="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?attachment=%A_FILE%;newweb=%TRASHWEB%;newtopic=TrashAttachment" title="%MAKETEXT{"delete this attachment"}%" rel='nofollow'><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/bin.png" border="0" width="16" height="16" /></a>
+      <a href="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?attachment=%ENCODE{%A_FILE%}%" title='%MAKETEXT{"move this attachment to a different topic"}%' rel='nofollow'><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/page_white_go.png" border="0" width="16" height="16" /></a> 
+      <a href="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?attachment=%ENCODE{%A_FILE%}%;newweb=%TRASHWEB%" title="%MAKETEXT{"delete this attachment"}%" rel='nofollow'><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/bin.png" border="0" width="16" height="16" /></a>
     </td>
   </tr>
   </table>

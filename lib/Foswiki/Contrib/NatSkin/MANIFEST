@@ -14,6 +14,7 @@ data/System/NatSkinTemplates.txt 0644
 data/System/NatSkinTopicDoesNotExistViewTemplate.txt 0644
 data/System/NatSkin.txt 0644
 data/System/NatSkinWebCreateNewTopicTemplate.txt 0644
+data/System/SiteBottomBar.txt 0644
 data/System/SiteButtons.txt 0644
 data/System/SiteHtmlHead.txt 0644
 data/System/SiteLinks.txt 0644
@@ -54,6 +55,7 @@ pub/System/NatSkin/BaseThin.css 0644
 pub/System/NatSkin/BaseThin.css.gz 0644
 pub/System/NatSkin/blank.gif 0644
 pub/System/NatSkin/BlueNoteStyle.jpeg 0644
+pub/System/NatSkin/edit.js 0644
 pub/System/NatSkin/external.png 0644
 pub/System/NatSkin/favicon.ico 0644
 pub/System/NatSkin/feed-icon-12x12.gif 0644
@@ -61,6 +63,9 @@ pub/System/NatSkin/feed-icon-12x12-gray.gif 0644
 pub/System/NatSkin/feed-icon-12x12-gray.png 0644
 pub/System/NatSkin/feed-icon-12x12.png 0644
 pub/System/NatSkin/foswiki-logo.png 0644
+pub/System/NatSkin/grid-40x18.png 0644
+pub/System/NatSkin/history.js 0644
+pub/System/NatSkin/history.js.gz 0644
 pub/System/NatSkin/icons/application_form_edit.png 0644
 pub/System/NatSkin/icons/attach.png 0644
 pub/System/NatSkin/icons/bin.png 0644
@@ -96,6 +101,8 @@ pub/System/NatSkin/icons/control-top.png 0644
 pub/System/NatSkin/icons/control-up-gray.png 0644
 pub/System/NatSkin/icons/control-up.png 0644
 pub/System/NatSkin/icons/cross.png 0644
+pub/System/NatSkin/icons/email_add.png 0644
+pub/System/NatSkin/icons/email_delete.png 0644
 pub/System/NatSkin/icons/eye.png 0644
 pub/System/NatSkin/icons/help.png 0644
 pub/System/NatSkin/icons/link.png 0644

@@ -139,6 +139,15 @@ allways open an extra window.
 |  Base Name: | nat |
 |  Screenshot: | <div style="overflow:hidden;height:200px"><a href="%ATTACHURL%/BlueNoteStyle.jpeg"><img src="%ATTACHURL%/BlueNoteStyle.jpeg" title="Clean"/></a></div> |
 |  Change&nbsp;History: | <!-- specify latest version first -->&nbsp; |
+|  20 Aug 2009: | Item1931: made it SafeWikiPlugin compatible, fixed xhtml issues; \
+                  Item1844: fixed WebCreateNewTopicTemplate; \
+                  reworked all of the typography using a 40x18 grid; \
+                  added natskin javascript initialization via foswiki.NatSkin; \
+                  disabled image previews in tooltips on internet exploders; \
+                  fixed "Permissions" tab in edit; \
+                  added a new !WebComponent "BottomBar"; \
+                  componentized the more screen; \ 
+                  fixed links to attachments with umlaute |
 |  15 Jan 2009: | more IE6 workarounds; \
                   fixed "placing" topics into the Trash web; \
                   fixed and improved backlinks to topic; \

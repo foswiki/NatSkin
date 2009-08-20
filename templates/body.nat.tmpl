@@ -36,7 +36,6 @@
   </td>
   <td class="natWebButtons natWebButtonsRight" id="natWebButtons">
 %TMPL:P{"webbuttons"}%<!-- webbuttons// -->
-    </div>
   </td>
 </tr>
 <!-- //buttons_on_sidebar_left -->%TMPL:END%
@@ -157,17 +156,7 @@
 <!-- //sidebar off-->%TMPL:END%
 
 %{ page bottom definitions -------------------------------------------------- }%
-%TMPL:DEF{"bottombar"}%<!-- bottombar -->
-<noautolink>
-<div class="natCopyRight">%WEBCOPYRIGHT%</div>
-<div class="natSyndicate">
-%IF{"defined 'WEBSYNDICATION'"
-  then="$percntWEBSYNDICATION$percnt"
-  else="%MAKETEXT{"Syndicate this site"}% <a class='natFeedIcon' href='%SCRIPTURL{"view"}%/%WEB%/WebRss'>RSS</a><a class='natFeedIcon' href='%SCRIPTURL{"view"}%/%WEB%/WebAtom'>ATOM</a>"
-}%
-</div>
-</noautolink>
-<!-- //bottombar -->%TMPL:END%
+%TMPL:DEF{"bottombar"}%%WEBCOMPONENT{"BottomBar"}%%TMPL:END%
 
 %{ assembly stage ---------------------------------------------------------- }%
 %TMPL:DEF{"defaultbody"}%<!-- defaulbody -->

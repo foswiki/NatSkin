@@ -16,13 +16,13 @@
           "height": height, 
           "filter": "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + img.attr("src") + "', sizingMethod='scale')"
         });
-        img.attr("src", blankImg);
+        img.attr("src", foswiki.pubUrlPath+"/"+foswiki.systemWebName+"/NatSkin/blank.gif");
       });
     }, 10);
   }
 
   /* move revinfo */
-  if (true) {
+  if (foswiki.NatSkin.fixRevisionPosition) {
     var target = $(".natMain h1:first");
     if (target.length) { 
       $(".natRevision").remove().insertAfter(target);
@@ -30,21 +30,21 @@
   }
 
   /* horiz menu */
-  if (true) {
+  if (foswiki.NatSkin.initWebButtons) {
     $(".natWebButtonsContents > ul").superfish({}).
       find("li:has(ul)").addClass("hasSubMenu");
     $(".natWebButtonsContents").css('display', 'block');
   }
 
   /* add overflow div for tables */
-  if (true) { 
-    $(".natMainContents .foswikiTable, .natMainContents .foswikiTable")
-      .not($(".foswikiTable .foswikiTable, .foswikiTable .foswikiTable", this))
-      .wrap("<div class='overflow'></div>");
+  if (foswiki.NatSkin.initOverflows) { 
+    $(".natMainContents .foswikiTable")
+      .not($(".foswikiTable .foswikiTable", this))
+      .wrap("<div class='overflow foswikiTableOverflow'></div>");
   }
 
   /* tooltips */
-  if (true) {
+  if (foswiki.NatSkin.initTooltips && !$.browser.msie) { /* IE6 and IE7 are too buggy for this feature */
     /* tooltip img previews */
     $(".natAttachmentName a").each(function() {
       if ($(this).attr('href').match(/jpe?g|gif|png|bmp/i)) {
@@ -56,7 +56,7 @@
             var src = this.href;
             var data = $(this).metadata();
             if (foswiki.ImagePluginEnabled && data) {
-              src = foswiki.scriptUrl+"/rest/ImagePlugin/resize?"+
+              src = foswiki.scriptUrlPath+"/rest/ImagePlugin/resize?"+
                 "topic="+data.web+"."+data.topic+";"+
                 "file="+data.image+";"+
                 "width="+(data.width||300)+";"+
@@ -70,7 +70,7 @@
     });
   }
 
-  if (true) { // topicaction tooltips 
+  if (foswiki.NatSkin.initTopicActions) { // topicaction tooltips 
     var $tipContainer = $("#natTopicActionTooltip");
     var $topicActions = $("#natTopicActions");
     //$tipContainer.width($topicActions.width());
@@ -113,7 +113,7 @@
     });
   }
 
-  if (true) { // typographic improvements in sidebar
+  if (foswiki.NatSkin.initSideBar) { // typographic improvements in sidebar
     $('.natSideBar h2 + h2').each(function() {
       $(this).replaceWith('<h3>'+$(this).text()+'</h3>');
     });

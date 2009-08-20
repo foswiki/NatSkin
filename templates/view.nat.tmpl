@@ -1,72 +1,62 @@
 %TMPL:INCLUDE{"page"}%<!-- template: view.nat.tmpl -->
+%TMPL:INCLUDE{"metacomments"}%<!-- metacomments// -->
 %TMPL:INCLUDE{"viewbody"}%<!-- viewbody// -->
 %TMPL:INCLUDE{"viewtopicactions"}%<!-- viewtopicactions// -->
 %TMPL:INCLUDE{"viewsidebar"}%<!-- viewsidebar// -->
 %TMPL:INCLUDE{"viewjavascript"}%<!-- viewjavascript// -->
 %TMPL:INCLUDE{"viewstyles"}%<!-- viewstyles// -->
 %TMPL:INCLUDE{"searchbox"}%<!-- searchbox// -->
-
 %TMPL:DEF{"bodyclass"}%natViewBody %IF{"context 'natskin_history_1'" then="natViewHistoryBody"}%%TMPL:END%
-
 %TMPL:DEF{"title"}%%HTMLTITLE%%TMPL:END%
-
 %TMPL:DEF{"meta"}%%TMPL:P{"metatitle"}%%TMPL:P{"metakeywords"}%%TMPL:P{"metaauthor"}%%TMPL:P{"metadescription"}%%TMPL:P{"metaedit"}%%HTTP_EQUIV_ON_VIEW%%TMPL:END%
-
-%TMPL:DEF{"metatitle"}%<meta name='title' content='%HTMLTITLE%'>
+%TMPL:DEF{"metatitle"}%<meta name='title' content='%HTMLTITLE%' />
 %TMPL:END%
-
 %TMPL:DEF{"metakeywords"}%%IF{
   "defined 'METAKEYWORDS'" 
   then="<meta name='keywords' content='$percntMETAKEYWORDS$percnt'>$n" 
-  else="$percntIF{\"'%WEB%.%TOPIC%'/Tag\" then=\"<meta name='keywords' content='$dollarpercntFORMFIELD{Tag}$dollarpercnt'>$n\"}$percnt"
+  else="$percntIF{\"'%WEB%.%TOPIC%'/Tag\" then=\"<meta name='keywords' content='$dollarpercntFORMFIELD{Tag}$dollarpercnt' />$n\"}$percnt"
 }%%TMPL:END%
-
 %TMPL:DEF{"metaauthor"}%%IF{
   "defined 'METAAUTHOR'" 
-  then="<meta name='author' content='$percntMETAAUTHOR$percnt'>$n"
+  then="<meta name='author' content='$percntMETAAUTHOR$percnt' />$n"
 }%%TMPL:END%
-
 %TMPL:DEF{"metadescription"}%%IF{
   "defined 'METADESCRIPTION'" 
   then="<meta name='description' content='$percntMETADESCRIPTION$percnt'>$n"
-  else="$percntIF{\"'%WEB%.%TOPIC%'/Summary\" then=\"<meta name='description' content='$dollarpercntFORMFIELD{\\"Summary\\"}$dollarpercnt'>$dollarn\"}$percnt"
+  else="$percntIF{\"'%WEB%.%TOPIC%'/Summary\" then=\"<meta name='description' content='$dollarpercntFORMFIELD{\\"Summary\\"}$dollarpercnt' />$dollarn\"}$percnt"
 }%%TMPL:END%
-
 %TMPL:DEF{"metaedit"}%%IF{
   "'%WEB%.%TOPIC%' allows 'change'" 
-  then="<link rel='alternate' type='application/x-wiki' title='Edit this page!' href='%SCRIPTURL{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%'>$n"
+  then="<link rel='alternate' type='application/x-wiki' title='Edit this page!' href='%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%' />$n"
 }%%TMPL:END%
-
 %TMPL:DEF{"content"}%<!-- content -->
 %TMPL:P{"beforetext"}%<!-- beforetext// -->
 %TMPL:P{"text"}%<!-- text// -->
 %TMPL:P{"rawbutton"}%<!-- rawbutton // -->
 %TMPL:P{context="save" else="aftertext"}%<!-- aftertext// -->
 <!-- //content -->%TMPL:END%
-
 %TMPL:DEF{"rawbutton"}%%IF{"$'URLPARAM{raw}'='on'" then="<div class='natButtonBox'>$percntBUTTON{\"%MAKETEXT{"View"}%\" title=\"%MAKETEXT{"Back to view mode"}%\" style=\"float:right\" icon=\"eye\" target=\"%WEB%.%TOPIC%\"}$percnt$percntCLEAR$percnt</div>" else="<!-- -->" }%%TMPL:END%
-
 %TMPL:DEF{"text"}%%TEXT%%TMPL:END%
-
 %TMPL:DEF{"aftertext"}%<!-- aftertext -->
+%IF{"$'DISPLAYCOMMENTS'='on'" then="$percntTMPL:P{\"comments\"}$percnt"}%<!-- meta:comments // -->
 %IF{"$'DISPLAYFORM'='off'" else="$percntTMPL:P{\"form\"}$percnt"}%<!-- meta:form // -->
 %IF{"$'DISPLAYATTACHMENTS'='off'" else="$percntMETA{\"attachments\"}$percnt"}%<!-- meta:attachments// -->
 <!-- //aftertext -->
-
 %TMPL:DEF{"form"}%%META{"form"}%%TMPL:END%
-
 %TMPL:DEF{"contentheader"}%<!-- contentheader -->
-%IF{"$'DISPLAYTOPICACTIONS'='off'" else="$percntTMPL:P{\"topicactions\"}$percnt"}%<!-- topicactions// -->
-%IF{"$'DISPLAYBREADCRUMBS'='off'" else="$percntTMPL:P{\"breadcrumbs\"}$percnt"}%<!-- breadcrumbs //-->
-<span class="foswikiClear"></span>
+%IF{
+  "$'DISPLAYTOPICACTIONS'='off'" 
+  else="$percntTMPL:P{\"topicactions\"}$percnt"
+}%<!-- topicactions// -->
+%IF{
+  "$'DISPLAYBREADCRUMBS'='off'" 
+  else="<div class='natBreadCrumbs'>%MAKETEXT{"You are here:"}% $percntTMPL:P{\"breadcrumbs\"}$percnt</div>"
+}%<!-- breadcrumbs //-->
 <!-- // contentheader -->%TMPL:END%
-
 %TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Changed by [_1] on [_2]" args="<span class='natRevisionAuthor'> %REVINFO{"$wikiusername" rev="%CURREV%"}% </span>, <a class='natRevisionDate' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"$date - $hour:$min - r$rev" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
 %TMPL:DEF{"rdiff"}%%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPIC%?type=last;render=sequential%TMPL:END%
 %TMPL:DEF{"compare"}%%SCRIPTURLPATH{"compare"}%/%WEB%/%TOPIC%?type=last;render=interweave%TMPL:END%
-
 %TMPL:DEF{"contentfooter"}%<!-- content footer -->
 %IF{"$'DISPLAYREVISIONINFO'='off'" else="$percntTMPL:P{\"revinfo\"}$percnt"}%<!-- revinfo //-->
 <!-- //content footer -->%TMPL:END%
-
 %TMPL:DEF{"broadcast"}%%IF{"not isempty 'BROADCASTMESSAGE'" then="<div class='foswikiBroadcastMessage'> $percntBROADCASTMESSAGE$percnt </div>"}%%TMPL:END%

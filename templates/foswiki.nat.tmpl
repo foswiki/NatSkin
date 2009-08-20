@@ -90,6 +90,13 @@
 %TMPL:DEF{"PDF_ACTION_RESTRICTED"}%<span class="natTopicAction natPdfTopicActionDisabled natDisabledTopicAction"><span>%TMPL:P{"PDF"}%</span></span>%TMPL:END%
 %TMPL:DEF{"PDF_ACTION"}%<a class="natTopicAction natPdfTopicAction" rel="nofollow" href="%$url%" accesskey="p" title="%TMPL:P{"PDF_HELP"}%"><span>%TMPL:P{"PDF"}%</span></a>%TMPL:END%
 
+%TMPL:DEF{"SUBSCRIBE_HELP"}%%MAKETEXT{"Get notified if this topic changes"}%%TMPL:END%
+%TMPL:DEF{"SUBSCRIBE_ACTION_RESTRICTED"}%<span class="natTopicAction natSubscribeTopicActionDisabled natDisabledTopicAction"><span>Subscribe</span></span>%TMPL:END%
+%TMPL:DEF{"SUBSCRIBE_ACTION"}%%SUBSCRIBE{
+  topic="%BASEWEB%.%BASETOPIC%"
+  format="<a class='natTopicAction nat$actionTopicAction' rel='nofollow' href='$url' accesskey='s' title='%TMPL:P{"SUBSCRIBE_HELP"}%'><span>$action</span></a>"
+}%%TMPL:END%
+
 %TMPL:DEF{"USERS"}%%MAKETEXT{"Users"}%%TMPL:END%
 %TMPL:DEF{"USERS_HELP"}%%MAKETEXT{"See the directory of all registered users"}%%TMPL:END%
 %TMPL:DEF{"USERS_ACTION_RESTRICTED"}%%TMPL:END%
@@ -132,11 +139,9 @@
 
 %TMPL:DEF{"NOTHING_FOUND"}%%MAKETEXT{"Nothing found. Try again!"}%%TMPL:END%
 
-%TMPL:DEF{"breadcrumbs"}%<!-- breadcrumb -->
-<div class="natBreadCrumbs">
-%MAKETEXT{"You are here:"}%<span class='natSep'>&nbsp; </span>%TMPL:P{context="ClassificationPluginEnabled" then="breadcrumbs_classificationplugin" else="breadcrumbs_standard"}%
-</div>
-<!-- //breadcrumbs -->%TMPL:END%
+%TMPL:DEF{"sep"}%<span class='natSep'>&nbsp;&#187; </span>%TMPL:END%
+
+%TMPL:DEF{"breadcrumbs"}%%BREADCRUMBS{separator="%TMPL:P{"sep"}%"}%%TMPL:END%
 
 %TMPL:DEF{"useractions"}%<!-- useractions -->
 %USERACTIONS{
@@ -144,14 +149,6 @@
   format="<div class='natGreeter natUserGreeter'>$account$sep$users$sep$logout</div>"
 }%
 <!-- //useractions -->%TMPL:END%
-
-%TMPL:DEF{"breadcrumbs_standard"}%%BREADCRUMBS{separator="<span class='natSep'>&nbsp;&#187; </span>"}%%TMPL:END%
-
-%TMPL:DEF{"breadcrumbs_classificationplugin"}%%CATINFO{
-  cat="%URLPARAM{"catname" default="%BASEWEB%.%BASETOPIC%"}%" 
-  header="$percntBREADCRUMBS{recurse=\"topicoff\" separator=\"<span class='natSep'>&nbsp;&#187; </span>\"}$percnt<span class='natSep'>&nbsp;&#187; </span>" format="$breadcrumb" separator="<span class='natSep'>&nbsp;&#187; </span>"
-  null="$percntTMPL:P{\"breadcrumbs_standard\"}$percnt"
-}%%TMPL:END%
 
 %TMPL:DEF{"hiddenform"}%<!-- hiddenform -->
 <form id="EditForm" name="EditForm" action="%SCRIPTURLPATH{"save"}%/%WEB%/%TOPIC%" method="post">
@@ -176,7 +173,7 @@
 </form>
 <!-- //hiddenform-->%TMPL:END%
 
-%TMPL:DEF{"spacer"}%<img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/blank.gif' class='natSpacer' />%TMPL:END%
+%TMPL:DEF{"spacer"}%<img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/blank.gif' class='natSpacer' alt="spacer" />%TMPL:END%
 
 %TMPL:DEF{"topictitle"}%%TMPL:P{context="DBCachePluginEnabled" then="topictitle_dbcache" else="topictitle_default"}%%TMPL:END%
 %TMPL:DEF{"topictitle_default"}%%IF{"defined 'TOPICTITLE'" then="%TOPICTITLE%" else="%BASETOPIC%"}%%TMPL:END%

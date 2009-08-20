@@ -1,0 +1,15 @@
+%META:TOPICINFO{author="ProjectContributor" date="1247225837" format="1.1" version="1.1"}%
+%META:TOPICPARENT{name="NatSkin"}%
+---+!! %TOPIC%
+
+Default bottombar component
+
+%STARTINCLUDE%<!-- site.bottombar -->
+<div class="natCopyRight">%WEBCOPYRIGHT%</div>
+  <div class="natSyndicate">
+    %MAKETEXT{"Syndicate this site"}% 
+    <a class='natFeedIcon' href='%SCRIPTURL{"view"}%/%WEB%/WebRss'>RSS</a>
+    <a class='natFeedIcon' href='%SCRIPTURL{"view"}%/%WEB%/WebAtom'>ATOM</a>
+  </div>
+</div>
+<!-- //site.bottombar -->%STOPINCLUDE%

@@ -2,15 +2,25 @@
 %TMPL:DEF{"bodyclass"}%natValidateBody%TMPL:END%
 %TMPL:DEF{"content"}%<!-- content -->
 <div id="foswikiLogin">
+  <h1 >%MAKETEXT{"Request validation"}%</h1>
   <div class="foswikiFormSteps">
+    <h2 >%MAKETEXT{"Warning! Confirmation required"}%</h2>
     <form action='%SCRIPTURLPATH{"login"}%/%WEB%/%TOPIC%' name='loginform' method='post'>
       <input type="hidden" name="origurl" value="%ORIGURL%" />
       <literal>
         %QUERYPARAMS{encoding="entity" format="<input type='hidden' name='$name' value='$value' />"}%
       </literal>
       <div class="foswikiFormStep">
-        <h2 >%MAKETEXT{"User validation required to save"}%</h2>
-        %MAKETEXT{"[_1] received a request from your browser which has an expired validation key. This may be because someone is trying to post using your session. Please indicate whether you want [_1] to process this request." args="<nop>%WIKITOOLNAME%"}%
+        %MAKETEXT{"[_1] has received a suspicious change request from your browser." args="<nop>%WIKITOOLNAME%"}%
+        %MAKETEXT{"There is a risk that someone may be trying to use your identity to change content on [_1] without your knowledge." args="<nop>%WIKITOOLNAME%"}%
+        <ul>
+          <li>%MAKETEXT{"Press OK to confirm that this change was intentional."}%</li>
+          <li>%MAKETEXT{"Press Cancel otherwise."}%</li>
+        </ul>
+        %MAKETEXT{"If you are unsure what this means, read:"}%
+        <a href="http://foswiki.org/Support/WhyYouAreAskedToConfirm" class="foswikiPopUp">
+          %MAKETEXT{"why you are being asked to confirm"}%
+        </a>.
       </div>
       <div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
         <input name="response" tabindex='4' type='submit' class='foswikiSubmit' value='OK' />

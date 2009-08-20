@@ -1,10 +1,172 @@
 /* Base Style */
-/* base */
 
+/* reset */
+a, abbr, acronym, address, applet, b, big, blockquote, body, caption, center,
+cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3,
+h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object, ol, p,
+pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, tfoot,
+th, thead, tr, tt, u, ul, var {
+  margin:0px;
+  padding:0px;
+  outline:0px;
+  font-size:100%;
+  border:0px;
+}
+
+button,
+html {
+  font: 13px/18px 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+}
+
+p { 
+  font-size: 1em; /* 13px */ 
+  line-height: 1.3846em; /* 18px */ 
+  margin:0em 0em 1.3846em 0em; 
+}
+
+blockquote {
+  border-top:1px solid #ddd;
+  border-left:4px solid #ddd;
+  margin:1.3846em 0em 1.3846em 1.3846em; /* 18px 0px 18px 18px */
+  padding:1.3076em 0 1.3846em 1.3846em; /* 17px 0 18px 18px */
+}
+
+h1 { 
+  font-size: 1.6923em; /* 22px */ 
+  line-height: 1.0909em; /* 24px */
+  margin:0.5454em 0em 0.8181em; /* 12px 0 18px*/
+}
+
+.natViewBody h1,
+.natCompareBody h1 {
+  border-bottom:1px #ddd solid;
+  margin-bottom:0.7727em; /* 17px */
+}
+
+h2 { 
+  margin-top:1em; 
+  font-size: 1.3846em; /* 18px */ 
+  line-height: 1em; /* 18px */ 
+  margin-bottom:1em; 
+}
+h3 { 
+  font-size: 1.3077em; /* 17px */ 
+  line-height: 1.0588em; /* 18px */ 
+  margin-top: 1.0588em; 
+  margin-bottom: 0em; 
+}
+h4 { 
+  font-size: 1.2308em; /* 16px */ 
+  line-height: 1.125em; /* 18px */ 
+  margin-top: 1.125em; 
+  margin-bottom: 0em; 
+}
+h5 { 
+  font-size: 1.1538em; /* 15px */ 
+  line-height: 1.2em; /* 18px */ 
+  margin-top: 1.2em; 
+  margin-bottom: 0em; 
+}
+h6 { 
+  font-size: 1.0769em; /* 14px */ 
+  line-height: 1.2857em; /* 18px */ 
+  margin-top: 1.2857em; 
+  margin-bottom: 0em; 
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight:normal;
+}
+
+input, textarea, select, body { 
+  font-size:100%;
+}
+
+pre, code, textarea {
+  line-height:1.3846em;
+  font-family:"Bitstream Vera Sans Mono", "Andale Mono", monospace;
+}
+
+
+blockquote, q {
+  quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content:'';
+  content:none;
+}
+
+:active,
+:focus {
+  outline:0;
+}
+
+a, .foswikiEmulatedLink,
+a:hover, .foswikiEmulatedLink:hover,
+h1 .foswikiEmulatedLink, h2 .foswikiEmulatedLink, h3 .foswikiEmulatedLink,
+h4 .foswikiEmulatedLink, h5 .foswikiEmulatedLink, h3 .foswikiEmulatedLink,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+h1 a:hover, h2 a:hover, h3 a:hover,
+h4 a:hover, h5 a:hover, h6 a:hover {
+  text-decoration:none;
+}
+
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+dt {
+  font-weight:bold;
+}
+
+
+hr {
+  border:0px;
+  padding:0px;
+  border-bottom:1px solid black;
+  margin:1.3846em 0em 1.3077em;
+}
+
+
+pre {
+  overflow-x:auto;
+  overflow-y:hidden;
+  margin:1em 0em;
+  /* ie6 */
+  _width:100%;
+  _margin:0px;
+  _padding:0px;
+  _position:relative;
+}
+
+/* fix scrollbars in ie7 */
+*:first-child+html 
+pre {
+  padding-bottom:1.5em;
+  margin:0px;
+}
+
+
+/* foswiki base */
 .foswikiMakeVisible,
 .foswikiMakeVisibleInline,
 .foswikiMakeVisibleBlock {
   display:none;
+}
+
+.foswikiCheckbox {
+  margin:0px 3px 0px 0px;
 }
 
 .foswikiLeft {
@@ -17,35 +179,75 @@
   display:inline;
   margin:0;
 }
+
+/* http://sonspring.com/journal/clearing-floats */
+.clear,
 .foswikiClear {
-  margin:0;
-  padding:0;
-  height:0px;
-  line-height:0px;
   clear:both;
   display:block;
-  border:0px;
+  height:0px;
+  line-height:0px;
+  margin:0;
+  padding:0;
+  visibility: hidden;
+  /* DISABLED: 
+     the div containing the floats does seem to lose its margins see WebCreateNewTopic
+   */
+  /*
+  overflow: hidden;
+  width: 0; 
+  */
 }
+
+/* http://perishablepress.com/press/2008/02/05/lessons-learned-concerning-the-clearfix-css-hack */
+.clearfix:after,
+.foswikiClearFix:after {
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix,
+.foswikiClearFix {
+  display: inline-block;
+}
+
+* html .clearfix,
+* html .foswikiClearFix {
+  height: 1%;
+}
+
+.clearfix,
+.foswikiClearFix {
+  display: block;
+}
+
 .foswikiHidden {
   display:none;
 }
 .foswikiSmall {
-  font-size:90%; 
-  line-height:120%;
+  font-size:0.7692em;  /* 10px */
+  line-height:1.8em; /* 18px */
+}
+.natSideBar .foswikiSmall {
+  line-height:1.5em; /* 15px */
 }
 .foswikiSmallish {
-  font-size:95%;
+  font-size:0.923em; /* 12px */
+  line-height:1.5em; /* 18px */
+}
+.natSideBar .foswikiSmallish {
+  line-height:1.25em; /* 15px */
 }
 
-.foswikiLayoutTable {
-  border-spacing:0px;
-  border-collapse:collapse;
-}
-.foswikiLayoutTable td {
-  padding:0px;
-}
+.foswikiLayoutTable td,
 .foswikiLayoutTable th {
-  padding:0px 5px 0px 0px;
+  padding:0em 0.5769em 0em 0em;
 }
 
 .foswikiGrayText {
@@ -53,96 +255,6 @@
 }
 .foswikiGrayText a {
   color:#7B7E81;
-}
-.foswikiSmallish i,
-.foswikiSmall i {
-  font-style:normal; /* no italics for fonts that are already small */
-}
-
-/* html elements */
-.foswikiEmulatedLink,
-a {
-  text-decoration:none; 
-  color:#0065CD;
-}
-.foswikiEmulatedLink:hover,
-a:hover { 
-  text-decoration:underline; 
-  color:#777;
-}
-
-a:active,
-a:focus { 
-  outline:0px;
-}
-
-hr {
-  border:0px;
-  border-bottom:1px solid black;
-  margin:0.7em 0px;
-}
-
-blockquote {
-  margin:1.0em 0em 1.0em 2em;
-}
-
-button,
-html {
-  font-size:12px; 
-}
-
-input, textarea, select, body { 
-  font-size:100%;
-}
-.foswikiCheckbox {
-  margin:0px 3px 0px 0px;
-}
-h1 { font-size:180%;}
-h2 { font-size:160%;}
-h3 { font-size:130%; margin-top:10px; margin-bottom:0px; }
-h4 { font-size:120%; margin-top:10px; margin-bottom:0px; }
-h5 { font-size:110%; margin-top:10px; margin-bottom:0px; }
-h6 { font-size:110%; margin-top:10px; margin-bottom:0px; }
-
-h1 .foswikiEmulatedLink, h2 .foswikiEmulatedLink, h3 .foswikiEmulatedLink,
-h4 .foswikiEmulatedLink, h5 .foswikiEmulatedLink, h3 .foswikiEmulatedLink,
-h1, h2, h3, h4, h5, h6,
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
-h1 a:hover, h2 a:hover, h3 a:hover,
-h4 a:hover, h5 a:hover, h6 a:hover {
-  text-decoration:none;
-}
-.natMainContents > h1,
-.natMainContents h1:first-child {
-  margin-top:0px;
-}
-
-p {
-  margin:1.0em 0em 0em 0em;
-}
-
-dt {
-  font-weight:bold;
-}
-
-pre, code,
-.foswikiTextareaRawView,
-.foswikiTextarea,
-.natEditTextArea {
-  font-family:"Bitstream Vera Sans Mono", "Andale Mono", monospace;
-}
-
-pre {
-  overflow:auto;
-  margin:1em 0em;
-}
-.DISnatBody > pre { /* hide from IE */
-  /*\*/ overflow:auto !important; /* */ overflow:scroll; /* for Mac Safari */
-}
-
-form {
-  padding:0px;
-  margin:0px;
 }
 
 /* extra divs */
@@ -153,26 +265,14 @@ form {
   display:none;
 }
 
-/* debug
-.natBody, .natBodyContents { border: 1px solid green }
-.natWebTitle, .natSearchBox,
-.natTopBar, .natTopBarContents, 
-.natTopLeft, .natTopRight, 
-.natTopLeftContents, .natTopRightContents, 
-.natWebButtons, .natWebButtonsContents
-{ border: 1px solid blue }
-.natMiddle, 
-.natSideBar, .natSideBarContents { border: 1px solid red }
-.natMain, .natMainContents, .natMainHeaderContents
-.natSideBar, .natSideBarContents,
-.natMainFooterContents {
-  border:1px solid red;
-}
-*/
-
-.natIcon {
-  border:0;
-  vertical-align:baseline;
+/* grid */
+.DISalt,
+.DISjqTabContents,
+.DISfoswikiPageForm,
+.DISfoswikiFormSteps,
+.DISnatMain,
+.showgrid-40x18 {
+  background:transparent url(grid-40x18.png) repeat scroll 0 0 !important;
 }
 
 /* layout */
@@ -189,6 +289,7 @@ form {
   background-color:white !important;
   color:black !important;
 }
+th, /* opera */
 .natBodyContents {
   text-align:left;
 }
@@ -275,14 +376,19 @@ form {
   width:1px;
 }
 
+.foswikiTopicInfo,
+.natRevision {
+  margin-bottom:1.3846em; /* 18px */
+}
+.foswikiTopicInfo .natRevision {
+  font-size:100%;
+  margin-bottom:0px;
+  padding-bottom:0px;
+}
+
 /* topbar */
 .natHeaderArt {
   background-repeat:no-repeat;
-}
-
-.natTopRight form {
-  padding:0px;
-  margin:0px;
 }
 
 .natWebTitle {
@@ -309,11 +415,6 @@ form {
 }
 .natSideBar h2 {
   margin:5px 0px;
-}
-.natSideBar h2 a,
-.natSideBar h2 a:hover {
-  background:inherit;
-  color:inherit;
 }
 .natSideBar h3 {
   margin:0px;
@@ -366,6 +467,11 @@ form {
 /* edit */
 .natEditBody .natLayoutTable {
   table-layout:auto; /* firefox fix to preven collapsing tables */
+  _table-layout:fixed; /* but IE6 still needs it */
+}
+*:first-child+html 
+.natEditBody .natLayoutTable {
+  table-layout:fixed; /* and IE7 as well */
 }
 .natEditBody .natBottomBar,
 .natEditBody .natWebButtons {
@@ -376,7 +482,10 @@ form {
   min-height:0em;
 }
 .natEditBody h1 {
-  margin-bottom:1em;
+  margin-top:0px;
+  font-size:1.3846em; /* 18px */
+  line-height:1.1111em; /* 20px */
+  font-weight:bold;
 }
 .natEditTopicInfo {
   margin:0.5em 0em 1em 0em;
@@ -496,6 +605,11 @@ form {
 }
 
 /* topic actions */
+.natBreadCrumbs {
+  font-size:0.923em; /* 12px */
+  line-height:1.25em; /* 15px */
+  padding-bottom:0.25em; /* 3px */
+}
 .natBodyAuthenticated .natBreadCrumbs {
   margin-right:280px;
 }
@@ -514,10 +628,10 @@ form {
 }
 .natTopicActions {
   float:right;
-  text-align:right;
+  margin-top:-2px;
 }
 .natTopicActions span span,
-.natTopicActions a span {
+.natTopicAction span {
   display:none;
 }
 .natTopicActions .natSep {
@@ -548,15 +662,12 @@ form {
   background-repeat:no-repeat;
   background-position:2px 2px;
   display:inline;
-  height:16px;
-  margin:0px 2px 0px 0px;
-  padding:2px 5px 5px 22px;
+  margin:0px 2px 0px 5px;
   color:black;
   float:left;
-  width:16px;
-  height:16px;
-  padding:2px;
-  margin-left:5px;
+  width:18px;
+  height:18px;
+  padding:1px;
 }
 
 .natDisabledTopicAction {
@@ -600,6 +711,14 @@ form {
 .natPdfTopicAction:hover,
 .natPdfTopicAction {
   background-image:url(icons/page_white_acrobat.png);
+}
+.natSubscribeTopicAction:hover,
+.natSubscribeTopicAction {
+  background-image:url(icons/email_add.png);
+}
+.natUnsubscribeTopicAction:hover,
+.natUnsubscribeTopicAction {
+  background-image:url(icons/email_delete.png);
 }
 .natHistoryTopicAction:hover,
 .natHistoryTopicAction {
@@ -690,9 +809,17 @@ form {
 .natHistoryAction {
   color:inherit;
 }
+.natHistoryTable td {
+  padding-right:0.5769em; /* 7px */
+}
 
 
 /* helpers */
+.natIcon {
+  border:0;
+  vertical-align:baseline;
+}
+
 .natAction {
   color:red;
   text-transform:capitalize;
@@ -714,6 +841,9 @@ form {
   padding:2px 5px;
 }
 
+.natTopicAttachments {
+  clear:both;
+}
 .natTopicAttachments table {
   width:100%;
 }
@@ -804,7 +934,6 @@ a.natFeedIcon {
 
 /* tables */
 .foswikiTable {
-  margin-top:1px;
   empty-cells:show;
   border:1px solid #d0d0d0;
   border-spacing:0px;
@@ -821,6 +950,7 @@ a.natFeedIcon {
   font-weight:bold;
   text-align:left;
   background:#1875D5;
+  color:#fff;
 }
 
 .foswikiTable th img {
@@ -846,6 +976,7 @@ a.natFeedIcon {
   display:table; 
   display:compact; 
   */
+  _zoom:1; /* triggering hasLayout in IE6 */
 }
 .foswikiPageForm th,
 .foswikiPageForm th,
@@ -863,9 +994,6 @@ a.natFeedIcon {
 .natTopicForm table {
   width:100%;
   border-collapse:collapse;
-}
-.foswikiPageForm form {
-  margin:0px;
 }
 .foswikiPageForm table table {
   border:0px;
@@ -909,17 +1037,16 @@ legend {
   font-weight:bold;
 }
 .foswikiFormSteps {
-  padding:1em;
 }
 .foswikiFormStep {
-  margin:0em 0em 1em;
+  _zoom:1; /* triggering hasLayout in IE6 */
 }
 .foswikiFormSteps hr {
   margin:1em 0em;
   _display:none; /* IE6 fix hide hr, they are non stylable and plain uggly */
 }
 .foswikiFormSteps .foswikiFormLast hr {
-  margin-bottom:1em;
+  /*margin-bottom:1em;*/
 }
 *:first-child+html 
 .foswikiFormSteps hr { /* IE7 fix hide hr, they are non stylable and plain uggly */
@@ -940,7 +1067,7 @@ legend {
   margin:0.35em 0em;
   line-height:160%;
 }
-.foswikiFormButtons.foswikiFormLast {
+.foswikiFormSteps .foswikiFormButtons {
   margin-top:20px;
 }
 .foswikiFormOptions .foswikiCheckbox {
@@ -1042,16 +1169,32 @@ td.foswikiDiffChangedText {
   background: #f8f8f8;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  margin: 0;
-  padding:10px;
+  margin:1.3846em 0em; /* 18px 0px */
+  padding:1.3076em 1.3846em; /* 17px 18px */;
+}
+.alt h2 {
+  border:0px;
 }
 .border {
   border:1px solid #ddd;
   padding:3px;
 }
 .overflow {
-  overflow:auto;
-  padding:1px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:1px 0px 0px 1px;
+  margin:-1px 0px 0px -1px;
+  _width:100%;
+  _margin:0px;
+  _padding:0px;
+  _position:relative;
+}
+
+/* fix scrollbars in ie7 */
+*:first-child+html 
+.overflow {
+  padding:0px 0px 1.2em 0px;
+  margin:0px;
 }
 
 .block {
@@ -1253,35 +1396,6 @@ img.alignleft {
   font-weight:bold;
 }
 
-/* blogplugin support */
-.blogCommentText {
-  margin:0.5em 0px;
-}
-.blogEntryEditor td.current {
-  background:#eee;
-}
-
-.blogScroll a {
-  text-decoration:none;
-}
-
-/* classification plugin */
-.foswikiTopicInfo .foswikiCurrentTopicLink {
-  color:inherit;
-}
-.foswikiTopicInfo {
-  margin:0em 0em 2em 0em;
-  font-size:95%;
-}
-.foswikiTopicInfo .natRevision {
-  margin:0px;
-  font-size:100%;
-}
-h1 .foswikiTopicSummary {
-  font-size:12.35px;
-  display:block;
-}
-
 /* jquery treeview */
 .natSideBar .jqTreeview ul > li:before { 
   content:"";
@@ -1323,3 +1437,65 @@ table.craSideBySide .craCell {
   background-color:#666;
 }
 
+/* filter plugin */
+.fltMakeIndexWrapper {
+  margin:1em 0em;
+}
+.fltMakeIndexWrapper a {
+  text-decoration:none;
+}
+.fltAnchors {
+  margin:1.5em 0em 1.0em -0.2em;
+}
+.fltMakeIndexWrapper .fltAnchors a {
+  padding:0.1em 0.2em;
+  margin:0px;
+}
+.fltMakeIndexWrapper h2 {
+  margin-top:0px;
+}
+.fltMakeIndexWrapper h3 {
+  font-weight:bold;
+  border:0px;
+  margin:0em 0em 0.1em;
+  padding:0px;
+}
+.fltMakeIndexWrapper ul {
+  list-style-type:none;
+  padding:0px;
+  margin:0em 1em 2.5em 0em;
+}
+.fltMakeIndexWrapper li {
+  padding:0;
+  margin:0;
+}
+.fltLayoutTable {
+  margin:0em 0px 1em;
+  width:99%;
+}
+.fltMakeIndexWrapper table td {
+  width:25em;
+}
+.fltMakeIndexWrapper .foswikiTopicInfo {
+  margin:0px;
+}
+.fltMakeIndexWrapper .redDot a {
+  display:inline !important;
+}
+
+.fltMakeIndexWrapper .clsSubCategories {
+  display:inline;
+  margin-top:0.2em;
+  margin-bottom:0.2em;
+}
+
+/* classification plugin */
+h1 .foswikiTopicSummary {
+  display:block;
+}
+
+.clsMakeIndexWrapper ul li {
+  border-bottom:1px solid #eee;
+  padding:0em 0.5em 0.5em 0em;
+  margin:0em 0em 1em 0em;
+}

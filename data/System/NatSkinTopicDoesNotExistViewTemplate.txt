@@ -2,6 +2,8 @@
 %TMPL:INCLUDE{"WebCreateNewTopic"}%
 
 %TMPL:DEF{"topicactions"}%%TMPL:END%
+%TMPL:DEF{"topicparentstep"}%%TMPL:END%
+%TMPL:DEF{"cancel"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 %TMPL:DEF{"formtitle"}%%TMPL:END%
 %TMPL:DEF{"contentheader_container"}%%TMPL:END%
@@ -9,7 +11,7 @@
 %TMPL:DEF{"newtopic"}%%BASETOPIC%%TMPL:END%
 %TMPL:DEF{"searchvalue"}%%BASETOPIC%%TMPL:END%
 
-%TMPL:DEF{"content"}%
+%TMPL:DEF{"content"}%<!-- content -->
 <h1 class="natOopsHeading">%MAKETEXT{"Topic [_1] does not exist" args="'%BASETOPIC%'"}%</h1>
 %SEARCH{"moved.from='%BASEWEB%.%BASETOPIC%'" 
   nosearch="on" 
@@ -20,17 +22,20 @@
 %MAKETEXT{"Did you spell the topic name correctly? Remember, a topic name is case sensitive."}%
 
 %TMPL:P{"createform"}%
+%TMPL:P{"similar"}%
+<!-- //content -->%TMPL:END%
 
-%SEARCH{"%BASETOPIC%" 
-  header="<h2 >%MAKETEXT{"Similar topics"}%</h2>"
-  limit="10" 
-  scope="topic" 
-  web="%BASEWEB%" 
-  nonoise="on" 
-  order="modified" 
-  reverse="on"
-}%
-%TMPL:END%
+%TMPL:DEF{"similar"}%<!-- similar -->
+  %SEARCH{"%BASETOPIC%" 
+    header="<h2 >%MAKETEXT{"Similar topics"}%</h2>"
+    limit="100" 
+    scope="topic" 
+    web="%BASEWEB%" 
+    nonoise="on" 
+    order="modified" 
+    reverse="on"
+  }%
+<!-- //similar -->%TMPL:END%
 
 %TMPL:DEF{"formstartstep"}%<!-- formstartstep -->
 %TWISTYBUTTON{id="createnewtopic" link="%BUTTON{"%MAKETEXT{"Create new topic"}%" icon="add"}%"}%
@@ -43,6 +48,6 @@
 
 %TMPL:DEF{"formendstep"}%<!-- formendstep -->
 %TMPL:P{"formend"}%
-%ENDTWISTY%
 </div>
+%ENDTWISTY%
 <!-- //formendstep -->%TMPL:END%
