@@ -119,8 +119,6 @@ dl dd {
   padding:20px;
 }
 .natLoginBody .foswikiFormSteps {
-  margin:0em 0em 1em;
-  padding:1em 0em;
   background-color:#f6f6f6;
   background-image:url(login_keys.png);
   background-repeat:no-repeat;
@@ -137,11 +135,7 @@ dl dd {
   border-bottom:2px solid #e0e0e0;
 }
 .natLoginBody .foswikiFormStep {
-  margin:0em 1em 1em 12em;
-}
-.natLoginBody .foswikiFormLast {
-  margin:2em 1em 1em 12em;
-  _margin:2em 1em 0em 12em; /* IE 6 fix */
+  margin-left:12em;
 }
 
 /* base styles */
@@ -344,10 +338,7 @@ fieldset .foswikiFormSteps {
   margin:0.5769em 0em;
 }
 
-.foswikiFormSteps .foswikiFormLast {
-  margin:0px;
-}
-.foswikiFormSteps .foswikiFormButtons {
+.foswikiFormButtons {
   margin:1.3846em 0em 0em 0em;
 }
 
@@ -391,9 +382,6 @@ fieldset .foswikiFormSteps {
 
 .alt h2 {
   margin:0em 0em 1.125em;
-}
-.alt p:last-child {
-  margin-bottom:0px;
 }
 
 /* top */

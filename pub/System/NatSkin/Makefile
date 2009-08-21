@@ -1,13 +1,16 @@
 TARGET= \
   attach.js \
-  history.js \
   BaseBorder.css \
   BaseButtons.css \
   BaseStyle.css \
   BaseThin.css \
-  print.css \
+  edit.js \
+  history.js \
+  login.js \
   natskin.js \
-  obfuscator.js
+  obfuscator.js \
+  print.css 
+
 
 SUBDIRS= \
   ../JazzyNoteTheme

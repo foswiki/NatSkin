@@ -22,7 +22,7 @@
 }%%TMPL:END%
 %TMPL:DEF{"metadescription"}%%IF{
   "defined 'METADESCRIPTION'" 
-  then="<meta name='description' content='$percntMETADESCRIPTION$percnt'>$n"
+  then="<meta name='description' content='$percntMETADESCRIPTION$percnt' />$n"
   else="$percntIF{\"'%WEB%.%TOPIC%'/Summary\" then=\"<meta name='description' content='$dollarpercntFORMFIELD{\\"Summary\\"}$dollarpercnt' />$dollarn\"}$percnt"
 }%%TMPL:END%
 %TMPL:DEF{"metaedit"}%%IF{

@@ -10,20 +10,10 @@
 </div>
 <!-- //rememberbox -->%TMPL:END%
 %TMPL:DEF{"logon"}%<!-- logon -->
-%JQREQUIRE{"validate"}% %JQREQUIRE{"shake"}% %JQREQUIRE{"focus"}%<!-- jqrequire -->
-<script type="text/javascript">
-//<![CDATA[
-(function($) {
-(function() {
-  $("#LogonForm").validate();
-  var bannerText = $("#natLogonBanner").text();
-  if (bannerText == '%TMPL:P{UNRECOGNISED_USER}%') {
-    $(".natLogin").shake(3, 10, 180);
-  }
-});
-})(jQuery);
-//]]>
-</script>
+%JQREQUIRE{"validate"}%%JQREQUIRE{"shake"}%%JQREQUIRE{"focus"}%%ADDTOHEAD{"NATSKIN::LOGIN"
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/login.js'></script>"
+  requires="JQUERYPLUGIN"
+}%<!-- require -->
 <form id="LogonForm" name="LogonForm" action="%IF{"$'HTTPSLOGON'='on'" then="https" else="http"}%://%HTTP_HOST%%SCRIPTURLPATH{"login"}%/%WEB%/%TOPIC%" method="post">
 <literal>%QUERYPARAMS{encoding="entity" format="<input type='hidden' name='$name' value='$value' />"}%</literal><!-- queryparams// -->
 %IF{"defined 'ORIGURL'" then="<input type='hidden' name='origurl' value='$percntORIGURL$percnt' />"}%

@@ -21,7 +21,7 @@ html {
 p { 
   font-size: 1em; /* 13px */ 
   line-height: 1.3846em; /* 18px */ 
-  margin:0em 0em 1.3846em 0em; 
+  margin:1.3846em 0em 0em 0em; 
 }
 
 blockquote {

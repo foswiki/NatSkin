@@ -6,10 +6,9 @@ Default bottombar component
 
 %STARTINCLUDE%<!-- site.bottombar -->
 <div class="natCopyRight">%WEBCOPYRIGHT%</div>
-  <div class="natSyndicate">
-    %MAKETEXT{"Syndicate this site"}% 
-    <a class='natFeedIcon' href='%SCRIPTURL{"view"}%/%WEB%/WebRss'>RSS</a>
-    <a class='natFeedIcon' href='%SCRIPTURL{"view"}%/%WEB%/WebAtom'>ATOM</a>
-  </div>
+<div class="natSyndicate">
+  %MAKETEXT{"Syndicate this site"}% 
+  <a class='natFeedIcon' href='%SCRIPTURL{"view"}%/%WEB%/WebRss'>RSS</a>
+  <a class='natFeedIcon' href='%SCRIPTURL{"view"}%/%WEB%/WebAtom'>ATOM</a>
 </div>
 <!-- //site.bottombar -->%STOPINCLUDE%

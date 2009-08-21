@@ -12,7 +12,10 @@
 %TMPL:DEF{"LOG_IN_BANNER"}%%MAKETEXT{"Welcome, please login:"}%%TMPL:END%
 %TMPL:DEF{"LOGGED_IN_BANNER"}%%MAKETEXT{"[_1] is currently logged in" args="%USERSWEB%.%WIKINAME%"}%.%TMPL:END%
 %TMPL:DEF{"NEW_USER_NOTE"}%%MAKETEXT{"Enter a new username and password to change identity"}%.%TMPL:END%
-%TMPL:DEF{"UNRECOGNISED_USER"}%%MAKETEXT{"Unrecognised user and/or password."}%%TMPL:END%
+%TMPL:DEF{"UNRECOGNISED_USER"}%%MAKETEXT{"Unrecognised user and/or password."}%
+%ADDTOHEAD{"NATSKIN::LOGIN::OPTS"
+  text="<meta name='foswiki.NatSkin.loginFailed' content='true' />"
+}%%TMPL:END%
 %TMPL:DEF{"message"}%<!-- message -->
 <h2 id="natLogonBanner">%BANNER%</h2>
 <div class="foswikiFormSteps">
@@ -31,9 +34,9 @@
 </div> 
 <!-- //content -->%TMPL:END%
 %TMPL:DEF{"contact"}%<!-- contact -->
-<div class="foswikiGrayText natContact"> 
+<p class="foswikiGrayText natContact"> 
 %MAKETEXT{"Contact [_1] if you have any questions." args="<a href='mailto:%WIKIWEBMASTER%?subject=%ENCODE{\"%WIKITOOLNAME%: Request for support\"}%&&body=%ENCODE{\"Hello, I have got a question ...\"}%'>%WIKIWEBMASTER%</a>"}%
-</div> 
+</p> 
 <!-- //contact -->%TMPL:END%
 %TMPL:DEF{"seealso"}%<!-- seealso -->
 <div class="foswikiFormStep foswikiFormLast">
