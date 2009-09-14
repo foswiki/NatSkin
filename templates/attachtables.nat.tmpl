@@ -47,7 +47,7 @@
   <tr>
     <td class="natAttachmentIcon">%A_ICON%</td> 
     <td class="natAttachmentInfo">
-      <div class="natAttachmentName"><a href="%PUBURLPATH%/%WEB%/%TOPIC%/%ENCODE{%A_FILE%}%" class="{web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%)</div>
+      <div class="natAttachmentName"><a href="%TMPL:P{"ATTACH:files:url"}%" class="{web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%)</div>
       %MAKETEXT{"version [_1] uploaded by [_2] on [_3]" args="%A_REV%,%A_USER%, %A_DATE%"}%
       <div class="natAttachmentComment"><noautolink>%A_COMMENT%</noautolink></div>
     </td>
@@ -64,7 +64,7 @@
   <tr>
     <td class="natAttachmentIcon">%A_ICON%</td> 
     <td class="natAttachmentInfo">
-      <div class="natAttachmentName"><a href="%PUBURLPATH%/%WEB%/%TOPIC%/%ENCODE{%A_FILE%}%" class="{web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%) </div>
+      <div class="natAttachmentName"><a href="%TMPL:P{"ATTACH:files:url"}%" class="{web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%) </div>
       %MAKETEXT{"version [_1] uploaded by [_2] on [_3]" args="%A_REV%,%A_USER%, %A_DATE%"}%
       %IF{"'%A_ATTRS%'='h'" then=", <span class='foswikiAlert'>hidden</span>"}%
       <div class="natAttachmentComment"><noautolink>%A_COMMENT%</noautolink></div>
@@ -81,11 +81,13 @@
 </div>%TMPL:END%
 %TMPL:DEF{ATTACH:files:footer:A}%%TMPL:END%
 
+%TMPL:DEF{"ATTACH:files:url"}%%TMPL:P{context="FilesysVirtualPluginEnabled" then="ATTACH:files:url:webdav" else="ATTACH:files:url:default"}%%TMPL:END%
+%TMPL:DEF{"ATTACH:files:url:default"}%%PUBURLPATH%/%WEB%/%TOPIC%/%ENCODE{%A_FILE%}%%TMPL:END%
+%TMPL:DEF{"ATTACH:files:url:webdav"}%/dav/%WEB%/%TOPIC%_files/%ENCODE{%A_FILE%}%%TMPL:END%
+
 <!-- Header definition for top table in attach screen -->
 <!-- Header definition for topic attachments and top table in attach screen -->
-
 <!-- A basic row definition, for attachment table and attach screen -->
-
 <!-- Macros for definition of version tables -->
 
 <!-- Header for versions table in attach screen -->

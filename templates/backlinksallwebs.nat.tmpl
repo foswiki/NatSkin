@@ -6,7 +6,7 @@
 %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep foswikiFormLast">
-%BUTTON{"%MAKETEXT{"Done"}%" icon="tick" target="%WEB%.%TOPIC%" title="Return to <nop>%TOPIC%"}%
+%BUTTON{"%MAKETEXT{"OK"}%" icon="tick" target="%WEB%.%TOPIC%" title="Return to <nop>%TOPIC%"}%
 %BUTTON{"%MAKETEXT{"Local Search"}%" icon="find" target="%SCRIPTURLPATH{"oops"}%/%WEB%/%TOPIC%?template=backlinksweb" title="%MAKETEXT{"Search for backlinks in the [_1] web only" args="<nop>%WEB%"}%"}%
 %CLEAR%
 </div>
@@ -14,6 +14,3 @@
 %SEARCH{web="all" search="%WEB%.%TOPIC%([^A-Za-z0-9]|$)|%WEB%.%SPACEOUT{"%TOPIC%" separator=" *"}%([^A-Za-z0-9]|$)" type="regex" scope="text" nosearch="on" excludetopic="%TOPIC%"}%
 %TMPL:P{"aftertext"}%<!-- aftertext// -->
 <!-- //content -->%TMPL:END%
-%TMPL:DEF{"contentheader"}%<!-- contentheader -->
-%TMPL:P{"breadcrumbs"}%<!-- breadcrumbs //-->
-<!-- // contentheader -->%TMPL:END%

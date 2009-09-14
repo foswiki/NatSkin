@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" date="1247678045" format="1.1" reprev="1.7" version="1.7"}%
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1251318288" format="1.1" reprev="1.8" version="1.8"}%
 %TMPL:INCLUDE{"view"}%
 %TMPL:DEF{"rightsidebar"}%%TMPL:END%
 %TMPL:DEF{"contentheader_container"}%%TMPL:END%
@@ -8,8 +8,8 @@
 <!-- //content -->%TMPL:END%
 
 %TMPL:DEF{"createform"}%<!-- createform -->
-%TMPL:P{"formstartstep"}%<!-- formstartstep// -->
 %TMPL:P{"formtitle"}%<!-- formtitle// -->
+%TMPL:P{"formstartstep"}%<!-- formstartstep// -->
 %TMPL:P{"topictitlestep"}%<!-- topictitlestep// -->
 %TWISTY{
   showlink="%MAKETEXT{"Show advanced options"}%" 
@@ -133,8 +133,7 @@ Topic name that the newly created topic will be a child of.
 <select name="templatetopic" class="foswikiSelect">
 %IF{"'%URLPARAM{"templatetopic"}%'" 
   then='<option selected="selected">%URLPARAM{"templatetopic"}%</option>'
-}%
-<option value="">%MAKETEXT{"Default template"}%</option>
+}%<option value="">%MAKETEXT{"Default template"}%</option>
 %SEARCH{
   "name~'*Template'" 
   scope="topic" 
@@ -143,8 +142,7 @@ Topic name that the newly created topic will be a child of.
   type="query" 
   nonoise="on" 
   format="<option value=\"$web.$topic\">$topic</option>"
-}%
-</select>
+}%</select>
 <div class="foswikiFormDescription">
 %MAKETEXT{"Initialize the new topic using a template."}%
 </div>

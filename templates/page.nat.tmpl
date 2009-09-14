@@ -6,13 +6,13 @@
 </html>
 %TMPL:END%
 %TMPL:DEF{"head"}%<head>
+<base href="%SCRIPTURL{%SCRIPTNAME%}%/%WEB%/%TOPIC%"></base>
 <meta http-equiv="Content-Type" content="%CONTENTTYPE%; charset=%CHARSET%" />
 <title>%TMPL:P{"title"}%</title>
 <meta name="date" content="%REVINFO{"$http"}%" /> 
 %TMPL:P{"meta"}%
 <link rel="icon" href="%FAVICON%" type="image/x-icon" />
 <link rel="shortcut icon" href="%FAVICON%" type="image/x-icon" />
-%GETSKINSTYLE%
 %TMPL:P{"styles"}%
 %TMPL:P{"javascript"}%
 %WEBCOMPONENT{"HtmlHead"}%

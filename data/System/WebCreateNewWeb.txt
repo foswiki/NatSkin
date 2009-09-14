@@ -1,22 +1,21 @@
-%META:TOPICINFO{author="ProjectContributor" date="1241699224" format="1.1" reprev="1.4" version="1.4"}%
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1251882245" format="1.1" reprev="1.5" version="1.5"}%
 %META:TOPICPARENT{name="ManagingWebs"}%
----+!! %TOPIC%
+---+!! %MAKETEXT{"Create a new web"}%
 <div class="foswikiFormSteps">
-  <h2>Create a new web</h2>
-  <form name="admin" action="%SCRIPTURLPATH{manage}%/%WEB%/%TOPIC%" method="post">
+  <form id="createNewWeb" name="admin" action="%SCRIPTURLPATH{manage}%/%WEB%/%TOPIC%" method="post">
   <input name="newtopic" type="hidden" value="%URLPARAM{"newtopic"}%" />
   <input name="action" type="hidden" value="createweb" />
   <input name="WEBBGCOLOR" type="hidden" value="#ffffff" />
   <div class="foswikiFormStep">
-    <h3>Name:</h3>
-    <input name="newweb" class="foswikiInputField" type="text" value="%URLPARAM{"newweb"}%" size="60" />
+    <h3>%MAKETEXT{"Name"}%:</h3>
+    <input name="newweb" class="foswikiInputField required" type="text" value="%URLPARAM{"newweb"}%" size="60" />
     <div class="foswikiFormDescription">
       The name must start with an upper case letter, followed by upper or lower case letters or numbers.
       Specify a short name to avoid long URLs.
     </div>
   </div>
   <div class="foswikiFormStep">
-    <h3>Description:</h3>
+    <h3>%MAKETEXT{"Description"}%:</h3>
     <input type="text" class="foswikiInputField" name="SITEMAPWHAT" value="" size="60" />
     <div class="foswikiFormDescription">
       Enter a short description of the web. 
@@ -25,22 +24,22 @@
     </div>
   </div>
   %TWISTY{
-    showlink="%MAKETEXT{"Show advanced options"}%" 
-    hidelink="%MAKETEXT{"Hide advanced options"}%"
+    showlink="%MAKETEXT{"Show additional settings"}%" 
+    hidelink="%MAKETEXT{"Hide additional settings"}%"
     showimgleft="%ICONURLPATH{toggleopen-small}%"
     hideimgleft="%ICONURLPATH{toggleclose-small}%"
     mode="div"
   }%
 ---
   <div class="foswikiFormStep">
-    <h3>Template web:</h3>
+    <h3>%MAKETEXT{"Template web"}%:</h3>
     <select name="baseweb" class="foswikiSelect">
     %WEBLIST{ "<option $marker>$name</option>" webs="webtemplate,public" selection="_default" separator=" "}%
     </select>
     <div class="foswikiFormDescription">Select a TemplateWeb which you want the new web to be based on.</div>
   </div>
   <div class="foswikiFormStep">
-    <h3>Sitemap:</h3>
+    <h3>%MAKETEXT{"Sitemap"}%:</h3>
     <label><input type="radio" name="SITEMAPLIST" value="on" checked="checked" /> *show* on sitemap </label> %BR%
     <label><input type="radio" name="SITEMAPLIST" value="" /> *hide* from sitemap </label>
     <div class="foswikiFormDescription">
@@ -49,12 +48,19 @@
     </div>
   </div>
   <div class="foswikiFormStep">
-    <h3>Global search:</h3>
-    <label><input type="radio" name="NOSEARCHALL" value="on" /> *include* in global search </label>%BR%
-    <label><input type="radio" name="NOSEARCHALL" value="" checked="checked" /> *exclude* from global search </label>
+    <h3>%MAKETEXT{"Global search"}%:</h3>
+    <label><input type="radio" name="NOSEARCHALL" value="on" checked="checked" /> *include* in global search </label>%BR%
+    <label><input type="radio" name="NOSEARCHALL" value="" /> *exclude* from global search </label>
     <div class="foswikiFormDescription">
       Specify if you want to exclude the web from a global search. Note, that you will have to
       enter this web explicitly to search in it.
+    </div>
+  </div>
+  <div class="foswikiFormStep">
+    <h3>%MAKETEXT{"Web color"}%:</h3>
+    <input name="WEBBGCOLOR" class="foswikiInputField jqFarbtastic" type="text" value="#efefef" size="20" /> 
+    <div class="foswikiFormDescription">
+      Displayed on %SYSTEMWEB%.SiteMap.
     </div>
   </div>
   %ENDTWISTY%
@@ -64,5 +70,25 @@
   </div>
 </div>
 </form>
+%JQREQUIRE{"farbtastic"}%
+%JQREQUIRE{"validate"}%
+%ADDTOHEAD{
+text="
+  <script type='text/javascript'>
+    (function($) {
+      $(function() {
+        $('#createNewWeb').validate();
+      });
+    })(jQuery);
+  </script>
+"
+  requires="JQUERYPLUGIN::VALIDATE"
+}%
 
 %ICON{"help"}% Get help on [[%SYSTEMWEB%.ManagingWebs][managing webs]].
+
+%META:PREFERENCE{name="DISPLAYTOPICACTIONS" title="DISPLAYTOPICACTIONS" type="Local" value="off"}%
+%META:PREFERENCE{name="DISPLAYBREADCRUMBS" title="DISPLAYBREADCRUMBS" type="Local" value="off"}%
+%META:PREFERENCE{name="DISPLAYREVISIONINFO" title="DISPLAYREVISIONINFO" type="Local" value="off"}%
+%META:PREFERENCE{name="DISPLAYFORM" title="DISPLAYFORM" type="Local" value="off"}%
+%META:PREFERENCE{name="DISPLAYATTACHMENTS" title="DISPLAYATTACHMENTS" type="Local" value="off"}%

@@ -139,6 +139,9 @@ allways open an extra window.
 |  Base Name: | nat |
 |  Screenshot: | <div style="overflow:hidden;height:200px"><a href="%ATTACHURL%/BlueNoteStyle.jpeg"><img src="%ATTACHURL%/BlueNoteStyle.jpeg" title="Clean"/></a></div> |
 |  Change&nbsp;History: | <!-- specify latest version first -->&nbsp; |
+|  14 Sep 2009: | fixing css for tinymce where reset classes where too eager; \
+                  fixes due to latest !TablePlugin; \
+                  support for Foswiki:Extensions/MetaCommentPlugin |
 |  20 Aug 2009: | Item1931: made it SafeWikiPlugin compatible, fixed xhtml issues; \
                   Item1844: fixed WebCreateNewTopicTemplate; \
                   reworked all of the typography using a 40x18 grid; \

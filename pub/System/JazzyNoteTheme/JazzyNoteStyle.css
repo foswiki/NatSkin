@@ -46,6 +46,11 @@ h1 a, h1 a:hover {
   text-decoration:none;
 }
 
+.natViewBody h1,
+.natCompareBody h1 {
+  border-bottom:1px #ddd solid;
+  margin-bottom:0.7727em; /* 17px */
+}
 
 ul, ol {
   margin:1.3846em 0em 1.3846em 3.0769em; 
@@ -125,6 +130,7 @@ dl dd {
   background-position:1.3em 0em;
   border-top:0px;
   border-bottom:1px solid #d6d6d6;
+  margin:0px;
 }
 #natLogonBanner {
   background:#e5e5e5;
@@ -144,11 +150,13 @@ dl dd {
 }
 
 /* tables */
+.mceContentBody table,
 .foswikiTable {
   border:1px #dedede solid;
   font-size:0.923em;
   line-height:1.5em;
 }
+.mceContentBody table,
 .foswikiTable,
 .foswikiTableOverflow {
   margin:0em 0em 1.3076em 0em;
@@ -156,28 +164,42 @@ dl dd {
 .foswikiTableOverflow .foswikiTable {
   margin:0em;
 }
-.foswikiTable td {
+.mceContentBody td,
+.foswikiTable td,
+.foswikiTable tr.foswikiTableOdd td,
+.foswikiTable tr.foswikiTableEven td,
+.mceContentBody table tr.foswikiTableOdd td,
+.mceContentBody table tr.foswikiTableEven td {
   background:#f9f9f9;
 }
+.mceContentBody th,
+.mceContentBody td,
 .foswikiTable th,
 .foswikiTable td {
   padding:0.6666em 0.75em 0.75em 0.666em;
   border:1px #dedede solid;
 }
 
+.mceContentBody th,
 .foswikiTable th,
-.foswikiTable th a,
-.foswikiTable th a:hover,
 .foswikiTable th font,
 .foswikiTable th h2,
 .foswikiTable th h3,
-.foswikiTable th h4,
-.foswikiTable th span {
+.foswikiTable th h4 {
   color:#444;
   font-weight:bold;
   text-decoration:none;
   background:#9CBAEF;
   color:white;
+}
+.foswikiTable th a,
+.foswikiTable th a:hover,
+.foswikiTable th span,
+.foswikiTable th a font {
+  text-decoration:none;
+  font-weight:bold;
+  color:inherit;
+  background-color:inherit;
 }
 .foswikiTable th a:hover,
 .foswikiTable th a:hover font {
@@ -187,10 +209,14 @@ dl dd {
   margin:0px;
 }
 
-th.foswikiSortedDescendingCol,
-th.foswikiSortedAscendingCol{ 
+.foswikiTable th.foswikiSortedCol,
+.foswikiTable th.foswikiSortedDescendingCol,
+.foswikiTable th.foswikiSortedAscendingCol{ 
   background:#8DA8D8;
 }
+.foswikiTable tr.foswikiTableEven td.foswikiSortedCol,
+.foswikiTable tr.foswikiTableOdd td.foswikiSortedCol,
+.foswikiTable td.foswikiSortedCol,
 .foswikiTable td.foswikiSortedDescendingCol,
 .foswikiTable td.foswikiSortedAscendingCol {
   background:#f4f4f4;
@@ -254,6 +280,7 @@ th.foswikiSortedAscendingCol{
   border-top:1px solid #ddd;
   border-bottom:1px solid #ddd;
   background:#FEF8EB;
+  margin-top:1.3846em; /* 18px */
 }
 .foswikiPageForm th,
 .foswikiPageForm td {
@@ -368,7 +395,7 @@ fieldset .foswikiFormSteps {
   font-weight:bold;
   font-size:1.2308em; /* 16px */
   line-height:1.125em; /* 18px */
-  padding-top:0.625; /* 10px */
+  padding-top:0.625em; /* 10px */
   margin-bottom:0.5625em; /* 9px */
 }
 .jqTabContents .foswikiFormSteps {
@@ -435,6 +462,7 @@ fieldset .foswikiFormSteps {
 .natEditBody h1,
 .natEditBody h1 a {
   color:#444;
+  
 }
 .natWebSlogan {
   font-style:italic;
@@ -737,8 +765,13 @@ h1 .foswikiTopicSummary {
 
 /* attachments */
 .natTopicAttachments {
-  margin:1.5em 0em 0em;
-  padding:1em 1em 1.5em;
+  margin-top:1.3846em;
+}
+.natTopicAttachments h2 {
+  margin-bottom:0px;
+}
+.natTopicAttachments .foswikiFormStep {
+  margin-top:1.3846em;
 }
 .jqTabContents .natTopicAttachments {
   margin:0px;
@@ -762,9 +795,6 @@ h1 .foswikiTopicSummary {
 .natTopicAttachments .natHelpTopicAction:hover,
 .natTopicAttachments .natTopicActions a:hover {
   background-color:#FEE8B8;
-}
-.natTopicAttachments .foswikiFormStep {
-  margin:1.25em 0em 0em;
 }
 
 /* search tables */
@@ -796,6 +826,7 @@ h1 .foswikiTopicSummary {
 .foswikiToc ul ul {
   padding:0em 0em 0em .5em;
   margin-top:0px;
+  margin-bottom:0px;
   border:0px;
 }
 .foswikiToc li {

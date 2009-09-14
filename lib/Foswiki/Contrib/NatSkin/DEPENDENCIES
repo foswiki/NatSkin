@@ -7,5 +7,5 @@ Foswiki::Plugins::SetVariablePlugin,>=4287,perl,Required
 Foswiki::Plugins::UploadPlugin,>=1340,perl,Required
 Foswiki::Plugins::NatEditPlugin,>=1993,perl,Required
 Foswiki::Plugins::JQueryPlugin,>=3740,perl,Required
-Foswiki::Plugins::NatSkinPlugin,>=4359,perl,Required
+Foswiki::Plugins::NatSkinPlugin,>=4916,perl,Required
 Foswiki::Plugins::RenderPlugin,>=3644,perl,Required

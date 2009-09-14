@@ -1,16 +1,10 @@
 <!-- template: attachjavascript.nat.tmpl -->
-%TMPL:DEF{"attachjavascript"}%<!-- attachjavascript -->
-<script type="text/javascript" src="%PUBURLPATH%/%SYSTEMWEB%/NatSkin/attach.js"></script>
-%JQREQUIRE{"validate"}%
-<script type="text/javascript">
-//<![CDATA[
-jQuery(function() {
-  jQuery("#main").validate();
-});
-//]]>
-</script>
-<!-- //attachjavascript -->%TMPL:END%
-%TMPL:DEF{"javascript"}%<!-- javascript -->
-%TMPL:P{"defaultjavascript"}%
-%TMPL:P{"attachjavascript"}%
-<!-- //javascript -->%TMPL:END%
+%TMPL:DEF{"attachjavascript"}%%JQREQUIRE{"validate"}%
+%ADDTOHEAD{
+  "NATSKIN::ATTACH"
+  text="
+<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/attach.js'></script>
+"
+  requires="JQUERYPLUGIN, NATSKIN"
+}%%TMPL:END%
+%TMPL:DEF{"javascript"}%%TMPL:P{"defaultjavascript"}%%TMPL:P{"attachjavascript"}%%TMPL:END%

@@ -41,7 +41,7 @@
 %TWISTYBUTTON{id="createnewtopic" link="%BUTTON{"%MAKETEXT{"Create new topic"}%" icon="add"}%"}%
 %BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" target="%BASEWEB%.%HOMETOPIC%" title="%MAKETEXT{"Get me out of here"}%"}%
 %CLEAR%
-%TWISTYTOGGLE{id="createnewtopic"}%
+%TWISTYTOGGLE{id="createnewtopic" mode="div"}%
 
 <div class='foswikiFormSteps'>%TMPL:P{"formstart"}%
 <!-- //formstartstep -->%TMPL:END%
@@ -49,5 +49,5 @@
 %TMPL:DEF{"formendstep"}%<!-- formendstep -->
 %TMPL:P{"formend"}%
 </div>
-%ENDTWISTY%
+%ENDTWISTYTOGGLE%
 <!-- //formendstep -->%TMPL:END%

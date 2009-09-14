@@ -1,41 +1,48 @@
 // (c)opyright 2008-2009 Michael Daum http://michaeldaumconsulting.com
 /* toggle the attachment editor */
-var lastElem;
-function toggleAttachmentEditor(elem, state) {
+(function($) {
+  var lastElem;
+  function toggleAttachmentEditor(elem, state) {
 
-  if (lastElem && lastElem != elem) {
-    toggleAttachmentEditor(lastElem, 'off');
-  }
-
-  var $elemStep = jQuery(elem).parents(".foswikiFormStep"); 
-  var $editor = $elemStep.find(".natAttachmentEditor");
-  var $comment = $elemStep.find(".natAttachmentComment");
-  var text = $editor.find("textarea").text();
-
-  if (state == 'off') {
-    $editor.slideUp('fast');
-    if (!isEmptyComment($comment)) {
-      $comment.show();
+    if (lastElem && lastElem != elem) {
+      toggleAttachmentEditor(lastElem, 'off');
     }
-    lastElem = '';
-  } else {
-    lastElem = elem;
-    if ($editor.is(":visible")) {
+
+    var $elemStep = $(elem).parents(".foswikiFormStep"); 
+    var $editor = $elemStep.find(".natAttachmentEditor");
+    var $comment = $elemStep.find(".natAttachmentComment");
+    var text = $editor.find("textarea").text();
+
+    if (state == 'off') {
+      $editor.slideUp('fast');
       if (!isEmptyComment($comment)) {
         $comment.show();
       }
+      lastElem = '';
     } else {
-      $comment.hide();
+      lastElem = elem;
+      if ($editor.is(":visible")) {
+        if (!isEmptyComment($comment)) {
+          $comment.show();
+        }
+      } else {
+        $comment.hide();
+      }
+      $editor.slideToggle('fast');
     }
-    $editor.slideToggle('fast');
   }
-}
 
-/* check if the comment of an attachment is empty;
- * the core inserts an &nbsp; thats why this is a bit
- * more complicated
- */
-function isEmptyComment ($comment) {
-  var text = $comment.text();
-  return text.length == 1 && text.charCodeAt(0) == 160;
-}
+  /* check if the comment of an attachment is empty;
+   * the core inserts an &nbsp; thats why this is a bit
+   * more complicated
+   */
+  function isEmptyComment ($comment) {
+    var text = $comment.text();
+    return text.length == 1 && text.charCodeAt(0) == 160;
+  }
+
+  // init
+  $(function() {
+    $("#main").validate();
+  });
+})(jQuery);

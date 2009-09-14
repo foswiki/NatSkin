@@ -5,73 +5,132 @@
 %TMPL:INCLUDE{"editstyles"}%<!-- editstyles// -->
 %TMPL:INCLUDE{"edithelp"}%<!-- edithelp// -->
 %TMPL:INCLUDE{"edittoolbar"}%<!-- edittoolbar// -->
+%TMPL:INCLUDE{"metacomments"}%<!-- metacomments// -->
 %TMPL:DEF{"useractions"}%%TMPL:END%
 %TMPL:DEF{"topbar"}%%TMPL:END%
 %TMPL:DEF{"webbuttons"}%%TMPL:END%
 %TMPL:DEF{"bodyclass"}%natEditBody%TMPL:END%
 %TMPL:DEF{"meta"}% %HTTP_EQUIV_ON_EDIT% %TMPL:END%
 %TMPL:DEF{"title"}%%TOPIC% - %WEBLINK{format="$web"}% - (%IF{"defined 'rev'" then="%MAKETEXT{"restore"}%" else="%MAKETEXT{"edit"}%"}%) - %WIKITOOLNAME%%TMPL:END%
-%TMPL:DEF{"contentheader_container"}%%TMPL:END%
-%TMPL:DEF{"moresettings"}%%TMPL:P{"showonscreen"}%%TMPL:END%
+%TMPL:DEF{"moresettings"}%%TMPL:P{"showonscreen"}%%TMPL:P{context="MetaCommentPluginEnabled" then="commentpreferences"}%%TMPL:END%
 %TMPL:DEF{"moretabs"}%%TMPL:P{"permissionstab"}%%TMPL:END%
 
 %TMPL:DEF{"showonscreen"}%<!-- showonscreen -->
 <h2>Show on screen</h2>
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep foswikiFormLast">
-    <input type='hidden' name='Default+DISPLAYFORM' value="%GETVAR{"DISPLAYFORM" scope="web" default="on"}%" />
-    <input type='hidden' name='Default+DISPLAYATTACHMENTS' value="%GETVAR{"DISPLAYATTACHMENTS" scope="web" default="on"}%" />
-    <input type='hidden' name='Default+DISPLAYCOMMENTS' value="%GETVAR{"DISPLAYCOMMENTS" scope="web" default="off"}%" />
-    <input type='hidden' name='Default+DISPLAYTOPICACTIONS' value="%GETVAR{"DISPLAYTOPICACTIONS" scope="web" default="on"}%" />
-    <input type='hidden' name='Default+DISPLAYREVISIONINFO' value="%GETVAR{"DISPLAYREVISIONINFO" scope="web" default="on"}%" />
-    <input type='hidden' name='Default+DISPLAYBREADCRUMBS' value="%GETVAR{"DISPLAYBREADCRUMBS" scope="web" default="on"}%" />
     <table class="foswikiLayoutTable">
-      <tr>
-        <th>%MAKETEXT{"Data form"}%</th>
-        <td><input type='radio' class='foswikiRadio' id="displayform_on" name='Local+DISPLAYFORM' value="on" %IF{"$'DISPLAYFORM'='on' OR isempty 'DISPLAYFORM'" then="checked='checked'"}% /></td>
-        <td><label for="displayform_on">%MAKETEXT{"on"}%</label></td>
-        <td><input type='radio' class='foswikiRadio' id="displayform_off" name='Local+DISPLAYFORM' value="off" %IF{"$'DISPLAYFORM'='off'" then="checked='checked'"}% /></td>
-        <td><label for="displayform_off">%MAKETEXT{"off"}%</label></td>
-      </tr>
-      <tr>
-        <th>%MAKETEXT{"Attachments"}%</th>
-        <td><input type="radio" class="foswikiRadio" id="displayattachments_on" name="Local+DISPLAYATTACHMENTS" value="on" %IF{"$'DISPLAYATTACHMENTS'='on' OR isempty 'DISPLAYATTACHMENTS'" then="checked='checked'"}% /></td>
-        <td><label for="displayattachments_on">%MAKETEXT{"on"}%</label></td>
-        <td><input type='radio' class="foswikiRadio" id="displayattachments_off" name='Local+DISPLAYATTACHMENTS' value="off" %IF{"$'DISPLAYATTACHMENTS'='off'" then="checked='checked'"}% /></td>
-        <td><label for="displayattachments_off">%MAKETEXT{"off"}%</label></td>
-      </tr>
-      <tr>
-        <th>%MAKETEXT{"Comments"}%</th>
-        <td><input type="radio" class="foswikiRadio" id="displaycomments_on" name="Local+DISPLAYCOMMENTS" value="on" %IF{"$'DISPLAYCOMMENTS'='on'" then="checked='checked'"}% /></td>
-        <td><label for="displaycomments_on">%MAKETEXT{"on"}%</label></td>
-        <td><input type='radio' class="foswikiRadio" id="displaycomments_off" name='Local+DISPLAYCOMMENTS' value="off" %IF{"$'DISPLAYCOMMENTS'='off' OR isempty 'DISPLAYCOMMENTS'" then="checked='checked'"}% /></td>
-        <td><label for="displaycomments_off">%MAKETEXT{"off"}%</label></td>
-      </tr>
-      <tr>
-        <th>%MAKETEXT{"Topic actions"}%</th>
-        <td><input type="radio" class="foswikiRadio" id="displaytopicactions_on" name="Local+DISPLAYTOPICACTIONS" value="on" %IF{"$'DISPLAYTOPICACTIONS'='on' OR isempty 'DISPLAYTOPICACTIONS'" then="checked='checked'"}% /></td>
-        <td><label for="displaytopicactions_on">%MAKETEXT{"on"}%</label></td>
-        <td><input type='radio' class="foswikiRadio" id="displaytopicactions_off" name='Local+DISPLAYTOPICACTIONS' value="off" %IF{"$'DISPLAYTOPICACTIONS'='off'" then="checked='checked'"}% /></td>
-        <td><label for="displaytopicactions_off">%MAKETEXT{"off"}%</label></td>
-      </tr>
-      <tr>
-        <th>%MAKETEXT{"Revision information"}%</th>
-        <td><input type="radio" class="foswikiRadio" id="displayrevisioninfo_on" name="Local+DISPLAYREVISIONINFO" value="on" %IF{"$'DISPLAYREVISIONINFO'='on' OR isempty 'DISPLAYREVISIONINFO'" then="checked='checked'"}% /></td>
-        <td><label for="displayrevisioninfo_on">%MAKETEXT{"on"}%</label></td>
-        <td><input type='radio' class="foswikiRadio" id="displayrevisioninfo_off" name='Local+DISPLAYREVISIONINFO' value="off" %IF{"$'DISPLAYREVISIONINFO'='off'" then="checked='checked'"}% /></td>
-        <td><label for="displayrevisioninfo_off">%MAKETEXT{"off"}%</label></td>
-      </tr>
-      <tr>
-        <th>%MAKETEXT{"Breadcrumbs navigation"}%</th>
-        <td><input type="radio" class="foswikiRadio" id="displaybreadcrumbs_on" name="Local+DISPLAYBREADCRUMBS" value="on" %IF{"$'DISPLAYBREADCRUMBS'='on' OR isempty 'DISPLAYBREADCRUMBS'" then="checked='checked'"}% /></td>
-        <td><label for="displaybreadcrumbs_on">%MAKETEXT{"on"}%</label></td>
-        <td><input type='radio' class="foswikiRadio" id="displaybreadcrumbs_off" name='Local+DISPLAYBREADCRUMBS' value="off" %IF{"$'DISPLAYBREADCRUMBS'='off'" then="checked='checked'"}% /></td>
-        <td><label for="displaybreadcrumbs_off">%MAKETEXT{"off"}%</label></td>
-      </tr>
+%TMPL:P{"showonscreen::topicactions"}%<!-- showonscreen::topicactions -->
+%TMPL:P{"showonscreen::breadcrumbs"}%<!-- showonscreen::breadcrumbs -->
+%TMPL:P{"showonscreen::revinfo"}%<!-- showonscreen::revinfo -->
+%TMPL:P{"showonscreen::dataform"}%<!-- showonscreen::dataform -->
+%TMPL:P{"showonscreen::attachments"}%<!-- showonscreen::attachments -->
+%TMPL:P{context="MetaCommentPluginEnabled" then="showonscreen::comments"}%<!-- showonscreen::comments -->
     </table>
   </div>
 </div>
 <!-- //showonscreen -->%TMPL:END%
+
+%TMPL:DEF{"showonscreen::dataform"}%<tr>
+  <th>%MAKETEXT{"Data form"}%</th>
+  <input type='hidden' name='Default+DISPLAYFORM' value="%GETVAR{"DISPLAYFORM" scope="web" default="on"}%" />
+  <td><input type='radio' class='foswikiRadio' id="displayform_on" name='Local+DISPLAYFORM' value="on" %IF{"$'DISPLAYFORM'='on' OR isempty 'DISPLAYFORM'" then="checked='checked'"}% /></td>
+  <td><label for="displayform_on">%MAKETEXT{"on"}%</label></td>
+  <td><input type='radio' class='foswikiRadio' id="displayform_off" name='Local+DISPLAYFORM' value="off" %IF{"$'DISPLAYFORM'='off'" then="checked='checked'"}% /></td>
+  <td><label for="displayform_off">%MAKETEXT{"off"}%</label></td>
+</tr>%TMPL:END%
+
+%TMPL:DEF{"showonscreen::attachments"}%<tr>
+  <th>%MAKETEXT{"Attachments"}%</th>
+  <input type='hidden' name='Default+DISPLAYATTACHMENTS' value="%GETVAR{"DISPLAYATTACHMENTS" scope="web" default="on"}%" />
+  <td><input type="radio" class="foswikiRadio" id="displayattachments_on" name="Local+DISPLAYATTACHMENTS" value="on" %IF{"$'DISPLAYATTACHMENTS'='on' OR isempty 'DISPLAYATTACHMENTS'" then="checked='checked'"}% /></td>
+  <td><label for="displayattachments_on">%MAKETEXT{"on"}%</label></td>
+  <td><input type='radio' class="foswikiRadio" id="displayattachments_off" name='Local+DISPLAYATTACHMENTS' value="off" %IF{"$'DISPLAYATTACHMENTS'='off'" then="checked='checked'"}% /></td>
+  <td><label for="displayattachments_off">%MAKETEXT{"off"}%</label></td>
+</tr>%TMPL:END%
+
+%TMPL:DEF{"showonscreen::comments"}%<tr>
+  <th>%MAKETEXT{"Comments"}%</th>
+  <input type='hidden' name='Default+DISPLAYCOMMENTS' value="%GETVAR{"DISPLAYCOMMENTS" scope="web" default="off"}%" />
+  <td><input type="radio" class="foswikiRadio" id="displaycomments_on" name="Local+DISPLAYCOMMENTS" value="on" %IF{"$'DISPLAYCOMMENTS'='on'" then="checked='checked'"}% /></td>
+  <td><label for="displaycomments_on">%MAKETEXT{"on"}%</label></td>
+  <td><input type='radio' class="foswikiRadio" id="displaycomments_off" name='Local+DISPLAYCOMMENTS' value="off" %IF{"$'DISPLAYCOMMENTS'='off' OR isempty 'DISPLAYCOMMENTS'" then="checked='checked'"}% /></td>
+  <td><label for="displaycomments_off">%MAKETEXT{"off"}%</label></td>
+</tr>%TMPL:END%
+
+%TMPL:DEF{"showonscreen::topicactions"}%<tr>
+  <th>%MAKETEXT{"Topic actions"}%</th>
+  <input type='hidden' name='Default+DISPLAYTOPICACTIONS' value="%GETVAR{"DISPLAYTOPICACTIONS" scope="web" default="on"}%" />
+  <td><input type="radio" class="foswikiRadio" id="displaytopicactions_on" name="Local+DISPLAYTOPICACTIONS" value="on" %IF{"$'DISPLAYTOPICACTIONS'='on' OR isempty 'DISPLAYTOPICACTIONS'" then="checked='checked'"}% /></td>
+  <td><label for="displaytopicactions_on">%MAKETEXT{"on"}%</label></td>
+  <td><input type='radio' class="foswikiRadio" id="displaytopicactions_off" name='Local+DISPLAYTOPICACTIONS' value="off" %IF{"$'DISPLAYTOPICACTIONS'='off'" then="checked='checked'"}% /></td>
+  <td><label for="displaytopicactions_off">%MAKETEXT{"off"}%</label></td>
+</tr>%TMPL:END%
+
+%TMPL:DEF{"showonscreen::revinfo"}%<tr>
+  <th>%MAKETEXT{"Revision information"}%</th>
+  <input type='hidden' name='Default+DISPLAYREVISIONINFO' value="%GETVAR{"DISPLAYREVISIONINFO" scope="web" default="on"}%" />
+  <td><input type="radio" class="foswikiRadio" id="displayrevisioninfo_on" name="Local+DISPLAYREVISIONINFO" value="on" %IF{"$'DISPLAYREVISIONINFO'='on' OR isempty 'DISPLAYREVISIONINFO'" then="checked='checked'"}% /></td>
+  <td><label for="displayrevisioninfo_on">%MAKETEXT{"on"}%</label></td>
+  <td><input type='radio' class="foswikiRadio" id="displayrevisioninfo_off" name='Local+DISPLAYREVISIONINFO' value="off" %IF{"$'DISPLAYREVISIONINFO'='off'" then="checked='checked'"}% /></td>
+  <td><label for="displayrevisioninfo_off">%MAKETEXT{"off"}%</label></td>
+</tr>%TMPL:END%
+
+%TMPL:DEF{"showonscreen::breadcrumbs"}%<tr>
+  <th>%MAKETEXT{"Breadcrumbs navigation"}%</th>
+  <input type='hidden' name='Default+DISPLAYBREADCRUMBS' value="%GETVAR{"DISPLAYBREADCRUMBS" scope="web" default="on"}%" />
+  <td><input type="radio" class="foswikiRadio" id="displaybreadcrumbs_on" name="Local+DISPLAYBREADCRUMBS" value="on" %IF{"$'DISPLAYBREADCRUMBS'='on' OR isempty 'DISPLAYBREADCRUMBS'" then="checked='checked'"}% /></td>
+  <td><label for="displaybreadcrumbs_on">%MAKETEXT{"on"}%</label></td>
+  <td><input type='radio' class="foswikiRadio" id="displaybreadcrumbs_off" name='Local+DISPLAYBREADCRUMBS' value="off" %IF{"$'DISPLAYBREADCRUMBS'='off'" then="checked='checked'"}% /></td>
+  <td><label for="displaybreadcrumbs_off">%MAKETEXT{"off"}%</label></td>
+</tr>%TMPL:END%
+
+%TMPL:DEF{"commentpreferences"}%<!-- commentpreferences -->
+<div id="cmtPreferences" %IF{"isempty 'DISPLAYCOMMENTS' or $'DISPLAYCOMMENTS'='off'" then="style='display:none'"}%>
+<h2>%MAKETEXT{"Comment preferences"}%</h2>
+<div class="foswikiFormSteps">
+  <div class="foswikiFormStep foswikiFormLast">
+    <input type='hidden' name='Default+COMMENTSTYLE' value="%GETVAR{"COMMENTSTYLE" scope="web" default="%TMPL:P{"comments::format::default"}%"}%" />
+    <input type='hidden' name='Default+COMMENTSTATE' value="%GETVAR{"COMMENTSTATE" scope="web" default="open"}%" />
+    <input type='hidden' name='Default+COMMENTSTRUCTURE' value="%GETVAR{"COMMENTSTRUCTURE" scope="web" default="linear"}%" />
+    <table class="foswikiLayoutTable">
+      <tr>
+        <th>%MAKETEXT{"Style"}%:</th>
+        <td colspan="4">
+          <select name="Local+COMMENTSTYLE" class="foswikiSelect">
+            <option value="%TMPL:P{"comments::format::default"}%">%MAKETEXT{"default"}%</option>
+            %FORMATLIST{"%TMPL:P{"comments::formats"}%"
+              split="\s*,\s*"
+              separator=""
+              format="<option $percntIF{\"$'COMMENTSTYLE'='$1'\" then=\"selected\"}$percnt>$1</option>"
+            }%
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>%MAKETEXT{"Structure"}%:</th>
+        <td><input type="radio" class="foswikiRadio" id="commentstruct_linear" name="Local+COMMENTSTRUCTURE" value="linear" %IF{"$'COMMENTSTRUCTURE'='linear' or isempty 'COMMENTSTRUCTURE'" then="checked"}% /></td>
+        <td><label for="commentstruct_linear">%MAKETEXT{"linear"}%</td>
+        <td><input type="radio" class="foswikiRadio" id="commentstruct_threaded" name="Local+COMMENTSTRUCTURE" value="threaded" %IF{"$'COMMENTSTRUCTURE'='threaded'" then="checked"}% /></td>
+        <td><label for="commentstruct_threaded">%MAKETEXT{"threaded"}%</td>
+      </tr>
+      <tr>
+        <th>%MAKETEXT{"State"}%:</th>
+        <td><input type="radio" class="foswikiRadio" id="commentstate_open" name="Local+COMMENTSTATE" value="open" %IF{"$'COMMENTSTATE'='open' or isempty 'COMMENTSTATE'" then="checked"}% /></td>
+        <td><label for="commentstate_open">%MAKETEXT{"open"}%</td>
+        <td><input type="radio" class="foswikiRadio" id="commentstate_closed" name="Local+COMMENTSTATE" value="closed" %IF{"$'COMMENTSTATE'='closed'" then="checked"}% /></td>
+        <td><label for="commentstate_closed">%MAKETEXT{"closed"}%</td>
+      </tr>
+    </table>
+  </div>
+</div>
+%ADDTOHEAD{"METACOMMENTPLUGIN::PREFS"
+  text="
+<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MetaCommentPlugin/metacomment_prefs.js'></script>
+"
+  requires="JQUERYPLUGIN"
+}%<!-- metacomment_prefs.js -->
+</div>%TMPL:END%
 
 %TMPL:DEF{"permissionstab"}%<!-- permissionstab -->
 %TAB{"%MAKETEXT{"Permissions"}%"}%

@@ -41,18 +41,16 @@
 %IF{"$'DISPLAYCOMMENTS'='on'" then="$percntTMPL:P{\"comments\"}$percnt"}%<!-- meta:comments // -->
 %IF{"$'DISPLAYFORM'='off'" else="$percntTMPL:P{\"form\"}$percnt"}%<!-- meta:form // -->
 %IF{"$'DISPLAYATTACHMENTS'='off'" else="$percntMETA{\"attachments\"}$percnt"}%<!-- meta:attachments// -->
-<!-- //aftertext -->
+<!-- //aftertext -->%TMPL:END%
 %TMPL:DEF{"form"}%%META{"form"}%%TMPL:END%
-%TMPL:DEF{"contentheader"}%<!-- contentheader -->
-%IF{
+%TMPL:DEF{"contentheader_container"}%<div class="natMainHeaderContents" %IF{"$'DISPLAYTOPICACTIONS'='off' and $'DISPLAYBREADCRUMBS'='off'" then="style='display:none'"}%>%TMPL:P{"contentheader"}%</div>%TMPL:END%
+%TMPL:DEF{"contentheader"}%%IF{
   "$'DISPLAYTOPICACTIONS'='off'" 
   else="$percntTMPL:P{\"topicactions\"}$percnt"
-}%<!-- topicactions// -->
-%IF{
+}%%IF{
   "$'DISPLAYBREADCRUMBS'='off'" 
   else="<div class='natBreadCrumbs'>%MAKETEXT{"You are here:"}% $percntTMPL:P{\"breadcrumbs\"}$percnt</div>"
-}%<!-- breadcrumbs //-->
-<!-- // contentheader -->%TMPL:END%
+}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Changed by [_1] on [_2]" args="<span class='natRevisionAuthor'> %REVINFO{"$wikiusername" rev="%CURREV%"}% </span>, <a class='natRevisionDate' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"$date - $hour:$min - r$rev" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
 %TMPL:DEF{"rdiff"}%%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPIC%?type=last;render=sequential%TMPL:END%
 %TMPL:DEF{"compare"}%%SCRIPTURLPATH{"compare"}%/%WEB%/%TOPIC%?type=last;render=interweave%TMPL:END%

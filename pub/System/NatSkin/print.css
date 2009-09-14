@@ -57,6 +57,7 @@ ul, ol, dl {
 }
 pre {
   page-break-inside:avoid;
+  overflow:auto;
 }
 
 /* hidden elements */
