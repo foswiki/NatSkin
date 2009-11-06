@@ -418,12 +418,12 @@ fieldset .foswikiFormSteps {
 .natTopRight a  {
   color:white;
 }
-.natTopRight {
-  background:url(foswiki-header-tile.png) repeat-x;
-}
 .natTopLeft.natTopRight {
   padding:0px;
   background:transparent;
+}
+.natTopRight {
+  background:url(foswiki-header-tile.png) repeat-x;
 }
 .natTopLeftContents {
   background:url(foswiki-header-tile.png) repeat-x;

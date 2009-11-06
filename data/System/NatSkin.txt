@@ -149,7 +149,7 @@ allways open an extra window.
                   disabled image previews in tooltips on internet exploders; \
                   fixed "Permissions" tab in edit; \
                   added a new !WebComponent "BottomBar"; \
-                  componentized the more screen; \ 
+                  componentized the more screen; \
                   fixed links to attachments with umlaute |
 |  15 Jan 2009: | more IE6 workarounds; \
                   fixed "placing" topics into the Trash web; \
