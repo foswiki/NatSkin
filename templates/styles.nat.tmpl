@@ -1,7 +1,12 @@
 <!-- template: styles.nat.tmpl -->
 %TMPL:DEF{"defaultstyles"}%
+%ADDTOHEAD{"NATSKIN::CSS"
+  text="
 <!--[if IE 6]>
-<style type="text/css">
+<script type='text/javascript'>
+var blankImg = '%PUBURLPATH%/%SYSTEMWEB%/NatSkin/blank.gif';
+</script>
+<style type='text/css'>
 /* ie6 png transperency fix for css backgrounds */
 .natLogin .foswikiFormSteps, 
 .jqButtonIcon,
@@ -15,5 +20,7 @@
 }
 </style>
 <![endif]-->
-%TMPL:END%
+"
+  requires="NATSKIN::JS"
+}%%TMPL:END%
 %TMPL:DEF{"styles"}%%TMPL:P{"defaultstyles"}%%TMPL:END%

@@ -13,10 +13,12 @@
   </div>
   <div class="foswikiFormStep foswikiFormOptions">
     <h3>Options:</h3>
-    <label>
-      <input type="checkbox" class="foswikiCheckbox" name="hidefile" id="hidefile" %IF{"'%A_ATTRS%'='h'" then=" checked "}% /> 
-      %MAKETEXT{"Hide attachment in normal topic view."}%
-    </label>
+    <table class="foswikiLayoutTable" style="width:auto">
+      <tr>
+        <td><input type="checkbox" class="foswikiCheckbox" name="hidefile" id="hidefile" %IF{"'%A_ATTRS%'='h'" then=" checked "}% /></td>
+        <td><label for="hidefile">%MAKETEXT{"Hide attachment in normal topic view."}%</label></td>
+      </tr>
+    </table>
   </div>
   <div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
     %BUTTON{"%MAKETEXT{"OK"}%" icon="tick" type="save"}%
@@ -71,8 +73,7 @@
       %TMPL:P{"ATTACH:editor"}% 
     </td>
     <td class="natAttachmentActions">
-      <a href="#" title='%MAKETEXT{"Edit properties of this attachment"}%' rel='nofollow' onclick="toggleAttachmentEditor(this); return false;"><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/pencil.png" border="0" width="16" height="16" /></a>
-      <!-- a href="#" title='%MAKETEXT{"View revisions of this attachment"}%' rel='nofollow' onclick="toggleAttachmentHistory(this); return false;"><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/time.png" border="0" width="16" height="16" /></a-->
+      <a href="#" class="natAttachEdit" title='%MAKETEXT{"Edit properties of this attachment"}%' rel='nofollow'><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/pencil.png" border="0" width="16" height="16" /></a>
       <a href="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?attachment=%ENCODE{%A_FILE%}%" title='%MAKETEXT{"move this attachment to a different topic"}%' rel='nofollow'><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/page_white_go.png" border="0" width="16" height="16" /></a> 
       <a href="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?attachment=%ENCODE{%A_FILE%}%;newweb=%TRASHWEB%" title="%MAKETEXT{"delete this attachment"}%" rel='nofollow'><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/bin.png" border="0" width="16" height="16" /></a>
     </td>

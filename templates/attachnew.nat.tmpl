@@ -1,5 +1,5 @@
 %TMPL:INCLUDE{"attach"}%<!-- template: attachnew.nat.tmpl -->
-%TMPL:DEF{"heading"}%%MAKETEXT{"Upload a file to <nop>[_1]" args="%TMPL:P{"topictitle"}%"}%%TMPL:END%
+%TMPL:DEF{"heading"}%<noautolink>%MAKETEXT{"Upload a file to [_1]" args="%TMPL:P{"topictitle"}%"}%</noautolink>%TMPL:END%
 %TMPL:DEF{"attachaction"}%<!-- attachaction -->
 %BUTTON{"%MAKETEXT{"Submit"}%" icon="tick" title="Upload selected file" type="save"}%
 %CLEAR%

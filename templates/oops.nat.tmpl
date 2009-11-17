@@ -18,7 +18,7 @@
 
 <form class="natOopsButtons" name="ButtonBox" action="%WIKILOGOURL%">
   %BUTTON{"%MAKETEXT{"Retry"}%" icon="tick" onclick="history.back()"}%
-  %BUTTON{"%MAKETEXT{"Abort"}%" target="%WIKILOGOURL%" icon="cross"}%
+  %BUTTON{"%MAKETEXT{"Abort"}%" target="%IF{"not '%target%' ~ '%*'" then="%target%" else="%WIKILOGOURL%"}%" icon="cross"}%
   %CLEAR%
 </form> 
 <!-- //goback -->%TMPL:END%

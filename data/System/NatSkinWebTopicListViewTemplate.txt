@@ -1,8 +1,21 @@
-%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1250500470" format="1.1" reprev="1.3" version="1.3"}%
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1257265212" format="1.1" reprev="1.4" version="1.4"}%
 %TMPL:INCLUDE{"WebTopicListView"}%
 %TMPL:DEF{"content"}%
 ---+ %TOPIC%
-%MAKEINDEX{"%TOPICLIST{"$name" separator=","}%" cols="3" header="$anchors" format="[[%BASEWEB%.$item][$item]]"}%
+<noautolink>
+%MAKEINDEX{
+  "$percntTOPICLIST{
+    \"($dollarpercntGETTOPICTITLE{\\"$dollarname\\"}$dollarpercnt);$dollarpercntGETTOPICTITLE{\\"$dollarname\\"}$dollarpercnt;$dollarname\" 
+    separator=\"$n\"
+  }$percnt" 
+  pattern="(.*);(.*);(.*)"
+  split="\n"
+  cols="3"
+  header="$anchors"
+  format="[[%BASEWEB%.$3][$2]]"
+}%
+</noautolink>
 %TMPL:END%
+%TMPL:DEF{"sidebar"}%%TMPL:END%
 
 %META:TOPICMOVED{by="micha" date="1250500443" from="System.PatternSkinWebTopicListViewTemplate" to="System.NatSkinWebTopicListViewTemplate"}%

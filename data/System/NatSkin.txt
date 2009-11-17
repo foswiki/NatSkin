@@ -137,8 +137,16 @@ allways open an extra window.
 |  Version: | %$VERSION% |
 |  Description: | Userfriendly Foswiki skin providing a flexible theming engine for professional webdesigns |
 |  Base Name: | nat |
-|  Screenshot: | <div style="overflow:hidden;height:200px"><a href="%ATTACHURL%/BlueNoteStyle.jpeg"><img src="%ATTACHURL%/BlueNoteStyle.jpeg" title="Clean"/></a></div> |
+|  Screenshot: | <div style="overflow:hidden;height:200px"><a href="%PUBURLPATH%/%WEB%/NatSkin/BlueNoteStyle.jpeg"><img src="%PUBURLPATH%/%WEB%/NatSkin/BlueNoteStyle.jpeg" title="JazzyNoteTheme"/></a></div> |
 |  Change&nbsp;History: | <!-- specify latest version first -->&nbsp; |
+|  17 Nov 2009: | fixed print cover; \
+                  fixed jazzyblue for ie6; \
+                  added autocomplete for reparenting; \
+                  fixed webbuttons for latest jQuery superfish; \
+                  added jQuery-ui theme matching jazzyblue; \
+                  added <nop>WebTopicListViewTempalte using MAKEINDEX; \
+                  added support for tag renaming in latest !ClassificationPlugin; \
+                  maketext fixes |
 |  14 Sep 2009: | fixing css for tinymce where reset classes where too eager; \
                   fixes due to latest !TablePlugin; \
                   support for Foswiki:Extensions/MetaCommentPlugin |

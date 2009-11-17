@@ -14,10 +14,10 @@
 %TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Search result for [_1]" args="<span class='natSearchString'>\"%URLPARAM{"search"}%\"</span>"}%</h1>%TMPL:END%
 %TMPL:DEF{"content"}%<!-- content -->
 %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
-%SPLIT%%TMPL:P{context="natskin_action_natsearch" then="searchform"}%%SPLIT% 
+%SPLIT%%TMPL:P{"searchform"}%%SPLIT% 
 %REPEAT%<div class="natSearchHit %CALC{"$SETM(incr, +1)$IF($ODD($GET(incr)),natSearchHitOdd,natSearchHitEven)"}%">
 %TMPL:P{"searchhit"}%
-%REPEAT%</div>%SPLIT%<div class="natSearchTotal">
+</div>%REPEAT%%SPLIT%<div class="natSearchTotal">
   %MAKETEXT{"<span>[_1]</span> topics found" args="%NTOPICS%"}% 
 </div>%SPLIT%
 <!-- //content -->%TMPL:END%
@@ -25,7 +25,7 @@
 %JQREQUIRE{"focus"}%<!-- jqrequire -->
 <form id="searchform" name="searchform" action="%SCRIPTURLPATH{"natsearch"}%/%BASEWEB%/%BASETOPIC%">
 <div class="foswikiFormSteps natSearchForm">
-<div class="foswikiFormStep foswikiFormButtons">
+<div class="foswikiFormStep">
 <input type="text" class="foswikiInputField jqFocus" id="search" name="search" size="30" value="%URLPARAM{"search" encode="entity"}%" style="float:left;margin-right:8px;"/>
 %BUTTON{"%MAKETEXT{"Search"}%" type="submit" title="submit the query" icon="find"}%
 %BUTTON{"%MAKETEXT{"Cancel"}%" target="%BASEWEB%.%BASETOPIC%" title="%MAKETEXT{"go back to <nop>[_1]" args="%WEB%.%TOPIC%"}%" icon="cross"}%
@@ -52,12 +52,12 @@
   <td>
   <select name="limit">
     <option %IF{"$'URLPARAM{limit}'='5'" then="selected"}%>5</option>
-    <option %IF{"$'URLPARAM{limit}'='10'" then="selected"}%>10</option>
+    <option %IF{"$'URLPARAM{limit}'='10' or $'URLPARAM{limit}'=''" then="selected"}%>10</option>
     <option %IF{"$'URLPARAM{limit}'='20'" then="selected"}%>20</option>
     <option %IF{"$'URLPARAM{limit}'='30'" then="selected"}%>30</option>
     <option %IF{"$'URLPARAM{limit}'='40'" then="selected"}%>40</option>
     <option %IF{"$'URLPARAM{limit}'='50'" then="selected"}%>50</option>
-    <option %IF{"$'URLPARAM{limit}'='100' or $'URLPARAM{limit}'=''" then="selected"}%>100</option>
+    <option %IF{"$'URLPARAM{limit}'='100'" then="selected"}%>100</option>
     <option %IF{"$'URLPARAM{limit}'='all'" then="selected"}%>all</option>
   </select>
   </td>

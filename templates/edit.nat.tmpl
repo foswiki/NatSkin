@@ -9,6 +9,7 @@
 %TMPL:DEF{"useractions"}%%TMPL:END%
 %TMPL:DEF{"topbar"}%%TMPL:END%
 %TMPL:DEF{"webbuttons"}%%TMPL:END%
+%TMPL:DEF{"sidebar"}%%TMPL:END%
 %TMPL:DEF{"bodyclass"}%natEditBody%TMPL:END%
 %TMPL:DEF{"meta"}% %HTTP_EQUIV_ON_EDIT% %TMPL:END%
 %TMPL:DEF{"title"}%%TOPIC% - %WEBLINK{format="$web"}% - (%IF{"defined 'rev'" then="%MAKETEXT{"restore"}%" else="%MAKETEXT{"edit"}%"}%) - %WIKITOOLNAME%%TMPL:END%
@@ -34,54 +35,54 @@
 %TMPL:DEF{"showonscreen::dataform"}%<tr>
   <th>%MAKETEXT{"Data form"}%</th>
   <input type='hidden' name='Default+DISPLAYFORM' value="%GETVAR{"DISPLAYFORM" scope="web" default="on"}%" />
-  <td><input type='radio' class='foswikiRadio' id="displayform_on" name='Local+DISPLAYFORM' value="on" %IF{"$'DISPLAYFORM'='on' OR isempty 'DISPLAYFORM'" then="checked='checked'"}% /></td>
+  <td><input type='radio' class='foswikiRadioButton' id="displayform_on" name='Local+DISPLAYFORM' value="on" %IF{"$'DISPLAYFORM'='on' OR isempty 'DISPLAYFORM'" then="checked='checked'"}% /></td>
   <td><label for="displayform_on">%MAKETEXT{"on"}%</label></td>
-  <td><input type='radio' class='foswikiRadio' id="displayform_off" name='Local+DISPLAYFORM' value="off" %IF{"$'DISPLAYFORM'='off'" then="checked='checked'"}% /></td>
+  <td><input type='radio' class='foswikiRadioButton' id="displayform_off" name='Local+DISPLAYFORM' value="off" %IF{"$'DISPLAYFORM'='off'" then="checked='checked'"}% /></td>
   <td><label for="displayform_off">%MAKETEXT{"off"}%</label></td>
 </tr>%TMPL:END%
 
 %TMPL:DEF{"showonscreen::attachments"}%<tr>
   <th>%MAKETEXT{"Attachments"}%</th>
   <input type='hidden' name='Default+DISPLAYATTACHMENTS' value="%GETVAR{"DISPLAYATTACHMENTS" scope="web" default="on"}%" />
-  <td><input type="radio" class="foswikiRadio" id="displayattachments_on" name="Local+DISPLAYATTACHMENTS" value="on" %IF{"$'DISPLAYATTACHMENTS'='on' OR isempty 'DISPLAYATTACHMENTS'" then="checked='checked'"}% /></td>
+  <td><input type="radio" class="foswikiRadioButton" id="displayattachments_on" name="Local+DISPLAYATTACHMENTS" value="on" %IF{"$'DISPLAYATTACHMENTS'='on' OR isempty 'DISPLAYATTACHMENTS'" then="checked='checked'"}% /></td>
   <td><label for="displayattachments_on">%MAKETEXT{"on"}%</label></td>
-  <td><input type='radio' class="foswikiRadio" id="displayattachments_off" name='Local+DISPLAYATTACHMENTS' value="off" %IF{"$'DISPLAYATTACHMENTS'='off'" then="checked='checked'"}% /></td>
+  <td><input type='radio' class="foswikiRadioButton" id="displayattachments_off" name='Local+DISPLAYATTACHMENTS' value="off" %IF{"$'DISPLAYATTACHMENTS'='off'" then="checked='checked'"}% /></td>
   <td><label for="displayattachments_off">%MAKETEXT{"off"}%</label></td>
 </tr>%TMPL:END%
 
 %TMPL:DEF{"showonscreen::comments"}%<tr>
   <th>%MAKETEXT{"Comments"}%</th>
   <input type='hidden' name='Default+DISPLAYCOMMENTS' value="%GETVAR{"DISPLAYCOMMENTS" scope="web" default="off"}%" />
-  <td><input type="radio" class="foswikiRadio" id="displaycomments_on" name="Local+DISPLAYCOMMENTS" value="on" %IF{"$'DISPLAYCOMMENTS'='on'" then="checked='checked'"}% /></td>
+  <td><input type="radio" class="foswikiRadioButton" id="displaycomments_on" name="Local+DISPLAYCOMMENTS" value="on" %IF{"$'DISPLAYCOMMENTS'='on'" then="checked='checked'"}% /></td>
   <td><label for="displaycomments_on">%MAKETEXT{"on"}%</label></td>
-  <td><input type='radio' class="foswikiRadio" id="displaycomments_off" name='Local+DISPLAYCOMMENTS' value="off" %IF{"$'DISPLAYCOMMENTS'='off' OR isempty 'DISPLAYCOMMENTS'" then="checked='checked'"}% /></td>
+  <td><input type='radio' class="foswikiRadioButton" id="displaycomments_off" name='Local+DISPLAYCOMMENTS' value="off" %IF{"$'DISPLAYCOMMENTS'='off' OR isempty 'DISPLAYCOMMENTS'" then="checked='checked'"}% /></td>
   <td><label for="displaycomments_off">%MAKETEXT{"off"}%</label></td>
 </tr>%TMPL:END%
 
 %TMPL:DEF{"showonscreen::topicactions"}%<tr>
   <th>%MAKETEXT{"Topic actions"}%</th>
   <input type='hidden' name='Default+DISPLAYTOPICACTIONS' value="%GETVAR{"DISPLAYTOPICACTIONS" scope="web" default="on"}%" />
-  <td><input type="radio" class="foswikiRadio" id="displaytopicactions_on" name="Local+DISPLAYTOPICACTIONS" value="on" %IF{"$'DISPLAYTOPICACTIONS'='on' OR isempty 'DISPLAYTOPICACTIONS'" then="checked='checked'"}% /></td>
+  <td><input type="radio" class="foswikiRadioButton" id="displaytopicactions_on" name="Local+DISPLAYTOPICACTIONS" value="on" %IF{"$'DISPLAYTOPICACTIONS'='on' OR isempty 'DISPLAYTOPICACTIONS'" then="checked='checked'"}% /></td>
   <td><label for="displaytopicactions_on">%MAKETEXT{"on"}%</label></td>
-  <td><input type='radio' class="foswikiRadio" id="displaytopicactions_off" name='Local+DISPLAYTOPICACTIONS' value="off" %IF{"$'DISPLAYTOPICACTIONS'='off'" then="checked='checked'"}% /></td>
+  <td><input type='radio' class="foswikiRadioButton" id="displaytopicactions_off" name='Local+DISPLAYTOPICACTIONS' value="off" %IF{"$'DISPLAYTOPICACTIONS'='off'" then="checked='checked'"}% /></td>
   <td><label for="displaytopicactions_off">%MAKETEXT{"off"}%</label></td>
 </tr>%TMPL:END%
 
 %TMPL:DEF{"showonscreen::revinfo"}%<tr>
   <th>%MAKETEXT{"Revision information"}%</th>
   <input type='hidden' name='Default+DISPLAYREVISIONINFO' value="%GETVAR{"DISPLAYREVISIONINFO" scope="web" default="on"}%" />
-  <td><input type="radio" class="foswikiRadio" id="displayrevisioninfo_on" name="Local+DISPLAYREVISIONINFO" value="on" %IF{"$'DISPLAYREVISIONINFO'='on' OR isempty 'DISPLAYREVISIONINFO'" then="checked='checked'"}% /></td>
+  <td><input type="radio" class="foswikiRadioButton" id="displayrevisioninfo_on" name="Local+DISPLAYREVISIONINFO" value="on" %IF{"$'DISPLAYREVISIONINFO'='on' OR isempty 'DISPLAYREVISIONINFO'" then="checked='checked'"}% /></td>
   <td><label for="displayrevisioninfo_on">%MAKETEXT{"on"}%</label></td>
-  <td><input type='radio' class="foswikiRadio" id="displayrevisioninfo_off" name='Local+DISPLAYREVISIONINFO' value="off" %IF{"$'DISPLAYREVISIONINFO'='off'" then="checked='checked'"}% /></td>
+  <td><input type='radio' class="foswikiRadioButton" id="displayrevisioninfo_off" name='Local+DISPLAYREVISIONINFO' value="off" %IF{"$'DISPLAYREVISIONINFO'='off'" then="checked='checked'"}% /></td>
   <td><label for="displayrevisioninfo_off">%MAKETEXT{"off"}%</label></td>
 </tr>%TMPL:END%
 
 %TMPL:DEF{"showonscreen::breadcrumbs"}%<tr>
   <th>%MAKETEXT{"Breadcrumbs navigation"}%</th>
   <input type='hidden' name='Default+DISPLAYBREADCRUMBS' value="%GETVAR{"DISPLAYBREADCRUMBS" scope="web" default="on"}%" />
-  <td><input type="radio" class="foswikiRadio" id="displaybreadcrumbs_on" name="Local+DISPLAYBREADCRUMBS" value="on" %IF{"$'DISPLAYBREADCRUMBS'='on' OR isempty 'DISPLAYBREADCRUMBS'" then="checked='checked'"}% /></td>
+  <td><input type="radio" class="foswikiRadioButton" id="displaybreadcrumbs_on" name="Local+DISPLAYBREADCRUMBS" value="on" %IF{"$'DISPLAYBREADCRUMBS'='on' OR isempty 'DISPLAYBREADCRUMBS'" then="checked='checked'"}% /></td>
   <td><label for="displaybreadcrumbs_on">%MAKETEXT{"on"}%</label></td>
-  <td><input type='radio' class="foswikiRadio" id="displaybreadcrumbs_off" name='Local+DISPLAYBREADCRUMBS' value="off" %IF{"$'DISPLAYBREADCRUMBS'='off'" then="checked='checked'"}% /></td>
+  <td><input type='radio' class="foswikiRadioButton" id="displaybreadcrumbs_off" name='Local+DISPLAYBREADCRUMBS' value="off" %IF{"$'DISPLAYBREADCRUMBS'='off'" then="checked='checked'"}% /></td>
   <td><label for="displaybreadcrumbs_off">%MAKETEXT{"off"}%</label></td>
 </tr>%TMPL:END%
 
@@ -95,7 +96,7 @@
     <input type='hidden' name='Default+COMMENTSTRUCTURE' value="%GETVAR{"COMMENTSTRUCTURE" scope="web" default="linear"}%" />
     <table class="foswikiLayoutTable">
       <tr>
-        <th>%MAKETEXT{"Style"}%:</th>
+        <th>%MAKETEXT{"Style"}%</th>
         <td colspan="4">
           <select name="Local+COMMENTSTYLE" class="foswikiSelect">
             <option value="%TMPL:P{"comments::format::default"}%">%MAKETEXT{"default"}%</option>
@@ -108,17 +109,17 @@
         </td>
       </tr>
       <tr>
-        <th>%MAKETEXT{"Structure"}%:</th>
-        <td><input type="radio" class="foswikiRadio" id="commentstruct_linear" name="Local+COMMENTSTRUCTURE" value="linear" %IF{"$'COMMENTSTRUCTURE'='linear' or isempty 'COMMENTSTRUCTURE'" then="checked"}% /></td>
+        <th>%MAKETEXT{"Structure"}%</th>
+        <td><input type="radio" class="foswikiRadioButton" id="commentstruct_linear" name="Local+COMMENTSTRUCTURE" value="linear" %IF{"$'COMMENTSTRUCTURE'='linear' or isempty 'COMMENTSTRUCTURE'" then="checked"}% /></td>
         <td><label for="commentstruct_linear">%MAKETEXT{"linear"}%</td>
-        <td><input type="radio" class="foswikiRadio" id="commentstruct_threaded" name="Local+COMMENTSTRUCTURE" value="threaded" %IF{"$'COMMENTSTRUCTURE'='threaded'" then="checked"}% /></td>
+        <td><input type="radio" class="foswikiRadioButton" id="commentstruct_threaded" name="Local+COMMENTSTRUCTURE" value="threaded" %IF{"$'COMMENTSTRUCTURE'='threaded'" then="checked"}% /></td>
         <td><label for="commentstruct_threaded">%MAKETEXT{"threaded"}%</td>
       </tr>
       <tr>
-        <th>%MAKETEXT{"State"}%:</th>
-        <td><input type="radio" class="foswikiRadio" id="commentstate_open" name="Local+COMMENTSTATE" value="open" %IF{"$'COMMENTSTATE'='open' or isempty 'COMMENTSTATE'" then="checked"}% /></td>
+        <th>%MAKETEXT{"State"}%</th>
+        <td><input type="radio" class="foswikiRadioButton" id="commentstate_open" name="Local+COMMENTSTATE" value="open" %IF{"$'COMMENTSTATE'='open' or isempty 'COMMENTSTATE'" then="checked"}% /></td>
         <td><label for="commentstate_open">%MAKETEXT{"open"}%</td>
-        <td><input type="radio" class="foswikiRadio" id="commentstate_closed" name="Local+COMMENTSTATE" value="closed" %IF{"$'COMMENTSTATE'='closed'" then="checked"}% /></td>
+        <td><input type="radio" class="foswikiRadioButton" id="commentstate_closed" name="Local+COMMENTSTATE" value="closed" %IF{"$'COMMENTSTATE'='closed'" then="checked"}% /></td>
         <td><label for="commentstate_closed">%MAKETEXT{"closed"}%</td>
       </tr>
     </table>
@@ -149,25 +150,25 @@
   <input type="hidden" name="Default+PERMSET_CHANGE" value="default" />
   <div class="foswikiFormStep">
     <h3>%MAKETEXT{"Users who may view"}%:</h3>
-      <input type="radio" class="foswikiRadio" id="default_view" name="Local+PERMSET_VIEW" value="default" %IF{"$'PERMSET_VIEW'='default' OR isempty 'PERMSET_VIEW'" then="checked='checked'"}% /> 
+      <input type="radio" class="foswikiRadioButton" id="default_view" name="Local+PERMSET_VIEW" value="default" %IF{"$'PERMSET_VIEW'='default' OR isempty 'PERMSET_VIEW'" then="checked='checked'"}% /> 
       <label for="default_view" title='%MAKETEXT{"default as defined in the [_1]" args="<nop>%WEBPREFSTOPIC%"}%'>%MAKETEXT{"Default"}%</label>
 
-      <input type="radio" class="foswikiRadio" id="everybody_view" name="Local+PERMSET_VIEW" value="everybody" %IF{"$'PERMSET_VIEW'='everybody'" then="checked='checked'"}% /> 
+      <input type="radio" class="foswikiRadioButton" id="everybody_view" name="Local+PERMSET_VIEW" value="everybody" %IF{"$'PERMSET_VIEW'='everybody'" then="checked='checked'"}% /> 
       <label for="everybody_view" title="%MAKETEXT{"public view access"}%">%MAKETEXT{"Everybody"}%</label>
 
-      <input type="radio" class="foswikiRadio" id="registered_users_view" name="Local+PERMSET_VIEW" value="registeredusers" %IF{"$'PERMSET_VIEW'='registeredusers'" then="checked='checked'"}% /> 
+      <input type="radio" class="foswikiRadioButton" id="registered_users_view" name="Local+PERMSET_VIEW" value="registeredusers" %IF{"$'PERMSET_VIEW'='registeredusers'" then="checked='checked'"}% /> 
       <label for="registered_users_view" title='%MAKETEXT{"restrict read access to users that have an account on this site"}%'>%MAKETEXT{"Registered users"}%</label>
 
-      <input type="radio" class="foswikiRadio" id="just_author_view" name="Local+PERMSET_VIEW" value="justauthor" %IF{"$'PERMSET_VIEW'='justauthor'" then="checked='checked'"}% />
+      <input type="radio" class="foswikiRadioButton" id="just_author_view" name="Local+PERMSET_VIEW" value="justauthor" %IF{"$'PERMSET_VIEW'='justauthor'" then="checked='checked'"}% />
       <label for="just_author_view" title='%MAKETEXT{"restrict access to [_1]" args="%SPACEOUT{"%WIKINAME%"}%"}%'>%MAKETEXT{"Just me"}%</label>
 
-      <input type="radio" class="foswikiRadio" id="nobody_view" name="Local+PERMSET_VIEW" value="nobody" %IF{"$'PERMSET_VIEW'='nobody'" then="checked='checked'"}% /> 
+      <input type="radio" class="foswikiRadioButton" id="nobody_view" name="Local+PERMSET_VIEW" value="nobody" %IF{"$'PERMSET_VIEW'='nobody'" then="checked='checked'"}% /> 
       <label for="nobody_view" title='%MAKETEXT{"strictly deny any access to this topic"}%'>%MAKETEXT{"Nobody"}%</label>
 
-      <table class="foswikiLayoutTable">
+      <table>
         <tr>
           <td>
-            <input type="radio" class="foswikiRadio" id="details_view_toggle" name="Local+PERMSET_VIEW" value="details" %IF{"$'PERMSET_VIEW'='details'" then="checked='checked'"}% />
+            <input type="radio" class="foswikiRadioButton" id="details_view_toggle" name="Local+PERMSET_VIEW" value="details" %IF{"$'PERMSET_VIEW'='details'" then="checked='checked'"}% />
           </td>
           <td>
             <label for="details_view_toggle" title='%MAKETEXT{"specify a list of users and/or groups"}%'>&nbsp;%MAKETEXT{"Specific users/groups"}%</label>
@@ -184,24 +185,25 @@
         </tr>
       </table>
   </div>
+
   <div class="foswikiFormStep foswikiFormLast">
     <h3>%MAKETEXT{"Users who may edit"}%:</h3>
-    <input type="radio" class="foswikiRadio" id="default_change" name="Local+PERMSET_CHANGE" value="default" %IF{"$'PERMSET_CHANGE'='default' OR isempty 'PERMSET_CHANGE'" then="checked='checked'"}% /> 
+    <input type="radio" class="foswikiRadioButton" id="default_change" name="Local+PERMSET_CHANGE" value="default" %IF{"$'PERMSET_CHANGE'='default' OR isempty 'PERMSET_CHANGE'" then="checked='checked'"}% /> 
     <label for="default_change" title='%MAKETEXT{"default as defined in the [_1]" args="<nop>%WEBPREFSTOPIC%"}%'>%MAKETEXT{"Default"}%</label>
 
-    <input type="radio" class="foswikiRadio" id="registered_users_change" name="Local+PERMSET_CHANGE"  value="registeredusers" %IF{"$'PERMSET_CHANGE'='registeredusers'" then="checked='checked'"}% /> 
+    <input type="radio" class="foswikiRadioButton" id="registered_users_change" name="Local+PERMSET_CHANGE"  value="registeredusers" %IF{"$'PERMSET_CHANGE'='registeredusers'" then="checked='checked'"}% /> 
     <label for="registered_users_change" title='%MAKETEXT{"restrict write access to users that have an account on this site"}%'>%MAKETEXT{"Registered users"}%</label>
 
-    <input type="radio" class="foswikiRadio" id="just_author_change" name="Local+PERMSET_CHANGE" value="justauthor" %IF{"$'PERMSET_CHANGE'='justauthor'" then="checked='checked'"}% />
+    <input type="radio" class="foswikiRadioButton" id="just_author_change" name="Local+PERMSET_CHANGE" value="justauthor" %IF{"$'PERMSET_CHANGE'='justauthor'" then="checked='checked'"}% />
     <label for="just_author_change" title='%MAKETEXT{"restrict access to [_1]" args="%SPACEOUT{"%WIKINAME%"}%"}%'>%MAKETEXT{"Just me"}%</label>
 
-    <input type="radio" class="foswikiRadio" id="nobody_change" name="Local+PERMSET_CHANGE" value="nobody" %IF{"$'PERMSET_CHANGE'='nobody'" then="checked='checked'"}% /> 
+    <input type="radio" class="foswikiRadioButton" id="nobody_change" name="Local+PERMSET_CHANGE" value="nobody" %IF{"$'PERMSET_CHANGE'='nobody'" then="checked='checked'"}% /> 
     <label for="nobody_change" title='%MAKETEXT{"strictly deny write access to this topic"}%'>%MAKETEXT{"Nobody"}%</label>
 
-    <table class="foswikiLayoutTable">
+    <table>
       <tr>
         <td>
-          <input type="radio" class="foswikiRadio" id="details_change_toggle" name="Local+PERMSET_CHANGE" value="details" %IF{"$'PERMSET_CHANGE'='details'" then="checked='checked'"}% />
+          <input type="radio" class="foswikiRadioButton" id="details_change_toggle" name="Local+PERMSET_CHANGE" value="details" %IF{"$'PERMSET_CHANGE'='details'" then="checked='checked'"}% />
         </td>
         <td>
           <label for="details_change_toggle" title='%MAKETEXT{"specify a list of users and/or groups"}%'>&nbsp;%MAKETEXT{"Specific users/groups"}%</label>

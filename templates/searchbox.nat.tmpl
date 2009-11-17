@@ -1,15 +1,15 @@
 <!-- template: searchbox.nat.tmpl -->
 %TMPL:DEF{"searchbox"}%<!-- search box go-->
 <div class="natSearchBox">
-<form name="searchbox" action="%SCRIPTURLPATH{"natsearch"}%/%BASEWEB%/%BASETOPIC%">
-  <input type="hidden" name="limit" value="100" />
+<form name="searchbox" id="searchbox" action="%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebSearch" >
+  <input type="hidden" name="jump" value="on" />
   <table cellspacing="0" cellpadding="0" border="0">
     <tr>
       <td valign="middle">
-        <input type="text" size="15" title="%MAKETEXT{"Enter topic name or a search string"}%" name="search" value="%TMPL:P{"searchvalue"}%" accesskey="f" onblur="if(this.value==''){this.value = '%MAKETEXT{"Search"}%'}" onfocus="if(this.value=='%TMPL:P{"searchvalue"}%'){this.value = ''}" /> 
+        <input type="text" class="foswikiInputText {title:'%TMPL:P{"searchvalue"}%', color:'#999'}" size="15" title="%MAKETEXT{"Enter topic name or a search string"}%" name="search" value="%TMPL:P{"searchvalue"}%" accesskey="f" /> 
       </td>
       <td valign="middle">
-        <a href="#" onclick="document.searchbox.submit();return false;" title="Go"><span>Go</span></a>
+        <a href="#" onclick="jQuery('#searchbox').submit();return false;" title="%MAKETEXT{"Search"}%"><span>Go</span></a>
       </td>
     </tr>
   </table>

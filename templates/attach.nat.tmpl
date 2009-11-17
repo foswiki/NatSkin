@@ -5,11 +5,17 @@
 %TMPL:INCLUDE{"attachjavascript"}%<!-- attachjavascript// -->
 %TMPL:INCLUDE{"attachstyles"}%<!-- attachstyles// -->
 %TMPL:DEF{"title"}%%TOPIC% (attach) - %WIKITOOLNAME%%TMPL:END%
-%TMPL:DEF{"contenttitle"}%<h1>Attachments at <noautolink>%TMPL:P{"topictitle"}%</noautolink></h1>%TMPL:END%
+%TMPL:DEF{"contenttitle"}%<h1><noautolink>%MAKETEXT{"Attachments at [_1]" args="%TMPL:P{"topictitle"}%"}%</noautolink></h1>%TMPL:END%
 %TMPL:DEF{"bodyclass"}%natAttachBody%TMPL:END%
 %TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
 %TMPL:DEF{"content"}%<!-- content -->
+%JQREQUIRE{"validate"}%<!-- jqrequire::validate -->
 %JQREQUIRE{"focus"}%<!-- jqrequire::focus -->
+%ADDTOHEAD{
+  "NATSKIN::ATTACH" 
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/attach.js'></script>" 
+  requires="JQUERYPLUGIN, NATSKIN"
+}%<!-- addtohead::attach -->
 %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
 <div class="foswikiFormSteps">
 %BUTTON{"%MAKETEXT{"Close"}%" 
@@ -45,7 +51,6 @@
             </label>
           </td>
         </tr>
-        <tr>
         <tr>
           <td>
             <input type="checkbox" class="foswikiCheckbox" name="hidefile" id="hidefile" %HIDEFILE% /> 

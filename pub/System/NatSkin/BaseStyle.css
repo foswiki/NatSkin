@@ -38,6 +38,7 @@ dt {
 
 input, textarea, select, body { 
   font-size:100%;
+  vertical-align:middle;
 }
 
 pre, code, textarea {
@@ -160,6 +161,8 @@ pre {
   display:none;
 }
 
+input[type=radio],
+input[type=checkbox],
 .foswikiCheckbox {
   margin:0px 3px 0px 0px;
 }
@@ -275,8 +278,13 @@ pre {
   text-align:center;
 }
 .natPrintBody {
-  width:21cm; 
-  margin:0px; 
+  margin:0px !important;
+  padding:0px !important;
+}
+.natPrintBody .natBodyContents {
+  margin:0px;
+  padding:2em;
+  width:auto;
 }
 .natPrintBody,
 .natPrintBody .natMain,
@@ -359,9 +367,11 @@ th, /* opera */
  * page layout fall appart ... sort of.
  */
 .natMainContents {
-  overflow:hidden;
   clear:both;
   min-height:40em;
+}
+.natBodyRight .natMainContents {
+  overflow:hidden;
 }
 
 /* IE6 fix for missing min-height */
@@ -1070,7 +1080,7 @@ legend {
   margin-top:20px;
 }
 .foswikiFormOptions .foswikiCheckbox {
-  margin:0px 8px 0px 0px;
+  margin:4px 3px 3px 3px;
 }
 .foswikiFormButtons input {
   padding:3px 5px;
@@ -1206,7 +1216,7 @@ td.foswikiDiffChangedText {
 }
 img {
   vertical-align:text-bottom;
-  border:0pt solid;
+  border:0px;
 }
 img.center {
   margin-left:auto;
@@ -1354,7 +1364,6 @@ img.alignleft {
   margin:0px;
   vertical-align:middle;
   position:relative;
-  bottom:2px;
 }
 .twistyTrigger a {
   text-decoration:none;
@@ -1503,3 +1512,25 @@ h1 .foswikiTopicSummary {
 .mceContentBody {
   margin:0.5em;
 }
+
+.defaultSkin table.mceLayout {
+  _width:100% !important; /* IE6 fix */
+} 
+
+/* jquery grid */
+.ui-jqgrid .overflow {
+  overflow:auto;
+  padding:0px;
+  margin:0px;
+}
+.ui-jqgrid td {
+  vertical-align:top;
+}
+.ui-jqgrid td.jqgrid-rownum {
+  vertical-align:middle;
+}
+/*
+.ui-jqgrid tr.jqgrow td {
+  white-space:normal !important;
+}
+*/

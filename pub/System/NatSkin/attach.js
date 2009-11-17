@@ -44,5 +44,9 @@
   // init
   $(function() {
     $("#main").validate();
+    $(".natAttachEdit").click(function() {
+      toggleAttachmentEditor(this);
+      return false;
+    });
   });
 })(jQuery);

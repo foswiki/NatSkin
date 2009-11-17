@@ -26,19 +26,22 @@
 <!-- //content -->%TMPL:END%
 
 %TMPL:DEF{"similar"}%<!-- similar -->
-  %SEARCH{"%BASETOPIC%" 
-    header="<h2 >%MAKETEXT{"Similar topics"}%</h2>"
-    limit="100" 
-    scope="topic" 
-    web="%BASEWEB%" 
-    nonoise="on" 
-    order="modified" 
-    reverse="on"
-  }%
+&nbsp;
+%SEARCH{"%BASETOPIC%" 
+  header="<h2 >%MAKETEXT{"Similar topics"}%</h2>"
+  limit="100" 
+  scope="topic" 
+  web="%BASEWEB%" 
+  nonoise="on" 
+  order="modified" 
+  reverse="on"
+}%
+
 <!-- //similar -->%TMPL:END%
 
 %TMPL:DEF{"formstartstep"}%<!-- formstartstep -->
 %TWISTYBUTTON{id="createnewtopic" link="%BUTTON{"%MAKETEXT{"Create new topic"}%" icon="add"}%"}%
+%BUTTON{"%MAKETEXT{"Search in all webs"}%" icon="find" target="%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebSearch?scope=topic;web=all;search=%BASETOPIC%" }%
 %BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" target="%BASEWEB%.%HOMETOPIC%" title="%MAKETEXT{"Get me out of here"}%"}%
 %CLEAR%
 %TWISTYTOGGLE{id="createnewtopic" mode="div"}%
@@ -48,6 +51,7 @@
 
 %TMPL:DEF{"formendstep"}%<!-- formendstep -->
 %TMPL:P{"formend"}%
-</div>
+
+</div><!-- foswikiFormSteps -->
 %ENDTWISTYTOGGLE%
 <!-- //formendstep -->%TMPL:END%

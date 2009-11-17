@@ -15,6 +15,7 @@
 %TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
 %TMPL:DEF{"content"}%<!-- content -->
 %JQREQUIRE{"focus"}%<!-- jqfocus -->
+%JQREQUIRE{"autocomplete"}%
 %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
 <form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
 %IF{"$'URLPARAM{newweb}'='%TRASHWEB%'" 
@@ -58,18 +59,26 @@
 </div>
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Move attachment to web:"}%</h3>
+  <verbatim style="display:none">
   <select name="newweb" onchange="if (document.rename.newweb.value == '%TRASHWEB%') { document.rename.newtopic.value = 'TrashAttachment'; document.rename.totrash.checked = true; } else { document.rename.totrash.checked = false; }"> 
-    %FLEXWEBLIST{"<option $marker value='$name'>$name</option>" webs="%TRASHWEB%,%NEW_WEB%,publiccurrent" selection="%IFDEFINED{"%NEW_WEB%" then="$test" else="%WEB%"}%" marker=" selected " separator=" "}% 
+    %FLEXWEBLIST{
+      "<option $marker value='$web'>$web</option>" 
+      webs="%TRASHWEB%,%NEW_WEB%,publiccurrent" 
+      selection="%IFDEFINED{"%NEW_WEB%" then="$test" else="%WEB%"}%" 
+      marker=" selected " 
+      separator=" "}% 
   </select>
 
   <label for="totrash">
     <input type="checkbox" class="foswikiCheckbox" name="totrash" id="totrash" onclick="var elem = document.rename.newweb; if (elem.value == '%TRASHWEB%') { elem.value = '%WEB%'; document.rename.newtopic.value = '%TOPIC%'; document.rename.totrash.checked = false; } else { elem.value = '%TRASHWEB%'; document.rename.newtopic.value = 'TrashAttachment'; document.rename.totrash.checked = true; }">
     %MAKETEXT{"Move to %TRASHWEB%"}%
   </label>
+  </verbatim>
+  %INCLUDE{"%SYSTEMWEB%.JQueryAjaxHelper" section="webselector" INPUT_NAME="newweb" INPUT_VALUE="%IFDEFINED{"%NEW_WEB%" then="$test" else="%WEB%"}%"}%
 </div>
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"To topic:"}%</h3>
-  <input type="text" name="newtopic" value="%TOPIC%" size="40" class="jqFocus" />
+  %INCLUDE{"%SYSTEMWEB%.JQueryAjaxHelper" section="topicselector" INPUT_NAME="newtopic" INPUT_VALUE="%TOPIC%"}%
 </div>
 <div class="foswikiFormStep">
 </div>

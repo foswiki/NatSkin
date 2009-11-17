@@ -1,9 +1,7 @@
-%META:TOPICINFO{author="ProjectContributor" date="1252423607" format="1.1" version="1.19"}%
+%META:TOPICINFO{author="ProjectContributor" comment="save topic" date="1257351150" format="1.1" reprev="1.20" version="1.20"}%
 ---+!! %TOPIC%
-%IF{"$'showgrid'='on'"
-  then="$percntBUTTON{\"Hide grid\" icon=\"table_delete\" class=\"foswikiRight\" href=\"%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%\"}$percnt"
-  else="$percntBUTTON{\"Show grid\" icon=\"table_add\" class=\"foswikiRight\" href=\"%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?showgrid=on\"}$percnt"
-}%
+%BUTTON{"Toggle grid" icon="table" class="foswikiRight" onclick="jQuery('.natMain').toggleClass('showgrid-40x18')"}%
+
 uismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
 ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
 ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
@@ -13,15 +11,6 @@ feugiat nulla facilisis at vero eros et accumsan et
 %CLEAR%
 
 %TOC{title="On this page"}%
-
-<literal>
-<style type="text/css">
-.%IF{"$'showgrid'!='on'" then="DIS"}%natMain {
-  background:transparent url(%PUBURLPATH%/%SYSTEMWEB%/NatSkin/grid-40x18.png) repeat scroll 0 0 !important;
-}
-</style>
-</literal>
-
 
 *left*: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
 euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim

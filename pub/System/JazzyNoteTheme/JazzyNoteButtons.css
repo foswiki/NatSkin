@@ -56,36 +56,41 @@
   _background-image:none
 }
 
-/* superfish menu *************************/
+/* sf-js-enabled menu *************************/
 
 /* essentials *****************************/
-.superfish, 
-.superfish * {
+.sf-js-enabled h2,
+.sf-js-enabled h3,
+.sf-js-enabled h4,
+.sf-js-enabled h5,
+.sf-js-enabled h6,
+.sf-js-enabled {
   margin:0;
   padding:0;
   list-style:none;
+  font-size:100%;
   line-height:2.3076em; /* to be added to top:... rules */
 }
-.superfish li li {
+.sf-js-enabled li li {
   height:auto;
 }
-.superfish ul {
+.sf-js-enabled ul {
   position:absolute; 
   top:-999em; 
 }
-.superfish ul ul {
-  width:9.45em; /* to be added to left:... rules */
+.sf-js-enabled ul ul {
+  width:11.45em; /* to be added to left:... rules */
 }
-.superfish ul li { 
-  width: 100%;
+.sf-js-enabled ul li { 
+  width:11.45em;
 }
-.superfish li {
+.sf-js-enabled li {
   padding:0em 1em; /* to be added to left:... rules */
   float:left; 
   position:relative;
   z-index:99; 
 }
-.superfish li.sfHover {
+.sf-js-enabled li.sfHover {
   z-index:999;
 }
 
@@ -96,44 +101,44 @@ embed, object {
 
 
 /**** second tier *************************/
-.superfish li:hover ul, 
-ul.superfish li.sfHover ul 
+.sf-js-enabled li:hover ul, 
+ul.sf-js-enabled li.sfHover ul 
 {
   left:-1px;
   top:2.3076em; /* VARIABLE */
 }
 
 /**** third tier **************************/
-.superfish li:hover li ul,
-.superfish li.sfHover li ul {
+.sf-js-enabled li:hover li ul,
+.sf-js-enabled li.sfHover li ul {
   top:-999em; 
 }
-.superfish li li:hover ul, 
-ul.superfish li li.sfHover ul {
-  left:11.45em; /* VARIABLE */
+.sf-js-enabled li li:hover ul, 
+ul.sf-js-enabled li li.sfHover ul {
+  left:13.45em; /* VARIABLE */
   top:-1px; 
 }
 
 /**** fourth tier *************************/
-.superfish li li:hover li ul,
-.superfish li li.sfHover li ul {
+.sf-js-enabled li li:hover li ul,
+.sf-js-enabled li li.sfHover li ul {
   top:-999em; 
 }
-.superfish li li li:hover ul, 
-ul.superfish li li li.sfHover ul {
-  left:11.45em; /* VARIABLE */ 
+.sf-js-enabled li li li:hover ul, 
+ul.sf-js-enabled li li li.sfHover ul {
+  left:13.45em; /* VARIABLE */ 
   top:-1px;
 }
 
 /* hide menus */
-.superfish li:hover ul,
-.superfish li li:hover ul,
-.superfish li li li:hover ul {
+.sf-js-enabled li:hover ul,
+.sf-js-enabled li li:hover ul,
+.sf-js-enabled li li li:hover ul {
   top: -999em; /* hide submenu in screen-reader and search-engine friendly way */
 }
 
 /* skinning */
-ul.superfish a {
+ul.sf-js-enabled a {
   margin:0em -1em;
   padding:0em 1em;
   display:block;
@@ -143,16 +148,16 @@ ul.superfish a {
   _width:auto;
 }
 
-ul.superfish li {
+ul.sf-js-enabled li {
   border-right:1px solid #E1EAFA;
 }
-ul.superfish {
+ul.sf-js-enabled {
   border-left:1px solid #E1EAFA;
 }
-ul.superfish ul {
+ul.sf-js-enabled ul {
   border-left:0px;
 }
-ul.superfish li li {
+ul.sf-js-enabled li li {
   /*
   border-bottom:1px solid #fff;
   border-right:1px solid #fff;
@@ -160,54 +165,67 @@ ul.superfish li li {
   border-bottom:1px solid #c2c4c4;
   border-left:1px solid #c2c4c4;
   border-right:1px solid #c2c4c4;
-  width:9.45em; 
 }
-ul.superfish li li a:hover.foswikiNewLink,
-ul.superfish li li:hover, 
-ul.superfish li li.sfHover,
-ul.superfish li li a:focus, 
-ul.superfish li li a:hover, 
-ul.superfish li li a:active {
+ul.sf-js-enabled li li a:hover.foswikiNewLink,
+ul.sf-js-enabled li li:hover, 
+ul.sf-js-enabled li li.sfHover,
+ul.sf-js-enabled li li a:focus, 
+ul.sf-js-enabled li li a:hover, 
+ul.sf-js-enabled li li a:active {
   background-color:#0055b5;
   color:#fff;
 }
-ul.superfish li ul {
+ul.sf-js-enabled li ul {
   border-top:1px solid #c2c4c4;
-  width:11.45em;
+  width:13.45em;
 }
-ul.superfish li ul ul {
+ul.sf-js-enabled li ul ul {
   border-top:1px solid #c2c4c4;
 }
-ul.superfish li li a.foswikiNewLink,
-ul.superfish li li {
+ul.sf-js-enabled li li a.foswikiNewLink,
+ul.sf-js-enabled li li {
   background:#E9E9EB;
 }
-ul.superfish li li li {
+ul.sf-js-enabled li li li {
   background:#E9E9EB;
 }
-ul.superfish li li li li {
+ul.sf-js-enabled li li li li {
   background:#E9E9EB;
 }
-ul.superfish .sfPath {
+ul.sf-js-enabled .sfPath {
   background-color:red;
 }
-ul.superfish li.hasSubMenu {
+ul.sf-js-enabled li.hasSubMenu {
   background-image:url(menucorner.gif);
   background-repeat:no-repeat;
   background-position:bottom right;
 }
-ul.superfish li li.sfHover a,
-ul.superfish li li a:hover.foswikiNewLink,
-ul.superfish li li a.foswikiNewLink,
-ul.superfish li li a:hover,
-ul.superfish li li a:active,
-ul.superfish li li a:link,
-ul.superfish li li a {
+ul.sf-js-enabled li li.sfHover a,
+ul.sf-js-enabled li li a:hover.foswikiNewLink,
+ul.sf-js-enabled li li a.foswikiNewLink,
+ul.sf-js-enabled li li a:hover,
+ul.sf-js-enabled li li a:active,
+ul.sf-js-enabled li li a:link,
+ul.sf-js-enabled li li a {
   display:block;
   background:transparent;
   margin:0em -1em;
-  padding:0em 1em;
+  padding:0.5em 1em;
+  line-height:1.1538em;
   /* ie 6 */
   _background:inherit;
   _padding:0em 2.3076em; 
 }
+/*** shadows for all but IE6 ***/
+ul.sf-shadow ul {
+  background: url('menushadow.png') no-repeat bottom right;
+  padding: 0 8px 6px 0;
+  -moz-border-radius-bottomleft: 17px;
+  -moz-border-radius-topright: 17px;
+  -webkit-border-top-right-radius: 17px;
+  -webkit-border-bottom-left-radius: 17px;
+}
+ul.sf-shadow ul.sf-shadow-off {
+  background: transparent;
+}
+

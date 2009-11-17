@@ -31,7 +31,9 @@
 
   /* horiz menu */
   if (foswiki.NatSkin.initWebButtons) {
-    $(".natWebButtonsContents > ul").superfish({}).
+    $(".natWebButtonsContents > ul").superfish({
+        autoArrows: false
+      }).
       find("li:has(ul)").addClass("hasSubMenu");
     $(".natWebButtonsContents").css('display', 'block');
   }
@@ -114,9 +116,52 @@
   }
 
   if (foswiki.NatSkin.initSideBar) { // typographic improvements in sidebar
-    $('.natSideBar h2 + h2').each(function() {
+    $('.natSideBar h2 + h2').not(".jqInited").each(function() {
       $(this).replaceWith('<h3>'+$(this).text()+'</h3>');
     });
+  }
+
+  if (foswiki.NatSkin.initSearchBox) { // autocompletion using solr 
+    var $form = $("#searchbox");
+    if ($form.length) {
+      var $input = $form.find("input[type=text]");
+      var color = $input.css('color');
+      var options = $.extend( {
+          color:'#999',
+          title:'Search'
+        }, $input.metadata());
+      $input.css('color', options.color);
+
+      $input.autocomplete(foswiki.scriptUrl+'/rest/SolrPlugin/terms?ellipsis=on', {
+        selectFirst: false,
+        autoFill:false,
+        matchCase:true,
+        matchSubset:false,
+        matchContains:false,
+        scrollHeight:'20em',
+        formatItem: function(row) {
+          return row[1];
+        }
+      });
+
+      $input.blur(function() {
+        if ($input.val() == '') {
+          $input.val(options.title);
+          $input.css('color', options.color);
+        }
+      });
+      $input.focus(function() {
+        if ($input.val() == options.title) {
+          $input.val('');
+          $input.css('color', color);
+        }
+      });
+      $form.submit(function() {
+        if ($input.val() == options.title) {
+          $input.val('');
+        }
+      });
+    }
   }
 
 });}(jQuery));

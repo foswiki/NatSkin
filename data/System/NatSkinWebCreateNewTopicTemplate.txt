@@ -133,7 +133,7 @@ Topic name that the newly created topic will be a child of.
 <select name="templatetopic" class="foswikiSelect">
 %IF{"'%URLPARAM{"templatetopic"}%'" 
   then='<option selected="selected">%URLPARAM{"templatetopic"}%</option>'
-}%<option value="">%MAKETEXT{"Default template"}%</option>
+}%<option value="%IF{"istopic 'WebTopicEditTemplate'" then="WebTopicEditTemplate"}%">%MAKETEXT{"Default template"}%</option>
 %SEARCH{
   "name~'*Template'" 
   scope="topic" 
