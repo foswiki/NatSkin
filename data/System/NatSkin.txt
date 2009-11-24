@@ -139,6 +139,7 @@ allways open an extra window.
 |  Base Name: | nat |
 |  Screenshot: | <div style="overflow:hidden;height:200px"><a href="%PUBURLPATH%/%WEB%/NatSkin/BlueNoteStyle.jpeg"><img src="%PUBURLPATH%/%WEB%/NatSkin/BlueNoteStyle.jpeg" title="JazzyNoteTheme"/></a></div> |
 |  Change&nbsp;History: | <!-- specify latest version first -->&nbsp; |
+|  24 Nov 2009: | Item2403: Improve !SubscribePlugin support |
 |  18 Nov 2009: | Item2373: Improve XHTML validation |
 |  17 Nov 2009: | fixed print cover; \
                   fixed jazzyblue for ie6; \

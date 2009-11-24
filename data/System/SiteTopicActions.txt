@@ -5,7 +5,7 @@ Default site-level configuration for the !WebTopicActions !WebComponent
 %STARTINCLUDE%<!-- sitetopicactions -->
 %USERACTIONS{
   restrictedactions="new, attach, move, delete, history, more, raw"
-  format="$edit$sep$attach$sep$new$sep$raw$sep$delete$sep$history$sep$print$sep$more"
+  format="$edit$sep$attach$sep$new$sep$raw$sep$delete$sep$history$sep$subscribe$sep$print$sep$more"
   history="$edit$sep$raw$sep$history$sep$first$sep$prev$sep$next$sep$last$sep$close"
 }%
 <!-- //sitetopicactions -->%STOPINCLUDE%
