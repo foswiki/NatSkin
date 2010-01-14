@@ -6,7 +6,7 @@
 ---++ The documentation of <nop>NatSkin is crap. I'm lost!
 If you need help there are a couple of options:
    * Create a support request on Foswiki:Support/WebHome.
-   * Explain the problem on Foswiki:Extensions/NatSkinDev.
+   * Explain the problem on Foswiki:Development/NatSkin.
    * Join the [[irc://irc.freenode.net/foswiki][#foswiki]] IRC channel and ask for help.
    * Contact the [[mailto:daum@wikiring.com][WikiRing]] in case you need 
      professional support.
@@ -25,7 +25,7 @@ greater benefit.
 
 ---++ Why are there so many template files?
 <nop>NatSkin does not build upon the standard templates/skin of Foswiki as
-it differs substantially in the way it is broken up into components. Therefor 
+it differs substantially in the way it is broken up into components. Therefore 
 every function of the core engine will use a =*.nat.tmpl= file. Infact,
 the <nop>NatSkin templates are created to provide an independent base
 for further template modifications. 

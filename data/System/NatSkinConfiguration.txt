@@ -124,6 +124,6 @@ Caution: don't add meta data to your [[%WIKIUSERNAME%][home topic]] because it w
 other meta data preferences.
 
 
--- Main.MichaelDaum - 25 Aug 2006
+-- Foswiki:Main.MichaelDaum - 25 Aug 2006
 
 %META:TOPICMOVED{by="MichaelDaum" date="1156530555" from="%SYSTEMWEB%.NatSkinCustomization" to="%SYSTEMWEB%.NatSkinConfiguration"}%
