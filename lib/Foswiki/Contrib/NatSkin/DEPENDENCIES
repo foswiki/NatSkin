@@ -9,3 +9,4 @@ Foswiki::Plugins::NatEditPlugin,>=1993,perl,Required
 Foswiki::Plugins::JQueryPlugin,>=3740,perl,Required
 Foswiki::Plugins::NatSkinPlugin,>=4916,perl,Required
 Foswiki::Plugins::RenderPlugin,>=3644,perl,Required
+Foswiki::Plugins::ZonePlugin,>=1,perl,Required
