@@ -8,8 +8,8 @@
   id="topicform"
   mode="span"
   link=" " 
-  showimg="%ICONURLPATH{toggleopenleft}%"
-  hideimg="%ICONURLPATH{toggleclose}%"
+  showimg="%TMPL:P{"iconpath:toggle"}%"
+  hideimg="%TMPL:P{"iconpath:toggleopen"}%"
 }%
 </h2>
 %TWISTYTOGGLE{
@@ -17,7 +17,8 @@
   start="show" 
   remember="off" 
   mode="div"
-}%<table class="foswikiTable">%TMPL:END%
+}%<table class="foswikiTable">
+%TMPL:END%
 %TMPL:DEF{FORM:display:row}% <!-- form:display:row -->
 <tr>
   <th class="foswikiTableFirstCol"> %A_TITLE%: </th>

@@ -1,21 +1,24 @@
 %META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1251318288" format="1.1" reprev="1.8" version="1.8"}%
 %TMPL:INCLUDE{"view"}%
-%TMPL:DEF{"rightsidebar"}%%TMPL:END%
 %TMPL:DEF{"contentheader_container"}%%TMPL:END%
+
+%TMPL:DEF{"dialog"}%<div class="foswikiDialog">
+%TMPL:P{"content"}%
+</div>%TMPL:END%
 
 %TMPL:DEF{"content"}%<!-- content -->
 %TMPL:P{"createform"}%
 <!-- //content -->%TMPL:END%
 
 %TMPL:DEF{"createform"}%<!-- createform -->
-%TMPL:P{"formtitle"}%<!-- formtitle// -->
 %TMPL:P{"formstartstep"}%<!-- formstartstep// -->
+%TMPL:P{"formtitle"}%<!-- formtitle// -->
 %TMPL:P{"topictitlestep"}%<!-- topictitlestep// -->
 %TWISTY{
-  showlink="%MAKETEXT{"Show advanced options"}%" 
+  showlink="%MAKETEXT{" Show advanced options"}%" 
   hidelink="%MAKETEXT{"Hide advanced options"}%"
-  showimgleft="%ICONURLPATH{toggleopen-small}%"
-  hideimgleft="%ICONURLPATH{toggleclose-small}%"
+  showimgleft="%TMPL:P{"iconpath:toggle"}%"
+  hideimgleft="%TMPL:P{"iconpath:toggleopen"}%"
   mode="div"
 }%
 ---
@@ -98,15 +101,14 @@
 %TMPL:DEF{"topictitleinput"}%<!-- topictitleinput -->
 <input type="text" class="foswikiInputField jqFocus required" name="TopicTitle" id="topictitle" size="60" value="%TMPL:P{"newtopictitle"}%" />
 <div class="foswikiFormDescription">
-%MAKETEXT{"Free form topic title text. The actual topic _name_ will be derived from the title automatically.
-You can specify a different topic name in the advanced options below."}%
+%MAKETEXT{"Free form topic title text. The actual topic _name_ will be derived from the title automatically. You can specify a different topic name in the advanced options below."}%
 </div>
 <!--//topictitleinput -->%TMPL:END%
 
 %TMPL:DEF{"topicname"}%<!-- topicname -->
 <input type="text" class="foswikiInputField" name="topic" id="topic" size="60" value="%TMPL:P{"newtopic"}%" />
 <div class="foswikiFormDescription">
-Topic name the new page is associated with, preferably a <nop>WikiWord.
+%MAKETEXT{"Topic name the new page is associated with, preferably a <nop>WikiWord."}%
 </div>
 <!--//topicname -->%TMPL:END%
 
@@ -118,7 +120,7 @@ Topic name the new page is associated with, preferably a <nop>WikiWord.
   INPUT_VALUE="%URLPARAM{"topicparent" default="%TOPIC%"}%"
 }%
 <div class="foswikiFormDescription">
-Topic name that the newly created topic will be a child of.
+%MAKETEXT{"Topic name that the newly created topic will be a child of."}%
 </div>
 <!-- //topicparent -->%TMPL:END%
 
@@ -149,8 +151,7 @@ Topic name that the newly created topic will be a child of.
 <!-- //topictemplate -->%TMPL:END%
 
 %TMPL:DEF{"submit"}%<!-- submit -->
-%BUTTON{type="submit" icon="tick" value="%MAKETEXT{"Submit"}%"}%
-<!-- //submit -->%TMPL:END%
+%BUTTON{type="submit" icon="tick" value="%MAKETEXT{"Submit"}%" class="ok"}%
 
 %TMPL:DEF{"cancel"}%<!-- cancel -->
 %BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" target="%URLPARAM{"origurl" default="%BASEWEB%.%BASETOPIC%"}%"}%
@@ -165,8 +166,9 @@ Topic name that the newly created topic will be a child of.
 %JQREQUIRE{"validate"}%
 %JQREQUIRE{"autocomplete"}%
 %JQREQUIRE{"focus"}%
-%ADDTOHEAD{
-"WIKIWORD::INIT"
+%ADDTOZONE{
+"body"
+tag="WIKIWORD::INIT"
 text="
 <script type='text/javascript'>
 (function($) {

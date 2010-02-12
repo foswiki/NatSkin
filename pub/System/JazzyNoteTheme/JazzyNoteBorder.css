@@ -1,39 +1,8 @@
-/* border variation for clean */
-.natBody {
-  margin:1em 2em;
-}
-.foswikiBroadcastMessage {
-  margin:-1em -2em 1em;
-}
-.natEditBody {
-  margin:0px;
-}
-
-.natBodyLeft .natSideBarHeader,
-.natBodyRight .natWebButtons {
-  border-left:1px #aaaaaa solid;
-}
-.natBodyLeft .natWebButtons,
+.natBody{margin:1em 2em;}.foswikiBroadcastMessage{margin:-1em -2em 1em;}.natEditBody{margin:0px;}.natBodyLeft .natSideBarHeader,
+.natBodyRight .natWebButtons{border-left:1px #aaaaaa solid;}.natBodyLeft .natWebButtons,
 .natBodyRight .natSideBarHeader,
-.natTopRight {
-  border-right:1px #aaaaaa solid;
-}
-.natMiddleLeft {
-  border-left:1px #aaaaaa solid;
-}
-.natMiddleRight {
-  border-right:1px #aaaaaa solid;
-}
-.natMiddle,
-.natSideBar {
-  border-bottom:1px #aaaaaa solid;
-}
-.natBottomBarContents {
-  margin-top:1px; /* konqueror fix */
-}
-.natEditBody .natTopBar,
+.natTopRight{border-right:1px #aaaaaa solid;}.natMiddleLeft{border-left:1px #aaaaaa solid;}.natMiddleRight{border-right:1px #aaaaaa solid;}.natMiddle,
+.natSideBar{border-bottom:1px #aaaaaa solid;}.natBottomBarContents{margin-top:1px;}.natEditBody .natTopBar,
 .natEditBody .natWebButtons,
 .natEditBody .natMiddle,
-.natEditBody .natBottomBar {
-  border:0px
-}
+.natEditBody .natBottomBar{border:0px}

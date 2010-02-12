@@ -1,0 +1,231 @@
+/* variation to switch on the web buttons for clean */
+.natSideBarHeader,
+.natWebButtons {
+  background-color:#9CBAEF;
+  background-image:url(button-bg.png);
+  background-repeat:repeat-x;
+  background-position:left bottom;
+  border-top:1px solid #E1EAFA;
+  /* ie 6 */
+  _background-image:none;
+}
+.natWebButtons {
+  padding-left:2.3076em; /* 30px */
+}
+.natBodyLeft .natWebButtons,
+.natBodyBoth .natWebButtons {
+  padding-left:0px;
+}
+.natTopBar {
+  border-bottom:0px;
+}
+.natWebButtons ul {
+  padding:0px;
+  margin:0em 2em 0em 0em;
+  float:left;
+}
+
+.natWebButtons li a {
+  margin:0px;
+  line-height:2.3076em;
+  padding-left:1.0em;
+  padding-right:1.0em;
+  font-weight:bold;
+  color:#00458F;
+}
+.natWebButtons li li a {
+  font-weight:normal;
+  color:#444;
+}
+
+.natWebButtons li a.current:hover,
+.natWebButtons li a.current {
+  text-decoration: none;
+  background-color:#fff;
+}
+
+.natWebButtons li a.current:hover,
+.natWebButtons li a:hover {
+  text-decoration: none;
+  background-image:url(button-bg.png);
+  background-repeat:repeat-x;
+  background-position:left bottom;
+  background-color:#0055b5;
+  color:#fff;
+  /* ie6 */
+  _background-image:none
+}
+
+/* sf-js-enabled menu *************************/
+
+/* essentials *****************************/
+.sf-js-enabled h2,
+.sf-js-enabled h3,
+.sf-js-enabled h4,
+.sf-js-enabled h5,
+.sf-js-enabled h6,
+.sf-js-enabled {
+  margin:0;
+  padding:0;
+  list-style:none;
+  font-size:100%;
+  line-height:2.3076em; /* to be added to top:... rules */
+}
+.sf-js-enabled li li {
+  height:auto;
+}
+.sf-js-enabled ul {
+  position:absolute; 
+  top:-999em; 
+}
+.sf-js-enabled ul ul {
+  width:11.45em; /* to be added to left:... rules */
+}
+.sf-js-enabled ul li { 
+  width:11.45em;
+}
+.sf-js-enabled li {
+  padding:0em 1em; /* to be added to left:... rules */
+  float:left; 
+  position:relative;
+  z-index:99; 
+}
+.sf-js-enabled li.sfHover {
+  z-index:999;
+}
+
+embed, object {
+  position: relative;
+  z-index: 0;
+}
+
+
+/**** second tier *************************/
+.sf-js-enabled li:hover ul, 
+ul.sf-js-enabled li.sfHover ul 
+{
+  left:-1px;
+  top:2.3076em; /* VARIABLE */
+}
+
+/**** third tier **************************/
+.sf-js-enabled li:hover li ul,
+.sf-js-enabled li.sfHover li ul {
+  top:-999em; 
+}
+.sf-js-enabled li li:hover ul, 
+ul.sf-js-enabled li li.sfHover ul {
+  left:13.45em; /* VARIABLE */
+  top:-1px; 
+}
+
+/**** fourth tier *************************/
+.sf-js-enabled li li:hover li ul,
+.sf-js-enabled li li.sfHover li ul {
+  top:-999em; 
+}
+.sf-js-enabled li li li:hover ul, 
+ul.sf-js-enabled li li li.sfHover ul {
+  left:13.45em; /* VARIABLE */ 
+  top:-1px;
+}
+
+/* hide menus */
+.sf-js-enabled li:hover ul,
+.sf-js-enabled li li:hover ul,
+.sf-js-enabled li li li:hover ul {
+  top: -999em; /* hide submenu in screen-reader and search-engine friendly way */
+}
+
+/* skinning */
+ul.sf-js-enabled a {
+  margin:0em -1em;
+  padding:0em 1em;
+  display:block;
+  width:100%;
+  /* ie 6 */
+  _padding:0em 2.3076em; 
+  _width:auto;
+}
+
+ul.sf-js-enabled li {
+  border-right:1px solid #E1EAFA;
+}
+ul.sf-js-enabled {
+  border-left:1px solid #E1EAFA;
+}
+ul.sf-js-enabled ul {
+  border-left:0px;
+}
+ul.sf-js-enabled li li {
+  /*
+  border-bottom:1px solid #fff;
+  border-right:1px solid #fff;
+  */
+  border-bottom:1px solid #c2c4c4;
+  border-left:1px solid #c2c4c4;
+  border-right:1px solid #c2c4c4;
+}
+ul.sf-js-enabled li li a:hover.foswikiNewLink,
+ul.sf-js-enabled li li:hover, 
+ul.sf-js-enabled li li.sfHover,
+ul.sf-js-enabled li li a:focus, 
+ul.sf-js-enabled li li a:hover, 
+ul.sf-js-enabled li li a:active {
+  background-color:#0055b5;
+  color:#fff;
+}
+ul.sf-js-enabled li ul {
+  border-top:1px solid #c2c4c4;
+  width:13.45em;
+}
+ul.sf-js-enabled li ul ul {
+  border-top:1px solid #c2c4c4;
+}
+ul.sf-js-enabled li li a.foswikiNewLink,
+ul.sf-js-enabled li li {
+  background:#E9E9EB;
+}
+ul.sf-js-enabled li li li {
+  background:#E9E9EB;
+}
+ul.sf-js-enabled li li li li {
+  background:#E9E9EB;
+}
+ul.sf-js-enabled .sfPath {
+  background-color:red;
+}
+ul.sf-js-enabled li.hasSubMenu {
+  background-image:url(menucorner.gif);
+  background-repeat:no-repeat;
+  background-position:bottom right;
+}
+ul.sf-js-enabled li li.sfHover a,
+ul.sf-js-enabled li li a:hover.foswikiNewLink,
+ul.sf-js-enabled li li a.foswikiNewLink,
+ul.sf-js-enabled li li a:hover,
+ul.sf-js-enabled li li a:active,
+ul.sf-js-enabled li li a:link,
+ul.sf-js-enabled li li a {
+  display:block;
+  background:transparent;
+  margin:0em -1em;
+  padding:0.5em 1em;
+  line-height:1.1538em;
+  /* ie 6 */
+  _background:inherit;
+  _padding:0em 2.3076em; 
+}
+/*** shadows for all but IE6 ***/
+ul.sf-shadow ul {
+  background: url('menushadow.png') no-repeat bottom right;
+  padding: 0 8px 6px 0;
+  -moz-border-radius-bottomleft: 17px;
+  -moz-border-radius-topright: 17px;
+  -webkit-border-top-right-radius: 17px;
+  -webkit-border-bottom-left-radius: 17px;
+}
+ul.sf-shadow ul.sf-shadow-off {
+  background: transparent;
+}
+

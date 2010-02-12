@@ -72,7 +72,8 @@
 </form>
 %JQREQUIRE{"farbtastic"}%
 %JQREQUIRE{"validate"}%
-%ADDTOHEAD{
+%ADDTOZONE{
+  "body"
 text="
   <script type='text/javascript'>
     (function($) {

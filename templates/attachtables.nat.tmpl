@@ -41,15 +41,15 @@
   prefix="<h2>" 
   suffix="</h2>" 
   link="%MAKETEXT{"Attachments"}% " 
-  showimg="%ICONURLPATH{toggleopenleft}%"
-  hideimg="%ICONURLPATH{toggleclose}%"
+  showimg="%TMPL:P{"iconpath:toggle"}%"
+  hideimg="%TMPL:P{"iconpath:toggleopen"}%"
 }%%TMPL:END%
 %TMPL:DEF{ATTACH:files:row}%<div class="foswikiFormStep">
   <table cellspacing="0" cellpadding="0">
   <tr>
     <td class="natAttachmentIcon">%A_ICON%</td> 
     <td class="natAttachmentInfo">
-      <div class="natAttachmentName"><a href="%TMPL:P{"ATTACH:files:url"}%" class="{web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%)</div>
+      <div class="natAttachmentName"><a href="%TMPL:P{"ATTACH:files:url"}%" class="jqImageTooltip {web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%)</div>
       %MAKETEXT{"version [_1] uploaded by [_2] on [_3]" args="%A_REV%,%A_USER%, %A_DATE%"}%
       <div class="natAttachmentComment"><noautolink>%A_COMMENT%</noautolink></div>
     </td>
@@ -66,7 +66,7 @@
   <tr>
     <td class="natAttachmentIcon">%A_ICON%</td> 
     <td class="natAttachmentInfo">
-      <div class="natAttachmentName"><a href="%TMPL:P{"ATTACH:files:url"}%" class="{web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%) </div>
+      <div class="natAttachmentName"><a href="%TMPL:P{"ATTACH:files:url"}%" class="jqImageTooltip {web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%) </div>
       %MAKETEXT{"version [_1] uploaded by [_2] on [_3]" args="%A_REV%,%A_USER%, %A_DATE%"}%
       %IF{"'%A_ATTRS%'='h'" then=", <span class='foswikiAlert'>hidden</span>"}%
       <div class="natAttachmentComment"><noautolink>%A_COMMENT%</noautolink></div>
@@ -75,7 +75,7 @@
     <td class="natAttachmentActions">
       <a href="#" class="natAttachEdit" title='%MAKETEXT{"Edit properties of this attachment"}%' rel='nofollow'><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/pencil.png" border="0" width="16" height="16" /></a>
       <a href="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?attachment=%ENCODE{%A_FILE%}%" title='%MAKETEXT{"move this attachment to a different topic"}%' rel='nofollow'><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/page_white_go.png" border="0" width="16" height="16" /></a> 
-      <a href="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?attachment=%ENCODE{%A_FILE%}%;newweb=%TRASHWEB%" title="%MAKETEXT{"delete this attachment"}%" rel='nofollow'><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/bin.png" border="0" width="16" height="16" /></a>
+      <a href="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?attachment=%ENCODE{%A_FILE%}%;newweb=%TRASHWEB%%IF{"$PLUGINVERSION >= 2.1" then=";newtopic=TrashAttachment"}%" title="%MAKETEXT{"delete this attachment"}%" rel='nofollow'><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/bin.png" border="0" width="16" height="16" /></a>
     </td>
   </tr>
   </table>
@@ -92,11 +92,28 @@
 <!-- Macros for definition of version tables -->
 
 <!-- Header for versions table in attach screen -->
-%TMPL:DEF{ATTACH:versions:header}% | *&nbsp;* | *%MAKETEXT{"Attachment"}%* | *%MAKETEXT{"Version"}%* | *%MAKETEXT{"Size"}%* | *%MAKETEXT{"Date"}%* | *%MAKETEXT{"Who"}%* | 
+%TMPL:DEF{DISATTACH:versions:header}% | *&nbsp;* | *%MAKETEXT{"Attachment"}%* | *%MAKETEXT{"Version"}%* | *%MAKETEXT{"Size"}%* | *%MAKETEXT{"Date"}%* | *%MAKETEXT{"Who"}%* | 
+%TMPL:END%
+
+%TMPL:DEF{ATTACH:versions:header}% <h2><noautolink>%MAKETEXT{"Version history of [_1]" args="%FILENAME%"}%:</noautolink></h2>
+<div class="natTopicAttachments" id="natTopicAttachments">
 %TMPL:END%
 
 <!-- Row for versions table in attach screen -->
-%TMPL:DEF{ATTACH:versions:row}% | %A_ICON% | <a href="%A_URL%">%A_FILE%</a><div class="natAttachmentComment"><noautolink>%A_COMMENT%</noautolink></div> | %A_REV% | %A_SIZE% | <nobr>%A_DATE%</nobr> | %A_USER% |%TMPL:END%
+%TMPL:DEF{DISATTACH:versions:row}% | %A_ICON% | <a href="%A_URL%">%A_FILE%</a><div class="natAttachmentComment"><noautolink>%A_COMMENT%</noautolink></div> | %A_REV% | %A_SIZE% | <nobr>%A_DATE%</nobr> | %A_USER% |%TMPL:END%
+%TMPL:DEF{ATTACH:versions:row}% <div class="foswikiFormStep"><a name="%A_FILE%"></a>
+  <table cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="natAttachmentIcon">%A_ICON%</td> 
+    <td class="natAttachmentInfo">
+      <div class="natAttachmentName"><a href="%A_URL%" class="jqImageTooltip {web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%)</div>
+      %MAKETEXT{"version [_1] uploaded by [_2] on [_3]" args="%A_REV%,%A_USER%, %A_DATE%"}%
+      <div class="natAttachmentComment"><noautolink>%A_COMMENT%</noautolink></div>
+    </td>
+  </tr>
+  </table>
+</div>
+%TMPL:END%
 
 <!-- Footer for versions table in attach screen -->
-%TMPL:DEF{ATTACH:versions:footer}% %TMPL:END%
+%TMPL:DEF{ATTACH:versions:footer}%</div>%TMPL:END%

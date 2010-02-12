@@ -9,7 +9,8 @@ TARGET= \
   login.js \
   natskin.js \
   obfuscator.js \
-  print.css 
+  print.css \
+  rename.js
 
 
 SUBDIRS= \

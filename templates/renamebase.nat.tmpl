@@ -2,8 +2,6 @@
 %TMPL:INCLUDE{"renamebody"}%<!-- renamebody// -->
 %TMPL:INCLUDE{"renamesidebar"}%<!-- renamesidebar// -->
 %TMPL:INCLUDE{"renametopicactions"}%<!-- renametopicactions// -->
-%TMPL:INCLUDE{"renamejavascript"}%<!-- renamejavascript// -->
-%TMPL:INCLUDE{"renamestyles"}%<!-- renamestyle// -->
 %TMPL:DEF{"bodyclass"}%natRenameBody%TMPL:END%
 %TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
 %TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"rename"}%) - %WIKITOOLNAME%%TMPL:END%
@@ -19,7 +17,7 @@
 <!--input type="hidden" name="confirm" value="on"-->
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep">
-    <h3>%MAKETEXT{"New location"}%:</h3>
+    <h3>%MAKETEXT{"Move to a different web"}%:</h3>
     %TMPL:P{"newweb"}%
     %IF{"$'URLPARAM{newweb}'!='%TRASHWEB%'" then="$percntTMPL:P{\"trashcheckbox\"}$percnt"}%
   </div>
@@ -51,6 +49,11 @@
       then="$percntBUTTON{\"%MAKETEXT{"Search in all webs"}%\" icon=\"find\" target=\"%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?newweb=%URLPARAM{"newweb"}%\" title=\"%MAKETEXT{"Search for backlinks in all webs"}%\"}$percnt"
     }%
     %CLEAR%
+    %ADDTOZONE{
+      "body"
+      tag="NATSKIN::RENAME"
+      text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/rename.js'></script>"
+    }%
   </div>
 </div>
 </form>

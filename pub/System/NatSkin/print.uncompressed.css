@@ -1,0 +1,162 @@
+/* page layout */
+@page {
+  size: a4;
+  margin:2.5cm 2cm 2cm 2cm;
+
+  @top-left {
+    content: string(title);
+    text-transform:uppercase;
+    font-family:arial,Helvetica,sans-serif;
+  }
+  @top-right {
+    content: string(chapter);
+    font-family:arial,Helvetica,sans-serif;
+  }
+  @bottom-right {
+    content: counter(page);
+    font-family:arial,Helvetica,sans-serif;
+  }
+}
+@page:first {
+  @top-left {
+    content: none;
+  }
+  @top-right {
+    content: none;
+  }
+}
+
+h1:first-of-type { string-set: title content() }
+h2 { string-set: chapter content() }
+
+html {
+  background:transparent !important;
+}
+body {
+  margin:0 !important;
+  padding:0 !important;
+  width:auto !important;
+  prince-linebreak-magic: auto;
+  hyphens: auto;
+/*
+  columns: 2;
+  column-gap: 1em;
+*/
+}
+
+/* pagination */
+h1, h2, h3, h4, h5, h6 {
+  page-break-after:avoid;
+  page-break-inside:avoid;
+}
+ul, ol, dl {
+  page-break-before:avoid;
+}
+.natMainContents table {
+  page-break-before:avoid;
+}
+pre {
+  page-break-inside:avoid;
+  overflow:auto;
+}
+
+/* hidden elements */
+.natFeedIcon,
+.natMainHeaderContents,
+.natBottomBar,
+.natBreadCrumbs,
+.natTopicActions,
+.natGreeter,
+.natSideBarHeader,
+.natWebButtons,
+.natSideBar,
+.natTopBar {
+  display:none;
+}
+
+
+/* spacings */
+.natHeaderArt {
+  border:0px !important;
+  margin:0px !important;
+  padding:0px !important;
+  background:transparent !important;
+}
+.natBodyContents {
+  width:auto !important;
+  padding:0px !important;
+  margin:0px !important;
+  border:0px !important;
+}
+.natLayoutTable {
+  table-layout:auto;
+  width:100%;
+}
+.natMain,
+.natMiddle {
+  border:0px !important;
+  padding:0px !important;
+  background:transparent !important;
+}
+.natMainContents {
+  background:transparent;
+  min-height:auto;
+  margin:0px !important;
+  padding:0px !important;
+}
+
+p {
+  margin:0.5em 0em;
+  text-indent:1em;
+  text-align:justify;
+  orphans:3;
+  widows:2;
+}
+p + p { text-indent: 1.5em }
+img {
+  page-break-inside: avoid;
+  prince-image-resolution: 150dpi;
+}
+
+
+/* links */
+.foswikiNewLink {
+  color:inherit !important;
+  background:inherit !important;
+  text-decoration:none;
+}
+
+/* clear overflow properties */
+.natMainContents,
+.overflow,
+pre {
+  overflow:visible !important;
+}
+
+/* BlogPlugin */
+.blogReply,
+.blogScroll,
+.blogAddComment {
+  display:none;
+}
+
+/* RedDotPlugin */
+.redDot {
+  display:none;
+}
+
+/* TwistyPlugin */
+.twistyHidden,
+.twistyTrigger {
+  display:none;
+}
+
+/* CommentPlugin */
+.commentPlugin {
+  display:none;
+}
+
+/* EditTablePlugin */
+.editTableEditImageButton {
+  display:none;
+}

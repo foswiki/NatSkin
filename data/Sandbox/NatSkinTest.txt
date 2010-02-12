@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="save topic" date="1257351150" format="1.1" reprev="1.20" version="1.20"}%
+%META:TOPICINFO{author="ProjectContributor" date="1260442910" format="1.1" version="1.23"}%
 ---+!! %TOPIC%
 %BUTTON{"Toggle grid" icon="table" class="foswikiRight" onclick="jQuery('.natMain').toggleClass('showgrid-40x18')"}%
 
@@ -7,6 +7,23 @@ ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
 ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
 hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
 feugiat nulla facilisis at vero eros et accumsan et
+
+---++ Response Messages
+<div class="foswikiSuccessMessage">
+Success, everything is fine. Click [[%TOPIC%][here]].
+</div>
+
+<div class="foswikiWarningMessage">
+Warning, could not connect to server. Click [[%TOPIC%][here]].
+</div>
+
+<div class="foswikiErrorMessage">
+Error, something is wrong.  Click [[%TOPIC%][here]].
+</div>
+
+<div class="foswikiTipMessage">
+Check this out.  Click [[%TOPIC%][here]].
+</div>
 
 %CLEAR%
 
@@ -484,5 +501,7 @@ facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
 </form>
 %ENDTAB%
 %ENDTABPANE%
+
+
 
 %META:TOPICMOVED{by="micha" date="1226426560" from="Sandbox.LaogContribTest" to="Sandbox.NatSkinTest"}%

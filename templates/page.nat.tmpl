@@ -6,17 +6,23 @@
 </html>
 %TMPL:END%
 %TMPL:DEF{"head"}%<head>
-<base href="%SCRIPTURL{%SCRIPTNAME%}%/%WEB%/%TOPIC%"></base>
+<meta http-equiv="X-UA-Compatible" content="%IF{"$'EDIT_FORCE_IE8_COMPATIBILITYMODE'='on' and context 'edit'" then="IE=EmulateIE7" else="chrome=1"}%" />
 <title>%TMPL:P{"title"}%</title>
+<base href="%SCRIPTURL{%SCRIPTNAME%}%/%WEB%/%TOPIC%" />
 <meta http-equiv="Content-Type" content="%CONTENTTYPE%; charset=%CHARSET%" />
-<meta http-equiv="X-UA-Compatible" content="chrome=1"/>
 <meta name="date" content="%REVINFO{"$http"}%" /> 
 %TMPL:P{"meta"}%
+%TMPL:P{"fixRevisionPosition"}%
+%TMPL:P{"initWebButtons"}%
+%TMPL:P{"initOverflows"}%
+%TMPL:P{"initTopicActions"}%
+%TMPL:P{"initSideBar"}%
+%TMPL:P{"initAutoComplete"}%
+%TMPL:P{"initSearchBox"}%
+%TMPL:P{"initRedDot"}%
 <link rel="icon" href="%FAVICON%" type="image/x-icon" />
 <link rel="shortcut icon" href="%FAVICON%" type="image/x-icon" />
-%TMPL:P{"styles"}%
-%TMPL:P{"javascript"}%
-%WEBCOMPONENT{"HtmlHead"}%
+%TMPL:P{"styles"}% %TMPL:P{"javascript"}% %WEBCOMPONENT{"HtmlHead"}%<!-- -->
 </head>%TMPL:END%
 %TMPL:INCLUDE{"foswiki"}%
 %TMPL:INCLUDE{"head"}%

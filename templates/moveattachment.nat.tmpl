@@ -2,8 +2,6 @@
 %TMPL:INCLUDE{"moveattachmentbody"}%<!-- moveattachmentbody// -->
 %TMPL:INCLUDE{"moveattachmentsidebar"}%<!-- moveattachmentsidebar// -->
 %TMPL:INCLUDE{"moveattachmenttopicactions"}%<!-- moveattachmenttopicactions// -->
-%TMPL:INCLUDE{"moveattachmentjavascript"}%<!-- moveattachmentjavascript// -->
-%TMPL:INCLUDE{"moveattachmentstyles"}%<!-- moveattachmentstyles// -->
 %TMPL:DEF{"bodyclass"}%natMoveAttachmentBody%TMPL:END%
 %TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"move attachment"}%) - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<!-- contenttitle-->
@@ -25,6 +23,7 @@
 <input type="hidden" name="attachment" value="%FILENAME%" />
 <input type="hidden" name="newattachment" value="%NEW_FILENAME%" />
 <input type="hidden" name="changeRefs" value="0" />
+<input type="hidden" name="nonwikiword" value="on" />
 </div>
 </form>
 <!-- //content -->%TMPL:END%
@@ -39,7 +38,7 @@
 <!-- //notes -->%TMPL:END%
 %TMPL:DEF{"content_trash"}%<!-- content_trash -->
 <input type="hidden" name="newweb" value="%TRASHWEB%" />
-<input type="hidden" name="newtopic" value="TrashAttachment" />
+<input type="hidden" name="newtopic" value="%URLPARAM{"newtopic" default="TrashAttachment"}%" />
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep">
   <h2>Are you sure?</h2>
@@ -54,34 +53,17 @@
 %TMPL:DEF{"content_move"}%<!-- content_move -->
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep">
-  <h3>%MAKETEXT{"From"}%:</h3>
-  <span class="foswikiAlert"><nop>%WEB%.%TOPIC%</span>
+  <h4>%MAKETEXT{"To web:"}%</h4>
+  <input type="text" class="foswikiInputField" name="newweb" id="newweb" autocomplete="%SCRIPTURL{"view"}%/%SYSTEMWEB%/JQueryAjaxHelper?section=web;contenttype=text/plain;skin=text;%IF{"defined EXCLUDE" then="exclude=%EXCLUDE%"}%" size="60" value="%IF{"defined NEW_WEB" then="%NEW_WEB%" else="%WEB%"}%" />
 </div>
 <div class="foswikiFormStep">
-  <h3>%MAKETEXT{"Move attachment to web:"}%</h3>
-  <verbatim style="display:none">
-  <select name="newweb" onchange="if (document.rename.newweb.value == '%TRASHWEB%') { document.rename.newtopic.value = 'TrashAttachment'; document.rename.totrash.checked = true; } else { document.rename.totrash.checked = false; }"> 
-    %FLEXWEBLIST{
-      "<option $marker value='$web'>$web</option>" 
-      webs="%TRASHWEB%,%NEW_WEB%,publiccurrent" 
-      selection="%IFDEFINED{"%NEW_WEB%" then="$test" else="%WEB%"}%" 
-      marker=" selected " 
-      separator=" "}% 
-  </select>
-
-  <label for="totrash">
-    <input type="checkbox" class="foswikiCheckbox" name="totrash" id="totrash" onclick="var elem = document.rename.newweb; if (elem.value == '%TRASHWEB%') { elem.value = '%WEB%'; document.rename.newtopic.value = '%TOPIC%'; document.rename.totrash.checked = false; } else { elem.value = '%TRASHWEB%'; document.rename.newtopic.value = 'TrashAttachment'; document.rename.totrash.checked = true; }">
-    %MAKETEXT{"Move to %TRASHWEB%"}%
-  </label>
-  </verbatim>
-  %INCLUDE{"%SYSTEMWEB%.JQueryAjaxHelper" section="webselector" INPUT_NAME="newweb" INPUT_VALUE="%IFDEFINED{"%NEW_WEB%" then="$test" else="%WEB%"}%"}%
+  <h4>%MAKETEXT{"To topic:"}%</h4>
+  <input type="text" class="foswikiInputField" name="newtopic" id="newtopic" autocomplete="%SCRIPTURL{"view"}%/%SYSTEMWEB%/JQueryAjaxHelper?section=topic;contenttype=text/plain;skin=text;baseweb=%BASEWEB%;%IF{"defined EXCLUDE" then="exclude=%EXCLUDE%"}%" size="60" value="%TOPIC%" />
+  <div class="foswikiFormDescription">
+    %MAKETEXT{"The new topic chosen must already exist."}%
+  </div>
 </div>
-<div class="foswikiFormStep">
-  <h3>%MAKETEXT{"To topic:"}%</h3>
-  %INCLUDE{"%SYSTEMWEB%.JQueryAjaxHelper" section="topicselector" INPUT_NAME="newtopic" INPUT_VALUE="%TOPIC%"}%
-</div>
-<div class="foswikiFormStep">
-</div>
+%IF{"$PLUGINVERSION >= 2.1" then="$percntTMPL:P{\"toattachment\"}$percnt"}%
 <div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
   %BUTTON{"%MAKETEXT{"OK"}%" type="save" icon="tick"}%
   %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WEB%.%TOPIC%" icon="cross"}%
@@ -89,6 +71,13 @@
 </div>
 </div>
 <!-- //content_move -->%TMPL:END%
+%TMPL:DEF{"toattachment"}%<div class="foswikiFormStep">
+  <h4>%MAKETEXT{"To attachment:"}%</h4>
+  <input name="newattachment" class="foswikiInputField" value="%URLPARAM{"attachment"}%" size="36" />
+  <div class="foswikiFormDescription">
+    %MAKETEXT{"The attachment may be renamed (by appending a number to the name) if an attachment of that name already exists in the target topic."}%
+  </div>
+</div>%TMPL:END%
 %TMPL:DEF{"notes_trash"}%<!-- notes_trash -->
 <p>
   %MAKETEXT{"When the file is deleted, it is moved to the %TRASHWEB% web and attached to the %TRASHWEB%.TrashAttachment topic."}%

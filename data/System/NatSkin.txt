@@ -131,7 +131,7 @@ allways open an extra window.
 
 ---++ Skin Info
 |  Skin Author: | Michael Daum |
-|  Copyright &copy;: | 2003-2009, Michael Daum http://michaeldaumconsulting.com |
+|  Copyright &copy;: | 2003-2010, Michael Daum http://michaeldaumconsulting.com |
 |  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
 |  Release: | %$RELEASE% |
 |  Version: | %$VERSION% |
@@ -139,6 +139,13 @@ allways open an extra window.
 |  Base Name: | nat |
 |  Screenshot: | <div style="overflow:hidden;height:200px"><a href="%PUBURLPATH%/%WEB%/NatSkin/BlueNoteStyle.jpeg"><img src="%PUBURLPATH%/%WEB%/NatSkin/BlueNoteStyle.jpeg" title="JazzyNoteTheme"/></a></div> |
 |  Change&nbsp;History: | <!-- specify latest version first -->&nbsp; |
+|  12 Feb 2010: | displaying attachment revisions in a small twisty now; \
+                  minifying and compressing all css and js now; \
+                  fixed and improved attachment tables; \
+                  removed support for T*/cairo; \
+                  improved !MySideBar wizard; \
+                  support for Foswiki:Extensions/ActionTrackerPlugin; \
+                  some visual improvements of form elements  |
 |  24 Nov 2009: | Item2403: Improve !SubscribePlugin support |
 |  18 Nov 2009: | Item2373: Improve XHTML validation |
 |  17 Nov 2009: | fixed print cover; \

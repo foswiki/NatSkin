@@ -1,7 +1,8 @@
 <!-- template: styles.nat.tmpl -->
-%TMPL:DEF{"defaultstyles"}%
-%ADDTOHEAD{"NATSKIN::CSS"
-  text="
+%TMPL:DEF{"defaultstyles"}%%ADDTOZONE{
+  "head"
+  tag="NATSKIN::CSS"
+  text="<literal>
 <!--[if IE 6]>
 <script type='text/javascript'>
 var blankImg = '%PUBURLPATH%/%SYSTEMWEB%/NatSkin/blank.gif';
@@ -19,8 +20,6 @@ var blankImg = '%PUBURLPATH%/%SYSTEMWEB%/NatSkin/blank.gif';
   line-height:1.2em;
 }
 </style>
-<![endif]-->
-"
-  requires="NATSKIN::JS"
+<![endif]--></literal>"
 }%%TMPL:END%
 %TMPL:DEF{"styles"}%%TMPL:P{"defaultstyles"}%%TMPL:END%

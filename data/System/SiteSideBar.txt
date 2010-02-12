@@ -4,7 +4,8 @@ Default sidebar implementation
 
 %STARTINCLUDE%<!-- sitesidebar -->
 <h2 >%WEBLINK%</h2>
-%WEBCOMPONENT{"Links"}%
+%WEBCOMPONENT{"Links"}%<!-- weblinks// -->
+%IF{"$'MYSIDEBAR'!='off'" then="$percntTMPL:P{\"mysidebar\"}$percnt" }%<!-- mysidebar -->
 <h2 >Tools</h2>
    * [[WebTopicList][%MAKETEXT{"Index"}%]]
    * [[WebChanges][%MAKETEXT{"Changes"}%]]

@@ -178,3 +178,13 @@
 %TMPL:DEF{"topictitle"}%%TMPL:P{context="DBCachePluginEnabled" then="topictitle_dbcache" else="topictitle_default"}%%TMPL:END%
 %TMPL:DEF{"topictitle_default"}%%IF{"defined 'TOPICTITLE'" then="%TOPICTITLE%" else="%BASETOPIC%"}%%TMPL:END%
 %TMPL:DEF{"topictitle_dbcache"}%%GETTOPICTITLE{encode="entity"}%%TMPL:END%
+
+%TMPL:DEF{"iconpath:toggle"}%%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/toggle.png%TMPL:END%
+%TMPL:DEF{"iconpath:toggleopen"}%%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/toggle-collapse.png%TMPL:END%
+%TMPL:DEF{"icon:toggle"}%<img alt='toggle' src='%TMPL:P{"iconpath::toggle"}%' border='0' />%TMPL:END%
+%TMPL:DEF{"icon:toggleopen"}%<img alt='toggle' src='%TMPL:P{"iconpath::toggleopen"}%' border='0' />%TMPL:END%
+
+%TMPL:DEF{"iconpath:togglesmall"}%%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/toggle-small.png%TMPL:END%
+%TMPL:DEF{"iconpath:toggleopensmall"}%%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/toggle-small-collapse.png%TMPL:END%
+%TMPL:DEF{"icon:togglesmall"}%<img alt='toggle' src='%TMPL:P{"iconpath::togglesmall"}%' border='0' />%TMPL:END%
+%TMPL:DEF{"icon:toggleopensmall"}%<img alt='toggle' src='%TMPL:P{"iconpath::toggleopensmall"}%' border='0' />%TMPL:END%

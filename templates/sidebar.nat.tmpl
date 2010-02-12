@@ -7,3 +7,23 @@
 %TMPL:DEF{"defaultsidebar"}%%TMPL:P{context="natskin_style_pattern" then="pattern_sidebar" else="nat_sidebar"}%%TMPL:END%
 %TMPL:DEF{"sidebar"}%%TMPL:P{"defaultsidebar"}%%TMPL:END%
 %TMPL:DEF{"rightsidebar"}%%TMPL:P{context="natskin_sidebar_both" then="webrightbar" else="sidebar"}%%TMPL:END%
+%TMPL:DEF{"mysidebarreddot"}%%REDDOT{"%topic%" text="%JQICON{"pencil"}%" class="natMySideBarRedDot" title="%MAKETEXT{"Edit my sidebar"}%"}%%TMPL:END%
+%TMPL:DEF{"thesidebar"}%%USERSWEB%.%WIKINAME%%IF{"defined 'MYSIDEBAR'" then="%MYSIDEBAR%" else="SideBar"}%%TMPL:END%
+%TMPL:DEF{"mysidebar"}%%IF{"istopic '%TMPL:P{"thesidebar"}%'" 
+  then="<h2 class='jqInited'>%MAKETEXT{"My sidebar"}%%TMPL:P{
+      context="RedDotPluginEnabled" 
+      then="mysidebarreddot" 
+      topic="%TMPL:P{"thesidebar"}%"
+    }%</h2>
+$percntINCLUDE{\"%TMPL:P{"thesidebar"}%\"}$percnt<!-- mysidebar -->
+$percntTMPL:P{\"mysidebarbookmark\"}$percnt"
+  else="<h2 class='jqInited'>%MAKETEXT{"My sidebar"}%</h2>
+    <ul>
+      <li>[[%SYSTEMWEB%.MySideBar][%JQICON{"layout_sidebar"}% %MAKETEXT{"Create a personal sidebar"}%]]</li>
+    </ul>"
+}%%TMPL:END%
+%TMPL:DEF{"mysidebarbookmark"}%<ul>
+  <li>
+    %COMMENT{type="mysidebarbookmark" templatetopic="%SYSTEMWEB%.MySideBar" target="%TMPL:P{"thesidebar"}%"}%
+  </li>
+</ul>%TMPL:END%

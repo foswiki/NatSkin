@@ -1,10 +1,9 @@
 %TMPL:INCLUDE{"attach"}%<!-- template: attachagain.nat.tmpl -->
-%TMPL:DEF{"heading"}%%MAKETEXT{"Update attachment [_1] on [_2]" args="[[%ATTACHURLPATH%/%ENCODE{%FILENAME%}%][%FILENAME%]],[[%TOPIC%]]"}%%TMPL:END%
+%TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Update attachment [_1] on [_2]" args="'[[%ATTACHURLPATH%/%ENCODE{%FILENAME%}%][%FILENAME%]]',[[%TOPIC%]]"}%</h1>%TMPL:END%
 %TMPL:DEF{"existingattachments"}%<!-- existingattachments -->
----++ %MAKETEXT{"Version history"}%
-<div class="natTopicAttachments">
+%TAB{"%MAKETEXT{"Versions"}%"}%
 %ATTACHTABLE% 
-</div>
+%ENDTAB%
 <!-- //existingattachments -->%TMPL:END%
 %TMPL:DEF{"notes"}%<!-- notes -->
 <p>
@@ -24,8 +23,9 @@ updated or added."}%
 <p> %MAKETEXT{"*Move attachment*: An attachment can be deleted by moving it to the Trash.TrashAttachment."}%  </p>
 <!-- //notes -->%TMPL:END%
 %TMPL:DEF{"attachaction"}% <!-- attachaction -->
-<input type="submit" class="natOkButton" value='%MAKETEXT{"Upload file"}%' />
-<input type="submit" class="natAltButton" name="changeproperties" value='%MAKETEXT{"Change properties"}%' />
-<input type="button" class="natCancelButton" value='%MAKETEXT{"Cancel"}%' onclick="window.location.href = '%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%';">
+%BUTTON{"%MAKETEXT{"Upload file"}%" icon="tick" type="save"}%
+%BUTTON{"%MAKETEXT{"Change properties"}%" icon="disk" type="submit" name="changeproperties"}%
+%BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" target="%WEB%.%TOPIC%"}%
+%CLEAR%
 <!-- //attachaction -->%TMPL:END%
 %TMPL:DEF{"fileuser"}%(%FILEUSER%)%TMPL:END%

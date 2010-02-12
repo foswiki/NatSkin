@@ -54,7 +54,7 @@
     <input type="hidden" name="action" value="editSettings" />
     <div class="foswikiFormStep">
         <h2>%MAKETEXT{"Edit topic preferences"}%</h2>
-        %MAKETEXT{"Edit preference settings for '[_1]'" args="[[%BASEWEB%.%BASETOPIC%]]"}%
+        %MAKETEXT{"Edit preference settings for [_1]" args="<b>%BASETOPIC%</b>"}%
     </div>
     <div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
         %BUTTON{value="%MAKETEXT{"Edit"}%" type="save" icon="page_white_edit"}%
@@ -71,7 +71,7 @@
     <h2>%MAKETEXT{"Search for backlinks"}%</h2>
   </div>
   <div class="foswikiFormStep">
-    %MAKETEXT{"Find topics that link back to '[_1]'" args="[[%BASEWEB%.%BASETOPIC%]]"}%
+    %MAKETEXT{"Find topics that link back to [_1]" args="<b>%BASETOPIC%</b>"}%
 
     <input type="radio" id="searchthis" name="template" value="backlinksweb" checked />
     <label for="searchthis">%MAKETEXT{"Search in current web"}%</label>
@@ -160,24 +160,27 @@
 
 %TMPL:DEF{"classificationplugin"}%<!-- classificationplugin -->
 <div class="foswikiFormSteps">
-  <form name="renametagform" action="%SCRIPTURLPATH{"rest"}%/ClassificationPlugin/renametag">
-  <h2>Rename, merge or delete tags</h2>
+  <form class="jqRenameTag" name="renametagform" action="%SCRIPTURLPATH{"rest"}%/ClassificationPlugin/renametag">
+  <input type="hidden" name="web" value="%BASEWEB%" />
+  <h2>%MAKETEXT{"Rename, merge or delete tags"}%</h2>
   <div class="foswikiFormStep">
-    <h3>From:</h3>
-    <input type="text" class="foswikiInputField jqTextboxList {autocomplete:'%SCRIPTURL{"rest"}%/RenderPlugin/template/rest?name=classificationplugin&expand=querytags&topic=%BASEWEB%.%BASETOPIC%'}" size="30" name="from" />
+    <h3>%MAKETEXT{"From:"}%</h3>
+    <input type="text" class="foswikiInputField jqTextboxList required {autocomplete:'%SCRIPTURL{"rest"}%/RenderPlugin/template/rest?name=classificationplugin&expand=querytags&topic=%BASEWEB%.%BASETOPIC%', clearControl:'#renameClear'}" size="30" name="from" />
+    <span class="foswikiHidden" id="renameClear">clear</span>
     <div class="foswikiFormDescription">
       %MAKETEXT{"Select one or more existing tags to be renamed."}%
     </div>
   </div>
   <div class="foswikiFormStep">
-    <h3>To:</h3>
-    <input type="text" class="foswikiInputField" autocomplete='%SCRIPTURL{"rest"}%/RenderPlugin/template/rest?name=classificationplugin&expand=querytags&topic=%BASEWEB%.%BASETOPIC%' size="30" name="to" />
+    <h3>%MAKETEXT{"To:"}%</h3>
+    <input type="text" class="foswikiInputField" required autocomplete='%SCRIPTURL{"rest"}%/RenderPlugin/template/rest?name=classificationplugin&expand=querytags&topic=%BASEWEB%.%BASETOPIC%' size="30" name="to" />
     <div class="foswikiFormDescription">
       %MAKETEXT{"Select the tag to rename the above tags to. Leaving this empty will delete them."}%
     </div>
   </div>
+  <div class="foswikiFormStep msg"></div>
   <div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
-    %BUTTON{"%MAKETEXT{"Rename"}%" type="submit" icon="tag_blue"}%
+    %BUTTON{"%MAKETEXT{"Rename"}%" icon="tag_blue" class="submit"}%
     %BUTTON{"%MAKETEXT{"Show all tags"}%" id="show_hide_tags" icon="find" onclick="showHideAllTags()"}%
     %CLEAR%
   </div>
@@ -186,7 +189,15 @@
 </div>
 %JQREQUIRE{"textboxlist"}%
 %JQREQUIRE{"autocomplete"}%
+%JQREQUIRE{"metadata"}%
+%JQREQUIRE{"simplemodal"}%
 %JQREQUIRE{"form"}%
+%ADDTOZONE{
+  "body"
+  tag="CLASSIFICATIONPLUGIN::RENAMETAG" 
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/ClassificationPlugin/renametag.js'></script>" 
+  requires="JQUERYPLUGIN::FORM"
+}%<!-- addtozone::renametag -->
 <literal>
 <style type="text/css">
 #alltags, #clsTagRenamer form {
@@ -196,68 +207,25 @@
   margin:0px;
 }
 </style>
-<script type="text/javascript">
-function showHideAllTags () {
-  var $alltags = jQuery("#alltags");
-  var $button = jQuery("#show_hide_tags .jqButtonIcon");
-  if ($alltags.is(":hidden")) {
-    var oldBackground = $button.css('background-image');
-    $button.css('background-image','url(%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/plugins/spinner/spinner.gif)');
-    $alltags.load(
-      '%SCRIPTURL{"rest"}%/RenderPlugin/template/rest', {
-        name:'oopsmore',
-        expand:'showalltags',
-        topic:'%BASEWEB%.%BASETOPIC%'
-      }, function() {
-        $alltags.slideDown();
-        jQuery("#show_hide_tags .jqButtonIcon").css('background-image',oldBackground).text("Hide all tags");;
-      }
-    );
-  } else {
-    $alltags.hide();
-    jQuery("#show_hide_tags .jqButtonIcon").text("Show all tags");
-  }
-  return false;
-}
-</script>
-</literal>
+<div id="confirmRenameTag" style="display:none" class="foswikiPage foswikiFormSteps">
+<div class="foswikiFormStep">
+  <h2>Confirmation required</h2>
+  Are you sure that you want to rename/delete these tags?
+  <div class="from" style="font-weight:bold;margin-top:1em;"></div>
+</div>
+<div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
+  %BUTTON{"%MAKETEXT{"Yes"}%" icon="tick" id="yes"}%
+  %BUTTON{"%MAKETEXT{"No"}%" icon="cross" id="no"}%
+  %CLEAR%
+</div></div>
 <!-- //classificationplugin -->%TMPL:END%
 
-%TMPL:DEF{"showalltags"}%%DBSTATS{
-  "TopicType=~'\b(Taggedtopic|ClassifiedTopic)\b'"
-  field="Tag"
-  header="<ol id='clsTagRenamer'>"
-  format="<li>
-    <a href='#'>$key</a>
-    <form action='%SCRIPTURL{"rest"}%/ClassificationPlugin/renametag'>
-      <input type='hidden' name='from' value='$key' />
-      <input type='text' class='foswikiInputField' name='to' value='$key' />
-      <input type='submit' value='Rename' />
-    </form>
-  </li>"
-  footer="</ol>"
+%TMPL:DEF{"showalltags"}%
+%MAKEINDEX{
+  "%DBSTATS{"TopicType=~'\b(Taggedtopic|ClassifiedTopic)\b'"
+    field="Tag"
+    separator=", "
+    format="$key"
+  }%"
 }%
-<literal>
-<script type="text/javascript">
-(function($) {
-  $(function() {
-    $("#clsTagRenamer a").click(function() {
-      $("#clsTagRenamer li.current:first").each(function() {
-        $(this).removeClass("current");
-        $("a", this).show();
-        $("form", this).css('display', 'none');
-      });
-      var $this = $(this);
-      var $container = $this.parent();
-      var $form = $("form", $container);
-      $form.css('display', 'inline');
-      $container.addClass("current");
-      $("input[type=text]", $form).focus();
-      $this.hide();
-      return false;
-    });
-  });
-})(jQuery);
-</script>
-</literal>
 %TMPL:END%

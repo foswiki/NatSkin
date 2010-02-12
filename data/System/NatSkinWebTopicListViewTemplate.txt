@@ -1,18 +1,23 @@
 %META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1257265212" format="1.1" reprev="1.4" version="1.4"}%
 %TMPL:INCLUDE{"WebTopicListView"}%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+%TMPL:DEF{"topicactions"}%%TMPL:END%
 %TMPL:DEF{"content"}%
 ---+ %TOPIC%
 <noautolink>
 %MAKEINDEX{
-  "$percntTOPICLIST{
-    \"($dollarpercntGETTOPICTITLE{\\"$dollarname\\"}$dollarpercnt);$dollarpercntGETTOPICTITLE{\\"$dollarname\\"}$dollarpercnt;$dollarname\" 
-    separator=\"$n\"
-  }$percnt" 
+  "%TOPICLIST{
+    "($percntGETTOPICTITLE{\"$name\"}$percnt);$percntGETTOPICTITLE{\"$name\"}$percnt;$name"
+    separator="$n"
+  }%"
+  pattern="^(.+);(.+);(.+)$"
   pattern="(.*);(.*);(.*)"
   split="\n"
   cols="3"
   header="$anchors"
   format="[[%BASEWEB%.$3][$2]]"
+  sort="nocase"
+  footer="$n<span class='foswikiAlert'>$count</span> topics found"
 }%
 </noautolink>
 %TMPL:END%

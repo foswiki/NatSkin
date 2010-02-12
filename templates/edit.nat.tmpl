@@ -1,8 +1,6 @@
 %TMPL:INCLUDE{"page"}%<!-- template: edit.nat.tmpl -->
 %TMPL:INCLUDE{"editbody"}%<!-- editbody// -->
 %TMPL:INCLUDE{"edittopicactions"}%<!-- edittopicactions// -->
-%TMPL:INCLUDE{"editjavascript"}%<!-- editjavascript// -->
-%TMPL:INCLUDE{"editstyles"}%<!-- editstyles// -->
 %TMPL:INCLUDE{"edithelp"}%<!-- edithelp// -->
 %TMPL:INCLUDE{"edittoolbar"}%<!-- edittoolbar// -->
 %TMPL:INCLUDE{"metacomments"}%<!-- metacomments// -->
@@ -119,7 +117,8 @@
     </table>
   </div>
 </div>
-%ADDTOHEAD{"METACOMMENTPLUGIN::PREFS"
+%ADDTOZONE{"body"
+  tag="METACOMMENTPLUGIN::PREFS"
   text="
 <script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MetaCommentPlugin/metacomment_prefs.js'></script>
 "
@@ -159,7 +158,7 @@
       <input type="radio" class="foswikiRadioButton" id="nobody_view" name="Local+PERMSET_VIEW" value="nobody" %IF{"$'PERMSET_VIEW'='nobody'" then="checked='checked'"}% /> 
       <label for="nobody_view" title='%MAKETEXT{"strictly deny any access to this topic"}%'>%MAKETEXT{"Nobody"}%</label>
 
-      <table>
+      <table class="foswikiNullTable">
         <tr>
           <td>
             <input type="radio" class="foswikiRadioButton" id="details_view_toggle" name="Local+PERMSET_VIEW" value="details" %IF{"$'PERMSET_VIEW'='details'" then="checked='checked'"}% />
@@ -194,7 +193,7 @@
     <input type="radio" class="foswikiRadioButton" id="nobody_change" name="Local+PERMSET_CHANGE" value="nobody" %IF{"$'PERMSET_CHANGE'='nobody'" then="checked='checked'"}% /> 
     <label for="nobody_change" title='%MAKETEXT{"strictly deny write access to this topic"}%'>%MAKETEXT{"Nobody"}%</label>
 
-    <table>
+    <table class="foswikiNullTable">
       <tr>
         <td>
           <input type="radio" class="foswikiRadioButton" id="details_change_toggle" name="Local+PERMSET_CHANGE" value="details" %IF{"$'PERMSET_CHANGE'='details'" then="checked='checked'"}% />
@@ -215,7 +214,9 @@
     </table>
   </div>
 </div>
-%ADDTOHEAD{"NATSKIN:EDIT" 
+%ADDTOZONE{
+  "body"
+  tag="NATSKIN:EDIT" 
   text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/edit.js'></script>"
   requires="NATSKIN::OPTS"
 }%

@@ -3,13 +3,11 @@
 %TMPL:INCLUDE{"viewbody"}%<!-- viewbody// -->
 %TMPL:INCLUDE{"viewtopicactions"}%<!-- viewtopicactions// -->
 %TMPL:INCLUDE{"viewsidebar"}%<!-- viewsidebar// -->
-%TMPL:INCLUDE{"viewjavascript"}%<!-- viewjavascript// -->
-%TMPL:INCLUDE{"viewstyles"}%<!-- viewstyles// -->
 %TMPL:INCLUDE{"searchbox"}%<!-- searchbox// -->
 %TMPL:DEF{"bodyclass"}%natViewBody %IF{"context 'natskin_history_1'" then="natViewHistoryBody"}%%TMPL:END%
-%TMPL:DEF{"title"}%%HTMLTITLE%%TMPL:END%
-%TMPL:DEF{"meta"}%%TMPL:P{"metatitle"}%%TMPL:P{"metakeywords"}%%TMPL:P{"metaauthor"}%%TMPL:P{"metadescription"}%%TMPL:P{"metaedit"}%%HTTP_EQUIV_ON_VIEW%%TMPL:END%
-%TMPL:DEF{"metatitle"}%<meta name='title' content='%HTMLTITLE%' />
+%TMPL:DEF{"title"}%%HTMLTITLE{separator=" %IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="-"}% "}%%TMPL:END%
+%TMPL:DEF{"meta"}%%TMPL:P{"metatitle"}%%TMPL:P{"metakeywords"}%%TMPL:P{"metaauthor"}%%TMPL:P{"metadescription"}%%TMPL:P{"DISmetaedit"}%%HTTP_EQUIV_ON_VIEW%%TMPL:END%
+%TMPL:DEF{"metatitle"}%<meta name='title' content='%TMPL:P{"title"}%' />
 %TMPL:END%
 %TMPL:DEF{"metakeywords"}%%IF{
   "defined 'METAKEYWORDS'" 
@@ -23,8 +21,9 @@
 %TMPL:DEF{"metadescription"}%%IF{
   "defined 'METADESCRIPTION'" 
   then="<meta name='description' content='$percntMETADESCRIPTION$percnt' />$n"
-  else="$percntIF{\"'%WEB%.%TOPIC%'/Summary\" then=\"<meta name='description' content='$dollarpercntFORMFIELD{\\"Summary\\"}$dollarpercnt' />$dollarn\"}$percnt"
+  else="$percntIF{\"'%WEB%.%TOPIC%'/Summary\" then=\"$dollarpercntTMPL:P{metasummary}$dollarpercnt$dollarn\"}$percnt"
 }%%TMPL:END%
+%TMPL:DEF{"metasummary"}%<meta name='description' content='%FORMFIELD{"Summary"}%' />%TMPL:END%
 %TMPL:DEF{"metaedit"}%%IF{
   "'%WEB%.%TOPIC%' allows 'change'" 
   then="<link rel='alternate' type='application/x-wiki' title='Edit this page!' href='%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%' />$n"
@@ -38,10 +37,52 @@
 %TMPL:DEF{"rawbutton"}%%IF{"$'URLPARAM{raw}'='on'" then="<div class='natButtonBox'>$percntBUTTON{\"%MAKETEXT{"View"}%\" title=\"%MAKETEXT{"Back to view mode"}%\" style=\"float:right\" icon=\"eye\" target=\"%WEB%.%TOPIC%\"}$percnt$percntCLEAR$percnt</div>" else="<!-- -->" }%%TMPL:END%
 %TMPL:DEF{"text"}%%TEXT%%TMPL:END%
 %TMPL:DEF{"aftertext"}%<!-- aftertext -->
-%IF{"$'DISPLAYCOMMENTS'='on'" then="$percntTMPL:P{\"comments\"}$percnt"}%<!-- meta:comments // -->
-%IF{"$'DISPLAYFORM'='off'" else="$percntTMPL:P{\"form\"}$percnt"}%<!-- meta:form // -->
-%IF{"$'DISPLAYATTACHMENTS'='off'" else="$percntMETA{\"attachments\"}$percnt"}%<!-- meta:attachments// -->
+%IF{"$'DISPLAYCOMMENTS'='on'" then="$percntTMPL:P{\"comments\"}$percnt"}%<!-- comments // -->
+%IF{"$'DISPLAYFORM'='off'" else="$percntTMPL:P{\"form\"}$percnt"}%<!-- form // -->
+%IF{"$'DISPLAYATTACHMENTS'='off'" else="$percntTMPL:P{\"attachments\"}$percnt"}%<!-- attachments// -->
 <!-- //aftertext -->%TMPL:END%
+%TMPL:DEF{"attachments"}%%TMPL:P{context="DBCachePluginEnabled" then="attachments::dbcache" else="attachments::default"}%%TMPL:END%
+%TMPL:DEF{"attachments::default"}%%META{"attachments"}%%TMPL:END%
+%TMPL:DEF{"attachments::dbcache"}%<!-- attachments::dbcache -->
+%ATTACHMENTS{
+  hidenull="on" 
+  attr="^[^h]*$"
+  header="<div class='foswikiFormSteps natTopicAttachments' id='natTopicAttachments'>
+    <a class='natTopicAction natAttachTopicAction' title='%MAKETEXT{"Manage existing attachments"}%' href='%SCRIPTURLPATH{"attach"}%/%WEB%/%TOPIC%?tab=2' rel='nofollow'>
+    <span>Attach</span>
+    </a>
+    $percntTWISTY{
+      mode=\"div\" 
+      start=\"show\" 
+      remember=\"off\" 
+      prefix=\"<h2>\" 
+      suffix=\"</h2>\" 
+      link=\"%MAKETEXT{"Attachments"}% \" 
+      showimg=\"%TMPL:P{"iconpath:toggle"}%\"
+      hideimg=\"%TMPL:P{"iconpath:toggleopen"}%\"
+    }$percnt"
+  format="<div class='foswikiFormStep'>
+    <table cellspacing='0' cellpadding='0'>
+      <tr>
+        <td class='natAttachmentIcon'>$icon</td> 
+        <td class='natAttachmentInfo'>
+            <div class='natAttachmentName'><a href='$url' class=\"jqImageTooltip { web:'%WEB%', topic:'%TOPIC%', image:'$name' }\">$name</a> ($sizeK)</div>
+            <div class='natAttachmentComment'><noautolink>$comment</noautolink></div>
+            %MAKETEXT{"version [_1] uploaded by [_2] on [_3]" args="$version,$wikiuser,$date"}%
+            $percntFORMATLIST{\"$oldversions\"
+              split=\"$n\"
+              pattern=\"(.*);(.*);(.*);(.*)\"
+              header=\"... $dollarpercntTWISTY{showlink=\\"%MAKETEXT{"more"}%\\" hidelink=\\"%MAKETEXT{"less"}%\\" mode=\\"div\\"}$dollarpercnt\"
+              format=\"<a href='%SCRIPTURLPATH{"viewfile"}%/%WEB%/%TOPIC%?filename=$name;rev=$3'>version $3</a> uploaded by $2 on $1\"
+              separator=\"%BR%\"
+              footer=\"$dollarpercntENDTWISTY$dollarpercnt\"
+            }$percnt<!-- oldversions -->
+        </td>
+      </tr>
+    </table>
+    </div>"
+  footer="$percntENDTWISTY$percnt </div>"
+}%<!-- //attachments::dbcache -->%TMPL:END%
 %TMPL:DEF{"form"}%%META{"form"}%%TMPL:END%
 %TMPL:DEF{"contentheader_container"}%<div class="natMainHeaderContents" %IF{"$'DISPLAYTOPICACTIONS'='off' and $'DISPLAYBREADCRUMBS'='off'" then="style='display:none'"}%>%TMPL:P{"contentheader"}%</div>%TMPL:END%
 %TMPL:DEF{"contentheader"}%%IF{

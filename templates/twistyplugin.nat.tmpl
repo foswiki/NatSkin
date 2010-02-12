@@ -1,13 +1,11 @@
-%TMPL:INCLUDE{twistyplugin}%
-
 %TMPL:DEF{twisty:header}%
-<link rel="stylesheet" href="%PUBURLPATH%/%SYSTEMWEB%/TwistyPlugin/twisty.jquery.css" type="text/css" media="all" />
-%ADDTOHEAD{
-  "TWISTYPLUGIN::HEADER"
-  text="
-<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/TwistyPlugin/twisty.jquery.js'></script>
-<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/JavascriptFiles/foswikiPref.js'></script>
-<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/JavascriptFiles/foswikiStyles.js'></script>
-  "
+%ADDTOZONE{"head"
+  tag="TWISTYPLUGIN"
+  text="<link rel='stylesheet' href='%PUBURLPATH%/%SYSTEMWEB%/TwistyPlugin/twisty.jquery.css' type='text/css' media='all' />"
+}%
+%ADDTOZONE{"body"
+  tag="TWISTYPLUGIN"
   requires="JQUERYPLUGIN"
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/TwistyPlugin/twisty.jquery.js'></script>
+<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/JavascriptFiles/foswikiPref.js'></script>"
 }%%TMPL:END%

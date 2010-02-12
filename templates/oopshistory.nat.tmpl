@@ -17,8 +17,9 @@
   <input type="hidden" name="type" value="history">
 <!-- //formstart_rdiff -->%TMPL:END%
 %TMPL:DEF{"formend"}%</form></div>%TMPL:END%
-%TMPL:DEF{"oopshistoryjavascript"}%%ADDTOHEAD{
-  "NATSKIN::HISTORY"
+%TMPL:DEF{"oopshistoryjavascript"}%%ADDTOZONE{
+  "body"
+  tag="NATSKIN::HISTORY"
   text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/history.js'></script>"
   requires="JQUERYPLUGIN::FOSWIKI"
 }%%TMPL:END%
@@ -90,8 +91,8 @@
 }%
 <tr>
     <td colspan="3">
-      %BUTTON{"%MAKETEXT{Compare}%" icon="tick" type="submit"}%
-      %BUTTON{"%MAKETEXT{Cancel}%" icon="cross" target="%WEB%.%TOPIC%"}%
+      %BUTTON{"%MAKETEXT{"Compare"}%" icon="tick" type="submit"}%
+      %BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" target="%WEB%.%TOPIC%"}%
     </td>
 </tr>
 </table>
@@ -132,8 +133,8 @@
 }%
 <tr>
     <td colspan="3" align='center'>
-      %BUTTON{"%MAKETEXT{Compare}%" icon="tick" type="submit"}%
-      %BUTTON{"%MAKETEXT{Cancel}%" icon="cross" target="%WEB%.%TOPIC%"}%
+      %BUTTON{"%MAKETEXT{"Compare"}%" icon="tick" type="submit"}%
+      %BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" target="%WEB%.%TOPIC%"}%
     </td>
 </tr>
 </table>

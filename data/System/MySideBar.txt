@@ -1,10 +1,123 @@
-%META:TOPICINFO{author="ProjectContributor" date="1185741636" format="1.1" reprev="1.2" version="$Rev: 1823 $"}%
-%META:TOPICPARENT{name="WebHome"}%
-%STARTINCLUDE%<!-- mysidebar -->
-<nop><h2><a name="mysidebar">MySideBar</a></h2>
+%META:TOPICINFO{author="ProjectContributor" date="1263480429" format="1.1" reprev="1.3" version="1.3"}%
+%META:TOPICPARENT{name="NatSkin"}%
+---+ Create a personalized sidebar navigation
+%IF{"$'MYSIDEBAR'='off'"
+   then="
+     <div class='foswikiErrorMessage'>
+       The sidebar feature is switched off. 
+       Set the *MYSIDEBAR* preferene variable to activate it again.
+     </div>
+   "
+   else="$percntINCLUDE{\"%BASEWEB%.%BASETOPIC%\" section=\"checkexists\"}$percnt"
+}%
 
-   * %MAKETEXT{"<a href='[_1]' title='[_2]'>Create your personalized sidebar.</a>"
- args="%SCRIPTURLPATH{"save"}%/%USERSWEB%/%WIKINAME%SideBar?topicparent=%WIKINAME%;templatetopic=%SYSTEMWEB%.MySideBarTemplate,<nop>%WIKINAME%SideBar"}%
-<!-- //mysidebar -->%STOPINCLUDE%
+<verbatim style="display:none">
+%STARTSECTION{"checkexists"}%
+%IF{"istopic '%TMPL:P{"thesidebar"}%'"
+   then="$percntINCLUDE{\"%BASEWEB%.%BASETOPIC%\" section=\"deletesidebarform\"}$percnt"
+   else="$percntINCLUDE{\"%BASEWEB%.%BASETOPIC%\" section=\"newsidebarform\"}$percnt"
+}%
+%ENDSECTION{"checkexists"}%
 
-%MAKETEXT{"See also:"}% NatSkin, NatSkinPlugin, MySideBarTemplate
+%STARTSECTION{"deletesidebarform"}%
+<div class='foswikiWarningMessage'>
+  The sidebar topic %TMPL:P{"thesidebar"}% already exists. 
+</div>
+
+<form action="%SCRIPTURLPATH{"rename"}%/%TMPL:P{"thesidebar"}%" method="post" id="deletesidebarform">
+  <input type="hidden" name="newweb" value="%TRASHWEB%" />
+  <input type="hidden" name="newtopic" value="%WIKINAME%%IF{"defined 'MYSIDEBAR'" then="%MYSIDEBAR%" else="SideBar"}%%GMTIME{"$epoch"}%" />
+  <input type="hidden" name="redirectto" value="%BASEWEB%.%BASETOPIC%" />
+  <input type="hidden" name="nonwikiword" value="on" />
+<div class="foswikiFormSteps">
+  <div class="foswikiFormStep">
+    %MAKETEXT{"Do you want to *delete* the old sidebar and then creating a new one?"}%
+  </div>
+  <div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
+    %BUTTON{"%MAKETEXT{"Yes, delete"}%" type="save" icon="bin"}%
+    %BUTTON{"%MAKETEXT{"No, thanks"}%" icon="cross" target="%TMPL:P{"thesidebar"}%"}%
+    %CLEAR%
+  </div>
+</div>
+</form>
+%ENDSECTION{"deletesidebarform"}%
+
+%STARTSECTION{"newsidebarform"}%
+<div class="foswikiFormSteps natMySideBarForm">
+<form action="%SCRIPTURLPATH{"save"}%/%TMPL:P{"thesidebar"}%" method="post" id="sidebarform">
+<input type="hidden" name="t" value="%GMTIME{"$epoch"}%" />
+<input type="hidden" name="topicparent" value="%WIKINAME%" />
+<input type="hidden" name="redirectto" value="%SCRIPTURL{"view"}%/%BASEWEB%/%BASETOPIC%?section=success" />
+<input type="hidden" name="Unset+TOPICTITLE" value="on" />
+<div class="foswikiFormStep">
+  <h3>Select a sidebar template:</h3>
+
+<noautolink>
+  %SEARCH{".*SideBarTemplate" 
+    scope="topic"
+    type="regex"
+    nonoise="on"
+    format="<input type='radio' id='$web_$topic_template' name='templatetopic' value='$web.$topic' class='foswikiRadioBox required'/>
+      <label for='$web_$topic_template'> 
+        $percntTOPICTITLE{\"$topic\"}$percnt
+        (<a href='%SCRIPTURLPATH{"view"}%/$web/$topic' target='_blank' title='%MAKETEXT{"open [_1]" args="<nop>$topic"}%'>?</a>)
+      </label><br />" 
+  }%
+  <input type='radio' id='empty_template' name='templatetopic' value='' class='foswikiRadioBox required'/>
+  <label for='empty_template'>
+    %MAKETEXT{"no template"}%
+  </label>
+</noautolink>
+  <label for='templatetopic' class='error' style='display:none'>Please select a template.</label>
+</div>
+<div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
+%BUTTON{"%MAKETEXT{"Save"}%" icon="disk" type="save"}%
+%CLEAR%
+</div>
+</form>
+</div>
+
+%JQREQUIRE{"validate"}%
+%ADDTOZONE{
+  "body"
+  id="sidebarform"
+  text="<script type='text/javascript'>
+    (function($) {
+      $(function() {
+        $('#sidebarform').validate();
+      });
+    })(jQuery);
+  </script>"
+  requires="JQUERYPLUGIN::VALIDATE"
+}%
+%ENDSECTION{"newsidebarform"}%
+
+%TMPL:DEF{PROMPT:mysidebarbookmark}%<!-- mysidebarbookmark:prompt -->
+<input type="hidden" name="bookmark_web" value="%BASEWEB%" />
+<input type="hidden" name="bookmark_topic" value="%BASETOPIC%" />
+<input type="hidden" name="redirectto" value="%BASEWEB%.%BASETOPIC%" />
+%BUTTON{
+  "%MAKETEXT{"Add to sidebar"}%"
+  icon="add" 
+  class="jqButtonSimple"
+  type="submit" 
+  style="width:99%" 
+  title="%MAKETEXT{"Add the topic <nop>%BASETOPIC% to my sidebar navigation"}%"
+}%
+%CLEAR%
+<!-- //mysidebarbookmark:prompt -->%TMPL:END%
+
+%TMPL:DEF{OUTPUT:mysidebarbookmark}%   * [[%URLPARAM{"bookmark_web"}%.%URLPARAM{"bookmark_topic"}%][%URLPARAM{"bookmark_topic"}%]]%POS:BOTTOM%
+%TMPL:END%
+
+
+%STARTSECTION{"success"}%
+---+ Create a personalized sidebar navigation
+<div class='foswikiSuccessMessage'>You successfully created your sidebar at %TMPL:P{"thesidebar"}%.</div>
+%ENDSECTION{"success"}%
+</verbatim>
+
+
+%META:PREFERENCE{name="DISPLAYREVISIONINFO" title="DISPLAYREVISIONINFO" type="Local" value="off"}%
+%META:PREFERENCE{name="DISPLAYFORM" title="DISPLAYFORM" type="Local" value="off"}%
+%META:PREFERENCE{name="DISPLAYATTACHMENTS" title="DISPLAYATTACHMENTS" type="Local" value="off"}%

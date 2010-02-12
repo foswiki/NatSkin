@@ -3,8 +3,6 @@
 %TMPL:INCLUDE{"loginbody"}%<!-- loginbody// -->
 %TMPL:INCLUDE{"logintopicactions"}%<!-- logintopicactions// -->
 %TMPL:INCLUDE{"loginsidebar"}%<!-- loginsidebar// -->
-%TMPL:INCLUDE{"loginjavascript"}%<!-- loginjavascript// -->
-%TMPL:INCLUDE{"loginstyles"}%<!-- loginstyles// -->
 %TMPL:DEF{"title"}%Login - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1 class="natLoginHeading"><span>%TMPL:P{"heading"}%</span></h1>%TMPL:END%
 %TMPL:DEF{"bodyclass"}%natLoginBody%TMPL:END%
@@ -13,7 +11,9 @@
 %TMPL:DEF{"LOGGED_IN_BANNER"}%%MAKETEXT{"[_1] is currently logged in" args="%USERSWEB%.%WIKINAME%"}%.%TMPL:END%
 %TMPL:DEF{"NEW_USER_NOTE"}%%MAKETEXT{"Enter a new username and password to change identity"}%.%TMPL:END%
 %TMPL:DEF{"UNRECOGNISED_USER"}%%MAKETEXT{"Unrecognised user and/or password."}%
-%ADDTOHEAD{"NATSKIN::LOGIN::OPTS"
+%ADDTOZONE{
+  "head"
+  tag="NATSKIN::LOGIN::OPTS"
   text="<meta name='foswiki.NatSkin.loginFailed' content='true' />"
 }%%TMPL:END%
 %TMPL:DEF{"message"}%<!-- message -->

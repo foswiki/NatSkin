@@ -1,14 +1,12 @@
 %TMPL:INCLUDE{"attach"}%<!-- template: attachnew.nat.tmpl -->
-%TMPL:DEF{"heading"}%<noautolink>%MAKETEXT{"Upload a file to [_1]" args="%TMPL:P{"topictitle"}%"}%</noautolink>%TMPL:END%
+%TMPL:DEF{"heading"}%<h2><noautolink>%MAKETEXT{"Upload a file to [_1]" args="%TMPL:P{"topictitle"}%"}%</noautolink></h2>%TMPL:END%
 %TMPL:DEF{"attachaction"}%<!-- attachaction -->
 %BUTTON{"%MAKETEXT{"Submit"}%" icon="tick" title="Upload selected file" type="save"}%
 %CLEAR%
 <!-- //attachaction -->%TMPL:END%
 %TMPL:DEF{"notes"}% <!-- notes -->
 <p> 
-  %MAKETEXT{"*Link checkbox*: In case the attached file is a JPG, GIF or PNG image and you check the box, 
-  it will create an inline image (e.g. show the image) at the end of the topic.  For other
-  file types a simple link will be created."}%
+  %MAKETEXT{"*Link checkbox*: In case the attached file is a JPG, GIF or PNG image and you check the box, it will create an inline image (e.g. show the image) at the end of the topic.  For other file types a simple link will be created."}%
 </p>
 <!-- //notes -->%TMPL:END%
 %TMPL:DEF{"moreoptions"}%<!-- moreoptions -->
