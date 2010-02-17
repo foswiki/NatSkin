@@ -4,8 +4,10 @@
   margin:0;
   padding:0;
 }
-.natWebButtonsContents {
-  display:none; /* will be switched on using javascript */
+.natWebButtonsHidden {
+  visibility:hidden; 
+  height:2.3076em;
+  float:left;
 }
 .natWebButtons ul {
   margin:0;

@@ -1,5 +1,6 @@
 <!-- template: javascript.nat.tmpl -->
-%TMPL:DEF{"defaultjavascript"}%%JQREQUIRE{"superfish"}%%JQREQUIRE{"supersubs"}%%JQREQUIRE{"autocomplete"}%%JQREQUIRE{"imagetooltip"}%%TMPL:END%
+%TMPL:DEF{"defaultjavascript"}%%JQREQUIRE{"superfish"}%%JQREQUIRE{"supersubs"}%%JQREQUIRE{"autocomplete"}%%TMPL:P{context="ImagePluginEnabled" then="imagetooltip"}%%TMPL:END%
+%TMPL:DEF{"imagetooltip"}%%JQREQUIRE{"imagetooltip"}%%TMPL:END%
 
 %TMPL:DEF{"fixRevisionPosition"}%<meta name='foswiki.NatSkin.fixRevisionPosition' content='true' />%TMPL:END%
 %TMPL:DEF{"initWebButtons"}%<meta name='foswiki.NatSkin.initWebButtons' content='true' />%TMPL:END%

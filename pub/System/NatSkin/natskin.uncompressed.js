@@ -31,11 +31,11 @@
 
   /* horiz menu */
   if (foswiki.NatSkin.initWebButtons) {
-    $(".natWebButtonsContents > ul").superfish({
-        autoArrows: false
-      }).
-      find("li:has(ul)").addClass("hasSubMenu");
-    $(".natWebButtonsContents").css('display', 'block');
+    var $container = $(".natWebButtonsContents");
+    $container.children("ul").superfish({
+      autoArrows: false
+    }).find("li:has(ul)").addClass("hasSubMenu");
+    $container.removeClass('natWebButtonsHidden');
   }
 
   /* add overflow div for tables */

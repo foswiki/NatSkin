@@ -10,3 +10,4 @@ Foswiki::Plugins::JQueryPlugin,>=3740,perl,Required
 Foswiki::Plugins::NatSkinPlugin,>=4916,perl,Required
 Foswiki::Plugins::RenderPlugin,>=3644,perl,Required
 Foswiki::Plugins::ZonePlugin,>=1,perl,Required
+Foswiki::Plugins::ImagePlugin,>=6307,perl,Optional
