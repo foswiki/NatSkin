@@ -15,8 +15,9 @@
   text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/login.js'></script>"
   requires="JQUERYPLUGIN"
 }%<!-- require -->
-<form id="LogonForm" name="LogonForm" action="%IF{"$'HTTPSLOGON'='on'" then="https" else="http"}%://%HTTP_HOST%%SCRIPTURLPATH{"login"}%/%WEB%/%TOPIC%" method="post">
+<form id="LogonForm" name="LogonForm" action="%IF{"$'HTTPSLOGON'='on'" then="https" else="http"}%://%HTTP_HOST%%SCRIPTURLPATH{"login"}%%IF{"defined 'PATH_INFO'" then="$percntPATH_INFO$percnt" else="/$percntWEB$percnt/$percntTOPIC$percnt"}%" method="post">
 <literal>%QUERYPARAMS{encoding="entity" format="<input type='hidden' name='$name' value='$value' />"}%</literal><!-- queryparams// -->
+%IF{"defined 'FOSWIKI_ORIGIN'" then="<input type='hidden' name='foswiki_origin' value='$percntFOSWIKI_ORIGIN$percnt' />"}% 
 %IF{"defined 'ORIGURL'" then="<input type='hidden' name='origurl' value='$percntORIGURL$percnt' />"}%
 <input type="submit" style="display:none" />
 <div class="foswikiFormStep">
