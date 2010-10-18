@@ -3,8 +3,8 @@
 ---+!! %TOPIC%
 
 This is a reference guide to all css classes used by NatSkin. These are all
-_classes_ and not _ids_, that is all classes below are applied to the html
-markup using =class="natXYZ"=.  All classes refering to html elements that are
+_classes_ and not _ids_; that is, all classes below are applied to the html
+markup using =class="natXYZ"=.  All classes referring to html elements that are
 part of the NatSkin templates are named using the =nat= prefix in their name
 (example: =natBodyContents=, =natMain=, =natSideBar=, etc).
 
@@ -15,22 +15,22 @@ a fixed table layout (means: not depending on the inner content).
 The reason for this is to provide a more reliable user experience on different
 browsers and a simplification of css code. So css means are used mainly for
 fonts, colors, spaces and margines but not for general page layouting on the client side. 
-Instead different layouts are emitted by the server using different html markup.
+Instead, different layouts are emitted by the server using different html markup.
 
 The basic layout consists of a topbar (=natTopBar=), a middle part (=natMiddle=) 
 holding the sidebar(s) (=natSideBar=) as well as the main area (=natMain=) and a bottom bar
 (=natBottomBar=). Within these boundaries NatSkin provides a one, two or three columns layout
 in the middle area depending on the sidebar being switched off, on the left/right side or
 displayed on both sides respectively. Different html markup and classification is done
-on the serverside so that adequat css takes effect in different configurations. For example
-if the sidebar is configured to be on the left it can be addressed using =natSideBarLeft= in
-addition to the standard =natSideBar= class. Accordingly the topic area (=natMain=) will be
+on the serverside so that adequate css takes effect in different configurations. For example,
+if the sidebar is configured to be on the left, it can be addressed using =natSideBarLeft= in
+addition to the standard =natSideBar= class. Accordingly, the topic area (=natMain=) will be
 located on the opposite side and will be named =natMainRight= if the sidebar is on the left.
-If the sidebars are both switched off the =natMain= area will be called =natMainRight= _and_
+If the sidebars are both switched off, the =natMain= area will be called =natMainRight= _and_
 =natMainLeft= at the same time. The same logic applies to the =natBottomBar= although it
-is not part of the =natMiddle=. Nevertheless it will be classified =natBottomBarLeft= or
-=natBottomBarRight= depending on the sidebar being on the right or left side respectively.
-This is usefull if the bottom bar is to be displayed under the =natMain= area. Additionally
+is not part of the =natMiddle=. Nevertheless, it will be classified =natBottomBarLeft= or
+=natBottomBarRight= depending on the sidebar being on the right or left side, respectively.
+This is useful if the bottom bar is to be displayed under the =natMain= area. Additionally,
 the =natBottomBar= will be classified as =natBottomBarBoth=.
 
 

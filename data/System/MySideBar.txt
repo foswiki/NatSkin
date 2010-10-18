@@ -5,7 +5,7 @@
    then="
      <div class='foswikiErrorMessage'>
        The sidebar feature is switched off. 
-       Set the *MYSIDEBAR* preferene variable to activate it again.
+       Set the *MYSIDEBAR* preference variable to activate it again.
      </div>
    "
    else="$percntINCLUDE{\"%BASEWEB%.%BASETOPIC%\" section=\"checkexists\"}$percnt"
@@ -31,7 +31,7 @@
   <input type="hidden" name="nonwikiword" value="on" />
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep">
-    %MAKETEXT{"Do you want to *delete* the old sidebar and then creating a new one?"}%
+    %MAKETEXT{"Do you want to *delete* the old sidebar and then create a new one?"}%
   </div>
   <div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
     %BUTTON{"%MAKETEXT{"Yes, delete"}%" type="save" icon="bin"}%

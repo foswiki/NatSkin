@@ -13,7 +13,7 @@ use it as a quick way to create and edit new topic by entering =e:NewTopic= into
 <nop>NatSearch is heavily inspired by the <nop>PhotonSearch by Esteban Manchado Velázquez.
 
 ---++ Usage
-<nop>NatSearch basically first tries to find the named topic and jumps to it if it exists. If not
+<nop>NatSearch basically first tries to find the named topic and jumps to it if it exists. If not,
 a combined topic+content search is started. If the topic matches a "web.topic" pattern then
 the topic is searched in the given web. If the topic does not exist in this web the following
 topic+content search will be conducted in the web. That is, you can search for content in
@@ -29,8 +29,8 @@ rest of the search string with a colon(:). Known options are:
 | l | local search |
 | k | do a keyword match |
 
-A search string may consist of a list of terms that are retrieved. If a term shall contain
-spaces it can be surrounded by double quotes. Each term may be preceded with a minus (-) to
+A search string may consist of a list of terms that are retrieved. If a term contains
+spaces, it should be surrounded by double quotes. Each term may be preceded with a minus (-) to
 exclude this term from the hit set.
 
 ---++ Examples
@@ -45,7 +45,7 @@ exclude this term from the hit set.
 
 ---++ Configuration
 <nop>NatSearch can be restricted to certain webs and topics by setting WebPreferences.
-Besides the NOSEARCHALL feature of every web that excludes a web from search the following variables
+Besides the NOSEARCHALL feature of every web that excludes a web from search, the following variables
  restrict the hit set:
 
 | *Name* | *Description* |
@@ -64,4 +64,4 @@ Besides the NOSEARCHALL feature of every web that excludes a web from search the
 
 The WebPreferences variable =NATSEARCHTEMPLATE= can be set to a template topic that
 is used instead of the skin's =search= template. This can be used in <nop>WikiApplications to
-define a customized look of search results.
+define a customized look for search results.

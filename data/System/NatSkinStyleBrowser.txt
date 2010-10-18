@@ -1,11 +1,11 @@
 %META:TOPICINFO{author="ProjectContributor" date="1202840013" format="1.1" version="$Rev: 1823 $"}%
 ---+ Style Browser
 Explore the style variations of the %SYSTEMWEB%.NatSkin by changing the base
-_style_ and a _variation_ of it. In general style variations are used to change
-the header art but also adapt colors to match the graphics. Various elements of
+_style_ and a _variation_ of it. In general, style variations are used to change
+not only the header art, but also adapt colors to match the graphics. Various elements of
 the style can be relocated using style switches or even be switched off. Use
 the "reset" button whenever you want to revert your selection and come back to
-the site's default settings. Note that each web may have its own defaults build
+the site's default settings. Note that each web may have its own defaults built
 in. If you select different style options they have precedence over those.
 
 Register [[%USERREGISTRATION%][here]] to make your settings persistent.

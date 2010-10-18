@@ -25,8 +25,8 @@ usability and customizability in several respects to quickly accomplish a
 personalized wiki experience.
 
 NatSkin allows you to switch between several kinds of page layouts. All of the
-predefined themes come with support for a 1,2 and 3 columns designs.
-To get a first impression check out the NatSkinStyleBrowser:
+predefined themes come with support for a 1, 2 and 3 columns designs.
+To get a first impression, check out the NatSkinStyleBrowser:
    * select one of the predefined styles
    * alter the header art by selecting a style variation
    * flip the sidebar from the left to the right
@@ -54,7 +54,7 @@ to the right with a single click.
 *Componentized templates:*
 
 The underlying templates that generate the pages are arranged in a flexible and
-manageable way to facilitate easy "skin mix-in", that is overriding specific parts of
+manageable way to facilitate easy "skin mix-in", that is, overriding specific parts of
 the templates by using the NatSkin as a base skin to create template modifications.
 
 *Customizing webs using <nop>WebComponents:*
@@ -72,7 +72,7 @@ the templates by using the NatSkin as a base skin to create template modificatio
 *Search &amp; GO* 
 
 NatSearch: a search+go box that combines advanced search with the GO feature.
-Compared to the standard WebSearch <nop>NatSearch is trying to maximize usability
+Compared to the standard WebSearch, <nop>NatSearch is trying to maximize usability
 and minimizing workflow disruption. In addition, <nop>NatSearch can be customized
 on an application level to specify the scope of search (using include/exclude rules)
 as well as the appearance of listed search hits.
@@ -84,12 +84,12 @@ javascript enabled wikiwyg editor
 *Email Obfuscation:* 
 
 Optionally, all email addresses can be obfuscated by use of javascript. Email
-links are still clickable while automatic email extraction is hampert.
+links are still clickable while automatic email extraction is hampered.
 
 *External link detection:*
 
 All offsite links are marked and a nice icon is added. Clicking on them will
-allways open an extra window.
+always open an extra window.
 
 ---++ Documentation
    * NatSkinTemplates

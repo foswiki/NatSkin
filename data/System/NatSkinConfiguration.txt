@@ -11,7 +11,7 @@ variables and can be set
    * site wide (in the [[%SYSTEMWEB%.DefaultPreferences]] or better [[%USERSWEB%.SitePreferences]] and
    * on every request (using url parameters)
 
-Use the NatSkinStyleBrowser to preview the known styles and settings. Note,
+Use the NatSkinStyleBrowser to preview the known styles and settings. Note
 that the selection made there will only last for the current session. You
 need to add the respective preference variables to your [[%WIKIUSERNAME%][home topic]]
 or the WebPreferences or the %USERSWEB%.SitePreferences to make the selection
@@ -50,9 +50,9 @@ There are a couple of special url parameters:
   * Set STYLESEARCHBOX = pos1
 </verbatim>
 
-There are some constraints build into the NatSkin templates that try guarantee a pleasant appearance
+There are some constraints built into the NatSkin templates that try guarantee a pleasant appearance
 when combining the different skin states:
-   * If the styleborder is "thin" the sidebar will be disabled for the edit, manage, rdiff,
+   * If the styleborder is "thin", the sidebar will be disabled for the edit, manage, rdiff,
      natsearch, changes and search topic actions. 
    * The web buttons will alternate with the sidebar so that they will not be displayed
      on the same side. 
@@ -61,7 +61,7 @@ when combining the different skin states:
 
 ---++ Defining new Themes
 The NatSkin can be themed using cascading styles attached to the <nop>%SYSTEMWEB%.NatSkin or any
-other topic defined in the STYLEPATH preference variable.
+other topic defined in the =STYLEPATH= preference variable.
 This variable is a list of topics that are consulted for css attachments. The default value is
 <verbatim>
   * Set STYLEPATH = %SYSTEMWEB%.NatSkin
@@ -69,7 +69,7 @@ This variable is a list of topics that are consulted for css attachments. The de
 
 Styles are collected in the order specified. This allows to insert style contributions that are
 not part of the NatSkin. For example given you uploaded NatSkin css definitions to a topic
-<nop>Main.NatSkinThemesContrib you can activate them by setting the STYLEPATH to
+<nop>Main.NatSkinThemesContrib, you can activate them by setting the =STYLEPATH= to
 
 <verbatim>
   * Set STYLEPATH = Main.NatSkinThemesContrib, %SYSTEMWEB%.NatSkin

@@ -28,21 +28,21 @@ Every template belongs to a group defined by their function:
    * [[#SearchTemplates]]: render all sorts of search results
    * [[#ViewTemplates]]: render the normal topic view
 
-Each group consists of one or more _entry templates_, e.g. attach group has
+Each group consists of one or more _entry templates_, e.g., attach group has
 three entry templates: attach, attachnew and attachagain, 
-If a template group has more than one entry template then these build upon
+If a template group has more than one entry template, then these build upon
 and intercostal _base template_, named &lt;name>base template (where &lt;name is
 the short name for the template group). The base template might also be
 an entry template. The base suffix is then stripped from the template name. For
-example in the attach group there are two pure entry template, attachnew and attachagain,
-that base on the attach template which is an entry template also. Pure base templates are 
-for example the renamebase or the oopslogonbase templates. See below for more.
+example, in the attach group there are two pure entry template, attachnew and attachagain,
+that base on the attach template which is an entry template also. Pure base templates are, 
+for example, the renamebase or the oopslogonbase templates. See below for more.
 
 The oops template group is a bit different from the others as it has subgroups of
 templates for authentification, notification and error messages.
-Some of these groups have an own base template shared among messages of the same type.
+Some of these groups have a base template shared among messages of the same type.
 All oops templates are finally using the central oops template.
-Ssee the INCLUDE hierary below.
+See the INCLUDE hierary below.
 
 Every group uses three _fragment templates_:
    * &lt;name>body: the html body
