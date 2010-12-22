@@ -31,13 +31,14 @@
 <!-- topic attachment table -->
 %TMPL:DEF{ATTACH:files:header}%<!-- attach:file:header -->
 <div class="foswikiFormSteps natTopicAttachments" id="natTopicAttachments">
-<a class="natTopicAction natAttachTopicAction" title="%MAKETEXT{"Manage existing attachments"}%" href="%SCRIPTURLPATH{"attach"}%/%WEB%/%TOPIC%?tab=2" rel="nofollow">
+<a class="natTopicAction natEditTopicAction" title="%MAKETEXT{"Manage existing attachments"}%" href="%SCRIPTURLPATH{"attach"}%/%WEB%/%TOPIC%?tab=2" rel="nofollow">
 <span>Attach</span>
 </a>
 %TWISTY{
+  id="attachments"
   mode="div" 
-  start="show" 
-  remember="off" 
+  start="hide" 
+  remember="on" 
   prefix="<h2>" 
   suffix="</h2>" 
   link="%MAKETEXT{"Attachments"}% " 
@@ -49,7 +50,7 @@
   <tr>
     <td class="natAttachmentIcon">%A_ICON%</td> 
     <td class="natAttachmentInfo">
-      <div class="natAttachmentName"><a href="%TMPL:P{"ATTACH:files:url"}%" class="jqImageTooltip {web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%)</div>
+      <div class="natAttachmentName"><a href="%TMPL:P{"ATTACH:files:url"}%" class="jqImageTooltip {web:'%WEB%', topic:'%TOPIC%', image:'%ENCODE{"%A_FILE%"}%'}">%A_FILE%</a> (%A_SIZE%)</div>
       %MAKETEXT{"version [_1] uploaded by [_2] on [_3]" args="%A_REV%,%A_USER%, %A_DATE%"}%
       <div class="natAttachmentComment"><noautolink>%A_COMMENT%</noautolink></div>
     </td>
@@ -66,7 +67,7 @@
   <tr>
     <td class="natAttachmentIcon">%A_ICON%</td> 
     <td class="natAttachmentInfo">
-      <div class="natAttachmentName"><a href="%TMPL:P{"ATTACH:files:url"}%" class="jqImageTooltip {web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%) </div>
+      <div class="natAttachmentName"><a href="%TMPL:P{"ATTACH:files:url"}%" class="jqImageTooltip {web:'%WEB%', topic:'%TOPIC%', image:'%ENCODE{"%A_FILE%"}%'}">%A_FILE%</a> (%A_SIZE%) </div>
       %MAKETEXT{"version [_1] uploaded by [_2] on [_3]" args="%A_REV%,%A_USER%, %A_DATE%"}%
       %IF{"'%A_ATTRS%'='h'" then=", <span class='foswikiAlert'>hidden</span>"}%
       <div class="natAttachmentComment"><noautolink>%A_COMMENT%</noautolink></div>
@@ -106,7 +107,7 @@
   <tr>
     <td class="natAttachmentIcon">%A_ICON%</td> 
     <td class="natAttachmentInfo">
-      <div class="natAttachmentName"><a href="%A_URL%" class="jqImageTooltip {web:'%WEB%', topic:'%TOPIC%', image:'%A_FILE%'}">%A_FILE%</a> (%A_SIZE%)</div>
+      <div class="natAttachmentName"><a href="%A_URL%" class="jqImageTooltip {web:'%WEB%', topic:'%TOPIC%', image:'%ENCODE{"%A_FILE%"}%'}">%A_FILE%</a> (%A_SIZE%)</div>
       %MAKETEXT{"version [_1] uploaded by [_2] on [_3]" args="%A_REV%,%A_USER%, %A_DATE%"}%
       <div class="natAttachmentComment"><noautolink>%A_COMMENT%</noautolink></div>
     </td>

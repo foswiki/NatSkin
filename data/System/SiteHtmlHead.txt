@@ -7,7 +7,7 @@ Create a <nop>WebHtmlHead topic in your web to override the content of this topi
 %STARTINCLUDE%
 %STOPINCLUDE% <!-- remove this line 
                    to enable the example settings below -->
-<style type="text/css">
+<style>
 .natSearchBox input,
 .natHeaderArt {
   background-color: %WEBBGCOLOR%;

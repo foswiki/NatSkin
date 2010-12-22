@@ -26,7 +26,7 @@ del {
 }
 
 table {
-  border-collapse: collapse;
+  border-collapse:collapse;
   border-spacing: 0;
 }
 
@@ -44,6 +44,14 @@ input, textarea, select, body {
 pre, code, textarea {
   line-height:1.3846em;
   font-family:"Bitstream Vera Sans Mono", "Andale Mono", monospace;
+}
+
+.natBody .natEdit {
+  font-size:0.923em; /* 12px */
+  line-height: 1.5em; /* 18px */ 
+}
+.natBody .natEdit textarea, .natEditTextArea {
+  font-size:1em; /* 12px */
 }
 
 p { 
@@ -111,7 +119,7 @@ q:before, q:after {
   content:none;
 }
 
-:active,
+a:active,
 :focus {
   outline:0;
 }
@@ -137,7 +145,7 @@ hr {
 pre {
   overflow-x:auto;
   overflow-y:hidden;
-  margin:1em 0em;
+  margin:0em 0em 1em 0em;
   /* ie6 */
   _width:100%;
   _margin:0px;
@@ -154,16 +162,6 @@ pre {
 
 
 /* foswiki base */
-.foswikiMakeVisible,
-.foswikiMakeVisibleInline {
-  display:inline;
-}
-.foswikiMakeVisibleBlock {
-  display:block;
-}
-.foswikiMakeHidden{
-  display:none;
-}
 
 input[type=radio],
 input[type=checkbox],
@@ -180,6 +178,18 @@ input[type=checkbox],
   float:right;
   display:inline;
   margin:0;
+}
+
+.foswikiImage a,
+.foswikiImage a:hover {
+  background-color:transparent;
+}
+.foswikiImage img {
+  padding:3px;
+  border-width:1px;
+  border-style:solid;
+  border-color:#eee;
+  background-color:#fff;
 }
 
 /* http://sonspring.com/journal/clearing-floats */
@@ -234,17 +244,9 @@ input[type=checkbox],
 }
 .foswikiSmall {
   font-size:0.7692em;  /* 10px */
-  line-height:1.8em; /* 18px */
-}
-.natSideBar .foswikiSmall {
-  line-height:1.5em; /* 15px */
 }
 .foswikiSmallish {
   font-size:0.923em; /* 12px */
-  line-height:1.5em; /* 18px */
-}
-.natSideBar .foswikiSmallish {
-  line-height:1.25em; /* 15px */
 }
 
 .foswikiFormSteps .foswikiNullTable,
@@ -313,16 +315,18 @@ th, /* opera */
 .natBodyContents {
   text-align:left;
 }
-.natOopsMore h1 {
-  margin-top:0px;
+
+/* bordered layout */
+.natBodyBordered {
+  margin:30px 30px 30px 30px;
 }
-.natOopsMessage {
-  width:58em;
-  margin:0.75em auto;
+
+/* fixed layout */
+.natBodyFluid .natBodyContents {
+  width:75em;
+  margin:0em auto 13em auto;
 }
-.natOopsMessage .foswikiFormSteps {
-  margin-bottom:2em;
-}
+
 .natLayoutTable {
   table-layout:fixed;
   width:100%;
@@ -336,7 +340,6 @@ th, /* opera */
 }
 .natBottomBarContents {
   text-align:center;
-  padding-top:5px;
 }
 .natLoadTime {
   position:absolute;
@@ -353,7 +356,7 @@ th, /* opera */
 .natTopRight,
 .natSideBarHeader,
 .natSideBar {
-  width:250px;
+  width:19em; 
 }
 .natSideBar {
   padding-bottom:5px;
@@ -437,7 +440,7 @@ th, /* opera */
 }
 
 .natWebTitle {
-  font-size:285%;
+  font-size: 1.6923em; /* 22px */ 
   line-height:normal;
   font-weight:bold;
   margin:0px;
@@ -445,13 +448,11 @@ th, /* opera */
 }
 
 /* search box */
-.natSearchBox {
-  font-weight:bold;
-}
-.natSearchBox a {
-  margin:0px 0px 0px 2px;
-  padding:0px 0px 0px 5px;
-  text-decoration:none;
+.natSearchBox input {
+  margin:0px;
+  padding:0px;
+  outline:none;
+  width:100%;
 }
 
 /* sidebar */
@@ -515,9 +516,18 @@ body .natSideBar .natMySideBarRedDot a:hover {
 }
 .natLoginMessage {
   margin:0px auto;
-  width:500px;
+  width:38em; 
 }
 /* edit */
+.natEditBody {
+  margin:0px;
+}
+.natEditBody .natBodyContents {
+  margin-top:0px;
+  margin-bottom:0px;
+  padding-top:0px;
+  padding-bottom:0px;
+}
 .natEditBody .natLayoutTable {
   table-layout:auto; /* firefox fix to preven collapsing tables */
   _table-layout:fixed; /* but IE6 still needs it */
@@ -528,7 +538,7 @@ body .natSideBar .natMySideBarRedDot a:hover {
 }
 .natEditBody .natMainFooterContents,
 .natEditBody .natBottomBar,
-.natEditBody .natWebButtons {
+.natEditBody .natWebMenu {
   display:none;
 }
 .natEditBody .natSideBarContents, 
@@ -561,6 +571,37 @@ body .natSideBar .natMySideBarRedDot a:hover {
   float:right;
 }
 
+/* web menu settings */
+.natWebMenu,
+.natWebMenuContents {
+  margin:0;
+  padding:0;
+}
+.natWebMenuContents {
+  _display:none;
+  _height:auto;
+}
+.natWebMenuHidden {
+  visibility:hidden; 
+  height:2.3076em;
+  float:left;
+}
+.natWebMenu ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.natWebMenu ul li {
+  display:inline;
+  float:left;
+}
+.natWebMenu ul a {
+  text-decoration:none;
+  float:left;
+  padding:0px 3px;
+  margin:0px 6px 0px -3px;
+}
+
 /* search */
 .natSearchRenameContents {
   width:100%;
@@ -584,7 +625,6 @@ body .natSideBar .natMySideBarRedDot a:hover {
   margin:1em 0em 2em;
 }
 .natSearchTarget {
-  font-size:120%;
   text-decoration:underline;
 }
 .natSearchSummary {
@@ -603,9 +643,6 @@ body .natSideBar .natMySideBarRedDot a:hover {
   font-weight:bold;
   color:red;
 }
-.natSearch {
-  font-weight:bold;
-}
 .foswikiNew {
   text-transform:lowercase;
 }
@@ -613,6 +650,9 @@ body .natSideBar .natMySideBarRedDot a:hover {
 .natSearchNewTopic {
   color:red; 
   font-style:italic;
+}
+.natSearchRss a {
+  text-decoration:none;
 }
 
 /* diff */
@@ -637,17 +677,14 @@ body .natSideBar .natMySideBarRedDot a:hover {
 .natLoginHeading,
 .natNoteHeading {
   color:green;
+  margin-top:0px;
 }
-.foswikiSubmit,
 .natOkButton {
   color:green;
 }
-.foswikiButton,
-.foswikiButton,
 .natAltButton {
   color:blue;
 }
-.foswikiButtonCancel,
 .natCancelButton {
   color:red;
 }
@@ -659,10 +696,9 @@ body .natSideBar .natMySideBarRedDot a:hover {
 /* topic actions */
 .natBreadCrumbs {
   font-size:0.923em; /* 12px */
-  line-height:1.25em; /* 15px */
-  padding-bottom:0.25em; /* 3px */
+  line-height:1.5em; /* 18px */
 }
-.natBodyAuthenticated .natBreadCrumbs {
+.natViewBody .natBreadCrumbs {
   margin-right:280px;
 }
 .natBodyNotAuthenticated .natBreadCrumbs {
@@ -672,7 +708,6 @@ body .natSideBar .natMySideBarRedDot a:hover {
   display:none;
 }
 .natGreeter {
-  margin:0em 0em 0.1em 0em;
   white-space:nowrap;
 }
 .natUserGreeter {
@@ -693,13 +728,6 @@ body .natSideBar .natMySideBarRedDot a:hover {
   text-align:right;
   float:left;
 }
-.natAccountAction:hover,
-.natAccountAction {
-  background-image:url(icons/user.png);
-  background-repeat:no-repeat;
-  background-position:center left;
-  padding:0em 0em 0em 1.5em;
-}
 .natLoginUserAction,
 .natRegisterUserAction,
 .natLogoutUserAction {
@@ -708,146 +736,27 @@ body .natSideBar .natMySideBarRedDot a:hover {
 
 .natTopicAction,
 .natTopicAction:hover {
-  background-color:inherit;
-  background-repeat:no-repeat;
-  background-position:2px 2px;
   display:inline;
-  margin:0px 2px 0px 5px;
+  margin:0px 0px 0px 7px;
   color:black;
   float:left;
-  width:18px;
-  height:18px;
   padding:1px;
+}
+.natTopicAction img {
+  vertical-align:text-bottom;
+  width:1.2308em; /* 16px */
+  max-width:16px;
 }
 
 .natDisabledTopicAction {
   display:none;
 }
 
-.natViewTopicAction:hover,
-.natViewTopicAction {
-  background-image:url(icons/eye.png);
-}
-.natNewTopicAction:hover,
-.natNewTopicAction {
-  background-image:url(icons/page_white_add.png);
-}
-.natEditTopicAction:hover,
-.natEditTopicAction,
-.natEditTextTopicAction:hover,
-.natEditTextTopicAction {
-  background-image:url(icons/pencil.png);
-}
-.natEditFormTopicAction:hover,
-.natEditFormTopicAction {
-  background-image:url(icons/application_form_edit.png);
-}
-.natRestoreTopicAction:hover,
-.natRestoreTopicAction {
-  background-image:url(icons/pencil_go.png);
-}
-.natAttachTopicAction:hover,
-.natAttachTopicAction {
-  background-image:url(icons/attach.png);
-}
-.natAddLinkTopicAction:hover,
-.natAddLinkTopicAction {
-  background-image:url(icons/link.png);
-}
-.natPrintTopicAction:hover,
-.natPrintTopicAction {
-  background-image:url(icons/printer.png);
-}
-.natPdfTopicAction:hover,
-.natPdfTopicAction {
-  background-image:url(icons/page_white_acrobat.png);
-}
-.natSubscribeTopicAction:hover,
-.natSubscribeTopicAction {
-  background-image:url(icons/email_add.png);
-}
-.natUnsubscribeTopicAction:hover,
-.natUnsubscribeTopicAction {
-  background-image:url(icons/email_delete.png);
-}
-.natHistoryTopicAction:hover,
-.natHistoryTopicAction {
-  background-image:url(icons/time.png);
-}
-.natRawTopicAction:hover,
-.natRawTopicAction {
-  background-image:url(icons/text_align_left.png);
-}
-.natDeleteTopicAction:hover,
-.natDeleteTopicAction {
-  background-image:url(icons/bin.png);
-}
-.natMoveTopicAction:hover,
-.natMoveTopicAction {
-  background-image:url(icons/page_white_go.png);
-}
-.natMoreTopicAction:hover,
-.natMoreTopicAction {
-  background-image:url(icons/wrench.png);
-}
-.natHelpTopicAction:hover,
-.natHelpTopicAction {
-  background-image:url(icons/help.png);
-}
-
-.natFirstTopicAction:hover,
-.natFirstTopicAction {
-  background-image:url(icons/control-start.png);
-}
-
-.natFirstTopicActionDisabled:hover,
-.natFirstTopicActionDisabled {
-  background-image:url(icons/control-start-gray.png);
-  display:inline;
-}
-
-.natLastTopicAction:hover,
-.natLastTopicAction {
-  background-image:url(icons/control-end.png);
-}
-
-.natLastTopicActionDisabled:hover,
+.natFirstTopicActionDisabled,
+.natPrevTopicActionDisabled,
+.natNextTopicActionDisabled,
 .natLastTopicActionDisabled {
-  background-image:url(icons/control-end-gray.png);
   display:inline;
-}
-
-
-.natPrevTopicAction:hover,
-.natPrevTopicAction {
-  background-image:url(icons/control-left.png);
-}
-
-.natPrevTopicActionDisabled:hover,
-.natPrevTopicActionDisabled {
-  background-image:url(icons/control-left-gray.png);
-  display:inline;
-}
-
-.natNextTopicAction:hover,
-.natNextTopicAction {
-  background-image:url(icons/control-right.png);
-}
-
-.natNextTopicActionDisabled:hover,
-.natNextTopicActionDisabled {
-  background-image:url(icons/control-right-gray.png);
-  display:inline;
-}
-
-.natCloseTopicAction:hover,
-.natCloseTopicAction {
-  background-image:url(icons/cross.png);
-}
-
-.natDiffTopicAction:hover,
-.natDiffTopicAction {
-  background-image:url(icons/page_white_stack.png);
 }
 
 .natHistoryAction, 
@@ -859,15 +768,23 @@ body .natSideBar .natMySideBarRedDot a:hover {
 .natHistoryAction {
   color:inherit;
 }
-.natHistoryTable td {
+.foswikiFormSteps .natHistoryTable td {
   padding-right:0.5769em; /* 7px */
+}
+.foswikiFormSteps .natHistoryTable th {
+  border-bottom:1px solid #ddd;
 }
 
 
 /* helpers */
-.natIcon {
+.natUserAction img {
   border:0;
-  vertical-align:baseline;
+  vertical-align:text-bottom;
+  width:1.2308em; /* 16px */
+  max-width:16px;
+}
+.natUserAction span {
+  padding-left:0.1538em; /* 2px */
 }
 
 .natAction {
@@ -904,12 +821,12 @@ body .natSideBar .natMySideBarRedDot a:hover {
   width:20px;
 }
 .natAttachmentActions {
-  width:100px;
+  width:100px; /* SMELL */
   text-align:right;
 }
 
 .natSkinStyleBrowser {
-  width:220px;
+  width:220px; /* SMELL */
 }
 
 .natSideBar .natSkinStyleBrowser ul,
@@ -938,21 +855,33 @@ body .natSideBar .natMySideBarRedDot a:hover {
 
 .natSideBar a.natFeedIcon:hover,
 a.natFeedIcon:hover {
-  background:#eee url("feed-icon-12x12.png") 3px center no-repeat !important;
+  background:#eee url("icons/feed-icon-12x12.png") 0px -12px no-repeat !important;
   text-decoration:none !important;
   color:#444 !important;
+  border:2px solid #eee;
 }
 a.natFeedIcon {
-  background:url("feed-icon-12x12-gray.png") 3px center no-repeat !important;
+  background:url("icons/feed-icon-12x12.png") 0px 0px no-repeat !important;
   text-decoration:none !important;
   color:#444;
-  font-size:10px;
-  padding:1px 3px 0px 18px;
+  padding:1px 0px 0px 15px;
   margin:0px;
+  border:2px solid #fff;
+}
+.natSearchRss a:hover,
+.natSearchRss a {
+  background-image:url("icons/feed-icon-12x12.png");
+  background-position:0px 0px;
+  background-repeat:no-repeat;
+  padding:1px 0px 0px 15px;
+  text-decoration:none;
+}
+.natFeedIcon {
+  font-size:9px;
 }
 .natSideBar a.natFeedIcon {
   background:none;
-  padding:1px 3px 0px 18px;
+  padding:1px 0px 0px 15px;
   color:#444;
 }
 
@@ -1053,6 +982,13 @@ a.natFeedIcon {
 .natTopicEditForm {
   clear:both;
 }
+.foswikiFormTable {
+  margin:1.3846em 0em;
+  width:100%;
+  border-collapse:separate;
+  border-bottom:0px;
+}
+
 .natTopicEditForm table,
 .natTopicForm table {
   width:100%;
@@ -1066,6 +1002,8 @@ a.natFeedIcon {
 .natTopicForm table table td {
   border:0px;
 }
+.foswikiFormTable td,
+.foswikiFormTable th,
 .natTopicForm td,
 .natTopicForm th {
   padding-left:3px;
@@ -1074,6 +1012,10 @@ a.natFeedIcon {
 .natTopicFormLabel {
   margin-top:3px;
   margin-bottom:3px;
+}
+.foswikiFormTable a,
+.natTopicForm a {
+  text-decoration:none;
 }
 .natTopicAttachments .natTopicAction:hover,
 .natTopicAttachments .natTopicAction,
@@ -1129,7 +1071,7 @@ legend {
   line-height:160%;
 }
 .foswikiFormSteps .foswikiFormButtons {
-  margin-top:20px;
+  margin-top:1.5384em; /* 20px */
 }
 .foswikiFormOptions .foswikiCheckbox {
   margin:4px 3px 3px 3px;
@@ -1137,6 +1079,7 @@ legend {
 .foswikiFormButtons input {
   padding:3px 5px;
 }
+.foswikiFormLegend,
 .foswikiFormDescription {
   margin:0.1em 0em;
 }
@@ -1289,8 +1232,9 @@ td.foswikiDiffChangedText {
 .overflow {
   overflow-x:auto;
   overflow-y:hidden;
-  padding:1px 0px 0px 1px;
-  margin:-1px 0px 0px -1px;
+  padding:1px;
+  margin:-1px -1px -1px 0px;
+  /* IE6 fix */
   _width:100%;
   _margin:0px;
   _padding:0px;
@@ -1333,127 +1277,6 @@ img.alignleft {
   padding: 3px;
   margin-right:7px;
   float:left;
-}
-
-/* supported plugins and applications */
-
-/* BlackListPlugin */
-.blackList {
-  border:0px;
-  overflow:auto;
-  padding:5px;
-}
-.blackListComments {
-  padding-left:25px;
-}
-.comment {
-  padding-top:5px;
-  padding-bottom:5px;
-}
-.posted {
-  margin-top:5px;
-}
-.text {
-  padding-bottom:5px;
-}
-.banForm {
-  margin:5px;
-  margin-left:25px;
-  margin-top:10px;
-}
-.currentScore {
-  margin:10px;
-  margin-left:25px;
-}
-.blackListTitle {
-  padding:10px;
-  padding-left:25px;
-}
-.blackListToggle {
-  padding-left:25px;
-  padding-right:5px;
-  padding-bottom:5px;
-  text-transform:capitalize;
-}
-
-/* HeadlinesPlugin */
-
-/* debug 
-.headlinesRss, .headlinesChannel, .headlinesDate,
-.headlinesRight, .headlinesDescription,
-.headlinesLogo, .headlinesArticle, .headlinesTitle,
-.headlinesCreator, .headlinesSubject, .headlinesTeaser {
-  border:1px solid red;
-}
-*/
-
-.headlinesRss {
-  margin-right:10px;
-}
-.headlinesChannel {
-  padding-bottom:5px;
-  margin-bottom:5px;
-}
-.headlinesChannel input {
-  display:none;
-}
-.headlinesChannel .headlinesDate {
-  margin:5px 0px;
-}
-.headlinesRight {
-  font-style:oblique;
-}
-.headlinesDescription {
-  font-size:110%;
-}
-.headlinesLogo {
-  float:right;
-  text-align:center;
-  overflow:hidden;
-  margin-left:5px;
-  margin-bottom:5px;
-}
-.headlinesLogo img {
-  border:0px;
-  margin:0px;
-  padding:0px;
-  margin-bottom:5px;
-}
-.headlinesArticle {
-  padding-top:5px;
-  padding-bottom:5px;
-  overflow:hidden;
-  margin-bottom:1.4em;
-}
-.headlinesArticle hr {
-  margin-top:2px;
-  margin-bottom:2px;
-}
-.headlinesArticle .headlinesTitle a {
-  font-size:140%;
-}
-.headlinesArticle .headlinesDate {
-  font-size:90%;
-  margin-left:0px;
-  white-space:nowrap;
-}
-.headlinesSubject,
-.headlinesCreator {
-  display:inline;
-  font-size:90%;
-}
-.headlinesTeaser {
-  margin-top:5px;
-  margin-left:30px;
-  text-align:justify;
-  overflow:hidden;
-}
-.headlinesTeaser img {
-  margin:5px;
-}
-.headlinesTeaser .natExternalLink:after {
-  content:"";
-  margin-left:0px;
 }
 
 /* twisty plugin */
@@ -1505,6 +1328,11 @@ img.alignleft {
 /* jquery treeview */
 .natSideBar .jqTreeview ul > li:before { 
   content:"";
+}
+
+.natSideBar .jqButtonSimple span,
+.natSideBar .jqButton.simple span {
+  text-decoration:none;
 }
 
 /* tooltips */
@@ -1563,20 +1391,20 @@ table.craSideBySide .craCell {
 .fltMakeIndexWrapper h3 {
   font-weight:bold;
   border:0px;
-  margin:0em 0em 0.1em;
+  margin:0em;
   padding:0px;
 }
 .fltMakeIndexWrapper ul {
   list-style-type:none;
   padding:0px;
-  margin:0em 1em 2.5em 0em;
+  margin:0em 1em 1.125em 0em;
 }
 .fltMakeIndexWrapper li {
   padding:0;
   margin:0;
 }
 .fltLayoutTable {
-  margin:0em 0px 1em;
+  margin:0em;
   width:99%;
 }
 .fltMakeIndexWrapper table td {
@@ -1632,3 +1460,71 @@ h1 .foswikiTopicSummary {
   white-space:normal !important;
 }
 */
+
+/* columns */
+.natCols1,
+.natCols2,
+.natCols3,
+.natCols4,
+.natCols5,
+.natCols2v1,
+.natCols1v2 { overflow: hidden; height: 100%; clear: both; }
+
+.natCol1, 
+.natCol2, 
+.natCol3, 
+.natCol4, 
+.natCol5 { float:left; height: 100%; margin-right: 4%;}
+
+.natCols2 .natCol1, 
+.natCols2 .natCol2 { width: 48%; }
+.natCols2 .natCol2 { float: right; margin-right: 0%;}
+
+.natCols3 .natCol1,
+.natCols3 .natCol2,
+.natCols3 .natCol3 { width: 30%; }
+.natCols3 .natCol3 { margin-right: 0%; }
+
+.natCols4 .natCol1,
+.natCols4 .natCol2,
+.natCols4 .natCol3,
+.natCols4 .natCol4 { width: 22%; }
+.natCols4 .natCol4 { margin-right: 0%; }
+
+.natCols5 .natCol1,
+.natCols5 .natCol2,
+.natCols5 .natCol3,
+.natCols5 .natCol4,
+.natCols5 .natCol5 { width: 16%; }
+.natCols5 .natCol5 { margin-right: 0%; }
+
+.natCols2v1 .natCol1 { width: 64%; }
+.natCols2v1 .natCol2 { width: 31%; margin-right: 0%; }
+
+.natCols1v2 .natCol1 { width: 31%; }
+.natCols1v2 .natCol2 { width: 64%; margin-right: 0%; }
+
+.natBottomActions {
+  margin-bottom:30px;
+}
+.natBottomActions h4 {
+  margin:0px:
+}
+.natBottomActions ul {
+  list-style-type:none;
+  margin-left:0px;
+  margin-right:0px;
+  margin-bottom:0px;
+}
+
+.foswikiShowOnPrint {
+  display:none;
+}
+
+/* metadata */
+.natAttachBody .foswikiMetaData {
+  margin-top:0px;
+}
+.natAttachBody .foswikiAttachments .foswikiMetaDataHelp {
+  display:none; /* already linked in sidebar */
+}

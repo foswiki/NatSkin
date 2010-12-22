@@ -2,6 +2,16 @@
 /* toggle the attachment editor */
 (function($) {
   var lastElem;
+
+  /* check if the comment of an attachment is empty;
+   * the core inserts an &nbsp; thats why this is a bit
+   * more complicated
+   */
+  function isEmptyComment ($comment) {
+    var text = $comment.text();
+    return text.length == 1 && text.charCodeAt(0) == 160;
+  }
+
   function toggleAttachmentEditor(elem, state) {
 
     if (lastElem && lastElem != elem) {
@@ -30,15 +40,6 @@
       }
       $editor.slideToggle('fast');
     }
-  }
-
-  /* check if the comment of an attachment is empty;
-   * the core inserts an &nbsp; thats why this is a bit
-   * more complicated
-   */
-  function isEmptyComment ($comment) {
-    var text = $comment.text();
-    return text.length == 1 && text.charCodeAt(0) == 160;
   }
 
   // init

@@ -10,6 +10,7 @@
 %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
 <noautolink>
 <form name="EditForm" method="post" action="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$year$mo$day$hours$minutes$seconds"}%">
+<input type="hidden" name="action" value="%URLPARAM{"action"}%" />
 <input type="hidden" name="topicparent" value="%URLPARAM{"topicparent"}%" />
 <input type="hidden" name="redirectto" value="%URLPARAM{"redirectto"}%" />
 <input type="hidden" name="skin" value="%URLPARAM{"skin"}%" />

@@ -1,0 +1,216 @@
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1257265212" format="1.1" reprev="1.4" version="1.4"}%
+%{<verbatim class="tml">}%
+%{ ###########################################################################
+   inherit settings from standard view template
+}%
+%TMPL:INCLUDE{"view"}%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%{ ###########################################################################
+   websearch - default settings and switches
+}%
+%TMPL:DEF{"searchbox"}%%TMPL:END%
+%TMPL:DEF{"sidebar"}%%TMPL:END%
+%TMPL:DEF{"bodyclass"}%natViewBody natSearchBody%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+%TMPL:DEF{"topicactions"}%%TMPL:END%
+%TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%{ ###########################################################################
+   content: main definition that puts together all pieces
+}%
+%TMPL:DEF{"content"}%<div class="natSearch">
+%TMPL:P{"websearch::form"}%
+%TMPL:P{"websearch::hits"}%
+%JQREQUIRE{"focus"}%<!-- jqrequire -->
+</div>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%{ ###########################################################################
+   websearch::form: this is the form to be submitted; it consists of several 
+   steps that make up the rows of the form; all form steps are wraped into
+   a start and end part
+}%
+
+%TMPL:DEF{"websearch::form"}%<!-- websearch::form -->
+%TMPL:P{"websearch::form::start"}%
+%TMPL:P{"websearch::form::inputstep"}%
+%TMPL:P{"websearch::form::rssstep"}%
+%TMPL:P{"websearch::form::end"}%
+<!-- //websearch::form -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%{ ###########################################################################
+   websearch::form::start - this is the head of the form
+}%
+%TMPL:DEF{"websearch::form::start"}%<!-- websearch::form::start -->
+<form id="searchform" name="searchform" action="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%">
+<input type="hidden" name="origtopic" value="%URLPARAM{"origtopic" default="%BASEWEB%.%HOMETOPIC%"}%" />
+<div class="foswikiFormSteps">
+<!-- //websearch::form::start -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%{ ###########################################################################
+   websearch::form::rss - this one holds the rss link
+}%
+%TMPL:DEF{"websearch::form::rssstep"}%<!-- -->
+<div class="foswikiFormStep">
+%TMPL:P{"websearch::rss"}%
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%{ ###########################################################################
+   websearch::rss - display an rss link for the current search
+}%
+%TMPL:DEF{"websearch::rss"}%<!-- -->
+<div class="natSearchRss foswikiGrayText">
+<a href='%SCRIPTURL{"view"}%/%BASEWEB%/WebRss?search=%URLPARAM{"search" encode="url"}%;limit=%URLPARAM{"limit" encode="url" default="all"}%;web=%URLPARAM{"web" default="%BASEWEB%"}%'>%MAKETEXT{"Get notified on changes on this search"}%</a>
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+
+%{<verbatim class="tml">}%
+%{ ###########################################################################
+   websearch::form::inputstep - this one holds the input field together with the submit/cancel buttons
+}%
+%TMPL:DEF{"websearch::form::inputstep"}%<!-- websearch::form::inputstep -->
+<div class="foswikiFormStep">
+<div class="foswikiRight">
+  <table class="foswikiLayoutTable">
+    <tr>
+      <th>
+        %MAKETEXT{"Topics per web"}%:
+      </th>
+      <td>
+        <select name="limit">
+          <option %IF{"$'URLPARAM{limit}'='5'" then="selected"}%>5</option>
+          <option %IF{"$'URLPARAM{limit}'='10' or $'URLPARAM{limit}'=''" then="selected"}%>10</option>
+          <option %IF{"$'URLPARAM{limit}'='20'" then="selected"}%>20</option>
+          <option %IF{"$'URLPARAM{limit}'='30'" then="selected"}%>30</option>
+          <option %IF{"$'URLPARAM{limit}'='40'" then="selected"}%>40</option>
+          <option %IF{"$'URLPARAM{limit}'='50'" then="selected"}%>50</option>
+          <option %IF{"$'URLPARAM{limit}'='100'" then="selected"}%>100</option>
+          <option %IF{"$'URLPARAM{limit}'='all'" then="selected"}%>all</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+</div>
+<table class="foswikiNullTable">
+  <tr>
+    <td>
+      <input type="text" class="foswikiInputField jqFocus" id="search" name="search" size="30" value="%URLPARAM{"search" encode="entity"}%" style="float:left;margin-right:8px;"/>
+    </td>
+    <td>
+      %BUTTON{"%MAKETEXT{"Search"}%" type="submit" title="%MAKETEXT{"submit the query"}%" icon="find"}%
+      %BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" title="%MAKETEXT{"back to [_1]" args="%GETTOPICTITLE{"%URLPARAM{"origtopic" default="%BASEWEB%.%HOMETOPIC%"}%"}%"}%" target="%URLPARAM{"origtopic" default="%BASEWEB%.%HOMETOPIC%"}%"}%
+    </td>
+  </tr>
+</table>
+%TMPL:P{"websearch::form::options"}%<!-- //websearch::form::options -->
+</div>
+<!-- //websearch::form::inputstep -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%{ ###########################################################################
+   websearch::form::options - this one renders the row of search options
+}%
+%TMPL:DEF{"websearch::form::options"}%<!-- websearch::form::options -->
+<input type="checkbox" class="foswikiCheckbox" id="web" name="web" value="all" %IF{"$'URLPARAM{web}'='all'" then=" checked"}%/>
+<label class="foswikiLabel" for="web">%MAKETEXT{"Search in all webs"}%</label>
+<!-- //websearch::form::options -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%{ ###########################################################################
+   websearch::form::end - finally close the form
+}%
+%TMPL:DEF{"websearch::form::end"}%<!-- websearch::form::end -->
+</div>
+</form>
+<!-- //websearch::form::end -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%{ ###########################################################################
+   websearch::hits - this block displays the list of hits as found by SEARCH
+}%
+%TMPL:DEF{"websearch::hits"}%<!-- websearch::hits -->
+%SEARCH{
+  "%URLPARAM{"search" encode="quote"}%"
+  nosearch="on"
+  type="%URLPARAM{"type" default="keyword"}%"
+  scope="%URLPARAM{"scope" default="all" encode="quote"}%"
+  web="%URLPARAM{"web" encode="quote"}%"
+  excludetopic="%URLPARAM{"excludetopic" encode="quote"}%"
+  casesensitive="%URLPARAM{"casesensitive" default="off" encode="quote"}%"
+  nosummary="%URLPARAM{"nosummary" encode="quote"}%"
+  nototal="on"
+  order="%URLPARAM{"order" encode="quote"}%"
+  reverse="%URLPARAM{"reverse" encode="quote"}%"
+  limit="%URLPARAM{"limit" encode="quote"}%"
+  zeroresults="%IF{ "defined search and $search!=''" then="on" else="off" }%"
+  header="%IF{"'%URLPARAM{"web"}%'='all'" 
+    then="$percntTMPL:P{\"websearch::hits::header\" 
+      web=\"$web\"
+      count=\"$ntopics\"
+    }$percnt"
+  }%"
+  footer="$percntTMPL:P{\"websearch::hits::footer\" 
+      count=\"$ntopics\"
+    }$percnt"
+  format="$percntTMPL:P{
+    \"websearch::hits::topic\"
+    topic=\"$topic\"
+    web=\"$web\"
+    author=\"$wikiname\"
+    changed=\"$date\"
+    summary=\"$summary\"
+  }$percnt"
+}%
+<!-- //websearc::hits -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%{ ###########################################################################
+   websearch::hits::topic - this is called for each found hit
+}%
+%TMPL:DEF{"websearch::hits::topic"}%<!-- websearch::hits::topic -->
+<div class="natSearchHit">
+[[%web%.%topic%][%topic%]]
+<span class="natSearchTargetWeb foswikiGrayText foswikiSmallish">in <nop>%WEBLINK{format="$web" web="%web%"}% </span>
+<div class="natSearchSummary"> <noautolink> %summary% </noautolink> </div>
+<div class="natSearchRevision">
+  changed on <a href='%SCRIPTURLPATH{"rdiff"}%/%web%/%topic%?type=last'>%changed%</a> by <span class='natSearchAuthor'> [[%USERSWEB%.%author%][%author%]] </span>
+</div>
+</div>
+<!-- //websearch::hits::topic -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%{ ###########################################################################
+   websearch::hits::header - this prepended to the hit set of a web
+}%
+%TMPL:DEF{"websearch::hits::header"}%<!-- -->
+---+++ %MAKETEXT{"Results from [_1] web" args="<nop>%web%"}%%TMPL:END%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%{ ###########################################################################
+   websearch::hits::footer - this appended to the hit set of a web
+}%
+%TMPL:DEF{"websearch::hits::footer"}%<!-- -->
+<div class="natSearchTotal">%MAKETEXT{"<span>[_1]</span> topic(s) found" args="%count%"}%</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%

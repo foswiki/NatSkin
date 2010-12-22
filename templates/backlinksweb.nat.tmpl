@@ -1,16 +1,32 @@
 %TMPL:INCLUDE{"search"}%<!-- template:backlinksweb.nat.tmpl -->
-%TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"backlinks"}%) - %WIKITOOLNAME%%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"title"}%%HTMLTITLE{"%TOPICTITLE% (%MAKETEXT{"backlinks"}%)" separator=" %IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="::"}% "}%%TMPL:END%
+%TMPL:DEF{"breadcrumbstail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=backlinksweb">%MAKETEXT{"Backlinks"}%</a>%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Backlinks to [_1] in the [_2] Web" args="<nop>%TOPIC%, <nop>%WEB%"}%</h1>%TMPL:END%
-%TMPL:DEF{"content"}%<!-- content -->
-%TMPL:P{"beforetext"}%<!-- beforetext// -->
-%TMPL:P{"contenttitle"}%<!-- contenttitle// -->
-<div class="foswikiFormSteps">
-<div class="foswikiFormStep foswikiFormLast">
-%BUTTON{"%MAKETEXT{"OK"}%" icon="tick" target="%WEB%.%TOPIC%" title="Return to <nop>%TOPIC%"}%
-%BUTTON{"%MAKETEXT{"Global Search"}%" icon="find" target="%SCRIPTURLPATH{"oops"}%/%WEB%/%TOPIC%?template=backlinksallwebs" title="%MAKETEXT{"Search for backlinks in all webs"}%"}%
-%CLEAR%
+%TMPL:DEF{"sidebar"}%%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"content"}%<!-- -->
+%TMPL:P{"beforetext"}%<!-- // -->
+<div class="foswikiRight">
+  %BUTTON{"%MAKETEXT{"Close"}%" icon="cross" target="%WEB%.%TOPIC%" class="simple foswikiRight"}%
+  %CLEAR%
 </div>
-</div>
-%SEARCH{web="%WEB%" search="%TOPIC%([^A-Za-z0-9]|$)|%SPACEOUT{"%TOPIC%" separator=" *"}%([^A-Za-z0-9]|$)|%WEB%.%TOPIC%([^A-Za-z0-9]|$)|%WEB%.%SPACEOUT{"%TOPIC%" separator=" *"}%([^A-Za-z0-9]|$)" type="regex" scope="text" nosearch="on" excludetopic="%TOPIC%"}%
-%TMPL:P{"aftertext"}%<!-- aftertext// -->
-<!-- //content -->%TMPL:END%
+%TMPL:P{"contenttitle"}%<!-- // -->
+%BUTTON{"%MAKETEXT{"Search all webs"}%" 
+  icon="find" 
+  href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=backlinksallwebs" 
+  title="%MAKETEXT{"Search all webs for topics that link to here"}%"
+  class="simple"
+}%%CLEAR%
+%SEARCH{
+  web="%WEB%" 
+  search="%TOPIC%([^A-Za-z0-9]|$)|%SPACEOUT{"%TOPIC%" separator=" *"}%([^A-Za-z0-9]|$)|%WEB%.%TOPIC%([^A-Za-z0-9]|$)" 
+  type="regex" 
+  scope="text" 
+  nosearch="on" 
+  excludetopic="%TOPIC%"
+}%
+%TMPL:P{"aftertext"}%<!-- -->
+<!-- -->%TMPL:END%

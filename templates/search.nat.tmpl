@@ -5,17 +5,17 @@
 %TMPL:DEF{"seealso"}%[[WebSearchAdvanced][%MAKETEXT{"Advanced Search"}%]]%TMPL:END%
 %TMPL:DEF{"searchhit"}%<!-- searchhit -->
   <a class="natSearchTarget" href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPICNAME%">%TMPL:P{"topictitle"}%</a>
-  <span class="natSearchTargetWeb">in <nop>%WEBLINK{format="$web" web="%WEB%"}% </span>
+  <span class="natSearchTargetWeb foswikiGrayText foswikiSmallish">in <nop>%WEBLINK{format="$web" web="%WEB%"}% </span>
   <div class="natSearchSummary"> <noautolink> %TEXTHEAD% </noautolink> </div>
   <div class="natSearchRevision">
-    changed on <a rel='nofollow' href='%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPICNAME%?type=last'>%TIME%</a> by <span class='natSearchAuthor'> %AUTHOR% </span>
+    <a href='%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPICNAME%?type=last' rel'nofollow'>%TIME%</a>, <span class='natSearchAuthor'> %AUTHOR% </span>
   </div>
 <!-- //searchit -->%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Search result for [_1]" args="<span class='natSearchString'>\"%URLPARAM{"search"}%\"</span>"}%</h1>%TMPL:END%
 %TMPL:DEF{"content"}%<!-- content -->
 %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
 %SPLIT%%TMPL:P{"searchform"}%%SPLIT% 
-%REPEAT%<div class="natSearchHit %CALC{"$SETM(incr, +1)$IF($ODD($GET(incr)),natSearchHitOdd,natSearchHitEven)"}%">
+%REPEAT%<div class="natSearchHit">
 %TMPL:P{"searchhit"}%
 </div>%REPEAT%%SPLIT%<div class="natSearchTotal">
   %MAKETEXT{"<span>[_1]</span> topics found" args="%NTOPICS%"}% 

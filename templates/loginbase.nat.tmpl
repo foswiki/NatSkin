@@ -1,38 +1,93 @@
 <!-- template: loginbase.tmpl -->
 %TMPL:DEF{"useractions"}%<div class='natGreeter'>&nbsp;</div>%TMPL:END%
-%TMPL:DEF{"rememberbox"}%<!-- rememberbox -->
-<div class="foswikiFormStep">
-  <table cellspacing="0" cellpadding="0"><tr><td>
-  <input id="remember" name="remember" class="foswikiCheckbox" type="checkbox" value="1" />
-  </td><td style="padding-left:0.3em">
-  <label for="remember">%MAKETEXT{"Remember me on this computer"}%</label>
-  </td></tr></table>
-</div>
-<!-- //rememberbox -->%TMPL:END%
-%TMPL:DEF{"logon"}%<!-- logon -->
-%JQREQUIRE{"validate"}%%JQREQUIRE{"shake"}%%JQREQUIRE{"focus"}%%ADDTOZONE{"body" 
-  tag="NATSKIN::LOGIN"
-  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/login.js'></script>"
-  requires="JQUERYPLUGIN"
-}%<!-- require -->
+
+%{################################################################################ }%
+%TMPL:DEF{"login"}%<!-- login -->
+%TMPL:P{"login::start"}%
+%TMPL:P{"login::usernamestep"}%
+%TMPL:P{"login::passwordstep"}%
+%TMPL:P{context="can_remember_login" then="rememberstep"}%<!-- -->
+%TMPL:P{"login::buttonstep"}%
+%TMPL:P{"login::end"}%
+<!-- //login -->%TMPL:END%
+
+%{################################################################################ }%
+%TMPL:DEF{"login::start"}%<!-- -->
 <form id="LogonForm" name="LogonForm" action="%IF{"$'HTTPSLOGON'='on'" then="https" else="http"}%://%HTTP_HOST%%SCRIPTURLPATH{"login"}%%IF{"defined 'PATH_INFO'" then="$percntPATH_INFO$percnt" else="/$percntWEB$percnt/$percntTOPIC$percnt"}%" method="post">
-<literal>%QUERYPARAMS{encoding="entity" format="<input type='hidden' name='$name' value='$value' />"}%</literal><!-- queryparams// -->
-%IF{"defined 'FOSWIKI_ORIGIN'" then="<input type='hidden' name='foswiki_origin' value='$percntFOSWIKI_ORIGIN$percnt' />"}% 
-%IF{"defined 'ORIGURL'" then="<input type='hidden' name='origurl' value='$percntORIGURL$percnt' />"}%
-<input type="submit" style="display:none" />
+  <literal>
+    %QUERYPARAMS{
+      encoding="entity" 
+      format="<input type='hidden' name='$name' value='$value' />"
+    }%
+  </literal>
+  %IF{"defined 'FOSWIKI_ORIGIN'" 
+    then="<input type='hidden' name='foswiki_origin' value='$percntFOSWIKI_ORIGIN$percnt' />
+  "}%<!-- -->
+  %IF{"defined 'ORIGURL'" 
+    then="<input type='hidden' name='origurl' value='$percntORIGURL$percnt' />"
+  }%<!-- -->
+  <input type="submit" style="display:none" />
+<!-- -->%TMPL:END%
+
+%{################################################################################ }%
+%TMPL:DEF{"login::usernamestep"}%<!-- -->
 <div class="foswikiFormStep">
----+++ %MAKETEXT{"Username"}%:
-<input type="text" class="foswikiFormField jqFocus required" size="20" id="username" name="username" value='%URLPARAM{"usernamestep"}%' /> 
+  <h3>%MAKETEXT{"Username"}%:</h3>
+  %TMPL:P{"usernamefield"}%
 </div>
+<!-- -->%TMPL:END%
+
+%{################################################################################ }%
+%TMPL:DEF{"usernamefield"}%<!-- -->
+<input type="text" class="foswikiInputField jqFocus required" size="20" id="username" name="username" value='%URLPARAM{"usernamestep"}%' /> 
+<!-- -->%TMPL:END%
+
+%{################################################################################ }%
+%TMPL:DEF{"login::passwordstep"}%<!-- -->
 <div class="foswikiFormStep">
----+++ %MAKETEXT{"Password"}%:
-<input type="password" class="foswikiFormField required" size="20" id="password" name="password" />
+  <h3>%MAKETEXT{"Password"}%:</h3>
+  %TMPL:P{"passwordfield"}%
 </div>
-%TMPL:P{context="can_remember_login" then="rememberbox"}%<!-- rememberbox // -->
+<!-- -->%TMPL:END%
+
+%{################################################################################ }%
+%TMPL:DEF{"passwordfield"}%<!-- -->
+<input type="password" class="foswikiInputField required" size="20" id="password" name="password" />
+<!-- -->%TMPL:END%
+
+%{################################################################################ }%
+%TMPL:DEF{"rememberstep"}%<!-- -->
+<div class="foswikiFormStep">
+  <table class="foswikiNullTable">
+    <tr>
+      <td>
+        <input id="remember" name="remember" class="foswikiCheckbox" type="checkbox" value="1" />
+      </td>
+      <td>
+        <label for="remember">%MAKETEXT{"Remember me on this computer"}%</label>
+      </td>
+    </tr>
+  </table>
+</div>
+<!-- -->%TMPL:END%
+
+%{################################################################################ }%
+%TMPL:DEF{"login::buttonstep"}%<!-- -->
 <div class="foswikiFormStep foswikiFormButtons">
   %BUTTON{"%MAKETEXT{"Log In"}%" icon="tick" type="save"}% 
   %BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" target="%WIKILOGOURL%"}%
   %CLEAR%
 </div>
+<!-- -->%TMPL:END%
+
+%{################################################################################ }%
+%TMPL:DEF{"login::end"}%<!-- -->
 </form>
-<!-- //logon -->%TMPL:END%
+%JQREQUIRE{"validate, shake, focus"}%<!-- -->
+%ADDTOZONE{"script" 
+  tag="NATSKIN::LOGIN"
+  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/login.js'></script>"
+  requires="JQUERYPLUGIN, JQUERYPLUGIN::VALIDATE, JQUERYPLUGIN::SHAKE"
+}%<!-- -->
+<!-- -->%TMPL:END%
+

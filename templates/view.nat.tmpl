@@ -1,101 +1,103 @@
 %TMPL:INCLUDE{"page"}%<!-- template: view.nat.tmpl -->
-%TMPL:INCLUDE{"metacomments"}%<!-- metacomments// -->
 %TMPL:INCLUDE{"viewbody"}%<!-- viewbody// -->
 %TMPL:INCLUDE{"viewtopicactions"}%<!-- viewtopicactions// -->
 %TMPL:INCLUDE{"viewsidebar"}%<!-- viewsidebar// -->
 %TMPL:INCLUDE{"searchbox"}%<!-- searchbox// -->
+%TMPL:INCLUDE{"metadata"}%<!-- metadata// -->
+%TMPL:INCLUDE{"metacomments"}%<!-- metacomments// -->
+
+%{ ################################################################################ }%
 %TMPL:DEF{"bodyclass"}%natViewBody %IF{"context 'natskin_history_1'" then="natViewHistoryBody"}%%TMPL:END%
 %TMPL:DEF{"title"}%%HTMLTITLE{separator=" %IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="-"}% "}%%TMPL:END%
-%TMPL:DEF{"meta"}%%TMPL:P{"metatitle"}%%TMPL:P{"metakeywords"}%%TMPL:P{"metaauthor"}%%TMPL:P{"metadescription"}%%TMPL:P{"DISmetaedit"}%%HTTP_EQUIV_ON_VIEW%%TMPL:END%
-%TMPL:DEF{"metatitle"}%<meta name='title' content='%TMPL:P{"title"}%' />
-%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"meta"}%%TMPL:P{"metatitle"}%
+%TMPL:P{"dublincore"}%
+%TMPL:P{"metakeywords"}%
+%TMPL:P{"metaauthor"}%
+%TMPL:P{"metadescription"}%
+%TMPL:P{"metaedit"}%
+%HTTP_EQUIV_ON_VIEW% %TMPL:END%
+
+%TMPL:DEF{"dublincore"}%<link rel="schema.DC" href= "http://purl.org/DC/elements/1.1/">
+<meta name="DC.Date.Created" content="%REVINFO{rev="1" format="$year-$mo-$day"}%" />
+<meta name="DC.Date.Modified" content="%REVINFO{"$year-$mo-$day"}%" />%TMPL:END%
+
+%TMPL:DEF{"metatitle"}%<meta name='title' content='%ENCODE{"%HTMLTITLE{"%TOPICTITLE%" wikitoolname="off"}%" type="html"}%' />%TMPL:END%
+
 %TMPL:DEF{"metakeywords"}%%IF{
   "defined 'METAKEYWORDS'" 
-  then="<meta name='keywords' content='$percntMETAKEYWORDS$percnt'>$n" 
-  else="$percntIF{\"'%WEB%.%TOPIC%'/Tag\" then=\"<meta name='keywords' content='$dollarpercntFORMFIELD{Tag}$dollarpercnt' />$n\"}$percnt"
+  then="<meta name='keywords' content='$percntENCODE{\"$percntMETAKEYWORDS$percnt\" type=\"html\"}$percnt'>$n" 
+  else="$percntIF{\"'%WEB%.%TOPIC%'/Tag\" then=\"<meta name='keywords' content='$dollarpercntENCODE{\\"$dollarpercntFORMFIELD{Tag}$dollarpercnt\\" type=\\"html\\"}$dollarpercnt' />$n\"}$percnt"
 }%%TMPL:END%
+
 %TMPL:DEF{"metaauthor"}%%IF{
   "defined 'METAAUTHOR'" 
-  then="<meta name='author' content='$percntMETAAUTHOR$percnt' />$n"
+  then="<meta name='author' content='$percntENCODE{\"$percntMETAAUTHOR$percnt\" type=\"html\"}$percnt' />$n"
 }%%TMPL:END%
+
 %TMPL:DEF{"metadescription"}%%IF{
   "defined 'METADESCRIPTION'" 
-  then="<meta name='description' content='$percntMETADESCRIPTION$percnt' />$n"
+  then="<meta name='description' content='$percntENCODE{\"$percntMETADESCRIPTION$percnt\" type=\"html\"}$percnt' />$n"
   else="$percntIF{\"'%WEB%.%TOPIC%'/Summary\" then=\"$dollarpercntTMPL:P{metasummary}$dollarpercnt$dollarn\"}$percnt"
 }%%TMPL:END%
-%TMPL:DEF{"metasummary"}%<meta name='description' content='%FORMFIELD{"Summary"}%' />%TMPL:END%
+
+%TMPL:DEF{"metasummary"}%<meta name='description' content='%ENCODE{"%FORMFIELD{"Summary"}%" type="html"}%' />%TMPL:END%
+
 %TMPL:DEF{"metaedit"}%%IF{
   "'%WEB%.%TOPIC%' allows 'change'" 
-  then="<link rel='alternate' type='application/x-wiki' title='Edit this page!' href='%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%' />$n"
+  then="<link rel='alternate' type='application/x-wiki' title='Edit this page!' href='%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%' />"
 }%%TMPL:END%
+
+%{ ################################################################################ }%
 %TMPL:DEF{"content"}%<!-- content -->
 %TMPL:P{"beforetext"}%<!-- beforetext// -->
 %TMPL:P{"text"}%<!-- text// -->
 %TMPL:P{"rawbutton"}%<!-- rawbutton // -->
-%TMPL:P{context="save" else="aftertext"}%<!-- aftertext// -->
+%TMPL:P{"aftertext"}%<!-- aftertext// -->
+%TMPL:P{"comments"}%<!-- comments// -->
+%TMPL:P{context="save" else="metadata"}%<!-- metadata// -->
 <!-- //content -->%TMPL:END%
+
 %TMPL:DEF{"rawbutton"}%%IF{"$'URLPARAM{raw}'='on'" then="<div class='natButtonBox'>$percntBUTTON{\"%MAKETEXT{"View"}%\" title=\"%MAKETEXT{"Back to view mode"}%\" style=\"float:right\" icon=\"eye\" target=\"%WEB%.%TOPIC%\"}$percnt$percntCLEAR$percnt</div>" else="<!-- -->" }%%TMPL:END%
 %TMPL:DEF{"text"}%%TEXT%%TMPL:END%
-%TMPL:DEF{"aftertext"}%<!-- aftertext -->
-%IF{"$'DISPLAYCOMMENTS'='on'" then="$percntTMPL:P{\"comments\"}$percnt"}%<!-- comments // -->
-%IF{"$'DISPLAYFORM'='off'" else="$percntTMPL:P{\"form\"}$percnt"}%<!-- form // -->
-%IF{"$'DISPLAYATTACHMENTS'='off'" else="$percntTMPL:P{\"attachments\"}$percnt"}%<!-- attachments// -->
-<!-- //aftertext -->%TMPL:END%
-%TMPL:DEF{"attachments"}%%TMPL:P{context="DBCachePluginEnabled" then="attachments::dbcache" else="attachments::default"}%%TMPL:END%
-%TMPL:DEF{"attachments::default"}%%META{"attachments"}%%TMPL:END%
-%TMPL:DEF{"attachments::dbcache"}%<!-- attachments::dbcache -->
-%ATTACHMENTS{
-  hidenull="on" 
-  attr="^[^h]*$"
-  header="<div class='foswikiFormSteps natTopicAttachments' id='natTopicAttachments'>
-    <a class='natTopicAction natAttachTopicAction' title='%MAKETEXT{"Manage existing attachments"}%' href='%SCRIPTURLPATH{"attach"}%/%WEB%/%TOPIC%?tab=2' rel='nofollow'>
-    <span>Attach</span>
-    </a>
-    $percntTWISTY{
-      mode=\"div\" 
-      start=\"show\" 
-      remember=\"off\" 
-      prefix=\"<h2>\" 
-      suffix=\"</h2>\" 
-      link=\"%MAKETEXT{"Attachments"}% \" 
-      showimg=\"%TMPL:P{"iconpath:toggle"}%\"
-      hideimg=\"%TMPL:P{"iconpath:toggleopen"}%\"
-    }$percnt"
-  format="<div class='foswikiFormStep'>
-    <table cellspacing='0' cellpadding='0'>
-      <tr>
-        <td class='natAttachmentIcon'>$icon</td> 
-        <td class='natAttachmentInfo'>
-            <div class='natAttachmentName'><a href='$url' class=\"jqImageTooltip { web:'%WEB%', topic:'%TOPIC%', image:'$name' }\">$name</a> ($sizeK)</div>
-            <div class='natAttachmentComment'><noautolink>$comment</noautolink></div>
-            %MAKETEXT{"version [_1] uploaded by [_2] on [_3]" args="$version,$wikiuser,$date"}%
-            $percntFORMATLIST{\"$oldversions\"
-              split=\"$n\"
-              pattern=\"(.*);(.*);(.*);(.*)\"
-              header=\"... $dollarpercntTWISTY{showlink=\\"%MAKETEXT{"more"}%\\" hidelink=\\"%MAKETEXT{"less"}%\\" mode=\\"div\\"}$dollarpercnt\"
-              format=\"<a href='%SCRIPTURLPATH{"viewfile"}%/%WEB%/%TOPIC%?filename=$name;rev=$3'>version $3</a> uploaded by $2 on $1\"
-              separator=\"%BR%\"
-              footer=\"$dollarpercntENDTWISTY$dollarpercnt\"
-            }$percnt<!-- oldversions -->
-        </td>
-      </tr>
-    </table>
-    </div>"
-  footer="$percntENDTWISTY$percnt </div>"
-}%<!-- //attachments::dbcache -->%TMPL:END%
-%TMPL:DEF{"form"}%%META{"form"}%%TMPL:END%
+
+%{ ################################################################################ }%
 %TMPL:DEF{"contentheader_container"}%<div class="natMainHeaderContents" %IF{"$'DISPLAYTOPICACTIONS'='off' and $'DISPLAYBREADCRUMBS'='off'" then="style='display:none'"}%>%TMPL:P{"contentheader"}%</div>%TMPL:END%
 %TMPL:DEF{"contentheader"}%%IF{
   "$'DISPLAYTOPICACTIONS'='off'" 
   else="$percntTMPL:P{\"topicactions\"}$percnt"
 }%%IF{
   "$'DISPLAYBREADCRUMBS'='off'" 
-  else="<div class='natBreadCrumbs'>%MAKETEXT{"You are here:"}% $percntTMPL:P{\"breadcrumbs\"}$percnt</div>"
+  else="<div class='natBreadCrumbs'>
+    <span class='natBreadCrumbsYouAreHere'>%MAKETEXT{"You are here:"}%</span> 
+    $percntTMPL:P{\"breadcrumbs\"}$percnt
+  </div>"
 }%%TMPL:END%
-%TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Changed by [_1] on [_2]" args="<span class='natRevisionAuthor'> %REVINFO{"$wikiusername" rev="%CURREV%"}% </span>, <a rel='nofollow' class='natRevisionDate' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"$date - $hour:$min - r$rev" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
-%TMPL:DEF{"rdiff"}%%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPIC%?type=last;render=sequential%TMPL:END%
-%TMPL:DEF{"compare"}%%SCRIPTURLPATH{"compare"}%/%WEB%/%TOPIC%?type=last;render=interweave%TMPL:END%
+
+%{ ################################################################################ }%
 %TMPL:DEF{"contentfooter"}%<!-- content footer -->
 %IF{"$'DISPLAYREVISIONINFO'='off'" else="$percntTMPL:P{\"revinfo\"}$percnt"}%<!-- revinfo //-->
 <!-- //content footer -->%TMPL:END%
+%TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Changed by [_1] on [_2]" args="<span class='natRevisionAuthor'> %REVINFO{"$wikiusername" rev="%CURREV%"}% </span>, <a class='natRevisionDate' ref='nofollow' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"$date - $hour:$min - r$rev" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
+%TMPL:DEF{"rdiff"}%%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPIC%?type=last;render=sequential%TMPL:END%
+%TMPL:DEF{"compare"}%%SCRIPTURLPATH{"compare"}%/%WEB%/%TOPIC%?type=last;render=interweave;context=2%TMPL:END%
 %TMPL:DEF{"broadcast"}%%IF{"not isempty 'BROADCASTMESSAGE'" then="<div class='foswikiBroadcastMessage'> $percntBROADCASTMESSAGE$percnt </div>"}%%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"comments"}% %IF{ "$DISPLAYCOMMENTS='on' and $COMMENTFORMAT!='insidetab'" then="<div>$percntTMPL:P{\"metacomments\"}$percnt</div>" else="<!-- -->" }%%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"previewraw"}%<!-- -->
+<div id="natPreviewRaw" class="foswikiDialog foswikiFormSteps" style="display:none">
+  <h2>%MAKETEXT{"Wiki text of [_1]" args="<span class='topic'></span>"}%</h2>
+  <div class="foswikiFormStep">
+    <textarea class="foswikiTextarea" rows="20" cols="80" style="width:99%" readonly></textarea>
+  </div>
+  <div class="foswikiFormStep">
+    %BUTTON{"%MAKETEXT{"Close"}%" class="jqSimpleModalCancel" icon="cross"}% 
+    %BUTTON{"%MAKETEXT{"Open in separate window"}%" href="%SCRIPTURL{"view"}%/%BASEWEB%/%BASETOPIC%?raw=text&skin=text" icon="application_double" class="simple separate foswikiRight"}%
+    %CLEAR%
+  </div>
+</div>
+<!-- -->%TMPL:END%

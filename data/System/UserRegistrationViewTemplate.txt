@@ -1,0 +1,342 @@
+%{<verbatim>}%
+%TMPL:INCLUDE{"view"}%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+%TMPL:DEF{"topicactions"}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"content"}%<!-- content -->
+%TMPL:P{"formtitle"}%
+%TMPL:P{"formstart"}%
+%TMPL:P{"accountdetails"}%
+%TMPL:P{"logindetails"}%
+%TMPL:P{"extradetails"}%
+%TMPL:P{"groupdetails"}%
+%TMPL:P{"formend"}%
+%TMPL:P{"formvalidation"}%
+<!-- //content -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"formtitle"}%<h1>%MAKETEXT{"Registration"}%</h1>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"formsep"}%<hr />%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"formstart"}%<!-- formstart -->
+<form id="registrationForm" action="%SCRIPTURLPATH{"register"}%/%USERSWEB%/%HOMETOPIC%" method="post">
+%IF{"context BlacklistPluginEnabled" 
+  then="<input type='hidden' name='rx' value='$percntBLACKLISTPLUGIN{ action=\"magic\" }$percnt' />"
+  else="<!-- no blacklist plugin installed -->"
+}%
+<input type="hidden" name="topic" value="%TOPIC%" />
+<input type="hidden" name="action" value="register" />
+<div class="foswikiFormSteps">
+<!-- //formstart -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"formend"}%<!-- formend -->
+<div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
+  %BUTTON{type="submit" "%MAKETEXT{"Register"}%" icon="user"}%
+  %CLEAR%
+</div>
+</div>
+</form>
+%MAKETEXT{"If you have any questions, please contact [_1]" args="%WIKIWEBMASTER%"}%
+<div class="foswikiErrorMessage" id="summary" style="display:none"></div>
+<!-- //formend -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"accountdetails"}%<!-- account details -->
+%TMPL:P{"accountdetailstitle"}%
+%TMPL:P{"firstname"}%
+%TMPL:P{"lastname"}%
+%TMPL:P{"email"}%
+%TMPL:P{"wikiname"}%
+%TMPL:P{"formsep"}%
+<!-- //account details -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"accountdetailstitle"}%<h2>%MAKETEXT{"Account settings"}%</h2>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"logindetails"}%<!-- login details -->
+%TMPL:P{"logindetailstitle"}%
+%TMPL:P{context="allow_loginname" "loginname"}%
+%TMPL:P{context="passwords_modifyable" "password"}%
+%TMPL:P{"formsep"}%
+<!-- //login details -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"logindetailstitle"}%<h2>%MAKETEXT{"Login settings"}%</h2>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"loginname"}%<!-- loginname -->
+<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"Choose a login name"}%:</h3>
+  <input %NOREGISTRATION% type="text" id="Twk1LoginName" name="Twk1LoginName" size="40" class="foswikiInputField" /> 
+  <span class="foswikiAlert">**</span>
+  <div class="foswikiFormDescription">
+    %MAKETEXT{"The login name you use to sign in."}%
+  </div>
+</div>
+<!-- //loginname -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"email"}%<!-- email -->
+<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"Your e-mail address"}%:</h3>
+  <input type="text" id="Twk1Email" name="Twk1Email" class="foswikiInputField" size="40" />
+  <span class="foswikiAlert">**</span>
+  <div class="foswikiFormDescription">
+    %MAKETEXT{"A valid email address. Will be kept confidential."}%
+  </div>
+</div>
+<!-- //email -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"password"}%<!-- password -->
+<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"Choose a password:"}%</h3>
+  <input type="password" id="Twk1Password" name="Twk1Password" class="foswikiInputField" size="40" value="" />
+  <span class="foswikiAlert">**</span>
+</div>
+<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"Re-enter password:"}%</h3>
+  <input type="password" id="Twk1Confirm" name="Twk1Confirm" class="foswikiInputField" size="40" value="" />
+  <span class="foswikiAlert">**</span>
+</div>
+<!-- //passwprd -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"firstname"}%<!-- firstname -->
+<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"Your first name"}%:</h3>
+  <input type="text" id="Twk1FirstName" name="Twk1FirstName" size="40" class="foswikiInputField" value="" /> 
+  <span class="foswikiAlert">**</span>
+</div>
+<!-- //firstname -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"lastname"}%<!-- lastname -->
+<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"Your last name"}%:</h3>
+  <input type="text" id="Twk1LastName" name="Twk1LastName" size="40" class="foswikiInputField" value="" /> 
+  <span class="foswikiAlert">**</span>
+</div>
+<!-- //lastname -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"wikiname"}%<!-- wikiname -->
+<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"Choose a <nop>WikiName"}%:</h3>
+  <input type="text" id="Twk1WikiName" name="Twk1WikiName" size="40" class="foswikiInputField" value="" /> 
+  <span class="foswikiAlert">**</span>
+  <div class="foswikiFormDescription">
+    %MAKETEXT{"Your name as displayed online. 
+       Note, this must be a unique %SYSTEMWEB%.WikiName.
+       By default it is derived from your first and last name"
+    }%
+  </div>
+</div>
+<!-- //wikiname -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"extradetails"}%<!-- extra details -->
+%TMPL:P{"extradetailstitle"}%
+%TMPL:P{"organisationname"}%
+%TMPL:P{"organisationurl"}%
+%TMPL:P{"country"}%
+%TMPL:P{"formsep"}%
+<!-- //extra details -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"extradetailstitle"}%<h2>%MAKETEXT{"Optional information"}%</h2>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"organisationname"}%<!-- organisationname -->
+<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"Organisation Name"}%:</h3>
+  <input type="text" id="Twk0OrganisationName" name="Twk0OrganisationName" size="40" class="foswikiInputField" value="" /> 
+</div>
+<!-- //organisationname -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"organisationurl"}%<!-- organisationurl -->
+<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"Organisation URL"}%:</h3>
+  <input type="text" id="Twk0OrganisationURL" name="Twk0OrganisationURL" size="40" class="foswikiInputField" value="" /> 
+</div>
+<!-- //organisationurl -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"country"}%<!-- country -->
+<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"Country"}%:</h3>
+  <select id="Twk0Country" name="Twk0Country" class="foswikiSelect"> 
+  %EXTRACT{
+    "%SYSTEMWEB%.CountryList"
+    pattern="\s*\|\s*(.*?)\s*\|"
+    skip="1"
+    format="<option>$1</option>$n"
+  }%
+  </select>
+</div>
+<!-- //Country -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"groupdetails"}%<!-- groupdetails -->
+%IF{"$'REGISTRATIONGROUPTYPE'!='none'"
+  then="<div class='foswikiHidden' id='groupDetails'>
+      $percntTMPL:P{\"groupdetailstitle\"}$percnt
+      $percntTMPL:P{\"joingroup\"}$percnt
+      $percntTMPL:P{\"formsep\"}$percnt
+    </div>"
+  else="<!-- no group details -->"
+}%
+<!-- //groupdetails -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"groupdetailstitle"}%<h2>%MAKETEXT{"Collaboration details"}%</h2>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"joingroup"}%<!-- joingroup -->
+<div class='foswikiFormStep'>
+%FORMATLIST{
+  "%GROUPINFO{
+    format="$name=$allowschange%IF{"$WIKINAME='WikiGuest'" then="(RegistrationAgent)"}%"
+  }%"
+  split="\s*,\s*"
+  pattern="(.*)=(.*)"
+  exclude="^((AdminGroup|NobodyGroup).*)|(.*=0)$"
+  format="<p>
+    <label><input type='%IF{"'%REGISTRATIONGROUPTYPE%' = 'one'" then="radio" else="checkbox"}%' name='Twk0AddToGroups' class='foswikiInputField' value='$1'> <nop>$1</label>
+    $percntADDTOZONE{\"head\" 
+      tag=\"showCollaborationDetails\" 
+      text=\"<style>#groupDetails {display:block}</style>\"
+    }$percnt</p>"
+  separator="$n"
+  sort="on"
+}%
+<div class="foswikiFormDescription">
+  %MAKETEXT{"Select the groups you want to join."}%
+</div>
+</div>
+<!-- //joingroup -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"formvalidation"}%<!-- formvalidation -->
+%JQREQUIRE{"validate, wikiword"}%
+%ADDTOZONE{"script" 
+  requires="JQUERYPLUGIN::VALIDATE, JQUERYPLUGIN::WIKIWORD"
+  text="<literal>
+<script>
+jQuery(function($) {
+  $('#Twk1WikiName').wikiword('#Twk1FirstName, #Twk1LastName');
+  var $form = $('#registrationForm')
+    .bind('invalid-form.validate', function(e, validator) {
+      var errors = validator.numberOfInvalids();
+      if (errors) {
+        $('#summary').html('%MAKETEXT{"There was an error. Please, see above."}%').show();
+      } else {
+        $('#summary').hide();
+      }
+    })
+    .validate({
+      rules: {
+        Twk1FirstName: '%MAKETEXT{"required"}%',
+        Twk1LastName: '%MAKETEXT{"required"}%',
+        Twk1WikiName: {
+          required: true,
+          wikiword: true,
+          remote: '%SCRIPTURLPATH{rest}%/RenderPlugin/template?name=UserRegistrationView;expand=checkWikiName'
+        },
+        Twk1Email: {
+          required: true,
+          email: true
+        },
+        Twk1LoginName: {
+          required: true,
+          minlength: 2,
+          remote: '%SCRIPTURLPATH{rest}%/RenderPlugin/template?name=UserRegistrationView;expand=checkLoginName'
+        },
+        Twk1Password: {
+          required: true,
+          minlength: 3 /* on foswiki > 1.1 use '%QUERY{"{MinPasswordLength}"}% */
+        },
+        Twk1Confirm: {
+          required: true,
+          equalTo: '#Twk1Password'
+        }
+      },
+      messages: {
+        Twk1FirstName: '%MAKETEXT{"Enter your first name"}%',
+        Twk1LastName: '%MAKETEXT{"Enter your last name"}%',
+        Twk1LoginName: {
+          required: '%MAKETEXT{"Enter a login name"}%',
+          minlength: $.format('%MAKETEXT{"Enter at least {0} characters"}%'),
+          remote: $.format('%MAKETEXT{"LoginName {0} is already in use"}%')
+        },
+        Twk1WikiName: {
+          required: '%MAKETEXT{"Enter a WikiName"}%',
+          wikiword: $.format('%MAKETEXT{"Enter a valid WikiWord"}%'),
+          remote: $.format('%MAKETEXT{"WikiName {0} is already in use"}%')
+        },
+        Twk1Password: {
+          required: '%MAKETEXT{"Provide a password"}%'
+        },
+        Twk1Confirm: {
+          required: '%MAKETEXT{"Repeat your password"}%',
+          equalTo: '%MAKETEXT{"Enter the same password as above"}%'
+        },
+        Twk1Email: {
+          required: '%MAKETEXT{"Please enter a valid email address"}%'
+        }
+      }
+    });
+});
+</script></literal>"
+}% 
+<!-- //formvalidation -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"checkLoginName"}%%IF{
+  "'%USERINFO{"%URLPARAM{"Twk1LoginName"}%" format="$username"}%'!=''" 
+  then="false" 
+  else="true"
+}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"checkWikiName"}%%IF{"istopic '%USERSWEB%.%URLPARAM{"Twk1WikiName"}%'" 
+  then="false" 
+  else="true"
+}%%TMPL:END%
+%{</verbatim>}%

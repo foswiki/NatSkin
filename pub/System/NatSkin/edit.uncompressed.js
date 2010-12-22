@@ -1,13 +1,14 @@
 (function($) {
   function setPermission(type, rules) {
-    $.log("EDIT: called setPermission()");
     $(".permset_"+type).each(function() { 
       $(this).val("undefined");
     });
     for (var key in rules) {
-      var val = rules[key];
-      $.log("EDIT: setting #"+key+"_"+type+"="+val); 
-      $("#"+key+"_"+type).val(val);
+      if (1) {
+        var val = rules[key];
+        $.log("EDIT: setting #"+key+"_"+type+"="+val); 
+        $("#"+key+"_"+type).val(val);
+      }
     }
   }
 
@@ -16,8 +17,9 @@
     var names = [];
     $("input[name='Local+PERMSET_"+type.toUpperCase()+"_DETAILS']").each(function() {
       var val = $(this).val();
-      if (val && val != '') 
+      if (val && val != '') {
         names.push(val);
+      }
     });
     names = names.join(', ');
     $.log("EDIT: switchOnDetails - names="+names);
@@ -35,6 +37,7 @@
 
   function setPermissionSet(permSet) {
     $.log("EDIT: called setPermissionSet "+permSet);
+    var wikiName = foswiki.getPreference("WIKINAME");
     switch(permSet) {
       /* change rules */
       case 'default_change':
@@ -45,20 +48,20 @@
       case 'nobody_change':
         switchOffDetails("change");
         setPermission("change", {
-          allow: ' ',
+          allow: 'AdminUser',
           deny: undefined
         });
         break;
       case 'registered_users_change':
         switchOffDetails("change");
         setPermission("change", {
-          deny: foswiki.wikiName
+          deny: 'WikiGuest'
         });
         break;
       case 'just_author_change':
         switchOffDetails("change");
         setPermission("change", {
-          allow: foswiki.wikiName
+          allow: wikiName
         });
         break;
       case 'details_change':
@@ -79,20 +82,20 @@
       case 'nobody_view':
         switchOffDetails("view");
         setPermission("view", {
-          allow: ' ',
+          allow: 'AdminUser',
           deny: undefined
         });
         break;
       case 'registered_users_view':
         switchOffDetails("view");
         setPermission("view", {
-          deny: foswiki.wikiName
+          deny: 'WikiGuest'
         });
         break;
       case 'just_author_view':
         switchOffDetails("view");
         setPermission("view", {
-          allow: foswiki.wikiName
+          allow: wikiName
         });
         break;
       case 'details_view':
@@ -102,7 +105,7 @@
       default:
         alert("unregistered permission-set '"+permSet+"'");
         break;
-    };
+    }
   }
 
   $(function() {
@@ -111,6 +114,8 @@
         $(this).wrap("<div></div>").parent().prepend("<b>"+$(this).attr('name')+": </b>");
       });
     }
+    var scriptUrl = foswiki.getPreference('SCRIPTURL');
+    var systemWeb = foswiki.getPreference('SYSTEMWEB');
     $("#details_change, #details_view").textboxlist({
       onSelect: function(input) {
         var currentValues = input.currentValues;
@@ -120,7 +125,7 @@
           allow: currentValues.join(", ")
         });
       },
-      autocomplete:foswiki.scriptUrl+"/view/"+foswiki.systemWebName+"/JQueryAjaxHelper?section=user;contenttype=text/plain;skin=text",
+      autocomplete:scriptUrl+"/view/"+systemWeb+"/JQueryAjaxHelper?section=user;contenttype=text/plain;skin=text",
       autocompleteOpts: {
         autoFill: false,
         matchCase: false,
@@ -135,6 +140,20 @@
     });
     $("#permissionsForm input[type=radio]").click(function() {
       setPermissionSet($(this).attr('id'));
+    });
+
+    // open links in help tab in an extra window
+    $(".natEditHelp a").click(function() {
+      var href = $(this).attr("href") + "?template=viewplain",
+          windowWidth = $(window).width(),
+          windowHeight = $(window).height(),
+          width = parseInt(windowWidth * 0.5, 10),
+          height = parseInt(windowHeight * 0.5, 10),
+          left = parseInt(windowWidth * 0.25, 10),
+          top = parseInt(windowHeight * 0.25, 10),
+          params = "height="+height+",width="+width+",top="+top+",left="+left+",scrollbars=yes";
+      window.open(href, 'nateditHelp', params).focus();
+      return false;
     });
   });
 })(jQuery);

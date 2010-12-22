@@ -1,0 +1,61 @@
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1273570498" format="1.1" reprev="2" version="2"}%
+---+ %TOPIC%
+Definition of site wide horizontal menu
+
+---++ Implementation
+<verbatim class="tml">
+%STARTINCLUDE%<ul>
+  <li>[[%USERSWEB%.%HOMETOPIC%][Home]]</li>
+  <!-- li>[[News.%HOMETOPIC%][News]]</li -->
+  <!-- li>[[Knowledge.%HOMETOPIC%][Knowledge]]</li -->
+  <!-- li>[[Projects.%HOMETOPIC%][Projects]]</li -->
+%IF{"'%USERNAME%' ingroup 'AdminGroup'" 
+  then="$percntINCLUDE{\"%SYSTEMWEB%.SiteMenu\" section=\"adminmenu\"}$percnt"
+}%<li>[[%SYSTEMWEB%.%HOMETOPIC%][Help]]
+    <ul>
+      <li>[[%SYSTEMWEB%.WelcomeGuest][%MAKETEXT{"Welcome"}%]]</li>
+      <li>[[%SYSTEMWEB%.TwentyMinuteTutorial][Tutorial]]</li>
+      <li>[[Sandbox.%HOMETOPIC%][Sandbox]]</li>
+      <li>[[%SYSTEMWEB%.UsersGuide][Users Guide]]</li>
+      <li>[[%SYSTEMWEB%.FrequentlyAskedQuestions][Foswiki FAQ]]</li>
+      <li>[[%SYSTEMWEB%.ReferenceManual][Reference Manual]]</li>
+      <li>[[%SYSTEMWEB%.Macros][Macros]]</li>
+      <li>[[%SYSTEMWEB%.InstalledPlugins][Installed Plugins]]</li>
+    </ul>
+  </li>
+</ul>%STOPINCLUDE% 
+</verbatim>
+
+---++ Subwebs
+<verbatim class="tml">
+%STARTSECTION{"subwebs"}%%FLEXWEBLIST{
+  include="^%theweb%.*"
+  exclude="%theweb%"
+  header="<ul><li>"
+  format="[[$web.%HOMETOPIC%][$name]]"
+  separator="</li><li>"
+  footer="</li></ul>"  
+}%%ENDSECTION{"subwebs"}%
+</verbatim>
+
+---++ Admin menu
+<verbatim class="tml">
+%STARTSECTION{"adminmenu"}%<li>Admin
+<ul>
+  <li>
+    [[Applications.%HOMETOPIC%][Applications]]
+    %INCLUDE{"%SYSTEMWEB%.SiteMenu" 
+      section="subwebs" 
+      theweb="Applications"
+    }%
+  </li>
+  <li>[[%BASEWEB%.%WEBPREFSTOPIC%][Web Preferences]]</li>
+  <li>[[%LOCALSITEPREFS%][Site Preferences]]</li>
+  <li>[[%SYSTEMWEB%.SitePermissions][Site Permissions]]</li>
+  <li>[[%SCRIPTURLPATH{"configure"}%][Configure %WIKITOOLNAME%]]</li>
+  <li>[[%SYSTEMWEB%.WebCreateNewWeb][%MAKETEXT{"Create Web"}%]]</li>
+  <li>[[%SCRIPTURL{"rename"}%/%BASEWEB%/%BASETOPIC%?action=renameweb][Rename Web]]</li>
+</ul>
+</li>%ENDSECTION{"adminmenu"}%
+</verbatim>
+

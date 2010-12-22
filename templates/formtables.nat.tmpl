@@ -1,28 +1,3 @@
-%{ These templates define the form attached at the bottom of viewed page. }%
-%{ Header definition for topic attachments and top table in attach screen }%
-%TMPL:DEF{FORM:display:header}% <!-- form:display:header -->
-<div class="natTopicForm foswikiFormSteps">
-%USERACTIONS{format="$editform"}%
-<h2 >[[%A_TITLE%]]
-%TWISTYBUTTON{
-  id="topicform"
-  mode="span"
-  link=" " 
-  showimg="%TMPL:P{"iconpath:toggle"}%"
-  hideimg="%TMPL:P{"iconpath:toggleopen"}%"
-}%
-</h2>
-%TWISTYTOGGLE{
-  id="topicform" 
-  start="show" 
-  remember="off" 
-  mode="div"
-}%<table class="foswikiTable">
-%TMPL:END%
-%TMPL:DEF{FORM:display:row}% <!-- form:display:row -->
-<tr>
-  <th class="foswikiTableFirstCol"> %A_TITLE%: </th>
-  <td class="foswikiFormValue"> %A_VALUE% </td>
-</tr>%TMPL:END%
-%TMPL:DEF{FORM:display:footer}% <!-- form:display:footer -->
-</table>%ENDTWISTY%</div>%TMPL:END%
+%TMPL:DEF{FORM:display:header}%%IF{"$'DISPLAYFORM'!='off'" then="$percntTMPL:P{\"dataform::tab\"}$percnt" }%%TMPL:END%
+%TMPL:DEF{FORM:display:row}%%TMPL:END%
+%TMPL:DEF{FORM:display:footer}%%TMPL:END%

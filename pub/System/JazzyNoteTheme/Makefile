@@ -1,7 +1,6 @@
 TARGET= \
-  JazzyNoteBorder.css \
-  JazzyNoteButtons.css \
   JazzyNoteStyle.css \
-  JazzyNoteThin.css
+  GreenVariation.css \
+  RedVariation.css
 
 -include ../NatSkin/Makefile.include

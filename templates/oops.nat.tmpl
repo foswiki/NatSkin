@@ -2,15 +2,21 @@
 %TMPL:INCLUDE{"oopsbody"}%<!-- ooppsbody// -->
 %TMPL:INCLUDE{"oopstopicactions"}%<!-- oopstopicactions// -->
 %TMPL:INCLUDE{"oopssidebar"}%<!-- oopssidebar// -->
+
+%{ ################################################################################ }%
 %TMPL:DEF{"bodyclass"}%natOopsBody%TMPL:END%
-%TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"oops"}%) - %WIKITOOLNAME%%TMPL:END%
+%TMPL:DEF{"title"}%HTMLTITLE{"%TOPICTITLE% (%MAKETEXT{"oops"}%)" separator=" %IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="::"}% "}%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1 class="%TMPL:P{"headingstyle"}%">%TMPL:P{"heading"}%</h1>%TMPL:END%
 %TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
 %TMPL:DEF{"headingstyle"}%natOopsHeading%TMPL:END%
+
+%{ ################################################################################ }%
 %TMPL:DEF{"contact"}%<!-- contact -->
 <hr />
 %MAKETEXT{"Contact [_1] if you have any questions." args="<a href=\"mailto:%WIKIWEBMASTER%?subject=%ENCODE{\"%WIKITOOLNAME%: Request for support\"}%&&body=%ENCODE{\"Hello, I have got a question ...\"}%\">%WIKIWEBMASTER%</a>"}%
 <!-- //contact -->%TMPL:END%
+
+%{ ################################################################################ }%
 %TMPL:DEF{"goback"}%<!-- goback -->
 %MAKETEXT{"Please go <a href=\"javascript:history.back()\">back</a> in your browser and try again."}%
 
@@ -20,14 +26,12 @@
   %CLEAR%
 </form> 
 <!-- //goback -->%TMPL:END%
+
+%{ ################################################################################ }%
 %TMPL:DEF{"content"}%<!-- content -->
-<div class="natOops">
-  <div class="natOopsMessage">
-    %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
+%TMPL:P{"contenttitle"}%<!-- contenttitle// -->
 %TMPL:P{"message"}%<!-- message// -->
-    <div class="natContact"> 
-      %TMPL:P{"contact"}% 
-    </div>
-  </div>
+<div class="natContact"> 
+  %TMPL:P{"contact"}% 
 </div>
 <!-- // content -->%TMPL:END%

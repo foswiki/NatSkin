@@ -1,28 +1,34 @@
 %TMPL:P{"page"}%<!-- template: page.nat.tmpl -->
-%TMPL:DEF{"page"}%<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+%TMPL:DEF{"page"}%<!DOCTYPE html>
 <html class="natHtml" xmlns="http://www.w3.org/1999/xhtml" xml:lang="%LANG%" lang="%LANG%">
 %TMPL:P{"head"}%
 %TMPL:P{"body"}%
 </html>
 %TMPL:END%
-%TMPL:DEF{"head"}%<head>
-<meta http-equiv="X-UA-Compatible" content="%IF{"$'EDIT_FORCE_IE8_COMPATIBILITYMODE'='on' and context 'edit'" then="IE=EmulateIE7" else="chrome=1"}%" />
+
+%TMPL:DEF{"msie8::compatibility"}%%IF{"context 'msie8'"
+  then="%IF{"context 'edit' or context 'preview' and $'EDIT_FORCE_IE8_COMPATIBILITYMODE'='on'" 
+    then="$n<meta http-equiv='X-UA-Compatible' content='IE=EmulateIE7' />"
+    DISelse="$n<meta http-equiv='X-UA-Compatible' content='IE=EmulateIE8' />"
+  }%"
+}%%TMPL:END%
+
+%TMPL:DEF{"head"}%<head>%TMPL:P{"msie8::compatibility"}%
 <title>%TMPL:P{"title"}%</title>
-<base href="%SCRIPTURL{%SCRIPTNAME%}%/%WEB%/%TOPIC%" />
-<meta http-equiv="Content-Type" content="%CONTENTTYPE%; charset=%CHARSET%" />
+<meta charset="%CHARSET%" />
 <meta name="date" content="%REVINFO{"$http"}%" /> 
+<link rel="icon" href="%FAVICON%" type="image/x-icon" />
+<link rel="shortcut icon" href="%FAVICON%" type="image/x-icon" />
 %TMPL:P{"meta"}%
 %TMPL:P{"fixRevisionPosition"}%
-%TMPL:P{"initWebButtons"}%
+%TMPL:P{"initWebMenu"}%
 %TMPL:P{"initOverflows"}%
 %TMPL:P{"initTopicActions"}%
 %TMPL:P{"initSideBar"}%
 %TMPL:P{"initAutoComplete"}%
 %TMPL:P{"initSearchBox"}%
 %TMPL:P{"initRedDot"}%
-<link rel="icon" href="%FAVICON%" type="image/x-icon" />
-<link rel="shortcut icon" href="%FAVICON%" type="image/x-icon" />
-%TMPL:P{"styles"}% %TMPL:P{"javascript"}% %WEBCOMPONENT{"HtmlHead"}%<!-- -->
+%TMPL:P{"styles"}% %TMPL:P{"javascript"}% %WEBCOMPONENT{"HtmlHead"}%
 </head>%TMPL:END%
 %TMPL:INCLUDE{"foswiki"}%
 %TMPL:INCLUDE{"head"}%

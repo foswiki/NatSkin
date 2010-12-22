@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" date="1202840013" format="1.1" version="$Rev: 1823 $"}%
+%META:TOPICINFO{author="ProjectContributor" comment="save topic" date="1290600879" format="1.1" reprev="6" version="6"}%
 ---+ Style Browser
 Explore the style variations of the %SYSTEMWEB%.NatSkin by changing the base
 _style_ and a _variation_ of it. In general, style variations are used to change
@@ -8,10 +8,6 @@ the "reset" button whenever you want to revert your selection and come back to
 the site's default settings. Note that each web may have its own defaults built
 in. If you select different style options they have precedence over those.
 
-Register [[%USERREGISTRATION%][here]] to make your settings persistent.
-See the %SYSTEMWEB%.NatSkinPlugin documentation on how to use style settings in your personal
-<nop>%WIKITOOLNAME% account.
-
 %STARTINCLUDE%<!-- style browser -->
 <noautolink>
 <div class="natSkinStyleBrowser">
@@ -19,57 +15,38 @@ See the %SYSTEMWEB%.NatSkinPlugin documentation on how to use style settings in 
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep">
     <h3 >%MAKETEXT{"Style"}%:</h3>
-    <table>
-      <tr>
-        <td width="20px">
-          <a href="?switchstyle=prev" title="%MAKETEXT{"Switch to previous style"}%"><img src="%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/arrowleft.gif" border="0" alt="%MAKETEXT{"prev"}%"/></a>
-        </td>
-        <td>
-          <select id="style" name="style"">
-            %FORMATLIST{"%KNOWNSTYLES%" pattern="\s*(.*)\s*" format="<option $percntIF{\"context natskin_style_$1\" then=\"selected='selected'\"}$percnt>$1</option>" join="\n" separator=" "}%
-          </select>
-        </td>
-        <td align="right" width="20px">
-          <a href="?switchstyle=next" title="%MAKETEXT{"Switch to next style"}%"><img src="%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/arrowright.gif" border="0" alt="%MAKETEXT{"next"}%"/></a>
-        </td>
-      </tr>
-    </table>
+    <select class="foswikiSelect" id="style" name="style"">
+      %FORMATLIST{"%KNOWNSTYLES%" 
+        pattern="\s*(.*)\s*" 
+        format="<option $percntIF{\"context natskin_style_$1\" then=\"selected='selected'\"}$percnt>$1</option>" 
+        join="\n" 
+        separator=" "
+      }%
+    </select>
   </div>
   <div class="foswikiFormStep">
     <h3 >%MAKETEXT{"Variation"}%:</h3>
-    <table>
-      <tr>
-        <td width="20px">
-          <a href="?switchvariation=prev" title="%MAKETEXT{"Switch to previous variation"}%"><img src="%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/arrowleft.gif" border="0" alt="%MAKETEXT{"prev"}%"/></a>
-        </td>
-        <td>
-          <select id="variation" name="stylevariation">
-          </select>
-        </td>
-        <td align="right" width="20px">
-          <a href="?switchvariation=next" title="%MAKETEXT{"Switch to next variation"}%"><img src="%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/arrowright.gif" border="0" alt="%MAKETEXT{"prev"}%"/></a>
-        </td>
-      </tr>
-    </table>
+    <select class="foswikiSelect" id="variation" name="skinvariation">
+    </select>
   </div>
   <div class="foswikiFormStep">
     <h3 >%MAKETEXT{"Layout"}%:</h3>
     <ul>
-      <li> <input type="radio" class="foswikiRadiobox" id="borderon" name="styleborder" value="on" %IF{"context natskin_border_on" then="checked='checked'"}% /><label for="borderon">%MAKETEXT{"Border On"}%</label></li>
-      <li> <input type="radio" class="foswikiRadiobox" id="borderoff" name="styleborder" value="off" %IF{"context natskin_border_off" then="checked='checked'"}% /><label for="borderoff">%MAKETEXT{"Border Off"}%</label></li>
-      <li> <input type="radio" class="foswikiRadiobox" id="borderthin" name="styleborder" value="thin" %IF{"context natskin_border_thin" then="checked='checked'"}% /><label for="borderthin">%MAKETEXT{"Thin Layout"}%</label></li>
+      <li> <input type="radio" class="foswikiRadiobox" id="full" name="skinlayout" value="full" %IF{"context natskin_layout_full" then="checked='checked'"}% /><label for="full">%MAKETEXT{"Full width"}%</label></li>
+      <li> <input type="radio" class="foswikiRadiobox" id="fluid" name="skinlayout" value="fluid" %IF{"context natskin_layout_fluid" then="checked='checked'"}% /><label for="fluid">%MAKETEXT{"Fluid"}%</label></li>
+      <li> <input type="radio" class="foswikiRadiobox" id="bordered" name="skinlayout" value="bordered" %IF{"context natskin_layout_bordered" then="checked='checked'"}% /><label for="bordered">%MAKETEXT{"Bordered"}%</label></li>
     </ul>
-
+    <h3 >%MAKETEXT{"Sidebar"}%:</h3>
     <ul>
-      <li> <input type="radio" class="foswikiRadiobox" id="sidebarleft" name="stylesidebar" value="left" %IF{"context natskin_sidebar_left" then="checked='checked'"}% /><label for="sidebarleft">%MAKETEXT{"Sidebar Left"}%</label></li>
-      <li> <input type="radio" class="foswikiRadiobox" id="sidebarright" name="stylesidebar" value="right" %IF{"context natskin_sidebar_right" then="checked='checked'"}% /><label for="sidebarright">%MAKETEXT{"Sidebar Right"}%</label></li>
-      <li> <input type="radio" class="foswikiRadiobox" id="sidebarboth" name="stylesidebar" value="both" %IF{"context natskin_sidebar_both" then="checked='checked'"}% /><label for="sidebarboth">%MAKETEXT{"Both sidebars"}%</label></li>
-      <li> <input type="radio" class="foswikiRadiobox" id="sidebaroff" name="stylesidebar" value="off" %IF{"context natskin_sidebar_off" then="checked='checked'"}% /><label for="sidebaroff">%MAKETEXT{"Sidebar Off"}%</label></li>
+      <li> <input type="radio" class="foswikiRadiobox" id="sidebarleft" name="skinsidebar" value="left" %IF{"context natskin_sidebar_left" then="checked='checked'"}% /><label for="sidebarleft">%MAKETEXT{"Left"}%</label></li>
+      <li> <input type="radio" class="foswikiRadiobox" id="sidebarright" name="skinsidebar" value="right" %IF{"context natskin_sidebar_right" then="checked='checked'"}% /><label for="sidebarright">%MAKETEXT{"Right"}%</label></li>
+      <li> <input type="radio" class="foswikiRadiobox" id="sidebarboth" name="skinsidebar" value="both" %IF{"context natskin_sidebar_both" then="checked='checked'"}% /><label for="sidebarboth">%MAKETEXT{"Both"}%</label></li>
+      <li> <input type="radio" class="foswikiRadiobox" id="sidebaroff" name="skinsidebar" value="off" %IF{"context natskin_sidebar_off" then="checked='checked'"}% /><label for="sidebaroff">%MAKETEXT{"Off"}%</label></li>
     </ul>
-
+    <h3 >%MAKETEXT{"Menu"}%:</h3>
     <ul>
-      <li> <input type="radio" class="foswikiRadiobox" id="buttonson" name="stylebuttons" value="on" %IF{"context natskin_buttons_on" then="checked='checked'"}% /><label for="buttonson">%MAKETEXT{"Web Buttons On"}%</label></li>
-      <li> <input type="radio" class="foswikiRadiobox" id="buttonsoff" name="stylebuttons" value="off" %IF{"context natskin_buttons_off" then="checked='checked'"}% /><label for="buttonsoff">%MAKETEXT{"Web Buttons Off"}%</label></li>
+      <li> <input type="radio" class="foswikiRadiobox" id="menuon" name="skinmenu" value="on" %IF{"context natskin_menu_on" then="checked='checked'"}% /><label for="menuon">%MAKETEXT{"On"}%</label></li>
+      <li> <input type="radio" class="foswikiRadiobox" id="menuoff" name="skinmenu" value="off" %IF{"context natskin_menu_off" then="checked='checked'"}% /><label for="menuoff">%MAKETEXT{"Off"}%</label></li>
     </ul>
   </div>
   <div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
@@ -80,11 +57,20 @@ See the %SYSTEMWEB%.NatSkinPlugin documentation on how to use style settings in 
 </div>
 </form>
 </div>
-<script type="text/javascript">
+%ADDTOZONE{"script" topic="%WEB%.%TOPIC%" section="javascript" requires="JQUERYPLUGIN::FOSWIKI"}%
+</noautolink>
+<!-- //style browser -->%STOPINCLUDE%
+<verbatim style="display:none">
+%STARTSECTION{"javascript"}%<literal>
+<script>
 var knownVariations = {
-  %KNOWNVARIATIONS{header="'$style': [" format="'$variation'" footer="]" separator=", " varseparator="', '"}%
+  %KNOWNVARIATIONS{
+    format="'$style': ['$variations']" 
+    separator=", "
+    varseparator="', '"
+  }%
 };
-var selectedVariation = '%GETSKINSTATE{"$variation"}%';
+var selectedVariation = '%SKINSTATE{"$variation"}%';
 function setVariations() {
   var style = jQuery("#style").val();
   var varSelect = jQuery("#variation").empty().append("<option>none</option>");
@@ -105,5 +91,8 @@ jQuery(function() {
   }).change();
 });
 </script>
-</noautolink>
-<!-- //style browser -->%STOPINCLUDE%
+</literal>
+%ENDSECTION{"javascript"}%
+</verbatim>
+
+%META:PREFERENCE{name="TOPICTITLE" title="TOPICTITLE" type="Local" value="NatSkin Style Browser"}%

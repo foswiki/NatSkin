@@ -1,14 +1,79 @@
-%META:TOPICINFO{author="ProjectContributor" date="1247225837" format="1.1" version="1.1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1292444337" format="1.1" reprev="10" version="10"}%
 %META:TOPICPARENT{name="NatSkin"}%
----+!! %TOPIC%
+<h1 >%TOPIC%</h1>
 
 Default bottombar component
 
-%STARTINCLUDE%<!-- site.bottombar -->
+%STARTINCLUDE%<!-- sitebottombar -->
+<div class="natBottomActions natCols4">
+<div class="natCol1">
+---++++ %MAKETEXT{"Edit"}%
+   * <a href="%SCRIPTURLPATH{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%">%MAKETEXT{"Edit topic"}%</a>
+   * <a href="%SCRIPTURLPATH{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%?nowysiwyg=on">%MAKETEXT{"Edit raw wiki text"}%</a>
+   * <a href="#" id="editSettings">%MAKETEXT{"Edit topic settings"}%</a>
+   * <a href="%SCRIPTURLPATH{"edit"}%/%BASEWEB%/WebPreferences?t=%GMTIME{"$epoch"}%;redirectto=%BASEWEB%.%BASETOPIC%">%MAKETEXT{"Edit web settings"}%</a>
+   * <a href="%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%">%MAKETEXT{"Attach files or images"}%</a> %IF{"'%BASEWEB%.%BASETOPIC%'/form.name != ''" then="
+   * <a href='%SCRIPTURLPATH{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%;action=form'>%MAKETEXT{"Modify form data"}%</a>"}%
+   * <a href="%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%?currentwebonly=on">%MAKETEXT{"Rename or move topic"}%</a>
+   * <a href="%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%?newweb=Trash;currentwebonly=on">%MAKETEXT{"Delete this topic"}%</a>
+<!--
+   * <a href="#">%MAKETEXT{"Edit tags"}%</a>
+   * <a href="#">%MAKETEXT{"Set new parent"}%</a>
+   * <a href="#">%MAKETEXT{"Change name identifier"}%</a>
+-->
+</div>
+<div class="natCol2">
+---++++ %MAKETEXT{"Create"}%
+   * <a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=WebCreateNewTopic">%MAKETEXT{"New topic"}%</a>
+%DBQUERY{
+  "TopicType=~'\bTopicType\b'"
+  exclude="TopicType|TopicStub"
+  format="   * [[$web.$topic][New $topic]]"
+}%
+<!--
+   * <a href="#">%MAKETEXT{"Copy this topic"}%</a>
+-->
+</div>
+<div class="natCol3">
+---++++ %MAKETEXT{"History"}%
+   * <a href="%SCRIPTURLPATH{"compare"}%/%BASEWEB%/%BASETOPIC%?type=last">%MAKETEXT{"Last change"}%</a>
+   * <a href="%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory">%MAKETEXT{"Compare two versions"}%</a>
+   * <a href="%SCRIPTURLPATH{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%;rev=%PREVREV%">%MAKETEXT{"Restore previous version"}%</a>
+</div>
+<div class="natCol4">
+---++++ %MAKETEXT{"View"}%
+   * <a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?raw=on" class="natRawTopicAction">%MAKETEXT{"View raw wiki text"}%</a>
+   * <a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?cover=print">%MAKETEXT{"Print version"}%</a>
+%IF{"context GenPDFPrincePluginEnabled or context GenPDFWebkitPluginEnabled"
+  then="   * <a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?contenttype=application/pdf'>%MAKETEXT{"Export as PDF"}%</a>"
+  else="<!-- -->"
+}%
+   * <a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=backlinksweb">%MAKETEXT{"Pages that link to here"}%</a>
+<!--
+   * <a href="#">%MAKETEXT{"Child pages"}%</a>
+   * <a href="#">%MAKETEXT{"Form data"}%</a>
+   * <a href="#">%MAKETEXT{"Topic settings"}%</a>
+-->
+</div>
+</div>
 <div class="natCopyRight">%WEBCOPYRIGHT%</div>
 <div class="natSyndicate">
   %MAKETEXT{"Syndicate this site"}% 
   <a class='natFeedIcon' href='%SCRIPTURL{"view"}%/%WEB%/WebRss'>RSS</a>
   <a class='natFeedIcon' href='%SCRIPTURL{"view"}%/%WEB%/WebAtom'>ATOM</a>
 </div>
-<!-- //site.bottombar -->%STOPINCLUDE%
+<form id="editSettingsForm" class="foswikiHidden" action="%SCRIPTURLPATH{"manage"}%/%BASEWEB%/%BASETOPIC%" method="post">
+<input type="hidden" name="action" value="editSettings" />
+</form>
+%ADDTOZONE{"script" section="js" requires="JQUERYPLUGIN"}%<!-- -->
+<!-- //sitebottombar -->%STOPINCLUDE%
+
+<verbatim class="foswikiHidden">
+%STARTSECTION{"js"}%<literal><script>
+jQuery(function($) {
+  $("#editSettings").click(function() {
+    $("#editSettingsForm").submit();
+    return false;
+  });
+});
+</script></literal>%ENDSECTION{"js"}%</verbatim>

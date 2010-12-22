@@ -1,5 +1,5 @@
 %META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1257265212" format="1.1" reprev="1.4" version="1.4"}%
-%TMPL:INCLUDE{"WebTopicListView"}%
+%TMPL:INCLUDE{"view"}%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
 %TMPL:DEF{"content"}%
@@ -17,10 +17,8 @@
   header="$anchors"
   format="[[%BASEWEB%.$3][$2]]"
   sort="nocase"
-  footer="$n<span class='foswikiAlert'>$count</span> topics found"
+  footer="$n$n<span class='foswikiAlert'>$count</span> topics found"
 }%
 </noautolink>
 %TMPL:END%
 %TMPL:DEF{"sidebar"}%%TMPL:END%
-
-%META:TOPICMOVED{by="micha" date="1250500443" from="System.PatternSkinWebTopicListViewTemplate" to="System.NatSkinWebTopicListViewTemplate"}%

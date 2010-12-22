@@ -1,13 +1,23 @@
-<!-- template: form.nat.tmpl -->
+%TMPL:INCLUDE{"form"}%<!-- template: form.nat.tmpl -->
 %TMPL:DEF{"changeform"}%%TMPL:END%
 %TMPL:DEF{"mandatory"}%<tr><td colspan="2" align="right"><span class="foswikiAlert">*</span> %MAKETEXT{"indicates mandatory fields"}% </td></tr> %TMPL:END%
+
 %TMPL:DEF{"repeatedformrows"}% %REPEAT%
 <tr>
-<th class="foswikiFirstCol natTopicFormFirstCol">%ROWTITLE%: %ROWEXTRA%</th>
-<td>%ROWVALUE%</td>
+<th class="foswikiFirstCol natTopicFormFirstCol">%ROWTITLE%:</th>
+<td>%ROWVALUE% %ROWEXTRA%</td>
 </tr>%REPEAT%<tr><td colspan="2">
 <div class="natTopicFormLabel">%ROWVALUE%</div></td></tr>%REPEAT% %TMPL:END%
+
 %TMPL:DEF{"formtail"}% %TMPL:P{context="mandatoryfields" then="mandatory"}%%TMPL:END%
 %TAB{"Form"}%
-<div class="natTopicEditForm"><table class="foswikiTable"><tr><th class="natTopicFormTitle" colspan="2">%FORMTITLE%</th></tr>%TMPL:P{"repeatedformrows"}%%TMPL:P{"formtail"}%</table></div>
+<div class="natTopicEditForm">
+  <table class="foswikiTable">
+    <tr>
+      <th class="natTopicFormTitle" colspan="2"><nop>%TMPL:P{context="DBCachePluginEnabled" then="formname::dbcache" else="formname::standard"}%</th>
+    </tr>
+    %TMPL:P{"repeatedformrows"}%
+    %TMPL:P{"formtail"}%
+  </table>
+</div>
 %ENDTAB%

@@ -1,0 +1,152 @@
+.natHtml {
+  background-position:0px -50px;
+}
+.natTopLeft.natTopRight {
+  _background:url(foswiki-header-tile-green.png) repeat-x;
+}
+.natTopRight {
+  background:url(foswiki-header-tile-green.png) repeat-x;
+}
+.natTopLeftContents {
+  background:url(foswiki-header-tile-green.png) repeat-x;
+}
+.natWebTitle {
+  background:url(foswiki-header-green.png) no-repeat;
+}
+.natSideBarHeader,
+.natWebMenu {
+  background-color:#4a4a4a;
+  border-top:0px;
+  border-bottom:1px solid #555;
+}
+.natTopBar {
+  border-bottom:1px solid #2F7A1C;
+}
+.natBodyFluid .natSideBarHeaderLeft,
+.natBodyFluid .natWebMenuLeft {
+  border-left:1px #4a4a4a solid;
+}
+.natWebMenu,
+.natWebMenu li,
+.natWebMenu li a {
+  color:#eee;
+}
+.natWebMenu li .foswikiCurrentWebHomeLink,
+.natWebMenu li a.current {
+  color:#4a4a4a;
+}
+
+a:hover,
+.natWebMenu li a:hover,
+.natWebMenu li .foswikiCurrentWebHomeLink:hover,
+.natWebMenu li a.current:hover {
+  background-color:#AD4F7C;
+}
+.natWebMenu .natWebMenuContents {
+  margin-bottom:-1px;
+}
+ul.sf-js-enabled li {
+  border-right:1px solid #bebebe;
+}
+ul.sf-js-enabled {
+  border-left:1px solid #bebebe;
+}
+ul.sf-js-enabled li li a:hover.foswikiNewLink,
+ul.sf-js-enabled li li:hover, 
+ul.sf-js-enabled li li.sfHover,
+ul.sf-js-enabled li li a:focus, 
+ul.sf-js-enabled li li a:hover, 
+ul.sf-js-enabled li li a:active {
+  background-color:#AD4F7C;
+  color:#fff;
+}
+ul.sf-js-enabled li.hasSubMenu {
+  background-image:url(menucorner-black.gif);
+}
+ul.sf-js-enabled li li.hasSubMenu {
+  background-image:url(menucorner.gif);
+}
+.natSideBar,
+.natSideBar h3,
+.natSideBar ul li {
+  border-top:1px solid #bebebe;
+}
+.natSideBar h2 {
+  background-color:#4a4a4a;
+  border-top:1px solid #555;
+  border-bottom:0px;
+}
+h1 a:hover,
+.natSideBar h2 a:hover {
+  background-color:#AD4F7C;
+}
+h1,
+h1 a,
+h1 a {
+  color:#237b15;
+}
+h1 {
+  border-bottom:1px #bfbfbf solid;
+}
+.natBody,
+.fltMakeIndexWrapper .foswikiTopicInfo,
+.fltMakeIndexWrapper .clsSubCategories a,
+.fltMakeIndexWrapper .clsSubCategories,
+.foswikiTopicInfo a,
+.natRevision a,
+.foswikiTopicInfo a,
+h1 .foswikiTopicSummary,
+.foswikiTopicSummary,
+.foswikiTopicInfo, 
+.natRevision,
+#natTopicActionTooltip,
+.natBreadCrumbs,
+.natBreadCrumbs a {
+  color:#434343;
+}
+.foswikiFormSteps,
+.foswikiPageForm {
+  background-color:#FFF0F9;
+  background-color:#FFF5FB;
+  border-top:1px solid #E7D7E1;
+  border-bottom:1px solid #E7D7E1;
+}
+#natLogonBanner,
+.natMainContents .foswikiNewLink,
+.natSideBar .foswikiCurrentTopicLink,
+.alt h2,
+.jqTabContents h2,
+.jqTabContents h2 a,
+.foswikiPageForm h2,
+.foswikiPageForm h2 a,
+.foswikiFormSteps h2,
+.foswikiFormSteps h2 a {
+  color:#AD4F7C;
+}
+
+.natBody .jqTextboxListValue {
+  background-color:#EFE6EC;
+  border:1px solid #DFD7DC;
+}
+.foswikiPageForm .foswikiTable td,
+.foswikiFormSteps .foswikiTable td {
+  border-bottom:1px solid #E7D7E1;
+}
+.foswikiPageForm .foswikiTable,
+.foswikiFormSteps .foswikiTable {
+  border:1px solid #E7D7E1;
+}
+.foswikiFormSteps .foswikiTable th,
+.foswikiFormSteps .foswikiTable th a,
+.foswikiPageForm .foswikiTable th,
+.foswikiPageForm .foswikiTable th a {
+  background-color:#EFE6EC;
+}
+.foswikiFormSteps .jqTabContents,
+.foswikiFormSteps .jqTabPane ul.jqTabGroup li.current {
+  background-color:#EFE6EC;
+}
+.natBody .solrRevision a,
+.natSearchRevision a {
+  color:#237B15;
+}

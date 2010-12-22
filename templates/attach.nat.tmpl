@@ -2,73 +2,33 @@
 %TMPL:INCLUDE{"attachtopicactions"}%<!-- attachtopicactions// -->
 %TMPL:INCLUDE{"attachbody"}%<!-- attachbody// -->
 %TMPL:INCLUDE{"attachsidebar"}%<!-- attachsidebar// -->
+%TMPL:INCLUDE{"metadata"}%<!-- attachsidebar// -->
+
+%{ ################################################################################ }%
 %TMPL:DEF{"title"}%%TOPIC% (attach) - %WIKITOOLNAME%%TMPL:END%
-%TMPL:DEF{"contenttitle"}%<h1><noautolink>%MAKETEXT{"Attachments at [_1]" args="%TMPL:P{"topictitle"}%"}%</noautolink></h1>%TMPL:END%
 %TMPL:DEF{"bodyclass"}%natAttachBody%TMPL:END%
 %TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
+%TMPL:DEF{"attachments::hidden"}%%URLPARAM{"attachments_hidden" default="on"}%%TMPL:END%
+%TMPL:DEF{"attachments::showuploader"}%%URLPARAM{"attachments_showuploader" default="on"}%%TMPL:END%
+%TMPL:DEF{"breadcrumbstail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%">%MAKETEXT{"Attachments"}%</a>%TMPL:END%
+
+%{ ################################################################################ }%
 %TMPL:DEF{"content"}%<!-- content -->
-%JQREQUIRE{"validate"}%<!-- jqrequire::validate -->
-%JQREQUIRE{"focus"}%<!-- jqrequire::focus -->
-%ADDTOZONE{
-  "body"
-  tag="NATSKIN::ATTACH" 
-  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/attach.js'></script>" 
-  requires="JQUERYPLUGIN, NATSKIN"
-}%<!-- addtozone::attach -->
-%TMPL:P{"contenttitle"}%<!-- contenttitle// -->
-<div class="foswikiFormSteps">
-%BUTTON{"%MAKETEXT{"Close"}%" 
-  title="%MAKETEXT{"Close this dialog"}%"
-  class="foswikiRight"
+<div class="foswikiMetaData %IF{"not '%WEB%.%TOPIC%' allows 'change'" then="foswikiMetaDataNotAllowed"}%">
+%BUTTON{
+  "%TMPL:P{"CLOSE"}%" 
+  title="%TMPL:P{"CLOSE_HELP"}%"
+  class="foswikiRight simple"
   target="%BASEWEB%.%BASETOPIC%" 
   icon="cross"
 }%
-%TABPANE{select="%URLPARAM{"tab" default="1"}%"}%
-%TAB{"%MAKETEXT{"New"}%"}%
-%TMPL:P{"heading"}%<!-- heading// -->
-  <form id="main" name="main" enctype="multipart/form-data" action="%SCRIPTURLPATH{"upload"}%/%WEB%/%TOPIC%" method="post" >
-    <input type="hidden" name="filename" id="filename" value="%FILENAME%" />
-    <div class="foswikiFormStep">
-      <h3><label for="filepath">%MAKETEXT{"File"}%:</label></h3>
-      <input class="jqFocus required" type="file" name="filepath" id="filepath" size="50"/>
-      %IF{"defined 'message'" then="<span class='foswikiAlert' id='message' style='padding:0px 10px'>%URLPARAM{"message"}%</span>"}%
-    </div>
-    <div class="foswikiFormStep">
-      <h3><label for="filecomment">%MAKETEXT{"Comment"}%:</label></h3>
-      <input type="text" name="filecomment" id="filecomment" value="%URLPARAM{"filecomment" default="%FILECOMMENT%"}%" size="50"/>
-    </div>
-    <div class="foswikiFormStep">
-      <h3>%MAKETEXT{"Options"}%:</h3>
-      <table class="foswikiFormOptions" cellspacing="0" cellpadding="0">
-        <tr>
-          <td>
-            <input type="checkbox" class="foswikiCheckbox" name="createlink" id="createlink" %ATTACHLINKBOX% /> 
-          </td>
-          <td>
-            <label for="createlink">
-              %MAKETEXT{"<strong>Create</strong> a link to the attached file at the end of the topic."}%
-            </label>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input type="checkbox" class="foswikiCheckbox" name="hidefile" id="hidefile" %HIDEFILE% /> 
-          </td>
-          <td>
-            <label for="hidefile">
-              %MAKETEXT{"<strong>Hide</strong> attachment in normal topic view."}%
-            </label>
-          </td>
-        </tr>
-%TMPL:P{"moreoptions"}%
-      </table>
-    </div>
-    <div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
-%TMPL:P{"attachaction"}%
-    </div>
-  </form>
-%ENDTAB%%TMPL:P{"existingattachments"}%
-%ENDTABPANE%
+<h1>
+  <noautolink>%MAKETEXT{"Attachments at [_1]" args="%TMPL:P{"topictitle"}%"}%</noautolink>
+  <span class='foswikiAttachmentsCount foswikiSmall foswikiGrayText'>()</span>
+</h1>
 %CLEAR%
+<div>%TMPL:P{"attachments"}%</div>
+%TMPL:P{"metadata::css"}%
+%TMPL:P{"metadata::javascript"}%
 </div>
 <!-- //content -->%TMPL:END%

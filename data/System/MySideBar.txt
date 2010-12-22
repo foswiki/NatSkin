@@ -79,9 +79,9 @@
 
 %JQREQUIRE{"validate"}%
 %ADDTOZONE{
-  "body"
+  "script"
   id="sidebarform"
-  text="<script type='text/javascript'>
+  text="<script>
     (function($) {
       $(function() {
         $('#sidebarform').validate();
@@ -96,6 +96,7 @@
 <input type="hidden" name="bookmark_web" value="%BASEWEB%" />
 <input type="hidden" name="bookmark_topic" value="%BASETOPIC%" />
 <input type="hidden" name="redirectto" value="%BASEWEB%.%BASETOPIC%" />
+<input type="hidden" name="endPoint" value="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%" />
 %BUTTON{
   "%MAKETEXT{"Add to sidebar"}%"
   icon="add" 
@@ -107,7 +108,7 @@
 %CLEAR%
 <!-- //mysidebarbookmark:prompt -->%TMPL:END%
 
-%TMPL:DEF{OUTPUT:mysidebarbookmark}%   * [[%URLPARAM{"bookmark_web"}%.%URLPARAM{"bookmark_topic"}%][%URLPARAM{"bookmark_topic"}%]]%POS:BOTTOM%
+%TMPL:DEF{OUTPUT:mysidebarbookmark}%   * [[%URLPARAM{"bookmark_web"}%.%URLPARAM{"bookmark_topic"}%][%URLPARAM{"bookmark_topic"}%]]%POS:AFTER%
 %TMPL:END%
 
 

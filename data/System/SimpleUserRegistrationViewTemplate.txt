@@ -1,0 +1,5 @@
+%{<verbatim>}%
+%TMPL:INCLUDE{"UserRegistrationView"}%
+%TMPL:DEF{"extradetails"}%<!-- disabled -->%TMPL:END%
+%TMPL:DEF{"groupdetails"}%<!-- disabled -->%TMPL:END%
+%{</verbatim>}%

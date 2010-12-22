@@ -1,6 +1,0 @@
-%META:TOPICINFO{author="ProjectContributor" date="1134493768" format="1.1" version="$Rev$"}%
-%STARTINCLUDE%
-%STOPINCLUDE%
-
-   * Set ALLOWTOPICCHANGE = AdminGroup
-   * Set ALLOWTOPICVIEW = WikiGuest

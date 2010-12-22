@@ -1,12 +1,14 @@
 %TMPL:INCLUDE{"login"}%<!-- template: login.sudo.nat.tmpl -->
 
-%TMPL:DEF{"webaction"}%%MAKETEXT{"Admin <nop>%WIKITOOLNAME% User Authentication"}%%TMPL:END%
+%TMPL:DEF{"LOG_IN_BANNER"}%%MAKETEXT{"Admin Foswiki User Authentication"}%%TMPL:END%
 %TMPL:DEF{"LOGGED_IN_BANNER"}%%MAKETEXT{"[_1] is currently logged in" args="%USERSWEB%.%WIKINAME%"}%%TMPL:END%
 %TMPL:DEF{"UNRECOGNISED_USER"}%%MAKETEXT{"Unrecognised user and/or password"}%%TMPL:END%
 
 %TMPL:DEF{"title"}%%MAKETEXT{"Sudo Login"}% - %WIKITOOLNAME%%TMPL:END%
 
-%TMPL:DEF{"usernamefield"}%<input tabindex='1' class="foswikiInputField foswikiFocus" type="text" size="40" name="username" value="%WIKIADMINLOGIN%"  %TMPL:P{context="no_auto_complete_login" then="autocomplete_off"}% />%TMPL:END%
+%TMPL:DEF{"usernamefield"}%<input type="text" class="foswikiInputField required" size="20" id="username" name="username" value='%WIKIADMINLOGIN%' />%TMPL:END%
+
+%TMPL:DEF{"passwordfield"}%<input type="password" class="foswikiInputField jqFocus required" size="20" id="password" name="password" />%TMPL:END%
 
 %TMPL:DEF{"usernamenote"}%%TMPL:P{"authrealm"}%%TMPL:END%
 

@@ -12,8 +12,7 @@
 <!-- //contenttitle -->%TMPL:END%
 %TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
 %TMPL:DEF{"content"}%<!-- content -->
-%JQREQUIRE{"focus"}%<!-- jqfocus -->
-%JQREQUIRE{"autocomplete"}%
+%JQREQUIRE{"focus, autocomplete"}%<!-- -->
 %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
 <form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
 %IF{"$'URLPARAM{newweb}'='%TRASHWEB%'" 

@@ -3,13 +3,13 @@
 %TMPL:DEF{"defaultbody"}%<div class="natBodyContents">%TMPL:P{"content_container"}%</div>%TMPL:END%
 %TMPL:DEF{"head"}%<!-- head -->
 <head>
-<meta http-equiv="Content-Type" content="%CONTENTTYPE%; charset=%CHARSET%">
+<meta charset="%CHARSET%" />
 <title>%TMPL:P{"title"}% - (%MAKETEXT{"printable"}%)</title>
 %TMPL:P{"meta"}%
 <link rel="icon" href="%FAVICON%" type="image/x-icon"> 
 <link rel="shortcut icon" href="%FAVICON%" type="image/x-icon">
 %TMPL:P{"styles"}%
-<style type="text/css">
+<style>
 object#player,
 .natFeedIcon,
 .blogEntryFeed,

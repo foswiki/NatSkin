@@ -8,7 +8,7 @@
 %MAKETEXT{"Please email [_1] to request this."
  args="<a href='mailto:%WIKIWEBMASTER%?subject=%ENCODE{"%WIKITOOLNAME% Delete User"}%&amp;body=%ENCODE{"%PARAM1%"}%'>%WIKIWEBMASTER%</a>"
 }%
-<style type="text/css">.natContact {display:none}</style>
+<style>.natContact {display:none}</style>
 %TMPL:END%
 %TMPL:DEF{"missing_action"}%<!-- uses goback template -->
 ---+++ %MAKETEXT{"Missing action command"}%
@@ -17,14 +17,6 @@
 %TMPL:DEF{"unrecognized_action"}%<!-- uses goback def -->
 ---+++ %MAKETEXT{"Unrecognized action command [_1]" args="'%PARAM1%'"}%
 %TMPL:P{"goback"}%
-%TMPL:END%
-%TMPL:DEF{"nofoswikiuser"}%<!-- fixes duplicate definition of nofoswikiuser in messages.tmpl -->
----+++ %MAKETEXT{"Can't find user \"[_1]\"." args="<nop>%PARAM1%"}%
-%MAKETEXT{"Please make sure you spelled the [_1] correctly and try again. If you get stuck, please mail [_2]."
- args="%SYSTEMWEB%.LoginName,%WIKIWEBMASTER%"}%
-
-%MAKETEXT{"See [_1] for a list of existing users or register as new user in [_2]."
-args="%USERSWEB%.%WIKIUSERSTOPIC%,%USERREGISTRATION%"}%
 %TMPL:END%
 %TMPL:DEF{"topic_exists"}%<!-- uses goback def -->
 ---+++ %MAKETEXT{"The [_1] topic already exists" args="\"%TOPIC%\""}%
@@ -55,14 +47,14 @@ args="%USERSWEB%.%WIKIUSERSTOPIC%,%USERREGISTRATION%"}%
  args="<nop>%WEB%.<nop>%TOPIC%,<nop>%PARAM2%.<nop>%PARAM3%,%PARAM1%"}%
 
 %MAKETEXT{"Please notify your [_1] administrator [_2]" args="<nop>%WIKITOOLNAME%,%WIKIWEBMASTER%"}%.
-<style type="text/css">.natContact {display:none}</style>
+<style>.natContact {display:none}</style>
 %TMPL:END%
 %TMPL:DEF{"rename_web_err"}%<!-- removes contact -->
 %MAKETEXT{"During rename of web [_1] to [_2] an error ([_3]) was found."
  args="<nop>%WEB%,<nop>%PARAM2%,%PARAM1%"}%
 
 %MAKETEXT{"Please notify your [_1] administrator [_2]." args="<nop>%WIKITOOLNAME%,%WIKIWEBMASTER%"}%
-<style type="text/css">.natContact {display:none}</style>
+<style>.natContact {display:none}</style>
 %TMPL:END%
 %TMPL:DEF{"wrong_password"}%<!-- uses goback def -->
 ---+++ %MAKETEXT{"Incorrect Password"}%
@@ -109,19 +101,16 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 %TMPL:DEF{"password_changed"}%<!-- huh -->
 ---+++ %MAKETEXT{"Password changed successfully!"}%
 
-<form action="%SCRIPTURLPATH{"view"}%/%USERSWEB%/%WIKINAME%">
-<input type="submit" class="natOkButton" value='%MAKETEXT{"OK"}%' />
-</form>
+%BUTTON{"%MAKETEXT{"OK"}%" target="%USERSWEB%.%WIKINAME%" icon="tick"}%%CLEAR%
 %TMPL:END%
-%TMPL:DEF{"confirm"}%<!-- BlackListPlugin support -->
+%TMPL:DEF{"confirm"}%<!-- confirm -->
 ---+++ %MAKETEXT{"Thank you for registering"}%
 %MAKETEXT{"Your activation code has been sent to [_1].  Either click on the link in your email or enter the code in the box below to activate your membership.  (This code is of the form \"YourName.xxxxxxxxxx\")" args="%PARAM1%"}%
 
 <form action="%SCRIPTURLPATH{"register"}%" method="post">
-<!--input type="hidden" name="rx" value="%BLACKLISTPLUGIN{action="magic"}%" /-->
 <input type="hidden" name="action" value="verify" size="20" />
 <input type="text" name="code" size="20" />
-<input type="submit" value=' %MAKETEXT{"Submit"}% ' />
+%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="tick"}%%CLEAR%
 </form>
 
 %TMPL:END%
@@ -143,7 +132,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 ---+++ %MAKETEXT{"Error registering user [_1]" args="<nop>%PARAM1%"}%
 %MAKETEXT{"There has been a problem adding your user id to the Password system."}%
 %MAKETEXT{"Please notify your [_1] webmaster [_2]." args="<nop>%WIKITOOLNAME%,%WIKIWEBMASTER%"}%
-<style type="text/css">.natContact {display:none}</style>
+<style>.natContact {display:none}</style>
 %TMPL:END%
 %TMPL:DEF{"send_mail_error"}%<!-- better dialog, removes contact -->
 ---+++ %MAKETEXT{"Mail Error"}%
@@ -161,7 +150,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 
 %MAKETEXT{"Please notify your [_1] administrator [_2]"
  args="<nop>%WIKITOOLNAME%,<a href=\"mailto:%WIKIWEBMASTER%?subject=%ENCODE{"%WIKITOOLNAME% Send Mail Error"}%\">%WIKIWEBMASTER%</a>"}%
-<style type="text/css">.natContact {display:none}</style>
+<style>.natContact {display:none}</style>
 %TMPL:END%
 %TMPL:DEF{"already_exists"}%<!-- only one contact message -->
 ---+++ %MAKETEXT{"You are already registered"}%
@@ -205,10 +194,10 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 %MAKETEXT{"Please try again."}%
 
 <form action="%SCRIPTURLPATH{"register"}%" method="post">
-<!--input type="hidden" name="rx" value="%BLACKLISTPLUGIN{action="magic"}%" /-->
 <input type="hidden" name="action" value="verify" size="20" />
 <input type="text" name="code" size="20" />
-<input type="submit" value=" %MAKETEXT{"Submit"}% " />
+%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="tick"}%
+%CLEAR%
 </form>
 %TMPL:END%
 %TMPL:DEF{"no_email_for"}%<!-- nach %2 umbenennenbetter dialog -->
@@ -240,7 +229,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 %MAKETEXT{"Please notify your [_1] administrator [_2]." args="<nop>%WIKITOOLNAME%,%WIKIWEBMASTER%"}%
 
 %MAKETEXT{"Go <a href=\"javascript:history.back()\">back</a> in your browser and save your changes locally."}%
-<style type="text/css">.natContact {display:none}</style>
+<style>.natContact {display:none}</style>
 %TMPL:END%
 %TMPL:DEF{"delete_err"}%<!-- better dialog, removes contact -->
 ---+++ %MAKETEXT{"Attachment delete failed"}%
@@ -252,7 +241,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 
 %MAKETEXT{"Please notify your [_1]" args="<nop>%WIKITOOLNAME%"}% 
 <a href="mailto:%WIKIWEBMASTER%?subject=%ENCODE{"%WIKITOOLNAME% Delete Error"}%&amp;body=%ENCODE{"%PARAM4%"}%">%WIKIWEBMASTER%</a>.
-<style type="text/css">.natContact {display:none}</style>
+<style>.natContact {display:none}</style>
 %TMPL:END%
 %TMPL:DEF{"upload_name_changed"}%<!-- uses goback def -->
 ---+++ %MAKETEXT{"File has been uploaded with different name"}%
@@ -267,9 +256,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
    * %MAKETEXT{"International (8-bit) characters are removed (replaced by US-ASCII equivalents for Latin-1)"}%
 %MAKETEXT{"You may be able to get your Wiki administrator to change the settings if they are inappropriate for your environment."}%
 
-<form action="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%">
-<input type="submit" class="natOkButton" value='%MAKETEXT{"OK"}%' />
-</form>
+%BUTTON{"%MAKETEXT{"OK"}%" target="%WEB%.%TOPIC%" icon="tick"}%%CLEAR%
 %TMPL:END%
 %TMPL:DEF{"rename_web_prerequisites"}%<!-- better buttons -->
 ---+++ %MAKETEXT{"There are problems with renaming this web:"}%
@@ -288,8 +275,9 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 <form class="natOopsButtons" name="ButtonBox" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%HOMETOPIC%" method="post">
   <input type="hidden" name="action" value="renameweb">
   <input type="hidden" name="confirm" value="continue">
-  <input type="submit" class="natOkButton" value='%MAKETEXT{"OK"}%'>&nbsp;
-  <input type="button" class="natCancelButton" value='%MAKETEXT{"Cancel"}%' onclick="window.location.href='%SCRIPTURLPATH{"view"}%/%WEB%/%HOMETOPIC%'">
+  %BUTTON{"%MAKETEXT{"OK"}%" type="submit" icon="tick"}%
+  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WEB%.%HOMETOPIC%" icon="cross"}%
+  %CLEAR%
 </form> 
 </div>
 %TMPL:END%
@@ -307,22 +295,23 @@ template that doesn't exist." args="%PARAM2%"}%
 %TMPL:DEF{"topic_access"}% <!-- -->
 %MAKETEXT{"[_1] has no permission to [_2] [_3]." args="<nop>%SPACEOUT{"%WIKINAME%"}%,%PARAM1%,%TOPIC%"}%
 
-%TMPL:P{"logon"}%
+%TMPL:P{"login"}%
 
 %MAKETEXT{"See also:"}% %USERSWEB%.WikiGroups, %SYSTEMWEB%.AccessControl,
-%USERREGISTRATION%
+%SYSTEMWEB%.UserRegistration
 %TMPL:END%
 %TMPL:DEF{"only_group"}% <!-- -->
 %MAKETEXT{"Only members of the [_1] are allowed to perform this action." args="%PARAM1%"}%
 
-%TMPL:P{"logon"}%
+%TMPL:P{"login"}%
 
 %MAKETEXT{"See also:"}% %USERSWEB%.WikiGroups, %SYSTEMWEB%.AccessControl,
-%USERREGISTRATION%
+%SYSTEMWEB%.UserRegistration
 %TMPL:END%
 %TMPL:DEF{"no_such_web"}% <!-- -->
 ---++ %MAKETEXT{"The [_1] web does not exist" args="\"%WEB%\""}%
-%MAKETEXT{"You are trying to '[_1]' a topic in a web that does not exist." args="%PARAM1%"}%
+
+%MAKETEXT{"You are trying to [_1] in a web that does not exist." args="'%PARAM1%'"}%
 
 %TMPL:P{"goback"}%
 %TMPL:END%

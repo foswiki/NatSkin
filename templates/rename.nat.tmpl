@@ -1,13 +1,10 @@
 %TMPL:INCLUDE{"renamebase"}%<!-- template: rename.nat.tmpl -->
+
+%{ ################################################################################ }%
 %TMPL:DEF{"newtopic"}%<input type="text" name="newtopic" value="%NEW_TOPIC%" size="40" />%TMPL:END%
 %TMPL:DEF{"newweb"}%<!-- newweb -->
-<select name="newweb"> 
-%WEBLIST{"<option $marker value='$name'>$name</option>" webs="%TRASHWEB%,%NEW_WEB%,public" selection="%NEW_WEB%" separator=" "}% 
+<select class="foswikiSelect" name="newweb"> 
+%WEBLIST{"<option $marker value='$name' class='foswikiOption'>$name</option>" webs="%TRASHWEB%,%NEW_WEB%,public" selection="%NEW_WEB%" separator=" "}% 
 </select> 
 <!-- //newweb -->%TMPL:END%
-%TMPL:DEF{"webaction"}%Rename%TMPL:END%
-%TMPL:DEF{"buttons"}%<!-- buttons -->
-%BUTTON{type="save" "%MAKETEXT{"Rename"}%" icon="tick"}%
-%BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" target="%WEB%.%TOPIC%"}%
-%CLEAR%
-<!-- //buttons -->%TMPL:END%
+%TMPL:DEF{"breadcrumbstail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%">%MAKETEXT{"Rename"}%</a>%TMPL:END%

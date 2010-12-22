@@ -2,20 +2,34 @@
 %TMPL:INCLUDE{"rdiffsidebar"}%<!-- rdiffsidebar// -->
 %TMPL:INCLUDE{"rdifftopicactions"}%<!-- rdifftopicactions// -->
 %TMPL:INCLUDE{"rdiffbody"}%<!-- rdiffbody// -->
+
+%{################################################################################}%
 %TMPL:DEF{"bodyclass"}%natRdiffBody%TMPL:END%
 %TMPL:DEF{"title"}%%TOPIC% %MAKETEXT{"([_1] vs. [_2])" args="%REVTITLE2%, %REVTITLE1%"}% - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Difference:"}% %TMPL:P{"topictitle"}% %MAKETEXT{"([_1] vs. [_2])" args="%REVTITLE2%, %REVTITLE1%"}%</h1>%TMPL:END%
 %TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
-%TMPL:DEF{"contentheader_container"}%<div class="natMainHeaderContents">%TMPL:P{"contentheader"}%</div>%TMPL:END%
+
+%{################################################################################}%
 %TMPL:DEF{"contentheader"}%<!-- contentheader -->
-%TMPL:P{"topicactions"}%<!-- topicactions// -->
+%TMPL:P{"topicactions"}%
+<div class='natBreadCrumbs'>
+  <span class='natBreadCrumbsYouAreHere'>%MAKETEXT{"You are here:"}%</span> 
+  %TMPL:P{"breadcrumbs"}% 
+</div>
 <!-- // contentheader -->%TMPL:END%
+
+%{################################################################################}%
+%TMPL:DEF{"breadcrumbstail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?%QUERYSTRING%">%MAKETEXT{"Difference"}%</a>%TMPL:END%
+
+%{################################################################################}%
 %TMPL:DEF{"content"}%<!-- content -->
 %TMPL:P{"beforetext"}%<!-- beforetext// -->
 %TMPL:P{"contenttitle"}%<!-- pagetitle // -->
 %TMPL:P{"text"}%<!-- text// -->
 %TMPL:P{"aftertext"}%<!-- aftertext// -->
 <!-- //content -->%TMPL:END%
+
+%{################################################################################}%
 %TMPL:DEF{"text"}%<!-- text -->
 %REPEAT%<table class="foswikiDiffTable" cellspacing="0" cellpadding="0">
 <th>

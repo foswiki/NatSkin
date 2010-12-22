@@ -1,0 +1,91 @@
+%TMPL:INCLUDE{"WebCreateNewTopic"}%
+
+%TMPL:DEF{"excludetopics"}%%IF{"defined DONTCREATETOPICS" 
+  then="%DONTCREATETOPICS"
+  else="TopicType|TopicStub|TopicTemplate|WebTopicEditTemplate"
+}%%TMPL:END%
+
+%TMPL:DEF{"topictemplatestep"}%<!-- -->
+%TMPL:P{"topictemplatestep::templates"}%
+%TMPL:P{"topictemplatestep::css"}%
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"topictemplatestep::templates"}%<!-- -->
+---
+<noautolink>
+%DBQUERY{
+  "topic=~'Template\b' AND topic!~'(View|Edit)Template\b'"
+  exclude="%TMPL:P{"excludetopics"}%"
+  header="<div class='natTopicTemplateSelector foswikiFormStep'>
+    <h3>%MAKETEXT{"Template"}%:</h3>
+    <div class='natTopicTemplate'>
+      <label title='%MAKETEXT{"Default topic as defined in WebTopicEditTemplate"}%'>
+        <input type='radio' name='templatetopic' value='' class='foswikiRadioButton' checked />
+        %MAKETEXT{"Default"}%
+      </label>
+    </div>"
+  format="<div class='natTopicTemplate'>
+    <label title='$percntENCODE{\"$expand(Summary)\" type=\"entity\"}$percnt'>
+      <input type='radio' name='templatetopic' value='$topic' class='foswikiRadioButton' />
+       $expand(topictitle)
+    </label>
+    </div>"
+  separator="$n"
+  footer="%CLEAR%$n
+      <div class='foswikiFormDescription'>
+        %MAKETEXT{"Select which template to use while creating this topic."}%
+      </div>
+    </div>"
+}%
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"topictemplatestep::topictype"}%<!-- -->
+---
+<noautolink>
+%DBQUERY{
+  "TopicType=~'\bTopicType\b'"
+  exclude="%TMPL:P{"excludetopics"}%"
+  header="<div class='natTopicTypeSelector foswikiFormStep'>
+    <h3>%MAKETEXT{"Type"}%:</h3>
+    <div class='natTopicType'>
+      <label title='%MAKETEXT{"Default topic as defined in WebTopicEditTemplate"}%'>
+        <input type='radio' name='TopicType' value='' class='foswikiRadioButton' checked />
+        %MAKETEXT{"Default"}%
+      </label>
+    </div>"
+  format="<div class='natTopicType'>
+    <label title='$percntENCODE{\"$expand(Summary)\" type=\"entity\"}$percnt'>
+      <input type='radio' name='TopicType' value='$topic' class='foswikiRadioButton' />
+       $expand(topictitle)
+    </label>
+    </div>"
+  separator="$n"
+  footer="%CLEAR%$n
+      <div class='foswikiFormDescription'>
+        %MAKETEXT{"Select which kind of topic you want to create."}%
+      </div>
+    </div>"
+}%
+</noautolink>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"topictemplatestep::css"}%<literal>
+<style>
+.natTopicTemplateSelector .natTopicTemplate,
+.natTopicTypeSelector .natTopicType {
+  width:50%;
+  float:left;
+  overflow:hidden;
+}
+.natTopicTemplateSelector label .foswikiRadioButton,
+.natTopicTypeSelector label .foswikiRadioButton {
+  margin:0px;
+}
+.natTopicTemplateSelector .natTopicTemplate label,
+.natTopicTypeSelector .natTopicType label {
+  white-space:nowrap;
+  padding:0em 0.5em 0em 0em;
+  margin:0px;
+}
+</style>
+</literal>%TMPL:END%

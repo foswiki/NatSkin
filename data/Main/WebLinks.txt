@@ -5,7 +5,7 @@ Sidebar navigation in the %WEB% web. See also the %SYSTEMWEB%.SiteLinks
 
 %STARTINCLUDE%<!-- main.weblinks -->
    * [[%SYSTEMWEB%.WelcomeGuest][%MAKETEXT{"Welcome"}%]]
-   * [[%USERREGISTRATION%][%MAKETEXT{"Registration"}%]] %IFDEFINEDTHEN{"%IFEXISTS{"%USERSWEB%.%WIKIUSERSTOPIC%"}%" as="1" glue="off"}%
+   * [[%SYSTEMWEB%.UserRegistration][%MAKETEXT{"Registration"}%]] %IFDEFINEDTHEN{"%IFEXISTS{"%USERSWEB%.%WIKIUSERSTOPIC%"}%" as="1" glue="off"}%
    * [[%USERSWEB%.%WIKIUSERSTOPIC%][%MAKETEXT{"Users"}%]] %FIDEFINED%
    * [[%USERSWEB%.WikiGroups][%MAKETEXT{"Groups"}%]]
    * [[%SYSTEMWEB%.ChangePassword][%MAKETEXT{"Password"}%]]

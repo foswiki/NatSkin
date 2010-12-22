@@ -1,11 +1,10 @@
 %META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1251882245" format="1.1" reprev="1.5" version="1.5"}%
 %META:TOPICPARENT{name="ManagingWebs"}%
 ---+!! %MAKETEXT{"Create a new web"}%
+<form id="createNewWeb" name="admin" action="%SCRIPTURLPATH{manage}%/%WEB%/%TOPIC%" method="post">
+<input name="newtopic" type="hidden" value="%URLPARAM{"newtopic"}%" />
+<input name="action" type="hidden" value="createweb" />
 <div class="foswikiFormSteps">
-  <form id="createNewWeb" name="admin" action="%SCRIPTURLPATH{manage}%/%WEB%/%TOPIC%" method="post">
-  <input name="newtopic" type="hidden" value="%URLPARAM{"newtopic"}%" />
-  <input name="action" type="hidden" value="createweb" />
-  <input name="WEBBGCOLOR" type="hidden" value="#ffffff" />
   <div class="foswikiFormStep">
     <h3>%MAKETEXT{"Name"}%:</h3>
     <input name="newweb" class="foswikiInputField required" type="text" value="%URLPARAM{"newweb"}%" size="60" />
@@ -15,8 +14,8 @@
     </div>
   </div>
   <div class="foswikiFormStep">
-    <h3>%MAKETEXT{"Description"}%:</h3>
-    <input type="text" class="foswikiInputField" name="SITEMAPWHAT" value="" size="60" />
+    <h3>%MAKETEXT{"Summary"}%:</h3>
+    <input type="text" class="foswikiInputField" name="WEBSUMMARY" value="" size="60" />
     <div class="foswikiFormDescription">
       Enter a short description of the web. 
       Write =Web.TopicName= instead of just =TopicName= if you include links. This
@@ -49,8 +48,8 @@
   </div>
   <div class="foswikiFormStep">
     <h3>%MAKETEXT{"Global search"}%:</h3>
-    <label><input type="radio" name="NOSEARCHALL" value="on" checked="checked" /> *include* in global search </label>%BR%
-    <label><input type="radio" name="NOSEARCHALL" value="" /> *exclude* from global search </label>
+    <label><input type="radio" name="NOSEARCHALL" value="" checked="checked" /> *include* in global search </label>%BR%
+    <label><input type="radio" name="NOSEARCHALL" value="on" /> *exclude* from global search </label>
     <div class="foswikiFormDescription">
       Specify if you want to exclude the web from a global search. Note, that you will have to
       enter this web explicitly to search in it.
@@ -73,15 +72,14 @@
 %JQREQUIRE{"farbtastic"}%
 %JQREQUIRE{"validate"}%
 %ADDTOZONE{
-  "body"
-text="
-  <script type='text/javascript'>
+  "script"
+text="<script>
     (function($) {
       $(function() {
         $('#createNewWeb').validate();
       });
     })(jQuery);
-  </script>
+  </script>"
 "
   requires="JQUERYPLUGIN::VALIDATE"
 }%

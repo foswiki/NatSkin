@@ -1,26 +1,17 @@
-%META:TOPICINFO{author="ProjectContributor" date="1238416975" format="1.1" version="1.2"}%
+%META:TOPICINFO{author="ProjectContributor" comment="save topic" date="1273079784" format="1.1" reprev="1.3" rev="3" version="1.3"}%
 ---+!! %TOPIC%
 Default sidebar implementation
 
 %STARTINCLUDE%<!-- sitesidebar -->
-<h2 >%WEBLINK%</h2>
+<h2 ><noautolink>%WEBLINK{"%BASEWEB%"}%</noautolink></h2>
 %WEBCOMPONENT{"Links"}%<!-- weblinks// -->
-%IF{"$'MYSIDEBAR'!='off'" then="$percntTMPL:P{\"mysidebar\"}$percnt" }%<!-- mysidebar -->
+%IF{
+  "$'MYSIDEBAR'!='off' and '%WIKINAME%'!='WikiGuest'" 
+   then="$percntTMPL:P{\"mysidebar\"}$percnt" 
+}%<!-- mysidebar -->
 <h2 >Tools</h2>
    * [[WebTopicList][%MAKETEXT{"Index"}%]]
    * [[WebChanges][%MAKETEXT{"Changes"}%]]
    * [[WebNotify][%MAKETEXT{"Notifications"}%]]
    * [[WebStatistics][%MAKETEXT{"Statistics"}%]]
-   * [[Sandbox.WebHome][Sandbox]]
-%IFDEFINEDTHEN{"%IFACCESS{"%USERSWEB%.AdminGroup" type="change"}%" as="1"}%
-<div class="natSidebarSection natSideBarAdminLinks">
-<h2 >Admin</h2>
-   * [[%SCRIPTURL{"configure"}%][%MAKETEXT{"Configure [_1]" args="<nop>%WIKITOOLNAME%"}%]]
-   * [[%BASEWEB%.WebPreferences][%MAKETEXT{"Web Preferences"}%]]
-   * [[%LOCALSITEPREFS%][%MAKETEXT{"Site Preferences"}%]]
-   * [[%SYSTEMWEB%.InstalledPlugins][%MAKETEXT{"Installed Plugins"}%]]
-   * [[%SYSTEMWEB%.WebCreateNewWeb][%MAKETEXT{"Create Web"}%]]
-   * [[%SCRIPTURL{"rename"}%/%BASEWEB%/%BASETOPIC%?action=renameweb][Rename Web]]
-</div>
-%FIDEFINED%
 <!-- //sitesidebar -->%STOPINCLUDE%

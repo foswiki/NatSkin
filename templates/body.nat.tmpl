@@ -2,8 +2,9 @@
 %TMPL:DEF{"defaultbodyclass"}%natBody%TMPL:END%
 
 %{ container definitions --------------------------------------------------- }%
+%TMPL:DEF{"contentheader_container"}%<div class="natMainHeaderContents">%TMPL:P{"contentheader"}%</div>%TMPL:END%
 %TMPL:DEF{"content_container"}%<div class="natMainContents" id="natMainContents">%TMPL:P{"content"}%%TMPL:P{"spacer"}%<a name="ContentBottom"></a></div>%TMPL:END%
-%TMPL:DEF{"contentfooter_container"}%<div class="natMainFooterContents">%TMPL:P{"contentfooter"}%</div>%TMPL:END%
+%TMPL:DEF{"contentfooter_container"}%%CLEAR%<div class="natMainFooterContents">%TMPL:P{"contentfooter"}%</div>%TMPL:END%
 %TMPL:DEF{"sidebar_container"}%<div class="natSideBarContents">
 %TMPL:P{"sidebar"}%
 %TMPL:P{"spacer"}%
@@ -13,36 +14,43 @@
 %TMPL:P{"spacer"}%
 </div>%TMPL:END%
 
-%TMPL:DEF{"webbuttons"}%<div class="natWebButtonsContents natWebButtonsHidden"> 
-%WEBCOMPONENT{"Buttons"}% <!-- webbuttons -->
+%TMPL:DEF{"contentheader"}%<!-- -->
+<div class='natBreadCrumbs'>
+  <span class='natBreadCrumbsYouAreHere'>%MAKETEXT{"You are here:"}%</span> 
+  %TMPL:P{"breadcrumbs"}% 
+</div>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"webmenu"}%<div class="natWebMenuContents natWebMenuHidden"> 
+%WEBCOMPONENT{"Menu"}% <!-- webmenu -->
 </div>%TMPL:END%
 
-%{ sidebar definitions when the web buttons are on ------------------------- }%
-%TMPL:DEF{"buttons_on"}%<!-- buttons_on -->
-%TMPL:P{context="natskin_sidebar_left" then="buttons_on_sidebar_left"}%<!-- natskin_sidebar_left// -->
-%TMPL:P{context="natskin_sidebar_right" then="buttons_on_sidebar_right"}%<!-- natskin_sidebar_right// -->
-%TMPL:P{context="natskin_sidebar_both" then="buttons_on_sidebar_both"}%<!-- natskin_sidebar_both// -->
-%TMPL:P{context="natskin_sidebar_off" then="buttons_on_sidebar_off"}%<!-- natskin_sidebar_off// -->
-<!-- //buttons_on -->%TMPL:END%
+%{ sidebar definitions when the web menu are on ------------------------- }%
+%TMPL:DEF{"menu_on"}%<!-- menu_on -->
+%TMPL:P{context="natskin_sidebar_left" then="menu_on_sidebar_left"}%<!-- natskin_sidebar_left// -->
+%TMPL:P{context="natskin_sidebar_right" then="menu_on_sidebar_right"}%<!-- natskin_sidebar_right// -->
+%TMPL:P{context="natskin_sidebar_both" then="menu_on_sidebar_both"}%<!-- natskin_sidebar_both// -->
+%TMPL:P{context="natskin_sidebar_off" then="menu_on_sidebar_off"}%<!-- natskin_sidebar_off// -->
+<!-- //menu_on -->%TMPL:END%
 
-%{ button/sidebar dependeing layouts --------------------------------------- }%
-%TMPL:DEF{"buttons_on_sidebar_left"}%<!-- buttons_on_sidebar_left -->
+%{ menu/sidebar dependeing layouts --------------------------------------- }%
+%TMPL:DEF{"menu_on_sidebar_left"}%<!-- menu_on_sidebar_left -->
 <tr>
   <td class="natSideBarHeader natSideBarHeaderLeft">
     <div class="natSideBarHeaderContents">
 %TMPL:P{"sidebarheader"}%<!-- sidebarheader// -->
     </div>
   </td>
-  <td class="natWebButtons natWebButtonsRight" id="natWebButtons">
-%TMPL:P{"webbuttons"}%<!-- webbuttons// -->
+  <td class="natWebMenu natWebMenuRight" id="natWebMenu">
+%TMPL:P{"webmenu"}%<!-- webmenu// -->
   </td>
 </tr>
-<!-- //buttons_on_sidebar_left -->%TMPL:END%
+<!-- //menu_on_sidebar_left -->%TMPL:END%
 
-%TMPL:DEF{"buttons_on_sidebar_right"}%<!-- buttons_on_sidebar_right -->
+%TMPL:DEF{"menu_on_sidebar_right"}%<!-- menu_on_sidebar_right -->
 <tr>
-  <td class="natWebButtons natWebButtonsLeft" id="natWebButtons">
-%TMPL:P{"webbuttons"}%<!-- webbuttons// -->
+  <td class="natWebMenu natWebMenuLeft" id="natWebMenu">
+%TMPL:P{"webmenu"}%<!-- webmenu// -->
   </td>
   <td class="natSideBarHeader natSideBarHeaderRight">
     <div class="natSideBarHeaderContents">
@@ -50,28 +58,28 @@
     </div>
   </td>
 </tr>
-<!-- //buttons_on_sidebar_left -->%TMPL:END%
+<!-- //menu_on_sidebar_left -->%TMPL:END%
 
-%TMPL:DEF{"buttons_on_sidebar_both"}%<!-- buttons_on_sidebar_both -->
+%TMPL:DEF{"menu_on_sidebar_both"}%<!-- menu_on_sidebar_both -->
 <tr>
   <td class="natSideBarHeader natSideBarHeaderLeft">
     <div class="natSideBarHeaderContents">
 %TMPL:P{"sidebarheader"}%<!-- sidebarheader// -->
     </div>
   </td>
-  <td class="natWebButtons natWebButtonsRight" id="natWebButtons">
-%TMPL:P{"webbuttons"}%<!-- webbuttons// -->
+  <td class="natWebMenu natWebMenuRight" id="natWebMenu">
+%TMPL:P{"webmenu"}%<!-- webmenu// -->
   </td>
 </tr>
-<!-- //buttons_on_sidebar_both -->%TMPL:END%
+<!-- //menu_on_sidebar_both -->%TMPL:END%
 
-%TMPL:DEF{"buttons_on_sidebar_off"}%<!-- buttons_on_sidebar_off -->
+%TMPL:DEF{"menu_on_sidebar_off"}%<!-- menu_on_sidebar_off -->
 <tr>
-  <td colspan="2" class="natWebButtons natWebButtonsLeft" id="natWebButtons">
-%TMPL:P{"webbuttons"}%<!-- webbuttons// -->
+  <td colspan="2" class="natWebMenu natWebMenuLeft" id="natWebMenu">
+%TMPL:P{"webmenu"}%<!-- webmenu// -->
   </td>
 </tr>
-<!-- //buttons_on_sidebar_off -->%TMPL:END%
+<!-- //menu_on_sidebar_off -->%TMPL:END%
 
 %{ page layouts depeding on sidebar ---------------------------------------- }%
 %{ left }%
@@ -80,7 +88,7 @@
 %TMPL:P{"topbar"}%<!-- topbar// -->
       </table>
       <table class="natLayoutTable" cellpadding="0" cellspacing="0" border="0" width="100%">
-%TMPL:P{context="natskin_buttons_on" then="buttons_on"}%<!-- buttons_on// -->
+%TMPL:P{context="natskin_menu_on" then="menu_on"}%<!-- menu_on// -->
 	<tr>
 	  <td class="natMiddle natMiddleLeft natSideBar natSideBarLeft" valign="top">
 %TMPL:P{"sidebar_container"}%<!-- sidebar container// -->
@@ -98,7 +106,7 @@
 %TMPL:DEF{"layout_sidebar_right"}%<!-- sidebar right -->
       <table class="natLayoutTable natHeaderArt" id="natHeaderArt" cellpadding="0" cellspacing="0" border="0" width="100%">
 %TMPL:P{"topbar"}%<!-- topbar// -->
-%TMPL:P{context="natskin_buttons_on" then="buttons_on"}%<!-- buttons_on// -->
+%TMPL:P{context="natskin_menu_on" then="menu_on"}%<!-- menu_on// -->
 	<tr>
 	  <td class="natMain natMiddle natMiddleLeft natMainLeft" valign="top">
 %TMPL:P{"contentheader_container"}%<!-- contentheader_container// -->
@@ -118,7 +126,7 @@
 %TMPL:P{"topbar"}%<!-- topbar// -->
       </table>
       <table class="natLayoutTable"  cellpadding="0" cellspacing="0" border="0" width="100%">
-%TMPL:P{context="natskin_buttons_on" then="buttons_on"}%<!-- buttons_on// -->
+%TMPL:P{context="natskin_menu_on" then="menu_on"}%<!-- menu_on// -->
       </table>
       <table class="natLayoutTable" cellpadding="0" cellspacing="0" border="0" width="100%">
 	<tr>
@@ -141,7 +149,7 @@
 %TMPL:DEF{"layout_sidebar_off"}%<!-- sidebar off -->
       <table class="natLayoutTable natHeaderArt" id="natHeaderArt" cellpadding="0" cellspacing="0" border="0" width="100%">
 %TMPL:P{"topbar"}%<!-- topbar// -->
-%TMPL:P{context="natskin_buttons_on" then="buttons_on"}%<!-- buttons_on// -->
+%TMPL:P{context="natskin_menu_on" then="menu_on"}%<!-- menu_on// -->
       </table>
       <table class="natLayoutTable" cellpadding="0" cellspacing="0" border="0" width="100%">
 	<tr>
@@ -171,8 +179,17 @@
     <div class="natBottomBarContents">
 %TMPL:P{"bottombar"}%<!-- bottombar// -->
     </div>
+    %IF{"{Cache}{Enabled} and context view and $CACHEABLE != 'off'" 
+      then="<div class='natPageCacheBanner foswikiGrayText'>
+              %MAKETEXT{"This page has been cached at [_1]." args="%SERVERTIME%"}%
+              %MAKETEXT{"Get a fresh version <a href='%SCRIPTURLPATH{view}%/%BASEWEB%/%BASETOPIC%?refresh=cache'>here</a>."}%
+            </div>"
+      else="<!-- -->"
+    }%
   </div>
-<a name="PageBottom"></a>
+  <a name="PageBottom"></a>
 </div>
+%TMPL:P{"previewraw"}%<!-- -->
 <!-- //defaultbody -->%TMPL:END%
-%TMPL:DEF{"body"}%<body class="%IF{"context authenticated" then="natBodyAuthenticated" else="natBodyNotAuthenticated"}% %TMPL:P{"defaultbodyclass"}% %TMPL:P{"bodyclass"}% %IF{"context 'natskin_sidebar_left'" then="natBodyLeft"}% %IF{"context 'natskin_sidebar_right'" then="natBodyRight"}% %IF{"context 'natskin_sidebar_both'" then="natBodyBoth"}% %IF{"context 'natskin_sidebar_off'" then="natBodyOff"}% %IF{"context 'natskin_border_thin'" then="natBodyThin"}% %IF{"context 'natskin_border_on'" then="natBodyBorder"}%">%TMPL:P{"defaultbody"}%</body>%TMPL:END%
+
+%TMPL:DEF{"body"}%<body class="%IF{"defined 'NATSKIN_FLUIDFONT'" then="jqFluidFont {%NATSKIN_FLUIDFONT%}"}% %IF{"context authenticated" then="natBodyAuthenticated" else="natBodyNotAuthenticated"}% %TMPL:P{"defaultbodyclass"}% %TMPL:P{"bodyclass"}% %IF{"context 'natskin_sidebar_left'" then="natBodyLeft "}%%IF{"context 'natskin_sidebar_right'" then="natBodyRight "}%%IF{"context 'natskin_sidebar_both'" then="natBodyBoth "}%%IF{"context 'natskin_sidebar_off'" then="natBodyOff "}%%IF{"context 'natskin_layout_fluid'" then="natBodyFluid "}%%IF{"context 'natskin_layout_full'" then="natBodyFull "}%%IF{"context 'natskin_layout_bordered'" then="natBodyBordered "}%">%TMPL:P{"defaultbody"}%</body>%TMPL:END%

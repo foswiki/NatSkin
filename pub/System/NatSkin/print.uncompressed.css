@@ -5,7 +5,6 @@
 
   @top-left {
     content: string(title);
-    text-transform:uppercase;
     font-family:arial,Helvetica,sans-serif;
   }
   @top-right {
@@ -32,16 +31,27 @@ h2 { string-set: chapter content() }
 html {
   background:transparent !important;
 }
+.natBody,
 body {
   margin:0 !important;
   padding:0 !important;
   width:auto !important;
   prince-linebreak-magic: auto;
   hyphens: auto;
+  color:#000;
+  font-size: 11px;
+  line-height: 1.3em;
 /*
   columns: 2;
   column-gap: 1em;
 */
+}
+
+/* color */
+h1, h2, h3, h4, h5, h6, 
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, 
+body, .natBody {
+  color:#000;
 }
 
 /* pagination */
@@ -57,21 +67,35 @@ ul, ol, dl {
 }
 pre {
   page-break-inside:avoid;
-  overflow:auto;
+  white-space:normal;
+  overflow:hidden;
 }
 
 /* hidden elements */
-.natFeedIcon,
-.natMainHeaderContents,
+.foswikiBroadcastMessage,
+.foswikiHideOnPrint,
 .natBottomBar,
 .natBreadCrumbs,
-.natTopicActions,
+.natFeedIcon,
 .natGreeter,
-.natSideBarHeader,
-.natWebButtons,
+.natMainHeaderContents,
 .natSideBar,
+.natSideBarHeader,
+.natTopicActions,
+.natWebMenu,
 .natTopBar {
   display:none;
+}
+.natBody .foswikiShowOnPrint,
+.natBody .foswikiShowBlockOnPrint {
+  display:block;
+}
+.natBody .foswikiShowInlineOnPrint {
+  display:inline;
+}
+
+.jqButton {
+  display:none !important;
 }
 
 
@@ -109,10 +133,12 @@ p {
   margin:0.5em 0em;
   text-indent:1em;
   text-align:justify;
-  orphans:3;
+  orphans:4;
   widows:2;
 }
+
 p + p { text-indent: 1.5em }
+
 img {
   page-break-inside: avoid;
   prince-image-resolution: 150dpi;

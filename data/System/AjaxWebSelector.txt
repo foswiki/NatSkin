@@ -25,8 +25,8 @@
 <verbatim class="tml">
 %STARTINCLUDE%<!-- webselector -->
 %JQREQUIRE{"gradient"}% %JQREQUIRE{"simplemodal"}%<!-- jqrequire// -->
-<style type="text/css">@import url(%ATTACHURLPATH%/webselector.css);</style>
-<script type="text/javascript" src="%ATTACHURLPATH%/webselector.js"></script>
+<style>@import url(%ATTACHURLPATH%/webselector.css);</style>
+<script src="%ATTACHURLPATH%/webselector.js"></script>
 <div id="weblist" class="foswikiFormSteps" style="display:none">
 ---++ Select a web
 <table><tr>

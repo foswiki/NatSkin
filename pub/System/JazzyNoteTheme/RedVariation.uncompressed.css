@@ -1,0 +1,107 @@
+.natHtml {
+  background-position:0px -50px;
+}
+.natTopLeft.natTopRight {
+  _background:url(foswiki-header-tile-red.png) repeat-x;
+}
+.natTopRight {
+  background:url(foswiki-header-tile-red.png) repeat-x;
+}
+.natTopLeftContents {
+  background:url(foswiki-header-tile-red.png) repeat-x;
+}
+.natWebTitle {
+  background:url(foswiki-header-red.png) no-repeat;
+}
+.natSideBarHeader,
+.natWebMenu {
+  background-color:#4a4a4a;
+  border-top:0px;
+  border-bottom:1px solid #555;
+}
+.natTopBar {
+  border-bottom:1px solid #5B0002;
+}
+.natBodyFluid .natSideBarHeaderLeft,
+.natBodyFluid .natWebMenuLeft {
+  border-left:1px #4a4a4a solid;
+}
+.natWebMenu,
+.natWebMenu li,
+.natWebMenu li a {
+  color:#eee;
+}
+.natWebMenu li .foswikiCurrentWebHomeLink,
+.natWebMenu li a.current {
+  color:#4a4a4a;
+}
+ul.sf-js-enabled li.hasSubMenu {
+  background-image:url(menucorner-black.gif);
+}
+ul.sf-js-enabled li li.hasSubMenu {
+  background-image:url(menucorner.gif);
+}
+.natSideBar,
+.natSideBar h3,
+.natSideBar ul li {
+  border-top:1px solid #bebebe;
+}
+.natSideBar h2 {
+  background-color:#4a4a4a;
+  border-top:1px solid #555;
+  border-bottom:0px;
+}
+.natSideBar h2 a:hover {
+  background-color:#0055B5;
+}
+h1 {
+  border-bottom:1px #bfbfbf solid;
+}
+h1,
+h1 a {
+  color:#0055B5;
+}
+.natBody,
+.fltMakeIndexWrapper .foswikiTopicInfo,
+.fltMakeIndexWrapper .clsSubCategories a,
+.fltMakeIndexWrapper .clsSubCategories,
+.foswikiTopicInfo a,
+.natRevision a,
+.foswikiTopicInfo a,
+h1 .foswikiTopicSummary,
+.foswikiTopicSummary,
+.foswikiTopicInfo, 
+.natRevision,
+#natTopicActionTooltip,
+.natBreadCrumbs,
+.natBreadCrumbs a {
+  color:#434343;
+}
+#natLogonBanner,
+.natMainContents .foswikiNewLink,
+.natSideBar .foswikiCurrentTopicLink,
+.alt h2,
+.jqTabContents h2,
+.jqTabContents h2 a,
+.foswikiPageForm h2,
+.foswikiPageForm h2 a,
+.foswikiFormSteps h2,
+.foswikiFormSteps h2 a {
+  color:#C60206;
+}
+.natSideBar .foswikiCurrentTopicLink {
+  color:#222;
+}
+
+.natEditBody h1 {
+  border-bottom:0px;
+}
+.natTopicAttachments h2,
+.natTopicAttachments h2 a {
+  color:#222;
+}
+
+.alt h2,
+.natMainContents .foswikiNewLink {
+  color:#A70002;
+}
