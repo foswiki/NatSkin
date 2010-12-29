@@ -35,10 +35,10 @@
 .natWebMenu li a.current {
   color:#4a4a4a;
 }
-ul.sf-js-enabled li.hasSubMenu {
+.natWebMenu li.hasSubMenu {
   background-image:url(menucorner-black.gif);
 }
-ul.sf-js-enabled li li.hasSubMenu {
+.natWebMenu li li.hasSubMenu {
   background-image:url(menucorner.gif);
 }
 .natSideBar,

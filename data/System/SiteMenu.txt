@@ -11,18 +11,7 @@ Definition of site wide horizontal menu
   <!-- li>[[Projects.%HOMETOPIC%][Projects]]</li -->
 %IF{"'%USERNAME%' ingroup 'AdminGroup'" 
   then="$percntINCLUDE{\"%SYSTEMWEB%.SiteMenu\" section=\"adminmenu\"}$percnt"
-}%<li>[[%SYSTEMWEB%.%HOMETOPIC%][Help]]
-    <ul>
-      <li>[[%SYSTEMWEB%.WelcomeGuest][%MAKETEXT{"Welcome"}%]]</li>
-      <li>[[%SYSTEMWEB%.TwentyMinuteTutorial][Tutorial]]</li>
-      <li>[[Sandbox.%HOMETOPIC%][Sandbox]]</li>
-      <li>[[%SYSTEMWEB%.UsersGuide][Users Guide]]</li>
-      <li>[[%SYSTEMWEB%.FrequentlyAskedQuestions][Foswiki FAQ]]</li>
-      <li>[[%SYSTEMWEB%.ReferenceManual][Reference Manual]]</li>
-      <li>[[%SYSTEMWEB%.Macros][Macros]]</li>
-      <li>[[%SYSTEMWEB%.InstalledPlugins][Installed Plugins]]</li>
-    </ul>
-  </li>
+}% %INCLUDE{"%SYSTEMWEB%.SiteMenu" section="helpmenu"}%
 </ul>%STOPINCLUDE% 
 </verbatim>
 
@@ -32,30 +21,53 @@ Definition of site wide horizontal menu
   include="^%theweb%.*"
   exclude="%theweb%"
   header="<ul><li>"
-  format="[[$web.%HOMETOPIC%][$name]]"
+  format="[[$web.%HOMETOPIC%][%JQICON{"%IF{"defined icon" then="%icon%" else="bullet_white"}%"}% $name]]"
   separator="</li><li>"
   footer="</li></ul>"  
 }%%ENDSECTION{"subwebs"}%
 </verbatim>
 
+---++ Help menu
+<verbatim class="tml">
+%STARTSECTION{"helpmenu"}%<li>[[%SYSTEMWEB%.WebHome][%MAKETEXT{"Help"}%]]
+  <ul>
+    <li>[[%SYSTEMWEB%.WelcomeGuest][%JQICON{"house"}% %MAKETEXT{"Welcome"}%]]</li>
+    <li>[[%SYSTEMWEB%.UserDocumentationCategory][%JQICON{"book"}% %MAKETEXT{"User Docs"}%]]</li>
+    <li>[[%SYSTEMWEB%.AdminDocumentationCategory][%JQICON{"book_key"}% %MAKETEXT{"Admin Docs"}%]]</li>
+    <li>[[%SYSTEMWEB%.ReferenceManual][%JQICON{"book_open"}% %MAKETEXT{"Reference Manual"}%]]</li>
+    <li>[[%SYSTEMWEB%.InstalledPlugins][%JQICON{"plugin"}% %MAKETEXT{"Installed plugins"}%]]</li>
+    <li><hr /></li>
+    <li>[[Sandbox.%HOMETOPIC%][%JQICON{"briefcase"}% Sandbox]]</li>
+    <li>[[%SYSTEMWEB%.FrequentlyAskedQuestions][%JQICON{"help"}% %MAKETEXT{"Foswiki FAQ"}%]]</li>
+    <li>[[%SYSTEMWEB%.ResetPassword][%JQICON{"key"}% %MAKETEXT{"Password forgotten"}%]]</li>
+    <li><hr /></li>
+    <li>[[http://foswiki.org/Support][%JQICON{"user_comment"}% %MAKETEXT{"Online support forum"}%]]</li>
+    <li>[[http://foswiki.org/Support/WikiConsultants][%JQICON{"user_red"}% %MAKETEXT{"Professional help"}%]]</li>
+    <li>[[http://foswiki.org/Tasks][%JQICON{"bug"}% %MAKETEXT{"Bugreport"}%]]</li>
+  </ul>
+</li>%ENDSECTION{"helpmenu"}%
+</verbatim>
+
 ---++ Admin menu
 <verbatim class="tml">
-%STARTSECTION{"adminmenu"}%<li>Admin
-<ul>
-  <li>
-    [[Applications.%HOMETOPIC%][Applications]]
-    %INCLUDE{"%SYSTEMWEB%.SiteMenu" 
-      section="subwebs" 
-      theweb="Applications"
-    }%
-  </li>
-  <li>[[%BASEWEB%.%WEBPREFSTOPIC%][Web Preferences]]</li>
-  <li>[[%LOCALSITEPREFS%][Site Preferences]]</li>
-  <li>[[%SYSTEMWEB%.SitePermissions][Site Permissions]]</li>
-  <li>[[%SCRIPTURLPATH{"configure"}%][Configure %WIKITOOLNAME%]]</li>
-  <li>[[%SYSTEMWEB%.WebCreateNewWeb][%MAKETEXT{"Create Web"}%]]</li>
-  <li>[[%SCRIPTURL{"rename"}%/%BASEWEB%/%BASETOPIC%?action=renameweb][Rename Web]]</li>
-</ul>
+%STARTSECTION{"adminmenu"}%<li>%MAKETEXT{"Admin"}%
+  <ul>
+    <li>
+      [[Applications.%HOMETOPIC%][%JQICON{"application_double"}% %MAKETEXT{"Applications"}%]]
+      %INCLUDE{"%SYSTEMWEB%.SiteMenu" 
+        section="subwebs" 
+        theweb="Applications"
+        icon="application"
+      }%
+    </li>
+    <li>[[%BASEWEB%.%WEBPREFSTOPIC%][%JQICON{"wrench"}% %MAKETEXT{"Web Preferences"}%]]</li>
+    <li>[[%LOCALSITEPREFS%][%JQICON{"wrench_orange"}% %MAKETEXT{"Site Preferences"}%]]</li>
+    <li>[[%SYSTEMWEB%.SitePermissions][%JQICON{"key"}% %MAKETEXT{"Site Permissions"}%]]</li>
+    <li>[[%SCRIPTURLPATH{"configure"}%][%JQICON{"wand"}% %MAKETEXT{"Configure Foswiki"}%]]</li>
+    <li> <hr /> </li>
+    <li>[[%SYSTEMWEB%.WebCreateNewWeb][%JQICON{"folder_add"}% %MAKETEXT{"Create a new web"}%]]</li>
+    <li>[[%SCRIPTURL{"rename"}%/%BASEWEB%/%BASETOPIC%?action=renameweb][%JQICON{"folder_go"}% %MAKETEXT{"Rename current web"}%]]</li>
+  </ul>
 </li>%ENDSECTION{"adminmenu"}%
 </verbatim>
 

@@ -29,6 +29,12 @@ a:hover {
   text-decoration:none;
 }
 
+embed, object {
+  position: relative;
+  z-index: 0;
+}
+
+
 hr {
   border-bottom:1px solid #ddd;
 }
@@ -89,6 +95,7 @@ dl dd {
 .natTopBar {
   padding:0px;
   vertical-align:middle;
+  border-bottom:0px;
 }
 .natTopRightContents {
   margin:0em 1em;
@@ -198,10 +205,6 @@ dl dd {
   border-top:1px solid #E1EAFA;
   border-bottom:1px solid #8099C4;
 }
-.natWebMenu .natWebMenuContents {
-  margin-bottom:-1px;
-  float:left;
-}
 .natWebMenu {
   padding-left:2.3076em; /* 30px */
 }
@@ -209,45 +212,63 @@ dl dd {
 .natBodyBoth .natWebMenu {
   padding-left:0px;
 }
-.natTopBar {
-  border-bottom:0px;
-}
-.natWebMenu ul {
-  padding:0px;
-  margin:0em 2em 0em 0em;
-  float:left;
-}
 
 /* ie7 fix */
 *:first-child+html .natBodyOff .natWebMenu ul {
   height:32px;
 }
+
+.natWebMenu li {
+  border-right:1px solid #E1EAFA;
+}
+.natWebMenu ul {
+  border-left:1px solid #E1EAFA;
+}
+.natWebMenu ul ul {
+  border-color:#c2c4c4;
+  border-width:1px 0px 1px 0px;
+  border-style:solid;
+  -moz-box-shadow:2px 2px 2px rgba(128,128,128,0.2);
+  -webkit-box-shadow:2px 2px 2px rgba(128,128,128,0.2);
+  box-shadow:2px 2px 2px rgba(128,128,128,0.2);
+}
+.natWebMenu li hr {
+  border-bottom:1px solid #c2c4c4;
+  margin:0.5em -1em;
+}
+.natWebMenu li li {
+  border-left:1px solid #c2c4c4;
+  border-right:1px solid #c2c4c4;
+}
+
 .natWebMenu li,
 .natWebMenu li a {
   font-weight:bold;
   color:#00458F;
 }
 
-.natWebMenu li a {
-  margin:0px;
-  line-height:2.3076em;
-  padding-left:1.0em;
-  padding-right:1.0em;
-}
 
-.natWebMenu li li a {
+.natWebMenu li li {
+  background-color:#E9E9EB;
+  background-color:#fff;
+}
+.natWebMenu li li,
+.natWebMenu li li a,
+.natWebMenu li li a.foswikiNewLink {
   font-weight:normal;
   color:#444;
 }
 
-.natWebMenu li .foswikiCurrentWebHomeLink:hover,
 .natWebMenu li .foswikiCurrentWebHomeLink,
-.natWebMenu li a.current:hover,
-.natWebMenu li a.current {
+.natWebMenu li .foswikiCurrentWebHomeLink:hover,
+.natWebMenu li a.current,
+.natWebMenu li a.current:hover {
   text-decoration: none;
   background-color:#fff;
 }
 
+.natWebMenu li.sfHover,
+.natWebMenu li.sfHover > a,
 .natWebMenu li .foswikiCurrentWebHomeLink:hover,
 .natWebMenu li a.current:hover,
 .natWebMenu li a:hover {
@@ -256,178 +277,12 @@ dl dd {
   color:#fff;
 }
 
-/* sf-js-enabled menu *************************/
-
-/* essentials *****************************/
-.sf-js-enabled h2,
-.sf-js-enabled h3,
-.sf-js-enabled h4,
-.sf-js-enabled h5,
-.sf-js-enabled h6,
-.sf-js-enabled {
-  margin:0;
-  padding:0;
-  list-style:none;
-  font-size:100%;
-  line-height:2.3076em; /* to be added to top:... rules */
-}
-.sf-js-enabled li li {
-  height:auto;
-}
-.sf-js-enabled ul {
-  position:absolute; 
-  top:-999em; 
-}
-.sf-js-enabled ul ul {
-  width:11.45em; /* to be added to left:... rules */
-}
-.sf-js-enabled ul li { 
-  width:11.45em;
-}
-.sf-js-enabled li {
-  padding:0em 1em; /* to be added to left:... rules */
-  float:left; 
-  position:relative;
-  z-index:99; 
-}
-.sf-js-enabled li.sfHover {
-  z-index:999;
-}
-
-embed, object {
-  position: relative;
-  z-index: 0;
-}
-
-
-/**** second tier *************************/
-.sf-js-enabled li:hover ul, 
-ul.sf-js-enabled li.sfHover ul 
-{
-  left:-1px;
-  top:2.3076em; /* VARIABLE */
-}
-
-/**** third tier **************************/
-.sf-js-enabled li:hover li ul,
-.sf-js-enabled li.sfHover li ul {
-  top:-999em; 
-}
-.sf-js-enabled li li:hover ul, 
-ul.sf-js-enabled li li.sfHover ul {
-  left:13.45em; /* VARIABLE */
-  top:-1px; 
-}
-
-/**** fourth tier *************************/
-.sf-js-enabled li li:hover li ul,
-.sf-js-enabled li li.sfHover li ul {
-  top:-999em; 
-}
-.sf-js-enabled li li li:hover ul, 
-ul.sf-js-enabled li li li.sfHover ul {
-  left:13.45em; /* VARIABLE */ 
-  top:-1px;
-}
-
-/* hide menus */
-.sf-js-enabled li:hover ul,
-.sf-js-enabled li li:hover ul,
-.sf-js-enabled li li li:hover ul {
-  top: -999em; /* hide submenu in screen-reader and search-engine friendly way */
-}
-
-/* skinning */
-ul.sf-js-enabled a {
-  margin:0em -1em;
-  padding:0em 1em;
-  display:block;
-  width:100%;
-  /* ie 6 */
-  _padding:0em 2.3076em; 
-  _width:auto;
-}
-
-ul.sf-js-enabled li {
-  border-right:1px solid #E1EAFA;
-}
-ul.sf-js-enabled {
-  border-left:1px solid #E1EAFA;
-}
-ul.sf-js-enabled ul {
-  border-left:0px;
-}
-ul.sf-js-enabled li li {
-  /*
-  border-bottom:1px solid #fff;
-  border-right:1px solid #fff;
-  */
-  border-bottom:1px solid #c2c4c4;
-  border-left:1px solid #c2c4c4;
-  border-right:1px solid #c2c4c4;
-}
-ul.sf-js-enabled li li a:hover.foswikiNewLink,
-ul.sf-js-enabled li li:hover, 
-ul.sf-js-enabled li li.sfHover,
-ul.sf-js-enabled li li a:focus, 
-ul.sf-js-enabled li li a:hover, 
-ul.sf-js-enabled li li a:active {
-  background-color:#0055b5;
-  color:#fff;
-}
-ul.sf-js-enabled li ul {
-  border-top:1px solid #c2c4c4;
-  width:13.45em;
-}
-ul.sf-js-enabled li ul ul {
-  border-top:1px solid #c2c4c4;
-}
-ul.sf-js-enabled li li a.foswikiNewLink,
-ul.sf-js-enabled li li {
-  background:#E9E9EB;
-}
-ul.sf-js-enabled li li li {
-  background:#E9E9EB;
-}
-ul.sf-js-enabled li li li li {
-  background:#E9E9EB;
-}
-ul.sf-js-enabled .sfPath {
-  background-color:red;
-}
-ul.sf-js-enabled li.hasSubMenu {
+.natWebMenu .hasSubMenu {
   background-image:url(menucorner.gif);
   background-repeat:no-repeat;
-  background-position:bottom right;
+  background-position:right bottom;
 }
-ul.sf-js-enabled li li.sfHover a,
-ul.sf-js-enabled li li a:hover.foswikiNewLink,
-ul.sf-js-enabled li li a.foswikiNewLink,
-ul.sf-js-enabled li li a:hover,
-ul.sf-js-enabled li li a:active,
-ul.sf-js-enabled li li a:link,
-ul.sf-js-enabled li li a {
-  display:block;
-  background:transparent;
-  margin:0em -1em;
-  padding:0.5em 1em;
-  line-height:1.1538em;
-  /* ie 6 */
-  _background:inherit;
-  _padding:0em 2.3076em; 
-}
-/*** shadows for all but IE6 ***/
-ul.sf-shadow ul {
-  background: url('menushadow.png') no-repeat bottom right;
-  padding: 0 8px 6px 0;
-  -moz-border-radius-bottomleft: 17px;
-  -moz-border-radius-topright: 17px;
-  -webkit-border-top-right-radius: 17px;
-  -webkit-border-bottom-left-radius: 17px;
-}
-ul.sf-shadow ul.sf-shadow-off {
-  background: transparent;
-}
+
 
 /* modal dialogs */
 .natBody #simplemodal-container {
@@ -1038,6 +893,7 @@ td .foswikiFormDescription {
   color:white;
   font-size:100%;
   font-weight:bold;
+  /* text-shadow:0px 1px #6CC200; */
 }
 .natSideBar h2 a {
   color:#fff;
@@ -1236,6 +1092,7 @@ h1 .foswikiTopicSummary {
 .natTopicForm th {
   vertical-align:top;
 }
+.foswikiFormTable .foswikiFirstCol,
 .natTopicForm th {
   width:20%;
 }
@@ -1329,107 +1186,6 @@ h1 .foswikiTopicSummary {
 .foswikiToc a {
   background-image:none;
   text-decoration:none;
-}
-
-/* supported plugins and applications */
-
-/* Blogging */
-.border {
-  border:1px #EDE3CE solid;
-}
-
-/* blogging */
-.blogAbout {
-  font-size:95%;
-  line-height:1.3em;
-}
-.blogSideBarLatest h2,
-.blogSideBarComments h2 {
-  border-bottom:0px;
-  margin-bottom:0px;
-}
-.blogSideBarHeader,
-.blogSideBarHeader h2,
-.blogSideBarHeader a {
-  font-size:14px;
-  color:#444;
-  font-weight:normal !important;
-}
-.blogSideBarHeader {
-  line-height:1.4em;
-  border-bottom:1px solid #dedede;
-  margin:0em 0em 1em 0em;
-}
-.blogSideBar {
-  line-height:1.4em;
-}
-.blogSideBarSection {
-  margin-bottom:1em;
-}
-.blogSideBarSection ol {
-  margin-top:0px;
-}
-.blogSideBarSection ul {
-  margin-top:0px;
-  margin-left:0px;
-}
-.blogText {
-  margin-top:5px;
-  padding:1px; /* fix for konqueror */
-}
-.blogComment {
-  margin:5px 0px;
-  padding:1em;
-  border:1px #ddd solid;
-}
-.blogCommentOdd {
-  background:#f6f6f6;
-  border:1px #ddd solid;
-}
-.blogComment .blogDate {
-  font-size:0.8em;
-  color:#777;
-  font-weight:normal;
-}
-.blogCommentNr {
-  color:#444;
-  margin-right:1em;
-}
-.blogCommentCount {
-  color:#777;
-  text-align:right;
-}
-.blogHeadline .blogCommentCount {
-  font-size:20px;
-}
-.blogSubComment {
-  padding-left:5px;
-  border-left:5px solid #ddd;
-}
-.blogCommentOdd .blogSubComment {
-  border-color:#ddd;
-}
-.blogCommentEven .blogSubComment {
-  border-color:#ddd;
-}
-.blogAddComment {
-  margin:1em 0em;
-}
-.blogAddComment textarea,
-.blogAddComment input {
-  font-family: Arial, Sans-Serif;
-}
-.blogArchiveDescription {
-  margin-bottom:20px;
-  font-size:0.9em;
-}
-.blogAdminButtons,
-.blogAuthorButtons {
-  background:#f6f6f6;
-  border:1px #ddd solid;
-}
-.blogSideBarSection ol {
-  padding-left:2em;
 }
 
 /* ClassificationPlugin */

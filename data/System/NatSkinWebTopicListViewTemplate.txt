@@ -7,15 +7,14 @@
 <noautolink>
 %MAKEINDEX{
   "%TOPICLIST{
-    "($percntGETTOPICTITLE{\"$name\"}$percnt);$percntGETTOPICTITLE{\"$name\"}$percnt;$name"
+    "($percntGETTOPICTITLE{\"$name\" encode=\"encode\"}$percnt);$name"
     separator="$n"
   }%"
-  pattern="^(.+);(.+);(.+)$"
-  pattern="(.*);(.*);(.*)"
+  pattern="\((.*)\);(.*)"
   split="\n"
   cols="3"
   header="$anchors"
-  format="[[%BASEWEB%.$3][$2]]"
+  format="[[%BASEWEB%.$2][$1]]"
   sort="nocase"
   footer="$n$n<span class='foswikiAlert'>$count</span> topics found"
 }%

@@ -571,11 +571,24 @@ body .natSideBar .natMySideBarRedDot a:hover {
   float:right;
 }
 
-/* web menu settings */
+/* web menu */
 .natWebMenu,
 .natWebMenuContents {
   margin:0;
   padding:0;
+}
+.natWebMenu li a,
+.natWebMenu h2,
+.natWebMenu h3,
+.natWebMenu h4,
+.natWebMenu h5,
+.natWebMenu h6,
+.natWebMenu .sf-js-enabled {
+  margin:0;
+  padding:0;
+  list-style:none;
+  font-size:100%;
+  line-height:2.3076em; /* to be added to VARIABLE1 */
 }
 .natWebMenuContents {
   _display:none;
@@ -591,15 +604,86 @@ body .natSideBar .natMySideBarRedDot a:hover {
   padding:0;
   list-style:none;
 }
+.natWebMenu .sf-js-enabled,
 .natWebMenu ul li {
-  display:inline;
   float:left;
 }
-.natWebMenu ul a {
+.natWebMenu .natWebMenuContents {
+  float:left;
+  margin-bottom:-1px;
+}
+
+.natWebMenu li {
+  padding-left:1.0em;
+  padding-right:1.0em;
+}
+.natWebMenu li a {
+  margin:0em -1em;
+  padding:0em 1em;
+  display:block;
+  width:100%;
   text-decoration:none;
   float:left;
-  padding:0px 3px;
-  margin:0px 6px 0px -3px;
+}
+.natWebMenu li img {
+  margin-right:0.3em;
+  margin-left:-0.2em;
+}
+.natWebMenu li .hasSubMenu > a:hover,
+.natWebMenu li .hasSubMenu.sfHover > a,
+.natWebMenu li .hasSubMenu {
+  background-image:url(icons/simple-arrow.png);
+  background-repeat:no-repeat;
+  background-position:right center;
+}
+
+.natWebMenu ul ul {
+  position:absolute; 
+  top:-999em; 
+}
+
+.natWebMenu ul li li {
+  height:auto;
+}
+
+.natWebMenu ul li {
+  position:relative;
+  z-index:99; 
+}
+
+.natWebMenu ul li.sfHover {
+  z-index:999;
+}
+
+/* web menu, second tier */
+.natWebMenu ul li:hover ul, 
+.natWebMenu ul li.sfHover ul 
+{
+  left:-1px;
+  top:2.3076em; /* VARIABLE1 */
+}
+
+.natWebMenu ul ul li {
+  width:11.45em; /* to be added to VARIABLE2 */
+}
+
+/* web menu, third tier */
+
+.natWebMenu ul li.sfHover li ul {
+  top:-999em; 
+}
+.natWebMenu ul li li.sfHover ul {
+  left:13.45em; /* VARIABLE2 */
+  top:-1px; 
+}
+
+/* web menu, fourth tier */
+.natWebMenu ul li li.sfHover li ul {
+  top:-999em; 
+}
+.natWebMenu ul li li li.sfHover ul {
+  left:13.45em; /* VARIABLE2 */ 
+  top:-1px;
 }
 
 /* search */
@@ -1008,6 +1092,7 @@ a.natFeedIcon {
 .natTopicForm th {
   padding-left:3px;
   padding-right:3px;
+  text-align:left;
 }
 .natTopicFormLabel {
   margin-top:3px;

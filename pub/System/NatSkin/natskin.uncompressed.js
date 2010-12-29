@@ -33,6 +33,7 @@ jQuery(function($) {
   if (foswiki.getPreference("NatSkin.initWebMenu") == 'true') {
     var $container = $(".natWebMenuContents");
     $container.children("ul").superfish({
+      dropShadows: false, /* enabled using css3 */
       autoArrows: false
     }).find("li:has(ul)").addClass("hasSubMenu");
     $container.removeClass('natWebMenuHidden');

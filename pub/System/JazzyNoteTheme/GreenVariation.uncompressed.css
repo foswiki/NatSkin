@@ -45,26 +45,22 @@ a:hover,
 .natWebMenu .natWebMenuContents {
   margin-bottom:-1px;
 }
-ul.sf-js-enabled li {
+.natWebMenu li li {
   border-right:1px solid #bebebe;
 }
-ul.sf-js-enabled {
+.natWebMenu ul {
   border-left:1px solid #bebebe;
 }
-ul.sf-js-enabled li li a:hover.foswikiNewLink,
-ul.sf-js-enabled li li:hover, 
-ul.sf-js-enabled li li.sfHover,
-ul.sf-js-enabled li li a:focus, 
-ul.sf-js-enabled li li a:hover, 
-ul.sf-js-enabled li li a:active {
+
+.natWebMenu li.sfHover,
+.natWebMenu li.sfHover > a,
+.natWebMenu li .foswikiCurrentWebHomeLink:hover,
+.natWebMenu li a.current:hover,
+.natWebMenu li a:hover {
   background-color:#AD4F7C;
-  color:#fff;
 }
-ul.sf-js-enabled li.hasSubMenu {
+.natWebMenu .hasSubMenu {
   background-image:url(menucorner-black.gif);
-}
-ul.sf-js-enabled li li.hasSubMenu {
-  background-image:url(menucorner.gif);
 }
 .natSideBar,
 .natSideBar h3,

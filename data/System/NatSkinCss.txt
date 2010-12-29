@@ -60,7 +60,7 @@ the =natBottomBar= will be classified as =natBottomBarBoth=.
   view.print.nat.tmpl \
 | html body, see also =natBodyPlain=, =natBodyPrint=, =nat...Body= |
 | =natBodyContents= \
-| defaultbody.nat.tmpl, %BR% \
+| body.nat.tmpl, %BR% \
   view.plain.nat.tmpl, %BR% \
   view.print.nat.tmpl \
 | contains all page content inside the =natPageBox= |
@@ -71,42 +71,42 @@ the =natBottomBar= will be classified as =natBottomBarBoth=.
 | view.print.nat.tmpl \
 | using the print.nat skin, see also =natBody= |
 | =natBottomBar= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | bottom element below the =natLayoutTable= |
 | =natBottomBarBoth= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | =natBottomBarBoth= conditional classification: sidebar switched off |
 | =natBottomBarContents= \
-| defaultbody.nat.tmpl, %BR% \
+| body.nat.tmpl, %BR% \
   view.plain.nat.tmpl \
 | contents container inside the =natBottomBar= |
 | =natBottomBarLeft= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | =natBottomBarBoth= conditional classification: sidebar on the right |
 | =natBottomBarRight= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | =natBottomBarBoth= conditional classification: sidebar on the left |
 | =natBottomTopicActions= \
 | edit.nat.tmpl, %BR% \
   preview.nat.tmpl \
 | |
 | =natBoxBorderBottomLeft= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natBoxBorderBottomRight= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natBoxBorderLeft= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natBoxBorderRight= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natBoxBorderTopLeft= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natBoxBorderTopRight= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natBreadCrumbs= \
 | edit.nat.tmpl, %BR% \
@@ -145,7 +145,7 @@ the =natBottomBar= will be classified as =natBottomBarBoth=.
 | oops.nat.tmpl \
 | |
 | =natCopyRight= \
-| defaultbody.nat.tmpl, %BR% \
+| body.nat.tmpl, %BR% \
   view.plain.nat.tmpl \
 | |
 | =natCurrentAction= \
@@ -335,7 +335,7 @@ the =natBottomBar= will be classified as =natBottomBarBoth=.
   oopssoftwareerr.nat.tmpl \
 | |
 | =natFeedIcon= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natFormAction= \
 | edit.nat.tmpl, %BR% \
@@ -353,10 +353,10 @@ the =natBottomBar= will be classified as =natBottomBarBoth=.
   attachnew.nat.tmpl \
 | |
 | =natHeaderArt= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natLayoutTable= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natLogonForm= \
 | oopslogonbase.nat.tmpl \
@@ -374,48 +374,48 @@ the =natBottomBar= will be classified as =natBottomBarBoth=.
 | oopslogonbase.nat.tmpl \
 | |
 | =natMain= \
-| defaultbody.nat.tmpl, %BR% \
+| body.nat.tmpl, %BR% \
   view.plain.nat.tmpl, %BR% \
   view.print.nat.tmpl \
 | |
 | =natMainContents= \
-| defaultbody.nat.tmpl, %BR% \
+| body.nat.tmpl, %BR% \
   view.plain.nat.tmpl, %BR% \
   view.print.nat.tmpl \
 | |
 | =natMainFooter= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natMainFooterContents= \
-| defaultbody.nat.tmpl, %BR% \
+| body.nat.tmpl, %BR% \
   view.plain.nat.tmpl, %BR% \
   view.print.nat.tmpl \
 | |
 | =natMainFooterLeft= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natMainFooterRight= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natMainHeaderContents= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natMainLeft= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natMainRight= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natMiddle= \
-| defaultbody.nat.tmpl, %BR% \
+| body.nat.tmpl, %BR% \
   view.plain.nat.tmpl, %BR% \
   view.print.nat.tmpl \
 | |
 | =natMiddleLeft= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natMiddleRight= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natMoveAttachmentBody= | moveattachment.nat.tmpl | html body while moving attachments |
 | =natNotes= \
@@ -469,7 +469,7 @@ the =natBottomBar= will be classified as =natBottomBarBoth=.
 | oops.nat.tmpl \
 | |
 | =natPageBox= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natPreviewAction= \
 | edit.nat.tmpl, %BR% \
@@ -499,7 +499,7 @@ the =natBottomBar= will be classified as =natBottomBarBoth=.
 | =natSearchBody= | searchbase.nat.tmpl | html body in search action |
 | =natSearchBox= \
 | defaultsidebar.nat.tmpl, %BR% \
-  defaulttopbar.nat.tmpl \
+  topbar.nat.tmpl \
 | |
 | =natSearchBox= \
 | searchbox.nat.tmpl \
@@ -545,7 +545,7 @@ the =natBottomBar= will be classified as =natBottomBarBoth=.
 | |
 | =natSep= \
 | changes.nat.tmpl, %BR% \
-  defaulttopbar.nat.tmpl, %BR% \
+  topbar.nat.tmpl, %BR% \
   edit.nat.tmpl, %BR% \
   moveattachment.nat.tmpl, %BR% \
   preview.nat.tmpl, %BR% \
@@ -556,16 +556,16 @@ the =natBottomBar= will be classified as =natBottomBarBoth=.
 | |
 | =natSettingsBody= | settings.nat.tmpl | html body during settings action |
 | =natSideBar= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natSideBarContents= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natSideBarLeft= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natSideBarRight= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natSideBarSearch= \
 | searchbox.nat.tmpl \
@@ -580,28 +580,28 @@ the =natBottomBar= will be classified as =natBottomBarBoth=.
   preview.nat.tmpl \
 | |
 | =natSyndicate= \
-| defaultbody.nat.tmpl \
+| body.nat.tmpl \
 | |
 | =natTopBar= \
-| defaulttopbar.nat.tmpl \
+| topbar.nat.tmpl \
 | |
 | =natTopBarSizer= \
-| defaulttopbar.nat.tmpl \
+| topbar.nat.tmpl \
 | |
 | =natTopLeft= \
-| defaulttopbar.nat.tmpl \
+| topbar.nat.tmpl \
 | |
 | =natTopLeftContents= \
-| defaulttopbar.nat.tmpl \
+| topbar.nat.tmpl \
 | |
 | =natTopRight= \
-| defaulttopbar.nat.tmpl \
+| topbar.nat.tmpl \
 | |
 | =natTopRightContents= \
-| defaulttopbar.nat.tmpl \
+| topbar.nat.tmpl \
 | |
 | =natTopicActions= \
-| defaulttopbar.nat.tmpl \
+| topbar.nat.tmpl \
 | |
 | =natTopicAttachments= \
 | attach.nat.tmpl, %BR% \
@@ -633,16 +633,16 @@ the =natBottomBar= will be classified as =natBottomBarBoth=.
 | |
 | =natViewBody= | view.nat.tmpl | html body for view action |
 | =natWebButtons= \
-| defaulttopbar.nat.tmpl \
+| topbar.nat.tmpl \
 | |
 | =natWebButtonsContents= \
-| defaulttopbar.nat.tmpl \
+| topbar.nat.tmpl \
 | |
 | =natWebSlogan= \
-| defaulttopbar.nat.tmpl \
+| topbar.nat.tmpl \
 | |
 | =natWebTitle= \
-| defaulttopbar.nat.tmpl \
+| topbar.nat.tmpl \
 | |
 
 <!-- extracted 157 classes in 63 files -->
