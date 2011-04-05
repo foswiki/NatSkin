@@ -159,13 +159,6 @@ pre {
   overflow:visible !important;
 }
 
-/* BlogPlugin */
-.blogReply,
-.blogScroll,
-.blogAddComment {
-  display:none;
-}
-
 /* RedDotPlugin */
 .redDot {
   display:none;

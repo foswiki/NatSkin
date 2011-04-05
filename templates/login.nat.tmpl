@@ -1,12 +1,12 @@
 %TMPL:INCLUDE{"page"}%<!-- template: login.nat.tmpl -->
-%TMPL:INCLUDE{"loginbase"}%<!-- loginbase// -->
-%TMPL:INCLUDE{"loginbody"}%<!-- loginbody// -->
-%TMPL:INCLUDE{"logintopicactions"}%<!-- logintopicactions// -->
-%TMPL:INCLUDE{"loginsidebar"}%<!-- loginsidebar// -->
+%TMPL:INCLUDE{"loginbase"}%<!-- -->
+%TMPL:INCLUDE{"loginbody"}%<!-- -->
+%TMPL:INCLUDE{"logintopicactions"}%<!-- -->
+%TMPL:INCLUDE{"loginsidebar"}%<!-- -->
 
 %{################################################################################ }%
 %TMPL:DEF{"title"}%Login - %WIKITOOLNAME%%TMPL:END%
-%TMPL:DEF{"contenttitle"}%<h1 class="natLoginHeading"><span>%TMPL:P{"heading"}%</span></h1>%TMPL:END%
+%TMPL:DEF{"contenttitle"}%<h1 class="natLoginHeading">%TMPL:P{"heading"}%</h1>%TMPL:END%
 %TMPL:DEF{"bodyclass"}%natLoginBody%TMPL:END%
 %TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
 %TMPL:DEF{"LOG_IN_BANNER"}%%MAKETEXT{"Welcome, please login:"}%%TMPL:END%
@@ -22,38 +22,36 @@
 }%%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"message"}%<!-- message -->
+%TMPL:DEF{"message"}%<!-- -->
 <h2 id="natLogonBanner">%BANNER%</h2>
 <div class="foswikiFormSteps">
-%NOTE%<!-- note// -->
-%TMPL:P{"login"}%<!-- login// -->
-%TMPL:P{"seealso"}%<!-- seealso// -->
+%NOTE%<!-- -->
+%TMPL:P{"login"}%<!-- -->
+%TMPL:P{"seealso"}%<!-- -->
 </div>
-<!-- //message-->%TMPL:END%
+<!-- -->%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"content"}%<!-- content -->
+%TMPL:DEF{"content"}%<!-- -->
 <div class="natLogin">
-<div class="natLoginMessage">
-%TMPL:P{"contenttitle"}%<!-- contenttitle// -->
-%TMPL:P{"message"}%<!-- message// -->
-%TMPL:P{"contact"}%<!-- contact// -->
+%TMPL:P{"contenttitle"}%<!-- -->
+%TMPL:P{"message"}%<!-- -->
+%TMPL:P{"contact"}%<!-- -->
 </div>
-</div> 
-<!-- //content -->%TMPL:END%
+<!-- -->%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"contact"}%<!-- contact -->
+%TMPL:DEF{"contact"}%<!-- -->
 <p class="foswikiGrayText natContact"> 
 %MAKETEXT{"Contact [_1] if you have any questions." args="<a href='mailto:%WIKIWEBMASTER%?subject=%ENCODE{\"%WIKITOOLNAME%: Request for support\"}%&&body=%ENCODE{\"Hello, I have got a question ...\"}%'>%WIKIWEBMASTER%</a>"}%
 </p> 
-<!-- //contact -->%TMPL:END%
+<!-- -->%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"seealso"}%<!-- seealso -->
+%TMPL:DEF{"seealso"}%<!-- -->
 
 <div class="foswikiFormStep foswikiFormLast">
 [[%SYSTEMWEB%.ResetPassword][%MAKETEXT{"Did you forget your password?"}%]] %BR%
 [[%SYSTEMWEB%.UserRegistration][%MAKETEXT{"Do you want to become a registered user?"}%]]
 </div>
-<!-- //seealso -->%TMPL:END%
+<!-- -->%TMPL:END%

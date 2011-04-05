@@ -23,7 +23,7 @@ jQuery(function($) {
 
   /* move revinfo */
   if (foswiki.getPreference("NatSkin.fixRevisionPosition") == 'true') {
-    var target = $(".natMain h1:first");
+    var target = $(".natMainContents h1:first");
     if (target.length) { 
       $(".natRevision").remove().insertAfter(target);
     }
@@ -34,8 +34,23 @@ jQuery(function($) {
     var $container = $(".natWebMenuContents");
     $container.children("ul").superfish({
       dropShadows: false, /* enabled using css3 */
-      autoArrows: false
-    }).find("li:has(ul)").addClass("hasSubMenu");
+      autoArrows: false,
+      onBeforeShow: function() {
+        var $this = $(this);
+        if ($this.is(".ajaxMenu")) {
+          var opts = $.extend({}, $this.metadata());
+          if (opts.url) {
+            $this.load(opts.url, function() {
+              $this.removeClass("ajaxMenu");
+              $this.parent().removeClass("hasAjaxMenu");
+            });
+          }
+        }
+      }
+    })
+    .find("li:has(ul)").addClass("hasSubMenu")
+    .find("li:has(.ajaxMenu)").addClass("hasAjaxMenu");
+
     $container.removeClass('natWebMenuHidden');
     if ($.browser.msie) {
       $container.css('display', 'block');
@@ -50,49 +65,33 @@ jQuery(function($) {
   }
 
   if (foswiki.getPreference("NatSkin.initTopicActions") == 'true') { // topicaction tooltips 
-    var $tipContainer = $("#natTopicActionTooltip");
-    var $topicActions = $("#natTopicActions");
-    //$tipContainer.width($topicActions.width());
-    //$tipContainer.css('margin-bottom', $topicActions.height());
-    $topicActions.hover(
-      function() { 
-        $tipContainer.fadeIn('slow').css('display', 'inline');
-      },
-      function() { 
-        $tipContainer.html('').css('display', 'none');
-      }
-    );
-    $topicActions.find("a").each(function() {
-      var $this = $(this);
-      var tip = $this.text() || $this.attr('title');
-      $this.hover(
-        function() { 
-          $tipContainer.html(tip);
-        },
-        function() { 
-          //
-        }
-      );
+    $(".natHistoryTopicActions .natTopicAction").each(function() {
+      var $this = $(this),
+          tip = $this.find("span.natTopicActionShortLabel").text();
+      $this.attr("title", tip);
     });
   }
 
-  if (true) { // remove empty attachment comments
-    $("#natTopicAttachments .natAttachmentComment").livequery(function(){
-      var text = $(this).text();
-      //alert("text='"+text+"' char="+text.charCodeAt(0));
-      if ((text.length == 1 && text.charCodeAt(0) == 160)) {
-        $(this).hide();
-      }
-    });
-  }
+  // init more actions menu
+  $(".natMoreActionsMenu:not(.natInitedMoreActionsMenu)").livequery(function() {
+    var $this = $(this), opts = $.extend({}, $this.metadata());
+    $this.addClass("natInitedMoreActionsMenu").superfish(opts);
+  });
 
-  if (true) { // add foswikiFormLast to last form step
-    $(".foswikiFormSteps").livequery(function() {
-      var $this = $(this);
-      $this.children(".foswikiFormStep:last").addClass("foswikiFormLast");
-      $this.children(".foswikiFormStep:first").addClass("foswikiFormFirst");
-    });
-  }
+  // remove empty attachment comments
+  $("#natTopicAttachments .natAttachmentComment").livequery(function(){
+    var text = $(this).text();
+    //alert("text='"+text+"' char="+text.charCodeAt(0));
+    if ((text.length == 1 && text.charCodeAt(0) == 160)) {
+      $(this).hide();
+    }
+  });
+
+  $(".foswikiFormSteps").livequery(function() {
+    var $this = $(this);
+    $this.children(".foswikiFormStep:last").addClass("foswikiFormLast");
+    $this.children(".foswikiFormStep:first").addClass("foswikiFormFirst");
+  });
 
   if (false) { // add foswikiLast to last row of a foswikiTable/foswikiLayoutTable/foswikiNullTable
     $(".foswikiLayoutTable, .foswikiTable, .foswikiNullTable").livequery(function() {
@@ -205,14 +204,13 @@ jQuery(function($) {
     });
     foswiki.openDialog("#natPreviewRaw", {
       persist:false, 
-      close:false, 
       containerCss: {
         width:800
       },
       onShow: function(dialog) { 
         var web = foswiki.getPreference("WEB"),
             topic = foswiki.getPreference("TOPIC"),
-            url = foswiki.getPreference("SCRIPTURL")+"/"+ 
+            url = foswiki.getPreference("SCRIPTURL")+"/view"+"/"+
                   web+"/"+topic;
 
         $.unblockUI();
@@ -239,5 +237,12 @@ jQuery(function($) {
     }); 
     return false; 
   }); 
+
+  // replace hr with a div.hr on ie7
+  if ($.browser.msie && $.browser.version == 7.0) {
+    $("hr").livequery(function() {
+      $(this).replaceWith("<div class='hr' />");
+    });
+  }
 
 });

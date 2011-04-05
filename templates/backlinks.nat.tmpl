@@ -1,0 +1,91 @@
+%TMPL:INCLUDE{"foswiki"}%<!-- template: backlinks.nat.tmpl -->
+%TMPL:DEF{"dialog"}%<div class="foswikiDialog">
+%TMPL:P{"content"}%<!-- -->
+%TMPL:P{"backlinksjavascript"}%<!-- -->
+</div>%TMPL:END%
+
+%TMPL:DEF{"content"}%<!-- -->
+<div class="foswikiFormSteps natBacklinks">
+  <h2 class="foswikiDialogTitle">%MAKETEXT{"Backlinks to [_1]" args="%BASEWEB%.%BASETOPIC%"}%</h2>
+  <div class="foswikiFormStep natBacklinksContainer">
+  </div>
+  <hr />
+  <div class="foswikiFormStep">
+    %BUTTON{"%MAKETEXT{"Close"}%" class="jqSimpleModalCancel" icon="cross"}%
+    <label style="float:left"><input type="checkbox" name="searchallwebs" class="foswikiCheckbox natBacklinksSearchAll"> %MAKETEXT{"Search all webs"}%</label>
+    %CLEAR%
+  </div>
+</div>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"searchweb"}%%MAKEINDEX{
+  "%SEARCH{
+    web="%BASEWEB%"
+    search="%BASETOPIC%([^A-Za-z0-9]|$)|%SPACEOUT{"%BASETOPIC%" separator=" *"}%([^A-Za-z0-9]|$)|%BASEWEB%.%BASETOPIC%([^A-Za-z0-9]|$)" 
+    type="regex" 
+    scope="text" 
+    excludetopic="%BASETOPIC%"
+    nonoise="on" 
+    separator="$n"
+    format="($percntGETTOPICTITLE{\"$web.$topic\" encode=\"encode\"}$percnt);$web.$topic"
+  }%"
+  pattern="\((.*)\);(.*)"
+  split="\n"
+  cols="3"
+  header="%MAKETEXT{"[_1] topics found" args="<span class='foswikiAlert'>$count</span>"}%$n$n $percntCALC{\"$SET(found,1)\"}$percnt"
+  format="[[$2][$1]]"
+  sort="nocase"
+}%<!-- -->
+%IF{"'%CALC{"$GET(found)"}%'=''"
+  then="<span class='foswikiAlert'>%MAKETEXT{"nothing found"}%</span>"
+}%<!-- -->%TMPL:END%
+
+%TMPL:DEF{"searchallwebs"}%%MAKEINDEX{
+  "%SEARCH{
+      web="%BASEWEB%"
+      search="%BASETOPIC%([^A-Za-z0-9]|$)|%SPACEOUT{"%BASETOPIC%" separator=" *"}%([^A-Za-z0-9]|$)|%BASEWEB%.%BASETOPIC%([^A-Za-z0-9]|$)" 
+      type="regex" 
+      scope="text" 
+      excludetopic="%BASETOPIC%"
+      nonoise="on" 
+      separator="$n"
+      format="($percntGETTOPICTITLE{\"$web.$topic\" encode=\"encode\"}$percnt);$web.$topic"
+    }% 
+    %SEARCH{
+      web="all, -%TRASHWEB%, -%BASEWEB%"
+      search="%BASEWEB%.%BASETOPIC%([^A-Za-z0-9]|$)|%BASEWEB%.%SPACEOUT{"%BASETOPIC%" separator=" *"}%([^A-Za-z0-9]|$)" 
+      type="regex" 
+      scope="text" 
+      excludetopic="%BASEWEB%.%BASETOPIC%"
+      nonoise="on" 
+      separator="$n"
+      format="($percntGETTOPICTITLE{\"$web.$topic\" encode=\"encode\"}$percnt);$web.$topic"
+    }%"
+  pattern="\((.*)\);(.*)"
+  split="\n"
+  cols="3"
+  header="%MAKETEXT{"[_1] topics found" args="<span class='foswikiAlert'>$count</span>"}%$n$n $percntCALC{\"$SET(found,1)\"}$percnt"
+  format="[[$2][$1]]"
+  sort="nocase"
+}%<!-- -->
+%IF{"'%CALC{"$GET(found)"}%'=''"
+  then="<span class='foswikiAlert'>%MAKETEXT{"nothing found"}%</span>"
+}%<!-- -->%TMPL:END%
+
+%TMPL:DEF{"backlinksjavascript"}%<literal><script>
+jQuery(function($) {
+  var url = "%SCRIPTURL{"rest"}%/RenderPlugin/template?name=backlinks;render=on;topic=%BASEWEB%.%BASETOPIC%",
+      $container = $(".natBacklinksContainer");
+
+  $(".natBacklinksSearchAll").change(function() {
+    $container.html('%ICON{"processing"}%');
+    if($(this).is(":checked")) {
+      $container.load(url+";expand=searchallwebs");
+    } else {
+      $container.load(url+";expand=searchweb");
+    }
+  });
+
+  $container.html('%ICON{"processing"}%').load(url+";expand=searchweb");
+});
+</script></literal>%TMPL:END%

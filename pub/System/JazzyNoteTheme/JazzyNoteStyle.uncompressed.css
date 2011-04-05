@@ -2,7 +2,7 @@
 /* html elements */
 /* see http://drewish.com/tools/vertical-rhythm */
 .natHtml {
-  background-color:white;
+  background-color:#fff;
   background-image:url(GrayBlend.gif);
   background-repeat:repeat-x;
   border:0px;
@@ -13,6 +13,9 @@
   font-family: Arial, 'Liberation Sans', FreeSans, sans-serif;
   font-size:13px;
   line-height:18px;
+}
+.natLoginBody {
+  background:#fff;
 }
 .foswikiEmulatedLink,
 a {
@@ -34,7 +37,7 @@ embed, object {
   z-index: 0;
 }
 
-
+.hr,
 hr {
   border-bottom:1px solid #ddd;
 }
@@ -52,6 +55,7 @@ h6 {
   color:#111;
 }
 
+h1 .foswikiEmulatedLink,
 h1 a {
   color:#222;
   text-decoration:none;
@@ -81,11 +85,6 @@ li li {
   margin:0em 0em 0em 0.7em;
 }
 */
-td ul {
-  margin-top:0px;
-  margin-bottom:0px;
-  margin-left:2em;
-}
 
 dl dd {
   margin:0em 0em 1.3846em 3.0769em;
@@ -101,7 +100,7 @@ dl dd {
   margin:0em 1em;
 }
 .natMiddle {
-  background:white;
+  background:#fff;
 }
 .natMain {
   background-image:url(button-bg.png);
@@ -218,6 +217,24 @@ dl dd {
   height:32px;
 }
 
+.natMoreActionsMenu h3 {
+  font-weight:bold;
+  background-color:#eee;
+  color:#444;
+}
+
+.natMoreActionsMenu ul {
+  border:1px solid #c2c4c4;
+  -moz-box-shadow:2px 2px 2px rgba(128,128,128,0.2);
+  -webkit-box-shadow:2px 2px 2px rgba(128,128,128,0.2);
+  box-shadow:2px 2px 2px rgba(128,128,128,0.2);
+}
+.natTopicActions .natMoreActionsMenu ul li a:hover,
+.natTopicActions .natMoreActionsMenu ul li .natTopicAction:hover,
+.natTopicActions .natMoreActionsMenu ul li .natTopicAction:hover span {
+  background-color:#0055b5;
+  color:#fff;
+}
 .natWebMenu li {
   border-right:1px solid #E1EAFA;
 }
@@ -232,6 +249,9 @@ dl dd {
   -webkit-box-shadow:2px 2px 2px rgba(128,128,128,0.2);
   box-shadow:2px 2px 2px rgba(128,128,128,0.2);
 }
+.natMoreActionsMenu li .hr,
+.natMoreActionsMenu li hr,
+.natWebMenu li .hr,
 .natWebMenu li hr {
   border-bottom:1px solid #c2c4c4;
   margin:0.5em -1em;
@@ -252,6 +272,8 @@ dl dd {
   background-color:#E9E9EB;
   background-color:#fff;
 }
+.natMoreActionsMenu li,
+.natMoreActionsMenu li a,
 .natWebMenu li li,
 .natWebMenu li li a,
 .natWebMenu li li a.foswikiNewLink {
@@ -276,6 +298,16 @@ dl dd {
   background-color:#0055b5;
   color:#fff;
 }
+/*
+.natWebMenu li li.sfHover,
+.natWebMenu li li.sfHover > a,
+.natWebMenu li li .foswikiCurrentWebHomeLink:hover,
+.natWebMenu li li a.current:hover,
+.natWebMenu li li a:hover {
+  background-color:#eee;
+  color:#444;
+}
+*/
 
 .natWebMenu .hasSubMenu {
   background-image:url(menucorner.gif);
@@ -298,24 +330,27 @@ dl dd {
   background-color:#fff;
   border:1px solid #BDBEC5;
 }
-#simplemodal-container .foswikiFormSteps h2 {
+#simplemodal-container h2.foswikiDialogTitle {
   background:#eee;
   /*color:#555;*/
   margin:-1.0625em -1.125em 1.125em -1.125em; /* 17px 18px */
-  padding:1.0625em 1.125em; /* 17px 18px */
+  padding:1em 1.125em; /* 16px 18px */
 }
 #simplemodal-container .foswikiFormSteps .jqTabPane ul.jqTabGroup li.current ,
 #simplemodal-container .foswikiFormSteps .jqTabContents {
   background-color:#fff;
 }
+#simplemodal-container .hr,
 #simplemodal-container hr {
   border-color:#ddd;
 }
 
 
 /* login */
-.natLogin h1 {
+.natLogin h1,
+.natLogin h2 {
   border:0px;
+  margin-top:0px;
 }
 
 .natLogin .foswikiFormSteps {
@@ -323,9 +358,11 @@ dl dd {
   background-image:url(login_keys.png);
   background-repeat:no-repeat;
   background-position:1.3em 0em;
-  border-top:0px;
-  border-bottom:1px solid #d6d6d6;
   margin:0px;
+  border:0px;
+  border-left:2px solid #d6d6d6;
+  border-right:2px solid #d6d6d6;
+  border-bottom:2px solid #d6d6d6;
 }
 #natLogonBanner {
   background:#e5e5e5;
@@ -333,7 +370,10 @@ dl dd {
   font-weight:bold;
   margin:0px;
   padding:13px 19px;
-  border-bottom:2px solid #e0e0e0;
+  border-top:2px solid #d6d6d6;
+  border-left:2px solid #d6d6d6;
+  border-right:2px solid #d6d6d6;
+  border-bottom:1px solid #d6d6d6;
 }
 .natLogin .foswikiFormStep {
   margin-left:12em;
@@ -341,7 +381,7 @@ dl dd {
 
 .natLogin #username,
 .natLogin #password {
-  width:160px; /* SMELL */
+  width:13em;
 }
 
 /* base styles */
@@ -408,7 +448,7 @@ dl dd {
   font-weight:bold;
   text-decoration:none;
   background:#9CBAEF;
-  color:white;
+  color:#fff;
 }
 .natBody .atpDef th a, 
 .natBody .atpSearch th a, 
@@ -468,6 +508,9 @@ dl dd {
 .foswikiFormSteps .foswikiTable th {
   border:0px;
 }
+.foswikiLayoutTable th {
+  padding-top:5px;
+}
 .foswikiFormTable,
 .foswikiPageForm .foswikiTable,
 .foswikiFormSteps .foswikiTable {
@@ -504,6 +547,7 @@ dl dd {
 .foswikiFormTable td {
   background-color:#FEF8EB;
 }
+
 /* diff */
 .foswikiDiffTable {
   border:1px solid #ddd;
@@ -521,6 +565,10 @@ dl dd {
  background:#FFD7D7;
 }
 
+/* history */
+.natHistoryTable .selected {
+  background-color:#EDE3CE;
+}
 
 /* forms */
 input[type=password],
@@ -533,7 +581,8 @@ input[type=text],
   background:#fefefe url(input-bg.png) no-repeat -1px -1px;
   padding:4px 4px 3px;
   font-size:0.923em;
-  -moz-border-radius:2px;
+          border-radius:2px;
+     -moz-border-radius:2px;
   -webkit-border-radius:2px;
   _background:#fefefe; /* IE6 */
 }
@@ -604,6 +653,7 @@ fieldset .foswikiFormSteps {
   border:0px;
 }
 
+.foswikiFormSteps .hr,
 .foswikiFormSteps hr {
   margin:1.3846em -1.3076em;
 }
@@ -742,7 +792,7 @@ td .foswikiFormDescription {
 .natTopRight,
 .natTopLeft a,
 .natTopRight a  {
-  color:white;
+  color:#fff;
 }
 .natTopLeft.natTopRight {
   padding:0px;
@@ -798,7 +848,7 @@ td .foswikiFormDescription {
 .natEditBody .natMainFooterContents {
   margin:0px;
 }
-.natEditBody h1 {
+.natEditTitle {
   margin-top:1em; 
   font-size: 1.3846em; /* 18px */ 
   line-height: 1em; /* 18px */ 
@@ -812,11 +862,9 @@ td .foswikiFormDescription {
 }
 
 /* topic actions */
-.natTopicActions {
-}
 .natGreeter {
   text-align:right;
-  padding:0em 1em 2px;
+  padding:0em 1em 3px;
 }
 .natGreeter a {
   color:#444;
@@ -824,10 +872,12 @@ td .foswikiFormDescription {
 }
 
 .natUserAction {
-  font-size:95%;
+  font-size:0.923em; /* 12px */
+  padding:3px;
+  margin:0px -2px;
 }
 .natUserAction img {
-  width:1.2955em; /* 16px */
+  width:1.3333em; /* 16px */
 }
 .natUserAction span {
   padding-left:0.1619em; /* 2px */
@@ -842,18 +892,45 @@ td .foswikiFormDescription {
   color:#cfcfcf;
 }
 .natTopicActions a:hover,
-.natTopicAction,
-.natTopicAction:hover {
-  color:black;
+.natTopicActions .natTopicAction,
+.natTopicActions .natTopicAction:hover {
   text-decoration:none;
 }
-.natTopicAction:hover,
-.natTopicActions a:hover {
-  background-color:#efefef;
+.natTopicActions .natTopicAction span {
+  color:#444;
 }
+
 .natDisabledTopicAction:hover,
 .natDisabledTopicActions a:hover {
   background-color:transparent;
+}
+
+.natTopicActions .natTopicAction:hover {
+  background-color:#eee;
+  border:1px solid #c2c4c4;
+
+  -webkit-border-radius:2px;
+     -moz-border-radius:2px;
+          border-radius:2px;
+
+  /*
+  -webkit-box-shadow:2px 2px 2px rgba(128,128,128,0.2);
+     -moz-box-shadow:2px 2px 2px rgba(128,128,128,0.2);
+          box-shadow:2px 2px 2px rgba(128,128,128,0.2);
+  */
+}
+.natTopicActions .sfHover .natMoreActionsTopicAction {
+  -webkit-border-radius:2px 2px 0px 2px;
+     -moz-border-radius:2px 2px 0px 2px;
+          border-radius:2px 2px 0px 2px;
+
+  -webkit-box-shadow:2px 0px 2px rgba(128,128,128,0.2);
+     -moz-box-shadow:2px 0px 2px rgba(128,128,128,0.2);
+          box-shadow:2px 0px 2px rgba(128,128,128,0.2);
+
+  border:1px solid #c2c4c4;
+  border-bottom:0px;
+  position:relative;
 }
 
 /* sidebar */
@@ -865,6 +942,7 @@ td .foswikiFormDescription {
   /* ie 6 */
   _background-image:none;
 }
+.natSideBar a span,
 .natSideBar a {
   text-decoration:none;
 }
@@ -890,7 +968,7 @@ td .foswikiFormDescription {
   margin:0em -1em 0em;
   padding:0.333em 1em;
   background-color:#62B000;
-  color:white;
+  color:#fff;
   font-size:100%;
   font-weight:bold;
   /* text-shadow:0px 1px #6CC200; */
@@ -925,13 +1003,12 @@ td .foswikiFormDescription {
 }
 
 .natSideBar p {
-  border-bottom:1px solid white;
   margin:0em -1em;
   padding:0em 1em;
 }
 
 .natSideBar p {
-  padding:1em;
+  padding:5px 1em 6px;
 }
 
 .natSideBar ul {
@@ -1124,22 +1201,6 @@ h1 .foswikiTopicSummary {
 .natTopicAttachments a {
   text-decoration:none;
 }
-.natTopicAttachments .natDisabledTopicAction:hover,
-.natTopicAttachments .natViewTopicAction:hover,
-.natTopicAttachments .natNewTopicAction:hover,
-.natTopicAttachments .natEditTopicInfo:hover,
-.natTopicAttachments .natAttachTopicAction:hover,
-.natTopicAttachments .natPrintTopicAction:hover,
-.natTopicAttachments .natPdfTopicAction:hover,
-.natTopicAttachments .natDiffTopicAction:hover,
-.natTopicAttachments .natRawTopicAction:hover,
-.natTopicAttachments .natDeleteTopicAction:hover,
-.natTopicAttachments .natMoveTopicAction:hover,
-.natTopicAttachments .natMoreTopicAction:hover,
-.natTopicAttachments .natHelpTopicAction:hover,
-.natTopicAttachments .natTopicActions a:hover {
-  background-color:#FEE8B8;
-}
 
 /* search tables */
 .natSearchRevision a {
@@ -1269,7 +1330,7 @@ td.mceToolbarTop {
   font-family: inherit;
 }
 .ui-corner-bottom,
-.ui-corner-all { -moz-border-radius: 0px; -webkit-border-radius: 0px; }
+.ui-corner-all { -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px}
 
 .ui-widget-content {
   border-color:#dedede;
@@ -1496,7 +1557,6 @@ a:hover {
     text-align:left;
     page-break-after:always;
   }
-  .natRevision,
   .natTopicAttachments,
   .foswikiTocTitle {
     display:none;

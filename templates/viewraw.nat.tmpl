@@ -1,0 +1,42 @@
+%TMPL:INCLUDE{"foswiki"}%<!-- template: viewraw.nat.tmpl -->
+%TMPL:DEF{"dialog"}%<div class="foswikiDialog">
+%TMPL:P{"content"}%<!-- -->
+%TMPL:P{"viewrawjavascript"}%<!-- -->
+</div>%TMPL:END%
+
+%TMPL:DEF{"content"}% %TMPL:P{"viewrawform"}%%TMPL:END%
+
+%TMPL:DEF{"viewrawform"}%<!-- -->
+<div id="natPreviewRaw" class="foswikiDialog foswikiFormSteps">
+  <h2 class="foswikiDialogTitle">%MAKETEXT{"Wiki markup of [_1]" args="%BASEWEB%.%BASETOPIC%"}%</h2>
+  <div class="foswikiFormStep">
+    <textarea class="foswikiTextarea" rows="20" cols="80" style="width:99%" readonly></textarea>
+  </div>
+  <div class="foswikiFormStep">
+    %BUTTON{"%MAKETEXT{"Close"}%" class="jqSimpleModalCancel" icon="cross"}% 
+    %BUTTON{"%MAKETEXT{"Open in separate window"}%" href="%SCRIPTURL{"view"}%/%BASEWEB%/%BASETOPIC%?raw=text&skin=text&contenttype=text/plain" icon="application_double" class="simple separate foswikiRight"}%
+    %CLEAR%
+  </div>
+</div>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"viewrawjavascript"}%<!-- -->
+<literal><script>
+jQuery(function($) {
+  $.ajax({
+    url: '%SCRIPTURL{"view"}%/%BASEWEB%/%BASETOPIC%',
+    data: {
+      raw:"text",
+      skin:"text",
+      rev:%URLPARAM{"rev"}%
+    },
+    dataType:"text",
+    success: function(data, status, xhr) {
+      var $textarea = $("#natPreviewRaw .foswikiTextarea");
+      $textarea.text(data);
+      setTimeout(function() { $textarea.focus(); }, 100);
+    }
+  });
+});
+</script></literal>
+<!-- -->%TMPL:END%

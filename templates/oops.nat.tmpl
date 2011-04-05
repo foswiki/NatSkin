@@ -1,7 +1,7 @@
 %TMPL:INCLUDE{"page"}%<!-- template: oops.nat.tmpl -->
-%TMPL:INCLUDE{"oopsbody"}%<!-- ooppsbody// -->
-%TMPL:INCLUDE{"oopstopicactions"}%<!-- oopstopicactions// -->
-%TMPL:INCLUDE{"oopssidebar"}%<!-- oopssidebar// -->
+%TMPL:INCLUDE{"oopsbody"}%<!-- -->
+%TMPL:INCLUDE{"oopstopicactions"}%<!-- -->
+%TMPL:INCLUDE{"oopssidebar"}%<!--  -->
 
 %{ ################################################################################ }%
 %TMPL:DEF{"bodyclass"}%natOopsBody%TMPL:END%
@@ -11,27 +11,27 @@
 %TMPL:DEF{"headingstyle"}%natOopsHeading%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"contact"}%<!-- contact -->
+%TMPL:DEF{"contact"}%<!-- -->
 <hr />
 %MAKETEXT{"Contact [_1] if you have any questions." args="<a href=\"mailto:%WIKIWEBMASTER%?subject=%ENCODE{\"%WIKITOOLNAME%: Request for support\"}%&&body=%ENCODE{\"Hello, I have got a question ...\"}%\">%WIKIWEBMASTER%</a>"}%
-<!-- //contact -->%TMPL:END%
+<!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"goback"}%<!-- goback -->
-%MAKETEXT{"Please go <a href=\"javascript:history.back()\">back</a> in your browser and try again."}%
+%TMPL:DEF{"goback"}%<!-- -->
+%MAKETEXT{"Please go <a href='javascript:history.back()'>back</a> in your browser and try again."}%
 
 <form class="natOopsButtons" name="ButtonBox" action="%WIKILOGOURL%">
   %BUTTON{"%MAKETEXT{"Retry"}%" icon="tick" onclick="history.back()"}%
   %BUTTON{"%MAKETEXT{"Abort"}%" target="%IF{"not '%target%' ~ '%*'" then="%target%" else="%WIKILOGOURL%"}%" icon="cross"}%
   %CLEAR%
 </form> 
-<!-- //goback -->%TMPL:END%
+<!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"content"}%<!-- content -->
-%TMPL:P{"contenttitle"}%<!-- contenttitle// -->
-%TMPL:P{"message"}%<!-- message// -->
+%TMPL:DEF{"content"}%<!-- -->
+%TMPL:P{"contenttitle"}%<!-- -->
+%TMPL:P{"message"}%<!-- -->
 <div class="natContact"> 
   %TMPL:P{"contact"}% 
 </div>
-<!-- // content -->%TMPL:END%
+<!-- -->%TMPL:END%

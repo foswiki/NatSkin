@@ -1,0 +1,112 @@
+%TMPL:INCLUDE{"oops"}%<!-- template: history.nat.tmpl -->
+
+%{ ################################################################################ }%
+%TMPL:DEF{"dialog"}%<div class="foswikiDialog">
+%TMPL:P{"formstart"}%<!-- -->
+<h2 class="foswikiDialogTitle">%TMPL:P{"heading"}%</h2>
+%TMPL:P{"revtable"}%<!-- -->
+%TMPL:P{"formend"}%<!-- -->
+%TMPL:P{"historyscript"}%<!-- -->
+</div>%TMPL:END%
+
+%TMPL:DEF{"heading"}%%MAKETEXT{"Revision history of [_1]" args="%BASEWEB%.%BASETOPIC%"}%%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"formstart"}%%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="formstart_compare" else="formstart_rdiff"}%%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"formstart_compare"}%<!-- -->
+<form name="main" action="%SCRIPTURLPATH{"compare"}%/%BASEWEB%/%BASETOPIC%">
+<div class="foswikiFormSteps">
+  <input type="hidden" name="render" value="interweave" />
+<!-- -->%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"formstart_rdiff"}%<!-- formstart_rdiff -->
+<form name="main" action="%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%">
+<div class="foswikiFormSteps">
+  <input type="hidden" name="render" value="sequential" />
+<!-- //formstart_rdiff -->%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"formend"}%<!-- -->
+    <hr />
+    <div class='foswikiFormStep'>
+      %BUTTON{"%MAKETEXT{"Compare"}%" icon="time" type="submit"}%
+      %BUTTON{"%MAKETEXT{"Close"}%" icon="cross" class="jqSimpleModalCancel" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%"}%
+      %CLEAR%
+    </div>
+  </div>
+</form>%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"historyjavascript"}%<!-- -->
+%ADDTOZONE{
+  "script"
+  tag="NATSKIN::HISTORY"
+  text="%TMPL:P{"historyscript"}%"
+  requires="JQUERYPLUGIN::LIVEQUERY, JQUERYPLUGIN::BLOCKUI"
+}%%TMPL:END%
+%TMPL:DEF{"historyscript"}%<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/history.js'></script>%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"revtable"}%<div class="natHistoryTable">
+%HISTORY{
+  rev2="%URLPARAM{"rev"}%" 
+  header="<div class='foswikiFormStep'>
+    <table class='foswikiLayoutTable' width='99%'>
+    <tr>
+      <th style='width:6em'>%MAKETEXT{"Revision"}%</th>
+      <th>%MAKETEXT{"Date"}%</th>
+      <th>%MAKETEXT{"Author"}%</th>
+      %IF{"context 'RevCommentPluginEnabled'" then="<th>%MAKETEXT{"Comment"}%</th>"}%<!-- -->
+      <th><span class='natHistoryAction'>%MAKETEXT{"Action"}%</span></th>
+    </tr>"
+  format="<tr>
+    <td><span style='width:1em;display:inline-block;text-align:right'>$rev</span>
+      <input $checked1 type='radio' name='rev2' value='$rev' />
+      <input $checked2 type='radio' name='rev1' value='$rev' />
+    </td>
+    <td style='width:10em'>$date</td>
+    <td>
+      $percntIF{\"istopic '$wikiusername'\" 
+        then=\"[[$wikiusername][$wikiname]]\" else=\"<nop>$wikiname\"
+      }$percnt
+    </td>
+    %IF{"context 'RevCommentPluginEnabled'" 
+      then="<td>$dollarpercntREVCOMMENT{\\"$rev\\" pre=\\"\\" post=\\"\\"}$dollarpercnt</td>"
+    }%<!-- -->
+    <td>
+      <a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?rev=$rev' title='%MAKETEXT{"View revision [_1]" args="$rev"}%' class='natHistoryAction'>
+        %JQICON{"eye"}% %MAKETEXT{"View"}%
+      </a>
+      <a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?rev=$rev' title='%MAKETEXT{"Restore revision [_1]" args="$rev"}%' class='natHistoryAction'>
+        %JQICON{"arrow_refresh"}% %MAKETEXT{"Restore"}%
+      </a>
+     </td>
+    </tr>" 
+  footer="</table></div>
+    <div class='foswikiFormStep'>
+      $percntIF{\"'$next{'test'}'='test'\" 
+        then=\"<a href='%SCRIPTURLPATH{oops}%/%BASEWEB%/%BASETOPIC%?template=oopshistory' class='natHistoryNavi'>
+          <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start.png' alt='%MAKETEXT{show last revisions}%' title='%MAKETEXT{show last revisions}%' />
+          </a>
+          <a href='%SCRIPTURLPATH{oops}%/%BASEWEB%/%BASETOPIC%?template=oopshistory;rev=$next{$rev2}' class='natHistoryNavi {rev:$next{$rev2}}'>
+            <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-left.png' alt='%MAKETEXT{show later revisions}%' title='%MAKETEXT{show later revisions}%' />
+          </a>\"
+        else=\"<img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start-gray.png' alt='%MAKETEXT{blank}%' />
+              <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-left-gray.png' alt='%MAKETEXT{blank}%' />\"
+      }$percnt
+      $percntIF{\"'$previous{'test'}'='test'\"
+        then=\"<a href='%SCRIPTURLPATH{oops}%/%BASEWEB%/%BASETOPIC%?template=oopshistory;rev=$previous{$rev2}' class='natHistoryNavi {rev:$previous{$rev2}}'>
+          <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-right.png' alt='%MAKETEXT{show earlier revisions}%' title='%MAKETEXT{show earlier revisions}%' />
+          </a>
+          <a href='%SCRIPTURLPATH{oops}%/%BASEWEB%/%BASETOPIC%?template=oopshistory;rev=$previous{$nrev}' class='natHistoryNavi {rev:$previous{$nrev}}'>
+            <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-end.png' alt='%MAKETEXT{show first revisions}%' title='%MAKETEXT{show first revisions}%' />
+          </a>\"
+        else=\"<img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-right-gray.png' alt='%MAKETEXT{blank}%' />
+              <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-end-gray.png' alt='%MAKETEXT{blank}%' />\"
+      }$percnt
+    </div>"
+}%
+</div>%TMPL:END%

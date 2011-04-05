@@ -1,0 +1,89 @@
+%TMPL:INCLUDE{"view"}%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"Child topics"}%) - %WIKITOOLNAME%%TMPL:END%
+%TMPL:DEF{"breadcrumbstail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=childtopics;%QUERYSTRING%">%MAKETEXT{"Child topics"}%</a>%TMPL:END%
+%TMPL:DEF{"topicactions"}%%TMPL:END%
+%TMPL:DEF{"bottombar"}%%TMPL:END%
+%TMPL:DEF{"sidebar"}%%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+%TMPL:DEF{"heading"}%%MAKETEXT{"Child topics of [_1] in [_1]" args="[[%BASEWEB%.%BASETOPIC%][%BASETOPIC%]], [[%BASEWEB%.%HOMETOPIC%][%HOMETOPIC%]]"}%%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"content"}%<!-- -->
+%BUTTON{
+  "%MAKETEXT{"Close"}%" 
+  class="foswikiRight simple"
+  target="%BASEWEB%.%BASETOPIC%" 
+  icon="cross"
+}%
+<h1>%TMPL:P{"heading"}%</h1>
+%TMPL:P{"childtopicsjavascript"}%<!-- -->
+<div class="natChildTopicsContainer"></div>
+<!-- -->%TMPL:END%
+
+
+%{ ################################################################################ }%
+%TMPL:DEF{"dialog"}%<div class="foswikiDialog">
+<div class="foswikiFormSteps">
+  <h2 class="foswikiDialogTitle">%TMPL:P{"heading"}%</h2>
+  <div class="foswikiFormStep natChildTopicsContainer"></div>
+  <hr />
+  <div class="foswikiFormStep">
+    %BUTTON{"%MAKETEXT{"Close"}%" class="jqSimpleModalCancel" icon="cross"}%
+    %CLEAR%
+  </div>
+</div>
+%TMPL:P{"childtopicsjavascript"}%<!-- -->
+%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"childtopicsearch"}%%TMPL:P{context="DBCachePluginEnabled" then="childtopicsearch::dbcache" else="childtopicsearch::default"}%%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"childtopicsearch::default"}%<!-- -->
+%MAKEINDEX{
+  "%METASEARCH{
+    type="parent" 
+    web="%BASEWEB%" 
+    topic="%BASETOPIC%" 
+    format="($percntGETTOPICTITLE{\"$web.$topic\" encode=\"encode\"}$percnt);$web.$topic"
+  }%"
+  pattern="\((.*)\);(.*)"
+  split="\n"
+  cols="3"
+  header="%MAKETEXT{"[_1] topics found" args="<span class='foswikiAlert'>$count</span>"}%$n$n $percntCALC{\"$SET(found,1)\"}$percnt"
+  format="[[$2][$1]]"
+  sort="nocase"
+}%
+%IF{"'%CALC{"$GET(found)"}%'=''"
+  then="<span class='foswikiAlert'>%MAKETEXT{"No child topics"}%</span>"
+}%<!-- -->%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"childtopicsearch::dbcache"}%<!-- -->
+%MAKEINDEX{
+  "%DBQUERY{
+    "parent='%BASETOPIC%'"
+    web="%BASEWEB%" 
+    format="($percntGETTOPICTITLE{\"$web.$topic\" encode=\"encode\"}$percnt);$web.$topic"
+  }%"
+  pattern="\((.*)\);(.*)"
+  split="\n"
+  cols="3"
+  header="%MAKETEXT{"[_1] topics found" args="<span class='foswikiAlert'>$count</span>"}%$n$n $percntCALC{\"$SET(found,1)\"}$percnt"
+  format="[[$2][$1]]"
+  sort="nocase"
+}%
+%IF{"'%CALC{"$GET(found)"}%'=''"
+  then="<span class='foswikiAlert'>%MAKETEXT{"No child topics"}%</span>"
+}%<!-- -->%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"childtopicsjavascript"}%<literal><script>
+jQuery(function($) {
+  var url = "%SCRIPTURL{"rest"}%/RenderPlugin/template?name=childtopics;render=on;topic=%BASEWEB%.%BASETOPIC%",
+      $container = $(".natChildTopicsContainer");
+  $container.html('%ICON{"processing"}%').load(url+";expand=childtopicsearch");
+});
+</script></literal>%TMPL:END%

@@ -1,19 +1,18 @@
 %TMPL:INCLUDE{"edit"}%<!-- template: preview.nat.tmpl -->
-%TMPL:INCLUDE{"topbar"}%<!-- topbar// -->
-%TMPL:INCLUDE{"previewbody"}%<!-- previewbody// -->
-%TMPL:INCLUDE{"previewtopicactions"}%<!-- previewtopicactions// -->
-%TMPL:INCLUDE{"previewsidebar"}%<!-- previewsidebar// -->
-%TMPL:INCLUDE{"previewtoolbar"}%<!-- previewtoolbar// -->
+%TMPL:INCLUDE{"topbar"}%<!-- -->
+%TMPL:INCLUDE{"previewbody"}%<!-- -->
+%TMPL:INCLUDE{"previewtopicactions"}%<!-- -->
+%TMPL:INCLUDE{"previewsidebar"}%<!-- -->
+%TMPL:INCLUDE{"previewtoolbar"}%<!-- -->
 %TMPL:DEF{"bodyclass"}%natPreviewBody%TMPL:END%
 %TMPL:DEF{"meta"}% %HTTP_EQUIV_ON_PREVIEW% %TMPL:END%
 %TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"preview"}%) - %WIKITOOLNAME%%TMPL:END%
-%TMPL:DEF{"content"}%%TMPL:P{"content_natskin"}%%TMPL:END%
-%TMPL:DEF{"content_natskin"}%<!-- content_natskin -->
-%TMPL:P{"previewtoolbar"}%<!-- previewtoolbar// -->
+%TMPL:DEF{"content"}%<!-- -->
+%TMPL:P{"previewtoolbar"}%<!-- -->
 %TEXT%
 %META{"form"}%
-%TMPL:P{"hiddenform"}%<!-- hiddenform// -->
-<!-- //content_natskin-->%TMPL:END%
+%TMPL:P{"hiddenform"}%<!-- -->
+<!-- -->%TMPL:END%
 %TMPL:DEF{"webbuttons"}%<div class="natWebMenuContents natWebMenuHidden"> 
-%WEBCOMPONENT{"Buttons"}% <!-- webbuttons -->
+%WEBCOMPONENT{"Buttons"}%<!-- -->
 </div>%TMPL:END%

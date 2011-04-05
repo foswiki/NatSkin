@@ -1,15 +1,15 @@
 %TMPL:P{"page"}%<!-- template: page.nat.tmpl -->
 %TMPL:DEF{"page"}%<!DOCTYPE html>
-<html class="natHtml" xmlns="http://www.w3.org/1999/xhtml" xml:lang="%LANG%" lang="%LANG%">
+<html class="natHtml" xmlns="http://www.w3.org/1999/xhtml" xml:lang="%FORMATLIST{"%LANG%" split="_" limit="1"}%" lang="%FORMATLIST{"%LANG%" split="_" limit="1"}%">
 %TMPL:P{"head"}%
 %TMPL:P{"body"}%
 </html>
 %TMPL:END%
 
 %TMPL:DEF{"msie8::compatibility"}%%IF{"context 'msie8'"
-  then="%IF{"context 'edit' or context 'preview' and $'EDIT_FORCE_IE8_COMPATIBILITYMODE'='on'" 
+  then="%IF{"context 'edit' and $'EDIT_FORCE_IE8_COMPATIBILITYMODE'='on'" 
     then="$n<meta http-equiv='X-UA-Compatible' content='IE=EmulateIE7' />"
-    DISelse="$n<meta http-equiv='X-UA-Compatible' content='IE=EmulateIE8' />"
+    else="$n<meta http-equiv='X-UA-Compatible' content='IE=Edge' />"
   }%"
 }%%TMPL:END%
 

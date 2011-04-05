@@ -9,13 +9,14 @@
 %TMPL:DEF{"rightsidebar"}%%TMPL:P{context="natskin_sidebar_both" then="webrightbar" else="sidebar"}%%TMPL:END%
 %TMPL:DEF{"mysidebarreddot"}%%REDDOT{"%topic%" icon="pencil" title="%MAKETEXT{"Edit my sidebar"}%"}%%TMPL:END%
 %TMPL:DEF{"thesidebar"}%%USERSWEB%.%WIKINAME%%IF{"defined 'MYSIDEBAR'" then="%MYSIDEBAR%" else="SideBar"}%%TMPL:END%
-%TMPL:DEF{"mysidebar"}%%IF{"istopic '%TMPL:P{"thesidebar"}%'" 
+%TMPL:DEF{"mysidebar"}%%TMPL:P{context="FavoritesPluginEnabled" then="mysidebar::favorites" else="mysidebar::default"}%%TMPL:END%
+%TMPL:DEF{"mysidebar::default"}%%IF{"istopic '%TMPL:P{"thesidebar"}%'" 
   then="<h2 class='jqInited'>%MAKETEXT{"My sidebar"}%%TMPL:P{
       context="RedDotPluginEnabled" 
       then="mysidebarreddot" 
       topic="%TMPL:P{"thesidebar"}%"
     }%</h2>
-$percntINCLUDE{\"%TMPL:P{"thesidebar"}%\"}$percnt<!-- mysidebar -->
+$percntINCLUDE{\"%TMPL:P{"thesidebar"}%\"}$percnt<!-- -->
 $percntTMPL:P{\"mysidebarbookmark\"}$percnt"
   else="<h2 class='jqInited'>%MAKETEXT{"My sidebar"}%</h2>
     <ul>
@@ -27,3 +28,19 @@ $percntTMPL:P{\"mysidebarbookmark\"}$percnt"
     %COMMENT{type="mysidebarbookmark" templatetopic="%SYSTEMWEB%.MySideBar" location="\n$" target="%TMPL:P{"thesidebar"}%"}%
   </li>
 </ul>%TMPL:END%
+
+%TMPL:DEF{"mysidebar::favorites"}%<!-- -->
+<h2 >%MAKETEXT{"My links"}%</h2>
+%FAVORITES{
+  format="<li id='$id'>
+    <a href='$url' class='jqFavoritesLink'><span class='jqFavoritesLinkText'>$title</span>
+      <div class='foswikiGrayText'>$summary</div>
+    </a>
+    <span class='jqFavoritesLinkTools'>
+      <a href='#' class='jqFavoritesEdit' title='%MAKETEXT{"Edit this link"}%'>%JQICON{"pencil"}%</a> 
+      <a href='#' class='jqFavoritesDelete' title='%MAKETEXT{"Delete this link"}%'>%JQICON{"bin"}%</a>
+    </span>
+  </li>"
+}%
+<!-- -->%TMPL:END%
+

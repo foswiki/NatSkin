@@ -205,11 +205,12 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 %MAKETEXT{"An email address is required before a password can be reset."}%
 %TMPL:END%
 %TMPL:DEF{"mandatory_field"}%<!-- uses goback def, duplicate missing_fields -->
+<div class='natErrorMessage'>
 ---+++ %MAKETEXT{"Topic Save Error"}%
 %MAKETEXT{"Could not save [_1]." args="<nop>%WEB%.%TOPIC%"}%
 
 %MAKETEXT{"The required field =<span class=\"foswikiAlert\">**</span>= *[_1]* was not filled in." args="%PARAM1%"}%
-
+</div>
 %TMPL:P{"goback"}%
 %TMPL:END%
 %TMPL:DEF{"zero_size_upload"}%<!-- uses goback def -->
@@ -218,6 +219,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 %TMPL:P{"goback" target="%BASEWEB%.%BASETOPIC%"}%
 %TMPL:END%
 %TMPL:DEF{"save_error"}%<!-- better dialog -->
+<div class='natErrorMessage'>
 ---+++ %MAKETEXT{"Error saving topic"}%
 %MAKETEXT{"During save of [_1] an error was found by the version control system."
  args="<nop>%WEB%.<nop>%TOPIC%"}%
@@ -225,7 +227,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 <pre>
 %PARAM1%
 </pre>
-
+</div>
 %MAKETEXT{"Please notify your [_1] administrator [_2]." args="<nop>%WIKITOOLNAME%,%WIKIWEBMASTER%"}%
 
 %MAKETEXT{"Go <a href=\"javascript:history.back()\">back</a> in your browser and save your changes locally."}%

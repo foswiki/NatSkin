@@ -1,5 +1,5 @@
 Foswiki::Contrib::FamFamFamContrib,>=2075,perl,Required.
-Foswiki::Plugins::AutoTempaltePlugin,>=1.11,perl,Required
+Foswiki::Plugins::AutoTemplatePlugin,>=1.11,perl,Required
 Foswiki::Plugins::BreadCrumbsPlugin,>=4318,perl,Required
 Foswiki::Plugins::DBCachePlugin,>=1,perl,Optional
 Foswiki::Plugins::FilterPlugin,>=3491,perl,Required

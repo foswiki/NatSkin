@@ -162,9 +162,6 @@
       </table> 
 <!-- //sidebar off-->%TMPL:END%
 
-%{ page bottom definitions -------------------------------------------------- }%
-%TMPL:DEF{"bottombar"}%%WEBCOMPONENT{"BottomBar"}%%TMPL:END%
-
 %{ assembly stage ---------------------------------------------------------- }%
 %TMPL:DEF{"defaultbody"}%<!-- defaulbody -->
 %TMPL:P{"broadcast"}%<!-- broadcast// -->
@@ -177,7 +174,7 @@
 %TMPL:P{context="natskin_sidebar_off" then="layout_sidebar_off"}%<!-- layout_sidebar_off// -->
   <div class="natBottomBar %IF{"context 'natskin_sidebar_right' or 'context natskin_sidebar_off'" then="natBottomBarLeft"}% %IF{"context 'natskin_sidebar_left' or context 'natskin_sidebar_off'" then="natBottomBarRight"}% %IF{"context 'natskin_sidebar_off'" then="natBottomBarBoth"}%">
     <div class="natBottomBarContents">
-%TMPL:P{"bottombar"}%<!-- bottombar// -->
+%TMPL:P{"bottombar"}%<!-- -->
     </div>
     %IF{"{Cache}{Enabled} and context view and $CACHEABLE != 'off'" 
       then="<div class='natPageCacheBanner foswikiGrayText'>
@@ -189,7 +186,6 @@
   </div>
   <a name="PageBottom"></a>
 </div>
-%TMPL:P{"previewraw"}%<!-- -->
 <!-- //defaultbody -->%TMPL:END%
 
 %TMPL:DEF{"body"}%<body class="%IF{"defined 'NATSKIN_FLUIDFONT'" then="jqFluidFont {%NATSKIN_FLUIDFONT%}"}% %IF{"context authenticated" then="natBodyAuthenticated" else="natBodyNotAuthenticated"}% %TMPL:P{"defaultbodyclass"}% %TMPL:P{"bodyclass"}% %IF{"context 'natskin_sidebar_left'" then="natBodyLeft "}%%IF{"context 'natskin_sidebar_right'" then="natBodyRight "}%%IF{"context 'natskin_sidebar_both'" then="natBodyBoth "}%%IF{"context 'natskin_sidebar_off'" then="natBodyOff "}%%IF{"context 'natskin_layout_fluid'" then="natBodyFluid "}%%IF{"context 'natskin_layout_full'" then="natBodyFull "}%%IF{"context 'natskin_layout_bordered'" then="natBodyBordered "}%">%TMPL:P{"defaultbody"}%</body>%TMPL:END%

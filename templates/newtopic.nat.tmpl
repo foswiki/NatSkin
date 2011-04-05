@@ -2,7 +2,7 @@
 
 %TMPL:DEF{"excludetopics"}%%IF{"defined DONTCREATETOPICS" 
   then="%DONTCREATETOPICS"
-  else="TopicType|TopicStub|TopicTemplate|WebTopicEditTemplate"
+  else="^(TopicType|TopicStub|TopicTemplate|WebTopicEditTemplate)$"
 }%%TMPL:END%
 
 %TMPL:DEF{"topictemplatestep"}%<!-- -->

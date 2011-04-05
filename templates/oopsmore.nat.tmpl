@@ -5,64 +5,16 @@
 %TMPL:DEF{"headingstyle"}%natNoteHeading%TMPL:END%
 %TMPL:DEF{"breadcrumbstail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?%QUERYSTRING%">%MAKETEXT{"Tools"}%</a>%TMPL:END%
 
-
 %{ ################################################################################ }%
 %TMPL:DEF{"message"}% <!-- message -->
-%TMPL:P{"copyform"}%
-%TMPL:P{"renameform"}%
-%TMPL:P{context="ClassificationPluginEnabled" then="renametagform" else="<!-- -->"}%
-%TMPL:P{"preferencesform"}%
-%TMPL:P{"backlinksform"}%
-%TMPL:P{"restoreform"}%
 %TMPL:P{"cacheform"}%
 %TMPL:P{"languageform"}%
 <!-- //message -->%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"DISmessage"}% <!-- message -->
-%IF{"'%URLPARAM{"tool"}%'=''" 
-  then="$percntTMPL:P{\"tools\"}$percnt"
-  else="$percntTMPL:P{\"%URLPARAM{"tool"}%form\"}$percnt"
-}%
-<!-- //message -->%TMPL:END%
-
-%TMPL:DEF{"tools"}%<!-- tools -->
-<div class="natTopicTools">
-%JQICON{"page_white_edit"}% [[%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=more;tool=rename][%MAKETEXT{"Rename topic"}%]]
-
-%JQICON{"page_white_copy"}% [[%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=more;tool=copy][%MAKETEXT{"Copy topic"}%]]
-
-%JQICON{"page_white_wrench"}% [[%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=more;tool=preferences][%MAKETEXT{"Edit topic preferences"}%]]
-
-%JQICON{"clock"}% [[%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=more;tool=restore][%MAKETEXT{"Restore topic"}%]]
-
-%JQICON{"page_white_link"}% [[%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=more;tool=backlinks][%MAKETEXT{"Search for backlinks"}%]]
-
-%JQICON{"arrow_refresh"}% [[%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=more;tool=cache][%MAKETEXT{"Refresh topic cache"}%]]
-
-%JQICON{"flag_white"}% [[%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=more;tool=language][%MAKETEXT{"Change interface language"}%]]
-
-%IF{"context 'ClassificationPluginEnabled'" 
-  then="%JQICON{"tag_blue"}% [[%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=more;tool=renametag][%MAKETEXT{"Rename, merge or delete tags"}%]]"
-}%
-</div>
-<literal>
-<style>
-.natTopicTools {
-  margin:1.5em;
-}
-.natTopicTools a {
-  text-decoration:none;
-}
-</style>
-</literal>
-<!-- //tools -->%TMPL:END%
-
-%{ ################################################################################ }%
 %TMPL:DEF{"content"}%<!-- content -->
 %BUTTON{
-  "%TMPL:P{"CLOSE"}%" 
-  title="%TMPL:P{"CLOSE_HELP"}%"
+  "%MAKETEXT{"Close"}%" 
   class="foswikiRight simple"
   target="%BASEWEB%.%BASETOPIC%" 
   icon="cross"
@@ -70,113 +22,6 @@
 %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
 %TMPL:P{"message"}%<!-- message// -->
 <!-- // content -->%TMPL:END%
-
-%{ ################################################################################ }%
-%TMPL:DEF{"copyform"}%<!-- copyform -->
-<form action="%SCRIPTURL{manage}%/%WEB%/" method="post">
-<input type="hidden" name="action" value="create" />
-<input type="hidden" name="onlynewtopic" value="on" />
-<input type="hidden" name="templatetopic" value="%WEB%.%TOPIC%" />
-<input type="hidden" name="nowysiwyg" value="1" />
-<input type="hidden" name="action_save" value="1" />
-<div class="foswikiFormSteps">
-  <h2>%MAKETEXT{"Copy topic"}%</h2>
-  <div class="foswikiFormStep">
-    %MAKETEXT{"Copy text and form data to a new topic."}%
-  </div>
-  <div class="foswikiFormStep">
-    <input type="text" name="topic" class="foswikiInputField" value="%TOPIC%Copy" size="30" /> 
-  </div>
-  <div class="foswikiFormStep">
-    <input type="checkbox" class="foswikiCheckbox" name="nonwikiword" id="nonwikiword" %IF{"$ 'URLPARAM{nonwikiword}'='on'" then="checked='checked'"}% />
-    <label for="nonwikiword">%MAKETEXT{"Allow non <nop>WikiWord for the new topic name"}%</label>
- </div>
-  <div class="foswikiFormStep foswikiFormButtons">
-    %BUTTON{type="save" "%MAKETEXT{"Copy"}%" icon="tick"}%
-    %CLEAR%
-  </div>
-</div>
-</form>
-<!-- //copyform -->%TMPL:END%
-
-%{ ################################################################################ }%
-%TMPL:DEF{"renameform"}%<!-- renameform -->
-<div class="foswikiFormSteps">
-  <div class="foswikiFormStep">
-    <h2>%MAKETEXT{"Rename, move or delete this topic"}%</h2>
-    %MAKETEXT{"Rename topic *[_1]*" args="%BASETOPIC%"}%
-
-    %MAKETEXT{"See also:"}% %SYSTEMWEB%.ManagingTopics.
-  </div>
-  <div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
-    %BUTTON{"%MAKETEXT{"Rename"}%" target="%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%?currentwebonly=on" icon="page_white_delete"}%
-    %CLEAR%
-  </div>
-</div>
-<!-- //renameform -->%TMPL:END%
-
-%{ ################################################################################ }%
-%TMPL:DEF{"preferencesform"}%<!-- preferenes -->
-<div class="foswikiFormSteps">
-  <form name="editsettings" action="%SCRIPTURLPATH{"manage"}%/%BASEWEB%/%BASETOPIC%" method="post">
-    <input type="hidden" name="action" value="editSettings" />
-    <div class="foswikiFormStep">
-        <h2>%MAKETEXT{"Edit topic preferences"}%</h2>
-        %MAKETEXT{"Edit preference settings for [_1]" args="<b>%BASETOPIC%</b>"}%
-    </div>
-    <div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
-        %BUTTON{value="%MAKETEXT{"Edit"}%" type="save" icon="page_white_edit"}%
-        %CLEAR%
-    </div>
-  </form>
-</div>
-<!-- //preferencesform -->%TMPL:END%
-
-%{ ################################################################################ }%
-%TMPL:DEF{"backlinksform"}%<!-- backlinksform -->
-<div class="foswikiFormSteps">
-  <form name="searchbacklinks" action="%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%">
-  <div class="foswikiFormStep">
-    <h2>%MAKETEXT{"Search for backlinks"}%</h2>
-  </div>
-  <div class="foswikiFormStep">
-    %MAKETEXT{"Find topics that link back to [_1]" args="<b>%BASETOPIC%</b>"}%
-
-    <input type="radio" id="searchthis" name="template" value="backlinksweb" checked />
-    <label for="searchthis">%MAKETEXT{"Search in current web"}%</label>
-
-    <input type="radio" id="searchall" name="template" value="backlinksallwebs" />
-    <label for="searchall">%MAKETEXT{"Search in all public webs"}%</label>
-  </div>
-  <div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
-    %BUTTON{"%MAKETEXT{"Search"}%" type="save" icon="find"}%
-    %CLEAR%
-  </div>
-  </form>
-</div>     
-<!-- //backlinksform -->%TMPL:END%
-
-%{ ################################################################################ }%
-%TMPL:DEF{"restoreform"}%<!-- restoreform -->
-<div class="foswikiFormSteps">
-  <form name="restoretopic" action="%SCRIPTURLPATH{"manage"}%/%BASEWEB%/%BASETOPIC%" method="post">
-    <input type="hidden" name="action" value="restoreRevision" />
-    <input type="hidden" name="nowysiwyg" value="1" />
-    <div class="foswikiFormStep">
-      <h2>%MAKETEXT{"Restore topic"}%</h2>
-      %MAKETEXT{"Restore topic to revision:"}% 
-      <input class="foswikiInputField" type="text" name="rev" size="6" value="%NATMAXREV%" />
-      <div class="foswikiFormDescription">
-        %MAKETEXT{"You will be able to review the topic before saving it to a new revision."}%
-      </div>
-    </div>
-    <div clasS="foswikiFormStep foswikiFormButtons foswikiFormLast">
-      %BUTTON{"%MAKETEXT{"Restore"}%" icon="arrow_undo" type="save" }%
-      %CLEAR%
-    </div>
-  </form>
-</div>
-<!-- //restoreform -->%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"cacheform"}%<!-- cacheform -->
@@ -230,80 +75,3 @@
 </div>
 <!-- //languageform -->%TMPL:END%
 
-%{ ################################################################################ }%
-%TMPL:DEF{"renametagform"}%<!-- renametagform -->
-<div class="foswikiFormSteps">
-  <form class="jqRenameTag" name="renametagform" action="%SCRIPTURLPATH{"rest"}%/ClassificationPlugin/renametag">
-  <input type="hidden" name="web" value="%BASEWEB%" />
-  <h2>%MAKETEXT{"Rename, merge or delete tags"}%</h2>
-  <div class="foswikiFormStep">
-    <h3>%MAKETEXT{"From:"}%</h3>
-    <input type="text" class="foswikiInputField jqTextboxList required {autocomplete:'%SCRIPTURL{"rest"}%/RenderPlugin/template/rest?name=classificationplugin&expand=querytags&topic=%BASEWEB%.%BASETOPIC%', clearControl:'#renameClear'}" size="30" name="from" />
-    <span class="foswikiHidden" id="renameClear">clear</span>
-    <div class="foswikiFormDescription">
-      %MAKETEXT{"Select one or more existing tags to be renamed."}%
-    </div>
-  </div>
-  <div class="foswikiFormStep">
-    <h3>%MAKETEXT{"To:"}%</h3>
-    <input type="text" class="foswikiInputField" required autocomplete='%SCRIPTURL{"rest"}%/RenderPlugin/template/rest?name=classificationplugin&expand=querytags&topic=%BASEWEB%.%BASETOPIC%' size="30" name="to" />
-    <div class="foswikiFormDescription">
-      %MAKETEXT{"Select the tag to rename the above tags to. Leaving this empty will delete them."}%
-    </div>
-  </div>
-  <div class="foswikiFormStep msg"></div>
-  <div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
-    %BUTTON{"%MAKETEXT{"Rename"}%" icon="tag_blue" class="jqRenameTagSubmit"}%
-    %CLEAR%
-  </div>
-  </form>
-  <div id="alltags"></div>
-</div>
-%JQREQUIRE{"textboxlist, autocomplete, metadata, simplemodal, form"}%<!-- -->
-%ADDTOZONE{
-  "script"
-  tag="CLASSIFICATIONPLUGIN::RENAMETAG" 
-  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/ClassificationPlugin/renametag.js'></script>" 
-  requires="JQUERYPLUGIN::FORM, JQUERYPLUGIN::TEXTBOXLIST, JQUERYPLUGIN::AUTOCOMPLETE, JQUERYPLUGIN::METADATA, JQUERYPLUGIN::SIMPLEMODAL"
-}%<!-- -->
-<literal>
-<style>
-#alltags, #clsTagRenamer form {
-  display:none;
-}
-#clsTagRenamer form {
-  margin:0px;
-}
-</style>
-</literal>
-<div id="confirmRenameTag" style="display:none" class="foswikiPage foswikiFormSteps">
-<div class="foswikiFormStep">
-  <h2>%MAKETEXT{"Confirmation required"}%</h2>
-  <div class="renameMessage" style="display:none">
-    %MAKETEXT{"Are you sure that you want to rename these tags?"}%
-
-    %MAKETEXT{"[_1] to [_2]" args="<div class='from' style='font-weight:bold;margin:1em 0em;'></div>,<div class='to' style='font-weight:bold;margin:1em 0em;'></div>"}%
-  </div>
-  <div class="deleteMessage" style="display:none">
-    %MAKETEXT{"Are you sure that you want to delete these tags?"}%
-
-    <div class='from' style='font-weight:bold;margin:1em 0em;'></div>
-  </div>
-</div>
-<div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
-  %BUTTON{"%MAKETEXT{"Yes, do it"}%" icon="tick" id="yes"}%
-  %BUTTON{"%MAKETEXT{"No"}%" icon="cross" id="no"}%
-  %CLEAR%
-</div></div>
-<!-- //renametagform -->%TMPL:END%
-
-%{ ################################################################################ }%
-%TMPL:DEF{"showalltags"}%
-%MAKEINDEX{
-  "%DBSTATS{"TopicType=~'\b(Taggedtopic|ClassifiedTopic)\b'"
-    field="Tag"
-    separator=", "
-    format="$key"
-  }%"
-}%
-%TMPL:END%

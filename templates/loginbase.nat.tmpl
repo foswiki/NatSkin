@@ -2,22 +2,25 @@
 %TMPL:DEF{"useractions"}%<div class='natGreeter'>&nbsp;</div>%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"login"}%<!-- login -->
+%TMPL:DEF{"login"}%<!-- -->
 %TMPL:P{"login::start"}%
 %TMPL:P{"login::usernamestep"}%
 %TMPL:P{"login::passwordstep"}%
 %TMPL:P{context="can_remember_login" then="rememberstep"}%<!-- -->
 %TMPL:P{"login::buttonstep"}%
 %TMPL:P{"login::end"}%
-<!-- //login -->%TMPL:END%
+<!--  -->%TMPL:END%
 
 %{################################################################################ }%
 %TMPL:DEF{"login::start"}%<!-- -->
 <form id="LogonForm" name="LogonForm" action="%IF{"$'HTTPSLOGON'='on'" then="https" else="http"}%://%HTTP_HOST%%SCRIPTURLPATH{"login"}%%IF{"defined 'PATH_INFO'" then="$percntPATH_INFO$percnt" else="/$percntWEB$percnt/$percntTOPIC$percnt"}%" method="post">
   <literal>
-    %QUERYPARAMS{
-      encoding="entity" 
-      format="<input type='hidden' name='$name' value='$value' />"
+    %FORMATLIST{"%QUERYPARAMS{encoding="entity" format="$name;$value"}%"
+      split="\n"
+      pattern="(.*);(.*)"
+      exclude="usernamestep.*"
+      format="<input type='hidden' name='$1' value='$2' />"
+      separator="$n"
     }%
   </literal>
   %IF{"defined 'FOSWIKI_ORIGIN'" 

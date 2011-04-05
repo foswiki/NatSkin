@@ -2,10 +2,31 @@
 ---+ %TOPIC%
 Default site-level configuration for the !WebTopicActions !WebComponent
 
-%STARTINCLUDE%<!-- sitetopicactions -->
+<verbatim class="tml">
+%STARTINCLUDE%<!-- -->
 %USERACTIONS{
-  restrictedactions="new, attach, move, delete, history, more, raw"
-  format="$edit$sep$attach$sep$new$sep$raw$sep$delete$sep$history$sep$subscribe$sep$print$sep$more"
-  history="$edit$sep$raw$sep$history$sep$first$sep$prev$sep$next$sep$last$sep$close"
+  restrictedactions="new, history, raw, edit, copy, menu"
+  format="$edit$attach$new$menu"
+  history="<div class='natHistoryTopicActions'>$edit$raw$history$first$prev$next$last$action(close)</div>"
+  menu="
+   * $action(move)
+   * $action(delete)
+   * $action(editsettings)
+   * $action(editform)
+   * $action(copytopic)
+   * $action(restore)
+   * <hr />
+   * $action(raw)
+   * $action(history)
+   * $action(backlinks)
+   * $action(childtopics)
+   * $action(print)
+   * $action(pdf)
+   * <hr />
+   * $action(subscribe, SubscribePluginEnabled)
+   * $action(managetags, ClassificationPluginEnabled)
+   * $action(harvest, HarvestPluginEnabled)
+"
 }%
-<!-- //sitetopicactions -->%STOPINCLUDE%
+<!-- -->%STOPINCLUDE%
+</verbatim>
