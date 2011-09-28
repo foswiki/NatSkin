@@ -1,7 +1,7 @@
 %TMPL:INCLUDE{"WebCreateNewTopic"}%
 
 %TMPL:DEF{"excludetopics"}%%IF{"defined DONTCREATETOPICS" 
-  then="%DONTCREATETOPICS"
+  then="%DONTCREATETOPICS%"
   else="^(TopicType|TopicStub|TopicTemplate|WebTopicEditTemplate)$"
 }%%TMPL:END%
 

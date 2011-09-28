@@ -12,7 +12,7 @@
 <!-- //contenttitle -->%TMPL:END%
 %TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
 %TMPL:DEF{"content"}%<!-- content -->
-%JQREQUIRE{"focus, autocomplete"}%<!-- -->
+%JQREQUIRE{"focus, ui, ui::autocomplete"}%<!-- -->
 %TMPL:P{"contenttitle"}%<!-- contenttitle// -->
 <form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
 %IF{"$'URLPARAM{newweb}'='%TRASHWEB%'" 
@@ -53,11 +53,11 @@
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep">
   <h4>%MAKETEXT{"To web:"}%</h4>
-  <input type="text" class="foswikiInputField" name="newweb" id="newweb" autocomplete="%SCRIPTURL{"view"}%/%SYSTEMWEB%/JQueryAjaxHelper?section=web;contenttype=text/plain;skin=text;%IF{"defined EXCLUDE" then="exclude=%EXCLUDE%"}%" size="60" value="%IF{"defined NEW_WEB" then="%NEW_WEB%" else="%WEB%"}%" />
+  <input type="text" class="foswikiInputField jqUIAutocomplete" name="newweb" id="newweb" autocomplete="%SCRIPTURL{"view"}%/%SYSTEMWEB%/JQueryAjaxHelper?section=web;contenttype=text/plain" size="60" value="%IF{"defined NEW_WEB" then="%NEW_WEB%" else="%WEB%"}%" />
 </div>
 <div class="foswikiFormStep">
   <h4>%MAKETEXT{"To topic:"}%</h4>
-  <input type="text" class="foswikiInputField" name="newtopic" id="newtopic" autocomplete="%SCRIPTURL{"view"}%/%SYSTEMWEB%/JQueryAjaxHelper?section=topic;contenttype=text/plain;skin=text;baseweb=%BASEWEB%;%IF{"defined EXCLUDE" then="exclude=%EXCLUDE%"}%" size="60" value="%TOPIC%" />
+  <input type="text" class="foswikiInputField jqUIAutocomplete {extraParams:{baseweb:function() {return jQuery('#neweb').val()}}}" name="newtopic" id="newtopic" autocomplete="%SCRIPTURL{"view"}%/%SYSTEMWEB%/JQueryAjaxHelper?section=topic;contenttype=text/plain;skin=text" size="60" value="%TOPIC%" />
   <div class="foswikiFormDescription">
     %MAKETEXT{"The new topic chosen must already exist."}%
   </div>

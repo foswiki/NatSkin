@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="save topic" date="1290600879" format="1.1" reprev="6" version="6"}%
+%META:TOPICINFO{author="micha" comment="save topic" date="1307611821" format="1.1" reprev="6" version="7"}%
 ---+ Style Browser
 Explore the style variations of the %SYSTEMWEB%.NatSkin by changing the base
 _style_ and a _variation_ of it. In general, style variations are used to change
@@ -32,7 +32,7 @@ in. If you select different style options they have precedence over those.
   <div class="foswikiFormStep">
     <h3 >%MAKETEXT{"Layout"}%:</h3>
     <ul>
-      <li> <input type="radio" class="foswikiRadiobox" id="full" name="skinlayout" value="full" %IF{"context natskin_layout_full" then="checked='checked'"}% /><label for="full">%MAKETEXT{"Full width"}%</label></li>
+      <li> <input type="radio" class="foswikiRadiobox" id="fixed" name="skinlayout" value="fixed" %IF{"context natskin_layout_fixed" then="checked='checked'"}% /><label for="fixed">%MAKETEXT{"Fixed"}%</label></li>
       <li> <input type="radio" class="foswikiRadiobox" id="fluid" name="skinlayout" value="fluid" %IF{"context natskin_layout_fluid" then="checked='checked'"}% /><label for="fluid">%MAKETEXT{"Fluid"}%</label></li>
       <li> <input type="radio" class="foswikiRadiobox" id="bordered" name="skinlayout" value="bordered" %IF{"context natskin_layout_bordered" then="checked='checked'"}% /><label for="bordered">%MAKETEXT{"Bordered"}%</label></li>
     </ul>

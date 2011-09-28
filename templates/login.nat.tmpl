@@ -23,7 +23,7 @@
 
 %{################################################################################ }%
 %TMPL:DEF{"message"}%<!-- -->
-<h2 id="natLogonBanner">%BANNER%</h2>
+<h2 id="natLoginBanner">%BANNER%</h2>
 <div class="foswikiFormSteps">
 %NOTE%<!-- -->
 %TMPL:P{"login"}%<!-- -->
@@ -52,6 +52,9 @@
 
 <div class="foswikiFormStep foswikiFormLast">
 [[%SYSTEMWEB%.ResetPassword][%MAKETEXT{"Did you forget your password?"}%]] %BR%
-[[%SYSTEMWEB%.UserRegistration][%MAKETEXT{"Do you want to become a registered user?"}%]]
+%IF{"context registration_enabled" 
+  then="[[%SYSTEMWEB%.UserRegistration][%MAKETEXT{"Do you want to become a registered user?"}%]]"
+  else="<!-- registration disabled -->"
+}%
 </div>
 <!-- -->%TMPL:END%

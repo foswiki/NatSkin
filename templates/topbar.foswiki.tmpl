@@ -1,15 +1,15 @@
-<!-- template: topbar.foswiki.nat.tmpl -->
-%TMPL:DEF{"defaulttopbar"}%<!-- defaulttopbar -->
-<tr>
-  <td class="natTopBar natTopLeft" valign="top">
+%TMPL:INCLUDE{"topbar"}%<!-- template: topbar.foswiki.nat.tmpl -->
+%TMPL:DEF{"defaulttopbar"}%<!-- -->
+<div class="natTopBar">
+  <div class="natTopRight">
+    <div class="natTopRightContents">%TMPL:P{"searchbox"}%</div>
+  </div>
+  <div class="natTopLeft">
     <div class="natTopLeftContents">
       <div class="natWebTitle">%NATWEBLOGO{format="<a href='$url'><img class='natWebLogo' src='$path/$style$variation-logo.png' style='width:16.1538em; max-width:210px;' /></a>"}%</div>
       <div class="natWebSlogan">%WEBSUMMARY%</div>
     </div>
-  </td>
-  <td class="natTopBar natTopRight" valign="top" width="250px">
-    <div class="natTopRightContents">%TMPL:P{"searchbox"}%</div>
-  </td>
-</tr>
-<!-- //defaulttopbar -->%TMPL:END%
+  </div>
+</div>
+<!-- -->%TMPL:END%
 %TMPL:DEF{"topbar"}%%TMPL:P{"defaulttopbar"}%%TMPL:END%

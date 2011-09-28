@@ -9,7 +9,7 @@ Default sidebar implementation
   "$'MYSIDEBAR'!='off' and '%WIKINAME%'!='WikiGuest'" 
    then="$percntTMPL:P{\"mysidebar\"}$percnt" 
 }%<!-- mysidebar -->
-<h2 >Tools</h2>
+<h2 >%MAKETEXT{"Tools"}%</h2>
    * [[WebTopicList][%MAKETEXT{"Index"}%]]
    * [[WebChanges][%MAKETEXT{"Changes"}%]]
    * [[WebNotify][%MAKETEXT{"Notifications"}%]]

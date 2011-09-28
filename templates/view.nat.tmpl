@@ -13,10 +13,10 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"meta"}%%TMPL:P{"metatitle"}%
-%TMPL:P{"dublincore"}%
+%TMPL:P{"metadescription"}%
 %TMPL:P{"metakeywords"}%
 %TMPL:P{"metaauthor"}%
-%TMPL:P{"metadescription"}%
+%TMPL:P{"dublincore"}%
 %TMPL:P{"metaedit"}%
 %HTTP_EQUIV_ON_VIEW% %TMPL:END%
 
@@ -24,26 +24,34 @@
 <meta name="DC.Date.Created" content="%REVINFO{rev="1" format="$year-$mo-$day"}%" />
 <meta name="DC.Date.Modified" content="%REVINFO{"$year-$mo-$day"}%" />%TMPL:END%
 
-%TMPL:DEF{"metatitle"}%<meta name='title' content='%ENCODE{"%HTMLTITLE{"%TOPICTITLE%" wikitoolname="off"}%" type="html"}%' />%TMPL:END%
+%TMPL:DEF{"metatitle"}%<meta name='title' content='%ENCODE{
+  "%IF{"'%WEB%.%TOPIC%'/MetaTitle" 
+    then="$percntFORMFIELD{MetaTitle}$percnt" 
+    else="%HTMLTITLE{"%TOPICTITLE%" wikitoolname="off"}%"
+  }%" 
+  type="html"
+}%' />%TMPL:END%
 
 %TMPL:DEF{"metakeywords"}%%IF{
   "defined 'METAKEYWORDS'" 
-  then="<meta name='keywords' content='$percntENCODE{\"$percntMETAKEYWORDS$percnt\" type=\"html\"}$percnt'>$n" 
-  else="$percntIF{\"'%WEB%.%TOPIC%'/Tag\" then=\"<meta name='keywords' content='$dollarpercntENCODE{\\"$dollarpercntFORMFIELD{Tag}$dollarpercnt\\" type=\\"html\\"}$dollarpercnt' />$n\"}$percnt"
-}%%TMPL:END%
-
-%TMPL:DEF{"metaauthor"}%%IF{
-  "defined 'METAAUTHOR'" 
-  then="<meta name='author' content='$percntENCODE{\"$percntMETAAUTHOR$percnt\" type=\"html\"}$percnt' />$n"
+  then="<meta name='keywords' content='$percntENCODE{\"$percntMETAKEYWORDS$percnt\" type=\"html\"}$percnt' />" 
+  else="$percntIF{\"'%WEB%.%TOPIC%'/MetaKeywords\" then=\"<meta name='keywords' content='$dollarpercntENCODE{\\"$dollarpercntFORMFIELD{MetaKeywords}$dollarpercnt\\" type=\\"html\\"}$dollarpercnt' />\"}$percnt"
 }%%TMPL:END%
 
 %TMPL:DEF{"metadescription"}%%IF{
   "defined 'METADESCRIPTION'" 
-  then="<meta name='description' content='$percntENCODE{\"$percntMETADESCRIPTION$percnt\" type=\"html\"}$percnt' />$n"
-  else="$percntIF{\"'%WEB%.%TOPIC%'/Summary\" then=\"$dollarpercntTMPL:P{metasummary}$dollarpercnt$dollarn\"}$percnt"
+  then="<meta name='description' content='$percntENCODE{\"$percntMETADESCRIPTION$percnt\" type=\"html\"}$percnt' />"
+  else="$percntIF{\"'%WEB%.%TOPIC%'/MetaDescription\" then=\"<meta name='description' content='$dollarpercntENCODE{\\"$dollarpercntFORMFIELD{MetaDescription}$dollarpercnt\\" type=\\"html\\"}$dollarpercnt' />\"}$percnt"
 }%%TMPL:END%
 
-%TMPL:DEF{"metasummary"}%<meta name='description' content='%ENCODE{"%FORMFIELD{"Summary"}%" type="html"}%' />%TMPL:END%
+%TMPL:DEF{"metaauthor"}%%IF{
+  "defined 'METAAUTHOR'" 
+  then="<meta name='author' content='$percntENCODE{\"$percntMETAAUTHOR$percnt\" type=\"html\"}$percnt' />"
+  else="<meta name='author' content='$percntTMPL:P{context=\"DBCachePluginEnabled\" then=\"metaauthor::dbcache\" else=\"metaauthor::default\"}$percnt' />"
+}%%TMPL:END%
+
+%TMPL:DEF{"metaauthor::default"}%%SPACEOUT{"%USERINFO{"%QUERY{"'%WEB%.%TOPIC%'/versions[-1].info.author"}%" format="$wikiname"}%"}%%TMPL:END%
+%TMPL:DEF{"metaauthor::dbcache"}%%SPACEOUT{"%DBQUERY{topic="%WEB%.%TOPIC%" format="$expand(createauthor)"}%"}%%TMPL:END%
 
 %TMPL:DEF{"metaedit"}%%IF{
   "'%WEB%.%TOPIC%' allows 'change'" 
@@ -83,13 +91,17 @@
 <!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Changed by [_1] on [_2]" args="<span class='natRevisionAuthor'> %REVINFO{"$wikiusername" rev="%CURREV%"}% </span>, <a class='natRevisionDate' ref='nofollow' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"$date - $hour:$min - r$rev" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
+%TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Changed by [_1] on [_2]" args="<span class='natRevisionAuthor'> %REVINFO{"[[$wikiusername][$wikiname]]" rev="%CURREV%"}% </span>, <a class='natRevisionDate' ref='nofollow' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"$date - $hour:$min - r$rev" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
 %TMPL:DEF{"rdiff"}%%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPIC%?type=last;render=sequential%TMPL:END%
 %TMPL:DEF{"compare"}%%SCRIPTURLPATH{"compare"}%/%WEB%/%TOPIC%?type=last;render=interweave%TMPL:END%
 %TMPL:DEF{"broadcast"}%%IF{"not isempty 'BROADCASTMESSAGE'" then="<div class='foswikiBroadcastMessage'> $percntBROADCASTMESSAGE$percnt </div>"}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"comments"}% %IF{ "$DISPLAYCOMMENTS='on' and $COMMENTFORMAT!='insidetab'" then="<div>$percntTMPL:P{\"metacomments\"}$percnt</div>" else="<!-- -->" }%%TMPL:END%
+%TMPL:DEF{"comments"}% %IF{
+  "$DISPLAYCOMMENTS='on' and $COMMENTFORMAT!='insidetab' and not context save and not context preview and not context edit"
+  then="<div>$percntTMPL:P{\"metacomments\"}$percnt</div>" 
+  else="<!-- -->" 
+}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"editsettingsform"}%<!-- -->

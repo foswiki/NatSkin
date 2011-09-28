@@ -71,8 +71,8 @@
    websearch::rss - display an rss link for the current search
 }%
 %TMPL:DEF{"websearch::rss"}%<!-- -->
-<div class="natSearchRss foswikiGrayText">
-<a href='%SCRIPTURL{"view"}%/%BASEWEB%/WebRss?search=%URLPARAM{"search" encode="url"}%;limit=%URLPARAM{"limit" encode="url" default="all"}%;web=%URLPARAM{"web" default="%BASEWEB%"}%'>%MAKETEXT{"Get notified on changes on this search"}%</a>
+<div class="foswikiGrayText">
+%JQICON{"feed"}% <a href='%SCRIPTURL{"view"}%/%BASEWEB%/WebRss?search=%URLPARAM{"search" encode="url"}%;limit=%URLPARAM{"limit" encode="url" default="all"}%;web=%URLPARAM{"web" default="%BASEWEB%"}%'>%MAKETEXT{"Get notified on changes on this search"}%</a>
 </div>
 <!-- -->%TMPL:END%
 %{</verbatim>}%

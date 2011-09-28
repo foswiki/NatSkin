@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="micha" comment="reprev" date="1299844818" format="1.1" reprev="4" version="4"}%
+%META:TOPICINFO{author="micha" comment="reprev" date="1311861083" format="1.1" reprev="5" version="5"}%
 ---+ %TOPIC%
 Definition of site wide horizontal menu
 
@@ -18,8 +18,8 @@ Definition of site wide horizontal menu
 ---++ Subwebs
 <verbatim class="tml">
 %STARTSECTION{"subwebs"}%%FLEXWEBLIST{
-  include="^%URLPARAM{"theweb" default="%theweb%"}%.*"
-  exclude="%URLPARAM{"theweb" default="%theweb%"}%"
+  include="%URLPARAM{"theweb" default="%theweb%"}%.*"
+  exclude="%URLPARAM{"theweb" default="%theweb%"}%|.*(%URLPARAM{"excludeweb" default="does not exist"}%).*"
   header="<li>"
   subheader="<ul><li>"
   format="[[$web.%HOMETOPIC%][%JQICON{
@@ -56,12 +56,15 @@ Definition of site wide horizontal menu
 
 ---++ Admin menu
 <verbatim class="tml">
-%STARTSECTION{"adminmenu"}%<li>%MAKETEXT{"Admin"}%
+%STARTSECTION{"adminmenu"}%<noautolink>
+<li>%MAKETEXT{"Admin"}%
   <ul>
-    <li>
-      [[Applications.%HOMETOPIC%][%JQICON{"application_double"}% %MAKETEXT{"Applications"}%]]
-      <ul class="ajaxMenu {url:'%SCRIPTURL{"view"}%/%SYSTEMWEB%/SiteMenu?skin=text;section=subwebs;theweb=Applications;icon=application'}"></ul>
-    </li>
+    %IF{"isweb 'Applications'"
+       then="<li>
+         [[Applications.%HOMETOPIC%][%JQICON{"application_double"}% %MAKETEXT{"Applications"}%]]
+         <ul class=\"ajaxMenu {url:'%SCRIPTURL{"view"}%/%SYSTEMWEB%/SiteMenu?skin=text;section=subwebs;theweb=Applications;icon=application%IF{"defined EXCLUDEWIKIAPPS" then=";excludeweb=%EXCLUDEWIKIAPPS%"}%'}\"></ul>
+       </li>"
+    }%<!-- -->
     <li>[[%BASEWEB%.%WEBPREFSTOPIC%][%JQICON{"wrench"}% %MAKETEXT{"Web Preferences"}%]]</li>
     <li>[[%LOCALSITEPREFS%][%JQICON{"wrench_orange"}% %MAKETEXT{"Site Preferences"}%]]</li>
     <li>[[%SYSTEMWEB%.SitePermissions][%JQICON{"key"}% %MAKETEXT{"Site Permissions"}%]]</li>
@@ -73,6 +76,7 @@ Definition of site wide horizontal menu
     <li>[[%SYSTEMWEB%.WebCreateNewWeb][%JQICON{"folder_add"}% %MAKETEXT{"Create a new web"}%]]</li>
     <li>[[%SCRIPTURL{"rename"}%/%BASEWEB%/%BASETOPIC%?action=renameweb][%JQICON{"folder_go"}% %MAKETEXT{"Rename current web"}%]]</li>
   </ul>
-</li>%ENDSECTION{"adminmenu"}%
+</li>
+</noautolink>%ENDSECTION{"adminmenu"}%
 </verbatim>
 

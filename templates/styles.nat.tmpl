@@ -1,8 +1,30 @@
 <!-- template: styles.nat.tmpl -->
-%TMPL:DEF{"defaultstyles"}%%TMPL:P{context="msie6" then="msie6::styles" }%%TMPL:END%
-%TMPL:DEF{"msie6::styles"}%%ADDTOZONE{
-  "head"
-  tag="NATSKIN::CSS"
+%TMPL:DEF{"defaultstyles"}%<!-- -->
+%TMPL:P{context="msie6" then="msie6::styles" }%<!-- -->
+%TMPL:P{"preferences::styles"}%<!-- -->
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"preferences::styles"}%%ADDTOZONE{"head"
+  id="NATSKIN::PREFERENCES::STYLES"
+  requires="NATSKIN"
+  text="<literal>
+%IF{"defined NATSKIN_SIDEBARWIDTH" 
+  then="<literal>
+<style>
+  .natTopRight, .natSideBarHeader, .natSideBar { 
+    width:%NATSKIN_SIDEBARWIDTH%; 
+  }
+  .natBodyLeft .natWebMenu,
+  .natBodyBoth .natWebMenu {
+    padding-left:%NATSKIN_SIDEBARWIDTH%;
+  }
+</style></literal>"
+  else="<!-- -->"
+}%</literal>"
+}%%TMPL:END%
+
+%TMPL:DEF{"msie6::styles"}%%ADDTOZONE{"head"
+  id="NATSKIN::MSIE6::STYLES"
   text="<literal>
 <!--[if IE 6]>
 <script>
@@ -21,6 +43,8 @@ var blankImg = '%PUBURLPATH%/%SYSTEMWEB%/NatSkin/blank.gif';
   line-height:1.2em;
 }
 </style>
-<![endif]--></literal>"
+<![endif]-->
+</literal>"
 }%%TMPL:END%
+
 %TMPL:DEF{"styles"}%%TMPL:P{"defaultstyles"}%%TMPL:END%

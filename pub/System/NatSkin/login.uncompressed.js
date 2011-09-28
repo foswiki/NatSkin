@@ -1,13 +1,13 @@
-(function($) {
-  $(function() {
-    $("#LogonForm").validate();
-    if (foswiki.getPreference("NatSkin.loginFailed")) {
-      $(".natLogin").shake(3, 10, 180);
+jQuery(function($) {
+  var $loginForm = $("#LoginForm");
+  $loginForm.validate();
+  $loginForm.find("input").keydown(function(e) {
+    if (e.keyCode == '13') {
+      $loginForm.submit();
+      return false;
     }
-    $("#username, #password").keydown(function(e) {
-      if (e.keyCode == '13') {
-        $(this).parents("form").submit();
-      }
-    });
   });
-})(jQuery);
+  if (foswiki.getPreference("NatSkin.loginFailed")) {
+    $(".natLogin").effect("shake", {times:3, distance:10}, 50);
+  }
+});

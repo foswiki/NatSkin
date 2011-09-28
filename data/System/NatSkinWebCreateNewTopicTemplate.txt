@@ -15,7 +15,7 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"dialog"}%<div class="foswikiDialog">
+%TMPL:DEF{"dialog"}%<div class="foswikiDialog foswikiFormSteps">
 %TMPL:P{"content"}%
 %TMPL:P{"javascript"}%
 </div>%TMPL:END%
@@ -78,7 +78,7 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"formtitle"}%<!-- -->
-<h2 class="foswikiDialogTitle">%MAKETEXT{"Create a new topic in the [_1] web" args="%WEBLINK{"%BASEWEB%" format="<nop>$title"}%"}%</h2>
+<h2 class="foswikiDialogTitle jqSimpleModalDraggable">%MAKETEXT{"Create a new topic in the [_1] web" args="%WEBLINK{"%BASEWEB%" format="<nop>$title"}%"}%</h2>
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
@@ -86,13 +86,11 @@
 %{<verbatim class="tml">}%
 %TMPL:DEF{"formstartstep"}%<!-- -->
 %TMPL:P{"formstart"}%
-<div class='foswikiFormSteps' style='margin-top:0px'>
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"formendstep"}%<!-- -->
-</div>
 %TMPL:P{"formend"}%
 <!-- -->%TMPL:END%
 %{</verbatim>}%
@@ -165,7 +163,7 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topictitleinput"}%<!-- -->
-<input type="text" class="foswikiInputField jqFocus" name="TopicTitle" id="topictitle" size="60" value="%TMPL:P{"newtopictitle"}%" />
+<input type="text" class="foswikiInputField jqFocus" name="TopicTitle" id="topictitle" size="40" value="%TMPL:P{"newtopictitle"}%" style="width:98%" />
 <div class="foswikiFormDescription">
 %MAKETEXT{"Free form topic title text. The actual topic _name_ will be derived from the title automatically."}%
 </div>
@@ -256,6 +254,6 @@
 %{<verbatim class="tml">}%
 %TMPL:DEF{"javascript"}%<!-- -->
 %TMPL:P{"defaultjavascript"}%<!-- -->
-%JQREQUIRE{"wikiword, autocomplete, focus"}%<!-- -->
+%JQREQUIRE{"wikiword, focus"}%<!-- -->
 <!-- -->%TMPL:END%
 %{</verbatim>}%

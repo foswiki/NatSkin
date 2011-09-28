@@ -5,8 +5,8 @@
 Default bottombar component
 
 %STARTINCLUDE%<!-- sitebottombar -->
-<div class="natBottomActions natCols4">
-<div class="natCol1">
+<div class="natBottomActions foswikiGrid">
+<div class="foswikiCol3">
 ---++++ %MAKETEXT{"Edit"}%
 %USERACTIONS{"
    * $action(edit)
@@ -24,7 +24,7 @@ Default bottombar component
    * <a href="#">%MAKETEXT{"Change name identifier"}%</a>
 -->
 </div>
-<div class="natCol2">
+<div class="foswikiCol3">
 ---++++ %MAKETEXT{"Create"}%
 %USERACTIONS{"
    * $action(new)
@@ -34,7 +34,7 @@ Default bottombar component
   format="   * [[$web.$topic][New $topic]]"
 }%
 </div>
-<div class="natCol3">
+<div class="foswikiCol3">
 %USERACTIONS{
   header="<h4>%MAKETEXT{"History"}%</h4>"
   format="
@@ -43,15 +43,15 @@ Default bottombar component
    * $action(restore)
 "}%
 </div>
-<div class="natCol4">
+<div class="foswikiCol3 last">
 ---++++ %MAKETEXT{"View"}%
-%USERACTIONS{"
+%USERACTIONS{"<!-- -->
    * $raw
    * $print
    * $pdf
    * $action(backlinks)
    * $action(childtopics)
-"}%
+<!-- -->"}%
 </div>
 </div>
 <div class="natCopyRight">%WEBCOPYRIGHT%</div>

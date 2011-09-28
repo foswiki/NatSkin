@@ -1,15 +1,15 @@
 %TMPL:INCLUDE{"oops"}%<!-- template: history.nat.tmpl -->
 
 %{ ################################################################################ }%
-%TMPL:DEF{"dialog"}%<div class="foswikiDialog">
+%TMPL:DEF{"dialog"}%<div class="foswikiDialog foswikiFormSteps">
 %TMPL:P{"formstart"}%<!-- -->
-<h2 class="foswikiDialogTitle">%TMPL:P{"heading"}%</h2>
+<h2 class="foswikiDialogTitle jqSimpleModalDraggable">%TMPL:P{"heading"}%</h2>
 %TMPL:P{"revtable"}%<!-- -->
 %TMPL:P{"formend"}%<!-- -->
 %TMPL:P{"historyscript"}%<!-- -->
 </div>%TMPL:END%
 
-%TMPL:DEF{"heading"}%%MAKETEXT{"Revision history of [_1]" args="%BASEWEB%.%BASETOPIC%"}%%TMPL:END%
+%TMPL:DEF{"heading"}%%MAKETEXT{"Revision history of [_1]" args="[[%BASEWEB%.%BASETOPIC%][%BASETOPIC%]]"}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"formstart"}%%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="formstart_compare" else="formstart_rdiff"}%%TMPL:END%
@@ -17,25 +17,22 @@
 %{ ################################################################################ }%
 %TMPL:DEF{"formstart_compare"}%<!-- -->
 <form name="main" action="%SCRIPTURLPATH{"compare"}%/%BASEWEB%/%BASETOPIC%">
-<div class="foswikiFormSteps">
-  <input type="hidden" name="render" value="interweave" />
+<input type="hidden" name="render" value="interweave" />
 <!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"formstart_rdiff"}%<!-- formstart_rdiff -->
 <form name="main" action="%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%">
-<div class="foswikiFormSteps">
-  <input type="hidden" name="render" value="sequential" />
+<input type="hidden" name="render" value="sequential" />
 <!-- //formstart_rdiff -->%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"formend"}%<!-- -->
-    <hr />
-    <div class='foswikiFormStep'>
-      %BUTTON{"%MAKETEXT{"Compare"}%" icon="time" type="submit"}%
-      %BUTTON{"%MAKETEXT{"Close"}%" icon="cross" class="jqSimpleModalCancel" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%"}%
-      %CLEAR%
-    </div>
+  <hr />
+  <div class='foswikiFormStep foswikiFormLast'>
+    %BUTTON{"%MAKETEXT{"Compare"}%" icon="time" type="submit"}%
+    %BUTTON{"%MAKETEXT{"Close"}%" icon="cross" class="jqSimpleModalCancel" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%"}%
+    %CLEAR%
   </div>
 </form>%TMPL:END%
 

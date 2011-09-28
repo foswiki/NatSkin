@@ -1,16 +1,10 @@
 .natHtml {
   background-position:0px -50px;
 }
-.natTopLeft.natTopRight {
-  _background:url(foswiki-header-tile-green.png) repeat-x;
-}
-.natTopRight {
+.natTopBar {
   background:url(foswiki-header-tile-green.png) repeat-x;
 }
-.natTopLeftContents {
-  background:url(foswiki-header-tile-green.png) repeat-x;
-}
-.natWebTitle {
+.natTopLeft {
   background:url(foswiki-header-green.png) no-repeat;
 }
 .natSideBarHeader,
@@ -19,11 +13,11 @@
   border-top:0px;
   border-bottom:1px solid #555;
 }
-.natTopBar {
+.natTopLeft, .natTopRight {
   border-bottom:1px solid #2F7A1C;
 }
-.natBodyFluid .natSideBarHeaderLeft,
-.natBodyFluid .natWebMenuLeft {
+.natBodyFixed .natSideBarHeaderLeft,
+.natBodyFixed .natWebMenuLeft {
   border-left:1px #4a4a4a solid;
 }
 .natWebMenu,
@@ -107,7 +101,8 @@ h1 .foswikiTopicSummary,
   border-top:1px solid #E7D7E1;
   border-bottom:1px solid #E7D7E1;
 }
-#natLogonBanner,
+#simplemodal-container h2.foswikiDialogTitle,
+#natLoginBanner,
 .natMainContents .foswikiNewLink,
 .natSideBar .foswikiCurrentTopicLink,
 .alt h2,

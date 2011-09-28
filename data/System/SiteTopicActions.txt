@@ -5,6 +5,7 @@ Default site-level configuration for the !WebTopicActions !WebComponent
 <verbatim class="tml">
 %STARTINCLUDE%<!-- -->
 %USERACTIONS{
+  guest="$pdf"
   restrictedactions="new, history, raw, edit, copy, menu"
   format="$edit$attach$new$menu"
   history="<div class='natHistoryTopicActions'>$edit$raw$history$first$prev$next$last$action(close)</div>"
@@ -23,6 +24,7 @@ Default site-level configuration for the !WebTopicActions !WebComponent
    * $action(print)
    * $action(pdf)
    * <hr />
+   * $action(webdavdir, WebDAVLinkPluginEnabled)
    * $action(subscribe, SubscribePluginEnabled)
    * $action(managetags, ClassificationPluginEnabled)
    * $action(harvest, HarvestPluginEnabled)

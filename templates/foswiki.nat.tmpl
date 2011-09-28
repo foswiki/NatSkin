@@ -14,7 +14,7 @@
 %TMPL:DEF{"REGISTER"}% %TMPL:P{"REGISTER_SHORT"}%%TMPL:P{"REGISTER_LONG"}%%TMPL:END%
 %TMPL:DEF{"REGISTER_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Register"}%</span>%TMPL:END%
 %TMPL:DEF{"REGISTER_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Sign on to [_1]." args="<nop>%WIKITOOLNAME%"}%</span>%TMPL:END%
-%TMPL:DEF{"REGISTER_ACTION"}%<a class="natUserAction" rel="nofollow" href="%SCRIPTURLPATH{"view"}%/%SYSTEMWEB%/UserRegistration">%TMPL:P{"REGISTER"}%</a>%TMPL:END%
+%TMPL:DEF{"REGISTER_ACTION"}%<a class="natUserAction" rel="nofollow" href="$registerurl">%TMPL:P{"REGISTER"}%</a>%TMPL:END%
 %TMPL:DEF{"REGISTER_ACTION_RESTRICTED"}%<span class="natUserAction natDisabledUserAction">%TMPL:P{"REGISTER"}%</span>%TMPL:END%
 
 %TMPL:DEF{"USERS"}% %TMPL:P{"USERS_SHORT"}%%TMPL:P{"USERS_LONG"}%%TMPL:END%
@@ -47,14 +47,14 @@
 
 %TMPL:DEF{"PRINT"}% %TMPL:P{"PRINT_SHORT"}%%TMPL:P{"PRINT_LONG"}%%TMPL:END%
 %TMPL:DEF{"PRINT_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Print"}%</span>%TMPL:END%
-%TMPL:DEF{"PRINT_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View print version"}%</span>%TMPL:END%
+%TMPL:DEF{"PRINT_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View printable version"}%</span>%TMPL:END%
 %TMPL:DEF{"PRINT_ACTION"}%<a class="natTopicAction" rel="nofollow" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=viewprint">%JQICON{"printer"}%%TMPL:P{"PRINT"}%</a>%TMPL:END%
 %TMPL:DEF{"PRINT_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction">%JQICON{"printer"}%%TMPL:P{"PRINT"}%</span>%TMPL:END%
 
 %TMPL:DEF{"RAW"}% %TMPL:P{"RAW_SHORT"}%%TMPL:P{"RAW_LONG"}%%TMPL:END%
 %TMPL:DEF{"RAW_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Raw"}%</span>%TMPL:END%
 %TMPL:DEF{"RAW_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View wiki markup"}%</span>%TMPL:END%
-%TMPL:DEF{"RAW_ACTION"}%<a class="natTopicAction jqSimpleModal {url: '%SCRIPTURL{"rest"}%/RenderPlugin/template?name=viewraw;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on;rev=$rev', persist:true, containerCss: {width:'61.5em'}}" rel="nofollow" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?raw=on;rev=$rev">%JQICON{"text_align_left"}%%TMPL:P{"RAW"}%</a>%TMPL:END%
+%TMPL:DEF{"RAW_ACTION"}%<a class="natTopicAction jqSimpleModal {url: '%SCRIPTURL{"rest"}%/RenderPlugin/template?name=viewraw;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on;rev=$rev', persist:false, containerCss: {width:'61.5em'}}" rel="nofollow" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?raw=on;rev=$rev">%JQICON{"text_align_left"}%%TMPL:P{"RAW"}%</a>%TMPL:END%
 %TMPL:DEF{"RAW_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction">%JQICON{"text_align_left"}%%TMPL:P{"RAW"}%</span>%TMPL:END%
 
 %TMPL:DEF{"EDIT"}% %TMPL:P{"EDIT_SHORT"}%%TMPL:P{"EDIT_LONG"}%%TMPL:END%
@@ -149,6 +149,7 @@
    * $action(print)
    * $action(pdf)
    * <hr />
+   * $action(webdavdir, WebDAVLinkPluginEnabled)
    * $action(subscribe, SubscribePluginEnabled)
    * $action(managetags, ClassificationPluginEnabled)
    * $action(harvest, HarvestPluginEnabled)
@@ -168,7 +169,7 @@
 
 %TMPL:DEF{"PDF"}% %TMPL:P{"PDF_SHORT"}%%TMPL:P{"PDF_LONG"}%%TMPL:END%
 %TMPL:DEF{"PDF_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Pdf"}%</span>%TMPL:END%
-%TMPL:DEF{"PDF_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Export to PDF"}%</span>%TMPL:END%
+%TMPL:DEF{"PDF_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Export topic to PDF"}%</span>%TMPL:END%
 %TMPL:DEF{"PDF_ACTION"}%<a class="natTopicAction" rel="nofollow" href="$pdfurl">%JQICON{"page_white_acrobat"}%%TMPL:P{"PDF"}%</a>%TMPL:END%
 %TMPL:DEF{"PDF_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction">%JQICON{"page_white_acrobat"}%%TMPL:P{"PDF"}%</span>%TMPL:END%
 
@@ -180,22 +181,28 @@
 %TMPL:DEF{"UNSUBSCRIBE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Unsubscribe from changes"}%</span>%TMPL:END%
 %TMPL:DEF{"SUBSCRIBE_ACTION"}%%SUBSCRIBE{
   topic="%BASEWEB%.%BASETOPIC%"
-  format="<a class='natTopicAction' rel='nofollow' href='$url'>%JQICON{"email_add"}%%TMPL:P{"SUBSCRIBE"}%</a>"
-  formatunsubscribe="<a class='natTopicAction' rel='nofollow' href='$url'>%JQICON{"email_delete"}%%TMPL:P{"UNSUBSCRIBE"}%</a>"
+  format="<a class='natTopicAction' rel='nofollow' href='$url'>%JQICON{"email_star"}%%TMPL:P{"SUBSCRIBE"}%</a>"
+  formatunsubscribe="<a class='natTopicAction' rel='nofollow' href='$url'>%JQICON{"email_stop"}%%TMPL:P{"UNSUBSCRIBE"}%</a>"
 
 }%%TMPL:END%
 %TMPL:DEF{"SUBSCRIBE_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction">%JQICON{"emain_add"}%%TMPL:P{"SUBSCRIBE"}%</span>%TMPL:END%
 
+%TMPL:DEF{"WEBDAVDIR"}% %TMPL:P{"WEBDAVDIR_SHORT"}% %TMPL:P{"WEBDAVDIR_LONG"}%%TMPL:END%
+%TMPL:DEF{"WEBDAVDIR_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"<nop>WebDAV Directory"}%</span>%TMPL:END%
+%TMPL:DEF{"WEBDAVDIR_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Open <nop>WebDAV Directory"}%</span>%TMPL:END%
+%TMPL:DEF{"WEBDAVDIR_ACTION"}%<a class='natTopicAction webdav' rel='nofollow' href='%WEBDAVFOLDERURL%/%BASEWEB%/%BASETOPIC%_files/'>%JQICON{"folder_link"}%%TMPL:P{"WEBDAVDIR"}%</a>%TMPL:END%
+%TMPL:DEF{"WEBDAVIIR_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction'>%JQICON{"folder_link"}%%TMPL:P{"WEBDAVDIR"}%</span>%TMPL:END%
+
 %TMPL:DEF{"HARVEST"}% %TMPL:P{"HARVEST_SHORT"}%%TMPL:P{"HARVEST_LONG"}%%TMPL:END%
 %TMPL:DEF{"HARVEST_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Download"}%</span>%TMPL:END%
 %TMPL:DEF{"HARVEST_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Download external resource"}%</span>%TMPL:END%
-%TMPL:DEF{"HARVEST_ACTION"}%<a class="natTopicAction" rel="nofollow" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=harvest">%JQICON{"photos"}%%TMPL:P{"HARVEST"}%</a>%TMPL:END%
-%TMPL:DEF{"HARVEST_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction">%JQICON{"photos"}%%TMPL:P{"HARVEST"}%</a>%TMPL:END%
+%TMPL:DEF{"HARVEST_ACTION"}%<a class="natTopicAction" rel="nofollow" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=harvestplugin">%JQICON{"photos"}%%TMPL:P{"HARVEST"}%</a>%TMPL:END%
+%TMPL:DEF{"HARVEST_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction">%JQICON{"photos"}%%TMPL:P{"HARVEST"}%</span>%TMPL:END%
 
 %TMPL:DEF{"MANAGETAGS"}% %TMPL:P{"MANAGETAGS_SHORT"}%%TMPL:P{"MANAGETAGS_LONG"}%%TMPL:END%
 %TMPL:DEF{"MANAGETAGS_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Tags"}%</span>%TMPL:END%
 %TMPL:DEF{"MANAGETAGS_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Manage tags in this web"}%</span>%TMPL:END%
-%TMPL:DEF{"MANAGETAGS_ACTION"}%%JQREQUIRE{"textboxlist, autocomplete, metadata, simplemodal, form"}%<a class="natTopicAction jqSimpleModal {url: '%SCRIPTURL{"rest"}%/RenderPlugin/template?name=managetags;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on', persist:true, containerCss: {width:'37.5em'}}" rel="nofollow" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=managetags">%JQICON{"tag_blue_edit"}%%TMPL:P{"MANAGETAGS"}%</a>%TMPL:END%
+%TMPL:DEF{"MANAGETAGS_ACTION"}%%JQREQUIRE{"textboxlist, metadata, simplemodal, form"}%<a class="natTopicAction jqSimpleModal {url: '%SCRIPTURL{"rest"}%/RenderPlugin/template?name=managetags;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on', persist:true, containerCss: {width:'37.5em'}}" rel="nofollow" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=managetags">%JQICON{"tag_blue_edit"}%%TMPL:P{"MANAGETAGS"}%</a>%TMPL:END%
 %TMPL:DEF{"MANAGETAGS_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction">%JQICON{"tag_blue_edit"}%%TMPL:P{"MANAGETAGS"}%</span>%TMPL:END%
 
 %TMPL:DEF{"FIRST"}% %TMPL:P{"FIRST_SHORT"}%%TMPL:P{"FIRST_LONG"}%%TMPL:END%
@@ -240,10 +247,14 @@
 
 %TMPL:DEF{"breadcrumbs"}%%BREADCRUMBS{separator="%TMPL:P{"sep"}%"}%%TMPL:P{"breadcrumbstail"}%%TMPL:END%
 
+%TMPL:DEF{"favicon"}%%FAVICON%%TMPL:END%
+
+%TMPL:DEF{"logo"}%%NATWEBLOGO%%TMPL:END%
+
 %TMPL:DEF{"useractions"}%<!-- useractions -->
 %USERACTIONS{
-  guest="<div class='natGreeter natGuestGreeter'>$login$sep$users$sep$register</div>"
-  format="<div class='natGreeter natUserGreeter'>$account$sep$users$sep$logout</div>"
+  guest="<div class='natGreeter natGuestGreeter'>$login$sep$register</div>"
+  format="<div class='natGreeter natUserGreeter'>$account$sep$logout</div>"
 }%
 <!-- //useractions -->%TMPL:END%
 
@@ -269,8 +280,6 @@
   <input type="hidden" name="text" value="%HIDDENTEXT%" />
 </form>
 <!-- //hiddenform-->%TMPL:END%
-
-%TMPL:DEF{"spacer"}%<img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/blank.gif' class='natSpacer' alt="spacer" />%TMPL:END%
 
 %TMPL:DEF{"topictitle"}%%TMPL:P{context="DBCachePluginEnabled" then="topictitle_dbcache" else="topictitle_default"}%%TMPL:END%
 %TMPL:DEF{"topictitle_default"}%%IF{"defined 'TOPICTITLE'" then="%TOPICTITLE%" else="%BASETOPIC%"}%%TMPL:END%

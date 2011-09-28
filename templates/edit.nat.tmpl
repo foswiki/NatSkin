@@ -19,7 +19,7 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"showonscreen"}%<!-- -->
-<h2>Show on screen</h2>
+<h2>%MAKETEXT{"Show on screen"}%</h2>
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep">
     <table class="foswikiLayoutTable">
@@ -106,17 +106,19 @@
   <div class="foswikiFormStep">
     <input type='hidden' name='Default+COMMENTFORMAT' value="%GETVAR{"COMMENTFORMAT" scope="web" default="%TMPL:P{"comments::format::default"}%"}%" />
     <input type='hidden' name='Default+COMMENTSTATE' value="%GETVAR{"COMMENTSTATE" scope="web" default="open"}%" />
-    <input type='hidden' name='Default+COMMENTAPPROVAL' value="%GETVAR{"COMMENTAPPROVAL" scope="web" default="off"}%" />
+    <input type='hidden' name='Default+COMMENTMODERATION' value="%GETVAR{"COMMENTMODERATION" scope="web" default="off"}%" />
     <table class="foswikiLayoutTable">
       <tr>
         <th>%MAKETEXT{"Format"}%</th>
         <td colspan="4">
           <select name="Local+COMMENTFORMAT" class="foswikiSelect">
             <option value="%TMPL:P{"comments::format::default"}%">%MAKETEXT{"default"}%</option>
-            %FORMATLIST{"%TMPL:P{"comments::formats"}%,insidetab"
+            %FORMATLIST{"%TMPL:P{"comments::formats"}%"
+              sort="on"
+              unique="on"
               split="\s*,\s*"
               separator=""
-              format="<option $percntIF{\"$'COMMENTFORMAT'='$1'\" then=\"selected\"}$percnt>$1</option>"
+              format="<option $percntIF{\"$'COMMENTFORMAT'='$1'\" then=\"selected\"}$percnt>$percntMAKETEXT{\"$1\"}$percnt</option>"
             }%
           </select>
         </td>
@@ -129,11 +131,11 @@
         <td><label for="commentstate_closed">%MAKETEXT{"closed"}%</td>
       </tr>
       <tr>
-        <th>%MAKETEXT{"Approval"}%</th>
-        <td><input type="radio" class="foswikiRadioButton" id="commentapproval_on" name="Local+COMMENTAPPROVAL" value="on" %IF{"$'COMMENTAPPROVAL'='on'" then="checked"}% /></td>
-        <td><label for="commentapproval_on">%MAKETEXT{"on"}%</td>
-        <td><input type="radio" class="foswikiRadioButton" id="commentapproval_off" name="Local+COMMENTAPPROVAL" value="off" %IF{"$'COMMENTAPPROVAL'='off' or isempty 'COMMENTAPPROVAL'" then="checked"}% /></td>
-        <td><label for="commentapproval_off">%MAKETEXT{"off"}%</td>
+        <th>%MAKETEXT{"Moderation"}%</th>
+        <td><input type="radio" class="foswikiRadioButton" id="commentmoderation_on" name="Local+COMMENTMODERATION" value="on" %IF{"$'COMMENTMODERATION'='on'" then="checked"}% /></td>
+        <td><label for="commentmoderation_on">%MAKETEXT{"on"}%</td>
+        <td><input type="radio" class="foswikiRadioButton" id="commentmoderation_off" name="Local+COMMENTMODERATION" value="off" %IF{"$'COMMENTMODERATION'='off' or isempty 'COMMENTMODERATION'" then="checked"}% /></td>
+        <td><label for="commentmoderation_off">%MAKETEXT{"off"}%</td>
       </tr>
     </table>
   </div>

@@ -7,6 +7,7 @@ data/System/JazzyNoteTheme.txt 0644
 data/System/MySideBar.txt 0644
 data/System/NatSearch.txt 0644
 data/System/NatSkinChangePasswordViewTemplate.txt 0644
+data/System/NatSkinResetPasswordViewTemplate.txt 0644
 data/System/NatSkinConfiguration.txt 0644
 data/System/NatSkinCss.txt 0644
 data/System/NatSkinFAQ.txt 0644
@@ -255,8 +256,6 @@ templates/sidebar.nat.tmpl 0644
 templates/styles.nat.tmpl 0644
 templates/topbar.foswiki.tmpl 0644
 templates/topbar.nat.tmpl 0644
-templates/topicnew.nat.tmpl 0644
-templates/topicnew.tmpl 0644
 templates/twistyplugin.nat.tmpl 0644
 templates/validate.nat.tmpl 0644
 templates/view.nat.tmpl 0644

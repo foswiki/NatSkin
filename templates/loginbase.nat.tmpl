@@ -13,7 +13,7 @@
 
 %{################################################################################ }%
 %TMPL:DEF{"login::start"}%<!-- -->
-<form id="LogonForm" name="LogonForm" action="%IF{"$'HTTPSLOGON'='on'" then="https" else="http"}%://%HTTP_HOST%%SCRIPTURLPATH{"login"}%%IF{"defined 'PATH_INFO'" then="$percntPATH_INFO$percnt" else="/$percntWEB$percnt/$percntTOPIC$percnt"}%" method="post">
+<form id="LoginForm" name="LoginForm" action="%IF{"$'HTTPSLOGON'='on'" then="https" else="http"}%://%HTTP_HOST%%SCRIPTURLPATH{"login"}%%IF{"defined 'PATH_INFO'" then="$percntPATH_INFO$percnt" else="/$percntWEB$percnt/$percntTOPIC$percnt"}%" method="post">
   <literal>
     %FORMATLIST{"%QUERYPARAMS{encoding="entity" format="$name;$value"}%"
       split="\n"
@@ -86,7 +86,7 @@
 %{################################################################################ }%
 %TMPL:DEF{"login::end"}%<!-- -->
 </form>
-%JQREQUIRE{"validate, shake, focus"}%<!-- -->
+%JQREQUIRE{"validate, focus"}%<!-- -->
 %ADDTOZONE{"script" 
   tag="NATSKIN::LOGIN"
   text="<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/login.js'></script>"

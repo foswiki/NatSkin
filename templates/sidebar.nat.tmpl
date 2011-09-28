@@ -1,15 +1,13 @@
-<!-- template: sidebar.nat.tmpl -->
+%TMPL:INCLUDE{"bookmarksplugin"}%<!-- template: sidebar.nat.tmpl -->
 %TMPL:DEF{"webleftbar"}%%WEBCOMPONENT{"LeftBar"}%%TMPL:END%
 %TMPL:DEF{"webrightbar"}%%WEBCOMPONENT{"RightBar"}%%TMPL:END%
 %TMPL:DEF{"websidebar"}%%WEBCOMPONENT{"SideBar"}%%TMPL:END%
-%TMPL:DEF{"pattern_sidebar"}%<h2 class="natSideBarTitle" style="background:%WEBBGCOLOR%">%BASEWEB%</h2>%TMPL:P{"webleftbar"}%%TMPL:END%
-%TMPL:DEF{"nat_sidebar"}%%TMPL:P{"websidebar"}%%TMPL:END%
-%TMPL:DEF{"defaultsidebar"}%%TMPL:P{context="natskin_style_pattern" then="pattern_sidebar" else="nat_sidebar"}%%TMPL:END%
+%TMPL:DEF{"defaultsidebar"}%%TMPL:P{"websidebar"}%%TMPL:END%
 %TMPL:DEF{"sidebar"}%%TMPL:P{"defaultsidebar"}%%TMPL:END%
 %TMPL:DEF{"rightsidebar"}%%TMPL:P{context="natskin_sidebar_both" then="webrightbar" else="sidebar"}%%TMPL:END%
 %TMPL:DEF{"mysidebarreddot"}%%REDDOT{"%topic%" icon="pencil" title="%MAKETEXT{"Edit my sidebar"}%"}%%TMPL:END%
 %TMPL:DEF{"thesidebar"}%%USERSWEB%.%WIKINAME%%IF{"defined 'MYSIDEBAR'" then="%MYSIDEBAR%" else="SideBar"}%%TMPL:END%
-%TMPL:DEF{"mysidebar"}%%TMPL:P{context="FavoritesPluginEnabled" then="mysidebar::favorites" else="mysidebar::default"}%%TMPL:END%
+%TMPL:DEF{"mysidebar"}%%TMPL:P{context="BookmarksPluginEnabled" then="mysidebar::bookmarks" else="mysidebar::default"}%%TMPL:END%
 %TMPL:DEF{"mysidebar::default"}%%IF{"istopic '%TMPL:P{"thesidebar"}%'" 
   then="<h2 class='jqInited'>%MAKETEXT{"My sidebar"}%%TMPL:P{
       context="RedDotPluginEnabled" 
@@ -29,18 +27,17 @@ $percntTMPL:P{\"mysidebarbookmark\"}$percnt"
   </li>
 </ul>%TMPL:END%
 
-%TMPL:DEF{"mysidebar::favorites"}%<!-- -->
+%TMPL:DEF{"mysidebar::bookmarks"}%<!-- -->
 <h2 >%MAKETEXT{"My links"}%</h2>
-%FAVORITES{
+%BOOKMARKS{
+  "mylinks"
+  hidenull="off"
+  topic="%WIKIUSERNAME%"
   format="<li id='$id'>
-    <a href='$url' class='jqFavoritesLink'><span class='jqFavoritesLinkText'>$title</span>
+    <a href='$url' class='jqBookmarksLink'><span class='jqBookmarksLinkText'>$title</span>
       <div class='foswikiGrayText'>$summary</div>
     </a>
-    <span class='jqFavoritesLinkTools'>
-      <a href='#' class='jqFavoritesEdit' title='%MAKETEXT{"Edit this link"}%'>%JQICON{"pencil"}%</a> 
-      <a href='#' class='jqFavoritesDelete' title='%MAKETEXT{"Delete this link"}%'>%JQICON{"bin"}%</a>
-    </span>
+    %TMPL:P{"bookmarks::link::tools"}%
   </li>"
-}%
+}%<!-- -->
 <!-- -->%TMPL:END%
-

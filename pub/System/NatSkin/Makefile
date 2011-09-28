@@ -9,8 +9,7 @@ TARGET= \
   print.css \
   rename.js
 
-
-SUBDIRS= \
-  ../JazzyNoteTheme
-
 -include Makefile.include
+
+SUBDIRS=../JazzyNoteTheme
+

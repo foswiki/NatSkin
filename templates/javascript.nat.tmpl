@@ -1,9 +1,10 @@
 <!-- template: javascript.nat.tmpl -->
 %TMPL:DEF{"defaultjavascript"}%<!-- -->
-%JQREQUIRE{"superfish, supersubs, autocomplete, blockui, simplemodal, wikiword, focus, twisty, button"}%<!--  -->
+%JQREQUIRE{"superfish, ui, ui::autocomplete, blockui, simplemodal, wikiword, focus, twisty, button, placeholder"}%<!--  -->
 %IF{"defined NATSKIN_FLUIDFONT" then="$percntJQREQUIRE{\"fluidfont\"}$percnt"}%<!-- -->
-%TMPL:P{context="ImagePluginEnabled" then="imagetooltip"}%<!-- imagetooltip// -->
+%TMPL:P{context="ImagePluginEnabled" then="imagetooltip"}%<!--  -->
 <!-- -->%TMPL:END%
+
 %TMPL:DEF{"imagetooltip"}%%JQREQUIRE{"imagetooltip"}%%TMPL:END%
 
 %TMPL:DEF{"fixRevisionPosition"}%<meta name='foswiki.NatSkin.fixRevisionPosition' content='true' />%TMPL:END%
@@ -12,7 +13,17 @@
 %TMPL:DEF{"initTopicActions"}%<meta name='foswiki.NatSkin.initTopicActions' content='true' />%TMPL:END%
 %TMPL:DEF{"initSideBar"}%<meta name='foswiki.NatSkin.initSideBar' content='true' />%TMPL:END%
 %TMPL:DEF{"initAutoComplete"}%<meta name='foswiki.NatSkin.initAutocomplete' content='true' />%TMPL:END%
-%TMPL:DEF{"initSearchBox"}%<meta name='foswiki.NatSkin.initSearchBox' content='true' />%TMPL:END%
 %TMPL:DEF{"initRedDot"}%<meta name='foswiki.NatSkin.initRedDot' content='true' />%TMPL:END%
+
+%TMPL:DEF{"metaflags"}%<!-- -->
+%TMPL:P{"fixRevisionPosition"}%
+%TMPL:P{"initWebMenu"}%
+%TMPL:P{"initOverflows"}%
+%TMPL:P{"initTopicActions"}%
+%TMPL:P{"initSideBar"}%
+%TMPL:P{"initAutoComplete"}%
+%TMPL:P{"initSearchBox"}%
+%TMPL:P{"initRedDot"}%
+<!-- -->%TMPL:END%
 
 %TMPL:DEF{"javascript"}%%TMPL:P{"defaultjavascript"}%%TMPL:END%

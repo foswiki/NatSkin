@@ -36,6 +36,7 @@ body {
   margin:0 !important;
   padding:0 !important;
   width:auto !important;
+  background:transparent !important;
   prince-linebreak-magic: auto;
   hyphens: auto;
   color:#000;
@@ -67,7 +68,6 @@ ul, ol, dl {
 }
 pre {
   page-break-inside:avoid;
-  white-space:normal;
   overflow:hidden;
 }
 
@@ -100,12 +100,6 @@ pre {
 
 
 /* spacings */
-.natHeaderArt {
-  border:0px !important;
-  margin:0px !important;
-  padding:0px !important;
-  background:transparent !important;
-}
 .natBodyContents {
   width:auto !important;
   padding:0px !important;

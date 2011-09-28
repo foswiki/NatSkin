@@ -7,7 +7,7 @@
 %TMPL:DEF{"bottombar"}%%TMPL:END%
 %TMPL:DEF{"sidebar"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
-%TMPL:DEF{"heading"}%%MAKETEXT{"Child topics of [_1] in [_1]" args="[[%BASEWEB%.%BASETOPIC%][%BASETOPIC%]], [[%BASEWEB%.%HOMETOPIC%][%HOMETOPIC%]]"}%%TMPL:END%
+%TMPL:DEF{"heading"}%%MAKETEXT{"Child topics of [_1]" args="[[%BASEWEB%.%BASETOPIC%][%BASETOPIC%]]"}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"content"}%<!-- -->
@@ -24,15 +24,13 @@
 
 
 %{ ################################################################################ }%
-%TMPL:DEF{"dialog"}%<div class="foswikiDialog">
-<div class="foswikiFormSteps">
-  <h2 class="foswikiDialogTitle">%TMPL:P{"heading"}%</h2>
-  <div class="foswikiFormStep natChildTopicsContainer"></div>
-  <hr />
-  <div class="foswikiFormStep">
-    %BUTTON{"%MAKETEXT{"Close"}%" class="jqSimpleModalCancel" icon="cross"}%
-    %CLEAR%
-  </div>
+%TMPL:DEF{"dialog"}%<div class="foswikiDialog foswikiFormSteps">
+<h2 class="foswikiDialogTitle jqSimpleModalDraggable">%TMPL:P{"heading"}%</h2>
+<div class="foswikiFormStep natChildTopicsContainer"></div>
+<hr />
+<div class="foswikiFormStep">
+  %BUTTON{"%MAKETEXT{"Close"}%" class="jqSimpleModalCancel" icon="cross"}%
+  %CLEAR%
 </div>
 %TMPL:P{"childtopicsjavascript"}%<!-- -->
 %TMPL:END%

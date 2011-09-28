@@ -1,0 +1,163 @@
+%META:TOPICINFO{author="ProjectContributor" date="1111929255" format="1.0" version="$Rev$"}%
+%{<verbatim class="tml">}%
+%TMPL:INCLUDE{"view"}%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"title"}%%HTMLTITLE{"%MAKETEXT{"Change E-mail Address"}%" separator=" %IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="-"}% "}%%TMPL:END%
+%TMPL:DEF{"topicactions"}%%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+%{</verbatim>}%
+%MAKETEXT{"Change E-mail Address"}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"content"}%<!-- -->
+---+ %MAKETEXT{"Change E-mail Address"}%
+%TMPL:P{context="passwords_modifyable" then="changeemailform" else="nochangeemail"}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"nochangeemail"}%<!-- -->
+%MAKETEXT{"Your registered e-mails are used by Foswiki for sending you e-mails, include notifications of password changes."}%
+%MAKETEXT{"You change your email address by setting the form field called Email in your user topic. If this form field does not exist it will look for a line like this:"}%
+
+<verbatim>
+   * Set Email = <nop>user@example.com=
+</verbatim>
+
+%MAKETEXT{"If your old e-mail addresses are all invalid (you can't receive mail there any more) and you have forgotten your password, please contact [_1] for help." args="%WIKIWEBMASTER%"}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"changeemailform"}%<!-- -->
+%TMPL:P{"formtitle"}%<!-- -->
+%TMPL:P{"formstartstep"}%<!-- -->
+%TMPL:P{"loginstep"}%<!-- -->
+%TMPL:P{"newemailaddressstep"}%<!-- -->
+%TMPL:P{"passwordstep"}%<!-- -->
+%TMPL:P{"formbuttons"}%<!-- -->
+%TMPL:P{"formendstep"}%<!-- -->
+%TMPL:P{"formvalidation"}%<!-- -->
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formtitle"}%<!-- -->
+%MAKETEXT{"This form is used to change your registered e-mail addresses. Your registered addresses are used by Foswiki for sending you e-mails, including notifications of password changes. The addresses you register via this form are kept secret and will *not* be published anywhere on this site."}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formstartstep"}%<!-- -->
+%TMPL:P{"formstart"}%
+<div class="foswikiFormSteps">
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formstart"}%<!-- -->
+<form name="changeEmailAddressForm" action="%SCRIPTURLPATH{"manage"}%/%WEB%/%TOPIC%" method="post">
+<input type="hidden" name="TopicName" value="%TOPIC%" />
+<input type="hidden" name="action" value="changePassword" />
+<input type="hidden" name="t" value="%GMTIME{"$epoch"}%" />
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formendstep"}%</div>%TMPL:P{"formend"}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formend"}%</form>
+
+%MAKETEXT{"If you have any questions, please contact [_1]" args="%WIKIWEBMASTER%"}%
+<!-- -->%TMPL:END%
+<!-- -->%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"loginstep"}%%IF{"$USERNAME ingroup 'AdminGroup'" 
+  then="$percntTMPL:P{\"loginstep::admin\"}$percnt"
+  else="$percntTMPL:P{\"loginstep::user\"}$percnt"
+}%%TMPL:END%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"loginstep::admin"}%<!-- -->
+<div class="foswikiFormStep">
+  <h3 >
+    %MAKETEXT{"Login"}%:
+  </h3>
+  <input type="text" autocomplete="off" name="username" value="%URLPARAM{"username" default="%USERNAME%"}%" size="40" class="foswikiInputField required" />
+  <div class='foswikiFormDescription'>
+    %MAKETEXT{"*Administrators:* You can change user's e-mail address using this form. Enter the users Login or WikiName and the new e-mail address."}%
+  </div>
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"loginstep::user"}%<input type="hidden" name="username" value="%USERNAME%" />%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"passwordstep"}%%IF{"$USERNAME ingroup 'AdminGroup'" else="$percntTMPL:P{\"passwordstep::user\"}$percnt"}%%TMPL:END%
+%TMPL:DEF{"passwordstep::user"}%<!-- -->
+<div class="foswikiFormStep">
+  <h3 >%MAKETEXT{"Password"}%:</h3>
+  <input type="password" autocomplete="off" name="oldpassword" value="%URLPARAM{oldpassword}%" size="40" class="foswikiInputField required" />
+
+  <div class="foswikiFormDescription">
+    %MAKETEXT{"You are required to enter your password to change your e-mail address."}%
+  </div>
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formbuttons"}%<!-- -->
+<div class='foswikiFormStep foswikiFormButtons'>
+%TMPL:P{"submit"}%%CLEAR%
+
+<div class="foswikiFormDescription">
+  %MAKETEXT{"After submitting this form the e-mails will be changed."}%
+</div>
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"newemailaddressstep"}%<!-- -->
+<div class="foswikiFormStep">
+  <h3 >%MAKETEXT{"New e-mails"}%:</h3>
+  <input type="text" autocomplete="off" name="email" size="80" class="foswikiInputField required email" value="%IF{"$USERNAME ingroup 'AdminGroup'" else="%FORMATLIST{"%USERINFO{format="$emails"}%" split="\s*,\s*" separator=" "}%"}%" />
+
+  <div class="foswikiFormDescription">
+    %MAKETEXT{"Specify one or more space separated emails."}%
+  </div>
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"submit"}%<!-- -->
+%BUTTON{"%MAKETEXT{"Change E-mail Address"}%" %IF{"not context passwords_modifyable" then="disabled=\"on\""}% type="submit" icon="email_edit" class="jqSimpleModalOK"}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"formvalidation"}%<!-- -->
+%JQREQUIRE{"validate"}%<!-- -->
+%ADDTOZONE{"script" 
+  requires="JQUERYPLUGIN::VALIDATE"
+  text="<literal>
+<script>
+jQuery(function($) { 
+  $('form[name=changeEmailAddressForm]').validate();
+});
+</script></literal>"
+}%%TMPL:END%
+%{</verbatim>}%

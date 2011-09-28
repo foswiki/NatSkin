@@ -1,2 +1,4 @@
 FOSWIKI_ROOT?=~/foswiki/trunk/core
+NATSKIN_ROOT=$(FOSWIKI_ROOT)/pub/System/NatSkin
+
 -include $(FOSWIKI_ROOT)/pub/System/JQueryPlugin/Makefile.include

@@ -1,5 +1,5 @@
 %TMPL:INCLUDE{"foswiki"}%<!-- template: copytopic.nat.tmpl -->
-%TMPL:DEF{"dialog"}%<div class="foswikiDialog">
+%TMPL:DEF{"dialog"}%<div class="foswikiDialog foswikiFormSteps">
 %TMPL:P{"content"}%<!-- -->
 %TMPL:P{"javascript"}%<!-- -->
 </div>%TMPL:END%
@@ -12,32 +12,31 @@
 <input type="hidden" name="onlynewtopic" value="on" />
 <input type="hidden" name="templatetopic" value="%WEB%.%TOPIC%" />
 <input type="hidden" name="nowysiwyg" value="1" />
+<input type="hidden" name="notemplateexpansion" value="1" />
 <input type="hidden" name="action_save" value="1" />
-<div class="foswikiFormSteps">
-  <h2 class="foswikiDialogTitle">%MAKETEXT{"Copy topic [_1]" args="%BASEWEB%.%BASETOPIC%"}%</h2>
-  <div class="foswikiFormStep">
-    <h3>%MAKETEXT{"To:"}%</h3>
-    <input type="text" name="topic" class="foswikiInputField jqFocus" value="%TOPIC%Copy" size="30" style="width:98%" /> 
-    <div class="foswikiFormDescription">
-      %MAKETEXT{"Copy text and form data to a new topic."}%
-    </div>
+<h2 class="foswikiDialogTitle jqSimpleModalDraggable">%MAKETEXT{"Copy topic [_1]" args="[[%BASEWEB%.%BASETOPIC%][%BASETOPIC%]]"}%</h2>
+<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"To:"}%</h3>
+  <input type="text" name="topic" class="foswikiInputField jqFocus" value="%TOPIC%Copy" size="30" style="width:98%" /> 
+  <div class="foswikiFormDescription">
+    %MAKETEXT{"Copy text and form data to a new topic."}%
   </div>
-  <div class="foswikiFormStep">
-    <input type="checkbox" class="foswikiCheckbox" name="nonwikiword" id="nonwikiword" %IF{"$ 'URLPARAM{nonwikiword}'='on'" then="checked='checked'"}% />
-    <label for="nonwikiword">%MAKETEXT{"Allow non <nop>WikiWord for the new topic name"}%</label>
-  </div>
-  <hr />
-  <div class="foswikiFormStep foswikiFormButtons">
-    %BUTTON{type="save" "%MAKETEXT{"Copy"}%" icon="page_white_copy"}%
-    %BUTTON{"%MAKETEXT{"Cancel"}%" 
-      class="jqSimpleModalCancel" 
-      icon="cross" 
-      %IF{"context view"
-        then="target=\"%URLPARAM{"origurl" default="%BASEWEB%.%BASETOPIC%"}%\""
-      }%
+</div>
+<div class="foswikiFormStep">
+  <input type="checkbox" class="foswikiCheckbox" name="nonwikiword" id="nonwikiword" %IF{"$ 'URLPARAM{nonwikiword}'='on'" then="checked='checked'"}% />
+  <label for="nonwikiword">%MAKETEXT{"Allow non <nop>WikiWord for the new topic name"}%</label>
+</div>
+<hr />
+<div class="foswikiFormStep foswikiFormButtons">
+  %BUTTON{type="save" "%MAKETEXT{"Copy"}%" icon="page_white_copy"}%
+  %BUTTON{"%MAKETEXT{"Cancel"}%" 
+    class="jqSimpleModalCancel" 
+    icon="cross" 
+    %IF{"context view"
+      then="target=\"%URLPARAM{"origurl" default="%BASEWEB%.%BASETOPIC%"}%\""
     }%
-    %CLEAR%
-  </div>
+  }%
+  %CLEAR%
 </div>
 </form>
 <!-- -->%TMPL:END%

@@ -1,15 +1,15 @@
 <!-- template: topbar.nat.tmpl -->
 %TMPL:DEF{"defaulttopbar"}%<!-- defaulttopbar -->
-<tr>
-  <td class="natTopBar natTopLeft" valign="top">
+<div class="natTopBar">
+  <div class="natTopRight">
+    <div class="natTopRightContents">%TMPL:P{"searchbox"}%</div>
+  </div>
+  <div class="natTopLeft">
     <div class="natTopLeftContents">
-      <div class="natWebTitle">%NATWEBLOGO%</div>
+      <div class="natWebTitle">%TMPL:P{"logo"}%</div>
       <div class="natWebSlogan">%WEBSUMMARY%</div>
     </div>
-  </td>
-  <td class="natTopBar natTopRight" valign="top" width="250px">
-    <div class="natTopRightContents">%TMPL:P{"searchbox"}%</div>
-  </td>
-</tr>
+  </div>
+</div>
 <!-- //defaulttopbar -->%TMPL:END%
 %TMPL:DEF{"topbar"}%%TMPL:P{"defaulttopbar"}%%TMPL:END%

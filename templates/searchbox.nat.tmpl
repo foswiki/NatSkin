@@ -4,9 +4,9 @@
 <form name="searchbox" id="searchbox" action="%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebSearch" >
   <input type="hidden" name="jump" value="on" />
   <input type="hidden" name="origtopic" value="%BASEWEB%.%BASETOPIC%" />
-  <input type="text" class="foswikiInputField {title:'%TMPL:P{"searchvalue"}%', color:'#808080'}" size="15" title="%MAKETEXT{"Enter topic name or a search string"}%" name="search" value="%TMPL:P{"searchvalue"}%" accesskey="f" /> 
+  <input type="text" class="foswikiInputField" placeholder="%MAKETEXT{"search"}%" size="20" title="%MAKETEXT{"Enter topic name or a search string"}%" name="search" value="%TMPL:P{"searchvalue"}%" accesskey="f" /> 
   <input type="submit" class="foswikiSubmit" value="" />
 </form>
 </div>
 <!-- //search box-->%TMPL:END%
-%TMPL:DEF{"searchvalue"}%%URLPARAM{"search" default="%MAKETEXT{"Search"}%" encode="entity"}%%TMPL:END%
+%TMPL:DEF{"searchvalue"}%%URLPARAM{"search" encode="entity"}%%TMPL:END%

@@ -8,7 +8,19 @@
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"content"}%<!-- content -->
+%TMPL:DEF{"content"}%<!-- -->
+%TMPL:P{context="registration_enabled" then="registration_enabled" else="registration_disabled"}%
+<!-- -->%TMPL:END%
+
+%{<verbatim>}%
+%TMPL:DEF{"registration_disabled"}%<!-- -->
+<div class='foswikiErrorMessage'>
+%MAKETEXT{"Sorry, registration has been temporarily disabled."}%
+</div>
+<!-- -->%TMPL:END%
+
+%{<verbatim>}%
+%TMPL:DEF{"registration_enabled"}%<!-- -->
 %TMPL:P{"formtitle"}%
 %TMPL:P{"formstart"}%
 %TMPL:P{"accountdetails"}%
@@ -17,7 +29,7 @@
 %TMPL:P{"groupdetails"}%
 %TMPL:P{"formend"}%
 %TMPL:P{"formvalidation"}%
-<!-- //content -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
@@ -29,7 +41,7 @@
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"formstart"}%<!-- formstart -->
+%TMPL:DEF{"formstart"}%<!-- -->
 <form id="registrationForm" action="%SCRIPTURLPATH{"register"}%/%USERSWEB%/%HOMETOPIC%" method="post">
 %IF{"context BlacklistPluginEnabled" 
   then="<input type='hidden' name='rx' value='$percntBLACKLISTPLUGIN{ action=\"magic\" }$percnt' />"
@@ -38,31 +50,33 @@
 <input type="hidden" name="topic" value="%TOPIC%" />
 <input type="hidden" name="action" value="register" />
 <div class="foswikiFormSteps">
-<!-- //formstart -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"formend"}%<!-- formend -->
+%TMPL:DEF{"formend"}%<!-- -->
 <div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
   %BUTTON{type="submit" "%MAKETEXT{"Register"}%" icon="user"}%
   %CLEAR%
 </div>
 </div>
 </form>
-%MAKETEXT{"If you have any questions, please contact [_1]" args="%WIKIWEBMASTER%"}%
+
 <div class="foswikiErrorMessage" id="summary" style="display:none"></div>
-<!-- //formend -->%TMPL:END%
+
+%MAKETEXT{"If you have any questions, please contact [_1]" args="%WIKIWEBMASTER%"}%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"accountdetails"}%<!-- account details -->
+%TMPL:DEF{"accountdetails"}%<!-- -->
 %TMPL:P{"accountdetailstitle"}%
 %TMPL:P{"firstname"}%
 %TMPL:P{"lastname"}%
 %TMPL:P{"email"}%
 %TMPL:P{"wikiname"}%
 %TMPL:P{"formsep"}%
-<!-- //account details -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
@@ -70,12 +84,12 @@
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"logindetails"}%<!-- login details -->
+%TMPL:DEF{"logindetails"}%<!-- -->
 %TMPL:P{"logindetailstitle"}%
 %TMPL:P{context="allow_loginname" "loginname"}%
 %TMPL:P{context="passwords_modifyable" "password"}%
 %TMPL:P{"formsep"}%
-<!-- //login details -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
@@ -83,7 +97,7 @@
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"loginname"}%<!-- loginname -->
+%TMPL:DEF{"loginname"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Choose a login name"}%:</h3>
   <input %NOREGISTRATION% type="text" id="Twk1LoginName" name="Twk1LoginName" size="40" class="foswikiInputField" /> 
@@ -92,11 +106,11 @@
     %MAKETEXT{"The login name you use to sign in."}%
   </div>
 </div>
-<!-- //loginname -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"email"}%<!-- email -->
+%TMPL:DEF{"email"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Your e-mail address"}%:</h3>
   <input type="text" id="Twk1Email" name="Twk1Email" class="foswikiInputField" size="40" />
@@ -105,11 +119,11 @@
     %MAKETEXT{"A valid email address. Will be kept confidential."}%
   </div>
 </div>
-<!-- //email -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"password"}%<!-- password -->
+%TMPL:DEF{"password"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Choose a password:"}%</h3>
   <input type="password" id="Twk1Password" name="Twk1Password" class="foswikiInputField" size="40" value="" />
@@ -120,31 +134,31 @@
   <input type="password" id="Twk1Confirm" name="Twk1Confirm" class="foswikiInputField" size="40" value="" />
   <span class="foswikiAlert">**</span>
 </div>
-<!-- //passwprd -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"firstname"}%<!-- firstname -->
+%TMPL:DEF{"firstname"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Your first name"}%:</h3>
   <input type="text" id="Twk1FirstName" name="Twk1FirstName" size="40" class="foswikiInputField" value="" /> 
   <span class="foswikiAlert">**</span>
 </div>
-<!-- //firstname -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"lastname"}%<!-- lastname -->
+%TMPL:DEF{"lastname"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Your last name"}%:</h3>
   <input type="text" id="Twk1LastName" name="Twk1LastName" size="40" class="foswikiInputField" value="" /> 
   <span class="foswikiAlert">**</span>
 </div>
-<!-- //lastname -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"wikiname"}%<!-- wikiname -->
+%TMPL:DEF{"wikiname"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Choose a <nop>WikiName"}%:</h3>
   <input type="text" id="Twk1WikiName" name="Twk1WikiName" size="40" class="foswikiInputField" value="" /> 
@@ -156,17 +170,17 @@
     }%
   </div>
 </div>
-<!-- //wikiname -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"extradetails"}%<!-- extra details -->
+%TMPL:DEF{"extradetails"}%<!-- -->
 %TMPL:P{"extradetailstitle"}%
 %TMPL:P{"organisationname"}%
 %TMPL:P{"organisationurl"}%
 %TMPL:P{"country"}%
 %TMPL:P{"formsep"}%
-<!-- //extra details -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
@@ -174,25 +188,25 @@
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"organisationname"}%<!-- organisationname -->
+%TMPL:DEF{"organisationname"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Organisation Name"}%:</h3>
   <input type="text" id="Twk0OrganisationName" name="Twk0OrganisationName" size="40" class="foswikiInputField" value="" /> 
 </div>
-<!-- //organisationname -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"organisationurl"}%<!-- organisationurl -->
+%TMPL:DEF{"organisationurl"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Organisation URL"}%:</h3>
   <input type="text" id="Twk0OrganisationURL" name="Twk0OrganisationURL" size="40" class="foswikiInputField" value="" /> 
 </div>
-<!-- //organisationurl -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"country"}%<!-- country -->
+%TMPL:DEF{"country"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Country"}%:</h3>
   <select id="Twk0Country" name="Twk0Country" class="foswikiSelect"> 
@@ -204,11 +218,11 @@
   }%
   </select>
 </div>
-<!-- //Country -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"groupdetails"}%<!-- groupdetails -->
+%TMPL:DEF{"groupdetails"}%<!-- -->
 %IF{"$'REGISTRATIONGROUPTYPE'!='none'"
   then="<div class='foswikiHidden' id='groupDetails'>
       $percntTMPL:P{\"groupdetailstitle\"}$percnt
@@ -217,7 +231,7 @@
     </div>"
   else="<!-- no group details -->"
 }%
-<!-- //groupdetails -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
@@ -225,7 +239,7 @@
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"joingroup"}%<!-- joingroup -->
+%TMPL:DEF{"joingroup"}%<!-- -->
 <div class='foswikiFormStep'>
 %FORMATLIST{
   "%GROUPINFO{
@@ -247,11 +261,11 @@
   %MAKETEXT{"Select the groups you want to join."}%
 </div>
 </div>
-<!-- //joingroup -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"formvalidation"}%<!-- formvalidation -->
+%TMPL:DEF{"formvalidation"}%<!-- -->
 %JQREQUIRE{"validate, wikiword"}%
 %ADDTOZONE{"script" 
   requires="JQUERYPLUGIN::VALIDATE, JQUERYPLUGIN::WIKIWORD"
@@ -323,7 +337,7 @@ jQuery(function($) {
 });
 </script></literal>"
 }% 
-<!-- //formvalidation -->%TMPL:END%
+<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%

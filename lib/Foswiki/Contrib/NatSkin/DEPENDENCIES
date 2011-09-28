@@ -1,7 +1,8 @@
 Foswiki::Contrib::FamFamFamContrib,>=2075,perl,Required.
-Foswiki::Plugins::AutoTemplatePlugin,>=1.11,perl,Required
+Foswiki::Plugins::AutoTemplatePlugin,>=2.01,perl,Required
 Foswiki::Plugins::BreadCrumbsPlugin,>=4318,perl,Required
 Foswiki::Plugins::DBCachePlugin,>=1,perl,Optional
+Foswiki::Plugins::MimeIconPlugin,>=1,perl,Required
 Foswiki::Plugins::FilterPlugin,>=3491,perl,Required
 Foswiki::Plugins::FlexWebListPlugin,>=3493,perl,Required
 Foswiki::Plugins::IfDefinedPlugin,>=3637,perl,Required
