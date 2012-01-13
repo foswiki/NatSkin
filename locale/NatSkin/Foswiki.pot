@@ -120,7 +120,7 @@ msgstr ""
 msgid "A topic with this name did exist, but has been renamed or moved to %1."
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:119
+#: data/System/UserRegistrationViewTemplate.txt:127
 msgid "A valid e-mail address. Will be kept confidential."
 msgstr ""
 
@@ -140,7 +140,7 @@ msgstr ""
 msgid "Access denied"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:85
+#: data/System/UserRegistrationViewTemplate.txt:93
 msgid "Account settings"
 msgstr ""
 
@@ -413,11 +413,11 @@ msgstr ""
 msgid "Chinese"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:159
+#: data/System/UserRegistrationViewTemplate.txt:167
 msgid "Choose a <nop>WikiName"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:104
+#: data/System/UserRegistrationViewTemplate.txt:112
 msgid "Choose a login name"
 msgstr ""
 
@@ -425,7 +425,7 @@ msgstr ""
 msgid "Choose a new form for %1"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:128
+#: data/System/UserRegistrationViewTemplate.txt:136
 msgid "Choose a password"
 msgstr ""
 
@@ -456,7 +456,7 @@ msgstr ""
 msgid "Close this dialog"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:233
+#: data/System/UserRegistrationViewTemplate.txt:238
 msgid "Collaboration details"
 msgstr ""
 
@@ -528,7 +528,7 @@ msgstr ""
 msgid "Could not save %1."
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:206
+#: data/System/UserRegistrationViewTemplate.txt:211
 msgid "Country"
 msgstr ""
 
@@ -761,12 +761,12 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:316
+#: data/System/UserRegistrationViewTemplate.txt:321
 msgid "Enter a WikiName"
 msgstr ""
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:170
-#: data/System/UserRegistrationViewTemplate.txt:311
+#: data/System/UserRegistrationViewTemplate.txt:316
 msgid "Enter a login name"
 msgstr ""
 
@@ -780,11 +780,11 @@ msgstr ""
 msgid "Enter a new username and password to change identity"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:317
+#: data/System/UserRegistrationViewTemplate.txt:322
 msgid "Enter a valid WikiWord"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:312
+#: data/System/UserRegistrationViewTemplate.txt:317
 msgid "Enter at least %1 characters"
 msgstr ""
 
@@ -797,7 +797,7 @@ msgid "Enter the current password for the given !LoginName."
 msgstr ""
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:180
-#: data/System/UserRegistrationViewTemplate.txt:325
+#: data/System/UserRegistrationViewTemplate.txt:330
 msgid "Enter the same password as above"
 msgstr ""
 
@@ -805,11 +805,11 @@ msgstr ""
 msgid "Enter topic name or a search string"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:308
+#: data/System/UserRegistrationViewTemplate.txt:313
 msgid "Enter your first name"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:309
+#: data/System/UserRegistrationViewTemplate.txt:314
 msgid "Enter your last name"
 msgstr ""
 
@@ -1006,7 +1006,7 @@ msgstr ""
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:76
 #: data/System/NatSkinChangePasswordViewTemplate.txt:83
-#: data/System/UserRegistrationViewTemplate.txt:69
+#: data/System/UserRegistrationViewTemplate.txt:77
 msgid "If you have any questions, please contact %1"
 msgstr ""
 
@@ -1136,11 +1136,11 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:98
+#: data/System/UserRegistrationViewTemplate.txt:106
 msgid "Login settings"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:313
+#: data/System/UserRegistrationViewTemplate.txt:318
 msgid "LoginName %1 is already in use"
 msgstr ""
 
@@ -1367,15 +1367,15 @@ msgstr ""
 msgid "Open in separate window"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:182
+#: data/System/UserRegistrationViewTemplate.txt:187
 msgid "Optional information"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:188
+#: data/System/UserRegistrationViewTemplate.txt:193
 msgid "Organisation Name"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:197
+#: data/System/UserRegistrationViewTemplate.txt:202
 msgid "Organisation URL"
 msgstr ""
 
@@ -1421,7 +1421,7 @@ msgstr ""
 msgid "Please e-mail %1 to request this."
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:328
+#: data/System/UserRegistrationViewTemplate.txt:333
 msgid "Please enter a valid e-mail address"
 msgstr ""
 
@@ -1487,7 +1487,7 @@ msgid "Provide a new password"
 msgstr ""
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:173
-#: data/System/UserRegistrationViewTemplate.txt:321
+#: data/System/UserRegistrationViewTemplate.txt:326
 msgid "Provide a password"
 msgstr ""
 
@@ -1495,7 +1495,7 @@ msgstr ""
 msgid "Raw"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:132
+#: data/System/UserRegistrationViewTemplate.txt:140
 msgid "Re-enter password"
 msgstr ""
 
@@ -1511,7 +1511,7 @@ msgstr ""
 msgid "Refresh topic caching"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:61
+#: data/System/UserRegistrationViewTemplate.txt:69
 #: templates/foswiki.nat.tmpl:15
 msgid "Register"
 msgstr ""
@@ -1565,7 +1565,7 @@ msgstr ""
 msgid "Repeat your new password"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:324
+#: data/System/UserRegistrationViewTemplate.txt:329
 msgid "Repeat your password"
 msgstr ""
 
@@ -1700,7 +1700,7 @@ msgstr ""
 msgid "Select the [[%1.WebHome][%1]] web to delete the topic."
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:256
+#: data/System/UserRegistrationViewTemplate.txt:261
 msgid "Select the groups you want to join."
 msgstr ""
 
@@ -1916,7 +1916,7 @@ msgstr ""
 msgid "The lease on this topic expired %1 ago."
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:107
+#: data/System/UserRegistrationViewTemplate.txt:115
 msgid "The login name you use to sign in."
 msgstr ""
 
@@ -1961,7 +1961,7 @@ msgid ""
 msgstr ""
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:146
-#: data/System/UserRegistrationViewTemplate.txt:275
+#: data/System/UserRegistrationViewTemplate.txt:280
 msgid "There was an error. Please, see above."
 msgstr ""
 
@@ -2255,7 +2255,7 @@ msgstr ""
 msgid "Wiki markup of %1"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:318
+#: data/System/UserRegistrationViewTemplate.txt:323
 msgid "WikiName %1 is already in use"
 msgstr ""
 
@@ -2351,11 +2351,11 @@ msgid ""
 "(This code is of the form \"YourName.xxxxxxxxxx\")"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:116
+#: data/System/UserRegistrationViewTemplate.txt:124
 msgid "Your e-mail address"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:141
+#: data/System/UserRegistrationViewTemplate.txt:149
 msgid "Your first name"
 msgstr ""
 
@@ -2372,7 +2372,7 @@ msgid ""
 "to proceed."
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:150
+#: data/System/UserRegistrationViewTemplate.txt:158
 msgid "Your last name"
 msgstr ""
 
@@ -2386,6 +2386,12 @@ msgstr ""
 msgid ""
 "Your login name. Note, you can't change your login name. Contact your wiki "
 "administrator to do this for you."
+msgstr ""
+
+#: data/System/UserRegistrationViewTemplate.txt:170
+msgid ""
+"Your name as displayed online.  Note, this must be a unique [[%1]"
+"[WikiName]]. By default it is derived from your first and last name."
 msgstr ""
 
 #: templates/messages.nat.tmpl:356
@@ -2538,8 +2544,8 @@ msgstr ""
 msgid "rename web"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:282
-#: data/System/UserRegistrationViewTemplate.txt:283
+#: data/System/UserRegistrationViewTemplate.txt:287
+#: data/System/UserRegistrationViewTemplate.txt:288
 msgid "required"
 msgstr ""
 

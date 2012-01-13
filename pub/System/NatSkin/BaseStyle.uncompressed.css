@@ -1046,7 +1046,7 @@ td.foswikiDiffChangedText {
 /* see also page.nat.tmpl */
 .natMainContents .natExternalLink:after {
   content:"";
-  background-image:url("external.gif");
+  background-image:url("external.png");
   background-repeat:no-repeat;
   background-position:0 0;
   margin:0px 3px 0px 5px;
@@ -1554,22 +1554,31 @@ body .natSideBar .natMySideBarRedDot a:hover {
 }
 
 /* edit */
+.natEditBody .natTopBar {
+  display:none;
+}
+
 .natEditBody {
   margin:0px;
 }
-.natEditBody .natBodyContents {
+.natEditBody .natBodyContents,
+.natEditBody.natBodyFixed .natBodyContents {
   margin-top:0px;
   margin-bottom:0px;
   padding-top:0px;
   padding-bottom:0px;
+  width:auto;
+  max-width:initial;
 }
 .natEditBody .natLayoutTable {
   table-layout:auto; /* firefox fix to preven collapsing tables */
+  margin-top:0px;
 }
 *:first-child+html 
 .natEditBody .natLayoutTable {
   table-layout:fixed; /* and IE7 as well */
 }
+.natEditBody .natMainHeaderContents,
 .natEditBody .natMainFooterContents,
 .natEditBody .natBottomBar,
 .natEditBody .natWebMenu {
@@ -1579,10 +1588,17 @@ body .natSideBar .natMySideBarRedDot a:hover {
 .natEditBody .natMainContents {
   min-height:0em;
 }
-.natEditBody .natMain {
-  padding-top:0px;
-  padding-bottom:0px;
+.natEditBody .natMain,
+.natEditBody.natBodyFixed .natMain {
+  padding:1.3846em 1.923em 0em 1.923em;
+  border:0px;
 }
+
+.natEditTitle {
+  margin-top:0px;
+  border-bottom:0px;
+}
+
 .natEditTopicInfo {
   margin:0.5em 0em 1em 0em;
 }

@@ -2,7 +2,7 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="jqUIDialog {modal:true, height:600, width:800, autoCenter:true}" title="%MAKETEXT{"Backlinks to [_1]" args="%GETTOPICTITLE{"%BASEWEB%.%BASETOPIC%"}%"}%">
+<div class="jqUIDialog {modal:true, height:600, width:800, draggable:true, resizable:true}" title="%MAKETEXT{"Backlinks to [_1]" args="%GETTOPICTITLE{"%BASEWEB%.%BASETOPIC%"}%"}%">
 %TMPL:P{"content"}%<!-- -->
 %TMPL:P{"backlinksjavascript"}%<!-- -->
 </div>

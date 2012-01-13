@@ -107,9 +107,18 @@ li li {
 }
 */
 
-dl dd {
+dd {
   margin:0em 0em 1.3846em 3.0769em;
+  /*margin-left:16em;*/
 }
+/*
+dt {
+  border-bottom:1px solid #ddd;
+  float:left;
+  width:15em;
+  margin-right:1em;
+}
+*/
 
 /* layout */
 .natTopBar {
@@ -150,9 +159,6 @@ dl dd {
 .natBodyBordered .natBodyContents {
   margin:1em 2em;
 }
-.natEditBody.natBodyBordered .natBodyContents {
-  margin:0px;
-}
 
 .natBodyBordered.natBodyLeft .natSideBarHeader,
 .natBodyBordered.natBodyRight .natWebMenu {
@@ -172,12 +178,6 @@ dl dd {
 .natBodyBordered .natMiddle,
 .natBodyBordered .natSideBar {
   border-bottom:1px #aaaaaa solid;
-}
-.natBodyBordered .natEditBody .natTopBar,
-.natBodyBordered .natEditBody .natWebMenu,
-.natBodyBordered .natEditBody .natMiddle,
-.natBodyBordered .natEditBody .natBottomBar {
-  border:0px
 }
 
 /* fixed layout*/
@@ -201,12 +201,6 @@ dl dd {
 .natBodyFixed .natMain,
 .natBodyFixed .natSideBar {
   border-bottom:1px #aaaaaa solid;
-}
-.natBodyFixed.natEditBody .natMiddle {
-  border-top:1px #aaaaaa solid;
-}
-.natBodyFixed.natEditBody .natBodyContents {
-  padding-top:0;
 }
 
 /* web menu */
@@ -831,11 +825,8 @@ td .foswikiFormDescription {
   margin:0px;
 }
 .natEditTitle {
-  margin-top:1em; 
   font-size: 1.3846em; /* 18px */ 
   line-height: 1em; /* 18px */ 
-  margin-bottom:1em; 
-  border-bottom:0px;
 }
 .natWebSlogan {
   font-style:italic;

@@ -44,6 +44,14 @@
 
 %{<verbatim>}%
 %TMPL:DEF{"formstart"}%<!-- -->
+<literal>
+<style>
+.foswikiFormStep h3 {
+  float:left;
+  width:15em;
+}
+</style>
+</literal>
 <form id="registrationForm" action="%SCRIPTURLPATH{"register"}%/%USERSWEB%/%HOMETOPIC%" method="post">
 %IF{"context BlacklistPluginEnabled" 
   then="<input type='hidden' name='rx' value='$percntBLACKLISTPLUGIN{ action=\"magic\" }$percnt' />"
@@ -159,10 +167,7 @@
   <h3>%MAKETEXT{"Choose a <nop>WikiName"}%: <span class="foswikiAlert">**</span></h3>
   <input type="text" id="Fwk1WikiName" name="Fwk1WikiName" size="40" class="foswikiInputField" /> 
   <div class="foswikiFormDescription">
-    %MAKETEXT{"Your name as displayed online. 
-       Note, this must be a unique %SYSTEMWEB%.WikiName.
-       By default it is derived from your first and last name"
-    }%
+    %MAKETEXT{"Your name as displayed online.  Note, this must be a unique [[[_1]][WikiName]]. By default it is derived from your first and last name." args="%SYSTEMWEB%.WikiName"}%
   </div>
 </div>
 <!-- -->%TMPL:END%
