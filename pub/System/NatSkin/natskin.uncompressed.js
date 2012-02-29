@@ -1,4 +1,4 @@
-// (c)opyright 2006-2011 Michael Daum http://michaeldaumconsulting.com
+// (c)opyright 2006-2012 Michael Daum http://michaeldaumconsulting.com
 
 // document ready
 jQuery(function($) {

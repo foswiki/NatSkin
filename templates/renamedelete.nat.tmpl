@@ -7,7 +7,7 @@
 %TMPL:DEF{"buttons"}%<!-- buttons -->
 %BUTTON{type="save" "%MAKETEXT{"Delete"}%" icon="bin"}%
 %BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" target="%WEB%.%TOPIC%"}%
-%IF{"$'URLPARAM{currentwebonly}'='on'"
+%IF{"$'URLPARAM{currentwebonly}'='on' and not context SolrPluginEnabled"
   then="$percntBUTTON{\"%MAKETEXT{"Search in all webs"}%\" icon=\"find\" target=\"%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?newweb=%URLPARAM{"newweb"}%\" title=\"%MAKETEXT{"Search for backlinks in all webs"}%\"}$percnt"
 }%
 <!-- //buttons -->%TMPL:END%
@@ -29,26 +29,16 @@
     </div>
   </div>
 ---
-  <div class="natSearchBacklinks" %IF{"'%SEARCH_COUNT%'='0'" then="style='display:none'"}%>
+  <div class="natSearchBacklinks">
+    %TMPL:P{"backlinks" checked=""}%
     <div class="foswikiFormStep">
-      <h3>%MAKETEXT{"Update links in the '[_1]' web" args="<nop>%WEB%"}%:</h3>
-      <div class="natSearchRenameContents">
-        %LOCAL_SEARCH%
-      </div>
-    </div>
-    <div class="foswikiFormStep">
-      <h3>%MAKETEXT{"Update links in all webs"}%:</h3>
-      <div class="natSearchRenameContents">
-        %GLOBAL_SEARCH%
-      </div>
-    </div>
-    <div class="foswikiFormStep foswikiFormButtons">
-      %BUTTON{"%MAKETEXT{"Set all"}%" icon="add" class="natRenameSetAll" title="%MAKETEXT{"Select all topics"}%"}%
-      %BUTTON{"%MAKETEXT{"Clear all"}%" icon="delete" class="natRenameClearAll" title="%MAKETEXT{"Clear selection"}%"}%
+      %BUTTON{"%MAKETEXT{"Set all"}%" icon="add" class="natRenameSetAll simple" title="%MAKETEXT{"Select all topics"}%"}%
+      %BUTTON{"%MAKETEXT{"Clear all"}%" icon="delete" class="natRenameClearAll simple" title="%MAKETEXT{"Clear selection"}%"}%
       %CLEAR%
     </div>
 ---
   </div>
+  <literal>%IF{"'%TMPL:P{"backlinks::count"}%'=~'^0?$'" then="<style>.natSearchBacklinks {display:none}</style>"}%</literal>
   <div class="foswikiFormStep foswikiFormButtons">
     %TMPL:P{"buttons"}%
     %CLEAR%

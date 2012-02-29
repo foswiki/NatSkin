@@ -6,10 +6,10 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Michael Daum <daum@michaeldaumconsulting.com>\n"
 "Language-Team: Foswiki Translation Team <none>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 
 #: templates/edit.nat.tmpl:166
 msgid "$1"
@@ -264,7 +264,7 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: templates/view.nat.tmpl:70
+#: templates/view.nat.tmpl:65
 msgid "Back to view mode"
 msgstr ""
 
@@ -323,7 +323,7 @@ msgstr ""
 #: data/System/NatSkinWebSearchViewTemplate.txt:115
 #: templates/actionform.nat.tmpl:18 templates/attachagain.nat.tmpl:28
 #: templates/changeform.nat.tmpl:31 templates/copytopic.nat.tmpl:38
-#: templates/kinosearch.nat.tmpl:8 templates/languageselector.nat.tmpl:35
+#: templates/kinosearch.nat.tmpl:8 templates/languageselector.nat.tmpl:36
 #: templates/loginbase.nat.tmpl:81 templates/managetags.nat.tmpl:32
 #: templates/messages.nat.tmpl:281 templates/moveattachment.nat.tmpl:68
 #: templates/newtopic.nat.tmpl:19 templates/oopsleaseconflict.nat.tmpl:56
@@ -361,7 +361,7 @@ msgstr ""
 msgid "Change from"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:134 templates/languageselector.nat.tmpl:40
+#: templates/foswiki.nat.tmpl:134 templates/languageselector.nat.tmpl:4
 #: templates/oopslanguagechanged.nat.tmpl:2
 #: templates/oopslanguagechanged.nat.tmpl:3 templates/oopsmore.nat.tmpl:61
 msgid "Change interface language"
@@ -381,10 +381,6 @@ msgstr ""
 
 #: templates/changes.nat.tmpl:12
 msgid "Changed"
-msgstr ""
-
-#: templates/view.nat.tmpl:90
-msgid "Changed by %1 on %2"
 msgstr ""
 
 #: data/System/SiteSideBar.txt:14
@@ -434,12 +430,12 @@ msgid ""
 "Chose a topic name that is a %1 or check the allow non-<nop>WikiWord box."
 msgstr ""
 
-#: templates/renamebase.nat.tmpl:64 templates/renamedelete.nat.tmpl:47
+#: templates/renamebase.nat.tmpl:53 templates/renamedelete.nat.tmpl:36
 #: templates/renamewebbase.nat.tmpl:52
 msgid "Clear all"
 msgstr ""
 
-#: templates/renamebase.nat.tmpl:64 templates/renamedelete.nat.tmpl:47
+#: templates/renamebase.nat.tmpl:53 templates/renamedelete.nat.tmpl:36
 #: templates/renamewebbase.nat.tmpl:52
 msgid "Clear selection"
 msgstr ""
@@ -579,7 +575,7 @@ msgid "Date"
 msgstr ""
 
 #: templates/edit.nat.tmpl:220 templates/edit.nat.tmpl:258
-#: templates/languageselector.nat.tmpl:15 templates/newtopic.nat.tmpl:46
+#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:46
 #: templates/newtopic.nat.tmpl:76
 msgid "Default"
 msgstr ""
@@ -1085,12 +1081,16 @@ msgstr ""
 msgid "Korean"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:133 templates/languageselector.nat.tmpl:12
+#: templates/foswiki.nat.tmpl:133 templates/languageselector.nat.tmpl:14
 msgid "Language"
 msgstr ""
 
 #: templates/foswiki.nat.tmpl:231
 msgid "Last"
+msgstr ""
+
+#: templates/view.nat.tmpl:85
+msgid "Last modified by %1 on %2"
 msgstr ""
 
 #: data/System/NatSkinStyleBrowser.txt:33
@@ -1301,7 +1301,7 @@ msgid ""
 "move."
 msgstr ""
 
-#: templates/languageselector.nat.tmpl:30
+#: templates/languageselector.nat.tmpl:32
 msgid ""
 "Note this will _only_ change the interface language, but not the default "
 "language of your content."
@@ -1681,13 +1681,13 @@ msgstr ""
 msgid "See also"
 msgstr ""
 
-#: templates/languageselector.nat.tmpl:28
+#: templates/languageselector.nat.tmpl:30
 msgid ""
 "Select 'Default' to switch to the default language configured in your "
 "browser."
 msgstr ""
 
-#: templates/renamebase.nat.tmpl:63 templates/renamedelete.nat.tmpl:46
+#: templates/renamebase.nat.tmpl:52 templates/renamedelete.nat.tmpl:35
 #: templates/renamewebbase.nat.tmpl:51
 msgid "Select all topics"
 msgstr ""
@@ -1718,7 +1718,7 @@ msgstr ""
 msgid "Select which template to use while creating this topic."
 msgstr ""
 
-#: templates/renamebase.nat.tmpl:63 templates/renamedelete.nat.tmpl:46
+#: templates/renamebase.nat.tmpl:52 templates/renamedelete.nat.tmpl:35
 #: templates/renamewebbase.nat.tmpl:51
 msgid "Set all"
 msgstr ""
@@ -1815,7 +1815,7 @@ msgstr ""
 #: data/Sandbox/NatSkinTest.txt:488
 #: data/System/NatSkinWebCreateNewTopicTemplate.txt:234
 #: data/System/WebCreateNewWeb.txt:67 templates/attachnew.nat.tmpl:4
-#: templates/languageselector.nat.tmpl:34 templates/managetags.nat.tmpl:31
+#: templates/languageselector.nat.tmpl:35 templates/managetags.nat.tmpl:31
 #: templates/messages.nat.tmpl:113 templates/messages.nat.tmpl:199
 #: templates/newtopic.nat.tmpl:18 templates/oopsmore.nat.tmpl:71
 msgid "Submit"
@@ -1837,7 +1837,7 @@ msgstr ""
 msgid "Swedish"
 msgstr ""
 
-#: data/System/SiteBottomBar.txt:65
+#: data/System/SiteBottomBar.txt:65 templates/body.slim.jazzynote.nat.tmpl:16
 msgid "Syndicate this site"
 msgstr ""
 
@@ -2090,13 +2090,12 @@ msgstr ""
 msgid "Update attachment %1 on %2"
 msgstr ""
 
-#: templates/renamebase.nat.tmpl:57 templates/renamedelete.nat.tmpl:40
+#: templates/renamebase.nat.tmpl:88 templates/renamebase.nat.tmpl:97
 #: templates/renamewebbase.nat.tmpl:45
 msgid "Update links in all webs"
 msgstr ""
 
-#: templates/renamebase.nat.tmpl:51 templates/renamedelete.nat.tmpl:34
-#: templates/renamewebbase.nat.tmpl:39
+#: templates/renamebase.nat.tmpl:82 templates/renamewebbase.nat.tmpl:39
 msgid "Update links in the '%1' web"
 msgstr ""
 
@@ -2177,7 +2176,7 @@ msgid "Versions"
 msgstr ""
 
 #: data/System/SiteBottomBar.txt:51 templates/foswiki.nat.tmpl:31
-#: templates/history.nat.tmpl:76 templates/view.nat.tmpl:70
+#: templates/history.nat.tmpl:76 templates/view.nat.tmpl:65
 msgid "View"
 msgstr ""
 
@@ -2573,7 +2572,7 @@ msgstr ""
 msgid "search in all webs"
 msgstr ""
 
-#: templates/view.nat.tmpl:90
+#: templates/view.nat.tmpl:85
 msgid "show last change"
 msgstr ""
 

@@ -312,24 +312,33 @@ div.foswikiErrorSummary {
 }
 
 /* colors */
-.foswikiYellowFG { color:#ffff00; } .foswikiYellowFG a { color:#dede00; }
-.foswikiOrangeFG { color:#ff6600; } .foswikiOrangeFG a { color:#ff0000; }
-.foswikiRedFG    { color:#ff0000; } .foswikiRedFG a    { color:#ff6600; }
-.foswikiPinkFG   { color:#ff00ff; } .foswikiPinkFG a   { color:#800080; }
-.foswikiPurpleFG { color:#800080; } .foswikiPurpleFG a { color:#ff00ff; }
-.foswikiNavyFG   { color:#000080; } .foswikiNavyFG a   { color:#0000ff; }
-.foswikiBlueFG   { color:#0000ff; } .foswikiBlueFG a   { color:#000080; }
-.foswikiTealFG   { color:#008080; } .foswikiTealFG a   { color:#00c0c0; }
-.foswikiAquaFG   { color:#00ffff; } .foswikiAquaFG a   { color:#008080; }
-.foswikiLimeFG   { color:#00ff00; } .foswikiLimeFG a   { color:#00c400; }
-.foswikiGreenFG  { color:#008000; } .foswikiGreenFG a  { color:#004000; }
-.foswikiOliveFG  { color:#808000; } .foswikiOliveFG a  { color:#047C04; }
-.foswikiMaroonFG { color:#800000; } .foswikiMaroonFG a { color:#cc0000; }
-.foswikiBrownFG  { color:#996633; } .foswikiBrownFG a  { color:#694623; }
-.foswikiBlackFG  { color:#000000; } .foswikiBlackFG a  { color:#000000; }
-.foswikiGrayFG   { color:#808080; } .foswikiGrayFG a   { color:#000000; }
-.foswikiSilverFG { color:#c0c0c0; } .foswikiSilverFG a { color:#808080; }
-.foswikiWhiteFG  { color:#ffffff; } .foswikiWhiteFG a  { color:#c0c0c0; }
+.foswikiYellowFG, .foswikiYellowFG a { color:#ffff00; } 
+.foswikiOrangeFG, .foswikiOrangeFG a { color:#ff6600; } 
+.foswikiRedFG, .foswikiRedFG a { color:#ff0000; } 
+.foswikiPinkFG, .foswikiPinkFG a { color:#ff00ff; } 
+.foswikiPurpleFG, .foswikiPurpleFG a { color:#800080; } 
+.foswikiNavyFG, .foswikiNavyFG a   { color:#000080; } 
+.foswikiBlueFG, .foswikiBlueFG a   { color:#0000ff; } 
+.foswikiTealFG, .foswikiTealFG a   { color:#008080; } 
+.foswikiAquaFG, .foswikiAquaFG a   { color:#00ffff; } 
+.foswikiLimeFG, .foswikiLimeFG a   { color:#00ff00; } 
+.foswikiGreenFG, .foswikiGreenFG a  { color:#008000; } 
+.foswikiOliveFG, .foswikiOliveFG a  { color:#808000; } 
+.foswikiMaroonFG, .foswikiMaroonFG a { color:#800000; } 
+.foswikiBrownFG, .foswikiBrownFG a  { color:#996633; } 
+.foswikiBlackFG, .foswikiBlackFG a  { color:#000000; } 
+.foswikiGrayFG, .foswikiGrayFG a   { color:#808080; } 
+.foswikiSilverFG, .foswikiSilverFG a { color:#c0c0c0; } 
+.foswikiWhiteFG, .foswikiWhiteFG a  { color:#ffffff; } 
+
+.foswikiYellowFG a:hover, .foswikiOrangeFG a:hover, .foswikiRedFG a:hover,
+.foswikiPinkFG a:hover, .foswikiPurpleFG a:hover, .foswikiNavyFG a:hover,
+.foswikiBlueFG a:hover, .foswikiTealFG a:hover, .foswikiAquaFG a:hover,
+.foswikiLimeFG a:hover, .foswikiGreenFG a:hover, .foswikiOliveFG a:hover,
+.foswikiMaroonFG a:hover, .foswikiBrownFG a:hover, .foswikiBlackFG a:hover,
+.foswikiGrayFG a:hover, .foswikiSilverFG a:hover, .foswikiWhiteFG a:hover {
+  color:#fff; 
+}
 
 .foswikiYellowBG { background-color:#ffff00; }
 .foswikiOrangeBG { background-color:#ff6600; } 
@@ -638,7 +647,6 @@ h4 a:hover, h5 a:hover, h6 a:hover {
   width:100%;
 }
 .natSearchRenameContents .foswikiTopRow {
-  white-space:pre;
   text-align:left;
   vertical-align:top;
   padding:5px;
@@ -962,6 +970,14 @@ a.natFeedIcon {
 }
 .foswikiTipMessage a {
   color:#004568;
+}
+.foswikiHelp {
+  margin:1.3076em 0px; /* 17px  0px */
+  padding:1.3846em; /* 18px */
+  border:1px solid;
+  background-color:#DEEBFA;
+  border-color:#A3D9FD;
+  color:#005884;
 }
 
 /* diff */
@@ -1562,9 +1578,10 @@ body .natSideBar .natMySideBarRedDot a:hover {
   margin:0px;
 }
 .natEditBody .natBodyContents,
+.natEditBody.natBodyBordered .natBodyContents,
 .natEditBody.natBodyFixed .natBodyContents {
-  margin-top:0px;
-  margin-bottom:0px;
+  border:0px;
+  margin:0px;
   padding-top:0px;
   padding-bottom:0px;
   width:auto;

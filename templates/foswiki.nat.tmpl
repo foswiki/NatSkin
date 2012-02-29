@@ -102,13 +102,13 @@
 %TMPL:DEF{"DELETE"}% %TMPL:P{"DELETE_SHORT"}%%TMPL:P{"DELETE_LONG"}%%TMPL:END%
 %TMPL:DEF{"DELETE_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Delete"}%</span>%TMPL:END%
 %TMPL:DEF{"DELETE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Delete this topic"}%</span>%TMPL:END%
-%TMPL:DEF{"DELETE_ACTION"}%<a class="natTopicAction" rel="nofollow" href="%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%?newweb=%TRASHWEB%&currentwebonly=on">%JQICON{"bin"}%%TMPL:P{"DELETE"}%</a>%TMPL:END%
+%TMPL:DEF{"DELETE_ACTION"}%<a class="natTopicAction" rel="nofollow" href="%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%?newweb=%TRASHWEB%%IF{"not context SolrPluginEnabled" then="&currentwebonly=on"}%">%JQICON{"bin"}%%TMPL:P{"DELETE"}%</a>%TMPL:END%
 %TMPL:DEF{"DELETE_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction">%JQICON{"bin"}%%TMPL:P{"DELETE"}%</span>%TMPL:END%
 
 %TMPL:DEF{"MOVE"}% %TMPL:P{"MOVE_SHORT"}%%TMPL:P{"MOVE_LONG"}%%TMPL:END%
 %TMPL:DEF{"MOVE_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Move"}%</span>%TMPL:END%
 %TMPL:DEF{"MOVE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Rename or move this topic"}%</span>%TMPL:END%
-%TMPL:DEF{"MOVE_ACTION"}%<a class="natTopicAction" rel="nofollow" href="%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%?currentwebonly=on">%JQICON{"page_white_go"}%%TMPL:P{"MOVE"}%</a>%TMPL:END%
+%TMPL:DEF{"MOVE_ACTION"}%<a class="natTopicAction" rel="nofollow" href="%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%%IF{"not context SolrPluginEnabled" then="?currentwebonly=on"}%">%JQICON{"page_white_go"}%%TMPL:P{"MOVE"}%</a>%TMPL:END%
 %TMPL:DEF{"MOVE_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction">%JQICON{"page_white_go"}%%TMPL:P{"MOVE"}%</span>%TMPL:END%
 
 %TMPL:DEF{"HISTORY"}% %TMPL:P{"HISTORY_SHORT"}%%TMPL:P{"HISTORY_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
@@ -326,6 +326,8 @@
  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/%id%.js'></script>"
  requires="%requires%"
 }%%TMPL:END%
+
+%TMPL:DEF{"msie::compatibility"}%<meta http-equiv='X-UA-Compatible' content='ie=edge,chrome=1' />%TMPL:END%
 
 %TMPL:DEF{"JavascriptFiles/foswikiArray"}%%TMPL:P{"LIBJS" id="JavascriptFiles/foswikiArray" requires="JQUERYPLUGIN::FOSWIKI"}%%TMPL:END%
 %TMPL:DEF{"JavascriptFiles/foswikiCSS"}%%TMPL:P{"LIBJS" id="JavascriptFiles/foswikiCSS" requires="JQUERYPLUGIN::FOSWIKI"}%%TMPL:END%

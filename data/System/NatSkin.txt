@@ -131,7 +131,7 @@ always open an extra window.
 
 ---++ Skin Info
 |  Skin Author: | Michael Daum |
-|  Copyright &copy;: | 2003-2010, Michael Daum http://michaeldaumconsulting.com |
+|  Copyright &copy;: | 2003-2012, Michael Daum http://michaeldaumconsulting.com |
 |  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
 |  Release: | %$RELEASE% |
 |  Version: | %$VERSION% |

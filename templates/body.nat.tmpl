@@ -87,15 +87,12 @@
 <!-- //sidebar off-->%TMPL:END%
 
 %{ cache info }%
-%TMPL:P{"cacheinfo"}%<!-- -->
-%IF{"{Cache}{Enabled} and context view and $CACHEABLE != 'off'" 
+%TMPL:DEF{"cacheinfo"}%%IF{"{Cache}{Enabled} and context view and $CACHEABLE != 'off'" 
   then="<div class='natPageCacheBanner foswikiGrayText'>
-          %MAKETEXT{"This page has been cached at [_1]." args="%SERVERTIME%"}%
+          %MAKETEXT{"This page was cached on [_1]." args="%SERVERTIME%"}%
           %MAKETEXT{"Get a fresh version <a href='[_1]'>here</a>." args="%SCRIPTURLPATH{view}%/%BASEWEB%/%BASETOPIC%?refresh=cache"}%
         </div>"
-  else="<!-- -->"
-}%
-<-- -->%TMPL:END%
+}%%TMPL:END%
 
 %{ assembly stage ---------------------------------------------------------- }%
 %TMPL:DEF{"defaultbody"}%<!-- -->
@@ -112,8 +109,8 @@
   <div class="natBottomBar %IF{"context 'natskin_sidebar_right' or 'context natskin_sidebar_off'" then="natBottomBarLeft"}% %IF{"context 'natskin_sidebar_left' or context 'natskin_sidebar_off'" then="natBottomBarRight"}% %IF{"context 'natskin_sidebar_off'" then="natBottomBarBoth"}%">
     <div class="natBottomBarContents">
 %TMPL:P{"bottombar"}%<!-- -->
-    </div>
 %TMPL:P{"cacheinfo"}%<!-- -->
+    </div>
   </div>
   <a name="PageBottom"></a>
 </div>

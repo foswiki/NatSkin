@@ -7,10 +7,10 @@ msgstr ""
 "PO-Revision-Date: 2011-12-19 19:31+0200\n"
 "Last-Translator: Michael Daum <daum@michaeldaumconsulting.com>\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Virtaal 0.5.2\n"
 
@@ -289,7 +289,7 @@ msgstr "Achtung"
 msgid "Author"
 msgstr "Author"
 
-#: templates/view.nat.tmpl:70
+#: templates/view.nat.tmpl:65
 msgid "Back to view mode"
 msgstr "Zurück zum Topic"
 
@@ -348,7 +348,7 @@ msgstr "E-Mail Adresse von %1 konnte nicht ermittelt werden"
 #: data/System/NatSkinWebSearchViewTemplate.txt:115
 #: templates/actionform.nat.tmpl:18 templates/attachagain.nat.tmpl:28
 #: templates/changeform.nat.tmpl:31 templates/copytopic.nat.tmpl:38
-#: templates/kinosearch.nat.tmpl:8 templates/languageselector.nat.tmpl:35
+#: templates/kinosearch.nat.tmpl:8 templates/languageselector.nat.tmpl:36
 #: templates/loginbase.nat.tmpl:81 templates/managetags.nat.tmpl:32
 #: templates/messages.nat.tmpl:281 templates/moveattachment.nat.tmpl:68
 #: templates/newtopic.nat.tmpl:19 templates/oopsleaseconflict.nat.tmpl:56
@@ -386,7 +386,7 @@ msgstr "E-Mail Adresse ändern"
 msgid "Change from"
 msgstr "Geändert von"
 
-#: templates/foswiki.nat.tmpl:134 templates/languageselector.nat.tmpl:40
+#: templates/foswiki.nat.tmpl:134 templates/languageselector.nat.tmpl:4
 #: templates/oopslanguagechanged.nat.tmpl:2
 #: templates/oopslanguagechanged.nat.tmpl:3 templates/oopsmore.nat.tmpl:61
 msgid "Change interface language"
@@ -407,10 +407,6 @@ msgstr "Eigenschaften ändern"
 #: templates/changes.nat.tmpl:12
 msgid "Changed"
 msgstr "Geändert"
-
-#: templates/view.nat.tmpl:90
-msgid "Changed by %1 on %2"
-msgstr "Geändert von %1 am %2"
 
 #: data/System/SiteSideBar.txt:14
 msgid "Changes"
@@ -463,12 +459,12 @@ msgstr ""
 "Bitten wählen Sie einen Topic-Namen, der ein %1 ist oder erlauben Sie die "
 "Verwendung von Nicht-<nop>WikiWörtern in der Auswahlbox."
 
-#: templates/renamebase.nat.tmpl:64 templates/renamedelete.nat.tmpl:47
+#: templates/renamebase.nat.tmpl:53 templates/renamedelete.nat.tmpl:36
 #: templates/renamewebbase.nat.tmpl:52
 msgid "Clear all"
 msgstr "Alles abwählen"
 
-#: templates/renamebase.nat.tmpl:64 templates/renamedelete.nat.tmpl:47
+#: templates/renamebase.nat.tmpl:53 templates/renamedelete.nat.tmpl:36
 #: templates/renamewebbase.nat.tmpl:52
 msgid "Clear selection"
 msgstr "Auswahl löschen"
@@ -608,7 +604,7 @@ msgid "Date"
 msgstr "Datum"
 
 #: templates/edit.nat.tmpl:220 templates/edit.nat.tmpl:258
-#: templates/languageselector.nat.tmpl:15 templates/newtopic.nat.tmpl:46
+#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:46
 #: templates/newtopic.nat.tmpl:76
 msgid "Default"
 msgstr "Standard"
@@ -1140,13 +1136,17 @@ msgstr "Wissen"
 msgid "Korean"
 msgstr "Koreanisch"
 
-#: templates/foswiki.nat.tmpl:133 templates/languageselector.nat.tmpl:12
+#: templates/foswiki.nat.tmpl:133 templates/languageselector.nat.tmpl:14
 msgid "Language"
 msgstr ""
 
 #: templates/foswiki.nat.tmpl:231
 msgid "Last"
 msgstr "Nachname"
+
+#: templates/view.nat.tmpl:85
+msgid "Last modified by %1 on %2"
+msgstr "Letzte Änderung am %2 von %1"
 
 #: data/System/NatSkinStyleBrowser.txt:33
 msgid "Layout"
@@ -1360,7 +1360,7 @@ msgstr ""
 "Beachten Sie, dass alle URLs die auf diesen Anhang zeigen, nach dem "
 "Verschieben nicht mehr funktionieren."
 
-#: templates/languageselector.nat.tmpl:30
+#: templates/languageselector.nat.tmpl:32
 msgid ""
 "Note this will _only_ change the interface language, but not the default "
 "language of your content."
@@ -1654,7 +1654,7 @@ msgstr "Wiederherstellen"
 
 #: templates/history.nat.tmpl:78
 msgid "Restore revision %1"
-msgstr "Revision %1 wiederherstellen"
+msgstr "Version %1 wiederherstellen"
 
 #: data/System/NatSkinWebSearchViewTemplate.txt:205
 msgid "Results from %1 web"
@@ -1674,15 +1674,15 @@ msgstr "Änderungen ansehen in"
 
 #: templates/history.nat.tmpl:54 templates/rdiff.nat.tmpl:44
 msgid "Revision"
-msgstr "Revision"
+msgstr "Version"
 
 #: templates/history.nat.tmpl:14
 msgid "Revision history of %1"
-msgstr "Revisions-Historie von %1"
+msgstr "Versionsgeschichte von %1"
 
 #: templates/edit.nat.tmpl:130
 msgid "Revision information"
-msgstr "Revisions-Information"
+msgstr "Versionsinformation"
 
 #: data/System/NatSkinStyleBrowser.txt:42
 msgid "Right"
@@ -1742,7 +1742,7 @@ msgstr "Suchergebnis für %1"
 msgid "See also"
 msgstr "Siehe auch"
 
-#: templates/languageselector.nat.tmpl:28
+#: templates/languageselector.nat.tmpl:30
 msgid ""
 "Select 'Default' to switch to the default language configured in your "
 "browser."
@@ -1750,7 +1750,7 @@ msgstr ""
 "Wählen Sie 'Standard' aus, um auf die in Ihrem Browser konfigurierte Sprache "
 "zu wechseln."
 
-#: templates/renamebase.nat.tmpl:63 templates/renamedelete.nat.tmpl:46
+#: templates/renamebase.nat.tmpl:52 templates/renamedelete.nat.tmpl:35
 #: templates/renamewebbase.nat.tmpl:51
 msgid "Select all topics"
 msgstr "Alles auswählen"
@@ -1781,7 +1781,7 @@ msgstr ""
 msgid "Select which template to use while creating this topic."
 msgstr ""
 
-#: templates/renamebase.nat.tmpl:63 templates/renamedelete.nat.tmpl:46
+#: templates/renamebase.nat.tmpl:52 templates/renamedelete.nat.tmpl:35
 #: templates/renamewebbase.nat.tmpl:51
 msgid "Set all"
 msgstr "Alles auswählen"
@@ -1879,7 +1879,7 @@ msgstr "Stil"
 #: data/Sandbox/NatSkinTest.txt:488
 #: data/System/NatSkinWebCreateNewTopicTemplate.txt:234
 #: data/System/WebCreateNewWeb.txt:67 templates/attachnew.nat.tmpl:4
-#: templates/languageselector.nat.tmpl:34 templates/managetags.nat.tmpl:31
+#: templates/languageselector.nat.tmpl:35 templates/managetags.nat.tmpl:31
 #: templates/messages.nat.tmpl:113 templates/messages.nat.tmpl:199
 #: templates/newtopic.nat.tmpl:18 templates/oopsmore.nat.tmpl:71
 msgid "Submit"
@@ -1901,7 +1901,7 @@ msgstr "Zusammenfassungen"
 msgid "Swedish"
 msgstr ""
 
-#: data/System/SiteBottomBar.txt:65
+#: data/System/SiteBottomBar.txt:65 templates/body.slim.jazzynote.nat.tmpl:16
 msgid "Syndicate this site"
 msgstr "Diese Website zusammenfassen"
 
@@ -2176,13 +2176,12 @@ msgstr ""
 msgid "Update attachment %1 on %2"
 msgstr "Anhang %1 an %2 aktualisieren"
 
-#: templates/renamebase.nat.tmpl:57 templates/renamedelete.nat.tmpl:40
+#: templates/renamebase.nat.tmpl:88 templates/renamebase.nat.tmpl:97
 #: templates/renamewebbase.nat.tmpl:45
 msgid "Update links in all webs"
 msgstr "Querverweise in allen Webs erneuern"
 
-#: templates/renamebase.nat.tmpl:51 templates/renamedelete.nat.tmpl:34
-#: templates/renamewebbase.nat.tmpl:39
+#: templates/renamebase.nat.tmpl:82 templates/renamewebbase.nat.tmpl:39
 msgid "Update links in the '%1' web"
 msgstr "Querverweise im %1 Web erneuern"
 
@@ -2252,24 +2251,24 @@ msgstr "Variation"
 
 #: templates/attachtables.nat.tmpl:96
 msgid "Version"
-msgstr "Revision"
+msgstr "Version"
 
 #: templates/attachtables.nat.tmpl:99
 msgid "Version history of %1"
-msgstr "Revisions-Historie von %1"
+msgstr "Versionsgeschichte von %1"
 
 #: templates/attachagain.nat.tmpl:4
 msgid "Versions"
-msgstr "Revisionen"
+msgstr "Versionen"
 
 #: data/System/SiteBottomBar.txt:51 templates/foswiki.nat.tmpl:31
-#: templates/history.nat.tmpl:76 templates/view.nat.tmpl:70
+#: templates/history.nat.tmpl:76 templates/view.nat.tmpl:65
 msgid "View"
 msgstr "Ansehen"
 
 #: templates/foswiki.nat.tmpl:214
 msgid "View first revision"
-msgstr "Erste Revision"
+msgstr "Erste Version"
 
 #: templates/foswiki.nat.tmpl:32
 msgid "View formatted topic"
@@ -2281,15 +2280,15 @@ msgstr "Letzte Änderung"
 
 #: templates/foswiki.nat.tmpl:232
 msgid "View last revision"
-msgstr "Letzte Revision"
+msgstr "Letzte Version"
 
 #: templates/foswiki.nat.tmpl:220
 msgid "View next revision"
-msgstr "NächsteRevision"
+msgstr "Nächste Version"
 
 #: templates/foswiki.nat.tmpl:226
 msgid "View previous revision"
-msgstr "Vorherige Revision"
+msgstr "Vorherige Version"
 
 #: templates/foswiki.nat.tmpl:50
 msgid "View printable version"
@@ -2297,11 +2296,11 @@ msgstr "Druckversion"
 
 #: templates/history.nat.tmpl:75
 msgid "View revision %1"
-msgstr "Revision %1 ansehen"
+msgstr "Version %1 ansehen"
 
 #: templates/foswiki.nat.tmpl:116
 msgid "View revision history"
-msgstr "Revisions-Historie"
+msgstr "Versionsgeschichte"
 
 #: templates/foswiki.nat.tmpl:56
 msgid "View wiki markup"
@@ -2325,7 +2324,7 @@ msgstr "Willkommen"
 
 #: templates/login.nat.tmpl:12
 msgid "Welcome, please login"
-msgstr ""
+msgstr "Willkommen, bitte melden Sie sich an"
 
 #: templates/moveattachment.nat.tmpl:82
 #, fuzzy
@@ -2511,7 +2510,10 @@ msgstr ""
 msgid ""
 "Your name as displayed online.  Note, this must be a unique [[%1]"
 "[WikiName]]. By default it is derived from your first and last name."
-msgstr "Ihr Name so, wie er online dargestellt wird. Beachten Sie bitte, dass dies ein eindeutiger [[%1][WikiName]] sein muss, der per Default von Ihrem Vor- und Nachnamen abgeleitet ist."
+msgstr ""
+"Ihr Name so, wie er online dargestellt wird. Beachten Sie bitte, dass dies "
+"ein eindeutiger [[%1][WikiName]] sein muss, der per Default von Ihrem Vor- "
+"und Nachnamen abgeleitet ist."
 
 #: templates/messages.nat.tmpl:356
 msgid "Your personal <nop>%WIKITOOLNAME% topic %1 has been created"
@@ -2694,7 +2696,7 @@ msgstr "suchen"
 msgid "search in all webs"
 msgstr "Alle Webs durchsuchen"
 
-#: templates/view.nat.tmpl:90
+#: templates/view.nat.tmpl:85
 msgid "show last change"
 msgstr "zeige letzte Änderung"
 
