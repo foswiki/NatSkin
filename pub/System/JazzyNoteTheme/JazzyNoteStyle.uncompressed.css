@@ -1340,7 +1340,8 @@ a:hover {
 
 }
 
-@media (max-width:700px) {
+@media screen and (max-width:700px) {
+/*
   .natBreadCrumbs,
   .natSideBar {
     display:none;
@@ -1350,6 +1351,7 @@ a:hover {
   .natLayoutTable {
     width:auto !important;
   }
+*/
 }
 
 /* solr plugin */

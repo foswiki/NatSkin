@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1313776572" format="1.1" reprev="29" version="31"}%
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1331628484" format="1.1" reprev="29" version="33"}%
 ---+!! %TOPIC%
 %BUTTON{"Toggle grid" icon="table" class="foswikiRight" onclick="jQuery('.natMain').toggleClass('showgrid-40x18')"}%
 
@@ -508,3 +508,4 @@ facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
 
 
 %META:TOPICMOVED{by="micha" date="1226426560" from="Sandbox.LaogContribTest" to="Sandbox.NatSkinTest"}%
+%META:PREFERENCE{name="TOPICTITLE" title="TOPICTITLE" type="Local" value="NatSkin Test"}%

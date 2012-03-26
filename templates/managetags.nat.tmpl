@@ -13,6 +13,7 @@
 %TMPL:DEF{"content"}%<!-- -->
 <form class="jqRenameTag" name="renametagform" action="%SCRIPTURLPATH{"rest"}%/ClassificationPlugin/renametag">
   <input type="hidden" name="web" value="%BASEWEB%" />
+  <input type="hidden" name="topic" value="%BASEWEB%.%BASETOPIC%" />
   <div class="foswikiFormStep">
     <h3>%MAKETEXT{"From"}%:</h3>
     <input type="text" class="foswikiInputField jqTextboxList jqFocus required {autocomplete:'%SCRIPTURL{"rest"}%/RenderPlugin/template/rest?name=classificationplugin&expand=querytags&topic=%BASEWEB%.%BASETOPIC%', clearControl:'#renameClear'}" size="30" name="from" />

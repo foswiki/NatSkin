@@ -90,7 +90,7 @@
 %TMPL:DEF{"cacheinfo"}%%IF{"{Cache}{Enabled} and context view and $CACHEABLE != 'off'" 
   then="<div class='natPageCacheBanner foswikiGrayText'>
           %MAKETEXT{"This page was cached on [_1]." args="%SERVERTIME%"}%
-          %MAKETEXT{"Get a fresh version <a href='[_1]'>here</a>." args="%SCRIPTURLPATH{view}%/%BASEWEB%/%BASETOPIC%?refresh=cache"}%
+          %MAKETEXT{"Get a fresh version <a href='[_1]' rel='nofollow'>here</a>." args="%SCRIPTURLPATH{view}%/%BASEWEB%/%BASETOPIC%?refresh=cache"}%
         </div>"
 }%%TMPL:END%
 

@@ -583,6 +583,12 @@ h4 a:hover, h5 a:hover, h6 a:hover {
   line-height:1.5;
 }
 
+/* squish it a little more in the sidebar */
+.natSideBar .foswikiSmall,
+.natSideBar .foswikiSmallish {
+  line-height:1em; 
+}
+
 .foswikiFormSteps .foswikiNullTable,
 .foswikiFormSteps .foswikiNullTable td,
 .foswikiFormSteps .foswikiNullTable th,
@@ -770,6 +776,9 @@ h4 a:hover, h5 a:hover, h6 a:hover {
   float:left;
   white-space:nowrap;
   text-decoration:none;
+}
+.natTopicActions > .natTopicAction:first-child {
+  margin-left:0;
 }
 .natTopicActions .natMoreActionsMenu ul li .natTopicAction,
 .natTopicActions .natMoreActionsMenu ul li .natTopicAction:hover {

@@ -121,46 +121,6 @@ jQuery(function($) {
     }
   }
 
-  // raw dialog
-if (0) {
-  $(".natRawTopicAction").click(function() { 
-    var $this = $(this), href = $this.attr("href");
-    $.blockUI({
-      message:"<h1>Loading wiki text ...</h1>",
-      fadeIn: 0,
-      fadeOut: 0
-    });
-    foswiki.openDialog("#natPreviewRaw", {
-      persist:false, 
-      containerCss: {
-        width:800
-      },
-      onShow: function(dialog) { 
-        var web = foswiki.getPreference("WEB"),
-            topic = foswiki.getPreference("TOPIC"),
-            url = href+"&raw=text&skin=text";
-        $.unblockUI();
-        dialog.container.find(".topic").text(web.replace(/\//, ".")+"."+topic);
-        dialog.container.find(".separate").attr("target", "_blank").click(function() {
-          $.modal.close();
-        });
-
-        $.ajax({
-          url: url,
-          async:false,
-          dataType:"text",
-          success: function(data, status, xhr) {
-            var $textarea = dialog.container.find(".foswikiTextarea");
-            $textarea.text(data);
-            setTimeout(function() { $textarea.focus(); }, 100);
-          }
-        });
-      } 
-    }); 
-    return false; 
-  }); 
-}
-
   // replace hr with a div.hr on ie7
   if ($.browser.msie && $.browser.version == 7.0) {
     $("hr").livequery(function() {
@@ -168,4 +128,8 @@ if (0) {
     });
   }
 
+  // hide address bar on mobile devices
+  if(navigator.userAgent.match(/Android/i)){
+    window.scrollTo(0,1);
+  }
 });

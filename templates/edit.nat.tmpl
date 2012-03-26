@@ -88,8 +88,8 @@
       <tr>
         <th>%MAKETEXT{"Style"}%</th>
         <td>
-          <input type='hidden' name='Default+NATSKIN_STYLE' value='%GETVAR{"NATSKIN_STYLE" scope="web" default="jazzyblue"}%' />
-          <select class="foswikiSelect" id="style" name="Local+NATSKIN_STYLE"">
+          <input type='hidden' name='Default+NATSKIN_STYLE' value='%GETVAR{"NATSKIN_STYLE" scope="web" default="jazzynote"}%' />
+          <select class="foswikiSelect" id="style" name="Local+NATSKIN_STYLE">
             %FORMATLIST{"%KNOWNSTYLES%" 
               pattern="\s*(.*)\s*" 
               format="<option $percntIF{\"context natskin_style_$1\" then=\"selected='selected'\"}$percnt>$1</option>" 
