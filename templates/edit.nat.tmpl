@@ -19,6 +19,7 @@
   SMELL: should come from cfg
 }%
 %TMPL:DEF{"supportedlanguages"}%
+  %MAKETEXT{"auto-detect"}%=detect,
   %MAKETEXT{"Chinese"}%=cjk,
   %MAKETEXT{"Danish"}%=da,
   %MAKETEXT{"Dutch"}%=nl,
@@ -40,14 +41,14 @@
   <tr>
     <th>%MAKETEXT{"Content language"}%</th>
     <td>
-      <input type='hidden' name='Default+CONTENT_LANGUAGE' value='%GETVAR{"CONTENT_LANGUAGE" scope="web" default="en"}%' />
+      <input type='hidden' name='Default+CONTENT_LANGUAGE' value='%GETVAR{"CONTENT_LANGUAGE" scope="web" default="detect"}%' />
       <select name="Local+CONTENT_LANGUAGE" class="foswikiSelect">
         %FORMATLIST{
           "%TMPL:P{"supportedlanguages"}%"
           split="\s*,\s*"
           pattern="(.*)=(.*)"
           separator="$n"
-          format="<option value='$2' $percntIF{\"$'CONTENT_LANGUAGE'='$2' or (not defined CONTENT_LANGUAGE and '$2'='en')\" then=\"selected\"}$percnt>$1</option>"
+          format="<option value='$2' $percntIF{\"$'CONTENT_LANGUAGE'='$2' or (not defined CONTENT_LANGUAGE and '$2'='detect')\" then=\"selected\"}$percnt>$1</option>"
         }%
       </select>
     </td>
