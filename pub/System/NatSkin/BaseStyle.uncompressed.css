@@ -1578,6 +1578,28 @@ body .natSideBar .natMySideBarRedDot a:hover {
   margin:0px;
 }
 
+.natPoweredBy {
+  text-decoration:none;
+  position:fixed;
+  bottom:1em;
+  right:2em;
+  line-height:35px;
+  padding:5px;
+  color:#444;
+}
+.natPoweredBy:hover {
+  background-color:transparent;
+  color:inherit;
+  text-decoration:underline;
+}
+.natPoweredBy span {
+  width:55px;
+  height:40px;
+  margin-right:0.5em;
+  float:left;
+  overflow:hidden;
+}
+
 /* edit */
 .natEditBody .natTopBar {
   display:none;

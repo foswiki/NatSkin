@@ -361,30 +361,47 @@ dt {
   margin-top:0px;
 }
 
+.natLogin {
+  border:1px solid #d6d6d6;
+          border-radius:5px;
+     -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  background:#fff;
+          box-shadow: 0pt 2px 5px rgba(105, 105, 105,  0.7), 0px 0px 8px 5px rgba(247, 247, 247, 0.4) inset;
+     -moz-box-shadow: 0pt 2px 5px rgba(105, 105, 105,  0.7), 0px 0px 8px 5px rgba(247, 247, 247, 0.4) inset;
+  -webkit-box-shadow: 0pt 2px 5px rgba(105, 105, 105,  0.7), 0px 0px 8px 5px rgba(247, 247, 247, 0.4) inset;
+/*
+  -moz-box-shadow: 0px 3px 10px #bcbcbc;
+  -webkit-box-shadow: 0px 3px 10px #bcbcbc;
+  box-shadow: 0px 3px 10px #bcbcbc;
+*/
+}
+
+.natContact {
+  position:absolute;
+  bottom:-45px;
+  width:100%;
+  text-align:center;
+}
+
+.natLoginHeading {
+  position:absolute;
+  top:-45px;
+  width:100%;
+  color:#C60206;
+  margin-left:1em;
+}
+
 .natLogin .foswikiFormSteps {
-  background-color:#f6f6f6;
+  background-color:transparent;
   background-image:url(login_keys.png);
   background-repeat:no-repeat;
-  background-position:1.3em 0em;
+  background-position:1em 0em;
   margin:0px;
   border:0px;
-  border-left:2px solid #d6d6d6;
-  border-right:2px solid #d6d6d6;
-  border-bottom:2px solid #d6d6d6;
-}
-#natLoginBanner {
-  background:#e5e5e5;
-  color:#9C3063;
-  font-weight:bold;
-  margin:0px;
-  padding:13px 19px;
-  border-top:2px solid #d6d6d6;
-  border-left:2px solid #d6d6d6;
-  border-right:2px solid #d6d6d6;
-  border-bottom:1px solid #d6d6d6;
 }
 .natLogin .foswikiFormStep {
-  margin-left:12em;
+  margin-left:10em;
 }
 
 .natLogin #username,
@@ -1338,20 +1355,6 @@ a:hover {
     border:1px solid #000;
   }
 
-}
-
-@media screen and (max-width:700px) {
-/*
-  .natBreadCrumbs,
-  .natSideBar {
-    display:none;
-  }
-  .natTopBarContents,
-  .natBottomBarContents,
-  .natLayoutTable {
-    width:auto !important;
-  }
-*/
 }
 
 /* solr plugin */
