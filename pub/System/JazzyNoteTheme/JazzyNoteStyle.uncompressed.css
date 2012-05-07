@@ -15,16 +15,10 @@
   font-size:13px;
   line-height:1.39em;
 }
-.natLoginBody {
-  background:#fff;
-}
 .foswikiEmulatedLink,
 a {
   color:#0055b5;
   text-decoration:underline;
-}
-.foswikiGrayText {
-  color:#808080;
 }
 .treeview a:hover,
 a:hover {

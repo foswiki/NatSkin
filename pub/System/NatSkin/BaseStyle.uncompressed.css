@@ -117,6 +117,7 @@ pre {
 /* typography ****************************************************************/
 pre, code, textarea {
   font-family:"Bitstream Vera Sans Mono", "Andale Mono", monospace;
+  line-height:17px; /* a bit less compared to sans-serif */
 }
 pre, textarea {
   line-height:1.3846em;
@@ -133,15 +134,8 @@ pre, textarea {
 p { 
   font-size: 1em; /* 13px */ 
   line-height: 1.3846em; /* 18px */ 
-  margin:1.3846em 0em 0em 0em; 
+  margin:1.3846em 0em;
 }
-
-/* not supported by foswiki 
-p + p {
-  text-indent:1.5em;
-  margin-top:0;
-}
-*/
 
 blockquote {
   border:1px solid #ddd;
@@ -190,19 +184,25 @@ h4 {
   font-size: 1.1538em; /* 15px */ 
   line-height: 1.2em; /* 18px */ 
   margin-top: 1.2em; 
-  margin-bottom: 0em; 
+  margin-bottom: 0;
 }
 h5 { 
-  font-size: 1em; /* 13px */ 
-  line-height: 1.3846em; /* 18px */ 
-  margin: 1.3846em 0; 
+  font-size: 1.0760em; /* 14px */ 
+  line-height: 1.2857em; /* 18px */ 
+  margin-top: 1.2857em;
+  margin-bottom: 0em;
 }
 h6 { 
   font-size: 1em; /* 13px */ 
-  line-height: 1.5em; /* 18px */ 
-  margin: 1.5em 0em 0em; 
+  line-height:1.3846em; /* 18px */
+  margin-top: 1.3846em;
+  margin-bottom: 0em;
 }
-
+h4 + p,
+h5 + p,
+h6 + p { 
+  margin-top: 0; 
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-weight:normal;
@@ -361,7 +361,9 @@ div.foswikiErrorSummary {
 
 /* grid **********************************************************************/
 .showgrid-40x18 {
-  background:transparent url(grid-40x18.png) repeat scroll 0 0 !important;
+  background-image:url(grid-40x18.png) !important;
+  background-repeat:repeat !important;
+  background-position:0 0 !important;
 }
 
 /* DEPRECATED grid: use new foswiki grid definitions below */
@@ -515,6 +517,14 @@ h4 a:hover, h5 a:hover, h6 a:hover {
   border-color:#eee;
   background-color:#fff;
 }
+.foswikiImage.foswikiRight {
+  margin-left:10px;
+  margin-bottom:10px;
+}
+.foswikiImage.foswikiLeft {
+  margin-right:10px;
+  margin-bottom:10px;
+}
 
 .foswikiIndent {
   margin-left:3em;
@@ -580,7 +590,7 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 }
 .foswikiSmallish {
   font-size:0.923em; /* 12px */
-  line-height:1.5;
+  /*line-height:1.5;*/
 }
 
 /* squish it a little more in the sidebar */
@@ -611,9 +621,7 @@ h4 a:hover, h5 a:hover, h6 a:hover {
   padding:0.1538em 0.5769em 0.1538em 0em;
 }
 
-.foswikiGrayText {
-  color:#8E9195;
-}
+.foswikiGrayText,
 .foswikiGrayText a {
   color:#7B7E81;
 }
@@ -1044,7 +1052,7 @@ td.foswikiDiffChangedText {
 
 /* TOC */
 .foswikiToc {
-  margin:1.3076em 0em 1.3846em;
+  margin:1.3846em 0em;
   padding:0em;
 }
 .foswikiTocTitle {
@@ -1057,7 +1065,7 @@ td.foswikiDiffChangedText {
 .foswikiToc ul {
   list-style:none;
   margin:1.3846em 0em;
-  padding:1.3846em 0em;
+  padding:1.3076em 0em 1.3846em;
   border-top:1px solid #ddd;
   border-left:4px solid #ddd;
 }
@@ -1299,6 +1307,18 @@ h1 .foswikiTopicSummary {
 /* tinymce */
 .mceContentBody {
   margin:0.5em;
+}
+
+a.natScrollTop {
+  text-decoration:none;
+  position:fixed;
+  bottom:1em;
+  right:1em;
+  font-size:120%;
+  font-weight:bold;
+  text-align:center;
+  padding:1px 5px 5px;
+  line-height:1em;
 }
 
 .natBottomActions {
@@ -1573,6 +1593,10 @@ body .natSideBar .natMySideBarRedDot a:hover {
   position:relative;
   top:-19em;
   left:-19em;
+}
+.natLogin .foswikiFormSteps {
+  padding-top:3em;
+  padding-bottom:3em;
 }
 .natLogin h2 {
   margin:0px;
@@ -1906,4 +1930,9 @@ body .natSideBar .natMySideBarRedDot a:hover {
 .natSlideShowBody .slideshowJump input {
   font-size:1em;
   padding:2px;
+}
+
+/* misc */
+.jqLoader {
+  display:none;
 }
