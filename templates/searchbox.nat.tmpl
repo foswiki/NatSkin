@@ -1,7 +1,8 @@
 <!-- template: searchbox.nat.tmpl -->
 %TMPL:DEF{"searchbox"}%<!-- -->
 <div class="natSearchBox">
-<form name="searchbox" id="searchbox" action="%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebSearch" >
+<form name="searchbox" id="searchbox" action="%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebSearch?origtopic=%BASEWEB%.%BASETOPIC%" >
+  <input type="hidden" name="origtopic" value="%BASEWEB%.%BASETOPIC%" />
   <input type="text" class="foswikiInputField" placeholder="%MAKETEXT{"search"}%" size="20" title="%MAKETEXT{"Enter topic name or a search string"}%" name="search" value="%TMPL:P{"searchvalue"}%" accesskey="f" /> 
   <input type="submit" class="foswikiSubmit" value="" />
 </form>
@@ -18,7 +19,6 @@ jQuery(function($) {
         action = $this.attr("action"),
         search = $this.find("input[name='search']"),
         href = action + ((search && search.val())?'#q='+search.val():'');
-
     window.location.href = href;
     return false;
   });

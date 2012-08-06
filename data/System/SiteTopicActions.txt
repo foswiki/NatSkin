@@ -1,12 +1,12 @@
-%META:TOPICINFO{author="ProjectContributor" date="1161605041" format="1.1" reprev="1.2" version="$Rev: 1823 $"}%
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1340128354" format="1.1" reprev="2" version="2"}%
 ---+ %TOPIC%
 Default site-level configuration for the !WebTopicActions !WebComponent
 
 <verbatim class="tml">
 %STARTINCLUDE%<!-- -->
 %USERACTIONS{
-  guest="$pdf"
-  restrictedactions="new, history, raw, edit, copy, menu"
+  guest="$action(pdf, can_generate_pdf)"
+  restrictedactions="new, history, raw, edit, copytopic, managetags, harvest"
   format="$edit$attach$new$menu"
   history="<div class='natHistoryTopicActions'>$edit$raw$history$first$prev$next$last$action(close)</div>"
   menu="
@@ -22,7 +22,7 @@ Default site-level configuration for the !WebTopicActions !WebComponent
    * $action(backlinks)
    * $action(childtopics)
    * $action(print)
-   * $action(pdf)
+   * $action(pdf, can_generate_pdf)
    * <hr />
    * $action(changelanguage, i18n_enabled)
    * $action(webdavdir, WebDAVLinkPluginEnabled)

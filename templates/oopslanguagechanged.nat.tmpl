@@ -10,20 +10,5 @@
 
 %BUTTON{"%MAKETEXT{"OK"}%" target="%WEB%.%TOPIC%" icon="tick"}%
 %CLEAR%
-
-%ADDTOZONE{
-  "script" 
-  text="<literal>
-<script>
-jQuery(function($) {
-  window.setTimeout(
-    function() {
-      window.location.href = '%SCRIPTURL{"view"}%/%WEB%/%TOPIC%';
-    }, 
-    2000
-  );
-});
-</script>"
-  </literal>"
-}%
+%ADDTOZONE{"head" text="<meta http-equiv='refresh' content='0;url=%SCRIPTURL{view}%/%WEB%/%TOPIC%' />"}%
 %TMPL:END%

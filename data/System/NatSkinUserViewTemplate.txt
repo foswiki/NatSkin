@@ -1,0 +1,60 @@
+%META:TOPICINFO{author="ProjectContributor" date="1168359939" format="1.1" version="1"}%
+
+%{<verbatim>}%
+%TMPL:INCLUDE{"view"}%<!-- -->
+%TMPL:DEF{"form"}%%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"beforetext"}%<!-- -->
+<noautolink>
+<div class="foswikiProfileInfo" style="margin:0.5454em 0 1em;">
+<div class="foswikiImage foswikiLeft">
+%ATTACHMENTS{
+   "%BASEWEB%.%BASETOPIC%"
+   name=".*\.(jpe?g|gif|png|JE?PG|GIF|PNG)"
+   warn="off"
+   limit="1"
+   sort="comment:name"
+   hidenull="off"
+   nullformat="$percntIMAGE{
+     \"nobody.gif\"
+     topic=\"System.MetaCommentPlugin\"
+     align=\"left\"
+     type=\"plain\"
+     width=\"100\"
+     crop=\"northwest\"
+     title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
+     warn=\"off\"
+   }$percnt"
+   format="$percntIMAGE{
+     \"$name\"
+     topic=\"$web.$topic\"
+     align=\"left\"
+     type=\"plain\"
+     width=\"100\"
+     crop=\"northwest\"
+     title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
+     warn=\"off\"
+   }$percnt"
+}% 
+</div>
+<h1 style="margin-top:0">%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%</h1>
+%RENDERFORDISPLAY{
+  topic="%BASEWEB%.%BASETOPIC%"
+  exclude="FirstName|LastName"
+  hideempty="on"
+  header="<table class='foswikiLayoutTable'>$n"
+  footer="</table>"
+  separator=""
+  format="<tr>
+    <th valign='top'>$percntSPACEOUT{$title}$percnt:</th>
+    <td valign='top'>$value</td>
+</tr>$n"
+}%
+</noautolink>
+%CLEAR%
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%

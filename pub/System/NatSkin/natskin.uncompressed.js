@@ -39,6 +39,19 @@ jQuery(function($) {
     }
   }
 
+  /* fix topic actions menu */
+  $(".natMoreActionsMenu:first").each(function() {
+    // hide hr if all prev list items are disabled
+    // ... or all following list items are disabled
+    $(this).find("hr").parent().each(function() {
+      var $this = $(this);
+      if ($this.prevAll().find(".natTopicAction").not(".natDisabledTopicAction").length == 0 ||
+          $this.nextAll().find(".natTopicAction").not(".natDisabledTopicAction").length == 0) {
+        $this.hide();
+      }
+    });
+  });
+
   /* add overflow div for tables */
   if (foswiki.getPreference("NatSkin.initOverflows")) { 
     $(".natMainContents").find(".foswikiTable")

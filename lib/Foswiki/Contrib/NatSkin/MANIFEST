@@ -6,6 +6,8 @@ data/System/EmptySideBarTemplate.txt 0644
 data/System/JazzyNoteTheme.txt 0644
 data/System/MySideBar.txt 0644
 data/System/NatSearch.txt 0644
+data/System/NatSkinUserViewTemplate.txt 0644
+data/System/NatSkinWikiUsersViewTemplate.txt 0644
 data/System/NatSkinChangeEmailAddressViewTemplate.txt 0644
 data/System/NatSkinChangePasswordViewTemplate.txt 0644
 data/System/NatSkinConfiguration.txt 0644
@@ -79,6 +81,7 @@ pub/System/NatSkin/blank.gif 0644
 pub/System/NatSkin/BlueNoteStyle.jpeg 0644
 pub/System/NatSkin/external.png 0644
 pub/System/NatSkin/favicon.ico 0644
+pub/System/NatSkin/search_button.png 0644
 pub/System/NatSkin/foswiki-logo.png 0644
 pub/System/NatSkin/grid-40x18.png 0644
 pub/System/NatSkin/history.js 0644
@@ -175,7 +178,6 @@ pub/System/NatSkin/q_black.gif 0644
 pub/System/NatSkin/rename.js 0644
 pub/System/NatSkin/rename.js.gz 0644
 pub/System/NatSkin/rename.uncompressed.js 0644
-pub/System/NatSkin/wikiringlogo40x40.png 0644
 templates/actionform.nat.tmpl 0644
 templates/addform.nat.tmpl 0644
 templates/attachagain.nat.tmpl 0644
@@ -199,7 +201,6 @@ templates/edit.nat.tmpl 0644
 templates/edittext.nat.tmpl 0644
 templates/form.nat.tmpl 0644
 templates/formtables.nat.tmpl 0644
-templates/foswiki.jazzynote.nat.tmpl 0644
 templates/foswiki.jazzynote.tmpl 0644
 templates/foswiki.nat.tmpl 0644
 templates/history.nat.tmpl 0644

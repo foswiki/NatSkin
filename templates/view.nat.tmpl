@@ -16,27 +16,25 @@
 %TMPL:P{"metadescription"}%
 %TMPL:P{"metakeywords"}%
 %TMPL:P{"metaauthor"}%
+%TMPL:P{"metagenerator"}%
 %TMPL:P{"metaedit"}%
 %HTTP_EQUIV_ON_VIEW% %TMPL:END%
 
-%TMPL:DEF{"metatitle"}%<meta name='title' content='%ENCODE{
-  "%IF{"'%WEB%.%TOPIC%'/MetaTitle" 
-    then="$percntFORMFIELD{MetaTitle}$percnt" 
-    else="$percntTMPL:P{\"title\"}$percnt"
-  }%" 
-  type="html"
-}%' />%TMPL:END%
+%TMPL:DEF{"metagenerator"}%<meta name='generator' content='Foswiki %WIKIVERSION%' />
 
-%TMPL:DEF{"metakeywords"}%%IF{
-  "defined 'METAKEYWORDS'" 
-  then="<meta name='keywords' content='$percntENCODE{\"$percntMETAKEYWORDS$percnt\" type=\"html\"}$percnt' />" 
-  else="$percntIF{\"'%WEB%.%TOPIC%'/MetaKeywords\" then=\"<meta name='keywords' content='$dollarpercntENCODE{\\"$dollarpercntFORMFIELD{MetaKeywords}$dollarpercnt\\" type=\\"html\\"}$dollarpercnt' />\"}$percnt"
+%TMPL:DEF{"metatitle"}%%IF{"defined 'METATITLE'" 
+  then="<meta name='title' content='$percntENCODE{\"$percntMETATITLE$percnt\" type=\"html\"}$percnt' />"
+  else="<meta name='title' content='$percntENCODE{\"$percntGETTOPICTITLE$percnt\" type=\"html\"}$percnt' />"
 }%%TMPL:END%
 
-%TMPL:DEF{"metadescription"}%%IF{
-  "defined 'METADESCRIPTION'" 
+%TMPL:DEF{"metadescription"}%%IF{"defined 'METADESCRIPTION'" 
   then="<meta name='description' content='$percntENCODE{\"$percntMETADESCRIPTION$percnt\" type=\"html\"}$percnt' />"
-  else="$percntIF{\"'%WEB%.%TOPIC%'/MetaDescription\" then=\"<meta name='description' content='$dollarpercntENCODE{\\"$dollarpercntFORMFIELD{MetaDescription}$dollarpercnt\\" type=\\"html\\"}$dollarpercnt' />\"}$percnt"
+  else="$percntFORMFIELD{\"Summary\" format=\"<meta name='description' content='$dollarpercntENCODE{\\"$value\\" type=\\"html\\"}$dollarpercnt' />\"}$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"metakeywords"}%%IF{"defined 'METAKEYWORDS'" 
+  then="<meta name='keywords' content='$percntENCODE{\"$percntMETAKEYWORDS$percnt\" type=\"html\"}$percnt' />" 
+  else="$percntFORMFIELD{\"Tag\" format=\"<meta name='keywords' content='$dollarpercntENCODE{\\"$value\\" type=\\"html\\"}$dollarpercnt' />\"}$percnt"
 }%%TMPL:END%
 
 %TMPL:DEF{"metaauthor"}%%IF{

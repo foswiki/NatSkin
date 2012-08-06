@@ -3,14 +3,6 @@
 %TOC%
 
 ---++ Description
-<table style="float:right">
-<tr>
-  <td><img src="%ATTACHURLPATH%/wikiringlogo40x40.png"></td>
-  <td><a href="http://wikiring.com" title="Make your Wiki ring!" style="text-decoration:none;color:#0065CD">
-      Powered by <br /> <nop>WikiRing Consultants </a>
-  </td>
-</tr>
-</table>
 NatSkin offers a decent appearance that increases
 usability and customizability in several respects to quickly accomplish a
 personalized wiki experience.
@@ -97,8 +89,6 @@ always open an extra window.
    * Edit [[%LOCALSITEPREFS%]] and change the SKIN variable to "nat";
      customize the default style adding the variables SKINSTYLE, STYLEBORDER,
      STYLEBUTTONS and STYLESIDEBAR (see NatSkin)
-   * If you have set up ssl for your server add the following variable to your <nop>SitePreferenecs:
-     <verbatim> * Set HTTPSLOGON = on </verbatim>
      This will prevent passwords being sent in clear-text over a possibly insecure net.
    * To switch on external link detection add 
      <verbatim> * Set EXTERNALLINKS = on </verbatim>
@@ -133,6 +123,15 @@ always open an extra window.
 |  Base Name: | nat |
 |  Screenshot: | <div style="overflow:hidden;height:200px"><a href="%PUBURLPATH%/%WEB%/NatSkin/BlueNoteStyle.jpeg"><img src="%PUBURLPATH%/%WEB%/NatSkin/BlueNoteStyle.jpeg" title="JazzyNoteTheme"/></a></div> |
 |  Change&nbsp;History: | <!-- specify latest version first -->&nbsp; |
+|  06 Aug 2012: | added custom user view and wiki user view template; \
+                  moving more styles from jazzynote theme to base theme; \
+                  removed HTTPSLOGON; \
+                  using IE7 compatible way of clearing floats; \
+                  removing x-ua-compatible meta tag in favor of the more robust http header way to do it; \
+                  rationalized generation of seo meta tags; \
+                  can't use the html5 way to indicate the page's charset as some pdf renderer don't understand it; \
+                  replaced table-based layout with a more modern approach; \
+                  removing support for IE6 and added warning banner |
 |  12 Feb 2010: | displaying attachment revisions in a small twisty now; \
                   minifying and compressing all css and js now; \
                   fixed and improved attachment tables; \
@@ -467,5 +466,4 @@ always open an extra window.
 |  Home: | Foswiki:Extensions/NatSkin |
 |  Support: | Foswiki:Support/NatSkin |
 
-%META:FILEATTACHMENT{name="wikiringlogo40x40.png" attachment="wikiringlogo40x40.png" attr="h" comment="" date="1189787359" path="wikiringlogo40x40.png" size="2571" stream="wikiringlogo40x40.png" tmpFilename="" user="ProjectContributor" version="1"}%
 %META:FILEATTACHMENT{name="BlueNoteStyle.jpeg" attachment="BlueNoteStyle.jpeg" attr="h" comment="" date="1225905266" path="BlueNoteStyle.jpeg" size="42093" stream="IO::File=GLOB(0x8f2567c)" tmpFilename="/var/tmp/CGItemp41158" user="ProjectContributor" version="1"}%

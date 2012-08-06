@@ -1,0 +1,189 @@
+%META:TOPICINFO{author="ProjectContributor" comment="pending" date="1343316280" format="1.1" version="2"}%
+%{<verbatim>}%
+%TMPL:INCLUDE{"view"}%<!-- -->
+%TMPL:DEF{"form"}%%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+%TMPL:DEF{"topicactions"}%%TMPL:END%
+%TMPL:DEF{"userlist::query"}%\b(UserForm|EmployeePortal)$%TMPL:END%
+%TMPL:DEF{"userlist::title"}%<h1 >%TOPIC%</h1>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"content"}%<!-- -->
+%TMPL:P{"userlist::title"}%
+%TMPL:P{"userlist::filter"}%
+%TMPL:P{"userlist::result"}%
+%TMPL:P{"userlist::javascript"}%
+%TMPL:P{"userlist::css"}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"userlist::filter"}%<!-- -->
+<div class="foswikiPageForm">
+  <b>%MAKETEXT{"Filter"}%:</b> 
+  <input type="text" class="foswikiInputField jqFocus" name="userlistFilter" value="%URLPARAM{"filter"}%" size="50" id="userlistFilter" />
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"userlist::result"}%<!-- -->
+<noautolink>
+
+<div class="userlistContainer">
+%SEARCH{
+  "form.name=~'%TMPL:P{"userlist::query"}%'" 
+  type="query" 
+  nonoise="on" 
+  separator="" 
+  format="$percntTMPL:P{\"userlist::format\" OBJECT=\"$web.$topic\"}$percnt"
+}%
+%CLEAR%
+</div>
+</noautolink>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"userlist::format"}%%ATTACHMENTS{ 
+   "%OBJECT%" 
+   name=".*\.(jpe?g|gif|png|JE?PG|GIF|PNG)" 
+   warn="off" 
+   limit="1" 
+   sort="%IF{"defined SORT" then="%SORT%" else="comment:name"}%" 
+   reverse="%IF{"'%SORT%' = 'date'" then="on" else="off"}%" 
+   hidenull="off" 
+   header="<div class='userImage'>
+      <h2><a href='%SCRIPTURLPATH{"view"}%/%OBJECT%'>$percntTMPL:P{\"userlist::name\" OBJECT=\"%OBJECT%\"}$percnt</a></h2>"
+   footer="$percntTMPL:P{\"userlist::info\" OBJECT=\"%OBJECT%\"}$percnt</div>"
+   format="$percntIMAGE{ 
+     \"$name\" 
+     topic=\"$web.$topic\" 
+     href=\"%SCRIPTURLPATH{"view"}%/$web/$topic\" 
+     type=\"user\" 
+     size=\"160x160^\" 
+     crop=\"northwest\" 
+     title=\"$percntSPACEOUT{$topic}$percnt\" 
+     caption=\"$percntSPACEOUT{$topic}$percnt\" 
+     warn=\"off\" 
+   }$percnt" 
+   nullformat="$percntIMAGE{ 
+     \"%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/images/nobody.gif\" 
+     href=\"%SCRIPTURLPATH{"view"}%/$web/$topic\" 
+     type=\"user\" 
+     size=\"160x160^\" 
+     crop=\"northwest\" 
+     title=\"$percntSPACEOUT{$topic}$percnt\" 
+     caption=\"$percntSPACEOUT{$topic}$percnt\" 
+     warn=\"off\" 
+   }$percnt" 
+}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"userlist::name"}%%IF{
+  "'%OBJECT%'/FirstName"
+  then="%FORMFIELD{"FirstName" topic="%OBJECT%"}% %FORMFIELD{"LastName" topic="%OBJECT%"}%"
+  else="%GETTOPICTITLE{"%OBJECT%"}%"
+}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"DISuserlist::info"}%<div class='userlistInfo'>
+%IF{
+  "'%OBJECT%'/Telephone"
+  then="Tel: %FORMFIELD{"Telephone" topic="%OBJECT%"}%"
+}%
+</div>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"image:user"}%<a class='imageHref' title='$title' href='$href'><img border='0' src='$src' alt='$alt'/></a>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"userlist::javascript"}%<literal>
+%JQREQUIRE{"focus"}%
+<script>
+jQuery(function($) {
+  function filterImages(query) {
+    var regex = new RegExp(query, "gi");
+    $(".userlistContainer h2").each(function() {
+      var $this = $(this),
+          text = $(this).text();
+      if (text.match(regex)) {
+        $this.parent().stop(false, true).fadeIn();
+      } else {
+        $this.parent().stop(false, true).fadeOut();
+      }
+    });
+  }
+
+  $(".userImage").hover(
+    function() {
+      $(this).addClass("hover");
+    },
+    function() {
+      $(this).removeClass("hover");
+    }
+  );
+
+  $("#userlistFilter").keyup(function(event) {
+    if (event.which == 13) {
+      event.preventDefault();
+    }
+    filterImages($(this).val());
+  });
+});
+</script>
+</literal>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"userlist::css"}%<literal>
+<style>
+.userImage.hover {
+  border-color:#aaa;
+          box-shadow: 2pt 2px 8px rgba(105, 105, 105,  0.3);
+     -moz-box-shadow: 2pt 2px 8px rgba(105, 105, 105,  0.3);
+  -webkit-box-shadow: 2pt 2px 8px rgba(105, 105, 105,  0.3);
+}
+.userImage.hover h2 a {
+  background-color:#0055b5;
+  color:#fff;
+}
+.userImage {
+  overflow:hidden;
+  float:left;
+  width:160px;
+  height:195px;
+  padding:0;
+  margin:0 1.2em 1.2em 0;
+  border:1px solid #ccc;
+          border-radius:8px;
+     -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  background:#fff;
+          box-shadow: 2pt 2px 8px rgba(105, 105, 105,  0.1);
+     -moz-box-shadow: 2pt 2px 8px rgba(105, 105, 105,  0.1);
+  -webkit-box-shadow: 2pt 2px 8px rgba(105, 105, 105,  0.1);
+}
+.userlistContainer .imageHref {
+  display:block;
+  margin:0;
+}
+.userImage h2 {
+  font-size:90%;
+  font-weight:bold;
+  line-height:1.3;
+  margin:0;
+  background-color:#F2F1F3;
+}
+.userImage h2 a {
+  display:block;
+  padding:1em;
+}
+</style>
+</literal>%TMPL:END%
+%{</verbatim>}%

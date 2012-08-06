@@ -58,14 +58,14 @@
       <th><span class='natHistoryAction'>%MAKETEXT{"Action"}%</span></th>
     </tr>"
   format="<tr>
-    <td><span style='width:1em;display:inline-block;text-align:right'>$rev</span>
+    <td><span style='width:2em;display:inline-block;text-align:right'>$rev</span>
       <input $checked1 type='radio' name='rev2' value='$rev' />
       <input $checked2 type='radio' name='rev1' value='$rev' />
     </td>
     <td style='width:10em'>$date</td>
     <td>
       $percntIF{\"istopic '$wikiusername'\" 
-        then=\"[[$wikiusername][$wikiname]]\" else=\"<nop>$wikiname\"
+        then=\"[[$wikiusername]]\" else=\"<nop>$wikiname\"
       }$percnt
     </td>
     %IF{"context 'RevCommentPluginEnabled'" 

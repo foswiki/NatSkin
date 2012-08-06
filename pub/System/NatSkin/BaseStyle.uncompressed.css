@@ -14,8 +14,12 @@ table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video, xmp {
   background: transparent;
 }
 
-html {
-  font: 13px/18px 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+embed, object {
+  position: relative;
+  z-index: 0;
+}
+
+.natHtml {
   overflow-y: scroll; /* force a vertical scrollbar to prevent a jumpy page */
 }
 
@@ -60,6 +64,9 @@ img {
   /* For IE.  http://css-tricks.com/ie-fix-bicubic-scaling-for-images */
   -ms-interpolation-mode: bicubic;
 }
+img.foswikiButton {
+  vertical-align:middle;
+}
 
 /* For IE6 + IE7.  */
 li {
@@ -91,6 +98,21 @@ a:active,
   outline:0;
 }
 
+.foswikiEmulatedLink,
+.wysiwyg_link,
+a {
+  color:#0055b5;
+  text-decoration:underline;
+}
+
+.treeview a:hover,
+.wysiwyg_link:hover,
+a:hover {
+  color:#ffffff;
+  background:#0055b5;
+  text-decoration:none;
+}
+
 pre {
   overflow-x:auto;
   overflow-y:hidden;
@@ -110,11 +132,18 @@ pre {
 .hr, hr {
   border:0px;
   padding:0px;
-  border-bottom:1px solid black;
+  border-bottom:1px solid #ddd;
   margin:1.3846em 0em 1.3077em;
 }
 
 /* typography ****************************************************************/
+body {
+  color:#444;
+  font-family: Arial, 'Liberation Sans', FreeSans, sans-serif;
+  font-size:13px;
+  line-height:1.39em;
+}
+
 pre, code, textarea {
   font-family:"Bitstream Vera Sans Mono", "Andale Mono", monospace;
   line-height:17px; /* a bit less compared to sans-serif */
@@ -122,12 +151,17 @@ pre, code, textarea {
 pre, textarea {
   line-height:1.3846em;
 }
+pre {
+  background:#f6f6f6;
+  padding:0.5em;
+  border:1px solid #ddd;
+}
 
-.natBody .natEdit {
+body .natEdit {
   font-size:0.923em; /* 12px */
   line-height: 1.5em; /* 18px */ 
 }
-.natBody .natEdit textarea, .natEditTextArea {
+body.natEdit textarea, .natEditTextArea {
   font-size:1em; /* 12px */
 }
 
@@ -144,8 +178,59 @@ blockquote {
   padding:1.3846em; /* 18px */
 }
 
+/* lists */
+ul, ol {
+  margin:1.3846em 0em 1.3846em 3.0769em; 
+  padding:0em;
+}
+ol ol,
+ul ol,
+ol ul,
+ul ul {
+  margin-top:0em;
+  margin-bottom:0em;
+}
+.foswikiIndent {
+  margin-left:3.0769em;
+  padding:0;
+}
+/*
+li {
+  margin:0em 0em 0em 2.623em;
+  padding:0em 0em 0em 0.3846em;
+}
+li li {
+  margin:0em 0em 0em 0.7em;
+}
+*/
+
+dd {
+  margin:0em 0em 1.3846em 3.0769em;
+  /*margin-left:16em;*/
+}
+/*
+dt {
+  border-bottom:1px solid #ddd;
+  float:left;
+  width:15em;
+  margin-right:1em;
+}
+*/
+
+/* TOC */
+
+.foswikiToc li {
+  margin-left:1em;
+  padding-left:1em;
+}
+.foswikiToc a {
+  background-image:none;
+  text-decoration:none;
+}
+
 .foswikiCite {
   font-style:italic;
+  margin:1.3846em 0em; /* 18px 0px */
 }
 
 .blogEntry blockquote,
@@ -159,6 +244,20 @@ blockquote {
 
 .foswikiBlockCite .foswikiCiteChar {
   display:none;
+}
+
+/* headings */
+h1, h2, h3, h4, h5 {
+  color:#222;
+}
+h6 {
+  color:#111;
+}
+
+h1 .foswikiEmulatedLink,
+h1 a {
+  color:#222;
+  text-decoration:none;
 }
 
 .blogEntry h2,
@@ -208,21 +307,202 @@ h1, h2, h3, h4, h5, h6 {
   font-weight:normal;
 }
 
-
-/* form **********************************************************************/
-input[type=radio],
-input[type=checkbox],
-.foswikiCheckbox {
-  margin:0px 3px 0px 0px;
+/* tables */
+.foswikiTable {
+  border:1px #ddd solid;
+  font-size:0.923em;
+  line-height:1.5em;
+  margin:1px 1px 1.3076em 1px;
 }
+.foswikiTableOverflow .foswikiTable {
+  margin:0em;
+}
+.foswikiTable td,
+.foswikiTable tr.foswikiTableOdd td,
+.foswikiTable tr.foswikiTableEven td {
+  background:#fcfcfc;
+}
+.foswikiTable th,
+.foswikiTable td {
+  padding:0.6666em 0.75em 0.75em 0.666em;
+  border:1px #ccc solid;
+}
+.foswikiTable th,
+.foswikiTable th h2,
+.foswikiTable th h3,
+.foswikiTable th h4 {
+  color:#fff;
+  font-weight:bold;
+  text-decoration:none;
+  background-color: #8CAFD5;
+}
+.foswikiTable th a,
+.foswikiTable th a:hover,
+.foswikiTable th span {
+  text-decoration:none;
+  font-weight:bold;
+  color:#fff;
+}
+.foswikiTable th a:hover {
+  text-decoration:underline;
+  color:#fff;
+  background-color:transparent;
+}
+
+/* tables in forms */
+.foswikiEditForm th a,
+.foswikiEditForm th a:hover {
+  color:inherit;
+  text-decoration:inherit;
+  background-color:inherit;
+}
+.foswikiPageForm th,
+.foswikiPageForm td,
+.foswikiFormSteps th,
+.foswikiFormSteps td {
+  padding:2px 7px 2px 3px;
+}
+.foswikiPageForm .foswikiTable td,
+.foswikiFormSteps .foswikiTable td,
+.foswikiPageForm .foswikiTable th,
+.foswikiFormSteps .foswikiTable th {
+  border:0px;
+}
+.foswikiPageForm .foswikiTable td,
+.foswikiFormSteps .foswikiTable td {
+  vertical-align:middle;
+}
+.foswikiFormSteps .foswikiTable td,
+.foswikiPageForm .foswikiTable td {
+  background:transparent;
+}
+.foswikiFormSteps .foswikiTable th,
+.foswikiPageForm .foswikiTable th {
+  border-bottom:0px;
+  vertical-align:top;
+}
+
+
+/* forms **********************************************************************/
+.foswikiDialog,
+.foswikiFormSteps,
+.foswikiPageForm {
+  padding:1.3076em 1.3846em; /* 17px 18px */
+  margin:1.3846em 0em 0em; /* 18px */
+  border-top:1px solid;
+  border-bottom:1px solid;
+  border-color:#DDD;
+  background-color:#FAF8F7;
+}
+
+.foswikiDialog .hr,
+.foswikiDialog hr,
+.foswikiFormSteps .hr,
+.foswikiFormSteps hr {
+  margin:1em -1.3076em;
+}
+
+.foswikiDialog h2,
+.foswikiDialogForm h2 a,
+.foswikiPageForm h2,
+.foswikiPageForm h3,
+.foswikiPageForm h4,
+.foswikiPageForm h2 a,
+.foswikiPageForm h3 a,
+.foswikiPageForm h4 a,
+.foswikiFormSteps h2,
+.foswikiFormSteps h3,
+.foswikiFormSteps h4,
+.foswikiFormSteps h2 a,
+.foswikiFormSteps h3 a,
+.foswikiFormSteps h4 a {
+  margin-top:0em;
+  margin-bottom:0em;
+  font-weight:bold;
+}
+.foswikiDialog h2 a:hover,
+.foswikiPageForm h2 a:hover,
+.foswikiFormSteps h2 a:hover {
+  color:#fff;
+}
+.foswikiDialog h2,
+.foswikiFormSteps h2 { 
+  font-size: 1.2308em; /* 16px */ 
+  line-height: 1.125em; /* 18px */ 
+  margin-bottom: 1.125em; /* 18px */ 
+  border:0px;
+  padding:0px;
+}
+
+.foswikiFormSteps h3,
+.foswikiFormSteps h4,
+.foswikiFormSteps h5,
+.foswikiFormSteps h6,
+.jqTabContents .foswikiFormSteps h3,
+.jqTabContents .foswikiFormSteps h4,
+.jqTabContents .foswikiFormSteps h5,
+.jqTabContents .foswikiFormSteps h6 {
+  font-size:100%;  /* 13px */
+  line-height:1.3846em; /* 18px */
+}
+
+.jqTabContents .foswikiFormSteps {
+  margin-top:0px;
+}
+
 label input[type=radio],
 label input[type=checkbox],
 label .foswikiCheckbox {
   -webkit-margin-after:4px !important; /* layout fix for chrome */
 }
-input:-webkit-autofill {
-  background:inherit !important; /* SMELL: does not work */
+
+input[type=text],
+input[type=password],
+.foswikiInputField,
+.foswikiSelect,
+.foswikiTextarea, textarea {
+  margin:0px;
+  border:1px solid #bbb;
+  background-color:#fefefe;
+  padding:4px;
+  font-size:0.923em;
+          border-radius:2px;
+     -moz-border-radius:2px;
+  -webkit-border-radius:2px;
 }
+.foswikiTextarea:focus, textarea:focus,
+.foswikiSelect:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+.foswikiInputField:focus {
+  background-color:#f5f5f5;
+  border-color:#aaa;
+  border-color:#A2748A;
+  border-color:#9C3063;
+  background-position:0px 0px;
+}
+
+input,
+textarea, .foswikiTextarea,
+select {
+  margin:0 3px 0 0;
+}
+
+fieldset {
+  padding:0px 0px 0px 1px; /* firefox fix to allign legend and content */
+  border:0px;
+  border-color:#DDD;
+  background-color:#FAF8F7;
+}
+legend {
+  color:#0055b5;
+}
+
+fieldset .foswikiFormSteps {
+  border:0px;
+}
+
+
 
 .natTopicEditForm .natTopicFormTitle {
   text-align:center;
@@ -480,7 +760,6 @@ div.foswikiErrorSummary {
 }
 
 /* foswiki base **************************************************************/
-a, .foswikiEmulatedLink,
 a:hover, .foswikiEmulatedLink:hover,
 h1 .foswikiEmulatedLink, h2 .foswikiEmulatedLink, h3 .foswikiEmulatedLink,
 h4 .foswikiEmulatedLink, h5 .foswikiEmulatedLink, h3 .foswikiEmulatedLink,
@@ -518,12 +797,12 @@ h4 a:hover, h5 a:hover, h6 a:hover {
   background-color:#fff;
 }
 .foswikiImage.foswikiRight {
-  margin-left:10px;
-  margin-bottom:10px;
+  margin-left:1em;
+  margin-bottom:1em;
 }
 .foswikiImage.foswikiLeft {
-  margin-right:10px;
-  margin-bottom:10px;
+  margin-right:1em;
+  margin-bottom:1em;
 }
 
 .foswikiIndent {
@@ -627,7 +906,6 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 }
 
 .foswikiNewLink {
-  color:blue;
   background:#eeeeee;
 }
 
@@ -651,6 +929,20 @@ h4 a:hover, h5 a:hover, h6 a:hover {
   background:orange;
 }
 
+.natBrowserSupportWarning {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:1000;
+  padding:1em;
+  width:100%;
+  background-color:yellow;
+  color:black;
+}
+
+.natBrowserSupportWarning a {
+  color:red;
+}
 
 /* search */
 .natSearchRenameContents {
@@ -740,6 +1032,46 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 }
 
 /* topic actions */
+.natGreeter {
+  text-align:right;
+  padding:2px 5px;
+}
+.natGreeter {
+  white-space:nowrap;
+}
+.natGreeter a {
+  color:#444;
+  text-decoration:none;
+}
+.natGreeter a:hover {
+  color:#fff;
+}
+
+.natUserAction {
+  font-size:0.923em; /* 12px */
+}
+.natGreeter .natUserAction {
+  padding:3px 5px;
+}
+.natUserAction img {
+  border:0;
+  vertical-align:text-bottom;
+  width:1.2308em; /* 16px */
+  max-width:16px;
+  margin-right:2px;
+}
+.natDisabledUserAction span,
+.natDisabledTopicAction span {
+  color:#cfcfcf;
+}
+.natTopicActions span {
+  color:#444;
+}
+
+.natDisabledTopicAction:hover,
+.natDisabledTopicActions a:hover {
+  background-color:transparent;
+}
 .natBreadCrumbs {
   font-size:0.923em; /* 12px */
   line-height:1.5em; /* 18px */
@@ -752,12 +1084,6 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 }
 .natBodyNotAuthenticated .natTopicAttachments .natTopicActions {
   display:none;
-}
-.natGreeter {
-  white-space:nowrap;
-}
-.natUserGreeter {
-  padding:2px 0px;
 }
 .natTopicActions {
   float:right;
@@ -792,6 +1118,23 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 .natTopicActions .natMoreActionsMenu ul li .natTopicAction:hover {
   float:none;
   border:0px;
+}
+.natTopicActions .natUserAction:hover,
+.natTopicActions .natTopicAction:hover {
+  background-color:#eee;
+  border:1px solid #c2c4c4;
+
+  -webkit-border-radius:2px;
+     -moz-border-radius:2px;
+          border-radius:2px;
+}
+.natTopicActions .sfHover .natMoreActionsTopicAction {
+  border:1px solid #c2c4c4;
+  border-bottom:0px;
+  position:relative;
+  -webkit-border-radius:2px 2px 0 0;
+     -moz-border-radius:2px 2px 0 0;
+          border-radius:2px 2px 0 0;
 }
 .natMoreActionsMenu img,
 .natTopicActions img {
@@ -842,36 +1185,6 @@ h4 a:hover, h5 a:hover, h6 a:hover {
   margin:0px;
 }
 
-/* helpers */
-.natUserAction img {
-  border:0;
-  vertical-align:text-bottom;
-  width:1.2308em; /* 16px */
-  max-width:16px;
-  margin-right:5px;
-}
-
-.natAction {
-  color:red;
-  text-transform:capitalize;
-  font-weight:bold;
-}
-.natCurrentAction {
-  font-weight:bold;
-}
-.natCurrentAction,
-.natEditAction a,
-.natPreviewAction a,
-.natSaveAction a,
-.natDoneAction a,
-.natFormAction a,
-.natUndoAction a,
-.natCancelAction a {
-  border:1px solid #cccccc;
-  margin:2px 5px 2px 0;
-  padding:2px 5px;
-}
-
 /* attachments */
 .natTopicAttachments {
   clear:both;
@@ -890,35 +1203,6 @@ h4 a:hover, h5 a:hover, h6 a:hover {
   text-align:right;
 }
 
-.natSkinStyleBrowser {
-  width:220px; /* SMELL */
-}
-
-.natSideBar .natSkinStyleBrowser ul,
-.natMain .natSkinStyleBrowser ul {
-  padding-left:0px;
-  margin:0px 0px 10px 0px;
-  padding-left:0px;
-  list-style: none;
-}
-.natSideBar .natSkinStyleBrowser ul li,
-.natMain .natSkinStyleBrowser ul li {
-  background-image:inherit;
-  list-style:none;
-  padding-left:0px;
-  margin-left:0px;
-}
-
-.natSkinStyleBrowser table,
-.natSkinStyleBrowser select {
-  width:100%;
-}
-.natSkinStyleBrowser td {
-  vertical-align:top;
-}
-
-
-.natSideBar a.natFeedIcon:hover,
 a.natFeedIcon:hover {
   background:#eee url("icons/feed-icon-12x12.png") 0px -14px no-repeat !important;
   text-decoration:none !important;
@@ -936,12 +1220,6 @@ a.natFeedIcon {
 .natFeedIcon {
   font-size:9px;
 }
-.natSideBar a.natFeedIcon {
-  background:none;
-  padding:1px 0px 0px 15px;
-  color:#444;
-}
-
 
 .foswikiSuccessMessage,
 .foswikiErrorMessage,
@@ -1074,6 +1352,11 @@ td.foswikiDiffChangedText {
   margin-top:0px;
   margin-bottom:0px;
   border:0px;
+}
+
+.foswikiToc.foswikiRight,
+.foswikiToc.foswikiLeft {
+  max-width: 40%;
 }
 
 /* see also page.nat.tmpl */
@@ -1294,8 +1577,13 @@ table.craSideBySide .craCell {
 }
 
 /* classification plugin */
-h1 .foswikiTopicSummary {
+h1 .foswikiTopicSummary,
+h2 .foswikiTopicSummary {
   display:block;
+  font-size:0.5909em; /* 13px */
+  line-height:1.3846em; /* 18px */
+  color:#808080;
+  font-weight:normal;
 }
 
 .clsMakeIndexWrapper ul li {
@@ -1308,12 +1596,19 @@ h1 .foswikiTopicSummary {
 .mceContentBody {
   margin:0.5em;
 }
+#mceIframeContainer {
+  border:2px solid red;
+}
+#mceIframeContainer html {
+  background:#fff;
+  border:2px solid red;
+}
 
 a.natScrollTop {
   text-decoration:none;
   position:fixed;
-  bottom:1em;
-  right:1em;
+  bottom:0;
+  right:0;
   font-size:120%;
   font-weight:bold;
   text-align:center;
@@ -1361,7 +1656,11 @@ a.natScrollTop {
   text-align:center;
 }
 
-/* natskin layout ************************************************************/
+/* layout ************************************************************/
+.natSideBarContents  {
+  margin:0em;
+  padding:0em 1em;
+}
 .natPlainBody {
   background-color:white;
 }
@@ -1396,24 +1695,13 @@ th, /* opera */
 
 /* bordered layout */
 .natBodyBordered {
-  margin:30px 30px 30px 30px;
+  margin:1em 2.3076em 2.3076em;
 }
 
 /* fixed layout */
 .natBodyFixed .natBodyContents {
   width:75em;
   margin:0em auto 13em auto;
-}
-
-.natLayoutTable {
-  table-layout:fixed;
-  width:100%;
-  border-collapse:separate;
-}
-
-.natTopBar,
-.natMiddle {
-  vertical-align:top;
 }
 
 .natTopLeft, .natTopRight {
@@ -1423,19 +1711,68 @@ th, /* opera */
   float:right;
 }
 
-.natBoxBorderRight
-.natBoxBorderTopRight,
-.natBoxBorderBottomRight {
-  width:1px;
+.natTopLeftContents {
+  padding:25px 0em 0em 2.3077em; 
 }
+.natTopRightContents {
+  padding:35px 2.3077em 0em 0em;
+}
+
 .natBottomBarContents {
-  text-align:center;
+  text-align:left;
+  padding:2.3076em;
 }
 .natLoadTime {
   position:absolute;
   top:0;
   right:0;
 }
+
+.natMiddle {
+  background-color:#E9E9E9;
+}
+.natMain {
+  padding:1.3846em 2.3076em 2.3076em;
+  margin-left:16.1538em;
+  background-color:#fff;
+}
+.natSideBarHeader,
+.natSideBar {
+  width:16.1538em; /* 210px */
+}
+
+/* sidebar left */
+.natSideBar {
+  float:left;  
+}
+
+/* sidebar off */
+.natBodyOff .natMain { 
+  margin-left:0;
+  margin-right:0;
+}
+.natBodyOff .natSideBar {
+  display:none;
+}
+
+/* sidebar right */
+.natBodyRight .natSideBar {
+  float:right;
+}
+.natBodyRight .natMain {
+  margin-left:0;
+  margin-right:16.1538em;
+}
+
+/* both sidebars */
+.natSideBarRight {
+  float:right;
+}
+.natBodyRight .natMain,
+.natBodyBoth .natMain {
+  margin-right:16.1538em;
+}
+
 .natPreviewBody .natMainContents {
   background-image:url('previewbg.png');
 }
@@ -1443,18 +1780,11 @@ th, /* opera */
 .natViewHistoryBody .natMainContents {
   background-image:url('oldrevisionbg.png');
 }
-.natSideBarHeader,
-.natSideBar {
-  width:16.1538em; 
-}
 .natBodyLeft .natWebMenu,
 .natBodyBoth .natWebMenu {
   padding-left:16.1538em;
 }
 
-.natSideBar {
-  padding-bottom:5px;
-}
 .natSideBarContents {
   overflow:hidden;
   min-height:40em;
@@ -1479,8 +1809,8 @@ th, /* opera */
  * page layout fall appart ... sort of.
  */
 .natMainContents {
-  clear:both;
   min-height:40em;
+  width:100%;
 }
 .natBodyRight .natMainContents {
   overflow:hidden;
@@ -1501,43 +1831,74 @@ th, /* opera */
   font-size: 1.6923em; /* 22px */ 
   line-height:normal;
   font-weight:bold;
-  margin:0px;
-  padding:0px;
-  float:left;
+}
+
+.natWebTitle a,
+.natWebTitle a:hover {
+  text-decoration:none;
+  background-color:transparent;
+  background-repeat:no-repeat;
 }
 
 /* search box */
-.natSearchBox {
-  width:180px;
-}
-.natSideBar .natSearchBox {
-  width:auto;
-}
-.natSearchBox input {
-  margin:0px;
+.natSearchBox form {
+  position:relative;
   padding:0px;
-  outline:none;
-  width:100%;
+}
+.natSearchBox .foswikiInputField {
+  width:180px; 
 }
 .natSearchBox .ui-autocomplete-wrapper {
   width:100%;
 }
+.natSearchBox .foswikiSubmit {
+  width:24px;
+  height:24px;
+  top:50%;
+  right:0px;
+  margin:-12px 0px 0px 0px;
+  border:0;
+  padding:0;
+  background:url(search_button.png) no-repeat 0 0 transparent;
+  position:absolute;
+  cursor:pointer;
+}
+.natSearchBox .foswikiSubmit:hover {
+  background-position:0px -25px;
+}
 
 /* sidebar */
+.natSideBar a span,
+.natSideBar a {
+  text-decoration:none;
+}
 .natSideBar h2.natSideBarTitle {
   margin-top:0px;
 }
 .natSideBar h2 {
-  margin:5px 0px;
+  font-size:1.1538em; /* 15px */
+  line-height:1.3333em; /* 20px */
+  clear:both;
+  display:block;
+  font-weight:normal;
+  font-size:100%;
+  font-weight:bold;
 }
 .natSideBar h3 {
   margin:0px;
+  font-size:100%; /* 13px */
+  line-height:1.3846em; /* 18px */
+  font-weight:bold;
 }
 
 .natSideBar ul {
   margin:0px;
   padding:0px;
   list-style-type:none;
+}
+.natSideBar ul li {
+  margin:0px;
+  padding:0;
 }
 .natSideBar ol {
   margin:0px;
@@ -1591,7 +1952,7 @@ body .natSideBar .natMySideBarRedDot a:hover {
   margin:0px;
   width:38em; 
   position:relative;
-  top:-19em;
+  top:-15em;
   left:-19em;
 }
 .natLogin .foswikiFormSteps {
@@ -1629,6 +1990,12 @@ body .natSideBar .natMySideBarRedDot a:hover {
   display:none;
 }
 
+.natEditBody .natMiddle {
+  margin:0px;
+  background:transparent;
+  border:0px;
+}
+
 .natEditBody {
   margin:0px;
 }
@@ -1642,14 +2009,12 @@ body .natSideBar .natMySideBarRedDot a:hover {
   width:auto;
   max-width:initial;
 }
-.natEditBody .natLayoutTable {
-  table-layout:auto; /* firefox fix to preven collapsing tables */
-  margin-top:0px;
+
+/* fix scrollbars in ie7 */
+*:first-child+html .natEditBody .natBodyContents {
+  border:1px solid #fff;
 }
-*:first-child+html 
-.natEditBody .natLayoutTable {
-  table-layout:fixed; /* and IE7 as well */
-}
+
 .natEditBody .natMainHeaderContents,
 .natEditBody .natMainFooterContents,
 .natEditBody .natBottomBar,
@@ -1660,10 +2025,9 @@ body .natSideBar .natMySideBarRedDot a:hover {
 .natEditBody .natMainContents {
   min-height:0em;
 }
-.natEditBody .natMain,
-.natEditBody.natBodyFixed .natMain {
+.natEditBody .natMain {
   padding:1.3846em 1.923em 0em 1.923em;
-  border:0px;
+  border:0px !important;
 }
 
 .natEditTitle {
@@ -1694,7 +2058,9 @@ body .natSideBar .natMySideBarRedDot a:hover {
 }
 
 /* web menu ******************************************************************/
-.natWebMenu,
+.natWebMenu {
+  padding-left:2.3076em; /* 30px */
+}
 .natWebMenuContents {
   margin:0;
   padding:0;
@@ -1721,6 +2087,24 @@ body .natSideBar .natMySideBarRedDot a:hover {
   padding:0;
   list-style:none;
 }
+.natWebMenu li,
+.natWebMenu li a {
+  font-weight:bold;
+  color:#00458F;
+}
+.natWebMenu li li,
+.natWebMenu li li a,
+.natWebMenu li li a.foswikiNewLink {
+  font-weight:normal;
+  color:#444;
+}
+.natWebMenu li .foswikiCurrentWebHomeLink,
+.natWebMenu li .foswikiCurrentWebHomeLink:hover,
+.natWebMenu li a.current,
+.natWebMenu li a.current:hover {
+  background-color:#fff;
+}
+
 .natWebMenu .sf-js-enabled,
 .natWebMenu ul li {
   float:left;
@@ -1729,7 +2113,25 @@ body .natSideBar .natMySideBarRedDot a:hover {
   float:left;
   margin-bottom:-1px;
 }
+.natWebMenu ul ul {
+  border-color:#c2c4c4;
+  border-width:1px 0px 1px 0px;
+  border-style:solid;
+  margin-top:-1px;
+}
 
+.natWebMenu li li {
+  background-color:#fff;
+  border-left:1px solid #c2c4c4;
+  border-right:1px solid #c2c4c4;
+}
+.natMoreActionsMenu li .hr,
+.natMoreActionsMenu li hr,
+.natWebMenu li .hr,
+.natWebMenu li hr {
+  border-bottom:1px solid #c2c4c4;
+  margin:0.5em -1em;
+}
 .natWebMenu li {
   padding-left:1.0em;
   padding-right:1.0em;
@@ -1822,7 +2224,7 @@ body .natSideBar .natMySideBarRedDot a:hover {
   list-style:none;
 }
 .natMoreActionsMenu ul {
-  margin:0px;
+  margin:-1px 0 0 0;
   line-height:2.3076em; 
   z-index:99999; 
   position:absolute;
@@ -1831,6 +2233,7 @@ body .natSideBar .natMySideBarRedDot a:hover {
   right:-4px;
   top:21px;
   display:none;
+  border:1px solid #c2c4c4;
 }
 .sfHover .natMoreActionsTopicAction {
   padding-bottom:5px;
@@ -1935,4 +2338,12 @@ body .natSideBar .natMySideBarRedDot a:hover {
 /* misc */
 .jqLoader {
   display:none;
+}
+
+/* some basic background colors */
+.natTopBar {
+  background-color:#2E5CAC;
+}
+.natWebMenu {
+  background-color:#E9E9E9;
 }

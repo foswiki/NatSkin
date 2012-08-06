@@ -52,7 +52,7 @@
 }
 </style>
 </literal>
-<form id="registrationForm" action="%SCRIPTURLPATH{"register"}%/%USERSWEB%/%HOMETOPIC%" method="post">
+<form id="registrationForm" action="%SCRIPTURLPATH{"register"}%/%SYSTEMWEB%/%HOMETOPIC%" method="post">
 %IF{"context BlacklistPluginEnabled" 
   then="<input type='hidden' name='rx' value='$percntBLACKLISTPLUGIN{ action=\"magic\" }$percnt' />"
   else="<!-- no blacklist plugin installed -->"
