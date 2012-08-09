@@ -1,75 +1,53 @@
-%META:TOPICINFO{author="ProjectContributor" date="1234355406" format="1.1" version="1.2"}%
+%META:TOPICINFO{author="micha" comment="reprev" date="1344506862" format="1.1" version="2"}%
 ---+!! [[%TOPIC%][The Natural Skin]]
-%TOC%
 
----++ Description
-NatSkin offers a decent appearance that increases
-usability and customizability in several respects to quickly accomplish a
-personalized wiki experience.
+!NatSkin improves your Foswiki experience by bringing together some of the most useful
+features from different plugins in a consistent way. !NatSkin comes with a modern
+web design that improves readability of your wiki content as well as easing the way
+you interact with it as a wiki author and consumer.
 
-NatSkin allows you to switch between several kinds of page layouts. All of the
-predefined themes come with support for a 1, 2 and 3 columns designs.
-To get a first impression, check out the NatSkinStyleBrowser:
-   * select one of the predefined styles
-   * alter the header art by selecting a style variation
-   * flip the sidebar from the left to the right
-   * select different page framing by switching on/off page borders or
-     enable a thin blog-like layout
-   * switch on/off navigations tabs above the main area, the so called <nop>WebButtons
-   * the position of the search box can be set to one of four predefined positions
+!NatSkin also serves as a foundation for additional web designs. So you won't need to
+reinvent the wheel on every project over and over again.
 
----++ Feature Overview
-*Conditional markup and skin states:* 
+!NatSkin allows you to choose between several kinds of page layouts. All of the
+predefined themes come with support for a 1, 2 and 3 columns designs in both a
+fluid and a fixed page layout. 
 
-The NatSkinPlugin maintaines an internal representation of different ways to
-render the NatSkin concerning
-   * the skin style,
-   * style variants,
+!NatSkin provides a much improved usability when navigating among webs as well as
+when interacting with wiki content.
+
+---++ Screenshots
+
+---++ Theme switcher
+
+You can change design and layout aspects of every page as you like with just a few clicks.
+
+Configure the skin by changing:
+
+   * the theme installed on your system,
+   * the style part of a theme,
+   * the variation added to the theme's style,
    * the sidebar location,
-   * the page border decoration,
-   * the web buttons in the topbar and
-   * the positioning of the search box
-and provides the infrastructure to get, set and display the skin style that
-is currently active as well as rendering different content depending on the skin state.
-This, for example, allows to switch the sidebar navigation from the left
-to the right with a single click.
-
-*Componentized templates:*
+   * the page layout being either a fixed-width, or a fluid design or
+   * the navigation elements as displayed at the top of the page.
 
 The underlying templates that generate the pages are arranged in a flexible and
 manageable way to facilitate easy "skin mix-in", that is, overriding specific parts of
-the templates by using the NatSkin as a base skin to create template modifications.
+the templates by using the !NatSkin as a parent skin to create template modifications.
 
-*Customizing webs using <nop>WebComponents:*
+---++ <nop>WebComponents
 
-   * <nop>WebSideBar: a configurable navigation bar
-   * <nop>WebLinks: component used by the standard navigation scheme to plug in more
-     navigation links
-   * <nop>WebButtons: navigation tabs above the topic area
-   * <nop>MySideBar: every user can extend the sidebar with a personalized navigation
-   * <nop>WebHtmlHead: additional stuff to be put into the html head
-   * <nop>WebJavaScript: additional javascript code per web
-   * <nop>WebTopicActions: actions to manipulate topics
-   * <nop>WebMoreTopicActions: actions when clicking on "More"
+| *Name* | *Description* | *Default* |
+| <nop>Menu | navigation tabs above the topic area | [[%SYSTEMWEB%.SiteMenu]] |
+| <nop>SideBar | a configurable navigation bar | [[%SYSTEMWEB%.SiteSideBar]] |
+| <nop>RightBar | when using two sidebars, this component holds the right sidebar, while the <nop>SideBar component is displayed on the left. | [[%SYSTEMWEB%.SiteRightBar]] |
+| <nop>Links | this is a sub-component of the <nop>SideBar component to plug in navigation links within | [[%SYSTEMWEB%.SiteLinks]], [[%USERSWEB%.WebLinks]], [[%SYSTEMWEB%.WebLinks]] |
+| <nop>BottmBar | customize the content at the bottom area of a page | [[%SYSTEMWEB%.SiteBottomBar]] |
+| <nop>HtmlHead | additional stuff to be put into the html head, like javascript and/or css | [[%SYSTEMWEB%.SiteHtmlHead]] |
+| <nop>HtmlBottom | similar to <nop>WebHtmlHead but putting additional stuff just before the closing &lt;/body> tag of a page; this is useful when adding third party javascript code to a website, like tracking code | |
+| <nop>TopicActions | configure the actions used to manipulate topics | [[%SYSTEMWEB%.SiteTopicActions]] |
 
-*Search &amp; GO* 
-
-NatSearch: a search+go box that combines advanced search with the GO feature.
-Compared to the standard WebSearch, <nop>NatSearch is trying to maximize usability
-and minimizing workflow disruption. In addition, <nop>NatSearch can be customized
-on an application level to specify the scope of search (using include/exclude rules)
-as well as the appearance of listed search hits.
-
-*Wikiwyg editor:* 
-
-javascript enabled wikiwyg editor
-
-*Email Obfuscation:* 
-
-Optionally, all email addresses can be obfuscated by use of javascript. Email
-links are still clickable while automatic email extraction is hampered.
-
-*External link detection:*
+----+++ External link detection
 
 All offsite links are marked and a nice icon is added. Clicking on them will
 always open an extra window.
@@ -86,26 +64,6 @@ always open an extra window.
 %$INSTALL_INSTRUCTIONS%
 
    * Test if installed: [[%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?skin=nat][click here]]
-   * Edit [[%LOCALSITEPREFS%]] and change the SKIN variable to "nat";
-     customize the default style adding the variables SKINSTYLE, STYLEBORDER,
-     STYLEBUTTONS and STYLESIDEBAR (see NatSkin)
-     This will prevent passwords being sent in clear-text over a possibly insecure net.
-   * To switch on external link detection add 
-     <verbatim> * Set EXTERNALLINKS = on </verbatim>
-   * To obfuscate email addresses in the case they appear online use:
-     <verbatim> * Set OBFUSCATEEMAILS = on </verbatim>
-   * To enable ssl as soon as you logged in use the following rewrite rules in =bin/.htaccess=:
-     <verbatim>
- RewriteEngine On
- RewriteCond %{SERVER_PORT} !443
- RewriteCond %{QUERY_STRING} template=oopslogon
- RewriteRule ^(.*)$ https://%{HTTP_HOST}/bin/$1 [R,L]
-</verbatim>
-     Note, that you might need to accommodate the =/bin= url path above to your installation!
-   * If you are running Foswiki using Foswiki:Extensions/FastCGIEngineContrib or any other stand-alone engine,
-     you will have to add the following line to your =LocalSite.cfg= 
-     <verbatim>$Foswiki::cfg{SwitchBoard}{natsearch} = ['Foswiki::Plugins::NatSkinPlugin::Search', 'searchCgi', {natsearch => 1}];</verbatim>
-
 
 ---++ Dependencies
 %$DEPENDENCIES%
@@ -165,7 +123,7 @@ always open an extra window.
                   fixed "placing" topics into the Trash web; \
                   fixed and improved backlinks to topic; \
                   natsearch docu updates; \
-                  copied the NatSkinPlugin DEPENDENCIES up the food chain to NatSkin |
+                  copied the NatSkinPlugin DEPENDENCIES up the food chain to !NatSkin |
 |  13 Jan 2009: | fixed web topic creator |
 |  08 Jan 2009: | fixed the IE6 PNG fix; fixed login screen for IE6 |
 |  07 Jan 2009: | added tape-recorder-like history browser; \

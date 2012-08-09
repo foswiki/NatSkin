@@ -60,29 +60,8 @@ when combining the different skin states:
      navigation to other webs.
 
 ---++ Defining new Themes
-The NatSkin can be themed using cascading styles attached to the <nop>%SYSTEMWEB%.NatSkin or any
-other topic defined in the =STYLEPATH= preference variable.
-This variable is a list of topics that are consulted for css attachments. The default value is
-<verbatim>
-  * Set STYLEPATH = %SYSTEMWEB%.NatSkin
-</verbatim>
 
-Styles are collected in the order specified. This allows to insert style contributions that are
-not part of the NatSkin. For example given you uploaded NatSkin css definitions to a topic
-<nop>Main.NatSkinThemesContrib, you can activate them by setting the =STYLEPATH= to
-
-<verbatim>
-  * Set STYLEPATH = Main.NatSkinThemesContrib, %SYSTEMWEB%.NatSkin
-</verbatim>
-
-Css files must obey the following naming scheme to be recognized
-   * =&lt;name>Style.css=: basic style definitions for style &lt;name>
-   * =&lt;name>Buttons.css=: <nop>WebButton definitions for style &lt;name>
-   * =&lt;name>Border.css=: definitions for style &lt;name> displayed using =STYLEBORDER = on=
-   * =&lt;name>Thin.css=: definitions for style &lt;name> displayed using =STYLEBORDER = thin=
-   * =&lt;name>Thin.css=: definitions for style &lt;name> displayed using =STYLEBORDER = thin=
-   * =&lt;name>Variation.css=: style variations that can be applied to any base style; this
-     can be used to vary a base style, e.g. to add header art or change some fonts and colours
+... TODO ...
 
 ---+++ Email Obfuscation
 The standard Foswiki engine tries to obfuscate email addresses by adding a phrase to the email url (like NOSPAM)

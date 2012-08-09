@@ -208,9 +208,9 @@ h1,
 
 .natLogin {
   border:1px solid #d6d6d6;
-          border-radius:5px;
-     -moz-border-radius:5px;
-  -webkit-border-radius:5px;
+          border-radius:10px;
+     -moz-border-radius:10px;
+  -webkit-border-radius:10px;
   background:#fff;
           box-shadow: 0pt 2px 5px rgba(105, 105, 105,  0.7), 0px 0px 8px 5px rgba(247, 247, 247, 0.4) inset;
      -moz-box-shadow: 0pt 2px 5px rgba(105, 105, 105,  0.7), 0px 0px 8px 5px rgba(247, 247, 247, 0.4) inset;
