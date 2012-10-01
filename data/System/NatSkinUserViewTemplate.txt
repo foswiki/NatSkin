@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="micha" date="1348825516" format="1.1" version="2"}%
+%META:TOPICINFO{author="ProjectContributor" date="1348825516" format="1.1" version="2"}%
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%<!-- -->
 %TMPL:DEF{"form"}%%TMPL:END%
