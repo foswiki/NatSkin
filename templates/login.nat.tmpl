@@ -18,8 +18,9 @@
 %TMPL:DEF{"UNRECOGNISED_USER"}%%MAKETEXT{"Unrecognised user and/or password."}%
 %ADDTOZONE{
   "script"
+  requires="JQUERYPLUGIN::FOSWIKI::PREFERENCES"
   id="NATSKIN::LOGIN::OPTS"
-  text="<script>jQuery.extend(foswiki.preferences, { NatSkin.loginFailed: true });</script>"
+  text="<script>jQuery.extend(foswiki.preferences, { 'NatSkin.loginFailed': true });</script>"
 }%%TMPL:END%
 
 %{################################################################################ }%

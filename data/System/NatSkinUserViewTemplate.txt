@@ -1,15 +1,14 @@
-%META:TOPICINFO{author="ProjectContributor" date="1168359939" format="1.1" version="1"}%
-
-%{<verbatim>}%
+%META:TOPICINFO{author="micha" date="1348825516" format="1.1" version="2"}%
+%{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%<!-- -->
 %TMPL:DEF{"form"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"beforetext"}%<!-- -->
 <noautolink>
-<div class="foswikiProfileInfo" style="margin:0.5454em 0 1em;">
+<div class="foswikiProfileInfo">
 <div class="foswikiImage foswikiLeft">
 %ATTACHMENTS{
    "%BASEWEB%.%BASETOPIC%"
@@ -40,7 +39,7 @@
    }$percnt"
 }% 
 </div>
-<h1 style="margin-top:0">%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%</h1>
+<h1>%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%%REDDOT{action="form" parent=".foswikiProfileInfo" title="Edit information"}%</h1>
 %RENDERFORDISPLAY{
   topic="%BASEWEB%.%BASETOPIC%"
   exclude="FirstName|LastName"
@@ -50,7 +49,7 @@
   separator=""
   format="<tr>
     <th valign='top'>$percntSPACEOUT{$title}$percnt:</th>
-    <td valign='top'>$value</td>
+    <td valign='top'> $value </td>
 </tr>$n"
 }%
 </noautolink>

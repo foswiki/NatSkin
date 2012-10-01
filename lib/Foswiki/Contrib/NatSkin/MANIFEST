@@ -55,14 +55,12 @@ pub/System/JazzyNoteTheme/GrayBlend.png 0644
 pub/System/JazzyNoteTheme/GreenVariation.css 0644
 pub/System/JazzyNoteTheme/GreenVariation.css.gz 0644
 pub/System/JazzyNoteTheme/GreenVariation.uncompressed.css 0644
-pub/System/JazzyNoteTheme/input-bg.png 0644
 pub/System/JazzyNoteTheme/jazzynotegreen-logo.png 0644
 pub/System/JazzyNoteTheme/jazzynote-logo.png 0644
 pub/System/JazzyNoteTheme/jazzynotered-logo.png 0644
 pub/System/JazzyNoteTheme/JazzyNoteStyle.css 0644
 pub/System/JazzyNoteTheme/JazzyNoteStyle.css.gz 0644
 pub/System/JazzyNoteTheme/JazzyNoteStyle.uncompressed.css 0644
-pub/System/JazzyNoteTheme/login_keys.png 0644
 pub/System/JazzyNoteTheme/Makefile 0644
 pub/System/JazzyNoteTheme/menucorner-black.gif 0644
 pub/System/JazzyNoteTheme/menucorner.gif 0644
@@ -87,6 +85,7 @@ pub/System/NatSkin/grid-40x18.png 0644
 pub/System/NatSkin/history.js 0644
 pub/System/NatSkin/history.js.gz 0644
 pub/System/NatSkin/history.uncompressed.js 0644
+pub/System/NatSkin/input-bg.png 0644
 pub/System/NatSkin/icons/application_form_edit.png 0644
 pub/System/NatSkin/icons/attach.png 0644
 pub/System/NatSkin/icons/bin.png 0644
@@ -150,6 +149,7 @@ pub/System/NatSkin/icons/user.png 0644
 pub/System/NatSkin/icons/wrench.png 0644
 pub/System/NatSkin/icons/x.png 0644
 pub/System/NatSkin/iepngfix.htc 0644
+pub/System/NatSkin/login_keys.png 0644
 pub/System/NatSkin/login.js 0644
 pub/System/NatSkin/login.js.gz 0644
 pub/System/NatSkin/login.uncompressed.js 0644
@@ -229,7 +229,6 @@ templates/oopsleaseconflict.nat.tmpl 0644
 templates/oopsmore.nat.tmpl 0644
 templates/oops.nat.tmpl 0644
 templates/page.nat.tmpl 0644
-templates/preview.nat.tmpl 0644
 templates/rdiff.nat.tmpl 0644
 templates/rdifftopicactions.nat.tmpl 0644
 templates/renamebase.nat.tmpl 0644

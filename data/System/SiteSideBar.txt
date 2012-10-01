@@ -2,17 +2,12 @@
 ---+!! %TOPIC%
 Default sidebar implementation
 
+---++ Main section
+<verbatim class="tml">
 %STARTINCLUDE%<!-- -->
-<h2 ><noautolink>%WEBLINK{"%BASEWEB%"}%</noautolink></h2>
-%WEBCOMPONENT{"Links"}%<!-- weblinks// -->
-%IF{
-  "$'MYSIDEBAR'!='off' and '%WIKINAME%'!='WikiGuest'" 
-   then="$percntTMPL:P{\"mysidebar\"}$percnt" 
-}%<!-- mysidebar -->
-<h2 >%MAKETEXT{"Tools"}%</h2>
-   * [[WebTopicList][%MAKETEXT{"Index"}%]]
-   * [[WebChanges][%MAKETEXT{"Changes"}%]]
-   * [[WebNotify][%MAKETEXT{"Notifications"}%]]%IF{"istopic '%BASEWEB%.WebStatistics'" then="
-   * [[WebStatistics][%MAKETEXT{"Statistics"}%]]"}%
-   * [[WebPreferences][%MAKETEXT{"Preferences"}%]]
+%TMPL:P{"sidebar::header"}%<!-- -->
+%TMPL:P{"sidebar::links"}%<!-- -->
+%TMPL:P{"sidebar::mysidebar"}%<!-- -->
+%TMPL:P{"sidebar::tools"}%<!-- -->
 <!-- -->%STOPINCLUDE%
+

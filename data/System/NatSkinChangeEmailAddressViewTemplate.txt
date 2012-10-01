@@ -18,6 +18,10 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
+%TMPL:DEF{"sidebar"}%%TMPL:P{"sidebar::usertools"}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
 %TMPL:DEF{"nochangeemail"}%<!-- -->
 %MAKETEXT{"Your registered e-mails are used by Foswiki for sending you e-mails, include notifications of password changes."}%
 %MAKETEXT{"You change your e-mail address by setting the form field called Email in your user topic. If this form field does not exist it will look for a line like this"}%:

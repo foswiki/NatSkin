@@ -1,10 +1,10 @@
 <!-- template: body.nat.tmpl -->
 %TMPL:DEF{"defaultbodyclass"}%natBody%TMPL:END%
-%TMPL:DEF{"body"}%<body class="%TMPL:P{"defaultbodyclass"}% %IF{"'%USERINFO{format="$isadmin"}%'='true'" then="natIsAdminBody"}% %IF{"defined 'NATSKIN_FLUIDFONT'" then="jqFluidFont {%NATSKIN_FLUIDFONT%} "}%%IF{"context authenticated" then="natBodyAuthenticated " else="natBodyNotAuthenticated "}%%IF{"context 'natskin_sidebar_left'" then="natBodyLeft "}%%IF{"context 'natskin_sidebar_right'" then="natBodyRight "}%%IF{"context 'natskin_sidebar_both'" then="natBodyBoth "}%%IF{"context 'natskin_sidebar_off'" then="natBodyOff "}%%IF{"context 'natskin_layout_fluid'" then="natBodyFluid "}%%IF{"context 'natskin_layout_fixed'" then="natBodyFixed "}%%IF{"context 'natskin_layout_bordered'" then="natBodyBordered "}%%TMPL:P{"bodyclass"}% natBodyWeb_%WEB% natBodyTopic_%TOPIC%">%TMPL:P{"defaultbody"}%</body>%TMPL:END%
+%TMPL:DEF{"body"}%<body class="foswikiNoJs %TMPL:P{"defaultbodyclass"}% %IF{"'%USERINFO{format="$isadmin"}%'='true'" then="natIsAdminBody"}% %IF{"defined 'NATSKIN_FLUIDFONT'" then="jqFluidFont {%NATSKIN_FLUIDFONT%} "}%%IF{"context authenticated" then="natBodyAuthenticated " else="natBodyNotAuthenticated "}%%IF{"context 'natskin_sidebar_left'" then="natBodyLeft "}%%IF{"context 'natskin_sidebar_right'" then="natBodyRight "}%%IF{"context 'natskin_sidebar_both'" then="natBodyBoth "}%%IF{"context 'natskin_sidebar_off'" then="natBodyOff "}%%IF{"context 'natskin_layout_fluid'" then="natBodyFluid "}%%IF{"context 'natskin_layout_fixed'" then="natBodyFixed "}%%IF{"context 'natskin_layout_bordered'" then="natBodyBordered "}%%TMPL:P{"bodyclass"}% natBodyWeb_%WEB% natBodyTopic_%TOPIC%">%TMPL:P{"defaultbody"}%</body>%TMPL:END%
 
 %{ container definitions --------------------------------------------------- }%
 %TMPL:DEF{"contentheader_container"}%<div class="natMainHeaderContents">%TMPL:P{"contentheader"}%</div>%TMPL:END%
-%TMPL:DEF{"content_container"}%<div class="natMainContents" id="natMainContents">%TMPL:P{"content"}%<a name="ContentBottom"></a></div>%TMPL:END%
+%TMPL:DEF{"content_container"}%<div class="natMainContents" id="natMainContents">%TMPL:P{"content"}%<span id="ContentBottom"></span></div>%TMPL:END%
 %TMPL:DEF{"contentfooter_container"}%%CLEAR%<div class="natMainFooterContents">%TMPL:P{"contentfooter"}%</div>%TMPL:END%
 %TMPL:DEF{"breadcrumbs_container"}%<div class='natBreadCrumbs'> %TMPL:P{"breadcrumbs::title"}% %TMPL:P{"breadcrumbs"}%</div>
 %TMPL:DEF{"contentheader"}%%TMPL:P{"breadcrumbs_container"}%%TMPL:END%
@@ -53,15 +53,14 @@
 %TMPL:DEF{"defaultbody"}%<!-- -->
 %TMPL:P{context="UnsupportedBrowser" then="browsersupport"}%<!-- -->
 %TMPL:P{"broadcast"}%<!-- -->
-<div class="natBodyContents">
-<a name="PageTop"></a>
+<div class="natBodyContents" id="PageTop">
 %TMPL:P{"useractions"}%<!-- -->
 %TMPL:P{"topbar"}%<!-- -->
 %TMPL:P{context="natskin_menu_on" then="webmenu"}%<!-- -->
 %TMPL:P{"main"}%
 %TMPL:P{"bottombar_container"}%<!-- -->
 %TMPL:P{"scrolltop"}%<!-- -->
-<a name="PageBottom"></a>
+<span id="PageBottom"></span>
 </div>
 %WEBCOMPONENT{"HtmlBottom"}%<!-- -->
 <!-- -->%TMPL:END%

@@ -12,20 +12,14 @@
 %TMPL:DEF{"scrolltop"}%<a href="#" class="natScrollTop jqScrollToLink {'target':'0', 'duration':500}" title="%MAKETEXT{"scroll to the top"}%">&uarr;</a>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"meta"}%%TMPL:P{"metatitle"}%
+%TMPL:DEF{"meta"}%%TMPL:P{"metagenerator"}%
 %TMPL:P{"metadescription"}%
 %TMPL:P{"metakeywords"}%
 %TMPL:P{"metaauthor"}%
-%TMPL:P{"metagenerator"}%
 %TMPL:P{"metaedit"}%
 %HTTP_EQUIV_ON_VIEW% %TMPL:END%
 
-%TMPL:DEF{"metagenerator"}%<meta name='generator' content='Foswiki %WIKIVERSION%' />
-
-%TMPL:DEF{"metatitle"}%%IF{"defined 'METATITLE'" 
-  then="<meta name='title' content='$percntENCODE{\"$percntMETATITLE$percnt\" type=\"html\"}$percnt' />"
-  else="<meta name='title' content='$percntENCODE{\"$percntGETTOPICTITLE$percnt\" type=\"html\"}$percnt' />"
-}%%TMPL:END%
+%TMPL:DEF{"metagenerator"}%<meta name='application-name' content='Foswiki %WIKIVERSION%' />%TMPL:END%
 
 %TMPL:DEF{"metadescription"}%%IF{"defined 'METADESCRIPTION'" 
   then="<meta name='description' content='$percntENCODE{\"$percntMETADESCRIPTION$percnt\" type=\"html\"}$percnt' />"
@@ -81,7 +75,7 @@
 <!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Last modified by [_1] on [_2]" args="<span class='natRevisionAuthor'> %REVINFO{"[[$wikiusername][$wikiname]]" rev="%CURREV%"}% </span>, <a class='natRevisionDate' rel='nofollow' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"$date - $hour:$min - r$rev" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
+%TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Last modified by [_1] on [_2]" args="<span class='natRevisionAuthor'> %REVINFO{"[[$wikiusername]]" rev="%CURREV%"}% </span>, <a class='natRevisionDate' rel='nofollow' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"$date - $hour:$min - r$rev" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
 %TMPL:DEF{"rdiff"}%%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPIC%?type=last;render=sequential%TMPL:END%
 %TMPL:DEF{"compare"}%%SCRIPTURLPATH{"compare"}%/%WEB%/%TOPIC%?type=last;render=interweave%TMPL:END%
 %TMPL:DEF{"broadcast"}%%IF{"not isempty 'BROADCASTMESSAGE'" then="<div class='foswikiBroadcastMessage'> $percntBROADCASTMESSAGE$percnt </div>"}%%TMPL:END%

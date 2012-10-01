@@ -24,7 +24,7 @@
 %TMPL:DEF{"USERS_ACTION_RESTRICTED"}%<span class='natUserAction natDisabledUserAction natUsersAction'>%TMPL:P{"USERS"}%</span>%TMPL:END%
 
 %TMPL:DEF{"ACCOUNT"}%<span class='natTopicActionShortLabel'>[[%WIKIUSERNAME%]]</span>%TMPL:END%
-%TMPL:DEF{"ACCOUNT_ACTION"}%<span class="natUserAction natAccountAction" rel="nofollow" >%JQICON{"user"}%%TMPL:P{"ACCOUNT"}%</span>%TMPL:END%
+%TMPL:DEF{"ACCOUNT_ACTION"}%<span class="natUserAction natAccountAction">%JQICON{"user"}%%TMPL:P{"ACCOUNT"}%</span>%TMPL:END%
 %TMPL:DEF{"ACCOUNT_ACTION_RESTRICTED"}%<span class="natUserAction natDisabledUserAction natAccountAction">%JQICON{"user"}%%TMPL:P{"ACCOUNT"}%</span>%TMPL:END%
 
 %TMPL:DEF{"VIEW"}% %TMPL:P{"VIEW_SHORT"}%%TMPL:P{"VIEW_LONG"}%%TMPL:END%
@@ -84,7 +84,7 @@
 %TMPL:DEF{"EDITSETTINGS"}% %TMPL:P{"EDITSETTINGS_SHORT"}%%TMPL:P{"EDITSETTINGS_LONG"}%%TMPL:END%
 %TMPL:DEF{"EDITSETTINGS_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Preferences"}%</span>%TMPL:END%
 %TMPL:DEF{"EDITSETTINGS_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Edit topic preferences"}%</span>%TMPL:END%
-%TMPL:DEF{"EDITSETTINGS_ACTION"}%<a class="natTopicAction natEditSettingsAction" rel="nofollow=" href="javascript:document.forms.editSettingsForm.submit()">%JQICON{"wrench"}%%TMPL:P{"EDITSETTINGS"}%</a>%TMPL:END%
+%TMPL:DEF{"EDITSETTINGS_ACTION"}%<a class="natTopicAction natEditSettingsAction" rel="nofollow=" href="#">%JQICON{"wrench"}%%TMPL:P{"EDITSETTINGS"}%</a>%TMPL:END%
 %TMPL:DEF{"EDITSETTINGS_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natEditSettingsAction">%JQICON{"wrench"}%%TMPL:P{"EDITSETTINGS"}%</span>%TMPL:END%
 
 %TMPL:DEF{"RESTORE"}% %TMPL:P{"RESTORE_SHORT"}%%TMPL:P{"RESTORE_LONG"}%%TMPL:END%
@@ -263,7 +263,7 @@
 
 %TMPL:DEF{"logo"}%%NATWEBLOGO%%TMPL:END%
 
-%TMPL:DEF{"poweredby"}%<a href="http://foswiki.org" class="natPoweredBy" title="foswiki.org"><span><img src="%PUBURLPATH%/%SYSTEMWEB%/NatSkin/foswiki-logo.png" height="40" /></span>%MAKETEXT{"Powered by Foswiki"}%</a>%TMPL:END%
+%TMPL:DEF{"poweredby"}%<a class="natPoweredBy nop" href="http://foswiki.org" title="foswiki.org"><span><img src="%PUBURLPATH%/%SYSTEMWEB%/NatSkin/foswiki-logo.png" height="40" /></span>%MAKETEXT{"Powered by Foswiki"}%</a>%TMPL:END%
 
 %TMPL:DEF{"useractions"}%<!-- useractions -->
 %USERACTIONS{

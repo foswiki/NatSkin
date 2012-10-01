@@ -2,10 +2,13 @@
 ---+!! %TOPIC%
 Navigation links in the %SYSTEMWEB% web.
 
-%STARTINCLUDE%<!-- system.weblinks -->
-   * [[TwentyMinuteTutorial][Tutorial]]
-   * [[UsersGuide][Users Guide]]
-   * [[FrequentlyAskedQuestions][FAQ]]
-   * [[ReferenceManual][Reference Manual]]
-   * [[Macros]]
-<!-- //system.weblinks -->%STOPINCLUDE%
+%STARTINCLUDE%<!-- -->
+   * [[TwentyMinuteTutorial][%MAKETEXT{"Tutorial"}%]]
+   * [[UsersGuide][%MAKETEXT{"Users Guide"}%]]
+   * [[FrequentlyAskedQuestions][%MAKETEXT{"FAQ"}%]]
+   * [[ReferenceManual][%MAKETEXT{"Reference Manual"}%]]
+   * [[Macros][%MAKETEXT{"Macros"}%]]
+   * [[UserToolsCategory][%MAKETEXT{"User Tools"}%]]
+   * [[AdminToolsCategory][%MAKETEXT{"Admin Tools"}%]]
+   * [[SiteTools][%MAKETEXT{"Site Tools"}%]]
+<!-- -->%STOPINCLUDE%

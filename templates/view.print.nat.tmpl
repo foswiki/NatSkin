@@ -2,8 +2,14 @@
 %TMPL:DEF{"bodyclass"}%natPrintBody%TMPL:END%
 %TMPL:DEF{"defaultbody"}%<div class="natBodyContents"> 
 <div class="natMainContents" id="natMainContents">
+<div class="foswikiHidden">
+  <div class="natRevision">
+    %MAKETEXT{"Last modified by [_1] on [_2]" 
+      args="<span class='natRevisionAuthor'> %REVINFO{"[[$wikiusername]]"}% </span>, <span class='natRevisionDate'>%REVINFO{"$date - $hour:$min"}%</span> - <span class='natRevisionID'>%REVINFO{"r$rev"}%"
+    }%
+  </div> 
+</div>
 %TMPL:P{"content"}%
-<div class="natRevision"><span class='natRevisionDate'>%REVINFO{"$date - $hour:$min"}%</span></div>
 </div>
 </div>%TMPL:END%
 %TMPL:DEF{"head"}%<!-- -->
@@ -18,3 +24,4 @@
 <link rel="shortcut icon" href="%FAVICON%" type="image/x-icon">
 %TMPL:P{"styles"}% %TMPL:P{"javascript"}% %WEBCOMPONENT{"HtmlHead"}%
 <!-- --></head>%TMPL:END%
+%TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Last modified by [_1] on [_2]" args="<span class='natRevisionAuthor'> %REVINFO{"[[$wikiusername]]" rev="%CURREV%"}% </span>, <a class='natRevisionDate' rel='nofollow' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"$date - $hour:$min - r$rev" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%

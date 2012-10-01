@@ -39,6 +39,12 @@ jQuery(function($) {
     }
   }
 
+  /* add edit topic prefs behavior */
+  $("a.natEditSettingsAction").live("click", function() {
+    $("#editSettingsForm").submit();    
+    return false;
+  });
+
   /* fix topic actions menu */
   $(".natMoreActionsMenu:first").each(function() {
     // hide hr if all prev list items are disabled
@@ -85,17 +91,11 @@ jQuery(function($) {
     }
   });
 
-  $(".foswikiFormSteps").livequery(function() {
-    var $this = $(this);
-    $this.find("> .foswikiFormStep:last, > form > .foswikiFormStep:last").addClass("foswikiFormLast");
-    $this.find("> .foswikiFormStep:first, > form > .foswikiFormStep:first").addClass("foswikiFormFirst");
-  });
-
-  if (false) { // add foswikiLast to last row of a foswikiTable/foswikiLayoutTable/foswikiNullTable
-    $(".foswikiLayoutTable, .foswikiTable, .foswikiNullTable").livequery(function() {
+  if (false) {
+    $(".foswikiFormSteps").livequery(function() {
       var $this = $(this);
-      $this.find("tr:last").addClass("foswikiLast");
-      $this.find("tr:first").addClass("foswikiFirst");
+      $this.find("> .foswikiFormStep:last, > form > .foswikiFormStep:last").addClass("foswikiFormLast");
+      $this.find("> .foswikiFormStep:first, > form > .foswikiFormStep:first").addClass("foswikiFormFirst");
     });
   }
 

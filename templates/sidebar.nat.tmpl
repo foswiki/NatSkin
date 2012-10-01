@@ -40,3 +40,40 @@ $percntTMPL:P{\"mysidebarbookmark\"}$percnt"
   </li>"
 }%<!-- -->
 <!-- -->%TMPL:END%
+
+%TMPL:DEF{"sidebar::header"}%<!-- -->
+<noautolink>
+%WEBLINK{
+  format="<h2 class='webLink'><a class='$marker' href='$url'>$title</a></h2>
+    <div class='webSummary foswikiGrayText'>$summary</div>"
+}%
+</noautolink>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"sidebar::links"}%%WEBCOMPONENT{"Links"}%%TMPL:END%
+
+%TMPL:DEF{"sidebar::tools"}%%TMPL:P{context="authenticated" then="sidebar::tools::content"}%%TMPL:END%
+%TMPL:DEF{"sidebar::tools::content"}%<!-- -->
+<h2 >%MAKETEXT{"Tools"}%</h2>
+   * [[WebTopicList][%MAKETEXT{"Index"}%]]
+   * [[WebChanges][%MAKETEXT{"Changes"}%]]
+   * [[WebNotify][%MAKETEXT{"Notifications"}%]]%IF{"istopic '%BASEWEB%.WebStatistics'" then="
+   * [[WebStatistics][%MAKETEXT{"Statistics"}%]]"}%
+   * [[WebPreferences][%MAKETEXT{"Preferences"}%]]
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"sidebar::mysidebar"}%%IF{
+  "$'MYSIDEBAR'!='off' and context authenticated" 
+   then="$percntTMPL:P{\"mysidebar\"}$percnt" 
+}%<!-- -->%TMPL:END%
+
+%TMPL:DEF{"sidebar::usertools"}%<!-- -->
+<h2 class='webLink'>[[%SYSTEMWEB%.UserToolsCategory][%MAKETEXT{"User Tools"}%]]</h2>
+<div class='webSummary foswikiGrayText'>
+  %MAKETEXT{"Collection of tools to manage your user account"}%
+</div>
+   * [[%SYSTEMWEB%.UserRegistration][Register on %WIKITOOLNAME%]]
+   * [[%SYSTEMWEB%.ResetPassword][Reset Password]] 
+   * [[%SYSTEMWEB%.ChangeEmailAddress][Change Email Address]]
+   * [[%SYSTEMWEB%.ChangePassword][Change Password]] 
+<!-- -->%TMPL:END%

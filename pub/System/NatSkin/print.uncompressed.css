@@ -8,12 +8,16 @@
     font-family:arial,Helvetica,sans-serif;
   }
   @top-right {
-    content: string(chapter);
     font-family:arial,Helvetica,sans-serif;
+  }
+  @bottom-left {
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
   }
   @bottom-right {
     content: counter(page);
     font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
   }
 }
 @page:first {
@@ -23,10 +27,17 @@
   @top-right {
     content: none;
   }
+  @bottom-left {
+    content: string(revision);
+  }
 }
 
 h1:first-of-type { string-set: title content() }
 h2 { string-set: chapter content() }
+.natRevision { string-set: revision content(); }
+.natRevisionID { string-set: revisionID content() }
+.natRevisionDate { string-set: date content() }
+.natRevisionAuthor { string-set: author content() }
 
 html {
   background:transparent !important;
@@ -39,8 +50,6 @@ body {
   prince-linebreak-magic: auto;
   hyphens: auto;
   color:#000;
-  font-size: 11px;
-  line-height: 1.3em;
 /*
   columns: 2;
   column-gap: 1em;
@@ -167,4 +176,38 @@ pre {
 /* EditTablePlugin */
 .editTableEditImageButton {
   display:none;
+}
+
+/* TOC */
+.foswikiToc::before {
+  font-size:135%;
+}
+.foswikiToc {
+  text-align:left;
+  page-break-after:always;
+}
+.natTopicAttachments,
+.foswikiTocTitle {
+  display:none;
+}
+.foswikiToc::before {
+  font-size:160%;
+  margin:2em 0em 1em;
+  display:block;
+  content: "Table of Contents";
+}
+.foswikiToc > ul {
+  columns: 2;
+  column-gap: 1em;
+  border:0px;
+  padding:0px;
+  margin:0px;
+}
+.foswikiToc a::after {
+  content:leader(".") target-counter(attr(href), page);
+}
+.foswikiToc li {
+  background:transparent;
+  padding-left:0px;
+  margin-left:5px;
 }

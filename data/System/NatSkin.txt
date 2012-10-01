@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="micha" comment="reprev" date="1344506862" format="1.1" version="2"}%
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1344506862" format="1.1" version="2"}%
 ---+!! [[%TOPIC%][The Natural Skin]]
 
 !NatSkin improves your Foswiki experience by bringing together some of the most useful

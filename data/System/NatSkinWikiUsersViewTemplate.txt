@@ -5,7 +5,7 @@
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
 %TMPL:DEF{"userlist::query"}%\b(UserForm|EmployeePortal)$%TMPL:END%
-%TMPL:DEF{"userlist::title"}%<h1 >%TOPIC%</h1>%TMPL:END%
+%TMPL:DEF{"userlist::title"}%<h1 >%TOPICTITLE%</h1>%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
@@ -38,6 +38,7 @@
   nonoise="on" 
   separator="" 
   format="$percntTMPL:P{\"userlist::format\" OBJECT=\"$web.$topic\"}$percnt"
+  excludetopic="NewUserTemplate"
 }%
 %CLEAR%
 </div>
@@ -54,8 +55,11 @@
    sort="%IF{"defined SORT" then="%SORT%" else="comment:name"}%" 
    reverse="%IF{"'%SORT%' = 'date'" then="on" else="off"}%" 
    hidenull="off" 
-   header="<div class='userImage'>
+   nullheader="<div class='userImage'>
       <h2><a href='%SCRIPTURLPATH{"view"}%/%OBJECT%'>$percntTMPL:P{\"userlist::name\" OBJECT=\"%OBJECT%\"}$percnt</a></h2>"
+   nullfooter="$percntTMPL:P{\"userlist::info\" OBJECT=\"%OBJECT%\"}$percnt</div>"
+   header="<div class='userImage'>
+      <h2><a href='%SCRIPTURLPATH{"view"}%/%OBJECT%' title='$percntTMPL:P{\"userlist::name\" OBJECT=\"%OBJECT%\"}$percnt'>$percntTMPL:P{\"userlist::name\" OBJECT=\"%OBJECT%\"}$percnt</a></h2>"
    footer="$percntTMPL:P{\"userlist::info\" OBJECT=\"%OBJECT%\"}$percnt</div>"
    format="$percntIMAGE{ 
      \"$name\" 
@@ -64,8 +68,7 @@
      type=\"user\" 
      size=\"160x160^\" 
      crop=\"northwest\" 
-     title=\"$percntSPACEOUT{$topic}$percnt\" 
-     caption=\"$percntSPACEOUT{$topic}$percnt\" 
+     title=\"$percntTMPL:P{\"userlist::name\" OBJECT=\"$web.$topic\"}$percnt\" 
      warn=\"off\" 
    }$percnt" 
    nullformat="$percntIMAGE{ 
@@ -74,8 +77,7 @@
      type=\"user\" 
      size=\"160x160^\" 
      crop=\"northwest\" 
-     title=\"$percntSPACEOUT{$topic}$percnt\" 
-     caption=\"$percntSPACEOUT{$topic}$percnt\" 
+     title=\"$percntTMPL:P{\"userlist::name\" OBJECT=\"$web.$topic\"}$percnt\" 
      warn=\"off\" 
    }$percnt" 
 }%%TMPL:END%
@@ -156,8 +158,8 @@ jQuery(function($) {
 .userImage {
   overflow:hidden;
   float:left;
-  width:160px;
-  height:195px;
+  width:110px;
+  height:135px;
   padding:0;
   margin:0 1.2em 1.2em 0;
   border:1px solid #ccc;
@@ -169,20 +171,26 @@ jQuery(function($) {
      -moz-box-shadow: 2pt 2px 8px rgba(105, 105, 105,  0.1);
   -webkit-box-shadow: 2pt 2px 8px rgba(105, 105, 105,  0.1);
 }
+.userImage img {
+  width:110px;
+}
 .userlistContainer .imageHref {
   display:block;
   margin:0;
 }
 .userImage h2 {
-  font-size:90%;
+  font-size:95%;
+  line-height:1.3em;
   font-weight:bold;
-  line-height:1.3;
   margin:0;
   background-color:#F2F1F3;
 }
 .userImage h2 a {
   display:block;
-  padding:1em;
+  padding:0.4em 0.5em;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
 }
 </style>
 </literal>%TMPL:END%

@@ -9,6 +9,11 @@
 %{</verbatim>}%
 
 %{<verbatim>}%
+%TMPL:DEF{"sidebar"}%%TMPL:P{"sidebar::usertools"}%%TMPL:END%
+%{</verbatim>}%
+
+
+%{<verbatim>}%
 %TMPL:DEF{"content"}%<!-- -->
 %TMPL:P{context="registration_enabled" then="registration_enabled" else="registration_disabled"}%
 <!-- -->%TMPL:END%
@@ -110,7 +115,7 @@
 %TMPL:DEF{"loginname"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Choose a login name"}%: <span class="foswikiAlert">**</span></h3>
-  <input %NOREGISTRATION% type="text" id="Fwk1LoginName" name="Fwk1LoginName" size="40" class="foswikiInputField" autocomplete="off" /> 
+  <input type="text" id="Fwk1LoginName" name="Fwk1LoginName" size="40" class="foswikiInputField" autocomplete="off" /> 
   <div class="foswikiFormDescription">
     %MAKETEXT{"The login name you use to sign in."}%
   </div>

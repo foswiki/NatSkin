@@ -62,7 +62,7 @@
 <!-- table at top of attach screen -->
 
 %TMPL:DEF{ATTACH:files:header:A}% %TMPL:END%
-%TMPL:DEF{ATTACH:files:row:A}%<div class="foswikiFormStep"><a name="%A_FILE%"></a>
+%TMPL:DEF{ATTACH:files:row:A}%<div class="foswikiFormStep" id="%A_FILE%">
   <table cellspacing="0" cellpadding="0">
   <tr>
     <td class="natAttachmentIcon">%A_ICON%</td> 
@@ -102,7 +102,7 @@
 
 <!-- Row for versions table in attach screen -->
 %TMPL:DEF{DISATTACH:versions:row}% | %A_ICON% | <a href="%A_URL%">%A_FILE%</a><div class="natAttachmentComment"><noautolink>%A_COMMENT%</noautolink></div> | %A_REV% | %A_SIZE% | <nobr>%A_DATE%</nobr> | %A_USER% |%TMPL:END%
-%TMPL:DEF{ATTACH:versions:row}% <div class="foswikiFormStep"><a name="%A_FILE%"></a>
+%TMPL:DEF{ATTACH:versions:row}% <div class="foswikiFormStep" id="%A_FILE%">
   <table cellspacing="0" cellpadding="0">
   <tr>
     <td class="natAttachmentIcon">%A_ICON%</td> 

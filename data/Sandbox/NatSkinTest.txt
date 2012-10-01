@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="save topic" date="1335338561" format="1.1" reprev="35" version="35"}%
+%META:TOPICINFO{author="micha" comment="reprev" date="1348820237" format="1.1" version="1"}%
 ---+!! %TOPIC%
 %BUTTON{"Toggle grid" icon="table" class="foswikiRight" onclick="jQuery('.natMain').toggleClass('showgrid-40x18')"}%
 
@@ -60,6 +60,16 @@ blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
 </p>
 
 %TWISTY%
+<p class="foswikiLarge">
+*foswikiLarge:*
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui.
+</p>
+
 <p class="foswikiSmallish">
 *foswikiSmall:*
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
@@ -288,6 +298,83 @@ eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim q
    1 strawberries
    1 raspberries
 
+---+++ Styled lists
+
+<div class="foswikiNoBullets">
+   * %JQICON{"user"}% custom bullet...Suspendisse molestie posuere justo vitae ultrices. Nunc auctor dolor leo, nec viverra sem. Donec est augue, pulvinar ut accumsan ac, sagittis rhoncus neque. Mauris eu purus magna. Nullam iaculis malesuada scelerisque. Morbi egestas molestie enim tempus luctus. Maecenas rutrum leo vitae tortor bibendum quis ultricies risus consectetur. Cras sed eros ut erat iaculis semper eget sit amet tellus.
+   * %X% custom bullet
+   * %Y% custom bullet
+   * no bullet ... Suspendisse molestie posuere justo vitae ultrices. Nunc auctor dolor leo, nec viverra sem. Donec est augue, pulvinar ut accumsan ac, sagittis rhoncus neque. Mauris eu purus magna. Nullam iaculis malesuada scelerisque. Morbi egestas molestie enim tempus luctus. Maecenas rutrum leo vitae tortor bibendum quis ultricies risus consectetur. Cras sed eros ut erat iaculis semper eget sit amet tellus.
+   * no bullet ... Suspendisse molestie posuere justo vitae ultrices. Nunc auctor dolor leo, nec viverra sem. Donec est augue, pulvinar ut accumsan ac, sagittis rhoncus neque. Mauris eu purus magna. Nullam iaculis malesuada scelerisque. Morbi egestas molestie enim tempus luctus. Maecenas rutrum leo vitae tortor bibendum quis ultricies risus consectetur. Cras sed eros ut erat iaculis semper eget sit amet tellus.
+</div>
+
+<div class="foswikiOrangeBullets">
+   * orange ...Suspendisse molestie posuere justo vitae ultrices. Nunc auctor dolor leo, nec viverra sem. Donec est augue, pulvinar ut accumsan ac, sagittis rhoncus neque. Mauris eu purus magna. Nullam iaculis malesuada scelerisque. Morbi egestas molestie enim tempus luctus. Maecenas rutrum leo vitae tortor bibendum quis ultricies risus consectetur. Cras sed eros ut erat iaculis semper eget sit amet tellus.
+   * orange
+   * orange
+</div>
+<div class="foswikiBlueBullets">
+   * blue
+   * blue
+   * blue
+</div>
+<div class="foswikiBlackBullets">
+   * black
+   * black
+   * black
+</div>
+<div class="foswikiGreenBullets">
+   * green
+   * green
+   * green
+</div>
+<div class="foswikiPinkBullets">
+   * pink
+   * pink
+   * pink
+</div>
+<div class="foswikiRedBullets">
+   * red
+   * red
+   * red
+</div>
+<div class="foswikiStarBullets">
+   * star
+   * star
+   * star
+</div>
+<div class="foswikiWhiteBullets">
+   * white
+   * white
+   * white
+</div>
+<div class="foswikiArrowBullets">
+   * arrow
+   * arrow
+   * arrow
+</div>
+<div class="foswikiAddBullets">
+   * add
+   * add
+   * add
+</div>
+<div class="foswikiTickBullets">
+   * tick 
+   * tick
+   * tick
+</div>
+%CLEAR%
+<div class="foswikiNoBullets">
+   * %JQICON{"bullet_blue"}% blue
+      * %JQICON{"bullet_red"}% red
+      * %JQICON{"bullet_red"}% red
+      * %JQICON{"bullet_red"}% red
+   * %JQICON{"bullet_blue"}% blue
+   * %JQICON{"bullet_blue"}% blue
+</div>
+
+
+
 ---++ Definitions
 
    Term: lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
@@ -350,7 +437,6 @@ facilisi.
 <td>data</td>
 </tr>
 </table>
-
 
 ---++ Verbatim
 
@@ -468,7 +554,9 @@ facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
 </div>
 </form>
 
----++ Form inside Tab
+---++ Tabs
+
+---+++ Form inside Tab
 %TABPANE{animate="on"}%
 %TAB{"Form 1"}%
   <h2 >Headline inside form</h2>
@@ -507,5 +595,71 @@ facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
 %ENDTAB%
 %ENDTABPANE%
 
+---+++ Default theme
 
-%META:TOPICMOVED{by="micha" date="1226426560" from="Sandbox.LaogContribTest" to="Sandbox.NatSkinTest"}%
+%TABPANE{animate="on"}%
+%TAB{"First tab"}%
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+%ENDTAB%
+%TAB{"Second tab"}%
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+%ENDTAB%
+%ENDTABPANE%
+
+---+++ Simple theme
+
+%TABPANE{animate="on" class="simple"}%
+%TAB{"First tab"}%
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+%ENDTAB%
+%TAB{"Second tab"}%
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+%ENDTAB%
+%ENDTABPANE%
+
+---+++ Plain theme
+
+%TABPANE{animate="on" class="plain"}%
+%TAB{"First tab"}%
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+%ENDTAB%
+%TAB{"Second tab"}%
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+%ENDTAB%
+%ENDTABPANE%
