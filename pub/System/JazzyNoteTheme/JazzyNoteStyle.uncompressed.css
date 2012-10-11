@@ -135,11 +135,11 @@ h1,
   display:none;
 }
 
-#simplemodal-container .foswikiFormSteps .jqTabPane > .jqTabGroup li.current a {
+.ui-dialog .foswikiFormSteps .jqTabPane > .jqTabGroup li.current a {
   background-color:#fff;
   border-bottom-color:#fff;
 }
-#simplemodal-container .foswikiFormSteps .jqTabContents {
+.ui-dialog .foswikiFormSteps .jqTabContents {
   background-color:#fff;
 }
 

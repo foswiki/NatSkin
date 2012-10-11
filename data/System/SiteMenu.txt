@@ -5,10 +5,10 @@ Definition of site wide horizontal menu
 ---++ Implementation
 <verbatim class="tml">
 %STARTINCLUDE%<ul>
-  <li>[[%USERSWEB%.%HOMETOPIC%][%MAKETEXT{"Home"}%]]</li>
-  <!-- li>[[News.%HOMETOPIC%][%MAKETEXT{"News"}%]]</li -->
-  <!-- li>[[Knowledge.%HOMETOPIC%][%MAKETEXT{"Knowledge"}%]]</li -->
-  <!-- li>[[Projects.%HOMETOPIC%][%MAKETEXT{"Projects"}%]]</li -->
+  <li class="%IF{"$CURRENT_MENU='%USERSWEB%'" then="current" else="notcurrent"}%">[[%USERSWEB%.%HOMETOPIC%][%MAKETEXT{"Home"}%]]</li>
+  <!-- li class="%IF{"$CURRENT_MENU='News'" then="current" else="notcurrent"}%">[[News.%HOMETOPIC%][%MAKETEXT{"News"}%]]</li -->
+  <!-- li class="%IF{"$CURRENT_MENU='Knowledge'" then="current" else="notcurrent"}%">[[Knowledge.%HOMETOPIC%][%MAKETEXT{"Knowledge"}%]]</li -->
+  <!-- li class="%IF{"$CURRENT_MENU='Projects'" then="current" else="notcurrent"}%">[[Projects.%HOMETOPIC%][%MAKETEXT{"Projects"}%]]</li -->
 %IF{"'%USERNAME%' ingroup 'AdminGroup'" 
   then="$percntINCLUDE{\"%SYSTEMWEB%.SiteMenu\" section=\"adminmenu\"}$percnt"
 }% %INCLUDE{"%SYSTEMWEB%.SiteMenu" section="helpmenu"}%
@@ -34,7 +34,7 @@ Definition of site wide horizontal menu
 
 ---++ Help menu
 <verbatim class="tml">
-%STARTSECTION{"helpmenu"}%<li>[[%SYSTEMWEB%.WebHome][%MAKETEXT{"Help"}%]]
+%STARTSECTION{"helpmenu"}%<li class="%IF{"$CURRENT_MENU='%SYSTEMWEB%'" then="current" else="notcurrent"}%">[[%SYSTEMWEB%.WebHome][%MAKETEXT{"Help"}%]]
   <ul>
     <li>[[%SYSTEMWEB%.WelcomeGuest][%JQICON{"house"}% %MAKETEXT{"Welcome"}%]]</li>
     <li>[[%SYSTEMWEB%.UserDocumentationCategory][%JQICON{"book"}% %MAKETEXT{"User docs"}%]]</li>

@@ -85,11 +85,13 @@ label, input, textarea, select, body, button {
 }
 
 /* layout fix for chrome */
+/*
 label input[type=radio],
 label input[type=checkbox],
 label .foswikiCheckbox {
   -webkit-margin-after:4px !important; 
 }
+*/
 
 blockquote, q {
   quotes:none;
@@ -376,6 +378,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* tables */
+.mcecontentbody table,
 .foswikiTable {
   border:1px #ddd solid;
   font-size:0.923em;
@@ -385,16 +388,26 @@ h1, h2, h3, h4, h5, h6 {
 .foswikiTableOverflow .foswikiTable {
   margin:0em;
 }
+.mcecontentbody td,
 .foswikiTable td,
 .foswikiTable tr.foswikiTableOdd td,
 .foswikiTable tr.foswikiTableEven td {
   background:#fcfcfc;
 }
+.mcecontentbody th,
+.mcecontentbody td,
 .foswikiTable th,
 .foswikiTable td {
   padding:0.6666em 0.75em 0.75em 0.666em;
   border:1px #ccc solid;
 }
+
+.mcecontentbody th,
+.mcecontentbody td {
+  font-family:inherit;
+  color:inherit;
+}
+
 .foswikiTable th,
 .foswikiTable th h2,
 .foswikiTable th h3,
@@ -553,14 +566,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-top:0px;
 }
 
-.foswikiFormSteps .foswikiRadioButton,
-.foswikiFormSteps .foswikiCheckbox {
-  margin:0em 7px 0em 0em; /* can't use 0.5em on chrome as it will wrap the table cell containing the checkbox otherwise */
-  vertical-align:middle;
-}
-
 /* tabpane */
-.natBody .jqTabContents {
+.jqTabContents {
   padding:0.6923em; /* 9px */
 }
 
@@ -1114,14 +1121,16 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 .natSearchHit {
   margin:1em 0em 2em;
 }
+.natSearchRevision a {
+  text-decoration:none;
+  color:#64B000;
+}
 .natSearchTarget {
   text-decoration:underline;
 }
-.natSearchSummary {
-  line-height:normal;
-}
 .natSearchTotal {
   margin:1em 0em;
+  font-weight:bold;
 }
 .natSearchTotal span {
   color:red;
@@ -1322,53 +1331,14 @@ h4 a:hover, h5 a:hover, h6 a:hover {
   border-bottom:1px solid #ddd;
 }
 
-#simplemodal-container .natHistoryTable .selected,
 .natHistoryTable .selected {
   background-color:#eee;
 }
-#simplemodal-container a.simplemodal-close {
-  background:url(icons/x.png) no-repeat;
-  width:16px;
-  height:16px;
-  top:1.385em; /* 18px */
-  right:1.385em; /* 18px */
-}
-#simplemodal-container a:hover.simplemodal-close {
-  background-position:-16px 0px;
-}
-.natBody #simplemodal-container {
-  -moz-box-shadow: 0px 3px 10px #888;
-  -webkit-box-shadow: 0px 3px 10px #888;
-  box-shadow: 0px 3px 10px #888;
-}
-.natBody #simplemodal-overlay {
-  background:#fff;
-}
 
-#simplemodal-container .foswikiDialog,
-#simplemodal-container .foswikiFormSteps {
+.ui-dialog .foswikiFormSteps {
   margin:0px;
   background-color:transparent;
   border:1px solid #BDBEC5;
-}
-
-#simplemodal-container h2 {
-  background:#eee;
-  margin:-1.0625em -1.125em 1.125em -1.125em; /* 17px 18px */
-  padding:1em 1.125em; /* 16px 18px */
-}
-
-#simplemodal-container .hr,
-#simplemodal-container hr {
-  border-color:#ddd;
-}
-
-#simplemodal-container .foswikiFormSteps .jqTabPane > .jqTabGroup li.current a {
-  background-color:#fff;
-  border-bottom-color:#fff;
-}
-#simplemodal-container .foswikiFormSteps .jqTabContents {
-  background-color:#fff;
 }
 
 .natBacklinks .fltMakeIndexWrapper {
@@ -1560,10 +1530,11 @@ td.foswikiDiffChangedText {
   background-image:url("external.png");
   background-repeat:no-repeat;
   background-position:0 0;
-  margin:0px 3px 0px 5px;
+  margin:0px 3px;
   width:12px;
-  height:11px;
+  height:12px;
   display:inline-block;
+  vertical-align:middle;
 }
 .natMainContents .natExternalLink:hover:after {
   background-position:-12px 0;
@@ -2135,12 +2106,6 @@ th, /* opera */
 }
 .natSideBar h2.webLink {
   margin-bottom:0;
-}
-.natSideBar .webSummary {
-  font-size:0.923em; /* 12px */
-  line-height: 1.5em; /* 18px */ 
-  font-size:0.923em;
-  margin-bottom:1.5em; 
 }
 .natSideBar .foswikiCurrentTopicLink {
   color:red;
