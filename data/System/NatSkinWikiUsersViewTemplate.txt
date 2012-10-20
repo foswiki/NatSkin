@@ -4,7 +4,7 @@
 %TMPL:DEF{"form"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
-%TMPL:DEF{"userlist::query"}%\b(UserForm|EmployeePortal)$%TMPL:END%
+%TMPL:DEF{"userlist::query"}%form.name=~'\b(UserForm|EmployeePortal)$'%TMPL:END%
 %TMPL:DEF{"userlist::title"}%<h1 >%TOPICTITLE%</h1>%TMPL:END%
 %{</verbatim>}%
 
@@ -30,10 +30,9 @@
 %{<verbatim>}%
 %TMPL:DEF{"userlist::result"}%<!-- -->
 <noautolink>
-
 <div class="userlistContainer">
 %SEARCH{
-  "form.name=~'%TMPL:P{"userlist::query"}%'" 
+  "%TMPL:P{"userlist::query"}%" 
   type="query" 
   nonoise="on" 
   separator="" 
@@ -173,6 +172,9 @@ jQuery(function($) {
 }
 .userImage img {
   width:110px;
+}
+.userlistContainer {
+  margin-top:1.5em;
 }
 .userlistContainer .imageHref {
   display:block;

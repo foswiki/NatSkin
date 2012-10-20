@@ -7,14 +7,14 @@ msgstr ""
 "PO-Revision-Date: 2011-12-19 19:31+0200\n"
 "Last-Translator: Michael Daum <daum@michaeldaumconsulting.com>\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Virtaal 0.5.2\n"
 
-#: templates/edit.nat.tmpl:260
+#: templates/edit.nat.tmpl:261
 msgid "$1"
 msgstr "$1"
 
@@ -24,7 +24,7 @@ msgid "%1"
 msgstr "%1"
 
 #: templates/mailnotify.nat.tmpl:3
-msgid "%1 - Automated notification of topic changes"
+msgid "%1 - Automated notification of topic changes in %2"
 msgstr "%1 - Automatische Benachrichtigung bei Änderung des Topics"
 
 #: templates/backlinks.nat.tmpl:113 templates/backlinks.nat.tmpl:72
@@ -82,7 +82,7 @@ msgstr "%2 wird noch von %1 bearbeitet."
 msgid "%1 topic does not exist"
 msgstr "%1 Topic existiert nicht"
 
-#: data/System/NatSkinWebSearchViewTemplate.txt:214
+#: data/System/NatSkinWebSearchViewTemplate.txt:196
 #: templates/childtopics.nat.tmpl:52 templates/childtopics.nat.tmpl:71
 #: templates/childtopics.nat.tmpl:94 templates/search.nat.tmpl:21
 #: templates/searchformat.nat.tmpl:5
@@ -94,7 +94,7 @@ msgstr "%1 Topic(s) gefunden"
 msgid "(%1 vs. %2)"
 msgstr "(%1 vs. %2)"
 
-#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:96
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:99
 msgid ""
 "*Administrators:* You can change user's e-mail address using this form. "
 "Enter the users Login or WikiName and the new e-mail address."
@@ -133,7 +133,7 @@ msgstr ""
 "Ein Topic mit diesem Namen existiert, es wurde jedoch umbenannt oder nach %1 "
 "verschoben."
 
-#: data/System/UserRegistrationViewTemplate.txt:127
+#: data/System/UserRegistrationViewTemplate.txt:132
 msgid "A valid e-mail address. Will be kept confidential."
 msgstr "Eine gültige E-mail Adresse (wird vertraulich gehandhabt)."
 
@@ -153,7 +153,7 @@ msgstr "Über Topics und Webs"
 msgid "Access denied"
 msgstr "Zugriff verweigert"
 
-#: data/System/UserRegistrationViewTemplate.txt:93
+#: data/System/UserRegistrationViewTemplate.txt:98
 msgid "Account settings"
 msgstr "Profil Einstellungen"
 
@@ -163,7 +163,7 @@ msgstr "Aktion"
 
 #: data/System/MySideBar.txt:101
 msgid "Add to sidebar"
-msgstr "Zur Seitenleiste hinzufügen"
+msgstr "Seite hinzufügen"
 
 #: data/System/MySideBar.txt:106
 msgid "Add topic %1 to my sidebar navigation"
@@ -177,6 +177,10 @@ msgstr "Admin"
 msgid "Admin Foswiki user authentication"
 msgstr "Foswiki Admin Benutzer-Authentifizierung"
 
+#: data/System/WebLinks.txt:12
+msgid "Admin Tools"
+msgstr "Admin Werkzeuge"
+
 #: data/System/SiteMenu.txt:41
 msgid "Admin docs"
 msgstr "Admin Doku"
@@ -185,12 +189,12 @@ msgstr "Admin Doku"
 msgid "Advanced Search"
 msgstr "Erweiterte Suche"
 
-#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:126
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:129
 msgid "After submitting this form the e-mails will be changed."
 msgstr ""
 "Nachdem Sie dieses Formular abgesendet haben, wird ihr Passwort geändert."
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:52
+#: data/System/NatSkinChangePasswordViewTemplate.txt:56
 msgid ""
 "After submitting this form your password will be changed. If you've "
 "forgotten use %1 to create a new one."
@@ -198,7 +202,7 @@ msgstr ""
 "Nachdem Sie dieses Formular abgesendet haben wird ihr Passwort geändert. "
 "Benutzen Sie %1, um ein neues zu erstellen, falls Sie es vergessen haben."
 
-#: data/System/NatSkinResetPasswordViewTemplate.txt:94
+#: data/System/NatSkinResetPasswordViewTemplate.txt:97
 msgid ""
 "After submitting this form, you will receive an e-mail with your new, system-"
 "generated password, and a link to a page where you can change it."
@@ -273,7 +277,7 @@ msgid "Attachment move failed"
 msgstr "Verschieben des Anhangs fehlgeschlagen"
 
 #: templates/attach.nat.tmpl:13 templates/attachtables.nat.tmpl:44
-#: templates/edit.nat.tmpl:197
+#: templates/edit.nat.tmpl:198
 msgid "Attachments"
 msgstr "Anhänge"
 
@@ -289,7 +293,7 @@ msgstr "Achtung"
 msgid "Author"
 msgstr "Author"
 
-#: templates/view.nat.tmpl:65
+#: templates/view.nat.tmpl:58
 msgid "Back to view mode"
 msgstr "Zurück zum Topic"
 
@@ -326,7 +330,7 @@ msgstr "Berahmt"
 msgid "Both"
 msgstr "Beide"
 
-#: templates/edit.nat.tmpl:233
+#: templates/edit.nat.tmpl:234
 msgid "Breadcrumbs navigation"
 msgstr "Brodkrumennavigation"
 
@@ -342,12 +346,11 @@ msgstr "Von"
 msgid "Can't get an e-mail address for %1"
 msgstr "E-Mail Adresse von %1 konnte nicht ermittelt werden"
 
-#: data/Sandbox/NatSkinTest.txt:439 data/Sandbox/NatSkinTest.txt:464
+#: data/Sandbox/NatSkinTest.txt:526 data/Sandbox/NatSkinTest.txt:551
 #: data/System/NatSkinTopicDoesNotExistViewTemplate.txt:45
 #: data/System/NatSkinWebCreateNewTopicTemplate.txt:240
-#: data/System/NatSkinWebSearchViewTemplate.txt:115
 #: templates/actionform.nat.tmpl:18 templates/attachagain.nat.tmpl:28
-#: templates/changeform.nat.tmpl:31 templates/copytopic.nat.tmpl:38
+#: templates/changeform.nat.tmpl:43 templates/copytopic.nat.tmpl:38
 #: templates/kinosearch.nat.tmpl:8 templates/languageselector.nat.tmpl:36
 #: templates/loginbase.nat.tmpl:81 templates/managetags.nat.tmpl:33
 #: templates/messages.nat.tmpl:281 templates/moveattachment.nat.tmpl:68
@@ -370,21 +373,21 @@ msgstr "Konnte Web %1 nicht anlegen, da es bereits existiert"
 msgid "Cannot rename %1 to %2 because it already exists."
 msgstr "Konnte %1 nicht nach %2 umbenennen, da es bereits existiert"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:45
+#: data/System/NatSkinChangePasswordViewTemplate.txt:49
 #: data/System/NatSkinChangePasswordViewTemplate.txt:7
 msgid "Change Password"
 msgstr "Passwort ändern"
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:11
-#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:147
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:15
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:150
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:7
 msgid "Change e-mail address"
 msgstr "E-Mail Adresse ändern"
 
 #: templates/foswiki.nat.tmpl:134 templates/languageselector.nat.tmpl:4
 #: templates/oopslanguagechanged.nat.tmpl:2
-#: templates/oopslanguagechanged.nat.tmpl:3 templates/oopsmore.nat.tmpl:61
+#: templates/oopslanguagechanged.nat.tmpl:3
 msgid "Change interface language"
 msgstr "Sprache wechseln"
 
@@ -392,7 +395,7 @@ msgstr "Sprache wechseln"
 msgid "Change name identifier"
 msgstr "Name ändern"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:90
+#: data/System/NatSkinChangePasswordViewTemplate.txt:94
 msgid "Change password"
 msgstr "Password ändern"
 
@@ -404,7 +407,7 @@ msgstr "Eigenschaften ändern"
 msgid "Changed"
 msgstr "Geändert"
 
-#: data/System/SiteSideBar.txt:14
+#: templates/sidebar.nat.tmpl:56
 msgid "Changes"
 msgstr "Änderungen"
 
@@ -428,15 +431,15 @@ msgstr "Unter-Topics von %1"
 msgid "Children"
 msgstr "Unter-Topics"
 
-#: templates/edit.nat.tmpl:22
+#: templates/edit.nat.tmpl:23
 msgid "Chinese"
 msgstr "Chinese"
 
-#: data/System/UserRegistrationViewTemplate.txt:167
+#: data/System/UserRegistrationViewTemplate.txt:172
 msgid "Choose a <nop>WikiName"
 msgstr "<nop>WikiNamen auswählen"
 
-#: data/System/UserRegistrationViewTemplate.txt:112
+#: data/System/UserRegistrationViewTemplate.txt:117
 msgid "Choose a login name"
 msgstr "Login-Name auswählen"
 
@@ -444,7 +447,7 @@ msgstr "Login-Name auswählen"
 msgid "Choose a new form for %1"
 msgstr "Wählen Sie eine neue Formularvorlage für %1"
 
-#: data/System/UserRegistrationViewTemplate.txt:136
+#: data/System/UserRegistrationViewTemplate.txt:141
 msgid "Choose a password"
 msgstr "Password auswählen"
 
@@ -467,7 +470,7 @@ msgstr "Auswahl löschen"
 #: templates/backlinksallwebs.nat.tmpl:18 templates/backlinksweb.nat.tmpl:13
 #: templates/childtopics.nat.tmpl:16 templates/childtopics.nat.tmpl:32
 #: templates/foswiki.nat.tmpl:121 templates/history.nat.tmpl:34
-#: templates/oopsmore.nat.tmpl:17 templates/viewraw.nat.tmpl:11
+#: templates/oopsmore.nat.tmpl:14 templates/viewraw.nat.tmpl:11
 msgid "Close"
 msgstr "Schließen"
 
@@ -475,7 +478,7 @@ msgstr "Schließen"
 msgid "Close this dialog"
 msgstr "Dialog schließen"
 
-#: data/System/UserRegistrationViewTemplate.txt:238
+#: data/System/UserRegistrationViewTemplate.txt:243
 msgid "Collaboration details"
 msgstr "Kollaborations-Details"
 
@@ -487,11 +490,11 @@ msgstr "Farbe %1 hat ein ungültiges Format"
 msgid "Comment"
 msgstr "Kommentar"
 
-#: templates/edit.nat.tmpl:243
+#: templates/edit.nat.tmpl:244
 msgid "Comment settings"
 msgstr "Kommentar Einstellungen"
 
-#: templates/edit.nat.tmpl:206
+#: templates/edit.nat.tmpl:207
 msgid "Comments"
 msgstr "Kommentare"
 
@@ -511,11 +514,11 @@ msgstr "Umbenennen oder Verschieben bestätigen"
 msgid "Conflict"
 msgstr "Konflikt"
 
-#: templates/login.nat.tmpl:46 templates/oops.nat.tmpl:16
+#: templates/login.nat.tmpl:48 templates/oops.nat.tmpl:16
 msgid "Contact %1 if you have any questions."
 msgstr "Kontaktieren Sie %1, wenn Sie Fragen haben."
 
-#: templates/edit.nat.tmpl:41
+#: templates/edit.nat.tmpl:42
 msgid "Content language"
 msgstr "Sprache wechseln"
 
@@ -547,7 +550,7 @@ msgstr "Template =%1= konnte nicht gefunden werden"
 msgid "Could not save %1."
 msgstr "%1 konnte nicht gespeichert werden."
 
-#: data/System/UserRegistrationViewTemplate.txt:211
+#: data/System/UserRegistrationViewTemplate.txt:216
 msgid "Country"
 msgstr "Land"
 
@@ -569,7 +572,7 @@ msgstr "Neues Topic im %1 Web anlegen"
 msgid "Create a new web"
 msgstr "Neues Web anlegen"
 
-#: templates/sidebar.nat.tmpl:21
+#: templates/sidebar.nat.tmpl:20
 msgid "Create a personal sidebar"
 msgstr "Persönliche Seitenleiste anlegen"
 
@@ -577,7 +580,7 @@ msgstr "Persönliche Seitenleiste anlegen"
 msgid "Create the topic"
 msgstr "Das Topic anlegen"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:109
+#: data/System/NatSkinChangePasswordViewTemplate.txt:113
 msgid "Current password"
 msgstr "Aktuelles Passwort"
 
@@ -585,11 +588,11 @@ msgstr "Aktuelles Passwort"
 msgid "Currently being edited"
 msgstr "Wird zurzeit bearbeitet"
 
-#: templates/edit.nat.tmpl:23
+#: templates/edit.nat.tmpl:24
 msgid "Danish"
 msgstr "Dänisch"
 
-#: templates/edit.nat.tmpl:188
+#: templates/edit.nat.tmpl:189
 msgid "Data form"
 msgstr "Formular"
 
@@ -601,10 +604,6 @@ msgstr "Datum"
 #: templates/newtopic.nat.tmpl:76
 msgid "Default"
 msgstr "Standard"
-
-#: templates/oopsmore.nat.tmpl:68
-msgid "Default language"
-msgstr "Standard Sprache"
 
 #: data/System/NatSkinWebCreateNewTopicTemplate.txt:202
 msgid "Default template"
@@ -652,7 +651,7 @@ msgstr ""
 msgid "Developer docs"
 msgstr "Entwickler Doku"
 
-#: templates/login.nat.tmpl:54
+#: templates/login.nat.tmpl:56
 msgid "Did you forget your password?"
 msgstr "Haben Sie Ihr Passwort vergessen?"
 
@@ -676,7 +675,7 @@ msgstr "Historie"
 msgid "Difference"
 msgstr "Unterschied"
 
-#: templates/edit.nat.tmpl:65
+#: templates/edit.nat.tmpl:66
 msgid "Display settings"
 msgstr "Anzeige Einstellungen"
 
@@ -684,7 +683,7 @@ msgstr "Anzeige Einstellungen"
 msgid "Do you want to *delete* the old sidebar and then create a new one?"
 msgstr "Wollen Sie die alte Seitenleisten *löschen* und eine neue anlegen?"
 
-#: templates/login.nat.tmpl:56
+#: templates/login.nat.tmpl:58
 msgid "Do you want to become a registered user?"
 msgstr "Wollen Sie ein registrierter Benutzer werden?"
 
@@ -736,7 +735,7 @@ msgid "During save of %1 an error was found by the version control system."
 msgstr ""
 "Während des Speicherns von %1 gab es einen Fehler im Version-Kontroll System."
 
-#: templates/edit.nat.tmpl:24
+#: templates/edit.nat.tmpl:25
 msgid "Dutch"
 msgstr "Niederländisch"
 
@@ -757,7 +756,7 @@ msgstr "Formular bearbeiten"
 msgid "Edit form data"
 msgstr "Formular bearbeiten"
 
-#: templates/sidebar.nat.tmpl:8
+#: templates/sidebar.nat.tmpl:7
 msgid "Edit my sidebar"
 msgstr "Meine Seitenleisten bearbeiten"
 
@@ -793,20 +792,20 @@ msgstr "Web-Einstellungen bearbeiten"
 msgid "Edit wiki markup"
 msgstr "Wiki-Quelltext bearbeiten"
 
-#: templates/edit.nat.tmpl:25
+#: templates/edit.nat.tmpl:26
 msgid "English"
 msgstr "Englisch"
 
-#: data/System/UserRegistrationViewTemplate.txt:321
+#: data/System/UserRegistrationViewTemplate.txt:326
 msgid "Enter a WikiName"
 msgstr "WikiName eingeben"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:170
-#: data/System/UserRegistrationViewTemplate.txt:316
+#: data/System/NatSkinChangePasswordViewTemplate.txt:174
+#: data/System/UserRegistrationViewTemplate.txt:321
 msgid "Enter a login name"
 msgstr "Login-Name eingeben"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:124
+#: data/System/NatSkinChangePasswordViewTemplate.txt:128
 msgid ""
 "Enter a new password. Please don't use a trivial password that could easily "
 "be guessed."
@@ -820,11 +819,11 @@ msgstr ""
 "Geben Sie einen neuen Benutzernamen und ein Passwort ein, um Ihre Identität "
 "zu wechseln"
 
-#: data/System/UserRegistrationViewTemplate.txt:322
+#: data/System/UserRegistrationViewTemplate.txt:327
 msgid "Enter a valid WikiWord"
 msgstr "Gültiges WikiWort eingeben"
 
-#: data/System/UserRegistrationViewTemplate.txt:317
+#: data/System/UserRegistrationViewTemplate.txt:322
 msgid "Enter at least %1 characters"
 msgstr "Bitte mindestens %1 Zeichen eingeben"
 
@@ -832,24 +831,24 @@ msgstr "Bitte mindestens %1 Zeichen eingeben"
 msgid "Enter the %WIKITOOLNAME% administrator user or login as set in %1"
 msgstr "Bitte geben Sie den Administrator Benutzernamen oder Login aus %1 ein"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:112
+#: data/System/NatSkinChangePasswordViewTemplate.txt:116
 msgid "Enter the current password for the given !LoginName."
 msgstr "Geben Sie das momentane Password für diesen Login-Namen ein."
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:180
-#: data/System/UserRegistrationViewTemplate.txt:330
+#: data/System/NatSkinChangePasswordViewTemplate.txt:184
+#: data/System/UserRegistrationViewTemplate.txt:335
 msgid "Enter the same password as above"
 msgstr "Bitte dasselbe Passwort nochmals eingeben"
 
-#: templates/searchbox.nat.tmpl:7
+#: templates/searchbox.nat.tmpl:6
 msgid "Enter topic name or a search string"
 msgstr "Topic-Name oder Suchbegriff eingeben"
 
-#: data/System/UserRegistrationViewTemplate.txt:313
+#: data/System/UserRegistrationViewTemplate.txt:318
 msgid "Enter your first name"
 msgstr "Vorname eingeben"
 
-#: data/System/UserRegistrationViewTemplate.txt:314
+#: data/System/UserRegistrationViewTemplate.txt:319
 msgid "Enter your last name"
 msgstr "Nachname eingeben"
 
@@ -882,6 +881,10 @@ msgstr "Export als PDF"
 msgid "Extracts individual files in a zip archive."
 msgstr ""
 
+#: data/System/WebLinks.txt:8
+msgid "FAQ"
+msgstr ""
+
 #: templates/attachsidebar.nat.tmpl:4
 #: templates/moveattachmentsidebar.nat.tmpl:4
 msgid "File attachments"
@@ -891,6 +894,10 @@ msgstr "Dateianhänge"
 msgid "File has been uploaded with different name"
 msgstr "Die Datei wurde mit einem anderen Namen hochgeladen"
 
+#: data/System/NatSkinWikiUsersViewTemplate.txt:24
+msgid "Filter"
+msgstr ""
+
 #: templates/foswiki.nat.tmpl:38
 msgid "Find backlinks"
 msgstr "Querverweise"
@@ -899,7 +906,7 @@ msgstr "Querverweise"
 msgid "Find child topics"
 msgstr "Unter-Topics"
 
-#: templates/edit.nat.tmpl:26
+#: templates/edit.nat.tmpl:27
 msgid "Finnish"
 msgstr "Finnisch"
 
@@ -923,7 +930,7 @@ msgstr ""
 msgid "Form-based input"
 msgstr "Formularbasierte Eingabe"
 
-#: templates/edit.nat.tmpl:251
+#: templates/edit.nat.tmpl:252
 msgid "Format"
 msgstr "Format"
 
@@ -937,7 +944,7 @@ msgid ""
 "title automatically."
 msgstr ""
 
-#: templates/edit.nat.tmpl:27
+#: templates/edit.nat.tmpl:28
 msgid "French"
 msgstr ""
 
@@ -945,15 +952,11 @@ msgstr ""
 msgid "From"
 msgstr "Von"
 
-#: templates/edit.nat.tmpl:28
+#: templates/edit.nat.tmpl:29
 msgid "German"
 msgstr ""
 
-#: templates/oopsmore.nat.tmpl:31
-msgid "Get a fresh page of the topic %1"
-msgstr "Die Seite mit dem Topic %1 neu laden"
-
-#: templates/body.nat.tmpl:93
+#: templates/body.nat.tmpl:26
 msgid "Get a fresh version <a href='%1' rel='nofollow'>here</a>."
 msgstr "Lade <a href='%1' rel='nofollow'>hier</a> eine frische version."
 
@@ -976,7 +979,7 @@ msgstr ""
 msgid "Get me out of here"
 msgstr ""
 
-#: data/System/NatSkinWebSearchViewTemplate.txt:75
+#: data/System/NatSkinWebSearchViewTemplate.txt:65
 msgid "Get notified on changes on this search"
 msgstr "Bei Änderungen bezüglich dieser Suche benachrichtigt werden"
 
@@ -1046,11 +1049,17 @@ msgid ""
 "class='foswikiPopUp'>why you are being asked to confirm</a>"
 msgstr ""
 
-#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:76
-#: data/System/NatSkinChangePasswordViewTemplate.txt:83
-#: data/System/UserRegistrationViewTemplate.txt:77
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:79
+#: data/System/NatSkinChangePasswordViewTemplate.txt:87
+#: data/System/UserRegistrationViewTemplate.txt:82
 msgid "If you have any questions, please contact %1"
 msgstr "Wenn Sie Fragen haben wenden Sie sich bitte an %1."
+
+#: templates/foswiki.nat.tmpl:351
+msgid ""
+"If you run an Internet Explorer 8 and still get this warning, then make sure "
+"the 'Compatibility View' setting is switched off."
+msgstr ""
 
 #: templates/messages.nat.tmpl:321
 msgid "If you want to create the topic"
@@ -1060,7 +1069,7 @@ msgstr "Wenn Sie das Topic anlegen wollen"
 msgid "If you want to create the topic then [[%1][click here]]."
 msgstr "Wenn Sie das Topic anlegen möchten, [[%1][klicken Sie hier]]."
 
-#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:29
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:33
 msgid ""
 "If your old e-mail addresses are all invalid (you can't receive mail there "
 "any more) and you have forgotten your password, please contact %1 for help."
@@ -1085,7 +1094,7 @@ msgstr "Inkorrekter %1"
 msgid "Incorrect Password"
 msgstr "Inkorrektes Passwort"
 
-#: data/System/SiteSideBar.txt:13
+#: templates/sidebar.nat.tmpl:55
 msgid "Index"
 msgstr "Index"
 
@@ -1113,11 +1122,11 @@ msgstr "Ungültiger Aktivierungs-Code"
 msgid "Invalid e-mail address"
 msgstr "Ungültige E-Mail Adresse"
 
-#: templates/edit.nat.tmpl:29
+#: templates/edit.nat.tmpl:30
 msgid "Italian"
 msgstr ""
 
-#: templates/edit.nat.tmpl:30
+#: templates/edit.nat.tmpl:31
 msgid "Japanese"
 msgstr ""
 
@@ -1125,7 +1134,7 @@ msgstr ""
 msgid "Knowledge"
 msgstr "Wissen"
 
-#: templates/edit.nat.tmpl:31
+#: templates/edit.nat.tmpl:32
 msgid "Korean"
 msgstr "Koreanisch"
 
@@ -1137,11 +1146,12 @@ msgstr ""
 msgid "Last"
 msgstr "Nachname"
 
-#: templates/view.nat.tmpl:85
+#: templates/view.nat.tmpl:78 templates/view.print.nat.tmpl:27
+#: templates/view.print.nat.tmpl:7
 msgid "Last modified by %1 on %2"
 msgstr "Letzte Änderung am %2 von %1"
 
-#: data/System/NatSkinStyleBrowser.txt:33 templates/edit.nat.tmpl:110
+#: data/System/NatSkinStyleBrowser.txt:33 templates/edit.nat.tmpl:111
 msgid "Layout"
 msgstr "Layout"
 
@@ -1153,10 +1163,6 @@ msgstr "Links"
 #: templates/moveattachmentsidebar.nat.tmpl:7
 msgid "Linking to attachments"
 msgstr "Anhänge verknüpfen"
-
-#: templates/oopsmore.nat.tmpl:42
-msgid "List of topics the current depends on."
-msgstr ""
 
 #: templates/renamewebbase.nat.tmpl:57
 msgid "Locked topics"
@@ -1178,19 +1184,23 @@ msgstr "Abmelden"
 msgid "Log out %1"
 msgstr "Abmelden bei %1"
 
-#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:92
-#: data/System/NatSkinChangePasswordViewTemplate.txt:97
-#: data/System/NatSkinResetPasswordViewTemplate.txt:78
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:95
+#: data/System/NatSkinChangePasswordViewTemplate.txt:101
+#: data/System/NatSkinResetPasswordViewTemplate.txt:81
 msgid "Login"
 msgstr "Login"
 
-#: data/System/UserRegistrationViewTemplate.txt:106
+#: data/System/UserRegistrationViewTemplate.txt:111
 msgid "Login settings"
 msgstr "Login Einstellungen"
 
-#: data/System/UserRegistrationViewTemplate.txt:318
+#: data/System/UserRegistrationViewTemplate.txt:323
 msgid "LoginName %1 is already in use"
 msgstr "Login-Name %1 wird bereits verwendet"
+
+#: data/System/WebLinks.txt:10
+msgid "Macros"
+msgstr ""
 
 #: templates/messages.nat.tmpl:138
 msgid "Mail error"
@@ -1216,7 +1226,7 @@ msgstr "Topics verwalten"
 msgid "Managing webs"
 msgstr "Webs verwalten"
 
-#: data/System/NatSkinStyleBrowser.txt:46 templates/edit.nat.tmpl:164
+#: data/System/NatSkinStyleBrowser.txt:46 templates/edit.nat.tmpl:165
 msgid "Menu"
 msgstr "Menü"
 
@@ -1230,7 +1240,7 @@ msgstr ""
 "Die mit =<span class='foswikiAlert'>**</span>= gekennzeichneten Felder sind "
 "Pflichtfelder"
 
-#: templates/edit.nat.tmpl:273
+#: templates/edit.nat.tmpl:274
 msgid "Moderation"
 msgstr "Moderierung"
 
@@ -1263,11 +1273,11 @@ msgstr "Nach %1 verschieben"
 msgid "Moving attachments"
 msgstr "Anhänge verschieben"
 
-#: templates/sidebar.nat.tmpl:31
+#: templates/sidebar.nat.tmpl:30
 msgid "My links"
 msgstr "Meine Verweise"
 
-#: templates/sidebar.nat.tmpl:12 templates/sidebar.nat.tmpl:19
+#: templates/sidebar.nat.tmpl:11 templates/sidebar.nat.tmpl:18
 msgid "My sidebar"
 msgstr "Meine Seitenleiste"
 
@@ -1284,7 +1294,7 @@ msgstr "Der Names des neuen Webs fehlt"
 msgid "New"
 msgstr "Neu"
 
-#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:135
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:138
 msgid "New e-mails"
 msgstr ""
 
@@ -1296,7 +1306,7 @@ msgstr "Neue oder geänderte Topics im %1 Web seit %2 GMT"
 msgid "New parent web"
 msgstr "Neues Ober-Web"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:121
+#: data/System/NatSkinChangePasswordViewTemplate.txt:125
 msgid "New password"
 msgstr "Neues Passwort"
 
@@ -1318,7 +1328,7 @@ msgstr "Neuigkeiten"
 
 #: templates/foswiki.nat.tmpl:219
 msgid "Next"
-msgstr "Nächster"
+msgstr "Nächste"
 
 #: templates/moveattachment.nat.tmpl:47
 msgid "No"
@@ -1335,7 +1345,7 @@ msgstr "Keine Erlaubnis"
 
 #: data/System/MySideBar.txt:38
 msgid "No, thanks"
-msgstr ""
+msgstr "Nein danke"
 
 #: templates/messages.nat.tmpl:253
 msgid "Note"
@@ -1351,7 +1361,7 @@ msgstr ""
 
 #: templates/renamebase.nat.tmpl:73
 msgid "Note that you may change the title from within the editor as well."
-msgstr ""
+msgstr "Sie können den Titel auch im Editor ändern."
 
 #: templates/languageselector.nat.tmpl:32
 msgid ""
@@ -1375,20 +1385,20 @@ msgstr "Hinweise"
 msgid "Nothing found. Try again!"
 msgstr "Keine Treffer. Versuchen Sie es nochmal!"
 
-#: data/System/SiteSideBar.txt:15
+#: templates/sidebar.nat.tmpl:57
 msgid "Notifications"
 msgstr "Benachrichtigungen"
 
 #: templates/foswiki.nat.tmpl:181
 msgid "Notify"
-msgstr ""
+msgstr "Benachrichtigen"
 
 #: templates/foswiki.nat.tmpl:182
 msgid "Notify on changes"
 msgstr "Bei Änderung benachrichtigen"
 
 #: data/System/NatSkinStyleBrowser.txt:53 templates/attachtables.nat.tmpl:24
-#: templates/changeform.nat.tmpl:30 templates/messages.nat.tmpl:104
+#: templates/changeform.nat.tmpl:42 templates/messages.nat.tmpl:104
 #: templates/messages.nat.tmpl:261 templates/messages.nat.tmpl:280
 #: templates/moveattachment.nat.tmpl:67
 #: templates/oopslanguagechanged.nat.tmpl:11
@@ -1399,15 +1409,15 @@ msgstr "OK"
 #: data/System/NatSkinStyleBrowser.txt:44
 #: data/System/NatSkinStyleBrowser.txt:49
 msgid "Off"
-msgstr ""
+msgstr "Aus"
 
 #: data/System/NatSkinStyleBrowser.txt:48
 msgid "On"
-msgstr ""
+msgstr "An"
 
 #: data/System/SiteMenu.txt:49
 msgid "Online support forum"
-msgstr ""
+msgstr "Online Hilfe-Forum"
 
 #: templates/messages.nat.tmpl:306
 msgid "Only members of the %1 are allowed to perform this action."
@@ -1421,15 +1431,15 @@ msgstr "WebDAV Verzeichnis"
 msgid "Open in separate window"
 msgstr "Details im separaten Fenster"
 
-#: data/System/UserRegistrationViewTemplate.txt:187
+#: data/System/UserRegistrationViewTemplate.txt:192
 msgid "Optional information"
 msgstr "Optionale Information"
 
-#: data/System/UserRegistrationViewTemplate.txt:193
+#: data/System/UserRegistrationViewTemplate.txt:198
 msgid "Organisation Name"
 msgstr "Name der Organisation"
 
-#: data/System/UserRegistrationViewTemplate.txt:202
+#: data/System/UserRegistrationViewTemplate.txt:207
 msgid "Organisation URL"
 msgstr "URL der Organisation"
 
@@ -1442,7 +1452,7 @@ msgid "Parent"
 msgstr "Ober-Topic"
 
 #: data/Main/WebLinks.txt:11
-#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:110
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:113
 #: templates/loginbase.nat.tmpl:51
 msgid "Password"
 msgstr "Passwort"
@@ -1467,7 +1477,7 @@ msgstr "Wählen Sie eine der %1."
 msgid "Please e-mail %1 to request this."
 msgstr "Bitte senden Sie %1 eine E-Mail, um das zu erbitten."
 
-#: data/System/UserRegistrationViewTemplate.txt:333
+#: data/System/UserRegistrationViewTemplate.txt:338
 msgid "Please enter a valid e-mail address"
 msgstr "Bitte eine gültige E-Mail Adresse angeben"
 
@@ -1492,11 +1502,15 @@ msgstr "Bitte informieren Sie Ihren %1 Administrator %2."
 msgid "Please try again."
 msgstr "Bitte versuchen Sie es erneut."
 
-#: templates/edit.nat.tmpl:32
+#: templates/edit.nat.tmpl:33
 msgid "Portuguese"
-msgstr ""
+msgstr "Portugisisch"
 
-#: data/System/SiteSideBar.txt:17 templates/foswiki.nat.tmpl:85
+#: templates/foswiki.nat.tmpl:266
+msgid "Powered by Foswiki"
+msgstr "Powered by Foswiki"
+
+#: templates/foswiki.nat.tmpl:85 templates/sidebar.nat.tmpl:59
 msgid "Preferences"
 msgstr "Einstellungen"
 
@@ -1522,18 +1536,18 @@ msgstr "Professionelle Hilfe"
 
 #: data/System/SiteMenu.txt:11
 msgid "Projects"
-msgstr ""
+msgstr "Projekte"
 
 #: templates/attachagain.nat.tmpl:10
 msgid "Properties"
 msgstr "Eigenschaften"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:176
+#: data/System/NatSkinChangePasswordViewTemplate.txt:180
 msgid "Provide a new password"
 msgstr "Neues Passwort eingeben"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:173
-#: data/System/UserRegistrationViewTemplate.txt:326
+#: data/System/NatSkinChangePasswordViewTemplate.txt:177
+#: data/System/UserRegistrationViewTemplate.txt:331
 msgid "Provide a password"
 msgstr "Passwort eingeben"
 
@@ -1541,28 +1555,24 @@ msgstr "Passwort eingeben"
 msgid "Raw"
 msgstr "Quelltext"
 
-#: data/System/UserRegistrationViewTemplate.txt:140
+#: data/System/UserRegistrationViewTemplate.txt:145
 msgid "Re-enter password"
 msgstr "Passwort erneut eingeben"
+
+#: data/System/WebLinks.txt:9
+msgid "Reference Manual"
+msgstr "Referenz-Handbuch"
 
 #: data/System/SiteMenu.txt:43
 msgid "Reference manual"
 msgstr "Bedienungshandbuch"
 
-#: templates/oopsmore.nat.tmpl:34
-msgid "Refresh"
-msgstr "Neu laden"
-
-#: templates/oopsmore.nat.tmpl:30
-msgid "Refresh topic caching"
-msgstr "Topic-Cache erneuern"
-
-#: data/System/UserRegistrationViewTemplate.txt:69
+#: data/System/UserRegistrationViewTemplate.txt:74
 #: templates/foswiki.nat.tmpl:15
 msgid "Register"
 msgstr "Registrieren"
 
-#: data/Main/WebLinks.txt:8 data/System/UserRegistrationViewTemplate.txt:38
+#: data/Main/WebLinks.txt:8 data/System/UserRegistrationViewTemplate.txt:43
 msgid "Registration"
 msgstr "Registrierung"
 
@@ -1570,7 +1580,7 @@ msgstr "Registrierung"
 msgid "Remember me on this computer"
 msgstr "Auf diesem Computer eingeloggt bleiben"
 
-#: data/System/NatSkinResetPasswordViewTemplate.txt:58
+#: data/System/NatSkinResetPasswordViewTemplate.txt:61
 msgid "Remember your password?"
 msgstr "Sie kennen Ihr Passwort?"
 
@@ -1603,11 +1613,11 @@ msgstr "Web %1 Umbenennen"
 msgid "Rename, merge or delete tags"
 msgstr "Schlüsselworte umbenennen, zusammenführen oder löschen"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:179
+#: data/System/NatSkinChangePasswordViewTemplate.txt:183
 msgid "Repeat your new password"
 msgstr "Neues Passwort wiederholen"
 
-#: data/System/UserRegistrationViewTemplate.txt:329
+#: data/System/UserRegistrationViewTemplate.txt:334
 msgid "Repeat your password"
 msgstr "Passwort wiederholen"
 
@@ -1619,8 +1629,8 @@ msgstr "Anfrage Bestätigung"
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: data/System/NatSkinResetPasswordViewTemplate.txt:102
-#: data/System/NatSkinResetPasswordViewTemplate.txt:36
+#: data/System/NatSkinResetPasswordViewTemplate.txt:105
+#: data/System/NatSkinResetPasswordViewTemplate.txt:39
 #: data/System/NatSkinResetPasswordViewTemplate.txt:7
 msgid "Reset password"
 msgstr "Passwort zurücksetzen"
@@ -1637,7 +1647,7 @@ msgstr "Wiederherstellen"
 msgid "Restore revision %1"
 msgstr "Version %1 wiederherstellen"
 
-#: data/System/NatSkinWebSearchViewTemplate.txt:205
+#: data/System/NatSkinWebSearchViewTemplate.txt:187
 msgid "Results from %1 web"
 msgstr "Ergebnisse vom %1 web"
 
@@ -1645,7 +1655,7 @@ msgstr "Ergebnisse vom %1 web"
 msgid "Retry"
 msgstr ""
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:128
+#: data/System/NatSkinChangePasswordViewTemplate.txt:132
 msgid "Retype new password"
 msgstr "Neues Passwort wiederholen"
 
@@ -1661,7 +1671,7 @@ msgstr "Version"
 msgid "Revision history of %1"
 msgstr "Versionsgeschichte von %1"
 
-#: templates/edit.nat.tmpl:224
+#: templates/edit.nat.tmpl:225
 msgid "Revision information"
 msgstr "Versionsinformation"
 
@@ -1669,7 +1679,7 @@ msgstr "Versionsinformation"
 msgid "Right"
 msgstr ""
 
-#: templates/edit.nat.tmpl:33
+#: templates/edit.nat.tmpl:34
 msgid "Russian"
 msgstr ""
 
@@ -1681,7 +1691,7 @@ msgstr "Sandkasten"
 msgid "Save"
 msgstr "Speichern"
 
-#: data/System/NatSkinWebSearchViewTemplate.txt:114
+#: data/System/NatSkinWebSearchViewTemplate.txt:77
 #: templates/kinosearch.nat.tmpl:7 templates/search.nat.tmpl:30
 #: templates/searchformat.nat.tmpl:3
 msgid "Search"
@@ -1709,7 +1719,7 @@ msgid "Search for backlinks in all webs"
 msgstr "Nach Querverweise in allen Webs suchen"
 
 #: data/System/NatSkinTopicDoesNotExistViewTemplate.txt:44
-#: data/System/NatSkinWebSearchViewTemplate.txt:130
+#: data/System/NatSkinWebSearchViewTemplate.txt:116
 #: templates/backlinks.nat.tmpl:49 templates/renamebase.nat.tmpl:18
 #: templates/renamedelete.nat.tmpl:16 templates/renamewebbase.nat.tmpl:76
 msgid "Search in all webs"
@@ -1743,7 +1753,7 @@ msgstr ""
 msgid "Select the [[%1.WebHome][%1]] web to delete the topic."
 msgstr "Wählen Sie das [[%1.WebHome][%1]] Web, um das Topic zu löschen."
 
-#: data/System/UserRegistrationViewTemplate.txt:261
+#: data/System/UserRegistrationViewTemplate.txt:266
 msgid "Select the groups you want to join."
 msgstr ""
 
@@ -1777,7 +1787,7 @@ msgstr ""
 msgid "Show advanced options"
 msgstr "Erweiterte Optionen anzeigen"
 
-#: data/System/NatSkinStyleBrowser.txt:39 templates/edit.nat.tmpl:173
+#: data/System/NatSkinStyleBrowser.txt:39 templates/edit.nat.tmpl:174
 msgid "Sidebar"
 msgstr "Seitenleiste"
 
@@ -1788,6 +1798,10 @@ msgstr "Anmelden bei %1"
 #: data/System/NatSkinTopicDoesNotExistViewTemplate.txt:31
 msgid "Similar topics"
 msgstr "Ähnliche Topics"
+
+#: data/System/WebLinks.txt:13
+msgid "Site Tools"
+msgstr "Site Werkzeuge"
 
 #: data/System/SiteMenu.txt:72
 msgid "Site activities"
@@ -1809,7 +1823,7 @@ msgstr "System-Verzeichnis"
 msgid "Size"
 msgstr "Größe"
 
-#: templates/edit.nat.tmpl:84
+#: templates/edit.nat.tmpl:85
 msgid "Skin settings"
 msgstr "Skin Einstellungen"
 
@@ -1817,11 +1831,11 @@ msgstr "Skin Einstellungen"
 msgid "Some characters such as =&#126;=, =$=, =@=, =%= are removed"
 msgstr "Manche Zeichen wie =&#126;=, =$=, =@=, =%= werden entfernt"
 
-#: data/System/UserRegistrationViewTemplate.txt:19
+#: data/System/UserRegistrationViewTemplate.txt:24
 msgid "Sorry, registration has been temporarily disabled."
 msgstr "Entschuldigung, die Registrierung wurde temporär abgeschaltet."
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:24
+#: data/System/NatSkinChangePasswordViewTemplate.txt:28
 msgid "Sorry, the password system is currently read only, please contact %1"
 msgstr ""
 "Das Passwort-System ist z.Z. schreibgeschützt. Bitte kontaktieren Sie %1"
@@ -1830,7 +1844,7 @@ msgstr ""
 msgid "Spaces are replaced by underscores"
 msgstr "Leerzeichen werden durch Unterstriche ersetzt"
 
-#: templates/edit.nat.tmpl:34
+#: templates/edit.nat.tmpl:35
 msgid "Spanish"
 msgstr ""
 
@@ -1838,29 +1852,29 @@ msgstr ""
 msgid "Specify a new topic title while renaming/moving the topic."
 msgstr ""
 
-#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:139
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:142
 msgid "Specify one or more space separated emails."
 msgstr ""
 
-#: templates/edit.nat.tmpl:266
+#: templates/edit.nat.tmpl:267
 msgid "State"
 msgstr "Status"
 
-#: data/System/SiteSideBar.txt:16
+#: templates/sidebar.nat.tmpl:58
 msgid "Statistics"
 msgstr "Statistiken"
 
-#: data/System/NatSkinStyleBrowser.txt:17 templates/edit.nat.tmpl:89
+#: data/System/NatSkinStyleBrowser.txt:17 templates/edit.nat.tmpl:90
 msgid "Style"
 msgstr "Stil"
 
-#: data/Sandbox/NatSkinTest.txt:438 data/Sandbox/NatSkinTest.txt:463
-#: data/Sandbox/NatSkinTest.txt:488
+#: data/Sandbox/NatSkinTest.txt:525 data/Sandbox/NatSkinTest.txt:550
+#: data/Sandbox/NatSkinTest.txt:577
 #: data/System/NatSkinWebCreateNewTopicTemplate.txt:234
 #: data/System/WebCreateNewWeb.txt:67 templates/attachnew.nat.tmpl:4
 #: templates/languageselector.nat.tmpl:35 templates/managetags.nat.tmpl:32
 #: templates/messages.nat.tmpl:113 templates/messages.nat.tmpl:199
-#: templates/newtopic.nat.tmpl:18 templates/oopsmore.nat.tmpl:71
+#: templates/newtopic.nat.tmpl:18
 msgid "Submit"
 msgstr "Übermitteln"
 
@@ -1876,7 +1890,7 @@ msgstr "Sudo Login"
 msgid "Summary"
 msgstr "Zusammenfassungen"
 
-#: templates/edit.nat.tmpl:35
+#: templates/edit.nat.tmpl:36
 msgid "Swedish"
 msgstr ""
 
@@ -1904,6 +1918,10 @@ msgstr "Web-Vorlage"
 #: templates/messages.nat.tmpl:107 templates/messages.nat.tmpl:355
 msgid "Thank you for registering"
 msgstr "Vielen Dank für Ihre Registrierung"
+
+#: templates/foswiki.nat.tmpl:348
+msgid "Thank you!"
+msgstr ""
 
 #: templates/messages.nat.tmpl:171
 msgid ""
@@ -1964,7 +1982,7 @@ msgstr ""
 msgid "The lease on this topic expired %1 ago."
 msgstr "Die Leihfrist von diesem Topic endete vor %1."
 
-#: data/System/UserRegistrationViewTemplate.txt:115
+#: data/System/UserRegistrationViewTemplate.txt:120
 msgid "The login name you use to sign in."
 msgstr "Der Login-Name, der zur Anmeldung verwendet wird."
 
@@ -2014,20 +2032,20 @@ msgstr ""
 "Es besteht ein Risiko, dass jemand versucht, unter Ihrer Identität und ohne "
 "Ihr Wissen Inhalte von %1 zu ändern."
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:146
-#: data/System/UserRegistrationViewTemplate.txt:280
+#: data/System/NatSkinChangePasswordViewTemplate.txt:150
+#: data/System/UserRegistrationViewTemplate.txt:285
 msgid "There was an error. Please, see above."
 msgstr ""
 
-#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:49
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:52
 msgid ""
 "This form is used to change your registered e-mail addresses. Your "
 "registered addresses are used by Foswiki for sending you e-mails, including "
 "notifications of password changes. The addresses you register via this form "
 "are kept secret and will *not* be published anywhere on this site."
 msgstr ""
-"Mit diesem Formular können Sie ihre registrierte E-Mail Adresse ändern. "
-"Ihre Informationen werden von Foswiki unter anderem für Änderungshinweise oder "
+"Mit diesem Formular können Sie ihre registrierte E-Mail Adresse ändern. Ihre "
+"Informationen werden von Foswiki unter anderem für Änderungshinweise oder "
 "Passwortänderungen benutzt. Die Adressen, die Sie über dieses Formular "
 "registrieren werden geheim gehalten und *nicht* auf dieser Seite "
 "veröffentlicht."
@@ -2036,7 +2054,7 @@ msgstr ""
 msgid "This is an automated e-mail from %1."
 msgstr "Dies ist eine automatisierte E-Mail von %1."
 
-#: templates/body.nat.tmpl:92
+#: templates/body.nat.tmpl:25
 msgid "This page was cached on %1."
 msgstr "Diese Seite wurde am %1 berechnet."
 
@@ -2075,8 +2093,8 @@ msgstr "Nach Topic"
 msgid "To web"
 msgstr "Nach Web"
 
-#: data/System/SiteSideBar.txt:12 templates/oopsmore.nat.tmpl:4
-#: templates/oopsmore.nat.tmpl:6
+#: templates/oopsmore.nat.tmpl:4 templates/oopsmore.nat.tmpl:6
+#: templates/sidebar.nat.tmpl:54
 msgid "Tools"
 msgstr "Werkzeuge"
 
@@ -2088,7 +2106,7 @@ msgstr "Topic"
 msgid "Topic %1 does not exist"
 msgstr "Topic %1 existiert nicht"
 
-#: templates/edit.nat.tmpl:215
+#: templates/edit.nat.tmpl:216
 msgid "Topic actions"
 msgstr "Topic Aktionen"
 
@@ -2108,7 +2126,7 @@ msgstr ""
 msgid "Topic save error"
 msgstr "Topic-Speichern-Fehler"
 
-#: data/System/NatSkinWebSearchViewTemplate.txt:91
+#: data/System/NatSkinWebSearchViewTemplate.txt:90
 msgid "Topics per web"
 msgstr "Topics per Web"
 
@@ -2116,8 +2134,12 @@ msgstr "Topics per Web"
 msgid "Try again"
 msgstr "Nochmal versuchen"
 
-#: templates/edit.nat.tmpl:36
+#: templates/edit.nat.tmpl:37
 msgid "Turkish"
+msgstr ""
+
+#: data/System/WebLinks.txt:6
+msgid "Tutorial"
 msgstr ""
 
 #: templates/newtopic.nat.tmpl:72
@@ -2128,7 +2150,7 @@ msgstr ""
 msgid "Unrecognised user and/or password"
 msgstr "Benutzer und/oder Passwort nicht erkannt"
 
-#: templates/login.nat.tmpl:17
+#: templates/login.nat.tmpl:18
 msgid "Unrecognised user and/or password."
 msgstr "Benutzer und/oder Passwort nicht erkannt."
 
@@ -2181,9 +2203,13 @@ msgstr "Die hochgeladene Datei %1 überschreitet das Limit von %2 KB."
 msgid "Uploaded file is too big"
 msgstr "Die hochgeladene Datei ist zu groß"
 
-#: data/System/NatSkinResetPasswordViewTemplate.txt:59
+#: data/System/NatSkinResetPasswordViewTemplate.txt:62
 msgid "Use %1 instead."
 msgstr "Benutzen Sie stattdessen %1."
+
+#: data/System/WebLinks.txt:11 templates/sidebar.nat.tmpl:68
+msgid "User Tools"
+msgstr "Benutzer Werkzeuge"
 
 #: templates/messages.nat.tmpl:3
 msgid "User account %1 deleted"
@@ -2201,6 +2227,10 @@ msgstr "Benutzername"
 msgid "Users"
 msgstr "Benutzer"
 
+#: data/System/WebLinks.txt:7
+msgid "Users Guide"
+msgstr "Benutzer-Handbuch"
+
 #: templates/foswiki.nat.tmpl:22
 msgid "Users directory"
 msgstr "Benutzerverzeichnis"
@@ -2209,7 +2239,7 @@ msgstr "Benutzerverzeichnis"
 msgid "Variables"
 msgstr "Variablen"
 
-#: data/System/NatSkinStyleBrowser.txt:28 templates/edit.nat.tmpl:103
+#: data/System/NatSkinStyleBrowser.txt:28 templates/edit.nat.tmpl:104
 msgid "Variation"
 msgstr "Variation"
 
@@ -2226,7 +2256,7 @@ msgid "Versions"
 msgstr "Versionen"
 
 #: data/System/SiteBottomBar.txt:51 templates/foswiki.nat.tmpl:31
-#: templates/history.nat.tmpl:76 templates/view.nat.tmpl:65
+#: templates/history.nat.tmpl:76 templates/view.nat.tmpl:58
 msgid "View"
 msgstr "Ansehen"
 
@@ -2274,6 +2304,12 @@ msgstr "Quelltext"
 msgid "Warning! Confirmation required"
 msgstr "Achtung! Bestätigung erforderlich"
 
+#: templates/foswiki.nat.tmpl:344
+msgid ""
+"Warning: your browser isn't supported. Please install a modern one, like %1, "
+"%2, %3, %4 or the latest %5."
+msgstr ""
+
 #: data/System/WebCreateNewWeb.txt:59
 msgid "Web color"
 msgstr ""
@@ -2294,8 +2330,9 @@ msgstr "Willkommen, bitte melden Sie sich an"
 msgid ""
 "When the file is deleted, it is moved to the %1 web and attached to the %2 "
 "topic."
-msgstr "Wenn diese Datei gelöscht wird, wurde sie in das %1 Web verschoben und
-an die %2 Seite angehängt."
+msgstr ""
+"Wenn diese Datei gelöscht wird, wurde sie in das %1 Web verschoben und an "
+"die %2 Seite angehängt."
 
 #: templates/attachtables.nat.tmpl:96
 msgid "Who"
@@ -2305,7 +2342,7 @@ msgstr "Wer"
 msgid "Wiki markup of %1"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:323
+#: data/System/UserRegistrationViewTemplate.txt:328
 msgid "WikiName %1 is already in use"
 msgstr "WikiName %1 wird bereits verwendet"
 
@@ -2321,8 +2358,7 @@ msgstr ""
 msgid "Yes, delete"
 msgstr "Ja, löschen"
 
-#: data/System/NatSkinResetPasswordViewTemplate.txt:61
-#, fuzzy
+#: data/System/NatSkinResetPasswordViewTemplate.txt:64
 msgid ""
 "You *must* have at least one valid registered e-mail to be able to reset "
 "your password. If none of your registered e-mail addresses is valid, and you "
@@ -2344,23 +2380,21 @@ msgstr "Sie sind auch auf Topic %1 gelistet"
 msgid "You are here"
 msgstr "Sie sind hier"
 
-#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:114
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:117
 msgid "You are required to enter your password to change your e-mail address."
 msgstr ""
 
 #: templates/messages.nat.tmpl:327
-#, fuzzy
 msgid "You are trying to %1 a topic that does not exist."
-msgstr "Sie versuchen ein Topic umzubenennen, welches nicht existiert."
+msgstr "Sie versuchen ein Topic zu %1, welches nicht existiert."
 
 #: templates/messages.nat.tmpl:345
 msgid "You are trying to %1 an attachment that does not exist."
 msgstr "Sie versuchen ein Topic zu %1, das nicht existiert."
 
 #: templates/messages.nat.tmpl:316
-#, fuzzy
 msgid "You are trying to %1 in a web that does not exist."
-msgstr "Sie versuchen ein Topic zu %1, das nicht existiert."
+msgstr "Sie versuchen ein Web zu %1, das nicht existiert."
 
 #: templates/messages.nat.tmpl:333
 msgid "You are trying to create a topic from a template that does not exist."
@@ -2372,7 +2406,6 @@ msgid "You are trying to rename a topic that does not exist."
 msgstr "Sie versuchen ein Topic umzubenennen, welches nicht existiert."
 
 #: templates/messages.nat.tmpl:96
-#, fuzzy
 msgid "You can also use the names of the standard HTML colors."
 msgstr "Sie können auch die Namen der Standard HTML Farben benutzen"
 
@@ -2387,17 +2420,15 @@ msgstr ""
 "Sie können sich nicht zweimal registrieren, der Name %1 ist bereits "
 "registriert."
 
-#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:23
-#, fuzzy
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:27
 msgid ""
 "You change your e-mail address by setting the form field called Email in "
 "your user topic. If this form field does not exist it will look for a line "
 "like this"
 msgstr ""
-"Es wird Ihnen empfohlen ein gültige E-Mail Adresse zu registrieren. Falls "
-"Foswiki keine registrierte E-Mail von Ihnen in der geschützten Datenbank "
-"finden kann, wird das System in ihrem Benutzer-Topic nach einer Zeile wie "
-"folgt Ausschau halten:"
+"Sie ändern Ihre E-Mail Adresse, indem Sie in ihrem Benutzer-Topic das "
+"Formfeld Email ändern.   Wenn diese Formfeld nicht existiert, sucht das "
+"System in ihrem Benutzer-Topic nach einer Zeile wie folgt Ausschau halten:"
 
 #: templates/messages.nat.tmpl:259
 msgid ""
@@ -2412,7 +2443,6 @@ msgid "Your [[%1][homepage]] has _not_ been removed yet."
 msgstr "Ihre [[%1][Profilseite]] ist noch _nicht_ gelöscht worden."
 
 #: templates/messages.nat.tmpl:108
-#, fuzzy
 msgid ""
 "Your activation code has been sent to %1.  Either click on the link in your "
 "e-mail or enter the code in the box below to activate your membership.  "
@@ -2423,16 +2453,15 @@ msgstr ""
 "Ihre Mitgliedschaft zu aktivieren. (Dieser Code ist von der Form \"IhrName."
 "xxxx\")"
 
-#: data/System/UserRegistrationViewTemplate.txt:124
+#: data/System/UserRegistrationViewTemplate.txt:129
 msgid "Your e-mail address"
 msgstr "Ihre E-Mail Adresse"
 
-#: data/System/UserRegistrationViewTemplate.txt:149
+#: data/System/UserRegistrationViewTemplate.txt:154
 msgid "Your first name"
 msgstr "Ihr Vorname"
 
 #: templates/oopslanguagechanged.nat.tmpl:8
-#, fuzzy
 msgid ""
 "Your language will be changed to %1 from the next screen. You will be "
 "redirected to there right now. If you aren't, [[%2][click here]] to proceed."
@@ -2451,11 +2480,11 @@ msgstr ""
 "umgeschaltet. Sie werden nun auf die nächste Seite weitergeleitet. Falls "
 "nicht, klicken Sie [[%1][hier]], um weiter zu kommen."
 
-#: data/System/UserRegistrationViewTemplate.txt:158
+#: data/System/UserRegistrationViewTemplate.txt:163
 msgid "Your last name"
 msgstr "Ihr Nachname"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:100
+#: data/System/NatSkinChangePasswordViewTemplate.txt:104
 msgid ""
 "Your login name. Note, you can't change your login name. Contact the "
 "administrator to do this for you."
@@ -2463,13 +2492,13 @@ msgstr ""
 "Ihr Login-Name. Achtung, sie können Ihren Login-Namen nicht mehr ändern. "
 "Kontaktieren Sie den Administrator, falls Sie dies trotzdem vorhaben."
 
-#: data/System/NatSkinResetPasswordViewTemplate.txt:82
+#: data/System/NatSkinResetPasswordViewTemplate.txt:85
 msgid ""
 "Your login name. Note, you can't change your login name. Contact your wiki "
 "administrator to do this for you."
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:170
+#: data/System/UserRegistrationViewTemplate.txt:175
 msgid ""
 "Your name as displayed online.  Note, this must be a unique [[%1]"
 "[WikiName]]. By default it is derived from your first and last name."
@@ -2482,7 +2511,7 @@ msgstr ""
 msgid "Your personal <nop>%WIKITOOLNAME% topic %1 has been created"
 msgstr "Ihr persönliches <nop>%WIKITOOLNAME% Profilwurde unter %1 angelegt"
 
-#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:22
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:26
 msgid ""
 "Your registered e-mails are used by Foswiki for sending you e-mails, include "
 "notifications of password changes."
@@ -2496,20 +2525,19 @@ msgstr "Ihr Benutzername wurde von dem Authentifizierungssystem gelöscht."
 msgid "attach"
 msgstr "anhängen"
 
-#: data/System/NatSkinWebSearchViewTemplate.txt:115
-msgid "back to %1"
-msgstr "zurück zu %1"
+#: templates/edit.nat.tmpl:22
+msgid "auto-detect"
+msgstr ""
 
 #: templates/backlinksallwebs.nat.tmpl:4 templates/backlinksweb.nat.tmpl:4
 msgid "backlinks"
 msgstr "Querverweise"
 
-#: templates/edit.nat.tmpl:120
-#, fuzzy
+#: templates/edit.nat.tmpl:121
 msgid "bordered"
 msgstr "Berahmt"
 
-#: templates/edit.nat.tmpl:181
+#: templates/edit.nat.tmpl:182
 msgid "both"
 msgstr ""
 
@@ -2517,11 +2545,11 @@ msgstr ""
 msgid "changes"
 msgstr "Änderungen"
 
-#: templates/edit.nat.tmpl:270
+#: templates/edit.nat.tmpl:271
 msgid "closed"
 msgstr "geschlossen"
 
-#: templates/edit.nat.tmpl:254
+#: templates/edit.nat.tmpl:255
 msgid "default"
 msgstr "Default"
 
@@ -2541,11 +2569,11 @@ msgstr "Formular bearbeiten"
 msgid "edit text"
 msgstr "Text editieren"
 
-#: templates/edit.nat.tmpl:116
+#: templates/edit.nat.tmpl:117
 msgid "fixed"
 msgstr ""
 
-#: templates/edit.nat.tmpl:118
+#: templates/edit.nat.tmpl:119
 msgid "fluid"
 msgstr ""
 
@@ -2561,7 +2589,7 @@ msgstr "Historie"
 msgid "indicates mandatory fields"
 msgstr "kennzeichnet Pflichtfelder"
 
-#: templates/edit.nat.tmpl:177
+#: templates/edit.nat.tmpl:178
 msgid "left"
 msgstr ""
 
@@ -2578,9 +2606,8 @@ msgid "move attachment"
 msgstr "Anhang verschieben"
 
 #: templates/attachtables.nat.tmpl:78
-#, fuzzy
 msgid "move this attachment to a different topic"
-msgstr "Sie können das Topic in ein anderes Web verschieben"
+msgstr "Anhang an ein anderes Topic hängen"
 
 #: data/System/MySideBar.txt:68
 msgid "no template"
@@ -2592,19 +2619,19 @@ msgstr "keine Vorlage"
 msgid "nothing found"
 msgstr "Keine Treffer"
 
-#: templates/edit.nat.tmpl:168 templates/edit.nat.tmpl:183
-#: templates/edit.nat.tmpl:192 templates/edit.nat.tmpl:201
-#: templates/edit.nat.tmpl:210 templates/edit.nat.tmpl:219
-#: templates/edit.nat.tmpl:228 templates/edit.nat.tmpl:237
-#: templates/edit.nat.tmpl:277
+#: templates/edit.nat.tmpl:169 templates/edit.nat.tmpl:184
+#: templates/edit.nat.tmpl:193 templates/edit.nat.tmpl:202
+#: templates/edit.nat.tmpl:211 templates/edit.nat.tmpl:220
+#: templates/edit.nat.tmpl:229 templates/edit.nat.tmpl:238
+#: templates/edit.nat.tmpl:278
 msgid "off"
 msgstr "aus"
 
-#: templates/edit.nat.tmpl:166 templates/edit.nat.tmpl:175
-#: templates/edit.nat.tmpl:190 templates/edit.nat.tmpl:199
-#: templates/edit.nat.tmpl:208 templates/edit.nat.tmpl:217
-#: templates/edit.nat.tmpl:226 templates/edit.nat.tmpl:235
-#: templates/edit.nat.tmpl:275
+#: templates/edit.nat.tmpl:167 templates/edit.nat.tmpl:176
+#: templates/edit.nat.tmpl:191 templates/edit.nat.tmpl:200
+#: templates/edit.nat.tmpl:209 templates/edit.nat.tmpl:218
+#: templates/edit.nat.tmpl:227 templates/edit.nat.tmpl:236
+#: templates/edit.nat.tmpl:276
 msgid "on"
 msgstr "an"
 
@@ -2612,7 +2639,7 @@ msgstr "an"
 msgid "oops"
 msgstr "oops"
 
-#: templates/edit.nat.tmpl:268
+#: templates/edit.nat.tmpl:269
 msgid "open"
 msgstr "offen"
 
@@ -2624,15 +2651,11 @@ msgstr "öffne %1"
 msgid "prefs"
 msgstr "Einstellungen"
 
-#: templates/preview.nat.tmpl:9
-msgid "preview"
-msgstr "Vorschau"
-
-#: templates/view.print.nat.tmpl:12
+#: templates/view.print.nat.tmpl:18
 msgid "printable"
 msgstr "druckbar"
 
-#: templates/changeform.nat.tmpl:25
+#: templates/changeform.nat.tmpl:33
 msgid "remove the current form (caution: possible data loss)"
 msgstr "entfernen des aktuellen Formulars (Achtung: möglicher Daten-Verlust)"
 
@@ -2648,11 +2671,15 @@ msgstr "Web umbenennen"
 msgid "restore"
 msgstr "Wiederherstellen"
 
-#: templates/edit.nat.tmpl:179
+#: templates/edit.nat.tmpl:180
 msgid "right"
 msgstr ""
 
-#: templates/searchbase.nat.tmpl:7 templates/searchbox.nat.tmpl:7
+#: templates/view.nat.tmpl:12
+msgid "scroll to the top"
+msgstr "nach oben scrollen"
+
+#: templates/searchbase.nat.tmpl:7 templates/searchbox.nat.tmpl:6
 msgid "search"
 msgstr "suchen"
 
@@ -2660,14 +2687,14 @@ msgstr "suchen"
 msgid "search in all webs"
 msgstr "Alle Webs durchsuchen"
 
-#: templates/view.nat.tmpl:85
+#: templates/view.nat.tmpl:78 templates/view.print.nat.tmpl:27
 msgid "show last change"
 msgstr "zeige letzte Änderung"
 
 #: templates/backlinks.nat.tmpl:115 templates/backlinks.nat.tmpl:142
 #: templates/childtopics.nat.tmpl:96
 msgid "showing only %1"
-msgstr ""
+msgstr "zeigt nur %1 an"
 
 #: templates/messages.nat.tmpl:178
 msgid "single character first name"
@@ -2677,7 +2704,7 @@ msgstr "erster Buchstabe des Vornamens"
 msgid "single character last name"
 msgstr "erster Buchstabe des Nachnamens"
 
-#: data/System/NatSkinWebSearchViewTemplate.txt:114
+#: data/System/NatSkinWebSearchViewTemplate.txt:77
 msgid "submit the query"
 msgstr ""
 

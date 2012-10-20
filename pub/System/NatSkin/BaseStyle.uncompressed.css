@@ -84,15 +84,6 @@ label, input, textarea, select, body, button {
   line-height:1.385em;
 }
 
-/* layout fix for chrome */
-/*
-label input[type=radio],
-label input[type=checkbox],
-label .foswikiCheckbox {
-  -webkit-margin-after:4px !important; 
-}
-*/
-
 blockquote, q {
   quotes:none;
 }
@@ -231,7 +222,6 @@ li li {
 
 dd {
   margin:0em 0em 1.385em 3.0769em;
-  /*margin-left:16em;*/
 }
 /*
 dt {
@@ -659,7 +649,6 @@ fieldset .foswikiFormSteps {
   margin-top:3px;
   margin-bottom:3px;
 }
-.natTopicAttachments .natTopicAction:hover,
 .natTopicAttachments .natTopicAction {
   float:right;
 }
@@ -1061,7 +1050,7 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 }
 
 .foswikiNewLink {
-  background:#eeeeee;
+  background:#eee;
 }
 
 .foswikiAlert {
@@ -1086,7 +1075,7 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 }
 
 .natBrowserSupportWarning {
-  position:absolute;
+  position:fixed;
   top:0;
   left:0;
   z-index:1000;
@@ -1170,24 +1159,9 @@ h4 a:hover, h5 a:hover, h6 a:hover {
   color:red;
 }
 
-.natOkButton {
-  color:green;
-}
-.natAltButton {
-  color:blue;
-}
-.natCancelButton {
-  color:red;
-}
-
-.natButtonBox {
-  margin:1em;
-}
-
 /* topic actions */
 .natGreeter {
   text-align:right;
-  padding:2px 5px;
 }
 .natGreeter {
   white-space:nowrap;
@@ -1203,9 +1177,6 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 .natUserAction {
   font-size:0.923em; /* 12px */
 }
-.natGreeter .natUserAction {
-  padding:3px 5px;
-}
 .natUserAction img {
   border:0;
   vertical-align:text-bottom;
@@ -1220,6 +1191,7 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 .natTopicActions span {
   color:#444;
 }
+.natTopicActions .sfHover .natMoreActionsTopicAction span,
 .natTopicAction:hover span {
   color:#fff;
 }
@@ -1292,10 +1264,9 @@ h4 a:hover, h5 a:hover, h6 a:hover {
           border-radius:2px;
 }
 .natTopicActions .sfHover .natMoreActionsTopicAction {
-  border:1px solid #004FA9;
+  border-bottom:0px;
   background-color:#0055b5;
   color:#fff;
-  border-bottom:0px;
   position:relative;
   -webkit-border-radius:2px 2px 0 0;
      -moz-border-radius:2px 2px 0 0;
@@ -1364,10 +1335,9 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 }
 
 a.natFeedIcon:hover {
-  background:#eee url("icons/feed-icon-12x12.png") 0px -14px no-repeat !important;
+  background:url("icons/feed-icon-12x12.png") 0px -14px no-repeat !important;
   text-decoration:none !important;
   color:#444 !important;
-  border:2px solid #eee;
 }
 a.natFeedIcon {
   background:url("icons/feed-icon-12x12.png") 0px 0px no-repeat !important;
@@ -1375,7 +1345,6 @@ a.natFeedIcon {
   color:#444;
   padding:1px 0px 0px 15px;
   margin:0px;
-  border:2px solid #fff;
 }
 .natFeedIcon {
   font-size:9px;
@@ -1459,7 +1428,7 @@ a.natFeedIcon {
   background:#dddddd;
 }
 .foswikiDiffLineNumberHeader th {
-  background:#eeeeee;
+  background:#eee;
 }
 
 td.foswikiDiffChangedHeader,
@@ -1842,13 +1811,25 @@ a.natScrollTop {
 }
 
 /* layout ************************************************************/
+.natMiddle {
+  background:#eee;
+}
+.natMiddleContents {
+  background:#fff;
+}
 .natMainHeaderContents {
-  margin-bottom:1.385em;
+  padding:1em 1em 0;
+}
+.natMainContents {
+  padding:1em;
+}
+.natMainFooterContents {
+  padding:0em 1em 1em;
 }
 
 .natSideBarContents  {
   margin:0em;
-  padding:0em 1em;
+  padding:0em 1em 1em 1em;
 }
 .natPlainBody {
   background-color:white;
@@ -1893,23 +1874,13 @@ th, /* opera */
   margin:0em auto 13em auto;
 }
 
-.natTopLeft, .natTopRight {
-  height:7.6923em; /* 100px */
-}
 .natTopRight {
   float:right;
 }
 
-.natTopLeftContents {
-  padding:25px 0em 0em 2.3077em; 
-}
-.natTopRightContents {
-  padding:35px 2.3077em 0em 0em;
-}
-
 .natBottomBarContents {
   text-align:left;
-  padding:2.3076em;
+  padding:1em;
 }
 .natLoadTime {
   position:absolute;
@@ -1917,28 +1888,30 @@ th, /* opera */
   right:0;
 }
 
-.natMiddle {
-  background-color:#E9E9E9;
-}
-.natMain {
-  padding:1.385em 2.3076em 2.3076em;
-  margin-left:16.1538em;
-  background-color:#fff;
-}
 .natSideBarHeader,
 .natSideBar {
-  width:16.1538em; /* 210px */
+  width:16em; 
 }
 
 /* sidebar left */
-.natSideBar {
+.natBodyBoth .natSideBar,
+.natBodyLeft .natSideBar {
   float:left;  
+  margin-left:-16em;
+}
+.natBodyLeft .natMain {
+  float:right;
+  width:100%;
+}
+.natBodyBoth .natMiddleContents,
+.natBodyLeft .natMiddleContents {
+  margin-left:16em;
 }
 
 /* sidebar off */
 .natBodyOff .natMain { 
-  margin-left:0;
-  margin-right:0;
+  float:none;
+  width:auto !important;
 }
 .natBodyOff .natSideBar {
   display:none;
@@ -1947,19 +1920,26 @@ th, /* opera */
 /* sidebar right */
 .natBodyRight .natSideBar {
   float:right;
+  margin-right:-16em;
 }
 .natBodyRight .natMain {
-  margin-left:0;
-  margin-right:16.1538em;
+  float:left;
+  width:100%;
+}
+.natBodyBoth .natMiddleContents,
+.natBodyRight .natMiddleContents {
+  margin-right:16em;
+  zoom:1; /* IE7 hack */
 }
 
 /* both sidebars */
-.natSideBarRight {
+.natBodyBoth .natSideBarRight {
   float:right;
+  margin-right:-16em;
 }
-.natBodyRight .natMain,
 .natBodyBoth .natMain {
-  margin-right:16.1538em;
+  float:left;
+  width:559px;
 }
 
 .natPreviewBody .natMainContents {
@@ -1968,10 +1948,6 @@ th, /* opera */
 .natCompareBody .natMainContents,
 .natViewHistoryBody .natMainContents {
   background-image:url('oldrevisionbg.png');
-}
-.natBodyLeft .natWebMenu,
-.natBodyBoth .natWebMenu {
-  padding-left:16.1538em;
 }
 
 .natSideBarContents {
@@ -1987,10 +1963,10 @@ th, /* opera */
 .natMainContents {
   min-height:40em;
 }
-
-.natMainContents {
-  width:100%;
+.natEditBody .natMainContents {
+  min-height:auto;
 }
+
 .natBodyRight .natMainContents {
   overflow:hidden;
 }
@@ -2195,7 +2171,7 @@ body .natSideBar .natMySideBarRedDot a:hover {
 }
 
 .natPoweredBy {
-
+  width:15em;
   text-decoration:none;
   position:fixed;
   bottom:1em;
@@ -2222,11 +2198,15 @@ body .natSideBar .natMySideBarRedDot a:hover {
   display:none;
 }
 
+.natEditBody .natMiddleContents {
+  background-image:none;
+  margin:0px;
+}
 .natEditBody .natMiddle,
 .natEditBody .natMain {
-  margin:0px;
   background-image:none;
   border:0px;
+  margin:0px;
 }
 
 .natEditBody {
@@ -2253,14 +2233,6 @@ body .natSideBar .natMySideBarRedDot a:hover {
 .natEditBody .natBottomBar,
 .natEditBody .natWebMenu {
   display:none;
-}
-.natEditBody .natSideBarContents, 
-.natEditBody .natMainContents {
-  min-height:0em;
-}
-.natEditBody .natMain {
-  padding:1.385em 1.923em 0em 1.923em;
-  border:0px !important;
 }
 
 .natEditTitle {
@@ -2293,13 +2265,6 @@ body .natSideBar .natMySideBarRedDot a:hover {
 }
 
 /* web menu ******************************************************************/
-.natWebMenu {
-  padding-left:2.3076em; /* 30px */
-}
-.natWebMenuContents {
-  margin:0;
-  padding:0;
-}
 .natWebMenu li a,
 .natWebMenu h2,
 .natWebMenu h3,
@@ -2479,9 +2444,6 @@ body .natSideBar .natMySideBarRedDot a:hover {
   display:none;
   border:1px solid #c2c4c4;
 }
-.sfHover .natMoreActionsTopicAction {
-  padding-bottom:5px;
-}
 
 .natHistoryTopicActions .natTopicActionShortLabel,
 .natBottomActions .natTopicActionShortLabel,
@@ -2584,14 +2546,6 @@ body .natSideBar .natMySideBarRedDot a:hover {
   display:none;
 }
 
-/* some basic background colors */
-.natTopBar {
-  background-color:#2E5CAC;
-}
-.natWebMenu {
-  background-color:#E9E9E9;
-}
-
 /* solr plugin */
 .natBody .solrRevision,
 .natBody .solrRevision a {
@@ -2636,3 +2590,4 @@ body .natSideBar .natMySideBarRedDot a:hover {
 .foswikiProfileInfo h1 {
   margin-top:0;
 }
+

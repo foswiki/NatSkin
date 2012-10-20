@@ -25,16 +25,26 @@ h1,
 
 /* layout */
 .natMiddle {
-  background-image:url(button-bg.png);
-  background-repeat:repeat-x;
-  background-position:0% 100%;
   border:1px #aaa solid;
   border-top:0px;
+  background-color:#E9E9E9;
 }
-.natMain {
-  background-image:url(button-bg.png);
+.natMiddleContents,
+.natMiddle {
+  background-image:url(../JazzyNoteTheme/button-bg.png);
   background-repeat:repeat-x;
   background-position:0% 100%;
+}
+
+.natBottomBarContents,
+.natWebMenuContents,
+.natMainHeaderContents,
+.natMainContents {
+  padding-left:1.5em;
+  padding-right:1.5em;
+}
+.natMainContents {
+  padding-bottom:1.5em;
 }
 .natPrintBody .natBodyContents {
   margin:0px !important;
@@ -43,6 +53,9 @@ h1,
 .natPrintBody .natMain {
   background-image:none;
   border:0px;
+}
+.natBottomBarContents {
+  padding-top:2em;
 }
 
 /* fluid layout */
@@ -262,8 +275,12 @@ h1,
 .natTopBar {
   background:url(foswiki-header-tile-blue.png) repeat-x;
   margin-left:25px;
-  height:7.6923em; /* 100px */
   max-height:100px;
+}
+.natTopBar,
+.natTopLeft,
+.natTopRight {
+  height:7.6923em; /* 100px */
 }
 .natTopLeft {
   background:url(foswiki-header-blue.png) no-repeat;
@@ -277,10 +294,6 @@ h1,
 }
 .natEditBody .natMain {
   background:#fff;
-}
-.natEditBody .natMainContents,
-.natEditBody .natMainFooterContents {
-  margin:0px;
 }
 
 /* sidebar */

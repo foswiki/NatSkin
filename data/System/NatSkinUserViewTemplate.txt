@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" date="1348825516" format="1.1" version="2"}%
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1349970303" format="1.1" reprev="2" version="2"}%
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%<!-- -->
 %TMPL:DEF{"form"}%%TMPL:END%
@@ -39,7 +39,7 @@
    }$percnt"
 }% 
 </div>
-<h1>%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%%REDDOT{action="form" parent=".foswikiProfileInfo" title="Edit information"}%</h1>
+<h1>%IF{"'%WEB%.%TOPIC%'/FirstName or '%WEB%.%TOPIC'/LastName" then="%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%" else="%TOPICTITLE%"}%%REDDOT{action="form" parent=".foswikiProfileInfo" title="Edit information"}%</h1>
 %RENDERFORDISPLAY{
   topic="%BASEWEB%.%BASETOPIC%"
   exclude="FirstName|LastName"
@@ -52,8 +52,8 @@
     <td valign='top'> $value </td>
 </tr>$n"
 }%
-</noautolink>
 %CLEAR%
+</noautolink>
 </div>
 <!-- -->%TMPL:END%
 %{</verbatim>}%

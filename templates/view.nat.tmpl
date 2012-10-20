@@ -55,7 +55,7 @@
 %TMPL:P{context="save" else="metadata"}%<!-- -->
 <!-- -->%TMPL:END%
 
-%TMPL:DEF{"rawbutton"}%%IF{"$'URLPARAM{raw}'='on'" then="<div class='natButtonBox'>$percntBUTTON{\"%MAKETEXT{"View"}%\" title=\"%MAKETEXT{"Back to view mode"}%\" style=\"float:right\" icon=\"eye\" target=\"%WEB%.%TOPIC%\"}$percnt$percntCLEAR$percnt</div>" else="<!-- -->" }%%TMPL:END%
+%TMPL:DEF{"rawbutton"}%%IF{"$'URLPARAM{raw}'='on'" then="<p>$percntBUTTON{\"%MAKETEXT{"View"}%\" title=\"%MAKETEXT{"Back to view mode"}%\" style=\"float:right\" icon=\"eye\" target=\"%WEB%.%TOPIC%\"}$percnt$percntCLEAR$percnt</p>" else="<!-- -->" }%%TMPL:END%
 %TMPL:DEF{"text"}%%TEXT%%TMPL:END%
 
 %{ ################################################################################ }%
@@ -66,7 +66,7 @@
 }%%IF{
   "$'DISPLAYBREADCRUMBS'='off'" 
   else="$percntTMPL:P{\"breadcrumbs_container\"}$percnt"
-}%%TMPL:END%
+}%%CLEAR%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"contentfooter"}%<!-- -->

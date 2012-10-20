@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="save topic" date="1307611821" format="1.1" reprev="6" version="7"}%
+%META:TOPICINFO{author="ProjectContributor" comment="save topic" date="1350410010" format="1.1" reprev="6" version="9"}%
 ---+ Style Browser
 Explore the style variations of the %SYSTEMWEB%.NatSkin by changing the base
 _style_ and a _variation_ of it. In general, style variations are used to change
@@ -8,7 +8,7 @@ the "reset" button whenever you want to revert your selection and come back to
 the site's default settings. Note that each web may have its own defaults built
 in. If you select different style options they have precedence over those.
 
-%STARTINCLUDE%<!-- style browser -->
+%STARTINCLUDE%<!-- -->
 <noautolink>
 <div class="natSkinStyleBrowser">
 <form action="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%" _method="post">
@@ -59,9 +59,16 @@ in. If you select different style options they have precedence over those.
 </div>
 %ADDTOZONE{"script" topic="%WEB%.%TOPIC%" section="javascript" requires="JQUERYPLUGIN::FOSWIKI"}%
 </noautolink>
-<!-- //style browser -->%STOPINCLUDE%
+<!-- -->%STOPINCLUDE%
 <verbatim style="display:none">
 %STARTSECTION{"javascript"}%<literal>
+<style>
+.natSkinStyleBrowser ul {
+  list-style:none;
+  margin:1em 0;
+  padding:0;
+}
+</style>
 <script>
 var knownVariations = {
   %KNOWNVARIATIONS{

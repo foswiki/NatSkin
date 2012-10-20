@@ -22,6 +22,7 @@
 %TMPL:DEF{"registration_disabled"}%<!-- -->
 <div class='foswikiErrorMessage'>
 %MAKETEXT{"Sorry, registration has been temporarily disabled."}%
+%MAKETEXT{"Contact <a href='[_1]'>the site administrator</a> for any further questions." args="mailto:%WIKIWEBMASTER%"}%
 </div>
 <!-- -->%TMPL:END%
 
