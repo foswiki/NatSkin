@@ -1,8 +1,8 @@
 %TMPL:INCLUDE{"page"}%<!-- template: attach.nat.tmpl -->
-%TMPL:INCLUDE{"attachtopicactions"}%<!-- attachtopicactions// -->
-%TMPL:INCLUDE{"attachbody"}%<!-- attachbody// -->
-%TMPL:INCLUDE{"attachsidebar"}%<!-- attachsidebar// -->
-%TMPL:INCLUDE{"metadata"}%<!-- attachsidebar// -->
+%TMPL:INCLUDE{"attachtopicactions"}%<!-- -->
+%TMPL:INCLUDE{"attachbody"}%<!-- -->
+%TMPL:INCLUDE{"attachsidebar"}%<!-- -->
+%TMPL:INCLUDE{"metadata"}%<!-- -->
 
 %{ ################################################################################ }%
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"attach"}%%TMPL:END%
@@ -13,8 +13,7 @@
 %TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%">%MAKETEXT{"Attachments"}%</a>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"content"}%<!-- content -->
-<div class="foswikiMetaData %IF{"not '%WEB%.%TOPIC%' allows 'change'" then="foswikiMetaDataNotAllowed"}%">
+%TMPL:DEF{"content"}%<div class="foswikiMetaData %IF{"not '%WEB%.%TOPIC%' allows 'change'" then="foswikiMetaDataNotAllowed"}%">
 %BUTTON{
   "%MAKETEXT{"Close"}%" 
   class="foswikiRight simple"
@@ -29,5 +28,4 @@
 <div>%TMPL:P{"attachments"}%</div>
 %TMPL:P{"metadata::css"}%
 %TMPL:P{"metadata::javascript"}%
-</div>
-<!-- //content -->%TMPL:END%
+</div>%TMPL:END%

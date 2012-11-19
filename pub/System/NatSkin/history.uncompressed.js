@@ -52,12 +52,12 @@ jQuery(function($) {
               render: "on"
             }, $navBtn.metadata()),
             $container = $this.parent().parent();
-        $container.block({message:"<h1>Loading ...</h1>"});
+        $.blockUI({message:"<h1>Loading ...</h1>"});
 
         $this.load(foswiki.getPreference("SCRIPTURL")+"/rest/RenderPlugin/template", 
           opts,
           function() {
-            $container.unblock();
+            $.unblockUI();
           });
         return false;
       });

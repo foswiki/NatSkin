@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1348820237" format="1.1" version="1"}%
+%META:TOPICINFO{author="micha" comment="save topic" date="1352942932" format="1.1" version="41"}%
 ---+!! %TOPIC%
 %BUTTON{"Toggle grid" icon="table" class="foswikiRight" onclick="jQuery('.natMain').toggleClass('showgrid-40x18')"}%
 
@@ -71,7 +71,7 @@ feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui.
 </p>
 
 <p class="foswikiSmallish">
-*foswikiSmall:*
+*foswikiSmallish:*
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
 euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
 ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
@@ -372,8 +372,6 @@ eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim q
    * %JQICON{"bullet_blue"}% blue
    * %JQICON{"bullet_blue"}% blue
 </div>
-
-
 
 ---++ Definitions
 

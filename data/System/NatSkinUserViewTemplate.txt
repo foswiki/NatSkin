@@ -3,13 +3,76 @@
 %TMPL:INCLUDE{"view"}%<!-- -->
 %TMPL:DEF{"form"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
+%TMPL:DEF{"userinfo::photo::width"}%100%TMPL:END%
+%TMPL:DEF{"beforetext"}%%TMPL:P{"userinfo"}%%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"beforetext"}%<!-- -->
+%TMPL:DEF{"userinfo"}%<!-- -->
 <noautolink>
 <div class="foswikiProfileInfo">
+%TMPL:P{"userinfo::photo"}%<!-- -->
+%TMPL:P{"userinfo::title"}%<!-- -->
+%TMPL:P{"userinfo::details"}%<!-- -->
+%CLEAR%
+</div>
+</noautolink>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"userinfo::title"}%<!-- -->
+<h1>%IF{
+    "'%WEB%.%TOPIC%'/FirstName or '%WEB%.%TOPIC'/LastName" 
+    then="%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%" 
+    else="%TOPICTITLE%"
+}%</h1>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"userinfo::details"}%%RENDERFORDISPLAY{
+  topic="%BASEWEB%.%BASETOPIC%"
+  exclude="FirstName|LastName"
+  hideempty="on"
+  header="<table class='foswikiLayoutTable'>$n"
+  footer="</table>"
+  separator=""
+  format="<tr>
+    <th valign='top'>$percntSPACEOUT{$title}$percnt:</th>
+    <td valign='top'> $value </td>
+</tr>$n"
+}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"userinfo::photo"}%<!-- -->
 <div class="foswikiImage foswikiLeft">
+%TMPL:P{context="TopicInteractionPluginEnabled" then="userinfo::photo::topicinteraction" else="userinfo::photo::default"}%<!-- -->
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"userinfo::photo::default"}%<!-- -->
+%IMAGE{
+   "%IF{"'%BASEWEB%.%BASETOPIC%'/Photo"
+     then="$percntFORMFIELD{\"Photo\" topic=\"%BASEWEB%.%BASETOPIC%\"}$percnt" 
+     else="%IF{"'%BASEWEB%.%BASETOPIC%'/attachments[name=~'\.(gif|png|jpe?g)$']"
+       then="%QUERY{"'%BASEWEB%.%BASETOPIC%'/attachments[name=~'\.(gif|png|jpe?g)'][0].name"}%"
+       else="%PUBURLPATH%/%SYSTEMWEB%/MetaCommentPlugin/nobody.gif"
+     }%"
+   }%"
+   topic="%BASEWEB%.%BASETOPIC%"
+   type="plain"
+   align="left"
+   width="%TMPL:P{"userinfo::photo::width"}%"
+}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"userinfo::photo::topicinteraction"}%<!-- -->
 %ATTACHMENTS{
    "%BASEWEB%.%BASETOPIC%"
    name=".*\.(jpe?g|gif|png|JE?PG|GIF|PNG)"
@@ -22,7 +85,7 @@
      topic=\"System.MetaCommentPlugin\"
      align=\"left\"
      type=\"plain\"
-     width=\"100\"
+     width=\"%TMPL:P{"userinfo::photo::width"}%\"
      crop=\"northwest\"
      title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
      warn=\"off\"
@@ -32,28 +95,11 @@
      topic=\"$web.$topic\"
      align=\"left\"
      type=\"plain\"
-     width=\"100\"
+     width=\"%TMPL:P{"userinfo::photo::width"}%\"
      crop=\"northwest\"
      title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
      warn=\"off\"
    }$percnt"
 }% 
-</div>
-<h1>%IF{"'%WEB%.%TOPIC%'/FirstName or '%WEB%.%TOPIC'/LastName" then="%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%" else="%TOPICTITLE%"}%%REDDOT{action="form" parent=".foswikiProfileInfo" title="Edit information"}%</h1>
-%RENDERFORDISPLAY{
-  topic="%BASEWEB%.%BASETOPIC%"
-  exclude="FirstName|LastName"
-  hideempty="on"
-  header="<table class='foswikiLayoutTable'>$n"
-  footer="</table>"
-  separator=""
-  format="<tr>
-    <th valign='top'>$percntSPACEOUT{$title}$percnt:</th>
-    <td valign='top'> $value </td>
-</tr>$n"
-}%
-%CLEAR%
-</noautolink>
-</div>
 <!-- -->%TMPL:END%
 %{</verbatim>}%

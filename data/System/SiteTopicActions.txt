@@ -6,7 +6,7 @@ Default site-level configuration for the !WebTopicActions !WebComponent
 %STARTINCLUDE%<!-- -->
 %USERACTIONS{
   guest="$action(pdf, can_generate_pdf)"
-  restrictedactions="new, history, raw, edit, copytopic, managetags, harvest"
+  restrictedactions="history, raw, edit, copytopic, managetags, harvest"
   format="$edit$attach$new$menu"
   history="<div class='natHistoryTopicActions'>$edit$raw$history$first$prev$next$last$action(close)</div>"
   menu="

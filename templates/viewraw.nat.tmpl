@@ -2,10 +2,10 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="jqUIDialog foswikiFormSteps {width:800, height:600, modal:true, resizable:true, draggable:true, alsoResize:'textarea'}" title="%TMPL:P{"heading"}%">
+<div class="jqUIDialog {width:800, modal:true, resizable:true, draggable:true}" title="%TMPL:P{"heading"}%">
   %TMPL:P{"viewrawjavascript"}%<!-- -->
-  <div id="natPreviewRaw" class="foswikiFormStep">
-    <textarea class="foswikiTextarea" rows="20" cols="80" style="width:99%; height:460px; resize:none;" readonly></textarea>
+  <div class="natPreviewRaw">
+    <textarea class="foswikiTextarea" rows="20" cols="80" readonly></textarea>
   </div>
  <a class="jqUIDialogButton {icon:'ui-icon-newwin', click: function() { window.location.href='%SCRIPTURL{"view"}%/%BASEWEB%/%BASETOPIC%?raw=text&skin=text&contenttype=text/plain&rev=%URLPARAM{"rev"}%'; }}">%MAKETEXT{"Open in separate window"}%</a>
  <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Close"}%</a>
@@ -24,11 +24,11 @@ jQuery(function($) {
     data: {
       raw:"text",
       skin:"text",
-      rev:%URLPARAM{"rev"}%
+      rev:"%URLPARAM{"rev"}%"
     },
     dataType:"text",
     success: function(data, status, xhr) {
-      var $textarea = $("#natPreviewRaw .foswikiTextarea");
+      var $textarea = $(".natPreviewRaw .foswikiTextarea");
       $textarea.text(data);
       setTimeout(function() { $textarea.focus(); }, 100);
     }

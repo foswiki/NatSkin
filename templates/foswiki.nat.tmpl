@@ -48,7 +48,7 @@
 %TMPL:DEF{"PRINT"}% %TMPL:P{"PRINT_SHORT"}%%TMPL:P{"PRINT_LONG"}%%TMPL:END%
 %TMPL:DEF{"PRINT_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Print"}%</span>%TMPL:END%
 %TMPL:DEF{"PRINT_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View printable version"}%</span>%TMPL:END%
-%TMPL:DEF{"PRINT_ACTION"}%<a class="natTopicAction natPrintAction" rel="nofollow" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=viewprint">%JQICON{"printer"}%%TMPL:P{"PRINT"}%</a>%TMPL:END%
+%TMPL:DEF{"PRINT_ACTION"}%<a class="natTopicAction natPrintAction" rel="nofollow" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?cover=print.nat">%JQICON{"printer"}%%TMPL:P{"PRINT"}%</a>%TMPL:END%
 %TMPL:DEF{"PRINT_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natPrintAction">%JQICON{"printer"}%%TMPL:P{"PRINT"}%</span>%TMPL:END%
 
 %TMPL:DEF{"RAW"}% %TMPL:P{"RAW_SHORT"}%%TMPL:P{"RAW_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
@@ -297,7 +297,7 @@
 
 %TMPL:DEF{"topictitle"}%%TMPL:P{context="DBCachePluginEnabled" then="topictitle_dbcache" else="topictitle_default"}%%TMPL:END%
 %TMPL:DEF{"topictitle_default"}%%IF{"defined 'TOPICTITLE'" then="%TOPICTITLE%" else="%BASETOPIC%"}%%TMPL:END%
-%TMPL:DEF{"topictitle_dbcache"}%%GETTOPICTITLE{encode="entity"}%%TMPL:END%
+%TMPL:DEF{"topictitle_dbcache"}%%GETTOPICTITLE%%TMPL:END%
 
 %TMPL:DEF{"iconpath:toggle"}%%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/toggle.png%TMPL:END%
 %TMPL:DEF{"iconpath:toggleopen"}%%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/toggle-collapse.png%TMPL:END%

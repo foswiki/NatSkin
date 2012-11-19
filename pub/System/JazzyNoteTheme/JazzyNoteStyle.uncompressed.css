@@ -46,14 +46,6 @@ h1,
 .natMainContents {
   padding-bottom:1.5em;
 }
-.natPrintBody .natBodyContents {
-  margin:0px !important;
-}
-.natPrintBody .natMiddle,
-.natPrintBody .natMain {
-  background-image:none;
-  border:0px;
-}
 .natBottomBarContents {
   padding-top:2em;
 }
@@ -153,7 +145,7 @@ h1,
   border-bottom-color:#fff;
 }
 .ui-dialog .foswikiFormSteps .jqTabContents {
-  background-color:#fff;
+  background-color:transparent;
 }
 
 /* tables */
