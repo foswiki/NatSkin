@@ -123,19 +123,6 @@ a:hover {
   text-decoration:none;
 }
 
-pre {
-  overflow-x:auto;
-  overflow-y:hidden;
-  margin:0em 0em 1em 0em;
-}
-
-/* fix scrollbars in ie7 */
-*:first-child+html 
-pre {
-  padding-bottom:1.5em;
-  margin:0px;
-}
-
 .hr:before, hr:before {
   clear:both;
 }
@@ -158,14 +145,26 @@ pre, code, textarea {
   font-family:"Bitstream Vera Sans Mono", "Andale Mono", monospace;
   line-height:17px; /* a bit less compared to sans-serif */
 }
+
 pre, textarea {
   line-height:1.385em;
 }
+
 pre {
+  overflow-x:auto;
+  overflow-y:hidden;
+  margin:0em 0em 1em 0em;
   background:#f6f6f6;
   padding:0.5em;
   border:1px solid #ddd;
 }
+
+*:first-child+html pre {
+  /* fix scrollbars in ie7 */
+  padding-bottom:1.5em;
+  margin:0px;
+}
+
 
 p { 
   font-size: 1em; /* 13px */ 

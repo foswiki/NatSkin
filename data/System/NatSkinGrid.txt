@@ -1,0 +1,235 @@
+%META:TOPICINFO{author="micha" comment="reprev" date="1354180398" format="1.1" reprev="10" version="10"}%
+---+!! %TOPIC%
+
+%TOC%
+
+<literal>
+<script type="text/javascript"> 
+jQuery(function($) {
+  $(".test div:odd").addClass("odd");
+});
+</script>
+<style>
+.foswikiGrid.test {
+  text-align: center;
+  background-color: #eee;
+  line-height:3em;
+}
+.foswikiGrid.test .odd {
+  background-color: #ADD8E6;
+}
+.foswikiGrid.test div {
+  background-color: #FFC0CB;
+}
+</style>
+</literal>
+
+---++ Columns
+<div class="foswikiGrid test">
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1 last">1/12</div>
+  <!-- -->
+  <div class="foswikiCol2">2/12</div>
+  <div class="foswikiCol2">2/12</div>
+  <div class="foswikiCol2">2/12</div>
+  <div class="foswikiCol2">2/12</div>
+  <div class="foswikiCol2">2/12</div>
+  <div class="foswikiCol2 last">2/12</div>
+  <!-- -->
+  <div class="foswikiCol3">3/12</div>
+  <div class="foswikiCol3">3/12</div>
+  <div class="foswikiCol3">3/12</div>
+  <div class="foswikiCol3 last">3/12</div>
+  <!-- -->
+  <div class="foswikiCol4">4/12</div>
+  <div class="foswikiCol4">4/12</div>
+  <div class="foswikiCol4 last">4/12</div>
+  <!-- -->
+  <div class="foswikiCol6">6/12</div>
+  <div class="foswikiCol6 last">6/12</div>
+  <!-- -->
+  <div class="foswikiCol12">12/12</div>
+</div>
+
+---++ Mix Columns
+<div class="foswikiGrid test">
+  <div class="foswikiCol7">7/12</div>
+  <div class="foswikiCol5 last">5/12</div>
+  <!-- -->
+  <div class="foswikiCol3">3/12</div>
+  <div class="foswikiCol4">4/12</div>
+  <div class="foswikiCol5 last">5/12</div>
+  <!-- -->
+  <div class="foswikiCol7">7/12</div>
+  <div class="foswikiCol2">2/12</div>
+  <div class="foswikiCol3 last">3/12</div>
+  <!-- -->
+  <div class="foswikiCol7">7/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1 last">1/12</div>
+</div>
+
+<div class="foswikiGrid test">
+  <!-- -->
+  <div class="foswikiCol8">8/12</div>
+  <div class="foswikiCol4 last">4/12</div>
+  <!-- -->
+  <div class="foswikiCol4">4/12</div>
+  <div class="foswikiCol4">4/12</div>
+  <div class="foswikiCol4 last">4/12</div>
+  <!-- -->
+  <div class="foswikiCol8">8/12</div>
+  <div class="foswikiCol2">2/12</div>
+  <div class="foswikiCol2 last">2/12</div>
+  <!-- -->
+  <div class="foswikiCol8">8/12</div>
+  <div class="foswikiCol3">3/12</div>
+  <div class="foswikiCol1 last">1/12</div>
+  <!-- -->
+  <div class="foswikiCol8">8/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1">1/12</div>
+  <div class="foswikiCol1 last">1/12</div>
+  <!-- -->
+</div>
+
+<div class="foswikiGrid test">
+  <div class="foswikiCol9">9/12</div>
+  <div class="foswikiCol3 last">3/12</div>
+  <!-- -->
+  <div class="foswikiCol6">6/12</div>
+  <div class="foswikiCol3">3/12</div>
+  <div class="foswikiCol3 last">3/12</div>
+  <!-- -->
+  <div class="foswikiCol10">10/12</div>
+  <div class="foswikiCol2 last">2/12</div>
+  <!-- -->
+  <div class="foswikiCol5">5/12</div>
+  <div class="foswikiCol5">5/12</div>
+  <div class="foswikiCol2 last">2/12</div>
+  <!-- -->
+  <div class="foswikiCol11">11/12</div>
+  <div class="foswikiCol1 last">1/12</div>
+  <!-- -->
+  <div class="foswikiCol5">5/12</div>
+  <div class="foswikiCol6">6/12</div>
+  <div class="foswikiCol1 last">1/12</div>
+</div>
+
+---++ Text example
+<div class="foswikiGrid">
+  <div class="foswikiRow">
+    <div class="foswikiCol6 border">
+      Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
+      habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
+      Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
+      sit integer? Aenean? 
+    </div>
+    <div class="foswikiCol6 last">
+      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
+      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
+      dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
+      phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
+      augue porta, cursus, a eu.
+    </div>
+  </div>
+---
+  <div class="foswikiRow">
+    <div class="foswikiCol4 border">
+      Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
+      habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
+      Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
+      sit integer? Aenean? 
+    </div>
+    <div class="foswikiCol4 border">
+      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
+      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
+      dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
+      phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
+      augue porta, cursus, a eu.
+    </div>
+    <div class="foswikiCol4 last">
+      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
+      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
+      dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
+      phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
+      augue porta, cursus, a eu.
+    </div>
+  </div>
+---
+  <div class="foswikiRow">
+    <div class="foswikiCol8 border">
+      Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
+      habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
+      Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
+      sit integer? Aenean? 
+    </div>
+    <div class="foswikiCol4 last">
+      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
+      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. 
+    </div>
+  </div>
+---
+  <div class="foswikiRow">
+    <div class="foswikiCol4 border">
+      Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
+      habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
+    </div>
+    <div class="foswikiCol8 last">
+      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
+      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
+      dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
+      phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
+      augue porta, cursus, a eu.
+    </div>
+  </div>
+---
+  <div class="foswikiRow">
+    <div class="foswikiCol3 border">
+      Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
+      habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
+      Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
+      sit integer? Aenean? 
+    </div>
+    <div class="foswikiCol3 border">
+      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
+      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
+      dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
+      phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
+      augue porta, cursus, a eu.
+    </div>
+    <div class="foswikiCol3 border">
+      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
+      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
+      dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
+      phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
+      augue porta, cursus, a eu.
+    </div>
+    <div class="foswikiCol3 last">
+      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
+      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
+      dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
+      phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
+      augue porta, cursus, a eu.
+    </div>
+  </div>
+</div><!-- end of grid -->
+
+
+%META:TOPICMOVED{by="micha" date="1354180398" from="Sandbox.NatGridTest" to="System.NatSkinGrid"}%
+%META:PREFERENCE{name="NATSKIN_SIDEBAR" title="NATSKIN_SIDEBAR" type="Local" value="off"}%
+%META:PREFERENCE{name="TOPICTITLE" title="TOPICTITLE" type="Local" value="NatSkin Grid"}%

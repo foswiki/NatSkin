@@ -1,0 +1,18 @@
+%META:TOPICINFO{author="ProjectContributor" comment="pending" date="1343316280" format="1.1" version="1"}%
+%{<verbatim>}%
+%TMPL:INCLUDE{"view"}%<!-- -->
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+%TMPL:DEF{"topicactions"}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"content"}%<!-- -->
+<h1 >%TOPIC%</h1>
+%MAKEINDEX{"%GROUPINFO%"
+  header="$anchors$n"
+  format="[[%USERSWEB%.$item]]"
+  footer="<span class='foswikiAlert'>$count</span> groups found"
+}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+

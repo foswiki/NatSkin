@@ -11,6 +11,7 @@ data/System/NatSkinChangePasswordViewTemplate.txt 0644
 data/System/NatSkinConfiguration.txt 0644
 data/System/NatSkinCss.txt 0644
 data/System/NatSkinFAQ.txt 0644
+data/System/NatSkinGrid.txt 0644
 data/System/NatSkinResetPasswordViewTemplate.txt 0644
 data/System/NatSkinStyleBrowser.txt 0644
 data/System/NatSkinTemplates.txt 0644
@@ -21,6 +22,7 @@ data/System/NatSkinWebCreateNewTopicTemplate.txt 0644
 data/System/NatSkinWebIndexViewTemplate.txt 0644
 data/System/NatSkinWebSearchViewTemplate.txt 0644
 data/System/NatSkinWebTopicListViewTemplate.txt 0644
+data/System/NatSkinWikiGroupsViewTemplate.txt 0644
 data/System/NatSkinWikiUsersViewTemplate.txt 0644
 data/System/SimpleUserRegistrationViewTemplate.txt 0644
 data/System/SiteBottomBar.txt 0644
@@ -202,7 +204,6 @@ templates/edittext.nat.tmpl 0644
 templates/form.nat.tmpl 0644
 templates/formtables.nat.tmpl 0644
 templates/foswiki.jazzynote.nat.tmpl 0644
-templates/foswiki.jazzynote.tmpl 0644
 templates/foswiki.nat.tmpl 0644
 templates/history.nat.tmpl 0644
 templates/javascript.nat.tmpl 0644
