@@ -10,7 +10,7 @@
 .natSideBarHeader,
 .natWebMenu {
   background-color:#4a4a4a;
-  border-top:0px;
+  border-top:1px solid #646464;
   border-bottom:1px solid #555;
 }
 .natBodyFixed .natSideBarHeaderLeft,
@@ -21,6 +21,10 @@
 .natWebMenu li,
 .natWebMenu li a {
   color:#eee;
+}
+.natWebMenu ul,
+.natWebMenu li {
+  border-color:#a3a3a3;
 }
 .natWebMenu li .foswikiCurrentWebHomeLink,
 .natWebMenu li a.current {

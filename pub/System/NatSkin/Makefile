@@ -6,7 +6,8 @@ TARGET= \
   natskin.js \
   obfuscator.js \
   print.css \
-  rename.js
+  rename.js \
+  password.js
 
 -include Makefile.include
 

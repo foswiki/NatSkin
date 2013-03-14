@@ -1,3 +1,4 @@
+%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278782" format="1.1" version="1"}%
 %{<verbatim>}%
 %TMPL:INCLUDE{"view"}%<!-- -->
 %TMPL:INCLUDE{"captcha"}%<!-- -->
@@ -52,6 +53,10 @@
 %TMPL:DEF{"formstart"}%<!-- -->
 <literal>
 <style>
+.jqGeneratePassword {
+  text-decoration:none;
+  padding-left:1em;
+}
 .foswikiFormStep h3 {
   float:left;
   width:15em;
@@ -141,6 +146,10 @@
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Choose a password"}%: <span class="foswikiAlert">**</span></h3>
   <input type="password" id="Fwk1Password" name="Fwk1Password" class="foswikiInputField" size="40" autocomplete="off" />
+  <a href="#" class="jqGeneratePassword" data-length="15" data-specials="true" data-target="#Fwk1Password">%JQICON{"key"}% %MAKETEXT{"Random password"}%</a>
+  <div class="foswikiFormDescription">
+    %MAKETEXT{"Make sure you remember your password, even more when generating one automatically."}%
+  </div>
 </div>
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Re-enter password"}%: <span class="foswikiAlert">**</span></h3>
@@ -273,6 +282,11 @@
 %{<verbatim>}%
 %TMPL:DEF{"formvalidation"}%<!-- -->
 %JQREQUIRE{"validate, wikiword"}%
+%ADDTOZONE{"script"
+  requires="JQUERYPLUGIN"
+  id="NATSKIN:PASSWORD"
+  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/password.js'></script>"
+}%<!-- -->
 %ADDTOZONE{"script" 
   requires="JQUERYPLUGIN::VALIDATE, JQUERYPLUGIN::WIKIWORD"
   text="<literal>
@@ -342,8 +356,7 @@ jQuery(function($) {
     });
 });
 </script></literal>"
-}% 
-<!-- -->%TMPL:END%
+}%<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%

@@ -1,4 +1,8 @@
+// (c)opyright 2006-2013 Michael Daum http://michaeldaumconsulting.com
+
 jQuery(function($) {
+  "use strict";
+
   var $loginForm = $("#LoginForm");
   $loginForm.validate();
   $loginForm.find("input").keydown(function(e) {

@@ -1,4 +1,23 @@
-%TMPL:INCLUDE{"WebCreateNewTopic"}%
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{"title"}%%HTMLTITLE{"%MAKETEXT{"Create a new topic"}%" separator=" %IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="-"}% "}%%TMPL:END%
+%TMPL:DEF{"breadcrumbstail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=newtopic" title="%TMPL:P{"NEW_HELP"}%">%MAKETEXT{"Create a new topic"}%</a>%TMPL:END%
+%TMPL:DEF{"formtitle"}%%MAKETEXT{"Create a new topic in the [_1] web" args="%WEBLINK{"%BASEWEB%" format="<nop>$title"}%"}%%TMPL:END%
+%TMPL:DEF{"topicactions"}%%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"content"}%<noautolink>
+%TMPL:P{"formtitlestep"}%
+<div class="foswikiFormSteps">
+  %TMPL:P{"formstartstep"}%
+  %TMPL:P{"topictitlestep"}%
+  %TMPL:P{"topictemplatestep"}%
+  %TMPL:P{"hiddenoptionsstep"}%<!-- -->
+  %TMPL:P{"formbuttons::default"}%
+  %TMPL:P{"formendstep"}%
+</div>
+</noautolink>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
@@ -7,17 +26,72 @@
   %TMPL:P{"topictitlestep"}%<!-- -->
   %TMPL:P{"topictemplatestep"}%<!-- -->
   %TMPL:P{"hiddenoptionsstep"}%<!-- -->
-  %TMPL:P{"formbuttons"}%<!-- -->
+  %TMPL:P{"formbuttons::dialog"}%<!-- -->
   %TMPL:P{"formendstep"}%<!-- -->
   %TMPL:P{"javascript"}%<!-- -->
 </div>
 </noautolink>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"formbuttons"}%<!-- -->
+%TMPL:DEF{"formstartstep"}%%TMPL:P{"formstart"}%%TMPL:END%
+%TMPL:DEF{"formstart"}%<!-- -->
+%JQREQUIRE{"wikiword, focus"}%<!-- -->
+<form name="newTopicForm" id="newTopicForm" action="%SCRIPTURLPATH{edit}%/%BASEWEB%/">
+<input type="hidden" name="t" value="%GMTIME{"$epoch"}%" />
+<input type="hidden" name="onlynewtopic" value="on" />
+<!-- -->%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"formendstep"}%%TMPL:P{"formend"}%%TMPL:END%
+%TMPL:DEF{"formend"}%</form>%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"formtitlestep"}%<h1>%TMPL:P{"formtitle"}%</h1>%TMPL:END%
+%TMPL:DEF{"formtitle"}%%MAKETEXT{"Create a new topic in the [_1] web" args="%WEBLINK{"%BASEWEB%" format="<nop>$title"}%"}%%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"topictitlestep"}%<!-- -->
+<div class='foswikiFormStep'>
+<h3 >%MAKETEXT{"Title"}%:</h3>
+%TMPL:P{"topictitleinput"}%
+</div>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"topictitleinput"}%<!-- -->
+<input type="text" class="foswikiInputField jqFocus" name="TopicTitle" id="topictitle" size="40" value="%TMPL:P{"newtopictitle"}%" style="width:98%" />
+<div class="foswikiFormDescription">
+%MAKETEXT{"Free form topic title text. The actual topic _name_ will be derived from the title automatically."}%
+</div>
+<!---->%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"formbuttons::dialog"}%<!-- -->
   <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-circle-check'}">%MAKETEXT{"Submit"}%</a>
   <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Cancel"}%</a>
 <!-- -->%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"formbuttons::default"}%<!-- -->
+<hr />
+<div class='foswikiFormStep foswikiFormLast foswikiFormButtons'>
+%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="tick"}%
+%BUTTON{"%MAKETEXT{"Cancel"}%" 
+  icon="cross" 
+  target="%URLPARAM{"origurl" 
+    default="%IF{"'%BASEWEB%.%BASETOPIC%'='%WEB%.%TOPIC%'"
+      then="%BASEWEB%.%HOMETOPIC%"
+      else="%BASEWEB%.%BASETOPIC%"
+    }%"
+  }%"
+}%
+%CLEAR%
+</div>
+<!-- -->%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"hiddenoptionsstep"}%%TMPL:P{"hiddentopicnamestep"}%%TMPL:P{"hiddentopicparentstep"}%%TMPL:END%
+%TMPL:DEF{"hiddentopicparentstep"}%<input type="hidden" name="topicparent" value="%URLPARAM{"topicparent" default="%TOPIC%"}%" />%TMPL:END%
+%TMPL:DEF{"hiddentopicnamestep"}%<input type="hidden" class="jqWikiWord {source:'#topictitle'}" name="topic" id="topic" value="%TMPL:P{"newtopic"}%"/>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"excludetopics"}%%IF{"defined DONTCREATETOPICS" 
@@ -48,9 +122,9 @@
     </div>"
   format="<div class='natTopicTemplate'>
     <label title='$percntENCODE{\"$expand(Summary)\" type=\"entity\"}$percnt'>
-      <input type='radio' name='templatetopic' value='$topic' class='foswikiRadioButton' />
-       $expand(topictitle)
-    </label>
+      <input type='radio' name='templatetopic' value='$topic' class='foswikiRadioButton' /> 
+        <nop>$topic 
+      </label>
     </div>"
   separator="$n"
   footer="%CLEAR%$n

@@ -1,4 +1,5 @@
-%META:TOPICINFO{author="ProjectContributor" comment="save topic" date="1350410010" format="1.1" reprev="6" version="9"}%
+%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278776" format="1.1" version="10"}%
+
 ---+ Style Browser
 Explore the style variations of the %SYSTEMWEB%.NatSkin by changing the base
 _style_ and a _variation_ of it. In general, style variations are used to change
@@ -87,9 +88,6 @@ function setVariations() {
       var selected = variation == selectedVariation ? "selected":"";
       varSelect.append("<option "+selected+">"+knownVariations[style][i]+"</option>");
     }
-  }
-  if (jQuery.browser.msie) {
-    varSelect.find("option").width("auto"); // IE7 fix, IE6 is okay
   }
 }
 jQuery(function() {

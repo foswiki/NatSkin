@@ -14,41 +14,46 @@
 %TMPL:DEF{"meta"}% %HTTP_EQUIV_ON_EDIT% %TMPL:END%
 %TMPL:DEF{"titleaction"}%%IF{"defined 'rev'" then="%MAKETEXT{"restore"}%" else="%MAKETEXT{"edit"}%"}%%TMPL:END%
 %TMPL:DEF{"contentheader"}%%TMPL:END%
+%TMPL:DEF{"natedit::options"}%, showDevTools:false%TMPL:END%
 
-%{ ################################################################################ 
-  SMELL: should come from cfg
-}%
-%TMPL:DEF{"supportedlanguages"}%
-  %MAKETEXT{"auto-detect"}%=detect,
-  %MAKETEXT{"Chinese"}%=cjk,
-  %MAKETEXT{"Danish"}%=da,
-  %MAKETEXT{"Dutch"}%=nl,
-  %MAKETEXT{"English"}%=en,
-  %MAKETEXT{"Finnish"}%=fi,
-  %MAKETEXT{"French"}%=fr,
-  %MAKETEXT{"German"}%=de,
-  %MAKETEXT{"Italian"}%=it,
-  %MAKETEXT{"Japanese"}%=cjk,
-  %MAKETEXT{"Korean"}%=cjk,
-  %MAKETEXT{"Portuguese"}%=pt,
-  %MAKETEXT{"Russian"}%=ru,
-  %MAKETEXT{"Spanish"}%=es,
-  %MAKETEXT{"Swedish"}%=se,
+%{ ################################################################################ }%
+%TMPL:DEF{"supportedlanguages::default"}%
+  %MAKETEXT{"default"}%=default;
+  %MAKETEXT{"Chinese"}%=cjk;
+  %MAKETEXT{"Danish"}%=da;
+  %MAKETEXT{"Dutch"}%=nl;
+  %MAKETEXT{"English"}%=en;
+  %MAKETEXT{"Finnish"}%=fi;
+  %MAKETEXT{"French"}%=fr;
+  %MAKETEXT{"German"}%=de;
+  %MAKETEXT{"Italian"}%=it;
+  %MAKETEXT{"Japanese"}%=cjk;
+  %MAKETEXT{"Korean"}%=cjk;
+  %MAKETEXT{"Portuguese"}%=pt;
+  %MAKETEXT{"Russian"}%=ru;
+  %MAKETEXT{"Spanish"}%=es;
+  %MAKETEXT{"Swedish"}%=sv;
   %MAKETEXT{"Turkish"}%=tr
+%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"supportedlanguages::multiling"}%
+%MAKETEXT{"default"}%=default;
+%LANGUAGES{format="$label$percntIF{\"'$label'!='$name'\" then=\" - $name\"}$percnt=$code" separator=";" sort="label"}%
 %TMPL:END%
 
 %TMPL:DEF{"moretopicsettings"}%<!-- -->
   <tr>
     <th>%MAKETEXT{"Content language"}%</th>
     <td>
-      <input type='hidden' name='Default+CONTENT_LANGUAGE' value='%GETVAR{"CONTENT_LANGUAGE" scope="web" default="detect"}%' />
+      <input type='hidden' name='Default+CONTENT_LANGUAGE' value='default' />
       <select name="Local+CONTENT_LANGUAGE" class="foswikiSelect">
         %FORMATLIST{
-          "%TMPL:P{"supportedlanguages"}%"
-          split="\s*,\s*"
+          "%TMPL:P{context="MultiLingualPluginEnabled" then="supportedlanguages::multiling" else="supportedlanguages::default"}%"
+          split="\s*;\s*"
           pattern="(.*)=(.*)"
           separator="$n"
-          format="<option value='$2' $percntIF{\"$'CONTENT_LANGUAGE'='$2' or (not defined CONTENT_LANGUAGE and '$2'='detect')\" then=\"selected\"}$percnt>$1</option>"
+          format="<option value='$2' $percntIF{\"$'CONTENT_LANGUAGE'='$2' or (not defined CONTENT_LANGUAGE and '$2'='default')\" then=\"selected\"}$percnt>$1</option>"
         }%
       </select>
     </td>
@@ -146,9 +151,6 @@ jQuery(function() {
         var selected = variation == selectedVariation ? "selected":"";
         varSelect.append("<option "+selected+">"+knownVariations[style][i]+"</option>");
       }
-    }
-    if (jQuery.browser.msie) {
-      varSelect.find("option").width("auto"); // IE7 fix, IE6 is okay
     }
   }
   jQuery("#style").change(function() {

@@ -1,4 +1,5 @@
-%META:TOPICINFO{author="ProjectContributor" date="1170174391" format="1.1" reprev="1.3" version="$Rev: 1340 $"}%
+%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278779" format="1.1" version="1"}%
+
 ---+ %MAKETEXT{"Note: This topic does not exist"}%
 
 *Do you want to create '<nop>%TOPIC%'?*

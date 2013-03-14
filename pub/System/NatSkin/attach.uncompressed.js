@@ -1,6 +1,8 @@
-// (c)opyright 2008-2012 Michael Daum http://michaeldaumconsulting.com
+// (c)opyright 2008-2013 Michael Daum http://michaeldaumconsulting.com
 /* toggle the attachment editor */
 (function($) {
+  "use strict";
+
   var lastElem;
 
   /* check if the comment of an attachment is empty;

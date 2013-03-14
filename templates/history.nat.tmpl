@@ -6,6 +6,7 @@
 %TMPL:P{"formstart"}%<!-- -->
 %TMPL:P{"revtable"}%<!-- -->
 %TMPL:P{"formend"}%<!-- -->
+%TMPL:P{"restoreform"}%<!-- -->
 %TMPL:P{"historyscript"}%<!-- -->
 </div>
 </noautolink>%TMPL:END%
@@ -45,6 +46,15 @@
 %TMPL:DEF{"historyscript"}%<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/history.js'></script>%TMPL:END%
 
 %{ ################################################################################ }%
+%TMPL:DEF{"restoreform"}%<!-- -->
+<form name="restore" action='%SCRIPTURLPATH{"manage"}%/%WEB%/%TOPIC%' method='post'>
+  <input type='hidden' type='text' name='rev' value='' />
+  <input type='hidden' name='action' value='restoreRevision' />
+  <input type='hidden' name='nowysiwyg' value='1' />
+</form>
+<!-- -->%TMPL:END%
+
+%{ ################################################################################ }%
 %TMPL:DEF{"revtable"}%<div class="natHistoryTable">
 %HISTORY{
   rev2="%URLPARAM{"rev"}%" 
@@ -75,7 +85,7 @@
       <a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?rev=$rev' title='%MAKETEXT{"View revision [_1]" args="$rev"}%' class='natHistoryAction'>
         %JQICON{"eye"}% %MAKETEXT{"View"}%
       </a>
-      <a href='%SCRIPTURLPATH{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%&rev=$rev' title='%MAKETEXT{"Restore revision [_1]" args="$rev"}%' class='natHistoryAction'>
+      <a href='#' title='%MAKETEXT{"Restore revision [_1]" args="$rev"}%' class='natHistoryAction natRestoreAction' data-rev='$rev'>
         %JQICON{"arrow_refresh"}% %MAKETEXT{"Restore"}%
       </a>
      </td>

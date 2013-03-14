@@ -1,4 +1,5 @@
-%META:TOPICINFO{author="ProjectContributor" date="1147166156" format="1.1" reprev="1.5" version="$Rev: 1340 $"}%
+%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278779" format="1.1" version="1"}%
+
 ---+ %TOPIC%
 Default <nop>WebHtmlHead component for your <nop>%WIKITOOLNAME% site.
 Create a <nop>WebHtmlHead topic in your web to override the content of this topic.

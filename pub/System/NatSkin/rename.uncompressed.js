@@ -1,4 +1,8 @@
+// (c)opyright 2008-2013 Michael Daum http://michaeldaumconsulting.com
+
 jQuery(function($) {
+  "use strict";
+
   var $form = $("form[name='rename']");
 
   $(".natRenameSetAll").click(function() {

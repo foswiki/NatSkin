@@ -77,6 +77,8 @@ ul, ol, dl {
 pre {
   page-break-inside:avoid;
   overflow:hidden;
+  white-space:pre-wrap;
+  word-break:break-all;
 }
 
 /* hidden elements */
@@ -184,7 +186,8 @@ pre {
 }
 .foswikiToc {
   text-align:left;
-  page-break-after:always;
+  /*page-break-after:always;*/
+  margin:0em 0em 2em;
 }
 .natTopicAttachments,
 .foswikiTocTitle {
@@ -192,7 +195,7 @@ pre {
 }
 .foswikiToc::before {
   font-size:160%;
-  margin:2em 0em 1em;
+  margin:1em 0em 1em;
   display:block;
   content: "Table of Contents";
 }

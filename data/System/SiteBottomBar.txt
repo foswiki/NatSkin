@@ -1,4 +1,6 @@
-%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1331117060" format="1.1" reprev="10" version="12"}%
+%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356776554" format="1.1" version="14"}%
+
+
 %META:TOPICPARENT{name="NatSkin"}%
 <h1 >%TOPIC%</h1>
 
@@ -29,10 +31,6 @@ Default bottombar component
    * $action(new)
 "
   guest=""
-}%%DBQUERY{
-  "TopicType=~'\bTopicType\b'"
-  exclude="TopicType|TopicStub"
-  format="   * [[$web.$topic][New $topic]]"
 }%<!-- -->
 </div>
 <div class="foswikiCol3">
@@ -63,8 +61,7 @@ Default bottombar component
 <div class="natCopyRight">%WEBCOPYRIGHT%</div>
 <div class="natSyndicate">
   %MAKETEXT{"Syndicate this site"}% 
-  <a class='natFeedIcon' href='%SCRIPTURL{"view"}%/%BASEWEB%/WebRss'>RSS</a>
-  <a class='natFeedIcon' href='%SCRIPTURL{"view"}%/%BASEWEB%/WebAtom'>ATOM</a>
+  <a class='natFeedIcon' href='%SCRIPTURL{"view"}%/%BASEWEB%/WebRss?contenttype=text/xml'>RSS</a>
 </div>
 <!-- //sitebottombar -->%STOPINCLUDE%
 

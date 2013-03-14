@@ -13,11 +13,11 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"meta"}%%TMPL:P{"metagenerator"}%
-%TMPL:P{"metadescription"}%
-%TMPL:P{"metakeywords"}%
-%TMPL:P{"metaauthor"}%
-%TMPL:P{"metaedit"}%
-%HTTP_EQUIV_ON_VIEW% %TMPL:END%
+%TMPL:P{"metadescription"}%<!-- -->
+%TMPL:P{"metakeywords"}%<!-- -->
+%TMPL:P{"metaauthor"}%<!-- -->
+%TMPL:P{"metaedit"}%<!-- -->
+%TMPL:P{"metarss"}% %TMPL:END%
 
 %TMPL:DEF{"metagenerator"}%<meta name='application-name' content='Foswiki %WIKIVERSION%' />%TMPL:END%
 
@@ -37,13 +37,15 @@
   else="<meta name='author' content='$percntTMPL:P{context=\"DBCachePluginEnabled\" then=\"metaauthor::dbcache\" else=\"metaauthor::default\"}$percnt' />"
 }%%TMPL:END%
 
-%TMPL:DEF{"metaauthor::default"}%%SPACEOUT{"%USERINFO{"%QUERY{"'%WEB%.%TOPIC%'/versions[-1].info.author"}%" format="$wikiname"}%"}%%TMPL:END%
+%TMPL:DEF{"metaauthor::default"}%%SPACEOUT{"%USERINFO{"%QUERY{"'%WEB%.%TOPIC%'/versions[1].info.author"}%" format="$wikiname"}%"}%%TMPL:END%
 %TMPL:DEF{"metaauthor::dbcache"}%%SPACEOUT{"%DBQUERY{topic="%WEB%.%TOPIC%" format="$expand(createauthor)"}%"}%%TMPL:END%
 
 %TMPL:DEF{"metaedit"}%%IF{
   "'%WEB%.%TOPIC%' allows 'change'" 
   then="<link rel='alternate' type='application/x-wiki' title='Edit this page!' href='%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%' />"
 }%%TMPL:END%
+
+%TMPL:DEF{"metarss"}%<link rel='alternate' type='application/rss+xml' title='RSS Feed' href='%SCRIPTURLPATH{"view"}%/%WEB%/WebRss?contenttype=text/xml' />%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"content"}%<!-- -->
@@ -52,7 +54,6 @@
 %TMPL:P{"rawbutton"}%<!-- -->
 %TMPL:P{"aftertext"}%<!-- -->
 %TMPL:P{"comments"}%<!-- -->
-%TMPL:P{context="save" else="metadata"}%<!-- -->
 <!-- -->%TMPL:END%
 
 %TMPL:DEF{"rawbutton"}%%IF{"$'URLPARAM{raw}'='on'" then="<p>$percntBUTTON{\"%MAKETEXT{"View"}%\" title=\"%MAKETEXT{"Back to view mode"}%\" style=\"float:right\" icon=\"eye\" target=\"%WEB%.%TOPIC%\"}$percnt$percntCLEAR$percnt</p>" else="<!-- -->" }%%TMPL:END%
@@ -70,6 +71,7 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"contentfooter"}%<!-- -->
+%TMPL:P{context="save" else="metadata"}%<!-- -->
 %IF{"$'DISPLAYREVISIONINFO'='off'" else="$percntTMPL:P{\"revinfo\"}$percnt"}%<!-- -->
 %TMPL:P{"editsettingsform"}%<!-- -->
 <!-- -->%TMPL:END%

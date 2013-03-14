@@ -1,11 +1,11 @@
 %TMPL:INCLUDE{"foswiki"}%<!-- template: languageselector.nat.tmpl -->
 
 %{ ################################################################################ }%
-%TMPL:DEF{"heading"}%%MAKETEXT{"Change interface language"}%%TMPL:END%
+%TMPL:DEF{"heading"}%%MAKETEXT{"Change language"}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="jqUIDialog foswikiFormSteps {width:480, height:260, modal:true, draggable:true}" title="%TMPL:P{"heading"}%">
+<div class="jqUIDialog foswikiFormSteps {width:480, modal:true, draggable:true}" title="%TMPL:P{"heading"}%">
   <form name="changelanguage" action="%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%" method="post">
     <input type="hidden" name="template" value="oopslanguagechanged" />
     <div class="foswikiFormStep">
@@ -16,10 +16,10 @@
             <select name="language" class="foswikiSelect">
               <option value="default">%MAKETEXT{"Default"}%</option>
               %LANGUAGES{
-                format="<option $marker value='$langtag'>$langname</option>" 
+                format="<option $marker value='$code'>$language$percntIF{\"'$language'!='$name'\" then=\" - $name\"}$percnt</option>" 
                 selection="%LANGUAGE%" 
                 marker="selected='selected'"
-                separator=" "
+                separator="\n"
               }%
             </select>
           </td>
@@ -28,13 +28,22 @@
 
       <div class="foswikiFormDescription">
         %MAKETEXT{"Select 'Default' to switch to the default language configured in your browser."}%
-
-        %MAKETEXT{"Note this will _only_ change the interface language, but not the default language of your content."}%      
       </div>
     </div>
     <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-circle-check'}">%MAKETEXT{"Submit"}%</a>
     <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Cancel"}%</a>
   </form>
 </div>
+%JQREQUIRE{"form"}%<!-- -->
+<literal>
+<script>
+jQuery(function($) {
+  $("form[name='changelanguage']").ajaxForm({
+    success: function() {
+      window.location.href = '%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%';
+    }
+  });  
+});
+</script>
+</literal>
 </noautolink>%TMPL:END%
-

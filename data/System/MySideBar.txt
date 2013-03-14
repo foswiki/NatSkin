@@ -1,4 +1,5 @@
-%META:TOPICINFO{author="ProjectContributor" date="1263480429" format="1.1" reprev="1.3" version="1.3"}%
+%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278776" format="1.1" version="3"}%
+
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ Create a personalized sidebar navigation
 %IF{"$'MYSIDEBAR'='off'"

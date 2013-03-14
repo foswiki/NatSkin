@@ -1,6 +1,6 @@
-%META:TOPICINFO{author="micha" comment="save topic" date="1352942932" format="1.1" version="41"}%
+%META:TOPICINFO{author="micha" comment="autosave" date="1359108940" format="1.1" version="45"}%
 ---+!! %TOPIC%
-%BUTTON{"Toggle grid" icon="table" class="foswikiRight" onclick="jQuery('.natMain').toggleClass('showgrid-40x18')"}%
+%BUTTON{"Toggle grid" icon="table" class="foswikiRight" onclick="jQuery('.natMain').toggleClass('showgrid')"}%
 
 uismod xxx tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
 ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl

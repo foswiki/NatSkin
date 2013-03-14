@@ -1,4 +1,5 @@
-%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1251882245" format="1.1" reprev="1.5" version="1.5"}%
+%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278806" format="1.1" version="6"}%
+
 %META:TOPICPARENT{name="ManagingWebs"}%
 ---+!! %MAKETEXT{"Create a new web"}%
 <form id="createNewWeb" name="admin" action="%SCRIPTURLPATH{manage}%/%WEB%/%TOPIC%" method="post">

@@ -1,3 +1,4 @@
+%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278778" format="1.1" version="1"}%
 %{<verbatim>}%
 %TMPL:INCLUDE{"UserRegistrationView"}%
 %TMPL:DEF{"extradetails"}%<!-- disabled -->%TMPL:END%

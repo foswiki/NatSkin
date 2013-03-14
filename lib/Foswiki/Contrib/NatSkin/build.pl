@@ -1,17 +1,13 @@
 #!/usr/bin/perl -w
-#
-# Build for NatSkin
-#
-BEGIN {
-  foreach my $pc (split(/:/, $ENV{FOSWIKI_LIBS})) {
-    unshift @INC, $pc;
-  }
-}
+use strict;
+use warnings;
+
+BEGIN { unshift @INC, split( /:/, $ENV{FOSWIKI_LIBS} ); }
 
 use Foswiki::Contrib::Build;
 
 # Create the build object
-$build = new Foswiki::Contrib::Build( 'NatSkin' );
+my $build = new Foswiki::Contrib::Build('NatSkin');
 
 # Build the target on the command line, or the default target
 $build->build($build->{target});

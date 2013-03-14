@@ -106,8 +106,8 @@
 %{ ################################################################################ }%
 %TMPL:DEF{"childtopicsjavascript"}%<literal><script>
 jQuery(function($) {
-  var url = "%SCRIPTURL{"rest"}%/RenderPlugin/template?name=childtopics;render=on;topic=%BASEWEB%.%BASETOPIC%",
+  var url = "%SCRIPTURL{"rest"}%/RenderPlugin/template?name=childtopics;render=on;topic=%BASEWEB%.%BASETOPIC%;expand=childtopicsearch",
       $container = $(".natChildTopicsContainer");
-  $container.html('%ICON{"processing"}%').load(url+";expand=childtopicsearch");
+  $container.html('<span class="jqAjaxLoader"></span>').load(url);
 });
 </script></literal>%TMPL:END%

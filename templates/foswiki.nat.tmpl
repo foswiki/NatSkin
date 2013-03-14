@@ -2,142 +2,148 @@
 %TMPL:DEF{"LOG_IN"}%%TMPL:P{"LOG_IN_SHORT"}%%TMPL:P{"LOG_IN_LONG"}%%TMPL:END%
 %TMPL:DEF{"LOG_IN_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Log in"}%</span>%TMPL:END%
 %TMPL:DEF{"LOG_IN_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Log in to [_1]." args="<nop>%WIKITOOLNAME%"}%</span>%TMPL:END%
-%TMPL:DEF{"LOG_IN_ACTION"}%<a class="natUserAction natLoginAction" rel="nofollow" href="$loginurl">%TMPL:P{"LOG_IN"}%</a>%TMPL:END%
-%TMPL:DEF{"LOG_IN_ACTION_RESTRICTED"}%<span class="natUserAction natDisabledUserAction natLoginAction">%TMPL:P{"LOG_IN"}%</span>%TMPL:END%
+%TMPL:DEF{"LOG_IN_ACTION"}%<a class='natUserAction natLoginAction' rel='nofollow' href='<literal>$loginurl</literal>'>%TMPL:P{"LOG_IN"}%</a>%TMPL:END%
+%TMPL:DEF{"LOG_IN_ACTION_RESTRICTED"}%<span class='natUserAction natDisabledUserAction natLoginAction'>%TMPL:P{"LOG_IN"}%</span>%TMPL:END%
 
 %TMPL:DEF{"LOG_OUT"}%%TMPL:P{"LOG_OUT_SHORT"}%%TMPL:P{"LOG_OUT_LONG"}%%TMPL:END%
 %TMPL:DEF{"LOG_OUT_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Log out"}%</span>%TMPL:END%
 %TMPL:DEF{"LOG_OUT_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Log out [_1]" args="<nop>%WIKINAME%"}%</span>%TMPL:END%
-%TMPL:DEF{"LOG_OUT_ACTION"}%<a class="natUserAction natLogoutAction" rel="nofollow" href="$logouturl">%TMPL:P{"LOG_OUT"}%</a>%TMPL:END%
-%TMPL:DEF{"LOG_OUT_ACTION_RESTRICTED"}%<span class="natUserAction natDisabledUserAction natLogoutAction">%TMPL:P{"LOG_OUT"}%</span>%TMPL:END%
+%TMPL:DEF{"LOG_OUT_ACTION"}%<a class='natUserAction natLogoutAction' rel='nofollow' href='$logouturl'>%TMPL:P{"LOG_OUT"}%</a>%TMPL:END%
+%TMPL:DEF{"LOG_OUT_ACTION_RESTRICTED"}%<span class='natUserAction natDisabledUserAction natLogoutAction'>%TMPL:P{"LOG_OUT"}%</span>%TMPL:END%
 
-%TMPL:DEF{"REGISTER"}% %TMPL:P{"REGISTER_SHORT"}%%TMPL:P{"REGISTER_LONG"}%%TMPL:END%
+%TMPL:DEF{"REGISTER"}%%TMPL:P{"REGISTER_SHORT"}%%TMPL:P{"REGISTER_LONG"}%%TMPL:END%
 %TMPL:DEF{"REGISTER_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Register"}%</span>%TMPL:END%
 %TMPL:DEF{"REGISTER_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Sign on to [_1]." args="<nop>%WIKITOOLNAME%"}%</span>%TMPL:END%
-%TMPL:DEF{"REGISTER_ACTION"}%<a class="natUserAction natRegisterAction" rel="nofollow" href="$registerurl">%TMPL:P{"REGISTER"}%</a>%TMPL:END%
-%TMPL:DEF{"REGISTER_ACTION_RESTRICTED"}%<span class="natUserAction natDisabledUserAction natRegisterAction">%TMPL:P{"REGISTER"}%</span>%TMPL:END%
+%TMPL:DEF{"REGISTER_ACTION"}%<a class='natUserAction natRegisterAction' rel='nofollow' href='$registerurl'>%TMPL:P{"REGISTER"}%</a>%TMPL:END%
+%TMPL:DEF{"REGISTER_ACTION_RESTRICTED"}%<span class='natUserAction natDisabledUserAction natRegisterAction'>%TMPL:P{"REGISTER"}%</span>%TMPL:END%
 
-%TMPL:DEF{"USERS"}% %TMPL:P{"USERS_SHORT"}%%TMPL:P{"USERS_LONG"}%%TMPL:END%
+%TMPL:DEF{"USERS"}%%TMPL:P{"USERS_SHORT"}%%TMPL:P{"USERS_LONG"}%%TMPL:END%
 %TMPL:DEF{"USERS_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Users"}%</span>%TMPL:END%
 %TMPL:DEF{"USERS_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Users directory"}%</span>%TMPL:END%
 %TMPL:DEF{"USERS_ACTION"}%<a class='natUserAction natUsersAction' href='%SCRIPTURLPATH{"view"}%/%USERSWEB%/%WIKIUSERSTOPIC%'>%TMPL:P{"USERS"}%</a>%TMPL:END%
 %TMPL:DEF{"USERS_ACTION_RESTRICTED"}%<span class='natUserAction natDisabledUserAction natUsersAction'>%TMPL:P{"USERS"}%</span>%TMPL:END%
 
 %TMPL:DEF{"ACCOUNT"}%<span class='natTopicActionShortLabel'>[[%WIKIUSERNAME%]]</span>%TMPL:END%
-%TMPL:DEF{"ACCOUNT_ACTION"}%<span class="natUserAction natAccountAction">%JQICON{"user"}%%TMPL:P{"ACCOUNT"}%</span>%TMPL:END%
-%TMPL:DEF{"ACCOUNT_ACTION_RESTRICTED"}%<span class="natUserAction natDisabledUserAction natAccountAction">%JQICON{"user"}%%TMPL:P{"ACCOUNT"}%</span>%TMPL:END%
+%TMPL:DEF{"ACCOUNT_ACTION"}%<span class='natUserAction natAccountAction'>%JQICON{"user"}%%TMPL:P{"ACCOUNT"}%</span>%TMPL:END%
+%TMPL:DEF{"ACCOUNT_ACTION_RESTRICTED"}%<span class='natUserAction natDisabledUserAction natAccountAction'>%JQICON{"user"}%%TMPL:P{"ACCOUNT"}%</span>%TMPL:END%
 
-%TMPL:DEF{"VIEW"}% %TMPL:P{"VIEW_SHORT"}%%TMPL:P{"VIEW_LONG"}%%TMPL:END%
+%TMPL:DEF{"VIEW"}%%TMPL:P{"VIEW_SHORT"}%%TMPL:P{"VIEW_LONG"}%%TMPL:END%
 %TMPL:DEF{"VIEW_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"View"}%</span>%TMPL:END%
 %TMPL:DEF{"VIEW_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View formatted topic"}%</span>%TMPL:END%
-%TMPL:DEF{"VIEW_ACTION"}%<a class="natTopicAction natViewAction" rel="nofollow" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%">%JQICON{"eye"}%%TMPL:P{"VIEW"}%</a>%TMPL:END%
-%TMPL:DEF{"VIEW_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natViewAction">%JQICON{"eye"}%%TMPL:P{"VIEW"}%</span>%TMPL:END%
+%TMPL:DEF{"VIEW_ACTION"}%<a class='natTopicAction natViewAction' rel='nofollow' href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%'>%JQICON{"eye"}%%TMPL:P{"VIEW"}%</a>%TMPL:END%
+%TMPL:DEF{"VIEW_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natViewAction'>%JQICON{"eye"}%%TMPL:P{"VIEW"}%</span>%TMPL:END%
 
-%TMPL:DEF{"BACKLINKS"}% %TMPL:P{"BACKLINKS_SHORT"}%%TMPL:P{"BACKLINKS_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
+%TMPL:DEF{"BACKLINKS"}%%TMPL:P{"BACKLINKS_SHORT"}%%TMPL:P{"BACKLINKS_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
 %TMPL:DEF{"BACKLINKS_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Backlinks"}%</span>%TMPL:END%
 %TMPL:DEF{"BACKLINKS_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Find backlinks"}%</span>%TMPL:END%
-%TMPL:DEF{"BACKLINKS_ACTION"}%<a class="natTopicAction jqUIDialogLink natBacklinksAction" href="%SCRIPTURL{"rest"}%/RenderPlugin/template?name=backlinks;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on" rel="nofollow" >%JQICON{"arrow_in"}%%TMPL:P{"BACKLINKS"}%</a>%TMPL:END%
-%TMPL:DEF{"BACKLINKS_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natBacklinksAction">%JQICON{"arrow_in"}%%TMPL:P{"BACKLINKS"}%</span>%TMPL:END%
+%TMPL:DEF{"BACKLINKS_ACTION"}%<a class='natTopicAction jqUIDialogLink natBacklinksAction' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=backlinks;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on' rel='nofollow' >%JQICON{"arrow_in"}%%TMPL:P{"BACKLINKS"}%</a>%TMPL:END%
+%TMPL:DEF{"BACKLINKS_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natBacklinksAction'>%JQICON{"arrow_in"}%%TMPL:P{"BACKLINKS"}%</span>%TMPL:END%
 
-%TMPL:DEF{"CHILDTOPICS"}% %TMPL:P{"CHILDTOPICS_SHORT"}%%TMPL:P{"CHILDTOPICS_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
+%TMPL:DEF{"CHILDTOPICS"}%%TMPL:P{"CHILDTOPICS_SHORT"}%%TMPL:P{"CHILDTOPICS_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
 %TMPL:DEF{"CHILDTOPICS_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Children"}%</span>%TMPL:END%
 %TMPL:DEF{"CHILDTOPICS_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Find child topics"}%</span>%TMPL:END%
-%TMPL:DEF{"CHILDTOPICS_ACTION"}%<a class="natTopicAction jqUIDialogLink natChildtopicsAction" href="%SCRIPTURL{"rest"}%/RenderPlugin/template?name=childtopics;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on" rel="nofollow">%JQICON{"sitemap"}%%TMPL:P{"CHILDTOPICS"}%</a>%TMPL:END%
-%TMPL:DEF{"CHILDTOPICS_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natChildtopicsAction">%JQICON{"sitemap"}%%TMPL:P{"CHILDTOPICS"}%</span>%TMPL:END%
+%TMPL:DEF{"CHILDTOPICS_ACTION"}%<a class='natTopicAction jqUIDialogLink natChildtopicsAction' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=childtopics;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"sitemap"}%%TMPL:P{"CHILDTOPICS"}%</a>%TMPL:END%
+%TMPL:DEF{"CHILDTOPICS_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natChildtopicsAction'>%JQICON{"sitemap"}%%TMPL:P{"CHILDTOPICS"}%</span>%TMPL:END%
 
-%TMPL:DEF{"PRINT"}% %TMPL:P{"PRINT_SHORT"}%%TMPL:P{"PRINT_LONG"}%%TMPL:END%
+%TMPL:DEF{"PRINT"}%%TMPL:P{"PRINT_SHORT"}%%TMPL:P{"PRINT_LONG"}%%TMPL:END%
 %TMPL:DEF{"PRINT_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Print"}%</span>%TMPL:END%
 %TMPL:DEF{"PRINT_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View printable version"}%</span>%TMPL:END%
-%TMPL:DEF{"PRINT_ACTION"}%<a class="natTopicAction natPrintAction" rel="nofollow" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?cover=print.nat">%JQICON{"printer"}%%TMPL:P{"PRINT"}%</a>%TMPL:END%
-%TMPL:DEF{"PRINT_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natPrintAction">%JQICON{"printer"}%%TMPL:P{"PRINT"}%</span>%TMPL:END%
+%TMPL:DEF{"PRINT_ACTION"}%<a class='natTopicAction natPrintAction' rel='nofollow' href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?cover=print.nat'>%JQICON{"printer"}%%TMPL:P{"PRINT"}%</a>%TMPL:END%
+%TMPL:DEF{"PRINT_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natPrintAction'>%JQICON{"printer"}%%TMPL:P{"PRINT"}%</span>%TMPL:END%
 
-%TMPL:DEF{"RAW"}% %TMPL:P{"RAW_SHORT"}%%TMPL:P{"RAW_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
+%TMPL:DEF{"RAW"}%%TMPL:P{"RAW_SHORT"}%%TMPL:P{"RAW_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
 %TMPL:DEF{"RAW_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Raw"}%</span>%TMPL:END%
 %TMPL:DEF{"RAW_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View wiki markup"}%</span>%TMPL:END%
-%TMPL:DEF{"RAW_ACTION"}%<a class="natTopicAction jqUIDialogLink natRawAction" href="%SCRIPTURL{"rest"}%/RenderPlugin/template?name=viewraw;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on;rev=$rev" rel="nofollow">%JQICON{"text_align_left"}%%TMPL:P{"RAW"}%</a>%TMPL:END%
-%TMPL:DEF{"RAW_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natRawAction">%JQICON{"text_align_left"}%%TMPL:P{"RAW"}%</span>%TMPL:END%
+%TMPL:DEF{"RAW_ACTION"}%<a class='natTopicAction jqUIDialogLink natRawAction' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=viewraw;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on;rev=$rev' rel='nofollow'>%JQICON{"text_align_left"}%%TMPL:P{"RAW"}%</a>%TMPL:END%
+%TMPL:DEF{"RAW_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natRawAction'>%JQICON{"text_align_left"}%%TMPL:P{"RAW"}%</span>%TMPL:END%
 
-%TMPL:DEF{"EDIT"}% %TMPL:P{"EDIT_SHORT"}%%TMPL:P{"EDIT_LONG"}%%TMPL:END%
+%TMPL:DEF{"EDIT"}%%TMPL:P{"EDIT_SHORT"}%%TMPL:P{"EDIT_LONG"}%%TMPL:END%
 %TMPL:DEF{"EDIT_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Edit"}%</span>%TMPL:END%
 %TMPL:DEF{"EDIT_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Edit this topic"}%</span>%TMPL:END%
-%TMPL:DEF{"EDIT_ACTION"}%<a class="natTopicAction natEditAction" rel="nofollow" href="$editurl">%JQICON{"pencil"}%%TMPL:P{"EDIT"}%</a>%TMPL:END%
-%TMPL:DEF{"EDIT_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natEditAction">%JQICON{"pencil"}%%TMPL:P{"EDIT"}%</span>%TMPL:END%
+%TMPL:DEF{"EDIT_ACTION"}%<a class='natTopicAction natEditAction' rel='nofollow' href='$editurl'>%JQICON{"pencil"}%%TMPL:P{"EDIT"}%</a>%TMPL:END%
+%TMPL:DEF{"EDIT_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natEditAction'>%JQICON{"pencil"}%%TMPL:P{"EDIT"}%</span>%TMPL:END%
 
-%TMPL:DEF{"EDITRAW"}% %TMPL:P{"EDITRAW_SHORT"}%%TMPL:P{"EDITRAW_LONG"}%%TMPL:END%
+%TMPL:DEF{"EDITRAW"}%%TMPL:P{"EDITRAW_SHORT"}%%TMPL:P{"EDITRAW_LONG"}%%TMPL:END%
 %TMPL:DEF{"EDITRAW_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Edit"}%</span>%TMPL:END%
 %TMPL:DEF{"EDITRAW_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Edit wiki markup"}%</span>%TMPL:END%
-%TMPL:DEF{"EDITRAW_ACTION"}%<a class="natTopicAction natEditRawAction" rel="nofollow" href="%SCRIPTURLPATH{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%;nowysiwyg=on">%JQICON{"pencil"}%%TMPL:P{"EDITRAW"}%</a>%TMPL:END%
-%TMPL:DEF{"EDITRAW_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natEditRawAction">%JQICON{"pencil"}%%TMPL:P{"EDITRAW"}%</span>%TMPL:END%
+%TMPL:DEF{"EDITRAW_ACTION"}%<a class='natTopicAction natEditRawAction' rel='nofollow' href='%SCRIPTURLPATH{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%;nowysiwyg=on'>%JQICON{"pencil"}%%TMPL:P{"EDITRAW"}%</a>%TMPL:END%
+%TMPL:DEF{"EDITRAW_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natEditRawAction'>%JQICON{"pencil"}%%TMPL:P{"EDITRAW"}%</span>%TMPL:END%
 
-%TMPL:DEF{"EDITFORM"}% %TMPL:P{"EDITFORM_SHORT"}%%TMPL:P{"EDITFORM_LONG"}%%TMPL:END%
+%TMPL:DEF{"EDITFORM"}%%TMPL:P{"EDITFORM_SHORT"}%%TMPL:P{"EDITFORM_LONG"}%%TMPL:END%
 %TMPL:DEF{"EDITFORM_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Edit form"}%</span>%TMPL:END%
 %TMPL:DEF{"EDITFORM_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Edit form data"}%</span>%TMPL:END%
-%TMPL:DEF{"EDITFORM_ACTION"}%<a class="natTopicAction natEditFormAction" rel="nofollow" href="%SCRIPTURLPATH{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%&action=form">%JQICON{"application_form_edit"}%%TMPL:P{"EDITFORM"}%</a>%TMPL:END%
-%TMPL:DEF{"EDITFORM_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natEditFormAction">%JQICON{"application_form_edit"}%%TMPL:P{"EDITFORM"}%</span>%TMPL:END%
+%TMPL:DEF{"EDITFORM_ACTION"}%<a class='natTopicAction natEditFormAction' rel='nofollow' href='%SCRIPTURLPATH{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%&action=form'>%JQICON{"application_form_edit"}%%TMPL:P{"EDITFORM"}%</a>%TMPL:END%
+%TMPL:DEF{"EDITFORM_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natEditFormAction'>%JQICON{"application_form_edit"}%%TMPL:P{"EDITFORM"}%</span>%TMPL:END%
 
-%TMPL:DEF{"EDITTEXT"}% %TMPL:P{"EDITTEXT_SHORT"}%%TMPL:P{"EDITTEXT_LONG"}%%TMPL:END%
+%TMPL:DEF{"EDITTEXT"}%%TMPL:P{"EDITTEXT_SHORT"}%%TMPL:P{"EDITTEXT_LONG"}%%TMPL:END%
 %TMPL:DEF{"EDITTEXT_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Edit text"}%</span>%TMPL:END%
 %TMPL:DEF{"EDITTEXT_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Edit text data of this topic"}%</span>%TMPL:END%
-%TMPL:DEF{"EDITTEXT_ACTION"}%<a class="natTopicAction natEditTextAction" rel="nofollow" href="%SCRIPTURLPATH{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%&action=text">%JQICON{"pencil"}%%TMPL:P{"EDITTEXT"}%</a>%TMPL:END%
-%TMPL:DEF{"EDITTEXT_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natEditTextAction">%TMPL:P{"EDITTEXT"}%</span>%TMPL:END%
+%TMPL:DEF{"EDITTEXT_ACTION"}%<a class='natTopicAction natEditTextAction' rel='nofollow' href='%SCRIPTURLPATH{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%&action=text'>%JQICON{"pencil"}%%TMPL:P{"EDITTEXT"}%</a>%TMPL:END%
+%TMPL:DEF{"EDITTEXT_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natEditTextAction'>%TMPL:P{"EDITTEXT"}%</span>%TMPL:END%
 
-%TMPL:DEF{"EDITSETTINGS"}% %TMPL:P{"EDITSETTINGS_SHORT"}%%TMPL:P{"EDITSETTINGS_LONG"}%%TMPL:END%
+%TMPL:DEF{"EDITSETTINGS"}%%TMPL:P{"EDITSETTINGS_SHORT"}%%TMPL:P{"EDITSETTINGS_LONG"}%%TMPL:END%
 %TMPL:DEF{"EDITSETTINGS_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Preferences"}%</span>%TMPL:END%
 %TMPL:DEF{"EDITSETTINGS_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Edit topic preferences"}%</span>%TMPL:END%
-%TMPL:DEF{"EDITSETTINGS_ACTION"}%<a class="natTopicAction natEditSettingsAction" rel="nofollow=" href="#">%JQICON{"wrench"}%%TMPL:P{"EDITSETTINGS"}%</a>%TMPL:END%
-%TMPL:DEF{"EDITSETTINGS_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natEditSettingsAction">%JQICON{"wrench"}%%TMPL:P{"EDITSETTINGS"}%</span>%TMPL:END%
+%TMPL:DEF{"EDITSETTINGS_ACTION"}%<a class='natTopicAction natEditSettingsAction' rel='nofollow=' href='#'>%JQICON{"wrench"}%%TMPL:P{"EDITSETTINGS"}%</a>%TMPL:END%
+%TMPL:DEF{"EDITSETTINGS_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natEditSettingsAction'>%JQICON{"wrench"}%%TMPL:P{"EDITSETTINGS"}%</span>%TMPL:END%
 
-%TMPL:DEF{"RESTORE"}% %TMPL:P{"RESTORE_SHORT"}%%TMPL:P{"RESTORE_LONG"}%%TMPL:END%
+%TMPL:DEF{"RESTORE"}%%TMPL:P{"RESTORE_SHORT"}%%TMPL:P{"RESTORE_LONG"}%%TMPL:END%
 %TMPL:DEF{"RESTORE_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Restore"}%</span>%TMPL:END%
 %TMPL:DEF{"RESTORE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Restore previous version"}%</span>%TMPL:END%
-%TMPL:DEF{"RESTORE_ACTION"}%<a class="natTopicAction natRestoreAction" rel="nofollow" href="$restoreurl">%JQICON{"pencil_go"}%%TMPL:P{"RESTORE"}%</a>%TMPL:END%
-%TMPL:DEF{"RESTORE_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natRestoreAction">%JQICON{"pencil_go"}%%TMPL:P{"RESTORE"}%</span>%TMPL:END%
+%TMPL:DEF{"RESTORE_ACTION"}%<a class='natTopicAction natRestoreAction' rel='nofollow' href='$restoreurl'>%JQICON{"pencil_go"}%%TMPL:P{"RESTORE"}%</a>%TMPL:END%
+%TMPL:DEF{"RESTORE_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natRestoreAction'>%JQICON{"pencil_go"}%%TMPL:P{"RESTORE"}%</span>%TMPL:END%
 
-%TMPL:DEF{"ATTACH"}% %TMPL:P{"ATTACH_SHORT"}%%TMPL:P{"ATTACH_LONG"}%%TMPL:END%
+%TMPL:DEF{"ATTACH"}%%TMPL:P{"ATTACH_SHORT"}%%TMPL:P{"ATTACH_LONG"}%%TMPL:END%
 %TMPL:DEF{"ATTACH_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Attach"}%</span>%TMPL:END%
 %TMPL:DEF{"ATTACH_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Attach files and images"}%</span>%TMPL:END%
-%TMPL:DEF{"ATTACH_ACTION"}%<a class="natTopicAction natAttachAction" rel="nofollow" href="%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%">%JQICON{"attach"}%%TMPL:P{"ATTACH"}%</a>%TMPL:END%
-%TMPL:DEF{"ATTACH_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natAttachAction">%JQICON{"attach"}%%TMPL:P{"ATTACH"}%</span>%TMPL:END%
+%TMPL:DEF{"ATTACH_ACTION"}%<a class='natTopicAction natAttachAction' rel='nofollow' href='%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%'>%JQICON{"attach"}%%TMPL:P{"ATTACH"}%</a>%TMPL:END%
+%TMPL:DEF{"ATTACH_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natAttachAction'>%JQICON{"attach"}%%TMPL:P{"ATTACH"}%</span>%TMPL:END%
 
-%TMPL:DEF{"DELETE"}% %TMPL:P{"DELETE_SHORT"}%%TMPL:P{"DELETE_LONG"}%%TMPL:END%
+%TMPL:DEF{"DELETE"}%%TMPL:P{"DELETE_SHORT"}%%TMPL:P{"DELETE_LONG"}%%TMPL:END%
 %TMPL:DEF{"DELETE_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Delete"}%</span>%TMPL:END%
 %TMPL:DEF{"DELETE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Delete this topic"}%</span>%TMPL:END%
-%TMPL:DEF{"DELETE_ACTION"}%<a class="natTopicAction natDeleteAction" rel="nofollow" href="%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%?newweb=%TRASHWEB%%IF{"not context SolrPluginEnabled" then="&currentwebonly=on"}%">%JQICON{"bin"}%%TMPL:P{"DELETE"}%</a>%TMPL:END%
-%TMPL:DEF{"DELETE_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natDeleteAction">%JQICON{"bin"}%%TMPL:P{"DELETE"}%</span>%TMPL:END%
+%TMPL:DEF{"DELETE_ACTION"}%<a class='natTopicAction natDeleteAction' rel='nofollow' href='%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%?newweb=%TRASHWEB%%IF{"not context SolrPluginEnabled" then="&currentwebonly=on"}%'>%JQICON{"bin"}%%TMPL:P{"DELETE"}%</a>%TMPL:END%
+%TMPL:DEF{"DELETE_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natDeleteAction'>%JQICON{"bin"}%%TMPL:P{"DELETE"}%</span>%TMPL:END%
 
-%TMPL:DEF{"MOVE"}% %TMPL:P{"MOVE_SHORT"}%%TMPL:P{"MOVE_LONG"}%%TMPL:END%
+%TMPL:DEF{"MOVE"}%%TMPL:P{"MOVE_SHORT"}%%TMPL:P{"MOVE_LONG"}%%TMPL:END%
 %TMPL:DEF{"MOVE_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Move"}%</span>%TMPL:END%
 %TMPL:DEF{"MOVE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Rename or move this topic"}%</span>%TMPL:END%
-%TMPL:DEF{"MOVE_ACTION"}%<a class="natTopicAction natMoveAction" rel="nofollow" href="%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%%IF{"not context SolrPluginEnabled" then="?currentwebonly=on"}%">%JQICON{"page_white_go"}%%TMPL:P{"MOVE"}%</a>%TMPL:END%
-%TMPL:DEF{"MOVE_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natMoveAction">%JQICON{"page_white_go"}%%TMPL:P{"MOVE"}%</span>%TMPL:END%
+%TMPL:DEF{"MOVE_ACTION"}%<a class='natTopicAction natMoveAction' rel='nofollow' href='%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%%IF{"not context SolrPluginEnabled" then="?currentwebonly=on"}%'>%JQICON{"page_white_go"}%%TMPL:P{"MOVE"}%</a>%TMPL:END%
+%TMPL:DEF{"MOVE_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natMoveAction'>%JQICON{"page_white_go"}%%TMPL:P{"MOVE"}%</span>%TMPL:END%
 
-%TMPL:DEF{"HISTORY"}% %TMPL:P{"HISTORY_SHORT"}%%TMPL:P{"HISTORY_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
+%TMPL:DEF{"HISTORY"}%%TMPL:P{"HISTORY_SHORT"}%%TMPL:P{"HISTORY_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
 %TMPL:DEF{"HISTORY_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"History"}%</span>%TMPL:END%
 %TMPL:DEF{"HISTORY_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View revision history"}%</span>%TMPL:END%
-%TMPL:DEF{"HISTORY_ACTION"}%<a class="natTopicAction jqUIDialogLink natHistoryAction" href="%SCRIPTURL{"rest"}%/RenderPlugin/template?name=history;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on;rev=$rev" rel="nofollow">%JQICON{"time"}%%TMPL:P{"HISTORY"}%</a>%TMPL:END%
-%TMPL:DEF{"HISTORY_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natHistoryAction">%JQICON{"time"}%%TMPL:P{"HISTORY"}%</span>%TMPL:END%
+%TMPL:DEF{"HISTORY_ACTION"}%<a class='natTopicAction jqUIDialogLink natHistoryAction' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=history;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on;rev=$rev' rel='nofollow'>%JQICON{"time"}%%TMPL:P{"HISTORY"}%</a>%TMPL:END%
+%TMPL:DEF{"HISTORY_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natHistoryAction'>%JQICON{"time"}%%TMPL:P{"HISTORY"}%</span>%TMPL:END%
 
-%TMPL:DEF{"CLOSE"}% %TMPL:P{"CLOSE_SHORT"}%%TMPL:P{"CLOSE_LONG"}%%TMPL:END%
+%TMPL:DEF{"CLOSE"}%%TMPL:P{"CLOSE_SHORT"}%%TMPL:P{"CLOSE_LONG"}%%TMPL:END%
 %TMPL:DEF{"CLOSE_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Close"}%</span>%TMPL:END%
 %TMPL:DEF{"CLOSE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Close this dialog"}%</span>%TMPL:END%
-%TMPL:DEF{"CLOSE_ACTION"}%<a class="natTopicAction natCloseAction" rel="nofollow" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%">%JQICON{"cross"}%%TMPL:P{"CLOSE"}%</a>%TMPL:END%
-%TMPL:DEF{"CLOSE_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natCloseAction">%TMPL:P{"CLOSE"}%</span>%TMPL:END%
+%TMPL:DEF{"CLOSE_ACTION"}%<a class='natTopicAction natCloseAction' rel='nofollow' href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%'>%JQICON{"cross"}%%TMPL:P{"CLOSE"}%</a>%TMPL:END%
+%TMPL:DEF{"CLOSE_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natCloseAction'>%TMPL:P{"CLOSE"}%</span>%TMPL:END%
 
-%TMPL:DEF{"MORE"}% %TMPL:P{"MORE_SHORT"}%%TMPL:P{"MORE_LONG"}%%TMPL:END%
+%TMPL:DEF{"MORE"}%%TMPL:P{"MORE_SHORT"}%%TMPL:P{"MORE_LONG"}%%TMPL:END%
 %TMPL:DEF{"MORE_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"More"}%</span>%TMPL:END%
 %TMPL:DEF{"MORE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"More actions"}%</span>%TMPL:END%
-%TMPL:DEF{"MORE_ACTION_LEGACY"}%<a class="natTopicAction natMoreTopicAction" rel="nofollow" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more">%JQICON{"wrench"}%%TMPL:P{"MORE"}%</a>%TMPL:END%
-%TMPL:DEF{"MORE_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natMoreTopicAction">%JQICON{"wrench"}%%TMPL:P{"MORE"}%</span>%TMPL:END%
+%TMPL:DEF{"MORE_ACTION_LEGACY"}%<a class='natTopicAction natMoreTopicAction' rel='nofollow' href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%JQICON{"wrench"}%%TMPL:P{"MORE"}%</a>%TMPL:END%
+%TMPL:DEF{"MORE_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natMoreTopicAction'>%JQICON{"wrench"}%%TMPL:P{"MORE"}%</span>%TMPL:END%
 
-%TMPL:DEF{"CHANGELANGUAGE"}% %TMPL:P{"CHANGELANGUAGE_SHORT"}%%TMPL:P{"CHANGELANGUAGE_LONG"}%%TMPL:END%
+%TMPL:DEF{"CHANGELANGUAGE"}%%TMPL:P{"CHANGELANGUAGE_SHORT"}%%TMPL:P{"CHANGELANGUAGE_LONG"}%%TMPL:END%
 %TMPL:DEF{"CHANGELANGUAGE_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Language"}%</span>%TMPL:END%
-%TMPL:DEF{"CHANGELANGUAGE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Change interface language"}%</span>%TMPL:END%
-%TMPL:DEF{"CHANGELANGUAGE_ACTION"}%<a class="natTopicAction jqUIDialogLink natChangeLanguageAction" href="%SCRIPTURL{"rest"}%/RenderPlugin/template?name=languageselector;expand=dialog;topic=%BASEWEB%/%BASETOPIC%;render=on" rel="nofollow">%JQICON{"world"}%%TMPL:P{"CHANGELANGUAGE"}%</a>%TMPL:END%
-%TMPL:DEF{"CHANGELANGUAGE_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natChangeLanguageAction">%TMPL:P{"CHANGELANGUAGE"}%</span>%TMPL:END%
+%TMPL:DEF{"CHANGELANGUAGE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Change language"}%</span>%TMPL:END%
+%TMPL:DEF{"CHANGELANGUAGE_ACTION"}%<a class='natTopicAction jqUIDialogLink natChangeLanguageAction' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=languageselector;expand=dialog;topic=%BASEWEB%/%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"world"}%%TMPL:P{"CHANGELANGUAGE"}%</a>%TMPL:END%
+%TMPL:DEF{"CHANGELANGUAGE_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natChangeLanguageAction'>%TMPL:P{"CHANGELANGUAGE"}%</span>%TMPL:END%
+
+%TMPL:DEF{"TRANSLATETOPIC"}%%TMPL:P{"TRANSLATETOPIC_SHORT"}%%TMPL:P{"TRANSLATETOPIC_LONG"}%%TMPL:END%
+%TMPL:DEF{"TRANSLATETOPIC_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Translate"}%</span>%TMPL:END%
+%TMPL:DEF{"TRANSLATETOPIC_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Translate topic"}%</span>%TMPL:END%
+%TMPL:DEF{"TRANSLATETOPIC_ACTION"}%<a class='natTopicAction natTranslateTopicAction' href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=translatetopic'>%JQICON{"arrow_switch"}%%TMPL:P{"TRANSLATETOPIC"}%</a>%TMPL:END%
+%TMPL:DEF{"TRANSLATETOPIC_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natTranslateTopicAction'>%TMPL:P{"TRANSLATETOPIC"}%</span>%TMPL:END%
 
 %TMPL:DEF{"MENU"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"More"}%</span>%TMPL:END%
-%TMPL:DEF{"MENU_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natMenuAction">%JQICON{"cog"}%%TMPL:P{"MENU"}%</span>%TMPL:END%
-%TMPL:DEF{"MENU_HEADER"}%<ul class="natMoreActionsMenu {delay:1000}"><li><span class="natTopicAction natMoreActionsTopicAction">%JQICON{"cog"}%%TMPL:P{"MENU"}%</span>%TMPL:END%
+%TMPL:DEF{"MENU_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natMenuAction'>%JQICON{"cog"}%%TMPL:P{"MENU"}%</span>%TMPL:END%
+%TMPL:DEF{"MENU_HEADER"}%<ul class='natMoreActionsMenu {delay:1000}'><li><span class='natTopicAction natMoreActionsTopicAction'>%JQICON{"cog"}%%TMPL:P{"MENU"}%</span>%TMPL:END%
 %TMPL:DEF{"MENU_FORMAT"}%
    * $action(move)
    * $action(delete)
@@ -153,29 +159,29 @@
    * $action(print)
    * $action(pdf)
    * <hr />
-   * $action(changelanguage, i18n_enabled)
-   * $action(webdavdir, WebDAVLinkPluginEnabled)
+   * $action(changelanguage, i18n_enabled) %IF{"$MULTILINGUAL = 'on'" then="
+   * $action(translatetopic, i18n_enabled)"}%
    * $action(subscribe, SubscribePluginEnabled)
    * $action(managetags, ClassificationPluginEnabled)
    * $action(harvest, HarvestPluginEnabled)
 %TMPL:END%
 %TMPL:DEF{"MENU_FOOTER"}%</li></ul>%TMPL:END%
 
-%TMPL:DEF{"NEW"}% %TMPL:P{"NEW_SHORT"}%%TMPL:P{"NEW_LONG"}%%JQREQUIRE{"ui::dialog, wikiword, focus"}%%TMPL:END%
+%TMPL:DEF{"NEW"}% %TMPL:P{"NEW_SHORT"}%%TMPL:P{"NEW_LONG"}%%JQREQUIRE{"ui::dialog, wikiword"}%%TMPL:END%
 %TMPL:DEF{"NEW_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"New"}%</span>%TMPL:END%
 %TMPL:DEF{"NEW_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"New topic"}%</span>%TMPL:END%
-%TMPL:DEF{"NEW_ACTION"}%<a class="natTopicAction jqUIDialogLink natNewAction" rel="nofollow" href="%SCRIPTURL{"rest"}%/RenderPlugin/template?name=newtopic;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on" rel="nofollow">%JQICON{"page_white_add"}%%TMPL:P{"NEW"}%</a>%TMPL:END%
-%TMPL:DEF{"NEW_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natNewAction">%JQICON{"page_white_add"}%%TMPL:P{"NEW"}%</span>%TMPL:END%
+%TMPL:DEF{"NEW_ACTION"}%<a class='natTopicAction jqUIDialogLink natNewAction' rel='nofollow' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=newtopic;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"page_white_add"}%%TMPL:P{"NEW"}%</a>%TMPL:END%
+%TMPL:DEF{"NEW_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natNewAction'>%JQICON{"page_white_add"}%%TMPL:P{"NEW"}%</span>%TMPL:END%
 
 %TMPL:DEF{"HELP"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Help"}%</span>%TMPL:END%
-%TMPL:DEF{"HELP_ACTION"}%<a class="natTopicAction natHelpAction" rel="nofollow" href="$helpurl">%JQICON{"help"}%%TMPL:P{"HELP"}%</a>%TMPL:END%
-%TMPL:DEF{"HELP_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natHelpAction">%JQICON{"help"}%%TMPL:P{"HELP"}%</span>%TMPL:END%
+%TMPL:DEF{"HELP_ACTION"}%<a class='natTopicAction natHelpAction' rel='nofollow' href='$helpurl'>%JQICON{"help"}%%TMPL:P{"HELP"}%</a>%TMPL:END%
+%TMPL:DEF{"HELP_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natHelpAction'>%JQICON{"help"}%%TMPL:P{"HELP"}%</span>%TMPL:END%
 
 %TMPL:DEF{"PDF"}% %TMPL:P{"PDF_SHORT"}%%TMPL:P{"PDF_LONG"}%%TMPL:END%
 %TMPL:DEF{"PDF_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"PDF"}%</span>%TMPL:END%
 %TMPL:DEF{"PDF_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Export topic to PDF"}%</span>%TMPL:END%
-%TMPL:DEF{"PDF_ACTION"}%<a class="natTopicAction natPdfAction" rel="nofollow" href="$pdfurl">%JQICON{"page_white_acrobat"}%%TMPL:P{"PDF"}%</a>%TMPL:END%
-%TMPL:DEF{"PDF_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natPdfAction">%JQICON{"page_white_acrobat"}%%TMPL:P{"PDF"}%</span>%TMPL:END%
+%TMPL:DEF{"PDF_ACTION"}%<a class='natTopicAction natPdfAction' rel='nofollow' href='$pdfurl'>%JQICON{"page_white_acrobat"}%%TMPL:P{"PDF"}%</a>%TMPL:END%
+%TMPL:DEF{"PDF_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natPdfAction'>%JQICON{"page_white_acrobat"}%%TMPL:P{"PDF"}%</span>%TMPL:END%
 
 %TMPL:DEF{"SUBSCRIBE"}% %TMPL:P{"SUBSCRIBE_SHORT"}%%TMPL:P{"SUBSCRIBE_LONG"}%%TMPL:END%
 %TMPL:DEF{"SUBSCRIBE_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Notify"}%</span>%TMPL:END%
@@ -189,7 +195,7 @@
   formatunsubscribe="<a class='natTopicAction natSubscribeAction' rel='nofollow' href='$url'>%JQICON{"email_stop"}%%TMPL:P{"UNSUBSCRIBE"}%</a>"
 
 }%%TMPL:END%
-%TMPL:DEF{"SUBSCRIBE_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natSubscribeAction">%JQICON{"emain_add"}%%TMPL:P{"SUBSCRIBE"}%</span>%TMPL:END%
+%TMPL:DEF{"SUBSCRIBE_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natSubscribeAction'>%JQICON{"emain_add"}%%TMPL:P{"SUBSCRIBE"}%</span>%TMPL:END%
 
 %TMPL:DEF{"WEBDAVDIR"}% %TMPL:P{"WEBDAVDIR_SHORT"}% %TMPL:P{"WEBDAVDIR_LONG"}%%TMPL:END%
 %TMPL:DEF{"WEBDAVDIR_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"<nop>WebDAV Directory"}%</span>%TMPL:END%
@@ -200,50 +206,50 @@
 %TMPL:DEF{"HARVEST"}% %TMPL:P{"HARVEST_SHORT"}%%TMPL:P{"HARVEST_LONG"}%%TMPL:END%
 %TMPL:DEF{"HARVEST_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Download"}%</span>%TMPL:END%
 %TMPL:DEF{"HARVEST_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Download external resource"}%</span>%TMPL:END%
-%TMPL:DEF{"HARVEST_ACTION"}%<a class="natTopicAction natHarvestAction" rel="nofollow" href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=harvestplugin">%JQICON{"photos"}%%TMPL:P{"HARVEST"}%</a>%TMPL:END%
-%TMPL:DEF{"HARVEST_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natHarvestAction">%JQICON{"photos"}%%TMPL:P{"HARVEST"}%</span>%TMPL:END%
+%TMPL:DEF{"HARVEST_ACTION"}%<a class='natTopicAction natHarvestAction' rel='nofollow' href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=harvestplugin'>%JQICON{"photos"}%%TMPL:P{"HARVEST"}%</a>%TMPL:END%
+%TMPL:DEF{"HARVEST_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natHarvestAction'>%JQICON{"photos"}%%TMPL:P{"HARVEST"}%</span>%TMPL:END%
 
-%TMPL:DEF{"MANAGETAGS"}% %TMPL:P{"MANAGETAGS_SHORT"}%%TMPL:P{"MANAGETAGS_LONG"}%%JQREQUIRE{"textboxlist, ui::dialog, form, focus"}%%TMPL:END%
+%TMPL:DEF{"MANAGETAGS"}% %TMPL:P{"MANAGETAGS_SHORT"}%%TMPL:P{"MANAGETAGS_LONG"}%%JQREQUIRE{"textboxlist, ui::dialog, form"}%%TMPL:END%
 %TMPL:DEF{"MANAGETAGS_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Tags"}%</span>%TMPL:END%
 %TMPL:DEF{"MANAGETAGS_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Manage tags in this web"}%</span>%TMPL:END%
-%TMPL:DEF{"MANAGETAGS_ACTION"}%<a class="natTopicAction jqUIDialogLink natManageTagsAction" href="%SCRIPTURL{"rest"}%/RenderPlugin/template?name=managetags;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on" rel="nofollow">%JQICON{"tag_blue_edit"}%%TMPL:P{"MANAGETAGS"}%</a>%TMPL:END%
-%TMPL:DEF{"MANAGETAGS_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natManageTagsAction">%JQICON{"tag_blue_edit"}%%TMPL:P{"MANAGETAGS"}%</span>%TMPL:END%
+%TMPL:DEF{"MANAGETAGS_ACTION"}%<a class='natTopicAction jqUIDialogLink natManageTagsAction' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=managetags;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"tag_blue_edit"}%%TMPL:P{"MANAGETAGS"}%</a>%TMPL:END%
+%TMPL:DEF{"MANAGETAGS_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natManageTagsAction'>%JQICON{"tag_blue_edit"}%%TMPL:P{"MANAGETAGS"}%</span>%TMPL:END%
 
 %TMPL:DEF{"FIRST"}% %TMPL:P{"FIRST_SHORT"}%%TMPL:P{"FIRST_LONG"}%%TMPL:END%
 %TMPL:DEF{"FIRST_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"First"}%</span>%TMPL:END%
 %TMPL:DEF{"FIRST_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View first revision"}%</span>%TMPL:END%
-%TMPL:DEF{"FIRST_ACTION"}%<a class="natTopicAction natFirstAction" rel="nofollow" href="$firsturl"><img alt="start" src="%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start.png" />%TMPL:P{"FIRST"}%</a>%TMPL:END%
-%TMPL:DEF{"FIRST_ACTION_RESTRICTION"}%<span class="natTopicAction natDisabledTopicAction natFirstAction"><img alt="start" src="%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start-gray.png" />%TMPL:P{"FIRST"}%</span>%TMPL:END%
+%TMPL:DEF{"FIRST_ACTION"}%<a class='natTopicAction natFirstAction' rel='nofollow' href='$firsturl'><img alt='start' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start.png' />%TMPL:P{"FIRST"}%</a>%TMPL:END%
+%TMPL:DEF{"FIRST_ACTION_RESTRICTION"}%<span class='natTopicAction natDisabledTopicAction natFirstAction'><img alt='start' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start-gray.png' />%TMPL:P{"FIRST"}%</span>%TMPL:END%
 
 %TMPL:DEF{"NEXT"}% %TMPL:P{"NEXT_SHORT"}%%TMPL:P{"NEXT_LONG"}%%TMPL:END%
 %TMPL:DEF{"NEXT_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Next"}%</span>%TMPL:END%
 %TMPL:DEF{"NEXT_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View next revision"}%</span>%TMPL:END%
-%TMPL:DEF{"NEXT_ACTION"}%<a class="natTopicAction natNextAction" rel="nofollow" href="$nexturl"><img alt="next" src="%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-right.png" />%TMPL:P{"NEXT"}%</a>%TMPL:END%
-%TMPL:DEF{"NEXT_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natNextAction"><img alt="next" src="%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-right-gray.png" />%TMPL:P{"NEXT"}%</span>%TMPL:END%
+%TMPL:DEF{"NEXT_ACTION"}%<a class='natTopicAction natNextAction' rel='nofollow' href='$nexturl'><img alt='next' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-right.png' />%TMPL:P{"NEXT"}%</a>%TMPL:END%
+%TMPL:DEF{"NEXT_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natNextAction'><img alt='next' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-right-gray.png' />%TMPL:P{"NEXT"}%</span>%TMPL:END%
 
 %TMPL:DEF{"PREV"}% %TMPL:P{"PREV_SHORT"}%%TMPL:P{"PREV_LONG"}%%TMPL:END%
 %TMPL:DEF{"PREV_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Previous"}%</span>%TMPL:END%
 %TMPL:DEF{"PREV_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View previous revision"}%</span>%TMPL:END%
-%TMPL:DEF{"PREV_ACTION"}%<a class="natTopicAction natPrevAction" rel="nofollow" href="$prevurl"><img alt="prev" src="%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-left.png" />%TMPL:P{"PREV"}%</a>%TMPL:END%
-%TMPL:DEF{"PREV_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natPrevAction"><img alt="prev" src="%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-left-gray.png" />%TMPL:P{"PREV"}%</span>%TMPL:END%
+%TMPL:DEF{"PREV_ACTION"}%<a class='natTopicAction natPrevAction' rel='nofollow' href='$prevurl'><img alt='prev' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-left.png' />%TMPL:P{"PREV"}%</a>%TMPL:END%
+%TMPL:DEF{"PREV_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natPrevAction'><img alt='prev' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-left-gray.png' />%TMPL:P{"PREV"}%</span>%TMPL:END%
 
 %TMPL:DEF{"LAST"}% %TMPL:P{"LAST_SHORT"}%%TMPL:P{"LAST_LONG"}%%TMPL:END%
 %TMPL:DEF{"LAST_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Last"}%</span>%TMPL:END%
 %TMPL:DEF{"LAST_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View last revision"}%</span>%TMPL:END%
-%TMPL:DEF{"LAST_ACTION"}%<a class="natTopicAction natLastAction" rel="nofollow" href="$lasturl"><img alt="end" src="%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-end.png" />%TMPL:P{"LAST"}%</a>%TMPL:END%
-%TMPL:DEF{"LAST_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natLastAction"><img alt="end" src="%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-end-gray.png" />%TMPL:P{"LAST"}%</span>%TMPL:END%
+%TMPL:DEF{"LAST_ACTION"}%<a class='natTopicAction natLastAction' rel='nofollow' href='$lasturl'><img alt='end' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-end.png' />%TMPL:P{"LAST"}%</a>%TMPL:END%
+%TMPL:DEF{"LAST_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natLastAction'><img alt='end' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-end-gray.png' />%TMPL:P{"LAST"}%</span>%TMPL:END%
 
 %TMPL:DEF{"DIFF"}% %TMPL:P{"DIFF_SHORT"}%%TMPL:P{"DIFF_LONG"}%%TMPL:END%
 %TMPL:DEF{"DIFF_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Diff"}%</span>%TMPL:END%
 %TMPL:DEF{"DIFF_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View last change"}%</span>%TMPL:END%
-%TMPL:DEF{"DIFF_ACTION"}%<a class="natTopicAction natDiffAction" rel="nofollow" href="$diffurl">%JQICON{"page_white_stack"}%%TMPL:P{"DIFF"}%</a>%TMPL:END%
-%TMPL:DEF{"DIFF_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natDiffAction">%JQICON{"page_white_stack"}%%TMPL:P{"DIFF"}%</span>%TMPL:END%
+%TMPL:DEF{"DIFF_ACTION"}%<a class='natTopicAction natDiffAction' rel='nofollow' href='$diffurl'>%JQICON{"page_white_stack"}%%TMPL:P{"DIFF"}%</a>%TMPL:END%
+%TMPL:DEF{"DIFF_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natDiffAction'>%JQICON{"page_white_stack"}%%TMPL:P{"DIFF"}%</span>%TMPL:END%
 
-%TMPL:DEF{"COPYTOPIC"}% %TMPL:P{"COPYTOPIC_SHORT"}%%TMPL:P{"COPYTOPIC_LONG"}%%JQREQUIRE{"ui::dialog, focus"}%%TMPL:END%
+%TMPL:DEF{"COPYTOPIC"}% %TMPL:P{"COPYTOPIC_SHORT"}%%TMPL:P{"COPYTOPIC_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
 %TMPL:DEF{"COPYTOPIC_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Copy"}%</span>%TMPL:END%
 %TMPL:DEF{"COPYTOPIC_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Copy this topic"}%</span>%TMPL:END%
-%TMPL:DEF{"COPYTOPIC_ACTION"}%<a class="natTopicAction jqUIDialogLink natCopyTopicAction" href="%SCRIPTURL{"rest"}%/RenderPlugin/template?name=copytopic;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on" rel="nofollow">%JQICON{"page_white_copy"}%%TMPL:P{"COPYTOPIC"}%</a>%TMPL:END%
-%TMPL:DEF{"COPYTOPIC_ACTION_RESTRICTED"}%<span class="natTopicAction natDisabledTopicAction natCopyTopicAction">%JQICON{"page_white_copy"}%%TMPL:P{"COPYTOPIC"}%</span>%TMPL:END%
+%TMPL:DEF{"COPYTOPIC_ACTION"}%<a class='natTopicAction jqUIDialogLink natCopyTopicAction' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=copytopic;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"page_white_copy"}%%TMPL:P{"COPYTOPIC"}%</a>%TMPL:END%
+%TMPL:DEF{"COPYTOPIC_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natCopyTopicAction'>%JQICON{"page_white_copy"}%%TMPL:P{"COPYTOPIC"}%</span>%TMPL:END%
 
 %TMPL:DEF{"NOTHING_FOUND"}%%MAKETEXT{"Nothing found. Try again!"}%%TMPL:END%
 
@@ -254,16 +260,28 @@
 
 %TMPL:DEF{"title"}%%HTMLTITLE{
   separator=" %TMPL:P{"titlesep"}% "
-  format="$title%IF{"'%TMPL:P{"titleaction"}%'!=''" then=" (%TMPL:P{"titleaction"}%) "}%$sep$webtitle$wikitoolname"
+  format="$percntIF{
+    \"'$topic'!='%HOMETOPIC%' or '$percntENCODE{\"$title\" type=\"safe\"}$percnt'!='$web' or '%TMPL:P{"titleaction"}%'!=''\" 
+    then=\"$title%IF{
+        "'%TMPL:P{"titleaction"}%'!=''" then=" (%TMPL:P{"titleaction"}%) "
+      }%$sep\"
+    }$percnt$webtitle$wikitoolname"
 }%%TMPL:END%
 
 %TMPL:DEF{"titlesep"}%%IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="-"}%%TMPL:END%
 
-%TMPL:DEF{"favicon"}%%FAVICON%%TMPL:END%
+%TMPL:DEF{"favicon"}%%TMPL:P{context="msie" then="favicon::msie" else="favicon::default"}%%TMPL:END%
+%TMPL:DEF{"favicon::msie"}%<link rel='shortcut icon' href='%TMPL:P{"favicon::msie::url"}%' />%TMPL:END%
+%TMPL:DEF{"favicon::msie::url"}%%TMPL:P{"favicon::url"}%%TMPL:END%
+%TMPL:DEF{"favicon::default"}%<link rel='icon' href='%TMPL:P{"favicon::default::url"}%' />%TMPL:END%
+%TMPL:DEF{"favicon::default::url"}%%TMPL:P{"favicon::url"}%%TMPL:END%
+%TMPL:DEF{"favicon::url"}%%FAVICON%%TMPL:END%
+
+<!--[if IE]><![endif]-->
 
 %TMPL:DEF{"logo"}%%NATWEBLOGO%%TMPL:END%
 
-%TMPL:DEF{"poweredby"}%<a class="natPoweredBy nop" href="http://foswiki.org" title="foswiki.org"><span><img src="%PUBURLPATH%/%SYSTEMWEB%/NatSkin/foswiki-logo.png" height="40" /></span>%MAKETEXT{"Powered by Foswiki"}%</a>%TMPL:END%
+%TMPL:DEF{"poweredby"}%<a class='natPoweredBy nop' href='http://foswiki.org' title='foswiki.org'><span><img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/foswiki-logo.png' height='40' /></span>%MAKETEXT{"Powered by Foswiki"}%</a>%TMPL:END%
 
 %TMPL:DEF{"useractions"}%<!-- useractions -->
 %USERACTIONS{
@@ -273,25 +291,25 @@
 <!-- //useractions -->%TMPL:END%
 
 %TMPL:DEF{"hiddenform"}%<!-- hiddenform -->
-<form id="EditForm" name="EditForm" action="%SCRIPTURLPATH{"save"}%/%WEB%/%TOPIC%" method="post">
-  <input type="hidden" name="action_addform" value="" />
-  <input type="hidden" name="action_cancel" value="" />
-  <input type="hidden" name="action_checkpoint" value="" />
-  <input type="hidden" name="action_preview" value="" />
-  <input type="hidden" name="action_replaceform" value="" />
-  <input type="hidden" name="action_save" value="" />
-  <input type="hidden" name="submitChangeForm" value="" />
+<form id='EditForm' name='EditForm' action='%SCRIPTURLPATH{"save"}%/%WEB%/%TOPIC%' method='post'>
+  <input type='hidden' name='action_addform' value='' />
+  <input type='hidden' name='action_cancel' value='' />
+  <input type='hidden' name='action_checkpoint' value='' />
+  <input type='hidden' name='action_preview' value='' />
+  <input type='hidden' name='action_replaceform' value='' />
+  <input type='hidden' name='action_save' value='' />
+  <input type='hidden' name='submitChangeForm' value='' />
   %FORMFIELDS% 
-  <input type="hidden" name="formtemplate" value="%FORMTEMPLATE%" />
-  <input type="hidden" name="originalrev" value="%URLPARAM{"originalrev"}%" />
-  <input type="hidden" name="redirectto" value="%REDIRECTTO%" />
-  <input type="hidden" name="topicparent" value="%TOPICPARENT%" />
-  <input type="hidden" name="templatetopic" value="%URLPARAM{"templatetopic" default="%TEMPLATETOPIC%"}%" />
-  <input type="hidden" name="cover" value="%URLPARAM{"cover"}%" />
-  <input type="hidden" name="cmd" value="%CMD%" />
-  <input type="hidden" name="nowysiwyg" value="%URLPARAM{"nowysiwyg"}%" />
-  <input type="hidden" name="rev" value="%URLPARAM{"rev"}%" />
-  <input type="hidden" name="text" value="%HIDDENTEXT%" />
+  <input type='hidden' name='formtemplate' value='%FORMTEMPLATE%' />
+  <input type='hidden' name='originalrev' value='%URLPARAM{"originalrev"}%' />
+  <input type='hidden' name='redirectto' value='%REDIRECTTO%' />
+  <input type='hidden' name='topicparent' value='%TOPICPARENT%' />
+  <input type='hidden' name='templatetopic' value='%URLPARAM{"templatetopic" default="%TEMPLATETOPIC%"}%' />
+  <input type='hidden' name='cover' value='%URLPARAM{"cover"}%' />
+  <input type='hidden' name='cmd' value='%CMD%' />
+  <input type='hidden' name='nowysiwyg' value='%URLPARAM{"nowysiwyg"}%' />
+  <input type='hidden' name='rev' value='%URLPARAM{"rev"}%' />
+  <input type='hidden' name='text' value='%HIDDENTEXT%' />
 </form>
 <!-- //hiddenform-->%TMPL:END%
 

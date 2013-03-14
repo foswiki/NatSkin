@@ -1,7 +1,7 @@
-// (c)opyright 2006-2012 Michael Daum http://michaeldaumconsulting.com
+// (c)opyright 2006-2013 Michael Daum http://michaeldaumconsulting.com
 
-// document ready
 jQuery(function($) {
+  "use strict";
 
   /* move revinfo */
   if (foswiki.getPreference("NatSkin.fixRevisionPosition")) {
@@ -34,13 +34,10 @@ jQuery(function($) {
     .find("li:has(.ajaxMenu)").addClass("hasAjaxMenu");
 
     $container.removeClass('natWebMenuHidden');
-    if ($.browser.msie) {
-      $container.css('display', 'block');
-    }
   }
 
   /* add edit topic prefs behavior */
-  $("a.natEditSettingsAction").live("click", function() {
+  $("a.natEditSettingsAction").on("click", function() {
     $("#editSettingsForm").submit();    
     return false;
   });
@@ -131,13 +128,6 @@ jQuery(function($) {
           .appendTo(ul);
       };
     }
-  }
-
-  // replace hr with a div.hr on ie7
-  if ($.browser.msie && $.browser.version == 7.0) {
-    $("hr").livequery(function() {
-      $(this).replaceWith("<div class='hr' />");
-    });
   }
 
   // hide address bar on mobile devices

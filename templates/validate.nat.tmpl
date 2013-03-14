@@ -7,23 +7,43 @@
     <h2 >%MAKETEXT{"Warning! Confirmation required"}%</h2>
     <form action='%SCRIPTURLPATH{"login"}%/%WEB%/%TOPIC%' name='loginform' method='post'>
       <input type="hidden" name="origurl" value="%ORIGURL%" />
+      <input type="hidden" name="foswikiloginaction" value="validate" />
+      <input type="hidden" name="response" value="Cancel" />
       <literal>
         %QUERYPARAMS{encoding="entity" format="<input type='hidden' name='$name' value='$value' />"}%
       </literal>
       <div class="foswikiFormStep">
-        %MAKETEXT{"[_1] has received a suspicious change request from your browser." args="<nop>%WIKITOOLNAME%"}%
-        %MAKETEXT{"There is a risk that someone may be trying to use your identity to change content on [_1] without your knowledge." args="<nop>%WIKITOOLNAME%"}%
+        <div class="natErrorMessage">
+          %MAKETEXT{"[_1] has received a suspicious change request from your browser." args="<nop>%WIKITOOLNAME%"}%
+          %MAKETEXT{"There is a risk that someone may be trying to use your identity to change content on [_1] without your knowledge." args="<nop>%WIKITOOLNAME%"}%
+        </div>
         <ul>
           <li>%MAKETEXT{"Press OK to confirm that this change was intentional."}%</li>
           <li>%MAKETEXT{"Press Cancel otherwise."}%</li>
         </ul>
         %MAKETEXT{"If you are unsure what this means, read <a href='[_1]' class='foswikiPopUp'>why you are being asked to confirm</a>" args="http://foswiki.org/Support/WhyYouAreAskedToConfirm"}%:
       </div>
-      <div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
-        <input name="response" tabindex='4' type='submit' class='foswikiSubmit natOkButton' value='OK' />
-        <input name="response" tabindex='5' type='submit' class='foswikiSubmit natCancelButton' value='Cancel' />
+      <div class="foswikiFormStep">
+        %BUTTON{"%MAKETEXT{"OK"}%" icon="tick" id="validateChange"}%
+        %BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" type="submit"}%
+        %CLEAR%
       </div>
     </form>
   </div>
 </div>
+<literal>
+<script>
+jQuery(function($) {
+  var $loginForm = $("form[name='loginform']"), 
+      $responseField = $loginForm.find("input[name='response']");
+
+  $("#validateChange").click(function() {
+    $responseField.val('OK');
+    $loginForm.submit();
+    return false;
+  });
+
+});
+</script>
+</literal>
 <!-- //content -->%TMPL:END%

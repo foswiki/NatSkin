@@ -83,6 +83,7 @@ pub/System/NatSkin/external.png 0644
 pub/System/NatSkin/favicon.ico 0644
 pub/System/NatSkin/foswiki-logo.png 0644
 pub/System/NatSkin/grid-40x18.png 0644
+pub/System/NatSkin/grid-40x21.png 0644
 pub/System/NatSkin/history.js 0644
 pub/System/NatSkin/history.js.gz 0644
 pub/System/NatSkin/history.uncompressed.js 0644
@@ -169,6 +170,9 @@ pub/System/NatSkin/oldrevisionbg.png 0644
 pub/System/NatSkin/oopsmore_diff_debug.gif 0644
 pub/System/NatSkin/oopsmore_diff_sequential.gif 0644
 pub/System/NatSkin/oopsmore_diff_sidebyside.gif 0644
+pub/System/NatSkin/password.js 0644
+pub/System/NatSkin/password.js.gz 0644
+pub/System/NatSkin/password.uncompressed.js 0644
 pub/System/NatSkin/pdf.png 0644
 pub/System/NatSkin/plus.png 0644
 pub/System/NatSkin/previewbg.png 0644
@@ -204,6 +208,7 @@ templates/edittext.nat.tmpl 0644
 templates/form.nat.tmpl 0644
 templates/formtables.nat.tmpl 0644
 templates/foswiki.jazzynote.nat.tmpl 0644
+templates/foswiki.jazzynote.tmpl 0644
 templates/foswiki.nat.tmpl 0644
 templates/history.nat.tmpl 0644
 templates/javascript.nat.tmpl 0644

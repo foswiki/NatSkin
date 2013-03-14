@@ -1,6 +1,9 @@
-// (c)opyright 2006-2012 Michael Daum http://michaeldaumconsulting.com
-var emoas;
+// (c)opyright 2006-2013 Michael Daum http://michaeldaumconsulting.com
+
 (function($) {
+  "use strict";
+
+  var emoas;
   $.wremo = {
     build: function(options) {
       return this.each(function() {

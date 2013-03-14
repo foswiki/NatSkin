@@ -1,4 +1,5 @@
-%META:TOPICINFO{author="ProjectContributor" comment="pending" date="1343316280" format="1.1" version="1"}%
+%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278777" format="1.1" version="1"}%
+
 %{<verbatim>}%
 %TMPL:INCLUDE{"view"}%<!-- -->
 %TMPL:DEF{"revinfo"}%%TMPL:END%
@@ -6,13 +7,38 @@
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"content"}%<!-- -->
+%TMPL:DEF{"content"}%%IF{"$'URLPARAM{group}' != ''"
+  then="$percntTMPL:P{\"displaygroup\" group=\"$percntURLPARAM{group}$percnt\"}$percnt"
+  else="$percntTMPL:P{\"listgroups\"}$percnt"
+}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"listgroups"}%<!-- -->
 <h1 >%TOPIC%</h1>
 %MAKEINDEX{"%GROUPINFO%"
   header="$anchors$n"
-  format="[[%USERSWEB%.$item]]"
+  sort="nocase"
+  format="<a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?group=$item'>$item</a>"
   footer="<span class='foswikiAlert'>$count</span> groups found"
 }%
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
+%{<verbatim>}%
+%TMPL:DEF{"displaygroup"}%<!-- -->
+<h1 >%IF{"istopic '%USERSWEB%.%group%'" 
+  then="[[%USERSWEB%.%group%][%group%]]" 
+  else="<nop>%group%"
+}%</h1>
+
+<h2 >%MAKETEXT{"Members"}%</h2>
+%GROUPINFO{"%group%" 
+  expand="0"
+  header="<ol>"
+  footer="</ol>"
+  format="<li> $wikiname </li>"
+  separator="$n"
+}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
