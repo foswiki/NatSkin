@@ -7,7 +7,8 @@ TARGET= \
   obfuscator.js \
   print.css \
   rename.js \
-  password.js
+  password.js \
+  subscribe.js
 
 -include Makefile.include
 

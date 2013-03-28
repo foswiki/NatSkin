@@ -1,0 +1,9 @@
+%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278777" format="1.1" version="1"}%
+
+%{<verbatim class="tml">}%
+%TMPL:INCLUDE{"WikiGroupsView"}%<!-- -->
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"content"}%%TMPL:P{"displaygroup" group="%TOPIC%"}%%TMPL:END%
+%{</verbatim>}%

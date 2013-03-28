@@ -5,13 +5,13 @@ data/System/AjaxWebSelector.txt 0644
 data/System/EmptySideBarTemplate.txt 0644
 data/System/JazzyNoteTheme.txt 0644
 data/System/MySideBar.txt 0644
-data/System/NatSearch.txt 0644
 data/System/NatSkinChangeEmailAddressViewTemplate.txt 0644
 data/System/NatSkinChangePasswordViewTemplate.txt 0644
 data/System/NatSkinConfiguration.txt 0644
 data/System/NatSkinCss.txt 0644
 data/System/NatSkinFAQ.txt 0644
 data/System/NatSkinGrid.txt 0644
+data/System/NatSkinGroupViewTemplate.txt 0644
 data/System/NatSkinResetPasswordViewTemplate.txt 0644
 data/System/NatSkinStyleBrowser.txt 0644
 data/System/NatSkinTemplates.txt 0644
@@ -184,6 +184,9 @@ pub/System/NatSkin/rename.js 0644
 pub/System/NatSkin/rename.js.gz 0644
 pub/System/NatSkin/rename.uncompressed.js 0644
 pub/System/NatSkin/search_button.png 0644
+pub/System/NatSkin/subscribe.js 0644
+pub/System/NatSkin/subscribe.js.gz 0644
+pub/System/NatSkin/subscribe.uncompressed.js 0644
 templates/actionform.nat.tmpl 0644
 templates/addform.nat.tmpl 0644
 templates/attachagain.nat.tmpl 0644
@@ -260,6 +263,7 @@ templates/sidebar.nat.tmpl 0644
 templates/styles.nat.tmpl 0644
 templates/topbar.foswiki.tmpl 0644
 templates/topbar.nat.tmpl 0644
+templates/translatetopic.nat.tmpl 0644
 templates/twistyplugin.nat.tmpl 0644
 templates/validate.nat.tmpl 0644
 templates/view.nat.tmpl 0644

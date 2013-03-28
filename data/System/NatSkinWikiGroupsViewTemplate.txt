@@ -1,19 +1,20 @@
 %META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278777" format="1.1" version="1"}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%<!-- -->
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
+%TMPL:DEF{"breadcrumbs::tail"}%%IF{"$'URLPARAM{group}'!=''" then="%TMPL:P{"sep"}%<a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?group=%URLPARAM{"group"}%'>%URLPARAM{"group"}%</a>"}%%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"content"}%%IF{"$'URLPARAM{group}' != ''"
   then="$percntTMPL:P{\"displaygroup\" group=\"$percntURLPARAM{group}$percnt\"}$percnt"
   else="$percntTMPL:P{\"listgroups\"}$percnt"
 }%%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"listgroups"}%<!-- -->
 <h1 >%TOPIC%</h1>
 %MAKEINDEX{"%GROUPINFO%"
@@ -25,20 +26,108 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"displaygroup"}%<!-- -->
 <h1 >%IF{"istopic '%USERSWEB%.%group%'" 
   then="[[%USERSWEB%.%group%][%group%]]" 
   else="<nop>%group%"
 }%</h1>
 
-<h2 >%MAKETEXT{"Members"}%</h2>
-%GROUPINFO{"%group%" 
-  expand="0"
-  header="<ol>"
-  footer="</ol>"
-  format="<li> $wikiname </li>"
-  separator="$n"
+%IF{"istopic '%USERSWEB%.%URLPARAM{"group"}%'"
+  then="$percntINCLUDE{\"%WEB%.%URLPARAM{"group"}%\"}$percnt"
+  else="<!-- -->"
+}%
+
+%IF{"'%USERSWEB%.%group%' allows 'change' and istopic '%USERSWEB%.%group%'"
+  then="$percntTMPL:P{\"editablegroup\" group=\"%group%\"}$percnt"
+  else="$percntTMPL:P{\"noneditablegroup\"  group=\"%group%\"}$percnt"
 }%
 <!-- -->%TMPL:END%
+%{</verbatim>}%
+
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"editablegroup"}%
+%TWISTYBUTTON{id="add" mode="span" link="%BUTTON{"%MAKETEXT{"Add"}%" icon="add" class="addButton"}%"}%
+%BUTTON{"%MAKETEXT{"Edit"}%" icon="pencil" href="%SCRIPTURLPATH{"edit"}%/%WEB%/%URLPARAM{"group" default="%TOPIC%"}%?t=%GMTIME{"$epoch"}%"}%
+%BUTTON{"%MAKETEXT{"Rename"}%" icon="page_white_go" href="%SCRIPTURLPATH{"rename"}%/%WEB%/%URLPARAM{"group" default="%TOPIC%"}%"}%
+%BUTTON{"%MAKETEXT{"Remove"}%" icon="delete" class="removeButton" style="display:none"}%
+%CLEAR%
+%TWISTYTOGGLE{id="add"}%
+
+<form action='%SCRIPTURLPATH{"manage"}%/%WEB%/%group%' method='post'> 
+<input type='hidden' name='groupname' value='%group%'/> 
+<input type='hidden' name='action' value='addUserToGroup'/>
+<div class='foswikiFormSteps'>
+  <div class='foswikiFormStep'>
+     <h3>%MAKETEXT{"Add users or groups to this group"}%</h3>%JQREQUIRE{"textboxlist"}%
+
+     <input type='text' name='username' value='' size='30' class='foswikiInputField jqTextboxList' autocomplete='%SCRIPTURL{"view"}%/%SYSTEMWEB%/JQueryAjaxHelper?section=user;skin=text;contenttype=application/json;baseweb=%USERSWEB%' />
+  </div>
+  <div class='foswikiFormStep'>
+     %BUTTON{"%MAKETEXT{"Submit"}%" icon="add" type="submit"}%
+     %CLEAR%
+  </div>
+</div>
+</form>
+%ENDTWISTY%
+
+%FORMATLIST{"%GROUPINFO{"%group%" format="$wikiname" separator=", " expand="0"}%"
+  header="<form action='%SCRIPTURLPATH{"manage"}%/%WEB%/%group%' method='post' class='editGroupForm'>
+    <input type='hidden' name='groupname' value='%group%' />
+    <input type='hidden' name='action' value='removeUserFromGroup' />
+    <div class='foswikiPageForm'>
+      <table class='foswikiLayoutTable'>
+      <tr><th>#</th><th>%MAKETEXT{"Name"}%</th><th>%MAKETEXT{"Select"}%</th></tr>"
+  format="<tr> 
+      <td> $index. </td> 
+      <td> 
+        $percntIF{\"'$percntUSERINFO{\"$1\" format=\"$isgroup\"}$percnt'='true'\"
+          then=\"<a href='%SCRIPTURLPATH{"view"}%/%USERSWEB%/WikiGroups?group=$1'>$1</a> (%MAKETEXT{"group"}%)\"
+          else=\"$1\"
+        }$percnt
+      </td> 
+      <td align='right'><input type='checkbox' name='username' value='$1' class='foswikiCheckbox' /></td>
+    </tr>"
+  separator="$n"
+  footer="</table></div>"
+  sort="on"
+  casesensitive="off"
+}%
+</form>
+<literal>
+<script>
+jQuery(function($) {
+  $(".editGroupForm").each(function() {
+    var $this = $(this);
+    
+    $this.find("input[type='checkbox']").change(function() {
+      if ($this.find("input[type='checkbox']:checked").length) {
+        $(".removeButton").fadeIn();
+      } else {
+        $(".removeButton").hide();
+      }
+    });
+  });
+
+  $(".removeButton").click(function() {
+    $(".editGroupForm").submit();
+    return false;
+  });
+});
+</script>
+</literal>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"noneditablegroup"}%
+%GROUPINFO{"%group%" 
+  header="<ol>"
+  footer="</ol>"
+  format="<li> $wikiname </li>" 
+  separator="$n" 
+  expand="0"
+}%
+%TMPL:END%
 %{</verbatim>}%

@@ -131,7 +131,7 @@
 
 %TMPL:DEF{"CHANGELANGUAGE"}%%TMPL:P{"CHANGELANGUAGE_SHORT"}%%TMPL:P{"CHANGELANGUAGE_LONG"}%%TMPL:END%
 %TMPL:DEF{"CHANGELANGUAGE_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Language"}%</span>%TMPL:END%
-%TMPL:DEF{"CHANGELANGUAGE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Change language"}%</span>%TMPL:END%
+%TMPL:DEF{"CHANGELANGUAGE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Interface language"}%</span>%TMPL:END%
 %TMPL:DEF{"CHANGELANGUAGE_ACTION"}%<a class='natTopicAction jqUIDialogLink natChangeLanguageAction' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=languageselector;expand=dialog;topic=%BASEWEB%/%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"world"}%%TMPL:P{"CHANGELANGUAGE"}%</a>%TMPL:END%
 %TMPL:DEF{"CHANGELANGUAGE_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natChangeLanguageAction'>%TMPL:P{"CHANGELANGUAGE"}%</span>%TMPL:END%
 
@@ -189,12 +189,7 @@
 %TMPL:DEF{"UNSUBSCRIBE"}% %TMPL:P{"UNSUBSCRIBE_SHORT"}%%TMPL:P{"UNSUBSCRIBE_LONG"}%%TMPL:END%
 %TMPL:DEF{"UNSUBSCRIBE_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Unsubscribe"}%</span>%TMPL:END%
 %TMPL:DEF{"UNSUBSCRIBE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Unsubscribe from changes"}%</span>%TMPL:END%
-%TMPL:DEF{"SUBSCRIBE_ACTION"}%%SUBSCRIBE{
-  topic="%BASEWEB%.%BASETOPIC%"
-  format="<a class='natTopicAction natSubscribeAction' rel='nofollow' href='$url'>%JQICON{"email_star"}%%TMPL:P{"SUBSCRIBE"}%</a>"
-  formatunsubscribe="<a class='natTopicAction natSubscribeAction' rel='nofollow' href='$url'>%JQICON{"email_stop"}%%TMPL:P{"UNSUBSCRIBE"}%</a>"
-
-}%%TMPL:END%
+%TMPL:DEF{"SUBSCRIBE_ACTION"}%<span class='natSubscribeButton %IFSUBSCRIBED{then="state-subscribed" else="state-unsubscribed"}%'><a class='natTopicAction natSubscribeAction'>%JQICON{"email_star"}%%TMPL:P{"SUBSCRIBE"}%</a><a class='natTopicAction natUnsubscribeAction'>%JQICON{"email_stop"}%%TMPL:P{"UNSUBSCRIBE"}%</a></span>%TMPL:END%
 %TMPL:DEF{"SUBSCRIBE_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natSubscribeAction'>%JQICON{"emain_add"}%%TMPL:P{"SUBSCRIBE"}%</span>%TMPL:END%
 
 %TMPL:DEF{"WEBDAVDIR"}% %TMPL:P{"WEBDAVDIR_SHORT"}% %TMPL:P{"WEBDAVDIR_LONG"}%%TMPL:END%

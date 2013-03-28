@@ -1779,6 +1779,7 @@ a.natScrollTop {
 /* layout ************************************************************/
 .natMiddle {
   background:#eee;
+  min-height:48em;
 }
 .natMiddleContents {
   background:#fff;
@@ -2561,4 +2562,10 @@ body .natSideBar .natMySideBarRedDot a:hover {
 
 .natPrintBody .cmtComments .jqButton {
   display:none;
+}
+
+/* subscribe support */
+.natSubscribeButton.state-subscribed .natSubscribeAction,
+.natSubscribeButton.state-unsubscribed .natUnsubscribeAction {
+  display:none !important;
 }

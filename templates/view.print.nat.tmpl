@@ -14,12 +14,15 @@
 </div>%TMPL:END%
 %TMPL:DEF{"head"}%<!-- -->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=%CHARSET%" />
+<meta charset="%CHARSET%" />
 <title>%TMPL:P{"title"}% - (%MAKETEXT{"printable"}%)</title>
 %TMPL:P{"favicon"}%
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="date" content="%REVINFO{"$http"}%" /> 
-%TMPL:P{"meta"}%
-%TMPL:P{"styles"}% %TMPL:P{"javascript"}% %WEBCOMPONENT{"HtmlHead"}%
+<base href="%SCRIPTURL{%SCRIPTNAME%}%/%WEB%/%TOPIC%" /><!--[if IE]></base><![endif]-->
+%TMPL:P{"meta"}%%TMPL:P{"styles"}%%TMPL:P{"javascript"}%%WEBCOMPONENT{"HtmlHead"}%
 <!-- --></head>%TMPL:END%
 %TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Last modified by [_1] on [_2]" args="<span class='natRevisionAuthor'> %REVINFO{"[[$wikiusername]]" rev="%CURREV%"}% </span>, <a class='natRevisionDate' rel='nofollow' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"$date - $hour:$min - r$rev" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
 %TMPL:DEF{"metadata"}%%TMPL:END%
