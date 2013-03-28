@@ -1779,10 +1779,10 @@ a.natScrollTop {
 /* layout ************************************************************/
 .natMiddle {
   background:#eee;
-  min-height:48em;
 }
 .natMiddleContents {
   background:#fff;
+  min-height:48em;
 }
 .natMainHeaderContents {
   padding:1em 1em 0;
