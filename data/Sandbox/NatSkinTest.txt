@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="micha" comment="autosave" date="1359108940" format="1.1" version="45"}%
+%META:TOPICINFO{author="micha" comment="autosave" date="1366885075" format="1.1" version="46"}%
 ---+!! %TOPIC%
 %BUTTON{"Toggle grid" icon="table" class="foswikiRight" onclick="jQuery('.natMain').toggleClass('showgrid')"}%
 
@@ -414,26 +414,26 @@ blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
 facilisi. 
 
 <table class="foswikiTable">
-<tr>
-<th>head</th>
-<th>head</th>
-<th>head</th>
-</tr>
-<tr>
-<td>data</td>
-<td>data</td>
-<td>data</td>
-</tr>
-<tr>
-<td>data</td>
-<td>data</td>
-<td>data</td>
-</tr>
-<tr>
-<td>data</td>
-<td>data</td>
-<td>data</td>
-</tr>
+   <tr>
+      <th>head</th>
+      <th>head</th>
+      <th>head</th>
+   </tr>
+   <tr>
+      <td>data</td>
+      <td>data</td>
+      <td>data</td>
+   </tr>
+   <tr>
+      <td>data</td>
+      <td>data</td>
+      <td>data</td>
+   </tr>
+   <tr>
+      <td>data</td>
+      <td>data</td>
+      <td>data</td>
+   </tr>
 </table>
 
 ---++ Verbatim

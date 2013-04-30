@@ -134,4 +134,14 @@ jQuery(function($) {
   if(navigator.userAgent.match(/Android/i)){
     window.scrollTo(0,1);
   }
+
+  /* scroll to top */
+  $(window).scroll(function() {
+    var scrolltop = $(this).scrollTop();
+    if (scrolltop > 100) {
+      $('a.natScrollTop').fadeIn(1000);
+    } else {
+      $('a.natScrollTop').fadeOut(100);
+    }
+  });
 });

@@ -20,13 +20,13 @@
 %TMPL:END%
 %TMPL:DEF{"topic_exists"}%<!-- uses goback def -->
 ---+++ %MAKETEXT{"The [_1] topic already exists" args="%TOPIC%"}%
-%MAKETEXT{"Cannot create [_1] because it already exists." args="%TOPIC%"}%
+%MAKETEXT{"Cannot create [_1] because it already exists." args="[[%TOPIC%]]"}%
 
 %TMPL:P{"goback" target="%BASEWEB%.%BASETOPIC%"}%
 %TMPL:END%
 %TMPL:DEF{"rename_topic_exists"}%<!-- uses goback def -->
 ---+++ %MAKETEXT{"Rename failed"}%
-%MAKETEXT{"Cannot rename [_1] to [_2] because it already exists." args="%TOPIC%,%PARAM1%.%PARAM2%"}%
+%MAKETEXT{"Cannot rename [_1] to [_2] because it already exists." args="[[%TOPIC%]],[[%PARAM1%.%PARAM2%]]"}%
 
 %TMPL:P{"goback" target="%BASEWEB%.%BASETOPIC%"}%
 %TMPL:END%

@@ -146,7 +146,7 @@
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Choose a password"}%: <span class="foswikiAlert">**</span></h3>
   <input type="password" id="Fwk1Password" name="Fwk1Password" class="foswikiInputField" size="40" autocomplete="off" />
-  <a href="#" class="jqGeneratePassword" data-length="15" data-specials="true" data-target="#Fwk1Password">%JQICON{"key"}% %MAKETEXT{"Random password"}%</a>
+  <a href="#" class="jqGeneratePassword" data-length="15" data-capital="true" data-numbers="true" data-target="#Fwk1Password">%JQICON{"key"}% %MAKETEXT{"Random password"}%</a>
   <div class="foswikiFormDescription">
     %MAKETEXT{"Make sure you remember your password, even more when generating one automatically."}%
   </div>

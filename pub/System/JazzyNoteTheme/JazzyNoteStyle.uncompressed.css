@@ -535,6 +535,9 @@ a:hover {
   background:#0055b5;
   text-decoration:none;
 }
+a:hover.natScrollTop {
+  color:#b22222;
+}
 .natSideBar .treeview a:hover,
 .natSideBar .treeview a {
   display:inline;

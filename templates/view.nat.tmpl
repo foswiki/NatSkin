@@ -9,7 +9,7 @@
 %{ ################################################################################ }%
 %TMPL:DEF{"bodyclass"}%natViewBody %IF{"context 'natskin_history_1'" then="natViewHistoryBody"}%%TMPL:END%
 %TMPL:DEF{"bottombar"}%%WEBCOMPONENT{"BottomBar"}%%TMPL:END%
-%TMPL:DEF{"scrolltop"}%<a href="#" class="natScrollTop jqScrollToLink {'target':'0', 'duration':500}" title="%MAKETEXT{"scroll to the top"}%">&uarr;</a>%TMPL:END%
+%TMPL:DEF{"scrolltop"}%<a href="#" class="natScrollTop jqScrollToLink {'target':'0', 'duration':500}" title="%MAKETEXT{"back to the top"}%">^</a>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"meta"}%%TMPL:P{"metagenerator"}%
@@ -85,11 +85,13 @@
 %{ ################################################################################ }%
 %TMPL:DEF{"comments"}%%IF{
   "$DISPLAYCOMMENTS='on' and $COMMENTFORMAT!='insidetab' and not context save and not context preview and not context edit"
-  then="$percntJQREQUIRE{\"loader\"}$percnt
-    <div class=\"jqLoader {url:'%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=metacomments;expand=metacomments;render=on;topic=%WEB%.%TOPIC%'}\"></div>" 
+  then="$percntTMPL:P{\"comments::system::%COMMENTSYSTEM{default="metacomment"}%\"}$percnt"
 }%<!-- -->
 %TMPL:P{"metacomments::init"}%<!-- -->
 <!-- -->%TMPL:END%
+
+%TMPL:DEF{"comments::system::disqus"}%%DISQUS%%TMPL:END%
+%TMPL:DEF{"comments::system::metacomment"}%%JQREQUIRE{"loader"}%<div class="jqLoader {url:'%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=metacomments;expand=metacomments;render=on;topic=%WEB%.%TOPIC%'}"></div>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"editsettingsform"}%<!-- -->

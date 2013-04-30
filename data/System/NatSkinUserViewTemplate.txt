@@ -61,7 +61,8 @@
      then="$percntFORMFIELD{\"Photo\" topic=\"%BASEWEB%.%BASETOPIC%\"}$percnt" 
      else="%IF{"'%BASEWEB%.%BASETOPIC%'/attachments[name=~'\.(gif|png|jpe?g)$']"
        then="%QUERY{"'%BASEWEB%.%BASETOPIC%'/attachments[name=~'\.(gif|png|jpe?g)'][0].name"}%"
-       else="%PUBURLPATH%/%SYSTEMWEB%/MetaCommentPlugin/nobody.gif"
+       else="%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/images/nobody.gif"
+
      }%"
    }%"
    topic="%BASEWEB%.%BASETOPIC%"

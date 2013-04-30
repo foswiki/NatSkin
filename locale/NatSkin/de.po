@@ -232,7 +232,7 @@ msgstr "Nicht-<nop>WikiW&&ouml;rter als Topic-Namen erlauben"
 
 #: templates/translatetopic.nat.tmpl:16
 msgid "Already existing translations"
-msgstr "Alle existierenden &&Uuml;bersetzungen"
+msgstr "Bereits existierende &&Uuml;bersetzungen"
 
 #: templates/messages.nat.tmpl:161
 msgid "Alternatively go back in your browser and choose a different username."

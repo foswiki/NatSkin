@@ -10,13 +10,28 @@
 %TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=translatetopic">%MAKETEXT{"Translate"}%</a>%TMPL:END%
 
 %{#################################################################}%
+%TMPL:DEF{"content"}%<!-- -->
+%TMPL:P{"translate::title"}%
+%TMPL:P{"translate::list_existing"}%
+%TMPL:P{"translate::form"}%
+%TMPL:P{"translate::javascript"}%
+<!-- -->%TMPL:END%
+
+%{#################################################################}%
+%TMPL:DEF{"translate::title"}%<!-- -->
+<h1 ><noautolink>%MAKETEXT{"Translate &&ldquo;[_1]&&rdquo;" args="%TOPICTITLE%"}%</noautolink></h1>
+%MAKETEXT{"Translate this topic to a new language."}%
+%TMPL:END%
+
+%{#################################################################}%
 %TMPL:DEF{"translate::list_existing"}%<!-- -->
 %DBQUERY{
   "(preferences.BASETRANSLATION = '%BASETRANSLATION{default="%TOPIC%"}%' OR topic = '%BASETRANSLATION{default="%TOPIC%"}%') AND topic != '%TOPIC%'"
-  header="%MAKETEXT{"Already existing translations"}%:
-<ul style='margin:0.5em 0;list-style:none'>$n"
-  format="<li>$percntLANGUAGES{\"$expand(preferences.CONTENT_LANGUAGE or '%DEFAULTLANGUAGE%')\" format=\"$icon\"}$percnt
+  header="<h3>%MAKETEXT{"Already existing translations"}%:</h3>
+<ul>$n"
+  format="<li>
     <a href='%SCRIPTURLPATH{"view"}%/$web/$topic?template=translatetopic'>$expand(topictitle)</a>
+    $percntLANGUAGES{\"$expand(preferences.CONTENT_LANGUAGE or '%DEFAULTLANGUAGE%')\" format=\"$icon\"}$percnt
     ($expand(preferences.CONTENT_LANGUAGE or '%DEFAULTLANGUAGE%')$percntIF{
       \"'$topic'='%BASETRANSLATION{default="%TOPIC%"}%'\" then=\", %MAKETEXT{"base language"}%\"
     }$percnt)
@@ -30,17 +45,13 @@
 <!-- -->%TMPL:END%
 
 %{#################################################################}%
-%TMPL:DEF{"translate::title"}%<!-- -->
-<h1 ><noautolink>%MAKETEXT{"Translate &&ldquo;[_1]&&rdquo;" args="%TOPICTITLE%"}%</noautolink></h1>
-%TMPL:END%
-
-%{#################################################################}%
 %TMPL:DEF{"translate::form"}%<!-- -->
 %TMPL:P{"translate::form::start"}%<!-- -->
 %TMPL:P{"translate::form::language_step"}%<!-- -->
 %TMPL:P{"translate::form::checkbox_step"}%
-%TMPL:P{"translate::form::topic_step"}%<!-- -->
+%TMPL:P{"translate::form::new_topic_step"}%<!-- -->
 %TMPL:P{"translate::form::title_step"}%<!-- -->
+%TMPL:P{"translate::form::topic_step"}%<!-- -->
 %TMPL:P{"translate::form::end"}%<!-- -->
 <!-- -->%TMPL:END%
 
@@ -84,10 +95,21 @@
 </div>
 <!-- -->%TMPL:END%
 
+%{#################################################################}%
+%TMPL:DEF{"translate::form::topic_step"}%<!-- -->
+<div class='foswikkiFormStep reuse_topic' style='display:none'>
+  <h4 >%MAKETEXT{"Topic"}%:</h4>
+  <input type='text' class='foswikiInputField topic' size='50' name='topic' value='%TOPIC%' />
+  <div class="foswikiFormDescription">
+    %MAKETEXT{"Select an existing topic to be added to the translation set."}%
+  </div>
+</div>
+<!-- -->%TMPL:END%
+
 
 %{#################################################################}%
 %TMPL:DEF{"translate::form::title_step"}%<!-- -->
-<div class='foswikkiFormStep'>
+<div class='foswikkiFormStep new_topic'>
   <h4 >%MAKETEXT{"Title"}%:</h4>
   <input type='text' class='foswikiInputField topictitle' size='50' name='Set+TOPICTITLE' value='%ENCODE{"%GETTOPICTITLE{"%WEB%.%TOPIC%"}%" type="safe"}%' />
   <div class="foswikiFormDescription">
@@ -97,8 +119,8 @@
 <!-- -->%TMPL:END%
 
 %{#################################################################}%
-%TMPL:DEF{"translate::form::topic_step"}%<!-- -->
-<div class='foswikiFormStep'>
+%TMPL:DEF{"translate::form::new_topic_step"}%<!-- -->
+<div class='foswikiFormStep new_topic'>
   <h4 >%MAKETEXT{"New topic"}%</h4>
   <input type='text' class='foswikiInputField topic' size='50' name='topic' value='%TOPIC%' />
   <p><label><input class='foswikiCheckbox wikify' type="checkbox" name="wikify"  />%MAKETEXT{"Derive from title"}%</label></p>
@@ -123,9 +145,10 @@ jQuery(function($) {
   'use strict';
 
   var $form = $('form[name=translate]'),
-      $target = $form.find('.topic'),
-      $source = $form.find('.topictitle'),
-      $wikify = $form.find('.wikify');
+      $target = $form.find('.new_topic .topic'),
+      $source = $form.find('.new_topic .topictitle'),
+      $wikify = $form.find('.wikify'),
+      $onlyNew = $form.find(\"input[name='onlynewtopic']\");
 
   $wikify.change(function() {
     if ($wikify.is(':checked')) {
@@ -137,21 +160,29 @@ jQuery(function($) {
     }
   });
 
+  function switch_form() {
+    var val = $onlyNew.filter(':checked').val();
+    if (val === 'on') {
+      $form.find('.new_topic').show().find('input').removeAttr('disabled');
+      $form.find('.reuse_topic').hide().find('input').attr('disabled', 'disabled');
+    } else {
+      $form.find('.reuse_topic').show().find('input').removeAttr('disabled');
+      $form.find('.new_topic').hide().find('input').attr('disabled', 'disabled');
+    }
+  }
+
+  $onlyNew.change(switch_form);
+
   $form.submit(function() {
-    $target.removeAttr('disabled');
+    if ($target.parent().is(':visible')) {
+      $target.removeAttr('disabled');
+    }
     return true;
   });
+
+  switch_form();
 });
 </script>
 </literal>"}%<!-- -->
 <!-- -->%TMPL:END%
 
-%{#################################################################}%
-%TMPL:DEF{"content"}%<!-- -->
-%TMPL:P{"translate::title"}%
-%MAKETEXT{"Translate this topic to a new language."}%
-
-%TMPL:P{"translate::list_existing"}%
-%TMPL:P{"translate::form"}%
-%TMPL:P{"translate::javascript"}%
-<!-- -->%TMPL:END%
