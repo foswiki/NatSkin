@@ -19,7 +19,7 @@
 %TMPL:P{"metaedit"}%<!-- -->
 %TMPL:P{"metarss"}% %TMPL:END%
 
-%TMPL:DEF{"metagenerator"}%<meta name='application-name' content='Foswiki %WIKIVERSION%' />%TMPL:END%
+%TMPL:DEF{"metagenerator"}%<meta name='generator' content='Foswiki %WIKIVERSION%' />%TMPL:END%
 
 %TMPL:DEF{"metadescription"}%%IF{"defined 'METADESCRIPTION'" 
   then="<meta name='description' content='$percntENCODE{\"$percntMETADESCRIPTION$percnt\" type=\"html\"}$percnt' />"

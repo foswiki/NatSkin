@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="micha" comment="reprev" date="1363520104" format="1.1" reprev="5" version="5"}%
+%META:TOPICINFO{author="micha" comment="reprev" date="1367524223" format="1.1" reprev="5" version="6"}%
 ---+!! [[%TOPIC%][The Natural Skin]]
 
 !NatSkin improves your Foswiki experience by bringing together some of the most useful
@@ -53,7 +53,7 @@ the templates by using the !NatSkin as a parent skin to create template modifica
    * NatSkinConfiguration
    * NatSkinFAQ
    * NatSkinPlugin
-
+   * NatSkinGrid
 ---++ Installation Instructions
 %$INSTALL_INSTRUCTIONS%
 

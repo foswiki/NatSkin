@@ -33,8 +33,8 @@
   else="<nop>%group%"
 }%</h1>
 
-%IF{"istopic '%USERSWEB%.%URLPARAM{"group"}%'"
-  then="$percntINCLUDE{\"%WEB%.%URLPARAM{"group"}%\"}$percnt"
+%IF{"istopic '%USERSWEB%.%group%'"
+  then="$percntINCLUDE{\"%WEB%.%group%\"}$percnt"
   else="<!-- -->"
 }%
 

@@ -1,138 +1,189 @@
-%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278776" format="1.1" version="11"}%
-
+%META:TOPICINFO{author="micha" comment="reprev" date="1367524196" format="1.1" reprev="12" version="12"}%
+%META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 
+<div class="gutterSelector">
+*Select gutter:* 
+
+<select class="foswikiSelect">
+<option>gutter0</option>
+<option>gutter1</option>
+<option>gutter2</option>
+<option>gutter3</option>
+<option value="gutter4" selected>gutter4 (default)</option>
+<option>gutter5</option>
+</select>
+</div>
 %TOC%
 
 <literal>
 <script type="text/javascript"> 
 jQuery(function($) {
-  $(".test div:odd").addClass("odd");
+  $(".test1 div:odd").addClass("odd");
+  $(".gutterSelector select").change(function() {
+    var val = $(this).val();
+    $(".foswikiGrid").removeClass("gutter0 gutter1 gutter2 gutter3 gutter4 gutter5").addClass(val);
+  });
 });
 </script>
 <style>
-.foswikiGrid.test {
+.foswikiGrid.test1 {
   text-align: center;
   background-color: #eee;
   line-height:3em;
 }
-.foswikiGrid.test .odd {
+.foswikiGrid.test1 .foswikiRow {
+  margin-bottom:0;
+}
+.foswikiGrid.test1 .foswikiRow div {
+  background-color: #FFC0CB;
+}
+.foswikiGrid.test1 .foswikiRow .odd {
   background-color: #ADD8E6;
 }
-.foswikiGrid.test div {
-  background-color: #FFC0CB;
+.foswikiGrid.test2 {
+  text-align:justify;
+}
+.gutterSelector {
+  border:2px solid red;
+  padding:1em;
+  float:right;
+  background-color:#fff;
 }
 </style>
 </literal>
 
 ---++ Columns
-<div class="foswikiGrid test">
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1 last">1/12</div>
-  <!-- -->
-  <div class="foswikiCol2">2/12</div>
-  <div class="foswikiCol2">2/12</div>
-  <div class="foswikiCol2">2/12</div>
-  <div class="foswikiCol2">2/12</div>
-  <div class="foswikiCol2">2/12</div>
-  <div class="foswikiCol2 last">2/12</div>
-  <!-- -->
-  <div class="foswikiCol3">3/12</div>
-  <div class="foswikiCol3">3/12</div>
-  <div class="foswikiCol3">3/12</div>
-  <div class="foswikiCol3 last">3/12</div>
-  <!-- -->
-  <div class="foswikiCol4">4/12</div>
-  <div class="foswikiCol4">4/12</div>
-  <div class="foswikiCol4 last">4/12</div>
-  <!-- -->
-  <div class="foswikiCol6">6/12</div>
-  <div class="foswikiCol6 last">6/12</div>
-  <!-- -->
-  <div class="foswikiCol12">12/12</div>
+<div class="foswikiGrid test1">
+  <div class="foswikiRow">
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1 last">1/12</div>
+  </div>
+  <div class="foswikiRow">
+    <div class="foswikiCol2">2/12</div>
+    <div class="foswikiCol2">2/12</div>
+    <div class="foswikiCol2">2/12</div>
+    <div class="foswikiCol2">2/12</div>
+    <div class="foswikiCol2">2/12</div>
+    <div class="foswikiCol2 last">2/12</div>
+  </div>
+  <div class="foswikiRow">
+    <div class="foswikiCol3">3/12</div>
+    <div class="foswikiCol3">3/12</div>
+    <div class="foswikiCol3">3/12</div>
+    <div class="foswikiCol3 last">3/12</div>
+  </div>
+  <div class="foswikiRow">
+    <div class="foswikiCol4">4/12</div>
+    <div class="foswikiCol4">4/12</div>
+    <div class="foswikiCol4 last">4/12</div>
+  </div>
+  <div class="foswikiRow">
+    <div class="foswikiCol6">6/12</div>
+    <div class="foswikiCol6 last">6/12</div>
+  </div>
+  <div class="foswikiRow last">
+    <div class="foswikiCol12">12/12</div>
+  </div>
 </div>
 
 ---++ Mix Columns
-<div class="foswikiGrid test">
-  <div class="foswikiCol7">7/12</div>
-  <div class="foswikiCol5 last">5/12</div>
-  <!-- -->
-  <div class="foswikiCol3">3/12</div>
-  <div class="foswikiCol4">4/12</div>
-  <div class="foswikiCol5 last">5/12</div>
-  <!-- -->
-  <div class="foswikiCol7">7/12</div>
-  <div class="foswikiCol2">2/12</div>
-  <div class="foswikiCol3 last">3/12</div>
-  <!-- -->
-  <div class="foswikiCol7">7/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1 last">1/12</div>
+<div class="foswikiGrid test1">
+  <div class="foswikiRow">
+    <div class="foswikiCol7">7/12</div>
+    <div class="foswikiCol5 last">5/12</div>
+  </div>
+  <div class="foswikiRow">
+    <div class="foswikiCol3">3/12</div>
+    <div class="foswikiCol4">4/12</div>
+    <div class="foswikiCol5 last">5/12</div>
+  </div>
+  <div class="foswikiRow">
+    <div class="foswikiCol7">7/12</div>
+    <div class="foswikiCol2">2/12</div>
+    <div class="foswikiCol3 last">3/12</div>
+  </div>
+  <div class="foswikiRow last">
+    <div class="foswikiCol7">7/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1 last">1/12</div>
+  </div>
 </div>
 
-<div class="foswikiGrid test">
-  <!-- -->
-  <div class="foswikiCol8">8/12</div>
-  <div class="foswikiCol4 last">4/12</div>
-  <!-- -->
-  <div class="foswikiCol4">4/12</div>
-  <div class="foswikiCol4">4/12</div>
-  <div class="foswikiCol4 last">4/12</div>
-  <!-- -->
-  <div class="foswikiCol8">8/12</div>
-  <div class="foswikiCol2">2/12</div>
-  <div class="foswikiCol2 last">2/12</div>
-  <!-- -->
-  <div class="foswikiCol8">8/12</div>
-  <div class="foswikiCol3">3/12</div>
-  <div class="foswikiCol1 last">1/12</div>
-  <!-- -->
-  <div class="foswikiCol8">8/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1">1/12</div>
-  <div class="foswikiCol1 last">1/12</div>
-  <!-- -->
+<div class="foswikiGrid test1">
+  <div class="foswikiRow">
+    <div class="foswikiCol8">8/12</div>
+    <div class="foswikiCol4 last">4/12</div>
+  </div>
+  <div class="foswikiRow">
+    <div class="foswikiCol4">4/12</div>
+    <div class="foswikiCol4">4/12</div>
+    <div class="foswikiCol4 last">4/12</div>
+  </div>
+  <div class="foswikiRow">
+    <div class="foswikiCol8">8/12</div>
+    <div class="foswikiCol2">2/12</div>
+    <div class="foswikiCol2 last">2/12</div>
+  </div>
+  <div class="foswikiRow">
+    <div class="foswikiCol8">8/12</div>
+    <div class="foswikiCol3">3/12</div>
+    <div class="foswikiCol1 last">1/12</div>
+  </div>
+  <div class="foswikiRow last">
+    <div class="foswikiCol8">8/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1">1/12</div>
+    <div class="foswikiCol1 last">1/12</div>
+  </div>
 </div>
 
-<div class="foswikiGrid test">
-  <div class="foswikiCol9">9/12</div>
-  <div class="foswikiCol3 last">3/12</div>
-  <!-- -->
-  <div class="foswikiCol6">6/12</div>
-  <div class="foswikiCol3">3/12</div>
-  <div class="foswikiCol3 last">3/12</div>
-  <!-- -->
-  <div class="foswikiCol10">10/12</div>
-  <div class="foswikiCol2 last">2/12</div>
-  <!-- -->
-  <div class="foswikiCol5">5/12</div>
-  <div class="foswikiCol5">5/12</div>
-  <div class="foswikiCol2 last">2/12</div>
-  <!-- -->
-  <div class="foswikiCol11">11/12</div>
-  <div class="foswikiCol1 last">1/12</div>
-  <!-- -->
-  <div class="foswikiCol5">5/12</div>
-  <div class="foswikiCol6">6/12</div>
-  <div class="foswikiCol1 last">1/12</div>
+<div class="foswikiGrid test1">
+  <div class="foswikiRow">
+    <div class="foswikiCol9">9/12</div>
+    <div class="foswikiCol3 last">3/12</div>
+  </div>
+  <div class="foswikiRow">
+    <div class="foswikiCol6">6/12</div>
+    <div class="foswikiCol3">3/12</div>
+    <div class="foswikiCol3 last">3/12</div>
+  </div>
+  <div class="foswikiRow">
+    <div class="foswikiCol10">10/12</div>
+    <div class="foswikiCol2 last">2/12</div>
+  </div>
+  <div class="foswikiRow">
+    <div class="foswikiCol5">5/12</div>
+    <div class="foswikiCol5">5/12</div>
+    <div class="foswikiCol2 last">2/12</div>
+  </div>
+  <div class="foswikiRow">
+    <div class="foswikiCol11">11/12</div>
+    <div class="foswikiCol1 last">1/12</div>
+  </div>
+  <div class="foswikiRow last">
+    <div class="foswikiCol5">5/12</div>
+    <div class="foswikiCol6">6/12</div>
+    <div class="foswikiCol1 last">1/12</div>
+  </div>
 </div>
 
 ---++ Text example
-<div class="foswikiGrid">
+<div class="foswikiGrid test2">
   <div class="foswikiRow">
     <div class="foswikiCol6 border">
       Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
@@ -199,7 +250,7 @@ jQuery(function($) {
     </div>
   </div>
 ---
-  <div class="foswikiRow">
+  <div class="foswikiRow last">
     <div class="foswikiCol3 border">
       Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
       habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
@@ -231,6 +282,5 @@ jQuery(function($) {
 </div><!-- end of grid -->
 
 
-%META:TOPICMOVED{by="micha" date="1354180398" from="Sandbox.NatGridTest" to="System.NatSkinGrid"}%
 %META:PREFERENCE{name="NATSKIN_SIDEBAR" title="NATSKIN_SIDEBAR" type="Local" value="off"}%
 %META:PREFERENCE{name="TOPICTITLE" title="TOPICTITLE" type="Local" value="NatSkin Grid"}%

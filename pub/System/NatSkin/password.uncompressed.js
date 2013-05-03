@@ -185,18 +185,22 @@
   }
 
   $(function() {
-    $(".jqGeneratePassword").click(function() {
-      var $this = $(this), 
-          opts = $.extend({}, defaults, $this.data()),
-          $passwordField = $(opts.target),
-          $substitute = $("<span />");
+    if ($("body").is(".natUnsupportedBrowser")) {
+      $(".jqGeneratePassword").hide();
+    } else {
+      $(".jqGeneratePassword").click(function() {
+        var $this = $(this), 
+            opts = $.extend({}, defaults, $this.data()),
+            $passwordField = $(opts.target),
+            $substitute = $("<span />");
 
-      // detatch password field temporarily, make it a text input, add the password and insert it back to the dom
-      $passwordField.replaceWith($substitute).attr("type", "text").val(password(opts));
-      $substitute.replaceWith($passwordField);
+        // detatch password field temporarily, make it a text input, add the password and insert it back to the dom
+        $passwordField.replaceWith($substitute).attr("type", "text").val(password(opts));
+        $substitute.replaceWith($passwordField);
 
-      return false;
-    });
+        return false;
+      });
+    }
   });
 
 })(jQuery);
