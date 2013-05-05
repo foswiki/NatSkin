@@ -188,7 +188,7 @@
     if ($("body").is(".natUnsupportedBrowser")) {
       $(".jqGeneratePassword").hide();
     } else {
-      $(".jqGeneratePassword").click(function() {
+      $(document).on("click", ".jqGeneratePassword", function() {
         var $this = $(this), 
             opts = $.extend({}, defaults, $this.data()),
             $passwordField = $(opts.target),

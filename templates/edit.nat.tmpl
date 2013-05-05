@@ -63,7 +63,7 @@
 %TMPL:DEF{"moresettings"}%<!-- -->
 %TMPL:P{"skinsettings"}%<!-- -->
 %TMPL:P{"showonscreen"}%<!-- -->
-%TMPL:P{context="MetaCommentPluginEnabled" then="commentsettings"}%<!-- -->
+%TMPL:P{"commentsettings"}%<!-- -->
 <!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
@@ -241,7 +241,22 @@ jQuery(function() {
 </tr>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"commentsettings"}%<!-- -->
+%TMPL:DEF{"commentsettings"}%%TMPL:P{
+  "comment::system::%COMMENTSYSTEM{default="metacomment"}%::settings"
+}%%ADDTOZONE{"script"
+  tag="METACOMMENTPLUGIN::PREFS"
+  text="<literal><script>
+    jQuery(function($) {
+      $('#displaycomments_on, #displaycomments_off').change(function() {
+        $('#cmtPreferences').animate({opacity:'toggle'});
+      });
+    });
+    </script></literal>"
+  requires="JQUERYPLUGIN"
+}%<!-- -->%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"comment::system::metacomment::settings"}%
 <div id="cmtPreferences" %IF{"isempty 'DISPLAYCOMMENTS' or $'DISPLAYCOMMENTS'='off'" then="style='display:none'"}%>
 <h2>%MAKETEXT{"Comment settings"}%</h2>
 <div class="foswikiFormSteps">
@@ -282,16 +297,5 @@ jQuery(function() {
     </table>
   </div>
 </div>
-%ADDTOZONE{"script"
-  tag="METACOMMENTPLUGIN::PREFS"
-  text="<literal><script>
-    jQuery(function($) {
-      $('#displaycomments_on, #displaycomments_off').change(function() {
-        $('#cmtPreferences').animate({opacity:'toggle'});
-      });
-    });
-    </script></literal>"
-  requires="JQUERYPLUGIN"
-}%<!-- -->
 </div>%TMPL:END%
 

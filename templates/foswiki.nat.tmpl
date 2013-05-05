@@ -36,13 +36,13 @@
 %TMPL:DEF{"BACKLINKS"}%%TMPL:P{"BACKLINKS_SHORT"}%%TMPL:P{"BACKLINKS_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
 %TMPL:DEF{"BACKLINKS_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Backlinks"}%</span>%TMPL:END%
 %TMPL:DEF{"BACKLINKS_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Find backlinks"}%</span>%TMPL:END%
-%TMPL:DEF{"BACKLINKS_ACTION"}%<a class='natTopicAction jqUIDialogLink natBacklinksAction' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=backlinks;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on' rel='nofollow' >%JQICON{"arrow_in"}%%TMPL:P{"BACKLINKS"}%</a>%TMPL:END%
+%TMPL:DEF{"BACKLINKS_ACTION"}%<a class='natTopicAction jqUIDialogLink natBacklinksAction' href='%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=backlinks;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on' rel='nofollow' >%JQICON{"arrow_in"}%%TMPL:P{"BACKLINKS"}%</a>%TMPL:END%
 %TMPL:DEF{"BACKLINKS_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natBacklinksAction'>%JQICON{"arrow_in"}%%TMPL:P{"BACKLINKS"}%</span>%TMPL:END%
 
 %TMPL:DEF{"CHILDTOPICS"}%%TMPL:P{"CHILDTOPICS_SHORT"}%%TMPL:P{"CHILDTOPICS_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
 %TMPL:DEF{"CHILDTOPICS_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Children"}%</span>%TMPL:END%
 %TMPL:DEF{"CHILDTOPICS_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Find child topics"}%</span>%TMPL:END%
-%TMPL:DEF{"CHILDTOPICS_ACTION"}%<a class='natTopicAction jqUIDialogLink natChildtopicsAction' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=childtopics;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"sitemap"}%%TMPL:P{"CHILDTOPICS"}%</a>%TMPL:END%
+%TMPL:DEF{"CHILDTOPICS_ACTION"}%<a class='natTopicAction jqUIDialogLink natChildtopicsAction' href='%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=childtopics;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"sitemap"}%%TMPL:P{"CHILDTOPICS"}%</a>%TMPL:END%
 %TMPL:DEF{"CHILDTOPICS_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natChildtopicsAction'>%JQICON{"sitemap"}%%TMPL:P{"CHILDTOPICS"}%</span>%TMPL:END%
 
 %TMPL:DEF{"PRINT"}%%TMPL:P{"PRINT_SHORT"}%%TMPL:P{"PRINT_LONG"}%%TMPL:END%
@@ -54,7 +54,7 @@
 %TMPL:DEF{"RAW"}%%TMPL:P{"RAW_SHORT"}%%TMPL:P{"RAW_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
 %TMPL:DEF{"RAW_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Raw"}%</span>%TMPL:END%
 %TMPL:DEF{"RAW_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View wiki markup"}%</span>%TMPL:END%
-%TMPL:DEF{"RAW_ACTION"}%<a class='natTopicAction jqUIDialogLink natRawAction' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=viewraw;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on;rev=$rev' rel='nofollow'>%JQICON{"text_align_left"}%%TMPL:P{"RAW"}%</a>%TMPL:END%
+%TMPL:DEF{"RAW_ACTION"}%<a class='natTopicAction jqUIDialogLink natRawAction' href='%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=viewraw;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on;rev=$rev' rel='nofollow'>%JQICON{"text_align_left"}%%TMPL:P{"RAW"}%</a>%TMPL:END%
 %TMPL:DEF{"RAW_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natRawAction'>%JQICON{"text_align_left"}%%TMPL:P{"RAW"}%</span>%TMPL:END%
 
 %TMPL:DEF{"EDIT"}%%TMPL:P{"EDIT_SHORT"}%%TMPL:P{"EDIT_LONG"}%%TMPL:END%
@@ -114,7 +114,7 @@
 %TMPL:DEF{"HISTORY"}%%TMPL:P{"HISTORY_SHORT"}%%TMPL:P{"HISTORY_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
 %TMPL:DEF{"HISTORY_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"History"}%</span>%TMPL:END%
 %TMPL:DEF{"HISTORY_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View revision history"}%</span>%TMPL:END%
-%TMPL:DEF{"HISTORY_ACTION"}%<a class='natTopicAction jqUIDialogLink natHistoryAction' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=history;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on;rev=$rev' rel='nofollow'>%JQICON{"time"}%%TMPL:P{"HISTORY"}%</a>%TMPL:END%
+%TMPL:DEF{"HISTORY_ACTION"}%<a class='natTopicAction jqUIDialogLink natHistoryAction' href='%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=history;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on;rev=$rev' rel='nofollow'>%JQICON{"time"}%%TMPL:P{"HISTORY"}%</a>%TMPL:END%
 %TMPL:DEF{"HISTORY_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natHistoryAction'>%JQICON{"time"}%%TMPL:P{"HISTORY"}%</span>%TMPL:END%
 
 %TMPL:DEF{"CLOSE"}%%TMPL:P{"CLOSE_SHORT"}%%TMPL:P{"CLOSE_LONG"}%%TMPL:END%
@@ -132,7 +132,7 @@
 %TMPL:DEF{"CHANGELANGUAGE"}%%TMPL:P{"CHANGELANGUAGE_SHORT"}%%TMPL:P{"CHANGELANGUAGE_LONG"}%%TMPL:END%
 %TMPL:DEF{"CHANGELANGUAGE_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Language"}%</span>%TMPL:END%
 %TMPL:DEF{"CHANGELANGUAGE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Interface language"}%</span>%TMPL:END%
-%TMPL:DEF{"CHANGELANGUAGE_ACTION"}%<a class='natTopicAction jqUIDialogLink natChangeLanguageAction' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=languageselector;expand=dialog;topic=%BASEWEB%/%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"world"}%%TMPL:P{"CHANGELANGUAGE"}%</a>%TMPL:END%
+%TMPL:DEF{"CHANGELANGUAGE_ACTION"}%<a class='natTopicAction jqUIDialogLink natChangeLanguageAction' href='%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=languageselector;expand=dialog;topic=%BASEWEB%/%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"world"}%%TMPL:P{"CHANGELANGUAGE"}%</a>%TMPL:END%
 %TMPL:DEF{"CHANGELANGUAGE_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natChangeLanguageAction'>%TMPL:P{"CHANGELANGUAGE"}%</span>%TMPL:END%
 
 %TMPL:DEF{"TRANSLATETOPIC"}%%TMPL:P{"TRANSLATETOPIC_SHORT"}%%TMPL:P{"TRANSLATETOPIC_LONG"}%%TMPL:END%
@@ -170,7 +170,7 @@
 %TMPL:DEF{"NEW"}% %TMPL:P{"NEW_SHORT"}%%TMPL:P{"NEW_LONG"}%%JQREQUIRE{"ui::dialog, wikiword"}%%TMPL:END%
 %TMPL:DEF{"NEW_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"New"}%</span>%TMPL:END%
 %TMPL:DEF{"NEW_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"New topic"}%</span>%TMPL:END%
-%TMPL:DEF{"NEW_ACTION"}%<a class='natTopicAction jqUIDialogLink natNewAction' rel='nofollow' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=newtopic;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"page_white_add"}%%TMPL:P{"NEW"}%</a>%TMPL:END%
+%TMPL:DEF{"NEW_ACTION"}%<a class='natTopicAction jqUIDialogLink natNewAction' rel='nofollow' href='%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=newtopic;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"page_white_add"}%%TMPL:P{"NEW"}%</a>%TMPL:END%
 %TMPL:DEF{"NEW_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natNewAction'>%JQICON{"page_white_add"}%%TMPL:P{"NEW"}%</span>%TMPL:END%
 
 %TMPL:DEF{"HELP"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Help"}%</span>%TMPL:END%
@@ -207,7 +207,7 @@
 %TMPL:DEF{"MANAGETAGS"}% %TMPL:P{"MANAGETAGS_SHORT"}%%TMPL:P{"MANAGETAGS_LONG"}%%JQREQUIRE{"textboxlist, ui::dialog, form"}%%TMPL:END%
 %TMPL:DEF{"MANAGETAGS_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Tags"}%</span>%TMPL:END%
 %TMPL:DEF{"MANAGETAGS_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Manage tags in this web"}%</span>%TMPL:END%
-%TMPL:DEF{"MANAGETAGS_ACTION"}%<a class='natTopicAction jqUIDialogLink natManageTagsAction' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=managetags;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"tag_blue_edit"}%%TMPL:P{"MANAGETAGS"}%</a>%TMPL:END%
+%TMPL:DEF{"MANAGETAGS_ACTION"}%<a class='natTopicAction jqUIDialogLink natManageTagsAction' href='%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=managetags;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"tag_blue_edit"}%%TMPL:P{"MANAGETAGS"}%</a>%TMPL:END%
 %TMPL:DEF{"MANAGETAGS_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natManageTagsAction'>%JQICON{"tag_blue_edit"}%%TMPL:P{"MANAGETAGS"}%</span>%TMPL:END%
 
 %TMPL:DEF{"FIRST"}% %TMPL:P{"FIRST_SHORT"}%%TMPL:P{"FIRST_LONG"}%%TMPL:END%
@@ -243,7 +243,7 @@
 %TMPL:DEF{"COPYTOPIC"}% %TMPL:P{"COPYTOPIC_SHORT"}%%TMPL:P{"COPYTOPIC_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%
 %TMPL:DEF{"COPYTOPIC_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Copy"}%</span>%TMPL:END%
 %TMPL:DEF{"COPYTOPIC_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Copy this topic"}%</span>%TMPL:END%
-%TMPL:DEF{"COPYTOPIC_ACTION"}%<a class='natTopicAction jqUIDialogLink natCopyTopicAction' href='%SCRIPTURL{"rest"}%/RenderPlugin/template?name=copytopic;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"page_white_copy"}%%TMPL:P{"COPYTOPIC"}%</a>%TMPL:END%
+%TMPL:DEF{"COPYTOPIC_ACTION"}%<a class='natTopicAction jqUIDialogLink natCopyTopicAction' href='%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=copytopic;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on' rel='nofollow'>%JQICON{"page_white_copy"}%%TMPL:P{"COPYTOPIC"}%</a>%TMPL:END%
 %TMPL:DEF{"COPYTOPIC_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natCopyTopicAction'>%JQICON{"page_white_copy"}%%TMPL:P{"COPYTOPIC"}%</span>%TMPL:END%
 
 %TMPL:DEF{"NOTHING_FOUND"}%%MAKETEXT{"Nothing found. Try again!"}%%TMPL:END%

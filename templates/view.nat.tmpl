@@ -17,6 +17,7 @@
 %TMPL:P{"metakeywords"}%<!-- -->
 %TMPL:P{"metaauthor"}%<!-- -->
 %TMPL:P{"metaedit"}%<!-- -->
+%TMPL:P{"metaatom"}%<!-- -->
 %TMPL:P{"metarss"}% %TMPL:END%
 
 %TMPL:DEF{"metagenerator"}%<meta name='generator' content='Foswiki %WIKIVERSION%' />%TMPL:END%
@@ -46,6 +47,7 @@
 }%%TMPL:END%
 
 %TMPL:DEF{"metarss"}%<link rel='alternate' type='application/rss+xml' title='RSS Feed' href='%SCRIPTURLPATH{"view"}%/%WEB%/WebRss?contenttype=text/xml' />%TMPL:END%
+%TMPL:DEF{"metaatom"}%<link rel='alternate' type='application/atom+xml' title='Atom Feed' href='%SCRIPTURLPATH{"view"}%/%WEB%/WebAtom?contenttype=text/xml' />%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"content"}%<!-- -->
