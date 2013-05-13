@@ -152,7 +152,7 @@ pre, textarea {
 pre {
   overflow-x:auto;
   overflow-y:hidden;
-  margin:0em 0em 1em 0em;
+  margin:1.385em 0em;
   background:#f6f6f6;
   padding:0.5em;
   border:1px solid #ddd;
@@ -321,7 +321,7 @@ h1 a {
   text-decoration:none;
 }
 
-.blogEntry h2,
+.blogEntries .foswikiTopicInfo h2,
 h1 { 
   font-size: 1.6923em; /* 22px */ 
   line-height: 1.091em; /* 24px */
@@ -689,18 +689,8 @@ legend {
 
 .foswikiFormLegend,
 .foswikiFormDescription {
-  margin:0em 0em 1.385em;
+  margin:0em 0em 0.6923em; /* 0 0 9px */
   color:#828282;
-}
-
-td .foswikiFormLegend,
-td .foswikiFormDescription {
-  margin:0px;
-}
-
-.foswikiFormStep:last-child .foswikiFormLegend,
-.foswikiFormStep:last-child .foswikiFormDescription {
-  margin-bottom:0px;
 }
 
 .foswikiFormStep p {
@@ -1116,18 +1106,14 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 }
 
 .natBrowserSupportWarning {
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:1000;
+  display:none;
   padding:1em;
   width:100%;
   background-color:yellow;
   color:black;
 }
-
-.natUnsupportedBrowser  {
-  margin-top:4em;
+.natDeprecatedBrowser .natBrowserSupportWarning {
+  display:block;
 }
 
 .natBrowserSupportWarning a {
@@ -1144,13 +1130,11 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 }
 .natSearchRenameContents .foswikiTopRow {
   text-align:left;
-  vertical-align:top;
   padding:5px;
 }
 .natSearchRenameContents .foswikiSummary {
   padding:5px;
   text-align:left;
-  vertical-align:top;
 }
 .natSearchHit {
   margin:1em 0em 2em;
@@ -1246,7 +1230,7 @@ h4 a:hover, h5 a:hover, h6 a:hover {
   background-color:transparent;
 }
 .natBreadCrumbs {
-  font-size:0.923em; /* 12px */
+  font-size:0.9231em; /* 12px */
   line-height:1.5em; /* 18px */
 }
 .natBreadCrumbs a {
@@ -1865,6 +1849,8 @@ a:hover.natScrollTop {
 }
 .natMiddleContents {
   background:#fff;
+}
+.natViewBody .natMiddleContents {
   min-height:48em;
 }
 .natMainHeaderContents {
@@ -2025,6 +2011,7 @@ a:hover.natScrollTop {
 .natSearchBox .ui-autocomplete-wrapper {
   width:100%;
 }
+
 .natSearchBox .foswikiSubmit {
   width:24px;
   height:24px;
@@ -2117,7 +2104,7 @@ a:hover.natScrollTop {
   position:fixed;
   top:50%;
   left:50%;
-  margin:-18em 0  0 -19em;
+  margin:-13em 0  0 -19em;
   width:38em; 
   border:1px solid #d6d6d6;
   border-radius:10px;

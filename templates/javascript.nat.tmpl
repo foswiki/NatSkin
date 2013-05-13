@@ -1,16 +1,17 @@
 <!-- template: javascript.nat.tmpl -->
 %TMPL:DEF{"defaultjavascript"}%<!-- -->
-%JQREQUIRE{"superfish, ui, blockui, farscroll, scrollto, imagetooltip" warn="off"}%<!--  -->
+%JQREQUIRE{"superfish, ui, blockui, farscroll, scrollto, imagetooltip, autosuggest" warn="off"}%<!--  -->
 %RENDERZONE{"script"}%
 %RENDERZONE{"skinjs"}%
 <!-- -->%TMPL:END%
 
+%TMPL:DEF{"deprecatedBrowsers"}%'NatSkin.deprecatedBrowsers': [%FORMATLIST{"%DEPRECATEDBROWSERS{default=""}%" split="\s*,\s*" format="'$1'" separator=", "}%]%TMPL:END%
 %TMPL:DEF{"fixRevisionPosition"}%'NatSkin.fixRevisionPosition': true%TMPL:END%
 %TMPL:DEF{"initWebMenu"}%'NatSkin.initWebMenu': true%TMPL:END%
 %TMPL:DEF{"initOverflows"}%'NatSkin.initOverflows': false%TMPL:END%
 %TMPL:DEF{"initTopicActions"}%'NatSkin.initTopicActions': true%TMPL:END%
 %TMPL:DEF{"initSideBar"}%'NatSkin.initSideBar': true%TMPL:END%
-%TMPL:DEF{"initAutoComplete"}%'NatSkin.initAutocomplete': false%TMPL:END%
+%TMPL:DEF{"initAutoComplete"}%'NatSkin.initAutocomplete': true%TMPL:END%
 %TMPL:DEF{"initRedDot"}%'NatSkin.initRedDot': true%TMPL:END%
 
 %TMPL:DEF{"metaflags"}%<literal>
@@ -19,6 +20,7 @@
   id="NATSKIN::PREFERENCES"
   text="<script>
 jQuery.extend(foswiki.preferences, {
+  %TMPL:P{"deprecatedBrowsers"}%,
   %TMPL:P{"fixRevisionPosition"}%,
   %TMPL:P{"initWebMenu"}%,
   %TMPL:P{"initOverflows"}%,

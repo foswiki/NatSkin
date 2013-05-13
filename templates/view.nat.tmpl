@@ -22,6 +22,13 @@
 
 %TMPL:DEF{"metagenerator"}%<meta name='generator' content='Foswiki %WIKIVERSION%' />%TMPL:END%
 
+%TMPL:DEF{"metaauthor"}%%IF{
+  "defined 'METAAUTHOR'" 
+  then="<meta name='author' content='$percntENCODE{\"$percntMETAAUTHOR$percnt\" type=\"html\"}$percnt' />"
+  else="<meta name='author' content='%SPACEOUT{"%USERINFO{"%QUERY{"'%WEB%.%TOPIC%'/versions[1].info.author"}%" format="$wikiname"}%"}%' />"
+}%%TMPL:END%
+
+
 %TMPL:DEF{"metadescription"}%%IF{"defined 'METADESCRIPTION'" 
   then="<meta name='description' content='$percntENCODE{\"$percntMETADESCRIPTION$percnt\" type=\"html\"}$percnt' />"
   else="$percntFORMFIELD{\"Summary\" format=\"<meta name='description' content='$dollarpercntENCODE{\\"$value\\" type=\\"html\\"}$dollarpercnt' />\"}$percnt"
@@ -31,15 +38,6 @@
   then="<meta name='keywords' content='$percntENCODE{\"$percntMETAKEYWORDS$percnt\" type=\"html\"}$percnt' />" 
   else="$percntFORMFIELD{\"Tag\" format=\"<meta name='keywords' content='$dollarpercntENCODE{\\"$value\\" type=\\"html\\"}$dollarpercnt' />\"}$percnt"
 }%%TMPL:END%
-
-%TMPL:DEF{"metaauthor"}%%IF{
-  "defined 'METAAUTHOR'" 
-  then="<meta name='author' content='$percntENCODE{\"$percntMETAAUTHOR$percnt\" type=\"html\"}$percnt' />"
-  else="<meta name='author' content='$percntTMPL:P{context=\"DBCachePluginEnabled\" then=\"metaauthor::dbcache\" else=\"metaauthor::default\"}$percnt' />"
-}%%TMPL:END%
-
-%TMPL:DEF{"metaauthor::default"}%%SPACEOUT{"%USERINFO{"%QUERY{"'%WEB%.%TOPIC%'/versions[1].info.author"}%" format="$wikiname"}%"}%%TMPL:END%
-%TMPL:DEF{"metaauthor::dbcache"}%%SPACEOUT{"%DBQUERY{topic="%WEB%.%TOPIC%" format="$expand(createauthor)"}%"}%%TMPL:END%
 
 %TMPL:DEF{"metaedit"}%%IF{
   "'%WEB%.%TOPIC%' allows 'change'" 

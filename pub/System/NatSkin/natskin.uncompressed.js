@@ -3,6 +3,25 @@
 jQuery(function($) {
   "use strict";
 
+  // flag browser deprecation
+  var agent, i, deprecatedBrowsers,
+      agents = ['msie', 'chrome', 'mozilla', 'opera', 'safari', 'webkit'];
+  for (i = 0; i < agents.length; i++) {
+    if ($.browser[agents[i]]) {
+      agent = agents[i] + $.browser.version.replace(/\..*$/, '');
+      break;
+    }
+  }
+  if (agent) {
+    deprecatedBrowsers = foswiki.getPreference("NatSkin.deprecatedBrowsers") || [];
+    for (i = 0; i < deprecatedBrowsers.length; i++) {
+      if (agent === deprecatedBrowsers[i]) {
+        $("body").addClass("natDeprecatedBrowser");
+        break;
+      }
+    }
+  }
+
   /* move revinfo */
   if (foswiki.getPreference("NatSkin.fixRevisionPosition")) {
     var target = $(".natMainContents h1:first");
@@ -104,36 +123,30 @@ jQuery(function($) {
     });
   }
 
-  if (foswiki.getPreference("NatSkin.initAutocomplete")) {// autocompletion using solr 
-    var $input = $("#searchbox input[type=text]"),
-        scriptUrl = foswiki.getPreference("SCRIPTURL") + '/rest/SolrPlugin/autocomplete',
-        now = (new Date).getTime(),
-        submitButton = $input.parent().find(".foswikiSubmit");
+  if (foswiki.getPreference("NatSkin.initAutocomplete")) {// autosuggest using solr 
+    $("#searchbox").each(function() {
+      var $form = $(this),
+          $input = $form.find("input[type=text]"),
+          submitButton = $form.find("input[type=submit]");
 
-    if ($input.length) {
-      $input.autocomplete({
-        source: scriptUrl + '?t='+ now,
-        loading: function(event) {
-          //console.log("got loading event");
+      $input.autosuggest({
+        search: function(event) {
           submitButton.hide();
         },
-        unloading: function(event) {
-          //console.log("got unloading event");
+        response: function(event) {
+          submitButton.show();
+        },
+        open: function(event) {
           submitButton.show();
         }
-      }).data("autocomplete")._renderItem = function(ul, item) {
-        return $("<li></li>")
-          .data("item.autocomplete", item)
-          .append("<a><table width='100%'><tr><td>"+item.label+"</td><td align='right'>"+item.frequency+"</td></tr></table></a>")
-          .appendTo(ul);
-      };
-    }
+      });
+    });
   }
 
   // hide address bar on mobile devices
   if(navigator.userAgent.match(/Android/i)){
     window.scrollTo(0,1);
-  }
+  } 
 
   /* scroll to top */
   $(window).scroll(function() {

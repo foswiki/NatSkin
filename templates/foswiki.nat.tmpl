@@ -357,8 +357,5 @@
   %MAKETEXT{"Warning: your browser isn't supported. Please install a modern one, like [_1], [_2], [_3], [_4] or the latest [_5]." 
     args="<a href='http://getfirefox.com'>Firefox</a>, <a href='http://www.opera.com/download/'>Opera</a>, <a href='http://www.apple.com/safari/'>Safari</a>, <a href='https://www.google.com/chrome/'>Chrome</a>, <a href='http://www.microsoft.com/windows/downloads/ie/getitnow.mspx'>Internet Explorer</a>"
   }%
-  %TMPL:P{context="msie7" then="browsersupport::ie7"}%<!-- -->
   %MAKETEXT{"Thank you!"}%
 </div>%TMPL:END%
-
-%TMPL:DEF{"browsersupport::ie7"}%%MAKETEXT{"If you run an Internet Explorer 8 and still get this warning, then make sure the 'Compatibility View' setting is switched off."}%%TMPL:END%
