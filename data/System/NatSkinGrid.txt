@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="micha" comment="reprev" date="1367524196" format="1.1" reprev="12" version="12"}%
+%META:TOPICINFO{author="micha" comment="reprev" date="1368602661" format="1.1" reprev="13" version="13"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 
@@ -33,7 +33,7 @@ jQuery(function($) {
   line-height:3em;
 }
 .foswikiGrid.test1 .foswikiRow {
-  margin-bottom:0;
+  margin-top:0;
 }
 .foswikiGrid.test1 .foswikiRow div {
   background-color: #FFC0CB;
@@ -67,7 +67,7 @@ jQuery(function($) {
     <div class="foswikiCol1">1/12</div>
     <div class="foswikiCol1">1/12</div>
     <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1 last">1/12</div>
+    <div class="foswikiCol1">1/12</div>
   </div>
   <div class="foswikiRow">
     <div class="foswikiCol2">2/12</div>
@@ -75,24 +75,24 @@ jQuery(function($) {
     <div class="foswikiCol2">2/12</div>
     <div class="foswikiCol2">2/12</div>
     <div class="foswikiCol2">2/12</div>
-    <div class="foswikiCol2 last">2/12</div>
+    <div class="foswikiCol2">2/12</div>
   </div>
   <div class="foswikiRow">
     <div class="foswikiCol3">3/12</div>
     <div class="foswikiCol3">3/12</div>
     <div class="foswikiCol3">3/12</div>
-    <div class="foswikiCol3 last">3/12</div>
+    <div class="foswikiCol3">3/12</div>
   </div>
   <div class="foswikiRow">
     <div class="foswikiCol4">4/12</div>
     <div class="foswikiCol4">4/12</div>
-    <div class="foswikiCol4 last">4/12</div>
+    <div class="foswikiCol4">4/12</div>
   </div>
   <div class="foswikiRow">
     <div class="foswikiCol6">6/12</div>
-    <div class="foswikiCol6 last">6/12</div>
+    <div class="foswikiCol6">6/12</div>
   </div>
-  <div class="foswikiRow last">
+  <div class="foswikiRow">
     <div class="foswikiCol12">12/12</div>
   </div>
 </div>
@@ -101,97 +101,97 @@ jQuery(function($) {
 <div class="foswikiGrid test1">
   <div class="foswikiRow">
     <div class="foswikiCol7">7/12</div>
-    <div class="foswikiCol5 last">5/12</div>
+    <div class="foswikiCol5">5/12</div>
   </div>
   <div class="foswikiRow">
     <div class="foswikiCol3">3/12</div>
     <div class="foswikiCol4">4/12</div>
-    <div class="foswikiCol5 last">5/12</div>
+    <div class="foswikiCol5">5/12</div>
   </div>
   <div class="foswikiRow">
     <div class="foswikiCol7">7/12</div>
     <div class="foswikiCol2">2/12</div>
-    <div class="foswikiCol3 last">3/12</div>
+    <div class="foswikiCol3">3/12</div>
   </div>
-  <div class="foswikiRow last">
+  <div class="foswikiRow">
     <div class="foswikiCol7">7/12</div>
     <div class="foswikiCol1">1/12</div>
     <div class="foswikiCol1">1/12</div>
     <div class="foswikiCol1">1/12</div>
     <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1 last">1/12</div>
+    <div class="foswikiCol1">1/12</div>
   </div>
 </div>
 
 <div class="foswikiGrid test1">
   <div class="foswikiRow">
     <div class="foswikiCol8">8/12</div>
-    <div class="foswikiCol4 last">4/12</div>
+    <div class="foswikiCol4">4/12</div>
   </div>
   <div class="foswikiRow">
     <div class="foswikiCol4">4/12</div>
     <div class="foswikiCol4">4/12</div>
-    <div class="foswikiCol4 last">4/12</div>
+    <div class="foswikiCol4">4/12</div>
   </div>
   <div class="foswikiRow">
     <div class="foswikiCol8">8/12</div>
     <div class="foswikiCol2">2/12</div>
-    <div class="foswikiCol2 last">2/12</div>
+    <div class="foswikiCol2">2/12</div>
   </div>
   <div class="foswikiRow">
     <div class="foswikiCol8">8/12</div>
     <div class="foswikiCol3">3/12</div>
-    <div class="foswikiCol1 last">1/12</div>
+    <div class="foswikiCol1">1/12</div>
   </div>
-  <div class="foswikiRow last">
+  <div class="foswikiRow">
     <div class="foswikiCol8">8/12</div>
     <div class="foswikiCol1">1/12</div>
     <div class="foswikiCol1">1/12</div>
     <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1 last">1/12</div>
+    <div class="foswikiCol1">1/12</div>
   </div>
 </div>
 
 <div class="foswikiGrid test1">
   <div class="foswikiRow">
     <div class="foswikiCol9">9/12</div>
-    <div class="foswikiCol3 last">3/12</div>
+    <div class="foswikiCol3">3/12</div>
   </div>
   <div class="foswikiRow">
     <div class="foswikiCol6">6/12</div>
     <div class="foswikiCol3">3/12</div>
-    <div class="foswikiCol3 last">3/12</div>
+    <div class="foswikiCol3">3/12</div>
   </div>
   <div class="foswikiRow">
     <div class="foswikiCol10">10/12</div>
-    <div class="foswikiCol2 last">2/12</div>
+    <div class="foswikiCol2">2/12</div>
   </div>
   <div class="foswikiRow">
     <div class="foswikiCol5">5/12</div>
     <div class="foswikiCol5">5/12</div>
-    <div class="foswikiCol2 last">2/12</div>
+    <div class="foswikiCol2">2/12</div>
   </div>
   <div class="foswikiRow">
     <div class="foswikiCol11">11/12</div>
-    <div class="foswikiCol1 last">1/12</div>
+    <div class="foswikiCol1">1/12</div>
   </div>
-  <div class="foswikiRow last">
+  <div class="foswikiRow">
     <div class="foswikiCol5">5/12</div>
     <div class="foswikiCol6">6/12</div>
-    <div class="foswikiCol1 last">1/12</div>
+    <div class="foswikiCol1">1/12</div>
   </div>
 </div>
 
 ---++ Text example
 <div class="foswikiGrid test2">
   <div class="foswikiRow">
+    <div class="foswikiCol6">
+      Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
+      habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
+      Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
+      sit integer? Aenean? 
+    </div>
     <div class="foswikiCol6 border">
-      Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
-      habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
-      Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
-      sit integer? Aenean? 
-    </div>
-    <div class="foswikiCol6 last">
       elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
       sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
       dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
@@ -201,7 +201,7 @@ jQuery(function($) {
   </div>
 ---
   <div class="foswikiRow">
-    <div class="foswikiCol4 border">
+    <div class="foswikiCol4">
       Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
       habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
       Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
@@ -214,7 +214,7 @@ jQuery(function($) {
       phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
       augue porta, cursus, a eu.
     </div>
-    <div class="foswikiCol4 last">
+    <div class="foswikiCol4 border">
       elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
       sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
       dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
@@ -224,24 +224,24 @@ jQuery(function($) {
   </div>
 ---
   <div class="foswikiRow">
-    <div class="foswikiCol8 border">
+    <div class="foswikiCol8">
       Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
       habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
       Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
       sit integer? Aenean? 
     </div>
-    <div class="foswikiCol4 last">
+    <div class="foswikiCol4 border">
       elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
       sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. 
     </div>
   </div>
 ---
   <div class="foswikiRow">
-    <div class="foswikiCol4 border">
+    <div class="foswikiCol4">
       Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
       habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
     </div>
-    <div class="foswikiCol8 last">
+    <div class="foswikiCol8">
       elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
       sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
       dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
@@ -250,8 +250,8 @@ jQuery(function($) {
     </div>
   </div>
 ---
-  <div class="foswikiRow last">
-    <div class="foswikiCol3 border">
+  <div class="foswikiRow">
+    <div class="foswikiCol3">
       Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
       habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
       Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
@@ -271,7 +271,7 @@ jQuery(function($) {
       phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
       augue porta, cursus, a eu.
     </div>
-    <div class="foswikiCol3 last">
+    <div class="foswikiCol3 border">
       elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
       sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
       dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
