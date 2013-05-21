@@ -25,9 +25,11 @@
 %TMPL:DEF{"metaauthor"}%%IF{
   "defined 'METAAUTHOR'" 
   then="<meta name='author' content='$percntENCODE{\"$percntMETAAUTHOR$percnt\" type=\"html\"}$percnt' />"
-  else="<meta name='author' content='%SPACEOUT{"%USERINFO{"%QUERY{"'%WEB%.%TOPIC%'/versions[1].info.author"}%" format="$wikiname"}%"}%' />"
+  else="<meta name='author' content='%SPACEOUT{"%USERINFO{"%TMPL:P{context="DBCachePluginEnabled" then="metaauthor::dbcache" else="metaauthor::default"}%" format="$wikiname"}%"}%' />"
 }%%TMPL:END%
 
+%TMPL:DEF{"metaauthor::default"}%%QUERY{"'%WEB%.%TOPIC%'/versions[1].info.author"}%%TMPL:END%
+%TMPL:DEF{"metaauthor::dbcache"}%%DBQUERY{topic="%WEB%.%TOPIC%" format="$expand(createauthor)"}%%TMPL:END%
 
 %TMPL:DEF{"metadescription"}%%IF{"defined 'METADESCRIPTION'" 
   then="<meta name='description' content='$percntENCODE{\"$percntMETADESCRIPTION$percnt\" type=\"html\"}$percnt' />"
