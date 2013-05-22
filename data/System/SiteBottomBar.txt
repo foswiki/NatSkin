@@ -44,7 +44,7 @@ Default bottombar component
   guest=""
 }%<!-- -->
 </div>
-<div class="foswikiCol3 last">
+<div class="foswikiCol3">
 %USERACTIONS{
   header="<h4>%MAKETEXT{"View"}%</h4>"
   format="

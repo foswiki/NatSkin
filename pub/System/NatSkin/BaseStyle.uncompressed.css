@@ -830,7 +830,7 @@ div.foswikiErrorSummary {
 .foswikiGrid.gutter1 .foswikiCol7,.foswikiGrid.gutter1 .foswikiCol8,
 .foswikiGrid.gutter1 .foswikiCol9, .foswikiGrid.gutter1 .foswikiCol10,
 .foswikiGrid.gutter1 .foswikiCol11 {  margin-left:1%; }
-.foswikiGrid.gutter1 .border { padding-left: 0.45%; margin-left: 0.45%; }
+.foswikiGrid.gutter1 .border { padding-left: 0.4%; margin-left: 0.4%; }
 .foswikiGrid.gutter1 .foswikiCol1 { width: 7.4167%; }
 .foswikiGrid.gutter1 .foswikiCol2 { width: 15.8333%; }
 .foswikiGrid.gutter1 .foswikiCol3 { width: 24.25%; }
@@ -852,7 +852,7 @@ div.foswikiErrorSummary {
 .foswikiGrid.gutter2 .foswikiCol7,.foswikiGrid.gutter2 .foswikiCol8,
 .foswikiGrid.gutter2 .foswikiCol9, .foswikiGrid.gutter2 .foswikiCol10,
 .foswikiGrid.gutter2 .foswikiCol11 {  margin-left:2%; }
-.foswikiGrid.gutter2 .border { padding-left: 0.95%; margin-left: 0.95%; }
+.foswikiGrid.gutter2 .border { padding-left: 0.9%; margin-left: 0.9%; }
 .foswikiGrid.gutter2 .foswikiCol1 { width: 6.5%; }
 .foswikiGrid.gutter2 .foswikiCol2 { width: 15%; }
 .foswikiGrid.gutter2 .foswikiCol3 { width: 23.5%; }
@@ -874,7 +874,7 @@ div.foswikiErrorSummary {
 .foswikiGrid.gutter3 .foswikiCol7,.foswikiGrid.gutter3 .foswikiCol8,
 .foswikiGrid.gutter3 .foswikiCol9, .foswikiGrid.gutter3 .foswikiCol10,
 .foswikiGrid.gutter3 .foswikiCol11 {  margin-left:3%; }
-.foswikiGrid.gutter3 .border { padding-left: 1.45%; margin-left: 1.45%; }
+.foswikiGrid.gutter3 .border { padding-left: 1.4%; margin-left: 1.4%; }
 .foswikiGrid.gutter3 .foswikiCol1 { width: 5.5833%; }
 .foswikiGrid.gutter3 .foswikiCol2 { width: 14.1667%; }
 .foswikiGrid.gutter3 .foswikiCol3 { width: 22.75%; }
@@ -896,7 +896,7 @@ div.foswikiErrorSummary {
 .foswikiGrid .foswikiCol7,.foswikiGrid .foswikiCol8,
 .foswikiGrid .foswikiCol9, .foswikiGrid .foswikiCol10,
 .foswikiGrid .foswikiCol11 {  margin-left:4%; }
-.foswikiGrid .border { padding-left: 1.95%; margin-left: 1.95%; }
+.foswikiGrid .border { padding-left: 1.9%; margin-left: 1.9%; }
 .foswikiGrid .foswikiCol1 { width: 4.6667%; }
 .foswikiGrid .foswikiCol2 { width: 13.3333%; }
 .foswikiGrid .foswikiCol3 { width: 22%; }
@@ -917,7 +917,7 @@ div.foswikiErrorSummary {
 .foswikiGrid.gutter5 .foswikiCol7,.foswikiGrid.gutter5 .foswikiCol8,
 .foswikiGrid.gutter5 .foswikiCol9, .foswikiGrid.gutter5 .foswikiCol10,
 .foswikiGrid.gutter5 .foswikiCol11 {  margin-left:5%; }
-.foswikiGrid.gutter5 .border { padding-left: 2.45%; margin-left: 2.45%; }
+.foswikiGrid.gutter5 .border { padding-left: 2.4%; margin-left: 2.4%; }
 .foswikiGrid.gutter5 .foswikiCol1 { width: 3.75%; }
 .foswikiGrid.gutter5 .foswikiCol2 { width: 12.5%; }
 .foswikiGrid.gutter5 .foswikiCol3 { width: 21.25%; }
@@ -950,6 +950,12 @@ div.foswikiErrorSummary {
   margin-left:0 !important;
   border-left:0 !important;
   padding-left:0 !important;
+}
+
+@media (max-width: 540px) {
+  .foswikiGrid .border {
+    border-left:0;
+  }
 }
 
 /* foswiki base **************************************************************/
