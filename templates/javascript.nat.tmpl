@@ -11,7 +11,7 @@
 %TMPL:DEF{"initOverflows"}%'NatSkin.initOverflows': false%TMPL:END%
 %TMPL:DEF{"initTopicActions"}%'NatSkin.initTopicActions': true%TMPL:END%
 %TMPL:DEF{"initSideBar"}%'NatSkin.initSideBar': true%TMPL:END%
-%TMPL:DEF{"initAutoComplete"}%'NatSkin.initAutocomplete': true%TMPL:END%
+%TMPL:DEF{"initAutoComplete"}%'NatSkin.initAutocomplete': %IF{"context SolrPluginEnabled" then="true" else="false"}%%TMPL:END%
 %TMPL:DEF{"initRedDot"}%'NatSkin.initRedDot': true%TMPL:END%
 
 %TMPL:DEF{"metaflags"}%<literal>

@@ -1,7 +1,6 @@
 data/Main/WebLinks.txt 0644
 data/Main/WikiGuestSideBar.txt 0644
 data/Sandbox/NatSkinTest.txt 0644
-data/System/AjaxWebSelector.txt 0644
 data/System/EmptySideBarTemplate.txt 0644
 data/System/JazzyNoteTheme.txt 0644
 data/System/MySideBar.txt 0644
@@ -84,6 +83,7 @@ pub/System/NatSkin/favicon.ico 0644
 pub/System/NatSkin/foswiki-logo.png 0644
 pub/System/NatSkin/grid-40x18.png 0644
 pub/System/NatSkin/grid-40x21.png 0644
+pub/System/NatSkin/hamburger.gif 0644
 pub/System/NatSkin/history.js 0644
 pub/System/NatSkin/history.js.gz 0644
 pub/System/NatSkin/history.uncompressed.js 0644

@@ -610,3 +610,12 @@ a:hover.natScrollTop {
   border-color:#DDD;
 }
 
+@media (max-width:870px) {
+  .natBreadCrumbs {
+    display:none;
+  }
+  .natBodyFixed .natBodyContents {
+    width:auto;
+    margin:0;
+  }
+}

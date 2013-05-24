@@ -43,17 +43,17 @@ first." args="%PARAM1%"}%
   <input type="hidden" name="breaklock" value="on" />
   %BUTTON{"%MAKETEXT{"Edit anyway"}%" type="submit" icon="pencil"}%
   %CLEAR%
-%QUERYPARAMS{format="<input type='hidden' name='$name' value='$percntENCODE{$quot()$value$quot type=$quot()html$quot}$percnt' />"}%
+%QUERYPARAMS{format="<input type='hidden' name='$name' value='$value' />" encoding="html"}%
 </form>
 </td> 
 <td valign="top">
 <form style="margin-bottom:0px" class="natOopsButtons" action="%SCRIPTURLPATH{"%PARAM4%"}%/%WEB%/%TOPIC%" method="post">
   %BUTTON{"%MAKETEXT{"Try again"}%" type="submit" icon="arrow_redo"}%
-%QUERYPARAMS{format="<input type='hidden' name='$name' value='$percntENCODE{$quot()$value$quot type=$quot()html$quot}$percnt' />"}%
+%QUERYPARAMS{format="<input type='hidden' name='$name' value='$value' />" encoding="html"}%
 </form>
 </td>
 <td valign="top">
-  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WEB%.%TOPIC%" icon="cross"}%
+  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%IF{"defined redirectto" then="%URLPARAM{"redirectto"}%" else="%WEB%.%TOPIC%"}%" icon="cross"}%
   %CLEAR%
 </td>
 </tr></table> %TMPL:END%

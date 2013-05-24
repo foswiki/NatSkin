@@ -157,4 +157,34 @@ jQuery(function($) {
       $('a.natScrollTop').fadeOut(100);
     }
   });
+
+  /* responsive navi */
+  $(".natNavToggle").livequery(function() {
+    var $this = $(this), 
+        $sidebar = $(".natSideBar");
+
+    if ($sidebar.length == 0) {
+      $this.hide();
+      return false;
+    }
+
+    $this.on("click", function(ev) {
+
+      $sidebar.toggle("slide", {
+        direction: "right"
+      });
+
+      if (ev.preventDefault) {
+        ev.preventDefault();
+        ev.stopPropagation();
+      } else {
+        ev.returnValue = false;
+      }
+
+
+      return false;
+    });
+
+  });
+  
 });

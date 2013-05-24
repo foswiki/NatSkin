@@ -952,11 +952,6 @@ div.foswikiErrorSummary {
   padding-left:0 !important;
 }
 
-@media (max-width: 540px) {
-  .foswikiGrid .border {
-    border-left:0;
-  }
-}
 
 /* foswiki base **************************************************************/
 a:hover, .foswikiEmulatedLink:hover,
@@ -1788,6 +1783,22 @@ h2 .foswikiTopicSummary {
   border:2px solid red;
 }
 
+.natNavToggle {
+  display:none; /* switch it on using media queries */
+  position:fixed;
+  z-index:9999;
+  top:0.5em;
+  right:0.5em;
+  margin:0;
+  width:50px;
+  height:50px;
+  border-radius:0;
+  overflow:hidden;
+  background:#999 url("hamburger.gif") no-repeat 50% 50%;
+  border:none;
+  text-decoration:none;
+}
+
 a.natScrollTop {
   position:fixed;
   bottom:0.5em;
@@ -2266,6 +2277,7 @@ a:hover.natScrollTop {
 }
 
 /* web menu ******************************************************************/
+
 .natWebMenu li a,
 .natWebMenu h2,
 .natWebMenu h3,
@@ -2642,4 +2654,11 @@ a:hover.natScrollTop {
 .natSubscribeButton.state-subscribed .natSubscribeAction,
 .natSubscribeButton.state-unsubscribed .natUnsubscribeAction {
   display:none !important;
+}
+
+/* responsive gear */
+@media (max-width: 540px) {
+  .foswikiGrid .border {
+    border-left:0;
+  }
 }
