@@ -15,12 +15,7 @@
           <td>
             <select name="language" class="foswikiSelect">
               <option value="default">%MAKETEXT{"Default"}%</option>
-              %LANGUAGES{
-                format="<option $marker value='$code'>$language$percntIF{\"'$language'!='$name'\" then=\" - $name\"}$percnt</option>" 
-                selection="%LANGUAGE%" 
-                marker="selected='selected'"
-                separator="\n"
-              }%
+              %TMPL:P{context="MultiLingualPluginEnabled" then="languages::multilingual" else="languages::default"}%
             </select>
           </td>
         </tr>
@@ -47,3 +42,18 @@ jQuery(function($) {
 </script>
 </literal>
 </noautolink>%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"languages::multilingual"}%%LANGUAGES{
+  format="<option $marker value='$code'>$language$percntIF{\"'$language'!='$name'\" then=\" - $name\"}$percnt</option>" 
+  selection="%LANGUAGE%" 
+  marker="selected='selected'"
+  separator="\n"
+}%%TMPL:END%
+
+%TMPL:DEF{"languages::default"}%%LANGUAGES{
+  format="<option $marker value=\"$langtag\">$langname</option>"
+  selection="%LANGUAGE%"
+  separator=" "
+  marker="selected=\"selected\""
+}%%TMPL:END%
