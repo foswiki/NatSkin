@@ -2,6 +2,10 @@
 %TMPL:DEF{"bodyclass"}%natCompareBody%TMPL:END%
 %TMPL:DEF{"title"}%%TOPIC% %MAKETEXT{"([_1] vs. [_2])" args="%REVTITLE1%, %REVTITLE2%"}% - %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
-%TMPL:DEF{"content"}%<!-- content -->
-%TMPL:P{"rendercontent"}%<!-- rendercontent// -->
-<!-- //content -->%TMPL:END%
+%TMPL:DEF{"beforetext"}%<h1>%MAKETEXT{"Difference:"}% %TOPIC% (%REVTITLE1% vs. %REVTITLE2%)</h1>%TMPL:END%
+%TMPL:DEF{"metadata"}%%TMPL:END%
+%TMPL:DEF{"content"}%<!-- -->
+%TMPL:P{"beforetext"}%<!-- -->
+%TMPL:P{"rendercontent"}%<!-- -->
+%TMPL:P{"aftertext"}%<!-- -->
+<!-- -->%TMPL:END%

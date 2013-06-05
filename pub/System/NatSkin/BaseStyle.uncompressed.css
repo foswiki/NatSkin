@@ -14,12 +14,6 @@ table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video, xmp {
   background: transparent;
 }
 
-/*
-* {
-  box-sizing: border-box;
-}
-*/
-
 embed, object {
   position: relative;
   z-index: 0;
@@ -1230,11 +1224,7 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 .natDisabledTopicAction span {
   color:#cfcfcf;
 }
-.natTopicActions span {
-  color:#444;
-}
-.natTopicActions .sfHover .natMoreActionsTopicAction span,
-.natTopicAction:hover span {
+.natTopicActions .sfHover .natMoreActionsTopicAction span {
   color:#fff;
 }
 
@@ -1294,13 +1284,9 @@ h4 a:hover, h5 a:hover, h6 a:hover {
 }
 .natTopicActions .natUserAction:hover,
 .natTopicActions .natTopicAction:hover {
-/*
-  background-color:#eee;
-  border:1px solid #c2c4c4;
-*/
   background-color:#0055b5;
   border:1px solid #004FA9;
-
+  color:#fff;
   border-radius:2px;
 }
 .natTopicActions .sfHover .natMoreActionsTopicAction {
@@ -1983,7 +1969,6 @@ a:hover.natScrollTop {
 .natPreviewBody .natMainContents {
   background-image:url('previewbg.png');
 }
-.natCompareBody .natMainContents,
 .natViewHistoryBody .natMainContents {
   background-image:url('oldrevisionbg.png');
 }

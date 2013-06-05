@@ -1,18 +1,19 @@
 %META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278776" format="1.1" version="1"}%
-
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 %TOC%
 
 ---++ Theme configuration
-The different NatSkin styles (themes) are controlled using preference 
+
+The different NatSkin styles are controlled using preference 
 variables and can be set 
+
    * per user (on the user's home topic), 
    * per web (in the WebPreferences),
    * site wide (in the [[%SYSTEMWEB%.DefaultPreferences]] or better [[%USERSWEB%.SitePreferences]] and
    * on every request (using url parameters)
 
-Use the NatSkinStyleBrowser to preview the known styles and settings. Note
+Use the %SYSTEMWEB%.NatSkinStyleBrowser to preview the known styles and settings. Note
 that the selection made there will only last for the current session. You
 need to add the respective preference variables to your [[%WIKIUSERNAME%][home topic]]
 or the WebPreferences or the %USERSWEB%.SitePreferences to make the selection
@@ -21,46 +22,34 @@ persistent.
 This is the list of variables to configure the skin style:
 
 | *Name%BR%(url param)*  | *Values* | *Description* | *Default* |
-| SKINSTYLE (style) | <noautolink>%KNOWNSTYLES%</noautolink> \
+| NATSKIN_STYLE (style) | <noautolink>%KNOWNSTYLES%</noautolink> \
 | select a predefined style | Clean |
-| STYLEVARIATION (stylevariation) | <noautolink>%KNOWNVARIATIONS%</noautolink> \
+| NATSKIN_VARIATION (skinvariation) | <noautolink>%KNOWNVARIATIONS%</noautolink> \
 | select a style variation | none |
-| STYLEBORDER (styleborder) | on, off, thin \
-| change the border decoration; thin enables a blog-like page layout | off |
-| STYLEBUTTONS (stylebuttons) | on, off \
-| switch on/of the tab buttons above the topic area | off |
-| STYLESIDEBAR (stylesidebar) | left, right, both, off \
-| configure where the sidebar is to be displayed | left |
+| NATSKIN_LAYOUT (skinlayout) | fixed, fluid, bordered \
+| select a page layout | fixed |
+| NATSKIN_MENU (skinmenu) | on, off \
+| switch on/of the horizontal menu above the topic area | on |
+| NATSKIN_SIDEBAR (skinsidebar) | left, right, both, off \
+| configure where to display the sidebar | left |
       
 There are a couple of special url parameters:
    * =togglesidebar=: disable the sidebar for this request only. 
    * =style=off=: switch off any styles (simulating a non-css browser)
    * =style=reset=: switch back to the user and server settings by reverting any 
      session preferences
-   * =switchstyle=next/prev=: switch to the next/previous known style
-   * =switchvariation=next/prev=: switch to the next/previous known style variation
      
 *Example*: To emulate the Kubrick style on the old
 [[http://binarybonsai.com][BinaryBonsai]] (not the new K2 style) use
 <verbatim>
-  * Set SKINSTYLE = Kubrick
-  * Set STYLEBORDER = thin
-  * Set STYLEBUTTONS = on
-  * Set STYLESIDEBAR = right
-  * Set STYLEVARIATION = none
-  * Set STYLESEARCHBOX = pos1
+  * Set NATSKIN_STYLE = jazzynote
+  * Set NATSKIN_LAYOUT = fixed
+  * Set NATSKIN_MENU = on
+  * Set NATSKIN_SIDEBAR = right
+  * Set NATSKIN_VARIATAION = red
 </verbatim>
 
-There are some constraints built into the NatSkin templates that try guarantee a pleasant appearance
-when combining the different skin states:
-   * If the styleborder is "thin", the sidebar will be disabled for the edit, manage, rdiff,
-     natsearch, changes and search topic actions. 
-   * The web buttons will alternate with the sidebar so that they will not be displayed
-     on the same side. 
-   * If the web buttons are enabled the default SiteSideBar will disable the redundant 
-     navigation to other webs.
-
----++ Defining new Themes
+---++ Defining a new style
 
 ... TODO ...
 

@@ -34,8 +34,8 @@ jQuery(function($) {
   if (foswiki.getPreference("NatSkin.initWebMenu")) {
     var $container = $(".natWebMenuContents");
     $container.children("ul").superfish({
-      dropShadows: false, /* enabled using css3 */
-      autoArrows: false,
+      dropShadows: false, autoArrows: false, /* for old superfishes */
+      cssArrows: false,
       onBeforeShow: function() {
         var $this = $(this);
         if ($this.is(".ajaxMenu")) {

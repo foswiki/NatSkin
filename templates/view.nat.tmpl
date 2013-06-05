@@ -81,7 +81,7 @@
 %{ ################################################################################ }%
 %TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Last modified by [_1] on [_2]" args="<span class='natRevisionAuthor'> %REVINFO{"[[$wikiusername]]" rev="%CURREV%"}% </span>, <a class='natRevisionDate' rel='nofollow' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"$date - $hour:$min - r$rev" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
 %TMPL:DEF{"rdiff"}%%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPIC%?type=last;render=sequential%TMPL:END%
-%TMPL:DEF{"compare"}%%SCRIPTURLPATH{"compare"}%/%WEB%/%TOPIC%?type=last;render=interweave%TMPL:END%
+%TMPL:DEF{"compare"}%%SCRIPTURLPATH{"compare"}%/%WEB%/%TOPIC%?type=last;render=interweave;context=1%TMPL:END%
 %TMPL:DEF{"broadcast"}%%IF{"not isempty 'BROADCASTMESSAGE'" then="<div class='foswikiBroadcastMessage'> $percntBROADCASTMESSAGE$percnt </div>"}%%TMPL:END%
 
 %{ ################################################################################ }%

@@ -30,7 +30,7 @@
 %TMPL:DEF{"VIEW"}%%TMPL:P{"VIEW_SHORT"}%%TMPL:P{"VIEW_LONG"}%%TMPL:END%
 %TMPL:DEF{"VIEW_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"View"}%</span>%TMPL:END%
 %TMPL:DEF{"VIEW_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View formatted topic"}%</span>%TMPL:END%
-%TMPL:DEF{"VIEW_ACTION"}%<a class='natTopicAction natViewAction' rel='nofollow' href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%'>%JQICON{"eye"}%%TMPL:P{"VIEW"}%</a>%TMPL:END%
+%TMPL:DEF{"VIEW_ACTION"}%<a class='natTopicAction natViewAction' rel='nofollow' href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?rev=$rev'>%JQICON{"eye"}%%TMPL:P{"VIEW"}%</a>%TMPL:END%
 %TMPL:DEF{"VIEW_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natViewAction'>%JQICON{"eye"}%%TMPL:P{"VIEW"}%</span>%TMPL:END%
 
 %TMPL:DEF{"BACKLINKS"}%%TMPL:P{"BACKLINKS_SHORT"}%%TMPL:P{"BACKLINKS_LONG"}%%JQREQUIRE{"ui::dialog"}%%TMPL:END%

@@ -14,5 +14,6 @@ Foswiki::Plugins::SetVariablePlugin,>=2.21,perl,Required
 Foswiki::Plugins::TopicInteractionPlugin,>=1340,perl,Required
 Foswiki::Plugins::ImagePlugin,>=2.40,perl,Required
 Foswiki::Plugins::WebLinkPlugin,>=1,perl,Optional
+Foswiki::Plugins::PageOptimizerPlugin,>=0.10,perl,Optional
 ONLYIF ( $Foswiki::Plugins::VERSION < 2.1)
 Foswiki::Plugins::ZonePlugin,>=3.1,perl,Required. required for Foswiki < 1.1
