@@ -1982,7 +1982,6 @@ a:hover.natScrollTop {
 }
 
 .natBodyRight .natMainContents,
-.natBodyRight .natMainHeaderContents,
 .natBodyRight .natMainFooterContents {
   overflow:hidden;
 }
