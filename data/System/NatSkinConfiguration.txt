@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278776" format="1.1" version="1"}%
+%META:TOPICINFO{author="micha" comment="reprev" date="1370432532" format="1.1" reprev="2" version="2"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 %TOC%
@@ -23,7 +23,7 @@ This is the list of variables to configure the skin style:
 
 | *Name%BR%(url param)*  | *Values* | *Description* | *Default* |
 | NATSKIN_STYLE (style) | <noautolink>%KNOWNSTYLES%</noautolink> \
-| select a predefined style | Clean |
+| select a predefined style | jazzynote |
 | NATSKIN_VARIATION (skinvariation) | <noautolink>%KNOWNVARIATIONS%</noautolink> \
 | select a style variation | none |
 | NATSKIN_LAYOUT (skinlayout) | fixed, fluid, bordered \
@@ -31,16 +31,14 @@ This is the list of variables to configure the skin style:
 | NATSKIN_MENU (skinmenu) | on, off \
 | switch on/of the horizontal menu above the topic area | on |
 | NATSKIN_SIDEBAR (skinsidebar) | left, right, both, off \
-| configure where to display the sidebar | left |
-      
+| configure where to display the sidebar | right |
+
 There are a couple of special url parameters:
    * =togglesidebar=: disable the sidebar for this request only. 
-   * =style=off=: switch off any styles (simulating a non-css browser)
    * =style=reset=: switch back to the user and server settings by reverting any 
      session preferences
-     
-*Example*: To emulate the Kubrick style on the old
-[[http://binarybonsai.com][BinaryBonsai]] (not the new K2 style) use
+
+*Example*: 
 <verbatim>
   * Set NATSKIN_STYLE = jazzynote
   * Set NATSKIN_LAYOUT = fixed
@@ -49,42 +47,29 @@ There are a couple of special url parameters:
   * Set NATSKIN_VARIATAION = red
 </verbatim>
 
----++ Defining a new style
-
-... TODO ...
-
----+++ Email Obfuscation
-The standard Foswiki engine tries to obfuscate email addresses by adding a phrase to the email url (like NOSPAM)
-to fool collecting web crawlers. But that is not adequate enough today as crawlers are aware of that. The solution
-to that is to remove every trace of a pattern that could be an email address from the html source code and regenerate
-them using javascript. Most likely, web crawlers will only parse the html and don't run a javascript interpreter 
-beforehand. Nevertheless the obfuscation feature can be switched on and off by adding the =OBFUSCATEEMAIL= variable
-to your %SYSTEMWEB%.DefaultPreferences or %USERSWEB%.SitePreferences like
-
-<verbatim>
-  * Set OBFUSCATEEMAIL = on
-</verbatim>
-
----++ Misc preference variables
+---++ Preference variables
 There is a set of variables that can be used influence how NatSkin behaves or renders pages.
 
 | *Name* | *Description* |
+| =CONTENT_LANGUAGE= | the language of the current topic; this is used by search engines like !SolrPlugin to run different stemming procedures while indexing the topic (defaults to auto-detect) |
 | =HTMLTITLE= | the &lt;title>...</title> of the html page; if no HTMLTITLE is defined the NatSkin \
                 will check for some formfields (Headlines, <nop>TopicDescription) to be used as a html page title \
       and back off to the topic name |
+| =HTMLTITLESEP= | the separator of items in the HTMLTITLE (defaults to a dash ('-')) |
 | =METAAUTHOR= | the value of this variable will be used to construct &lt;meta name="author" ... /> in the html head |
 | =METADESCRIPTION= | the value of this variable will be used to construct &lt;meta name="description" ... /> in the html head |
 | =METAKEYWORDS= | the value of this variable will be used to construct &lt;meta name="keywords" ... /> in the html head |
-| =WHITEBOARD= | possible values: on, off; if WHITEBOARD is set to only the topic form will be edited \
-                when clicking on "Edit"; note, that the textarea is still accessible and not hidden completely; \
-      this is flag is only there for convenience |
+| =TOPICTITLE= | the title to be used displaying a !WikiWord link to the current page; this is set automatically using !NatEditPlugin |
 
 Hint: Assign default meta data _per web_ by adding
+
 <verbatim>
   * Set DEFAULT_METAKEYWORDS = keyword1, keyword2, keyword3
   * Set METAKEYWORDS = %DEFAULT_METAKEYWORDS%
 </verbatim>
+
 to the WebPreferences and add extra keyword data _per topic_ like this
+
 <verbatim>
   * Set METAKEYWORDS = %DEFAULT_METAKEYWORDS%, keyword4, keyword5, keyword6
 </verbatim>
@@ -93,6 +78,4 @@ Caution: don't add meta data to your [[%WIKIUSERNAME%][home topic]] because it w
 other meta data preferences.
 
 
--- Foswiki:Main.MichaelDaum - 25 Aug 2006
-
-%META:TOPICMOVED{by="MichaelDaum" date="1156530555" from="%SYSTEMWEB%.NatSkinCustomization" to="%SYSTEMWEB%.NatSkinConfiguration"}%
+%META:TOPICMOVED{by="MichaelDaum" date="1156530555" from="%25SYSTEMWEB%25.NatSkinCustomization" to="%25SYSTEMWEB%25.NatSkinConfiguration"}%

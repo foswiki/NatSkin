@@ -1981,7 +1981,9 @@ a:hover.natScrollTop {
   min-height:auto;
 }
 
-.natBodyRight .natMainContents {
+.natBodyRight .natMainContents,
+.natBodyRight .natMainHeaderContents,
+.natBodyRight .natMainFooterContents {
   overflow:hidden;
 }
 

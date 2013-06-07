@@ -7,13 +7,11 @@ data/System/MySideBar.txt 0644
 data/System/NatSkinChangeEmailAddressViewTemplate.txt 0644
 data/System/NatSkinChangePasswordViewTemplate.txt 0644
 data/System/NatSkinConfiguration.txt 0644
-data/System/NatSkinCss.txt 0644
 data/System/NatSkinFAQ.txt 0644
 data/System/NatSkinGrid.txt 0644
 data/System/NatSkinGroupViewTemplate.txt 0644
 data/System/NatSkinResetPasswordViewTemplate.txt 0644
 data/System/NatSkinStyleBrowser.txt 0644
-data/System/NatSkinTemplates.txt 0644
 data/System/NatSkinTopicDoesNotExistViewTemplate.txt 0644
 data/System/NatSkin.txt 0644
 data/System/NatSkinUserViewTemplate.txt 0644
@@ -210,7 +208,6 @@ templates/edit.nat.tmpl 0644
 templates/edittext.nat.tmpl 0644
 templates/form.nat.tmpl 0644
 templates/formtables.nat.tmpl 0644
-templates/foswiki.jazzynote.nat.tmpl 0644
 templates/foswiki.jazzynote.tmpl 0644
 templates/foswiki.nat.tmpl 0644
 templates/history.nat.tmpl 0644
