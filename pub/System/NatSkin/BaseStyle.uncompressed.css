@@ -78,6 +78,9 @@ label, input, textarea, select, body, button {
   vertical-align:middle;
   line-height:1.385em;
 }
+label {
+  padding-right:0.5em;
+}
 
 blockquote, q {
   quotes:none;
@@ -166,10 +169,14 @@ p {
 }
 
 blockquote {
-  border:1px solid #ddd;
-  border-left:4px solid #ddd;
+  border-left:2px solid #ddd;
   margin:1.3076em 0px; /* 17px  0px */
   padding:1.385em; /* 18px */
+  font-style:italic;
+}
+blockquote i {
+  font-style:normal;
+  font-weight:bold;
 }
 
 .italic {
@@ -577,11 +584,11 @@ input[type=password],
 .foswikiTextarea, textarea {
   margin:0px;
   border:1px solid #bbb;
-  /*background:#fefefe url(input-bg.png) no-repeat -1px -1px;*/
-  box-shadow:inset 2px 2px 4px rgba(0,0,0,0.1);
+  background-color:#fff;
   padding:4px;
   font-size:0.923em;
   border-radius:2px;
+  box-shadow:inset 2px 2px 2px rgba(0,0,0,0.1);
 }
 
 .foswikiTextarea:focus, textarea:focus,
@@ -590,7 +597,6 @@ select:focus.ui-pg-selbox, /* jqgrid */
 input[type=text]:focus,
 input[type=password]:focus,
 .foswikiInputField:focus {
-  background-color:#f5f5f5;
   border-color:#9C3063;
   /* background-position:0px 0px; */
 }
