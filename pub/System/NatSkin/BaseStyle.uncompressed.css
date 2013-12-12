@@ -458,9 +458,6 @@ th {
 .mceContentBody td {
   font-family:inherit;
 }
-.mceContentBody p br:first-child {
-  display:none; /* typographics fix for wysiwyg hidding any bogus <p><br/></p>  */
-}
 
 .foswikiTable th,
 .foswikiTable th h2,
