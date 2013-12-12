@@ -1,11 +1,15 @@
 jQuery(function($) {
   $(document).on("click", ".natSubscribeButton", function() {
     var $this = $(this), 
-        endpoint = foswiki.getPreference("SCRIPTURL")+"/rest/SubscribePlugin/subscribe",
         isSubscribed = $this.is(".state-subscribed"),
+        endpoint = foswiki.getPreference("SCRIPTURL")+"/rest/NatSkinPlugin/"+(isSubscribed?"unsubscribe":"subscribe"),
         opts = $.extend({
-            subscribeTopic: foswiki.getPreference('WEB')+'.'+foswiki.getPreference('TOPIC'),
-            subscriber: foswiki.getPreference('WIKINAME')
+            web: foswiki.getPreference('WEB'),
+            topic: foswiki.getPreference('TOPIC'),
+            topicTitle: foswiki.getPreference('TOPIC'),
+            subscribeMessage: "Subscribed to ${title}",
+            unsubscribeMessage: "Unsubscribed from ${title}",
+            timeout: 1000
           }, $this.data()
         );
 
@@ -14,22 +18,30 @@ jQuery(function($) {
         dataType: "json",
         url: endpoint,
         data: {
-          topic: opts.subscribeTopic,
-          subscriber: opts.subscriber,
-          subscribe_remove: isSubscribed?1:0
+          topic: opts.web+'.'+opts.topic
         },
         error: function(xhr, code, error) {
           alert("Error");
         },
         success: function(data, code, xhr) {
-          $(".natSubscribeButton").each(function() {
-            var $this = $(this);
-            if (isSubscribed) {
-              $this.removeClass("state-subscribed").addClass("state-unsubscribed");
-            } else {
-              $this.addClass("state-subscribed").removeClass("state-unsubscribed");
-            }
-          });
+          var msg;
+
+          if (isSubscribed) {
+            msg = opts.unsubscribeMessage;
+            $this.removeClass("state-subscribed").addClass("state-unsubscribed");
+          } else {
+            msg = opts.subscribeMessage;
+            $this.addClass("state-subscribed").removeClass("state-unsubscribed");
+          }
+
+          if (opts.timeout) {
+            msg = msg
+              .replace(/\$\{topicTitle\}/, opts.topicTitle)
+              .replace(/\$\{topic\}/, opts.topic)
+              .replace(/\$\{web\}/, opts.web);
+
+            $.blockUI({message:'<h1>'+msg+'</h1>', timeout:opts.timeout});
+          }
         }
       });
 

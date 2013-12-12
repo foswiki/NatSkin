@@ -12,7 +12,7 @@
 </noautolink>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"heading"}%%MAKETEXT{"Revision history of [_1]" args="%GETTOPICTITLE{"%BASEWEB%.%BASETOPIC%"}%"}%%TMPL:END%
+%TMPL:DEF{"heading"}%%MAKETEXT{"Revision history of [_1]" args="%GETTOPICTITLE{"%BASEWEB%.%BASETOPIC%" encode="entity"}%"}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"formstart"}%%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="formstart_compare" else="formstart_rdiff"}%%TMPL:END%

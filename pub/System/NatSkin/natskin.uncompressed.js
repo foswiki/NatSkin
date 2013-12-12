@@ -4,14 +4,29 @@ jQuery(function($) {
   "use strict";
 
   // flag browser deprecation
-  var agent, i, deprecatedBrowsers,
-      agents = ['msie', 'chrome', 'mozilla', 'opera', 'safari', 'webkit'];
-  for (i = 0; i < agents.length; i++) {
-    if ($.browser[agents[i]]) {
-      agent = agents[i] + $.browser.version.replace(/\..*$/, '');
-      break;
-    }
+  function uaMatch(ua) { // borrowed from jQuery
+      ua = ua.toLowerCase();
+
+      var match = /(chrome)[ \/]([\w.]+)/.exec( ua ) ||
+              /(webkit)[ \/]([\w.]+)/.exec( ua ) ||
+              /(opera)(?:.*version|)[ \/]([\w.]+)/.exec( ua ) ||
+              /(msie) ([\w.]+)/.exec( ua ) ||
+              ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec( ua ) ||
+              [];
+
+      return {
+              browser: match[ 1 ] || "",
+              version: match[ 2 ] || "0"
+      };
   }
+
+  var deprecatedBrowsers,
+      agent = uaMatch(window.navigator.userAgent),
+      i, target, $container, busyIndicator;
+
+  // simplify
+  agent = agent.browser + agent.version.replace(/\..*$/, '');
+
   if (agent) {
     deprecatedBrowsers = foswiki.getPreference("NatSkin.deprecatedBrowsers") || [];
     for (i = 0; i < deprecatedBrowsers.length; i++) {
@@ -24,7 +39,7 @@ jQuery(function($) {
 
   /* move revinfo */
   if (foswiki.getPreference("NatSkin.fixRevisionPosition")) {
-    var target = $(".natMainContents h1:first");
+    target = $(".natMainContents h1:first");
     if (target.length) { 
       $(".natRevision").remove().insertAfter(target);
     }
@@ -32,14 +47,14 @@ jQuery(function($) {
 
   /* horiz menu */
   if (foswiki.getPreference("NatSkin.initWebMenu")) {
-    var $container = $(".natWebMenuContents");
+    $container = $(".natWebMenuContents");
     $container.children("ul").superfish({
       dropShadows: false, autoArrows: false, /* for old superfishes */
       cssArrows: false,
       onBeforeShow: function() {
-        var $this = $(this);
+        var $this = $(this), opts;
         if ($this.is(".ajaxMenu")) {
-          var opts = $.extend({}, $this.metadata());
+          opts = $.extend({}, $this.metadata());
           if (opts.url) {
             $this.load(opts.url, function() {
               $this.removeClass("ajaxMenu");
@@ -67,8 +82,8 @@ jQuery(function($) {
     // ... or all following list items are disabled
     $(this).find("hr").parent().each(function() {
       var $this = $(this);
-      if ($this.prevAll().find(".natTopicAction").not(".natDisabledTopicAction").length == 0 ||
-          $this.nextAll().find(".natTopicAction").not(".natDisabledTopicAction").length == 0) {
+      if ($this.prevAll().find(".natTopicAction").not(".natDisabledTopicAction").length === 0 ||
+          $this.nextAll().find(".natTopicAction").not(".natDisabledTopicAction").length === 0) {
         $this.hide();
       }
     });
@@ -81,22 +96,28 @@ jQuery(function($) {
       .wrap("<div class='overflow foswikiTableOverflow'></div>");
   }
 
-  if (foswiki.getPreference("NatSkin.initTopicActions")) { // topicaction tooltips 
-    $(".natHistoryTopicActions .natTopicAction").each(function() {
-      var $this = $(this),
-          tip = $this.find("span.natTopicActionShortLabel").text();
-      $this.attr("title", tip);
-    });
-  }
-
   // init more actions menu
   $(".natMoreActionsMenu:not(.natInitedMoreActionsMenu)").livequery(function() {
-    var $this = $(this), opts = $.extend({}, $this.metadata());
-    $this.addClass("natInitedMoreActionsMenu").superfish(opts).
-    find("a[href]").click(function() {
-      $this.hideSuperfishUl();
+    var $this = $(this), 
+        opts = $.extend({}, $this.metadata());
+    $this.addClass("natInitedMoreActionsMenu").superfish(opts);
+    $this.find("a[href]").click(function() {
+      $this.superfish("hide");
     });
   });
+
+  /* init ajax busy indicator */
+  if (foswiki.getPreference("NatSkin.initBusyIndicator")) {
+    busyIndicator = $("<div class='natBusy' />").appendTo("body");
+    $(document).ajaxSend(function() {
+      if ($(".blockUI").length === 0) { // don't show when a blockUI is active
+        busyIndicator.show();
+      }
+    });
+    $(document).ajaxComplete(function() {
+      busyIndicator.hide();
+    });
+  }
 
   // remove empty attachment comments
   $("#natTopicAttachments .natAttachmentComment").livequery(function(){
@@ -144,7 +165,7 @@ jQuery(function($) {
   }
 
   // hide address bar on mobile devices
-  if(navigator.userAgent.match(/Android/i)){
+  if(window.navigator.userAgent.match(/Android/i)){
     window.scrollTo(0,1);
   } 
 
@@ -163,7 +184,7 @@ jQuery(function($) {
     var $this = $(this), 
         $sidebar = $(".natSideBar");
 
-    if ($sidebar.length == 0) {
+    if ($sidebar.length === 0) {
       $this.hide();
       return false;
     }
@@ -181,10 +202,24 @@ jQuery(function($) {
         ev.returnValue = false;
       }
 
-
       return false;
     });
 
+    // switch on the sidebar when there's no toggle in sight
+    $(window).resize(function() {
+      if (!$this.is(":visible") && !$sidebar.is(":visible")) {
+        $sidebar.show();
+      }
+    });
+  });
+
+
+
+  /* clean up address */
+  $("address").livequery(function() {
+    var $this = $(this),
+        content = $this.html().replace(/^\s+|\s+$/g, "");
+    $this.html(content);
   });
   
 });

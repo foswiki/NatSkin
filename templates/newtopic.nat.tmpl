@@ -10,27 +10,26 @@
 %TMPL:DEF{"content"}%<noautolink>
 %TMPL:P{"formtitlestep"}%
 <div class="foswikiFormSteps">
-  %TMPL:P{"formstartstep"}%
-  %TMPL:P{"topictitlestep"}%
-  %TMPL:P{"topictemplatestep"}%
-  %TMPL:P{"hiddenoptionsstep"}%<!-- -->
-  %TMPL:P{"formbuttons::default"}%
-  %TMPL:P{"formendstep"}%
+%TMPL:P{"createform"}%
 </div>
 </noautolink>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
 <div class="jqUIDialog foswikiFormSteps {width:500, modal:true, draggable:true}" title="%TMPL:P{"formtitle"}%">
-  %TMPL:P{"formstartstep"}%<!-- -->
-  %TMPL:P{"topictitlestep"}%<!-- -->
-  %TMPL:P{"topictemplatestep"}%<!-- -->
-  %TMPL:P{"hiddenoptionsstep"}%<!-- -->
-  %TMPL:P{"formbuttons::dialog"}%<!-- -->
-  %TMPL:P{"formendstep"}%<!-- -->
-  %TMPL:P{"javascript"}%<!-- -->
+%TMPL:P{"createform"}%
 </div>
 </noautolink>%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"createform"}%<!-- -->
+ %TMPL:P{"formstartstep"}%<!-- -->
+ %TMPL:P{"topictitlestep"}%<!-- -->
+ %TMPL:P{"topictemplatestep"}%<!-- -->
+ %TMPL:P{"hiddenoptionsstep"}%<!-- -->
+ %TMPL:P{"formbuttons::dialog"}%<!-- -->
+ %TMPL:P{"formendstep"}%<!-- -->
+<!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"formstartstep"}%%TMPL:P{"formstart"}%%TMPL:END%
@@ -112,7 +111,7 @@
 %DBQUERY{
   "topic=~'Template\b' AND topic!~'(View|Edit)Template\b'"
   exclude="%TMPL:P{"excludetopics"}%"
-  header="<div class='natTopicTemplateSelector foswikiFormStep'>
+  header="<div class='natTopicTemplateSelector foswikiFormStep foswikiLast'>
     <h3>%MAKETEXT{"Template"}%:</h3>
     <div class='natTopicTemplate'>
       <label title='%MAKETEXT{"Default topic as defined in WebTopicEditTemplate"}%'>

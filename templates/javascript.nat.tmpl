@@ -1,6 +1,6 @@
 <!-- template: javascript.nat.tmpl -->
 %TMPL:DEF{"defaultjavascript"}%<!-- -->
-%JQREQUIRE{"superfish, ui, blockui, farscroll, scrollto, imagetooltip, autosuggest" warn="off"}%<!--  -->
+%JQREQUIRE{"superfish, ui, blockui, farscroll, scrollto, imagetooltip, autosuggest, ui::tooltip" warn="off"}%<!--  -->
 %RENDERZONE{"script"}%
 %RENDERZONE{"skinjs"}%
 <!-- -->%TMPL:END%
@@ -9,10 +9,10 @@
 %TMPL:DEF{"fixRevisionPosition"}%'NatSkin.fixRevisionPosition': true%TMPL:END%
 %TMPL:DEF{"initWebMenu"}%'NatSkin.initWebMenu': true%TMPL:END%
 %TMPL:DEF{"initOverflows"}%'NatSkin.initOverflows': false%TMPL:END%
-%TMPL:DEF{"initTopicActions"}%'NatSkin.initTopicActions': true%TMPL:END%
 %TMPL:DEF{"initSideBar"}%'NatSkin.initSideBar': true%TMPL:END%
 %TMPL:DEF{"initAutoComplete"}%'NatSkin.initAutocomplete': %IF{"context SolrPluginEnabled" then="true" else="false"}%%TMPL:END%
 %TMPL:DEF{"initRedDot"}%'NatSkin.initRedDot': true%TMPL:END%
+%TMPL:DEF{"initBusyIndicator"}%'NatSkin.initBusyIndicator': true%TMPL:END%
 
 %TMPL:DEF{"metaflags"}%<literal>
 %ADDTOZONE{"script" 
@@ -24,10 +24,10 @@ jQuery.extend(foswiki.preferences, {
   %TMPL:P{"fixRevisionPosition"}%,
   %TMPL:P{"initWebMenu"}%,
   %TMPL:P{"initOverflows"}%,
-  %TMPL:P{"initTopicActions"}%,
   %TMPL:P{"initSideBar"}%,
   %TMPL:P{"initAutoComplete"}%,
-  %TMPL:P{"initRedDot"}%
+  %TMPL:P{"initRedDot"}%,
+  %TMPL:P{"initBusyIndicator"}%
 });
 </script>"
 }%</literal>%TMPL:END%

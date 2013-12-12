@@ -1,5 +1,5 @@
-%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278779" format="1.1" version="6"}%
-
+%META:TOPICINFO{author="ProjectContributor" comment="autosave" date="1356278779" format="1.1" version="6"}%
+%META:TOPICPARENT{name="NatSkin"}%
 ---+ %TOPIC%
 Definition of site wide horizontal menu
 
@@ -81,3 +81,5 @@ Definition of site wide horizontal menu
 </noautolink>%ENDSECTION{"adminmenu"}%
 </verbatim>
 
+%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
+%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

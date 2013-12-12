@@ -1,33 +1,35 @@
-%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278782" format="1.1" version="1"}%
-%{<verbatim>}%
+%META:TOPICINFO{author="ProjectContributor" comment="autosave" date="1386095073" format="1.1" version="2"}%
+%META:TOPICPARENT{name="NatSkin"}%
+%{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%<!-- -->
 %TMPL:INCLUDE{"captcha"}%<!-- -->
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"sidebar"}%%TMPL:P{"sidebar::usertools"}%%TMPL:END%
 %{</verbatim>}%
 
-
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"content"}%<!-- -->
 %TMPL:P{context="registration_enabled" then="registration_enabled" else="registration_disabled"}%
 <!-- -->%TMPL:END%
+%{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"registration_disabled"}%<!-- -->
 <div class='foswikiErrorMessage'>
 %MAKETEXT{"Sorry, registration has been temporarily disabled."}%
 %MAKETEXT{"Contact <a href='[_1]'>the site administrator</a> for any further questions." args="mailto:%WIKIWEBMASTER%"}%
 </div>
 <!-- -->%TMPL:END%
+%{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"registration_enabled"}%<!-- -->
 %TMPL:P{"formtitle"}%
 %TMPL:P{"formstart"}%
@@ -35,21 +37,25 @@
 %TMPL:P{"logindetails"}%
 %TMPL:P{"DIS_extradetails"}%<!-- -->
 %TMPL:P{"groupdetails"}%
-%TMPL:P{context="CaptchaPluginEnabled" then="captcha"}%<!-- -->
+%TMPL:P{context="CaptchaPluginEnabled" then="captchaform"}%<!-- -->
 %TMPL:P{"formend"}%
 %TMPL:P{"formvalidation"}%
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"captchaform"}%%CAPTCHAFORM%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
 %TMPL:DEF{"formtitle"}%<h1>%MAKETEXT{"Registration"}%</h1>%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"formsep"}%<hr />%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"formstart"}%<!-- -->
 <literal>
 <style>
@@ -74,7 +80,7 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"formend"}%<!-- -->
 <div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
   %BUTTON{type="submit" "%MAKETEXT{"Register"}%" icon="user"}%
@@ -89,7 +95,7 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"accountdetails"}%<!-- -->
 %TMPL:P{"accountdetailstitle"}%
 %TMPL:P{"firstname"}%
@@ -100,11 +106,11 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"accountdetailstitle"}%<h2>%MAKETEXT{"Account settings"}%</h2>%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"logindetails"}%<!-- -->
 %TMPL:P{"logindetailstitle"}%
 %TMPL:P{context="allow_loginname" "loginname"}%
@@ -113,11 +119,11 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"logindetailstitle"}%<h2>%MAKETEXT{"Login settings"}%</h2>%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"loginname"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Choose a login name"}%: <span class="foswikiAlert">**</span></h3>
@@ -129,7 +135,7 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"email"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Your e-mail address"}%: <span class="foswikiAlert">**</span></h3>
@@ -141,7 +147,7 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"password"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Choose a password"}%: <span class="foswikiAlert">**</span></h3>
@@ -158,7 +164,7 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"firstname"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Your first name"}%: <span class="foswikiAlert">**</span></h3>
@@ -167,7 +173,7 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"lastname"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Your last name"}%: <span class="foswikiAlert">**</span></h3>
@@ -176,7 +182,7 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"wikiname"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Choose a <nop>WikiName"}%: <span class="foswikiAlert">**</span></h3>
@@ -188,7 +194,7 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"extradetails"}%<!-- -->
 %TMPL:P{"extradetailstitle"}%
 %TMPL:P{"organisationname"}%
@@ -198,11 +204,11 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"extradetailstitle"}%<h2>%MAKETEXT{"Optional information"}%</h2>%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"organisationname"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Organisation Name"}%:</h3>
@@ -211,7 +217,7 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"organisationurl"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Organisation URL"}%:</h3>
@@ -220,7 +226,7 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"country"}%<!-- -->
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Country"}%:</h3>
@@ -236,7 +242,7 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"groupdetails"}%<!-- -->
 %IF{"$'REGISTRATIONGROUPTYPE'!='none'"
   then="<div class='foswikiHidden' id='groupDetails'>
@@ -249,11 +255,11 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"groupdetailstitle"}%<h2>%MAKETEXT{"Collaboration details"}%</h2>%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"joingroup"}%<!-- -->
 <div class='foswikiFormStep'>
 %FORMATLIST{
@@ -279,7 +285,7 @@
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"formvalidation"}%<!-- -->
 %JQREQUIRE{"validate, wikiword"}%
 %ADDTOZONE{"script"
@@ -359,7 +365,7 @@ jQuery(function($) {
 }%<!-- -->%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"checkLoginName"}%%IF{
   "'%USERINFO{"%URLPARAM{"Fwk1LoginName"}%" format="$username"}%'!=''" 
   then="false" 
@@ -367,10 +373,13 @@ jQuery(function($) {
 }%%TMPL:END%
 %{</verbatim>}%
 
-%{<verbatim>}%
+%{<verbatim class="tml">}%
 %TMPL:DEF{"checkWikiName"}%%IF{
   "'%USERINFO{"%URLPARAM{"Fwk1WikiName"}%" format="$wikiname"}%'!=''" 
   then="false" 
   else="true"
 }%%TMPL:END%
 %{</verbatim>}%
+
+%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
+%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

@@ -1,5 +1,5 @@
-%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278779" format="1.1" version="1"}%
-
+%META:TOPICINFO{author="ProjectContributor" comment="autosave" date="1356278779" format="1.1" version="1"}%
+%META:TOPICPARENT{name="NatSkin"}%
 ---+ %TOPIC%
 Default <nop>WebHtmlHead component for your <nop>%WIKITOOLNAME% site.
 Create a <nop>WebHtmlHead topic in your web to override the content of this topic.
@@ -22,3 +22,5 @@ Create a <nop>WebHtmlHead topic in your web to override the content of this topi
 </style>
 %STOPINCLUDE% 
 </verbatim>
+%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
+%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

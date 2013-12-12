@@ -1,4 +1,5 @@
-%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278777" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="autosave" date="1356278777" format="1.1" version="1"}%
+%META:TOPICPARENT{name="NatSkin"}%
 
 %{<verbatim class="tml">}%
 %{ ###########################################################################
@@ -197,3 +198,6 @@
 <div class='natSearchTotal'>%MAKETEXT{"[_1] topic(s) found" args="<span>%count%</span>"}%</div>
 <!-- -->%TMPL:END%
 %{</verbatim>}%
+
+%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
+%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

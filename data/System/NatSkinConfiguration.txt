@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="micha" comment="reprev" date="1370432532" format="1.1" reprev="2" version="2"}%
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1370432532" format="1.1" reprev="2" version="2"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 %TOC%

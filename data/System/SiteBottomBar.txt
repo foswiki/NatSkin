@@ -1,73 +1,15 @@
-%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356776554" format="1.1" version="14"}%
-
-
+%META:TOPICINFO{author="ProjectContributor" comment="autosave" date="1356776554" format="1.1" version="14"}%
 %META:TOPICPARENT{name="NatSkin"}%
 <h1 >%TOPIC%</h1>
 
 Default bottombar component
 
-%STARTINCLUDE%<!-- sitebottombar -->
-<div class="natBottomActions foswikiGrid">
-<div class="foswikiCol3">
-%USERACTIONS{
-  header="<h4>%MAKETEXT{"Edit"}%</h4>"
-  format="
-   * $action(edit)
-   * $action(editraw)
-   * $action(editsettings)
-   * <a href='%SCRIPTURLPATH{"edit"}%/%BASEWEB%/WebPreferences?t=%GMTIME{"$epoch"}%;redirectto=%BASEWEB%.%BASETOPIC%'>%MAKETEXT{"Edit web preferences"}%</a>
-   * $action(attach)
-   * $action(editform)
-   * $action(move)
-   * $action(delete)
-"
-  guest=""
-}%<!-- -->
-</div>
-<div class="foswikiCol3">
-%USERACTIONS{
-  header="<h4>%MAKETEXT{"Create"}%</h4>"
-  format="
-   * $action(new)
-"
-  guest=""
-}%<!-- -->
-</div>
-<div class="foswikiCol3">
-%USERACTIONS{
-  header="<h4>%MAKETEXT{"History"}%</h4>"
-  format="
-   * $action(diff)
-   * $action(history)
-   * $action(restore)
-"
-  guest=""
-}%<!-- -->
-</div>
-<div class="foswikiCol3">
-%USERACTIONS{
-  header="<h4>%MAKETEXT{"View"}%</h4>"
-  format="
-   * $raw
-   * $print
-   * $pdf
-   * $action(backlinks)
-   * $action(childtopics)
-"
-  guest=""
-}%<!-- -->
-</div>
-</div>
+%STARTINCLUDE%<!-- -->
 <div class="natCopyRight">%WEBCOPYRIGHT%</div>
 <div class="natSyndicate">
   %MAKETEXT{"Syndicate this site"}% 
   <a class='natFeedIcon' href='%SCRIPTURL{"view"}%/%BASEWEB%/WebRss?contenttype=text/xml'>RSS</a>
 </div>
-<!-- //sitebottombar -->%STOPINCLUDE%
-
-<!--
-   * <a href="#">%MAKETEXT{"Edit tags"}%</a>
-   * <a href="#">%MAKETEXT{"Set new parent"}%</a>
-   * <a href="#">%MAKETEXT{"Change name identifier"}%</a>
--->
-
+<!-- -->%STOPINCLUDE%
+%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
+%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

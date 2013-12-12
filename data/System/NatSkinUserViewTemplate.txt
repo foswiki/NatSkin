@@ -1,5 +1,5 @@
-%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278776" format="1.1" version="3"}%
-
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1377000573" format="1.1" reprev="4" version="4"}%
+%META:TOPICPARENT{name="NatSkin"}%
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%<!-- -->
 %TMPL:DEF{"form"}%%TMPL:END%
@@ -59,8 +59,8 @@
 %IMAGE{
    "%IF{"'%BASEWEB%.%BASETOPIC%'/Photo"
      then="$percntFORMFIELD{\"Photo\" topic=\"%BASEWEB%.%BASETOPIC%\"}$percnt" 
-     else="%IF{"'%BASEWEB%.%BASETOPIC%'/attachments[name=~'\.(gif|png|jpe?g)$']"
-       then="%QUERY{"'%BASEWEB%.%BASETOPIC%'/attachments[name=~'\.(gif|png|jpe?g)'][0].name"}%"
+     else="%IF{"'%BASEWEB%.%BASETOPIC%'/attachments[name=~'\.(gif|png|jpe?g|svg)$']"
+       then="%QUERY{"'%BASEWEB%.%BASETOPIC%'/attachments[name=~'\.(gif|png|jpe?g|svg)'][0].name"}%"
        else="%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/images/nobody.gif"
 
      }%"
@@ -74,10 +74,37 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"userinfo::photo::topicinteraction"}%<!-- -->
+%TMPL:DEF{"userinfo::photo::topicinteraction"}%%IF{"'%BASEWEB%.%BASETOPIC%'/attachments[attr=~'.*t.*'" 
+  then="$percntTMPL:P{\"userinfo::photo::topicinteraction::thumbnailed\"}$percnt" 
+  else="$percntTMPL:P{\"userinfo::photo::topicinteraction::defaultthumbnail\"}$percnt" 
+}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"userinfo::photo::topicinteraction::thumbnailed"}%<!-- -->
 %ATTACHMENTS{
    "%BASEWEB%.%BASETOPIC%"
-   name=".*\.(jpe?g|gif|png|JE?PG|GIF|PNG)"
+   attr=".*t.*"
+   warn="off"
+   hidenull="off"
+   format="$percntIMAGE{
+     \"$name\"
+     topic=\"$web.$topic\"
+     align=\"left\"
+     type=\"plain\"
+     width=\"%TMPL:P{"userinfo::photo::width"}%\"
+     crop=\"northwest\"
+     title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
+     warn=\"off\"
+   }$percnt"
+}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"userinfo::photo::topicinteraction::defaultthumbnail"}%<!-- -->
+%ATTACHMENTS{
+   "%BASEWEB%.%BASETOPIC%"
+   name=".*\.(jpe?g|gif|png|svg|JE?PG|GIF|PNG|SVG)"
    warn="off"
    limit="1"
    sort="comment:name"
@@ -102,6 +129,8 @@
      title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
      warn=\"off\"
    }$percnt"
-}% 
-<!-- -->%TMPL:END%
+}%%TMPL:END%
 %{</verbatim>}%
+
+%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
+%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

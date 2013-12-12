@@ -1,6 +1,11 @@
-%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278807" format="1.1" version="1"}%
-
+%META:TOPICINFO{author="ProjectContributor" comment="autosave" date="1356278807" format="1.1" version="1"}%
+%META:TOPICPARENT{name="NatSkin"}%
+%{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%
 %TMPL:DEF{"content"}%
 %TOPICLIST{"   1 [[%BASEWEB%.$name][$name]]"}%
 %TMPL:END%
+%{</verbatim>}%
+
+%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
+%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

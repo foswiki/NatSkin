@@ -18,22 +18,22 @@
       length: 10,
       capitals: true,
       numbers: true
-    };
-
-  var PWGen = function() {
+    },
+    PWGen = function() {
           this.maxLength = defaults.length;
           this.includeCapitalLetter = defaults.capitals;
           this.includeNumber = defaults.numbers;
-  };
+    };
 
   PWGen.prototype = {
 
       generate0: function() {
-          var result = "";
-          var prev = 0;
-          var isFirst = true;
-          
-          var requested = 0;
+          var result = "",
+              prev = 0,
+              isFirst = true,
+              requested = 0,
+              shouldBe,i,str,flags;
+
           if (this.includeCapitalLetter) {
               requested |= this.INCLUDE_CAPITAL_LETTER;
           }
@@ -42,7 +42,7 @@
               requested |= this.INCLUDE_NUMBER;
           }
           
-          var shouldBe = (Math.random() < 0.5) ? this.VOWEL : this.CONSONANT;
+          shouldBe = (Math.random() < 0.5) ? this.VOWEL : this.CONSONANT;
           
           while (result.length < this.maxLength) {
               i = Math.floor((this.ELEMENTS.length - 1) * Math.random());
@@ -50,18 +50,21 @@
               flags = this.ELEMENTS[i][1];
 
               /* Filter on the basic type of the next element */
-              if ((flags & shouldBe) == 0)
+              if ((flags & shouldBe) === 0) {
                   continue;
+              }
               /* Handle the NOT_FIRST flag */
-              if (isFirst && (flags & this.NOT_FIRST))
+              if (isFirst && (flags & this.NOT_FIRST)) {
                   continue;
+              }
               /* Don't allow VOWEL followed a Vowel/Dipthong pair */
-              if ((prev & this.VOWEL) && (flags & this.VOWEL) && (flags & this.DIPTHONG))
+              if ((prev & this.VOWEL) && (flags & this.VOWEL) && (flags & this.DIPTHONG)) {
                   continue;
+              }
               /* Don't allow us to overflow the buffer */
-              if (result.length + str.length > this.maxLength)
+              if (result.length + str.length > this.maxLength) {
                   continue;
-              
+              }
               
               if (requested & this.INCLUDE_CAPITAL_LETTER) {
                   if ((isFirst || (flags & this.CONSONANT)) &&
@@ -107,8 +110,9 @@
               isFirst = false;
           }
           
-          if (requested & (this.INCLUDE_NUMBER | this.INCLUDE_CAPITAL_LETTER))
+          if (requested & (this.INCLUDE_NUMBER | this.INCLUDE_CAPITAL_LETTER)) {
               return null;
+          }
           
           return result;
       },
@@ -116,8 +120,9 @@
       generate: function() {
           var result = null;
 
-          while (! result)
+          while (! result) {
               result = this.generate0();
+          }
           
           return result;
       },
@@ -171,7 +176,7 @@
       [ "w",  PWGen.prototype.CONSONANT ],
       [ "x",  PWGen.prototype.CONSONANT ],
       [ "y",  PWGen.prototype.CONSONANT ],
-      [ "z",  PWGen.prototype.CONSONANT ],
+      [ "z",  PWGen.prototype.CONSONANT ]
   ];
 
   function password (opts) {

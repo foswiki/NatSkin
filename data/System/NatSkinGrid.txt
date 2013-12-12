@@ -1,6 +1,8 @@
-%META:TOPICINFO{author="micha" comment="reprev" date="1368602661" format="1.1" reprev="13" version="13"}%
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1378291744" format="1.1" reprev="14" version="14"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
+
+%JQREQUIRE{"gridlayout, ui::resizable"}%
 
 <div class="gutterSelector">
 *Select gutter:* 
@@ -48,6 +50,12 @@ jQuery(function($) {
   border:2px solid red;
   padding:1em;
   float:right;
+  background-color:#fff;
+}
+.readOn {
+  position:absolute;
+  bottom:0;
+  right:0;
   background-color:#fff;
 }
 </style>
@@ -250,37 +258,40 @@ jQuery(function($) {
     </div>
   </div>
 ---
-  <div class="foswikiRow">
-    <div class="foswikiCol3">
+</div><!-- end of grid -->
+---++ Same Heights      
+<div class="foswikiGrid">
+  <div class="foswikiRow jqSameHeight">
+    <div class="foswikiCol3" style="padding-bottom:2em">
       Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
       habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
-      Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
-      sit integer? Aenean? 
+      Egestas, dictumst? 
+      <a class="readOn">%T% read on</a>
     </div>
-    <div class="foswikiCol3 border">
+    <div class="foswikiCol3 border" style="padding-bottom:2em">
       elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
       sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
       dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
       phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
       augue porta, cursus, a eu.
+      <a class="readOn">%T% read on</a>
     </div>
-    <div class="foswikiCol3 border">
+    <div class="foswikiCol3 border" style="padding-bottom:2em">
+      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
+      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
+      <a class="readOn">%T% read on</a>
+    </div>
+    <div class="foswikiCol3 border" style="padding-bottom:2em">
       elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
       sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
       dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
       phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
       augue porta, cursus, a eu.
-    </div>
-    <div class="foswikiCol3 border">
-      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
-      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
-      dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
-      phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
-      augue porta, cursus, a eu.
+      <a class="readOn">%T% read on</a>
     </div>
   </div>
 </div><!-- end of grid -->
-
+---
 
 %META:PREFERENCE{name="NATSKIN_SIDEBAR" title="NATSKIN_SIDEBAR" type="Local" value="off"}%
 %META:PREFERENCE{name="TOPICTITLE" title="TOPICTITLE" type="Local" value="NatSkin Grid"}%

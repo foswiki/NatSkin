@@ -1,12 +1,13 @@
-%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278779" format="1.1" version="1"}%
-
+%META:TOPICINFO{author="ProjectContributor" comment="autosave" date="1356278779" format="1.1" version="1"}%
+%META:TOPICPARENT{name="NatSkin"}%
 ---+ %TOPIC%
 
 Standard links in sidebar navigation. 
 
 <verbatim class="tml">
-%STARTINCLUDE%<!-- default navigation links -->
-<!-- //default navigation links -->%STOPINCLUDE%
+%STARTINCLUDE%%STOPINCLUDE%
 </verbatim>
 
 
+%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
+%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

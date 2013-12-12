@@ -1,5 +1,5 @@
-%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278807" format="1.1" version="3"}%
-
+%META:TOPICINFO{author="ProjectContributor" comment="autosave" date="1356278807" format="1.1" version="3"}%
+%META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 Navigation links in the %SYSTEMWEB% web.
 
@@ -13,3 +13,6 @@ Navigation links in the %SYSTEMWEB% web.
    * [[AdminToolsCategory][%MAKETEXT{"Admin Tools"}%]]
    * [[SiteTools][%MAKETEXT{"Site Tools"}%]]
 <!-- -->%STOPINCLUDE%
+
+%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
+%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

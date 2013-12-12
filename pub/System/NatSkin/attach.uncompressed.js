@@ -20,10 +20,10 @@
       toggleAttachmentEditor(lastElem, 'off');
     }
 
-    var $elemStep = $(elem).parents(".foswikiFormStep"); 
-    var $editor = $elemStep.find(".natAttachmentEditor");
-    var $comment = $elemStep.find(".natAttachmentComment");
-    var text = $editor.find("textarea").text();
+    var $elemStep = $(elem).parents(".foswikiFormStep"),
+        $editor = $elemStep.find(".natAttachmentEditor"),
+        $comment = $elemStep.find(".natAttachmentComment"),
+        text = $editor.find("textarea").text();
 
     if (state == 'off') {
       $editor.slideUp('fast');

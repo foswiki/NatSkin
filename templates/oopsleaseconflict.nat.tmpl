@@ -3,7 +3,7 @@
 <!-- template: oopsleaseconflict.nat.tmpl -->
 %TMPL:DEF{"heading"}%%MAKETEXT{"Conflict"}%%TMPL:END%
 %TMPL:DEF{"lease_active"}%<!-- -->
-%MAKETEXT{"[_1] is editing [_2]." args="%PARAM1%, %WEB%.%TOPIC%"}%
+%MAKETEXT{"[_1] is editing [_2]." args="[[%PARAM1%]], [[%WEB%.%TOPIC%]]"}%
 
 %MAKETEXT{"[_1] has been editing the topic for [_2] and the lease is still active for another [_3]." args="%PARAM1%,%PARAM2%,%PARAM3%"}%
 
@@ -15,7 +15,7 @@ check with [_1] first." args="%PARAM1%"}%
 
 %TMPL:END%
 %TMPL:DEF{"lease_old"}% <!-- -->
-%MAKETEXT{"[_1] may still be editing [_2]." args="%PARAM1%, %WEB%.%TOPIC%"}%
+%MAKETEXT{"[_1] may still be editing [_2]." args="[[%PARAM1%]], [[%WEB%.%TOPIC%]]"}%
 
 %MAKETEXT{"The lease on this topic expired [_1] ago." args="%PARAM2%"}%
 
@@ -37,7 +37,7 @@ first." args="%PARAM1%"}%
   <li> %MAKETEXT{"If unsure, click 'Cancel'."}% </li>
 </ul>
 
-<table border="0"><tr>
+<table class="foswikiLayoutTable"><tr>
 <td valign="top">
 <form style="margin-bottom:0px" action="%SCRIPTURLPATH{"%PARAM4%"}%/%WEB%/%TOPIC%" method="post">
   <input type="hidden" name="breaklock" value="on" />

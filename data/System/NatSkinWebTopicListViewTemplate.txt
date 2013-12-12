@@ -1,5 +1,6 @@
-%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278777" format="1.1" version="5"}%
-
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1385712671" format="1.1" reprev="7" version="7"}%
+%META:TOPICPARENT{name="NatSkin"}%
+%{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
@@ -27,3 +28,7 @@
 </noautolink>
 %TMPL:END%
 %TMPL:DEF{"sidebar"}%%TMPL:END%
+%{</verbatim>}%
+
+%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
+%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

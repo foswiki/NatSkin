@@ -23,6 +23,19 @@ h1,
   color:#fff;
 }
 
+/*
+h2 {
+  border-bottom:1px #ddd solid;
+}
+.foswikiGrid h2 {
+  border-bottom:0;
+}
+*/
+
+.natPlainBody h1 {
+  border-bottom:0;
+}
+
 /* layout */
 .natGreeter {
   margin-top:0.5em;
@@ -43,14 +56,11 @@ h1,
 .natWebMenuContents,
 .natMainHeaderContents,
 .natMainContents {
-  padding-left:1.5em;
-  padding-right:1.5em;
-}
-.natMainContents {
-  padding-bottom:1.5em;
+  padding-left:1.385em;
+  padding-right:1.385em;
 }
 .natBottomBarContents {
-  padding-top:2em;
+  padding-top:1.385em;
 }
 
 /* fluid layout */
@@ -184,12 +194,18 @@ h1,
   margin:0px;
 }
 
-.foswikiTable tr.foswikiTableEven td.foswikiSortedCol,
-.foswikiTable tr.foswikiTableOdd td.foswikiSortedCol,
 .foswikiTable td.foswikiSortedCol,
 .foswikiTable td.foswikiSortedDescendingCol,
 .foswikiTable td.foswikiSortedAscendingCol {
   background:#f4f4f4;
+}
+
+.metaDataView .foswikiTable th {
+  border-top:0;
+  border-right:0;
+}
+.metaDataView .foswikiTable th:first-child {
+  border-left:0;
 }
 
 
@@ -275,12 +291,17 @@ h1,
 }
 .natTopLeftContents {
   padding:25px 0em 0em 2.3077em; /* 25px 0 0 30px */
+  overflow:hidden;
 }
 .natTopRightContents {
   padding:40px 2.3077em 0em 0em; /* 40px 30px 0 0 */
 }
 .natEditBody .natMain {
   background:#fff;
+}
+
+.ui-natedit-toolbar, .ui-natedit-toolbar .fa {
+  font-size:14px;
 }
 
 /* sidebar */
@@ -613,12 +634,91 @@ a:hover.natScrollTop {
   border-color:#DDD;
 }
 
-@media (max-width:870px) {
-  .natBreadCrumbs {
-    display:none;
+.natNavToggle {
+  right:0;
+  top:0;
+}
+
+@media (max-width: 1180px) {
+  .natBodyFixed .natTopBarContents,
+  .natBodyFixed .natBottomBarContents {
+    width:auto;
   }
   .natBodyFixed .natBodyContents {
     width:auto;
-    margin:0;
+    margin:0px;
+  }
+  .natTopLeft,
+  .natTopBar {
+    margin-left:0;
+  }
+  .natTopLeftContents {
+    padding-left:1.385em;
+  }
+  .natGreeter {
+    display:none;
+  }
+}
+
+@media (max-width:870px) {
+  .natBody .natMiddleContents {
+    margin-right:0;
+  }
+  .natSideBar,
+  .natLangSwitcher {
+    display:none;
+  }
+
+  .natNavToggle {
+    display:block;
+    width:40px;
+    height:40px;
+  }
+
+  .natSideBarContents {
+    padding-top:100px;
+    padding-right:1.5em;
+    border-color:#dbdbdb;
+    border:0px;
+  }
+  .natBody .natSideBar {
+    position:fixed;
+    top:0;
+    right:0;
+    height:100%;
+    overflow:auto;
+    margin:0 -15px 0 0;
+    z-index:999;
+    background:#e9e9e9;
+    box-shadow:-5px 0px 5px rgba(0,0,0,0.05);
+    border:1px solid #dbdbdb;
+  }
+
+  .natLogo {
+    margin-top:14px;
+    float:none;
+  }
+  .natMenu {
+    float:left;
+    margin-top:0;
+    margin-left:-10px;
+  }
+  .natMenu li a {
+    margin-top:0;
+    padding:0.5em;
+  }
+
+  .natBody .natMainHeaderContents,
+  .natBody .natMainFooterContents,
+  .natBody .natMainContents {
+    margin-right:0;
+    margin-left:0;
+  }
+}
+
+@media (max-width:485px) {
+  .natBreadCrumbs,
+  .natTopBar .natSearchBox {
+    display:none;
   }
 }

@@ -1,0 +1,78 @@
+%TMPL:INCLUDE{"viewplain"}%
+
+%TMPL:DEF{"defaultbodyclass"}%natBody nat404Body%TMPL:END%
+%TMPL:DEF{"titleaction"}%%MAKETEXT{"page not found"}%%TMPL:END%
+
+%TMPL:DEF{"content"}%<!-- -->
+<div class="foswikiGrid">
+<div class="foswikiRow">
+<div class="foswikiCol4">
+<div class="nat404">404</div>
+</div>
+<div class="foswikiCol8 border">
+<h2 class="natOopsHeading">%MAKETEXT{"Whoops, page not found!"}%</h2>
+%MAKETEXT{"I am afraid this topic slipped between the cracks."}%
+%MAKETEXT{"Maybe you simply got here by accident. Then move back in your browser and try something else."}%
+%TMPL:P{"similar"}%<!-- -->
+%TMPL:P{"actions"}%<!-- -->
+</div>
+</div>
+</div>
+%TMPL:P{"poweredby"}%
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"actions"}%<!-- -->
+%TMPL:P{"search::action"}%<!-- -->
+%TMPL:P{"search::index"}%<!-- -->
+%TMPL:P{context="authenticated" then="create::action"}%<!-- -->
+%TMPL:P{"restart::action"}%<!-- -->
+%CLEAR%
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"search::action"}%
+%BUTTON{"%MAKETEXT{"Search"}%" class="simple" icon="find" href="%TMPL:P{"searchurl"}%"}%
+%MAKETEXT{"The page might be here under a different name."}%
+%TMPL:END%
+
+%TMPL:DEF{"search::index"}%
+%BUTTON{"%MAKETEXT{"Index"}%" class="simple" icon="text_list_bullets" target="%BASEWEB%.WebTopicList"}%
+%MAKETEXT{"Have a look at the list of all pages in this web."}%
+%TMPL:END%
+
+%TMPL:DEF{"create::action"}%
+%BUTTON{"%MAKETEXT{"Create"}%" class="simple" icon="page_white_add" ref="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%"}%
+%MAKETEXT{"The page might be missing but it shouldn't."}%
+%TMPL:END%
+
+%TMPL:DEF{"restart::action"}%
+%BUTTON{"%MAKETEXT{"Restart"}%" class="simple" icon="house" target="%BASEWEB%.%HOMETOPIC%"}%
+%MAKETEXT{"Or just start from the beginning in case you got lost somehow."}%
+%TMPL:END%
+
+%TMPL:DEF{"searchurl"}%%TMPL:P{context="SolrPluginEnabled" then="searchurl::solr" else="searchurl::default"}%%TMPL:END%
+%TMPL:DEF{"searchurl::default"}%%SCRIPTURL{"view"}%/%BASEWEB%/WebSearch?search=%BASETOPIC%%TMPL:END%
+%TMPL:DEF{"searchurl::solr"}%%SOLRSCRIPTURL{"topic_search:%BASETOPIC%~ OR topic_search:*%BASETOPIC%*"}%%TMPL:END%
+
+%TMPL:DEF{"similar"}%%TMPL:P{context="SolrPluginEnabled" then="similar::solr" else="similar::default"}%%TMPL:END%
+%TMPL:DEF{"similar::solr"}%%SOLRSEARCH{
+  "topic_search:%BASETOPIC%~ OR topic_search:*%BASETOPIC%*"
+  filter="type:topic web:%BASEWEB%"
+  rows="1"
+  type="edismax"
+  format="$percntIF{\"istopic '$web.$topic'\"
+      then=\"$n%MAKETEXT{"There's a similar page called [_1]" args="[[$web.$topic][$title]]"}%\"
+    }$percnt"
+  fields="web,topic,title"
+}%%TMPL:END%
+
+%TMPL:DEF{"similar::default"}%
+%SEARCH{
+  "%BASETOPIC%" 
+  header="%MAKETEXT{"There's a similar page called"}%"
+  format=" [[$web.$topic]] "
+  limit="1"
+  scope="topic" 
+  web="%BASEWEB%" 
+  nonoise="on" 
+}%%TMPL:END%
+

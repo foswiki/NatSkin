@@ -1,5 +1,4 @@
-%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1356278776" format="1.1" version="3"}%
-
+%META:TOPICINFO{author="ProjectContributor" comment="autosave" date="1356278776" format="1.1" version="3"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ Create a personalized sidebar navigation
 %IF{"$'MYSIDEBAR'='off'"
@@ -123,3 +122,5 @@
 %META:PREFERENCE{name="DISPLAYREVISIONINFO" title="DISPLAYREVISIONINFO" type="Local" value="off"}%
 %META:PREFERENCE{name="DISPLAYFORM" title="DISPLAYFORM" type="Local" value="off"}%
 %META:PREFERENCE{name="DISPLAYATTACHMENTS" title="DISPLAYATTACHMENTS" type="Local" value="off"}%
+%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
+%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

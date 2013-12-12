@@ -1,18 +1,16 @@
 %TMPL:INCLUDE{"view"}%
 %TMPL:DEF{"bodyclass"}%natTranslateBody%TMPL:END%
-%TMPL:DEF{"bottombar"}%%TMPL:END%
 %TMPL:DEF{"form"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 %TMPL:DEF{"searchbox"}%%TMPL:END%
-%TMPL:DEF{"sidebar"}%%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
 %TMPL:DEF{"langswitcher"}%%TMPL:END%
+%TMPL:DEF{"bottombar_container"}%%TMPL:END%
 %TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=translatetopic">%MAKETEXT{"Translate"}%</a>%TMPL:END%
 
 %{#################################################################}%
 %TMPL:DEF{"content"}%<!-- -->
 %TMPL:P{"translate::title"}%
-%TMPL:P{"translate::list_existing"}%
 %TMPL:P{"translate::form"}%
 %TMPL:P{"translate::javascript"}%
 <!-- -->%TMPL:END%
@@ -20,25 +18,23 @@
 %{#################################################################}%
 %TMPL:DEF{"translate::title"}%<!-- -->
 <h1 ><noautolink>%MAKETEXT{"Translate &&ldquo;[_1]&&rdquo;" args="%TOPICTITLE%"}%</noautolink></h1>
-%MAKETEXT{"Translate this topic to a new language."}%
 %TMPL:END%
 
 %{#################################################################}%
-%TMPL:DEF{"translate::list_existing"}%<!-- -->
+%TMPL:DEF{"translate::form::list_existing"}%<!-- -->
 %DBQUERY{
   "(preferences.BASETRANSLATION = '%BASETRANSLATION{default="%TOPIC%"}%' OR topic = '%BASETRANSLATION{default="%TOPIC%"}%') AND topic != '%TOPIC%'"
-  header="<h3>%MAKETEXT{"Already existing translations"}%:</h3>
-<ul>$n"
+  header="<hr /><h3>%MAKETEXT{"Already existing translations"}%:</h3>
+<ul class='foswikiNoBullets'>$n"
   format="<li>
-    <a href='%SCRIPTURLPATH{"view"}%/$web/$topic?template=translatetopic'>$expand(topictitle)</a>
     $percntLANGUAGES{\"$expand(preferences.CONTENT_LANGUAGE or '%DEFAULTLANGUAGE%')\" format=\"$icon\"}$percnt
-    ($expand(preferences.CONTENT_LANGUAGE or '%DEFAULTLANGUAGE%')$percntIF{
-      \"'$topic'='%BASETRANSLATION{default="%TOPIC%"}%'\" then=\", %MAKETEXT{"base language"}%\"
-    }$percnt)
+    <a href='%SCRIPTURLPATH{"view"}%/$web/$topic?template=translatetopic'>$expand(topictitle)</a>$percntIF{
+      \"'$topic'='%BASETRANSLATION{default="%TOPIC%"}%'\" then=\", (%MAKETEXT{"base language"}%)\"
+    }$percnt<!-- -->
     <style>.$expand(preferences.CONTENT_LANGUAGE or '%DEFAULTLANGUAGE%') {display:none}</style>
     </li>"
   separator="$n"
-  footer="</ul>"
+  footer="</ul><hr />"
   hidenull="on"
 }%
 <style>.%CONTENT_LANGUAGE{default="%DEFAULTLANGUAGE%"}% {display:none}</style>
@@ -52,6 +48,7 @@
 %TMPL:P{"translate::form::new_topic_step"}%<!-- -->
 %TMPL:P{"translate::form::title_step"}%<!-- -->
 %TMPL:P{"translate::form::topic_step"}%<!-- -->
+%TMPL:P{"translate::form::list_existing"}%
 %TMPL:P{"translate::form::end"}%<!-- -->
 <!-- -->%TMPL:END%
 
