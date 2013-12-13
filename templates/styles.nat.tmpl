@@ -5,13 +5,13 @@
 %TMPL:P{"preferences::styles"}%<!-- -->
 <!-- -->%TMPL:END%
 
-%TMPL:DEF{"preferences::styles"}%%ADDTOZONE{"head"
+%TMPL:DEF{"preferences::styles"}%%ADDTOZONE{"skincss"
   id="NATSKIN::PREFERENCES::STYLES"
   requires="NATSKIN"
   text="<literal>
 %IF{"defined NATSKIN_SIDEBARWIDTH" 
   then="<style>
-  .natSideBarHeader, .natSideBar { 
+  .natSideBar { 
     width:%NATSKIN_SIDEBARWIDTH%; 
   }
   .natBodyBoth .natSideBar,
@@ -21,6 +21,13 @@
   .natBodyBoth .natMiddleContents,
   .natBodyRight .natMiddleContents {
     margin-right:%NATSKIN_SIDEBARWIDTH%;
+  }
+  .natBodyLeft .natSideBar {
+    margin-left:-%NATSKIN_SIDEBARWIDTH%;
+  }
+  .natBodyLeft .natWebMenuContents,
+  .natBodyLeft .natMiddleContents {
+    margin-left:%NATSKIN_SIDEBARWIDTH%;
   }
 </style>"
   else="<!-- -->"

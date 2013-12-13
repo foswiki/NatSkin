@@ -1867,7 +1867,6 @@ a:active.natScrollTop {
   right:0;
 }
 
-.natSideBarHeader,
 .natSideBar {
   width:16em; 
 }
@@ -1882,9 +1881,13 @@ a:active.natScrollTop {
   float:right;
   width:100%;
 }
+.natBodyLeft .natWebMenuContents,
 .natBodyBoth .natMiddleContents,
 .natBodyLeft .natMiddleContents {
   margin-left:16em;
+}
+.natBodyLeft .natWebMenuContents {
+  padding-left:1px;
 }
 
 /* sidebar off */
