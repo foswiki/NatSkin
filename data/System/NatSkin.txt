@@ -65,7 +65,7 @@ the templates by using the !NatSkin as a parent skin to create template modifica
    * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
 -->
 |  Skin Author: | Michael Daum |
-|  Copyright &copy;: | 2003-2013, Michael Daum http://michaeldaumconsulting.com |
+|  Copyright &copy;: | 2003-2014, Michael Daum http://michaeldaumconsulting.com |
 |  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
 |  Release: | %$RELEASE% |
 |  Version: | %$VERSION% |
