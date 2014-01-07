@@ -5,11 +5,28 @@
 Default bottombar component
 
 %STARTINCLUDE%<!-- -->
-<div class="natCopyRight">%WEBCOPYRIGHT%</div>
-<div class="natSyndicate">
-  %MAKETEXT{"Syndicate this site"}% 
-  <a class='natFeedIcon' href='%SCRIPTURL{"view"}%/%BASEWEB%/WebRss?contenttype=text/xml'>RSS</a>
+<div class="natSiteMap">
+<h3>%MAKETEXT{"Sitemap"}%</h3>
+<noautolink>
+%FORMATLIST{
+  "%FLEXWEBLIST{
+    format="$name=$web" 
+    map="%FLEXWEBLIST{format="$web=$percntGETTOPICTITLE{\"$web.WebHome\"}$percnt,"}%"
+    separator=", " 
+    subheader=", "
+    %IF{"not context isadmin" then="exclude=\"^Applications.*\""}%
+  }%"
+  split="\s*,\s*"
+  pattern="(.*)=(.*)"
+  format="<div class='natSiteMapItem'><a href='%SCRIPTURLPATH{"view"}%/$2/WebHome'>$1</a></div>$n"
+  sort="on"
+  separator=""
+}%
+</noautolink>
+%CLEAR%
 </div>
+<div class="natCopyRight">%WEBCOPYRIGHT%</div>
 <!-- -->%STOPINCLUDE%
+
 %META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
 %META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

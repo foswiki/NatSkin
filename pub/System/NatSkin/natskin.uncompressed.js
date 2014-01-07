@@ -221,5 +221,31 @@ jQuery(function($) {
         content = $this.html().replace(/^\s+|\s+$/g, "");
     $this.html(content);
   });
-  
+
+  /* click behavior for broadcastmessage */
+  $(".foswikiBroadcastMessage").each(function() {
+    var $this = $(this), 
+        cookieName = "broadcastMessage_counter",
+        counter = $.cookie(cookieName) || 0;
+
+    if (counter > 0) {
+      $this.hide();
+      counter--;
+      $.cookie(cookieName, counter, {path:'/'});
+    } else {
+      $.cookie(cookieName, null, {path:'/'});
+    }
+
+    $this.find(".foswikiBroadcastMessageClose").on("click", function() {
+      if (counter > 0) {
+        $this.slideDown("fast");
+        $.cookie(cookieName, null, {path:'/'});
+      } else {
+        $this.slideUp("fast");
+        $.cookie(cookieName, 4, {path:'/'});
+      }
+      return false;
+    });
+  });
+
 });

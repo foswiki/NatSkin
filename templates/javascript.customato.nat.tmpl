@@ -1,0 +1,8 @@
+%TMPL:INCLUDE{"javascript"}%
+%TMPL:DEF{"javascript"}%%TMPL:P{"defaultjavascript"}%%TMPL:P{"customato::javascript"}%%TMPL:END%
+%TMPL:DEF{"customato::javascript"}%%ADDTOZONE{"script"
+  id="customato"
+  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/CustomatoTheme/customato.js'></script>"
+  requires="JQUERYPLUGIN"
+}%<!-- -->%TMPL:END%
+

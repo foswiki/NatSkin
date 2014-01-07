@@ -1,4 +1,8 @@
-%TMPL:INCLUDE{"oops"}%<!-- template: oopsaccessdenied.nat.tmpl -->
+%TMPL:INCLUDE{"404"}%<!-- template: oopsaccessdenied.nat.tmpl -->
 %TMPL:INCLUDE{"messages"}%
-%TMPL:DEF{"heading"}%%MAKETEXT{"Access denied"}%%TMPL:END%
-%TMPL:DEF{"message"}%%INSTANTIATE%%TMPL:END%
+%TMPL:DEF{"heading"}%%MAKETEXT{"Whoops, access denied!"}%%TMPL:END%
+%TMPL:DEF{"heading"}%%TMPL:END%
+%TMPL:DEF{"message"}%<!-- -->%INSTANTIATE%<!-- -->%TMPL:END%
+%TMPL:DEF{"create::action"}%%TMPL:END%
+%TMPL:DEF{"search::action"}%%TMPL:END%
+%TMPL:DEF{"index::action"}%%TMPL:END%

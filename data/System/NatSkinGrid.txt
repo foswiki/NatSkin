@@ -1,8 +1,8 @@
-%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1378291744" format="1.1" reprev="14" version="14"}%
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1387285307" format="1.1" reprev="14" version="15"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 
-%JQREQUIRE{"gridlayout, ui::resizable"}%
+%JQREQUIRE{"sameheight, ui::resizable"}%
 
 <div class="gutterSelector">
 *Select gutter:* 

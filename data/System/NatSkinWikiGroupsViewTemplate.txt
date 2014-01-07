@@ -169,7 +169,9 @@ jQuery(function($) {
     $this.removeAttr('onsubmit');
     $this.ajaxForm({
       beforeSerialize: function() {
-        StrikeOne.submit($this[0]);
+        if (typeof(StrikeOne) !== 'undefined') {
+          StrikeOne.submit($this[0]);
+        }
         $.blockUI({message:'<h1>' + (action == 'removeUserFromGroup'?'%MAKETEXT{"Removing"}%':'%MAKETEXT{"Adding"}%') + ' ...'});
       }, 
       error: function() {

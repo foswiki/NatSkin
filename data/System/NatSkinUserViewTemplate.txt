@@ -74,7 +74,7 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"userinfo::photo::topicinteraction"}%%IF{"'%BASEWEB%.%BASETOPIC%'/attachments[attr=~'.*t.*'" 
+%TMPL:DEF{"userinfo::photo::topicinteraction"}%%IF{"'%BASEWEB%.%BASETOPIC%'/attachments[attr=~'.*t.*']!=''" 
   then="$percntTMPL:P{\"userinfo::photo::topicinteraction::thumbnailed\"}$percnt" 
   else="$percntTMPL:P{\"userinfo::photo::topicinteraction::defaultthumbnail\"}$percnt" 
 }%%TMPL:END%

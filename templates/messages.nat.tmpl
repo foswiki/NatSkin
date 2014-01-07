@@ -295,25 +295,29 @@ template that doesn't exist." args="%PARAM2%"}%
 (%MAKETEXT{"Don't forget to check your topic settings."}%)
 %TMPL:END%
 %TMPL:DEF{"topic_access"}% <!-- -->
+---++ %MAKETEXT{"Access denied"}%
 %MAKETEXT{"[_1] has no permission to [_2] [_3]." args="[[%WIKIUSERNAME%]], <b>%PARAM1%</b> ,[[%TOPIC%]]"}%
 
 %TMPL:P{"login"}%
 
-%MAKETEXT{"See also"}%: %USERSWEB%.WikiGroups, %SYSTEMWEB%.AccessControl,
-%SYSTEMWEB%.UserRegistration
+%MAKETEXT{"See also"}%: [[%USERSWEB%.WikiGroups]], [[%SYSTEMWEB%.AccessControl]], [[%SYSTEMWEB%.UserRegistration]]
 %TMPL:END%
 %TMPL:DEF{"only_group"}% <!-- -->
 %MAKETEXT{"Only members of the [_1] are allowed to perform this action." args="%PARAM1%"}%
 
 %TMPL:P{"login"}%
 
-%MAKETEXT{"See also"}%: %USERSWEB%.WikiGroups, %SYSTEMWEB%.AccessControl,
-%SYSTEMWEB%.UserRegistration
+%MAKETEXT{"See also"}%: [[%USERSWEB%.WikiGroups]], [[%SYSTEMWEB%.AccessControl]], [[%SYSTEMWEB%.UserRegistration]]
+%TMPL:END%
+%TMPL:DEF{"bad_web_name"}%
+---++ %MAKETEXT{"Missing or illegal web name"}%
+%MAKETEXT{"You are trying to [_1] in a web that does not exist." args="%PARAM1%"}%
+
+%TMPL:P{"goback"}%
 %TMPL:END%
 %TMPL:DEF{"no_such_web"}% <!-- -->
 ---++ %MAKETEXT{"The [_1] web does not exist" args="%WEB%"}%
-
-%MAKETEXT{"You are trying to [_1] in a web that does not exist." args="'%PARAM1%'"}%
+%MAKETEXT{"You are trying to [_1] in a web that does not exist." args="%PARAM1%"}%
 
 %TMPL:P{"goback"}%
 %TMPL:END%

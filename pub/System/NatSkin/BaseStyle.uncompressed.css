@@ -24,16 +24,28 @@ embed, object {
   overflow-y: scroll; /* force a vertical scrollbar to prevent a jumpy page */
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav,
-section {
-/*
-  Override the default (display: inline) for
-  browsers that do not recognize HTML5 tags.
-
-  IE8 (and lower) requires a shiv:
-  http://ejohn.org/blog/html5-shiv
-*/
+/* correct block display not defined in IE 8/9.  */
+article, aside, details, figcaption, figure, footer,
+header, hgroup, main, menu, nav, section, summary {
   display: block;
+}
+
+/* Correct `inline-block` display not defined in IE 8/9. */
+audio, canvas, video {
+  display: inline-block;
+}
+
+/* prevent modern browsers from displaying `audio` without controls.
+   remove excess height in iOS 5 devices.  */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* address [hidden] styling not present in IE 8/9. hide the template element in IE, Safari, and Firefox < 22.  */
+[hidden],
+template {
+  display: none;
 }
 
 b,
@@ -59,9 +71,9 @@ table {
 }
 
 img {
-  color: transparent;
+  color:transparent;
   vertical-align:text-bottom;
-  border:0px;
+  border:0;
   /* For IE.  http://css-tricks.com/ie-fix-bicubic-scaling-for-images */
   -ms-interpolation-mode: bicubic;
 }
@@ -69,8 +81,7 @@ img.foswikiButton {
   vertical-align:middle;
 }
 
-/* For IE9.  */
-svg {
+svg { /* for IE9.  */
   overflow: hidden;
 }
 
@@ -91,6 +102,27 @@ blockquote, q {
 
 input, textarea, select, button {
   box-sizing:border-box;
+}
+
+/* address box sizing set to `content-box` in IE 8/9/10. */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; 
+  padding: 0; 
+}
+
+/* appearance set to searchfield in Safari 5 and Chrome.  * box-sizing set to border-box in Safari 5 and Chrome.  */
+input[type="search"] {
+          box-sizing: content-box;
+     -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; 
+  -webkit-appearance: textfield; 
+}
+
+/* remove inner padding and search cancel button in Safari 5 and Chrome * on OS X.  */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 blockquote:before, blockquote:after,
@@ -336,17 +368,6 @@ ul.foswikiTickBullets,
   background-position:0 2px;
 }
 
-
-/* TOC */
-
-.foswikiToc li {
-  margin-left:1em;
-  padding-left:1em;
-}
-.foswikiToc a {
-  background-image:none;
-  text-decoration:none;
-}
 
 .foswikiCite {
   font-style:italic;
@@ -607,15 +628,14 @@ h2.marked,
   font-size:100%;  /* 13px */
   line-height:1.385em; /* 18px */
 }
-
 .alt h2,
 .jqTabContents h2 {
   font-size:1.2308em; /* 16px */
   line-height:1.125em; /* 18px */
   margin-bottom:0.5625em; /* 9px */
 }
-.alt > h2:first-child,
-.jqTabContents > h2:first-child {
+.alt > :first-child,
+.jqTabContents > :first-child {
   margin-top:0px;
 }
 .alt h2,
@@ -717,9 +737,6 @@ input[type=submit]:active,
 
 fieldset {
   padding:0px 0px 0px 1px; /* firefox fix to allign legend and content */
-  border:0px;
-  border-color:#DDD;
-  background-color:#FAF8F7;
 }
 legend {
   color:#0055b5;
@@ -994,24 +1011,6 @@ img.foswikiLeft,
 .foswikiAlert {
   color:red;
 }
-.foswikiBroadcastMessage {
-  text-align:left;
-  background:yellow;
-  color:black;
-  border-bottom:2px solid orange;
-  padding:0.5em 1em;
-  margin:0em 0em 1em;
-}
-.foswikiBroadcastMessage .foswikiLink,
-.foswikiBroadcastMessage a {
-  color:red;
-}
-.foswikiBroadcastMessage .foswikiLink:hover,
-.foswikiBroadcastMessage a:hover {
-  color:black;
-  background:orange;
-}
-
 .natBrowserSupportWarning {
   display:none;
   padding:1em;
@@ -1091,8 +1090,11 @@ img.foswikiLeft,
   color:red;
 }
 
-.natMain .natOopsHeading {
-  color:red;
+.natOopsMessage h2 {
+  margin-top:0;
+}
+.natOopsMessage {
+  min-height:10em;
 }
 
 /* topic actions */
@@ -1105,9 +1107,6 @@ img.foswikiLeft,
 .natGreeter a {
   color:#444;
   text-decoration:none;
-}
-.natGreeter a:hover {
-  color:#fff;
 }
 
 .natUserAction {
@@ -1360,6 +1359,23 @@ a.natFeedIcon {
   margin:0 0 0.6154em 1.5384em; /* 0 0 18px 20px */
 }
 
+.foswikiBroadcastMessage {
+  position:relative;
+  text-align:left;
+  border-top:0;
+  border-left:0;
+  border-right:0;
+  -webkit-border-radius: 0px; 
+     -moz-border-radius: 0px; 
+          border-radius: 0px; 
+}
+.foswikiBroadcastMessageClose {
+  position:absolute;
+  top:50%;
+  right:1.5385em;
+  margin-top:-8px;
+}
+
 .foswikiAlt,
 .alt {
   background: #f8f8f8;
@@ -1453,6 +1469,14 @@ td.foswikiDiffChangedText {
   margin-top:0px;
   margin-bottom:0px;
   border:0px;
+}
+.foswikiToc li {
+  margin-left:1em;
+  padding-left:1em;
+}
+.foswikiToc a {
+  background-image:none;
+  text-decoration:none;
 }
 
 .natSideBar .foswikiToc {
@@ -1840,6 +1864,9 @@ a:active.natScrollTop {
 .natPlainBody {
   background-color:white;
 }
+.natMain {
+  width:100%;
+}
 
 /* bordered layout */
 .natBodyBordered {
@@ -1855,7 +1882,6 @@ a:active.natScrollTop {
 .natTopRight {
   float:right;
 }
-
 
 .natBottomBarContents {
   text-align:left;
@@ -1879,7 +1905,6 @@ a:active.natScrollTop {
 }
 .natBodyLeft .natMain {
   float:right;
-  width:100%;
 }
 .natBodyLeft .natWebMenuContents,
 .natBodyBoth .natMiddleContents,
@@ -1893,7 +1918,6 @@ a:active.natScrollTop {
 /* sidebar off */
 .natBodyOff .natMain { 
   float:none;
-  width:auto !important;
 }
 .natBodyOff .natSideBar {
   display:none;
@@ -1906,7 +1930,6 @@ a:active.natScrollTop {
 }
 .natBodyRight .natMain {
   float:left;
-  width:100%;
 }
 .natBodyBoth .natMiddleContents,
 .natBodyRight .natMiddleContents {
@@ -1921,7 +1944,6 @@ a:active.natScrollTop {
 }
 .natBodyBoth .natMain {
   float:left;
-  width:559px;
 }
 
 .natPreviewBody .natMainContents {
@@ -2346,7 +2368,7 @@ a:active.natScrollTop {
 .natWebMenu ul li:hover ul, 
 .natWebMenu ul li.sfHover ul 
 {
-  left:-1px;
+  left:0px;
   top:2.3076em; /* VARIABLE1 */
 }
 
