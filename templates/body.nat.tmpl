@@ -50,18 +50,19 @@
 </div>
 </div>%TMPL:END%
 
+%{ body contents ----------------------------------------------------------- }%
+%TMPL:DEF{"beforebodycontents"}%%TMPL:P{"browsersupport"}%%TMPL:P{"broadcast"}%%TMPL:END%
 
-%{ assembly stage ---------------------------------------------------------- }%
-%TMPL:DEF{"defaultbody"}%<!-- -->
-%TMPL:P{"browsersupport"}%<!-- -->
-%TMPL:P{"broadcast"}%<!-- -->
-<div class="natBodyContents" id="PageTop">
+%TMPL:DEF{"bodycontents"}%<div class="natBodyContents" id="PageTop">
 %TMPL:P{"topbar"}%<!-- -->
 %TMPL:P{context="natskin_menu_on" then="webmenu"}%<!-- -->
 %TMPL:P{"main"}%
 %TMPL:P{"bottombar_container"}%<!-- -->
 %TMPL:P{"scrolltop"}%<!-- -->
 <span id="PageBottom"></span>
-</div>
-%WEBCOMPONENT{"HtmlBottom"}%<!-- -->
-<!-- -->%TMPL:END%
+</div>%TMPL:END%
+
+%TMPL:DEF{"afterbodycontents"}%%WEBCOMPONENT{"HtmlBottom"}%%TMPL:END%
+
+%{ assembly stage ---------------------------------------------------------- }%
+%TMPL:DEF{"defaultbody"}%%TMPL:P{"beforebodycontents"}%%TMPL:P{"bodycontents"}%%TMPL:P{"aftercontents"}%%TMPL:END%

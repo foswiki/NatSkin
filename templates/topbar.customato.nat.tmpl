@@ -2,7 +2,6 @@
 
 %{################################################################################ }%
 %TMPL:DEF{"topbar"}%<!-- -->
-%TMPL:P{"toppanel"}%<!-- -->
 <div class="natTopShadow"></div>
 %TMPL:P{"langswitcher"}%<!-- -->
 <span href="#" class="natNavToggle"></span>
@@ -43,10 +42,12 @@
 %TMPL:P{context="authenticated" then="toppanel::authenticated" else="toppanel::notauthenticated"}%<!-- -->
 </div>%TMPL:END%
 
+%TMPL:DEF{"toppanel::bulletsclass"}%foswikiNoBullets%TMPL:END%
+
 %{################################################################################ }%
 %TMPL:DEF{"toppanel::authenticated"}%<div class="natTopPanelContents">
 <div class="foswikiGrid">
-  <div class="foswikiRow foswikiOrangeBullets">
+  <div class="foswikiRow %TMPL:P{"toppanel::bulletsclass"}%">
     <div class="foswikiCol4">
       <h3 >My <nop>%WIKITOOLNAME%</h3>
       <ul>
@@ -81,9 +82,8 @@
 %{################################################################################ }%
 %TMPL:DEF{"toppanel::notauthenticated"}%<div class="natTopPanelContents">
 <div class="foswikiGrid">
-  <div class="foswikiRow foswikiOrangeBullets">
-    <div class="foswikiCol6">&nbsp;</div>
-    <div class="foswikiCol3">
+  <div class="foswikiRow %TMPL:P{"toppanel::bulletsclass"}%">
+    <div class="foswikiCol6">
       <h3 >%MAKETEXT{"Welcome"}%</h3>
       <ul>
        <li> [[%SYSTEMWEB%.UserRegistration][Register on %WIKITOOLNAME%]] </li>
@@ -92,7 +92,7 @@
        <li> [[%SYSTEMWEB%.ChangePassword][Change Password]] </li>
       </ul>
     </div>
-    <div class="foswikiCol3 border">
+    <div class="foswikiCol6 border">
       %TMPL:P{"toppanel::login"}%
     </div>
   </div>

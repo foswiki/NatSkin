@@ -101,21 +101,19 @@ blockquote, q {
 }
 
 input, textarea, select, button {
-  box-sizing:border-box;
+          box-sizing:border-box;
+     -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box; 
 }
 
 /* address box sizing set to `content-box` in IE 8/9/10. */
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box; 
   padding: 0; 
 }
 
 /* appearance set to searchfield in Safari 5 and Chrome.  * box-sizing set to border-box in Safari 5 and Chrome.  */
 input[type="search"] {
-          box-sizing: content-box;
-     -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box; 
   -webkit-appearance: textfield; 
 }
 
@@ -1797,6 +1795,15 @@ a:active.natScrollTop {
 .natBottomActions h4 {
   margin:0px;
 }
+
+.natSiteMap .natSiteMapItem {
+  float:left;
+  width:33%;
+}
+.natSiteMap .natSiteMapItem:nth-child(10) {
+   clear; 
+}
+
 .natBottomBar ul {
   list-style-type:none;
   padding-left:0px;
@@ -1906,7 +1913,6 @@ a:active.natScrollTop {
 .natBodyLeft .natMain {
   float:right;
 }
-.natBodyLeft .natWebMenuContents,
 .natBodyBoth .natMiddleContents,
 .natBodyLeft .natMiddleContents {
   margin-left:16em;

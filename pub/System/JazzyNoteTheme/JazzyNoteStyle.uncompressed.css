@@ -63,6 +63,10 @@ h2 {
   padding-top:1.385em;
 }
 
+.natSiteMap {
+  margin-bottom:2em;
+}
+
 /* fluid layout */
 .natBodyFluid .natMiddle,
 .natBodyFluid .natMain {

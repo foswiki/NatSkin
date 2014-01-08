@@ -193,8 +193,17 @@ h2.marked,
 /* layout */
 .natSideBarContents {
   margin-top:-1em;
-  padding:1em 1px 0 1.5em;
+}
+.natBodyRight .natSideBarContents {
   border-left:1px solid #D5D6DD;
+  padding:1em 1px 0 1.5em;
+}
+.natBodyLeft .natSideBarContents {
+  border-right:1px solid #D5D6DD;
+  padding:1em 1em 0 1px;
+}
+.natBodyBoth .natSideBarContents {
+  padding:1em 0 0 0;
 }
 .natMainHeaderContents,
 .natMainFooterContents {
@@ -202,22 +211,29 @@ h2.marked,
 }
 
 .natMainContents {
-  margin:1.5em 0 0;
+  margin-top:1.5em;
   padding:0;
 }
 .natMainFooterContents {
   padding:0;
 }
+.natBodyBoth .natMainHeaderContents,
+.natBodyBoth .natMainFooterContents,
+.natBodyBoth .natMainContents,
 .natBodyRight .natMainHeaderContents,
 .natBodyRight .natMainFooterContents,
 .natBodyRight .natMainContents {
   margin-right:1.5em;
 }
+.natBodyBoth .natMainHeaderContents,
+.natBodyBoth .natMainFooterContents,
+.natBodyBoth .natMainContents,
 .natBodyLeft .natMainHeaderContents,
 .natBodyLeft .natMainFooterContents,
 .natBodyLeft .natMainContents {
   margin-left:1.5em;
 }
+.natBodyFixed .natTopPanelContents,
 .natBodyFixed .natBottomBarContents,
 .natBodyFixed .natBodyContents {
   width:80em;
@@ -272,14 +288,6 @@ h2.marked,
   width:100%;
   margin-top:2em;
   padding:2em 0;
-}
-
-.natSiteMap .natSiteMapItem {
-  float:left;
-  width:33%;
-}
-.natSiteMap .natSiteMapItem:nth-child(10) {
-   clear; 
 }
 
 .natBottomBar .natPageCacheBanner {
@@ -407,6 +415,9 @@ fieldset,
   height:30px;
 }
 
+.natBodyLeft .natWebMenuContents {
+  margin-left:0;
+}
 .natWebMenu .natSearchBox {
   width:280px;
   float:right;
@@ -429,6 +440,9 @@ fieldset,
 
 
 /* topbar */
+.natTopPanel {
+  background-color:#f3f3f3;
+}
 .natTopLeft {
   padding:2em 0;
 }
@@ -572,14 +586,27 @@ fieldset,
 .natSideBar {
   width:20em; 
 }
+
+/* right */
+.natBodyBoth .natSideBar,
 .natBodyRight .natSideBar {
   margin-right:-20em;
 }
 .natBodyBoth .natMiddleContents,
 .natBodyRight .natMiddleContents {
   margin-right:20em;
-  zoom:1; /* IE7 hack */
 }
+
+/* left */
+.natBodyBoth .natSideBar,
+.natBodyLeft .natSideBar {
+  margin-left:-20em;
+}
+.natBodyBoth .natMiddleContents,
+.natBodyLeft .natMiddleContents {
+  margin-left:20em;
+}
+
 .natSideBar h2 {
   text-transform:uppercase;
   margin:2.5em 0 0.5em;
