@@ -1796,6 +1796,9 @@ a:active.natScrollTop {
   margin:0px;
 }
 
+.natSiteMap {
+  margin-bottom:2em;
+}
 .natSiteMap .natSiteMapItem {
   float:left;
   width:33%;

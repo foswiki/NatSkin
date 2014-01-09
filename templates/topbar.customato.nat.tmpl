@@ -2,7 +2,6 @@
 
 %{################################################################################ }%
 %TMPL:DEF{"topbar"}%<!-- -->
-<div class="natTopShadow"></div>
 %TMPL:P{"langswitcher"}%<!-- -->
 <span href="#" class="natNavToggle"></span>
 <div class="natTopBar">
@@ -40,7 +39,9 @@
 %{################################################################################ }%
 %TMPL:DEF{"toppanel"}%<div class="natTopPanel" style="display:none">
 %TMPL:P{context="authenticated" then="toppanel::authenticated" else="toppanel::notauthenticated"}%<!-- -->
-</div>%TMPL:END%
+</div>
+<div class="natTopShadow"></div>
+<!-- -->%TMPL:END%
 
 %TMPL:DEF{"toppanel::bulletsclass"}%foswikiNoBullets%TMPL:END%
 

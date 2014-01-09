@@ -259,12 +259,10 @@ h2.marked,
 
 /* bottombar */
 .natBottomBar { 
-  box-shadow:0 -2px 10px rgba(0, 0, 0, 0.3);
   position:absolute;
   width:100%;
   left:0px;
-  background-color:#333;
-  border-top:2px solid #444;
+  background-color:#efefef;
   margin-top:4.28em; /* 60px */
 }
 .natRenameBody .natBottomBar,
@@ -275,19 +273,7 @@ h2.marked,
 }
 .natBottomBarContents {
   margin:0em 1.9231em;
-  padding:2em;
-}
-
-.natBottomBar .natCopyRight {
-  border-top:2px solid #444;
-  text-align:center;
-  display:block;
-  background-color:#111;
-  position:absolute;
-  left:0;
-  width:100%;
-  margin-top:2em;
-  padding:2em 0;
+  padding:2em 2em 3.5em;
 }
 
 .natBottomBar .natPageCacheBanner {
@@ -306,17 +292,18 @@ h2.marked,
 .natBottomBarContents h2,
 .natBottomBarContents h3,
 .natBottomBarContents h4 {
-  color:#ccc;
   margin-top:0;
 }
+.natTopPanelContents a,
 .natPageCacheBanner,
 .natPageCacheBanner a,
 .natBottomBarContents,
 .natBottomBarContents a {
-  color:#999;
+  color:#777;
 }
+.natTopPanelContents a:hover,
 .natBottomBarContents a:hover {
-  color:#fff;
+  color:#ED299C;
 }
 
 /* form elements */
@@ -441,7 +428,7 @@ fieldset,
 
 /* topbar */
 .natTopPanel {
-  background-color:#f3f3f3;
+  background-color:#efefef;
 }
 .natTopLeft {
   padding:2em 0;
@@ -457,11 +444,7 @@ fieldset,
   z-index:2;
 }
 .natTopShadow {
-  position:absolute;
-  left:0;
-  box-shadow:0px 6px 10px  -6px rgba(0,0,0,0.2) inset;
-  width:100%;
-  z-index:1;
+  box-shadow:0px 6px 10px -6px rgba(0,0,0,0.3) inset;
   height:10px;
   border-top:5px solid #FF9100;
 }
@@ -490,6 +473,7 @@ fieldset,
   border-radius:0 0 5px 5px;
   padding:1.3em 0.7em 0.5em 0.7em;
   display:inline-block;
+  margin-top:-10px;
 }
 
 .natPanelToggle,
