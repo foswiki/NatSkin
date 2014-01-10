@@ -428,6 +428,8 @@ fieldset,
 
 /* topbar */
 .natTopPanel {
+  position:relative;
+  z-index:1;
   background-color:#efefef;
 }
 .natTopLeft {
@@ -444,9 +446,15 @@ fieldset,
   z-index:2;
 }
 .natTopShadow {
+  position:relative;
+  z-index:1;
   box-shadow:0px 6px 10px -6px rgba(0,0,0,0.3) inset;
   height:10px;
   border-top:5px solid #FF9100;
+}
+
+.natBody .natBodyContents {
+  margin-top:-10px;
 }
 
 .natNetworkNavi {
@@ -473,7 +481,6 @@ fieldset,
   border-radius:0 0 5px 5px;
   padding:1.3em 0.7em 0.5em 0.7em;
   display:inline-block;
-  margin-top:-10px;
 }
 
 .natPanelToggle,
