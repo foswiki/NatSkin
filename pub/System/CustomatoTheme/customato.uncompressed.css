@@ -525,21 +525,27 @@ fieldset,
   color:#fff;
 }
 
+.natTopicActions .sfHover .natMoreActionsTopicAction,
+.natTopicActions .natTopicAction:hover,
 .natWebMenu li.sfHover > a,
 .natWebMenu li a:hover,
-.natWebMenu li .foswikiCurrentWebHomeLink:hover,
 .natWebMenu li .foswikiCurrentWebHomeLink,
 .natWebMenu li .foswikiCurrentTopicLink {
   background-color:#1A7FE2;
   color:#fff;
+  border-radius:0;
+  border-color:transparent;
 }
 
 .natWebMenu li.sfHover > a,
 .natWebMenu li .foswikiCurrentWebHomeLink:hover,
 .natWebMenu li a:hover {
   background-color:#0055AB;
+  border-radius:0;
+  border-color:transparent;
 }
 
+.natWebMenu li .foswikiCurrentWebHomeLink:hover,
 .natWebMenu li .foswikiCurrentWebHomeLink,
 .natWebMenu li .foswikiCurrentTopicLink {
   border-bottom:5px solid #FF45B1;
@@ -558,6 +564,9 @@ fieldset,
 }
 .natWebMenu li li a:hover {
   border-bottom-color:inherit;
+}
+.natMoreActionsMenu ul {
+  margin-top:5px;
 }
 
 

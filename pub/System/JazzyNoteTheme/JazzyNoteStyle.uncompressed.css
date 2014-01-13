@@ -89,7 +89,6 @@ h2 {
   box-shadow:2px 2px 2px rgba(128,128,128,0.2);
 }
 .natTopicActions .sfHover .natMoreActionsTopicAction {
-  border-radius:2px 2px 0px 2px;
   box-shadow:2px 0px 2px rgba(128,128,128,0.2);
 }
 .natTopicActions .natMoreActionsMenu ul li a:hover,
