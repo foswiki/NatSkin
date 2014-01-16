@@ -162,16 +162,10 @@
 %{################################################################################ }%
 %TMPL:DEF{"toppanel::login::rememberstep"}%<!-- -->
 <tr><td colspan="2">
-<table class="foswikiNullTable">
-  <tr>
-    <td>
-      <input id="remember" name="remember" class="foswikiCheckbox" type="checkbox" value="1" />
-    </td>
-    <td>
-      <label for="remember">%MAKETEXT{"Remember me on this computer"}%</label>
-    </td>
-  </tr>
-</table>
+  <label>
+    <input name="remember" class="foswikiCheckbox" type="checkbox" value="1" />
+    %MAKETEXT{"Remember me on this computer"}%
+  </label>
 </td>
 </tr>
 <!-- -->%TMPL:END%

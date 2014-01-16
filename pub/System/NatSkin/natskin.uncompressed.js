@@ -53,8 +53,9 @@ jQuery(function($) {
           topElems, count, width, elemWidth, lastWidth;
 
       $this.find(".natWebMenuContents > ul").superfish({
-        dropShadows: false, autoArrows: false, /* for old superfishes */
+        dropShadows: false, 
         cssArrows: false,
+        speed:200,
         onBeforeShow: function() {
           var $this = $(this), opts;
           if ($this.is(".ajaxMenu")) {
