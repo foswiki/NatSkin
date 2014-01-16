@@ -2241,6 +2241,19 @@ a:active.natScrollTop {
 }
 
 /* web menu ******************************************************************/
+.natWebMenu li,
+.natWebMenu {
+          box-sizing:border-box;
+     -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box; 
+}
+
+.natWebMenu li {
+  float:left;
+}
+.natWebMenu li li {
+  display:block;
+}
 
 .natWebMenu li a,
 .natWebMenu h2,
@@ -2257,7 +2270,6 @@ a:active.natScrollTop {
 .natWebMenuHidden {
   visibility:hidden; 
   height:2.3076em;
-  float:left;
 }
 .natWebMenu ul {
   margin:0;
@@ -2296,10 +2308,6 @@ a:active.natScrollTop {
   color:#fff;
 }
 
-.natWebMenu .sf-js-enabled,
-.natWebMenu ul li {
-  float:left;
-}
 .natWebMenu ul ul {
   border-color:#c2c4c4;
   border-width:1px 0px 1px 0px;
@@ -2328,7 +2336,6 @@ a:active.natScrollTop {
   display:block;
   width:100%;
   text-decoration:none;
-  float:left;
 }
 .natWebMenu li img {
   margin-right:0.3em;
@@ -2372,19 +2379,24 @@ a:active.natScrollTop {
 {
   left:0px;
   top:2.3076em; /* VARIABLE1 */
+  width:13.45em; /* VARIABLE2 */
+}
+.natWebMenuStretch ul li:last-child:hover ul, 
+.natWebMenuStretch ul li:last-child.sfHover ul {
+  right:0;
+  left:auto;
 }
 
 .natWebMenu ul ul li {
-  width:11.45em; /* to be added to VARIABLE2 */
+  width:100%;
 }
 
 /* web menu, third tier */
-
 .natWebMenu ul li.sfHover li ul {
   top:-999em; 
 }
 .natWebMenu ul li li.sfHover ul {
-  left:13.45em; /* VARIABLE2 */
+  left:13.31em; /* VARIABLE2  - 2px*/
   top:-1px; 
 }
 

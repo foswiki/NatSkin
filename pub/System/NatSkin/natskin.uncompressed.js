@@ -22,7 +22,7 @@ jQuery(function($) {
 
   var deprecatedBrowsers,
       agent = uaMatch(window.navigator.userAgent),
-      i, target, $container, busyIndicator;
+      i, target, busyIndicator;
 
   // simplify
   agent = agent.browser + agent.version.replace(/\..*$/, '');
@@ -47,27 +47,48 @@ jQuery(function($) {
 
   /* horiz menu */
   if (foswiki.getPreference("NatSkin.initWebMenu")) {
-    $container = $(".natWebMenuContents");
-    $container.children("ul").superfish({
-      dropShadows: false, autoArrows: false, /* for old superfishes */
-      cssArrows: false,
-      onBeforeShow: function() {
-        var $this = $(this), opts;
-        if ($this.is(".ajaxMenu")) {
-          opts = $.extend({}, $this.metadata());
-          if (opts.url) {
-            $this.load(opts.url, function() {
-              $this.removeClass("ajaxMenu");
-              $this.parent().removeClass("hasAjaxMenu");
-            });
+    $(".natWebMenu").each(function() {
+      var $this = $(this), 
+          opts = $this.data(),
+          topElems, count, width, elemWidth, lastWidth;
+
+      $this.find(".natWebMenuContents > ul").superfish({
+        dropShadows: false, autoArrows: false, /* for old superfishes */
+        cssArrows: false,
+        onBeforeShow: function() {
+          var $this = $(this), opts;
+          if ($this.is(".ajaxMenu")) {
+            opts = $.extend({}, $this.metadata());
+            if (opts.url) {
+              $this.load(opts.url, function() {
+                $this.removeClass("ajaxMenu");
+                $this.parent().removeClass("hasAjaxMenu");
+              });
+            }
           }
         }
-      }
-    })
-    .find("li:has(ul)").addClass("hasSubMenu")
-    .find("li:has(.ajaxMenu)").addClass("hasAjaxMenu");
+      })
+      .find("li:has(ul)").addClass("hasSubMenu")
+      .find("li:has(.ajaxMenu)").addClass("hasAjaxMenu");
 
-    $container.removeClass('natWebMenuHidden');
+      /* stretch top navi evenly based on the number of top elems */
+      if ($this.is(".natWebMenuStretch")) {
+        topElems = $this.find(".natWebMenuContents > ul > li");
+        count = topElems.length;
+        width = 100 - (count-1) * (opts.margin||0);
+        elemWidth =  width / count;
+        lastWidth = width - elemWidth * (count-1);
+
+        elemWidth = elemWidth+"%";
+        lastWidth = lastWidth+"%";
+        //console.log("count=",count,"width=",width,"elemWidth=",elemWidth,"lastWidth=",lastWidth);
+
+        topElems.outerWidth(elemWidth).last().outerWidth(lastWidth);
+      }
+
+      $this.removeClass('natWebMenuHidden');
+    });
+
   }
 
   /* add edit topic prefs behavior */
@@ -144,13 +165,14 @@ jQuery(function($) {
     });
   }
 
-  if (foswiki.getPreference("NatSkin.initAutocomplete")) {// autosuggest using solr 
+  if (foswiki.getPreference("NatSkin.initAutoComplete")) {// autosuggest using solr 
     $("#searchbox").each(function() {
       var $form = $(this),
           $input = $form.find("input[type=text]"),
           submitButton = $form.find("input[type=submit]");
 
       $input.autosuggest({
+        menuClass: 'natSearchBoxMenu',
         search: function(event) {
           submitButton.hide();
         },

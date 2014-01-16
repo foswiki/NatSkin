@@ -48,7 +48,7 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"userinfo::photo"}%<!-- -->
-<div class="foswikiImage foswikiLeft">
+<div class="foswikiImage foswikiRight">
 %TMPL:P{context="TopicInteractionPluginEnabled" then="userinfo::photo::topicinteraction" else="userinfo::photo::default"}%<!-- -->
 </div>
 <!-- -->%TMPL:END%

@@ -111,7 +111,7 @@ h2 {
 .natWebMenu li {
   border-right:1px solid #E1EAFA;
 }
-.natWebMenu ul {
+.natWebMenu ul.sf-js-enabled > li:first-child {
   border-left:1px solid #E1EAFA;
 }
 .natWebMenu ul ul {

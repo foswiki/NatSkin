@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="autosave" date="1356278776" format="1.1" version="10"}%
+%META:TOPICINFO{author="micha" comment="autosave" date="1389793976" format="1.1" version="11"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ Style Browser
 Explore the style variations of the %SYSTEMWEB%.NatSkin by changing the base
@@ -12,7 +12,7 @@ in. If you select different style options they have precedence over those.
 %STARTINCLUDE%<!-- -->
 <noautolink>
 <div class="natSkinStyleBrowser">
-<form action="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%" _method="post">
+<form action="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%">
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep">
     <h3 >%MAKETEXT{"Style"}%:</h3>

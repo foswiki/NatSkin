@@ -1,23 +1,21 @@
 %TMPL:DEF{"MailNotifyBody"}%From: %WIKITOOLNAME% Administrator <%WIKIWEBMASTER%>
 To: %EMAILTO%
-Subject: %MAKETEXT{"[_1] - Automated notification of topic changes in [_2]" args="%WIKITOOLNAME%, %WEB%"}%
+Subject: %MAKETEXT{"[_1] - Automated notification of topic changes in [_2]" args="%WIKITOOLNAME%, %GETTOPICTITLE{"%WEB%.WebHome"}%"}%
 Content-Type: text/plain; charset=%CHARSET%
 Content-Transfer-Encoding: 8bit
 
-%MAKETEXT{"This is an automated e-mail from [_1]." args="%WIKITOOLNAME%"}%
-
-%MAKETEXT{"Review recent changes in"}%:
-  %SCRIPTURL{"view"}%/%WEB%/WebChanges
-
-%MAKETEXT{"Subscribe/unsubscribe in"}%:
-  %SCRIPTURL{"view"}%/%WEB%/%NOTIFYTOPIC%
-
-%MAKETEXT{"New or changed topics in the [_1] web, since [_2] GMT" args="%WEB%,%LASTDATE%"}%:
+%MAKETEXT{"New or changed topics in the [_1] web, since [_2] GMT" args="%GETTOPICTITLE{"%WEB%.WebHome"}%,%LASTDATE%"}%:
 
 %PLAIN_TEXT%
+%MAKETEXT{"Review recent changes in:"}% %SCRIPTURL{"view"}%/%WEB%/WebChanges
+%MAKETEXT{"Subscribe / Unsubscribe in:"}% %SCRIPTURL{"view"}%/%WEB%/%NOTIFYTOPIC%
 %TMPL:END%
-%TMPL:DEF{PLAIN:middle}%- %AUTHOR%, %TIME%: 
-  %URL% 
+%TMPL:DEF{PLAIN:middle}%- %GETTOPICTITLE{"%WEB%.%TOPIC%"}%%IF{
+  "'%WEB%.%TOPIC%'/Summary" 
+  then=" // $percntQUERY{\"'%WEB%.%TOPIC%'/Summary\"}$percnt"
+}%
+  %SCRIPTURL{view}%/%ENCODE{%WEB%}%/%ENCODE{%TOPIC%}%
+  %AUTHOR%, %TIME%
 
 %TMPL:END%
 %TMPL:P{"MailNotifyBody"}%
