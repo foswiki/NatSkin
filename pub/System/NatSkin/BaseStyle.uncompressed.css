@@ -625,16 +625,19 @@ h2.marked,
   font-size:100%;  /* 13px */
   line-height:1.385em; /* 18px */
 }
+.foswikiAlt h2,
 .alt h2,
 .jqTabContents h2 {
   font-size:1.2308em; /* 16px */
   line-height:1.125em; /* 18px */
   margin-bottom:0.5625em; /* 9px */
 }
+.foswikiAlt > :first-child,
 .alt > :first-child,
 .jqTabContents > :first-child {
   margin-top:0px;
 }
+.foswikiAlt h2,
 .alt h2,
 .jqTabContents h2,
 .jqTabContents h2 a {
@@ -1379,7 +1382,6 @@ a.natFeedIcon {
 .foswikiAlt h2,
 .alt h2 {
   border:0px;
-  margin:0em 0em 1.125em;
 }
 
 
@@ -2851,6 +2853,7 @@ a:active.natScrollTop {
 .foswikiGrid .foswikiCol10:first-child,
 .foswikiGrid .foswikiCol11:first-child,
 .foswikiGrid .foswikiCol12:first-child {
+  margin-top:0 !important;
   margin-left:0 !important;
   border:0 !important;
   padding-left:0 !important;

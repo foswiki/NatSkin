@@ -203,7 +203,8 @@ a {
 }
 
 .natEditBody .natMainContents {
-  margin:1em 2em;
+  margin:0;
+  padding:1em 2em;
 }
 
 /* bottombar */
@@ -211,7 +212,6 @@ a {
   position:absolute;
   width:100%;
   left:0px;
-  background-color:#efefef;
   margin-top:4.28em; /* 60px */
 }
 .natRenameBody .natBottomBar,
@@ -245,53 +245,6 @@ a {
 }
 
 /* form elements */
-input[type=text],
-input[type=password],
-.foswikiInputField,
-select.ui-pg-selbox, /* jqgrid */
-select,
-.foswikiSelect,
-.foswikiTextarea, textarea {
-  border-radius:0;
-  background-color:#fff;
-  border:1px solid #ccc;
-  box-shadow:none;
-}
-input[type=text],
-input[type=password],
-.foswikiInputField,
-select,
-.foswikiSelect,
-.foswikiTextarea, textarea {
-  padding:4px 6px;
-}
-input::-ms-reveal,
-input::-ms-clear {
-  display:none;
-}
-
-.foswikiTextarea:focus, textarea:focus,
-select.ui-pg-selbox:focus, /* jqgrid */
-select:focus,
-.foswikiSelect:focus,
-input[type=text]:focus,
-input[type=password]:focus,
-.foswikiInputField:focus {
-  background-color:#fff;
-  box-shadow:inset 2px 2px 4px rgba(0,0,0,0.1);
-  border:1px solid #16BEEF;
-}
-
-fieldset,
-.foswikiDialog,
-.foswikiFormSteps,
-.foswikiPageForm {
-  background-color:#f5f5f5;
-}
-.foswikiPageForm {
-  border:0px;
-}
-
 .jqTextboxListValue {
   background-color:#ebebeb;
   border:1px solid #cfcfcf;
@@ -368,7 +321,7 @@ fieldset,
 .natTopPanel {
   position:relative;
   z-index:1;
-  background-color:#efefef;
+  background-color:#f4f4f4;
 }
 .natTopLeft {
   padding:2em 0;
@@ -388,6 +341,10 @@ fieldset,
   z-index:1;
   box-shadow:0px 6px 10px -6px rgba(0,0,0,0.3) inset;
   height:10px;
+}
+.natEditBody .natTopPanel,
+.natEditBody .natTopShadow {
+  display:none;
 }
 
 .natBody .natBodyContents {
@@ -693,7 +650,6 @@ fieldset,
   .natBody .natMiddleContents {
     margin-right:0;
   }
-  .natTopLeft,
   .natNetworkNavi,
   .natSideBar,
   .natLangSwitcher {
@@ -744,27 +700,27 @@ fieldset,
   }
 }
 @media (max-width: 600px) {
-  .foswikiCol1,
-  .foswikiCol2,
-  .foswikiCol3,
-  .foswikiCol4,
-  .foswikiCol5,
-  .foswikiCol6,
-  .foswikiCol7,
-  .foswikiCol8,
-  .foswikiCol9,
-  .foswikiCol10,
-  .foswikiCol11,
-  .foswikiCol12 {
+  .foswikiGrid .foswikiCol1,
+  .foswikiGrid .foswikiCol2,
+  .foswikiGrid .foswikiCol3,
+  .foswikiGrid .foswikiCol4,
+  .foswikiGrid .foswikiCol5,
+  .foswikiGrid .foswikiCol6,
+  .foswikiGrid .foswikiCol7,
+  .foswikiGrid .foswikiCol8,
+  .foswikiGrid .foswikiCol9,
+  .foswikiGrid .foswikiCol10,
+  .foswikiGrid .foswikiCol11,
+  .foswikiGrid .foswikiCol12 {
     float:none;
-    width:100% !important;
-    padding-left:0 !important;
+    width:100%;
+    padding-left:0;
     min-height:0;
+    margin:1.385em 0 0 0;
   }
   .foswikiGrid .border {
     border-left-width:0;
     border-top-width:1px;
-    margin:1.385em 0 0 0;
     padding-top:1.385em;
   }
 
@@ -794,6 +750,17 @@ fieldset,
 
 */
 
+.natBody {
+  background:url("bg.png") repeat-x #fff;
+  background-attachment:fixed;
+}
+.natEditBody {
+  background:#fff;
+}
+.natMiddle,
+.natMiddleContents {
+  background-color:transparent;
+}
 
 .blogEntries .foswikiTopicInfo h2,
 h1 {
@@ -808,6 +775,9 @@ h1 {
   background-color:#FF9100;
   color:#fff;
   text-decoration:none;
+}
+.natPanelToggle a:hover {
+  color:#fff;
 }
 
 .natWebMenu li .foswikiCurrentWebHomeLink:hover,
@@ -864,6 +834,7 @@ a.jqButton:hover,
 #natLoginBanner,
 .natMainContents .foswikiNewLink,
 .natSideBar .foswikiCurrentTopicLink,
+.foswikiAlt h2,
 .alt h2,
 h2.marked,
 .jqTabPanePlain >.jqTabGroup a:hover, 
@@ -877,6 +848,10 @@ h2.marked,
 .foswikiFormSteps h2 a:hover {
   color:#ED299C;
 }
+.foswikiAlt h2,
+.alt h2 {
+  font-weight:bold;
+}
 
 .natTopPanelContents a,
 .natPageCacheBanner,
@@ -884,4 +859,87 @@ h2.marked,
 .natBottomBarContents,
 .natBottomBarContents a {
   color:#777;
+}
+
+input[type=text],
+input[type=password],
+.foswikiInputField,
+select.ui-pg-selbox, /* jqgrid */
+select,
+.foswikiSelect,
+.foswikiTextarea, textarea {
+  border-radius:0;
+  background-color:#fff;
+  border:1px solid #ccc;
+  box-shadow:none;
+  box-shadow:inset 2px 2px 4px #f4f4f4;
+}
+input[type=text],
+input[type=password],
+.foswikiInputField,
+select,
+.foswikiSelect,
+.foswikiTextarea, textarea {
+  padding:4px 6px;
+}
+input::-ms-reveal,
+input::-ms-clear {
+  display:none;
+}
+
+.foswikiTextarea:focus, textarea:focus,
+select.ui-pg-selbox:focus, /* jqgrid */
+select:focus,
+.foswikiSelect:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+.foswikiInputField:focus {
+  border:1px solid #16BEEF;
+}
+
+
+fieldset,
+.alt,
+.cmtCommentOdd,
+.foswikiPageForm,
+.foswikiFormSteps {
+  border-radius:2px;
+  border:1px solid #d1d1d1;
+  box-shadow:0 0 10px #f4f4f4;
+
+  /* http://colorzilla.com/gradient-editor/#ffffff+0,f4f4f4+100;Custom */
+  background: #f4f4f4; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #f4f4f4 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f4f4f4)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#f4f4f4 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%,#f4f4f4 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%,#f4f4f4 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%,#f4f4f4 100%); /* W3C */
+}
+.cmtSubComments .cmtCommentOdd,
+.ui-dialog .foswikiFormSteps, 
+.foswikiMetaData .foswikiDataForm, 
+.foswikiMetaData .foswikiAttachments, 
+.foswikiMetaData .foswikiComments, 
+.foswikiMetaData .foswikiAttachmentsProcess {
+  background:transparent;
+  box-shadow:none;
+}
+.cmtSubComments .cmtCommentOdd {
+  border:0
+}
+pre {
+  border-radius:2px;
+  border:1px solid #d1d1d1;
+}
+
+.jqTextboxListValue {
+  background-color:#f4f4f4;
+  border:1px solid #cfcfcf;
+  border-radius:4px;
+}
+
+.natBottomBar {
+  background-color:#f4f4f4;
+  border-top:1px solid #d1d1d1;
 }

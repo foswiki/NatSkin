@@ -38,6 +38,7 @@ lib/Foswiki/Contrib/NatSkin/Config.spec 0644
 lib/Foswiki/Contrib/NatSkin.pm 0644
 locale/NatSkin/de.po 0644
 locale/NatSkin/Foswiki.pot 0644
+pub/System/CustomatoTheme/bg.png 0644
 pub/System/CustomatoTheme/customato-base.css 0644
 pub/System/CustomatoTheme/customato-base.css.gz 0644
 pub/System/CustomatoTheme/customato-base.uncompressed.css 0644
