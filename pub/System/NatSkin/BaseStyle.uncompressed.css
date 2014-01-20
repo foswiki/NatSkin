@@ -1670,6 +1670,9 @@ table.craSideBySide .craCell {
   padding:0px;
   margin:0 0 1.125em 0;
 }
+.fltMakeIndexWrapper table td ul:last-child {
+  margin-bottom:0;
+}
 .fltMakeIndexWrapper table td {
   padding-left:2em;
 }
@@ -2686,7 +2689,9 @@ a:active.natScrollTop {
 }
 
 .foswikiGrid .border {
-  border-left:1px solid #ddd;
+  border-color:#ddd;
+  border-style:solid;
+  border-left-width:1px;
 }
 
 .foswikiCol12 { width: 100%; }
@@ -2847,7 +2852,7 @@ a:active.natScrollTop {
 .foswikiGrid .foswikiCol11:first-child,
 .foswikiGrid .foswikiCol12:first-child {
   margin-left:0 !important;
-  border-left:0 !important;
+  border:0 !important;
   padding-left:0 !important;
 }
 

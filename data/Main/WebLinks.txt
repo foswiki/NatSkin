@@ -3,13 +3,13 @@
 
 Sidebar navigation in the %WEB% web. See also the %SYSTEMWEB%.SiteLinks
 
-%STARTINCLUDE%<!-- main.weblinks -->
+%STARTINCLUDE%<!-- -->
    * [[%SYSTEMWEB%.WelcomeGuest][%MAKETEXT{"Welcome"}%]]
    * [[%SYSTEMWEB%.UserRegistration][%MAKETEXT{"Registration"}%]] %IF{"istopic '%USERSWEB%.%WIKIUSERSTOPIC%'" then="
    * [[%USERSWEB%.%WIKIUSERSTOPIC%][%MAKETEXT{"Users"}%]]"}%
    * [[%USERSWEB%.WikiGroups][%MAKETEXT{"Groups"}%]]
    * [[%SYSTEMWEB%.ChangePassword][%MAKETEXT{"Password"}%]]
-<!-- //main.weblinks -->%STOPINCLUDE%
+<!-- -->%STOPINCLUDE%
 
 <!--
    * Set ALLOWTOPICCHANGE = AdminGroup
