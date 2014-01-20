@@ -1752,6 +1752,9 @@ h2 .foswikiTopicSummary {
   text-decoration:none;
   font-size:30px;
 }
+.natNavToggleActive {
+  color:inherit !important;
+}
 
 a.natScrollTop {
   position:fixed;

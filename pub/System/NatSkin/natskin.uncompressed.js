@@ -233,6 +233,7 @@ jQuery(function($) {
         easing: "shagga",
         complete: function() {
           $this.show();
+          $this.toggleClass("natNavToggleActive");
         }
       });
 
