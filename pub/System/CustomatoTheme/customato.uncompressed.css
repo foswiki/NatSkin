@@ -327,8 +327,8 @@ a {
   padding:2em 0;
 }
 .natTopRight {
-  float:none;
   position:relative;
+  width:100%;
 }
 .natTopRightContents {
   position:absolute;
@@ -658,9 +658,10 @@ a {
 
   .natNavToggle {
     display:block;
-    width:40px;
-    height:40px;
-    top:1em;
+    top:18px;
+    font-size:24px;
+    right:10px;
+    z-index:999999;
   }
 
   .natWebMenu .natSearchBox {
@@ -672,7 +673,11 @@ a {
   }
 
   .natTopRightContents {
-    position:inherit;
+    margin-right:-1em;
+  }
+  .natTopRight .natPanelToggle {
+    padding-right:60px;
+    border-radius:0 0 0 5px;
   }
 
   .natBody .natSideBarContents {
@@ -752,7 +757,6 @@ a {
 
 .natBody {
   background:url("bg.png") repeat-x #fff;
-  background-attachment:fixed;
 }
 .natEditBody {
   background:#fff;

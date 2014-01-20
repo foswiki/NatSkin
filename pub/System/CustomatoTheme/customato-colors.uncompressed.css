@@ -8,7 +8,6 @@
 
 .natBody {
   background:url("bg.png") repeat-x #fff;
-  background-attachment:fixed;
 }
 .natEditBody {
   background:#fff;

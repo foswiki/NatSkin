@@ -3,6 +3,18 @@
 jQuery(function($) {
   "use strict";
 
+  /* custom ease-in-out */
+  $.extend($.easing, {
+    'shagga':  function (x, t, b, c, d) {
+      if (( t /= d / 2) < 1) {
+          return c / 2 * t * t + b;
+      }
+      return -c / 2 * ((--t) * (t - 2) - 1) + b;
+    }
+  });
+
+
+
   // flag browser deprecation
   function uaMatch(ua) { // borrowed from jQuery
       ua = ua.toLowerCase();
@@ -214,8 +226,14 @@ jQuery(function($) {
 
     $this.on("click", function(ev) {
 
+      $this.hide();
       $sidebar.toggle("slide", {
-        direction: "right"
+        direction: "right",
+        duration: 200,
+        easing: "shagga",
+        complete: function() {
+          $this.show();
+        }
       });
 
       if (ev.preventDefault) {
