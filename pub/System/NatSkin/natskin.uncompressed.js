@@ -219,21 +219,14 @@ jQuery(function($) {
     var $this = $(this), 
         $sidebar = $(".natSideBar");
 
-    if ($sidebar.length === 0) {
-      $this.hide();
-      return false;
-    }
-
     $this.on("click", function(ev) {
 
-      $this.hide();
       $sidebar.toggle("slide", {
         direction: "right",
         duration: 200,
         easing: "shagga",
         complete: function() {
-          $this.show();
-          $this.toggleClass("natNavToggleActive");
+          $("body").toggleClass("natBodyNavToggleActive");
         }
       });
 

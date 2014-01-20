@@ -1751,9 +1751,15 @@ h2 .foswikiTopicSummary {
   border:none;
   text-decoration:none;
   font-size:30px;
+  cursor:w-resize;
 }
-.natNavToggleActive {
+.natBodyNavToggleActive {
+  overflow:hidden;
+  position:fixed;
+}
+.natBodyNavToggleActive .natNavToggle {
   color:inherit !important;
+  cursor:e-resize;
 }
 
 a.natScrollTop {
@@ -2024,10 +2030,16 @@ a:active.natScrollTop {
   margin:-12px 0px 0px 0px;
   border:0;
   padding:0;
-  background:url(search_button.png) no-repeat 0 0 transparent;
   position:absolute;
   cursor:pointer;
 }
+
+.natSearchBox .foswikiSubmit,
+.natSearchBox .foswikiSubmit:active,
+.natSearchBox .foswikiSubmit:hover {
+  background:url(search_button.png) no-repeat 0 0 transparent;
+}
+.natSearchBox .foswikiSubmit:active,
 .natSearchBox .foswikiSubmit:hover {
   background-position:0px -25px;
 }

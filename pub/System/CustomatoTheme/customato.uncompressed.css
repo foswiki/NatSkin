@@ -667,9 +667,14 @@ a {
     z-index:999999;
   }
 
+  .natTopLeft {
+    padding-bottom:1em;
+  }
   .natWebMenu .natSearchBox {
     float:none;
-    margin:1em auto 2em;
+    margin:0em auto 2em;
+    width:50%;
+    min-width:300px;
   }
   .natWebMenu .natSearchBox .foswikiInputField {
     border-bottom-width:1px;
@@ -731,6 +736,7 @@ a {
     border-top-width:1px;
     padding-top:1.385em;
   }
+
 
   .natBreadCrumbs {
     display:none;
