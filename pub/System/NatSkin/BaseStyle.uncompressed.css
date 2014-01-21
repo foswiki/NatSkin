@@ -1003,6 +1003,9 @@ img.foswikiLeft,
 .foswikiLayoutTable th {
   padding:0.1538em 0.5769em 0.1538em 0em;
 }
+.foswikiLayoutTable th {
+  vertical-align:top;
+}
 
 .foswikiNewLink {
   background:#eee;
@@ -2602,12 +2605,11 @@ a:active.natScrollTop {
   padding:0.5em 1em;
   border-bottom:1px solid #c2c4c4;
 }
-.foswikiProfileInfo {
-  margin:0.5454em 0 1em;
-  position:relative;
+.foswikiProfileInfo .foswikiCol6 {
+  overflow:hidden;
 }
-.foswikiProfileInfo h1 {
-  margin-top:0;
+.foswikiProfileInfo .foswikiLayoutTable td {
+  word-break:break-word;
 }
 
 /* some print styles affecting cover=print.nat as well */

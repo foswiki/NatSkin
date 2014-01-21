@@ -4,7 +4,7 @@
 %TMPL:INCLUDE{"view"}%<!-- -->
 %TMPL:DEF{"form"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
-%TMPL:DEF{"userinfo::photo::width"}%100%TMPL:END%
+%TMPL:DEF{"userinfo::photo::size"}%x80%TMPL:END%
 %TMPL:DEF{"beforetext"}%%TMPL:P{"userinfo"}%%TMPL:END%
 %{</verbatim>}%
 
@@ -23,34 +23,58 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"userinfo::title"}%<!-- -->
-<h1>%IF{
+<h1>
+<span itemprop='name'>
+  %IF{
     "'%WEB%.%TOPIC%'/FirstName or '%WEB%.%TOPIC'/LastName" 
     then="%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%" 
     else="%TOPICTITLE%"
-}%</h1>
+  }%
+</span>
+<span itemprop='description' class='foswikiTopicSummary'>%FORMFIELD{"Profession"}%</span>
+</h1>
+%CLEAR%
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"userinfo::details"}%%RENDERFORDISPLAY{
+%TMPL:DEF{"userinfo::details"}%<div class="foswikiPageForm foswikiGrid">
+<div class="foswikiRow">
+<div class="foswikiCol6">
+<h2>%MAKETEXT{"Person"}%</h2>
+%RENDERFORDISPLAY{
   topic="%BASEWEB%.%BASETOPIC%"
-  exclude="FirstName|LastName"
+  fields="OrganisationName, OrganisationURL, Profession, HomePage"
   hideempty="on"
-  header="<table class='foswikiLayoutTable'>$n"
+  header="<table class='foswikiLayoutTable'>"
   footer="</table>"
-  separator=""
-  format="<tr>
-    <th valign='top'>$percntSPACEOUT{$title}$percnt:</th>
-    <td valign='top'> $value </td>
-</tr>$n"
-}%%TMPL:END%
+  format="<tr> <th>$title:</th> <td> $value </td> </tr>$n"
+}%
+</div>
+<div class="foswikiCol6">
+<h2>%MAKETEXT{"Contact"}%</h2>
+%RENDERFORDISPLAY{
+  topic="%BASEWEB%.%BASETOPIC%"
+  exclude="FirstName|LastName|OrganisationName|OrganisationURL|Profession|HomePage|Comment"
+  hideempty="on"
+  header="<table class='foswikiLayoutTable'>"
+  footer="</table>"
+  format="<tr> <th>$title:</th> <td> $value </td> </tr>$n"
+}%
+</div>
+</div>
+%IF{"'%WEB%.%TOPIC%'/Comment"
+  then="<div class='foswikiRow'><div class='foswikiCol12'>
+<h2>%MAKETEXT{"Comment"}%</h2> 
+$percntFORMFIELD{\"Comment\"}$percnt
+    </div></div>"
+}%<!-- -->
+</div>%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"userinfo::photo"}%<!-- -->
-<div class="foswikiImage foswikiRight">
 %TMPL:P{context="TopicInteractionPluginEnabled" then="userinfo::photo::topicinteraction" else="userinfo::photo::default"}%<!-- -->
-</div>
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
@@ -68,7 +92,7 @@
    topic="%BASEWEB%.%BASETOPIC%"
    type="plain"
    align="left"
-   width="%TMPL:P{"userinfo::photo::width"}%"
+   size="%TMPL:P{"userinfo::photo::size"}%"
 }%
 <!-- -->%TMPL:END%
 %{</verbatim>}%
@@ -92,7 +116,7 @@
      topic=\"$web.$topic\"
      align=\"left\"
      type=\"plain\"
-     width=\"%TMPL:P{"userinfo::photo::width"}%\"
+     size=\"%TMPL:P{"userinfo::photo::size"}%\"
      crop=\"northwest\"
      title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
      warn=\"off\"
@@ -114,7 +138,7 @@
      topic=\"System.MetaCommentPlugin\"
      align=\"left\"
      type=\"plain\"
-     width=\"%TMPL:P{"userinfo::photo::width"}%\"
+     size=\"%TMPL:P{"userinfo::photo::size"}%\"
      crop=\"northwest\"
      title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
      warn=\"off\"
@@ -124,7 +148,7 @@
      topic=\"$web.$topic\"
      align=\"left\"
      type=\"plain\"
-     width=\"%TMPL:P{"userinfo::photo::width"}%\"
+     size=\"%TMPL:P{"userinfo::photo::size"}%\"
      crop=\"northwest\"
      title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
      warn=\"off\"

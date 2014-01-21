@@ -540,19 +540,6 @@ a {
 }
 
 /* some forms */
-.foswikiProfileInfo .foswikiImage {
-  padding:5px;
-  border:1px solid #D5D6DD;
-  overflow:hidden;
-  background:#fff;
-  border-radius:8px;
-}
-.foswikiProfileInfo .foswikiImage img {
-  border:0px;
-  margin:0;
-  padding:0;
-  border-radius:5px;
-}
 #contactForm {
   width:95%;
 }
@@ -601,7 +588,7 @@ a {
   font-weight:bold;
   text-decoration:none;
   background-color: #f4f4f4;
-  vertical-align:bottom;
+  vertical-align:top;
 }
 .foswikiTable th a,
 .foswikiTable th a:hover,
