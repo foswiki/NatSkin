@@ -25,7 +25,7 @@
 
 %TMPL:DEF{"VIEW_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"View"}%</span>%TMPL:END%
 %TMPL:DEF{"VIEW_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View formatted topic"}%</span>%TMPL:END%
-%TMPL:DEF{"VIEW_ACTION"}%<a class='natTopicAction natViewAction' title='%MAKETEXT{"Display this version of the topic"}% rel='nofollow' href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?rev=$rev''>%JQICON{"eye"}%$label</a>%TMPL:END%
+%TMPL:DEF{"VIEW_ACTION"}%<a class='natTopicAction natViewAction' title='%MAKETEXT{"Display this version of the topic"}%" rel='nofollow' href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?rev=$rev'>%JQICON{"eye"}%$label</a>%TMPL:END%
 %TMPL:DEF{"VIEW_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natViewAction'>%JQICON{"eye"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"BACKLINKS_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Backlinks"}%</span>%TMPL:END%
@@ -40,7 +40,7 @@
 
 %TMPL:DEF{"PRINT_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Print"}%</span>%TMPL:END%
 %TMPL:DEF{"PRINT_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View printable version"}%</span>%TMPL:END%
-%TMPL:DEF{"PRINT_ACTION"}%<a class='natTopicAction natPrintAction' title='%MAKETEXT{"Display this topic in a printer-friendly manner"}%' rel='nofollow' href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?cover=print.nat'>%JQICON{"printer"}%$label</a>%TMPL:END%
+%TMPL:DEF{"PRINT_ACTION"}%<a class='natTopicAction natPrintAction' title='%MAKETEXT{"Display this topic in a printer-friendly manner"}%' rel='nofollow' href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?cover=print.nat&rev=$rev'>%JQICON{"printer"}%$label</a>%TMPL:END%
 %TMPL:DEF{"PRINT_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natPrintAction'>%JQICON{"printer"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"RAW_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Raw"}%</span>%TMPL:END%
@@ -167,7 +167,7 @@
 
 %TMPL:DEF{"WEBDAVDIR_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"<nop>WebDAV Directory"}%</span>%TMPL:END%
 %TMPL:DEF{"WEBDAVDIR_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Open <nop>WebDAV Directory"}%</span>%TMPL:END%
-%TMPL:DEF{"WEBDAVDIR_ACTION"}%<a class='natTopicAction webdav natWebdavDirAction' rel='nofollow' href='%WEBDAVFOLDERURL%/%BASEWEB%/%BASETOPIC%_files/'>%JQICON{"folder_link"}%$label</a>%TMPL:END%
+%TMPL:DEF{"WEBDAVDIR_ACTION"}%<a class='natTopicAction webdav natWebdavDirAction' rel='nofollow' href='webdav://%USERINFO{format="$username"}%@%HTTP_HOST%:80/dav/%BASEWEB%/%BASETOPIC%_files/'>%JQICON{"folder"}%$label</a>%TMPL:END%
 %TMPL:DEF{"WEBDAVDIR_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natWebdavDirAction'>%JQICON{"folder_link"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"HARVEST_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Download"}%</span>%TMPL:END%

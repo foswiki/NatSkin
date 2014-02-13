@@ -15,10 +15,10 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"content"}%%IF{"$'URLPARAM{group}' != ''"
+%TMPL:DEF{"content"}%<noautolink>%IF{"$'URLPARAM{group}' != ''"
   then="$percntTMPL:P{\"displaygroup\" group=\"$percntURLPARAM{group}$percnt\"}$percnt"
   else="$percntTMPL:P{\"listgroups\"}$percnt"
-}%%TMPL:END%
+}%</noautolink>%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
@@ -29,7 +29,7 @@
   header="$anchors$n"
   sort="nocase"
   format="<a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?group=$item'>$item</a>"
-  footer="<span class='foswikiAlert'>$count</span> groups found"
+  footer="<p><span class='foswikiAlert'>$count</span> groups found</p>"
 }%
 <!-- -->%TMPL:END%
 %{</verbatim>}%
@@ -92,7 +92,7 @@ jQuery(function($) {
   then="$percntTMPL:P{\"editablegroup\" group=\"%group%\"}$percnt"
   else="$percntTMPL:P{\"noneditablegroup\"  group=\"%group%\"}$percnt"
 }%
-<span class="foswikiRight"> [[WikiGroups][%MAKETEXT{"Back to WikiGroups &#187;"}%]] </span>
+<div class="foswikiGrayText">%JQICON{"arrow_left"}% [[WikiGroups][%MAKETEXT{"Back to WikiGroups"}%]]</div>
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 

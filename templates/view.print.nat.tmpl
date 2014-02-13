@@ -5,7 +5,7 @@
 <div class="foswikiHidden">
   <div class="natRevision">
     %MAKETEXT{"Last modified by [_1] on [_2]" 
-      args="<span class='natRevisionAuthor'> %REVINFO{"[[$wikiusername]]"}% </span>, <span class='natRevisionDate'>%REVINFO{"$date - $hour:$min"}%</span> - <span class='natRevisionID'>%REVINFO{"r$rev"}%"
+      args="<span class='natRevisionAuthor' itemprop='author'>%REVINFO{"[[$wikiusername]]" rev="%CURREV%"}%</span>, <span class='natRevisionDate'>%REVINFO{"$date - $hour:$min" rev="%CURREV%"}%</span> - <span class='natRevisionID'>%REVINFO{"r$rev" rev="%CURREV%"}%</span>"
     }%
   </div> 
 </div>
@@ -20,9 +20,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="date" content="%REVINFO{"$http"}%" /> 
+<meta name="date" content="%REVINFO{"$http" rev="%CURREV%"}%" /> 
 <base href="%SCRIPTURL{%SCRIPTNAME%}%/%WEB%/%TOPIC%" /><!--[if IE]></base><![endif]-->
 %TMPL:P{"meta"}%%TMPL:P{"styles"}%%TMPL:P{"javascript"}%%WEBCOMPONENT{"HtmlHead"}%
 <!-- --></head>%TMPL:END%
-%TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Last modified by [_1] on [_2]" args="<span class='natRevisionAuthor'> %REVINFO{"[[$wikiusername]]" rev="%CURREV%"}% </span>, <a class='natRevisionDate' rel='nofollow' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"$date - $hour:$min - r$rev" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
+%TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Last modified by [_1] on [_2]" args="<span class='natRevisionAuthor' itemprop='author'>%REVINFO{"[[$wikiusername]]" rev="%CURREV%"}% </span>, <a class='natRevisionDate' rel='nofollow' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"$date - $hour:$min - r$rev" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
 %TMPL:DEF{"metadata"}%%TMPL:END%

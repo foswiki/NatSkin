@@ -1,4 +1,4 @@
-%TMPL:INCLUDE{"bookmarksplugin"}%<!-- template: sidebar.nat.tmpl -->
+%TMPL:INCLUDE{"listyPlugin"}%<!-- template: sidebar.nat.tmpl -->
 %TMPL:DEF{"webrightbar"}%%WEBCOMPONENT{"RightBar"}%%TMPL:END%
 %TMPL:DEF{"websidebar"}%%WEBCOMPONENT{"SideBar"}%%TMPL:END%
 %TMPL:DEF{"defaultsidebar"}%%TMPL:P{"websidebar"}%%TMPL:END%
@@ -6,7 +6,7 @@
 %TMPL:DEF{"rightsidebar"}%%TMPL:P{context="natskin_sidebar_both" then="webrightbar" else="sidebar"}%%TMPL:END%
 %TMPL:DEF{"mysidebarreddot"}%%REDDOT{"%topic%" icon="pencil" title="%MAKETEXT{"Edit my sidebar"}%"}%%TMPL:END%
 %TMPL:DEF{"thesidebar"}%%USERSWEB%.%WIKINAME%%IF{"defined 'MYSIDEBAR'" then="%MYSIDEBAR%" else="SideBar"}%%TMPL:END%
-%TMPL:DEF{"mysidebar"}%%TMPL:P{context="BookmarksPluginEnabled" then="mysidebar::bookmarks" else="mysidebar::default"}%%TMPL:END%
+%TMPL:DEF{"mysidebar"}%%TMPL:P{context="ListyPluginEnabled" then="mysidebar::listy" else="mysidebar::default"}%%TMPL:END%
 %TMPL:DEF{"mysidebar::default"}%%IF{"istopic '%TMPL:P{"thesidebar"}%'" 
   then="<h2 class='jqInited'>%MAKETEXT{"My sidebar"}%%TMPL:P{
       context="RedDotPluginEnabled" 
@@ -14,31 +14,21 @@
       topic="%TMPL:P{"thesidebar"}%"
     }%</h2>
 $percntINCLUDE{\"%TMPL:P{"thesidebar"}%\"}$percnt<!-- -->
-$percntTMPL:P{\"mysidebarbookmark\"}$percnt"
+$percntTMPL:P{\"mysidebar::add::bookmark\"}$percnt"
   else="<h2 class='jqInited'>%MAKETEXT{"My sidebar"}%</h2>
     <ul>
       <li>[[%SYSTEMWEB%.MySideBar][%JQICON{"layout_sidebar"}% %MAKETEXT{"Create a personal sidebar"}%]]</li>
     </ul>"
 }%%TMPL:END%
-%TMPL:DEF{"mysidebarbookmark"}%<ul>
+%TMPL:DEF{"mysidebar::add::bookmark"}%<ul>
   <li>
     %COMMENT{type="mysidebarbookmark" templatetopic="%SYSTEMWEB%.MySideBar" location="\n$" target="%TMPL:P{"thesidebar"}%"}%
   </li>
 </ul>%TMPL:END%
 
-%TMPL:DEF{"mysidebar::bookmarks"}%<!-- -->
+%TMPL:DEF{"mysidebar::listy"}%<!-- -->
 <h2 >%MAKETEXT{"My links"}%</h2>
-%BOOKMARKS{
-  "mylinks"
-  hidenull="off"
-  topic="%WIKIUSERNAME%"
-  format="<li id='$id'>
-    <a href='$url' class='jqBookmarksLink'><span class='jqBookmarksLinkText'>$title</span>
-      <div class='foswikiGrayText'>$summary</div>
-    </a>
-    %TMPL:P{"bookmarks::link::tools"}%
-  </li>"
-}%<!-- -->
+%LISTY{"mylinks" hidenull="off" topic="%WIKIUSERNAME%"}%<!-- -->
 <!-- -->%TMPL:END%
 
 %TMPL:DEF{"sidebar::header"}%<!-- -->

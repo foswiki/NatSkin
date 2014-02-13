@@ -100,9 +100,9 @@ blockquote, q {
 }
 
 input, textarea, select, button {
-          box-sizing:border-box;
-     -moz-box-sizing:border-box;
   -webkit-box-sizing:border-box; 
+     -moz-box-sizing:border-box;
+          box-sizing:border-box;
 }
 
 /* address box sizing set to `content-box` in IE 8/9/10. */
@@ -876,15 +876,6 @@ div.foswikiErrorSummary {
 .foswikiWhiteBG  { background-color:#ffffff; } 
 
 /* foswiki base **************************************************************/
-a:hover, .foswikiEmulatedLink:hover,
-h1 .foswikiEmulatedLink, h2 .foswikiEmulatedLink, h3 .foswikiEmulatedLink,
-h4 .foswikiEmulatedLink, h5 .foswikiEmulatedLink, h3 .foswikiEmulatedLink,
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
-h1 a:hover, h2 a:hover, h3 a:hover,
-h4 a:hover, h5 a:hover, h6 a:hover {
-  text-decoration:none;
-}
-
 .foswikiCenter {
   text-align:center;
   margin-left:auto;
@@ -1559,7 +1550,7 @@ img.alignleft {
 .twistyTrigger img {
   padding:0px;
   margin:0px;
-  vertical-align:bottom;
+  vertical-align:middle;
   position:relative;
 }
 .twistyTrigger a {
@@ -1848,9 +1839,17 @@ a:active.natScrollTop {
   display:none; /* already linked in sidebar */
 }
 
-/* bookmarks */
-.natSideBar .jqBookmarks li {
-  background-image:none;
+/* listy */
+.natSideBar .jqListy {
+  width:100%;
+}
+.natSideBar .jqListy li {
+  position:relative;
+}
+.natSideBar .jqListyItemTools {
+  position:absolute;
+  top:5px;
+  right:5px;
 }
 
 /* InfiniteScrollContrib */
@@ -2153,6 +2152,7 @@ a:active.natScrollTop {
 }
 
 .natLogin .foswikiFormSteps {
+  box-shadow:none;
   background-color:transparent;
   background-image:url(login_keys.png);
   background-repeat:no-repeat;
@@ -2181,7 +2181,7 @@ a:active.natScrollTop {
   width:15em;
   text-decoration:none;
   position:fixed;
-  bottom:1em;
+  bottom:3em;
   right:2em;
   line-height:35px;
   padding:5px;
@@ -2199,6 +2199,11 @@ a:active.natScrollTop {
 }
 
 /* edit */
+.natEditBody {
+  position:fixed;
+  width:100%;
+  height:100%;
+}
 .natEditBody .natTopBar {
   display:none;
 }
@@ -2265,9 +2270,9 @@ a:active.natScrollTop {
 /* web menu ******************************************************************/
 .natWebMenu li,
 .natWebMenu {
-          box-sizing:border-box;
-     -moz-box-sizing:border-box;
   -webkit-box-sizing:border-box; 
+     -moz-box-sizing:border-box;
+          box-sizing:border-box;
 }
 
 .natWebMenu li {
@@ -2275,6 +2280,11 @@ a:active.natScrollTop {
 }
 .natWebMenu li li {
   display:block;
+}
+
+.natWebMenu a {
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
 .natWebMenu li a,
@@ -2403,8 +2413,8 @@ a:active.natScrollTop {
   top:2.3076em; /* VARIABLE1 */
   width:13.45em; /* VARIABLE2 */
 }
-.natWebMenuStretch ul li:last-child:hover ul, 
-.natWebMenuStretch ul li:last-child.sfHover ul {
+.natWebMenuStretch > ul > li:last-child:hover > ul, 
+.natWebMenuStretch > ul > li:last-child.sfHover > ul {
   right:0;
   left:auto;
 }
@@ -2607,9 +2617,6 @@ a:active.natScrollTop {
 }
 .foswikiProfileInfo .foswikiCol6 {
   overflow:hidden;
-}
-.foswikiProfileInfo .foswikiLayoutTable td {
-  word-break:break-word;
 }
 
 /* some print styles affecting cover=print.nat as well */

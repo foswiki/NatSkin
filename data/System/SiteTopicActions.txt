@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="autosave" date="1356278779" format="1.1" version="3"}%
+%META:TOPICINFO{author="micha" comment="reprev" date="1391424821" format="1.1" reprev="4" version="4"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ %TOPIC%
 Default site-level configuration for the !WebTopicActions !WebComponent
@@ -6,9 +6,9 @@ Default site-level configuration for the !WebTopicActions !WebComponent
 <verbatim class="tml">
 %STARTINCLUDE%%USERACTIONS{
   guest="$action(pdf, can_generate_pdf)"
-  restrictedactions="history, raw, edit, copytopic, managetags, harvest"
+  restrictedactions="history, raw, edit, copytopic, managetags, harvest, history, diff"
   format="$edit$attach$new$menu"
-  history="<div class='natHistoryTopicActions'>$edit$raw$view$history$first$prev$next$last$action(close)</div>"
+  history="<div class='natHistoryTopicActions'>$edit$raw$print$view$history$first$prev$next$last$action(close)</div>"
   menu="
    * $action(move)
    * $action(delete)
@@ -30,6 +30,7 @@ Default site-level configuration for the !WebTopicActions !WebComponent
    * $action(translatetopic, i18n_enabled)"}%
    * $action(managetags, ClassificationPluginEnabled)
    * $action(harvest, HarvestPluginEnabled)
+   * $action(webdavdir)
 "
 }%%STOPINCLUDE%
 </verbatim>

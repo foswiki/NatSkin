@@ -7,5 +7,5 @@ TARGET= \
 -include ../NatSkin/Makefile.include
 
 customato.uncompressed.css: customato-base.uncompressed.css customato-colors.uncompressed.css
-	@echo creating $@ from $^; $(CAT) $^ > $@
+	@echo creating $@ from $^; echo "/* WARNING: THIS IS A DERIVED FILE. DON'T MODIFIY. */" > $@; $(CAT) $^ >> $@
 

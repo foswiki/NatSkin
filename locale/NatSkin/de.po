@@ -46,7 +46,7 @@ msgstr ""
 
 #: templates/messages.nat.tmpl:299
 msgid "%1 has no permission to %2 %3."
-msgstr "%1 hat keine Berechtigung, um *%3* zu %2."
+msgstr "%1 hat keine Berechtigung f&&uml;r Aktion '%2' auf *%3*."
 
 #: templates/validate.nat.tmpl:17
 msgid "%1 has received a suspicious change request from your browser."
@@ -2103,7 +2103,7 @@ msgstr "Vielen Dank f&&uuml;r Ihre Registrierung"
 
 #: templates/foswiki.nat.tmpl:324
 msgid "Thank you!"
-msgstr ""
+msgstr "Danke!"
 
 #: templates/messages.nat.tmpl:171
 msgid ""
@@ -2536,7 +2536,7 @@ msgstr "Achtung! Best&&auml;tigung erforderlich"
 msgid ""
 "Warning: your browser isn't supported. Please install a modern one, like %1, "
 "%2, %3, %4 or the latest %5."
-msgstr ""
+msgstr "Warnung: Ihr Browser wird nicht unterstützt. Bitte installieren Sie einen modernen Browser, wie z.B. %1, %2, %3, %4 oder den neuesten %5."
 
 #: data/System/WebCreateNewWeb.txt:59
 msgid "Web color"

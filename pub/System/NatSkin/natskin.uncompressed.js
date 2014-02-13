@@ -171,11 +171,11 @@ jQuery(function($) {
   }
 
   if (foswiki.getPreference("NatSkin.initSideBar")) { // typographic improvements in sidebar
-    $('.natSideBar h2 + h2:not(.jqInitedSideBar)').livequery(function() {
+    $('.natSideBar h2 + h2').livequery(function() {
       var $this = $(this);
-      $this.addClass('jqInitedSideBar');
       $this.replaceWith('<h3>'+$this.html()+'</h3>');
     });
+    $('.natSideBarContents > h2:first-of-type').addClass('natFirstOfType');
   }
 
   if (foswiki.getPreference("NatSkin.initAutoComplete")) {// autosuggest using solr 

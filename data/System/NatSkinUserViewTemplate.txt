@@ -4,7 +4,7 @@
 %TMPL:INCLUDE{"view"}%<!-- -->
 %TMPL:DEF{"form"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
-%TMPL:DEF{"userinfo::photo::size"}%x80%TMPL:END%
+%TMPL:DEF{"userinfo::photo::size"}%>100x%TMPL:END%
 %TMPL:DEF{"beforetext"}%%TMPL:P{"userinfo"}%%TMPL:END%
 %{</verbatim>}%
 
@@ -117,7 +117,7 @@ $percntFORMFIELD{\"Comment\"}$percnt
      align=\"left\"
      type=\"plain\"
      size=\"%TMPL:P{"userinfo::photo::size"}%\"
-     crop=\"northwest\"
+     crop=\"center\"
      title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
      warn=\"off\"
    }$percnt"
@@ -139,7 +139,7 @@ $percntFORMFIELD{\"Comment\"}$percnt
      align=\"left\"
      type=\"plain\"
      size=\"%TMPL:P{"userinfo::photo::size"}%\"
-     crop=\"northwest\"
+     crop=\"center\"
      title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
      warn=\"off\"
    }$percnt"
@@ -149,7 +149,7 @@ $percntFORMFIELD{\"Comment\"}$percnt
      align=\"left\"
      type=\"plain\"
      size=\"%TMPL:P{"userinfo::photo::size"}%\"
-     crop=\"northwest\"
+     crop=\"center\"
      title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
      warn=\"off\"
    }$percnt"

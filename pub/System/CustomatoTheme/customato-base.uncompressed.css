@@ -30,10 +30,14 @@ em {
 h1 {
   font-family: Arial, sans-serif;
   font-size:2em; /* 28px */
-  line-height:1.5em; /* 42px */
+  /*line-height:1.5em;  42px */
   margin-top:0;
-  margin-bottom:0.75em; /* 21px */
+  margin-bottom:0.5em; /* 14px */
   border-bottom:1px solid #D5D6DD;
+}
+h1 .foswikiTopicSummary {
+  font-size:0.5em;
+  line-height:1.5em;
 }
 .foswikiInfo, .natRevision {
   margin-bottom: 1.5em;
@@ -237,8 +241,8 @@ a {
   display:none;
 }
 
-.natBottomBarContents .jqButton {
-  color:#222;
+a.jqButton:link {
+  color:#333;
 }
 
 .natBottomBarContents h2,
@@ -513,6 +517,9 @@ a {
 .natSideBarContents > h2:first-of-type {
   margin-top:0;
 }
+.natSideBarContents h2.natFirstOfType {
+  margin-top:0;
+}
 .natSideBar h3 {
   font-size:100%; 
   line-height:1.5em;
@@ -534,34 +541,8 @@ a {
   padding:0.1em 0;
 }
 
-/* main area */
 .natMiddle {
   background-color:transparent;
-}
-
-/* some forms */
-#contactForm {
-  width:95%;
-}
-#contactForm input,
-#contactForm textarea {
-  width:99%;
-  font-family:inherit;
-  font-size:inherit;
-}
-
-#contactForm .foswikiFormSteps {
-  margin:0px;
-  background:transparent;
-  border:0px;
-  padding:0px;
-}
-#contactForm .foswikiFormSteps h3,
-#contactForm .foswikiFormSteps h4 {
-  font-weight:normal;
-}
-#contactForm label.error {
-  padding:2px 0 0 0;
 }
 
 /* tables */
@@ -620,6 +601,42 @@ a {
 .clsTagCloud .current {
   background-color: #3E89D3 !important;
   color:#fff !important;
+}
+
+.solrHierarchyChildren a,
+.clsSubCategories a,
+.clsSubCategories {
+  color:#a1a1a1;
+}
+
+/* profile page */
+.foswikiProfileInfo .imagePlain {
+  border-radius: 6px;
+  padding:0;
+  border:1px solid #CCD6DD;
+}
+
+/* image plugin */
+.imageFrame {
+  border-radius: 6px;
+  box-shadow: 2px 2px 10px -5px rgba(0, 0, 0, 0.5);
+  padding:0;
+}
+.imageFrame img {
+  border:0;
+  padding:0;
+  margin:-1px;
+}
+.imageFrame .imageHref {
+  border:0;
+}
+.imageCaption {
+  text-align:center;
+  color:inherit;
+  padding:0.4em 2px;
+}
+.imageCaption a {
+  text-decoration:none;
 }
 
 @media (max-width: 1180px) {
