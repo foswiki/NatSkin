@@ -4,7 +4,7 @@
 %TMPL:INCLUDE{"view"}%<!-- -->
 %TMPL:DEF{"form"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
-%TMPL:DEF{"userinfo::photo::size"}%>100x%TMPL:END%
+%TMPL:DEF{"userinfo::photo::size"}%120x150^%TMPL:END%
 %TMPL:DEF{"beforetext"}%%TMPL:P{"userinfo"}%%TMPL:END%
 %{</verbatim>}%
 
@@ -44,6 +44,7 @@
 <h2>%MAKETEXT{"Person"}%</h2>
 %RENDERFORDISPLAY{
   topic="%BASEWEB%.%BASETOPIC%"
+  revision="%URLPARAM{"rev"}%"
   fields="OrganisationName, OrganisationURL, Profession, HomePage"
   hideempty="on"
   header="<table class='foswikiLayoutTable'>"
@@ -55,6 +56,7 @@
 <h2>%MAKETEXT{"Contact"}%</h2>
 %RENDERFORDISPLAY{
   topic="%BASEWEB%.%BASETOPIC%"
+  revision="%URLPARAM{"rev"}%"
   exclude="FirstName|LastName|OrganisationName|OrganisationURL|Profession|HomePage|Comment"
   hideempty="on"
   header="<table class='foswikiLayoutTable'>"
@@ -117,7 +119,7 @@ $percntFORMFIELD{\"Comment\"}$percnt
      align=\"left\"
      type=\"plain\"
      size=\"%TMPL:P{"userinfo::photo::size"}%\"
-     crop=\"center\"
+     crop=\"on\"
      title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
      warn=\"off\"
    }$percnt"
@@ -139,7 +141,7 @@ $percntFORMFIELD{\"Comment\"}$percnt
      align=\"left\"
      type=\"plain\"
      size=\"%TMPL:P{"userinfo::photo::size"}%\"
-     crop=\"center\"
+     crop=\"on\"
      title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
      warn=\"off\"
    }$percnt"
@@ -149,7 +151,7 @@ $percntFORMFIELD{\"Comment\"}$percnt
      align=\"left\"
      type=\"plain\"
      size=\"%TMPL:P{"userinfo::photo::size"}%\"
-     crop=\"center\"
+     crop=\"on\"
      title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
      warn=\"off\"
    }$percnt"

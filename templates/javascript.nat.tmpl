@@ -13,9 +13,9 @@
 %TMPL:DEF{"initAutoComplete"}%'NatSkin.initAutoComplete': %IF{"context SolrPluginEnabled" then="true" else="false"}%%TMPL:END%
 %TMPL:DEF{"initRedDot"}%'NatSkin.initRedDot': true%TMPL:END%
 %TMPL:DEF{"initBusyIndicator"}%'NatSkin.initBusyIndicator': true%TMPL:END%
+%TMPL:DEF{"initExternalLinks"}%'NatSkin.initExternalLinks': false%TMPL:END%
 
-%TMPL:DEF{"metaflags"}%<literal>
-%ADDTOZONE{"script" 
+%TMPL:DEF{"metaflags"}%%ADDTOZONE{"script" 
   requires="JQUERYPLUGIN::FOSWIKI::PREFERENCES"
   id="NATSKIN::PREFERENCES"
   text="<script>
@@ -27,9 +27,10 @@ jQuery.extend(foswiki.preferences, {
   %TMPL:P{"initSideBar"}%,
   %TMPL:P{"initAutoComplete"}%,
   %TMPL:P{"initRedDot"}%,
-  %TMPL:P{"initBusyIndicator"}%
+  %TMPL:P{"initBusyIndicator"}%,
+  %TMPL:P{"initExternalLinks"}%
 });
 </script>"
-}%</literal>%TMPL:END%
+}%%TMPL:END%
 
 %TMPL:DEF{"javascript"}%%TMPL:P{"defaultjavascript"}%%TMPL:END%

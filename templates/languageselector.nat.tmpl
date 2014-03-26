@@ -48,7 +48,7 @@ jQuery(function($) {
   format="<option $marker value='$code'>$language$percntIF{\"'$language'!='$name'\" then=\" - $name\"}$percnt</option>" 
   selection="%LANGUAGE%" 
   marker="selected='selected'"
-  separator="\n"
+  separator="$n"
 }%%TMPL:END%
 
 %TMPL:DEF{"languages::default"}%%LANGUAGES{

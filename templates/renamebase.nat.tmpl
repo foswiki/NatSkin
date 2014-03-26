@@ -24,7 +24,7 @@
 <noautolink>
 %TMPL:P{"contenttitle"}%<!-- -->
 %TMPL:P{"formstart"}%<!-- -->
-%TMPL:P{"changefromstep"}%<!-- -->
+%TMPL:P{"DISchangefromstep"}%<!-- -->
 %TMPL:P{"changetostep"}%<!-- -->
 %TMPL:P{"titlestep"}%<!-- -->
 %TMPL:P{"backlinksstep"}%<!-- -->
@@ -54,11 +54,11 @@
 %{ ################################################################################ }%
 %TMPL:DEF{"changetostep"}%<!-- -->
 <div class="foswikiFormStep">
-  <h3>%MAKETEXT{"To web"}%:</h3>
+  <h3>%MAKETEXT{"Web"}%:</h3>
   %TMPL:P{"newweb"}%
 </div>
 <div class="foswikiFormStep">
-  <h3>%MAKETEXT{"To topic"}%:</h3>
+  <h3>%MAKETEXT{"Topic"}%:</h3>
   %TMPL:P{"newtopic"}%
 </div>
 <!-- -->%TMPL:END%
@@ -70,8 +70,7 @@
   <input type="text" class="foswikiInputField" id="topictitle" name="TopicTitle" value="%TOPICTITLE%" size="40" />
 
   <div class="foswikiFormDescription">
-    %MAKETEXT{"Specify a new topic title while renaming/moving the topic."}%
-
+    %MAKETEXT{"Specify a new topic title while renaming/moving the topic."}% %BR%
     %MAKETEXT{"Note that you may change the title from within the editor as well."}%
   </div>
 </div>

@@ -59,6 +59,7 @@
 <!-- -->%TMPL:END%
 
 %TMPL:DEF{"rawbutton"}%%IF{"$'URLPARAM{raw}'='on'" then="<p>$percntBUTTON{\"%MAKETEXT{"View"}%\" title=\"%MAKETEXT{"Back to view mode"}%\" style=\"float:right\" icon=\"eye\" target=\"%WEB%.%TOPIC%\"}$percnt$percntCLEAR$percnt</p>" else="<!-- -->" }%%TMPL:END%
+%TMPL:DEF{"redirectbutton"}%%IF{"$'URLPARAM{redirectedfrom}'!=''" then="<p class='natRedirectFrom'>%JQICON{"arrow_undo"}% %MAKETEXT{"Redirect from [_1]" args="[[%URLPARAM{"redirectedfrom"}%?noredirect=on"}%]]</p>" else="<!-- -->" }%%TMPL:END%
 %TMPL:DEF{"text"}%%TEXT%%TMPL:END%
 
 %{ ################################################################################ }%
@@ -77,6 +78,7 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"contentfooter"}%<!-- -->
+%TMPL:P{"redirectbutton"}%<!-- -->
 %TMPL:P{context="save" else="metadata"}%<!-- -->
 %IF{"$'DISPLAYREVISIONINFO'='off'" else="$percntTMPL:P{\"revinfo\"}$percnt"}%<!-- -->
 %TMPL:P{"editsettingsform"}%<!-- -->

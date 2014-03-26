@@ -1,9 +1,11 @@
 // (c)opyright 2006-2014 Michael Daum http://michaeldaumconsulting.com
 
-jQuery(function($) {
+(function($) {
   "use strict";
 
-  /* custom ease-in-out */
+  /**************************************************************************
+   * custom ease-in-out 
+   */
   $.extend($.easing, {
     'shagga':  function (x, t, b, c, d) {
       if (( t /= d / 2) < 1) {
@@ -13,9 +15,9 @@ jQuery(function($) {
     }
   });
 
-
-
-  // flag browser deprecation
+  /**************************************************************************
+   * browser detection
+   */
   function uaMatch(ua) { // borrowed from jQuery
       ua = ua.toLowerCase();
 
@@ -23,8 +25,13 @@ jQuery(function($) {
               /(webkit)[ \/]([\w.]+)/.exec( ua ) ||
               /(opera)(?:.*version|)[ \/]([\w.]+)/.exec( ua ) ||
               /(msie) ([\w.]+)/.exec( ua ) ||
+              /(trident).*; rv:([\w.]+)/.exec( ua ) ||
               ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec( ua ) ||
               [];
+
+      if (match[1] == 'trident') {
+        match[1] = 'msie';
+      }
 
       return {
               browser: match[ 1 ] || "",
@@ -32,33 +39,44 @@ jQuery(function($) {
       };
   }
 
-  var deprecatedBrowsers,
-      agent = uaMatch(window.navigator.userAgent),
-      i, target, busyIndicator;
+  /**************************************************************************
+   * flag browser deprecation on body element
+   */
+  function initBrowserDeprecation() {
+    var deprecatedBrowsers,
+        agent = uaMatch(window.navigator.userAgent),
+        i;
 
-  // simplify
-  agent = agent.browser + agent.version.replace(/\..*$/, '');
+    // simplify
+    agent = agent.browser + agent.version.replace(/\..*$/, '');
 
-  if (agent) {
-    deprecatedBrowsers = foswiki.getPreference("NatSkin.deprecatedBrowsers") || [];
-    for (i = 0; i < deprecatedBrowsers.length; i++) {
-      if (agent === deprecatedBrowsers[i]) {
-        $("body").addClass("natDeprecatedBrowser");
-        break;
+    if (agent) {
+      deprecatedBrowsers = foswiki.getPreference("NatSkin.deprecatedBrowsers") || [];
+      for (i = 0; i < deprecatedBrowsers.length; i++) {
+        if (agent === deprecatedBrowsers[i]) {
+          $("body").addClass("natDeprecatedBrowser");
+          break;
+        }
       }
     }
   }
 
-  /* move revinfo */
-  if (foswiki.getPreference("NatSkin.fixRevisionPosition")) {
-    target = $(".natMainContents h1:first");
+  /**************************************************************************
+   * fix revision position by moving it under the first h1 found in the 
+   * content area
+   */
+  function fixRevisionPosition() {
+
+    var target = $(".natMainContents h1:first");
     if (target.length) { 
       $(".natRevision").remove().insertAfter(target);
     }
   }
 
-  /* horiz menu */
-  if (foswiki.getPreference("NatSkin.initWebMenu")) {
+  /**************************************************************************
+   * init horizontal navigation
+   */
+  function initWebMenu() {
     $(".natWebMenu").each(function() {
       var $this = $(this), 
           opts = $this.data(),
@@ -98,87 +116,88 @@ jQuery(function($) {
 
         topElems.outerWidth(elemWidth).last().outerWidth(lastWidth);
       }
-
-      $this.removeClass('natWebMenuHidden');
     });
-
   }
 
-  /* add edit topic prefs behavior */
-  $("a.natEditSettingsAction").on("click", function() {
-    $("#editSettingsForm").submit();    
-    return false;
-  });
+  /**************************************************************************
+   * add behavior to various topic actions
+   * 
+   */
+  function initTopicActions() {
 
-  /* fix topic actions menu */
-  $(".natMoreActionsMenu:first").each(function() {
-    // hide hr if all prev list items are disabled
-    // ... or all following list items are disabled
-    $(this).find("hr").parent().each(function() {
-      var $this = $(this);
-      if ($this.prevAll().find(".natTopicAction").not(".natDisabledTopicAction").length === 0 ||
-          $this.nextAll().find(".natTopicAction").not(".natDisabledTopicAction").length === 0) {
-        $this.hide();
-      }
+    /* add edit topic prefs behavior */
+    $("a.natEditSettingsAction").on("click", function() {
+      $("#editSettingsForm").submit();    
+      return false;
     });
-  });
 
-  /* add overflow div for tables */
-  if (foswiki.getPreference("NatSkin.initOverflows")) { 
+    /* fix topic actions menu */
+    $(".natMoreActionsMenu:first").each(function() {
+      // hide hr if all prev list items are disabled
+      // ... or all following list items are disabled
+      $(this).find("hr").parent().each(function() {
+        var $this = $(this);
+        if ($this.prevAll().find(".natTopicAction").not(".natDisabledTopicAction").length === 0 ||
+            $this.nextAll().find(".natTopicAction").not(".natDisabledTopicAction").length === 0) {
+          $this.hide();
+        }
+      });
+    });
+
+    // init more actions menu
+    $(".natMoreActionsMenu:not(.natInitedMoreActionsMenu)").livequery(function() {
+      var $this = $(this), 
+          opts = $.extend({}, $this.metadata());
+      $this.addClass("natInitedMoreActionsMenu").superfish(opts);
+      $this.find("a[href]").click(function() {
+        $this.superfish("hide");
+      });
+    });
+  }
+
+  /**************************************************************************
+   * init overflow elements by adding an overflow div for tables 
+   */
+  function initOverflows() {
     $(".natMainContents").find(".foswikiTable")
       .not($(".foswikiTable .foswikiTable", this))
       .wrap("<div class='overflow foswikiTableOverflow'></div>");
   }
 
-  // init more actions menu
-  $(".natMoreActionsMenu:not(.natInitedMoreActionsMenu)").livequery(function() {
-    var $this = $(this), 
-        opts = $.extend({}, $this.metadata());
-    $this.addClass("natInitedMoreActionsMenu").superfish(opts);
-    $this.find("a[href]").click(function() {
-      $this.superfish("hide");
-    });
-  });
+  /**************************************************************************
+   * init ajax busy indicator
+   */
+  function initBusyIndicator() {
 
-  /* init ajax busy indicator */
-  if (foswiki.getPreference("NatSkin.initBusyIndicator")) {
-    busyIndicator = $("<div class='natBusy' />").appendTo("body");
+    var busyIndicator = $("<div class='natBusy' />").appendTo("body");
+
     $(document).ajaxSend(function() {
       if ($(".blockUI").length === 0) { // don't show when a blockUI is active
         busyIndicator.show();
       }
     });
+
     $(document).ajaxComplete(function() {
       busyIndicator.hide();
     });
   }
 
-  // remove empty attachment comments
-  $("#natTopicAttachments .natAttachmentComment").livequery(function(){
-    var text = $(this).text();
-    //alert("text='"+text+"' char="+text.charCodeAt(0));
-    if ((text.length == 1 && text.charCodeAt(0) == 160)) {
-      $(this).hide();
-    }
-  });
-
-  if (false) {
-    $(".foswikiFormSteps").livequery(function() {
-      var $this = $(this);
-      $this.find("> .foswikiFormStep:last, > form > .foswikiFormStep:last").addClass("foswikiFormLast");
-      $this.find("> .foswikiFormStep:first, > form > .foswikiFormStep:first").addClass("foswikiFormFirst");
-    });
-  }
-
-  if (foswiki.getPreference("NatSkin.initSideBar")) { // typographic improvements in sidebar
+  /**************************************************************************
+   * init sidebar: some typographic improvements and helpers for old IEs
+   */
+  function initSideBar() {
     $('.natSideBar h2 + h2').livequery(function() {
       var $this = $(this);
       $this.replaceWith('<h3>'+$this.html()+'</h3>');
     });
+
     $('.natSideBarContents > h2:first-of-type').addClass('natFirstOfType');
   }
 
-  if (foswiki.getPreference("NatSkin.initAutoComplete")) {// autosuggest using solr 
+  /**************************************************************************
+   * init the autosuggestion feature on the search field
+   */
+  function initSearchBox() {
     $("#searchbox").each(function() {
       var $form = $(this),
           $input = $form.find("input[type=text]"),
@@ -199,28 +218,23 @@ jQuery(function($) {
     });
   }
 
-  // hide address bar on mobile devices
-  if(window.navigator.userAgent.match(/Android/i)){
-    window.scrollTo(0,1);
-  } 
+  /**************************************************************************
+   * init for mobile devices
+   */
+  function initMobile() {
+    // hide address bar on androids
+    if(window.navigator.userAgent.match(/Android/i)){
+      window.scrollTo(0,1);
+    } 
+  }
 
-  /* scroll to top */
-  $(window).scroll(function() {
-    var scrolltop = $(this).scrollTop();
-    if (scrolltop > 100) {
-      $('a.natScrollTop').fadeIn(1000);
-    } else {
-      $('a.natScrollTop').fadeOut(100);
-    }
-  });
+  /**************************************************************************
+   * init responsive navi
+   */
+  function initResponsiveNavi() {
+    var $sidebar = $(".natSideBar");
 
-  /* responsive navi */
-  $(".natNavToggle").livequery(function() {
-    var $this = $(this), 
-        $sidebar = $(".natSideBar");
-
-    $this.on("click", function(ev) {
-
+    function toggleSidebar() {
       $sidebar.toggle("slide", {
         direction: "right",
         duration: 200,
@@ -229,58 +243,135 @@ jQuery(function($) {
           $("body").toggleClass("natBodyNavToggleActive");
         }
       });
-
-      if (ev.preventDefault) {
-        ev.preventDefault();
-        ev.stopPropagation();
-      } else {
-        ev.returnValue = false;
-      }
-
-      return false;
-    });
-
-    // switch on the sidebar when there's no toggle in sight
-    $(window).resize(function() {
-      if (!$this.is(":visible") && !$sidebar.is(":visible")) {
-        $sidebar.show();
-      }
-    });
-  });
-
-
-
-  /* clean up address */
-  $("address").livequery(function() {
-    var $this = $(this),
-        content = $this.html().replace(/^\s+|\s+$/g, "");
-    $this.html(content);
-  });
-
-  /* click behavior for broadcastmessage */
-  $(".foswikiBroadcastMessage").each(function() {
-    var $this = $(this), 
-        cookieName = "broadcastMessage_counter",
-        counter = $.cookie(cookieName) || 0;
-
-    if (counter > 0) {
-      $this.hide();
-      counter--;
-      $.cookie(cookieName, counter, {path:'/'});
-    } else {
-      $.cookie(cookieName, null, {path:'/'});
     }
 
-    $this.find(".foswikiBroadcastMessageClose").on("click", function() {
-      if (counter > 0) {
-        $this.slideDown("fast");
-        $.cookie(cookieName, null, {path:'/'});
-      } else {
-        $this.slideUp("fast");
-        $.cookie(cookieName, 4, {path:'/'});
-      }
-      return false;
+    $(".natNavToggle").livequery(function() {
+      var $this = $(this);
+
+      $this.on("click", function() {
+        toggleSidebar();
+        return false;
+      });
+
+      // switch on the sidebar when there's no toggle in sight
+      $(window).resize(function() {
+        if (!$this.is(":visible") && !$sidebar.is(":visible")) {
+          $sidebar.show();
+        }
+      });
     });
+  }
+
+  /**************************************************************************
+   * init the scroll to top feature
+   */
+  function initScrollToTop() {
+
+    $(window).scroll(function() {
+      var scrolltop = $(this).scrollTop();
+      if (scrolltop > 100) {
+        $('a.natScrollTop').fadeIn(1000);
+      } else {
+        $('a.natScrollTop').fadeOut(100);
+      }
+    });
+  }
+
+  /**************************************************************************
+   * init click behavior for broadcastmessage
+   */
+  function initBroadcastMessage() {
+
+    $(".foswikiBroadcastMessage").each(function() {
+      var $this = $(this), 
+          cookieName = "broadcastMessage_counter",
+          counter = $.cookie(cookieName) || 0;
+
+      if (counter > 0) {
+        $this.hide();
+        counter--;
+        $.cookie(cookieName, counter, {path:'/'});
+      } else {
+        $.cookie(cookieName, null, {path:'/'});
+      }
+
+      $this.find(".foswikiBroadcastMessageClose").on("click", function() {
+        if (counter > 0) {
+          $this.slideDown("fast");
+          $.cookie(cookieName, null, {path:'/'});
+        } else {
+          $this.slideUp("fast");
+          $.cookie(cookieName, 4, {path:'/'});
+        }
+        return false;
+      });
+    });
+
+  }
+
+  /**************************************************************************
+   * init address element
+   */
+  function initAddressElement() {
+    
+    $("address").livequery(function() {
+      var $this = $(this),
+          content = $this.html().replace(/^\s+|\s+$/g, "");
+
+      $this.html(content);
+    });
+  }
+
+  /**************************************************************************
+   * init external links: open them in a separate window.
+   * note: you will have to enable {NatSkin}{DetectExternalLinks}
+   */
+  function initExternalLinks() {
+    $(".natMainContents .natExternalLink").attr("target", "_blank");
+  }
+
+  /**************************************************************************
+   * init on load
+   */
+  $(function() { 
+
+    initBrowserDeprecation();
+    initMobile();
+
+    if (foswiki.getPreference("NatSkin.initWebMenu")) {
+      initWebMenu();
+    }
+
+    if (foswiki.getPreference("NatSkin.fixRevisionPosition")) {
+      fixRevisionPosition();
+    }
+
+    if (foswiki.getPreference("NatSkin.initBusyIndicator")) {
+      initBusyIndicator();
+    }
+
+    if (foswiki.getPreference("NatSkin.initOverflows")) { 
+      initOverflows();
+    }
+
+    if (foswiki.getPreference("NatSkin.initSideBar")) { 
+      initSideBar();
+    }
+
+    if (foswiki.getPreference("NatSkin.initAutoComplete")) {
+      initSearchBox();
+    }
+
+    if (foswiki.getPreference("NatSkin.initExternalLinks")) {
+      initExternalLinks();
+    }
+
+    initTopicActions();
+    initScrollToTop();
+    initResponsiveNavi();
+    initBroadcastMessage();
+    initAddressElement();
+
   });
 
-});
+})(jQuery);

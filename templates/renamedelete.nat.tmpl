@@ -4,7 +4,7 @@
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"delete"}%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Delete [_1]"  args="<nop>%TOPIC%"}%</h1>%TMPL:END%
 %TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%?%QUERYSTRING%">%MAKETEXT{"Delete"}%</a>%TMPL:END%
-%TMPL:DEF{"changetostep"}%%TMPL:END%
+%TMPL:DEF{"changefromstep"}%%TMPL:END%
 %TMPL:DEF{"titlestep"}%%TMPL:END%
 %TMPL:DEF{"backlinks::checked"}%%TMPL:END%
 
@@ -28,9 +28,9 @@
 <!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"changefromstep"}%<!-- -->
+%TMPL:DEF{"changetostep"}%<!-- -->
 <div class="foswikiFormStep">
-  <h3>%MAKETEXT{"Move this topic into the [_1] web" args="[[%TRASHWEB%.%HOMETOPIC%][<span class='foswikiAlert'>%TRASHWEB%</span>]]"}%</h3>
+  <b>%MAKETEXT{"Move this topic into the [_1] web" args="<span class='foswikiAlert'>[[%TRASHWEB%.%HOMETOPIC%][%TRASHWEB%]]</span>"}%</b>
 
   <div class="foswikiFormDescription">
     %MAKETEXT{"The topic will be renamed to [_1]." args="_%TRASHWEB%.%NEW_TOPIC%_"}%

@@ -2,10 +2,10 @@
 
    blue: #3E89D3, #1A7FE2
    orange: #FF9100
+   green: #52AF00
    magenta: #FF45B1 / #ED299C
 
 */
-
 .natBody {
   background:url("bg.png") repeat-x #fff;
 }
@@ -17,9 +17,11 @@
   background-color:transparent;
 }
 
-.blogEntries .foswikiTopicInfo h2,
 h1 {
   color:#303030;
+}
+h2, h3, h4, h5, h6 {
+  color:#339000;
 }
 
 .natTopShadow {
@@ -35,11 +37,30 @@ h1 {
   color:#fff;
 }
 
+.natNavToggle:hover,
+.natNavToggle {
+  color:#fff;
+}
+
+.natWebMenu li,
+.natWebMenu li a {
+  background-color:#1A7FE2;
+  color:#fff;
+}
+
 .natWebMenu li .foswikiCurrentWebHomeLink:hover,
 .natWebMenu li .foswikiCurrentWebHomeLink,
 .natWebMenu li .foswikiCurrentTopicLink {
+/*
   border-bottom:5px solid #FF45B1;
   margin-bottom:-5px;
+*/
+  background-color:#0055AB;
+}
+.natWebMenu li.sfHover > a,
+.natWebMenu li .foswikiCurrentWebHomeLink:hover,
+.natWebMenu li a:hover {
+  background-color:#0055AB;
 }
 
 .natSideBar li a:hover {
@@ -90,11 +111,11 @@ a.jqButton:hover,
 #natLoginBanner,
 .natMainContents .foswikiNewLink,
 .natSideBar .foswikiCurrentTopicLink,
+.jqTabPanePlain >.jqTabGroup a:hover, 
+.jqTabPaneSimple >.jqTabGroup a:hover,
 .foswikiAlt h2,
 .alt h2,
 h2.marked,
-.jqTabPanePlain >.jqTabGroup a:hover, 
-.jqTabPaneSimple >.jqTabGroup a:hover,
 .jqTabContents h2,
 .jqTabContents h2 a,
 .foswikiPageForm h2,
@@ -104,8 +125,27 @@ h2.marked,
 .foswikiFormSteps h2 a:hover {
   color:#ED299C;
 }
+
+.foswikiAlt h3, .foswikiAlt h4, .foswikiAlt h5, .foswikiAlt h6,
+.alt h3, .alt h4, .alt h5, .alt h6,
+.jqTabContents h3, .jqTabContents h4, .jqTabContents h5, .jqTabContents h6,
+.jqTabContents h3 a, .jqTabContents h4 a, .jqTabContents h5 a, .jqTabContents h6 a,
+.foswikiPageForm h3, .foswikiPageForm h4, .foswikiPageForm h5, .foswikiPageForm h6,
+.foswikiPageForm h3 a, .foswikiPageForm h4 a, .foswikiPageForm h5 a, .foswikiPageForm h6 a,
+.foswikiFormSteps h3, .foswikiFormSteps h4, .foswikiFormSteps h5, .foswikiFormSteps h6,
+.foswikiFormSteps h3 a, .foswikiFormSteps h4 a, .foswikiFormSteps h5 a, .foswikiFormSteps h6 a {
+  color:#1A7FE2;
+}
 .foswikiAlt h2,
-.alt h2 {
+.foswikiAlt h3,
+.foswikiAlt h4,
+.foswikiAlt h5,
+.foswikiAlt h6,
+.alt h2,
+.alt h3,
+.alt h4,
+.alt h5,
+.alt h6 {
   font-weight:bold;
 }
 
@@ -155,6 +195,7 @@ input[type=password]:focus,
 
 
 fieldset,
+.foswikiAlt,
 .alt,
 .cmtCommentOdd,
 .foswikiPageForm,

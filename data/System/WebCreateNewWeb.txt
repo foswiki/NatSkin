@@ -1,7 +1,7 @@
 %META:TOPICINFO{author="ProjectContributor" comment="autosave" date="1356278806" format="1.1" version="6"}%
 %META:TOPICPARENT{name="ManagingWebs"}%
 ---+!! %MAKETEXT{"Create a new web"}%
-<form id="createNewWeb" name="admin" action="%SCRIPTURLPATH{manage}%/%WEB%/%TOPIC%" method="post">
+<form id="createNewWeb" name="admin" action="%SCRIPTURLPATH{manage}%/%WEB%/%TOPIC%" method="post" class="jqValidate">
 <input name="newtopic" type="hidden" value="%URLPARAM{"newtopic"}%" />
 <input name="action" type="hidden" value="createweb" />
 <div class="foswikiFormSteps">
@@ -22,67 +22,28 @@
       description will be used in the %SYSTEMWEB%.SiteMap
     </div>
   </div>
-  %TWISTY{
-    showlink="%MAKETEXT{"Show additional settings"}%" 
-    hidelink="%MAKETEXT{"Hide additional settings"}%"
-    showimgleft="%ICONURLPATH{toggleopen-small}%"
-    hideimgleft="%ICONURLPATH{toggleclose-small}%"
-    mode="div"
-  }%
----
   <div class="foswikiFormStep">
     <h3>%MAKETEXT{"Template web"}%:</h3>
     <select name="baseweb" class="foswikiSelect">
-    %WEBLIST{ "<option $marker>$name</option>" webs="webtemplate,public" selection="_default" separator=" "}%
+    %FLEXWEBLIST{ 
+      format="<option $marker>$name</option>" 
+      marker="selected"
+      webs="webtemplate" 
+      include="_.*"
+      exclude=".*/.*"
+      selection="%DEFAULTWEB{default="%IF{"context ClassificationPluginEnabled" then="_ClassificationTemplate" else="_default"}%"}%" 
+      separator="$n"
+    }%
     </select>
     <div class="foswikiFormDescription">Select a TemplateWeb which you want the new web to be based on.</div>
   </div>
-  <div class="foswikiFormStep">
-    <h3>%MAKETEXT{"Sitemap"}%:</h3>
-    <label><input type="radio" name="SITEMAPLIST" value="on" checked="checked" /> *show* on sitemap </label> %BR%
-    <label><input type="radio" name="SITEMAPLIST" value="" /> *hide* from sitemap </label>
-    <div class="foswikiFormDescription">
-      Note, that this will only affect the list of webs on the SiteMap. The web itself is still accessible
-      to users.
-    </div>
-  </div>
-  <div class="foswikiFormStep">
-    <h3>%MAKETEXT{"Global search"}%:</h3>
-    <label><input type="radio" name="NOSEARCHALL" value="" checked="checked" /> *include* in global search </label>%BR%
-    <label><input type="radio" name="NOSEARCHALL" value="on" /> *exclude* from global search </label>
-    <div class="foswikiFormDescription">
-      Specify if you want to exclude the web from a global search. Note, that you will have to
-      enter this web explicitly to search in it.
-    </div>
-  </div>
-  <div class="foswikiFormStep">
-    <h3>%MAKETEXT{"Web color"}%:</h3>
-    <input name="WEBBGCOLOR" class="foswikiInputField jqFarbtastic" type="text" value="#efefef" size="20" /> 
-    <div class="foswikiFormDescription">
-      Displayed on %SYSTEMWEB%.SiteMap.
-    </div>
-  </div>
-  %ENDTWISTY%
   <div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
     %BUTTON{"%MAKETEXT{"Submit"}%" icon="add" type="save"}%
     %CLEAR%
   </div>
 </div>
 </form>
-%JQREQUIRE{"farbtastic"}%
 %JQREQUIRE{"validate"}%
-%ADDTOZONE{
-  "script"
-text="<script>
-    (function($) {
-      $(function() {
-        $('#createNewWeb').validate();
-      });
-    })(jQuery);
-  </script>"
-"
-  requires="JQUERYPLUGIN::VALIDATE"
-}%
 
 %ICON{"help"}% Get help on [[%SYSTEMWEB%.ManagingWebs][managing webs]].
 

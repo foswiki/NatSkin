@@ -1,16 +1,32 @@
 %TMPL:DEF{"MailNotifyBody"}%From: %WIKITOOLNAME% Administrator <%WIKIWEBMASTER%>
 To: %EMAILTO%
-Subject: %MAKETEXT{"[_1] - Automated notification of topic changes in [_2]" args="%WIKITOOLNAME%, %GETTOPICTITLE{"%WEB%.WebHome"}%"}%
-Content-Type: text/plain; charset=%CHARSET%
+Subject: %MAKETEXT{"[_1] - Automated notification of topic changes in [_2]" args="%WIKITOOLNAME%, %GETTOPICTITLE{"%WEB%.%HOMETOPIC%"}%"}%
+Auto-Submitted: auto-generated
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_=0i0k0i0w0s0o0fXuOi0E0A"
+
+This is a multi-part message in MIME format.
+--=_=0i0k0i0w0s0o0fXuOi0E0A
+Content-Type: text/plain; charset=%CHARSET%; format=flowed
 Content-Transfer-Encoding: 8bit
 
-%MAKETEXT{"New or changed topics in the [_1] web, since [_2] GMT" args="%GETTOPICTITLE{"%WEB%.WebHome"}%,%LASTDATE%"}%:
-
 %PLAIN_TEXT%
-%MAKETEXT{"Review recent changes in:"}% %SCRIPTURL{"view"}%/%WEB%/WebChanges
-%MAKETEXT{"Subscribe / Unsubscribe in:"}% %SCRIPTURL{"view"}%/%WEB%/%NOTIFYTOPIC%
+
+--=_=0i0k0i0w0s0o0fXuOi0E0A
+Content-Type: text/html; charset=%CHARSET%
+Content-Transfer-Encoding: 8bit
+
+%HTML_TEXT%
+
+--=_=0i0k0i0w0s0o0fXuOi0E0A--
 %TMPL:END%
-%TMPL:DEF{PLAIN:middle}%- %GETTOPICTITLE{"%WEB%.%TOPIC%"}%%IF{
+
+%TMPL:DEF{"PLAIN:before"}%
+%MAKETEXT{"New or changed topics in the [_1] web, since [_2] GMT" args="%GETTOPICTITLE{"%WEB%.%HOMETOPIC%"}%,%LASTDATE%"}%:
+
+%TMPL:END%
+
+%TMPL:DEF{"PLAIN:middle"}%- %GETTOPICTITLE{"%WEB%.%TOPIC%"}%%IF{
   "'%WEB%.%TOPIC%'/Summary" 
   then=" // $percntQUERY{\"'%WEB%.%TOPIC%'/Summary\"}$percnt"
 }%
@@ -18,4 +34,26 @@ Content-Transfer-Encoding: 8bit
   %AUTHOR%, %TIME%
 
 %TMPL:END%
-%TMPL:P{"MailNotifyBody"}%
+
+%TMPL:DEF{"PLAIN:after"}%
+%MAKETEXT{"Review recent changes in:"}% %SCRIPTURL{"view"}%/%WEB%/WebChanges
+%MAKETEXT{"Subscribe / Unsubscribe in:"}% %SCRIPTURL{"view"}%/%WEB%/%NOTIFYTOPIC%
+%TMPL:END%
+
+%TMPL:DEF{"HTML:before"}%
+<p>%MAKETEXT{"New or changed topics in the [_1] web, since [_2] GMT" args="%GETTOPICTITLE{"%WEB%.%HOMETOPIC%"}%,%LASTDATE%"}%:</p>
+<ul style="margin:1em 0;padding:0 0 0 1.5em;">%TMPL:END%
+
+%TMPL:DEF{"HTML:middle"}%<li style="margin:0 0 1em"> <a href="%SCRIPTURL{view}%/%ENCODE{%WEB%}%/%ENCODE{%TOPIC%}%">%GETTOPICTITLE{"%WEB%.%TOPIC%"}%</a> 
+%IF{
+  "'%WEB%.%TOPIC%'/Summary" 
+  then="// $percntQUERY{\"'%WEB%.%TOPIC%'/Summary\"}$percnt"
+}%<br />
+%GETTOPICTITLE{"%USERSWEB%.%AUTHOR%"}%, %TIME%
+</li>
+%TMPL:END%
+
+%TMPL:DEF{"HTML:after"}%</ul>
+%MAKETEXT{"Review recent changes in:"}% <a href="%SCRIPTURL{"view"}%/%WEB%/WebChanges">WebChanges</a><br />
+%MAKETEXT{"Subscribe / Unsubscribe in:"}% <a href="%SCRIPTURL{"view"}%/%WEB%/%NOTIFYTOPIC%">%NOTIFYTOPIC%</a>
+%TMPL:END%

@@ -6,6 +6,10 @@
   background-color:#fff;
   color:#333;
 }
+.foswikiNormal {
+  font-size:14px;
+  line-height:1.5em;
+}
 
 /* revert some fixed sizes */
 .natBody .natEditBottomBar li {
@@ -27,13 +31,15 @@ em {
 }
 
 .blogEntries .foswikiTopicInfo h2,
-h1 {
+h1,
+.foswikiNormal h1 {
   font-family: Arial, sans-serif;
   font-size:2em; /* 28px */
   /*line-height:1.5em;  42px */
   margin-top:0;
   margin-bottom:0.5em; /* 14px */
   border-bottom:1px solid #D5D6DD;
+  font-weight:normal;
 }
 h1 .foswikiTopicSummary {
   font-size:0.5em;
@@ -53,34 +59,48 @@ h1 .foswikiTopicSummary {
   color:#808080;
 }
 
-h2 {
+h2,
+.foswikiNormal h2 {
   font-size:1.5em; /* 21px */
   line-height:1em; /* 21px */
   margin:1em 0;
+  font-weight:normal;
+  border-bottom:1px solid #D5D6DD;
+}
+.foswikiGrid h2 {
+  border-bottom:0;
 }
 
-h3 {
+h3,
+.foswikiNormal h3 {
   font-size:1.2857em; /* 18px */
   line-height: 1.1667em; /* 21px */
   margin: 1.1667em 0; 
+  font-weight:normal;
 }
 
-h4 {
+h4,
+.foswikiNormal h4 {
   font-size: 1.1429em; /* 16px */
   line-height: 1.3125em; /* 21px */
   margin: 1.3125em 0 0 0;
+  font-weight:normal;
 }
 
-h5 {
+h5,
+.foswikiNormal h5 {
   font-size: 1.0714em; /* 15px */
   line-height: 1.4em; /* 21px */
   margin-top: 1.4em;
   margin-bottom: 0em;
+  font-weight:normal;
 }
 
-h6 {
+h6,
+.foswikiNormal h6 {
   font-size: 1em; /* 14px */
   line-height: 1.5em; /* 21px */
+  font-weight:normal;
 }
 blockquote {
   margin:1.5em 0;
@@ -141,9 +161,6 @@ a {
 }
 
 /* layout */
-.natNavToggle {
-  color:#fff;
-}
 .natSideBarContents {
   margin-top:-1em;
 }
@@ -233,7 +250,8 @@ a {
 }
 
 .natBottomBar .natPageCacheBanner {
-  margin:0.5em 0 0 0;
+  margin:2em 0 0 0;
+  text-align:left;
 }
 
 .natBottomBar .natCopyRight br,
@@ -418,11 +436,6 @@ a.jqButton:link {
 .natWebMenu li li {
   margin: 0;
 }
-.natWebMenu li,
-.natWebMenu li a {
-  background-color:#1A7FE2;
-  color:#fff;
-}
 
 .natTopicActions .sfHover .natMoreActionsTopicAction,
 .natTopicActions .natTopicAction:hover,
@@ -439,7 +452,6 @@ a.jqButton:link {
 .natWebMenu li.sfHover > a,
 .natWebMenu li .foswikiCurrentWebHomeLink:hover,
 .natWebMenu li a:hover {
-  background-color:#0055AB;
   border-radius:0;
   border-color:transparent;
 }
@@ -532,7 +544,6 @@ a.jqButton:link {
 }
 
 .natSideBar li a {
-  color:#434343;
   display:block;
   background-color:transparent;
 }

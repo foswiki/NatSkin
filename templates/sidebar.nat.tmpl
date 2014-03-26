@@ -28,7 +28,11 @@ $percntTMPL:P{\"mysidebar::add::bookmark\"}$percnt"
 
 %TMPL:DEF{"mysidebar::listy"}%<!-- -->
 <h2 >%MAKETEXT{"My links"}%</h2>
-%LISTY{"mylinks" hidenull="off" topic="%WIKIUSERNAME%"}%<!-- -->
+%LISTY{"mylinks" 
+  hidenull="off" 
+  topic="%WIKIUSERNAME%"
+  type="topic,external"
+}%<!-- -->
 <!-- -->%TMPL:END%
 
 %TMPL:DEF{"sidebar::header"}%<!-- -->

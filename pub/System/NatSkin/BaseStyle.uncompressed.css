@@ -273,14 +273,9 @@ li li {
 dd {
   margin:0em 0em 1.385em 3.0769em;
 }
-/*
 dt {
-  border-bottom:1px solid #ddd;
-  float:left;
-  width:15em;
-  margin-right:1em;
+  font-weight:bold;
 }
-*/
 table ul,
 table ol {
   margin:0;
@@ -393,9 +388,11 @@ h6 {
 }
 
 h1 .foswikiEmulatedLink,
-h1 a {
+h1 a,
+h2 .foswikiEmulatedLink,
+h2 a {
   color:#222;
-  text-decoration:none;
+  text-decoration:none !important;
 }
 
 .blogEntries .foswikiTopicInfo h2,
@@ -1002,6 +999,7 @@ img.foswikiLeft,
   background:#eee;
 }
 
+.foswikiAlert a,
 .foswikiAlert {
   color:red;
 }
@@ -1265,7 +1263,7 @@ a.natFeedIcon {
 .foswikiHelp,
 .foswikiInfoMessage,
 .foswikiTipMessage {
-  padding:0.6154em 1.385em; /* 8px 18px */ 
+  padding:1.385em; /* 18px */ 
   background-repeat:no-repeat;
   background-position:1.1111em 0.6154em;
   border:1px solid;
@@ -1490,9 +1488,6 @@ td.foswikiDiffChangedText {
   display:inline-block;
   vertical-align:middle;
 }
-.natMainContents .natExternalLink:hover:after {
-  background-position:-12px 0;
-}
 
 /* prevent margins to collapse with floating elements next to a list */
 .natMainContents ul,
@@ -1500,6 +1495,8 @@ td.foswikiDiffChangedText {
   width:auto;
   overflow:hidden;
 }
+.natMainContents .sf-menu,
+.natMainContents .sf-menu ul,
 .natMainContents .ui-menu {
   overflow:visible;
 }
@@ -1747,6 +1744,13 @@ h2 .foswikiTopicSummary {
   font-size:30px;
   cursor:w-resize;
 }
+.natNavToggle:hover {
+  color:#777;
+  text-decoration:none;
+}
+.natBodyOff .natNavToggle {
+  display:none !important;
+}
 .natBodyNavToggleActive {
   overflow:hidden;
   position:fixed;
@@ -1986,6 +1990,9 @@ a:active.natScrollTop {
 .foswikiTopicInfo,
 .natRevision {
   margin-bottom:1.385em; /* 18px */
+}
+.natMainFooterContents .natRevision {
+  margin-top:1.385em; /* 18px */
 }
 .foswikiTopicInfo .natRevision {
   font-size:100%;
@@ -2238,6 +2245,7 @@ a:active.natScrollTop {
   border:1px solid #fff;
 }
 
+.natChangeFormBody .natBottomBar,
 .natEditBody .natMainHeaderContents,
 .natEditBody .natMainFooterContents,
 .natEditBody .natBottomBar,
@@ -2275,10 +2283,25 @@ a:active.natScrollTop {
           box-sizing:border-box;
 }
 
+.natWebMenu ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:block;
+}
+
+.natWebMenu ul ul {
+  display:none;
+  border-color:#c2c4c4;
+  border-width:1px 0px 1px 0px;
+  border-style:solid;
+  position:absolute; 
+  top:-999em; 
+}
+
 .natWebMenu li {
   float:left;
-}
-.natWebMenu li li {
+  list-style:none;
   display:block;
 }
 
@@ -2287,7 +2310,7 @@ a:active.natScrollTop {
   text-overflow:ellipsis;
 }
 
-.natWebMenu li a,
+.natWebMenu li,
 .natWebMenu h2,
 .natWebMenu h3,
 .natWebMenu h4,
@@ -2298,15 +2321,6 @@ a:active.natScrollTop {
   padding:0;
   font-size:100%;
   line-height:2.3076em; /* to be added to VARIABLE1 */
-}
-.natWebMenuHidden {
-  visibility:hidden; 
-  height:2.3076em;
-}
-.natWebMenu ul {
-  margin:0;
-  padding:0;
-  list-style:none;
 }
 .natWebMenu li,
 .natWebMenu li a {
@@ -2340,12 +2354,6 @@ a:active.natScrollTop {
   color:#fff;
 }
 
-.natWebMenu ul ul {
-  border-color:#c2c4c4;
-  border-width:1px 0px 1px 0px;
-  border-style:solid;
-}
-
 .natWebMenu li li {
   background-color:#fff;
   border-left:1px solid #c2c4c4;
@@ -2366,7 +2374,6 @@ a:active.natScrollTop {
   margin:0em -1em;
   padding:0em 1em;
   display:block;
-  width:100%;
   text-decoration:none;
 }
 .natWebMenu li img {
@@ -2385,11 +2392,6 @@ a:active.natScrollTop {
 .natWebMenu li .hasAjaxMenu.sfHover > a {
   background-image:url(icons/facebook-loader.gif);
   background-position:95% 50%;
-}
-
-.natWebMenu ul ul {
-  position:absolute; 
-  top:-999em; 
 }
 
 .natWebMenu ul li li {
@@ -2447,7 +2449,6 @@ a:active.natScrollTop {
   float:left;
   margin:0px;
   padding:0px;
-  float:left;
   font-size:100%;
 }
 .natMoreActionsMenu li {
@@ -2494,91 +2495,6 @@ a:active.natScrollTop {
 }
 
 /* slideshow fixes */
-.natSlideShowBody .slideshowHeader {
-  border:0px;
-  padding:0px;
-  margin:1em 25px;
-
-}
-
-.natSlideShowBody .slideshowFooter {
-  display:none;
-}
-
-.natSlideShowBody .slideshowToolbar { /* see ui-widget-header */ 
-  color: #111;
-  text-shadow: 0px 1px #fff;
-  border-top: 1px solid #ddd;
-  background: #f0f0f0; 
-  background: -moz-linear-gradient(top, #ffffff 0%, #f0f0f0 100%); 
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f0f0f0)); 
-  background: -webkit-linear-gradient(top, #ffffff 0%,#f0f0f0 100%); 
-  background: -o-linear-gradient(top, #ffffff 0%,#f0f0f0 100%); 
-  background: -ms-linear-gradient(top, #ffffff 0%,#f0f0f0 100%); 
-  background: linear-gradient(top, #ffffff 0%,#f0f0f0 100%); /* W3C */
-  padding:0px;
-  position:fixed;
-  width:100%;
-  bottom:0px;
-  z-index:99999;
-}
-.natSlideShowBody .slideshowToolbarContents {
-  margin:0px 25px;
-}
-.natSlideShowBody .slideshowContent {
-  font-size:150%;
-  line-height:139%;
-}
-
-.natSlideShowBody a.slideshowBtnStop:visited,
-.natSlideShowBody a.slideshowBtnStop:link { /* see .ui-dialog .ui-dialog-titlebar-close */
-  background-image:url(../JQueryPlugin/themes/foswiki/images/x.png);
-  background-repeat: no-repeat; 
-  background-position:0px 0px;
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 0px;
-  width: 16px;
-  height: 16px;
-  margin-top:-8px;
-}
-.natSlideShowBody a.slideshowBtnStop:hover {
-  background-position:-16px 0px;
-}
-
-.natSlideShowBody .slideshowJumpSlideMax {
-  background:none;
-  border:none;
-}
-
-.natSlideShowBody .slideshowJump input {
-  font-size:1em;
-  padding:2px;
-}
-
-/* old version */
-.slideShow {
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background-color:#fff;
-  overflow:hidden;
-  z-index:999;
-}
-.slideShow .slideshowPane {
-  padding:1em !important;
-}
-.slideShow .slideText {
-  font-size:2em;
-  line-height:1.5;
-}
-.slideShow .slideText h1 {
-  font-size:1.6em;
-  line-height:1.5;
-}
 .slideShow .natRevision {
   display:none;
 }

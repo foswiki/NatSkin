@@ -28,7 +28,7 @@
 %MAKEINDEX{"%GROUPINFO%"
   header="$anchors$n"
   sort="nocase"
-  format="<a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?group=$item'>$item</a>"
+  format="<a href='%SCRIPTURLPATH{"view"}%/%WEB%/$percntIF{\"istopic '%WEB%.$item'\" then=\"$item\" else=\"%TOPIC%?group=$item\"}$percnt'>$item</a>"
   footer="<p><span class='foswikiAlert'>$count</span> groups found</p>"
 }%
 <!-- -->%TMPL:END%
@@ -92,7 +92,6 @@ jQuery(function($) {
   then="$percntTMPL:P{\"editablegroup\" group=\"%group%\"}$percnt"
   else="$percntTMPL:P{\"noneditablegroup\"  group=\"%group%\"}$percnt"
 }%
-<div class="foswikiGrayText">%JQICON{"arrow_left"}% [[WikiGroups][%MAKETEXT{"Back to WikiGroups"}%]]</div>
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
@@ -134,7 +133,7 @@ jQuery(function($) {
       <td> 
         $percntIF{\"'$percntUSERINFO{\"$1\" format=\"$isgroup\"}$percnt'='true'\"
           then=\"<a href='%SCRIPTURLPATH{"view"}%/%USERSWEB%/WikiGroups?group=$1'>$1</a> (%MAKETEXT{"group"}%)\"
-          else=\"$1\"
+          else=\"[[$1]]\"
         }$percnt
       </td> 
       <td align='right'><input type='checkbox' name='username' value='$1' class='foswikiCheckbox' /></td>

@@ -2,6 +2,7 @@
 %META:TOPICPARENT{name="NatSkin"}%
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"WikiGroupsView"}%<!-- -->
+%TMPL:INCLUDE{"viewtopicactions"}%<!-- -->
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
