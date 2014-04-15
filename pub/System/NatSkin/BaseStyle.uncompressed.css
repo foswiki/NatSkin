@@ -19,7 +19,7 @@ embed, object {
   z-index: 0;
 }
 
-.natHtml {
+.DISnatHtml {
   overflow-y: scroll; /* force a vertical scrollbar to prevent a jumpy page */
 }
 
@@ -395,7 +395,6 @@ h2 a {
   text-decoration:none !important;
 }
 
-.blogEntries .foswikiTopicInfo h2,
 h1 { 
   font-size: 1.6923em; /* 22px */ 
   line-height: 1.091em; /* 24px */
@@ -1998,6 +1997,7 @@ a:active.natScrollTop {
   font-size:100%;
   margin-bottom:0px;
   padding-bottom:0px;
+  display:inline;
 }
 .clsIndexItem .foswikiTopicInfo {
   margin-bottom:0px;
@@ -2536,8 +2536,11 @@ a:active.natScrollTop {
 }
 
 /* some print styles affecting cover=print.nat as well */
+.natPrintBody .natRevisionSep:first-of-type {
+  display:none;
+}
 .natPrintBody .natRevision {
-  float:right;
+  display:none;
 }
 
 .natPrintBody {

@@ -46,7 +46,9 @@ $percntTMPL:P{\"mysidebar::add::bookmark\"}$percnt"
 %TMPL:DEF{"sidebar::tools"}%%TMPL:P{context="authenticated" then="sidebar::tools::content"}%%TMPL:END%
 %TMPL:DEF{"sidebar::tools::content"}%<!-- -->
 <h2 >%MAKETEXT{"Tools"}%</h2>
-   * [[WebTopicList][%MAKETEXT{"Index"}%]]
+   * [[WebTopicList][%MAKETEXT{"Index"}%]]%IF{"istopic 'WebTagList'" then="
+   * [[WebTagList][%MAKETEXT{"Tags"}%]]"}%%IF{"istopic 'Category'" then="
+   * [[Category][%MAKETEXT{"Categories"}%]]"}%
    * [[WebChanges][%MAKETEXT{"Changes"}%]]
    * [[WebNotify][%MAKETEXT{"Notifications"}%]]%IF{"istopic '%BASEWEB%.WebStatistics'" then="
    * [[WebStatistics][%MAKETEXT{"Statistics"}%]]"}%

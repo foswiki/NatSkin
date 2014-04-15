@@ -23,7 +23,7 @@
   header="$anchors"
   format="[[%BASEWEB%.$2][$1]]"
   sort="nocase"
-  footer="$n$n<span class='foswikiAlert'>$count</span> topics found"
+  footer="$n$n$percntMAKETEXT{\"[_1] topics found\" args=\"<span class='foswikiAlert'>$count</span>\"}$percnt"
 }%
 </noautolink>
 %TMPL:END%

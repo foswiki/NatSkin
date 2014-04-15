@@ -30,7 +30,6 @@ em {
   font-style:italic;
 }
 
-.blogEntries .foswikiTopicInfo h2,
 h1,
 .foswikiNormal h1 {
   font-family: Arial, sans-serif;
@@ -131,6 +130,9 @@ dd {
 .foswikiTopicInfo h1 a,
 .foswikiTopicInfo h2 a {
   color:inherit;
+}
+.foswikiTopicInfo .fa {
+  vertical-align:baseline;
 }
 
 .foswikiEmulatedLink,
@@ -525,7 +527,6 @@ a.jqButton:link {
   font-weight:bold;
 }
 .natSideBar h2.webLink,
-.blogSideBarSection:first-of-type h2,
 .natSideBarContents > h2:first-of-type {
   margin-top:0;
 }

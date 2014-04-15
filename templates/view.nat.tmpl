@@ -85,7 +85,17 @@
 <!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"revinfo"}%<div class="natRevision">%MAKETEXT{"Last modified by [_1] on [_2]" args="<span class='natRevisionAuthor' itemprop='author'>%REVINFO{"[[$wikiusername]]" rev="%CURREV%"}%</span>, <a class='natRevisionDate' rel='nofollow' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"<span itemprop='dateModified' content='$iso'>$date - $hour:$min</span> - r<span itemprop='version'>$rev</span>" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
+%TMPL:DEF{"DISrevinfo"}%<div class="natRevision">%MAKETEXT{"Last modified by [_1] on [_2]" args="<span class='natRevisionAuthor' itemprop='author'>%REVINFO{"[[$wikiusername]]" rev="%CURREV%"}%</span>, <a class='natRevisionDate' rel='nofollow' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"<span itemprop='dateModified' content='$iso'>$date - $hour:$min</span> - r<span itemprop='version'>$rev</span>" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
+%TMPL:DEF{"revinfo"}%<div class="natRevision">
+  %JQICON{"fa-calendar"}%
+  %REVINFO{"<span itemprop='dateModified' content='$iso'>$date - $hour:$min</span>" rev="%CURREV%"}%
+  <span class='natRevisionSep'>&#124;</span>
+  %JQICON{"fa-flag"}%
+  %MAKETEXT{"Version [_1]" args="%REVINFO{"<span itemprop='version'>$rev</span>" rev="%CURREV%"}%"}%
+  <span class='natRevisionSep'>&#124;</span>
+  %JQICON{"fa-user"}%
+  <span class='natRevisionAuthor' itemprop='author'>%REVINFO{"[[$wikiusername]]" rev="%CURREV%"}%</span> 
+</div>%TMPL:END%
 %TMPL:DEF{"rdiff"}%%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPIC%?type=last;render=sequential%TMPL:END%
 %TMPL:DEF{"compare"}%%SCRIPTURLPATH{"compare"}%/%WEB%/%TOPIC%?type=last;render=interweave;context=1%TMPL:END%
 %TMPL:DEF{"broadcast"}%%IF{"not isempty 'BROADCASTMESSAGE'" then="<div class='foswikiWarningMessage foswikiBroadcastMessage'><a href='#' title='%MAKETEXT{"Close broadcast message"}%' class='foswikiBroadcastMessageClose ui-icon ui-icon-closethick'></a> $percntBROADCASTMESSAGE$percnt </div>"}%%TMPL:END%
