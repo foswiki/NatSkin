@@ -69,7 +69,7 @@
 
     var target = $(".natMainContents h1:first");
     if (target.length) { 
-      $(".natRevision").remove().insertAfter(target);
+      $(".foswikiRevision").remove().insertAfter(target);
     }
   }
 

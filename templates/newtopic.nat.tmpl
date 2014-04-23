@@ -71,7 +71,7 @@
 %{ ################################################################################ }%
 %TMPL:DEF{"formbuttons::default"}%<!-- -->
 <hr />
-<div class='foswikiFormStep foswikiFormLast foswikiFormButtons'>
+<div class='foswikiFormStep foswikiFormButtons'>
 %BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="tick"}%
 %BUTTON{"%MAKETEXT{"Cancel"}%" 
   icon="cross" 
@@ -82,7 +82,6 @@
     }%"
   }%"
 }%
-%CLEAR%
 </div>
 <!-- -->%TMPL:END%
 
@@ -110,7 +109,7 @@
 %DBQUERY{
   "topic=~'Template\b' AND topic!~'(View|Edit)Template\b'"
   exclude="%TMPL:P{"excludetopics"}%"
-  header="<div class='natTopicTemplateSelector foswikiFormStep foswikiLast'>
+  header="<div class='natTopicTemplateSelector foswikiFormStep clearfix'>
     <h3>%MAKETEXT{"Template"}%:</h3>
     <div class='natTopicTemplate'>
       <label title='%MAKETEXT{"Default topic as defined in WebTopicEditTemplate"}%'>
@@ -125,7 +124,7 @@
       </label>
     </div>"
   separator="$n"
-  footer="%CLEAR%$n
+  footer="$n
       <div class='foswikiFormDescription'>
         %MAKETEXT{"Select which template to use while creating this topic."}%
       </div>
@@ -140,7 +139,7 @@
 %DBQUERY{
   "TopicType=~'\bTopicType\b'"
   exclude="%TMPL:P{"excludetopics"}%"
-  header="<div class='natTopicTypeSelector foswikiFormStep'>
+  header="<div class='natTopicTypeSelector foswikiFormStep clearfix'>
     <h3>%MAKETEXT{"Type"}%:</h3>
     <div class='natTopicType'>
       <label title='%MAKETEXT{"Default topic as defined in WebTopicEditTemplate"}%'>
@@ -155,7 +154,7 @@
     </label>
     </div>"
   separator="$n"
-  footer="%CLEAR%$n
+  footer="$n
       <div class='foswikiFormDescription'>
         %MAKETEXT{"Select which kind of topic you want to create."}%
       </div>

@@ -20,8 +20,15 @@
 h1 {
   color:#303030;
 }
-h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6,
+h2 a, h3 a, h4 a, h5 a, h6 a {
   color:#339000;
+}
+.solrSearchHits h3 a {
+  color:#333;
+} 
+.solrSearchHits h3 .foswikiGrayText a {
+  color:inherit;
 }
 
 .natTopShadow {
@@ -83,8 +90,8 @@ h1 .foswikiTopicSummary,
 .foswikiTopicSummary,
 .foswikiTopicInfo, 
 .foswikiTopicInfo a,
-.natRevision a,
-.natRevision,
+.foswikiRevision a,
+.foswikiRevision,
 .natBreadCrumbs,
 .natBreadCrumbs a,
 .natBreadCrumbs .natSep {

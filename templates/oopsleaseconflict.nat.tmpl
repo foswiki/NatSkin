@@ -42,7 +42,6 @@ first." args="%PARAM1%"}%
 <form style="margin-bottom:0px" action="%SCRIPTURLPATH{"%PARAM4%"}%/%WEB%/%TOPIC%" method="post">
   <input type="hidden" name="breaklock" value="on" />
   %BUTTON{"%MAKETEXT{"Edit anyway"}%" type="submit" icon="pencil"}%
-  %CLEAR%
 %QUERYPARAMS{format="<input type='hidden' name='$name' value='$value' />" encoding="html"}%
 </form>
 </td> 
@@ -54,6 +53,5 @@ first." args="%PARAM1%"}%
 </td>
 <td valign="top">
   %BUTTON{"%MAKETEXT{"Cancel"}%" target="%IF{"defined redirectto" then="%URLPARAM{"redirectto"}%" else="%WEB%.%TOPIC%"}%" icon="cross"}%
-  %CLEAR%
 </td>
 </tr></table> %TMPL:END%

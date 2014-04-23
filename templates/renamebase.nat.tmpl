@@ -84,15 +84,11 @@
     <div class="foswikiFormStep">
       %BUTTON{"%MAKETEXT{"Set all"}%" icon="add" class="natRenameSetAll simple" title="%MAKETEXT{"Select all topics"}%"}%
       %BUTTON{"%MAKETEXT{"Clear all"}%" icon="delete" class="natRenameClearAll simple" title="%MAKETEXT{"Clear selection"}%"}%
-      %CLEAR%
     </div>
 ---
   </div>
   <literal>%IF{"'%TMPL:P{"backlinks::count"}%'=~'^0?$'" then="<style>.natSearchBacklinks {display:none}</style>"}%</literal>
-  <div class="foswikiFormStep foswikiFormButtons">
-    %TMPL:P{"buttons"}%
-    %CLEAR%
-  </div>
+  <div class="foswikiFormStep foswikiFormButtons">%TMPL:P{"buttons"}%</div>
 <!-- -->%TMPL:END%
 
 %TMPL:DEF{"formend"}%</div></form>%TMPL:END%

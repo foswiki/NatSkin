@@ -34,10 +34,10 @@
 
 h1:first-of-type { string-set: title content() }
 h2 { string-set: chapter content() }
-.natRevision { string-set: revision content(); }
-.natRevisionID { string-set: revisionID content() }
-.natRevisionDate { string-set: date content() }
-.natRevisionAuthor { string-set: author content() }
+.foswikiRevision { string-set: revision content(); }
+.foswikiRevisionID { string-set: revisionID content() }
+.foswikiRevisionDate { string-set: date content() }
+.foswikiRevisionAuthor { string-set: author content() }
 
 html {
   background:transparent !important;

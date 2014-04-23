@@ -50,7 +50,6 @@
     <div class="foswikiFormStep">
       %BUTTON{"%MAKETEXT{"Set all"}%" icon="add" class="natRenameSetAll" title="%MAKETEXT{"Select all topics"}%"}%
       %BUTTON{"%MAKETEXT{"Clear all"}%" icon="delete" class="natRenameClearAll" title="%MAKETEXT{"Clear selection"}%"}%
-      %CLEAR%
     </div>
 ---
     <div class="foswikiFormStep">
@@ -75,7 +74,6 @@
     %IF{"$'URLPARAM{currentwebonly}'='on'"
       then="$percntBUTTON{\"%MAKETEXT{"Search in all webs"}%\" icon=\"find\" target=\"%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?action=renameweb\" title=\"%MAKETEXT{"Search for backlinks in all webs"}%\"}$percnt"
     }%
-    %CLEAR%
   </div>
 </div>
 </form>

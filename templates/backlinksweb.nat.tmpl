@@ -11,7 +11,6 @@
 %TMPL:P{"beforetext"}%<!-- // -->
 <div class="foswikiRight">
   %BUTTON{"%MAKETEXT{"Close"}%" icon="cross" target="%WEB%.%TOPIC%" class="simple foswikiRight"}%
-  %CLEAR%
 </div>
 %TMPL:P{"contenttitle"}%<!-- // -->
 %BUTTON{"%MAKETEXT{"Search all webs"}%" 
@@ -19,7 +18,7 @@
   href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=backlinksallwebs" 
   title="%MAKETEXT{"Search all webs for topics that link to here"}%"
   class="simple"
-}%%CLEAR%
+}%
 %SEARCH{
   web="%WEB%" 
   search="%TOPIC%([^A-Za-z0-9]|$)|%SPACEOUT{"%TOPIC%" separator=" *"}%([^A-Za-z0-9]|$)|%WEB%.%TOPIC%([^A-Za-z0-9]|$)" 

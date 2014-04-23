@@ -255,6 +255,7 @@ templates/oopslanguagechanged.nat.tmpl 0644
 templates/oopsleaseconflict.nat.tmpl 0644
 templates/oopsmore.nat.tmpl 0644
 templates/oops.nat.tmpl 0644
+templates/opensearch.nat.tmpl 0644
 templates/page.nat.tmpl 0644
 templates/rdiff.nat.tmpl 0644
 templates/rdifftopicactions.nat.tmpl 0644

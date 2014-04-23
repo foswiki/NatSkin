@@ -42,10 +42,9 @@
   <div class="foswikiFormStep">
   <h2>Are you sure?</h2>
   </div>
-  <div class="foswikiFormStep foswikiFormLast foswikiFormButtons">
+  <div class="foswikiFormStep foswikiFormButtons">
   %BUTTON{"%MAKETEXT{"Yes"}%" icon="tick" type="save"}%
   %BUTTON{"%MAKETEXT{"No"}%" icon="cross" target="%WEB%.%TOPIC%"}%
-  %CLEAR%
   </div>
 </div>
 <!-- //content_trash -->%TMPL:END%
@@ -63,10 +62,9 @@
   </div>
 </div>
 %IF{"$PLUGINVERSION >= 2.1" then="$percntTMPL:P{\"toattachment\"}$percnt"}%
-<div class="foswikiFormStep foswikiFormButtons foswikiFormLast">
+<div class="foswikiFormStep foswikiFormButtons">
   %BUTTON{"%MAKETEXT{"OK"}%" type="save" icon="tick"}%
   %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WEB%.%TOPIC%" icon="cross"}%
-  %CLEAR%
 </div>
 </div>
 <!-- //content_move -->%TMPL:END%

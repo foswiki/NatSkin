@@ -1,0 +1,59 @@
+%TMPL:DEF{"metaopensearch"}%%TMPL:P{"opensearch::content::link"}%
+%TMPL:P{"opensearch::person::link"}%%TMPL:END%
+
+%TMPL:DEF{"opensearch::header"}%<?xml version="1.0" encoding="UTF-8"?><OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">%TMPL:END%
+%TMPL:DEF{"opensearch::footer"}%</OpenSearchDescription>%TMPL:END% 
+%TMPL:DEF{"opensearch::encoding"}%<InputEncoding>%CHARSET%</InputEncoding><OutputEncoding>%CHARSET%</OutputEncoding>%TMPL:END%
+%TMPL:DEF{"opensearch::tags"}%<Tags>Foswiki Search</Tags>%TMPL:END%
+%TMPL:DEF{"opensearch::contact"}%<Contact>%WIKIWEBMASTER%</Contact>%TMPL:END%
+%TMPL:DEF{"opensearch::image"}%<Image height="16" width="16" type="image/x-icon">%PUBURL%%SUBST{text="%FAVICON%" pattern="%PUBURLPATH%"}%</Image>%TMPL:END%
+%{ Image height="64" width="64" type="image/png">http://example.com/websearch.png</Image --> }%
+
+%{ content search }%
+%TMPL:DEF{"opensearch::content::link"}%<link rel='search' type='application/opensearchdescription+xml' href='%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?topic=%SYSTEMWEB%.WebSearch&name=opensearch&expand=opensearch::content&contenttype=text/xml' title='%MAKETEXT{"[_1] Content Search" args="%WIKITOOLNAME%"}%' />%TMPL:END%
+
+%TMPL:DEF{"opensearch::content"}%%TMPL:P{"opensearch::content::header"}%
+%TMPL:P{"opensearch::content::name"}%
+%TMPL:P{"opensearch::content::description"}%
+%TMPL:P{"opensearch::content::url"}%
+%TMPL:P{"opensearch::content::tags"}%
+%TMPL:P{"opensearch::content::contact"}%
+%TMPL:P{"opensearch::content::image"}%
+%TMPL:P{"opensearch::content::encoding"}%
+%TMPL:P{"opensearch::content::footer"}%%TMPL:END%
+
+%TMPL:DEF{"opensearch::content::header"}%%TMPL:P{"opensearch::header"}%%TMPL:END%
+%TMPL:DEF{"opensearch::content::name"}%<ShortName>%MAKETEXT{"[_1] Content Search" args="%WIKITOOLNAME%"}%</ShortName>%TMPL:END%
+%TMPL:DEF{"opensearch::content::description"}%<Description>%MAKETEXT{"Search for content on [_1]" args="%WIKITOOLNAME%"}%</Description>%TMPL:END%
+%TMPL:DEF{"opensearch::content::url"}%<Url type="text/html" template="%SCRIPTURL{"view"}%/%SYSTEMWEB%/WebSearch#q={searchTerms}&amp;start={startIndex?}&amp;rows={count?}" />%TMPL:END%
+%TMPL:DEF{"opensearch::content::tags"}%%TMPL:P{"opensearch::tags"}%%TMPL:END%
+%TMPL:DEF{"opensearch::content::contact"}%%TMPL:P{"opensearch::contact"}%%TMPL:END%
+%TMPL:DEF{"opensearch::content::image"}%%TMPL:P{"opensearch::image"}%%TMPL:END%
+%TMPL:DEF{"opensearch::content::encoding"}%%TMPL:P{"opensearch::encoding"}%%TMPL:END%
+%TMPL:DEF{"opensearch::content::footer"}%%TMPL:P{"opensearch::footer"}%%TMPL:END%
+
+
+
+%{ person search }%
+%TMPL:DEF{"opensearch::person::link"}%<link rel='search' type='application/opensearchdescription+xml' href='%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?topic=%USERSWEB%.WikiUsers&name=opensearch&expand=opensearch::person&contenttype=text/xml' title='%MAKETEXT{"[_1] Person Search" args="%WIKITOOLNAME%"}%' />%TMPL:END%
+
+%TMPL:DEF{"opensearch::person"}%%TMPL:P{"opensearch::person::header"}%
+%TMPL:P{"opensearch::person::name"}%
+%TMPL:P{"opensearch::person::description"}%
+%TMPL:P{"opensearch::person::url"}%
+%TMPL:P{"opensearch::person::tags"}%
+%TMPL:P{"opensearch::person::contact"}%
+%TMPL:P{"opensearch::person::image"}%
+%TMPL:P{"opensearch::person::encoding"}%
+%TMPL:P{"opensearch::person::footer"}%%TMPL:END%
+
+%TMPL:DEF{"opensearch::person::header"}%%TMPL:P{"opensearch::header"}%%TMPL:END%
+%TMPL:DEF{"opensearch::person::name"}%<ShortName>%MAKETEXT{"[_1] Person Search" args="%WIKITOOLNAME%"}%</ShortName>%TMPL:END%
+%TMPL:DEF{"opensearch::person::description"}%<Description>%MAKETEXT{"Search for persons on [_1]" args="%WIKITOOLNAME%"}%</Description>%TMPL:END%
+%TMPL:DEF{"opensearch::person::url"}%<Url type="text/html" template="%SCRIPTURL{"view"}%/%USERSWEB%/WikiUsers#q={searchTerms}&amp;start={startIndex?}&amp;rows={count?}" />%TMPL:END%
+%TMPL:DEF{"opensearch::person::tags"}%%TMPL:P{"opensearch::tags"}%%TMPL:END%
+%TMPL:DEF{"opensearch::person::contact"}%%TMPL:P{"opensearch::contact"}%%TMPL:END%
+%TMPL:DEF{"opensearch::person::image"}%%TMPL:P{"opensearch::image"}%%TMPL:END%
+%TMPL:DEF{"opensearch::person::encoding"}%%TMPL:P{"opensearch::encoding"}%%TMPL:END%
+%TMPL:DEF{"opensearch::person::footer"}%%TMPL:P{"opensearch::footer"}%%TMPL:END%
+

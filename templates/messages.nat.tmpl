@@ -101,7 +101,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 %TMPL:DEF{"password_changed"}%<!-- huh -->
 ---+++ %MAKETEXT{"Password changed successfully!"}%
 
-%BUTTON{"%MAKETEXT{"OK"}%" target="%USERSWEB%.%WIKINAME%" icon="tick"}%%CLEAR%
+%BUTTON{"%MAKETEXT{"OK"}%" target="%USERSWEB%.%WIKINAME%" icon="tick"}%
 %TMPL:END%
 %TMPL:DEF{"confirm"}%<!-- confirm -->
 ---+++ %MAKETEXT{"Thank you for registering"}%
@@ -110,7 +110,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 <form action="%SCRIPTURLPATH{"register"}%" method="post">
 <input type="hidden" name="action" value="verify" size="20" />
 <input type="text" name="code" size="20" />
-%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="tick"}%%CLEAR%
+%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="tick"}%
 </form>
 
 %TMPL:END%
@@ -197,7 +197,6 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 <input type="hidden" name="action" value="verify" size="20" />
 <input type="text" name="code" size="20" />
 %BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="tick"}%
-%CLEAR%
 </form>
 %TMPL:END%
 %TMPL:DEF{"no_email_for"}%<!-- nach %2 umbenennenbetter dialog -->
@@ -258,7 +257,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
    * %MAKETEXT{"International (8-bit) characters are removed (replaced by US-ASCII equivalents for Latin-1)"}%
 %MAKETEXT{"You may be able to get your Wiki administrator to change the settings if they are inappropriate for your environment."}%
 
-%BUTTON{"%MAKETEXT{"OK"}%" target="%WEB%.%TOPIC%" icon="tick"}%%CLEAR%
+%BUTTON{"%MAKETEXT{"OK"}%" target="%WEB%.%TOPIC%" icon="tick"}%
 %TMPL:END%
 %TMPL:DEF{"rename_web_prerequisites"}%<!-- better buttons -->
 ---+++ %MAKETEXT{"There are problems with renaming this web"}%:
@@ -279,7 +278,6 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
   <input type="hidden" name="confirm" value="continue">
   %BUTTON{"%MAKETEXT{"OK"}%" type="submit" icon="tick"}%
   %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WEB%.%HOMETOPIC%" icon="cross"}%
-  %CLEAR%
 </form> 
 </div>
 %TMPL:END%

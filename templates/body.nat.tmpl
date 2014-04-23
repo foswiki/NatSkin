@@ -3,16 +3,15 @@
 %TMPL:DEF{"body"}%<body class="foswikiNoJs %TMPL:P{"defaultbodyclass"}% %IF{"'%USERINFO{format="$isadmin"}%'='true'" then="natIsAdminBody"}%%IF{"defined 'NATSKIN_FLUIDFONT' and '%SCRIPTNAME%'!='edit'" then="jqFluidFont {%NATSKIN_FLUIDFONT%} "}%%IF{"context authenticated" then="natBodyAuthenticated " else="natBodyNotAuthenticated "}%%IF{"context 'natskin_sidebar_left'" then="natBodyLeft "}%%IF{"context 'natskin_sidebar_right'" then="natBodyRight "}%%IF{"context 'natskin_sidebar_both'" then="natBodyBoth "}%%IF{"context 'natskin_sidebar_off'" then="natBodyOff "}%%IF{"context 'natskin_layout_fluid'" then="natBodyFluid "}%%IF{"context 'natskin_layout_fixed'" then="natBodyFixed "}%%IF{"context 'natskin_layout_bordered'" then="natBodyBordered "}%%TMPL:P{"bodyclass"}% natBodyWeb_%WEB% natBodyTopic_%TOPIC%">%TMPL:P{"defaultbody"}%</body>%TMPL:END%
 
 %{ container definitions --------------------------------------------------- }%
-%TMPL:DEF{"contentheader_container"}%<div class="natMainHeaderContents">%TMPL:P{"contentheader"}%</div>%TMPL:END%
+%TMPL:DEF{"contentheader_container"}%<div class="natMainHeaderContents clearfix">%TMPL:P{"contentheader"}%</div>%TMPL:END%
 %TMPL:DEF{"content_container"}%<div class="natMainContents" id="natMainContents">%TMPL:P{"content"}%<span id="ContentBottom"></span></div>%TMPL:END%
-%TMPL:DEF{"contentfooter_container"}%%CLEAR%<div class="natMainFooterContents">%TMPL:P{"contentfooter"}%</div>%TMPL:END%
+%TMPL:DEF{"contentfooter_container"}%<div class="natMainFooterContents">%TMPL:P{"contentfooter"}%</div>%TMPL:END%
 %TMPL:DEF{"breadcrumbs_container"}%<div class='natBreadCrumbs'> %TMPL:P{"breadcrumbs::title"}% %TMPL:P{"breadcrumbs"}%</div>
-%TMPL:DEF{"contentheader"}%%TMPL:P{"breadcrumbs_container"}%%CLEAR%%TMPL:END%
-%TMPL:DEF{"webmenu"}%<div class="natWebMenu">
+%TMPL:DEF{"contentheader"}%%TMPL:P{"breadcrumbs_container"}%%TMPL:END%
+%TMPL:DEF{"webmenu"}%<div class="natWebMenu clearfix">
   <div class="natWebMenuContents"> 
   %WEBCOMPONENT{"Menu"}% <!-- -->
   </div>
-  %CLEAR%
 </div>%TMPL:END%
 
 %TMPL:DEF{"bottombar_container"}%<div class="natBottomBar"><div class="natBottomBarContents">
@@ -39,14 +38,13 @@
 
 %{ columns ----------------------------------------------------------------- }%
 %TMPL:DEF{"main"}%<div class="natMiddle">
-<div class="natMiddleContents">
+<div class="natMiddleContents clearfix">
 %TMPL:P{context="natskin_sidebar_off" else="sidebars"}%<!-- -->
-<div itemscope itemtype="http://schema.org/Article" class="natMain">
+<div itemscope itemtype="http://schema.org/Article" class="natMain clearfix">
 %TMPL:P{"contentheader_container"}%<!-- -->
 %TMPL:P{"content_container"}%<!-- -->
 %TMPL:P{"contentfooter_container"}%<!-- -->
 </div>
-%CLEAR%
 </div>
 </div>%TMPL:END%
 

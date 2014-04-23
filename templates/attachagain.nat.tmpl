@@ -1,11 +1,12 @@
 %TMPL:INCLUDE{"attach"}%<!-- template: attachagain.nat.tmpl -->
 %TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Update attachment [_1] on [_2]" args="'[[%ATTACHURLPATH%/%ENCODE{%FILENAME%}%][%FILENAME%]]',[[%TOPIC%]]"}%</h1>%TMPL:END%
-%TMPL:DEF{"existingattachments"}%<!-- existingattachments -->
+%TMPL:DEF{"existingattachments"}%<!-- -->
 %TAB{"%MAKETEXT{"Versions"}%"}%
 %ATTACHTABLE% 
 %ENDTAB%
-<!-- //existingattachments -->%TMPL:END%
-%TMPL:DEF{"notes"}%<!-- notes -->
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"notes"}%<!-- -->
 <p>
   *%MAKETEXT{"Properties"}%:* 
   %MAKETEXT{"The comment and visibility (i.e. is attachment hidden) can be changed without 
@@ -21,11 +22,12 @@ comment when the file was uploaded."}%
 updated or added."}%
 </p>
 <p> %MAKETEXT{"*Move attachment*: An attachment can be deleted by moving it to [_1]" args="Trash.TrashAttachment."}%  </p>
-<!-- //notes -->%TMPL:END%
-%TMPL:DEF{"attachaction"}% <!-- attachaction -->
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"attachaction"}% <!-- -->
 %BUTTON{"%MAKETEXT{"Upload file"}%" icon="tick" type="save"}%
 %BUTTON{"%MAKETEXT{"Change properties"}%" icon="disk" type="submit" name="changeproperties"}%
 %BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" target="%WEB%.%TOPIC%"}%
-%CLEAR%
-<!-- //attachaction -->%TMPL:END%
+<!-- -->%TMPL:END%
+
 %TMPL:DEF{"fileuser"}%(%FILEUSER%)%TMPL:END%

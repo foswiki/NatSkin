@@ -1,36 +1,35 @@
 <!-- template: javascript.nat.tmpl -->
 %TMPL:DEF{"defaultjavascript"}%<!-- -->
+%ADDTOZONE{"script" 
+  requires="JQUERYPLUGIN::FOSWIKI::PREFERENCES"
+  id="NATSKIN::PREFERENCES"
+  text="<script>
+jQuery.extend(foswiki.preferences, {
+  %TMPL:P{"deprecatedBrowsers"}%
+  %TMPL:P{"fixRevisionPosition"}%
+  %TMPL:P{"initWebMenu"}%
+  %TMPL:P{"initOverflows"}%
+  %TMPL:P{"initSideBar"}%
+  %TMPL:P{"initAutoComplete"}%
+  %TMPL:P{"initRedDot"}%
+  %TMPL:P{"initBusyIndicator"}%
+  %TMPL:P{"initExternalLinks"}%
+});
+</script>"
+}%<!-- -->
 %JQREQUIRE{"superfish, ui, blockui, farscroll, scrollto, imagetooltip, autosuggest, ui::tooltip, cookie, fontawesome" warn="off"}%<!--  -->
 %RENDERZONE{"script"}%
 %RENDERZONE{"skinjs"}%
 <!-- -->%TMPL:END%
 
-%TMPL:DEF{"deprecatedBrowsers"}%'NatSkin.deprecatedBrowsers': [%FORMATLIST{"%DEPRECATEDBROWSERS{default=""}%" split="\s*,\s*" format="'$1'" separator=", "}%]%TMPL:END%
-%TMPL:DEF{"fixRevisionPosition"}%'NatSkin.fixRevisionPosition': true%TMPL:END%
-%TMPL:DEF{"initWebMenu"}%'NatSkin.initWebMenu': true%TMPL:END%
-%TMPL:DEF{"initOverflows"}%'NatSkin.initOverflows': false%TMPL:END%
-%TMPL:DEF{"initSideBar"}%'NatSkin.initSideBar': true%TMPL:END%
-%TMPL:DEF{"initAutoComplete"}%'NatSkin.initAutoComplete': %IF{"context SolrPluginEnabled" then="true" else="false"}%%TMPL:END%
-%TMPL:DEF{"initRedDot"}%'NatSkin.initRedDot': true%TMPL:END%
-%TMPL:DEF{"initBusyIndicator"}%'NatSkin.initBusyIndicator': true%TMPL:END%
-%TMPL:DEF{"initExternalLinks"}%'NatSkin.initExternalLinks': false%TMPL:END%
-
-%TMPL:DEF{"metaflags"}%%ADDTOZONE{"script" 
-  requires="JQUERYPLUGIN::FOSWIKI::PREFERENCES"
-  id="NATSKIN::PREFERENCES"
-  text="<script>
-jQuery.extend(foswiki.preferences, {
-  %TMPL:P{"deprecatedBrowsers"}%,
-  %TMPL:P{"fixRevisionPosition"}%,
-  %TMPL:P{"initWebMenu"}%,
-  %TMPL:P{"initOverflows"}%,
-  %TMPL:P{"initSideBar"}%,
-  %TMPL:P{"initAutoComplete"}%,
-  %TMPL:P{"initRedDot"}%,
-  %TMPL:P{"initBusyIndicator"}%,
-  %TMPL:P{"initExternalLinks"}%
-});
-</script>"
-}%%TMPL:END%
+%TMPL:DEF{"deprecatedBrowsers"}%'NatSkin.deprecatedBrowsers': [%FORMATLIST{"%DEPRECATEDBROWSERS{default=""}%" split="\s*,\s*" format="'$1'" separator=", "}%],%TMPL:END%
+%TMPL:DEF{"fixRevisionPosition"}%'NatSkin.fixRevisionPosition': true,%TMPL:END%
+%TMPL:DEF{"initWebMenu"}%'NatSkin.initWebMenu': true,%TMPL:END%
+%TMPL:DEF{"initOverflows"}%'NatSkin.initOverflows': false,%TMPL:END%
+%TMPL:DEF{"initSideBar"}%'NatSkin.initSideBar': true,%TMPL:END%
+%TMPL:DEF{"initAutoComplete"}%'NatSkin.initAutoComplete': %IF{"context SolrPluginEnabled" then="true" else="false"}%,%TMPL:END%
+%TMPL:DEF{"initRedDot"}%'NatSkin.initRedDot': true,%TMPL:END%
+%TMPL:DEF{"initBusyIndicator"}%'NatSkin.initBusyIndicator': true,%TMPL:END%
+%TMPL:DEF{"initExternalLinks"}%'NatSkin.initExternalLinks': false,%TMPL:END%
 
 %TMPL:DEF{"javascript"}%%TMPL:P{"defaultjavascript"}%%TMPL:END%

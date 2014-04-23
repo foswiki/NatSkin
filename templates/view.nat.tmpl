@@ -5,6 +5,7 @@
 %TMPL:INCLUDE{"searchbox"}%<!-- -->
 %TMPL:INCLUDE{"metadata"}%<!-- -->
 %TMPL:INCLUDE{"metacomments"}%<!-- -->
+%TMPL:INCLUDE{"opensearch"}%<!-- -->
 
 %{ ################################################################################ }%
 %TMPL:DEF{"bodyclass"}%natViewBody %IF{"context 'natskin_history_1'" then="natViewHistoryBody"}%%TMPL:END%
@@ -18,7 +19,8 @@
 %TMPL:P{"metaauthor"}%<!-- -->
 %TMPL:P{"metaedit"}%<!-- -->
 %TMPL:P{"metaatom"}%<!-- -->
-%TMPL:P{"metarss"}% %TMPL:END%
+%TMPL:P{"metarss"}%<!-- -->
+%TMPL:P{"metaopensearch"}%%TMPL:END%
 
 %TMPL:DEF{"metagenerator"}%<meta name='generator' content='Foswiki %WIKIVERSION%' />%TMPL:END%
 
@@ -58,12 +60,12 @@
 %TMPL:P{"comments"}%<!-- -->
 <!-- -->%TMPL:END%
 
-%TMPL:DEF{"rawbutton"}%%IF{"$'URLPARAM{raw}'='on'" then="<p>$percntBUTTON{\"%MAKETEXT{"View"}%\" title=\"%MAKETEXT{"Back to view mode"}%\" style=\"float:right\" icon=\"eye\" target=\"%WEB%.%TOPIC%\"}$percnt$percntCLEAR$percnt</p>" else="<!-- -->" }%%TMPL:END%
+%TMPL:DEF{"rawbutton"}%%IF{"$'URLPARAM{raw}'='on'" then="<p class='clearfix'>$percntBUTTON{\"%MAKETEXT{"View"}%\" title=\"%MAKETEXT{"Back to view mode"}%\" style=\"float:right\" icon=\"eye\" target=\"%WEB%.%TOPIC%\"}$percnt</p>" else="<!-- -->" }%%TMPL:END%
 %TMPL:DEF{"redirectbutton"}%%IF{"$'URLPARAM{redirectedfrom}'!=''" then="<p class='natRedirectFrom'>%JQICON{"arrow_undo"}% %MAKETEXT{"Redirect from [_1]" args="[[%URLPARAM{"redirectedfrom"}%?noredirect=on"}%]]</p>" else="<!-- -->" }%%TMPL:END%
 %TMPL:DEF{"text"}%%TEXT%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"contentheader_container"}%<div class="natMainHeaderContents" %IF{"$'DISPLAYTOPICACTIONS'='off' and $'DISPLAYBREADCRUMBS'='off'" then="style='display:none'"}%>%TMPL:P{"contentheader"}%</div>%TMPL:END%
+%TMPL:DEF{"contentheader_container"}%<div class="natMainHeaderContents clearfix" %IF{"$'DISPLAYTOPICACTIONS'='off' and $'DISPLAYBREADCRUMBS'='off'" then="style='display:none'"}%>%TMPL:P{"contentheader"}%</div>%TMPL:END%
 %TMPL:DEF{"contentheader"}%<!-- -->
 %IF{
   "$'DISPLAYTOPICACTIONS'='off'" 
@@ -73,7 +75,6 @@
   "$'DISPLAYBREADCRUMBS'='off'" 
   else="$percntTMPL:P{\"breadcrumbs_container\"}$percnt"
 }%<!-- -->
-%CLEAR%
 <!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
@@ -85,16 +86,16 @@
 <!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"DISrevinfo"}%<div class="natRevision">%MAKETEXT{"Last modified by [_1] on [_2]" args="<span class='natRevisionAuthor' itemprop='author'>%REVINFO{"[[$wikiusername]]" rev="%CURREV%"}%</span>, <a class='natRevisionDate' rel='nofollow' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"<span itemprop='dateModified' content='$iso'>$date - $hour:$min</span> - r<span itemprop='version'>$rev</span>" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
-%TMPL:DEF{"revinfo"}%<div class="natRevision">
+%TMPL:DEF{"DISrevinfo"}%<div class="foswikiRevision">%MAKETEXT{"Last modified by [_1] on [_2]" args="<span class='foswikiRevisionAuthor' itemprop='author'>%REVINFO{"[[$wikiusername]]" rev="%CURREV%"}%</span>, <a class='foswikiRevisionDate' rel='nofollow' href='%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="compare" else="rdiff"}%' title='%MAKETEXT{"show last change"}%'>%REVINFO{"<span itemprop='dateModified' content='$iso'>$date - $hour:$min</span> - r<span itemprop='version'>$rev</span>" rev="%CURREV%"}%</a>"}%</div>%TMPL:END%
+%TMPL:DEF{"revinfo"}%<div class="foswikiRevision">
   %JQICON{"fa-calendar"}%
   %REVINFO{"<span itemprop='dateModified' content='$iso'>$date - $hour:$min</span>" rev="%CURREV%"}%
-  <span class='natRevisionSep'>&#124;</span>
+  <span class='foswikiRevisionSep'>&#124;</span>
   %JQICON{"fa-flag"}%
   %MAKETEXT{"Version [_1]" args="%REVINFO{"<span itemprop='version'>$rev</span>" rev="%CURREV%"}%"}%
-  <span class='natRevisionSep'>&#124;</span>
+  <span class='foswikiRevisionSep'>&#124;</span>
   %JQICON{"fa-user"}%
-  <span class='natRevisionAuthor' itemprop='author'>%REVINFO{"[[$wikiusername]]" rev="%CURREV%"}%</span> 
+  <span class='foswikiRevisionAuthor' itemprop='author'>%REVINFO{"[[$wikiusername]]" rev="%CURREV%"}%</span> 
 </div>%TMPL:END%
 %TMPL:DEF{"rdiff"}%%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPIC%?type=last;render=sequential%TMPL:END%
 %TMPL:DEF{"compare"}%%SCRIPTURLPATH{"compare"}%/%WEB%/%TOPIC%?type=last;render=interweave;context=1%TMPL:END%

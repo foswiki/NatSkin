@@ -428,15 +428,15 @@ h2 {
 .foswikiTopicSummary,
 .foswikiTopicInfo, 
 .foswikiTopicInfo a,
-.natRevision a,
-.natRevision {
+.foswikiRevision a,
+.foswikiRevision {
   color:#808080;
 }
 .foswikiTopicInfo h1 a,
 .foswikiTopicInfo h2 a {
   color:inherit;
 }
-.natRevision a:hover,
+.foswikiRevision a:hover,
 .foswikiTopicInfo a:hover,
 .natBreadCrumbs a:hover {
   color:#fff;
@@ -455,7 +455,7 @@ h2 {
 }
 
 /* bottom */
-.natMainFooterContents .natRevision {
+.natMainFooterContents .foswikiRevision {
   margin:2em 0em 0em;
 }
 .natSyndicate {

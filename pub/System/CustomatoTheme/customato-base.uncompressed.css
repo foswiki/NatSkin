@@ -44,7 +44,7 @@ h1 .foswikiTopicSummary {
   font-size:0.5em;
   line-height:1.5em;
 }
-.foswikiInfo, .natRevision {
+.foswikiInfo, .foswikiRevision {
   margin-bottom: 1.5em;
 }
 .solrSearchHits h3,
@@ -759,7 +759,7 @@ a.jqButton:link {
   }
   .natMainHeaderContents .natTopicActions {
     float:none;
-    width:320px;
+    width:345px;
     margin:0 auto;
     font-size:1em;
   }
