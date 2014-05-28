@@ -16,52 +16,6 @@
   });
 
   /**************************************************************************
-   * browser detection
-   */
-  function uaMatch(ua) { // borrowed from jQuery
-      ua = ua.toLowerCase();
-
-      var match = /(chrome)[ \/]([\w.]+)/.exec( ua ) ||
-              /(webkit)[ \/]([\w.]+)/.exec( ua ) ||
-              /(opera)(?:.*version|)[ \/]([\w.]+)/.exec( ua ) ||
-              /(msie) ([\w.]+)/.exec( ua ) ||
-              /(trident).*; rv:([\w.]+)/.exec( ua ) ||
-              ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec( ua ) ||
-              [];
-
-      if (match[1] == 'trident') {
-        match[1] = 'msie';
-      }
-
-      return {
-              browser: match[ 1 ] || "",
-              version: match[ 2 ] || "0"
-      };
-  }
-
-  /**************************************************************************
-   * flag browser deprecation on body element
-   */
-  function initBrowserDeprecation() {
-    var deprecatedBrowsers,
-        agent = uaMatch(window.navigator.userAgent),
-        i;
-
-    // simplify
-    agent = agent.browser + agent.version.replace(/\..*$/, '');
-
-    if (agent) {
-      deprecatedBrowsers = foswiki.getPreference("NatSkin.deprecatedBrowsers") || [];
-      for (i = 0; i < deprecatedBrowsers.length; i++) {
-        if (agent === deprecatedBrowsers[i]) {
-          $("body").addClass("natDeprecatedBrowser");
-          break;
-        }
-      }
-    }
-  }
-
-  /**************************************************************************
    * fix revision position by moving it under the first h1 found in the 
    * content area
    */
@@ -245,6 +199,11 @@
       });
     }
 
+    $(document).on("click", ".natBodyNavToggleActive", function() {
+      toggleSidebar();
+      return true;
+    });
+
     $(".natNavToggle").livequery(function() {
       var $this = $(this);
 
@@ -335,7 +294,6 @@
    */
   $(function() { 
 
-    initBrowserDeprecation();
     initMobile();
 
     if (foswiki.getPreference("NatSkin.initWebMenu")) {

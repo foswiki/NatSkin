@@ -4,6 +4,7 @@
 <form id="createNewWeb" name="admin" action="%SCRIPTURLPATH{manage}%/%WEB%/%TOPIC%" method="post" class="jqValidate">
 <input name="newtopic" type="hidden" value="%URLPARAM{"newtopic"}%" />
 <input name="action" type="hidden" value="createweb" />
+<input name="WEBBGCOLOR" type="hidden" value="#efefef" size="20" />
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep">
     <h3>%MAKETEXT{"Name"}%:</h3>

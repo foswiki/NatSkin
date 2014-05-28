@@ -1,0 +1,45 @@
+%TMPL:INCLUDE{"page"}%
+%TMPL:INCLUDE{"body.plain"}%
+
+%TMPL:DEF{"webdav-file"}%<li class='file webdav-entry'><a href='%URL%'>%FILE%</a></li>%TMPL:END%
+
+%TMPL:DEF{"webdav-dir"}%<li class='file'><a class="webdav_disable" href='%URL%'>%FILE%/</a></li>%TMPL:END%
+
+%TMPL:DEF{"webdav-updir"}%<li class="disable directory_up"><a class="webdav_disable" href="%URL%" title="%MAKETEXT{"up one folder"}%">..</a></li>%TMPL:END%
+
+%TMPL:DEF{"titleaction"}%WebDAV %MAKETEXT{"Directory"}%%TMPL:END%
+%TMPL:DEF{"styles:dynamic"}%<style type="text/css" media="all">
+body {
+  margin:1em;
+}
+ul, ol, li {
+  padding:0;
+  margin:0;
+}
+ul, ol {
+  margin: 1.3846em 0 1.3846em 3.0769em;
+}
+.file_list {
+  list-style:none;
+  margin-left:0px;
+}
+.file_list li.directory_up {
+  margin-bottom:1em;
+}
+.file_list a {
+  text-decoration:none;
+  color:#0055B5;
+}
+.file_list a:hover {
+  background-color:#0055B5;
+  color:white;
+}
+</style>%TMPL:END%
+
+%TMPL:DEF{"content"}%
+    <h1>%TITLE%</h1>
+    <ul class='file_list'>
+%ENTRIES%
+    </ul>
+%TMPL:END%
+

@@ -16,19 +16,21 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="jqUIDialog foswikiFormSteps {width:500, modal:true, draggable:true}" title="%TMPL:P{"formtitle"}%">
+<div class="jqUIDialog foswikiFormSteps {width:%TMPL:P{"dialog::width"}%, modal:true, draggable:true}" title="%TMPL:P{"formtitle"}%">
 %TMPL:P{"createform"}%
 </div>
 </noautolink>%TMPL:END%
 
+%TMPL:DEF{"dialog::width"}%500%TMPL:END%
+
 %{ ################################################################################ }%
 %TMPL:DEF{"createform"}%<!-- -->
- %TMPL:P{"formstartstep"}%<!-- -->
- %TMPL:P{"topictitlestep"}%<!-- -->
- %TMPL:P{"topictemplatestep"}%<!-- -->
- %TMPL:P{"hiddenoptionsstep"}%<!-- -->
- %TMPL:P{"formbuttons::dialog"}%<!-- -->
- %TMPL:P{"formendstep"}%<!-- -->
+%TMPL:P{"formstartstep"}%<!-- -->
+%TMPL:P{"topictitlestep"}%<!-- -->
+%TMPL:P{"topictemplatestep"}%<!-- -->
+%TMPL:P{"hiddenoptionsstep"}%<!-- -->
+%TMPL:P{"formbuttons::dialog"}%<!-- -->
+%TMPL:P{"formendstep"}%<!-- -->
 <!-- -->%TMPL:END%
 
 %{ ################################################################################ }%

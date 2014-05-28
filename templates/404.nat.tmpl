@@ -54,7 +54,7 @@
 </tr>%TMPL:END%
 
 %TMPL:DEF{"restart::action"}%<tr>
-<th>%BUTTON{"%MAKETEXT{"Restart"}%" class="simple" icon="house" target="%BASEWEB%.%HOMETOPIC%"}%</th>
+<th>%BUTTON{"%MAKETEXT{"Restart"}%" class="simple" icon="house" target="%IF{"istopic '%BASEWEB%.%HOMETOPIC%'" then="%BASEWEB%.%HOMETOPIC%" else="%USERSWEB%.%HOMETOPIC%"}%"}%</th>
 <td>%MAKETEXT{"Or just start from the beginning in case you got lost somehow."}%</td>
 </tr>%TMPL:END%
 

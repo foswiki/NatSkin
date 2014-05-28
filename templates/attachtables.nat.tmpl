@@ -84,7 +84,7 @@
 
 %TMPL:DEF{"ATTACH:files:url"}%%TMPL:P{context="FilesysVirtualPluginEnabled" then="ATTACH:files:url:webdav" else="ATTACH:files:url:default"}%%TMPL:END%
 %TMPL:DEF{"ATTACH:files:url:default"}%%PUBURLPATH%/%WEB%/%TOPIC%/%ENCODE{%A_FILE%}%%TMPL:END%
-%TMPL:DEF{"ATTACH:files:url:webdav"}%/dav/%WEB%/%TOPIC%_files/%ENCODE{%A_FILE%}%%TMPL:END%
+%TMPL:DEF{"ATTACH:files:url:webdav"}%/dav/%WEB%/%TOPIC%/%ENCODE{%A_FILE%}%%TMPL:END%
 
 <!-- Header definition for top table in attach screen -->
 <!-- Header definition for topic attachments and top table in attach screen -->

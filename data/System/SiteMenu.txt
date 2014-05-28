@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="autosave" date="1356278779" format="1.1" version="6"}%
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1399391186" format="1.1" reprev="8" version="8"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ %TOPIC%
 Definition of site wide horizontal menu
@@ -26,7 +26,7 @@ Definition of site wide horizontal menu
   format="[[$web.%HOMETOPIC%][%JQICON{
     "%URLPARAM{"icon" 
        default="%IF{"defined icon" then="%icon%" else="bullet_white"}%"
-    }%"}% $name]]"
+    }%"}% $title]]"
   separator="</li><li>"
   subfooter="</li></ul>"  
   footer="</li>"
@@ -66,6 +66,7 @@ Definition of site wide horizontal menu
          <ul class=\"ajaxMenu {url:'%SCRIPTURL{"view"}%/%SYSTEMWEB%/SiteMenu?skin=text;section=subwebs;theweb=Applications;icon=application%IF{"defined EXCLUDEWIKIAPPS" then=";excludeweb=%EXCLUDEWIKIAPPS%"}%'}\"></ul>
        </li>"
     }%<!-- -->
+    <li>[[%TRASHWEB%.%HOMETOPIC%][%JQICON{"bin"}% %MAKETEXT{"Trash"}%]]</li>
     <li>[[%BASEWEB%.%WEBPREFSTOPIC%][%JQICON{"wrench"}% %MAKETEXT{"Web preferences"}%]]</li>
     <li>[[%LOCALSITEPREFS%][%JQICON{"wrench_orange"}% %MAKETEXT{"Site preferences"}%]]</li>
     <li>[[%SYSTEMWEB%.SitePermissions][%JQICON{"key"}% %MAKETEXT{"Site permissions"}%]]</li>
@@ -80,6 +81,3 @@ Definition of site wide horizontal menu
 </li>
 </noautolink>%ENDSECTION{"adminmenu"}%
 </verbatim>
-
-%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
-%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

@@ -19,7 +19,7 @@ embed, object {
   z-index: 0;
 }
 
-.DISnatHtml {
+.natHtml {
   overflow-y: scroll; /* force a vertical scrollbar to prevent a jumpy page */
 }
 
@@ -641,6 +641,7 @@ h2.marked,
   padding:0px;
 }
 
+input[type=search],
 input[type=text],
 input[type=password],
 .foswikiInputField,
@@ -658,6 +659,7 @@ select,
 select:focus,
 .foswikiSelect:focus,
 select:focus.ui-pg-selbox, /* jqgrid */
+input[type=search]:focus,
 input[type=text]:focus,
 input[type=password]:focus,
 .foswikiInputField:focus {
@@ -900,10 +902,6 @@ img.foswikiLeft,
   margin-bottom:1em;
 }
 
-.foswikiIndent {
-  margin-left:3em;
-}
-
 /* http://sonspring.com/journal/clearing-floats */
 .clear,
 .foswikiClear {
@@ -1003,14 +1001,9 @@ img.foswikiLeft,
   color:red;
 }
 .natBrowserSupportWarning {
-  display:none;
   padding:1em;
-  width:100%;
   background-color:yellow;
   color:black;
-}
-.natDeprecatedBrowser .natBrowserSupportWarning {
-  display:block;
 }
 
 .natBrowserSupportWarning a {
@@ -1036,6 +1029,7 @@ img.foswikiLeft,
 .natSearchHit {
   margin:1em 0em 2em;
 }
+.natSearchRevision,
 .natSearchRevision a {
   text-decoration:none;
   color:#64B000;

@@ -5,7 +5,6 @@
   id="NATSKIN::PREFERENCES"
   text="<script>
 jQuery.extend(foswiki.preferences, {
-  %TMPL:P{"deprecatedBrowsers"}%
   %TMPL:P{"fixRevisionPosition"}%
   %TMPL:P{"initWebMenu"}%
   %TMPL:P{"initOverflows"}%
@@ -22,7 +21,6 @@ jQuery.extend(foswiki.preferences, {
 %RENDERZONE{"skinjs"}%
 <!-- -->%TMPL:END%
 
-%TMPL:DEF{"deprecatedBrowsers"}%'NatSkin.deprecatedBrowsers': [%FORMATLIST{"%DEPRECATEDBROWSERS{default=""}%" split="\s*,\s*" format="'$1'" separator=", "}%],%TMPL:END%
 %TMPL:DEF{"fixRevisionPosition"}%'NatSkin.fixRevisionPosition': true,%TMPL:END%
 %TMPL:DEF{"initWebMenu"}%'NatSkin.initWebMenu': true,%TMPL:END%
 %TMPL:DEF{"initOverflows"}%'NatSkin.initOverflows': false,%TMPL:END%

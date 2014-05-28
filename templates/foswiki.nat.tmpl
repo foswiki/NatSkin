@@ -167,7 +167,7 @@
 
 %TMPL:DEF{"WEBDAVDIR_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"<nop>WebDAV Directory"}%</span>%TMPL:END%
 %TMPL:DEF{"WEBDAVDIR_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Open <nop>WebDAV Directory"}%</span>%TMPL:END%
-%TMPL:DEF{"WEBDAVDIR_ACTION"}%<a class='natTopicAction webdav natWebdavDirAction' rel='nofollow' href='webdavs://%USERINFO{format="$username"}%@%HTTP_HOST%/dav/%BASEWEB%/%BASETOPIC%_files/'>%JQICON{"folder"}%$label</a>%TMPL:END%
+%TMPL:DEF{"WEBDAVDIR_ACTION"}%<a class='natTopicAction webdav natWebdavDirAction' rel='nofollow' href='webdavs://%USERINFO{format="$username"}%@%HTTP_HOST%/dav/%BASEWEB%/%BASETOPIC%/'>%JQICON{"folder"}%$label</a>%TMPL:END%
 %TMPL:DEF{"WEBDAVDIR_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natWebdavDirAction'>%JQICON{"folder_link"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"HARVEST_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Download"}%</span>%TMPL:END%
@@ -238,14 +238,14 @@
 
 %TMPL:DEF{"poweredby"}%<a class='natPoweredBy nop' href='http://foswiki.org' title='foswiki.org'><span><img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/foswiki-logo.png' height='40' /></span>%MAKETEXT{"Powered by Foswiki"}%</a>%TMPL:END%
 
-%TMPL:DEF{"useractions"}%<!-- useractions -->
+%TMPL:DEF{"useractions"}%<!-- -->
 %USERACTIONS{
   guest="<div class='natGreeter natGuestGreeter'>$login$sep$register</div>"
   format="<div class='natGreeter natUserGreeter'>$account$sep$logout</div>"
 }%
-<!-- //useractions -->%TMPL:END%
+<!-- -->%TMPL:END%
 
-%TMPL:DEF{"hiddenform"}%<!-- hiddenform -->
+%TMPL:DEF{"hiddenform"}%<!-- -->
 <form id='EditForm' name='EditForm' action='%SCRIPTURLPATH{"save"}%/%WEB%/%TOPIC%' method='post'>
   <input type='hidden' name='action_addform' value='' />
   <input type='hidden' name='action_cancel' value='' />
@@ -266,7 +266,7 @@
   <input type='hidden' name='rev' value='%URLPARAM{"rev"}%' />
   <input type='hidden' name='text' value='%HIDDENTEXT%' />
 </form>
-<!-- //hiddenform-->%TMPL:END%
+<!-- -->%TMPL:END%
 
 %TMPL:DEF{"topictitle"}%%TMPL:P{context="DBCachePluginEnabled" then="topictitle_dbcache" else="topictitle_default"}%%TMPL:END%
 %TMPL:DEF{"topictitle_default"}%%IF{"defined 'TOPICTITLE'" then="%TOPICTITLE%" else="%BASETOPIC%"}%%TMPL:END%
@@ -312,10 +312,12 @@
 %TMPL:DEF{"JavascriptFiles/foswikiString"}%%TMPL:P{"LIBJS" id="JavascriptFiles/foswikiString" requires="JQUERYPLUGIN::FOSWIKI"}%%TMPL:END%
 %TMPL:DEF{"JavascriptFiles/foswikiStringUnicodeChars"}%%TMPL:P{"LIBJS" id="JavascriptFiles/foswikiStringUnicodeChars" requires="JQUERYPLUGIN::FOSWIKI,JavascriptFiles/foswikiString"}%%TMPL:END%
 
-%TMPL:DEF{"browsersupport"}%<div class='natBrowserSupportWarning'>
-  %X% 
-  %MAKETEXT{"Warning: your browser isn't supported. Please install a modern one, like [_1], [_2], [_3], [_4] or the latest [_5]." 
+%TMPL:DEF{"browsersupport"}%%TMPL:P{context="UnsupportedBrowser" then="browsersupport::warning"}%%TMPL:END%
+
+%TMPL:DEF{"browsersupport::warning"}%<div class='natBrowserSupportWarning'>
+  %MAKETEXT{"<b>Warning</b>: Your browser isn't supported. Please install a modern one, like [_1], [_2], [_3], [_4] or the latest [_5]." 
     args="<a href='http://getfirefox.com'>Firefox</a>, <a href='http://www.opera.com/download/'>Opera</a>, <a href='http://www.apple.com/safari/'>Safari</a>, <a href='https://www.google.com/chrome/'>Chrome</a>, <a href='http://www.microsoft.com/windows/downloads/ie/getitnow.mspx'>Internet Explorer</a>"
   }%
   %MAKETEXT{"Thank you!"}%
 </div>%TMPL:END%
+

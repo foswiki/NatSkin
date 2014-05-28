@@ -2,7 +2,7 @@
 jQuery(function($) {
   "use strict";
 
-  $(".natPanelToggle").click(function() {
+  $(".natPanelToggle a").click(function() {
     var $toggle = $(this);
     $toggle.toggleClass("active");
     $(".natTopPanel").slideToggle(200, "shagga");

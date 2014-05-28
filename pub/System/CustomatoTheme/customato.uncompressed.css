@@ -681,8 +681,9 @@ a.jqButton:link {
     top:18px;
     font-size:24px;
     right:10px;
-    z-index:999999;
+    z-index:9999;
   }
+
 
   .natTopLeft {
     padding-bottom:1em;
@@ -939,6 +940,7 @@ h2.marked,
   color:#777;
 }
 
+input[type=search],
 input[type=text],
 input[type=password],
 .foswikiInputField,
@@ -952,6 +954,7 @@ select,
   box-shadow:none;
   box-shadow:inset 2px 2px 4px #f4f4f4;
 }
+input[type=search],
 input[type=text],
 input[type=password],
 .foswikiInputField,
@@ -969,6 +972,7 @@ input::-ms-clear {
 select.ui-pg-selbox:focus, /* jqgrid */
 select:focus,
 .foswikiSelect:focus,
+input[type=search]:focus,
 input[type=text]:focus,
 input[type=password]:focus,
 .foswikiInputField:focus {

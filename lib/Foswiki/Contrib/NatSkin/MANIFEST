@@ -47,9 +47,9 @@ pub/System/CustomatoTheme/customato-colors.css.gz 0644
 pub/System/CustomatoTheme/customato-colors.uncompressed.css 0644
 pub/System/CustomatoTheme/customato.css 0644
 pub/System/CustomatoTheme/customato.css.gz 0644
-pub/System/CustomatoTheme/customato.uncompressed.css 0644
 pub/System/CustomatoTheme/customato.js 0644
 pub/System/CustomatoTheme/customato.js.gz 0644
+pub/System/CustomatoTheme/customato.uncompressed.css 0644
 pub/System/CustomatoTheme/customato.uncompressed.js 0644
 pub/System/CustomatoTheme/foswiki-logo.png 0644
 pub/System/CustomatoTheme/Makefile 0644
@@ -291,3 +291,4 @@ templates/view.print.nat.tmpl 0644
 templates/viewprint.nat.tmpl 0644
 templates/viewraw.nat.tmpl 0644
 templates/viewtopicactions.nat.tmpl 0644
+templates/webdav_folder.nat.tmpl 0644
