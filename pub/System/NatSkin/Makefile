@@ -1,5 +1,4 @@
 TARGET= \
-  attach.js \
   BaseStyle.css \
   history.js \
   login.js \

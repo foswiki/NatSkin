@@ -157,18 +157,20 @@
           $input = $form.find("input[type=text]"),
           submitButton = $form.find("input[type=submit]");
 
-      $input.autosuggest({
-        menuClass: 'natSearchBoxMenu',
-        search: function(event) {
-          submitButton.hide();
-        },
-        response: function(event) {
-          submitButton.show();
-        },
-        open: function(event) {
-          submitButton.show();
-        }
-      });
+      if (typeof($.fn.autosuggest) === 'function') { // make sure autosuggest realy is present
+        $input.autosuggest({
+          menuClass: 'natSearchBoxMenu',
+          search: function(event) {
+            submitButton.hide();
+          },
+          response: function(event) {
+            submitButton.show();
+          },
+          open: function(event) {
+            submitButton.show();
+          }
+        });
+      }
     });
   }
 

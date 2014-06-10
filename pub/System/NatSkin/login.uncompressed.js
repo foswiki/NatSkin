@@ -12,6 +12,6 @@ jQuery(function($) {
     }
   });
   if (foswiki.getPreference("NatSkin.loginFailed")) {
-    $(".natLogin").effect("shake", {times:3, distance:10}, 50);
+    $(".natLogin .foswikiFormSteps").effect("shake", {times:3, distance:10}, 50);
   }
 });

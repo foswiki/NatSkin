@@ -16,23 +16,28 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"copyform"}%<!-- -->
-<form action="%SCRIPTURL{manage}%/%WEB%/" method="post">
-<input type="hidden" name="action" value="create" />
-<input type="hidden" name="onlynewtopic" value="on" />
-<input type="hidden" name="templatetopic" value="%WEB%.%TOPIC%" />
-<input type="hidden" name="nowysiwyg" value="1" />
-<input type="hidden" name="notemplateexpansion" value="1" />
-<input type="hidden" name="action_save" value="1" />
+<form action="%SCRIPTURL{"copy"}%/%WEB%/" method="post">
+<input type="hidden" name="mode" value="topic" />
+<input type="hidden" name="source" value="%WEB%.%TOPIC%" />
 <div class="foswikiFormStep">
-  <h3>%MAKETEXT{"To"}%:</h3>
-  <input type="text" name="topic" class="foswikiInputField" value="%TOPIC%Copy" size="30" style="width:98%" /> 
-  <div class="foswikiFormDescription">
-    %MAKETEXT{"Copy text and form data to a new topic."}%
-  </div>
+  <h3>%MAKETEXT{"Destination"}%:</h3>
+  <input type="text" name="destination" class="foswikiInputField" value="%TOPIC%Copy" size="30" style="width:98%" /> 
 </div>
+  <div class="foswikiFormStep">
+     <h3>Parts:</h3>
+     <label><input type="checkbox" name="includepart" value="text" />%MAKETEXT{"Text"}%</label> %BR%
+     <label><input type="checkbox" name="includepart" value="attachments" />%MAKETEXT{"Attachments"}%</label> %BR%
+     <label><input type="checkbox" name="includepart" value="preferences" />%MAKETEXT{"Preferences"}%</label>%BR%
+     <label><input type="checkbox" name="includepart" value="parent" />%MAKETEXT{"Parent"}%</label>%BR%
+     <label><input type="checkbox" name="includeparts" value="form, fields" />%MAKETEXT{"DataForm"}%</label> %BR%
+     <label><input type="checkbox" name="includepart" value="comment" />%MAKETEXT{"Comments"}%</label> 
+     <div class="foswikiGrayText">%MAKETEXT{"leave unchecked to copy all"}%</div>
+   </div>
 <div class="foswikiFormStep">
-  <input type="checkbox" class="foswikiCheckbox" name="nonwikiword" id="nonwikiword" %IF{"$ 'URLPARAM{nonwikiword}'='on'" then="checked='checked'"}% />
-  <label for="nonwikiword">%MAKETEXT{"Allow non-<nop>WikiWord for the new topic name"}%</label>
+  <h3>%MAKETEXT{"Options"}%:</h3>
+  <label><input type="checkbox" name="onlynew" value="off">%MAKETEXT{"Allow overwrite"}%</label> %BR%
+  <label><input type="checkbox" name="forcenewrevision" value="off">%MAKETEXT{"Force a new revision"}%</label> %BR%
+  <label><input type="checkbox" name="clear" vlaue="on">%MAKETEXT{"Clear destination before copying"}%</label>
 </div>
 <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-copy'}">%MAKETEXT{"Copy"}%</a>
 <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Cancel"}%</a>

@@ -1,6 +1,6 @@
 /* main colors:
 
-   blue: #3E89D3, #1A7FE2
+   blue: #3D8FE0, #2375C5
    orange: #FF9100
    green: #52AF00
    magenta: #FF45B1 / #ED299C
@@ -51,23 +51,32 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
 
 .natWebMenu li,
 .natWebMenu li a {
-  background-color:#1A7FE2;
+  background-color:#3D8FE0;
   color:#fff;
 }
 
-.natWebMenu li .foswikiCurrentWebHomeLink:hover,
-.natWebMenu li .foswikiCurrentWebHomeLink,
-.natWebMenu li .foswikiCurrentTopicLink {
-/*
-  border-bottom:5px solid #FF45B1;
-  margin-bottom:-5px;
-*/
-  background-color:#0055AB;
-}
+.natWebMenu li.sfHover,
 .natWebMenu li.sfHover > a,
 .natWebMenu li .foswikiCurrentWebHomeLink:hover,
-.natWebMenu li a:hover {
-  background-color:#0055AB;
+.natWebMenu li a.current:hover,
+.natWebMenu li a:hover,
+.natWebMenu li .foswikiCurrentWebHomeLink:hover,
+.natWebMenu li .foswikiCurrentWebHomeLink,
+.natWebMenu li .foswikiCurrentTopicLink,
+.natWebMenu li.sfHover > a,
+.natWebMenu li .foswikiCurrentWebHomeLink:hover,
+.natWebMenu li a:hover,
+.natTopicActions .sfHover .natMoreActionsTopicAction,
+.natTopicActions .natTopicAction:hover,
+.natWebMenu li.sfHover > a,
+.natWebMenu li a:hover,
+.natWebMenu li .foswikiCurrentWebHomeLink,
+.natWebMenu li .foswikiCurrentTopicLink {
+  background-color:#2375C5;
+}
+.natSideBar h2,
+.natSideBar h2 a {
+  color: #2375C5;
 }
 
 .natSideBar li a:hover {
@@ -141,7 +150,7 @@ h2.marked,
 .foswikiPageForm h3 a, .foswikiPageForm h4 a, .foswikiPageForm h5 a, .foswikiPageForm h6 a,
 .foswikiFormSteps h3, .foswikiFormSteps h4, .foswikiFormSteps h5, .foswikiFormSteps h6,
 .foswikiFormSteps h3 a, .foswikiFormSteps h4 a, .foswikiFormSteps h5 a, .foswikiFormSteps h6 a {
-  color:#1A7FE2;
+  color:#2375C5;
 }
 .foswikiAlt h2,
 .foswikiAlt h3,
@@ -161,7 +170,7 @@ h2.marked,
 .natPageCacheBanner a,
 .natBottomBarContents,
 .natBottomBarContents a {
-  color:#777;
+  color:#666;
 }
 
 input[type=search],

@@ -445,7 +445,6 @@ a.jqButton:link {
 .natWebMenu li a:hover,
 .natWebMenu li .foswikiCurrentWebHomeLink,
 .natWebMenu li .foswikiCurrentTopicLink {
-  background-color:#1A7FE2;
   color:#fff;
   border-radius:0;
   border-color:transparent;
@@ -523,7 +522,6 @@ a.jqButton:link {
 .natSideBar h2,
 .natSideBar h2 a {
   display:block;
-  color: #1A7FE2;
   font-weight:bold;
 }
 .natSideBar h2.webLink,
