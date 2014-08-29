@@ -2,7 +2,7 @@
 
    blue: #3D8FE0, #2375C5
    orange: #FF9100
-   green: #52AF00
+   green: #52AF00, #339000
    magenta: #FF45B1 / #ED299C
 
 */
@@ -22,6 +22,11 @@ h1 {
 }
 h2, h3, h4, h5, h6,
 h2 a, h3 a, h4 a, h5 a, h6 a {
+  color:#339000;
+  color:#2375C5;
+}
+.natTopPanel h3,
+.natBottomBar h3 {
   color:#339000;
 }
 .solrSearchHits h3 a {
@@ -77,6 +82,7 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
 .natSideBar h2,
 .natSideBar h2 a {
   color: #2375C5;
+  color:#339000;
 }
 
 .natSideBar li a:hover {

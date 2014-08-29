@@ -1,4 +1,4 @@
-Foswiki::Contrib::CopyContrib,>=1.0,perl,Required.
+Foswiki::Contrib::CopyContrib,>=2.0,perl,Required.
 Foswiki::Contrib::FamFamFamContrib,>=2075,perl,Required.
 Foswiki::Plugins::AutoTemplatePlugin,>=2.01,perl,Required
 Foswiki::Plugins::BreadCrumbsPlugin,>=4318,perl,Required

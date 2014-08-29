@@ -73,6 +73,7 @@ the templates by using the !NatSkin as a parent skin to create template modifica
 |  Base Name: | nat |
 |  Screenshot: | <div style="overflow:hidden;height:200px"><a href="%PUBURLPATH%/%WEB%/NatSkin/BlueNoteStyle.jpeg"><img src="%PUBURLPATH%/%WEB%/NatSkin/BlueNoteStyle.jpeg" title="JazzyNoteTheme"/></a></div> |
 |  Change&nbsp;History: | <!-- specify latest version first -->&nbsp; |
+|  29 Aug 2013: | third beta |
 |  12 Dec 2013: | second beta |
 |  14 Mar 2013: | first beta of new release |
 |  25 Jun 2003: | Initial version |

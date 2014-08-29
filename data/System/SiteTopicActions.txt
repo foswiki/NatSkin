@@ -15,14 +15,15 @@ Default site-level configuration for the !WebTopicActions !WebComponent
    * $action(editsettings)
    * $action(editform)
    * $action(copytopic)
+   * <hr />
    * $action(diff)
    * $action(restore)
+   * $action(history)
    * <hr />
    * $action(raw)
-   * $action(history)
+   * $action(print)
    * $action(backlinks)
    * $action(childtopics)
-   * $action(print)
    * $action(pdf, can_generate_pdf)
    * <hr />
    * $action(subscribe)

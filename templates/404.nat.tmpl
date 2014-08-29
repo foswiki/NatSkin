@@ -30,12 +30,14 @@
 <!-- -->%TMPL:END%
 
 %TMPL:DEF{"actions"}%<!-- -->
+<p>
 <table class='foswikiLayoutTable'>
 %TMPL:P{"search::action"}%<!-- -->
 %TMPL:P{"index::action"}%<!-- -->
 %TMPL:P{context="authenticated" then="create::action"}%<!-- -->
 %TMPL:P{"restart::action"}%<!-- -->
 </table>
+</p>
 <!-- -->%TMPL:END%
 
 %TMPL:DEF{"search::action"}%<tr>

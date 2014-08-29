@@ -3,7 +3,7 @@
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%<!-- -->
 %TMPL:DEF{"form"}%%TMPL:END%
-%TMPL:DEF{"revinfo"}%%TMPL:END%
+%TMPL:DEF{"fixRevisionPosition"}%'NatSkin.fixRevisionPosition': false,%TMPL:END%
 %TMPL:DEF{"userinfo::photo::size"}%120x150^%TMPL:END%
 %TMPL:DEF{"beforetext"}%%TMPL:P{"userinfo"}%%TMPL:END%
 %{</verbatim>}%
@@ -38,40 +38,55 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"userinfo::details"}%<div class="foswikiPageForm foswikiGrid">
-<div class="foswikiRow">
-<div class="foswikiCol6">
-<h2>%MAKETEXT{"Person"}%</h2>
+%TMPL:DEF{"userinfo::details"}%<div class="foswikiGrid">
+<div class="foswikiRow jqSameHeight">
+<div class="foswikiCol6 border">
 %RENDERFORDISPLAY{
   topic="%BASEWEB%.%BASETOPIC%"
   revision="%URLPARAM{"rev"}%"
-  fields="OrganisationName, OrganisationURL, Profession, HomePage"
+  fields="OrganisationName, Address, Location, Country"
   hideempty="on"
-  header="<table class='foswikiLayoutTable'>"
-  footer="</table>"
-  format="<tr> <th>$title:</th> <td> $value </td> </tr>$n"
+  format="<b>$title:</b> $value <br />"
+  separator="$n"
+  OrganisationName_format="<b>%MAKETEXT{"Organisation"}%:</b> <a href='%FORMFIELD{"OrganisationURL" rev="%URLPARAM{"rev"}%"}%'>$value</a><br/>"
+  HomePage_title="%MAKETEXT{"Homepage"}%"
+  Address_title="%MAKETEXT{"Address"}%"
+  Location_title="%MAKETEXT{"Location"}%"
+  Country_title="%MAKETEXT{"Country"}%"
 }%
 </div>
-<div class="foswikiCol6">
-<h2>%MAKETEXT{"Contact"}%</h2>
+<div class="foswikiCol6 border">
 %RENDERFORDISPLAY{
   topic="%BASEWEB%.%BASETOPIC%"
   revision="%URLPARAM{"rev"}%"
-  exclude="FirstName|LastName|OrganisationName|OrganisationURL|Profession|HomePage|Comment"
+  exclude="FirstName|LastName|OrganisationName|OrganisationURL|Profession|HomePage|Comment|Location|Address|Country|State"
   hideempty="on"
-  header="<table class='foswikiLayoutTable'>"
-  footer="</table>"
-  format="<tr> <th>$title:</th> <td> $value </td> </tr>$n"
+  format="<b>$title:</b> $value <br />"
+  separator="$n"
+  Telephone_title="%MAKETEXT{"Tel"}%"
+  Email_value="%FORMFIELD{"Email" rev="%URLPARAM{"rev"}%" default="%USERINFO{"%BASETOPIC%" format="$emails"}%"}%"
 }%
 </div>
 </div>
-%IF{"'%WEB%.%TOPIC%'/Comment"
-  then="<div class='foswikiRow'><div class='foswikiCol12'>
-<h2>%MAKETEXT{"Comment"}%</h2> 
-$percntFORMFIELD{\"Comment\"}$percnt
-    </div></div>"
-}%<!-- -->
-</div>%TMPL:END%
+</div>
+<literal>
+<style> 
+.foswikiProfileInfo { 
+  margin-bottom:1.5em; 
+  position:relative; 
+  padding-left:140px; 
+  min-height:160px; 
+} 
+.foswikiProfileInfo .imagePlain { 
+  position:absolute; 
+  max-width:140px; 
+  top:0; 
+  left:0; 
+} 
+</style>
+</literal>
+</div>
+%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
@@ -157,6 +172,3 @@ $percntFORMFIELD{\"Comment\"}$percnt
    }$percnt"
 }%%TMPL:END%
 %{</verbatim>}%
-
-%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
-%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

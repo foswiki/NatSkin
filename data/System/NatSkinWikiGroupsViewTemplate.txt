@@ -198,12 +198,15 @@ jQuery(function($) {
 %FORMATLIST{"%GROUPINFO{"%group%" format="$wikiname" separator=", " expand="0"}%"
   header="<ol>"
   footer="</ol>"
-  format="<li>$percntIF{\"istopic '%USERSWEB%.$1'\" then=\"[[%USERSWEB%.$1]]\" else=\"<nop>$1\"}$percnt</li>" 
+  format="<li>$percntIF{\"istopic '%USERSWEB%.$1'\"
+      then=\"[[%USERSWEB%.$1]]\"
+      else=\"$percntIF{\"'$percntUSERINFO{\"$1\" format=\"$isgroup\"}$percnt'='true'\"
+          then=\"<a href='%SCRIPTURLPATH{"view"}%/%USERSWEB%/WikiGroups?group=$1'>$1</a> (%MAKETEXT{"group"}%)\"
+          else=\"[[$1]]\"
+        }$percnt\"
+    }$percnt</li>"
   separator="$n"
   expand="0"
   sort="on"
 }%%TMPL:END%
 %{</verbatim>}%
-
-%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
-%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

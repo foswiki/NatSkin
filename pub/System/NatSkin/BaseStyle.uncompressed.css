@@ -344,7 +344,6 @@ ul.foswikiTickBullets,
   background-position:1.3846em; /* 18px */
 } 
 
-.foswikiGrid .foswikiNoBullets li,
 .foswikiGrid .foswikiOrangeBullets li,
 .foswikiGrid .foswikiBlueBullets li,
 .foswikiGrid .foswikiBlackBullets li,
@@ -358,6 +357,10 @@ ul.foswikiTickBullets,
 .foswikiGrid .foswikiTickBullets li {
   padding-left:1.3846em; /* 18px */
   background-position:0 2px;
+}
+.foswikiGrid .foswikiNoBullets li {
+  padding-left:0;
+  text-indent:0;
 }
 
 
@@ -1763,7 +1766,7 @@ a.natScrollTop {
   -webkit-border-radius: 25%;
      -moz-border-radius: 25%;
           border-radius: 25%;
-  line-height:57px;
+  line-height:50px;
   width:50px;
   height:50px;
   opacity:0.9;

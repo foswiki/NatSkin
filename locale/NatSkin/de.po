@@ -614,7 +614,7 @@ msgstr ""
 
 #: templates/newtopic.nat.tmpl:3 templates/newtopic.nat.tmpl:4
 msgid "Create a new topic"
-msgstr "Neues FAQ-Topic anlegen"
+msgstr "Neues Topic anlegen"
 
 #: templates/foswiki.nat.tmpl:147 templates/newtopic.nat.tmpl:5
 msgid "Create a new topic in the %1 web"
@@ -1954,7 +1954,7 @@ msgstr "Sprache ausw&&auml;hlen"
 msgid "Select one or more existing tags to be renamed."
 msgstr ""
 "Eine oder mehrere Schl&&uuml;sselworte ausw&&auml;hlen, die &&uuml;"
-"bers&&auml;tzt werden sollen"
+"bersetzt werden sollen"
 
 #: templates/renamesidebar.nat.tmpl:14
 msgid "Select the [[%1.WebHome][%1]] web to delete the topic."
