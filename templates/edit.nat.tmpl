@@ -14,6 +14,7 @@
 %TMPL:DEF{"meta"}% %HTTP_EQUIV_ON_EDIT% %TMPL:END%
 %TMPL:DEF{"titleaction"}%%IF{"defined 'rev'" then="%MAKETEXT{"restore"}%" else="%MAKETEXT{"edit"}%"}%%TMPL:END%
 %TMPL:DEF{"contentheader"}%%TMPL:END%
+%TMPL:DEF{"tabs"}%%TMPL:P{"firsttab"}%%TMPL:P{"formfields"}%%TMPL:P{"settingstab"}%%TMPL:P{"permissionstab"}%%TMPL:P{"helptab"}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"supportedlanguages::default"}%
@@ -39,33 +40,43 @@
 %LANGUAGES{format="$label$percntIF{\"'$label'!='$name'\" then=\" - $name\"}$percnt=$code" separator=";" sort="label"}%
 %TMPL:END%
 
-%TMPL:DEF{"moretopicsettings"}%<!-- -->
-  <tr>
-    <th>%MAKETEXT{"Content language"}%</th>
-    <td>
-      <input type='hidden' name='Default+CONTENT_LANGUAGE' value='undefined' />
-      <select name="Local+CONTENT_LANGUAGE" class="foswikiSelect">
-        <option value="undefined">%MAKETEXT{"default"}%</option>
-        %FORMATLIST{
-          "%TMPL:P{context="MultiLingualPluginEnabled" then="supportedlanguages::multiling" else="supportedlanguages::default"}%"
-          split="\s*;\s*"
-          pattern="(.*)=(.*)"
-          separator="$n"
-          format="<option value='$2' $percntIF{\"preferences[name='CONTENT_LANGUAGE'].value='$2'\" then=\"selected\"}$percnt>$1</option>"
-        }%
-      </select>
-    </td>
-  </tr>
-<!-- -->%TMPL:END%
-
-%TMPL:DEF{"moresettings"}%<!-- -->
-%TMPL:P{"skinsettings"}%<!-- -->
-%TMPL:P{"showonscreen"}%<!-- -->
-%TMPL:P{"commentsettings"}%<!-- -->
-<!-- -->%TMPL:END%
+%{ ################################################################################ }%
+%TMPL:DEF{"settingstab"}%%TAB{"%MAKETEXT{"Settings"}%" id="settings"}%%TMPL:P{"settings"}%%ENDTAB%%TMPL:END%
+%TMPL:DEF{"settings"}%%TMPL:P{"topicsettings"}%%TMPL:P{"skinsettings"}%%TMPL:P{"displaysettings"}%%TMPL:P{"commentsettings"}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"showonscreen"}%<!-- -->
+%TMPL:DEF{"topicsettings"}%<h2>%MAKETEXT{"Topic settings"}%</h2>
+<div class="foswikiFormSteps">
+  <div class="foswikiFormStep">
+    <table class="foswikiLayoutTable">
+      <tr>
+        <th>%MAKETEXT{"Parent topic"}%</th>
+        <td>
+          <input class="foswikiInputField jqUIAutocomplete" autocomplete="%SCRIPTURL{"view"}%/%SYSTEMWEB%/JQueryAjaxHelper?section=topic&contenttype=application/json&skin=text&baseweb=%BASEWEB%" type="text" name="topicparent" id="topicparent" size="40" value="%TOPICPARENT%"  />
+        </td>
+      </tr>
+      <tr>
+        <th>%MAKETEXT{"Content language"}%</th>
+        <td>
+          <input type='hidden' name='Default+CONTENT_LANGUAGE' value='undefined' />
+          <select name="Local+CONTENT_LANGUAGE" class="foswikiSelect">
+            <option value="undefined">%MAKETEXT{"default"}%</option>
+            %FORMATLIST{
+              "%TMPL:P{context="MultiLingualPluginEnabled" then="supportedlanguages::multiling" else="supportedlanguages::default"}%"
+              split="\s*;\s*"
+              pattern="(.*)=(.*)"
+              separator="$n"
+              format="<option value='$2' $percntIF{\"preferences[name='CONTENT_LANGUAGE'].value='$2'\" then=\"selected\"}$percnt>$1</option>"
+            }%
+          </select>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"displaysettings"}%<!-- -->
 <h2>%MAKETEXT{"Display settings"}%</h2>
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep">

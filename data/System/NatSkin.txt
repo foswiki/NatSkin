@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1370432671" format="1.1" reprev="5" version="7"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1409560855" format="1.1" version="1"}%
 ---+!! [[%TOPIC%][The Natural Skin]]
 
 !NatSkin improves your Foswiki experience by bringing together some of the most useful
@@ -80,4 +80,4 @@ the templates by using the !NatSkin as a parent skin to create template modifica
 |  Home: | Foswiki:Extensions/NatSkin |
 |  Support: | Foswiki:Support/NatSkin |
 
-%META:FILEATTACHMENT{name="BlueNoteStyle.jpeg" attachment="BlueNoteStyle.jpeg" attr="h" comment="" date="1225905266" path="BlueNoteStyle.jpeg" size="42093" stream="IO::File=GLOB(0x8f2567c)" tmpFilename="/var/tmp/CGItemp41158" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="BlueNoteStyle.jpeg" attachment="BlueNoteStyle.jpeg" attr="h" comment="" date="1409560855" path="BlueNoteStyle.jpeg" size="42093" stream="IO::File=GLOB(0x8f2567c)" tmpFilename="/var/tmp/CGItemp41158" user="ProjectContributor" version="1"}%
