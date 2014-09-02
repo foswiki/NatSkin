@@ -12,7 +12,7 @@
  */
 
 (function($) {
-  "use strict";
+"use strict";
 
   var defaults = {
       length: 10,

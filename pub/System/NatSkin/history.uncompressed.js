@@ -3,7 +3,7 @@
 /* updates the radio buttons in a way to prevent illegal selections */
 
 jQuery(function($) {
-  "use strict";
+"use strict";
 
   $(".natHistoryTable").livequery(function() {
     var $this = $(this);

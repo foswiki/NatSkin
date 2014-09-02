@@ -1,7 +1,7 @@
 // (c)opyright 2006-2014 Michael Daum http://michaeldaumconsulting.com
 
 (function($) {
-  "use strict";
+"use strict";
 
   var emoas;
   $.wremo = {

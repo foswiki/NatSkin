@@ -1,7 +1,7 @@
 // (c)opyright 2006-2014 Michael Daum http://michaeldaumconsulting.com
 
 (function($) {
-  "use strict";
+"use strict";
 
   /**************************************************************************
    * custom ease-in-out 
@@ -72,6 +72,20 @@
       }
     });
   }
+
+  /**************************************************************************
+   * add behavior to top panel
+   * 
+   */
+  function initTopPanel() {
+
+    $(".natPanelToggle a").click(function() {
+      var $toggle = $(this);
+      $toggle.toggleClass("active");
+      $(".natTopPanel").slideToggle(200, "shagga");
+      return false;
+    });
+  };
 
   /**************************************************************************
    * add behavior to various topic actions
@@ -326,6 +340,7 @@
       initExternalLinks();
     }
 
+    initTopPanel();
     initTopicActions();
     initScrollToTop();
     initResponsiveNavi();

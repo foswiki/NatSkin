@@ -9,6 +9,7 @@
 %TMPL:DEF{"breadcrumbs_container"}%<div class='natBreadCrumbs'> %TMPL:P{"breadcrumbs::title"}% %TMPL:P{"breadcrumbs"}%</div>
 %TMPL:DEF{"contentheader"}%%TMPL:P{"breadcrumbs_container"}%%TMPL:END%
 %TMPL:DEF{"webmenu"}%<div class="natWebMenu clearfix">
+  %TMPL:P{"searchbox"}%<!-- -->
   <div class="natWebMenuContents"> 
   %WEBCOMPONENT{"Menu"}% <!-- -->
   </div>
@@ -49,7 +50,7 @@
 </div>%TMPL:END%
 
 %{ body contents ----------------------------------------------------------- }%
-%TMPL:DEF{"beforebodycontents"}%%TMPL:P{"browsersupport"}%%TMPL:P{"broadcast"}%%TMPL:END%
+%TMPL:DEF{"beforebodycontents"}%%TMPL:P{"browsersupport"}%%TMPL:P{"broadcast"}%%TMPL:P{"toppanel"}%%TMPL:END%
 
 %TMPL:DEF{"bodycontents"}%<div class="natBodyContents" id="PageTop">
 %TMPL:P{"topbar"}%<!-- -->

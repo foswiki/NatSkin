@@ -1,7 +1,7 @@
 // (c)opyright 2008-2014 Michael Daum http://michaeldaumconsulting.com
 
 jQuery(function($) {
-  "use strict";
+"use strict";
 
   var $form = $("form[name='rename']");
 

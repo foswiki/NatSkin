@@ -1,8 +1,7 @@
 TARGET= \
   customato.css \
   customato-base.css \
-  customato-colors.css \
-  customato.js
+  customato-colors.css 
 
 -include ../NatSkin/Makefile.include
 

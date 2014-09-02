@@ -1,7 +1,7 @@
 // (c)opyright 2006-2014 Michael Daum http://michaeldaumconsulting.com
 
 jQuery(function($) {
-  "use strict";
+"use strict";
 
   var $loginForm = $("#LoginForm");
   $loginForm.validate();
