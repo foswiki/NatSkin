@@ -47,10 +47,7 @@ pub/System/CustomatoTheme/customato-colors.css.gz 0644
 pub/System/CustomatoTheme/customato-colors.uncompressed.css 0644
 pub/System/CustomatoTheme/customato.css 0644
 pub/System/CustomatoTheme/customato.css.gz 0644
-pub/System/CustomatoTheme/customato.js 0644
-pub/System/CustomatoTheme/customato.js.gz 0644
 pub/System/CustomatoTheme/customato.uncompressed.css 0644
-pub/System/CustomatoTheme/customato.uncompressed.js 0644
 pub/System/CustomatoTheme/foswiki-logo.png 0644
 pub/System/CustomatoTheme/Makefile 0644
 pub/System/JazzyNoteTheme/button-bg.png 0644
@@ -208,7 +205,7 @@ templates/attachtables.nat.tmpl 0644
 templates/backlinksallwebs.nat.tmpl 0644
 templates/backlinks.nat.tmpl 0644
 templates/backlinksweb.nat.tmpl 0644
-templates/body.customato.nat.tmpl 0644
+templates/body.jazzynote.nat.tmpl 0644
 templates/body.nat.tmpl 0644
 templates/body.plain.nat.tmpl 0644
 templates/changeform.nat.tmpl 0644
@@ -223,11 +220,9 @@ templates/edittext.nat.tmpl 0644
 templates/edittoolbar.nat.tmpl 0644
 templates/form.nat.tmpl 0644
 templates/formtables.nat.tmpl 0644
-templates/foswiki.customato.nat.tmpl 0644
-templates/foswiki.jazzynote.tmpl 0644
+templates/foswiki.jazzynote.nat.tmpl 0644
 templates/foswiki.nat.tmpl 0644
 templates/history.nat.tmpl 0644
-templates/javascript.customato.nat.tmpl 0644
 templates/javascript.nat.tmpl 0644
 templates/kinosearch.nat.tmpl 0644
 templates/languageselector.nat.tmpl 0644
