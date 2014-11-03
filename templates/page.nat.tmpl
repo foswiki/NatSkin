@@ -1,6 +1,6 @@
 %TMPL:P{"page"}%<!-- template: page.nat.tmpl -->
 %TMPL:DEF{"page"}%<!DOCTYPE html>
-<html class="natHtml" lang="%CONTENT_LANGUAGE{default="%DEFAULTLANGUAGE{default="%LANG%"}%"}%">
+<html class="natHtml" lang="%CONTENT_LANGUAGE{default="%DEFAULTLANGUAGE{default="%LANG%"}%"}%" %TMPL:P{"ngapp"}% %TMPL:P{"ngcontroller"}%>
 %TMPL:P{"head"}%
 %TMPL:P{"body"}%
 </html>
@@ -8,7 +8,7 @@
 
 %TMPL:DEF{"head"}%<head profile="http://a9.com/-/spec/opensearch/1.1/">
 <meta charset="%CHARSET%" />
-<title>%TMPL:P{"title"}%</title>
+%TMPL:P{"pagetitle"}%
 %TMPL:P{"favicon"}%<!-- -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
 <meta name="mobile-web-app-capable" content="yes" />

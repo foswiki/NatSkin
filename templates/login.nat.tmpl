@@ -20,7 +20,7 @@
   "script"
   requires="JQUERYPLUGIN::FOSWIKI::PREFERENCES"
   id="NATSKIN::LOGIN::OPTS"
-  text="<script>jQuery.extend(foswiki.preferences, { 'NatSkin.loginFailed': true });</script>"
+  text="<script type='text/javascript'>jQuery.extend(foswiki.preferences, { 'NatSkin.loginFailed': true });</script>"
 }%%TMPL:END%
 
 %{################################################################################ }%
@@ -53,7 +53,10 @@
 %TMPL:DEF{"seealso"}%<!-- -->
 
 <div class="foswikiFormStep">
-[[%SYSTEMWEB%.ResetPassword][%MAKETEXT{"Did you forget your password?"}%]] %BR%
+%IF{"context passwords_modifyable"
+  then="[[%SYSTEMWEB%.ResetPassword][%MAKETEXT{"Did you forget your password?"}%]] %BR%"
+  else="<!-- passwords not modifiable -->"
+}%
 %IF{"context registration_enabled" 
   then="[[%SYSTEMWEB%.UserRegistration][%MAKETEXT{"Do you want to become a registered user?"}%]]"
   else="<!-- registration disabled -->"

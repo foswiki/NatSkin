@@ -21,22 +21,41 @@
    */
   function fixRevisionPosition() {
 
-    var target = $(".natMainContents h1:first");
-    if (target.length) { 
-      $(".foswikiRevision").remove().insertAfter(target);
-    }
+    $(".natMainContents h1:first:not(.h1Inited)").livequery(function() {
+      $(".natMainFooterContents .foswikiRevision").remove().insertAfter(this);
+      $(this).addClass("h1Inited");
+    });
   }
 
   /**************************************************************************
    * init horizontal navigation
    */
   function initWebMenu() {
-    $(".natWebMenu").each(function() {
+    $(".natWebMenu").livequery(function() {
       var $this = $(this), 
           opts = $this.data(),
           topElems, count, width, elemWidth, lastWidth;
 
-      $this.find(".natWebMenuContents > ul").superfish({
+      /* stretch top navi evenly based on the number of top elems */
+      if ($this.is(".natWebMenuStretch")) {
+        topElems = $this.find(".natWebMenuContents > ul > li");
+        count = topElems.length;
+        width = 100 - (count-1) * (opts.margin||0);
+        elemWidth =  width / count;
+        lastWidth = width - elemWidth * (count-1);
+
+        elemWidth = elemWidth+"%";
+        lastWidth = lastWidth+"%";
+        //console.log("count=",count,"width=",width,"elemWidth=",elemWidth,"lastWidth=",lastWidth);
+
+        topElems.outerWidth(elemWidth).last().outerWidth(lastWidth);
+      }
+    });
+
+    $(".natWebMenuContents > ul").livequery(function() {
+      var $this = $(this);
+
+      $this.superfish({
         dropShadows: false, 
         cssArrows: false,
         speed:200,
@@ -56,20 +75,6 @@
       .find("li:has(ul)").addClass("hasSubMenu")
       .find("li:has(.ajaxMenu)").addClass("hasAjaxMenu");
 
-      /* stretch top navi evenly based on the number of top elems */
-      if ($this.is(".natWebMenuStretch")) {
-        topElems = $this.find(".natWebMenuContents > ul > li");
-        count = topElems.length;
-        width = 100 - (count-1) * (opts.margin||0);
-        elemWidth =  width / count;
-        lastWidth = width - elemWidth * (count-1);
-
-        elemWidth = elemWidth+"%";
-        lastWidth = lastWidth+"%";
-        //console.log("count=",count,"width=",width,"elemWidth=",elemWidth,"lastWidth=",lastWidth);
-
-        topElems.outerWidth(elemWidth).last().outerWidth(lastWidth);
-      }
     });
   }
 
@@ -79,7 +84,7 @@
    */
   function initTopPanel() {
 
-    $(".natPanelToggle a").click(function() {
+    $(document).on("click", ".natPanelToggle a", function() {
       var $toggle = $(this);
       $toggle.toggleClass("active");
       $(".natTopPanel").slideToggle(200, "shagga");
@@ -94,13 +99,13 @@
   function initTopicActions() {
 
     /* add edit topic prefs behavior */
-    $("a.natEditSettingsAction").on("click", function() {
+    $(document).on("click", "a.natEditSettingsAction", function() {
       $("#editSettingsForm").submit();    
       return false;
     });
 
     /* fix topic actions menu */
-    $(".natMoreActionsMenu:first").each(function() {
+    $(".natMoreActionsMenu:first").livequery(function() {
       // hide hr if all prev list items are disabled
       // ... or all following list items are disabled
       $(this).find("hr").parent().each(function() {
@@ -137,16 +142,14 @@
    */
   function initBusyIndicator() {
 
-    var busyIndicator = $("<div class='natBusy' />").appendTo("body");
-
     $(document).ajaxSend(function() {
       if ($(".blockUI").length === 0) { // don't show when a blockUI is active
-        busyIndicator.show();
+        $(".natBusy").show();
       }
     });
 
     $(document).ajaxComplete(function() {
-      busyIndicator.hide();
+      $(".natBusy").hide();
     });
   }
 
@@ -166,7 +169,7 @@
    * init the autosuggestion feature on the search field
    */
   function initSearchBox() {
-    $("#searchbox").each(function() {
+    $("#searchbox").livequery(function() {
       var $form = $(this),
           $input = $form.find("input[type=text]"),
           submitButton = $form.find("input[type=submit]");
@@ -257,7 +260,7 @@
    */
   function initBroadcastMessage() {
 
-    $(".foswikiBroadcastMessage").each(function() {
+    $(".foswikiBroadcastMessage").livequery(function() {
       var $this = $(this), 
           cookieName = "broadcastMessage_counter",
           counter = $.cookie(cookieName) || 0;
@@ -302,7 +305,9 @@
    * note: you will have to enable {NatSkin}{DetectExternalLinks}
    */
   function initExternalLinks() {
-    $(".natMainContents .natExternalLink").attr("target", "_blank");
+    $(".natMainContents .natExternalLink").livequery(function() {
+      $(this).attr("target", "_blank");
+    });
   }
 
   /**************************************************************************
@@ -316,9 +321,11 @@
       initWebMenu();
     }
 
+/*
     if (foswiki.getPreference("NatSkin.fixRevisionPosition")) {
       fixRevisionPosition();
     }
+*/
 
     if (foswiki.getPreference("NatSkin.initBusyIndicator")) {
       initBusyIndicator();
@@ -341,7 +348,7 @@
     }
 
     initTopPanel();
-    initTopicActions();
+    initTopicActions(); 
     initScrollToTop();
     initResponsiveNavi();
     initBroadcastMessage();

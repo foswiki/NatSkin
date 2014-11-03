@@ -44,8 +44,8 @@ Definition of site wide horizontal menu
     <li>[[%SYSTEMWEB%.ReferenceManual][%JQICON{"book_open"}% %MAKETEXT{"Reference manual"}%]]</li>
     <li>[[%SYSTEMWEB%.InstalledPlugins][%JQICON{"plugin"}% %MAKETEXT{"Installed plugins"}%]]</li>
     <li><hr /></li>
-    <li>[[Sandbox.%HOMETOPIC%][%JQICON{"briefcase"}% %MAKETEXT{"Sandbox"}%]]</li>
-    <li>[[%SYSTEMWEB%.ResetPassword][%JQICON{"key"}% %MAKETEXT{"Password forgotten"}%]]</li>
+    <li>[[Sandbox.%HOMETOPIC%][%JQICON{"briefcase"}% %MAKETEXT{"Sandbox"}%]]</li>%IF{"context passwords_modifyable" then="
+    <li>[[%SYSTEMWEB%.ResetPassword][%JQICON{"key"}% %MAKETEXT{"Password forgotten"}%]]</li>"}%
     <li><hr /></li>
     <li>[[http://foswiki.org/Support][%JQICON{"user_comment"}% %MAKETEXT{"Online support forum"}%]]</li>
     <li>[[http://foswiki.org/Support/FAQ][%JQICON{"help"}% %MAKETEXT{"Foswiki FAQ"}%]]</li>

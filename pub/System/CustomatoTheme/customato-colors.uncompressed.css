@@ -257,8 +257,12 @@ pre {
 
 .jqTextboxListValue {
   background-color:#f4f4f4;
+  background-color:#f7f7f7;
   border:1px solid #cfcfcf;
   border-radius:4px;
+  -webkit-box-shadow: 0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05);
+  -moz-box-shadow   : 0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05);
+  box-shadow        : 0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05);
 }
 
 .natBottomBar {

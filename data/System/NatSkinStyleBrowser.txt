@@ -63,7 +63,7 @@ in. If you select different style options they have precedence over those.
 <!-- -->%STOPINCLUDE%
 <verbatim style="display:none">
 %STARTSECTION{"javascript"}%<literal>
-<style>
+<style class='$id'>
 .natSkinStyleBrowser ul {
   list-style:none;
   margin:1em 0;

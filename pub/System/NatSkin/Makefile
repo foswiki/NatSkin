@@ -7,7 +7,8 @@ TARGET= \
   print.css \
   rename.js \
   password.js \
-  subscribe.js
+  subscribe.js \
+  angular.js
 
 -include Makefile.include
 

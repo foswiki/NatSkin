@@ -2,16 +2,16 @@
 %{ backwards compatibility }%
 %TMPL:DEF{twisty:header}%
 %ADDTOZONE{"head"
-  tag="TWISTYPLUGIN"
-  text="<link rel='stylesheet' href='%PUBURLPATH%/%SYSTEMWEB%/TwistyPlugin/twisty.jquery.css' type='text/css' media='all' />"
+  id="TWISTYPLUGIN"
+  text="<link class='$id' rel='stylesheet' href='%PUBURLPATH%/%SYSTEMWEB%/TwistyPlugin/twisty.jquery.css' type='text/css' media='all' />"
 }%
 %ADDTOZONE{"script"
-  tag="JavascriptFiles/foswikiPref"
-  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/JavascriptFiles/foswikiPref.js'></script>"
+  id="JavascriptFiles/foswikiPref"
+  text="<script class='$id' src='%PUBURLPATH%/%SYSTEMWEB%/JavascriptFiles/foswikiPref.js'></script>"
 }%
 %ADDTOZONE{"script"
-  tag="TWISTYPLUGIN"
+  id="TWISTYPLUGIN"
   requires="JavascriptFiles/foswikiPref,JQUERYPLUGIN::FOSWIKI"
-  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/TwistyPlugin/twisty.jquery.js'></script>"
+  text="<script class='$id' src='%PUBURLPATH%/%SYSTEMWEB%/TwistyPlugin/twisty.jquery.js'></script>"
 }%
 %TMPL:END%

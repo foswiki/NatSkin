@@ -5,7 +5,7 @@
 %TMPL:DEF{"searchbox"}%%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
 %TMPL:DEF{"langswitcher"}%%TMPL:END%
-%TMPL:DEF{"bottombar_container"}%%TMPL:END%
+%TMPL:DEF{"bottombar"}%%TMPL:END%
 %TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=translatetopic">%MAKETEXT{"Translate"}%</a>%TMPL:END%
 
 %{#################################################################}%
@@ -137,7 +137,7 @@
 %{#################################################################}%
 %TMPL:DEF{"translate::javascript"}%<!-- -->
 %JQREQUIRE{"wikiword"}%%ADDTOZONE{"script" requires="JQUERYPLUGIN::WIKIWORD" id="translate" text="<literal>
-<script>
+<script class='$id' type='text/javascript'>
 jQuery(function($) {
   'use strict';
 

@@ -3,20 +3,22 @@
 %TMPL:DEF{"body"}%<body id="body" class="foswikiNoJs %TMPL:P{"defaultbodyclass"}% %IF{"'%USERINFO{format="$isadmin"}%'='true'" then="natIsAdminBody"}%%IF{"defined 'NATSKIN_FLUIDFONT' and '%SCRIPTNAME%'!='edit'" then="jqFluidFont {%NATSKIN_FLUIDFONT%} "}%%IF{"context authenticated" then="natBodyAuthenticated " else="natBodyNotAuthenticated "}%%IF{"context 'natskin_sidebar_left'" then="natBodyLeft "}%%IF{"context 'natskin_sidebar_right'" then="natBodyRight "}%%IF{"context 'natskin_sidebar_both'" then="natBodyBoth "}%%IF{"context 'natskin_sidebar_off'" then="natBodyOff "}%%IF{"context 'natskin_layout_fluid'" then="natBodyFluid "}%%IF{"context 'natskin_layout_fixed'" then="natBodyFixed "}%%IF{"context 'natskin_layout_bordered'" then="natBodyBordered "}%%TMPL:P{"bodyclass"}% natBodyWeb_%WEB% natBodyTopic_%TOPIC%">%TMPL:P{"defaultbody"}%</body>%TMPL:END%
 
 %{ container definitions --------------------------------------------------- }%
-%TMPL:DEF{"contentheader_container"}%<div class="natMainHeaderContents clearfix">%TMPL:P{"contentheader"}%</div>%TMPL:END%
+%TMPL:DEF{"contentheader"}%<div class="natMainHeaderContents clearfix">%TMPL:P{"contentheader::contents"}%</div>%TMPL:END%
 %TMPL:DEF{"content_container"}%<div class="natMainContents" id="natMainContents">%TMPL:P{"content"}%<span id="ContentBottom"></span></div>%TMPL:END%
-%TMPL:DEF{"contentfooter_container"}%<div class="natMainFooterContents">%TMPL:P{"contentfooter"}%</div>%TMPL:END%
-%TMPL:DEF{"breadcrumbs_container"}%<div class='natBreadCrumbs'> %TMPL:P{"breadcrumbs::title"}% %TMPL:P{"breadcrumbs"}%</div>
-%TMPL:DEF{"contentheader"}%%TMPL:P{"breadcrumbs_container"}%%TMPL:END%
+%TMPL:DEF{"contentfooter"}%<div class="natMainFooterContents">%TMPL:P{"contentfooter::contents"}%</div>%TMPL:END%
+%TMPL:DEF{"breadcrumbs"}%<div class='natBreadCrumbs'> %TMPL:P{"breadcrumbs::title"}% %TMPL:P{"breadcrumbs::contents"}%</div>
+%TMPL:DEF{"contentheader::contents"}%%TMPL:P{"breadcrumbs"}%%TMPL:END%
 %TMPL:DEF{"webmenu"}%<div class="natWebMenu clearfix">
-  %TMPL:P{"searchbox"}%<!-- -->
-  <div class="natWebMenuContents"> 
-  %WEBCOMPONENT{"Menu"}% <!-- -->
-  </div>
+%TMPL:P{"webmenu::contents"}%<!-- -->
 </div>%TMPL:END%
 
-%TMPL:DEF{"bottombar_container"}%<div class="natBottomBar"><div class="natBottomBarContents">
-%TMPL:P{"bottombar"}%<!-- -->
+%TMPL:DEF{"webmenu::contents"}%<div class="natWebMenuContents"> 
+  %TMPL:P{"searchbox"}%<!-- -->
+  %WEBCOMPONENT{"Menu"}% <!-- -->
+</div>%TMPL:END%
+
+%TMPL:DEF{"bottombar"}%<div class="natBottomBar"><div class="natBottomBarContents">
+%TMPL:P{"bottombar::contents"}%<!-- -->
 %TMPL:P{"cacheinfo"}%<!-- -->
 </div></div>%TMPL:END%
 
@@ -39,13 +41,15 @@
 
 %{ columns ----------------------------------------------------------------- }%
 %TMPL:DEF{"main"}%<div class="natMiddle">
-<div class="natMiddleContents clearfix">
+%TMPL:P{"main::contents"}%<!-- -->
+</div>%TMPL:END%
+
+%TMPL:DEF{"main::contents"}%<div class="natMiddleContents clearfix">
 %TMPL:P{context="natskin_sidebar_off" else="sidebars"}%<!-- -->
 <div itemscope itemtype="http://schema.org/Article" class="natMain clearfix">
-%TMPL:P{"contentheader_container"}%<!-- -->
+%TMPL:P{"contentheader"}%<!-- -->
 %TMPL:P{"content_container"}%<!-- -->
-%TMPL:P{"contentfooter_container"}%<!-- -->
-</div>
+%TMPL:P{"contentfooter"}%<!-- -->
 </div>
 </div>%TMPL:END%
 
@@ -56,7 +60,7 @@
 %TMPL:P{"topbar"}%<!-- -->
 %TMPL:P{context="natskin_menu_on" then="webmenu"}%<!-- -->
 %TMPL:P{"main"}%
-%TMPL:P{"bottombar_container"}%<!-- -->
+%TMPL:P{"bottombar"}%<!-- -->
 %TMPL:P{"scrolltop"}%<!-- -->
 <span id="PageBottom"></span>
 </div>%TMPL:END%
@@ -64,4 +68,4 @@
 %TMPL:DEF{"afterbodycontents"}%%WEBCOMPONENT{"HtmlBottom"}%%TMPL:END%
 
 %{ assembly stage ---------------------------------------------------------- }%
-%TMPL:DEF{"defaultbody"}%%TMPL:P{"beforebodycontents"}%%TMPL:P{"bodycontents"}%%TMPL:P{"aftercontents"}%%TMPL:END%
+%TMPL:DEF{"defaultbody"}%%TMPL:P{"beforebodycontents"}%%TMPL:P{"bodycontents"}%%TMPL:P{"afterbodycontents"}%%TMPL:END%

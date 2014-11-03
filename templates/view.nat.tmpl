@@ -9,8 +9,8 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"bodyclass"}%natViewBody %IF{"context 'natskin_history_1'" then="natViewHistoryBody"}%%TMPL:END%
-%TMPL:DEF{"bottombar"}%%WEBCOMPONENT{"BottomBar"}%%TMPL:END%
-%TMPL:DEF{"scrolltop"}%<a href="#" class="natScrollTop jqScrollToLink {'target':'0', 'duration':500}" title="%MAKETEXT{"back to the top"}%">%JQICON{"fa-angle-double-up"}%</a>%TMPL:END%
+%TMPL:DEF{"bottombar::contents"}%%WEBCOMPONENT{"BottomBar"}%%TMPL:END%
+%TMPL:DEF{"scrolltop"}%<a class="natScrollTop jqScrollToLink {'target':'0', 'duration':500}" title="%MAKETEXT{"back to the top"}%">%JQICON{"fa-angle-double-up"}%</a>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"meta"}%%TMPL:P{"metagenerator"}%
@@ -65,23 +65,22 @@
 %TMPL:DEF{"text"}%%TEXT%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"contentheader_container"}%<div class="natMainHeaderContents clearfix" %IF{"$'DISPLAYTOPICACTIONS'='off' and $'DISPLAYBREADCRUMBS'='off'" then="style='display:none'"}%>%TMPL:P{"contentheader"}%</div>%TMPL:END%
-%TMPL:DEF{"contentheader"}%<!-- -->
+%TMPL:DEF{"contentheader"}%<div class="natMainHeaderContents clearfix" %IF{"$'DISPLAYTOPICACTIONS'='off' and $'DISPLAYBREADCRUMBS'='off'" then="style='display:none'"}%>%TMPL:P{"contentheader::contents"}%</div>%TMPL:END%
+%TMPL:DEF{"contentheader::contents"}%<!-- -->
 %IF{
   "$'DISPLAYTOPICACTIONS'='off'" 
   else="$percntTMPL:P{\"topicactions\"}$percnt"
 }%<!-- -->
 %IF{
   "$'DISPLAYBREADCRUMBS'='off'" 
-  else="$percntTMPL:P{\"breadcrumbs_container\"}$percnt"
+  else="$percntTMPL:P{\"breadcrumbs\"}$percnt"
 }%<!-- -->
 <!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"contentfooter"}%<!-- -->
+%TMPL:DEF{"contentfooter::contents"}%<!-- -->
 %TMPL:P{"redirectbutton"}%<!-- -->
 %TMPL:P{context="save" else="metadata"}%<!-- -->
-%IF{"$'DISPLAYREVISIONINFO'='off'" else="$percntTMPL:P{\"revinfo\"}$percnt"}%<!-- -->
 %TMPL:P{"editsettingsform"}%<!-- -->
 <!-- -->%TMPL:END%
 
@@ -98,7 +97,7 @@
 </div>%TMPL:END%
 %TMPL:DEF{"rdiff"}%%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPIC%?type=last;render=sequential%TMPL:END%
 %TMPL:DEF{"compare"}%%SCRIPTURLPATH{"compare"}%/%WEB%/%TOPIC%?type=last;render=interweave;context=1%TMPL:END%
-%TMPL:DEF{"broadcast"}%%IF{"not isempty 'BROADCASTMESSAGE'" then="<div class='foswikiWarningMessage foswikiBroadcastMessage'><a href='#' title='%MAKETEXT{"Close broadcast message"}%' class='foswikiBroadcastMessageClose ui-icon ui-icon-closethick'></a> $percntBROADCASTMESSAGE$percnt </div>"}%%TMPL:END%
+%TMPL:DEF{"broadcast"}%%IF{"not isempty 'BROADCASTMESSAGE'" then="<div class='foswikiWarningMessage foswikiBroadcastMessage'><a title='%MAKETEXT{"Close broadcast message"}%' class='foswikiBroadcastMessageClose ui-icon ui-icon-closethick'></a> $percntBROADCASTMESSAGE$percnt </div>"}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"comments"}%%IF{

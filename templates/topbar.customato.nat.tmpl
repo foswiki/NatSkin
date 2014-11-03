@@ -3,8 +3,14 @@
 %{################################################################################ }%
 %TMPL:DEF{"topbar"}%<!-- -->
 %TMPL:P{"langswitcher"}%<!-- -->
-<a href="#" class="natNavToggle fa fa-bars"></a>
+<a class="natNavToggle fa fa-bars"></a>
 <div class="natTopBar clearfix">
+%TMPL:P{"topbar::contents"}%
+</div>
+<!-- -->%TMPL:END%
+
+%{################################################################################ }%
+%TMPL:DEF{"topbar::contents"}%<!-- -->
   <div class="natTopRight">
     <div class="natTopRightContents">
       %TMPL:P{"topbar::navi"}%<!-- -->
@@ -16,7 +22,6 @@
       <div class="natWebTitle">%TMPL:P{"logo"}%</div>
     </div>
   </div>
-</div>
 <!-- -->%TMPL:END%
 
 %{################################################################################ }%
@@ -27,21 +32,25 @@
 
 %{################################################################################ }%
 %TMPL:DEF{"topbar::authenticated"}%<div class='natUserAction natPanelToggle'>
-%JQICON{"user"}% <a href='#'><nop>%GETTOPICTITLE{"%WIKIUSERNAME%"}%</a>
+%JQICON{"user"}% <a><nop>%GETTOPICTITLE{"%WIKIUSERNAME%"}%</a>
 </div>%TMPL:END%
 
 %{################################################################################ }%
 %TMPL:DEF{"topbar::notauthenticated"}%<div class='natUserAction natPanelToggle'>
-%JQICON{"key"}% <a href='#'>Log in</a>
+%JQICON{"key"}% <a>Log in</a>
 </div>%TMPL:END%
 
 %{################################################################################ }%
 %TMPL:DEF{"toppanel"}%<div class="natTopPanel" style="display:none">
-%TMPL:P{context="authenticated" then="toppanel::authenticated" else="toppanel::notauthenticated"}%<!-- -->
+%TMPL:P{"toppanel::contents"}%
 </div>
 <div class="natTopShadow"></div>
 <!-- -->%TMPL:END%
 
+%{################################################################################ }%
+%TMPL:DEF{"toppanel::contents"}%%TMPL:P{context="authenticated" then="toppanel::authenticated" else="toppanel::notauthenticated"}%%TMPL:END%
+
+%{################################################################################ }%
 %TMPL:DEF{"toppanel::bulletsclass"}%foswikiNoBullets%TMPL:END%
 
 %{################################################################################ }%
@@ -86,10 +95,16 @@
     <div class="foswikiCol6">
       <h3 >%MAKETEXT{"Welcome"}%</h3>
       <ul>
-       <li> [[%SYSTEMWEB%.UserRegistration][Register on %WIKITOOLNAME%]] </li>
-       <li> [[%SYSTEMWEB%.ResetPassword][Reset Password]] </li>
-       <li> [[%SYSTEMWEB%.ChangeEmailAddress][Change Email Address]] </li>
-       <li> [[%SYSTEMWEB%.ChangePassword][Change Password]] </li>
+%IF{"context registration_enabled"
+   then="<li> [[%SYSTEMWEB%.UserRegistration][Register on %WIKITOOLNAME%]] </li>"
+   else="<!-- -->"
+}%
+%IF{"context passwords_modifyable"
+   then="<li> [[%SYSTEMWEB%.ResetPassword][Reset Password]] </li>
+         <li> [[%SYSTEMWEB%.ChangeEmailAddress][Change Email Address]] </li>
+         <li> [[%SYSTEMWEB%.ChangePassword][Change Password]] </li>"
+   else="<!-- -->"
+}%
       </ul>
     </div>
     <div class="foswikiCol6 border">
@@ -112,7 +127,7 @@
 %{################################################################################ }%
 %TMPL:DEF{"toppanel::login::start"}%<!-- -->
 <h3 >%MAKETEXT{"Log in"}%</h3>
-<form id="LoginForm" name="LoginForm" action="%SCRIPTURL{"login"}%/%WEB%/%TOPIC%" method="post">
+<form id="LoginForm" name="LoginForm" action="%SCRIPTURLPATH{"login"}%/%WEB%/%TOPIC%" method="post">
   <literal>
     %FORMATLIST{"%QUERYPARAMS{encoding="entity" format="$name;$value"}%"
       split="\n"
@@ -185,8 +200,8 @@
 
 %JQREQUIRE{"validate"}%<!-- -->
 %ADDTOZONE{"script" 
-  tag="NATSKIN::LOGIN"
-  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/login.js'></script>"
+  id="NATSKIN::LOGIN"
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/login.js'></script>"
   requires="JQUERYPLUGIN, JQUERYPLUGIN::VALIDATE"
 }%<!-- -->
 %CLEAR%

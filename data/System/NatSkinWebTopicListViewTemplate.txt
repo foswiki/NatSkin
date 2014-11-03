@@ -14,14 +14,18 @@
 <noautolink>
 %MAKEINDEX{
   "%TOPICLIST{
-    "($percntGETTOPICTITLE{\"$name\" encode=\"encode\"}$percnt);$name"
+    "($percntSUBST{
+        text=\"$percntGETTOPICTITLE{\"$name\" encode=\"entity\"}$percnt\" 
+        pattern=\"(&#\d+;)|[$]\" 
+        format=\"\"
+      }$percnt);$percntGETTOPICTITLE{\"$name\" encode=\"entity\"}$percnt;$name"
     separator="$n"
   }%"
-  pattern="\((.*)\);(.*)"
+  pattern="\((.*)\);(.*);(.*)"
   split="\n"
   cols="%IF{"defined WEBTOPICLIST_COLS" then="%WEBTOPICLIST_COLS%" else="3"}%"
   header="$anchors"
-  format="[[%BASEWEB%.$2][$1]]"
+  format="[[%BASEWEB%.$3][$2]]"
   sort="nocase"
   footer="$n$n$percntMAKETEXT{\"[_1] topics found\" args=\"<span class='foswikiAlert'>$count</span>\"}$percnt"
 }%

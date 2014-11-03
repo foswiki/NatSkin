@@ -8,10 +8,10 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"title"}%%HTMLTITLE{
+%TMPL:DEF{"title"}%<noautolink>%HTMLTITLE{
   separator=" %TMPL:P{"titlesep"}% "
   format="%URLPARAM{"group" default="%TOPIC%"}%$sep$webtitle$wikitoolname"
-}%%TMPL:END%
+}%</noautolink>%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
@@ -147,7 +147,7 @@ jQuery(function($) {
 %ADDTOZONE{"script"
   id="WIKIGROUPS::JAVASCRIPT"
   requires="JQUERYPLUGIN::FORM, JQUERYPLUGIN::BLOCKUI"
-  text="<script>
+  text="<script class='$id'>
 jQuery(function($) {
   $('.editGroupForm').each(function() {
     var $this = $(this);

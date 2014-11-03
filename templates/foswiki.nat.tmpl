@@ -215,17 +215,18 @@
 %TMPL:DEF{"sep"}%<span class='natSep'>&nbsp;&#187; </span>%TMPL:END%
 
 %TMPL:DEF{"breadcrumbs::title"}%<span class='natBreadCrumbsYouAreHere'>%MAKETEXT{"You are here"}%:</span>%TMPL:END%
-%TMPL:DEF{"breadcrumbs"}%%BREADCRUMBS{separator="%TMPL:P{"sep"}%" newtopicformat="<nop>$topic"}%%TMPL:P{"breadcrumbs::tail"}%%TMPL:END%
+%TMPL:DEF{"breadcrumbs::contents"}%%BREADCRUMBS{separator="%TMPL:P{"sep"}%" newtopicformat="<nop>$topic"}%%TMPL:P{"breadcrumbs::tail"}%%TMPL:END%
 
-%TMPL:DEF{"title"}%%HTMLTITLE{
+%TMPL:DEF{"pagetitle"}%<title>%TMPL:P{"title"}%</title>%TMPL:END%
+%TMPL:DEF{"title"}%<noautolink>%HTMLTITLE{
   "$percntIF{
     \"'$topic'!='%HOMETOPIC%' or '$percntENCODE{\"$title\" type=\"safe\"}$percnt'!='$web' or '%TMPL:P{"titleaction"}%'!=''\" 
       then=\"$title$dollarpercntIF{\\"'%TMPL:P{"titleaction"}%'!=''\\" then=\\" (%TMPL:P{"titleaction"}%) \\"}$dollarpercnt$sep\"
   }$percnt$webtitle$wikitoolname"
   separator=" %TMPL:P{"titlesep"}% "
-}%%TMPL:END%
+}%</noautolink>%TMPL:END%
 
-%TMPL:DEF{"titlesep"}%%IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="-"}%%TMPL:END%
+%TMPL:DEF{"titlesep"}%%IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="&#183;"}%%TMPL:END%
 
 %TMPL:DEF{"favicon"}%%TMPL:P{context="msie" then="favicon::msie" else="favicon::default"}%%TMPL:END%
 %TMPL:DEF{"favicon::msie"}%<link rel='shortcut icon' href='%TMPL:P{"favicon::msie::url"}%' />%TMPL:END%
@@ -294,9 +295,9 @@
 }%%TMPL:END%
 
 
-%TMPL:DEF{"LIBJS"}%%ADDTOZONE{
+d%TMPL:DEF{"LIBJS"}%%ADDTOZONE{
  "script"
- tag="%id%"
+ id="%id%"
  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/%id%.js'></script>"
  requires="%requires%"
 }%%TMPL:END%

@@ -81,7 +81,7 @@
 %ADDTOZONE{
   "script"
   id="sidebarform"
-  text="<script>
+  text="<script type='text/javascript'>
     (function($) {
       $(function() {
         $('#sidebarform').validate();

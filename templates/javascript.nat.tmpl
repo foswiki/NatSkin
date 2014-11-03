@@ -3,9 +3,8 @@
 %ADDTOZONE{"script" 
   requires="JQUERYPLUGIN::FOSWIKI::PREFERENCES"
   id="NATSKIN::PREFERENCES"
-  text="<script>
+  text="<script type='text/javascript'>
 jQuery.extend(foswiki.preferences, {
-  %TMPL:P{"fixRevisionPosition"}%
   %TMPL:P{"initWebMenu"}%
   %TMPL:P{"initOverflows"}%
   %TMPL:P{"initSideBar"}%
@@ -22,7 +21,6 @@ jQuery.extend(foswiki.preferences, {
 %RENDERZONE{"skinjs"}%
 <!-- -->%TMPL:END%
 
-%TMPL:DEF{"fixRevisionPosition"}%'NatSkin.fixRevisionPosition': true,%TMPL:END%
 %TMPL:DEF{"initWebMenu"}%'NatSkin.initWebMenu': true,%TMPL:END%
 %TMPL:DEF{"initOverflows"}%'NatSkin.initOverflows': false,%TMPL:END%
 %TMPL:DEF{"initSideBar"}%'NatSkin.initSideBar': false,%TMPL:END%

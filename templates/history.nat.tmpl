@@ -40,11 +40,11 @@
 %TMPL:DEF{"historyjavascript"}%<!-- -->
 %ADDTOZONE{
   "script"
-  tag="NATSKIN::HISTORY"
+  id="NATSKIN::HISTORY"
   text="%TMPL:P{"historyscript"}%"
   requires="JQUERYPLUGIN::LIVEQUERY, JQUERYPLUGIN::BLOCKUI"
 }%%TMPL:END%
-%TMPL:DEF{"historyscript"}%<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/history.js'></script>%TMPL:END%
+%TMPL:DEF{"historyscript"}%<script class='$id' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/history.js'></script>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"restoreform"}%<!-- -->

@@ -133,7 +133,7 @@
       </tr>
     </table>
   </div>
-%ADDTOZONE{"script" requires="JQUERYPLUGIN" text="<script>
+%ADDTOZONE{"script" id="NATSKIN::VARIATIONS" requires="JQUERYPLUGIN" text="<script class='$id' type='text/javascript'>
 jQuery(function() {
   var knownVariations = { %KNOWNVARIATIONS{ format="'$style': ['$variations']" separator=", " varseparator="', '" }%},
       selectedVariation = '%QUERY{"preferences[name='NATSKIN_VARIATION'].value"}%' || 'undefined';
@@ -292,8 +292,8 @@ jQuery(function() {
 %TMPL:DEF{"commentsettings"}%%TMPL:P{
   "comment::system::%COMMENTSYSTEM{default="metacomment"}%::settings"
 }%%ADDTOZONE{"script"
-  tag="METACOMMENTPLUGIN::PREFS"
-  text="<literal><script>
+  id="METACOMMENTPLUGIN::PREFS"
+  text="<script class='$id' type='text/javascript'>
     jQuery(function($) {
       $('.natDisplayComments').change(function() {
         var val = $(this).val();
@@ -304,7 +304,7 @@ jQuery(function() {
         }
       });
     });
-    </script></literal>"
+    </script>"
   requires="JQUERYPLUGIN"
 }%<!-- -->%TMPL:END%
 

@@ -17,12 +17,11 @@
   var defaults = {
       length: 10,
       capitals: true,
-      numbers: true
+      numbers: true,
+      duplicates: true
     },
-    PWGen = function() {
-          this.maxLength = defaults.length;
-          this.includeCapitalLetter = defaults.capitals;
-          this.includeNumber = defaults.numbers;
+    PWGen = function(opts) {
+          this.opts = $.extend({}, defaults, opts);
     };
 
   PWGen.prototype = {
@@ -34,17 +33,21 @@
               requested = 0,
               shouldBe,i,str,flags;
 
-          if (this.includeCapitalLetter) {
+          if (this.opts.capitals) {
               requested |= this.INCLUDE_CAPITAL_LETTER;
           }
           
-          if (this.includeNumber) {
+          if (this.opts.numbers) {
               requested |= this.INCLUDE_NUMBER;
+          }
+
+          if (this.opts.duplicates) {
+              requested |= this.INCLUDE_DUPLICATES;
           }
           
           shouldBe = (Math.random() < 0.5) ? this.VOWEL : this.CONSONANT;
           
-          while (result.length < this.maxLength) {
+          while (result.length < this.opts.length) {
               i = Math.floor((this.ELEMENTS.length - 1) * Math.random());
               str = this.ELEMENTS[i][0];
               flags = this.ELEMENTS[i][1];
@@ -62,7 +65,7 @@
                   continue;
               }
               /* Don't allow us to overflow the buffer */
-              if (result.length + str.length > this.maxLength) {
+              if (result.length + str.length > this.opts.length) {
                   continue;
               }
               
@@ -80,6 +83,9 @@
                */
               result += str;
               
+              if (!(requested & this.INCLUDE_DUPLICATES)) {
+                result = result.replace(/(.)(?=\1)/g, "");
+              }
               
               if (requested & this.INCLUDE_NUMBER) {
                   if (!isFirst && (Math.random() < 0.3)) {
@@ -129,6 +135,7 @@
 
       INCLUDE_NUMBER: 1,
       INCLUDE_CAPITAL_LETTER: 1 << 1,
+      INCLUDE_DUPLICATES: 1 << 2,
 
       CONSONANT: 1,
       VOWEL:     1 << 1,
@@ -180,12 +187,7 @@
   ];
 
   function password (opts) {
-    var pwgen = new PWGen();
-
-    pwgen.maxLength = opts.length;
-    pwgen.includeCapitalLetter = opts.capitals;
-    pwgen.includeNumber = opts.numbers;
-
+    var pwgen = new PWGen(opts);
     return pwgen.generate();
   }
 
@@ -193,7 +195,7 @@
     if ($("body").is(".natUnsupportedBrowser")) {
       $(".jqGeneratePassword").hide();
     } else {
-      $(document).on("click", ".jqGeneratePassword", function() {
+      $(document).on("click", ".jqGeneratePassword", function(ev) {
         var $this = $(this), 
             opts = $.extend({}, defaults, $this.data()),
             $passwordField = $(opts.target),
@@ -203,6 +205,7 @@
         $passwordField.replaceWith($substitute).attr("type", "text").val(password(opts));
         $substitute.replaceWith($passwordField);
 
+        ev.preventDefault();
         return false;
       });
     }

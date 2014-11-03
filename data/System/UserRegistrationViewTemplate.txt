@@ -59,7 +59,8 @@
 %TMPL:DEF{"formstart"}%<!-- -->
 <literal>
 <style>
-.jqGeneratePassword {
+.jqGeneratePassword,
+.jqGeneratePassword:hover {
   text-decoration:none;
   padding-left:1em;
 }
@@ -152,7 +153,7 @@
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Choose a password"}%: <span class="foswikiAlert">**</span></h3>
   <input type="password" id="Fwk1Password" name="Fwk1Password" class="foswikiInputField" size="40" autocomplete="off" />
-  <a href="#" class="jqGeneratePassword" data-length="15" data-capital="true" data-numbers="true" data-target="#Fwk1Password">%JQICON{"key"}% %MAKETEXT{"Random password"}%</a>
+  <a class="jqGeneratePassword" %TMPL:P{"password::params"}% data-target="#Fwk1Password">%JQICON{"key"}% %MAKETEXT{"Random password"}%</a>
   <div class="foswikiFormDescription">
     %MAKETEXT{"Make sure you remember your password, even more when generating one automatically."}%
   </div>
@@ -162,6 +163,10 @@
   <input type="password" id="Fwk1Confirm" name="Fwk1Confirm" class="foswikiInputField" size="40" autocomplete="off" />
 </div>
 <!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"password::params"}%data-length="15" data-capitals="true" data-numbers="true" data-duplicates="true"%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
@@ -272,8 +277,8 @@
   format="<p>
     <label><input type='%IF{"'%REGISTRATIONGROUPTYPE%' = 'one'" then="radio" else="checkbox"}%' name='Fwk0AddToGroups' class='foswikiInputField' value='$1'> <nop>$1</label>
     $percntADDTOZONE{\"head\" 
-      tag=\"showCollaborationDetails\" 
-      text=\"<style>#groupDetails {display:block}</style>\"
+      id=\"showCollaborationDetails\" 
+      text=\"<style class='$id'>#groupDetails {display:block}</style>\"
     }$percnt</p>"
   separator="$n"
   sort="on"
@@ -290,13 +295,14 @@
 %JQREQUIRE{"validate, wikiword"}%
 %ADDTOZONE{"script"
   requires="JQUERYPLUGIN"
-  id="NATSKIN:PASSWORD"
-  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/password.js'></script>"
+  id="NATSKIN::PASSWORD"
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/password.js'></script>"
 }%<!-- -->
 %ADDTOZONE{"script" 
   requires="JQUERYPLUGIN::VALIDATE, JQUERYPLUGIN::WIKIWORD"
+  id="NATSKIN::VALIDATE::USERREGISTATION"
   text="<literal>
-<script>
+<script type='text/javascript'>
 jQuery(function($) {
   $('#Fwk1WikiName').wikiword('#Fwk1FirstName, #Fwk1LastName');
   var $form = $('#registrationForm')

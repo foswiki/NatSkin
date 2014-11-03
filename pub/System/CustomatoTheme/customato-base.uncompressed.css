@@ -58,8 +58,8 @@ h2,
   font-size:1.5em; /* 21px */
   line-height:1em; /* 21px */
   margin:1em 0;
-  font-weight:normal;
   border-bottom:1px solid #D5D6DD;
+  font-weight:normal;
 }
 .foswikiGrid h2 {
   border-bottom:0;
@@ -94,6 +94,8 @@ h6,
 .foswikiNormal h6 {
   font-size: 1em; /* 14px */
   line-height: 1.5em; /* 21px */
+  margin-top: 1.5em;
+  margin-bottom: 0;
   font-weight:normal;
 }
 blockquote {
@@ -267,12 +269,8 @@ a.jqButton:link {
 }
 
 /* form elements */
-.jqTextboxListValue {
-  background-color:#ebebeb;
-  border:1px solid #cfcfcf;
-}
-
 .select2-container .select2-choice:hover,
+.select2-container-multi .select2-choices,
 .select2-container .select2-choice {
   border-color:#ccc;
 }
