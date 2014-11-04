@@ -200,6 +200,7 @@ pub/System/NatSkin/subscribe.uncompressed.js 0644
 templates/404.nat.tmpl 0644
 templates/actionform.nat.tmpl 0644
 templates/addform.nat.tmpl 0644
+templates/angular.nat.tmpl 0644
 templates/attachagain.nat.tmpl 0644
 templates/attach.nat.tmpl 0644
 templates/attachnew.nat.tmpl 0644
@@ -223,9 +224,11 @@ templates/edittext.nat.tmpl 0644
 templates/edittoolbar.nat.tmpl 0644
 templates/form.nat.tmpl 0644
 templates/formtables.nat.tmpl 0644
+templates/foswiki.angular.nat.tmpl 0644
 templates/foswiki.jazzynote.nat.tmpl 0644
 templates/foswiki.nat.tmpl 0644
 templates/history.nat.tmpl 0644
+templates/javascript.angular.nat.tmpl 0644
 templates/javascript.nat.tmpl 0644
 templates/kinosearch.nat.tmpl 0644
 templates/languageselector.nat.tmpl 0644
@@ -273,6 +276,7 @@ templates/searchmeta.nat.tmpl 0644
 templates/search.nat.tmpl 0644
 templates/settings.nat.tmpl 0644
 templates/sidebar.nat.tmpl 0644
+templates/styles.angular.nat.tmpl 0644
 templates/styles.nat.tmpl 0644
 templates/topbar.customato.nat.tmpl 0644
 templates/topbar.foswiki.tmpl 0644

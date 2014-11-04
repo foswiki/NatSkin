@@ -1,0 +1,27 @@
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{"body"}%<body id="body" class="natBodyFixed natBodyRight %TMPL:P{"defaultbodyclass"}% %TMPL:P{"bodyclass"}%">%TMPL:P{"defaultbody"}%</body>%TMPL:END%
+
+%TMPL:DEF{"meta::base"}%<base href="%SCRIPTURLPATH{"angular"}%/"/><!--[if IE]></base><![endif]-->%TMPL:END%
+%TMPL:DEF{"meta"}%%TMPL:P{"meta::base"}%
+<meta name="fragment" content="!" />
+%TMPL:PREV%%TMPL:END%
+
+%TMPL:DEF{"toppanel"}%<!-- -->
+  <div class="natTopPanel foswikiContents" name="toppanel::contents" reload="web" style="display:none"></div>
+  <div class="natTopShadow"></div>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"bodycontents"}%<!-- -->
+  <div class="natBodyContents">
+    %TMPL:P{"langswitcher"}%<!-- -->
+    <a class="natNavToggle fa fa-bars"></a>
+    <div class="natTopBar clearfix foswikiContents" name="topbar::contents" reload="web"></div>
+    <div class="natWebMenu clearfix foswikiContents" name="webmenu::contents" reload="web"></div>
+    <div class="natMiddle foswikiContents" name="main::contents"></div>
+    <div class="natBottomBar">
+      <div class="natBottomBarContents foswikiContents" name="bottombar::contents" reload="web"></div>
+    </div>
+    %TMPL:P{"scrolltop"}%<!-- -->
+  </div>
+<!-- -->%TMPL:END%
