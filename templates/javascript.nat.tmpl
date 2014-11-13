@@ -6,6 +6,7 @@
   text="<script type='text/javascript'>
 jQuery.extend(foswiki.preferences, {
   %TMPL:P{"initWebMenu"}%
+  %TMPL:P{"initTopPanel"}%
   %TMPL:P{"initOverflows"}%
   %TMPL:P{"initSideBar"}%
   %TMPL:P{"initAutoComplete"}%
@@ -22,6 +23,7 @@ jQuery.extend(foswiki.preferences, {
 <!-- -->%TMPL:END%
 
 %TMPL:DEF{"initWebMenu"}%'NatSkin.initWebMenu': true,%TMPL:END%
+%TMPL:DEF{"initTopPanel"}%'NatSkin.initTopPanel': true,%TMPL:END%
 %TMPL:DEF{"initOverflows"}%'NatSkin.initOverflows': false,%TMPL:END%
 %TMPL:DEF{"initSideBar"}%'NatSkin.initSideBar': false,%TMPL:END%
 %TMPL:DEF{"initAutoComplete"}%'NatSkin.initAutoComplete': %IF{"context SolrPluginEnabled" then="true" else="false"}%,%TMPL:END%

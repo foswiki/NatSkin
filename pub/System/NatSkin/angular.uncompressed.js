@@ -12,7 +12,9 @@ foswikiApp.directive("natBody", [ '$rootScope',
 
         // things to do when a page loaded
         scope.$on("foswiki.pageLoaded", function() {
-          angular.element(".natTopPanel").hide();
+          if (foswiki.getPreference("NatSkin.initTopPanel")) {
+            angular.element(".natTopPanel").hide();
+          }
           angular.element('ul.sf-js-enabled').hideSuperfishUl(); 
           isEmptySideBar = _testSideBar();
         });

@@ -217,7 +217,7 @@
 %TMPL:DEF{"breadcrumbs::title"}%<span class='natBreadCrumbsYouAreHere'>%MAKETEXT{"You are here"}%:</span>%TMPL:END%
 %TMPL:DEF{"breadcrumbs::contents"}%%BREADCRUMBS{separator="%TMPL:P{"sep"}%" newtopicformat="<nop>$topic"}%%TMPL:P{"breadcrumbs::tail"}%%TMPL:END%
 
-%TMPL:DEF{"pagetitle"}%<title>%TMPL:P{"title"}%</title>%TMPL:END%
+%TMPL:DEF{"pagetitle"}%<title class='foswikiContents' name='title' type='plain'>%TMPL:P{"title"}%</title>%TMPL:END%
 %TMPL:DEF{"title"}%<noautolink>%HTMLTITLE{
   "$percntIF{
     \"'$topic'!='%HOMETOPIC%' or '$percntENCODE{\"$title\" type=\"safe\"}$percnt'!='$web' or '%TMPL:P{"titleaction"}%'!=''\" 

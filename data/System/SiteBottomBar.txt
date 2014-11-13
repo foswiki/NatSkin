@@ -14,7 +14,7 @@ Default bottombar component
     map="%FLEXWEBLIST{format="$web=$percntGETTOPICTITLE{\"$web.WebHome\"}$percnt,"}%"
     separator=", " 
     subheader=", "
-    %IF{"not context isadmin" then="exclude=\"^Applications.*\""}%
+    exclude="^(Applications|Trash)([\/\.].*)?$"
   }%"
   split="\s*,\s*"
   pattern="(.*)=(.*)"

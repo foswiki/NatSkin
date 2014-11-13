@@ -360,10 +360,12 @@ h2 {
   padding:5px 1em 6px;
 }
 
+.natSideBar .jqListyContainer,
 .natSideBar .jqSerialPager,
 .natSideBar ul {
   margin:0em -1em;
 }
+.natSideBar .jqListyContainer ul,
 .natSideBar .jqSerialPager ul {
   margin:0;
 }

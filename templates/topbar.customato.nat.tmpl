@@ -4,7 +4,7 @@
 %TMPL:DEF{"topbar"}%<!-- -->
 %TMPL:P{"langswitcher"}%<!-- -->
 <a class="natNavToggle fa fa-bars"></a>
-<div class="natTopBar clearfix">
+<div class="natTopBar clearfix foswikiContents" name="topbar::contents" reload="web">
 %TMPL:P{"topbar::contents"}%
 </div>
 <!-- -->%TMPL:END%
@@ -41,7 +41,7 @@
 </div>%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"toppanel"}%<div class="natTopPanel" style="display:none">
+%TMPL:DEF{"toppanel"}%<div class="natTopPanel foswikiContents" name="toppanel::contents" reload="web" style="display:none">
 %TMPL:P{"toppanel::contents"}%
 </div>
 <div class="natTopShadow"></div>

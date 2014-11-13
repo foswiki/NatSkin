@@ -347,7 +347,10 @@
       initExternalLinks();
     }
 
-    initTopPanel();
+    if (foswiki.getPreference("NatSkin.initTopPanel")) {
+      initTopPanel();
+    }
+
     initTopicActions(); 
     initScrollToTop();
     initResponsiveNavi();

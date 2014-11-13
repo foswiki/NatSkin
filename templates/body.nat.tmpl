@@ -8,7 +8,7 @@
 %TMPL:DEF{"contentfooter"}%<div class="natMainFooterContents">%TMPL:P{"contentfooter::contents"}%</div>%TMPL:END%
 %TMPL:DEF{"breadcrumbs"}%<div class='natBreadCrumbs'> %TMPL:P{"breadcrumbs::title"}% %TMPL:P{"breadcrumbs::contents"}%</div>
 %TMPL:DEF{"contentheader::contents"}%%TMPL:P{"breadcrumbs"}%%TMPL:END%
-%TMPL:DEF{"webmenu"}%<div class="natWebMenu clearfix">
+%TMPL:DEF{"webmenu"}%<div class="natWebMenu clearfix foswikiContents" name="webmenu::contents" reload="web">
 %TMPL:P{"webmenu::contents"}%<!-- -->
 </div>%TMPL:END%
 
@@ -40,7 +40,7 @@
 %TMPL:DEF{"sidebars"}%%TMPL:P{"sidebar_container"}%%TMPL:P{context="natskin_sidebar_both" then="rightsidebar_container"}%%TMPL:END%
 
 %{ columns ----------------------------------------------------------------- }%
-%TMPL:DEF{"main"}%<div class="natMiddle">
+%TMPL:DEF{"main"}%<div class="natMiddle foswikiContents" name="main::contents" page-in-effect="%TMPL:P{"pageineffect"}%" page-out-effect="%TMPL:P{"pageouteffect"}%">
 %TMPL:P{"main::contents"}%<!-- -->
 </div>%TMPL:END%
 

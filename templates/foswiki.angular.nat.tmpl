@@ -1,6 +1,8 @@
 %TMPL:INCLUDE{"foswiki"}%
-%TMPL:DEF{"pagetitle"}%<title class="foswikiContents" name="title" type="plain"></title>%TMPL:END%
-%TMPL:DEF{"logo"}%%NATWEBLOGO{
-  format="<a href='%WIKILOGOURL%' title='$alt'>$logo</a>"
-  height="60"
-}%%TMPL:END%
+
+%{ bounceOut, bounceOutDown, bounceOutLeft, bounceOutRight, fadeOut, fadeOutDown, fadeOutLeft, fadeOutRight, hinge, hinge, zoomOut, zoomOutLeft, zoomOutRight, zoomOutDown }%
+%TMPL:DEF{"pageouteffect"}%%ANGULAR_PAGEOUT_EFFECT{default=""}%%TMPL:END%
+
+%{ pulse, bounceIn, bounceInLeft, bounceInRight, bounceInUp, fadeIn, fadeInUp, fadeInLeft, fadeInRight, lightSpeedIn, zoomIn, zoomInLeft, zoomInRight, zoomInUp }%
+%TMPL:DEF{"pageineffect"}%%ANGULAR_PAGEIN_EFFECT{default=""}%%TMPL:END%
+
