@@ -229,9 +229,9 @@
 %TMPL:DEF{"titlesep"}%%IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="&#183;"}%%TMPL:END%
 
 %TMPL:DEF{"favicon"}%%TMPL:P{context="msie" then="favicon::msie" else="favicon::default"}%%TMPL:END%
-%TMPL:DEF{"favicon::msie"}%<link rel='shortcut icon' href='%TMPL:P{"favicon::msie::url"}%' />%TMPL:END%
+%TMPL:DEF{"favicon::msie"}%<link rel="shortcut icon" href="%TMPL:P{"favicon::msie::url"}%" />%TMPL:END%
 %TMPL:DEF{"favicon::msie::url"}%%TMPL:P{"favicon::url"}%%TMPL:END%
-%TMPL:DEF{"favicon::default"}%<link rel='icon' href='%TMPL:P{"favicon::default::url"}%' />%TMPL:END%
+%TMPL:DEF{"favicon::default"}%<link rel="icon" href="%TMPL:P{"favicon::default::url"}%" />%TMPL:END%
 %TMPL:DEF{"favicon::default::url"}%%TMPL:P{"favicon::url"}%%TMPL:END%
 %TMPL:DEF{"favicon::url"}%%FAVICON%%TMPL:END%
 
@@ -294,8 +294,7 @@
   "%count% > 1" then="%plural%"
 }%%TMPL:END%
 
-
-d%TMPL:DEF{"LIBJS"}%%ADDTOZONE{
+%TMPL:DEF{"LIBJS"}%%ADDTOZONE{
  "script"
  id="%id%"
  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/%id%.js'></script>"

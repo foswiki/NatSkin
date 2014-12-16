@@ -17,39 +17,79 @@
 %TMPL:P{"metadescription"}%<!-- -->
 %TMPL:P{"metakeywords"}%<!-- -->
 %TMPL:P{"metaauthor"}%<!-- -->
+%TMPL:P{"metacanonical"}%<!-- -->
+%TMPL:P{"metarelations"}%<!-- -->
 %TMPL:P{"metaedit"}%<!-- -->
 %TMPL:P{"metaatom"}%<!-- -->
 %TMPL:P{"metarss"}%<!-- -->
 %TMPL:P{"metaopensearch"}%%TMPL:END%
 
-%TMPL:DEF{"metagenerator"}%<meta name='generator' content='Foswiki %WIKIVERSION%' />%TMPL:END%
+%TMPL:DEF{"metagenerator"}%<meta name="generator" content="Foswiki %WIKIVERSION%" />%TMPL:END%
 
-%TMPL:DEF{"metaauthor"}%%IF{
-  "defined 'METAAUTHOR'" 
-  then="<meta name='author' content='$percntENCODE{\"$percntMETAAUTHOR$percnt\" type=\"html\"}$percnt' />"
-  else="<meta name='author' content='%SPACEOUT{"%USERINFO{"%TMPL:P{context="DBCachePluginEnabled" then="metaauthor::dbcache" else="metaauthor::default"}%" format="$wikiname"}%"}%' />"
-}%%TMPL:END%
+%TMPL:DEF{"metaauthor"}%<meta name="author" content="%ENCODE{
+  "%IF{"defined 'METAAUTHOR'" 
+    then="$percntMETAAUTHOR$percnt"
+    else="%SPACEOUT{
+      "%USERINFO{
+        "%TMPL:P{context="DBCachePluginEnabled" then="metaauthor::dbcache" else="metaauthor::default"}%" 
+        format="$wikiname"
+      }%"
+    }%"
+  }%"
+  type="html"
+}%" />%TMPL:END%
 
 %TMPL:DEF{"metaauthor::default"}%%QUERY{"'%WEB%.%TOPIC%'/versions[1].info.author"}%%TMPL:END%
 %TMPL:DEF{"metaauthor::dbcache"}%%DBQUERY{topic="%WEB%.%TOPIC%" format="$expand(createauthor)"}%%TMPL:END%
 
-%TMPL:DEF{"metadescription"}%%IF{"defined 'METADESCRIPTION'" 
-  then="<meta name='description' content='$percntENCODE{\"$percntMETADESCRIPTION$percnt\" type=\"html\"}$percnt' />"
-  else="$percntFORMFIELD{\"Summary\" format=\"<meta name='description' content='$dollarpercntENCODE{\\"$value\\" type=\\"html\\"}$dollarpercnt' />\"}$percnt"
-}%%TMPL:END%
+%TMPL:DEF{"metadescription"}%<meta name="description" content="%ENCODE{
+  "%IF{"defined 'METADESCRIPTION'" 
+    then="$percntMETADESCRIPTION$percnt"
+    else="$percntFORMFIELD{\"Summary\" default=\"$percntTOPICTITLE$percnt\" alttext=\"$percntTOPICTITLE$percnt\"}$percnt"
+  }%"
+  type="html"
+}%" />%TMPL:END%
 
-%TMPL:DEF{"metakeywords"}%%IF{"defined 'METAKEYWORDS'" 
-  then="<meta name='keywords' content='$percntENCODE{\"$percntMETAKEYWORDS$percnt\" type=\"html\"}$percnt' />" 
-  else="$percntFORMFIELD{\"Tag\" format=\"<meta name='keywords' content='$dollarpercntENCODE{\\"$value\\" type=\\"html\\"}$dollarpercnt' />\"}$percnt"
-}%%TMPL:END%
+%TMPL:DEF{"metakeywords"}%<meta name="keywords" content="%ENCODE{
+  "%IF{"defined 'METAKEYWORDS'" 
+    then="$percntMETAKEYWORDS$percnt" 
+    else="$percntFORMFIELD{\"Tag\" default=\"Foswiki, %WEB%, %TOPIC%\" alttext=\"Foswiki, %WEB%, %TOPIC%\"}$percnt"
+  }%"
+  type="html"
+}%" />%TMPL:END%
 
 %TMPL:DEF{"metaedit"}%%IF{
   "'%WEB%.%TOPIC%' allows 'change'" 
-  then="<link rel='alternate' type='application/x-wiki' title='Edit this page!' href='%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%' />"
+  then="<link rel=\"alternate\" type=\"application/x-wiki\" title=\"Edit this page!\" href=\"%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%\" />"
 }%%TMPL:END%
 
-%TMPL:DEF{"metarss"}%<link rel='alternate' type='application/rss+xml' title='RSS Feed' href='%SCRIPTURLPATH{"view"}%/%WEB%/WebRss?contenttype=text/xml' />%TMPL:END%
-%TMPL:DEF{"metaatom"}%<link rel='alternate' type='application/atom+xml' title='Atom Feed' href='%SCRIPTURLPATH{"view"}%/%WEB%/WebAtom?contenttype=text/xml' />%TMPL:END%
+%TMPL:DEF{"metarss"}%<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="%SCRIPTURLPATH{"view"}%/%WEB%/WebRss?contenttype=text/xml" />%TMPL:END%
+%TMPL:DEF{"metaatom"}%<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="%SCRIPTURLPATH{"view"}%/%WEB%/WebAtom?contenttype=text/xml" />%TMPL:END%
+
+%TMPL:DEF{"metarelations"}%%IF{"context i18n_enabled and $MULTILINGUAL = 'on'" 
+  then="$percntTMPL:P{\"metarelations::langs\"}$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"metacanonical"}%<link rel="canonical" href="%SCRIPTURL{"view"}%/%WEB%/%TOPIC%" />%TMPL:END%
+
+%TMPL:DEF{"metarelations::langs"}%%DBQUERY{
+  "(preferences.BASETRANSLATION = '%BASETRANSLATION{default="%TOPIC%"}%' OR topic = '%BASETRANSLATION{default="%TOPIC%"}%')"
+  format="<link rel=\"alternate\" hreflang=\"$expand(preferences.CONTENT_LANGUAGE or '%DEFAULTLANGUAGE{default="en"}%')\" href=\"%SCRIPTURL{"view"}%/$web/$topic\" />" 
+  separator="$n"
+}%%TMPL:END%
+
+%{ ########################################################################## }%
+%TMPL:DEF{"langswitcher"}%%IF{"context i18n_enabled and $MULTILINGUAL = 'on'" then="$percntTMPL:P{\"langswitcher::impl\"}$percnt"}%%TMPL:END%
+
+%{ ########################################################################## }%
+%TMPL:DEF{"langswitcher::impl"}%<div class="natLangs foswikiContents" name="langswitcher::contents">%TMPL:P{"langswitcher::contents"}%</div>%TMPL:END%
+%TMPL:DEF{"langswitcher::contents"}%<literal>%DBQUERY{
+  "(preferences.BASETRANSLATION = '%BASETRANSLATION{default="%TOPIC%"}%' OR topic = '%BASETRANSLATION{default="%TOPIC%"}%') AND topic != '%TOPIC%'"
+  format="$percntLANGUAGES{\"$expand(preferences.CONTENT_LANGUAGE or '%DEFAULTLANGUAGE{default="en"}%')\"
+      format=\"<a href='%SCRIPTURLPATH{"view"}%/$web/$topic' class='jqUITooltip' data-theme='info' data-delay='0' title='$percntMAKETEXT{\"Select translation in [_1]\" args=\"$dollarlabel_name\"}$percnt'>$icon(24)</a>\"
+    }$percnt"
+  separator="$n"
+}%</literal>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"content"}%<!-- -->

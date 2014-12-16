@@ -1,5 +1,8 @@
-%TMPL:DEF{"metaopensearch"}%%TMPL:P{"opensearch::content::link"}%
+%TMPL:DEF{"metaopensearch"}%%TMPL:P{"opensearch::profile"}%
+%TMPL:P{"opensearch::content::link"}%
 %TMPL:P{"opensearch::person::link"}%%TMPL:END%
+
+%TMPL:DEF{"opensearch::profile"}%<link rel="profile" href="http://a9.com/-/spec/opensearch/1.1/" />%TMPL:END%
 
 %TMPL:DEF{"opensearch::header"}%<?xml version="1.0" encoding="UTF-8"?><OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">%TMPL:END%
 %TMPL:DEF{"opensearch::footer"}%</OpenSearchDescription>%TMPL:END% 
@@ -10,7 +13,7 @@
 %{ Image height="64" width="64" type="image/png">http://example.com/websearch.png</Image --> }%
 
 %{ content search }%
-%TMPL:DEF{"opensearch::content::link"}%<link rel='search' type='application/opensearchdescription+xml' href='%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?topic=%SYSTEMWEB%.WebSearch&name=opensearch&expand=opensearch::content&contenttype=text/xml' title='%MAKETEXT{"[_1] Content Search" args="%WIKITOOLNAME%"}%' />%TMPL:END%
+%TMPL:DEF{"opensearch::content::link"}%<link rel="search" type="application/opensearchdescription+xml" href="%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?topic=%SYSTEMWEB%.WebSearch&name=opensearch&expand=opensearch::content&contenttype=text/xml" title="%MAKETEXT{"[_1] Content Search" args="%WIKITOOLNAME%"}%" />%TMPL:END%
 
 %TMPL:DEF{"opensearch::content"}%%TMPL:P{"opensearch::content::header"}%
 %TMPL:P{"opensearch::content::name"}%
@@ -35,7 +38,7 @@
 
 
 %{ person search }%
-%TMPL:DEF{"opensearch::person::link"}%<link rel='search' type='application/opensearchdescription+xml' href='%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?topic=%USERSWEB%.WikiUsers&name=opensearch&expand=opensearch::person&contenttype=text/xml' title='%MAKETEXT{"[_1] Person Search" args="%WIKITOOLNAME%"}%' />%TMPL:END%
+%TMPL:DEF{"opensearch::person::link"}%<link rel="search" type="application/opensearchdescription+xml" href="%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?topic=%USERSWEB%.WikiUsers&name=opensearch&expand=opensearch::person&contenttype=text/xml" title="%MAKETEXT{"[_1] Person Search" args="%WIKITOOLNAME%"}%" />%TMPL:END%
 
 %TMPL:DEF{"opensearch::person"}%%TMPL:P{"opensearch::person::header"}%
 %TMPL:P{"opensearch::person::name"}%

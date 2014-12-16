@@ -405,20 +405,8 @@ a.jqButton:link {
 
 .natLangs {
   position:absolute;
-  top:0.2em;
-  right:0.5em;
-}
-.natLangs img {
-  margin-right:0.5em;
-  vertical-align:middle;
-}
-.natLangs a {
-  color:#444;
-  text-decoration:none;
-}
-
-.natSolrBody .natLangs {
-  display:none;
+  top:1em;
+  right:0;
 }
 
 /* menu */
@@ -960,6 +948,14 @@ select,
   box-shadow:none;
   box-shadow:inset 2px 2px 4px #f4f4f4;
 }
+
+select[disabled],
+input[disabled],
+textarea[disabled] {
+  color:#aaa;
+  background-color: #f8f8f8;
+}
+
 input[type=search],
 input[type=text],
 input[type=password],

@@ -17,6 +17,8 @@ foswikiApp.directive("natBody", [ '$rootScope',
           }
           angular.element('ul.sf-js-enabled').hideSuperfishUl(); 
           isEmptySideBar = _testSideBar();
+
+          angular.element(".natSearchBox .foswikiInputField").val("");
         });
 
         // update the body class according to natskin settings

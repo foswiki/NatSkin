@@ -404,20 +404,8 @@ a.jqButton:link {
 
 .natLangs {
   position:absolute;
-  top:0.2em;
-  right:0.5em;
-}
-.natLangs img {
-  margin-right:0.5em;
-  vertical-align:middle;
-}
-.natLangs a {
-  color:#444;
-  text-decoration:none;
-}
-
-.natSolrBody .natLangs {
-  display:none;
+  top:1em;
+  right:0;
 }
 
 /* menu */

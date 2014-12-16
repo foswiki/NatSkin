@@ -193,6 +193,14 @@ select,
   box-shadow:none;
   box-shadow:inset 2px 2px 4px #f4f4f4;
 }
+
+select[disabled],
+input[disabled],
+textarea[disabled] {
+  color:#aaa;
+  background-color: #f8f8f8;
+}
+
 input[type=search],
 input[type=text],
 input[type=password],

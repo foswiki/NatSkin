@@ -741,6 +741,7 @@ button[disabled],
 input[disabled],
 textarea[disabled] {
   color:#cfcfcf;
+  background-color: #fafafa;
 }
 
 fieldset {
@@ -2015,6 +2016,26 @@ a:active.natScrollTop {
   background-repeat:no-repeat;
 }
 
+/* language switcher */
+.natLangs {
+  position:absolute;
+  top:0.2em;
+  right:0.5em;
+}
+.natLangs img {
+  margin-right:0.5em;
+  vertical-align:middle;
+}
+.natLangs a {
+  color:#444;
+  text-decoration:none;
+}
+
+.natSolrBody .natLangs {
+  display:none;
+}
+
+
 /* search box */
 .natSearchBox form {
   position:relative;
@@ -2526,13 +2547,6 @@ a:active.natScrollTop {
 }
 
 /* some print styles affecting cover=print.nat as well */
-.natPrintBody .foswikiRevisionSep:first-of-type {
-  display:none;
-}
-.natPrintBody .foswikiRevision {
-  display:none;
-}
-
 .natPrintBody {
   margin:0px !important;
   padding:0px !important;
