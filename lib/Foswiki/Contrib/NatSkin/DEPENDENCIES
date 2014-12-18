@@ -1,5 +1,5 @@
-Foswiki::Contrib::CopyContrib,>=2.0,perl,Required.
-Foswiki::Contrib::FamFamFamContrib,>=2075,perl,Required.
+Foswiki::Contrib::CopyContrib,>=2.0,perl,Required
+Foswiki::Contrib::FamFamFamContrib,>=2075,perl,Required
 Foswiki::Plugins::AutoTemplatePlugin,>=2.01,perl,Required
 Foswiki::Plugins::BreadCrumbsPlugin,>=4318,perl,Required
 Foswiki::Plugins::CaptchaPlugin,>=2.0.0,perl,Optional
@@ -9,6 +9,7 @@ Foswiki::Plugins::FlexWebListPlugin,>=3493,perl,Required
 Foswiki::Plugins::ImagePlugin,>=2.40,perl,Required
 Foswiki::Plugins::JQueryPlugin,>=5.00,perl,Required
 Foswiki::Plugins::MimeIconPlugin,>=1,perl,Required
+Foswiki::Plugins::MultiLingualPlugin,>=2.00,perl,Optional
 Foswiki::Plugins::NatEditPlugin,>=8.00,perl,Required
 Foswiki::Plugins::NatSkinPlugin,>=3.99_004,perl,Required
 Foswiki::Plugins::PageOptimizerPlugin,>=0.10,perl,Optional
