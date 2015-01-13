@@ -16,6 +16,19 @@
 %TMPL:DEF{"contentheader"}%%TMPL:END%
 %TMPL:DEF{"tabs"}%%TMPL:P{"firsttab"}%%TMPL:P{"formfields"}%%TMPL:P{"settingstab"}%%TMPL:P{"permissionstab"}%%TMPL:P{"helptab"}%%TMPL:END%
 
+%TMPL:DEF{"formparameters"}%<input type="hidden" name="action" value="%URLPARAM{"action"}%" />
+<input type="hidden" name="cmd" value="%CMD%" />
+<input type="hidden" name="cover" value="%URLPARAM{"cover"}%" />
+<input type="hidden" name="formtemplate" value="%FORMTEMPLATE%" />
+<input type="hidden" name="newtopic" value="%NEWTOPIC%" />
+<input type="hidden" name="nowysiwyg" value="%URLPARAM{"nowysiwyg"}%" />
+<input type="hidden" name="originalrev" value="%ORIGINALREV%" />
+<input type="hidden" name="redirectto" value="%REDIRECTTO%" />
+<input type="hidden" name="rev" value="%URLPARAM{"rev"}%" />
+<input type="hidden" name="skin" value="%URLPARAM{"skin"}%" />
+<input type="hidden" name="templatetopic" value="%TEMPLATETOPIC%" />
+<input type="hidden" name="template" value="%URLPARAM{"template"}%" />%TMPL:END%
+
 %{ ################################################################################ }%
 %TMPL:DEF{"supportedlanguages::default"}%
   %MAKETEXT{"Chinese"}%=cjk;
