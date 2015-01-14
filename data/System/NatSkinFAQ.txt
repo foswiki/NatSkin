@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1409560855" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1421245043" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 %TOC%
@@ -14,27 +14,39 @@ If you need help, there are a couple of options:
 In any case, helping out improving documentation, fixing bugs, helping others
 with the same problems is very welcome.
 
----++ Why does <nop>NatSkin depend on so many extra plugins?
-The main goal is to achieve the best user experience possible. It frankly
-does not matter if that requires extra plugins.
+---++ Why does <nop>NatSkin require on so many extra plugins?
+The primary goal is to achieve the best user experience possible and this by using as few extra plugins as possible. 
+All of the plugins that !NatSkin depends on have been added for a specific purpose.
 
-Some things can't be done with the inventory being shipped with standard
-Foswiki. A lot of the plugins once have been an integral part of the
+   1 CopyContrib: improve copy-topic feature, such as copy only the attachments, comments, or form data
+   1 AutoTemplatePlugin: provide NatSkin specific view templates for some of the tools in System web; these are used to implement an improved usability without having to touch the default implementation
+   1 BreadCrumbsPlugin: an improved way to render the breadcrumbs navigation
+   1 DBCachePlugin: improved search performance; implements !TopicTitles feature
+   1 FilterPlugin: filter content as well as format lists in a flexible way
+   1 FlexWebListPlugin: more flexible way to render the list of installed webs
+   1 ImagePlugin: server-side image thumbnailing
+   1 MimeIconPlugin: icon set for all kind of file types used in attachment lists
+   1 NatSkinPlugin: suplemental plugin, i.e. implements the theme-engine to manage css and templates
+   1 RenderPlugin: render Foswiki templates using ajax
+   1 TopicInteractionPlugin: improved attachment handling including batch uploading of images
+   1 WebLinkPlugin: implements a way to link to a web as well as render its preference settings
+
+A lot of these plugins once have been an integral part of the
 NatSkinPlugin and then been externalized into plugins of their own for the
 greater benefit. 
 
 ---++ Why are there so many template files?
-<nop>NatSkin does not build upon the standard templates/skin of Foswiki as
-it differs substantially in the way it is broken up into components. Therefore, 
-every function of the core engine will use a =*.nat.tmpl= file. In fact,
-the <nop>NatSkin templates are created to provide an independent base
+<nop>NatSkin does not build upon the standard templates of Foswiki as
+they differ substantially. <nop>NatSkin templates are created to provide an independent base
 for further template modifications. 
 
 <nop>NatSkin templates offer much more flexibility than the standard 
-templates do. While its theming engine controls which css files are to
-be loaded, it also maintains the =SKIN= path to allow themes to override
-the standard markup. So switching a theme does also switch the =SKIN= path
-and the templates with it.
+templates. While the theming engine controls the css files being loaded, 
+it also maintains the =SKIN= path to allow themes and their variations to override
+the standard markup. 
+
+!NatSkin's templates also integrate well into [[Foswiki:Extensions/AngularPlugin][AngularPlugin]] where
+pages are loaded asynchronously and patched into an existing skeleton while navigating across topics and webs.
 
 ---++ Can I enable offsite link detection?
 Yes. Use the ={NatSkin}{DetectExternalLinks}= configuration setting.
@@ -42,4 +54,3 @@ Yes. Use the ={NatSkin}{DetectExternalLinks}= configuration setting.
 ---++ Does <nop>NatSkin support <nop>QuietSave?
 This feature confuses more than provide any added value and has thus been removed from
 the =edit= page to simplify the interface.
-

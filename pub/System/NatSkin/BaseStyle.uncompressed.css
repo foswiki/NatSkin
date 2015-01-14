@@ -175,7 +175,10 @@ body {
 
 pre, code, textarea {
   font-family:"Bitstream Vera Sans Mono", "Andale Mono", monospace;
-  line-height:17px; /* a bit less compared to sans-serif */
+}
+
+pre, code {
+  line-height:1.385em;
 }
 
 code {
@@ -191,10 +194,6 @@ address {
 }
 address:first-line {
   font-weight:bold;
-}
-
-pre, textarea {
-  line-height:1.385em;
 }
 
 pre {
@@ -1349,15 +1348,18 @@ a.natFeedIcon {
   border-top:0;
   border-left:0;
   border-right:0;
-  -webkit-border-radius: 0px; 
-     -moz-border-radius: 0px; 
-          border-radius: 0px; 
 }
 .foswikiBroadcastMessageClose {
   position:absolute;
   top:50%;
   right:1.5385em;
   margin-top:-8px;
+}
+.foswikiUpdatesMessage {
+  border:0;
+  -webkit-border-radius: 0px; 
+     -moz-border-radius: 0px; 
+          border-radius: 0px; 
 }
 
 .foswikiAlt,
@@ -2803,19 +2805,6 @@ a:active.natScrollTop {
   margin-left:0 !important;
   border:0 !important;
   padding-left:0 !important;
-}
-
-.WYSIWYG_PROTECTED,
-.WYSIWYG_STICKY,
-.WYSIWYG_LITERAL,
-.TMLverbatim,
-.WYSIWYG_TT {
-  font-size:inherit;
-  font-family:inherit;
-  color:inherit;
-}
-.WYSIWYG_PROTECTED {
-  background:transparent;
 }
 
 .natBusy {

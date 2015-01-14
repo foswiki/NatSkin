@@ -1,12 +1,77 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1409560855" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1421245043" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
+%TOC%
 
-%JQREQUIRE{"sameheight, ui::resizable"}%
+---++ The grid system
+!NatSkin comes with a 12er grid system for flexible layouts. A grid is a set of HTML div elements that are styled in a way to arrange content in cells and rows.
+The grid, its rows and cells are all flagged using an appropriate CSS class that specifies the configuration of the grid. More specifically a "grid"
+is made up of "rows" and each row consists of "cells". A row may have up to 12 cells. All cells in a row have to "add up to 12".
 
-<div class="gutterSelector">
+Example:
+
+<verbatim class="html">
+<div class="foswikiGrid">
+   <div class="foswikiRow">
+      <div class="foswikiCol6">
+
+         <!-- content content content -->
+
+      </div>
+      <div class="foswikiCol3">
+
+         <!-- content content content -->
+
+      </div>
+      <div class="foswikiCol3">
+
+         <!-- content content content -->
+
+       </div>
+   </div> <!-- end of first row -->
+---
+   <div class="foswikiRow">
+      <div class="foswikiCol4">
+
+         <!-- content content content -->
+
+      </div>
+      <div class="foswikiCol4">
+
+         <!-- content content content -->
+
+      </div>
+      <div class="foswikiCol4">
+
+         <!-- content content content -->
+      </div>
+   </div> <!-- end of second row -->
+</div> <!-- end of grid -->
+</verbatim>
+
+Note that the numbers of all =foswikiColxxx= elements add up to 12 (6+3+3=12, 4+4+4=12). You may divide a row by any possible decomposition of 12.
+Further note that content is only supposed to be placed inside the =foswikiColxxx= elements. The only exception is a =&lt;hr>= element (produced by ---)
+to draw a border separating grid rows visually.
+
+Grids might also be nested to further subdivide cells with yet another grid element inside.
+
+---++ Class list
+
+All below classes are meant to be used as part of a =&lt;div class="..."> ... &lt;/div>= HTML element.
+
+| *CSS* | *Description* |
+| =foswikiGrid= | the grid container; contains =foswikiRow= elements |
+| =foswikiRow= | the row container; contains =foswikiColxxx= elements |
+| =foswikiCol1=, =foswikiCol2=, =foswikiCol3=, =foswikiCol4=,%BR% \
+  =foswikiCol5=, =foswikiCol6=, =foswikiCol7=, =foswikiCol8=,%BR% \
+  =foswikiCol9=, =foswikiCol10=, =foswikiCol11=, =foswikiCol12= | column definition; contains the net content |
+| =gutter0=, =gutter1=, =gutter2=, =gutter3=, =gutter4=, =gutter5= | margin of the cells in a grid; applies to =foswikiGrid= element; by default a =gutter4= is applied to any =foswikiGrid= element |
+| =border= | draws a vertical border separating cells visually; may be applied to a =foswikiGrid=, =foswikiRow= or =foswikiCellxxx= element |
+
+---++ Layout examples 
+
+<div class="foswikiPageForm gutterSelector">
 *Select gutter:* 
-
 <select class="foswikiSelect">
 <option>gutter0</option>
 <option>gutter1</option>
@@ -16,7 +81,6 @@
 <option>gutter5</option>
 </select>
 </div>
-%TOC%
 
 <literal>
 <script type="text/javascript"> 
@@ -47,10 +111,7 @@ jQuery(function($) {
   text-align:justify;
 }
 .gutterSelector {
-  border:2px solid red;
-  padding:1em;
-  float:right;
-  background-color:#fff;
+  display:inline-block;
 }
 .readOn {
   position:absolute;
@@ -61,7 +122,7 @@ jQuery(function($) {
 </style>
 </literal>
 
----++ Columns
+---+++ Columns
 <div class="foswikiGrid test1">
   <div class="foswikiRow">
     <div class="foswikiCol1">1/12</div>
@@ -105,7 +166,7 @@ jQuery(function($) {
   </div>
 </div>
 
----++ Mix Columns
+---+++ Mix Columns
 <div class="foswikiGrid test1">
   <div class="foswikiRow">
     <div class="foswikiCol7">7/12</div>
@@ -190,7 +251,7 @@ jQuery(function($) {
   </div>
 </div>
 
----++ Text example
+---+++ Text example
 <div class="foswikiGrid test2">
   <div class="foswikiRow">
     <div class="foswikiCol6">
@@ -257,41 +318,6 @@ jQuery(function($) {
       augue porta, cursus, a eu.
     </div>
   </div>
----
 </div><!-- end of grid -->
----++ Same Heights      
-<div class="foswikiGrid">
-  <div class="foswikiRow jqSameHeight">
-    <div class="foswikiCol3" style="padding-bottom:2em">
-      Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
-      habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
-      Egestas, dictumst? 
-      <a class="readOn">%T% read on</a>
-    </div>
-    <div class="foswikiCol3 border" style="padding-bottom:2em">
-      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
-      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
-      dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
-      phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
-      augue porta, cursus, a eu.
-      <a class="readOn">%T% read on</a>
-    </div>
-    <div class="foswikiCol3 border" style="padding-bottom:2em">
-      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
-      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
-      <a class="readOn">%T% read on</a>
-    </div>
-    <div class="foswikiCol3 border" style="padding-bottom:2em">
-      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
-      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
-      dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
-      phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
-      augue porta, cursus, a eu.
-      <a class="readOn">%T% read on</a>
-    </div>
-  </div>
-</div><!-- end of grid -->
----
 
 %META:PREFERENCE{name="NATSKIN_SIDEBAR" title="NATSKIN_SIDEBAR" type="Local" value="off"}%
-%META:PREFERENCE{name="TOPICTITLE" title="TOPICTITLE" type="Local" value="NatSkin Grid"}%

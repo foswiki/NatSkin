@@ -1,4 +1,4 @@
-// (c)opyright 2006-2014 Michael Daum http://michaeldaumconsulting.com
+// (c)opyright 2006-2015 Michael Daum http://michaeldaumconsulting.com
 
 (function($) {
 "use strict";

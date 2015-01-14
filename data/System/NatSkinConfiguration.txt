@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1409560855" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1421245043" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 %TOC%
@@ -23,7 +23,7 @@ This is the list of variables to configure the skin style:
 
 | *Name%BR%(url param)*  | *Values* | *Description* | *Default* |
 | NATSKIN_STYLE (style) | <noautolink>%KNOWNSTYLES%</noautolink> \
-| select a predefined style | jazzynote |
+| select a predefined style | customato |
 | NATSKIN_VARIATION (skinvariation) | <noautolink>%KNOWNVARIATIONS%</noautolink> \
 | select a style variation | none |
 | NATSKIN_LAYOUT (skinlayout) | fixed, fluid, bordered \
@@ -40,11 +40,11 @@ There are a couple of special url parameters:
 
 *Example*: 
 <verbatim>
-  * Set NATSKIN_STYLE = jazzynote
+  * Set NATSKIN_STYLE = customato
   * Set NATSKIN_LAYOUT = fixed
   * Set NATSKIN_MENU = on
   * Set NATSKIN_SIDEBAR = right
-  * Set NATSKIN_VARIATAION = red
+  * Set NATSKIN_VARIATAION = frontpage
 </verbatim>
 
 ---++ Preference variables

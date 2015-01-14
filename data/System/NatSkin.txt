@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1409560855" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1421245043" format="1.1"  version="1"}%
 ---+!! [[%TOPIC%][The Natural Skin]]
 
 !NatSkin improves your Foswiki experience by bringing together some of the most useful
@@ -17,6 +17,44 @@ fluid and a fixed page layout.
 when interacting with wiki content.
 
 ---++ Screenshots
+
+<div class="screenshots">
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap1.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap1-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinThemeSnap2.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinThemeSnap2-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinThemeSnap3.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinThemeSnap3-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinThemeSnap4.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinThemeSnap4-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinThemeSnap5.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinThemeSnap5-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinThemeSnap6.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinThemeSnap6-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap2.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap2-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap3.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap3-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap4.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap4-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap5.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap5-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap6.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap6-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap7.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap7-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap8.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap8-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap9.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap9-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap10.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap10-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap11.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap11-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap12.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap12-200.png" /></a>
+<a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap13.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap13-200.png" /></a>
+</div>
+
+%CLEAR%
+
+<literal>
+<style>
+.screenshots a {
+  overflow:hidden; 
+  max-width:190px; 
+  max-height:200px;
+  float:left;
+  margin:0 1em 1em 0;
+}
+.screenshots img {
+  height:200px;
+}
+</style>
+</literal>
 
 ---++ Theme switcher
 
@@ -51,6 +89,7 @@ the templates by using the !NatSkin as a parent skin to create template modifica
    * NatSkinConfiguration
    * NatSkinFAQ
    * NatSkinGrid
+   * NatSkinTypography
    * NatSkinPlugin
 ---++ Installation Instructions
 %$INSTALL_INSTRUCTIONS%
@@ -65,13 +104,13 @@ the templates by using the !NatSkin as a parent skin to create template modifica
    * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
 -->
 |  Skin Author: | Michael Daum |
-|  Copyright &copy;: | 2003-2014, Michael Daum http://michaeldaumconsulting.com |
+|  Copyright &copy;: | 2003-2015, Michael Daum http://michaeldaumconsulting.com |
 |  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
 |  Release: | %$RELEASE% |
 |  Version: | %$VERSION% |
 |  Description: | Userfriendly Foswiki skin providing a flexible theming engine for professional webdesigns |
 |  Base Name: | nat |
-|  Screenshot: | <div style="overflow:hidden;height:200px"><a href="%PUBURLPATH%/%WEB%/NatSkin/BlueNoteStyle.jpeg"><img src="%PUBURLPATH%/%WEB%/NatSkin/BlueNoteStyle.jpeg" title="JazzyNoteTheme"/></a></div> |
+|  Screenshot: | <div style="overflow:hidden;height:200px"><a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap1.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap1-200.png"/></a></div> |
 |  Change&nbsp;History: | <!-- specify latest version first -->&nbsp; |
 |  29 Aug 2013: | third beta |
 |  12 Dec 2013: | second beta |
@@ -80,4 +119,39 @@ the templates by using the !NatSkin as a parent skin to create template modifica
 |  Home: | Foswiki:Extensions/NatSkin |
 |  Support: | Foswiki:Support/NatSkin |
 
-%META:FILEATTACHMENT{name="BlueNoteStyle.jpeg" attachment="BlueNoteStyle.jpeg" attr="h" comment="" date="1409560855" path="BlueNoteStyle.jpeg" size="42093" stream="IO::File=GLOB(0x8f2567c)" tmpFilename="/var/tmp/CGItemp41158" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap1.png" attachment="NatSkinSnap1.png" attr="h" comment="" date="1421245043" size="90414" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap1-200.png" attachment="NatSkinSnap1-200.png" attr="ht" comment="" date="1421245043" size="36394" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap2.png" attachment="NatSkinSnap2.png" attr="h" comment="" date="1421245043" size="53315" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap2-200.png" attachment="NatSkinSnap2-200.png" attr="h" comment="" date="1421245043" size="14159" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap10.png" attachment="NatSkinSnap10.png" attr="h" comment="" date="1421245043" size="72803" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap9.png" attachment="NatSkinSnap9.png" attr="h" comment="" date="1421245043" size="39699" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap3.png" attachment="NatSkinSnap3.png" attr="h" comment="" date="1421245043" size="38859" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap4.png" attachment="NatSkinSnap4.png" attr="h" comment="" date="1421245043" size="65346" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap5.png" attachment="NatSkinSnap5.png" attr="h" comment="" date="1421245043" size="110480" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap6.png" attachment="NatSkinSnap6.png" attr="h" comment="" date="1421245043" size="117840" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap7.png" attachment="NatSkinSnap7.png" attr="h" comment="" date="1421245043" size="116892" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap8.png" attachment="NatSkinSnap8.png" attr="h" comment="" date="1421245043" size="67071" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap11.png" attachment="NatSkinSnap11.png" attr="h" comment="" date="1421245043" size="173959" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap4-200.png" attachment="NatSkinSnap4-200.png" attr="h" comment="" date="1421245043" size="23942" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap5-200.png" attachment="NatSkinSnap5-200.png" attr="h" comment="" date="1421245043" size="34327" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap6-200.png" attachment="NatSkinSnap6-200.png" attr="h" comment="" date="1421245043" size="26433" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap7-200.png" attachment="NatSkinSnap7-200.png" attr="h" comment="" date="1421245043" size="26509" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap8-200.png" attachment="NatSkinSnap8-200.png" attr="h" comment="" date="1421245043" size="11870" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap9-200.png" attachment="NatSkinSnap9-200.png" attr="h" comment="" date="1421245043" size="12106" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap10-200.png" attachment="NatSkinSnap10-200.png" attr="h" comment="" date="1421245043" size="9891" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap11-200.png" attachment="NatSkinSnap11-200.png" attr="h" comment="" date="1421245043" size="17800" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap3-200.png" attachment="NatSkinSnap3-200.png" attr="h" comment="" date="1421245043" size="13208" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap12-200.png" attachment="NatSkinSnap12-200.png" attr="h" comment="" date="1421245043" size="27388" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap12.png" attachment="NatSkinSnap12.png" attr="h" comment="" date="1421245043" size="103871" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap13-200.png" attachment="NatSkinSnap13-200.png" attr="h" comment="" date="1421245043" size="14530" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap13.png" attachment="NatSkinSnap13.png" attr="h" comment="" date="1421245043" size="27376" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap2-200.png" attachment="NatSkinThemeSnap2-200.png" attr="h" comment="" date="1421245043" size="44661" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap2.png" attachment="NatSkinThemeSnap2.png" attr="h" comment="" date="1421245043" size="422218" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap3-200.png" attachment="NatSkinThemeSnap3-200.png" attr="h" comment="" date="1421245043" size="35541" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap4-200.png" attachment="NatSkinThemeSnap4-200.png" attr="h" comment="" date="1421245043" size="34134" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap5-200.png" attachment="NatSkinThemeSnap5-200.png" attr="h" comment="" date="1421245043" size="45110" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap5.png" attachment="NatSkinThemeSnap5.png" attr="h" comment="" date="1421245043" size="421865" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap6-200.png" attachment="NatSkinThemeSnap6-200.png" attr="h" comment="" date="1421245043" size="44620" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap6.png" attachment="NatSkinThemeSnap6.png" attr="h" comment="" date="1421245043" size="414253" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap4.png" attachment="NatSkinThemeSnap4.png" attr="h" comment="" date="1421245043" size="135166" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap3.png" attachment="NatSkinThemeSnap3.png" attr="h" comment="" date="1421245043" size="126224" user="ProjectContributor" version="1"}%
