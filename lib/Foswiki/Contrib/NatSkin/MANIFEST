@@ -36,6 +36,7 @@ data/System/WebCreateNewWeb.txt 0644
 data/System/WebLinks.txt 0644
 data/System/WebTopicListViewTemplate.txt 0644
 lib/Foswiki/Contrib/NatSkin/Config.spec 0644
+lib/Foswiki/Contrib/NatSkin/DEPENDENCIES 0644
 lib/Foswiki/Contrib/NatSkin.pm 0644
 locale/NatSkin/de.po 0644
 locale/NatSkin/Foswiki.pot 0644

@@ -1,4 +1,6 @@
 <!-- template: viewtopicaction.nat.tmpl -->
-%TMPL:DEF{"topicactions"}%<div class="natTopicActions jqUITooltip clearfix" id="natTopicActions" data-theme="info" data-arrow="on" data-position="top">
+%TMPL:DEF{"topicactions"}%%TMPL:P{context="static" else="topicactions::contents"}%%TMPL:END%
+
+%TMPL:DEF{"topicactions::contents"}%<div class="natTopicActions jqUITooltip clearfix" id="natTopicActions" data-theme="info" data-arrow="on" data-position="top">
 %WEBCOMPONENT{"TopicActions"}%<!-- -->
 </div>%TMPL:END%

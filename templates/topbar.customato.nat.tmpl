@@ -57,13 +57,13 @@
 %TMPL:DEF{"toppanel::authenticated"}%<div class="natTopPanelContents">
 <div class="foswikiGrid">
   <div class="foswikiRow %TMPL:P{"toppanel::bulletsclass"}%">
-    <div class="foswikiCol4">
+    <div class="foswikiCol4 border">
       <h3 >My <nop>%WIKITOOLNAME%</h3>
       <ul>
        <li> [[%%WIKIUSERNAME%][%MAKETEXT{"My Profile"}%]] </li>
        <li> [[%SYSTEMWEB%.ChangeEmailAddress][%MAKETEXT{"Change Email Address"}%]] </li>
-       <li> [[%SYSTEMWEB%.ChangePassword][%MAKETEXT{"Change Password"}%]] </li>
-       <li> [[%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?logout=1][%MAKETEXT{"Log out"}%]] </li>
+       <li> [[%SYSTEMWEB%.ChangePassword][%MAKETEXT{"Change Password"}%]] </li>%IF{"$ LOGOUT" then="
+       <li> [[%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?logout=1][%MAKETEXT{"Log out"}%]] </li>"}%
       </ul>
     </div>
     <div class="foswikiCol4 border">

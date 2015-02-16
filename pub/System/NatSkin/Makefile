@@ -12,5 +12,5 @@ TARGET= \
 
 -include Makefile.include
 
-SUBDIRS=../JazzyNoteTheme
+SUBDIRS=../JazzyNoteTheme ../CustomatoTheme
 

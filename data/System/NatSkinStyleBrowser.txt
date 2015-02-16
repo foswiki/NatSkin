@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1421245043" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1424086937" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ Style Browser
 Explore the style variations of the %SYSTEMWEB%.NatSkin by changing the base
@@ -33,21 +33,21 @@ in. If you select different style options they have precedence over those.
   <div class="foswikiFormStep">
     <h3 >%MAKETEXT{"Layout"}%:</h3>
     <ul>
-      <li><label><input type="radio" class="foswikiRadiobox" name="skinlayout" value="fixed" %IF{"context natskin_layout_fixed" then="checked='checked'"}% /> %MAKETEXT{"Fixed"}%</label></li>
-      <li><label><input type="radio" class="foswikiRadiobox" name="skinlayout" value="fluid" %IF{"context natskin_layout_fluid" then="checked='checked'"}% /> %MAKETEXT{"Fluid"}%</label></li>
+      <li><label><input type="radio" class="foswikiRadiobox" name="skinlayout" value="fixed" %IF{"context natskin_layout_fixed" then="checked='checked'"}% />%MAKETEXT{"Fixed"}%</label></li>
+      <li><label><input type="radio" class="foswikiRadiobox" name="skinlayout" value="fluid" %IF{"context natskin_layout_fluid" then="checked='checked'"}% />%MAKETEXT{"Fluid"}%</label></li>
       <li><label><input type="radio" class="foswikiRadiobox" name="skinlayout" value="bordered" %IF{"context natskin_layout_bordered" then="checked='checked'"}% />%MAKETEXT{"Bordered"}%</label></li>
     </ul>
     <h3 >%MAKETEXT{"Sidebar"}%:</h3>
     <ul>
-      <li><label><input type="radio" class="foswikiRadiobox" name="skinsidebar" value="left" %IF{"context natskin_sidebar_left" then="checked='checked'"}% /> %MAKETEXT{"Left"}%</label></li>
-      <li><label><input type="radio" class="foswikiRadiobox" name="skinsidebar" value="right" %IF{"context natskin_sidebar_right" then="checked='checked'"}% /> %MAKETEXT{"Right"}%</label></li>
-      <li><label><input type="radio" class="foswikiRadiobox" name="skinsidebar" value="both" %IF{"context natskin_sidebar_both" then="checked='checked'"}% /> %MAKETEXT{"Both"}%</label></li>
-      <li><label><input type="radio" class="foswikiRadiobox" name="skinsidebar" value="off" %IF{"context natskin_sidebar_off" then="checked='checked'"}% /> %MAKETEXT{"Off"}%</label></li>
+      <li><label><input type="radio" class="foswikiRadiobox" name="skinsidebar" value="left" %IF{"context natskin_sidebar_left" then="checked='checked'"}% />%MAKETEXT{"Left"}%</label></li>
+      <li><label><input type="radio" class="foswikiRadiobox" name="skinsidebar" value="right" %IF{"context natskin_sidebar_right" then="checked='checked'"}% />%MAKETEXT{"Right"}%</label></li>
+      <li><label><input type="radio" class="foswikiRadiobox" name="skinsidebar" value="both" %IF{"context natskin_sidebar_both" then="checked='checked'"}% />%MAKETEXT{"Both"}%</label></li>
+      <li><label><input type="radio" class="foswikiRadiobox" name="skinsidebar" value="off" %IF{"context natskin_sidebar_off" then="checked='checked'"}% />%MAKETEXT{"Off"}%</label></li>
     </ul>
     <h3 >%MAKETEXT{"Menu"}%:</h3>
     <ul>
-      <li><label><input type="radio" class="foswikiRadiobox" name="skinmenu" value="on" %IF{"context natskin_menu_on" then="checked='checked'"}% /> %MAKETEXT{"On"}%</label></li>
-      <li><label><input type="radio" class="foswikiRadiobox" name="skinmenu" value="off" %IF{"context natskin_menu_off" then="checked='checked'"}% /> %MAKETEXT{"Off"}%</label></li>
+      <li><label><input type="radio" class="foswikiRadiobox" name="skinmenu" value="on" %IF{"context natskin_menu_on" then="checked='checked'"}% />%MAKETEXT{"On"}%</label></li>
+      <li><label><input type="radio" class="foswikiRadiobox" name="skinmenu" value="off" %IF{"context natskin_menu_off" then="checked='checked'"}% />%MAKETEXT{"Off"}%</label></li>
     </ul>
   </div>
   <div class="foswikiFormStep foswikiFormLast foswikiFormButtons">

@@ -1,0 +1,520 @@
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1424086937" format="1.1"  version="1"}%
+%META:TOPICPARENT{name="NatSkin"}%
+---+!! %TOPICTITLE%
+
+This topic gives you a short overview of the elements styled by NatSkin as well as the CSS classes being used to do so.
+
+%TOC%
+
+<!--
+see 
+   * http://demo.gantry-framework.org/typography
+   * http://getbootstrap.com/2.3.2/base-css.html
+   * http://getbootstrap.com/css/#type
+-->
+
+---++ Typography
+
+Below markup will be replaced by appropriate HTML entities. This requires to enable below setting in your Foswiki configuration.
+
+<verbatim>
+$Foswiki::cfg{NatSkin}{FixTypograpghy} = 1;
+</verbatim>
+
+<div class="alt">
+
+``Quotes'', ,,More quotes''
+
+(c) copyright, (r) registered, (tm) trademark
+
+... ellipsis
+
+<- arrow left ... arrow right ->
+</div>
+
+---++ Headings
+<div class="alt headings">
+<div class="foswikiNormal">
+---+!! Heading 1
+---++!! Heading 2
+---+++!! Heading 3
+---++++!! Heading 4
+---+++++!! Heading 5
+---++++++!! Heading 6
+</div>
+</div>
+
+---++ Body copy
+!NatSkin takes care of vertical rhythm by taking care line heights of body text and headings obey to a predefined grid. Hit the button to display a grid checking vertical and horizontal
+accurate typography.
+
+<div class="alt">
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+</div>
+
+---++ Text-decorations
+Put emphasize in your text using Foswiki Markup or using HTML tags
+
+<div class="alt">
+*bold text*
+
+_italic text_
+
+__bold italic text__
+
+=code text=
+
+==bold code text==
+
+<u>underlined text</u>
+
+<strike>strike through text</strike>
+</div>
+
+---++ Citations
+Use =&lt;cite>= or =&lt;blockquote>= to put emphasize on complete paragraphs.
+
+=&lt;cite>= element:
+
+<div class="alt">
+<cite>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+</cite>
+</div>
+
+=&lt;blockquote>= element:
+
+<blockquote class="alt">
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+<i>&mdash; Henry Moore</i>
+</blockquote>
+
+=&lt;blockquote class="foswikiBlockQuote">= element:
+
+<div class="alt">
+<blockquote class="foswikiBlockQuote">
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+</blockquote>
+</div>
+---++ Code
+Use Foswiki ML to add =inline code= or wrap it into HTML =&lt;code>= .... =&lt;/code>=
+
+Blocks of code are marked up using =&lt;verbatim>= ... =&lt;/verbatim>= to make sure content inside is
+not executed by Foswiki and proper escaping is performed. Compare this to the normal =&lt;pre>= ... =&lt;/pre>=
+HTML where macros are still executed whereas results are formatted as code.
+
+<verbatim>
+Sample text with makros %SEARCH{... }% and _dummy_ text.
+</verbatim>
+
+Code can be prettified using the [[%SYSTEMWEB%.JQueryChili][chili jQuery module]]. 
+
+<verbatim class="tml">
+%JQREQUIRE{"chili"}%
+... if not loaded by default anyway (see configure).
+
+Sample text with makros
+%SEARCH{
+  "foo bar"
+  type="query"
+}%
+</verbatim>
+
+---++ Font sizes
+Use classes =foswikiLarge=, =foswikiNormal=, =foswikiSmallish= and =foswikiSmall= to control font sizes:
+
+<div class="alt foswikiLarge">
+*foswikiLarge:*
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui.
+</div>
+
+<div class="alt foswikiNormal">
+*foswikiNormal:*
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui.
+</div>
+
+<div class="alt foswikiSmallish">
+*foswikiSmallish:*
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+</div>
+
+<div class="alt foswikiSmall">
+*foswikiSmall:*
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+</div>
+---++ Floating Elements
+Use =foswikiLeft= or =foswikiRight= on any element to let it foat. Use the =%<nop>CLEAR%= macro to clear any floating elements beyond its position.
+Or use the =clearfix= class for a container to keep all float elements inside it.
+
+<div class="alt">
+<div class="foswikiLeft foswikiHelp">I am on the left</div>
+<div class="foswikiRight foswikiHelp">I am on the right.</div>
+The rest of the text floats as normal til the next clear.
+%CLEAR%
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et purus aliquet, consequat massa blandit, eleifend est. Duis vehicula purus sem, at mollis enim faucibus non. Proin odio elit, varius blandit metus non, venenatis fringilla justo. Vestibulum dui felis, vulputate et dignissim ut, consectetur at lorem. Maecenas scelerisque, eros porttitor venenatis malesuada, neque ipsum hendrerit libero, nec rutrum urna sapien nec eros. Ut adipiscing fermentum magna, aliquet condimentum lorem porttitor et. Sed eu ultricies nulla.
+</div>
+
+---++ Addresses
+Present contact information. Preserves line breaks and emphasizes the first line
+
+<div class="alt">
+<address>
+Twitter, Inc.
+795 Folsom Ave, Suite 600
+San Francisco, CA 94107
+P: (123) 456-7890
+first.last@gmail.com
+</address>
+</div>
+
+---++ Message styles
+Use css classes =foswikiSuccessMessage=, =foswikiErrorMessage=, =foswikiWarningMessage=, =foswikiInfoMessage=, =foswikiHelp= or =foswikiAlt= to give paragraphs special meaning.
+
+<div class="foswikiSuccessMessage">
+Success, everything is fine. Click [[%TOPIC%][here]].
+</div>
+
+<div class="foswikiWarningMessage">
+Warning, could not connect to server. Click [[%TOPIC%][here]].
+</div>
+
+<div class="foswikiErrorMessage">
+Error, something is wrong.  Click [[%TOPIC%][here]].
+</div>
+
+<div class="foswikiInfoMessage">
+Check this out.  Click [[%TOPIC%][here]].
+</div>
+
+<div class="foswikiHelp">
+%JQICON{"medal_gold_1"}% Some note with a custom icon and a bit of a style around it.
+</div>
+
+<div class="foswikiAlt">
+A paragraph to stand out from the rest.
+</div>
+
+---++ Lists
+
+<div class="foswikiGrid">
+<div class="foswikiRow">
+<div class="foswikiCol4">
+<div class="alt">
+ordered
+
+   1 item
+   2 item
+   3 item
+   4 item
+</div>
+</div>
+<div class="foswikiCol4">
+<div class="alt">
+unordered
+
+   * item
+   * item
+   * item
+   * item
+</div>
+</div>
+<div class="foswikiCol4">
+<div class="alt">
+custom icon
+
+<div class="foswikiNoBullets">
+   * %JQICON{"user"}% item
+   * %JQICON{"emoticon_smile"}% item
+   * %JQICON{"user_red"}% item
+   * %JQICON{"user_green"}% item
+</div>
+</div>
+</div>
+</div>
+<div class="foswikiRow">
+<div class="foswikiCol4">
+<div class="alt">
+=foswikiOrangeBullets=
+
+<div class="foswikiOrangeBullets">
+   * item
+   * item
+   * item
+   * item
+</div>
+</div>
+</div>
+<div class="foswikiCol4">
+<div class="alt">
+=foswikiBlueBullets=
+
+<div class="foswikiBlueBullets">
+   * item
+   * item
+   * item
+   * item
+</div>
+</div>
+</div>
+<div class="foswikiCol4">
+<div class="alt">
+=foswikiBlackBullets=
+
+<div class="foswikiBlackBullets">
+   * item
+   * item
+   * item
+   * item
+</div>
+</div>
+</div>
+</div>
+<div class="foswikiRow">
+<div class="foswikiCol4">
+<div class="alt">
+=foswikiGreenBullets=
+
+<div class="foswikiGreenBullets">
+   * item
+   * item
+   * item
+   * item
+</div>
+</div>
+</div>
+<div class="foswikiCol4">
+<div class="alt">
+=foswikiPinkBullets=
+
+<div class="foswikiPinkBullets">
+   * item
+   * item
+   * item
+   * item
+</div>
+</div>
+</div>
+<div class="foswikiCol4">
+<div class="alt">
+=foswikiRedBullets=
+
+<div class="foswikiRedBullets">
+   * item
+   * item
+   * item
+   * item
+</div>
+</div>
+</div>
+</div>
+<div class="foswikiRow">
+<div class="foswikiCol4">
+<div class="alt">
+=foswikiStarBullets=
+
+<div class="foswikiStarBullets">
+   * item
+   * item
+   * item
+   * item
+</div>
+</div>
+</div>
+<div class="foswikiCol4">
+<div class="alt">
+=foswikiWhiteBullets=
+
+<div class="foswikiWhiteBullets">
+   * item
+   * item
+   * item
+   * item
+</div>
+</div>
+</div>
+<div class="foswikiCol4">
+<div class="alt">
+=foswikiArrowBullets=
+
+<div class="foswikiArrowBullets">
+   * item
+   * item
+   * item
+   * item
+</div>
+</div>
+</div>
+</div>
+<div class="foswikiRow">
+<div class="foswikiCol4">
+<div class="alt">
+=foswikiAddBullets=
+
+<div class="foswikiAddBullets">
+   * item
+   * item
+   * item
+   * item
+</div>
+</div>
+</div>
+<div class="foswikiCol4">
+<div class="alt">
+=foswikiNoBullets=
+
+<div class="foswikiNoBullets">
+   * item
+   * item
+   * item
+   * item
+</div>
+</div>
+</div>
+<div class="foswikiCol4">
+
+</div>
+</div>
+</div>
+
+---++ Descriptions
+<div class="alt">
+description list
+
+   term1: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+   term2: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+   term3: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+
+</div>
+
+<div class="alt">
+=foswikiHorizontal=
+
+<div class="foswikiHorizontal">
+   Consectetuer: adipiscing elit, sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+   Dolor: sit amet, consectetuer adipiscing elit, sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+   Adipiscing: elit sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+</div>
+</div>
+
+<div class="alt">
+indenting
+
+   : adipiscing elit, sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+
+      : sit amet, consectetuer adipiscing elit, sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+
+         : elit sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
+
+</div>
+
+---++ Tables
+=foswikiTable=
+
+| *Consectetuer* | *Dolor* | *Adipiscing* | *Dignissim* |
+| Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+| Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+| Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+
+| *Consectetuer* | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+| *Dolor* | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+| *Adipiscing* | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+| *Dignissim* | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+
+<div class="alt">
+=foswikiLayoutTable=
+
+<table class="foswikiLayoutTable">
+<tr>
+   <th>Adipiscing</th>
+   <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</td>
+   <td>sed diam nonummy nibh feugiat nulla facilisis at</td>
+   <td>vero eros et accumsan et iusto odio dignissim qui</td>
+   <td>blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla</td>
+</tr>
+<tr>
+   <th>Adipiscing</th>
+   <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</td>
+   <td>sed diam nonummy nibh feugiat nulla facilisis at</td>
+   <td>vero eros et accumsan et iusto odio dignissim qui</td>
+   <td>blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla</td>
+</tr>
+<tr>
+   <th>Adipiscing</th>
+   <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</td>
+   <td>sed diam nonummy nibh feugiat nulla facilisis at</td>
+   <td>vero eros et accumsan et iusto odio dignissim qui</td>
+   <td>blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla</td>
+</tr>
+</table>
+</div>
+
+<div class="alt">
+=foswikiNullTable=
+
+<table class="foswikiNullTable">
+<tr>
+   <th>Adipiscing</th>
+   <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</td>
+   <td>sed diam nonummy nibh feugiat nulla facilisis at</td>
+   <td>vero eros et accumsan et iusto odio dignissim qui</td>
+   <td>blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla</td>
+</tr>
+<tr>
+   <th>Adipiscing</th>
+   <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</td>
+   <td>sed diam nonummy nibh feugiat nulla facilisis at</td>
+   <td>vero eros et accumsan et iusto odio dignissim qui</td>
+   <td>blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla</td>
+</tr>
+<tr>
+   <th>Adipiscing</th>
+   <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</td>
+   <td>sed diam nonummy nibh feugiat nulla facilisis at</td>
+   <td>vero eros et accumsan et iusto odio dignissim qui</td>
+   <td>blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla</td>
+</tr>
+</table>
+</div>
+
+---++ Forms
+input, textarea, select, check boxes, radio boxes, buttons, form steps, horizontal, vertical
+
+<literal>
+<style>
+.headings h1, .headings h2, .headings h3,
+.headings h4, .headings h5, .headings h6 {
+  color:inherit;
+  font-weight:inherit;
+}
+</style>
+</literal>
+
+%META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Set" value="on"}%

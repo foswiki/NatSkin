@@ -97,8 +97,6 @@ a:hover {
   color:#ED299C;
 }
 
-.blogPagination,
-.blogPagination a,
 .foswikiGrayText,
 .foswikiGrayText a,
 h1 .foswikiTopicSummary,
@@ -110,7 +108,7 @@ h1 .foswikiTopicSummary,
 .natBreadCrumbs,
 .natBreadCrumbs a,
 .natBreadCrumbs .natSep {
-  color:#a1a1a1;
+  color:#818181;
 }
 
 .natLoginHeading,

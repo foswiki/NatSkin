@@ -248,6 +248,9 @@ ol {
   margin:1.385em 0em;
   padding:0 0 0 3.0769em;
 }
+dl {
+  margin:1.385em 0em;
+}
 ol ol,
 ul ol,
 ol ul,
@@ -274,6 +277,17 @@ dd {
 }
 dt {
   font-weight:bold;
+}
+.foswikiHorizontal dt {
+  float:left;
+  width:12em;
+  text-align:right;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.foswikiHorizontal dd {
+  margin-left:13em;
 }
 table ul,
 table ol {
@@ -369,7 +383,7 @@ ul.foswikiTickBullets,
 }
 
 .blogEntry blockquote,
-.foswikiBlockCite {
+.foswikiBlockQuote {
   font-style:italic;
   border:0px;
   margin:1.385em 0em; /* 18px 0px */
@@ -377,7 +391,7 @@ ul.foswikiTickBullets,
   background:url(icons/quote.png) no-repeat;
 }
 
-.foswikiBlockCite .foswikiCiteChar {
+.foswikiBlockQuote .foswikiCiteChar {
   display:none;
 }
 
@@ -1890,6 +1904,12 @@ a:active.natScrollTop {
   width:100%;
 }
 
+/* fluid layout */
+.natBodyFluid .natBodyContents {
+  margin-left:1em;
+  margin-right:1em;
+}
+
 /* bordered layout */
 .natBodyBordered {
   margin:1em 2.3076em 5em;
@@ -2636,6 +2656,7 @@ a:active.natScrollTop {
   float:left; 
   height: 100%; 
   position:relative;
+  min-height:1em;
 }
 
 .foswikiGrid .border {

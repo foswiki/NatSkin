@@ -58,7 +58,7 @@ h2,
 .foswikiNormal h2 {
   font-size:1.5em; /* 21px */
   line-height:1em; /* 21px */
-  margin:1em 0;
+  margin:2em 0 1em;
   border-bottom:1px solid #D5D6DD;
   font-weight:normal;
 }
@@ -70,7 +70,7 @@ h3,
 .foswikiNormal h3 {
   font-size:1.2857em; /* 18px */
   line-height: 1.1667em; /* 21px */
-  margin: 1.1667em 0; 
+  margin: 2.3333em 0 1.1667em; /* 42px 0 21px */
   font-weight:normal;
 }
 
@@ -78,7 +78,7 @@ h4,
 .foswikiNormal h4 {
   font-size: 1.1429em; /* 16px */
   line-height: 1.3125em; /* 21px */
-  margin: 1.3125em 0 0 0;
+  margin: 1.3125em 0;
   font-weight:normal;
 }
 
@@ -218,8 +218,19 @@ a {
 }
 .natBodyBordered .natBottomBarContents,
 .natBodyBordered .natBodyContents {
-  margin-left:50px;
-  margin-right:50px;
+  margin-left:1em;
+  margin-right:1em;
+}
+.natBodyFluid .natTopPanelContents,
+.natBodyFluid .natBottomBarContents,
+.natBodyFluid .natBodyContents {
+  margin-left:10%;
+  margin-right:10%;
+}
+.natBodyFluid .natBottomBarContents,
+.natBodyFluid .natTopPanelContents {
+  padding-left:0;
+  padding-right:0;
 }
 .showgrid {
   background-position:0px 1px;
@@ -632,14 +643,15 @@ a.jqButton:link {
 }
 
 @media (max-width: 1180px) {
-  .natBodyFixed .natTopPanelContents,
-  .natBodyFixed .natBottomBarContents {
+  .natBody .natTopPanelContents,
+  .natBody .natBottomBarContents {
     width:auto;
   }
-  .natBodyFixed .natTopPanelContents {
+  .natBody .natTopPanelContents {
     padding:1em;
+    margin:0;
   }
-  .natBodyFixed .natBodyContents {
+  .natBody .natBodyContents {
     width:auto;
     margin:-10px 1em 0;
   }
@@ -852,8 +864,6 @@ a:hover {
   color:#ED299C;
 }
 
-.blogPagination,
-.blogPagination a,
 .foswikiGrayText,
 .foswikiGrayText a,
 h1 .foswikiTopicSummary,
@@ -865,7 +875,7 @@ h1 .foswikiTopicSummary,
 .natBreadCrumbs,
 .natBreadCrumbs a,
 .natBreadCrumbs .natSep {
-  color:#a1a1a1;
+  color:#818181;
 }
 
 .natLoginHeading,
