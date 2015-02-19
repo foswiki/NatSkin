@@ -55,63 +55,48 @@
 
 %{################################################################################ }%
 %TMPL:DEF{"toppanel::authenticated"}%<div class="natTopPanelContents">
-<div class="foswikiGrid">
-  <div class="foswikiRow %TMPL:P{"toppanel::bulletsclass"}%">
-    <div class="foswikiCol4 border">
-      <h3 >My <nop>%WIKITOOLNAME%</h3>
-      <ul>
-       <li> [[%%WIKIUSERNAME%][%MAKETEXT{"My Profile"}%]] </li>
-       <li> [[%SYSTEMWEB%.ChangeEmailAddress][%MAKETEXT{"Change Email Address"}%]] </li>
-       <li> [[%SYSTEMWEB%.ChangePassword][%MAKETEXT{"Change Password"}%]] </li>%IF{"$ LOGOUT" then="
-       <li> [[%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?logout=1][%MAKETEXT{"Log out"}%]] </li>"}%
-      </ul>
-    </div>
-    <div class="foswikiCol4 border">
-      <h3 >%MAKETEXT{"Tools"}%</h3>
-      <ul>
-       <li> [[WebChanges][%MAKETEXT{"Recent Changes"}%]] </li>
-       <li> [[WebTopicList][%MAKETEXT{"Index of all Topics"}%]] </li>
-       <li> [[WebNotify][%MAKETEXT{"Notifications"}%]] </li>
-       <li> [[WebStatistics][%MAKETEXT{"Usage Statistics"}%]] </li>
-      </ul>
-    </div>
-    <div class="foswikiCol4 border">
-      <h3 >%MAKETEXT{"Help"}%</h3>
-      <ul>
-        <li>[[%SYSTEMWEB%.TwentyMinuteTutorial][%MAKETEXT{"20 Minutes Tutorial"}%]]</li>
-        <li>[[%SYSTEMWEB%.UsersGuide][%MAKETEXT{"User's guide"}%]]</li>
-        <li>[[%SYSTEMWEB%.FrequentlyAskedQuestions][%MAKETEXT{"Frequently Asked Questions"}%]]</li>
-        <li>[[%SYSTEMWEB%.ReferenceManual][%MAKETEXT{"Reference Manual"}%]]</li>
-      </ul>
-    </div>
-  </div>
-</div>
+%BEGINGRID{border="on"}%
+%BEGINROW{class="%TMPL:P{"toppanel::bulletsclass"}%"}%
+%BEGINCOL{"4"}%
+<h3 >My <nop>%WIKITOOLNAME%</h3>
+   * [[%%WIKIUSERNAME%][%MAKETEXT{"My Profile"}%]]
+   * [[%SYSTEMWEB%.ChangeEmailAddress][%MAKETEXT{"Change Email Address"}%]]
+   * [[%SYSTEMWEB%.ChangePassword][%MAKETEXT{"Change Password"}%]] %IF{"$ LOGOUT" then="
+   * [[%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?logout=1][%MAKETEXT{"Log out"}%]]"}%
+%BEGINCOL{"4"}%
+<h3 >%MAKETEXT{"Tools"}%</h3>
+   * [[WebChanges][%MAKETEXT{"Recent Changes"}%]]
+   * [[WebTopicList][%MAKETEXT{"Index of all Topics"}%]]
+   * [[WebNotify][%MAKETEXT{"Notifications"}%]]
+   * [[WebStatistics][%MAKETEXT{"Usage Statistics"}%]]
+%BEGINCOL{"4"}%
+<h3 >%MAKETEXT{"Help"}%</h3>
+   * [[%SYSTEMWEB%.TwentyMinuteTutorial][%MAKETEXT{"20 Minutes Tutorial"}%]]
+   * [[%SYSTEMWEB%.UsersGuide][%MAKETEXT{"User's guide"}%]]
+   * [[%SYSTEMWEB%.FrequentlyAskedQuestions][%MAKETEXT{"Frequently Asked Questions"}%]]
+   * [[%SYSTEMWEB%.ReferenceManual][%MAKETEXT{"Reference Manual"}%]]
+%ENDGRID%
 </div>%TMPL:END%
 
 %{################################################################################ }%
 %TMPL:DEF{"toppanel::notauthenticated"}%<div class="natTopPanelContents">
-<div class="foswikiGrid">
-  <div class="foswikiRow %TMPL:P{"toppanel::bulletsclass"}%">
-    <div class="foswikiCol6">
-      <h3 >%MAKETEXT{"Welcome"}%</h3>
-      <ul>
+%BEGINGRID{border="on"}%
+%BEGINROW{class="%TMPL:P{"toppanel::bulletsclass"}%"}%
+%BEGINCOL{"6"}%
+<h3 >%MAKETEXT{"Welcome"}%</h3>
 %IF{"context registration_enabled"
-   then="<li> [[%SYSTEMWEB%.UserRegistration][Register on %WIKITOOLNAME%]] </li>"
-   else="<!-- -->"
+  then="   * [[%SYSTEMWEB%.UserRegistration][Register on %WIKITOOLNAME%]]"
+  else="<!-- -->"
+}%%IF{"context passwords_modifyable"
+  then="
+   * [[%SYSTEMWEB%.ResetPassword][Reset Password]]
+   * [[%SYSTEMWEB%.ChangeEmailAddress][Change Email Address]]
+   * [[%SYSTEMWEB%.ChangePassword][Change Password]]"
+  else="<!-- -->"
 }%
-%IF{"context passwords_modifyable"
-   then="<li> [[%SYSTEMWEB%.ResetPassword][Reset Password]] </li>
-         <li> [[%SYSTEMWEB%.ChangeEmailAddress][Change Email Address]] </li>
-         <li> [[%SYSTEMWEB%.ChangePassword][Change Password]] </li>"
-   else="<!-- -->"
-}%
-      </ul>
-    </div>
-    <div class="foswikiCol6 border">
-      %TMPL:P{"toppanel::login"}%
-    </div>
-  </div>
-</div>
+%BEGINCOL{"6"}%
+%TMPL:P{"toppanel::login"}%
+%ENDGRID%
 </div>%TMPL:END%
 
 %{################################################################################ }%
@@ -197,7 +182,6 @@
 %TMPL:DEF{"toppanel::login::end"}%<!-- -->
 </table>
 </form>
-
 %JQREQUIRE{"validate"}%<!-- -->
 %ADDTOZONE{"script" 
   id="NATSKIN::LOGIN"

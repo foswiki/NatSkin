@@ -8,7 +8,6 @@ data/System/NatSkinChangeEmailAddressViewTemplate.txt 0644
 data/System/NatSkinChangePasswordViewTemplate.txt 0644
 data/System/NatSkinConfiguration.txt 0644
 data/System/NatSkinFAQ.txt 0644
-data/System/NatSkinGrid.txt 0644
 data/System/NatSkinGroupViewTemplate.txt 0644
 data/System/NatSkinResetPasswordViewTemplate.txt 0644
 data/System/NatSkinStyleBrowser.txt 0644

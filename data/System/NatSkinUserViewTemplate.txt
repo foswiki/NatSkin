@@ -38,9 +38,9 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"userinfo::details"}%<div class="foswikiGrid">
-<div class="foswikiRow jqSameHeight">
-<div class="foswikiCol6 border">
+%TMPL:DEF{"userinfo::details"}%%BEGINGRID{border="on"}%
+%BEGINROW{class="DISjqSameHeight"}%
+%BEGINCOL{"6"}%
 %RENDERFORDISPLAY{
   topic="%BASEWEB%.%BASETOPIC%"
   revision="%URLPARAM{"rev"}%"
@@ -54,8 +54,7 @@
   Location_title="%MAKETEXT{"Location"}%"
   Country_title="%MAKETEXT{"Country"}%"
 }%
-</div>
-<div class="foswikiCol6 border">
+%BEGINCOL%
 %RENDERFORDISPLAY{
   topic="%BASEWEB%.%BASETOPIC%"
   revision="%URLPARAM{"rev"}%"
@@ -66,9 +65,7 @@
   Telephone_title="%MAKETEXT{"Tel"}%"
   Email_value="%FORMFIELD{"Email" rev="%URLPARAM{"rev"}%" default="%USERINFO{"%BASETOPIC%" format="$emails"}%"}%"
 }%
-</div>
-</div>
-</div>
+%ENDGRID%
 <literal>
 <style> 
 .foswikiProfileInfo { 

@@ -722,31 +722,6 @@ a.jqButton:link {
   }
 }
 @media (max-width: 600px) {
-  .foswikiGrid .foswikiCol1,
-  .foswikiGrid .foswikiCol2,
-  .foswikiGrid .foswikiCol3,
-  .foswikiGrid .foswikiCol4,
-  .foswikiGrid .foswikiCol5,
-  .foswikiGrid .foswikiCol6,
-  .foswikiGrid .foswikiCol7,
-  .foswikiGrid .foswikiCol8,
-  .foswikiGrid .foswikiCol9,
-  .foswikiGrid .foswikiCol10,
-  .foswikiGrid .foswikiCol11,
-  .foswikiGrid .foswikiCol12 {
-    float:none;
-    width:100%;
-    padding-left:0;
-    min-height:0;
-    margin:1.385em 0 0 0;
-  }
-  .foswikiGrid .border {
-    border-left-width:0;
-    border-top-width:1px;
-    padding-top:1.385em;
-  }
-
-
   .natBreadCrumbs {
     display:none;
   }

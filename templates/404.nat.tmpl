@@ -4,21 +4,17 @@
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"page not found"}%%TMPL:END%
 
 %TMPL:DEF{"content"}%<!-- -->
-<div class="foswikiGrid">
-<div class="foswikiRow">
-<div class="foswikiCol4">
+%BEGINGRID{border="on"}%
+%BEGINCOL{"4"}%
 <div class="nat404">404</div>
-</div>
-<div class="foswikiCol8 border">
+%BEGINCOL%
 <div class="natOopsMessage clearfix">
 %TMPL:P{"heading"}%<!-- -->
 %TMPL:P{"message"}%<!-- -->
 %TMPL:P{"similar"}%<!-- -->
 %TMPL:P{"actions"}%<!-- -->
 </div>
-</div>
-</div>
-</div>
+%ENDGRID%
 %TMPL:P{"poweredby"}%
 <!-- -->%TMPL:END%
 

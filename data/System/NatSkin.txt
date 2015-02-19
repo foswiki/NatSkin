@@ -88,7 +88,6 @@ the templates by using the !NatSkin as a parent skin to create template modifica
 ---++ Documentation
    * NatSkinConfiguration
    * NatSkinFAQ
-   * NatSkinGrid
    * NatSkinTypography
    * NatSkinPlugin
 ---++ Installation Instructions

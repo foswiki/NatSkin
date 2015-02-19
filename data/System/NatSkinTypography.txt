@@ -224,9 +224,8 @@ A paragraph to stand out from the rest.
 
 ---++ Lists
 
-<div class="foswikiGrid">
-<div class="foswikiRow">
-<div class="foswikiCol4">
+%BEGINGRID%
+%BEGINCOL{"4"}%
 <div class="alt">
 ordered
 
@@ -235,8 +234,7 @@ ordered
    3 item
    4 item
 </div>
-</div>
-<div class="foswikiCol4">
+%BEGINCOL{"4"}%
 <div class="alt">
 unordered
 
@@ -245,8 +243,7 @@ unordered
    * item
    * item
 </div>
-</div>
-<div class="foswikiCol4">
+%BEGINCOL{"4"}%
 <div class="alt">
 custom icon
 
@@ -257,10 +254,7 @@ custom icon
    * %JQICON{"user_green"}% item
 </div>
 </div>
-</div>
-</div>
-<div class="foswikiRow">
-<div class="foswikiCol4">
+%BEGINCOL{"4"}%
 <div class="alt">
 =foswikiOrangeBullets=
 
@@ -271,8 +265,7 @@ custom icon
    * item
 </div>
 </div>
-</div>
-<div class="foswikiCol4">
+%BEGINCOL{"4"}%
 <div class="alt">
 =foswikiBlueBullets=
 
@@ -283,8 +276,7 @@ custom icon
    * item
 </div>
 </div>
-</div>
-<div class="foswikiCol4">
+%BEGINCOL{"4"}%
 <div class="alt">
 =foswikiBlackBullets=
 
@@ -295,10 +287,7 @@ custom icon
    * item
 </div>
 </div>
-</div>
-</div>
-<div class="foswikiRow">
-<div class="foswikiCol4">
+%BEGINCOL{"4"}%
 <div class="alt">
 =foswikiGreenBullets=
 
@@ -309,8 +298,7 @@ custom icon
    * item
 </div>
 </div>
-</div>
-<div class="foswikiCol4">
+%BEGINCOL{"4"}%
 <div class="alt">
 =foswikiPinkBullets=
 
@@ -321,8 +309,7 @@ custom icon
    * item
 </div>
 </div>
-</div>
-<div class="foswikiCol4">
+%BEGINCOL{"4"}%
 <div class="alt">
 =foswikiRedBullets=
 
@@ -333,10 +320,7 @@ custom icon
    * item
 </div>
 </div>
-</div>
-</div>
-<div class="foswikiRow">
-<div class="foswikiCol4">
+%BEGINCOL{"4"}%
 <div class="alt">
 =foswikiStarBullets=
 
@@ -347,8 +331,7 @@ custom icon
    * item
 </div>
 </div>
-</div>
-<div class="foswikiCol4">
+%BEGINCOL{"4"}%
 <div class="alt">
 =foswikiWhiteBullets=
 
@@ -359,8 +342,7 @@ custom icon
    * item
 </div>
 </div>
-</div>
-<div class="foswikiCol4">
+%BEGINCOL{"4"}%
 <div class="alt">
 =foswikiArrowBullets=
 
@@ -371,10 +353,7 @@ custom icon
    * item
 </div>
 </div>
-</div>
-</div>
-<div class="foswikiRow">
-<div class="foswikiCol4">
+%BEGINCOL{"4"}%
 <div class="alt">
 =foswikiAddBullets=
 
@@ -385,8 +364,7 @@ custom icon
    * item
 </div>
 </div>
-</div>
-<div class="foswikiCol4">
+%BEGINCOL{"4"}%
 <div class="alt">
 =foswikiNoBullets=
 
@@ -397,12 +375,7 @@ custom icon
    * item
 </div>
 </div>
-</div>
-<div class="foswikiCol4">
-
-</div>
-</div>
-</div>
+%ENDGRID%
 
 ---++ Descriptions
 <div class="alt">
