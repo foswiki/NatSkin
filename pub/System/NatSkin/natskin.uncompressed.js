@@ -16,18 +16,6 @@
   });
 
   /**************************************************************************
-   * fix revision position by moving it under the first h1 found in the 
-   * content area
-   */
-  function fixRevisionPosition() {
-
-    $(".natMainContents h1:first:not(.h1Inited)").livequery(function() {
-      $(".natMainFooterContents .foswikiRevision").remove().insertAfter(this);
-      $(this).addClass("h1Inited");
-    });
-  }
-
-  /**************************************************************************
    * init horizontal navigation
    */
   function initWebMenu() {
@@ -40,7 +28,7 @@
       if ($this.is(".natWebMenuStretch")) {
         topElems = $this.find(".natWebMenuContents > ul > li");
         count = topElems.length;
-        width = 100 - (count-1) * (opts.margin||0);
+        width = 100 - (count -1) * (opts.margin||0);
         elemWidth =  width / count;
         lastWidth = width - elemWidth * (count-1);
 
@@ -48,15 +36,14 @@
         lastWidth = lastWidth+"%";
         //console.log("count=",count,"width=",width,"elemWidth=",elemWidth,"lastWidth=",lastWidth);
 
-        topElems.outerWidth(elemWidth).last().outerWidth(lastWidth);
+        topElems.width(elemWidth).last().width(lastWidth);
       }
     });
 
     $(".natWebMenuContents > ul").livequery(function() {
       var $this = $(this);
 
-      $this.superfish({
-        dropShadows: false, 
+      $this.addClass("sf-menu").superfish({
         cssArrows: false,
         speed:200,
         onBeforeShow: function() {
@@ -320,12 +307,6 @@
     if (foswiki.getPreference("NatSkin.initWebMenu")) {
       initWebMenu();
     }
-
-/*
-    if (foswiki.getPreference("NatSkin.fixRevisionPosition")) {
-      fixRevisionPosition();
-    }
-*/
 
     if (foswiki.getPreference("NatSkin.initBusyIndicator")) {
       initBusyIndicator();

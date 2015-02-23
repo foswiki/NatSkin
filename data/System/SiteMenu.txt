@@ -58,7 +58,7 @@ Definition of site wide horizontal menu
 ---++ Admin menu
 <verbatim class="tml">
 %STARTSECTION{"adminmenu"}%<noautolink>
-<li>%MAKETEXT{"Admin"}%
+<li><a>%MAKETEXT{"Admin"}%</a>
   <ul>
     %IF{"isweb 'Applications'"
        then="<li>

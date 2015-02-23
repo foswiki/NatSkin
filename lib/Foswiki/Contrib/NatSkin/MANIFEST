@@ -244,6 +244,7 @@ templates/attachtables.nat.tmpl 0644
 templates/backlinksallwebs.nat.tmpl 0644
 templates/backlinks.nat.tmpl 0644
 templates/backlinksweb.nat.tmpl 0644
+templates/body.customato.nat.tmpl 0644
 templates/body.jazzynote.nat.tmpl 0644
 templates/body.nat.tmpl 0644
 templates/body.plain.nat.tmpl 0644
@@ -318,6 +319,7 @@ templates/translatetopic.nat.tmpl 0644
 templates/twistyplugin.nat.tmpl 0644
 templates/updatesplugin.nat.tmpl 0644
 templates/validate.nat.tmpl 0644
+templates/view.angular.nat.tmpl 0644
 templates/view.nat.tmpl 0644
 templates/viewplain.nat.tmpl 0644
 templates/view.print.nat.tmpl 0644

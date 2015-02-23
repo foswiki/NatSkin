@@ -1,0 +1,19 @@
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{"body"}%<body id="body" class="natBodyFixed natBodyRight %TMPL:P{"defaultbodyclass"}% %TMPL:P{"bodyclass"}%">%TMPL:P{"defaultbody"}%%TMPL:P{"ng::loadtime"}%</body>%TMPL:END%
+
+%TMPL:DEF{"meta::base"}%<base href="%SCRIPTURLPATH{"view"}%/"/><!--[if IE]></base><![endif]-->%TMPL:END%
+%TMPL:DEF{"meta"}%%TMPL:P{"meta::base"}%
+<meta name="fragment" content="!" />
+%TMPL:PREV%%TMPL:END%
+
+%TMPL:DEF{"styles"}%%TMPL:PREV%%TMPL:P{"css::angular"}%%TMPL:END%
+
+%TMPL:DEF{"javascript"}%%TMPL:PREV%
+%ADDTOZONE{
+  "script"
+  id="NATSKIN::ANGULAR"
+  requires="ANGULARSKIN"
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/angular.js'></script>"
+}%
+%TMPL:P{"javascript::angular"}%%RENDERZONE{"script"}%%RENDERZONE{"skinjs"}%%TMPL:END%

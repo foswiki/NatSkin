@@ -144,6 +144,10 @@ img {
   prince-image-resolution: 150dpi;
 }
 
+.natMainContents img {
+  max-width:100%;
+}
+
 
 /* links */
 .foswikiNewLink {

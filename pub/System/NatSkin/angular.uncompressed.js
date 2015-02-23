@@ -15,7 +15,7 @@ foswikiApp.directive("natBody", [ '$rootScope',
           if (foswiki.getPreference("NatSkin.initTopPanel")) {
             angular.element(".natTopPanel").hide();
           }
-          angular.element('ul.sf-js-enabled').hideSuperfishUl(); 
+          angular.element('ul.sf-js-enabled').superfish("hide"); 
           isEmptySideBar = _testSideBar();
 
           angular.element(".natSearchBox .foswikiInputField").val("");

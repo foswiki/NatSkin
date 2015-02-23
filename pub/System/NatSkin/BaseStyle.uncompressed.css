@@ -1172,6 +1172,7 @@ img.foswikiLeft,
   float:left;
   white-space:nowrap;
   text-decoration:none;
+  color:inherit;
 }
 .natTopicActions > .natTopicAction:first-child {
   margin-left:0;
@@ -1184,7 +1185,6 @@ img.foswikiLeft,
 .natTopicActions .natUserAction:hover,
 .natTopicActions .natTopicAction:hover {
   background-color:#0055b5;
-  border:1px solid #004FA9;
   color:#fff;
 }
 .natTopicActions .sfHover .natMoreActionsTopicAction {
@@ -2050,6 +2050,9 @@ a:active.natScrollTop {
   position:relative;
   padding:0px;
 }
+.natWebMenu .natSearchBox {
+  float:right;
+}
 .natSearchBox .foswikiInputField {
   width:180px; 
   color:#aaa; 
@@ -2081,7 +2084,7 @@ a:active.natScrollTop {
   background-position:0px -25px;
 }
 
-.natSearchBox input:focus { 
+.natSearchBox .foswikiInputField:focus { 
   color:#0055b5;
 }
 
@@ -2296,63 +2299,61 @@ a:active.natScrollTop {
 }
 
 /* web menu ******************************************************************/
-.natWebMenu li,
-.natWebMenu {
-  -webkit-box-sizing:border-box; 
-     -moz-box-sizing:border-box;
-          box-sizing:border-box;
-}
+/* init realy */
 
-.natWebMenu ul {
+.natWebMenuContents > ul {
+  float:left;
   margin:0;
   padding:0;
   list-style:none;
-  display:block;
 }
-
+.natWebMenuContents > ul > li {
+  float:left;
+}
+/* reset some */
+.natWebMenu .sf-menu {
+  margin-bottom:0;
+}
+.natWebMenu .sf-menu li:hover,
+.natWebMenu .sf-menu li.sfHover,
+.natWebMenu .sf-menu li {
+  -webkit-transition: none;
+  transition: none;
+}
+.natWebMenu li {
+  background-color:transparent;
+}
+.natWebMenu .sf-menu a {
+  border:0;
+}
+/* customize */
 .natWebMenu ul ul {
-  display:none;
   border-color:#c2c4c4;
   border-width:1px 0px 1px 0px;
   border-style:solid;
-  position:absolute; 
-  top:-999em; 
+  display:none;
 }
-
-.natWebMenu li {
-  float:left;
-  list-style:none;
-  display:block;
+.natWebMenu ul ul ul {
+  margin-top:-1px;
 }
-
-.natWebMenu a {
-  overflow:hidden;
-  text-overflow:ellipsis;
-}
-
 .natWebMenu li,
-.natWebMenu h2,
-.natWebMenu h3,
-.natWebMenu h4,
-.natWebMenu h5,
-.natWebMenu h6,
 .natWebMenu .sf-js-enabled {
-  margin:0;
-  padding:0;
   font-size:100%;
-  line-height:2.3076em; /* to be added to VARIABLE1 */
+  line-height:2.3076em;  
 }
-.natWebMenu li,
 .natWebMenu li a {
   font-weight:bold;
   color:#00458F;
+  padding:0 1em;
+  text-decoration: none;
+  display:block;
 }
 .natWebMenu a:hover {
   color:#fff;
 }
-.natWebMenu li li,
-.natWebMenu li li a,
-.natWebMenu li li a.foswikiNewLink {
+.natWebMenu ul ul li,
+.natWebMenu ul ul a,
+.natWebMenu ul ul a.foswikiNewLink {
   font-weight:normal;
   color:#444;
 }
@@ -2363,7 +2364,6 @@ a:active.natScrollTop {
   background-color:#fff;
   color:#00458F;
 }
-
 .natWebMenu li.sfHover,
 .natWebMenu li.sfHover > a,
 .natWebMenu li .foswikiCurrentWebHomeLink:hover,
@@ -2373,32 +2373,10 @@ a:active.natScrollTop {
   background-color:#0055b5;
   color:#fff;
 }
-
-.natWebMenu li li {
+.natWebMenu ul ul li {
   background-color:#fff;
   border-left:1px solid #c2c4c4;
   border-right:1px solid #c2c4c4;
-}
-.natMoreActionsMenu li .hr,
-.natMoreActionsMenu li hr,
-.natWebMenu li .hr,
-.natWebMenu li hr {
-  border-bottom:1px solid #c2c4c4;
-  margin:0.5em -1em;
-}
-.natWebMenu li {
-  padding-left:1.0em;
-  padding-right:1.0em;
-}
-.natWebMenu li a {
-  margin:0em -1em;
-  padding:0em 1em;
-  display:block;
-  text-decoration:none;
-}
-.natWebMenu li img {
-  margin-right:0.3em;
-  margin-left:-0.2em;
 }
 
 .natWebMenu li .hasSubMenu > a:hover,
@@ -2412,55 +2390,6 @@ a:active.natScrollTop {
 .natWebMenu li .hasAjaxMenu.sfHover > a {
   background-image:url(icons/facebook-loader.gif);
   background-position:95% 50%;
-}
-
-.natWebMenu ul li li {
-  height:auto;
-}
-
-.natWebMenu ul li {
-  position:relative;
-  z-index:99; 
-}
-
-.natWebMenu ul li.sfHover {
-  z-index:999999;
-}
-
-/* web menu, second tier */
-.natWebMenu ul li:hover ul, 
-.natWebMenu ul li.sfHover ul 
-{
-  left:0px;
-  top:2.3076em; /* VARIABLE1 */
-  width:13.45em; /* VARIABLE2 */
-}
-.natWebMenuStretch > ul > li:last-child:hover > ul, 
-.natWebMenuStretch > ul > li:last-child.sfHover > ul {
-  right:0;
-  left:auto;
-}
-
-.natWebMenu ul ul li {
-  width:100%;
-}
-
-/* web menu, third tier */
-.natWebMenu ul li.sfHover li ul {
-  top:-999em; 
-}
-.natWebMenu ul li li.sfHover ul {
-  left:13.31em; /* VARIABLE2  - 2px*/
-  top:-1px; 
-}
-
-/* web menu, fourth tier */
-.natWebMenu ul li li.sfHover li ul {
-  top:-999em; 
-}
-.natWebMenu ul li li li.sfHover ul {
-  left:13.45em; /* VARIABLE2 */ 
-  top:-1px;
 }
 
 /* more actions menu */
@@ -2503,6 +2432,7 @@ a:active.natScrollTop {
   text-decoration:none;
   margin:0em -1em;
   padding:0em 1em;
+  color:inherit;
 }
 .natTopicActions .natMoreActionsMenu ul li img {
   margin-right:0.3em;
@@ -2512,6 +2442,9 @@ a:active.natScrollTop {
   margin:0em -1em;
   padding:0.5em 1em;
   font-size:100%;
+}
+.natTopicActions .natMoreActionsMenu hr {
+  margin:0.5em -1em;
 }
 
 /* slideshow fixes */
