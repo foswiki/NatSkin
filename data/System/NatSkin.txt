@@ -111,6 +111,7 @@ the templates by using the !NatSkin as a parent skin to create template modifica
 |  Base Name: | nat |
 |  Screenshot: | <div style="overflow:hidden;height:200px"><a href="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap1.png"><img src="%PUBURLPATH%/%WEB%/NatSkin/NatSkinSnap1-200.png"/></a></div> |
 |  Change&nbsp;History: | <!-- specify latest version first -->&nbsp; |
+|  27 Feb 2015: | final 4.00 which comes with the new customato theme |
 |  29 Aug 2013: | third beta |
 |  12 Dec 2013: | second beta |
 |  14 Mar 2013: | first beta of new release |

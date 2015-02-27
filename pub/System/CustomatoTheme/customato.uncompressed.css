@@ -423,37 +423,6 @@ a.jqButton:link {
   margin-bottom:1em;
 }
 
-.natTopicActions .sfHover .natMoreActionsTopicAction,
-.natTopicActions .natTopicAction:hover,
-.natWebMenu li.sfHover > a,
-.natWebMenu li a:hover,
-.natWebMenu li .foswikiCurrentWebHomeLink,
-.natWebMenu li .foswikiCurrentTopicLink {
-  color:#fff;
-  border-radius:0;
-/*  border-color:transparent;*/
-}
-
-.natWebMenu li.sfHover > a,
-.natWebMenu li .foswikiCurrentWebHomeLink:hover,
-.natWebMenu li a:hover {
-  border-radius:0;
-/*  border-color:transparent;*/
-}
-
-.natWebMenu ul ul {
-  box-shadow:2px 2px 10px -2px rgba(0,0,0,0.2);
-}
-
-.natWebMenu ul ul .foswikiCurrentTopicLink,
-.natWebMenu ul ul .foswikiCurrentWebHomeLink,
-.natWebMenu ul ul a {
-  background:inherit;
-  color:inherit;
-}
-.natWebMenu ul ul a:hover {
-  border-bottom-color:inherit;
-}
 .natMoreActionsMenu ul {
   margin-top:5px;
 }
@@ -787,31 +756,26 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
   color:#fff;
 }
 
-.natWebMenu li,
-.natWebMenu li a {
+.natWebMenuContents > ul > li,
+.natWebMenuContents > ul > li > a {
+  text-decoration: none;
   background-color:#3D8FE0;
   color:#fff;
 }
-
+.natTopicActions .natTopicAction:hover,
+.natTopicActions .sfHover .natMoreActionsTopicAction,
+.natWebMenu li a:hover,
 .natWebMenu li.sfHover,
 .natWebMenu li.sfHover > a,
-.natWebMenu li .foswikiCurrentWebHomeLink:hover,
-.natWebMenu li a.current:hover,
-.natWebMenu li a:hover,
-.natWebMenu li .foswikiCurrentWebHomeLink:hover,
-.natWebMenu li .foswikiCurrentWebHomeLink,
-.natWebMenu li .foswikiCurrentTopicLink,
-.natWebMenu li.sfHover > a,
-.natWebMenu li .foswikiCurrentWebHomeLink:hover,
-.natWebMenu li a:hover,
-.natTopicActions .sfHover .natMoreActionsTopicAction,
-.natTopicActions .natTopicAction:hover,
-.natWebMenu li.sfHover > a,
-.natWebMenu li a:hover,
-.natWebMenu li .foswikiCurrentWebHomeLink,
-.natWebMenu li .foswikiCurrentTopicLink {
+.natWebMenuContents > ul > li > a:hover,
+.natWebMenuContents > ul > li > li > a.current,
+.natWebMenuContents > ul > li > li > a.current:hover,
+.natWebMenuContents > ul > li > .foswikiCurrentWebHomeLink,
+.natWebMenuContents > ul > li > .foswikiCurrentWebHomeLink:hover {
   background-color:#2375C5;
+  color:#fff;
 }
+
 .natSideBar h2,
 .natSideBar h2 a {
   color: #2375C5;

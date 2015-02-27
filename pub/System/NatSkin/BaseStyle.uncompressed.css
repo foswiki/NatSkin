@@ -2343,7 +2343,6 @@ a:active.natScrollTop {
 }
 .natWebMenu li a {
   font-weight:bold;
-  color:#00458F;
   padding:0 1em;
   text-decoration: none;
   display:block;
@@ -2357,17 +2356,12 @@ a:active.natScrollTop {
   font-weight:normal;
   color:#444;
 }
-.natWebMenu li .foswikiCurrentWebHomeLink,
-.natWebMenu li .foswikiCurrentWebHomeLink:hover,
-.natWebMenu li a.current,
-.natWebMenu li a.current:hover {
-  background-color:#fff;
-  color:#00458F;
-}
+.natWebMenuContents > ul > li > .foswikiCurrentWebHomeLink,
+.natWebMenuContents > ul > li > .foswikiCurrentWebHomeLink:hover,
+.natWebMenuContents > ul > li > li > a.current,
+.natWebMenuContents > ul > li > li > a.current:hover,
 .natWebMenu li.sfHover,
 .natWebMenu li.sfHover > a,
-.natWebMenu li .foswikiCurrentWebHomeLink:hover,
-.natWebMenu li a.current:hover,
 .natWebMenu li a:hover {
   text-decoration: none;
   background-color:#0055b5;
@@ -2421,7 +2415,6 @@ a:active.natScrollTop {
   display:none;
 }
 
-
 .natTopicActions .natMoreActionsMenu ul li {
   padding-left:1.0em;
   padding-right:1.0em;
@@ -2432,7 +2425,6 @@ a:active.natScrollTop {
   text-decoration:none;
   margin:0em -1em;
   padding:0em 1em;
-  color:inherit;
 }
 .natTopicActions .natMoreActionsMenu ul li img {
   margin-right:0.3em;
