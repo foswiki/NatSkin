@@ -1,14 +1,27 @@
 @import url(../NatSkin/BaseStyle.css);
+@import url(../WebFontsContrib/roboto/font-face.css);
 
 .natBody {
   font-size:14px;
   line-height:1.5em;
+  font-family: Roboto, Arial, 'Liberation Sans', FreeSans, sans-serif;
   background-color:#fff;
   color:#333;
 }
 .foswikiNormal {
   font-size:14px;
-  line-height:1.5em;
+  line-height:1.5;
+}
+
+.jqTextboxListValue,
+label,
+.ui-menu,
+.natWebMenu ul ul li,
+.natTopicActions,
+.ui-natedit-toolbar,
+.jqTabGroup,
+.jqButton {
+  font-family: Arial, 'Liberation Sans', FreeSans, sans-serif;
 }
 
 /* revert some fixed sizes */
@@ -25,9 +38,22 @@ em {
   font-style:italic;
 }
 
+u {
+  text-decoration:none;
+  border-bottom:1px dashed #333;
+}
+
+blockquote i,
+address:first-line,
+dt, 
+b, 
+strong {
+  font-weight:500;
+}
+
+
 h1,
 .foswikiNormal h1 {
-  font-family: Arial, sans-serif;
   font-size:2em; /* 28px */
   /*line-height:1.5em;  42px */
   margin-top:0;
@@ -111,14 +137,6 @@ dd {
   margin:0 0 1.5em 2em;
 }
 
-.foswikiSuccessMessage,
-.foswikiErrorMessage,
-.foswikiWarningMessage,
-.foswikiInfoMessage,
-.foswikiTipMessage {
-  padding:0.678em 1em 0.678em 3em; /* 9.5px 21px 9.5px 42px */
-  background-position:1em 0.8em;
-}
 .foswikiHelp,
 .foswikiAlt {
   padding:0.678em 1em; /* 9.5px 21px */
@@ -231,6 +249,12 @@ a {
   padding-left:0;
   padding-right:0;
 }
+
+.natLoginForm input[type=text], 
+.natLoginForm input[type=password] {
+  width:100%;
+} 
+
 .showgrid {
   background-position:0px 1px;
   background-image:url(../NatSkin/grid-40x21.png);
@@ -281,7 +305,6 @@ a.jqButton:link {
 
 /* form elements */
 .select2-container .select2-choice:hover,
-.select2-container-multi .select2-choices,
 .select2-container .select2-choice {
   border-color:#ccc;
 }
@@ -421,6 +444,11 @@ a.jqButton:link {
   border-bottom:1px solid #D5D6DD;
   margin-bottom:1em;
 }
+@media (max-width:620px) {
+  .natWebMenu {
+    border-bottom:0;
+  }
+}
 
 .natMoreActionsMenu ul {
   margin-top:5px;
@@ -474,7 +502,7 @@ a.jqButton:link {
 .natSideBar h2,
 .natSideBar h2 a {
   display:block;
-  font-weight:bold;
+  font-weight:500;
 }
 .natSideBar h2.webLink,
 .natSideBarContents > h2:first-of-type {
@@ -509,7 +537,7 @@ a.jqButton:link {
 
 /* tables */
 .foswikiTable {
-  margin:0px 1px 1.5em 1px;
+  margin:0 0 1.5em 0;
   font-size:0.9285em; /* 13px */
   line-height:1.4615em; /* 19px */
   border:1px solid #e4e4e4;
@@ -518,17 +546,12 @@ a.jqButton:link {
 .foswikiTable td {
   border:1px solid #e4e4e4;
 }
-/*
-.foswikiTable tr:hover {
-  background-color: #f4f4f4;
-}
-*/
 .foswikiTable th,
 .foswikiTable th h2,
 .foswikiTable th h3,
 .foswikiTable th h4 {
   color:#222;
-  font-weight:bold;
+  font-weight:500;
   text-decoration:none;
   background-color: #f4f4f4;
   vertical-align:top;
@@ -538,10 +561,6 @@ a.jqButton:link {
 .foswikiTable th span {
   color:#222;
 }
-.foswikiTable tr {
-  background-color:transparent;
-}
-
 
 /* toc */
 .foswikiToc ul {
@@ -619,6 +638,7 @@ a.jqButton:link {
 @media (max-width:870px) {
   .natBody .natMiddleContents {
     margin-right:0 !important;
+    margin-left:0 !important;
   }
   .natNetworkNavi,
   .natSideBar,
@@ -645,7 +665,7 @@ a.jqButton:link {
     min-width:300px;
   }
   .natWebMenu .natSearchBox .foswikiInputField {
-    border-bottom-width:1px;
+    border-bottom-style:solid;
   }
 
   .natTopRightContents {
@@ -658,6 +678,7 @@ a.jqButton:link {
 
   .natBody .natSideBarContents {
     padding-top:2em;
+    padding-left:1.5em;
     border:0;
   }
   .natBody .natSideBar {

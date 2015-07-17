@@ -1,9 +1,8 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1424086937" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1437156544" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%<!-- -->
 %TMPL:DEF{"form"}%%TMPL:END%
-%TMPL:DEF{"fixRevisionPosition"}%'NatSkin.fixRevisionPosition': false,%TMPL:END%
 %TMPL:DEF{"userinfo::photo::size"}%120x150^%TMPL:END%
 %TMPL:DEF{"beforetext"}%%TMPL:P{"userinfo"}%%TMPL:END%
 %{</verbatim>}%

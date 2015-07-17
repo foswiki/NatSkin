@@ -41,6 +41,7 @@ Content-Transfer-Encoding: 8bit
 %TMPL:END%
 
 %TMPL:DEF{"HTML:before"}%
+<h2>%GETTOPICTITLE{"%WEB%.%HOMETOPIC%"}% // %WIKITOOLNAME% </h2>
 <p>%MAKETEXT{"New or changed topics in the [_1] web, since [_2] GMT" args="%GETTOPICTITLE{"%WEB%.%HOMETOPIC%"}%,%LASTDATE%"}%:</p>
 <ul style="margin:1em 0;padding:0 0 0 1.5em;">%TMPL:END%
 

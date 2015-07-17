@@ -128,12 +128,12 @@ jQuery(function($) {
   "%SOLRSEARCH{
     "outgoing:%BASEWEB%.%BASETOPIC%"
     header="$percntCALC{\"$SET(total,$count)\"}$percnt"
-    format="($title);$web.$topic"
+    format="($percntSUBST{text=\"$percntENCODE{\"$title\" type=\"entity\"}$percnt\" pattern=\"(&#\d+;)|[$]\" format=\"\"}$percnt);$title;$web.$topic"
     sort="title"
     separator="$n"
     rows="%TMPL:P{"backlinks::limit"}%"
   }%"
-  pattern="\((.*)\);(.*)"
+  pattern="\((.*)\);(.*);(.*)"
   split="\n"
   cols="3"
   sort="nocase"
@@ -142,7 +142,7 @@ jQuery(function($) {
       then=\"(%MAKETEXT{"showing only [_1]" args="%TMPL:P{"backlinks::limit"}%"}%)\"
     }$percnt<!-- -->$n$n
   "
-  format="[[$2][$1]]"
+  format="[[$3][$2]]"
 }%<!-- --></noautolink>
 %IF{"'%CALC{"$GET(total)"}%'=''"
   then="<span class='foswikiAlert'>%MAKETEXT{"nothing found"}%</span>"

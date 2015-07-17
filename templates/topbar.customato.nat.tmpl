@@ -112,7 +112,7 @@
 %{################################################################################ }%
 %TMPL:DEF{"toppanel::login::start"}%<!-- -->
 <h3 >%MAKETEXT{"Log in"}%</h3>
-<form id="LoginForm" name="LoginForm" action="%SCRIPTURLPATH{"login"}%/%WEB%/%TOPIC%" method="post">
+<form class="natLoginForm" name="LoginForm" action="%SCRIPTURLPATH{"login"}%/%WEB%/%TOPIC%" method="post">
   <literal>
     %FORMATLIST{"%QUERYPARAMS{encoding="entity" format="$name;$value"}%"
       split="\n"

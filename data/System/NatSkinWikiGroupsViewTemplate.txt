@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1424086937" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1437156544" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%<!-- -->
@@ -23,7 +23,7 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"listgroups"}%<!-- -->
-<h1 >%TOPIC%</h1>
+<h1 > %TOPICTITLE% </h1>
 %TMPL:P{context="authenticated" "creategroup"}%<!-- -->
 %MAKEINDEX{"%GROUPINFO%"
   header="$anchors$n"

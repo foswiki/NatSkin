@@ -44,13 +44,13 @@
     type="parent" 
     web="%BASEWEB%" 
     topic="%BASETOPIC%" 
-    format="($percntGETTOPICTITLE{\"$web.$topic\" encode=\"encode\"}$percnt);$web.$topic"
+    format="($percntSUBST{text=\"$percntGETTOPICTITLE{\"$web.$topic\" encode=\"entity\"}$percnt\" pattern=\"(&#\d+;)|[$]\" format=\"\"}$percnt);$percntGETTOPICTITLE{\"$web.$topic\" encode=\"entity\"}$percnt;$web.$topic"
   }%"
-  pattern="\((.*)\);(.*)"
+  pattern="\((.*)\);(.*);(.*)"
   split="\n"
   cols="3"
   header="%MAKETEXT{"[_1] topic(s) found" args="<span class='foswikiAlert'>$count</span>"}%$n$n $percntCALC{\"$SET(found,1)\"}$percnt"
-  format="[[$2][$1]]"
+  format="[[$3][$2]]"
   sort="nocase"
 }%
 %IF{"'%CALC{"$GET(found)"}%'=''"
@@ -63,13 +63,13 @@
   "%DBQUERY{
     "parent='%BASETOPIC%'"
     web="%BASEWEB%" 
-    format="($percntGETTOPICTITLE{\"$web.$topic\" encode=\"encode\"}$percnt);$web.$topic"
+    format="($percntSUBST{text=\"$percntGETTOPICTITLE{\"$web.$topic\" encode=\"entity\"}$percnt\" pattern=\"(&#\d+;)|[$]\" format=\"\"}$percnt);$percntGETTOPICTITLE{\"$web.$topic\" encode=\"entity\"}$percnt;$web.$topic"
   }%"
-  pattern="\((.*)\);(.*)"
+  pattern="\((.*)\);(.*);(.*)"
   split="\n"
   cols="3"
   header="%MAKETEXT{"[_1] topic(s) found" args="<span class='foswikiAlert'>$count</span>"}%$n$n $percntCALC{\"$SET(found,1)\"}$percnt"
-  format="[[$2][$1]]"
+  format="[[$3][$2]]"
   sort="nocase"
   limit="%TMPL:P{"childtopics::limit"}%"
 }%
@@ -83,12 +83,12 @@
   "%SOLRSEARCH{
     "parent:%BASEWEB%.%BASETOPIC%"
     header="$percntCALC{\"$SET(total,$count)\"}$percnt"
-    format="($title);$web.$topic"
+    format="($percntSUBST{text=\"$percntENCODE{\"$title\" type=\"entity\"}$percnt\" pattern=\"(&#\d+;)|[$]\" format=\"\"}$percnt);$title;$web.$topic"
     sort="title"
     separator="$n"
     rows="%TMPL:P{"childtopics::limit"}%"
   }%"
-  pattern="\((.*)\);(.*)"
+  pattern="\((.*)\);(.*);(.*)"
   split="\n"
   cols="3"
   header="%MAKETEXT{"[_1] topic(s) found" args="<span class='foswikiAlert'>%CALC{"$GET(total)"}%</span>"}%
@@ -96,7 +96,7 @@
       then=\"(%MAKETEXT{"showing only [_1]" args="%TMPL:P{"childtopics::limit"}%"}%)\"
     }$percnt<!-- -->$n
   "
-  format="[[$2][$1]]"
+  format="[[$3][$2]]"
   sort="nocase"
 }%</noautolink>
 %IF{"'%CALC{"$GET(total)"}%'=''"

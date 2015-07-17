@@ -21,6 +21,8 @@ pub/System/JazzyNoteTheme/JazzyNoteStyle.css
 pub/System/CustomatoTheme/customato.js
 pub/System/NatSkin/login.js
 pub/System/NatSkin/angular.js
+pub/System/NatSkin/topiccreator.css
+pub/System/NatSkin/topiccreator.js
 NatSkin.md5
 NatSkin.sha1
 NatSkin.tgz

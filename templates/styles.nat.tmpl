@@ -1,5 +1,10 @@
 <!-- template: styles.nat.tmpl -->
 %TMPL:DEF{"defaultstyles"}%<!-- -->
+%ADDTOZONE{
+  "head" 
+  id="TOPICCREATOR"
+  text="<link rel='stylesheet' href='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/topiccreator.css' media='all' />"
+}%
 %RENDERZONE{"head"}%<!-- -->
 %RENDERZONE{"skincss"}%<!-- -->
 %TMPL:P{"preferences::styles"}%<!-- -->

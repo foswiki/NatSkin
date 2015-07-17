@@ -1,20 +1,21 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1424086937" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1437156544" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ %TOPIC%
 Default site-level configuration for the !WebTopicActions !WebComponent
 
 <verbatim class="tml">
 %STARTINCLUDE%%USERACTIONS{
-  guest="$action(pdf, can_generate_pdf)"
+  guest="$action(share, SocialSharePluginEnabled)"
   restrictedactions="history, raw, edit, copytopic, managetags, harvest, history, diff"
-  format="$edit$attach$new$menu"
+  format="$edit$attach$new$action(share, SocialSharePluginEnabled)$menu"
   history="<div class='natHistoryTopicActions'>$edit$raw$print$view$history$first$prev$next$last$action(close)</div>"
   menu="
    * $action(move)
    * $action(delete)
-   * $action(editsettings)
-   * $action(editform)
-   * $action(copytopic)
+   * $action(edit_raw)
+   * $action(edit_settings)
+   * $action(edit_form)
+   * $action(copy_topic)
    * <hr />
    * $action(diff)
    * $action(restore)
@@ -36,5 +37,5 @@ Default site-level configuration for the !WebTopicActions !WebComponent
 }%%STOPINCLUDE%
 </verbatim>
 
-%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
 %META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%
+%META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%

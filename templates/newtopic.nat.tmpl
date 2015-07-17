@@ -1,6 +1,6 @@
 %TMPL:INCLUDE{"view"}%
 
-%TMPL:DEF{"title"}%%HTMLTITLE{"%MAKETEXT{"Create a new topic"}%" separator=" %IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="-"}% "}%%TMPL:END%
+%TMPL:DEF{"title"}%%HTMLTITLE{"%MAKETEXT{"Create a new topic"}%" separator=" %TMPL:P{"titlesep"}% "}%%TMPL:END%
 %TMPL:DEF{"breadcrumbstail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=newtopic" title="%TMPL:P{"NEW_HELP"}%">%MAKETEXT{"Create a new topic"}%</a>%TMPL:END%
 %TMPL:DEF{"formtitle"}%%MAKETEXT{"Create a new topic in the [_1] web" args="%WEBLINK{"%BASEWEB%" format="<nop>$title"}%"}%%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
@@ -16,7 +16,7 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="jqUIDialog foswikiFormSteps {width:%TMPL:P{"dialog::width"}%, modal:true, draggable:true}" title="%TMPL:P{"formtitle"}%">
+<div class="jqUIDialog foswikiFormSteps {width:%TMPL:P{"dialog::width"}%, modal:true, draggable:true, closeOnEscape:true, autoCenter:true}" title="%TMPL:P{"formtitle"}%">
 %TMPL:P{"createform"}%
 </div>
 </noautolink>%TMPL:END%
@@ -132,37 +132,6 @@
       </div>
     </div>"
 }%
-<!-- -->%TMPL:END%
-
-%{ ################################################################################ }%
-%TMPL:DEF{"topictemplatestep::topictype"}%<!-- -->
----
-<noautolink>
-%DBQUERY{
-  "TopicType=~'\bTopicType\b'"
-  exclude="%TMPL:P{"excludetopics"}%"
-  header="<div class='natTopicTypeSelector foswikiFormStep clearfix'>
-    <h3>%MAKETEXT{"Type"}%:</h3>
-    <div class='natTopicType'>
-      <label title='%MAKETEXT{"Default topic as defined in WebTopicEditTemplate"}%'>
-        <input type='radio' name='TopicType' value='' class='foswikiRadioButton' checked />
-        %MAKETEXT{"Default"}%
-      </label>
-    </div>"
-  format="<div class='natTopicType'>
-    <label title='$percntENCODE{\"$expand(Summary)\" type=\"entity\"}$percnt'>
-      <input type='radio' name='TopicType' value='$topic' class='foswikiRadioButton' />
-       $expand(topictitle)
-    </label>
-    </div>"
-  separator="$n"
-  footer="$n
-      <div class='foswikiFormDescription'>
-        %MAKETEXT{"Select which kind of topic you want to create."}%
-      </div>
-    </div>"
-}%
-</noautolink>
 <!-- -->%TMPL:END%
 
 %{ ################################################################################ }%

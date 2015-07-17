@@ -29,7 +29,7 @@ h1,
 
 /* layout */
 .natGreeter {
-  margin-top:0.5em;
+  margin:0.5em 0;
 }
 .natMiddle {
   border:1px #aaa solid;

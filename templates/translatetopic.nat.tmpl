@@ -139,7 +139,7 @@
 %JQREQUIRE{"wikiword"}%%ADDTOZONE{"script" requires="JQUERYPLUGIN::WIKIWORD" id="translate" text="<literal>
 <script class='$id' type='text/javascript'>
 jQuery(function($) {
-  'use strict';
+'use strict';
 
   var $form = $('form[name=translate]'),
       $target = $form.find('.new_topic .topic'),
@@ -150,7 +150,7 @@ jQuery(function($) {
   $wikify.change(function() {
     if ($wikify.is(':checked')) {
       $target.attr('disabled', 'disabled');
-      $target.wikiword($source);
+      $target.wikiword({source: $source});
     } else {
       $target.removeAttr('disabled');
       $source.unbind();

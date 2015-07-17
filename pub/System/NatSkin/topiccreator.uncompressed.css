@@ -1,0 +1,92 @@
+.jqTopicCreator {
+  position:relative;
+}
+.tcViewPort {
+  width:790px;
+  overflow:hidden;
+}
+.tcNaviContainer {
+  border-top:1px solid #d1d1d1;
+  padding-top:1em;
+  color:#888;
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
+.tcNavi a {
+  text-decoration:none;
+  display:inline-block;
+  color:#888;
+  margin:0 1em;
+}
+.tcNavi a:hover {
+  color:#0055B5;
+}
+.jqTopicCreator .foswikiPageForm {
+  box-shadow:none;
+  border:0;
+  background:transparent;
+  float:left;
+  width:790px;
+  margin:0 15px 0 0;
+  padding:0;
+}
+.jqTopicCreator .foswikiPageForm h2 {
+  font-weight:normal;
+  line-height:2;
+  border-bottom:1px solid #ddd;
+}
+.tcContainer {
+  width:39000px;
+  position:relative;
+  height:27em;
+}
+.tcPage {
+  height:19em;
+  overflow-y:auto;
+  padding-right:5px;
+  padding-bottom:5px;
+}
+.tcTopicTemplate,
+.tcTopicType {
+  box-sizing:border-box;
+  padding:0.7em 0.7em 0.7em 45px;
+  height:5.5em;
+  border:1px solid transparent;
+  border-radius:0.5em;
+  float:left;
+  width:30%;
+  margin: 0 2% 1em 0;
+  overflow:hidden;
+}
+.tcSelected {
+  border:1px solid #d1d1d1;
+  background: #ededed;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VkZWRlZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); /* IE9 */
+  background: -moz-linear-gradient(top, #ededed 0%, #ffffff 50%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(50%,#ffffff));
+  background: -webkit-linear-gradient(top, #ededed 0%,#ffffff 50%);
+  background: -o-linear-gradient(top, #ededed 0%,#ffffff 50%);
+  background: -ms-linear-gradient(top, #ededed 0%,#ffffff 50%);
+  background: linear-gradient(top, #ededed 0%,#ffffff 50%);
+}
+.tcTopicTemplate:hover,
+.tcTopicType:hover {
+  border:1px solid #d1d1d1;
+  background:linear-gradient(to bottom,#FFF 0,#F4F4F4 100%);
+  box-shadow:0 0 10px #F4F4F4;
+}
+.tcIcon {
+  margin:0 0 0 -40px;
+  float:left;
+  max-height:50px;
+  max-width:40px;
+  overflow:hidden:
+}
+.tcIcon .jqIcon {
+  font-size:30px;
+}
+.tcIcon img {
+  width:30px;
+  height:auto;
+}

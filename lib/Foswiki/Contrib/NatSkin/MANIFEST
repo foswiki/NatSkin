@@ -233,6 +233,12 @@ pub/System/NatSkin/search_button.png 0644
 pub/System/NatSkin/subscribe.js 0644
 pub/System/NatSkin/subscribe.js.gz 0644
 pub/System/NatSkin/subscribe.uncompressed.js 0644
+pub/System/NatSkin/topiccreator.css 0644
+pub/System/NatSkin/topiccreator.css.gz 0644
+pub/System/NatSkin/topiccreator.js 0644
+pub/System/NatSkin/topiccreator.js.gz 0644
+pub/System/NatSkin/topiccreator.uncompressed.css 0644
+pub/System/NatSkin/topiccreator.uncompressed.js 0644
 templates/404.nat.tmpl 0644
 templates/actionform.nat.tmpl 0644
 templates/addform.nat.tmpl 0644
@@ -280,6 +286,7 @@ templates/moveattachment.nat.tmpl 0644
 templates/moveattachmentsidebar.nat.tmpl 0644
 templates/newtopic.nat.tmpl 0644
 templates/newtopic.tmpl 0644
+templates/newtopic.wwb.tmpl 0644
 templates/oopsaccessdenied.nat.tmpl 0644
 templates/oopsattention.nat.tmpl 0644
 templates/oopsgeneric.nat.tmpl 0644

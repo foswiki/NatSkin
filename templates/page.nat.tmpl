@@ -1,16 +1,18 @@
 %TMPL:P{"page"}%<!-- template: page.nat.tmpl -->
 %TMPL:DEF{"page"}%<!DOCTYPE html>
-<html class="natHtml" lang="%CONTENT_LANGUAGE{default="%DEFAULTLANGUAGE{default="%LANG%"}%"}%" %TMPL:P{"ngapp"}% %TMPL:P{"ngcontroller"}%>
+<html class="natHtml" %TMPL:P{"xmlns"}% lang="%CONTENT_LANGUAGE{default="%DEFAULTLANGUAGE{default="%LANG%"}%"}%" %TMPL:P{"ngapp"}% %TMPL:P{"ngcontroller"}%>
 %TMPL:P{"head"}%
 %TMPL:P{"body"}%
 </html>
 %TMPL:END%
 
+%TMPL:DEF{"xmlns"}%xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#"%TMPL:END%
+
 %TMPL:DEF{"head"}%<head>
 <meta charset="%CHARSET%" />
 %TMPL:P{"pagetitle"}%
 %TMPL:P{"favicon"}%<!-- -->
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-capable" content="yes" />

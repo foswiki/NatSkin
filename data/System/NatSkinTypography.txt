@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1424086937" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1437156544" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPICTITLE%
 
@@ -245,13 +245,13 @@ unordered
 </div>
 %BEGINCOL{"4"}%
 <div class="alt">
-custom icon
+no indent
 
-<div class="foswikiNoBullets">
-   * %JQICON{"user"}% item
-   * %JQICON{"emoticon_smile"}% item
-   * %JQICON{"user_red"}% item
-   * %JQICON{"user_green"}% item
+<div class="foswikiNoIndent">
+   * item
+   * item
+   * item
+   * item
 </div>
 </div>
 %BEGINCOL{"4"}%
@@ -375,6 +375,17 @@ custom icon
    * item
 </div>
 </div>
+%BEGINCOL{"4"}%
+<div class="alt">
+custom icon
+
+<div class="foswikiNoBullets">
+   * %JQICON{"user"}% item
+   * %JQICON{"emoticon_smile"}% item
+   * %JQICON{"user_red"}% item
+   * %JQICON{"user_green"}% item
+</div>
+</div>
 %ENDGRID%
 
 ---++ Descriptions
@@ -420,6 +431,26 @@ indenting
 | *Dolor* | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
 | *Adipiscing* | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
 | *Dignissim* | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+
+=foswikiFlatTable=
+
+<div class="foswikiFlatTable">
+| *#* | *Consectetuer* | *Dolor* | *Adipiscing* | *Dignissim* |
+|  *1* | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+|  *2* | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+|  *3* | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+|  *4* | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+</div>
+
+=foswikiFlatTable foswikiStripes=
+
+<div class="foswikiFlatTable foswikiStripes">
+| *#* | *Consectetuer* | *Dolor* | *Adipiscing* | *Dignissim* |
+|  *1* | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+|  *2* | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+|  *3* | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+|  *4* | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, | sed diam nonummy nibh feugiat nulla facilisis at | vero eros et accumsan et iusto odio dignissim qui | blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla |
+</div>
 
 <div class="alt">
 =foswikiLayoutTable=
@@ -479,15 +510,5 @@ indenting
 
 ---++ Forms
 input, textarea, select, check boxes, radio boxes, buttons, form steps, horizontal, vertical
-
-<literal>
-<style>
-.headings h1, .headings h2, .headings h3,
-.headings h4, .headings h5, .headings h6 {
-  color:inherit;
-  font-weight:inherit;
-}
-</style>
-</literal>
 
 %META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Set" value="on"}%

@@ -32,12 +32,12 @@
   }
 }
 
-h1:first-of-type { string-set: title content() }
-h2 { string-set: chapter content() }
+h1:first-of-type { string-set: title content(); }
+h2 { string-set: chapter content(); }
 .foswikiRevision { string-set: revision content(); }
-.foswikiRevisionID { string-set: revisionID content() }
-.foswikiRevisionDate { string-set: date content() }
-.foswikiRevisionAuthor { string-set: author content() }
+.foswikiRevisionID { string-set: revisionID content(); }
+.foswikiRevisionDate { string-set: date content(); }
+.foswikiRevisionAuthor { string-set: author content(); }
 
 html {
   background:transparent !important;
@@ -143,11 +143,6 @@ img {
   page-break-inside: avoid;
   prince-image-resolution: 150dpi;
 }
-
-.natMainContents img {
-  max-width:100%;
-}
-
 
 /* links */
 .foswikiNewLink {

@@ -60,6 +60,10 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
   background-color:#3D8FE0;
   color:#fff;
 }
+.natTopicActions .fa {
+  color:#666;
+}
+.natTopicActions .natTopicAction:hover .fa,
 .natTopicActions .natTopicAction:hover,
 .natTopicActions .sfHover .natMoreActionsTopicAction,
 .natWebMenu li a:hover,
@@ -71,7 +75,7 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
 .natWebMenuContents > ul > li > .foswikiCurrentWebHomeLink,
 .natWebMenuContents > ul > li > .foswikiCurrentWebHomeLink:hover {
   background-color:#2375C5;
-  color:#fff;
+  color:#fff !important;
 }
 
 .natSideBar h2,
@@ -83,11 +87,16 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
 .natSideBar li a:hover {
   text-decoration:none;
   color:#ED299C;
+  background-color:transparent;
 }
 
 .ui-jqgrid .ui-state-hover a:hover,
 a:hover {
   text-decoration:underline;
+  background-color:transparent;
+  color:#ED299C;
+}
+.hover {
   background-color:transparent;
   color:#ED299C;
 }
@@ -161,7 +170,7 @@ h2.marked,
 .alt h4,
 .alt h5,
 .alt h6 {
-  font-weight:bold;
+  font-weight:500;
 }
 
 .natTopPanelContents a,
@@ -252,8 +261,11 @@ fieldset,
   border:0
 }
 pre {
+/*
   border-radius:2px;
   border:1px solid #d1d1d1;
+*/
+  border:0;
 }
 
 .jqTextboxListValue {

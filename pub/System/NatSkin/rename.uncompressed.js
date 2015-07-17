@@ -21,7 +21,9 @@ jQuery(function($) {
         
     if ($this.is(":checked")) {
       $target.attr("disabled", "disabled");
-      $target.wikiword("#topictitle");
+      $target.wikiword({
+        source: "#topictitle"
+      });
     } else {
       $target.removeAttr("disabled");
       $source.unbind();

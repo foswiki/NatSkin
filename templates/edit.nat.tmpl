@@ -55,7 +55,7 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"settingstab"}%%TAB{"%MAKETEXT{"Settings"}%" id="settings"}%%TMPL:P{"settings"}%%ENDTAB%%TMPL:END%
-%TMPL:DEF{"settings"}%%TMPL:P{"topicsettings"}%%TMPL:P{"skinsettings"}%%TMPL:P{"displaysettings"}%%TMPL:P{"commentsettings"}%%TMPL:END%
+%TMPL:DEF{"settings"}%%TMPL:P{"topicsettings"}%%TMPL:P{"editsettings"}%%TMPL:P{"skinsettings"}%%TMPL:P{"displaysettings"}%%TMPL:P{"commentsettings"}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"topicsettings"}%<h2>%MAKETEXT{"Topic settings"}%</h2>
@@ -87,6 +87,32 @@
     </table>
   </div>
 </div>%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"editsettings"}%<!-- -->
+<h2>%MAKETEXT{"Edit settings"}%</h2>
+<div class="foswikiFormSteps">
+  <div class="foswikiFormStep">
+    <table class="foswikiLayoutTable">
+%TMPL:P{"editsettings::wysiwyg"}%
+    </table>
+  </div>
+</div>
+<!-- -->%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"editsettings::wysiwyg"}%<tr>
+  <th>%MAKETEXT{"Wysiwyg"}%<input type='hidden' name='Default+NOWYSIWYG' value='undefined' /></th>
+  <td>
+    <label><input type='radio' class='foswikiRadioButton' name='Local+NOWYSIWYG' value='undefined' %IF{"preferences[name='NOWYSIWYG'].value=''" then="checked"}% />%MAKETEXT{"default"}%</label>
+  </td>
+  <td>
+    <label><input type='radio' class='foswikiRadioButton' name='Local+NOWYSIWYG' value='off' %IF{"preferences[name='NOWYSIWYG'].value='off'" then="checked"}% />%MAKETEXT{"on"}%</label>
+  </td>
+  <td>
+    <label><input type='radio' class='foswikiRadioButton' name='Local+NOWYSIWYG' value='on' %IF{"preferences[name='NOWYSIWYG'].value='on'" then="checked"}% />%MAKETEXT{"off"}%</label>
+  </td>
+</tr>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"displaysettings"}%<!-- -->

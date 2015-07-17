@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1424086937" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1437156544" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%
@@ -13,14 +13,7 @@
 </style>
 <noautolink>
 %MAKEINDEX{
-  "%TOPICLIST{
-    "($percntSUBST{
-        text=\"$percntGETTOPICTITLE{\"$name\" encode=\"entity\"}$percnt\" 
-        pattern=\"(&#\d+;)|[$]\" 
-        format=\"\"
-      }$percnt);$percntGETTOPICTITLE{\"$name\" encode=\"entity\"}$percnt;$name"
-    separator="$n"
-  }%"
+  "%TMPL:P{"topiclist::default"}%"
   pattern="\((.*)\);(.*);(.*)"
   split="\n"
   cols="%IF{"defined WEBTOPICLIST_COLS" then="%WEBTOPICLIST_COLS%" else="3"}%"
@@ -29,10 +22,34 @@
   sort="nocase"
   footer="$n$n$percntMAKETEXT{\"[_1] topics found\" args=\"<span class='foswikiAlert'>$count</span>\"}$percnt"
 }%
+<!--
+-->
 </noautolink>
 %TMPL:END%
 %TMPL:DEF{"sidebar"}%%TMPL:END%
 %{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topiclist::old"}%%TOPICLIST{
+  "($percntSUBST{
+      text=\"$percntGETTOPICTITLE{\"$name\" encode=\"entity\"}$percnt\" 
+      pattern=\"(&#\d+;)|[$]\" 
+      format=\"\"
+    }$percnt);$percntGETTOPICTITLE{\"$name\" encode=\"entity\"}$percnt;$name"
+  separator="$n"
+}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topiclist::default"}%%DBQUERY{
+  format="($percntSUBST{
+      text=\"$encode($expand(topictitle))\"
+      pattern=\"(&#\d+;)|[$]\"
+      format=\"\"
+    }$percnt);$encode($expand(topictitle));$topic"
+}%%TMPL:END%
+%{</verbatim>}%
+
 
 %META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
 %META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

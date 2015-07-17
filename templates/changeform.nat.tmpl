@@ -19,7 +19,104 @@
 %TEXT%
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep">
-<table cellspacing="5" class="natChangeForm">
+%TMPL:P{"formlist"}%
+</div>
+<div class="foswikiFormStep foswikiFormButtons">
+  %BUTTON{"%MAKETEXT{"OK"}%" accesskey="o" type="save" icon="tick"}%
+  %BUTTON{"%MAKETEXT{"Cancel"}%" accesskey="c" onclick="history.back()" icon="cross"}%
+</div>
+</div>
+</form>
+</noautolink>
+<!-- //content -->%TMPL:END%
+
+%TMPL:DEF{"formlist"}%%FORMATLIST{
+  "%DBQUERY{
+    "TopicType=~'\bTopicType\b' OR @Target.TopicType=~'\bTopicType\b'"
+    header="%FORMATLIST{"%WEBFORMS{default=""}%" 
+              format="$percntGETTOPICTITLE{\"$1\"}$percnt=$percntDBQUERY{topic=\"$1\" format=\"$web.$topic\"}$percnt=fa-file-o" 
+              separator=", "
+           }%"
+    format=", $expand(topictitle)=$expand(Target or topic)=$expand(@Target.Icon or Icon or 'fa-file-o')"
+    separator=""
+  }%"
+  sort="on"
+  unique="on"
+  split="\s*,\s*"
+  replace="/=."
+  pattern="(.*)=(.*)=(.*)"
+  header="<div id='formlist'>"
+  marker="checked"
+  selection="%IF{"'%URLPARAM{"formtemplate"}%'=''"
+    then="%IF{"'%QUERY{"form.name"}%'=''"
+            then="none"
+            else="%QUERY{"form.name"}%"
+          }%"
+    else="%URLPARAM{"formtemplate"}%"
+  }%"
+  format="<div class='row'><label>
+    <input type='radio' name='formtemplate' $marker value='$2' />
+    $percntJQICON{\"$3\"}$percnt
+    <b class='title'>$1</b> ... 
+    <span class='foswikiGrayText desc'>$percntFORMFIELD{\"Summary\" topic=\"$2\"}$percnt (<a href='%SCRIPTURLPATH{"view"}%/$2' target='_blank'>?</a>)</span>
+    </label></div>"
+  separator="$n"
+  footer="<div class='row'><label>
+      <input type='radio' name='formtemplate' value='none' />
+      %JQICON{"fa-remove"}%
+      <i class='title'>%MAKETEXT{"none "}%</i> ... 
+      <span class='foswikiGrayText desc'>%MAKETEXT{"remove the current form (caution: possible data loss)"}%</div>
+      </label></div></div>"
+}%
+<literal>
+<script>
+jQuery(function($) {
+  var $formlist = $("#formlist"), 
+      selectClass = "checked";
+  function update() {
+    $formlist.find(".row").removeClass(selectClass);
+    $formlist.find("input:checked").parents(".row:first").addClass(selectClass);
+  }
+  $formlist.find(".row").on("click", function() {
+    update($(this));
+  }).mouseenter(function() {
+    $(this).addClass("hover");
+  }).mouseleave(function() {
+    $(this).removeClass("hover");
+  });
+  update();
+});
+</script>
+<style>
+#formlist label {
+  display:block;
+}
+#formlist input {
+  display:none;
+}
+#formlist .checked {
+  background: #efffd8;
+  color:#599E00;
+}
+#formlist .row {
+  margin-bottom:0.5em;
+  padding:0.5em 1em;
+}
+#formlist .title {
+  margin-right:2em;
+}
+#formlist .desc {
+}
+#formlist .fa {
+  text-align:center;
+  font-size:1.5em;
+  width:1em;
+  margin-right:10px;
+}
+</style>
+</literal>%TMPL:END%
+
+%TMPL:DEF{"formlist_old"}%<table cellspacing="5" class="natChangeForm">
 %NATFORMLIST{
   separator="$n"
   format="<tr>
@@ -36,13 +133,4 @@
       </td>
     </tr>"
 }%
-</table>
-</div>
-<div class="foswikiFormStep foswikiFormButtons">
-  %BUTTON{"%MAKETEXT{"OK"}%" accesskey="o" type="save" icon="tick"}%
-  %BUTTON{"%MAKETEXT{"Cancel"}%" accesskey="c" onclick="history.back()" icon="cross"}%
-</div>
-</div>
-</form>
-</noautolink>
-<!-- //content -->%TMPL:END%
+</table>%TMPL:END%

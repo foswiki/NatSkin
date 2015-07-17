@@ -4,6 +4,12 @@
 "use strict";
 
   /**************************************************************************
+   * globals
+   */
+  var numDialogsOpen = 0;
+
+
+  /**************************************************************************
    * custom ease-in-out 
    */
   $.extend($.easing, {
@@ -22,7 +28,7 @@
     $(".natWebMenu").livequery(function() {
       var $this = $(this), 
           opts = $this.data(),
-          topElems, count, width, elemWidth, lastWidth;
+          topElems, count, width, elemWidth, lastWidth, sel;
 
       /* stretch top navi evenly based on the number of top elems */
       if ($this.is(".natWebMenuStretch")) {
@@ -38,6 +44,30 @@
 
         topElems.width(elemWidth).last().width(lastWidth);
       }
+
+      // Create the dropdown base
+      sel = $("<select />").appendTo(this);
+
+      // Create default option "Go to..."
+      $("<option />", {
+         "selected": "selected",
+         "value"   : "",
+         "text"    : "Go to..."
+      }).appendTo(sel);
+
+      // Populate dropdown with menu items
+      $this.find(".natWebMenuContents > ul > li > a").each(function() {
+        var el = $(this);
+        $("<option />", {
+            "value"   : el.attr("href"),
+            "text"    : el.text()
+        }).appendTo(sel);
+      });
+
+      sel.change(function() {
+        window.location.href = $(this).find("option:selected").val();
+      });
+
     });
 
     $(".natWebMenuContents > ul").livequery(function() {
@@ -159,10 +189,18 @@
     $("#searchbox").livequery(function() {
       var $form = $(this),
           $input = $form.find("input[type=text]"),
-          submitButton = $form.find("input[type=submit]");
+          submitButton = $form.find("input[type=submit]"),
+          position = $.extend({
+            my: "right top",
+            at: "right+5 bottom+11",
+          }, {
+            my: $form.data("position-my"),
+            at: $form.data("position-at"),
+          });
 
       if (typeof($.fn.autosuggest) === 'function') { // make sure autosuggest realy is present
         $input.autosuggest({
+          position: position,
           menuClass: 'natSearchBoxMenu',
           search: function(event) {
             submitButton.hide();
@@ -201,6 +239,10 @@
         easing: "shagga",
         complete: function() {
           $("body").toggleClass("natBodyNavToggleActive");
+          if($("body").is(".natBodyNavToggleActive")) {
+          } else {
+            $sidebar.css("display", "");
+          }
         }
       });
     }
@@ -216,13 +258,6 @@
       $this.on("click", function() {
         toggleSidebar();
         return false;
-      });
-
-      // switch on the sidebar when there's no toggle in sight
-      $(window).resize(function() {
-        if (!$this.is(":visible") && !$sidebar.is(":visible")) {
-          $sidebar.show();
-        }
       });
     });
   }
@@ -331,6 +366,19 @@
     if (foswiki.getPreference("NatSkin.initTopPanel")) {
       initTopPanel();
     }
+
+    // flag a dialog being open to the body element
+    $(document).on("dialogopen", function(){
+      numDialogsOpen++;
+      $("body").addClass("natDialogOpen");
+    })
+    $(document).on("dialogclose", function(){
+      numDialogsOpen--;
+      if (numDialogsOpen <= 0) {
+        $("body").removeClass("natDialogOpen");
+      }
+    });
+
 
     initTopicActions(); 
     initScrollToTop();

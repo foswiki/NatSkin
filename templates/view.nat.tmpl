@@ -13,10 +13,11 @@
 %TMPL:DEF{"scrolltop"}%<a class="natScrollTop jqScrollToLink {'target':'0', 'duration':500}" title="%MAKETEXT{"back to the top"}%">%JQICON{"fa-angle-double-up"}%</a>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"meta"}%%TMPL:P{"metagenerator"}%
+%TMPL:DEF{"meta"}%%TMPL:P{"metagenerator"}%<!-- -->
 %TMPL:P{"metadescription"}%<!-- -->
 %TMPL:P{"metakeywords"}%<!-- -->
 %TMPL:P{"metaauthor"}%<!-- -->
+%TMPL:P{"metaopengraph"}%<!-- -->
 %TMPL:P{"metacanonical"}%<!-- -->
 %TMPL:P{"metarelations"}%<!-- -->
 %TMPL:P{"metaedit"}%<!-- -->
@@ -24,39 +25,42 @@
 %TMPL:P{"metarss"}%<!-- -->
 %TMPL:P{"metaopensearch"}%%TMPL:END%
 
-%TMPL:DEF{"metagenerator"}%<meta name="generator" content="Foswiki %WIKIVERSION%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph"}%<!-- -->
+%TMPL:P{"metaopengraph::title"}%<!-- -->
+%TMPL:P{"metaopengraph::sitename"}%<!-- -->
+%TMPL:P{"metaopengraph::url"}%<!-- -->
+%TMPL:P{"metaopengraph::description"}%<!-- -->
+%TMPL:P{"metaopengraph::image"}%
+<!-- -->%TMPL:END%
 
-%TMPL:DEF{"metaauthor"}%<meta name="author" content="%ENCODE{
-  "%IF{"defined 'METAAUTHOR'" 
-    then="$percntMETAAUTHOR$percnt"
-    else="%SPACEOUT{
-      "%USERINFO{
-        "%TMPL:P{context="DBCachePluginEnabled" then="metaauthor::dbcache" else="metaauthor::default"}%" 
-        format="$wikiname"
-      }%"
-    }%"
-  }%"
-  type="html"
-}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::title"}%<meta property="og:title" content="%TMPL:P{"metaopengraph::title::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::title::content"}%%TOPICTITLE%%TMPL:END%
 
-%TMPL:DEF{"metaauthor::default"}%%QUERY{"'%WEB%.%TOPIC%'/versions[1].info.author"}%%TMPL:END%
-%TMPL:DEF{"metaauthor::dbcache"}%%DBQUERY{topic="%WEB%.%TOPIC%" format="$expand(createauthor)"}%%TMPL:END%
+%TMPL:DEF{"metaopengraph::url"}%<meta property="og:url" content="%TMPL:P{"metaopengraph::url::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::url::content"}%%SCRIPTURL{"view"}%/%WEB%/%TOPIC%%TMPL:END%
 
-%TMPL:DEF{"metadescription"}%<meta name="description" content="%ENCODE{
-  "%IF{"defined 'METADESCRIPTION'" 
-    then="$percntMETADESCRIPTION$percnt"
-    else="$percntFORMFIELD{\"Summary\" default=\"$percntTOPICTITLE$percnt\" alttext=\"$percntTOPICTITLE$percnt\"}$percnt"
-  }%"
-  type="html"
-}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::sitename"}%<meta property="og:site_name" content="%TMPL:P{"metaopengraph::sitename::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::sitename::content"}%%WIKITOOLNAME{default="Foswiki"}%%TMPL:END%
 
-%TMPL:DEF{"metakeywords"}%<meta name="keywords" content="%ENCODE{
-  "%IF{"defined 'METAKEYWORDS'" 
-    then="$percntMETAKEYWORDS$percnt" 
-    else="$percntFORMFIELD{\"Tag\" default=\"Foswiki, %WEB%, %TOPIC%\" alttext=\"Foswiki, %WEB%, %TOPIC%\"}$percnt"
-  }%"
-  type="html"
-}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::description"}%<meta property="og:description" content="%ENCODE{"%TMPL:P{"metaopengraph::description::content"}%" type="html"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::description::content"}%%TMPL:P{"metadescription::content"}%%TMPL:END%
+
+%TMPL:DEF{"metadescription"}%<meta name="description" content="%ENCODE{"%TMPL:P{"metadescription::content"}%" type="html"}%" />%TMPL:END%
+%TMPL:DEF{"metadescription::content"}%%METADESCRIPTION{default="%FORMFIELD{"Summary" default="%TOPICTITLE%" alttext="%TOPICTITLE%"}%"}%%TMPL:END%
+
+%TMPL:DEF{"metaopengraph::image"}%<meta property="og:image" content="%TMPL:P{"metaopengraph::image::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::image::content"}%%METAIMAGE{default="%WIKILOGOIMG%"}%%TMPL:END%
+
+%TMPL:DEF{"metakeywords"}%<meta name="keywords" content="%ENCODE{"%TMPL:P{"metakeywords::content"}%" type="html"}%" />%TMPL:END%
+%TMPL:DEF{"metakeywords::content"}%%METAKEYWORDS{default="%FORMFIELD{"Tag" default="Foswiki, %WEB%, %TOPIC%" alttext="Foswiki, %WEB%, %TOPIC%"}%"}%%TMPL:END%
+
+%TMPL:DEF{"metagenerator"}%<meta name="generator" content="%TMPL:P{"metagenerator::content"}%" />%TMPL:END%
+%TMPL:DEF{"metagenerator::content"}%Foswiki %WIKIVERSION%%TMPL:END%
+
+%TMPL:DEF{"metaauthor"}%<meta name="author" content="%ENCODE{"%TMPL:P{"metaauthor::content"}%" type="html"}%" />%TMPL:END%
+%TMPL:DEF{"metaauthor::content"}%%METAAUTHOR{default="%SPACEOUT{"%USERINFO{"%TMPL:P{context="DBCachePluginEnabled" then="metaauthor::content::dbcache" else="metaauthor::content::default"}%" format="$wikiname"}%"}%"}%%TMPL:END%
+%TMPL:DEF{"metaauthor::content::default"}%%QUERY{"'%WEB%.%TOPIC%'/versions[1].info.author"}%%TMPL:END%
+%TMPL:DEF{"metaauthor::content::dbcache"}%%DBQUERY{topic="%WEB%.%TOPIC%" format="$expand(createauthor)"}%%TMPL:END%
 
 %TMPL:DEF{"metaedit"}%%IF{
   "'%WEB%.%TOPIC%' allows 'change'" 
@@ -103,6 +107,7 @@
 %TMPL:DEF{"rawbutton"}%%IF{"$'URLPARAM{raw}'='on'" then="<p class='clearfix'>$percntBUTTON{\"%MAKETEXT{"View"}%\" title=\"%MAKETEXT{"Back to view mode"}%\" style=\"float:right\" icon=\"eye\" target=\"%WEB%.%TOPIC%\"}$percnt</p>" else="<!-- -->" }%%TMPL:END%
 %TMPL:DEF{"redirectbutton"}%%IF{"$'URLPARAM{redirectedfrom}'!=''" then="<p class='natRedirectFrom'>%JQICON{"arrow_undo"}% %MAKETEXT{"Redirect from [_1]" args="[[%URLPARAM{"redirectedfrom"}%?noredirect=on"}%]]</p>" else="<!-- -->" }%%TMPL:END%
 %TMPL:DEF{"text"}%%TEXT%%TMPL:END%
+%TMPL:DEF{"rawtext"}%<textarea rows="22" cols="70" class="foswikiTextarea foswikiTextareaRawView" readonly="readonly" style="width:99%">%TEXT%</textarea>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"contentheader"}%<div class="natMainHeaderContents clearfix" %IF{"$'DISPLAYTOPICACTIONS'='off' and $'DISPLAYBREADCRUMBS'='off'" then="style='display:none'"}%>%TMPL:P{"contentheader::contents"}%</div>%TMPL:END%

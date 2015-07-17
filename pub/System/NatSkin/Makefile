@@ -8,7 +8,9 @@ TARGET= \
   rename.js \
   password.js \
   subscribe.js \
-  angular.js
+  angular.js \
+  topiccreator.js \
+  topiccreator.css
 
 -include Makefile.include
 

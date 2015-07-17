@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1424086937" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1437156544" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 %TOC%
@@ -44,7 +44,7 @@ There are a couple of special url parameters:
   * Set NATSKIN_LAYOUT = fixed
   * Set NATSKIN_MENU = on
   * Set NATSKIN_SIDEBAR = right
-  * Set NATSKIN_VARIATAION = frontpage
+  * Set NATSKIN_VARIATION = frontpage
 </verbatim>
 
 ---++ Preference variables

@@ -1,4 +1,3 @@
-<!-- template: javascript.nat.tmpl -->
 %TMPL:DEF{"defaultjavascript"}%<!-- -->
 %ADDTOZONE{"script" 
   requires="JQUERYPLUGIN::FOSWIKI::PREFERENCES"
@@ -16,8 +15,13 @@ jQuery.extend(foswiki.preferences, {
   '_':'_'
 });
 </script>"
-}%<!-- -->
-%JQREQUIRE{"superfish, ui, blockui, farscroll, scrollto, imagetooltip, autosuggest, ui::tooltip, cookie, fontawesome" warn="off"}%<!--  -->
+}%%ADDTOZONE{
+  "script" 
+  id="TOPICCREATOR" 
+  requires="JQUERYPLUGIN::WIKIWORD, JQUERYPLUGIN::SCROLLTO"
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/RenderPlugin/foswikiTemplate.js'></script>
+<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/topiccreator.js'></script>"
+}%%JQREQUIRE{"validate, superfish, ui, blockui, farscroll, scrollto, imagetooltip, autosuggest, ui::tooltip, cookie, fontawesome, wikiword" warn="off"}%<!--  -->
 %RENDERZONE{"script"}%
 %RENDERZONE{"skinjs"}%
 <!-- -->%TMPL:END%
@@ -30,5 +34,8 @@ jQuery.extend(foswiki.preferences, {
 %TMPL:DEF{"initRedDot"}%'NatSkin.initRedDot': true,%TMPL:END%
 %TMPL:DEF{"initBusyIndicator"}%'NatSkin.initBusyIndicator': true,%TMPL:END%
 %TMPL:DEF{"initExternalLinks"}%'NatSkin.initExternalLinks': false,%TMPL:END%
+
+%TMPL:DEF{"defaultjavascript"}%<!-- -->
+%TMPL:PREV%%TMPL:END%
 
 %TMPL:DEF{"javascript"}%%TMPL:P{"defaultjavascript"}%%TMPL:END%

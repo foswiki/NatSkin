@@ -1,0 +1,157 @@
+%TMPL:INCLUDE{"newtopic"}%
+
+%TMPL:DEF{"formtitle"}%%MAKETEXT{"New"}%%TMPL:END%
+
+%TMPL:DEF{"dialog"}%<noautolink>
+<div class="jqUIDialog foswikiFormSteps {width:'auto', modal:true, draggable:true, closeOnEscape:true}" title="%TMPL:P{"formtitle"}%">
+%TMPL:P{"createform"}%
+</div>
+</noautolink>%TMPL:END%
+
+%TMPL:DEF{"createform"}%<!-- -->
+<div class="jqTopicCreator">
+  <div class="tcViewPort">
+    <div class="tcContainer">
+      %TMPL:P{"topiccreator::topictypes"}%<!-- -->
+    </div>
+  </div>
+  <div class="tcNaviContainer clearfix">
+    <a href="#prev" class="tcNavi tcNaviPrev foswikiLeft" style="display:none">%JQICON{"arrow_left"}% %MAKETEXT{"Prev"}%</a>
+    <a href="#next" class="tcNavi tcNaviNext foswikiRight">%MAKETEXT{"Next"}% %JQICON{"arrow_right"}%</a>
+    %BUTTON{"%MAKETEXT{"Abort"}%" class="tcAbort foswikiRight" icon="cross" style="display:none"}%
+    %BUTTON{"%MAKETEXT{"Submit"}%" class="tcSubmit foswikiRight" icon="add" style="display:none"}%
+  </div>
+</div>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"topiccreator::topictypes"}%<div class="foswikiPageForm tcTopicTypes">
+  <h2>
+    <div class="foswikiRight foswikiNormal">
+      <input type="text" class="tcFilter foswikiInputText" size="20"  placeholder="%MAKETEXT{"search"}%" />
+    </div>
+    %MAKETEXT{"Select Type"}%
+  </h2>
+  <div class="tcPage clearfix">
+    <div class='tcTopicType tcSelected clearfix' autofocus %DBQUERY{
+        topic="WebTopicEditTemplate" 
+          format="data-topic-type='$percntFORMATLIST{\"$expand(TopicType)\" limit=\"1\"}$percnt' data-topic-template='%WEB%.WebTopicEditTemplate' data-form='$percntQUERY{\"'$web.$topic'/form.name\"}$percnt'"
+      }%>
+      <div class='tcIcon'>%JQICON{"fa-file-o"}%</div>
+      <h3>%MAKETEXT{"Default"}%</h3>
+      <div class='foswikiGrayText'>
+        %MAKETEXT{"Default wiki topic"}%
+      </div>
+    </div>
+    %DBQUERY{"TopicType=~'\bTopicType\b' OR @Target.TopicType=~'\bTopicType\b'"
+      format="<div class='tcTopicType clearfix' data-topic-type='$percntFORMATLIST{\"$expand(Target or topic)\" split=\"[\./]\" reverse=\"on\" limit=\"1\"}$percnt' data-form='$expand(Target or topic)' data-topic-editor='$expand(@Target.Editor or Editor)' data-topic-template='$expand(@Target.Template or Template)' data-title='%MAKETEXT{"Create a new [_1] in [_2]:" args="$expand(@Target.topictitle or topictitle),%GETTOPICTITLE{"%WEB%.%HOMETOPIC%"}%"}%'>
+          <div class='tcIcon'>
+            $percntIF{\"'$expand(@Target.Icon or Icon)'!=''\"
+              then=\"$percntJQICON{\"$expand(@Target.Icon or Icon)\"}$percnt\"
+              else=\"$dollarpercntIF{
+                        \\"'$web.$topic'/attachments[name=~'\.(%TMPL:P{"img::exts"}%)'][0].name\\"
+                        then=\\"<img src='%PUBURLPATH%/$web/$topic/$dollarpercntQUERY{\\"'$web.$topic'/attachments[name=~'\.(%TMPL:P{"img::exts"}%)'][0].name\\"}$dollarpercnt' />\\"
+                        else=\\"%JQICON{"fa-file-o"}%\\"
+                      }$dollarpercnt\"
+            }$percnt
+          </div>
+          <h3>$expand(@Target.topictitle or topictitle)</h3>
+          <div class='foswikiGrayText'>$expand(@Target.Summary or Summary)</div>
+        </div>"
+      separator="$n"
+      web="%URLPARAM{"web" default="%BASEWEB%"}%"
+    }%
+  </div>
+</div>%TMPL:END%
+
+%TMPL:DEF{"img::exts"}%jpe?g|gif|png|bmp|svg|ico|tiff?|xcf|psd|JE?PG|GIF|PNG|BMP|SVG|ICO|TIFF|XCF|PSD?%TMPL:END%
+
+%TMPL:DEF{"topiccreator::topictemplates"}%%IF{"'%URLPARAM{"topicTemplate"}%'=''"
+  then="$percntTMPL:P{\"topiccreator::topictemplates::query\"}$percnt"
+}%%IF{"'%URLPARAM{"topicType"}%'!=''"
+  then="$percntTMPL:P{\"topiccreator::inputform\"}$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"topiccreator::topictemplates::query"}%%DBQUERY{
+  "TopicType=~'\bTopicTemplate\b' AND ForTopicType='%URLPARAM{"topicType"}%'"
+  exclude="^(TopicTemplate|WebTopicEditTemplate|.*ViewTemplate|.*EditTemplate)$"
+  header="<div class='foswikiPageForm tcTopicTemplates'>
+    <h2>
+      <div class='foswikiRight foswikiNormal'>
+        <input type='text' class='tcFilter foswikiInputText' size='20'  placeholder='%MAKETEXT{"search"}%' />
+      </div>
+      %MAKETEXT{"Select a Template"}%
+    </h2>
+    <div class='tcPage clearfix'>
+      <div class='tcTopicTemplate tcSelected clearfix'>
+        <div class='tcIcon'>%JQICON{"fa-file-o"}%</div>
+        <h3>%MAKETEXT{"Default"}%</h3>
+        <div class='foswikiGrayText'>
+          %MAKETEXT{"Default template for the selected type"}%
+        </div>
+      </div>"
+  format="<div class='tcTopicTemplate clearfix' data-topic-template='$web.$topic'>
+      <div class='tcIcon'>%JQICON{"fa-file"}%</div>
+      <h3>$expand(topictitle)</h3>
+      <div class='foswikiGrayText'>$expand(Summary)</div>
+    </div>"
+  footer="</div></div>"
+  hidenull="on"
+  separator="$n"
+  web="%URLPARAM{"web" default="%BASEWEB%"}%"
+}%%TMPL:END%
+
+%TMPL:DEF{"topiccreator::inputform"}%<div class="foswikiPageForm tcInputForm">
+  <div class="foswikiRight tcIcon">%JQICON{
+    "%FORMFIELD{"Icon" topic="%URLPARAM{"form" default="Applications.WikiTopic"}%"}%"
+  }%</div>
+  <h2>%URLPARAM{"title" default="%MAKETEXT{"Create a new [_1] in [_2]:" args="topic,%GETTOPICTITLE{"%WEB%.%HOMETOPIC%"}%"}%"}%</h2>
+  <div class="tcPage clearfix">
+    <form class='jqValidate' action="%SCRIPTURLPATH{"%ACTION{default="edit"}%"}%/%BASEWEB%/">
+      <input type="hidden" name="onlynewtopic" value="on" />
+      <input type="hidden" name="onlywikiname" value="off" />
+      <input type="hidden" name="topicparent" value="%URLPARAM{"topicparent" default="%BASETOPIC%"}%" />
+      <input type='hidden' name='templatetopic' value='%URLPARAM{"topicTemplate"}%' />
+      %IF{"'%URLPARAM{"form"}%'!=''"
+        then="<input type='hidden' name='formtemplate' value='%URLPARAM{"form"}%' />"
+      }%<!-- -->
+      %IF{"'%URLPARAM{"topicEditor"}%'!=''"
+        then="<input type='hidden' name='template' value='%URLPARAM{"topicEditor"}%' />"
+      }%<!-- -->
+      <input type="hidden" name="topic" class="jqWikiWord {source:'.tcInputForm input[name=TopicTitle]'}" />
+      <table class="foswikiLayoutTable foswikiFullWidth">
+        %RENDERFOREDIT{
+          form="%URLPARAM{"form" default="Applications.WikiTopic"}%"
+          topic="%IF{"'%URLPARAM{"topicTemplate"}%'" 
+            then="%URLPARAM{"topicTemplate"}%" 
+            else="%IF{"istopic '%BASEWEB%.WebTopicEditTemplate'" 
+                    then="WebTopicEditTemplate" 
+                    else="nosuchtopic"
+                  }%"
+          }%"
+          field="TopicTitle"
+          TopicTitle_value=""
+          format="<tr><th>%TRANSLATE{"Title"}%:</th>
+                 <td>$edit
+                    <div class='foswikiFormDescription'>$description</div>
+                 </td></tr>$n"
+        }%%RENDERFOREDIT{
+          form="%URLPARAM{"form" default="Applications.WikiTopic"}%"
+          topic="%IF{"'%URLPARAM{"topicTemplate"}%'" 
+            then="%URLPARAM{"topicTemplate"}%" 
+            else="%IF{"istopic '%BASEWEB%.WebTopicEditTemplate'" 
+                    then="WebTopicEditTemplate" 
+                    else="nosuchtopic"
+                  }%"
+          }%"
+          exclude="TopicTitle"
+          includeattr="\bc|M\b"
+          mandatory="<span class='foswikiAlert'>**</span>"
+          Summary_value=""
+          format="<tr><th>$title:$mandatory</th>
+                 <td>$edit
+                    <div class='foswikiFormDescription'>$description</div>
+                 </td></tr>$n"
+        }%</table>
+    </div>
+  </form>
+</div>%TMPL:END%
