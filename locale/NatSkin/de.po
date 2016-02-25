@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2016-02-25 16:15+0200\n"
-"Last-Translator: Michael Daum <foswiki@michaeldaumconsulting.com>\n"
+"Last-Translator: Christian Kern <translate-foswiki.der_poet@xoxy.net>\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -1776,7 +1776,7 @@ msgstr "Wählen Sie ansonsten 'Abbrechen'."
 
 #: templates/validate.nat.tmpl:21
 msgid "Press OK to confirm that this change was intentional."
-msgstr "Bitte bestätigen Sie mit OK, wenn diese Änderung beabsichtigt ist."
+msgstr "Bitte bestätigen Sie mit ‚OK‘, wenn diese Änderung beabsichtigt ist."
 
 #: templates/newtopic.wwb.tmpl:19
 msgid "Prev"
