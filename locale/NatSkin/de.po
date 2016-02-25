@@ -4,8 +4,8 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-02-25 16:10+0200\n"
-"Last-Translator: Christian Kern <translate-foswiki.der_poet@xoxy.net>\n"
+"PO-Revision-Date: 2016-02-25 16:15+0200\n"
+"Last-Translator: Michael Daum <foswiki@michaeldaumconsulting.com>\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -284,7 +284,7 @@ msgstr "Applikationen"
 
 #: templates/foswiki.nat.tmpl:30
 msgid "Attach"
-msgstr "Anhang"
+msgstr "Anhängen"
 
 #: templates/foswiki.nat.tmpl:31
 msgid "Attach files and images"
@@ -1544,7 +1544,7 @@ msgstr "Neues Topic"
 
 #: templates/messages.nat.tmpl:40
 msgid "New topic name %1 is not a %2"
-msgstr "Neuer Topic-Name %1 ist kein %2"
+msgstr "Der neue Topic-Name %1 ist kein %2"
 
 #: templates/renamewebbase.nat.tmpl:24
 msgid "New web name"
