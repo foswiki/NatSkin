@@ -4,8 +4,8 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-02-25 16:16+0200\n"
-"Last-Translator: Michael Daum <foswiki@michaeldaumconsulting.com>\n"
+"PO-Revision-Date: 2016-02-25 16:17+0200\n"
+"Last-Translator: Christian Kern <translate-foswiki.der_poet@xoxy.net>\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -2466,7 +2466,7 @@ msgstr "Topic Metadaten"
 
 #: templates/messages.nat.tmpl:208
 msgid "Topic save error"
-msgstr "Topic-Speichern-Fehler"
+msgstr "Fehler beim Speichern des Topics"
 
 #: templates/edit.nat.tmpl:61
 msgid "Topic settings"
@@ -2518,7 +2518,7 @@ msgstr "Benutzer und/oder Passwort nicht erkannt."
 
 #: templates/messages.nat.tmpl:18
 msgid "Unrecognized action command %1"
-msgstr "Aktions Befehl %1 nicht erkannt"
+msgstr "Aktionsbefehl %1 nicht erkannt"
 
 #: templates/foswiki.nat.tmpl:228
 msgid "Unsubscribe"
@@ -2826,11 +2826,11 @@ msgstr "Sie versuchen ein Web zu %1, das nicht existiert."
 #: templates/messages.nat.tmpl:335
 msgid "You are trying to create a topic from a template that does not exist."
 msgstr ""
-"Sie versuchen ein Topic von einer Vorlage zu erzeugen, die nicht existiert."
+"Sie versuchen, ein Topic von einer Vorlage zu erzeugen, die nicht existiert."
 
 #: templates/messages.nat.tmpl:341
 msgid "You are trying to rename a topic that does not exist."
-msgstr "Sie versuchen ein Topic umzubenennen, welches nicht existiert."
+msgstr "Sie versuchen, ein Topic umzubenennen, welches nicht existiert."
 
 #: templates/messages.nat.tmpl:96
 msgid "You can also use the names of the standard HTML colors."
