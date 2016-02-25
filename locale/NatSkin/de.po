@@ -4,15 +4,15 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-11-25 10:30+0100\n"
-"Last-Translator: MichaelDaum <daum@michaeldaumconsulting.com>\n"
+"PO-Revision-Date: 2016-02-25 16:09+0200\n"
+"Last-Translator: Michael Daum <foswiki@michaeldaumconsulting.com>\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: vi\n"
+"X-Generator: Weblate 2.4\n"
 
 #: templates/oopsgeneric.nat.tmpl:5 templates/oopsgeneric.nat.tmpl:7
 #: templates/oopsgeneric.nat.tmpl:9
@@ -102,6 +102,9 @@ msgid ""
 "*Administrators:* You can change user's e-mail address using this form. "
 "Enter the users Login or WikiName and the new e-mail address."
 msgstr ""
+"*Administratoren:* Mit diesem Formular können die E-Mail-Adresse eines "
+"Benutzers geändert werden. Geben Sie den Login-Namen oder WikiNamen, sowie "
+"die neue E-Mail-Adresse."
 
 #: templates/attachnew.nat.tmpl:8
 msgid ""
@@ -109,6 +112,9 @@ msgid ""
 "you check the box, it will create an inline image (e.g. show the image) at "
 "the end of the topic.  For other file types a simple link will be created."
 msgstr ""
+"*Verweis-Checkbox*: Falls die anzuhängende Datei ein JPG, GIF oder PNG-Bild "
+"ist und Sie diese Auswahl ankreuzen, wird das Bild am Ende des Topics "
+"angehängt. Andere Dateitypen werden als einfacher Verweis angelegt."
 
 #: templates/attachagain.nat.tmpl:24
 msgid "*Move attachment*: An attachment can be deleted by moving it to %1"
@@ -121,6 +127,8 @@ msgid ""
 "*Note:* A group name must be a [[%SYSTEMWEB%.WikiWord][WikiWord]] and end "
 "in ...Group."
 msgstr ""
+"*Hinweis:* Der Name einer Gruppe muss ein [[%SYSTEMWEB%.WikiWord][WikiWort]] "
+"sein und mit ...Group enden."
 
 #: templates/topbar.customato.nat.tmpl:86
 msgid "20 Minutes Tutorial"
@@ -446,6 +454,8 @@ msgid ""
 "Changing the form bares the danger of losing data not storable in the newly "
 "selected form."
 msgstr ""
+"Wenn Sie das Formular ändern, besteht die Gefahr, dass Datenfelder, die "
+"nicht im neuen Formular definiert sind, verlogen gehen."
 
 #: templates/renamewebbase.nat.tmpl:88
 msgid ""
@@ -1083,6 +1093,8 @@ msgid ""
 "Free form topic title text. The actual topic _name_ will be derived from the "
 "title automatically."
 msgstr ""
+"Freiform Topic Titel. Der eigentliche Topic-_Name_ wird vom Titel "
+"automatisch abgeleitet."
 
 #: templates/edit.nat.tmpl:39
 msgid "French"
@@ -1193,7 +1205,7 @@ msgstr "Bitte beachten Sie, dass der Dateiname von %1 auf %2 geändert wurde."
 
 #: templates/404.nat.tmpl:24
 msgid "I am afraid this page slipped between the cracks."
-msgstr ""
+msgstr "I befürchte, diese Seite ist verloren gegangen."
 
 #: templates/oopsleaseconflict.nat.tmpl:37
 msgid "If unsure, click 'Cancel'."
@@ -1204,6 +1216,8 @@ msgid ""
 "If you are unsure what this means, read <a href='%1' "
 "class='foswikiPopUp'>why you are being asked to confirm</a>"
 msgstr ""
+"Wenn Sie nicht sicher sind, was diese zu bedeuten hat, lesen Sie bitte <a "
+"href='%1' class='foswikiPopUp'>warum Sie diese Meldung bestätigen müssen</a>"
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:81
 #: data/System/NatSkinChangePasswordViewTemplate.txt:89
@@ -1401,6 +1415,8 @@ msgid ""
 "Make sure you remember your password, even more when generating one "
 "automatically."
 msgstr ""
+"Bitte vergewissern Sie sich, dass Sie sich an dieses Passwort erinnern, "
+"insbesondere, wenn es automatisch generiert worden ist."
 
 #: templates/attachtables.nat.tmpl:33
 msgid "Manage existing attachments"
@@ -1423,6 +1439,8 @@ msgid ""
 "Maybe you simply got here by accident. Then move back in your browser and "
 "try something else."
 msgstr ""
+"Eventuell sind Sie hier nur per Zufall hingeraten. In dem Fall gehen Sie "
+"bitte in Ihrem Browser einen Schritt zurück und versuchen Sie es noch einmal."
 
 #: data/System/NatSkinStyleBrowser.txt:47 templates/edit.nat.tmpl:199
 msgid "Menu"
@@ -2280,6 +2298,9 @@ msgid ""
 "The attachment may be renamed (by appending a number to the name) if an "
 "attachment of that name already exists in the target topic."
 msgstr ""
+"Das Attachment wird eventuell umbenannt (indem eine Nummer an den Namen "
+"angehängt wird), falls ein Attachment mit dem selben Namen bereits im "
+"Zieltopic existiert."
 
 #: templates/oopsleaseconflict.nat.tmpl:22
 msgid ""
@@ -2380,9 +2401,9 @@ msgid ""
 "notifications of password changes. The addresses you register via this form "
 "are kept secret and will *not* be published anywhere on this site."
 msgstr ""
-"Mit diesem Formular können Sie ihre registrierte E-Mail Adresseändern. Ihre "
-"Informationen werden von Foswiki unter anderem fürÄnderungshinweise oder "
-"PasswortÄnderungen benutzt. Die Adressen, die Sie über dieses Formular "
+"Mit diesem Formular können Sie ihre registrierte E-Mail Adresse ändern. Ihre "
+"Informationen werden von Foswiki unter anderem für Änderungshinweise oder "
+"Passwort Änderungen benutzt. Die Adressen, die Sie über dieses Formular "
 "registrieren werden geheim gehalten und *nicht* auf dieser Seite "
 "veröffentlicht."
 
