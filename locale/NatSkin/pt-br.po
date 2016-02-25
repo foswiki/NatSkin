@@ -3050,7 +3050,7 @@ msgstr "(remover)"
 msgid ""
 "You *must* have at least one valid registered e-mail to be able to reset "
 "your password. If none of your registered e-mail addresses is valid, and you "
-"have forgotten your password, contact %1"
+"have forgotten your password, contact %1."
 msgstr ""
 "você *precisa* ter ao menos um e-mail válido registado para poder restaurar "
 "sua senha.  Caso nenhum de seus endereços registrados for um e-mail válido, "
@@ -3499,4 +3499,3 @@ msgstr ""
 #: templates/attachtables.nat.tmpl:70
 msgid "version %1 uploaded by %2 on %3"
 msgstr ""
-

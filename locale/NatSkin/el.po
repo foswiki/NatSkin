@@ -3053,7 +3053,7 @@ msgstr "(διαγραφή)"
 msgid ""
 "You *must* have at least one valid registered e-mail to be able to reset "
 "your password. If none of your registered e-mail addresses is valid, and you "
-"have forgotten your password, contact %1"
+"have forgotten your password, contact %1."
 msgstr ""
 "*θα πρέπει* να έχετε τουλάχιστον ένα έγκυρο καταχωρημένο e-mail για να "
 "είσται σε θέση να επανατάξετε τον κωδικό πρόσβασής σας. If none of your "
@@ -3488,4 +3488,3 @@ msgstr ""
 #: templates/attachtables.nat.tmpl:70
 msgid "version %1 uploaded by %2 on %3"
 msgstr ""
-

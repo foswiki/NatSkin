@@ -3027,7 +3027,7 @@ msgstr "(smazat)"
 msgid ""
 "You *must* have at least one valid registered e-mail to be able to reset "
 "your password. If none of your registered e-mail addresses is valid, and you "
-"have forgotten your password, contact %1"
+"have forgotten your password, contact %1."
 msgstr ""
 "*Musíte* mít alespoň jeden funkční registrovaný email, aby jste byl schopen "
 "resetovat Vaše heslo. Pokud žádná z Vašich registrovaných emailových adres "
@@ -3473,4 +3473,3 @@ msgstr ""
 #: templates/attachtables.nat.tmpl:70
 msgid "version %1 uploaded by %2 on %3"
 msgstr ""
-

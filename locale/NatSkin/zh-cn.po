@@ -2998,7 +2998,7 @@ msgstr "(删除)"
 msgid ""
 "You *must* have at least one valid registered e-mail to be able to reset "
 "your password. If none of your registered e-mail addresses is valid, and you "
-"have forgotten your password, contact %1"
+"have forgotten your password, contact %1."
 msgstr ""
 "您 *必须* 至少有 1 个有效的注册电子邮件才能重设密码。若您忘记密码且注册用的邮"
 "件地址已失效，后请联系 %1。"
@@ -3427,4 +3427,3 @@ msgstr ""
 #: templates/attachtables.nat.tmpl:70
 msgid "version %1 uploaded by %2 on %3"
 msgstr ""
-

@@ -3038,7 +3038,7 @@ msgstr "(видалити)"
 msgid ""
 "You *must* have at least one valid registered e-mail to be able to reset "
 "your password. If none of your registered e-mail addresses is valid, and you "
-"have forgotten your password, contact %1"
+"have forgotten your password, contact %1."
 msgstr ""
 "Щоб мати можливість скинути пароль Вам *необхідно* мати хоча б одну "
 "правильно зареєстровану електронну адресу. Якщо жодна із зареєстрованих Вами "
@@ -3479,4 +3479,3 @@ msgstr ""
 #: templates/attachtables.nat.tmpl:70
 msgid "version %1 uploaded by %2 on %3"
 msgstr ""
-

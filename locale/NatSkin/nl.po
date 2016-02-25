@@ -3032,7 +3032,7 @@ msgstr "(verwijderen)"
 msgid ""
 "You *must* have at least one valid registered e-mail to be able to reset "
 "your password. If none of your registered e-mail addresses is valid, and you "
-"have forgotten your password, contact %1"
+"have forgotten your password, contact %1."
 msgstr ""
 "Je *moet* tenminste één geldig geregistreerd e-mailadres hebben om je "
 "wachtwoord opnieuw te kunnen instellen. Als geen van je geregistreerde e-"
@@ -3477,4 +3477,3 @@ msgstr ""
 #: templates/attachtables.nat.tmpl:70
 msgid "version %1 uploaded by %2 on %3"
 msgstr ""
-

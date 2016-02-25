@@ -400,7 +400,8 @@ msgstr "Konnte Web %1 nicht anlegen, da es bereits vorhanden ist"
 
 #: templates/messages.nat.tmpl:29 templates/messages.nat.tmpl:35
 msgid "Cannot rename %1 to %2 because it already exists."
-msgstr "Konnte %1 nicht nach %2 umbenennen, da Letzteres bereits vorhanden ist."
+msgstr ""
+"Konnte %1 nicht nach %2 umbenennen, da Letzteres bereits vorhanden ist."
 
 #: templates/sidebar.nat.tmpl:52
 msgid "Categories"
@@ -1113,7 +1114,8 @@ msgstr "Deutsch"
 
 #: templates/body.nat.tmpl:63
 msgid "Get a fresh version <a href='%1' rel='nofollow'>here</a>."
-msgstr "Rufen Sie die aktuelle Version <a href='%1' rel='nofollow'>hier</a> ab."
+msgstr ""
+"Rufen Sie die aktuelle Version <a href='%1' rel='nofollow'>hier</a> ab."
 
 #: templates/foswiki.nat.tmpl:224
 msgid "Get an email notification whenever this topic changes"
@@ -2785,10 +2787,11 @@ msgid "Yes, delete"
 msgstr "Ja, löschen"
 
 #: data/System/NatSkinResetPasswordViewTemplate.txt:68
+#, fuzzy
 msgid ""
 "You *must* have at least one valid registered e-mail to be able to reset "
 "your password. If none of your registered e-mail addresses is valid, and you "
-"have forgotten your password, contact %1"
+"have forgotten your password, contact %1."
 msgstr ""
 "Sie *müssen* zumindest eine gültige E-Mail registriert haben, um Ihr "
 "Passwort zurücksetzen zu können. Falls keine Ihrer E-Mail Adressen gültig "
@@ -3199,5 +3202,5 @@ msgstr "ein Verzeichnis nach oben"
 msgid "version %1 uploaded by %2 on %3"
 msgstr "version %1 hochgeladen von %2 am %3"
 
-msgid "$1"
-msgstr "$1"
+#~ msgid "$1"
+#~ msgstr "$1"
