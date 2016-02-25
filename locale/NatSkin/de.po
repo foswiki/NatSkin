@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-02-25 16:35+0200\n"
+"PO-Revision-Date: 2016-02-25 16:39+0200\n"
 "Last-Translator: Michael Daum <foswiki@michaeldaumconsulting.com>\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
@@ -2787,7 +2787,6 @@ msgid "Yes, delete"
 msgstr "Ja, löschen"
 
 #: data/System/NatSkinResetPasswordViewTemplate.txt:68
-#, fuzzy
 msgid ""
 "You *must* have at least one valid registered e-mail to be able to reset "
 "your password. If none of your registered e-mail addresses is valid, and you "
