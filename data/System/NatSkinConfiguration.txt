@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1437156544" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1456411053" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 %TOC%
@@ -77,5 +77,3 @@ to the WebPreferences and add extra keyword data _per topic_ like this
 Caution: don't add meta data to your [[%WIKIUSERNAME%][home topic]] because it will override all
 other meta data preferences.
 
-
-%META:TOPICMOVED{by="MichaelDaum" date="1156530555" from="%25SYSTEMWEB%25.NatSkinCustomization" to="%25SYSTEMWEB%25.NatSkinConfiguration"}%

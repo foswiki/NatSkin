@@ -1,0 +1,3489 @@
+# Foswiki translation for Danish
+# Translators:
+#   Foswiki:Main/SteffenPoulsen, 2007.
+#   Foswiki:Main/KennethLavrsen, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: da\n"
+"Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-09-29 20:45+0200\n"
+"Last-Translator: Martin Dahlem <martin@dahlem.dk>\n"
+"Language-Team: Danish <http://translate.foswiki.org/projects/foswiki/"
+"distribution-master/da/>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.1\n"
+
+#: templates/oopsgeneric.nat.tmpl:5 templates/oopsgeneric.nat.tmpl:7
+#: templates/oopsgeneric.nat.tmpl:9
+msgid "%1"
+msgstr "%1"
+
+#: templates/mailnotify.nat.tmpl:3
+#, fuzzy
+msgid "%1 - Automated notification of topic changes in %2"
+msgstr "Automatiseret notificering om opdateringer"
+
+#: templates/opensearch.nat.tmpl:16 templates/opensearch.nat.tmpl:29
+#, fuzzy
+msgid "%1 Content Search"
+msgstr "Tilpasset søgning"
+
+#: templates/opensearch.nat.tmpl:41 templates/opensearch.nat.tmpl:54
+#, fuzzy
+msgid "%1 Person Search"
+msgstr "Udtrykssøgning (Query)"
+
+#: templates/backlinks.nat.tmpl:49 templates/backlinks.nat.tmpl:68
+#: templates/backlinks.nat.tmpl:90
+msgid "%1 backlink(s) found"
+msgstr ""
+
+#: templates/backlinks.nat.tmpl:117 templates/backlinks.nat.tmpl:142
+#, fuzzy
+msgid "%1 backlink(s) found in all webs"
+msgstr "(referencer fra alle webs)"
+
+#: templates/oopsleaseconflict.nat.tmpl:8
+msgid ""
+"%1 has been editing the topic for %2 and the lease is still active for "
+"another %3."
+msgstr "%1 har nu editeret siden i %2 og låsen er stadig aktiv i %3 endnu."
+
+#: templates/messages.nat.tmpl:297
+#, fuzzy
+msgid "%1 has no permission to %2 %3."
+msgstr "Ingen rettigheder til at se %1"
+
+#: templates/validate.nat.tmpl:17
+msgid "%1 has received a suspicious change request from your browser."
+msgstr "%1 har modtaget en mistænkelig forespørgsel fra din browser."
+
+#: templates/messages.nat.tmpl:70
+#, fuzzy
+msgid "%1 is an invalid name for a new web."
+msgstr "%1 er ikke et lovligt navn til et nyt web"
+
+#: templates/login.nat.tmpl:13 templates/login.sudo.nat.tmpl:4
+msgid "%1 is currently logged in"
+msgstr "%1 er logget på i øjeblikket"
+
+#: templates/messages.nat.tmpl:291
+msgid "%1 is currently set to %2"
+msgstr "%1 er i øjeblikket sat til %2"
+
+#: templates/messages.nat.tmpl:165
+#, fuzzy
+msgid "%1 is not a valid %2"
+msgstr "%1 er ikke et gyldigt formular navn"
+
+#: templates/oopsleaseconflict.nat.tmpl:18
+msgid "%1 may still be editing %2."
+msgstr "%1 editerer muligvis stadig %2."
+
+#: templates/messages.nat.tmpl:328 templates/messages.nat.tmpl:340
+msgid "%1 topic does not exist"
+msgstr "siden %1 eksisterer ikke"
+
+#: data/System/NatSkinWebSearchViewTemplate.txt:198
+#: templates/childtopics.nat.tmpl:52 templates/childtopics.nat.tmpl:71
+#: templates/childtopics.nat.tmpl:94 templates/search.nat.tmpl:21
+#: templates/searchformat.nat.tmpl:5
+#, fuzzy
+msgid "%1 topic(s) found"
+msgstr "Ingen dattersider er fundet."
+
+#: data/System/NatSkinWebTopicListViewTemplate.txt:23
+#, fuzzy
+msgid "%1 topics found"
+msgstr "Ingen dattersider er fundet."
+
+#: templates/compare.nat.tmpl:6 templates/rdiff.nat.tmpl:8
+#, fuzzy
+msgid "%1 vs. %2"
+msgstr "(%1 vs. %2)"
+
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:101
+#, fuzzy
+msgid ""
+"*Administrators:* You can change user's e-mail address using this form. "
+"Enter the users Login or WikiName and the new e-mail address."
+msgstr ""
+"*Administratorer:* I kan ændre brugerens e-mail-adresse med denne formular. "
+"Angiv brugerens [[%1][brugernavn]] eller [[%1][WikiNavn]] og den nye e-mail-"
+"adresse."
+
+#: templates/attachnew.nat.tmpl:8
+msgid ""
+"*Link checkbox*: In case the attached file is a JPG, GIF or PNG image and "
+"you check the box, it will create an inline image (e.g. show the image) at "
+"the end of the topic.  For other file types a simple link will be created."
+msgstr ""
+
+#: templates/attachagain.nat.tmpl:24
+msgid "*Move attachment*: An attachment can be deleted by moving it to %1"
+msgstr ""
+
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:53
+msgid ""
+"*Note:* A group name must be a [[%SYSTEMWEB%.WikiWord][WikiWord]] and end "
+"in ...Group."
+msgstr ""
+
+#: templates/topbar.customato.nat.tmpl:86
+msgid "20 Minutes Tutorial"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:232
+msgid "<nop>WebDAV Directory"
+msgstr ""
+
+#: templates/attachnew.nat.tmpl:29
+msgid "<strong>Continue</strong> uploading more files"
+msgstr ""
+
+#: templates/messages.nat.tmpl:255
+msgid "A =.txt= extension is appended to some filenames for security reasons"
+msgstr ""
+"Nogle filnavne vil blive tilføjet =.txt= som endelse af sikkerhedshensyn"
+
+#: data/System/UserRegistrationViewTemplate.txt:145
+#, fuzzy
+msgid "A valid e-mail address. Will be kept confidential."
+msgstr "Din e-mail-adresse vil blive holdt fortrolig."
+
+#: templates/actionform.nat.tmpl:19
+msgid "Abandon changes and exit"
+msgstr "Slet ændringer og afbryd"
+
+#: templates/newtopic.wwb.tmpl:21 templates/oops.nat.tmpl:27
+msgid "Abort"
+msgstr ""
+
+#: templates/renamesidebar.nat.tmpl:4
+#, fuzzy
+msgid "About topics and webs"
+msgstr "Flyt side til web:"
+
+#: templates/messages.nat.tmpl:296
+#, fuzzy
+msgid "Access denied"
+msgstr "Adgang nægtet"
+
+#: data/System/UserRegistrationViewTemplate.txt:111
+msgid "Account settings"
+msgstr ""
+
+#: templates/history.nat.tmpl:77
+msgid "Action"
+msgstr "Handling"
+
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:100
+#, fuzzy
+msgid "Add member"
+msgstr "Tilføj medlemmer"
+
+#: data/System/MySideBar.txt:101
+msgid "Add to sidebar"
+msgstr ""
+
+#: data/System/MySideBar.txt:106
+msgid "Add topic %1 to my sidebar navigation"
+msgstr ""
+
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:112
+#, fuzzy
+msgid "Add users or groups to this group"
+msgstr "Vælg brugere eller grupper for at tilføje til denne gruppe"
+
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:174
+msgid "Adding"
+msgstr ""
+
+#: data/System/NatSkinUserViewTemplate.txt:52
+msgid "Address"
+msgstr ""
+
+#: data/System/SiteMenu.txt:61
+msgid "Admin"
+msgstr ""
+
+#: templates/login.sudo.nat.tmpl:3
+#, fuzzy
+msgid "Admin Foswiki user authentication"
+msgstr "Foswiki Administrator-bruger login"
+
+#: data/System/WebLinks.txt:13
+msgid "Admin Tools"
+msgstr ""
+
+#: data/System/SiteMenu.txt:42
+msgid "Admin docs"
+msgstr ""
+
+#: templates/search.nat.tmpl:5
+#, fuzzy
+msgid "Advanced Search"
+msgstr "Avanceret søgning"
+
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:131
+#, fuzzy
+msgid "After submitting this form the e-mails will be changed."
+msgstr "Når du har sendt denne formular, vil din adgangskode blive opdateret."
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:58
+#, fuzzy
+msgid ""
+"After submitting this form your password will be changed. If you've "
+"forgotten use %1 to create a new one."
+msgstr "Når du har sendt denne formular, vil din adgangskode blive opdateret."
+
+#: data/System/NatSkinResetPasswordViewTemplate.txt:101
+msgid ""
+"After submitting this form, you will receive an e-mail with your new, system-"
+"generated password, and a link to a page where you can change it."
+msgstr ""
+"Når du har sendt denne formular, vil du modtage en e-mail med din nye system-"
+"genererede adgangskode, samt et link til en side hvor du selv kan ændre det."
+
+#: templates/copytopic.nat.tmpl:38
+msgid "Allow overwrite"
+msgstr ""
+
+#: templates/translatetopic.nat.tmpl:27
+msgid "Already existing translations"
+msgstr ""
+
+#: templates/messages.nat.tmpl:161
+#, fuzzy
+msgid "Alternatively go back in your browser and choose a different username."
+msgstr ""
+"Benyt venligst tilbage-knappen i browseren og forsøg igen med et andet "
+"filnavn."
+
+#: templates/messages.nat.tmpl:204
+#, fuzzy
+msgid "An e-mail address is required before a password can be reset."
+msgstr ""
+"Kunne ikke finde e-mail-adresse for %1 (en e-mail-adresse er nødvendig for "
+"at kunne nulstille en adgangskode)"
+
+#: templates/messages.nat.tmpl:139
+#, fuzzy
+msgid "An e-mail could not be delivered."
+msgstr ""
+"E-mailen kunne ikke afsendes. Informér venligst din %1-administrator, %2"
+
+#: templates/moveattachment.nat.tmpl:94
+msgid ""
+"An error page will be shown if either of the topics are locked by another "
+"user."
+msgstr ""
+"En fejlside vil blive vist, hvis en af siderne er låst af en anden bruger."
+
+#: templates/changeformsidebar.nat.tmpl:10
+#, fuzzy
+msgid "Any change you made to topic before coming to this page are preserved."
+msgstr ""
+"Alle ændringer, som du har lavet før du skiftede til denne side er gemt."
+
+#: data/System/SiteMenu.txt:65
+#, fuzzy
+msgid "Applications"
+msgstr "Handlinger"
+
+#: templates/foswiki.nat.tmpl:30
+msgid "Attach"
+msgstr "Vedhæft"
+
+#: templates/foswiki.nat.tmpl:31
+#, fuzzy
+msgid "Attach files and images"
+msgstr "Vedhæft en fil til siden %1"
+
+#: templates/attachtables.nat.tmpl:95
+msgid "Attachment"
+msgstr "Vedhæftet fil"
+
+#: templates/messages.nat.tmpl:346
+msgid "Attachment '%1' does not exist"
+msgstr "Den vedhæftede fil '%1' findes ikke"
+
+#: templates/messages.nat.tmpl:236 templates/messages.nat.tmpl:379
+msgid "Attachment delete failed"
+msgstr "Fejl under sletning af vedhæftet fil"
+
+#: templates/messages.nat.tmpl:364
+msgid "Attachment move failed"
+msgstr "Fejl under flytning af vedhæftet fil"
+
+#: templates/attach.nat.tmpl:13 templates/attachtables.nat.tmpl:43
+#: templates/copytopic.nat.tmpl:29 templates/edit.nat.tmpl:250
+msgid "Attachments"
+msgstr "Vedhæftede filer"
+
+#: templates/attach.nat.tmpl:25 templates/attachnew.nat.tmpl:36
+#, fuzzy
+msgid "Attachments at %1"
+msgstr "Vedhæftede filer %1"
+
+#: templates/oopsattention.nat.tmpl:3
+msgid "Attention"
+msgstr "Bemærk"
+
+#: templates/history.nat.tmpl:75
+msgid "Author"
+msgstr ""
+
+#: templates/view.nat.tmpl:108
+#, fuzzy
+msgid "Back to view mode"
+msgstr "Tilbage til siden"
+
+#: templates/backlinksallwebs.nat.tmpl:6 templates/backlinksweb.nat.tmpl:5
+#: templates/foswiki.nat.tmpl:36
+msgid "Backlinks"
+msgstr "Referencer"
+
+#: templates/backlinks.nat.tmpl:5
+#, fuzzy
+msgid "Backlinks to %1"
+msgstr "Referencer til %1 fra %2 webbet"
+
+#: templates/backlinksallwebs.nat.tmpl:5
+msgid "Backlinks to %1 in all Webs"
+msgstr "Referencer til %1 fra alle offentlige webs"
+
+#: templates/backlinksweb.nat.tmpl:6
+#, fuzzy
+msgid "Backlinks to %1 in the %2 web"
+msgstr "Referencer til %1 fra %2 webbet"
+
+#: templates/messages.nat.tmpl:85
+msgid "Base web %1 is missing or does not exist"
+msgstr "Basis-webbet %1 mangler eller er ikke oprettet"
+
+#: templates/attachnew.nat.tmpl:18
+#, fuzzy
+msgid "Batch upload"
+msgstr "Fortryd upload"
+
+#: data/System/NatSkinStyleBrowser.txt:38
+msgid "Bordered"
+msgstr ""
+
+#: data/System/NatSkinStyleBrowser.txt:44
+msgid "Both"
+msgstr ""
+
+#: templates/edit.nat.tmpl:306
+msgid "Breadcrumbs navigation"
+msgstr ""
+
+#: data/System/SiteMenu.txt:53
+msgid "Bugreport"
+msgstr ""
+
+#: templates/changes.nat.tmpl:13
+msgid "By"
+msgstr ""
+
+#: templates/messages.nat.tmpl:203
+#, fuzzy
+msgid "Can't get an e-mail address for %1"
+msgstr "Ændre e-mail-adresse"
+
+#: data/Sandbox/NatSkinTest.txt:527 data/Sandbox/NatSkinTest.txt:552
+#: templates/actionform.nat.tmpl:18 templates/attachagain.nat.tmpl:30
+#: templates/changeform.nat.tmpl:26 templates/copytopic.nat.tmpl:43
+#: templates/kinosearch.nat.tmpl:8 templates/languageselector.nat.tmpl:29
+#: templates/loginbase.nat.tmpl:75 templates/managetags.nat.tmpl:33
+#: templates/messages.nat.tmpl:280 templates/moveattachment.nat.tmpl:67
+#: templates/newtopic.nat.tmpl:73 templates/newtopic.nat.tmpl:81
+#: templates/oopsleaseconflict.nat.tmpl:55 templates/print.nat.tmpl:29
+#: templates/renamebase.nat.tmpl:17 templates/renameconfirm.nat.tmpl:7
+#: templates/renamedelete.nat.tmpl:14 templates/renamewebbase.nat.tmpl:13
+#: templates/renamewebconfirm.nat.tmpl:7 templates/search.nat.tmpl:31
+#: templates/translatetopic.nat.tmpl:131 templates/validate.nat.tmpl:28
+msgid "Cancel"
+msgstr "Fortryd"
+
+#: templates/messages.nat.tmpl:23
+msgid "Cannot create %1 because it already exists."
+msgstr "Kan ikke oprette siden %1, fordi den allerede eksisterer."
+
+#: templates/messages.nat.tmpl:80
+msgid "Cannot create web %1 because it already exists"
+msgstr "Kan ikke oprette webbet %1 fordi det allerede eksisterer"
+
+#: templates/messages.nat.tmpl:29 templates/messages.nat.tmpl:35
+msgid "Cannot rename %1 to %2 because it already exists."
+msgstr "Kan ikke omdøbe %1 til %2, da siden allerede eksisterer."
+
+#: templates/sidebar.nat.tmpl:52
+msgid "Categories"
+msgstr "Kategorier"
+
+#: templates/topbar.customato.nat.tmpl:75
+#, fuzzy
+msgid "Change Email Address"
+msgstr "Opdater E-mail-adresse"
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:51
+#: data/System/NatSkinChangePasswordViewTemplate.txt:9
+#: templates/topbar.customato.nat.tmpl:76
+msgid "Change Password"
+msgstr "Skift adgangskode"
+
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:13
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:152
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:17
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:9
+msgid "Change e-mail address"
+msgstr "Ændre e-mail-adresse"
+
+#: templates/oopslanguagechanged.nat.tmpl:2
+#: templates/oopslanguagechanged.nat.tmpl:3
+msgid "Change language"
+msgstr "Skift sprog"
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:96
+msgid "Change password"
+msgstr "Skift adgangskode"
+
+#: templates/attachagain.nat.tmpl:29
+#, fuzzy
+msgid "Change properties"
+msgstr "Opdatér kun attributter"
+
+#: templates/foswiki.nat.tmpl:136
+#, fuzzy
+msgid "Change the name and/or the location of this topic"
+msgstr "Tilføj brugerhåndtering til denne side."
+
+#: templates/changes.nat.tmpl:12
+#, fuzzy
+msgid "Changed"
+msgstr "Ændret:"
+
+#: templates/sidebar.nat.tmpl:53
+msgid "Changes"
+msgstr "Seneste ændringer"
+
+#: templates/changeformsidebar.nat.tmpl:12
+msgid ""
+"Changing the form bares the danger of losing data not storable in the newly "
+"selected form."
+msgstr ""
+
+#: templates/renamewebbase.nat.tmpl:88
+#, fuzzy
+msgid ""
+"Characters not allowed in topic names, such as spaces will automatically be "
+"removed."
+msgstr ""
+"Det anbefales at vælge %1 som nyt sidenavn, da dette gør det nemmere at "
+"linke til det senere hen. Karakterer der ikke er tilladte i side-navne, som "
+"fx mellemrum, fjernes automatisk."
+
+#: templates/foswiki.nat.tmpl:79
+msgid "Chat"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:80
+#, fuzzy
+msgid "Chat about this topic"
+msgstr "Opret denne side"
+
+#: templates/childtopics.nat.tmpl:4 templates/childtopics.nat.tmpl:5
+#, fuzzy
+msgid "Child topics"
+msgstr "Datter-sider i %1-webbet"
+
+#: templates/childtopics.nat.tmpl:10
+#, fuzzy
+msgid "Child topics of %1"
+msgstr "Datter-sider i %1-webbet"
+
+#: templates/foswiki.nat.tmpl:48
+msgid "Children"
+msgstr ""
+
+#: templates/edit.nat.tmpl:34
+msgid "Chinese"
+msgstr ""
+
+#: data/System/UserRegistrationViewTemplate.txt:193
+#, fuzzy
+msgid "Choose a <nop>WikiName"
+msgstr "<nop>WikiNavn:"
+
+#: data/System/UserRegistrationViewTemplate.txt:130
+#, fuzzy
+msgid "Choose a login name"
+msgstr "Indtast brugernavn."
+
+#: templates/changeform.nat.tmpl:8
+msgid "Choose a new form for %1"
+msgstr "Vælg en ny formular for %1"
+
+#: data/System/UserRegistrationViewTemplate.txt:154
+#, fuzzy
+msgid "Choose a password"
+msgstr "Skift adgangskode"
+
+#: templates/messages.nat.tmpl:41
+#, fuzzy
+msgid ""
+"Chose a topic name that is a %1 or check the allow non-<nop>WikiWord box."
+msgstr ""
+"Vælg et sidenavn der er et WikiWord eller afkryds non-WikiWord i "
+"afkrydsningsfeltet."
+
+#: templates/renamebase.nat.tmpl:87 templates/renamewebbase.nat.tmpl:52
+msgid "Clear all"
+msgstr "Nulstil alle"
+
+#: templates/copytopic.nat.tmpl:40
+msgid "Clear destination before copying"
+msgstr ""
+
+#: templates/renamebase.nat.tmpl:87 templates/renamewebbase.nat.tmpl:52
+#, fuzzy
+msgid "Clear selection"
+msgstr "Handling"
+
+#: templates/foswiki.nat.tmpl:75
+msgid "Click to like/unlike this topic"
+msgstr ""
+
+#: templates/attach.nat.tmpl:19 templates/backlinks.nat.tmpl:21
+#: templates/backlinksallwebs.nat.tmpl:18 templates/backlinksweb.nat.tmpl:13
+#: templates/childtopics.nat.tmpl:16 templates/childtopics.nat.tmpl:32
+#: templates/foswiki.nat.tmpl:145 templates/history.nat.tmpl:44
+#: templates/oopsmore.nat.tmpl:14 templates/viewraw.nat.tmpl:12
+msgid "Close"
+msgstr "Luk"
+
+#: templates/view.nat.tmpl:168
+msgid "Close broadcast message"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:146 templates/foswiki.nat.tmpl:148
+msgid "Close this dialog"
+msgstr ""
+
+#: data/System/UserRegistrationViewTemplate.txt:264
+msgid "Collaboration details"
+msgstr ""
+
+#: templates/messages.nat.tmpl:90
+msgid "Color %1 has an invalid format"
+msgstr "Farven %1 er et ugyldigt format"
+
+#: templates/history.nat.tmpl:76
+msgid "Comment"
+msgstr "Kommentar"
+
+#: templates/edit.nat.tmpl:327
+#, fuzzy
+msgid "Comment settings"
+msgstr "Fortsæt editering"
+
+#: templates/copytopic.nat.tmpl:33 templates/edit.nat.tmpl:264
+#, fuzzy
+msgid "Comments"
+msgstr "Kommentar"
+
+#: templates/compare.nat.tmpl:17 templates/history.nat.tmpl:43
+#, fuzzy
+msgid "Compare"
+msgstr "(sammenlign)"
+
+#: templates/print.nat.tmpl:66
+#, fuzzy
+msgid "Confidential"
+msgstr "Konflikt"
+
+#: data/System/SiteMenu.txt:73
+msgid "Configure Foswiki"
+msgstr ""
+
+#: templates/renameconfirm.nat.tmpl:4 templates/renamewebconfirm.nat.tmpl:2
+msgid "Confirm rename or move"
+msgstr "Bekræft omdøbning eller sletning"
+
+#: templates/oopsleaseconflict.nat.tmpl:4
+msgid "Conflict"
+msgstr "Konflikt"
+
+#: templates/login.nat.tmpl:48 templates/oops.nat.tmpl:18
+msgid "Contact %1 if you have any questions."
+msgstr "Hvis du har spørgsmål, så kontakt venligst %1."
+
+#: data/System/UserRegistrationViewTemplate.txt:27
+#, fuzzy
+msgid ""
+"Contact <a href='%1'>the site administrator</a> for any further questions."
+msgstr ""
+"Kontakt <a href=\\'mailto:%1\\'>sidens administrator</a> for yderligere "
+"hjælp."
+
+#: templates/edit.nat.tmpl:72
+#, fuzzy
+msgid "Content language"
+msgstr "Skift sprog"
+
+#: templates/messages.nat.tmpl:274
+msgid "Continue and try to rename web?"
+msgstr "Fortsæt med at omdøbe webbet?"
+
+#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:284
+msgid "Copy"
+msgstr ""
+
+#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:285
+msgid "Copy topic"
+msgstr "Kopier side"
+
+#: templates/messages.nat.tmpl:285
+#, fuzzy
+msgid "Could not find template =%1="
+msgstr "Kunne ikke finde skabelonen"
+
+#: templates/messages.nat.tmpl:209
+msgid "Could not save %1."
+msgstr "%1 kunne ikke gemmes."
+
+#: data/System/NatSkinUserViewTemplate.txt:54
+#: data/System/UserRegistrationViewTemplate.txt:237
+#, fuzzy
+msgid "Country"
+msgstr "Land:"
+
+#: templates/404.nat.tmpl:50 templates/newtopic.wwb.tmpl:22
+#, fuzzy
+msgid "Create"
+msgstr "Opret gruppe"
+
+#: templates/foswiki.nat.tmpl:287
+msgid "Create a copy of this topic under a new name"
+msgstr ""
+
+#: templates/newtopic.wwb.tmpl:151
+#, fuzzy
+msgid "Create a new %1 in %2:"
+msgstr "Opret en ny gruppe"
+
+#: templates/newtopic.nat.tmpl:3 templates/newtopic.nat.tmpl:4
+#, fuzzy
+msgid "Create a new topic"
+msgstr "Opret ny side"
+
+#: templates/foswiki.nat.tmpl:196 templates/newtopic.nat.tmpl:5
+#, fuzzy
+msgid "Create a new topic in the %1 web"
+msgstr "Opret ny side i %1-webbet"
+
+#: templates/foswiki.nat.tmpl:160
+#, fuzzy
+msgid "Create a new topic serving as a translation for this topic"
+msgstr "Opretter ny side version når der gemmes"
+
+#: templates/translatetopic.nat.tmpl:84
+#, fuzzy
+msgid "Create a new translation"
+msgstr "Opret en ny tabel"
+
+#: data/System/SiteMenu.txt:75 data/System/WebCreateNewWeb.txt:3
+#, fuzzy
+msgid "Create a new web"
+msgstr "Opret en ny tabel"
+
+#: templates/sidebar.nat.tmpl:20
+#, fuzzy
+msgid "Create a personal sidebar"
+msgstr "Opret personlig venstre-menu"
+
+#: templates/messages.nat.tmpl:324
+msgid "Create the topic"
+msgstr "Opret siden"
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:115
+#, fuzzy
+msgid "Current password"
+msgstr "Nuværende password:"
+
+#: templates/renamewebbase.nat.tmpl:61
+msgid "Currently being edited"
+msgstr ""
+
+#: templates/print.nat.tmpl:67
+msgid "Custom"
+msgstr ""
+
+#: templates/edit.nat.tmpl:35
+msgid "Danish"
+msgstr ""
+
+#: templates/edit.nat.tmpl:236
+#, fuzzy
+msgid "Data form"
+msgstr "Datarækker"
+
+#: templates/copytopic.nat.tmpl:32
+#, fuzzy
+msgid "DataForm"
+msgstr "Formular"
+
+#: templates/attachtables.nat.tmpl:95 templates/history.nat.tmpl:74
+msgid "Date"
+msgstr "Dato"
+
+#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:122
+#: templates/newtopic.wwb.tmpl:130 templates/newtopic.wwb.tmpl:57
+msgid "Default"
+msgstr "Standard"
+
+#: templates/newtopic.wwb.tmpl:132
+msgid "Default template for the selected type"
+msgstr ""
+
+#: templates/newtopic.nat.tmpl:120
+#, fuzzy
+msgid "Default topic as defined in WebTopicEditTemplate"
+msgstr "standard som defineret i %1"
+
+#: templates/newtopic.wwb.tmpl:59
+#, fuzzy
+msgid "Default wiki topic"
+msgstr "Slet side"
+
+#: templates/foswiki.nat.tmpl:127 templates/renamedelete.nat.tmpl:13
+#: templates/renamedelete.nat.tmpl:6 templates/renamewebdelete.nat.tmpl:3
+msgid "Delete"
+msgstr "Slet"
+
+#: templates/renamedelete.nat.tmpl:5
+#, fuzzy
+msgid "Delete %1"
+msgstr "Slet"
+
+#: templates/moveattachment.nat.tmpl:9
+#, fuzzy
+msgid "Delete attachment '%1'"
+msgstr "Slet vedhæftet fil %1"
+
+#: templates/attachtables.nat.tmpl:78
+#, fuzzy
+msgid "Delete this attachment"
+msgstr "Slet vedhæftet fil %1"
+
+#: templates/foswiki.nat.tmpl:128
+#, fuzzy
+msgid "Delete this topic"
+msgstr "Slet side"
+
+#: templates/attachsidebar.nat.tmpl:6
+#: templates/moveattachmentsidebar.nat.tmpl:6
+#, fuzzy
+msgid "Deleting attachments"
+msgstr "Slet vedhæftet fil %1"
+
+#: templates/renamesidebar.nat.tmpl:6
+#, fuzzy
+msgid "Deleting topics"
+msgstr "Slet side"
+
+#: templates/rename.nat.tmpl:7 templates/translatetopic.nat.tmpl:123
+msgid "Derive from title"
+msgstr ""
+
+#: templates/copytopic.nat.tmpl:23
+#, fuzzy
+msgid "Destination"
+msgstr "Beskrivelse"
+
+#: data/System/SiteMenu.txt:43
+msgid "Developer docs"
+msgstr ""
+
+#: templates/login.nat.tmpl:57
+#, fuzzy
+msgid "Did you forget your password?"
+msgstr "Har du glemt din adgangskode?"
+
+#: templates/messages.nat.tmpl:159
+msgid "Did you want to [[%1][reset %2's password]]?"
+msgstr "Ønskede du at [[%1][nulstille adgangskoden for brugeren %2]]?"
+
+#: templates/foswiki.nat.tmpl:278
+msgid "Diff"
+msgstr ""
+
+#: templates/compare.nat.tmpl:7 templates/rdiff.nat.tmpl:20
+#: templates/rdiff.nat.tmpl:9
+#, fuzzy
+msgid "Difference"
+msgstr "Ændringer:"
+
+#: templates/webdav_folder.nat.tmpl:10
+#, fuzzy
+msgid "Directory"
+msgstr "Historik"
+
+#: templates/edit.nat.tmpl:128
+msgid "Display settings"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:281
+msgid "Display the most recent change of this topic"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:207
+msgid "Display this topic in PDF format"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:57
+msgid "Display this topic in a printer-friendly manner"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:45
+#, fuzzy
+msgid "Display this version of the topic"
+msgstr "Printbar version af denne side (p)"
+
+#: data/System/MySideBar.txt:34
+msgid "Do you want to *delete* the old sidebar and then create a new one?"
+msgstr ""
+
+#: templates/login.nat.tmpl:61
+msgid "Do you want to become a registered user?"
+msgstr ""
+
+#: templates/messages.nat.tmpl:293
+#, fuzzy
+msgid "Don't forget to check your topic settings."
+msgstr "glem ikke at tjekke dine side-instillinger (Topic Settings)"
+
+#: templates/foswiki.nat.tmpl:238
+msgid "Download"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:241
+msgid "Download assets from an external url and attach them to this topic"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:239
+msgid "Download external resource"
+msgstr ""
+
+#: templates/print.nat.tmpl:65
+msgid "Draft"
+msgstr ""
+
+#: templates/messages.nat.tmpl:237
+#, fuzzy
+msgid "During deletion of attachment =%1= an error was found."
+msgstr ""
+"Under flytningen af den vedhæftede fil =%1= til %2 blev der konstateret en "
+"fejl."
+
+#: templates/messages.nat.tmpl:367 templates/messages.nat.tmpl:380
+msgid ""
+"During deletion of attachment =%1= an error was found. Please notify your %2 "
+"administrator."
+msgstr ""
+"Under sletningen af den vedhæftede fil %1 blev der konstateret en fejl. "
+"Underret venligst din %2 administrator."
+
+#: templates/messages.nat.tmpl:368
+#, fuzzy
+msgid ""
+"During move of attachment %1 to %2 an error was found. Please notify your %3 "
+"administrator."
+msgstr ""
+"Under sletningen af den vedhæftede fil %1 blev der konstateret en fejl. "
+"Underret venligst din %2 administrator."
+
+#: templates/messages.nat.tmpl:46
+#, fuzzy
+msgid "During rename of topic %1 to %2 an error (%3) was found."
+msgstr "Under omdøbning af webbet %1 til %2 blev der konstateret en fejl."
+
+#: templates/messages.nat.tmpl:53
+#, fuzzy
+msgid "During rename of web %1 to %2 an error (%3) was found."
+msgstr "Under omdøbning af webbet %1 til %2 blev der konstateret en fejl."
+
+#: templates/messages.nat.tmpl:223
+#, fuzzy
+msgid "During save of %1 an error was found by the version control system."
+msgstr ""
+"Under skrivningen af %1 blev der konstateret en fejl af "
+"versionsstyringssystemet. Underret venligst din %2 administrator."
+
+#: templates/edit.nat.tmpl:36
+msgid "Dutch"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:97
+msgid "Edit"
+msgstr "Editér"
+
+#: templates/foswiki.nat.tmpl:91
+#, fuzzy
+msgid "Edit Raw"
+msgstr "Editér"
+
+#: templates/oopsleaseconflict.nat.tmpl:44
+#, fuzzy
+msgid "Edit anyway"
+msgstr "Editér alligevel"
+
+#: templates/foswiki.nat.tmpl:103
+#, fuzzy
+msgid "Edit form"
+msgstr "editér formular"
+
+#: templates/foswiki.nat.tmpl:104
+#, fuzzy
+msgid "Edit form data"
+msgstr "Formular-data"
+
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:101
+#, fuzzy
+msgid "Edit group"
+msgstr "Opret gruppe"
+
+#: templates/foswiki.nat.tmpl:118
+#, fuzzy
+msgid "Edit hidden preference settings of this topic"
+msgstr "Editér præferencer for siden"
+
+#: templates/sidebar.nat.tmpl:7
+msgid "Edit my sidebar"
+msgstr ""
+
+#: templates/attachtables.nat.tmpl:76
+#, fuzzy
+msgid "Edit properties of this attachment"
+msgstr "Mere om at skjule vedhæftede filer"
+
+#: templates/edit.nat.tmpl:93
+#, fuzzy
+msgid "Edit settings"
+msgstr "Editér præferencer for siden"
+
+#: templates/foswiki.nat.tmpl:109
+#, fuzzy
+msgid "Edit text"
+msgstr "(editér tekst)"
+
+#: templates/foswiki.nat.tmpl:110
+#, fuzzy
+msgid "Edit text data"
+msgstr "(editér tekst)"
+
+#: templates/foswiki.nat.tmpl:106
+#, fuzzy
+msgid "Edit the form data of this topic"
+msgstr "Opdatér side-indstillinger for denne side..."
+
+#: templates/foswiki.nat.tmpl:94
+#, fuzzy
+msgid "Edit the raw text of this topic"
+msgstr "Opdatér side-indstillinger for denne side..."
+
+#: templates/foswiki.nat.tmpl:112
+#, fuzzy
+msgid "Edit the text data of this topic"
+msgstr "Opdatér side-indstillinger for denne side..."
+
+#: templates/foswiki.nat.tmpl:100 templates/foswiki.nat.tmpl:98
+#, fuzzy
+msgid "Edit this topic"
+msgstr "Editér denne sides tekst (e)"
+
+#: templates/foswiki.nat.tmpl:116
+#, fuzzy
+msgid "Edit topic preferences"
+msgstr "Editér præferencer for siden"
+
+#: templates/foswiki.nat.tmpl:92
+msgid "Edit wiki markup"
+msgstr ""
+
+#: templates/edit.nat.tmpl:37
+msgid "English"
+msgstr ""
+
+#: data/System/UserRegistrationViewTemplate.txt:356
+#, fuzzy
+msgid "Enter a WikiName"
+msgstr "Indtast et WikiNavn."
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:189
+#: data/System/UserRegistrationViewTemplate.txt:351
+#, fuzzy
+msgid "Enter a login name"
+msgstr "Skriv forælder navn"
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:131
+msgid ""
+"Enter a new password. Please don't use a trivial password that could easily "
+"be guessed."
+msgstr ""
+
+#: templates/login.nat.tmpl:14
+msgid "Enter a new username and password to change identity"
+msgstr "Angiv et nyt brugernavn og password for at skifte identitet"
+
+#: data/System/UserRegistrationViewTemplate.txt:357
+msgid "Enter a valid WikiWord"
+msgstr ""
+
+#: data/System/UserRegistrationViewTemplate.txt:352
+#, fuzzy
+msgid "Enter at least %1 characters"
+msgstr "Dette site kræver at en adgangskode har mindst %1 karakterer"
+
+#: templates/login.sudo.nat.tmpl:19
+#, fuzzy
+msgid "Enter the %WIKITOOLNAME% administrator user or login as set in %1"
+msgstr ""
+"Brug den Wiki Administrator-bruger eller det login som er benyttet i %1"
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:118
+msgid "Enter the current password for the given !LoginName."
+msgstr ""
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:199
+#: data/System/UserRegistrationViewTemplate.txt:365
+#, fuzzy
+msgid "Enter the same password as above"
+msgstr "Indtast venligst samme adgangskode som ovenfor."
+
+#: templates/searchbox.nat.tmpl:6
+msgid "Enter topic name or a search string"
+msgstr ""
+
+#: data/System/UserRegistrationViewTemplate.txt:348
+#, fuzzy
+msgid "Enter your first name"
+msgstr "Indtast venligst fornavn."
+
+#: data/System/UserRegistrationViewTemplate.txt:349
+#, fuzzy
+msgid "Enter your last name"
+msgstr "Indtast venligst efternavn."
+
+#: templates/messages.nat.tmpl:132
+msgid "Error registering user %1"
+msgstr "Fejl ved registrering af brugeren %1"
+
+#: templates/messages.nat.tmpl:222
+msgid "Error saving topic"
+msgstr "Fejl ved skrivning af siden"
+
+#: templates/messages.nat.tmpl:146
+msgid "Errors"
+msgstr "Fejl"
+
+#: templates/attachnew.nat.tmpl:35
+#, fuzzy
+msgid "Existing files"
+msgstr "Manglende felter"
+
+#: templates/print.nat.tmpl:28
+msgid "Export"
+msgstr ""
+
+#: templates/print.nat.tmpl:7
+msgid "Export to PDF"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:205
+msgid "Export topic to PDF"
+msgstr ""
+
+#: templates/attachnew.nat.tmpl:19
+msgid "Extracts individual files in a zip archive."
+msgstr ""
+
+#: data/System/WebLinks.txt:9
+msgid "FAQ"
+msgstr ""
+
+#: templates/attachsidebar.nat.tmpl:4
+#: templates/moveattachmentsidebar.nat.tmpl:4
+#, fuzzy
+msgid "File attachments"
+msgstr "Vedhæftede filer på siden"
+
+#: templates/messages.nat.tmpl:248
+msgid "File has been uploaded with different name"
+msgstr "Filen er blevet uploadet under et ændret navn"
+
+#: data/System/NatSkinWikiUsersViewTemplate.txt:26
+msgid "Filter"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:37
+#, fuzzy
+msgid "Find backlinks"
+msgstr "Referencer"
+
+#: templates/foswiki.nat.tmpl:49
+#, fuzzy
+msgid "Find child topics"
+msgstr "Find lignende sider"
+
+#: templates/edit.nat.tmpl:38
+msgid "Finnish"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:250
+msgid "First"
+msgstr "Første"
+
+#: data/System/NatSkinStyleBrowser.txt:36
+msgid "Fixed"
+msgstr ""
+
+#: data/System/NatSkinStyleBrowser.txt:37
+msgid "Fluid"
+msgstr ""
+
+#: templates/copytopic.nat.tmpl:39
+#, fuzzy
+msgid "Force a new revision"
+msgstr "Gennemtving ny version"
+
+#: templates/form.nat.tmpl:13
+msgid "Form"
+msgstr "Formular"
+
+#: templates/changeformsidebar.nat.tmpl:4
+#, fuzzy
+msgid "Form-based input"
+msgstr "Formular-baseret input"
+
+#: templates/edit.nat.tmpl:336
+#, fuzzy
+msgid "Format"
+msgstr "Formular"
+
+#: data/System/SiteMenu.txt:51
+msgid "Foswiki FAQ"
+msgstr ""
+
+#: templates/translatetopic.nat.tmpl:113
+msgid "Free form topic title in target language."
+msgstr ""
+
+#: templates/newtopic.nat.tmpl:66
+msgid ""
+"Free form topic title text. The actual topic _name_ will be derived from the "
+"title automatically."
+msgstr ""
+
+#: templates/edit.nat.tmpl:39
+msgid "French"
+msgstr ""
+
+#: templates/topbar.customato.nat.tmpl:88
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: templates/managetags.nat.tmpl:18 templates/renamebase.nat.tmpl:49
+msgid "From"
+msgstr ""
+
+#: templates/edit.nat.tmpl:40
+msgid "German"
+msgstr ""
+
+#: templates/body.nat.tmpl:63
+msgid "Get a fresh version <a href='%1' rel='nofollow'>here</a>."
+msgstr "Få en opdateret version <a href='%1' rel='nofollow'>her</a>."
+
+#: templates/foswiki.nat.tmpl:224
+#, fuzzy
+msgid "Get an email notification whenever this topic changes"
+msgstr "Automatiseret notificering om opdateringer"
+
+#: templates/renamesidebar.nat.tmpl:10
+msgid ""
+"Get help on <a href='%1' target='_blank'>Renaming and moving topics</a>."
+msgstr ""
+
+#: templates/renamewebbase.nat.tmpl:86
+#, fuzzy
+msgid ""
+"Get help on <a target='_blank' href='%1' rel='nofollow'>Renaming and moving "
+"webs</a>."
+msgstr "Få en opdateret version <a href='%1' rel='nofollow'>her</a>."
+
+#: data/System/NatSkinWebSearchViewTemplate.txt:67
+msgid "Get notified on changes on this search"
+msgstr "Få notificering om ændringer i resultaterne af denne søgning"
+
+#: templates/messages.nat.tmpl:232
+msgid "Go back in your browser and save your changes locally."
+msgstr "Gå tilbage i din browser, og gem dine opdateringer lokalt."
+
+#: templates/foswiki.nat.tmpl:259
+#, fuzzy
+msgid "Go to the following version of this topic"
+msgstr "Printbar version af denne side (p)"
+
+#: templates/foswiki.nat.tmpl:266
+#, fuzzy
+msgid "Go to the previous version of this topic"
+msgstr "Printbar version af denne side (p)"
+
+#: templates/messages.nat.tmpl:174
+#, fuzzy
+msgid "Good examples"
+msgstr "Gode eksempler:"
+
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:50
+msgid "Group name"
+msgstr "Gruppenavn"
+
+#: data/Main/WebLinks.txt:10
+msgid "Groups"
+msgstr "Grupper"
+
+#: templates/404.nat.tmpl:46
+msgid "Have a look at the list of all pages in this web."
+msgstr ""
+
+#: data/System/SiteMenu.txt:38 templates/attachsidebar.nat.tmpl:3
+#: templates/changeformsidebar.nat.tmpl:3 templates/foswiki.nat.tmpl:199
+#: templates/moveattachmentsidebar.nat.tmpl:3
+#: templates/renamesidebar.nat.tmpl:3 templates/renamewebsidebar.nat.tmpl:3
+#: templates/topbar.customato.nat.tmpl:85
+msgid "Help"
+msgstr "Hjælp"
+
+#: templates/attachtables.nat.tmpl:19
+#, fuzzy
+msgid "Hide attachment in normal topic view."
+msgstr "Filen vil ikke blive vist ved almindelig sidevisning."
+
+#: templates/attachsidebar.nat.tmpl:8
+#: templates/moveattachmentsidebar.nat.tmpl:8
+#, fuzzy
+msgid "Hiding attachments"
+msgstr "Mere om at skjule vedhæftede filer"
+
+#: templates/foswiki.nat.tmpl:139 templates/oopshistory.nat.tmpl:6
+msgid "History"
+msgstr "Historik"
+
+#: data/System/SiteMenu.txt:9
+msgid "Home"
+msgstr ""
+
+#: data/System/NatSkinUserViewTemplate.txt:51
+#, fuzzy
+msgid "Homepage"
+msgstr "Hele siden"
+
+#: templates/messages.nat.tmpl:250
+msgid ""
+"However, the filename has been changed from %1 to %2. Please make a note of "
+"it."
+msgstr "Dog er filnavnet blevet ændret fra %1 til %2. _Bemærk venligst dette_."
+
+#: templates/404.nat.tmpl:24
+msgid "I am afraid this page slipped between the cracks."
+msgstr ""
+
+#: templates/oopsleaseconflict.nat.tmpl:37
+msgid "If unsure, click 'Cancel'."
+msgstr ""
+
+#: templates/validate.nat.tmpl:24
+msgid ""
+"If you are unsure what this means, read <a href='%1' "
+"class='foswikiPopUp'>why you are being asked to confirm</a>"
+msgstr ""
+
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:81
+#: data/System/NatSkinChangePasswordViewTemplate.txt:89
+#: data/System/UserRegistrationViewTemplate.txt:95
+msgid "If you have any questions, please contact %1"
+msgstr "Hvis du har spørgsmål, så kontakt venligst %1"
+
+#: templates/messages.nat.tmpl:323
+msgid "If you want to create the topic"
+msgstr "Hvis du vil oprette siden"
+
+#: templates/messages.nat.tmpl:331
+#, fuzzy
+msgid "If you want to create the topic then [[%1][click here]]."
+msgstr "Hvis du vil oprette siden"
+
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:35
+msgid ""
+"If your old e-mail addresses are all invalid (you can't receive mail there "
+"any more) and you have forgotten your password, please contact %1 for help."
+msgstr ""
+"Hvis dine gamle e-mail-adresser alle er ugyldige (du kan ikke længere "
+"modtage e-mail på dem) og du har glemt din adgangskode, kontakt da venligst "
+"%1."
+
+#: templates/updatesplugin.nat.tmpl:7
+#, fuzzy
+msgid "Ignore for %1 days"
+msgstr "Ignorer i 7 dage"
+
+#: templates/messages.nat.tmpl:253
+#, fuzzy
+msgid ""
+"In some cases, Foswiki changes the name of the uploaded file to make it safe "
+"and accessible across all platforms"
+msgstr ""
+"I nogle tilfælde ændrer Foswiki navnet på den uploadede fil, for at gøre den "
+"sikker og tilgængelig fra flest mulige platforme:"
+
+#: templates/messages.nat.tmpl:164 templates/messages.nat.tmpl:170
+#: templates/messages.nat.tmpl:174
+msgid "Incorrect %1"
+msgstr "Forkert %1"
+
+#: templates/messages.nat.tmpl:60
+msgid "Incorrect Password"
+msgstr "Forkert adgangskode"
+
+#: templates/404.nat.tmpl:45 templates/sidebar.nat.tmpl:50
+msgid "Index"
+msgstr "Indeks"
+
+#: templates/topbar.customato.nat.tmpl:81
+#, fuzzy
+msgid "Index of all Topics"
+msgstr "Nulstil alle"
+
+#: data/System/SiteMenu.txt:45
+#, fuzzy
+msgid "Installed plugins"
+msgstr "Fejlede plugins"
+
+#: templates/foswiki.nat.tmpl:152 templates/languageselector.nat.tmpl:4
+#, fuzzy
+msgid "Interface language"
+msgstr "Skift sprog"
+
+#: templates/messages.nat.tmpl:257
+msgid ""
+"International (8-bit) characters are removed (replaced by US-ASCII "
+"equivalents for Latin-1)"
+msgstr ""
+"Internationale (8-bit) karakterer fjernes (erstattes med tilsvarende US-"
+"ASCII karakterer for Latin-1)"
+
+#: templates/messages.nat.tmpl:191
+msgid "Invalid Activation Code"
+msgstr "Forkert aktiveringskode"
+
+#: templates/messages.nat.tmpl:183
+msgid "Invalid e-mail address"
+msgstr "Ugyldig e-mail-adresse"
+
+#: templates/edit.nat.tmpl:41
+#, fuzzy
+msgid "Italian"
+msgstr "Kursiv"
+
+#: templates/edit.nat.tmpl:42
+msgid "Japanese"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:252
+#, fuzzy
+msgid "Jump to the first version of this topic"
+msgstr "Printbar version af denne side (p)"
+
+#: templates/foswiki.nat.tmpl:273
+#, fuzzy
+msgid "Jump to the most recent version of this topic"
+msgstr "Printbar version af denne side (p)"
+
+#: data/System/SiteMenu.txt:11
+msgid "Knowledge"
+msgstr ""
+
+#: templates/edit.nat.tmpl:43
+msgid "Korean"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:151 templates/languageselector.nat.tmpl:14
+#, fuzzy
+msgid "Language"
+msgstr "Dansk"
+
+#: templates/foswiki.nat.tmpl:271
+msgid "Last"
+msgstr "Sidste"
+
+#: data/System/NatSkinStyleBrowser.txt:34 templates/edit.nat.tmpl:173
+msgid "Layout"
+msgstr ""
+
+#: data/System/NatSkinStyleBrowser.txt:42
+msgid "Left"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:65
+msgid "Like"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:67
+#, fuzzy
+msgid "Like this topic"
+msgstr "Opret denne side"
+
+#: templates/foswiki.nat.tmpl:66
+msgid "Liked"
+msgstr ""
+
+#: templates/attachsidebar.nat.tmpl:7
+#: templates/moveattachmentsidebar.nat.tmpl:7
+#, fuzzy
+msgid "Linking to attachments"
+msgstr "Mere om at skjule vedhæftede filer"
+
+#: templates/foswiki.nat.tmpl:39
+#, fuzzy
+msgid "List other topics linking to this topic"
+msgstr "Opdatér side-indstillinger for denne side..."
+
+#: templates/foswiki.nat.tmpl:51
+#, fuzzy
+msgid "List topics that branch off this topic"
+msgstr "Vis alle sider der starter med bogstavet:"
+
+#: data/System/NatSkinUserViewTemplate.txt:53
+#, fuzzy
+msgid "Location"
+msgstr "Tegn"
+
+#: templates/renamewebbase.nat.tmpl:56
+#, fuzzy
+msgid "Locked topics"
+msgstr "Til side"
+
+#: templates/foswiki.nat.tmpl:2 templates/loginbase.nat.tmpl:74
+#: templates/topbar.customato.nat.tmpl:126
+#, fuzzy
+msgid "Log in"
+msgstr "Log ind"
+
+#: templates/foswiki.nat.tmpl:4
+#, fuzzy
+msgid "Log in to %1."
+msgstr "Log ind til %1"
+
+#: templates/foswiki.nat.tmpl:8 templates/topbar.customato.nat.tmpl:77
+#, fuzzy
+msgid "Log out"
+msgstr "Log ud"
+
+#: templates/foswiki.nat.tmpl:10
+#, fuzzy
+msgid "Log out %1"
+msgstr "Log ind til %1"
+
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:97
+#: data/System/NatSkinChangePasswordViewTemplate.txt:103
+#: data/System/NatSkinResetPasswordViewTemplate.txt:85
+msgid "Login"
+msgstr "Log ind"
+
+#: data/System/UserRegistrationViewTemplate.txt:124
+#, fuzzy
+msgid "Login settings"
+msgstr "Brugernavn:"
+
+#: data/System/UserRegistrationViewTemplate.txt:353
+#, fuzzy
+msgid "LoginName %1 is already in use"
+msgstr "Dette WikiNavn er allerede i brug."
+
+#: data/System/WebLinks.txt:11
+msgid "Macros"
+msgstr "Makroer"
+
+#: templates/messages.nat.tmpl:138
+#, fuzzy
+msgid "Mail error"
+msgstr "E-mail til"
+
+#: templates/messages.nat.tmpl:141
+msgid "Mail to"
+msgstr "E-mail til"
+
+#: data/System/UserRegistrationViewTemplate.txt:158
+msgid ""
+"Make sure you remember your password, even more when generating one "
+"automatically."
+msgstr ""
+
+#: templates/attachtables.nat.tmpl:33
+#, fuzzy
+msgid "Manage existing attachments"
+msgstr "Mere om at skjule vedhæftede filer"
+
+#: templates/foswiki.nat.tmpl:245
+#, fuzzy
+msgid "Manage tags in this web"
+msgstr "Søg efter flere sider i dette web"
+
+#: templates/renamesidebar.nat.tmpl:5
+#, fuzzy
+msgid "Managing topics"
+msgstr "Opdatér side"
+
+#: templates/renamewebsidebar.nat.tmpl:4
+msgid "Managing webs"
+msgstr ""
+
+#: templates/404.nat.tmpl:25
+msgid ""
+"Maybe you simply got here by accident. Then move back in your browser and "
+"try something else."
+msgstr ""
+
+#: data/System/NatSkinStyleBrowser.txt:47 templates/edit.nat.tmpl:199
+msgid "Menu"
+msgstr ""
+
+#: templates/messages.nat.tmpl:14
+msgid "Missing action command"
+msgstr "Manglende aktionskommando (action command)"
+
+#: templates/messages.nat.tmpl:118
+msgid "Missing fields =<span class='foswikiAlert'>**</span>="
+msgstr ""
+
+#: templates/messages.nat.tmpl:311
+msgid "Missing or illegal web name"
+msgstr "Manglende eller illegalt webnavn"
+
+#: templates/edit.nat.tmpl:364
+#, fuzzy
+msgid "Moderation"
+msgstr "Tegn"
+
+#: templates/foswiki.nat.tmpl:163
+#, fuzzy
+msgid "More"
+msgstr "Mere..."
+
+#: templates/foswiki.nat.tmpl:133
+msgid "Move"
+msgstr "Flyt"
+
+#: templates/moveattachment.nat.tmpl:10
+#, fuzzy
+msgid "Move attachment '%1'"
+msgstr "Flyt vedhæftet fil %1"
+
+#: templates/renamedelete.nat.tmpl:33
+#, fuzzy
+msgid "Move this topic into the %1 web"
+msgstr "Flyt side til web:"
+
+#: templates/foswiki.nat.tmpl:130
+#, fuzzy
+msgid "Move this topic to the trash"
+msgstr "Flyt side til web:"
+
+#: templates/renamewebbase.nat.tmpl:33
+#, fuzzy
+msgid "Move to %1"
+msgstr "Flyt til web: %1"
+
+#: templates/attachsidebar.nat.tmpl:5
+#: templates/moveattachmentsidebar.nat.tmpl:5
+#, fuzzy
+msgid "Moving attachments"
+msgstr "Vedhæftede filer på siden"
+
+#: templates/topbar.customato.nat.tmpl:74
+msgid "My Profile"
+msgstr "Min profil"
+
+#: templates/sidebar.nat.tmpl:30
+#, fuzzy
+msgid "My links"
+msgstr "Mine links"
+
+#: templates/sidebar.nat.tmpl:11 templates/sidebar.nat.tmpl:18
+msgid "My sidebar"
+msgstr ""
+
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:130
+#: data/System/WebCreateNewWeb.txt:10
+#, fuzzy
+msgid "Name"
+msgstr "Navn:"
+
+#: templates/messages.nat.tmpl:66
+msgid "Name of new web is missing"
+msgstr "Navnet på det nye web mangler"
+
+#: templates/foswiki.nat.tmpl:193 templates/newtopic.wwb.tmpl:3
+#, fuzzy
+msgid "New"
+msgstr "ny"
+
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:140
+#, fuzzy
+msgid "New e-mails"
+msgstr "Send e-mail"
+
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:40
+#, fuzzy
+msgid "New group"
+msgstr "Opret gruppe"
+
+#: templates/mailnotify.nat.tmpl:25 templates/mailnotify.nat.tmpl:45
+#, fuzzy
+msgid "New or changed topics in the %1 web, since %2 GMT"
+msgstr "Nye eller ændrede sider i %1-webbet, siden %2:"
+
+#: templates/renamewebbase.nat.tmpl:28
+#, fuzzy
+msgid "New parent web"
+msgstr "Nyt forælder-web:"
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:127
+#, fuzzy
+msgid "New password"
+msgstr "Forkert adgangskode:"
+
+#: templates/foswiki.nat.tmpl:194 templates/translatetopic.nat.tmpl:121
+#, fuzzy
+msgid "New topic"
+msgstr "Vis side"
+
+#: templates/messages.nat.tmpl:40
+msgid "New topic name %1 is not a %2"
+msgstr "Det nye sidenavn %1 er ikke et %2"
+
+#: templates/renamewebbase.nat.tmpl:24
+#, fuzzy
+msgid "New web name"
+msgstr "Nyt web-navn:"
+
+#: data/System/SiteMenu.txt:10
+msgid "News"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:257 templates/newtopic.wwb.tmpl:20
+msgid "Next"
+msgstr "Næste"
+
+#: templates/moveattachment.nat.tmpl:47
+msgid "No"
+msgstr "Nej"
+
+#: templates/childtopics.nat.tmpl:103 templates/childtopics.nat.tmpl:57
+#: templates/childtopics.nat.tmpl:77
+#, fuzzy
+msgid "No child topics"
+msgstr "Ingen dattersider er fundet."
+
+#: templates/renamewebbase.nat.tmpl:57
+#, fuzzy
+msgid "No permission"
+msgstr "Rettigheder"
+
+#: data/System/MySideBar.txt:38
+msgid "No, thanks"
+msgstr ""
+
+#: templates/print.nat.tmpl:64
+msgid "None"
+msgstr ""
+
+#: templates/messages.nat.tmpl:252
+#, fuzzy
+msgid "Note"
+msgstr "Note:"
+
+#: templates/moveattachment.nat.tmpl:35
+msgid ""
+"Note that any URLs that refer to the attachment will be broken after this "
+"move."
+msgstr ""
+"Vær opmærksom på, at alle links der refererer direkte til denne vedhæftede "
+"fil ikke vil virke mere efter flytningen (fx eksterne links fra andre "
+"websteder)."
+
+#: templates/renamebase.nat.tmpl:75
+msgid "Note that you may change the title from within the editor as well."
+msgstr ""
+
+#: data/System/SiteNothingFound.txt:2
+#, fuzzy
+msgid "Note: This topic does not exist"
+msgstr "siden %1 eksisterer ikke"
+
+#: templates/attachsidebar.nat.tmpl:9 templates/changeformsidebar.nat.tmpl:8
+#: templates/moveattachmentsidebar.nat.tmpl:9
+#: templates/renamesidebar.nat.tmpl:8 templates/renamewebsidebar.nat.tmpl:6
+#, fuzzy
+msgid "Notes"
+msgstr "Noter:"
+
+#: templates/foswiki.nat.tmpl:290
+msgid "Nothing found. Try again!"
+msgstr ""
+
+#: templates/sidebar.nat.tmpl:54 templates/topbar.customato.nat.tmpl:82
+msgid "Notifications"
+msgstr "Notificeringer"
+
+#: templates/foswiki.nat.tmpl:210
+msgid "Notify"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:211
+#, fuzzy
+msgid "Notify on changes"
+msgstr "Ingen ændringer"
+
+#: data/System/NatSkinStyleBrowser.txt:54 templates/attachtables.nat.tmpl:24
+#: templates/changeform.nat.tmpl:25 templates/messages.nat.tmpl:104
+#: templates/messages.nat.tmpl:260 templates/messages.nat.tmpl:279
+#: templates/moveattachment.nat.tmpl:66
+#: templates/oopslanguagechanged.nat.tmpl:11
+#: templates/renameconfirm.nat.tmpl:6 templates/renamewebconfirm.nat.tmpl:6
+#: templates/validate.nat.tmpl:27
+msgid "OK"
+msgstr "OK"
+
+#: data/System/NatSkinStyleBrowser.txt:45
+#: data/System/NatSkinStyleBrowser.txt:50
+msgid "Off"
+msgstr ""
+
+#: data/System/NatSkinStyleBrowser.txt:49
+msgid "On"
+msgstr ""
+
+#: data/System/SiteMenu.txt:50
+msgid "Online support forum"
+msgstr ""
+
+#: templates/messages.nat.tmpl:304
+msgid "Only members of the %1 are allowed to perform this action."
+msgstr "Kun medlemmer af %1 må udføre denne handling."
+
+#: templates/foswiki.nat.tmpl:233
+msgid "Open <nop>WebDAV Directory"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:82
+#, fuzzy
+msgid "Open a channel to talk about this topic"
+msgstr "Gendan forrige ændring"
+
+#: templates/viewraw.nat.tmpl:11
+#, fuzzy
+msgid "Open in separate window"
+msgstr "Detaljer i separat vindue"
+
+#: data/System/UserRegistrationViewTemplate.txt:213
+#, fuzzy
+msgid "Optional information"
+msgstr "Information i dette web"
+
+#: templates/copytopic.nat.tmpl:37
+msgid "Options"
+msgstr "Valgmuligheder"
+
+#: templates/404.nat.tmpl:56
+msgid "Or just start from the beginning in case you got lost somehow."
+msgstr ""
+
+#: data/System/NatSkinUserViewTemplate.txt:50
+#, fuzzy
+msgid "Organisation"
+msgstr "Organisationsnavn:"
+
+#: data/System/UserRegistrationViewTemplate.txt:219
+#, fuzzy
+msgid "Organisation Name"
+msgstr "Organisationsnavn:"
+
+#: data/System/UserRegistrationViewTemplate.txt:228
+#, fuzzy
+msgid "Organisation URL"
+msgstr "Organisationsnavn:"
+
+#: templates/print.nat.tmpl:50
+#, fuzzy
+msgid "Orientation"
+msgstr "Dokumentation"
+
+#: templates/foswiki.nat.tmpl:204
+msgid "PDF"
+msgstr ""
+
+#: templates/print.nat.tmpl:33
+msgid "Page size"
+msgstr ""
+
+#: templates/copytopic.nat.tmpl:31
+msgid "Parent"
+msgstr ""
+
+#: templates/edit.nat.tmpl:66
+#, fuzzy
+msgid "Parent topic"
+msgstr "Opdatér side"
+
+#: data/Main/WebLinks.txt:11
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:115
+#: templates/loginbase.nat.tmpl:51 templates/topbar.customato.nat.tmpl:163
+msgid "Password"
+msgstr "Adgangskode"
+
+#: templates/messages.nat.tmpl:102
+msgid "Password changed successfully!"
+msgstr "Adgangskoden er opdateret!"
+
+#: data/System/SiteMenu.txt:48
+#, fuzzy
+msgid "Password forgotten"
+msgstr "Adgangskoder stemmer ikke overens"
+
+#: templates/messages.nat.tmpl:126
+msgid "Passwords do not match"
+msgstr "Adgangskoder stemmer ikke overens"
+
+#: templates/messages.nat.tmpl:94
+msgid "Pick one of the %1."
+msgstr "Vælg en af %1."
+
+#: templates/messages.nat.tmpl:8
+msgid "Please e-mail %1 to request this."
+msgstr ""
+
+#: data/System/UserRegistrationViewTemplate.txt:368
+#, fuzzy
+msgid "Please enter a valid e-mail address"
+msgstr "Indtast gyldig e-mail-adresse."
+
+#: templates/oops.nat.tmpl:23
+msgid "Please go back in your browser and try again."
+msgstr "Benyt venligst tilbage-knappen i browseren og forsøg igen."
+
+#: templates/messages.nat.tmpl:243
+#, fuzzy
+msgid "Please notify your %1"
+msgstr "Advisér venligst din %1-administrator."
+
+#: templates/messages.nat.tmpl:49
+#, fuzzy
+msgid "Please notify your %1 administrator %2"
+msgstr "Advisér venligst din %1-administrator."
+
+#: templates/messages.nat.tmpl:134 templates/messages.nat.tmpl:151
+#: templates/messages.nat.tmpl:230 templates/messages.nat.tmpl:56
+#, fuzzy
+msgid "Please notify your %1 administrator %2."
+msgstr "Advisér venligst din %1-administrator."
+
+#: templates/messages.nat.tmpl:194
+#, fuzzy
+msgid "Please try again."
+msgstr "Indtast brugernavn."
+
+#: templates/edit.nat.tmpl:44
+msgid "Portuguese"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:316
+#, fuzzy
+msgid "Powered by Foswiki"
+msgstr "Dette site er drevet af Foswiki"
+
+#: templates/copytopic.nat.tmpl:30 templates/foswiki.nat.tmpl:115
+#: templates/sidebar.nat.tmpl:56
+msgid "Preferences"
+msgstr "Præferencer"
+
+#: templates/validate.nat.tmpl:22
+msgid "Press Cancel otherwise."
+msgstr "Ellers vælg Fortryd."
+
+#: templates/validate.nat.tmpl:21
+msgid "Press OK to confirm that this change was intentional."
+msgstr "Vælg OK for at bekræfte at denne ændring var tilsigtet."
+
+#: templates/newtopic.wwb.tmpl:19
+#, fuzzy
+msgid "Prev"
+msgstr "Forhåndsvisning"
+
+#: templates/foswiki.nat.tmpl:264
+msgid "Previous"
+msgstr "Forrige"
+
+#: templates/foswiki.nat.tmpl:54
+msgid "Print"
+msgstr ""
+
+#: data/System/SiteMenu.txt:52
+msgid "Professional help"
+msgstr ""
+
+#: data/System/SiteMenu.txt:12
+msgid "Projects"
+msgstr ""
+
+#: templates/attachagain.nat.tmpl:11
+msgid "Properties"
+msgstr "Egenskaber"
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:195
+#, fuzzy
+msgid "Provide a new password"
+msgstr "Gentag ny adgangskode:"
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:192
+#: data/System/UserRegistrationViewTemplate.txt:361
+#, fuzzy
+msgid "Provide a password"
+msgstr "Forkert adgangskode"
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:129
+#: data/System/UserRegistrationViewTemplate.txt:156
+#, fuzzy
+msgid "Random password"
+msgstr "Forkert adgangskode"
+
+#: templates/foswiki.nat.tmpl:85
+msgid "Raw"
+msgstr ""
+
+#: data/System/UserRegistrationViewTemplate.txt:162
+#, fuzzy
+msgid "Re-enter password"
+msgstr "Nulstil adgangskode"
+
+#: templates/topbar.customato.nat.tmpl:80
+#, fuzzy
+msgid "Recent Changes"
+msgstr "Senest ændrede sider"
+
+#: templates/view.nat.tmpl:109
+#, fuzzy
+msgid "Redirect from %1"
+msgstr "Søgeresultater fra %1-webbet"
+
+#: data/System/WebLinks.txt:10 templates/topbar.customato.nat.tmpl:89
+#, fuzzy
+msgid "Reference Manual"
+msgstr "Brugervejledninger"
+
+#: data/System/SiteMenu.txt:44
+#, fuzzy
+msgid "Reference manual"
+msgstr "Brugervejledninger"
+
+#: data/System/UserRegistrationViewTemplate.txt:87
+#: templates/foswiki.nat.tmpl:14
+msgid "Register"
+msgstr "Registrér dig"
+
+#: data/Main/WebLinks.txt:8 data/System/UserRegistrationViewTemplate.txt:51
+msgid "Registration"
+msgstr "Registrering"
+
+#: templates/loginbase.nat.tmpl:66 templates/topbar.customato.nat.tmpl:178
+msgid "Remember me on this computer"
+msgstr "Husk mig på denne PC"
+
+#: data/System/NatSkinResetPasswordViewTemplate.txt:65
+msgid "Remember your password?"
+msgstr "Kan du huske din adgangskode?"
+
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:103
+#, fuzzy
+msgid "Remove members"
+msgstr "Fjern medlemmer..."
+
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:174
+msgid "Removing"
+msgstr ""
+
+#: templates/rename.nat.tmpl:22 templates/renamebase.nat.tmpl:16
+#: templates/renameweb.nat.tmpl:5 templates/renamewebbase.nat.tmpl:12
+msgid "Rename"
+msgstr "Omdøb"
+
+#: data/System/SiteMenu.txt:76
+#, fuzzy
+msgid "Rename current web"
+msgstr "Nyt forælder-web:"
+
+#: templates/messages.nat.tmpl:28 templates/messages.nat.tmpl:34
+msgid "Rename failed"
+msgstr "Omdøbning fejlede"
+
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:102
+#, fuzzy
+msgid "Rename group "
+msgstr "Opret gruppe"
+
+#: templates/renamebase.nat.tmpl:10
+msgid "Rename or move %1"
+msgstr "Omdøb eller flyt siden %1"
+
+#: templates/foswiki.nat.tmpl:134
+#, fuzzy
+msgid "Rename or move this topic"
+msgstr "Omdøb eller flyt side"
+
+#: templates/renamewebbase.nat.tmpl:10
+#, fuzzy
+msgid "Rename the %1 web"
+msgstr "Velkommen til %1-webbet"
+
+#: templates/managetags.nat.tmpl:10
+#, fuzzy
+msgid "Rename, merge or delete tags"
+msgstr "Omdøb, flyt eller slet dette web"
+
+#: templates/foswiki.nat.tmpl:247
+#, fuzzy
+msgid "Rename, merge or delete tags being used in this web"
+msgstr "Omdøb, flyt eller slet dette web"
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:198
+#, fuzzy
+msgid "Repeat your new password"
+msgstr "Gentag ny adgangskode:"
+
+#: data/System/UserRegistrationViewTemplate.txt:364
+#, fuzzy
+msgid "Repeat your password"
+msgstr "Kan du huske din adgangskode?"
+
+#: templates/validate.nat.tmpl:5
+#, fuzzy
+msgid "Request validation"
+msgstr "Bed om bekræftelse"
+
+#: data/System/NatSkinStyleBrowser.txt:55
+msgid "Reset"
+msgstr ""
+
+#: data/System/NatSkinResetPasswordViewTemplate.txt:109
+#: data/System/NatSkinResetPasswordViewTemplate.txt:43
+#: data/System/NatSkinResetPasswordViewTemplate.txt:9
+msgid "Reset password"
+msgstr "Nulstil adgangskode"
+
+#: templates/404.nat.tmpl:55
+#, fuzzy
+msgid "Restart"
+msgstr "Gendan"
+
+#: templates/foswiki.nat.tmpl:121 templates/history.nat.tmpl:98
+msgid "Restore"
+msgstr "Gendan"
+
+#: templates/foswiki.nat.tmpl:122
+#, fuzzy
+msgid "Restore previous version"
+msgstr "Gendan siden til versionen:"
+
+#: templates/history.nat.tmpl:97
+#, fuzzy
+msgid "Restore revision %1"
+msgstr "Seneste revision: %1"
+
+#: data/System/NatSkinWebSearchViewTemplate.txt:189
+msgid "Results from %1 web"
+msgstr "Søgeresultater fra %1-webbet"
+
+#: templates/oops.nat.tmpl:26
+msgid "Retry"
+msgstr ""
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:135
+#, fuzzy
+msgid "Retype new password"
+msgstr "Gentag ny adgangskode:"
+
+#: templates/mailnotify.nat.tmpl:39 templates/mailnotify.nat.tmpl:58
+msgid "Review recent changes in:"
+msgstr "Senest ændrede sider i:"
+
+#: templates/history.nat.tmpl:73 templates/rdiff.nat.tmpl:45
+msgid "Revision"
+msgstr "Version"
+
+#: templates/history.nat.tmpl:15
+msgid "Revision history of %1"
+msgstr "Versionshistorik for %1"
+
+#: templates/edit.nat.tmpl:292
+#, fuzzy
+msgid "Revision information"
+msgstr "Information i dette web"
+
+#: data/System/NatSkinStyleBrowser.txt:43
+msgid "Right"
+msgstr ""
+
+#: templates/edit.nat.tmpl:45
+msgid "Russian"
+msgstr ""
+
+#: data/System/SiteMenu.txt:47
+msgid "Sandbox"
+msgstr ""
+
+#: data/System/MySideBar.txt:74 templates/actionform.nat.tmpl:10
+msgid "Save"
+msgstr "Gem"
+
+#: data/System/NatSkinWebSearchViewTemplate.txt:79 templates/404.nat.tmpl:40
+#: templates/kinosearch.nat.tmpl:7 templates/search.nat.tmpl:30
+#: templates/searchformat.nat.tmpl:3
+msgid "Search"
+msgstr "Søg"
+
+#: templates/backlinksallwebs.nat.tmpl:21
+#, fuzzy
+msgid "Search %1 web only"
+msgstr "Søg kun i %1-webbet"
+
+#: templates/backlinksallwebs.nat.tmpl:24
+#, fuzzy
+msgid "Search %1 web only for topics that link to here"
+msgstr "Søg i %1-webbet efter sider der linker til denne side"
+
+#: templates/backlinksweb.nat.tmpl:16
+msgid "Search all webs"
+msgstr "Søg i alle webs"
+
+#: templates/backlinksweb.nat.tmpl:19
+msgid "Search all webs for topics that link to here"
+msgstr "Søg i alle webs efter sider der linker til denne side"
+
+#: templates/renamebase.nat.tmpl:19 templates/renamedelete.nat.tmpl:16
+#: templates/renamewebbase.nat.tmpl:75
+#, fuzzy
+msgid "Search for backlinks in all webs"
+msgstr "(referencer fra alle webs)"
+
+#: templates/opensearch.nat.tmpl:30
+#, fuzzy
+msgid "Search for content on %1"
+msgstr "Vedhæft billede eller dokument til %1"
+
+#: templates/opensearch.nat.tmpl:55
+#, fuzzy
+msgid "Search for persons on %1"
+msgstr "Søg efter opdateringer"
+
+#: data/System/NatSkinWebSearchViewTemplate.txt:118
+#: templates/backlinks.nat.tmpl:26 templates/renamebase.nat.tmpl:19
+#: templates/renamedelete.nat.tmpl:16 templates/renamewebbase.nat.tmpl:75
+msgid "Search in all webs"
+msgstr "Søg i alle webs"
+
+#: templates/search.nat.tmpl:14
+#, fuzzy
+msgid "Search result for %1"
+msgstr "Søgeresultat"
+
+#: templates/messages.nat.tmpl:301 templates/messages.nat.tmpl:308
+#, fuzzy
+msgid "See also"
+msgstr "Se også:"
+
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:130
+msgid "Select"
+msgstr "Vælg"
+
+#: templates/languageselector.nat.tmpl:25
+msgid ""
+"Select 'Default' to switch to the default language configured in your "
+"browser."
+msgstr ""
+
+#: templates/newtopic.wwb.tmpl:45
+#, fuzzy
+msgid "Select Type"
+msgstr "Vælg"
+
+#: templates/newtopic.wwb.tmpl:123
+#, fuzzy
+msgid "Select a Template"
+msgstr "Standard-skabelon"
+
+#: templates/foswiki.nat.tmpl:154
+msgid "Select a different language for the wiki interface"
+msgstr ""
+
+#: templates/renamebase.nat.tmpl:86 templates/renamewebbase.nat.tmpl:51
+msgid "Select all topics"
+msgstr "Vælg alle sider"
+
+#: templates/translatetopic.nat.tmpl:101
+msgid "Select an existing topic to be added to the translation set."
+msgstr ""
+
+#: templates/translatetopic.nat.tmpl:89
+msgid "Select existing translation"
+msgstr ""
+
+#: templates/translatetopic.nat.tmpl:66
+#, fuzzy
+msgid "Select language"
+msgstr "Skift sprog"
+
+#: templates/managetags.nat.tmpl:22
+msgid "Select one or more existing tags to be renamed."
+msgstr ""
+
+#: templates/renamesidebar.nat.tmpl:14
+msgid "Select the [[%1.WebHome][%1]] web to delete the topic."
+msgstr ""
+
+#: data/System/UserRegistrationViewTemplate.txt:287
+#, fuzzy
+msgid "Select the groups you want to join."
+msgstr "Vælg den gruppe som skal tilmeldes:"
+
+#: templates/managetags.nat.tmpl:29
+msgid ""
+"Select the tag to rename the above tags to. Leaving this empty will delete "
+"them."
+msgstr ""
+
+#: templates/view.nat.tmpl:93
+#, fuzzy
+msgid "Select translation in %1"
+msgstr "Vælg hvilke grupper som skal tilmeldes:"
+
+#: templates/newtopic.nat.tmpl:134
+msgid "Select which template to use while creating this topic."
+msgstr ""
+
+#: templates/renamebase.nat.tmpl:86 templates/renamewebbase.nat.tmpl:51
+msgid "Set all"
+msgstr "Vælg alle"
+
+#: templates/edit.nat.tmpl:57
+msgid "Settings"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:60
+msgid "Share"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:62
+msgid "Share this topic with others"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:61
+#, fuzzy
+msgid "Share topic"
+msgstr "Opdatér side"
+
+#: data/System/NatSkinStyleBrowser.txt:40 templates/edit.nat.tmpl:213
+msgid "Sidebar"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:16
+#, fuzzy
+msgid "Sign on to %1."
+msgstr "Log ind til %1"
+
+#: data/System/WebLinks.txt:14
+#, fuzzy
+msgid "Site Tools"
+msgstr "Flere værktøjer"
+
+#: data/System/SiteMenu.txt:72
+#, fuzzy
+msgid "Site permissions"
+msgstr "Rettigheder"
+
+#: data/System/SiteMenu.txt:71
+#, fuzzy
+msgid "Site preferences"
+msgstr "sæt præferencer"
+
+#: data/System/SiteBottomBar.txt:9
+msgid "Sitemap"
+msgstr ""
+
+#: templates/attachtables.nat.tmpl:95
+msgid "Size"
+msgstr "Størrelse"
+
+#: templates/edit.nat.tmpl:147
+msgid "Skin settings"
+msgstr ""
+
+#: templates/messages.nat.tmpl:256
+msgid "Some characters such as =&#126;=, =$=, =@=, =%= are removed"
+msgstr "Nogle karakterer, såsom =&#126;=, =$=, =@= og =%= bliver fjernet"
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:30
+#, fuzzy
+msgid "Sorry, passwords can't be changed."
+msgstr "Din adgangskode er ikke ændret."
+
+#: data/System/UserRegistrationViewTemplate.txt:26
+msgid "Sorry, registration has been temporarily disabled."
+msgstr "Beklager, registrering er midlertidigt deaktiveret."
+
+#: templates/messages.nat.tmpl:254
+msgid "Spaces are replaced by underscores"
+msgstr "Et mellemrum bliver erstattet af et understregningstegn ( _ )"
+
+#: templates/edit.nat.tmpl:46
+msgid "Spanish"
+msgstr ""
+
+#: templates/renamebase.nat.tmpl:74
+msgid "Specify a new topic title while renaming/moving the topic."
+msgstr ""
+
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:144
+msgid "Specify one or more space separated emails."
+msgstr ""
+
+#: templates/edit.nat.tmpl:352
+msgid "State"
+msgstr ""
+
+#: templates/sidebar.nat.tmpl:55
+msgid "Statistics"
+msgstr "Statistik"
+
+#: templates/foswiki.nat.tmpl:224
+#, fuzzy
+msgid "Stop being notified about changes of this topic"
+msgstr "Få notificering om ændringer i resultaterne af denne søgning"
+
+#: data/System/NatSkinStyleBrowser.txt:18 templates/edit.nat.tmpl:152
+#, fuzzy
+msgid "Style"
+msgstr "GodStil"
+
+#: data/Sandbox/NatSkinTest.txt:526 data/Sandbox/NatSkinTest.txt:551
+#: data/Sandbox/NatSkinTest.txt:578
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:117
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:57
+#: data/System/WebCreateNewWeb.txt:42 templates/attachnew.nat.tmpl:4
+#: templates/languageselector.nat.tmpl:28 templates/managetags.nat.tmpl:32
+#: templates/messages.nat.tmpl:113 templates/messages.nat.tmpl:199
+#: templates/newtopic.nat.tmpl:72 templates/newtopic.nat.tmpl:80
+#: templates/topbar.customato.nat.tmpl:188
+#: templates/translatetopic.nat.tmpl:130
+msgid "Submit"
+msgstr "Send"
+
+#: templates/mailnotify.nat.tmpl:40 templates/mailnotify.nat.tmpl:59
+msgid "Subscribe / Unsubscribe in:"
+msgstr "Abonnér / afmeld i:"
+
+#: templates/foswiki.nat.tmpl:224
+#, fuzzy
+msgid "Subscribed to ${topicTitle}"
+msgstr "Abonner på denne side"
+
+#: templates/login.sudo.nat.tmpl:7
+#, fuzzy
+msgid "Sudo login"
+msgstr "(%1 login)"
+
+#: data/System/WebCreateNewWeb.txt:18
+#, fuzzy
+msgid "Summary"
+msgstr "Sammendrag"
+
+#: templates/edit.nat.tmpl:47
+msgid "Swedish"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:244 templates/sidebar.nat.tmpl:51
+msgid "Tags"
+msgstr ""
+
+#: data/System/NatSkinUserViewTemplate.txt:64
+msgid "Tel"
+msgstr ""
+
+#: templates/newtopic.nat.tmpl:118
+#, fuzzy
+msgid "Template"
+msgstr "Brug skabelon:"
+
+#: templates/messages.nat.tmpl:334
+msgid "Template %1 does not exist"
+msgstr "Skabelon %1 eksisterer ikke"
+
+#: data/System/WebCreateNewWeb.txt:27
+msgid "Template web"
+msgstr ""
+
+#: templates/copytopic.nat.tmpl:28
+msgid "Text"
+msgstr "Tekst"
+
+#: templates/messages.nat.tmpl:107 templates/messages.nat.tmpl:357
+msgid "Thank you for registering"
+msgstr "Tak fordi du registrerede dig"
+
+#: templates/foswiki.nat.tmpl:398
+msgid "Thank you!"
+msgstr ""
+
+#: templates/messages.nat.tmpl:171
+#, fuzzy
+msgid ""
+"The %1 field must be your first and lastname in %2, e.g. your capitalized "
+"first and lastname with spaces removed."
+msgstr ""
+"Feltet [[%1][WikiNavn]] skal være dit fornavn, og dit efternavn som et [[%2]"
+"[WikiOrd]], fx dit for- og efternavn sammensat uden mellemrum, men stadig "
+"med stort bogstav for efternavnet."
+
+#: templates/messages.nat.tmpl:22
+msgid "The %1 topic already exists"
+msgstr "Siden %1 eksisterer allerede"
+
+#: templates/messages.nat.tmpl:317
+msgid "The %1 web does not exist"
+msgstr "%1-webbet eksisterer ikke"
+
+#: templates/messages.nat.tmpl:192
+msgid "The activation code %1 is invalid."
+msgstr "Aktiveringskoden %1 er invalid."
+
+#: templates/moveattachment.nat.tmpl:83
+#, fuzzy
+msgid "The attachment and its history will be moved as well."
+msgstr ""
+"Den vedhæftede fil og tilhørende historik vil blive flyttet til den nye side."
+
+#: templates/moveattachment.nat.tmpl:91
+#, fuzzy
+msgid "The attachment and its history will be moved to the new topic."
+msgstr ""
+"Den vedhæftede fil og tilhørende historik vil blive flyttet til den nye side."
+
+#: templates/moveattachment.nat.tmpl:75
+msgid ""
+"The attachment may be renamed (by appending a number to the name) if an "
+"attachment of that name already exists in the target topic."
+msgstr ""
+"Den vedhæftede fil kan omdøbes (ved at tilføje et tal til navnet) hvis der "
+"allerede eksisterer en fil med samme navn på den nye side."
+
+#: templates/oopsleaseconflict.nat.tmpl:22
+msgid ""
+"The chances are good that %1 has simply navigated away from the edit page "
+"without saving."
+msgstr ""
+"Det er meget sandsynligt at %1 simpelthen har navigeret væk fra "
+"redigeringssiden uden at gemme ændringerne."
+
+#: templates/renamewebbase.nat.tmpl:94
+#, fuzzy
+msgid "The checkmarked topics will be updated."
+msgstr "Markederede sider vil blive opdateret til at pege på det nye webnavn."
+
+#: templates/messages.nat.tmpl:184
+msgid "The e-mail address for this account is not valid."
+msgstr "E-mail-adressen for dette brugernavn er ikke gyldig."
+
+#: templates/messages.nat.tmpl:249
+msgid "The file has been uploaded and attached properly to the %1 topic."
+msgstr "Filen er blevet uploadet og vedhæftet korrekt til %1-siden."
+
+#: templates/oopsleaseconflict.nat.tmpl:20
+msgid "The lease on this topic expired %1 ago."
+msgstr "Låsen på denne side udløb for %1 siden."
+
+#: data/System/UserRegistrationViewTemplate.txt:133
+#, fuzzy
+msgid "The login name you use to sign in."
+msgstr "Navn du logger på med"
+
+#: templates/moveattachment.nat.tmpl:61 templates/moveattachment.nat.tmpl:97
+msgid "The new topic chosen must already exist."
+msgstr "Det nye side-navn skal være oprettet på forhånd."
+
+#: templates/404.nat.tmpl:41
+#, fuzzy
+msgid "The page might be here under a different name."
+msgstr "Du kan omdøbe dette web til et nyt navn."
+
+#: templates/404.nat.tmpl:51
+msgid "The page might be missing but it shouldn't."
+msgstr ""
+
+#: templates/messages.nat.tmpl:61
+msgid "The password you entered in the *old password* field is incorrect."
+msgstr "Adgangskoden, som du har indtastet i *Old password*-feltet er forkert."
+
+#: templates/messages.nat.tmpl:120
+msgid "The required field %1 was not filled in."
+msgstr "Det obligatoriske felt %1 er ikke udfyldt."
+
+#: templates/messages.nat.tmpl:211
+#, fuzzy
+msgid ""
+"The required field =<span class='foswikiAlert'>**</span>= *%1* was not "
+"filled in."
+msgstr "Det obligatoriske felt %1 er ikke udfyldt."
+
+#: templates/renamedelete.nat.tmpl:36
+#, fuzzy
+msgid "The topic will be renamed to %1."
+msgstr "Siden vil blive kaldt: "
+
+#: templates/messages.nat.tmpl:127
+msgid "The two passwords you entered do not match."
+msgstr "De to adgangskoder du har indtastet er ikke ens."
+
+#: templates/messages.nat.tmpl:263
+#, fuzzy
+msgid "There are problems with renaming this web"
+msgstr "Der er problemer med at omdøbe dette web:"
+
+#: templates/messages.nat.tmpl:133
+msgid "There has been a problem adding your user id to the Password system."
+msgstr ""
+"Der opstod et problem med at tilføje dit brugernavn til adgangskode-systemet."
+
+#: templates/validate.nat.tmpl:18
+msgid ""
+"There is a risk that someone may be trying to use your identity to change "
+"content on %1 without your knowledge."
+msgstr ""
+"Der er en risiko for, at nogen prøver at bruge din identitet til at ændre "
+"indhold på %1 uden din viden."
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:165
+#: data/System/UserRegistrationViewTemplate.txt:315
+msgid "There was an error. Please, see above."
+msgstr ""
+
+#: templates/404.nat.tmpl:70 templates/404.nat.tmpl:77
+msgid "There's a similar page called %1."
+msgstr ""
+
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:54
+msgid ""
+"This form is used to change your registered e-mail addresses. Your "
+"registered addresses are used by Foswiki for sending you e-mails, including "
+"notifications of password changes. The addresses you register via this form "
+"are kept secret and will *not* be published anywhere on this site."
+msgstr ""
+"Denne formular bruges til at opdatere dine registrerede e-mail-addresser. "
+"Dine registrerede e-mail-adresser bruges af Foswiki til at sende e-mails til "
+"dig, f.eks. ved nulstilling af adgangskode. De adresser som du registrerer "
+"ved hjælp af denne formular bliver holdt hemmelige af systemet og vil ikke "
+"kunne ses nogen steder på dette site."
+
+#: templates/body.nat.tmpl:61
+msgid "This page was cached on %1."
+msgstr "Denne side er cached på %1."
+
+#: templates/newtopic.nat.tmpl:58 templates/newtopic.wwb.tmpl:180
+#: templates/renamebase.nat.tmpl:70 templates/translatetopic.nat.tmpl:110
+#, fuzzy
+msgid "Title"
+msgstr "Titel:"
+
+#: templates/managetags.nat.tmpl:26
+msgid "To"
+msgstr ""
+
+#: templates/moveattachment.nat.tmpl:72
+#, fuzzy
+msgid "To attachment"
+msgstr "Til vedhæftet fil:"
+
+#: templates/moveattachment.nat.tmpl:88
+#, fuzzy
+msgid "To delete an attachment move it to the %1 topic."
+msgstr "Filen er blevet uploadet og vedhæftet korrekt til %1-siden."
+
+#: templates/oopsleaseconflict.nat.tmpl:35
+#, fuzzy
+msgid "To edit the topic anyway, hit 'Edit Anyway'."
+msgstr "For at fortsætte med at editere siden alligevel, klik "
+
+#: templates/oopsleaseconflict.nat.tmpl:36
+#, fuzzy
+msgid "To see if they have finished their edit yet, click 'Try Again'"
+msgstr "For at se om %1 har afsluttet redigeringen, klik "
+
+#: templates/moveattachment.nat.tmpl:58
+msgid "To topic"
+msgstr "Til side"
+
+#: templates/moveattachment.nat.tmpl:54
+msgid "To web"
+msgstr "Til web"
+
+#: templates/oopsmore.nat.tmpl:4 templates/oopsmore.nat.tmpl:6
+#: templates/sidebar.nat.tmpl:49 templates/topbar.customato.nat.tmpl:79
+#, fuzzy
+msgid "Tools"
+msgstr "Værktøjer"
+
+#: templates/changes.nat.tmpl:11 templates/renamebase.nat.tmpl:62
+#: templates/translatetopic.nat.tmpl:98
+msgid "Topic"
+msgstr "Side"
+
+#: templates/edit.nat.tmpl:278
+#, fuzzy
+msgid "Topic actions"
+msgstr "Flere muligheder med denne side"
+
+#: templates/changeformsidebar.nat.tmpl:5
+#, fuzzy
+msgid "Topic meta data"
+msgstr "Sidedata"
+
+#: templates/messages.nat.tmpl:208
+msgid "Topic save error"
+msgstr "Fejl ved skrivning af siden"
+
+#: templates/edit.nat.tmpl:61
+#, fuzzy
+msgid "Topic settings"
+msgstr "Vedhæftede filer på siden"
+
+#: data/System/NatSkinWebSearchViewTemplate.txt:92
+msgid "Topics per web"
+msgstr "Sider pr. web"
+
+#: templates/foswiki.nat.tmpl:157 templates/translatetopic.nat.tmpl:9
+msgid "Translate"
+msgstr ""
+
+#: templates/translatetopic.nat.tmpl:20
+msgid "Translate %1"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:158
+#, fuzzy
+msgid "Translate this topic"
+msgstr "Opret denne side"
+
+#: data/System/SiteMenu.txt:69
+msgid "Trash"
+msgstr ""
+
+#: templates/oopsleaseconflict.nat.tmpl:50
+#, fuzzy
+msgid "Try again"
+msgstr "Forsøg igen"
+
+#: templates/edit.nat.tmpl:48
+msgid "Turkish"
+msgstr ""
+
+#: data/System/WebLinks.txt:7
+msgid "Tutorial"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:124
+#, fuzzy
+msgid "Undo a previous change to this topic"
+msgstr "Gendan forrige ændring"
+
+#: templates/login.sudo.nat.tmpl:5
+msgid "Unrecognised user and/or password"
+msgstr "Ukendt brugernavn og/eller adgangskode"
+
+#: templates/login.nat.tmpl:18
+#, fuzzy
+msgid "Unrecognised user and/or password."
+msgstr "Ukendt brugernavn og/eller adgangskode"
+
+#: templates/messages.nat.tmpl:18
+msgid "Unrecognized action command %1"
+msgstr "Ukendt action command %1"
+
+#: templates/foswiki.nat.tmpl:228
+msgid "Unsubscribe"
+msgstr "Slet abonnement"
+
+#: templates/foswiki.nat.tmpl:229
+#, fuzzy
+msgid "Unsubscribe from changes"
+msgstr "Slet abonnement fra denne side"
+
+#: templates/foswiki.nat.tmpl:224
+#, fuzzy
+msgid "Unsubscribed from ${topicTitle}"
+msgstr "Slet abonnement fra denne side"
+
+#: templates/attachagain.nat.tmpl:2
+msgid "Update attachment %1 on %2"
+msgstr "Opdatér den vedhæftede fil %1 på siden %2"
+
+#: templates/renamebase.nat.tmpl:118 templates/renamebase.nat.tmpl:128
+#: templates/renamewebbase.nat.tmpl:45
+#, fuzzy
+msgid "Update links in all webs"
+msgstr "(referencer fra alle webs)"
+
+#: templates/renamebase.nat.tmpl:112 templates/renamewebbase.nat.tmpl:39
+#, fuzzy
+msgid "Update links in the '%1' web"
+msgstr "Kun opdater linkede sider i %1-webbet"
+
+#: templates/updatesplugin.nat.tmpl:6
+msgid "Upgrade"
+msgstr "Opgradér"
+
+#: templates/attachnew.nat.tmpl:2
+#, fuzzy
+msgid "Upload a file to %1"
+msgstr "Vedhæft ny fil"
+
+#: templates/attachagain.nat.tmpl:28
+msgid "Upload file"
+msgstr "Vedhæft fil"
+
+#: templates/foswiki.nat.tmpl:33
+#, fuzzy
+msgid "Upload files and images to this topic"
+msgstr "nægte al adgang til denne side"
+
+#: templates/attachnew.nat.tmpl:25
+#, fuzzy
+msgid "Upload successful"
+msgstr "Vedhæft fil"
+
+#: templates/messages.nat.tmpl:216
+#, fuzzy
+msgid "Uploaded file %1 does not exist or is empty."
+msgstr "Skabelon %1 eksisterer ikke"
+
+#: templates/messages.nat.tmpl:352
+#, fuzzy
+msgid "Uploaded file %1 exceeds limit of %2 KB."
+msgstr "Den angivne fil %1 overskrider upload-grænsen på %2 KB"
+
+#: templates/messages.nat.tmpl:351
+msgid "Uploaded file is too big"
+msgstr "Den angivne fil er for stor"
+
+#: templates/topbar.customato.nat.tmpl:83
+#, fuzzy
+msgid "Usage Statistics"
+msgstr "Statistik"
+
+#: data/System/NatSkinResetPasswordViewTemplate.txt:66
+msgid "Use %1 instead."
+msgstr "Brug %1 i stedet."
+
+#: data/System/WebLinks.txt:12 templates/sidebar.nat.tmpl:65
+#, fuzzy
+msgid "User Tools"
+msgstr "Brugere"
+
+#: templates/messages.nat.tmpl:3
+#, fuzzy
+msgid "User account %1 deleted"
+msgstr "Brugernavn %1 slettet"
+
+#: data/System/SiteMenu.txt:41
+#, fuzzy
+msgid "User docs"
+msgstr "Brugere"
+
+#: templates/topbar.customato.nat.tmpl:87
+msgid "User's guide"
+msgstr ""
+
+#: templates/loginbase.nat.tmpl:38 templates/topbar.customato.nat.tmpl:150
+msgid "Username"
+msgstr "Brugernavn"
+
+#: data/Main/WebLinks.txt:9 templates/foswiki.nat.tmpl:20
+msgid "Users"
+msgstr "Brugere"
+
+#: data/System/WebLinks.txt:8
+#, fuzzy
+msgid "Users Guide"
+msgstr "Brugere"
+
+#: templates/foswiki.nat.tmpl:21
+#, fuzzy
+msgid "Users directory"
+msgstr "Versionshistorik"
+
+#: templates/changeformsidebar.nat.tmpl:6
+msgid "Variables"
+msgstr ""
+
+#: data/System/NatSkinStyleBrowser.txt:29 templates/edit.nat.tmpl:166
+#, fuzzy
+msgid "Variation"
+msgstr "Beskrivelse"
+
+#: templates/attachtables.nat.tmpl:95
+msgid "Version"
+msgstr "Version"
+
+#: templates/view.nat.tmpl:158
+#, fuzzy
+msgid "Version %1"
+msgstr "Version"
+
+#: templates/attachtables.nat.tmpl:98
+msgid "Version history of %1"
+msgstr "Versionshistorik for %1"
+
+#: templates/attachagain.nat.tmpl:4
+#, fuzzy
+msgid "Versions"
+msgstr "Version"
+
+#: templates/foswiki.nat.tmpl:42 templates/history.nat.tmpl:95
+#: templates/view.nat.tmpl:108
+msgid "View"
+msgstr "Vis"
+
+#: templates/foswiki.nat.tmpl:251
+#, fuzzy
+msgid "View first revision"
+msgstr "Vis version"
+
+#: templates/foswiki.nat.tmpl:43
+#, fuzzy
+msgid "View formatted topic"
+msgstr "Vis side"
+
+#: templates/foswiki.nat.tmpl:279
+#, fuzzy
+msgid "View last change"
+msgstr "seneste ændring"
+
+#: templates/foswiki.nat.tmpl:272
+#, fuzzy
+msgid "View last revision"
+msgstr "Vis version"
+
+#: templates/foswiki.nat.tmpl:258
+#, fuzzy
+msgid "View next revision"
+msgstr "Vis version"
+
+#: templates/foswiki.nat.tmpl:265
+#, fuzzy
+msgid "View previous revision"
+msgstr "Vis en tidligere version af siden"
+
+#: templates/foswiki.nat.tmpl:55
+#, fuzzy
+msgid "View printable version"
+msgstr "Vis version"
+
+#: templates/history.nat.tmpl:94
+#, fuzzy
+msgid "View revision %1"
+msgstr "Vis version"
+
+#: templates/foswiki.nat.tmpl:140
+#, fuzzy
+msgid "View revision history"
+msgstr "Versionshistorik"
+
+#: templates/foswiki.nat.tmpl:88
+#, fuzzy
+msgid "View the raw text of this topic"
+msgstr "Opret denne side"
+
+#: templates/foswiki.nat.tmpl:142
+#, fuzzy
+msgid "View the revision history of all changes to this topic"
+msgstr "Søg i %1-webbet efter sider der linker til denne side."
+
+#: templates/foswiki.nat.tmpl:86
+msgid "View wiki markup"
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:27
+msgid "Visit your profile page"
+msgstr ""
+
+#: templates/edit.nat.tmpl:376
+msgid "Voting"
+msgstr ""
+
+#: templates/validate.nat.tmpl:7
+msgid "Warning! Confirmation required"
+msgstr "Advarsel! Bekræftelse krævet"
+
+#: templates/foswiki.nat.tmpl:395
+msgid ""
+"Warning: Your browser isn't supported. Please install a modern one, like %1, "
+"%2, %3, %4 or the latest %5."
+msgstr ""
+
+#: templates/print.nat.tmpl:62
+msgid "Watermark"
+msgstr ""
+
+#: templates/renamebase.nat.tmpl:58
+msgid "Web"
+msgstr "Web"
+
+#: data/System/SiteMenu.txt:70
+#, fuzzy
+msgid "Web preferences"
+msgstr "sæt præferencer"
+
+#: data/Main/WebLinks.txt:7 data/System/SiteMenu.txt:40
+#: templates/topbar.customato.nat.tmpl:98
+msgid "Welcome"
+msgstr ""
+
+#: templates/login.nat.tmpl:12
+msgid "Welcome, please login"
+msgstr ""
+
+#: templates/moveattachment.nat.tmpl:80
+#, fuzzy
+msgid ""
+"When the file is deleted, it is moved to the %1 web and attached to the %2 "
+"topic."
+msgstr "Filen er blevet uploadet og vedhæftet korrekt til %1-siden."
+
+#: templates/attachtables.nat.tmpl:95
+msgid "Who"
+msgstr "Hvem"
+
+#: templates/oopsaccessdenied.nat.tmpl:3
+#, fuzzy
+msgid "Whoops, access denied!"
+msgstr "(adgang nægtet)"
+
+#: templates/404.nat.tmpl:21
+msgid "Whoops, page not found!"
+msgstr ""
+
+#: templates/viewraw.nat.tmpl:17
+msgid "Wiki markup of %1"
+msgstr ""
+
+#: data/System/UserRegistrationViewTemplate.txt:358
+#, fuzzy
+msgid "WikiName %1 is already in use"
+msgstr "Dette WikiNavn er allerede i brug."
+
+#: templates/renamesidebar.nat.tmpl:7 templates/renamewebsidebar.nat.tmpl:5
+msgid "WikiWord"
+msgstr ""
+
+#   "<nop>$fromWeb.<nop>$fromTopic",
+#   $date,
+#   $by)
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:178
+#, fuzzy
+msgid "Woops, there was an error adding/removing a user to this group"
+msgstr "Der opstod fejl ved at fjerne %1 fra gruppen %2."
+
+#: templates/edit.nat.tmpl:105
+msgid "Wysiwyg"
+msgstr ""
+
+#: templates/moveattachment.nat.tmpl:46
+msgid "Yes"
+msgstr "Ja"
+
+#: data/System/MySideBar.txt:37
+#, fuzzy
+msgid "Yes, delete"
+msgstr "(slet)"
+
+#: data/System/NatSkinResetPasswordViewTemplate.txt:68
+#, fuzzy
+msgid ""
+"You *must* have at least one valid registered e-mail to be able to reset "
+"your password. If none of your registered e-mail addresses is valid, and you "
+"have forgotten your password, contact %1"
+msgstr ""
+"Du *skal* have mindst en registreret e-mail-adresse for at kunne nulstille "
+"dit password. Hvis ingen af dine registrerede e-mail-adresser er valide, og "
+"du har glemt din adgangskode, kontakt da %1"
+
+#: templates/messages.nat.tmpl:156
+#, fuzzy
+msgid "You are already registered"
+msgstr "Du er allerede registreret."
+
+#: templates/messages.nat.tmpl:359
+msgid "You are also listed in the %1 topic"
+msgstr "Du er også oprettet på siden %1"
+
+#: templates/foswiki.nat.tmpl:294
+#, fuzzy
+msgid "You are here"
+msgstr "Du er her:"
+
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:119
+msgid "You are required to enter your password to change your e-mail address."
+msgstr ""
+
+#: templates/messages.nat.tmpl:329
+#, fuzzy
+msgid "You are trying to %1 a topic that does not exist."
+msgstr "Du forsøger at omdøbe en side der ikke eksisterer."
+
+#: templates/messages.nat.tmpl:347
+#, fuzzy
+msgid "You are trying to %1 an attachment that does not exist."
+msgstr "Du forsøger at tilgå en vedhæftet fil der ikke eksisterer."
+
+#: templates/messages.nat.tmpl:312 templates/messages.nat.tmpl:318
+#, fuzzy
+msgid "You are trying to %1 in a web that does not exist."
+msgstr "Du forsøger at omdøbe en side der ikke eksisterer."
+
+#: templates/messages.nat.tmpl:335
+msgid "You are trying to create a topic from a template that does not exist."
+msgstr "Du forsøger at oprette en side fra en skabelon der ikke eksisterer."
+
+#: templates/messages.nat.tmpl:341
+msgid "You are trying to rename a topic that does not exist."
+msgstr "Du forsøger at omdøbe en side der ikke eksisterer."
+
+#: templates/messages.nat.tmpl:96
+msgid "You can also use the names of the standard HTML colors."
+msgstr ""
+
+#: templates/messages.nat.tmpl:360
+msgid ""
+"You can try out this site hands-on in the [[Sandbox.WebHome][Sandbox]] web."
+msgstr ""
+
+#: templates/messages.nat.tmpl:157
+msgid "You cannot register twice, the name %1 is already registered."
+msgstr "Du kan ikke registrere to gange, navnet %1 er allerede registreret."
+
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:29
+#, fuzzy
+msgid ""
+"You change your e-mail address by setting the form field called Email in "
+"your user topic. If this form field does not exist it will look for a line "
+"like this"
+msgstr ""
+"Du ændrer din email-adresse ved at udfylde formfeltet Email i din "
+"brugerside. Hvis dette formfelt ikke eksisterer så vil den lede after en "
+"linje der ser ud som denne:"
+
+#: templates/messages.nat.tmpl:258
+msgid ""
+"You may be able to get your Wiki administrator to change the settings if "
+"they are inappropriate for your environment."
+msgstr ""
+"Du kan muligvis overtale din Foswiki-administrator til at opdatere de "
+"aktuelle regler, hvis de forekommer uhensigtsmæssige eller synes for "
+"restriktive."
+
+#: templates/messages.nat.tmpl:6
+msgid "Your [[%1][homepage]] has _not_ been removed yet."
+msgstr ""
+
+#: templates/messages.nat.tmpl:108
+#, fuzzy
+msgid ""
+"Your activation code has been sent to %1.  Either click on the link in your "
+"e-mail or enter the code in the box below to activate your membership.  "
+"(This code is of the form \"YourName.xxxxxxxxxx\")"
+msgstr ""
+"Din aktiveringskode er blevet sendt til %1. Enten kan du klikke på linket i "
+"den tilsendte e-mail - eller du kan indtaste aktiveringskoden i feltet "
+"nedenfor - for at aktivere dit brugernavn (aktiveringskoden har formatet "
+"\"DitNavn.xxxxxxxxxx\")"
+
+#: data/System/UserRegistrationViewTemplate.txt:142
+#, fuzzy
+msgid "Your e-mail address"
+msgstr "Ændre e-mail-adresse"
+
+#: data/System/UserRegistrationViewTemplate.txt:175
+#, fuzzy
+msgid "Your first name"
+msgstr "Fornavn:"
+
+#: templates/oopslanguagechanged.nat.tmpl:8
+#, fuzzy
+msgid ""
+"Your language will be changed to %1 from the next screen. You will be "
+"redirected to there right now. If you aren't, [[%2][click here]] to proceed."
+msgstr ""
+"Sproget bliver skiftet til %1 fra næste skærmbillede. Du bliver nu "
+"viderestillet. Hvis det ikke sker automatisk, så [[%2][klik her]] for at "
+"fortsætte."
+
+#: templates/oopslanguagechanged.nat.tmpl:7
+#, fuzzy
+msgid ""
+"Your language will be reset to the global default from the next screen on. "
+"You will be redirected to there right now. If you aren't, [[%1][click here]] "
+"to proceed."
+msgstr ""
+"Sproget bliver skiftet til %1 fra næste skærmbillede. Du bliver nu "
+"viderestillet. Hvis det ikke sker automatisk, så [[%2][klik her]] for at "
+"fortsætte."
+
+#: data/System/UserRegistrationViewTemplate.txt:184
+#, fuzzy
+msgid "Your last name"
+msgstr "Efternavn:"
+
+#: data/System/NatSkinChangePasswordViewTemplate.txt:106
+#, fuzzy
+msgid ""
+"Your login name. Note, you can't change your login name. Contact the "
+"administrator to do this for you."
+msgstr ""
+"Du kan ikke ændre brugernavn: du er nødt til at få administratoren til at "
+"gøre dette for dig."
+
+#: data/System/NatSkinResetPasswordViewTemplate.txt:89
+#, fuzzy
+msgid ""
+"Your login name. Note, you can't change your login name. Contact your wiki "
+"administrator to do this for you."
+msgstr ""
+"Du kan ikke ændre brugernavn: du er nødt til at få administratoren til at "
+"gøre dette for dig."
+
+#: data/System/UserRegistrationViewTemplate.txt:196
+msgid ""
+"Your name as displayed online.  Note, this must be a unique [[%1]"
+"[WikiName]]. By default it is derived from your first and last name."
+msgstr ""
+
+#: templates/messages.nat.tmpl:358
+#, fuzzy
+msgid "Your personal <nop>%WIKITOOLNAME% topic %1 has been created"
+msgstr "Din personlige Foswiki side %1 er blevet oprettet"
+
+#: data/System/NatSkinChangeEmailAddressViewTemplate.txt:28
+msgid ""
+"Your registered e-mails are used by Foswiki for sending you e-mails, include "
+"notifications of password changes."
+msgstr ""
+"Dine registrerede e-mail-adresser bliver brugt af Foswiki til at sende dig e-"
+"mails, inkl. notifikation om ændringer af adgangskode."
+
+#: templates/messages.nat.tmpl:4
+#, fuzzy
+msgid "Your user name has been removed from the Authentication System."
+msgstr "Brugeren er blevet fjernet fra login-systemet."
+
+#: templates/oopsleaseconflict.nat.tmpl:6
+#, fuzzy
+msgid "[[%1]] is editing [[%2]]."
+msgstr "%1 editerer i øjeblikket [[%2][%3]]."
+
+#: templates/attach.nat.tmpl:8
+#, fuzzy
+msgid "attach"
+msgstr "(vedhæft)"
+
+#: templates/print.nat.tmpl:52
+msgid "auto"
+msgstr ""
+
+#: templates/view.nat.tmpl:13
+#, fuzzy
+msgid "back to the top"
+msgstr "Tilbage til siden"
+
+#: templates/backlinksallwebs.nat.tmpl:4 templates/backlinksweb.nat.tmpl:4
+#, fuzzy
+msgid "backlinks"
+msgstr "Referencer"
+
+#: templates/translatetopic.nat.tmpl:32
+#, fuzzy
+msgid "base language"
+msgstr "Skift sprog"
+
+#: templates/edit.nat.tmpl:179
+msgid "bordered"
+msgstr ""
+
+#: templates/edit.nat.tmpl:227
+msgid "both"
+msgstr ""
+
+#: templates/changes.nat.tmpl:6
+#, fuzzy
+msgid "changes"
+msgstr "(ændringer)"
+
+#: templates/edit.nat.tmpl:360
+#, fuzzy
+msgid "closed"
+msgstr "Luk"
+
+#: templates/edit.nat.tmpl:107 templates/edit.nat.tmpl:156
+#: templates/edit.nat.tmpl:176 templates/edit.nat.tmpl:201
+#: templates/edit.nat.tmpl:215 templates/edit.nat.tmpl:238
+#: templates/edit.nat.tmpl:252 templates/edit.nat.tmpl:266
+#: templates/edit.nat.tmpl:280 templates/edit.nat.tmpl:294
+#: templates/edit.nat.tmpl:308 templates/edit.nat.tmpl:339
+#: templates/edit.nat.tmpl:354 templates/edit.nat.tmpl:366
+#: templates/edit.nat.tmpl:378 templates/edit.nat.tmpl:76
+#, fuzzy
+msgid "default"
+msgstr "Standard"
+
+#: templates/renamedelete.nat.tmpl:4
+#, fuzzy
+msgid "delete"
+msgstr "(slet)"
+
+#: templates/changeform.nat.tmpl:7 templates/edit.nat.tmpl:15
+msgid "edit"
+msgstr "editér"
+
+#: templates/editform.nat.tmpl:2 templates/editform.nat.tmpl:4
+msgid "edit form"
+msgstr "editér formular"
+
+#: templates/edittext.nat.tmpl:2 templates/edittext.nat.tmpl:3
+#, fuzzy
+msgid "edit text"
+msgstr "(editér tekst)"
+
+#: templates/edit.nat.tmpl:177
+msgid "fixed"
+msgstr ""
+
+#: templates/edit.nat.tmpl:178
+msgid "fluid"
+msgstr ""
+
+#: templates/kinosearch.nat.tmpl:8 templates/search.nat.tmpl:31
+#, fuzzy
+msgid "go back to %1"
+msgstr "Log ind til %1"
+
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:135
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:204
+#, fuzzy
+msgid "group"
+msgstr "Gruppe"
+
+#: templates/oopshistory.nat.tmpl:4
+#, fuzzy
+msgid "history"
+msgstr "Historik"
+
+#: templates/form.nat.tmpl:3
+msgid "indicates mandatory fields"
+msgstr "angiver obligatoriske felter"
+
+#: templates/history.nat.tmpl:35
+msgid "interweave"
+msgstr ""
+
+#: templates/print.nat.tmpl:54
+msgid "landscape"
+msgstr ""
+
+#: templates/copytopic.nat.tmpl:34
+msgid "leave unchecked to copy all"
+msgstr ""
+
+#: templates/edit.nat.tmpl:221
+msgid "left"
+msgstr ""
+
+#: templates/kinosearch.nat.tmpl:23
+msgid "maximum number of hits"
+msgstr ""
+
+#: templates/search.nat.tmpl:48
+#, fuzzy
+msgid "maximum number of hits per web"
+msgstr "Maksimalt %1 resultater per web"
+
+#: templates/moveattachment.nat.tmpl:6
+#, fuzzy
+msgid "move attachment"
+msgstr "(flyt vedhæftet fil)"
+
+#: templates/attachtables.nat.tmpl:77
+#, fuzzy
+msgid "move this attachment to a different topic"
+msgstr "Kopiér denne side (og alle vedhæftede filer) til en ny side."
+
+#: data/System/MySideBar.txt:68
+#, fuzzy
+msgid "no template"
+msgstr "Brug skabelon:"
+
+#: templates/changeform.nat.tmpl:67
+#, fuzzy
+msgid "none "
+msgstr "(ingen)"
+
+#: templates/backlinks.nat.tmpl:125 templates/backlinks.nat.tmpl:147
+#: templates/backlinks.nat.tmpl:54 templates/backlinks.nat.tmpl:73
+#: templates/backlinks.nat.tmpl:98
+msgid "nothing found"
+msgstr ""
+
+#: templates/edit.nat.tmpl:113 templates/edit.nat.tmpl:207
+#: templates/edit.nat.tmpl:230 templates/edit.nat.tmpl:244
+#: templates/edit.nat.tmpl:258 templates/edit.nat.tmpl:272
+#: templates/edit.nat.tmpl:286 templates/edit.nat.tmpl:300
+#: templates/edit.nat.tmpl:314 templates/edit.nat.tmpl:372
+#: templates/edit.nat.tmpl:384
+msgid "off"
+msgstr ""
+
+#: templates/edit.nat.tmpl:110 templates/edit.nat.tmpl:204
+#: templates/edit.nat.tmpl:218 templates/edit.nat.tmpl:241
+#: templates/edit.nat.tmpl:255 templates/edit.nat.tmpl:269
+#: templates/edit.nat.tmpl:283 templates/edit.nat.tmpl:297
+#: templates/edit.nat.tmpl:311 templates/edit.nat.tmpl:369
+#: templates/edit.nat.tmpl:381
+#, fuzzy
+msgid "on"
+msgstr "Ikon"
+
+#: templates/oops.nat.tmpl:8
+msgid "oops"
+msgstr ""
+
+#: templates/edit.nat.tmpl:357
+msgid "open"
+msgstr ""
+
+#: data/System/MySideBar.txt:63
+#, fuzzy
+msgid "open %1"
+msgstr "Sammenføj %1"
+
+#: templates/404.nat.tmpl:4
+msgid "page not found"
+msgstr ""
+
+#: templates/print.nat.tmpl:53
+msgid "portrait"
+msgstr ""
+
+#: templates/settings.nat.tmpl:7 templates/settings.nat.tmpl:8
+msgid "prefs"
+msgstr ""
+
+#: templates/view.print.nat.tmpl:11
+#, fuzzy
+msgid "printable"
+msgstr "Editér tabel"
+
+#: templates/changeform.nat.tmpl:130 templates/changeform.nat.tmpl:68
+msgid "remove the current form (caution: possible data loss)"
+msgstr ""
+
+#: templates/renamebase.nat.tmpl:9
+#, fuzzy
+msgid "rename"
+msgstr "(omdøb)"
+
+#: templates/renamewebbase.nat.tmpl:9 templates/renamewebdelete.nat.tmpl:2
+#, fuzzy
+msgid "rename web"
+msgstr "(omdøb)"
+
+#: templates/edit.nat.tmpl:15
+msgid "restore"
+msgstr "gendan"
+
+#: templates/edit.nat.tmpl:224
+#, fuzzy
+msgid "right"
+msgstr "Juster højre"
+
+#: templates/newtopic.wwb.tmpl:121 templates/newtopic.wwb.tmpl:43
+#: templates/searchbase.nat.tmpl:7 templates/searchbox.nat.tmpl:13
+#, fuzzy
+msgid "search"
+msgstr "Søg"
+
+#: templates/kinosearch.nat.tmpl:16 templates/search.nat.tmpl:41
+#, fuzzy
+msgid "search in all webs"
+msgstr "Søg i alle webs"
+
+#: templates/backlinks.nat.tmpl:119 templates/backlinks.nat.tmpl:92
+#: templates/childtopics.nat.tmpl:96
+msgid "showing only %1"
+msgstr ""
+
+#: templates/history.nat.tmpl:36
+#, fuzzy
+msgid "side by side"
+msgstr "Side ved side"
+
+#: templates/messages.nat.tmpl:178
+#, fuzzy
+msgid "single character first name"
+msgstr "(første bogstav i fornavn)"
+
+#: templates/messages.nat.tmpl:177
+#, fuzzy
+msgid "single character last name"
+msgstr "(første bogstav i efternavn)"
+
+#: data/System/NatSkinWebSearchViewTemplate.txt:79
+msgid "submit the query"
+msgstr ""
+
+#: templates/oopsmore.nat.tmpl:3
+#, fuzzy
+msgid "tools"
+msgstr "Flere værktøjer"
+
+#: templates/webdav_folder.nat.tmpl:8
+msgid "up one folder"
+msgstr ""
+
+#: templates/attachtables.nat.tmpl:110 templates/attachtables.nat.tmpl:53
+#: templates/attachtables.nat.tmpl:70
+msgid "version %1 uploaded by %2 on %3"
+msgstr ""
+

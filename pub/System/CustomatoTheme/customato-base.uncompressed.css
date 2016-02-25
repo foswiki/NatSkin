@@ -3,7 +3,7 @@
 
 .natBody {
   font-size:14px;
-  line-height:1.5em;
+  line-height:1.5;
   font-family: Roboto, Arial, 'Liberation Sans', FreeSans, sans-serif;
   background-color:#fff;
   color:#333;
@@ -31,7 +31,7 @@ label,
 
 /* typo */
 p {
-  line-height:1.5em;
+  line-height:1.5;
   margin:1.5em 0;
 }
 em {
@@ -63,7 +63,7 @@ h1,
 }
 h1 .foswikiTopicSummary {
   font-size:0.5em;
-  line-height:1.5em;
+  line-height:1.5;
 }
 .foswikiInfo, .foswikiRevision {
   margin-bottom: 1.5em;
@@ -293,10 +293,6 @@ a {
   display:none;
 }
 
-a.jqButton:link {
-  color:#333;
-}
-
 .natBottomBarContents h2,
 .natBottomBarContents h3,
 .natBottomBarContents h4 {
@@ -420,6 +416,31 @@ a.jqButton:link {
 .natNetworkNavi a {
   text-decoration:none;
   padding:0.5em 1em;
+}
+
+.natNotifications {
+  line-height:2em;
+  display:inline-block;
+  font-size:120%;
+}
+.natNotifications > ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.natNotifications > ul > li {
+  margin:0;
+  padding:0;
+  display:inline;
+}
+.natNotifications > ul > li > a {
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:0.5em 1em;
+  color:#999;
+}
+.natNotifications .fa {
+  margin-right:0.5em;
 }
 
 .natPanelToggle {

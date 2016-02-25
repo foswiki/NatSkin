@@ -2,38 +2,37 @@
 %ADDTOZONE{"script" 
   requires="JQUERYPLUGIN::FOSWIKI::PREFERENCES"
   id="NATSKIN::PREFERENCES"
-  text="<script type='text/javascript'>
-jQuery.extend(foswiki.preferences, {
-  %TMPL:P{"initWebMenu"}%
-  %TMPL:P{"initTopPanel"}%
-  %TMPL:P{"initOverflows"}%
-  %TMPL:P{"initSideBar"}%
-  %TMPL:P{"initAutoComplete"}%
-  %TMPL:P{"initRedDot"}%
-  %TMPL:P{"initBusyIndicator"}%
-  %TMPL:P{"initExternalLinks"}%
-  '_':'_'
-});
-</script>"
+  text="<script class='$zone $id foswikiPreferences' type='text/json'>{
+    \"NatSkin\" : {
+      \"initWebMenu\": %TMPL:P{"initWebMenu"}%,
+      \"initTopPanel\": %TMPL:P{"initTopPanel"}%,
+      \"initOverflows\": %TMPL:P{"initOverflows"}%,
+      \"initSideBar\": %TMPL:P{"initSideBar"}%,
+      \"initAutoComplete\": %TMPL:P{"initAutoComplete"}%,
+      \"initRedDot\": %TMPL:P{"initRedDot"}%,
+      \"initBusyIndicator\": %TMPL:P{"initBusyIndicator"}%,
+      \"initExternalLinks\": %TMPL:P{"initExternalLinks"}%
+    }
+}</script>"
 }%%ADDTOZONE{
   "script" 
   id="TOPICCREATOR" 
   requires="JQUERYPLUGIN::WIKIWORD, JQUERYPLUGIN::SCROLLTO"
   text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/RenderPlugin/foswikiTemplate.js'></script>
 <script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/topiccreator.js'></script>"
-}%%JQREQUIRE{"validate, superfish, ui, blockui, farscroll, scrollto, imagetooltip, autosuggest, ui::tooltip, cookie, fontawesome, wikiword" warn="off"}%<!--  -->
+}%%JQREQUIRE{"validate, superfish, ui, blockui, farscroll, scrollto, imagetooltip, autosuggest, ui::tooltip, cookie, fontawesome, wikiword, like" warn="off"}%<!--  -->
 %RENDERZONE{"script"}%
 %RENDERZONE{"skinjs"}%
 <!-- -->%TMPL:END%
 
-%TMPL:DEF{"initWebMenu"}%'NatSkin.initWebMenu': true,%TMPL:END%
-%TMPL:DEF{"initTopPanel"}%'NatSkin.initTopPanel': true,%TMPL:END%
-%TMPL:DEF{"initOverflows"}%'NatSkin.initOverflows': false,%TMPL:END%
-%TMPL:DEF{"initSideBar"}%'NatSkin.initSideBar': false,%TMPL:END%
-%TMPL:DEF{"initAutoComplete"}%'NatSkin.initAutoComplete': %IF{"context SolrPluginEnabled" then="true" else="false"}%,%TMPL:END%
-%TMPL:DEF{"initRedDot"}%'NatSkin.initRedDot': true,%TMPL:END%
-%TMPL:DEF{"initBusyIndicator"}%'NatSkin.initBusyIndicator': true,%TMPL:END%
-%TMPL:DEF{"initExternalLinks"}%'NatSkin.initExternalLinks': false,%TMPL:END%
+%TMPL:DEF{"initWebMenu"}%true%TMPL:END%
+%TMPL:DEF{"initTopPanel"}%true%TMPL:END%
+%TMPL:DEF{"initOverflows"}%false%TMPL:END%
+%TMPL:DEF{"initSideBar"}%false%TMPL:END%
+%TMPL:DEF{"initAutoComplete"}%%IF{"context SolrPluginEnabled" then="true" else="false"}%%TMPL:END%
+%TMPL:DEF{"initRedDot"}%true%TMPL:END%
+%TMPL:DEF{"initBusyIndicator"}%true%TMPL:END%
+%TMPL:DEF{"initExternalLinks"}%true%TMPL:END%
 
 %TMPL:DEF{"defaultjavascript"}%<!-- -->
 %TMPL:PREV%%TMPL:END%

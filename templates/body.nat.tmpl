@@ -1,41 +1,41 @@
 <!-- template: body.nat.tmpl -->
 %TMPL:DEF{"defaultbodyclass"}%natBody%TMPL:END%
-%TMPL:DEF{"body"}%<body id="body" class="foswikiNoJs %TMPL:P{"defaultbodyclass"}% %IF{
-    "'%USERINFO{format="$isadmin"}%'='true'" 
-    then="natIsAdminBody"
+%TMPL:DEF{"body"}%<body id="body" class="foswikiNoJs %TMPL:P{"defaultbodyclass"}%%IF{
+    "context isadmin" 
+    then=" natIsAdminBody"
   }%%IF{
     "defined 'NATSKIN_FLUIDFONT' and '%SCRIPTNAME%'!='edit'" 
     then="jqFluidFont {%NATSKIN_FLUIDFONT%} "
   }%%IF{
     "'%WEB%.%TOPIC%' allows 'change'" 
-    then="natBodyAuthorized " 
-    else="natBodyNotAuthorized "
+    then=" natBodyAuthorized" 
+    else=" natBodyNotAuthorized"
   }%%IF{
     "context authenticated" 
-    then="natBodyAuthenticated " 
-    else="natBodyNotAuthenticated "
+    then=" natBodyAuthenticated" 
+    else=" natBodyNotAuthenticated"
   }%%IF{
     "context 'natskin_sidebar_left'" 
-    then="natBodyLeft "
+    then=" natBodyLeft"
   }%%IF{
     "context 'natskin_sidebar_right'" 
-    then="natBodyRight "
+    then=" natBodyRight"
   }%%IF{
     "context 'natskin_sidebar_both'" 
-    then="natBodyBoth "
+    then=" natBodyBoth"
   }%%IF{
     "context 'natskin_sidebar_off'" 
-    then="natBodyOff "
+    then=" natBodyOff"
   }%%IF{
     "context 'natskin_layout_fluid'" 
-    then="natBodyFluid "
+    then=" natBodyFluid"
   }%%IF{
     "context 'natskin_layout_fixed'" 
-    then="natBodyFixed "
+    then=" natBodyFixed"
   }%%IF{
     "context 'natskin_layout_bordered'" 
-    then="natBodyBordered "
-  }%%TMPL:P{"bodyclass"}% natBodyWeb_%WEB% natBodyTopic_%TOPIC%">%TMPL:P{"defaultbody"}%</body>%TMPL:END%
+    then=" natBodyBordered"
+  }% %TMPL:P{"bodyclass"}% natBodyWeb_%WEB% natBodyTopic_%TOPIC%">%TMPL:P{"defaultbody"}%%RENDERZONE{"body"}%</body>%TMPL:END%
 
 %{ container definitions --------------------------------------------------- }%
 %TMPL:DEF{"contentheader"}%<div class="natMainHeaderContents clearfix">%TMPL:P{"contentheader::contents"}%</div>%TMPL:END%

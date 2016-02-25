@@ -1,6 +1,7 @@
 TARGET= \
   BaseStyle.css \
   history.js \
+  edit.js \
   login.js \
   natskin.js \
   obfuscator.js \
@@ -10,7 +11,9 @@ TARGET= \
   subscribe.js \
   angular.js \
   topiccreator.js \
-  topiccreator.css
+  topiccreator.css \
+  childtopics.js \
+  backlinks.js
 
 -include Makefile.include
 

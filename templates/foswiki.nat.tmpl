@@ -54,14 +54,33 @@
 %TMPL:DEF{"PRINT_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Print"}%</span>%TMPL:END%
 %TMPL:DEF{"PRINT_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View printable version"}%</span>%TMPL:END%
 %TMPL:DEF{"PRINT_ICON"}%%JQICON{"printer"}%%TMPL:END%
-%TMPL:DEF{"PRINT_ACTION"}%<a class='natTopicAction natPrintAction' title='%MAKETEXT{"Display this topic in a printer-friendly manner"}%' rel='nofollow' href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?cover=print.nat&rev=$rev'>%TMPL:P{"PRINT_ICON"}%$label</a>%TMPL:END%
+%TMPL:DEF{"PRINT_ACTION"}%<a class='natTopicAction natPrintAction' title='%MAKETEXT{"Display this topic in a printer-friendly manner"}%' rel='nofollow' href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?cover=print.nat&rev=$rev&section=%URLPARAM{"section"}%'>%TMPL:P{"PRINT_ICON"}%$label</a>%TMPL:END%
 %TMPL:DEF{"PRINT_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natPrintAction'>%TMPL:P{"PRINT_ICON"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"SHARE_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Share"}%</span>%TMPL:END%
 %TMPL:DEF{"SHARE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Share topic"}%</span>%TMPL:END%
-%TMPL:DEF{"SHARE_ICON"}%%JQICON{"fa-share-alt"}%%TMPL:END%
 %TMPL:DEF{"SHARE_ACTION"}%<a class='natTopicAction natShareAction socialShareButton' title='%MAKETEXT{"Share this topic with others"}%' rel='nofollow' href='#'>%TMPL:P{"SHARE_ICON"}%$label</a>%TMPL:END%
 %TMPL:DEF{"SHARE_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natShareAction'>%TMPL:P{"SHARE_ICON"}%$label</span>%TMPL:END%
+
+%TMPL:DEF{"LIKE_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Like"}%</span>%TMPL:END%
+%TMPL:DEF{"LIKED_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Liked"}%</span>%TMPL:END%
+%TMPL:DEF{"LIKE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Like this topic"}%</span>%TMPL:END%
+%TMPL:DEF{"LIKE_ICON"}%%JQICON{"thumb_up"}%%TMPL:END%
+%TMPL:DEF{"LIKE_ACTION"}%%LIKE{
+  theme="simple" 
+  class="natTopicAction natLikeAction" 
+  likelabel="%TMPL:P{"LIKE_SHORT"}%" 
+  likedlabel="%TMPL:P{"LIKED_SHORT"}%" 
+  showdislike="off" 
+  likeformat="<a class='jqLikeButton %likeSelected%' title='%MAKETEXT{"Click to like/unlike this topic"}%' rel='nofollow' href='#'>%TMPL:P{"LIKE_ICON"}%%thisLikeLabel%</a>"
+}%%TMPL:END%
+%TMPL:DEF{"LIKE_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natLikeAction'>%TMPL:P{"LIKE_ICON"}%$label</span>%TMPL:END%
+
+%TMPL:DEF{"CHAT_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Chat"}%</span>%TMPL:END%
+%TMPL:DEF{"CHAT_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Chat about this topic"}%</span>%TMPL:END%
+%TMPL:DEF{"CHAT_ICON"}%%JQICON{"fa-comment-o"}%%TMPL:END%
+%TMPL:DEF{"CHAT_ACTION"}%<a class='natTopicAction natCatAction ui-chat-subscribe' data-channel="%WEB%.%TOPIC%" data-title="%TOPICTITLE%" title='%MAKETEXT{"Open a channel to talk about this topic"}%' rel='nofollow' href='#'>%TMPL:P{"CHAT_ICON"}%$label</a>%TMPL:END%
+%TMPL:DEF{"CHAT_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natChatAction'>%TMPL:P{"CHAT_ICON"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"RAW_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Raw"}%</span>%TMPL:END%
 %TMPL:DEF{"RAW_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View wiki markup"}%</span>%TMPL:END%
@@ -185,13 +204,24 @@
 %TMPL:DEF{"PDF_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"PDF"}%</span>%TMPL:END%
 %TMPL:DEF{"PDF_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Export topic to PDF"}%</span>%TMPL:END%
 %TMPL:DEF{"PDF_ICON"}%%JQICON{"page_white_acrobat"}%%TMPL:END%
-%TMPL:DEF{"PDF_ACTION"}%<a class='natTopicAction natPdfAction' title='%MAKETEXT{"Display this topic in PDF format"}%' target='_self' rel='nofollow' href='$pdfurl'>%TMPL:P{"PDF_ICON"}%$label</a>%TMPL:END%
+%TMPL:DEF{"PDF_ACTION"}%<a class='natTopicAction natPdfAction jqUIDialogLink' title='%MAKETEXT{"Display this topic in PDF format"}%' rel='nofollow' href='%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=print;expand=dialog;topic=%BASEWEB%.%BASETOPIC%;render=on;section=%URLPARAM{"section"}%'>%TMPL:P{"PDF_ICON"}%$label</a>%TMPL:END%
 %TMPL:DEF{"PDF_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natPdfAction'>%TMPL:P{"PDF_ICON"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"SUBSCRIBE_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Notify"}%</span>%TMPL:END%
 %TMPL:DEF{"SUBSCRIBE_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"Notify on changes"}%</span>%TMPL:END%
 %TMPL:DEF{"SUBSCRIBE_ICON"}%%JQICON{"email_star"}%%TMPL:END%
-%TMPL:DEF{"SUBSCRIBE_ACTION"}%<span class='natSubscribeButton %IFSUBSCRIBED{then="state-subscribed" else="state-unsubscribed"}%' data-timeout='1600' data-topic-title='%TOPICTITLE%' data-subscribe-message='%MAKETEXT{"Subscribed to ${topicTitle}"}%' data-unsubscribe-message='%MAKETEXT{"Unubscribed from ${topicTitle}"}%'><a href='#' class='natTopicAction natSubscribeAction' title='%MAKETEXT{"Get an email notification whenever this topic changes"}%'>%TMPL:P{"SUBSCRIBE_ICON"}%$label</a><a href='#' class='natTopicAction natUnsubscribeAction' title='%MAKETEXT{"Stop being notified about changes of this topic"}%'>%TMPL:P{"UNSUBSCRIBE_ICON"}%%TMPL:P{"UNSUBSCRIBE"}%</a></span>%TMPL:END%
+%TMPL:DEF{"SUBSCRIBE_ACTION"}%<span class='natSubscribeButton %IFSUBSCRIBED{
+  topic="%IF{"'%TOPIC%'='TopCategory' and '%URLPARAM{catname}%' != ''" 
+            then="%URLPARAM{"catname"}%" 
+            else="%TOPIC%"
+          }%"
+  then="state-subscribed" 
+  else="state-unsubscribed"
+}%' data-timeout='1600' %IF{
+  "'%TOPIC%'='TopCategory' and '%URLPARAM{catname}%' != ''" 
+  then="data-subscription='%URLPARAM{"catname"}%' data-topic-title='%CATINFO{cat="%URLPARAM{"catname"}%" format="$title"}%'" 
+  else="data-subscription='%TOPIC%' data-topic-title='%TOPICTITLE%'"
+}% data-subscribe-message='%MAKETEXT{"Subscribed to ${topicTitle}"}%' data-unsubscribe-message='%MAKETEXT{"Unsubscribed from ${topicTitle}"}%'><a href='#' class='natTopicAction natSubscribeAction' title='%MAKETEXT{"Get an email notification whenever this topic changes"}%'>%TMPL:P{"SUBSCRIBE_ICON"}%$label</a><a href='#' class='natTopicAction natUnsubscribeAction' title='%MAKETEXT{"Stop being notified about changes of this topic"}%'>%TMPL:P{"UNSUBSCRIBE_ICON"}%%TMPL:P{"UNSUBSCRIBE"}%</a></span>%TMPL:END%
 %TMPL:DEF{"SUBSCRIBE_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natSubscribeAction'>%TMPL:P{"SUBSCRIBE_ICON"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"UNSUBSCRIBE"}%%TMPL:P{"UNSUBSCRIBE_LONG"}%%TMPL:END%
@@ -219,23 +249,31 @@
 
 %TMPL:DEF{"FIRST_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"First"}%</span>%TMPL:END%
 %TMPL:DEF{"FIRST_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View first revision"}%</span>%TMPL:END%
-%TMPL:DEF{"FIRST_ACTION"}%<a class='natTopicAction natFirstAction' rel='nofollow' href='$firsturl' title='%MAKETEXT{"Jump to the first version of this topic"}%'><img alt='start' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start.png' />$label</a>%TMPL:END%
-%TMPL:DEF{"FIRST_ACTION_RESTRICTION"}%<span class='natTopicAction natDisabledTopicAction natFirstAction'><img alt='start' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start-gray.png' />$label</span>%TMPL:END%
+%TMPL:DEF{"FIRST_ACTION"}%<a class='natTopicAction natFirstAction' rel='nofollow' href='$firsturl' title='%MAKETEXT{"Jump to the first version of this topic"}%'>%TMPL:P{"FIRST_ICON"}%$label</a>%TMPL:END%
+%TMPL:DEF{"FIRST_ICON"}%<img alt='start' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start.png' />%TMPL:END%
+%TMPL:DEF{"FIRST_ICON_RESTRICTED"}%<img alt='start' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start-gray.png' />%TMPL:END%
+%TMPL:DEF{"FIRST_ACTION_RESTRICTION"}%<span class='natTopicAction natDisabledTopicAction natFirstAction'>%TMPL:P{"FIRST_ICON_RESTRICTED"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"NEXT_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Next"}%</span>%TMPL:END%
 %TMPL:DEF{"NEXT_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View next revision"}%</span>%TMPL:END%
-%TMPL:DEF{"NEXT_ACTION"}%<a class='natTopicAction natNextAction' rel='nofollow' href='$nexturl' title='%MAKETEXT{"Go to the following version of this topic"}%'><img alt='next' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-right.png' />$label</a>%TMPL:END%
-%TMPL:DEF{"NEXT_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natNextAction'><img alt='next' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-right-gray.png' />$label</span>%TMPL:END%
+%TMPL:DEF{"NEXT_ACTION"}%<a class='natTopicAction natNextAction' rel='nofollow' href='$nexturl' title='%MAKETEXT{"Go to the following version of this topic"}%'>%TMPL:P{"NEXT_ICON"}%$label</a>%TMPL:END%
+%TMPL:DEF{"NEXT_ICON"}%<img alt='next' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-right.png' />%TMPL:END%
+%TMPL:DEF{"NEXT_ICON_RESTRICTED"}%<img alt='next' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-right-gray.png' />%TMPL:END%
+%TMPL:DEF{"NEXT_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natNextAction'>%TMPL:P{"NEXT_ICON_RESTRICTED"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"PREV_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Previous"}%</span>%TMPL:END%
 %TMPL:DEF{"PREV_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View previous revision"}%</span>%TMPL:END%
-%TMPL:DEF{"PREV_ACTION"}%<a class='natTopicAction natPrevAction' rel='nofollow' href='$prevurl' title='%MAKETEXT{"Go to the previous version of this topic"}%'><img alt='prev' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-left.png' />$label</a>%TMPL:END%
-%TMPL:DEF{"PREV_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natPrevAction'><img alt='prev' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-left-gray.png' />$label</span>%TMPL:END%
+%TMPL:DEF{"PREV_ACTION"}%<a class='natTopicAction natPrevAction' rel='nofollow' href='$prevurl' title='%MAKETEXT{"Go to the previous version of this topic"}%'>%TMPL:P{"PREV_ICON"}%$label</a>%TMPL:END%
+%TMPL:DEF{"PREV_ICON"}%<img alt='prev' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-left.png' />%TMPL:END%
+%TMPL:DEF{"PREV_ICON_RESTRICTED"}%<img alt='prev' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-left-gray.png' />%TMPL:END%
+%TMPL:DEF{"PREV_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natPrevAction'>%TMPL:P{"PREV_ICON_RESTRICTED"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"LAST_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Last"}%</span>%TMPL:END%
 %TMPL:DEF{"LAST_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View last revision"}%</span>%TMPL:END%
-%TMPL:DEF{"LAST_ACTION"}%<a class='natTopicAction natLastAction' rel='nofollow' href='$lasturl' title='%MAKETEXT{"Jump to the most recent version of this topic"}%'><img alt='end' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-end.png' />$label</a>%TMPL:END%
-%TMPL:DEF{"LAST_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natLastAction'><img alt='end' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-end-gray.png' />$label</span>%TMPL:END%
+%TMPL:DEF{"LAST_ACTION"}%<a class='natTopicAction natLastAction' rel='nofollow' href='$lasturl' title='%MAKETEXT{"Jump to the most recent version of this topic"}%'>%TMPL:P{"LAST_ICON"}%$label</a>%TMPL:END%
+%TMPL:DEF{"LAST_ICON"}%<img alt='end' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-end.png' />%TMPL:END%
+%TMPL:DEF{"LAST_ICON_RESTRICTED"}%<img alt='end' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-end-gray.png' />%TMPL:END%
+%TMPL:DEF{"LAST_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natLastAction'>%TMPL:P{"LAST_ICON_RESTRICTED"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"DIFF_SHORT"}%<span class='natTopicActionShortLabel'>%MAKETEXT{"Diff"}%</span>%TMPL:END%
 %TMPL:DEF{"DIFF_LONG"}%<span class='natTopicActionLongLabel'>%MAKETEXT{"View last change"}%</span>%TMPL:END%
@@ -335,10 +373,10 @@
 }%%TMPL:END%
 
 %TMPL:DEF{"LIBJS"}%%ADDTOZONE{
- "script"
- id="%id%"
- text="<script src='%PUBURLPATH%/%SYSTEMWEB%/%id%.js'></script>"
- requires="%requires%"
+  "script"
+  id="%id%"
+  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/%id%.js'></script>"
+  requires="%requires%"
 }%%TMPL:END%
 
 %TMPL:DEF{"JavascriptFiles/foswikiArray"}%%TMPL:P{"LIBJS" id="JavascriptFiles/foswikiArray" requires="JQUERYPLUGIN::FOSWIKI"}%%TMPL:END%
@@ -354,10 +392,51 @@
 %TMPL:DEF{"browsersupport"}%%TMPL:P{context="UnsupportedBrowser" then="browsersupport::warning"}%%TMPL:END%
 
 %TMPL:DEF{"browsersupport::warning"}%<div class='natBrowserSupportWarning'>
-  %MAKETEXT{"<b>Warning</b>: Your browser isn't supported. Please install a modern one, like [_1], [_2], [_3], [_4] or the latest [_5]." 
+  %MAKETEXT{"Warning: Your browser isn't supported. Please install a modern one, like [_1], [_2], [_3], [_4] or the latest [_5]." 
     args="<a href='http://getfirefox.com'>Firefox</a>, <a href='http://www.opera.com/download/'>Opera</a>, <a href='http://www.apple.com/safari/'>Safari</a>, <a href='https://www.google.com/chrome/'>Chrome</a>, <a href='http://www.microsoft.com/windows/downloads/ie/getitnow.mspx'>Internet Explorer</a>"
   }%
   %MAKETEXT{"Thank you!"}%
 </div>%TMPL:END%
 
 %TMPL:DEF{"webListIndent"}%<span class='foswikiWebIndent'></span>%TMPL:END%
+
+%TMPL:DEF{"ACCOUNT_ICON"}%%JQICON{"fa-user"}%%TMPL:END%
+%TMPL:DEF{"ATTACH_ICON"}%%JQICON{"fa-paperclip"}%%TMPL:END%
+%TMPL:DEF{"BACKLINKS_ICON"}%%JQICON{"fa-arrows-alt"}%%TMPL:END%
+%TMPL:DEF{"CHANGELANGUAGE_ICON"}%%JQICON{"fa-globe"}%%TMPL:END%
+%TMPL:DEF{"CHILDTOPICS_ICON"}%%JQICON{"fa-child"}%%TMPL:END%
+%TMPL:DEF{"COPY_TOPIC_ICON"}%%JQICON{"fa-clone"}%%TMPL:END%
+%TMPL:DEF{"DELETE_ICON"}%%JQICON{"fa-trash-o"}%%TMPL:END%
+%TMPL:DEF{"DIFF_ICON"}%%JQICON{"fa-step-backward"}%%TMPL:END%
+%TMPL:DEF{"EDIT_FORM_ICON"}%%JQICON{"fa-list-alt"}%%TMPL:END%
+%TMPL:DEF{"EDIT_ICON"}%%JQICON{"fa-pencil"}%%TMPL:END%
+%TMPL:DEF{"EDIT_RAW_ICON"}%%JQICON{"fa-pencil-square-o"}%%TMPL:END%
+%TMPL:DEF{"EDIT_SETTINGS_ICON"}%%JQICON{"fa-wrench"}%%TMPL:END%
+%TMPL:DEF{"HARVEST_ICON"}%%JQICON{"fa-download"}%%TMPL:END%
+%TMPL:DEF{"HISTORY_ICON"}%%JQICON{"fa-clock-o"}%%TMPL:END%
+%TMPL:DEF{"LOG_IN_ICON"}%%JQICON{"fa-sign-in"}%%TMPL:END%
+%TMPL:DEF{"MANAGETAGS_ICON"}%%JQICON{"fa-tags"}%%TMPL:END%
+%TMPL:DEF{"MENU_ICON"}%%JQICON{"fa-cog"}%%TMPL:END%
+%TMPL:DEF{"MOVE_ICON"}%%JQICON{"fa-arrows"}%%TMPL:END%
+%TMPL:DEF{"NEW_ICON"}%%JQICON{"fa-plus"}%%TMPL:END%
+%TMPL:DEF{"PDF_ICON"}%%JQICON{"fa-file-pdf-o"}%%TMPL:END%
+%TMPL:DEF{"PRINT_ICON"}%%JQICON{"fa-print"}%%TMPL:END%
+%TMPL:DEF{"REGISTER_ICON"}%%JQICON{"fa-users"}%%TMPL:END%
+%TMPL:DEF{"RESTORE_ICON"}%%JQICON{"fa-history"}%%TMPL:END%
+%TMPL:DEF{"SHARE_ICON"}%%JQICON{"fa-share-alt"}%%TMPL:END%
+%TMPL:DEF{"SUBSCRIBE_ICON"}%%JQICON{"fa-bell-o"}%%TMPL:END%
+%TMPL:DEF{"UNSUBSCRIBE_ICON"}%%JQICON{"fa-bell-slash-o"}%%TMPL:END%
+%TMPL:DEF{"TRANSLATETOPIC_ICON"}%%JQICON{"fa-language"}%%TMPL:END%
+%TMPL:DEF{"VIEW_ICON"}%%JQICON{"fa-eye"}%%TMPL:END%
+%TMPL:DEF{"WEBDAVDIR_ICON"}%%JQICON{"fa-folder-o"}%%TMPL:END%
+%TMPL:DEF{"LIKE_ICON"}%%JQICON{"fa-thumbs-o-up" class="fa-flip-horizontal"}%%TMPL:END%
+%TMPL:DEF{"RAW_ICON"}%%JQICON{"fa-file-text-o"}%%TMPL:END%
+%TMPL:DEF{"_CLOSE_ICON"}%%JQICON{"fa-times"}%%TMPL:END%
+%TMPL:DEF{"_FIRST_ICON"}%%JQICON{"fa-step-backward"}%%TMPL:END%
+%TMPL:DEF{"_FIRST_ICON_RESTRICTED"}%%JQICON{"fa-step-backward"}%%TMPL:END%
+%TMPL:DEF{"_PREV_ICON"}%%JQICON{"fa-backward"}%%TMPL:END%
+%TMPL:DEF{"_PREV_ICON_RESTRICTED"}%%JQICON{"fa-backward"}%%TMPL:END%
+%TMPL:DEF{"_NEXT_ICON"}%%JQICON{"fa-forward"}%%TMPL:END%
+%TMPL:DEF{"_NEXT_ICON_RESTRICTED"}%%JQICON{"fa-forward"}%%TMPL:END%
+%TMPL:DEF{"_LAST_ICON"}%%JQICON{"fa-step-forward"}%%TMPL:END%
+%TMPL:DEF{"_LAST_ICON_RESTRICTED"}%%JQICON{"fa-step-forward"}%%TMPL:END%

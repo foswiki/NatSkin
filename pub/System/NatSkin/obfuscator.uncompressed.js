@@ -1,11 +1,11 @@
 // (c)opyright 2006-2015 Michael Daum http://michaeldaumconsulting.com
+"use strict";
 
 (function($) {
-"use strict";
 
   var emoas;
   $.wremo = {
-    build: function(options) {
+    build: function() {
       return this.each(function() {
         $(this).empty();
         var id = $(this).attr('id'),

@@ -1,3 +1,4 @@
+"use strict";
 jQuery(function($) {
   $(document).on("click", ".natSubscribeButton", function() {
     var $this = $(this), 
@@ -6,6 +7,7 @@ jQuery(function($) {
         opts = $.extend({
             web: foswiki.getPreference('WEB'),
             topic: foswiki.getPreference('TOPIC'),
+            subscription: foswiki.getPreference('TOPIC'),
             topicTitle: foswiki.getPreference('TOPIC'),
             subscribeMessage: "Subscribed to ${title}",
             unsubscribeMessage: "Unsubscribed from ${title}",
@@ -18,12 +20,13 @@ jQuery(function($) {
         dataType: "json",
         url: endpoint,
         data: {
-          topic: opts.web+'.'+opts.topic
+          topic: opts.web+'.'+opts.topic,
+          subscription: opts.subscription
         },
         error: function(xhr, code, error) {
-          alert("Error");
+          alert("Error:", error);
         },
-        success: function(data, code, xhr) {
+        success: function() {
           var msg;
 
           if (isSubscribed) {

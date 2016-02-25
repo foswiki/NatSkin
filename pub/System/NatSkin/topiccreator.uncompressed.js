@@ -8,8 +8,9 @@
  *   http://www.gnu.org/licenses/gpl.html
  *
  */
-(function($) {
+/*eslint no-console: 0 */
 "use strict";
+(function($) {
 
   /***************************************************************************
    * class definition
@@ -46,9 +47,9 @@
     // navigation
     self.elem.find(".tcNavi").on("click", function() {
       var target = $(this).attr("href");
-      if (target == '#next') {
+      if (target === '#next') {
         self.gotoStep(self.currentStep+1, 1);
-      } else if (target == '#prev') {
+      } else if (target === '#prev') {
         self.gotoStep(self.currentStep-1, -1);
       } else {
         console.error("unknown target ",target,"clicking on ",this);
@@ -64,24 +65,32 @@
 
     // submit button
     self.elem.find(".tcSubmit").on("click", function() {
-      self.container.block();
+      self.container.block({message:""});
       self.elem.find("form").submit();
       return false;
     });
 
+    // set initial selection
+    var stepDesc = self.steps[0],
+        stepElem = self.container.find(stepDesc.id),
+        $select = stepElem.find(stepDesc.select+".tcSelected");
+    if ($select.length) {
+      stepDesc.selectedElem = $select;
+    }
+
     // first page
-    self.gotoStep(0);
+    self.gotoStep(0, 1);
   }
 
   /***************************************************************************
    * logging
    */
   TopicCreator.prototype.log = function() {
-    var self = this,
-      args = $.makeArray(arguments);
+    var args = $.makeArray(arguments);
 
     args.unshift("TC:");
-    $.log.apply(self, args);
+    //console.log.apply(console, args);
+    //$.log.apply(self, args);
   };
 
   /***************************************************************************
@@ -91,10 +100,10 @@
     var self = this, params = {},
         stepDesc = self.steps[step], i;
 
-    self.log("called gotoStep",step);
+    self.log("called gotoStep",step,"dir=",dir);
 
     if (step < 0 || step > self.steps.length || typeof(stepDesc) === 'undefined') {
-      //console.error("unknown step "+step);
+      console.error("unknown step "+step);
       return;
     }
 
@@ -109,7 +118,7 @@
     }
 
     // step 0: remove previous pages 
-    if (step == 0 || dir < 0) {
+    if (step === 0 || dir < 0) {
       for (i = step; i < self.steps.length; i++) {
         // remove dynamically loaded pages
         if (self.steps[i].expand) {
@@ -117,12 +126,12 @@
           self.elem.find(self.steps[i].id).remove();
           delete self.steps[i].selectedElem;
         }
-      };
+      }
     }
 
     // load it async'ly if there is an "expand" property and it isn't there yet
-    if (stepDesc.expand && self.container.find(stepDesc.id).length == 0) {
-      self.container.block();
+    if (stepDesc.expand && self.container.find(stepDesc.id).length === 0) {
+      self.container.block({message:""});
       $.extend(params, self.opts, {
         "name": self.template,
         "expand": stepDesc.expand,
@@ -150,22 +159,37 @@
   TopicCreator.prototype.initStep = function(step, dir) {
     var self = this,
         stepDesc = self.steps[step],
-        stepElem = self.container.find(stepDesc.id);
+        stepElem = self.container.find(stepDesc.id),
+        optElems = stepElem.find(stepDesc.select),
+        foundPrev = false, i;
+
+    self.log("called initStep() - step=",step,"stepDesc=",stepDesc,"currentStep=",self.currentStep,"dir=",dir);
 
     // scroll it into view
-    if (self.container.find(stepDesc.id).length) {
+    if (stepElem.length && optElems.length !== 1) {
+      self.log("got something to select");
       self.elem.find(".tcViewPort").scrollTo(stepDesc.id, 250);
     } else {
+      self.log("nothing to select ... next");
+      stepDesc.isHidden = true;
+      stepElem.hide();
       return self.gotoStep(self.currentStep+dir, dir);
     }
 
+    // find out whether there is a non-hidden previous step
+    for(i = step-1; i >= 0; i--) {
+      if (!self.steps[i].isHidden) {
+        foundPrev = true;
+      }
+    }
+
     // show/hide navi elems
-    if (step == 0) {
+    if (!foundPrev) {
       self.elem.find(".tcNaviPrev").hide();
     } else {
       self.elem.find(".tcNaviPrev").show();
     }
-    if (step == self.steps.length -1) {
+    if (step === self.steps.length -1) {
       self.elem.find(".tcNaviNext").hide();
       self.elem.find(".tcAbort, .tcSubmit").show();
     } else {
@@ -174,7 +198,7 @@
     }
 
     // propagate template selection
-    if (step == 2) {// input form step
+    if (step === 2) {// input form step
       if (self.steps[1].selectedElem && self.steps[1].selectedElem.data("topicTemplate")) {
         self.container.find(stepDesc.id).find("input[name='templatetopic']").val(
           self.steps[1].selectedElem.data("topicTemplate")
@@ -187,8 +211,8 @@
     
     // add return=submit
     stepElem.find("input[type=text]:not(.jqTextboxList)").on("keyup", function(ev) {
-      if (ev.keyCode == 13) {
-        self.container.block();
+      if (ev.keyCode === 13) {
+        self.container.block({message:""});
         self.elem.find("form").submit();
         return false;
       }
@@ -206,10 +230,10 @@
 
     // select 
     if (stepDesc.select) {
-      stepElem.find(stepDesc.select).on("click", function() {
+      optElems.on("click", function() {
         var $select = $(this);
 
-        stepElem.find(stepDesc.select).removeClass("tcSelected");
+        optElems.removeClass("tcSelected");
         $select.addClass("tcSelected");
 
         stepDesc.selectedElem = $select;
@@ -223,7 +247,7 @@
     stepElem.find("input.tcFilter").on("keyup", function() {
       var pattern = $(this).val().toLowerCase();
 
-        stepElem.find(stepDesc.select).each(function() {
+        optElems.each(function() {
           var $cell = $(this), text = $cell.text().toLowerCase();
           if (text.indexOf(pattern) >= 0) {
             $cell.show();

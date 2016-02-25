@@ -4,7 +4,7 @@
 
 .natBody {
   font-size:14px;
-  line-height:1.5em;
+  line-height:1.5;
   font-family: Roboto, Arial, 'Liberation Sans', FreeSans, sans-serif;
   background-color:#fff;
   color:#333;
@@ -32,7 +32,7 @@ label,
 
 /* typo */
 p {
-  line-height:1.5em;
+  line-height:1.5;
   margin:1.5em 0;
 }
 em {
@@ -64,7 +64,7 @@ h1,
 }
 h1 .foswikiTopicSummary {
   font-size:0.5em;
-  line-height:1.5em;
+  line-height:1.5;
 }
 .foswikiInfo, .foswikiRevision {
   margin-bottom: 1.5em;
@@ -294,10 +294,6 @@ a {
   display:none;
 }
 
-a.jqButton:link {
-  color:#333;
-}
-
 .natBottomBarContents h2,
 .natBottomBarContents h3,
 .natBottomBarContents h4 {
@@ -421,6 +417,31 @@ a.jqButton:link {
 .natNetworkNavi a {
   text-decoration:none;
   padding:0.5em 1em;
+}
+
+.natNotifications {
+  line-height:2em;
+  display:inline-block;
+  font-size:120%;
+}
+.natNotifications > ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.natNotifications > ul > li {
+  margin:0;
+  padding:0;
+  display:inline;
+}
+.natNotifications > ul > li > a {
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:0.5em 1em;
+  color:#999;
+}
+.natNotifications .fa {
+  margin-right:0.5em;
 }
 
 .natPanelToggle {
@@ -752,12 +773,6 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
 .natBottomBar h3 {
   color:#339000;
 }
-.solrSearchHits h3 a {
-  color:#333;
-} 
-.solrSearchHits h3 .foswikiGrayText a {
-  color:inherit;
-}
 
 .natTopShadow {
   border-top:5px solid #FF9100;
@@ -786,6 +801,8 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
 .natTopicActions .fa {
   color:#666;
 }
+.natTopicActions .natUserAction:hover .fa,
+.natTopicActions .natUserAction:hover,
 .natTopicActions .natTopicAction:hover .fa,
 .natTopicActions .natTopicAction:hover,
 .natTopicActions .sfHover .natMoreActionsTopicAction,
@@ -813,13 +830,16 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
   background-color:transparent;
 }
 
+.redDot a:hover,
 .ui-jqgrid .ui-state-hover a:hover,
 a:hover {
   text-decoration:underline;
   background-color:transparent;
   color:#ED299C;
 }
-.hover {
+.hover,
+.hover a,
+.hover a:hover {
   background-color:transparent;
   color:#ED299C;
 }
@@ -838,10 +858,15 @@ h1 .foswikiTopicSummary,
   color:#818181;
 }
 
+a.jqButton:link {
+  color:#333;
+}
+
 .natLoginHeading,
 .natNoteHeading,
 .natBreadCrumbs a:hover,
 a:hover .foswikiGrayText,
+.foswikiGrayText a:hover ,
 .foswikiTopicInfo a:hover,
 .natTopPanelContents a:hover,
 .natBottomBarContents a:hover,
@@ -871,6 +896,10 @@ h2.marked,
 .foswikiFormSteps h2 a,
 .foswikiFormSteps h2 a:hover {
   color:#ED299C;
+}
+
+a.jqButton:link.jqButtonDisabled {
+  color:#888;
 }
 
 .foswikiAlt h3, .foswikiAlt h4, .foswikiAlt h5, .foswikiAlt h6,

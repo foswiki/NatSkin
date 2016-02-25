@@ -1,23 +1,50 @@
 /* page layout */
 @page {
-  size: a4;
+/*  size: a4;*/
   margin:2.5cm 2cm 2cm 2cm;
 
+  @top-left-corner {
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+  }
   @top-left {
     content: string(title);
     font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+  }
+  @top-center {
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
   }
   @top-right {
     font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+  }
+  @top-right-corner {
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+  }
+  @bottom-left-corner {
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
   }
   @bottom-left {
     font-family:arial,Helvetica,sans-serif;
     font-size:12px;
   }
-  @bottom-right {
-    content: counter(page);
+  @bottom-center {
     font-family:arial,Helvetica,sans-serif;
     font-size:12px;
+  }
+  @bottom-right {
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+  }
+  @bottom-right-corner {
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+    content: counter(page);
+    text-align:center;
   }
 }
 @page:first {
@@ -32,12 +59,30 @@
   }
 }
 
-h1:first-of-type { string-set: title content(); }
-h2 { string-set: chapter content(); }
-.foswikiRevision { string-set: revision content(); }
-.foswikiRevisionID { string-set: revisionID content(); }
-.foswikiRevisionDate { string-set: date content(); }
-.foswikiRevisionAuthor { string-set: author content(); }
+h1:first-of-type { 
+  string-set: title content(); 
+  -weasy-string-set: title content(); 
+}
+h2 { 
+  string-set: chapter content();
+  -weasy-string-set: chapter content();
+}
+.foswikiRevision { 
+  string-set: revision content();
+  -weasy-string-set: revision content();
+}
+.foswikiRevisionID { 
+  string-set: revisionID content(); 
+  -weasy-string-set: revisionID content(); 
+}
+.foswikiRevisionDate { 
+  string-set: date content();
+  -weasy-string-set: date content();
+}
+.foswikiRevisionAuthor { 
+  string-set: author content();
+  -weasy-string-set: author content();
+}
 
 html {
   background:transparent !important;
@@ -49,10 +94,19 @@ body {
   background:transparent !important;
   prince-linebreak-magic: auto;
   hyphens: auto;
+  -weasy-hyphens: auto;
   color:#000;
+
 /*
-  columns: 2;
-  column-gap: 1em;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: balance;
+  -moz-column-gap: balance;
+  column-gap: balance;
+  -webkit-column-gap: 0.33in;
+  -moz-column-gap: 0.33in;
+  column-gap: 0.33in;
 */
 }
 
@@ -74,11 +128,19 @@ ul, ol, dl {
 .natMainContents table {
   page-break-before:avoid;
 }
+
 pre {
   page-break-inside:avoid;
   overflow:hidden;
   white-space:pre-wrap;
   word-break:break-all;
+}
+
+.natPageBreakAfter {
+  page-break-after:always;
+}
+.natPageBreakBefore {
+  page-break-before:always;
 }
 
 /* hidden elements */
@@ -141,14 +203,17 @@ p + p { text-indent: 1.5em }
 
 img {
   page-break-inside: avoid;
-  prince-image-resolution: 150dpi;
 }
+
 
 /* links */
 .foswikiNewLink {
   color:inherit !important;
   background:inherit !important;
   text-decoration:none;
+}
+a[name] {
+  display:none;
 }
 
 /* clear overflow properties */
@@ -177,39 +242,4 @@ pre {
 /* EditTablePlugin */
 .editTableEditImageButton {
   display:none;
-}
-
-/* TOC */
-.foswikiToc::before {
-  font-size:135%;
-}
-.foswikiToc {
-  text-align:left;
-  /*page-break-after:always;*/
-  margin:0em 0em 2em;
-}
-.natTopicAttachments,
-.foswikiTocTitle {
-  display:none;
-}
-.foswikiToc::before {
-  font-size:160%;
-  margin:1em 0em 1em;
-  display:block;
-  content: "Table of Contents";
-}
-.foswikiToc > ul {
-  columns: 2;
-  column-gap: 1em;
-  border:0px;
-  padding:0px;
-  margin:0px;
-}
-.foswikiToc a::after {
-  content:leader(".") target-counter(attr(href), page);
-}
-.foswikiToc li {
-  background:transparent;
-  padding-left:0px;
-  margin-left:5px;
 }

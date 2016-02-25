@@ -1,12 +1,11 @@
 // (c)opyright 2006-2015 Michael Daum http://michaeldaumconsulting.com
-
-jQuery(function($) {
 "use strict";
+jQuery(function($) {
 
   var $loginForm = $("#LoginForm");
   $loginForm.validate();
   $loginForm.find("input").keydown(function(e) {
-    if (e.keyCode == '13') {
+    if (e.keyCode === '13') {
       $loginForm.submit();
       return false;
     }

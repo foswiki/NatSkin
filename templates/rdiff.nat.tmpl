@@ -5,14 +5,15 @@
 
 %{################################################################################}%
 %TMPL:DEF{"bodyclass"}%natRdiffBody%TMPL:END%
-%TMPL:DEF{"titleaction"}%%MAKETEXT{"([_1] vs. [_2])" args="%REVTITLE2%, %REVTITLE1%"}%%TMPL:END%
-%TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Difference"}%: %TMPL:P{"topictitle"}% %MAKETEXT{"([_1] vs. [_2])" args="%REVTITLE2%, %REVTITLE1%"}%</h1>%TMPL:END%
-%TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
+%TMPL:DEF{"titleaction"}%%MAKETEXT{"[_1] vs. [_2]" args="%REVTITLE1%, %REVTITLE2%"}%%TMPL:END%
+%TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Difference"}%: %TMPL:P{"topictitle"}% (%TMPL:P{"titleaction"}%)</h1>%TMPL:END%
+%TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
+%TMPL:DEF{"bottombar"}%%TMPL:END%
 
 %{################################################################################}%
 %TMPL:DEF{"contentheader::contents"}%<!-- -->
 %TMPL:P{"topicactions"}%
-%TMPL:P{"breadcrumbs::contents"}%
+%TMPL:PREV%
 <!-- -->%TMPL:END%
 
 %{################################################################################}%

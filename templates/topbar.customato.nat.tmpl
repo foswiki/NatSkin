@@ -14,6 +14,7 @@
   <div class="natTopRight">
     <div class="natTopRightContents">
       %TMPL:P{"topbar::navi"}%<!-- -->
+      %TMPL:P{"topbar::notifications"}%<!-- -->
       %TMPL:P{context="authenticated" then="topbar::authenticated" else="topbar::notauthenticated"}%<!-- -->
     </div>
   </div>
@@ -31,13 +32,24 @@
 }%<!-- -->%TMPL:END%
 
 %{################################################################################ }%
+%TMPL:DEF{"DIS_topbar::notifications"}%<div class='natNotifications jqUITooltip' data-theme='info' data-arrow='on' data-position='bottom'>
+<ul>
+  <li>%CHATNOTIFIER{
+        debug="on"
+        pnotify="on"      
+      }%
+  </li>
+</ul>
+</div>%TMPL:END%
+
+%{################################################################################ }%
 %TMPL:DEF{"topbar::authenticated"}%<div class='natUserAction natPanelToggle'>
-%JQICON{"user"}% <a><nop>%GETTOPICTITLE{"%WIKIUSERNAME%"}%</a>
+%TMPL:P{"ACCOUNT_ICON"}%<a><nop>%GETTOPICTITLE{"%WIKIUSERNAME%"}%</a>
 </div>%TMPL:END%
 
 %{################################################################################ }%
 %TMPL:DEF{"topbar::notauthenticated"}%<div class='natUserAction natPanelToggle'>
-%JQICON{"key"}% <a>Log in</a>
+%JQICON{"fa-sign-in"}% <a>Log in</a>
 </div>%TMPL:END%
 
 %{################################################################################ }%

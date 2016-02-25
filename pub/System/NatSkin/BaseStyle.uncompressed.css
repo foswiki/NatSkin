@@ -19,6 +19,14 @@ embed, object {
   z-index: 0;
 }
 
+svg text {
+  font-family: Arial, 'Liberation Sans', FreeSans, sans-serif;
+}
+svg a {
+  text-decoration:none;
+  cursor:pointer;
+}
+
 .natHtml {
   overflow-y: scroll; /* force a vertical scrollbar to prevent a jumpy page */
 }
@@ -198,6 +206,9 @@ code {
   background-color: #f6f6f6;
   border: 1px solid #ddd;
   font-size:85%;
+}
+code b {
+  font-weight:bold;
 }
 
 address {
@@ -533,9 +544,6 @@ th[align=center] {
 .foswikiLayoutTable td,
 .foswikiLayoutTable th {
   padding:0.1538em 0.5769em 0.1538em 0em;
-}
-.foswikiLayoutTable th,
-.foswikiLayoutTable td {
   vertical-align:top;
 }
 
@@ -565,13 +573,22 @@ th[align=center] {
 .foswikiFlatTable,
 .foswikiFlatTable table,
 .foswikiFlatTable table th, 
-.foswikiFlatTable table td {
+.foswikiFlatTable table td,
+table.foswikiFlatTable,
+table.foswikiFlatTable th, 
+table.foswikiFlatTable td {
   background-color:transparent;
   border:0;
 }
+table.dataTable.foswikiFlatTable.fixedHeader-floating { /* JQDataTablesPlugin */
+  background:#fff;
+}
 .foswikiFlatTable td,
 .foswikiFlatTable table td,
-.foswikiFlatTable table th {
+.foswikiFlatTable table th,
+table.foswikiFlatTable td,
+table.foswikiFlatTable td,
+table.foswikiFlatTable th {
   padding:0.75em 0.5em;
   vertical-align:top;
   border-bottom:1px solid #ddd;
@@ -600,9 +617,7 @@ th[align=center] {
 table.foswikiTable.foswikiFullWidth,
 table.foswikiFlatTable.foswikiFullWidth,
 table.foswikiLayoutTable.foswikiFullWidth,
-.foswikiTable.foswikiFullWidth > table,
-.foswikiFlatTable.foswikiFullWidth > table,
-.foswikiLayoutTable.foswikiFullWidth > table {
+.foswikiFullWidth > table {
    width:99%;
 }
 
@@ -764,6 +779,7 @@ select,
   background-color:#fff;
   padding:4px;
   font-size:0.923em;
+  max-width:100%;
 }
 
 .foswikiTextarea:focus, textarea:focus,
@@ -845,10 +861,12 @@ input[type=submit]:active,
   background: linear-gradient(top, #ededed 0%,#ffffff 50%);
 }
 
+.jqButtonDisabled,
 select[disabled],
 button[disabled],
 input[disabled],
 textarea[disabled] {
+  cursor:default;
   color:#cfcfcf;
   background-color: #fafafa;
 }
@@ -991,7 +1009,7 @@ div.foswikiErrorSummary {
   text-align:center;
   margin-left:auto;
   margin-right:auto;
-  display:block;
+  display:table;
 }
 .foswikiLeft {
   float:left;
@@ -1089,6 +1107,10 @@ img.foswikiLeft,
 .foswikiAlert a,
 .foswikiAlert {
   color:red;
+}
+.foswikiOK a,
+.foswikiOK {
+  color:green;
 }
 .natBrowserSupportWarning {
   padding:1em;
@@ -1226,6 +1248,13 @@ img.foswikiLeft,
 .natUserAction .fa,
 .natTopicAction .fa {
   padding:0 0.5em 0 0;
+  font-size:120%;
+  width:1em;
+  text-align:center;
+}
+.natUserAction .fa-flip-horizontal,
+.natTopicAction .fa-flip-horizontal {
+  padding:0 0 0 0.3em;
 }
 .natTopicActions .natMoreActionsMenu ul li .natTopicAction span {
   padding:0px;
@@ -1250,6 +1279,11 @@ img.foswikiLeft,
   margin:-4px -4px -4px 6px;
   float:left;
   white-space:nowrap;
+  text-decoration:none;
+  color:inherit;
+}
+.natTopicActions .natTopicAction a,
+.natTopicActions .natTopicAction a:hover {
   text-decoration:none;
   color:inherit;
 }
@@ -1362,6 +1396,31 @@ a.natFeedIcon {
   border:1px solid;
   font-weight:bold;
 }
+.foswikiHelp strong,
+.foswikiSuccessMessage strong,
+.foswikiErrorMessage strong,
+.foswikiWarningMessage strong,
+.foswikiInfoMessage strong,
+.foswikiTipMessage strong,
+.foswikiHelp b,
+.foswikiSuccessMessage b,
+.foswikiErrorMessage b,
+.foswikiWarningMessage b,
+.foswikiInfoMessage b,
+.foswikiTipMessage b {
+  color:#222;
+}
+.foswikiAlt .jqButton, 
+.alt .jqButton,
+.foswikiHelp .jqButton,
+.foswikiSuccessMessage .jqButton,
+.foswikiErrorMessage .jqButton,
+.foswikiWarningMessage .jqButton,
+.foswikiInfoMessage .jqButton,
+.foswikiTipMessage .jqButton {
+  font-weight:normal;
+}
+
 .foswikiHelp {
   padding:0.678em 1em;; /* 9.5px 21px */
 }
@@ -1372,7 +1431,7 @@ a.natFeedIcon {
 .foswikiTipMessage {
   padding:0.678em 1em 0.678em 3em; /* 9.5px 21px 9.5px 42px */
   background-repeat:no-repeat;
-  background-position:1em 0.8em;
+  background-position:1em 50%;
 }
 .foswikiSuccessMessage,
 .foswikiErrorMessage,
@@ -1594,6 +1653,7 @@ td.foswikiDiffChangedText {
   max-width: 40%;
 }
 
+/*
 .natMainContents .natExternalLink:after {
   content:"";
   background-image:url("external.png");
@@ -1605,6 +1665,7 @@ td.foswikiDiffChangedText {
   display:inline-block;
   vertical-align:middle;
 }
+*/
 
 /* prevent margins to collapse with floating elements next to a list */
 .natMainContents ul,
@@ -2257,19 +2318,55 @@ a:active.natScrollTop {
   display:inline;
 }
 
+/* watermark */
+.natWatermark {
+  position: fixed;
+  display: block;
+  top:50%;
+  left:50%;
+  margin:0;
+  padding:0;
+  font-size: 8em;
+  line-height:1.1;
+  text-align: center;
+  max-width:80%;
+  -ms-transform: translate(-50%, -50%) rotate(-45deg); /* IE 9 */
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg); /* Safari */
+  transform: translate(-50%, -50%) rotate(-45deg);
+  opacity:0.2;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
 /* login */
 .natLoginBody .natBodyContents {
-  margin:0px;
+  margin:0px !important;
   padding:0px;
-  width:auto !important;
+  width:100% !important;
+  height:100%;
+
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:-webkit-flexbox;
+  display:flex;
+
+  -webkit-box-pack: center; -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  -webkit-box-align: center; 
+  -ms-flex-align: center; 
+  -webkit-align-items: center;
+  align-items: center;
+
+  position:absolute;
+  top:0;
+  left:0;
 }
 
 .natLogin {
-  position:absolute;
-  top:50%;
-  left:50%;
-  margin:-12em -19em;
-  width:38em; 
+  width:40em; 
   border:1px solid #d6d6d6;
   border-radius:10px;
   background:#fff;
@@ -2410,10 +2507,15 @@ a:active.natScrollTop {
 .natWebMenu select {
   display:none;
   width:50%;
-  min-width:10em;
-  margin:0;
+  min-width:300px;
+  margin:0 auto;
 }
 
+.natWebMenu .fa {
+  font-size:1em;
+  width:1.3em;
+  text-align:left;
+}
 
 .natWebMenuContents > ul {
   float:left;
@@ -2454,7 +2556,7 @@ a:active.natScrollTop {
   height:320px;
 }
 .natWebMenu .natMegaMenu li {
-  position:initial;
+  position:static;
   width:15em;
 }
 .natWebMenu .natMegaMenu ul li:nth-child(n+11) {
@@ -2544,7 +2646,6 @@ a:active.natScrollTop {
   z-index:99999; 
   position:absolute;
   background-color:#fff;
-  width:16.45em; 
   right:-4px;
   top:1.5em;
   display:none;
@@ -2593,6 +2694,7 @@ a:active.natScrollTop {
 .solrRevision a:hover {
   color:#fff;
 }
+
 .natSideBar .solrFacetPager ul {
   border-right:1px solid #c2c4c4;
 }
@@ -2701,6 +2803,20 @@ a:active.natScrollTop {
   right:0.5em;
 }
 
+/* social bar */
+.natSocialBar {
+  margin:3em 0;
+}
+.natSocialBar > * {
+  float:left;
+}
+.natSocialBar .socialShare a {
+  font-weight:normal;
+  min-width:inherit;
+  border-radius:4px;
+  margin:0 0.5em 0.5em 0;
+}
+
 @media (max-width:620px) {
   .natWebMenu select {
     display:block;
@@ -2711,8 +2827,12 @@ a:active.natScrollTop {
   .natLoginBody {
     background:#fff !important;;
   }
+  .natLoginBody .natBodyContents {
+    display:block;
+    width:auto !important;
+  }
   .natLogin {
-    position:initial;
+    position:static;
     margin:5em 0 0;
     width:auto;
     box-shadow:none;
@@ -2735,4 +2855,34 @@ a:active.natScrollTop {
   .natPoweredBy {
     display:none;
   }
+}
+
+/* select2 */
+.select2-container-multi .select2-choices {
+  background-color:transparent;
+  border:0;
+}
+.select2-container-multi .select2-choices li {
+  float:none;
+}
+.select2-container-multi .select2-choices .select2-search-choice,
+.select2-container-multi .select2-choices .select2-search-field {
+  background:#fff;
+  margin:0 0 4px;
+  box-shadow:none;
+  border-radius:0;
+  line-height:26px;
+  border:1px solid #bbb;
+}
+.select2-search-choice-close {
+  top:10px;
+}
+
+/* chat */
+.ui-chat-maximized-html .natBodyContents,
+.ui-chat-maximized-html .ngLoadTime {
+  display:none;
+}
+.natChatBody .natNavToggle {
+  display:none !important;
 }

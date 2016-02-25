@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1437156544" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1456411053" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%<!-- -->
@@ -304,7 +304,10 @@
   text="<literal>
 <script type='text/javascript'>
 jQuery(function($) {
-  $('#Fwk1WikiName').wikiword('#Fwk1FirstName, #Fwk1LastName');
+  $('#Fwk1WikiName').wikiword({
+    source: '#Fwk1FirstName, #Fwk1LastName',
+    transliterate: true
+  });
   var $form = $('#registrationForm')
     .bind('invalid-form.validate', function(e, validator) {
       var errors = validator.numberOfInvalids();
@@ -387,5 +390,5 @@ jQuery(function($) {
 }%%TMPL:END%
 %{</verbatim>}%
 
-%META:PREFERENCE{name="DENYTOPICVIEW" title="DENYTOPICVIEW" type="Set" value=" "}%
+%META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%
 %META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

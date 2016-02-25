@@ -2,7 +2,8 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="jqUIDialog {width:800, modal:true, resizable:true, draggable:true}" title="%TMPL:P{"heading"}%">
+<div class="jqUIDialog" data-width="800" data-modal="true" data-resizable="true" data-draggable="true" title="%TMPL:P{"heading"}%">
+  <input type="hidden" autofocus />
   %TMPL:P{"viewrawjavascript"}%<!-- -->
   <div class="natPreviewRaw">
     <textarea class="foswikiTextarea" rows="20" cols="80" readonly></textarea>
@@ -13,12 +14,13 @@
 </noautolink>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"heading"}%%MAKETEXT{"Wiki markup of [_1]" args="%GETTOPICTITLE{"%BASEWEB%.%BASETOPIC%"}%"}%%TMPL:END%
+%TMPL:DEF{"heading"}%%MAKETEXT{"Wiki markup of [_1]" args="%GETTOPICTITLE{"%BASEWEB%.%BASETOPIC%" encode="entity"}%"}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"viewrawjavascript"}%<!-- -->
-<literal><script>
+%TMPL:DEF{"viewrawjavascript"}%<literal>
+<script>
 jQuery(function($) {
+  var $textarea = $(".natPreviewRaw .foswikiTextarea");
   $.ajax({
     url: '%SCRIPTURL{"view"}%/%BASEWEB%/%BASETOPIC%',
     data: {
@@ -28,11 +30,9 @@ jQuery(function($) {
     },
     dataType:"text",
     success: function(data, status, xhr) {
-      var $textarea = $(".natPreviewRaw .foswikiTextarea");
-      $textarea.text(data);
-      setTimeout(function() { $textarea.focus(); }, 100);
+      $textarea.val(data);
     }
   });
 });
-</script></literal>
-<!-- -->%TMPL:END%
+</script>
+</literal>%TMPL:END%

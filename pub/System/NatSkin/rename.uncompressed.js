@@ -1,7 +1,7 @@
 // (c)opyright 2008-2015 Michael Daum http://michaeldaumconsulting.com
+"use strict";
 
 jQuery(function($) {
-"use strict";
 
   var $form = $("form[name='rename']");
 
@@ -22,7 +22,8 @@ jQuery(function($) {
     if ($this.is(":checked")) {
       $target.attr("disabled", "disabled");
       $target.wikiword({
-        source: "#topictitle"
+        source: "#topictitle",
+        transliterate: true
       });
     } else {
       $target.removeAttr("disabled");

@@ -96,9 +96,6 @@ h1,
   border-top:1px solid #E1EAFA;
   border-bottom:1px solid #8099C4;
 }
-.natWebMenu {
-  margin-bottom:-1px;
-}
 .natWebMenu li {
   border-right:1px solid #E1EAFA;
 }
@@ -663,6 +660,7 @@ a:hover.natScrollTop {
 @media (max-width:870px) {
   .natBody .natMiddleContents {
     margin-right:0;
+    margin-left:0;
   }
   .natSideBar,
   .natLangSwitcher {

@@ -11,6 +11,7 @@
 %TMPL:DEF{"attachments::hidden"}%%URLPARAM{"attachments_hidden" default="on"}%%TMPL:END%
 %TMPL:DEF{"attachments::showuploader"}%%URLPARAM{"attachments_showuploader" default="on"}%%TMPL:END%
 %TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%">%MAKETEXT{"Attachments"}%</a>%TMPL:END%
+%TMPL:DEF{"form"}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"content"}%<div class="foswikiMetaData %IF{"not '%WEB%.%TOPIC%' allows 'change'" then="foswikiMetaDataNotAllowed"}%">
@@ -18,7 +19,7 @@
   "%MAKETEXT{"Close"}%" 
   class="foswikiRight simple"
   href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%" 
-  icon="cross"
+  icon="fa-times-circle"
 }%
 <h1>
   <noautolink>%MAKETEXT{"Attachments at [_1]" args="%TMPL:P{"topictitle"}%"}%</noautolink>

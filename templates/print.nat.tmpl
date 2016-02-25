@@ -1,0 +1,84 @@
+%TMPL:DEF{"dialog"}%<noautolink>
+<div class="natPrintDialog jqUIDialog foswikiFormSteps" data-cache="false" data-width="600" data-modal="true" data-draggable="true" data-close-on-escape="true" title="%TMPL:P{"formtitle"}%">
+%TMPL:P{"printform"}%
+</div>
+</noautolink>%TMPL:END%
+
+%TMPL:DEF{"formtitle"}%%MAKETEXT{"Export to PDF"}%%TMPL:END%
+
+%TMPL:DEF{"printform"}%<!-- -->
+%TMPL:P{"printform::start"}%
+%TMPL:P{"printform::pagesize"}%<!-- -->
+%TMPL:P{"printform::orientation"}%<!-- -->
+%TMPL:P{"printform::watermark"}%<!-- -->
+%TMPL:P{"printform::end"}%
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"printform::start"}%<!-- -->
+<form action="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%">
+  <input type="hidden" name="section" value="%URLPARAM{"section"}%" />
+  <input type="hidden" name="contenttype" value="application/pdf" />
+  <input type="hidden" name="cover" value="print.nat" />
+  <input type="hidden" name="pdfdisposition" value="redirect" />
+  <table class='foswikiLayoutTable'>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"printform::end"}%<!-- -->
+  </table>
+  <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-circle-check'}">%MAKETEXT{"Export"}%</a>
+  <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Cancel"}%</a>
+</form>%TMPL:END%
+
+%TMPL:DEF{"printform::pagesize"}%<tr>
+  <th>%MAKETEXT{"Page size"}%:</th>
+  <td><select name="pdfpagesize" class="foswikiSelect">
+        <option value="a3" %IF!{"'%TMPL:P{"printform::pagesize::default"}%'='a3'" then="selected"}%>A3</option>
+        <option value="a4" %IF{"'%TMPL:P{"printform::pagesize::default"}%'='a4'" then="selected"}%>A4</option>
+        <option value="a5" %IF{"'%TMPL:P{"printform::pagesize::default"}%'='a5'" then="selected"}%>A5</option>
+        <option value="b4" %IF{"'%TMPL:P{"printform::pagesize::default"}%'='b4'" then="selected"}%>B4</option>
+        <option value="b5" %IF{"'%TMPL:P{"printform::pagesize::default"}%'='b5'" then="selected"}%>B5</option>
+        <option value="letter" %IF{"'%TMPL:P{"printform::pagesize::default"}%'='letter'" then="selected"}%>Letter</option>
+        <option value="legal" %IF{"'%TMPL:P{"printform::pagesize::default"}%'='legal'" then="selected"}%>Legal</option>
+        <option value="ledger" %IF{"'%TMPL:P{"printform::pagesize::default"}%'='ledger'" then="selected"}%>Ledger</option>
+      </select>
+  </td>
+</tr>%TMPL:END%
+
+%TMPL:DEF{"printform::pagesize::default"}%%PDFPAGESIZE{default="a4"}%%TMPL:END%
+
+%TMPL:DEF{"printform::orientation"}%<tr>
+  <th>%MAKETEXT{"Orientation"}%:</th>
+  <td><select name="pdforientation" class="foswikiSelect">
+        <option %IF{"'%TMPL:P{"printform::orientation::default"}%'='auto'" then="selected"}%>%MAKETEXT{"auto"}%</option>
+        <option %IF{"'%TMPL:P{"printform::orientation::default"}%'='portrait'" then="selected"}%>%MAKETEXT{"portrait"}%</option>
+        <option %IF{"'%TMPL:P{"printform::orientation::default"}%'='landscape'" then="selected"}%>%MAKETEXT{"landscape"}%</option>
+      </select>
+  </td>
+</tr>%TMPL:END%
+
+%TMPL:DEF{"printform::orientation::default"}%%PDFORIENTATION{default="portrait"}%%TMPL:END%
+
+%TMPL:DEF{"printform::watermark"}%<tr>
+  <th>%MAKETEXT{"Watermark"}%</th>
+  <td>
+      <label><input type="radio" class="foswikiRadio" name="watermark_radio" value="" checked>%MAKETEXT{"None"}%</label> 
+      <label><input type="radio" class="foswikiRadio" name="watermark_radio" value="%MAKETEXT{"Draft"}%">%MAKETEXT{"Draft"}%</label> 
+      <label><input type="radio" class="foswikiRadio" name="watermark_radio" value="%MAKETEXT{"Confidential"}%">%MAKETEXT{"Confidential"}%</label> 
+      <label><input type="radio" class="foswikiRadio" name="watermark_radio" id="watermark_custom">%MAKETEXT{"Custom"}%</label>  %BR%
+      <input type="text" size="50" name="pdfwatermark" id="watermark_input" style="display:none;margin-top:0.5em" /> 
+<literal>
+<script>
+jQuery(function($) {
+  $("input[name='watermark_radio']").on("change", function() {
+    var $this = $(this);
+    if ($this.is("#watermark_custom")) {
+      $("#watermark_input").show().val("");
+    } else {
+      $("#watermark_input").hide().val($this.val());
+    }
+  });
+});
+</script>
+</literal>
+  </td>
+</tr>%TMPL:END%

@@ -5,7 +5,7 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="jqUIDialog foswikiFormSteps {width:480, modal:true, draggable:true}" title="%TMPL:P{"heading"}%">
+<div class="jqUIDialog foswikiFormSteps" data-width="480" data-modal="true" data-draggable="true" title="%TMPL:P{"heading"}%">
   <form name="changelanguage" action="%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%" method="post">
     <input type="hidden" name="template" value="oopslanguagechanged" />
     <div class="foswikiFormStep">

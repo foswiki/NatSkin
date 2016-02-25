@@ -1,7 +1,7 @@
 // (c)opyright 2006-2015 Michael Daum http://michaeldaumconsulting.com
+"use strict";
 
 (function($) {
-"use strict";
 
   /**************************************************************************
    * globals
@@ -103,11 +103,17 @@
 
     $(document).on("click", ".natPanelToggle a", function() {
       var $toggle = $(this);
-      $toggle.toggleClass("active");
-      $(".natTopPanel").slideToggle(200, "shagga");
+      $(".natTopPanel").slideToggle({
+        duration:200, 
+        easing: "shagga",
+        complete: function() {
+          $(this).toggleClass("open");
+          $toggle.parent().toggleClass("open");
+        }
+      });
       return false;
     });
-  };
+  }
 
   /**************************************************************************
    * add behavior to various topic actions
@@ -186,29 +192,37 @@
    * init the autosuggestion feature on the search field
    */
   function initSearchBox() {
-    $("#searchbox").livequery(function() {
+    $(".solrSearchBox form").livequery(function() {
       var $form = $(this),
+          action = $form.attr("action"),
           $input = $form.find("input[type=text]"),
           submitButton = $form.find("input[type=submit]"),
           position = $.extend({
             my: "right top",
-            at: "right+5 bottom+11",
+            at: "right bottom+11",
           }, {
             my: $form.data("position-my"),
             at: $form.data("position-at"),
           });
 
+      $form.submit(function() {
+        var search = $form.find("input[name='search']"),
+            href = action + ((search && search.val())?'#q='+search.val():'');
+        window.location.href = href;
+        return false;
+      });
+
       if (typeof($.fn.autosuggest) === 'function') { // make sure autosuggest realy is present
         $input.autosuggest({
           position: position,
           menuClass: 'natSearchBoxMenu',
-          search: function(event) {
+          search: function() {
             submitButton.hide();
           },
-          response: function(event) {
+          response: function() {
             submitButton.show();
           },
-          open: function(event) {
+          open: function() {
             submitButton.show();
           }
         });
@@ -239,8 +253,7 @@
         easing: "shagga",
         complete: function() {
           $("body").toggleClass("natBodyNavToggleActive");
-          if($("body").is(".natBodyNavToggleActive")) {
-          } else {
+          if(!$("body").is(".natBodyNavToggleActive")) {
             $sidebar.css("display", "");
           }
         }
@@ -336,34 +349,35 @@
    * init on load
    */
   $(function() { 
+    var prefs = foswiki.getPreference("NatSkin");
 
     initMobile();
 
-    if (foswiki.getPreference("NatSkin.initWebMenu")) {
+    if (prefs.initWebMenu) {
       initWebMenu();
     }
 
-    if (foswiki.getPreference("NatSkin.initBusyIndicator")) {
+    if (prefs.initBusyIndicator) {
       initBusyIndicator();
     }
 
-    if (foswiki.getPreference("NatSkin.initOverflows")) { 
+    if (prefs.initOverflows) { 
       initOverflows();
     }
 
-    if (foswiki.getPreference("NatSkin.initSideBar")) { 
+    if (prefs.initSideBar) { 
       initSideBar();
     }
 
-    if (foswiki.getPreference("NatSkin.initAutoComplete")) {
+    if (prefs.initAutoComplete) {
       initSearchBox();
     }
 
-    if (foswiki.getPreference("NatSkin.initExternalLinks")) {
+    if (prefs.initExternalLinks) {
       initExternalLinks();
     }
 
-    if (foswiki.getPreference("NatSkin.initTopPanel")) {
+    if (prefs.initTopPanel) {
       initTopPanel();
     }
 
@@ -371,7 +385,7 @@
     $(document).on("dialogopen", function(){
       numDialogsOpen++;
       $("body").addClass("natDialogOpen");
-    })
+    });
     $(document).on("dialogclose", function(){
       numDialogsOpen--;
       if (numDialogsOpen <= 0) {

@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1437156544" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1456411053" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%<!-- -->
@@ -62,7 +62,7 @@
   format="<b>$title:</b> $value <br />"
   separator="$n"
   Telephone_title="%MAKETEXT{"Tel"}%"
-  Email_value="%FORMFIELD{"Email" rev="%URLPARAM{"rev"}%" default="%USERINFO{"%BASETOPIC%" format="$emails"}%"}%"
+  Email_default="%USERINFO{"%BASETOPIC%" format="$emails"}%"
 }%
 %ENDGRID%
 <literal>

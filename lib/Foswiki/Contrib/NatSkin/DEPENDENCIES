@@ -1,5 +1,6 @@
 Foswiki::Contrib::CopyContrib,>=2.0,perl,Required
 Foswiki::Contrib::FamFamFamContrib,>=2075,perl,Required
+Foswiki::Contrib::WebFontsContrib,>=1,perl,Required
 Foswiki::Plugins::AutoTemplatePlugin,>=2.01,perl,Required
 Foswiki::Plugins::BreadCrumbsPlugin,>=4318,perl,Required
 Foswiki::Plugins::CaptchaPlugin,>=2.0.0,perl,Optional
@@ -8,16 +9,17 @@ Foswiki::Plugins::FilterPlugin,>=3491,perl,Required
 Foswiki::Plugins::FlexWebListPlugin,>=3493,perl,Required
 Foswiki::Plugins::GridLayoutPlugin,>=1.00,perl,Required
 Foswiki::Plugins::ImagePlugin,>=2.40,perl,Required
-Foswiki::Plugins::JQueryPlugin,>=5.00,perl,Required
+Foswiki::Plugins::JQueryPlugin,>=7.00,perl,Required
 Foswiki::Plugins::ListyPlugin,>=1,perl,Required
 Foswiki::Plugins::MetaCommentPlugin,>=2.80,perl,Optional
 Foswiki::Plugins::MimeIconPlugin,>=1,perl,Required
-Foswiki::Plugins::MultiLingualPlugin,>=2.00,perl,Optional
+Foswiki::Plugins::MultiLingualPlugin,>=2.00,perl,Required
 Foswiki::Plugins::NatEditPlugin,>=8.00,perl,Required
 Foswiki::Plugins::NatSkinPlugin,>=3.99_004,perl,Required
 Foswiki::Plugins::PageOptimizerPlugin,>=0.10,perl,Optional
 Foswiki::Plugins::RedDotPlugin,>=1,perl,Required
-Foswiki::Plugins::RenderPlugin,>=3644,perl,Required
+Foswiki::Plugins::RenderPlugin,>=4.00,perl,Required
+Foswiki::Plugins::SecurityHeadersPlugin,>=2.00,perl,Optional
 Foswiki::Plugins::TopicInteractionPlugin,>=1340,perl,Required
 Foswiki::Plugins::WebLinkPlugin,>=1,perl,Required
 ONLYIF ( $Foswiki::Plugins::VERSION < 2.1)

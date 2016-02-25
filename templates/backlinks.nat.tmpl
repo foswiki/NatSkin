@@ -2,7 +2,7 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="jqUIDialog {modal:true, height:600, width:800, draggable:true, resizable:true}" title="%MAKETEXT{"Backlinks to [_1]" args="%GETTOPICTITLE{"%BASEWEB%.%BASETOPIC%"}%"}%">
+<div class="jqUIDialog" data-modal="true" data-height="600" data-width="800" data-draggable="true" data-resizable="true" title="%MAKETEXT{"Backlinks to [_1]" args="%GETTOPICTITLE{"%BASEWEB%.%BASETOPIC%" encode="entity"}%"}%">
 %TMPL:P{"content"}%<!-- -->
 %TMPL:P{"backlinksjavascript"}%<!-- -->
 </div>
@@ -10,32 +10,9 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"backlinks::limit"}%500%TMPL:END%
-%TMPL:DEF{"backlinks::loadurl"}%%SCRIPTURL{"rest"}%/RenderPlugin/template?name=backlinks;render=on;topic=%BASEWEB%.%BASETOPIC%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"backlinksjavascript"}%<!-- -->
-<literal>
-<script>
-jQuery(function($) {
-  var url = "%TMPL:P{"backlinks::loadurl"}%",
-      $container = $(".natBacklinksContainer"),
-      $searchAllWebs = $(".natBacklinksSearchAll");
-
-  function updateContainer() {
-    $container.html("<span class='jqAjaxLoader'></span>");
-    if ($searchAllWebs.is(":checked") || $searchAllWebs.val() == 'true') {
-      $container.load(url+";expand=searchallwebs");
-    } else {
-      $container.load(url+";expand=searchweb");
-    }
-  }
-
-  $searchAllWebs.change(updateContainer);
-  updateContainer();
-});
-</script>
-</literal>
-<!-- -->%TMPL:END%
+%TMPL:DEF{"backlinksjavascript"}%<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/backlinks.js'></script>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"content"}%<!-- -->
@@ -52,7 +29,7 @@ jQuery(function($) {
 %{ ################################################################################ }%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"searchweb"}%%TMPL:P{context="SolrPluginEnabled" then="searchweb::solr" else="searchweb::else"}%%TMPL:END%
+%TMPL:DEF{"searchweb"}%%TMPL:P{context="SolrPluginEnabled" then="searchallwebs::solr" else="searchweb::else"}%%TMPL:END%
 %TMPL:DEF{"searchweb::else"}%%TMPL:P{context="DBCachePluginEnabled" then="searchweb::dbcache" else="searchweb::default"}%%TMPL:END%
 
 %TMPL:DEF{"searchweb::default"}%%MAKEINDEX{

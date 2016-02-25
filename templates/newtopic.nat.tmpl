@@ -16,7 +16,7 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="jqUIDialog foswikiFormSteps {width:%TMPL:P{"dialog::width"}%, modal:true, draggable:true, closeOnEscape:true, autoCenter:true}" title="%TMPL:P{"formtitle"}%">
+<div class="jqUIDialog foswikiFormSteps" data-width="%TMPL:P{"dialog::width"}%" data-modal="true" data-draggable="true" data-close-on-escape="true" data-auto-center="true" title="%TMPL:P{"formtitle"}%">
 %TMPL:P{"createform"}%
 </div>
 </noautolink>%TMPL:END%
@@ -50,6 +50,9 @@
 %TMPL:DEF{"formtitlestep"}%<h1>%TMPL:P{"formtitle"}%</h1>%TMPL:END%
 
 %{ ################################################################################ }%
+%TMPL:DEF{"newtopictitle"}%%URLPARAM{"topictitle"}%%TMPL:END%
+
+%{ ################################################################################ }%
 %TMPL:DEF{"topictitlestep"}%<!-- -->
 <div class='foswikiFormStep'>
 <h3 >%MAKETEXT{"Title"}%:</h3>
@@ -66,7 +69,7 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"formbuttons::dialog"}%<!-- -->
-  <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-circle-check'}">%MAKETEXT{"Submit"}%</a>
+  <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-check'}">%MAKETEXT{"Submit"}%</a>
   <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Cancel"}%</a>
 <!-- -->%TMPL:END%
 
@@ -74,9 +77,9 @@
 %TMPL:DEF{"formbuttons::default"}%<!-- -->
 <hr />
 <div class='foswikiFormStep foswikiFormButtons'>
-%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="tick"}%
+%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="fa-check"}%
 %BUTTON{"%MAKETEXT{"Cancel"}%" 
-  icon="cross" 
+  icon="fa-times" 
   target="%URLPARAM{"origurl" 
     default="%IF{"'%BASEWEB%.%BASETOPIC%'='%WEB%.%TOPIC%'"
       then="%BASEWEB%.%HOMETOPIC%"
@@ -90,7 +93,7 @@
 %{ ################################################################################ }%
 %TMPL:DEF{"hiddenoptionsstep"}%%TMPL:P{"hiddentopicnamestep"}%%TMPL:P{"hiddentopicparentstep"}%%TMPL:END%
 %TMPL:DEF{"hiddentopicparentstep"}%<input type="hidden" name="topicparent" value="%URLPARAM{"topicparent" default="%TOPIC%"}%" />%TMPL:END%
-%TMPL:DEF{"hiddentopicnamestep"}%<input type="hidden" class="jqWikiWord {source:'#topictitle'}" name="topic" id="topic" value="%TMPL:P{"newtopic"}%"/>%TMPL:END%
+%TMPL:DEF{"hiddentopicnamestep"}%<input type="hidden" class="jqWikiWord" data-source="#topictitle" data-transliterate="true" name="topic" id="topic" value="%TMPL:P{"newtopic"}%"/>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"excludetopics"}%%IF{"defined DONTCREATETOPICS" 

@@ -7,7 +7,7 @@
 %TMPL:DEF{"bottombar"}%%TMPL:END%
 %TMPL:DEF{"sidebar"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
-%TMPL:DEF{"heading"}%%MAKETEXT{"Child topics of [_1]" args="%GETTOPICTITLE{"%BASEWEB%.%BASETOPIC%"}%"}%%TMPL:END%
+%TMPL:DEF{"heading"}%%MAKETEXT{"Child topics of [_1]" args="%GETTOPICTITLE{"%BASEWEB%.%BASETOPIC%" encode="entity"}%"}%%TMPL:END%
 %TMPL:DEF{"childtopics::limit"}%500%TMPL:END%
 
 %{ ################################################################################ }%
@@ -26,7 +26,7 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="jqUIDialog foswikiFormSteps {modal:true, height:600, width:800, draggable:true, resizable:true}" title="%TMPL:P{"heading"}%">
+<div class="jqUIDialog foswikiFormSteps" data-modal="true" data-height="600" data-width="800" data-draggable="true" data-resizable="true" title="%TMPL:P{"heading"}%">
   <div class="foswikiFormStep natChildTopicsContainer"></div>
   %TMPL:P{"childtopicsjavascript"}%<!-- -->
   <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Close"}%</a>
@@ -104,10 +104,4 @@
 }%<!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"childtopicsjavascript"}%<literal><script>
-jQuery(function($) {
-  var url = "%SCRIPTURL{"rest"}%/RenderPlugin/template?name=childtopics;render=on;topic=%BASEWEB%.%BASETOPIC%;expand=childtopicsearch",
-      $container = $(".natChildTopicsContainer");
-  $container.html('<span class="jqAjaxLoader"></span>').load(url);
-});
-</script></literal>%TMPL:END%
+%TMPL:DEF{"childtopicsjavascript"}%<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/childtopics.js'></script>%TMPL:END%

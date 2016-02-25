@@ -29,12 +29,6 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
 .natBottomBar h3 {
   color:#339000;
 }
-.solrSearchHits h3 a {
-  color:#333;
-} 
-.solrSearchHits h3 .foswikiGrayText a {
-  color:inherit;
-}
 
 .natTopShadow {
   border-top:5px solid #FF9100;
@@ -63,6 +57,8 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
 .natTopicActions .fa {
   color:#666;
 }
+.natTopicActions .natUserAction:hover .fa,
+.natTopicActions .natUserAction:hover,
 .natTopicActions .natTopicAction:hover .fa,
 .natTopicActions .natTopicAction:hover,
 .natTopicActions .sfHover .natMoreActionsTopicAction,
@@ -90,13 +86,16 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
   background-color:transparent;
 }
 
+.redDot a:hover,
 .ui-jqgrid .ui-state-hover a:hover,
 a:hover {
   text-decoration:underline;
   background-color:transparent;
   color:#ED299C;
 }
-.hover {
+.hover,
+.hover a,
+.hover a:hover {
   background-color:transparent;
   color:#ED299C;
 }
@@ -115,10 +114,15 @@ h1 .foswikiTopicSummary,
   color:#818181;
 }
 
+a.jqButton:link {
+  color:#333;
+}
+
 .natLoginHeading,
 .natNoteHeading,
 .natBreadCrumbs a:hover,
 a:hover .foswikiGrayText,
+.foswikiGrayText a:hover ,
 .foswikiTopicInfo a:hover,
 .natTopPanelContents a:hover,
 .natBottomBarContents a:hover,
@@ -148,6 +152,10 @@ h2.marked,
 .foswikiFormSteps h2 a,
 .foswikiFormSteps h2 a:hover {
   color:#ED299C;
+}
+
+a.jqButton:link.jqButtonDisabled {
+  color:#888;
 }
 
 .foswikiAlt h3, .foswikiAlt h4, .foswikiAlt h5, .foswikiAlt h6,

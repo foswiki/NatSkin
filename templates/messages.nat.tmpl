@@ -331,8 +331,8 @@ template that doesn't exist." args="%PARAM2%"}%
 %MAKETEXT{"If you want to create the topic then [[[_1]][click here]]." args="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%SERVERTIME{"$year$mo$day$min$sec"}%"}%
 %TMPL:END%
 %TMPL:DEF{"no_such_topic_template"}%
----++ %MAKETEXT{"Template [_1] does not exist" args="%WEB%.%TOPIC%"}%
-%MAKETEXT{"You are trying to create a topic from a template that does not exist." args="%PARAM1%"}%
+---++ %MAKETEXT{"Template [_1] does not exist" args="%PARAM1%.%PARAM2%"}%
+%MAKETEXT{"You are trying to create a topic from a template that does not exist."}%
 
 %TMPL:P{"goback"}%
 %TMPL:END%

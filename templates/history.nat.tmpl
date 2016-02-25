@@ -2,7 +2,7 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="jqUIDialog foswikiFormSteps {modal:true, draggable:true, width:'auto'}" title="%TMPL:P{"heading"}%">
+<div class="jqUIDialog foswikiFormSteps" data-modal="true" data-draggable="true" data-width="auto" title="%TMPL:P{"heading"}%">
 %TMPL:P{"formstart"}%<!-- -->
 %TMPL:P{"revtable"}%<!-- -->
 %TMPL:P{"formend"}%<!-- -->
@@ -20,7 +20,6 @@
 %{ ################################################################################ }%
 %TMPL:DEF{"formstart_compare"}%<!-- -->
 <form name="main" action="%SCRIPTURLPATH{"compare"}%/%BASEWEB%/%BASETOPIC%">
-<input type="hidden" name="render" value="interweave" />
 <input type="hidden" name="context" value="1" />
 <!-- -->%TMPL:END%
 
@@ -31,7 +30,16 @@
 <!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
+%TMPL:DEF{"options"}%<!-- -->
+<div class="foswikiRight">
+<label><input type="radio" name="render" value="interweave" checked> %MAKETEXT{"interweave"}%</label>
+<label><input type="radio" name="render" value="sidebyside"> %MAKETEXT{"side by side"}%</label>
+</div>
+<!-- -->%TMPL:END%
+
+%{ ################################################################################ }%
 %TMPL:DEF{"formend"}%<!-- -->
+<!-- input type="hidden" name="render" value="interweave" -->
   <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-clock'}">%MAKETEXT{"Compare"}%</a>
   <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Close"}%</a>
 </form>%TMPL:END%
@@ -44,7 +52,7 @@
   text="%TMPL:P{"historyscript"}%"
   requires="JQUERYPLUGIN::LIVEQUERY, JQUERYPLUGIN::BLOCKUI"
 }%%TMPL:END%
-%TMPL:DEF{"historyscript"}%<script class='$id' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/history.js'></script>%TMPL:END%
+%TMPL:DEF{"historyscript"}%<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/history.js'></script>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"restoreform"}%<!-- -->
@@ -70,8 +78,8 @@
     </tr>"
   format="<tr>
     <td><span style='width:2em;display:inline-block;text-align:right'>$rev</span>
-      <input $checked1 type='radio' name='rev2' value='$rev' />
-      <input $checked2 type='radio' name='rev1' value='$rev' />
+      <input $checked1 type='radio' name='rev2' value='$rev' class='natHistoryRadio' />
+      <input $checked2 type='radio' name='rev1' value='$rev' class='natHistoryRadio' />
     </td>
     <td style='width:10em'>$date</td>
     <td>
@@ -84,15 +92,16 @@
     }%<!-- -->
     <td>
       <a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?rev=$rev' title='%MAKETEXT{"View revision [_1]" args="$rev"}%' class='natHistoryAction'>
-        %JQICON{"eye"}% %MAKETEXT{"View"}%
+        %JQICON{"fa-eye"}% %MAKETEXT{"View"}%
       </a>
       <a href='#' title='%MAKETEXT{"Restore revision [_1]" args="$rev"}%' class='natHistoryAction natRestoreAction' data-rev='$rev'>
-        %JQICON{"arrow_refresh"}% %MAKETEXT{"Restore"}%
+        %JQICON{"fa-refresh"}% %MAKETEXT{"Restore"}%
       </a>
      </td>
     </tr>" 
   footer="</table></div>
     <div class='foswikiFormStep'>
+      $percntTMPL:P{\"options\"}$percnt<!-- -->
       $percntIF{\"'$next{'test'}'='test'\" 
         then=\"<a href='%SCRIPTURLPATH{oops}%/%BASEWEB%/%BASETOPIC%?template=oopshistory' class='natHistoryNavi'>
           <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start.png' alt='%MAKETEXT{show last revisions}%' title='%MAKETEXT{show last revisions}%' />

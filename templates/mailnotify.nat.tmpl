@@ -45,7 +45,7 @@ Content-Transfer-Encoding: 8bit
 <p>%MAKETEXT{"New or changed topics in the [_1] web, since [_2] GMT" args="%GETTOPICTITLE{"%WEB%.%HOMETOPIC%"}%,%LASTDATE%"}%:</p>
 <ul style="margin:1em 0;padding:0 0 0 1.5em;">%TMPL:END%
 
-%TMPL:DEF{"HTML:middle"}%<li style="margin:0 0 1em"> <a href="%SCRIPTURL{view}%/%ENCODE{%WEB%}%/%ENCODE{%TOPIC%}%">%GETTOPICTITLE{"%WEB%.%TOPIC%"}%</a> 
+%TMPL:DEF{"HTML:middle"}%<li style="margin:0 0 1em"> <a href="%SCRIPTURL{"view"}%/%ENCODE{%WEB%}%/%ENCODE{%TOPIC%}%">%GETTOPICTITLE{"%WEB%.%TOPIC%"}%</a> 
 %IF{
   "'%WEB%.%TOPIC%'/Summary" 
   then="// $percntQUERY{\"'%WEB%.%TOPIC%'/Summary\"}$percnt"

@@ -1,12 +1,12 @@
 // (c)opyright 2008-2015 Michael Daum http://michaeldaumconsulting.com
 /* helper for oopshistory */
-/* updates the radio buttons in a way to prevent illegal selections */
-
-jQuery(function($) {
 "use strict";
+jQuery(function($) {
 
-  $(".natHistoryTable").livequery(function() {
+  $(".natHistoryTable:not(.natHistoryTableInited)").livequery(function() {
     var $this = $(this);
+
+    $this.addClass("natHistoryTableInited");
 
     function updateRadio () {
       var $rev1Elem = $this.find("[name=rev1]:checked"),
@@ -20,14 +20,14 @@ jQuery(function($) {
       $rev1Elem.parent().parent().addClass("selected");
       $rev2Elem.parent().parent().addClass("selected");
 
-      $this.find("input[type=radio]").attr('disabled', 'disabled').each(function() {
+      $this.find(".natHistoryRadio").attr('disabled', 'disabled').each(function() {
         var $this = $(this),
             rev = $this.attr('name'),
             val = parseInt($this.val(), 10);
 
         if (val > 0) {
-          if ((rev == 'rev2' && val > rev1) ||
-              (rev == 'rev1' && val < rev2)) {
+          if ((rev === 'rev2' && val > rev1) ||
+              (rev === 'rev1' && val < rev2)) {
             $this.removeAttr('disabled');
           }
         }
@@ -38,7 +38,7 @@ jQuery(function($) {
     updateRadio();
     $this.find("input[name=rev1]:first").attr('disabled','disabled').attr('value', '0');
     $this.find("input[name=rev2]:last").attr('disabled','disabled').attr('value', '0');
-    $this.find("input[type=radio]").change(updateRadio);
+    $this.find(".natHistoryRadio").change(updateRadio);
 
     $this.find(".natHistoryNavi").click(function() {
       var $navBtn = $(this), 
@@ -47,8 +47,8 @@ jQuery(function($) {
             name: "history",
             expand: "revtable",
             render: "on"
-          }, $navBtn.metadata()),
-          $container = $this.parent().parent();
+          }, $navBtn.metadata());
+
       $.blockUI({message:"<h1>Loading ...</h1>"});
 
       $this.load(foswiki.getPreference("SCRIPTURL")+"/rest/RenderPlugin/template", 

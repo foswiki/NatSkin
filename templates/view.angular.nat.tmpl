@@ -1,11 +1,12 @@
 %TMPL:INCLUDE{"view"}%
 
-%TMPL:DEF{"body"}%<body id="body" class="natBodyFixed natBodyRight %TMPL:P{"defaultbodyclass"}% %TMPL:P{"bodyclass"}%">%TMPL:P{"defaultbody"}%%TMPL:P{"ng::loadtime"}%</body>%TMPL:END%
+%TMPL:DEF{"body"}%<body id="body" class="natBodyFixed natBodyRight %TMPL:P{"defaultbodyclass"}% %TMPL:P{"bodyclass"}%">%TMPL:P{"defaultbody"}%%RENDERZONE{"body"}%%TMPL:P{"ng::loadtime"}%</body>%TMPL:END%
 
-%TMPL:DEF{"meta::base"}%<base href="%SCRIPTURLPATH{"view"}%/"/><!--[if IE]></base><![endif]-->%TMPL:END%
-%TMPL:DEF{"meta"}%%TMPL:P{"meta::base"}%
-<meta name="fragment" content="!" />
+%TMPL:DEF{"meta"}%<meta name="fragment" content="!" />
+%TMPL:P{"metabase"}%
 %TMPL:PREV%%TMPL:END%
+
+%TMPL:DEF{"metabase"}%<base href="%SCRIPTURLPATH{"view"}%/"/><!--[if IE]></base><![endif]-->%TMPL:END%
 
 %TMPL:DEF{"styles"}%%TMPL:PREV%%TMPL:P{"css::angular"}%%TMPL:END%
 

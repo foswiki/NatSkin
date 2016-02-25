@@ -1,3 +1,6 @@
+/*global foswikiApp:true, angular:true */
+"use strict";
+
 foswikiApp.directive("natBody", [ '$rootScope', 
   function($rootScope) {
     function _testSideBar() {
@@ -7,7 +10,7 @@ foswikiApp.directive("natBody", [ '$rootScope',
 
     return {
       restrict: "C",
-      link: function(scope, elem, attrs) {
+      link: function(scope, elem) {
         var isEmptySideBar;
 
         // things to do when a page loaded
@@ -19,12 +22,14 @@ foswikiApp.directive("natBody", [ '$rootScope',
           isEmptySideBar = _testSideBar();
 
           angular.element(".natSearchBox .foswikiInputField").val("");
+      
+          angular.element(".natTopPanel").hide();
         });
 
         // update the body class according to natskin settings
-        $rootScope.$watch("preferences", function(ev) {
+        $rootScope.$watch("preferences", function() {
           var prefs = $rootScope.preferences || {},
-              sidebar = prefs.NATSKIN_SIDEBAR || 'on';
+              sidebar = prefs.NATSKIN_SIDEBAR || 'on',
               layout = prefs.NATSKIN_LAYOUT || 'fixed',
               classes = [];
 
@@ -42,9 +47,6 @@ foswikiApp.directive("natBody", [ '$rootScope',
                 break;
               case "left":
                 classes.push("natBodyLeft");
-                break;
-              case "both":
-                classes.push("natBodyBoth");
                 break;
               case "off":
                 classes.push("natBodyOff");

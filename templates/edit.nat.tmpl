@@ -54,7 +54,7 @@
 %TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"settingstab"}%%TAB{"%MAKETEXT{"Settings"}%" id="settings"}%%TMPL:P{"settings"}%%ENDTAB%%TMPL:END%
+%TMPL:DEF{"settingstab"}%%TAB{"%MAKETEXT{"Settings"}%" id="settings"}%<noautolink>%TMPL:P{"settings"}%</noautolink>%ENDTAB%%TMPL:END%
 %TMPL:DEF{"settings"}%%TMPL:P{"topicsettings"}%%TMPL:P{"editsettings"}%%TMPL:P{"skinsettings"}%%TMPL:P{"displaysettings"}%%TMPL:P{"commentsettings"}%%TMPL:END%
 
 %{ ################################################################################ }%
@@ -104,15 +104,24 @@
 %TMPL:DEF{"editsettings::wysiwyg"}%<tr>
   <th>%MAKETEXT{"Wysiwyg"}%<input type='hidden' name='Default+NOWYSIWYG' value='undefined' /></th>
   <td>
-    <label><input type='radio' class='foswikiRadioButton' name='Local+NOWYSIWYG' value='undefined' %IF{"preferences[name='NOWYSIWYG'].value=''" then="checked"}% />%MAKETEXT{"default"}%</label>
+    <label><input type='radio' class='foswikiRadioButton' name='%TMPL:P{"editsettings::wysiwyg::var"}%' value='undefined' %IF{"preferences[name='NOWYSIWYG'].value=''" then="checked"}% />%MAKETEXT{"default"}%</label>
   </td>
   <td>
-    <label><input type='radio' class='foswikiRadioButton' name='Local+NOWYSIWYG' value='off' %IF{"preferences[name='NOWYSIWYG'].value='off'" then="checked"}% />%MAKETEXT{"on"}%</label>
+    <label><input type='radio' class='foswikiRadioButton' name='%TMPL:P{"editsettings::wysiwyg::var"}%' value='off' %IF{"preferences[name='NOWYSIWYG'].value='off'" then="checked"}% />%MAKETEXT{"on"}%</label>
   </td>
   <td>
-    <label><input type='radio' class='foswikiRadioButton' name='Local+NOWYSIWYG' value='on' %IF{"preferences[name='NOWYSIWYG'].value='on'" then="checked"}% />%MAKETEXT{"off"}%</label>
+    <label><input type='radio' class='foswikiRadioButton' name='%TMPL:P{"editsettings::wysiwyg::var"}%' value='on' %IF{"preferences[name='NOWYSIWYG'].value='on'" then="checked"}% />%MAKETEXT{"off"}%</label>
   </td>
 </tr>%TMPL:END%
+%TMPL:DEF{"editsettings::wysiwyg::var"}%%IF{
+  "preferences[name='NOWYSIWYG']" 
+  then="%QUERY{"preferences[name='NOWYSIWYG'].type"}%" 
+  else="%IF{
+    "'%WEB%.%TOPIC%'='%USERSWEB%.%WIKINAME%'" 
+    then="Set" 
+    else="Local" 
+  }%"
+}%+NOWYSIWYG%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"displaysettings"}%<!-- -->
@@ -172,37 +181,16 @@
       </tr>
     </table>
   </div>
-%ADDTOZONE{"script" id="NATSKIN::VARIATIONS" requires="JQUERYPLUGIN" text="<script class='$id' type='text/javascript'>
-jQuery(function() {
-  var knownVariations = { %KNOWNVARIATIONS{ format="'$style': ['$variations']" separator=", " varseparator="', '" }%},
-      selectedVariation = '%QUERY{"preferences[name='NATSKIN_VARIATION'].value"}%' || 'undefined';
-
-  function setVariations() {
-    var style = jQuery('#style').val(),
-        varSelect = jQuery('#variation'),
-        variation, selected, i;
-
-    varSelect.empty()
-        .append(\"<option value='undefined'>%MAKETEXT{"default"}%</option>\")
-        .append(\"<option value='none'>%MAKETEXT{"none"}%</option>\");
-
-    if (knownVariations[style]) {
-      varSelect.removeAttr('disabled');
-
-      for (i = 0; i < knownVariations[style].length; i++) {
-        variation = knownVariations[style][i],
-        selected = variation == selectedVariation ? 'selected':'';
-        varSelect.append('<option '+selected+'>'+knownVariations[style][i]+'</option>');
-      }
-    } else {
-      varSelect.attr('disabled', 'disabled');
-    }
+%ADDTOZONE{"script" id="NATSKIN::VARIATIONS" requires="JQUERYPLUGIN" text="<script class='$zone $id foswikiPreferences' type='text/json'>{
+  \"NatSkinEdit\": {
+    \"knownVariations\": {%KNOWNVARIATIONS{ 
+        format="\\"$style\\": [\\"$variations\\"]" 
+        separator=", " 
+        varseparator="\\", \\"" 
+    }%},
+    \"selectedVariation\": \"%QUERY{"preferences[name='NATSKIN_VARIATION'].value"}%\"
   }
-  jQuery('#style').change(function() {
-    setVariations();
-  }).change();
-});
-</script>"}%<!-- -->
+}</script>"}%<!-- -->
 </div>
 <!-- -->%TMPL:END%
 
@@ -330,22 +318,8 @@ jQuery(function() {
 %{ ################################################################################ }%
 %TMPL:DEF{"commentsettings"}%%TMPL:P{
   "comment::system::%COMMENTSYSTEM{default="metacomment"}%::settings"
-}%%ADDTOZONE{"script"
-  id="METACOMMENTPLUGIN::PREFS"
-  text="<script class='$id' type='text/javascript'>
-    jQuery(function($) {
-      $('.natDisplayComments').change(function() {
-        var val = $(this).val();
-        if (val == 'on') {
-          $('#cmtPreferences').fadeIn();
-        } else {
-          $('#cmtPreferences').fadeOut();
-        }
-      });
-    });
-    </script>"
-  requires="JQUERYPLUGIN"
-}%<!-- -->%TMPL:END%
+}%%ADDTOZONE{"script" requires="JQUERYPLUGIN::FOSWIKI" id="NATSKIN::EDIT" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/edit.js'></script>"}%
+<!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"comment::system::metacomment::settings"}%
@@ -356,6 +330,7 @@ jQuery(function() {
     <input type='hidden' name='Default+COMMENTFORMAT' value="undefined" />
     <input type='hidden' name='Default+COMMENTSTATE' value="undefined" />
     <input type='hidden' name='Default+COMMENTMODERATION' value="undefined" />
+    <input type='hidden' name='Default+COMMENTVOTING' value="undefined" />
     <table class="foswikiLayoutTable">
       <tr>
         <th>%MAKETEXT{"Format"}%</th>
@@ -365,9 +340,10 @@ jQuery(function() {
             %FORMATLIST{"%TMPL:P{"comments::formats"}%"
               sort="on"
               unique="on"
+              pattern="(.*)=(.*)"
               split="\s*,\s*"
-              separator=""
-              format="<option $percntIF{\"preferences[name='COMMENTFORMAT'].value='$1'\" then=\"selected\"}$percnt>$percntMAKETEXT{\"$1\"}$percnt</option>"
+              separator="$n"
+              format="<option value='$1' $percntIF{\"preferences[name='COMMENTFORMAT'].value='$1'\" then=\"selected\"}$percnt>$2</option>"
             }%
           </select>
         </td>
@@ -394,6 +370,18 @@ jQuery(function() {
         </td>
         <td>
           <label><input type="radio" class="foswikiRadioButton" name="Local+COMMENTMODERATION" value="off" %IF{"preferences[name='COMMENTMODERATION'].value='off'" then="checked"}% />%MAKETEXT{"off"}%</label>
+        </td>
+      </tr>
+      <tr %IF{"not context LikePluginEnabled" then="style='display:none'"}%>
+        <th>%MAKETEXT{"Voting"}%</th>
+        <td>
+          <label><input type="radio" class="foswikiRadioButton" name="Local+COMMENTVOTING" value="undefined" %IF{"preferences[name='COMMENTVOTING'].value=''" then="checked"}% />%MAKETEXT{"default"}%</label>
+        </td>
+        <td>
+          <label><input type="radio" class="foswikiRadioButton" name="Local+COMMENTVOTING" value="on" %IF{"preferences[name='COMMENTVOTING'].value='on'" then="checked"}% />%MAKETEXT{"on"}%</label>
+        </td>
+        <td>
+          <label><input type="radio" class="foswikiRadioButton" name="Local+COMMENTVOTING" value="off" %IF{"preferences[name='COMMENTVOTING'].value='off'" then="checked"}% />%MAKETEXT{"off"}%</label>
         </td>
       </tr>
     </table>

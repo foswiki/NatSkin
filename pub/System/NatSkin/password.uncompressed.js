@@ -10,9 +10,9 @@
  * This file may be distributed under the terms of the GNU General
  * Public License.
  */
+"use strict";
 
 (function($) {
-"use strict";
 
   var defaults = {
       length: 10,
@@ -102,7 +102,7 @@
               /*
                * OK, figure out what the next element should be
                */
-              if (shouldBe == this.CONSONANT) {
+              if (shouldBe === this.CONSONANT) {
                   shouldBe = this.VOWEL;
               } else { /* should_be == VOWEL */
                   if ((prev & this.VOWEL) ||
