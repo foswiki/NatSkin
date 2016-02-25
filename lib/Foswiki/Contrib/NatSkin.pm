@@ -21,7 +21,7 @@ package Foswiki::Contrib::NatSkin;
 use strict;
 use warnings;
 
-our $VERSION = '4.20';
+our $VERSION = '4.21';
 our $RELEASE = '25 Feb 2016';
 our $SHORTDESCRIPTION = 'Userfriendly Foswiki skin providing a flexible theming engine for professional webdesigns';
 
