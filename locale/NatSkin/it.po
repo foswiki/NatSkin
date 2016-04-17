@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-09-29 20:22+0200\n"
-"Last-Translator: Lieven L. Litaer <qephom@gmx.de>\n"
-"Language-Team: Italian <http://translate.foswiki.org/projects/foswiki/"
-"distribution-master/it/>\n"
+"PO-Revision-Date: 2016-04-17 12:05+0200\n"
+"Last-Translator: Guido Brugnara <gdo@leader.it>\n"
+"Language-Team: Italian <http://translate.foswiki.org/projects/foswiki"
+"/distribution-master/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.1\n"
+"X-Generator: Weblate 2.4\n"
 
 #: templates/oopsgeneric.nat.tmpl:5 templates/oopsgeneric.nat.tmpl:7
 #: templates/oopsgeneric.nat.tmpl:9
@@ -109,14 +109,13 @@ msgid "%1 vs. %2"
 msgstr "(%1 vs. %2)"
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:101
-#, fuzzy
 msgid ""
 "*Administrators:* You can change user's e-mail address using this form. "
 "Enter the users Login or WikiName and the new e-mail address."
 msgstr ""
 "*Amministratori:* potete cambiare gli indirizzi email degli utenti usando "
-"questo modulo. Inserire il [[%1][nome utente]] o il [[%1][WikiName]] degli "
-"utenti e i nuovi indirizzi e-mail."
+"questo modulo. Inserire i login o i WikiName degli utenti e i nuovi "
+"indirizzi e-mail."
 
 #: templates/attachnew.nat.tmpl:8
 msgid ""
@@ -198,7 +197,6 @@ msgid "Add topic %1 to my sidebar navigation"
 msgstr ""
 
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:112
-#, fuzzy
 msgid "Add users or groups to this group"
 msgstr "Inserire utenti o gruppi da aggiungere a questo gruppo"
 
@@ -1672,9 +1670,8 @@ msgid "New parent web"
 msgstr "Nuovo Web padre:"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:127
-#, fuzzy
 msgid "New password"
-msgstr "Nuova password:"
+msgstr "Nuova password"
 
 #: templates/foswiki.nat.tmpl:194 templates/translatetopic.nat.tmpl:121
 #, fuzzy
@@ -1704,9 +1701,8 @@ msgstr "No"
 
 #: templates/childtopics.nat.tmpl:103 templates/childtopics.nat.tmpl:57
 #: templates/childtopics.nat.tmpl:77
-#, fuzzy
 msgid "No child topics"
-msgstr "Nessuna pagina figlia."
+msgstr "Nessuna pagina figlia"
 
 #: templates/renamewebbase.nat.tmpl:57
 #, fuzzy
@@ -2132,9 +2128,8 @@ msgid "Retry"
 msgstr ""
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:135
-#, fuzzy
 msgid "Retype new password"
-msgstr "Ridigita la nuova password:"
+msgstr "Ridigita la nuova password"
 
 #: templates/mailnotify.nat.tmpl:39 templates/mailnotify.nat.tmpl:58
 msgid "Review recent changes in:"
@@ -3046,9 +3041,8 @@ msgstr ""
 "valido e hai dimenticato la password, contatta %1."
 
 #: templates/messages.nat.tmpl:156
-#, fuzzy
 msgid "You are already registered"
-msgstr "Sei già registrato."
+msgstr "Sei già registrato"
 
 #: templates/messages.nat.tmpl:359
 msgid "You are also listed in the %1 topic"
@@ -3208,7 +3202,6 @@ msgstr ""
 "le notifiche di cambiamento password."
 
 #: templates/messages.nat.tmpl:4
-#, fuzzy
 msgid "Your user name has been removed from the Authentication System."
 msgstr "L'utente è stato rimosso dal Sistema di Autenticazione."
 
