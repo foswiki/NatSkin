@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $ld\n"
 "Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-02-26 01:20+0200\n"
+"PO-Revision-Date: 2016-06-27 15:30+0200\n"
 "Last-Translator: Vadim Belman <vrurg@lflat.org>\n"
 "Language-Team: <translation@linux.org.ua>\n"
 "Language: uk\n"
@@ -26,29 +26,25 @@ msgid "%1"
 msgstr "%1"
 
 #: templates/mailnotify.nat.tmpl:3
-#, fuzzy
 msgid "%1 - Automated notification of topic changes in %2"
-msgstr "Автоматичне повідомлення про зміни у темі"
+msgstr "%1 - Автоматичне повідомлення про зміни у темі %2"
 
 #: templates/opensearch.nat.tmpl:16 templates/opensearch.nat.tmpl:29
-#, fuzzy
 msgid "%1 Content Search"
-msgstr "Пошук за форматом"
+msgstr "%1 Пошук за вмістом"
 
 #: templates/opensearch.nat.tmpl:41 templates/opensearch.nat.tmpl:54
-#, fuzzy
 msgid "%1 Person Search"
-msgstr "Пошук запитом"
+msgstr "%1 Пошук людини"
 
 #: templates/backlinks.nat.tmpl:49 templates/backlinks.nat.tmpl:68
 #: templates/backlinks.nat.tmpl:90
 msgid "%1 backlink(s) found"
-msgstr ""
+msgstr "зворотніх посилань знайдено: %1"
 
 #: templates/backlinks.nat.tmpl:117 templates/backlinks.nat.tmpl:142
-#, fuzzy
 msgid "%1 backlink(s) found in all webs"
-msgstr "(зворотні посилання у всіх розділах)"
+msgstr "знайдено зворотніх посилань у всіх розділах: %1"
 
 #: templates/oopsleaseconflict.nat.tmpl:8
 msgid ""
@@ -57,18 +53,16 @@ msgid ""
 msgstr "%1 редагував тему для %2 і блокування все ще активне для іншого %3."
 
 #: templates/messages.nat.tmpl:297
-#, fuzzy
 msgid "%1 has no permission to %2 %3."
-msgstr "Немає прав для перегляду %1"
+msgstr "%1 не має прав щоб %2 %3."
 
 #: templates/validate.nat.tmpl:17
 msgid "%1 has received a suspicious change request from your browser."
 msgstr "%1 отримав підозрілий запит на зміну від Вашого браузера."
 
 #: templates/messages.nat.tmpl:70
-#, fuzzy
 msgid "%1 is an invalid name for a new web."
-msgstr "%1 - неправильне ім'я для нового розділу"
+msgstr "%1 - неправильне ім'я для нового розділу."
 
 #: templates/login.nat.tmpl:13 templates/login.sudo.nat.tmpl:4
 msgid "%1 is currently logged in"
@@ -79,9 +73,8 @@ msgid "%1 is currently set to %2"
 msgstr "%1 вже встановлено на %2"
 
 #: templates/messages.nat.tmpl:165
-#, fuzzy
 msgid "%1 is not a valid %2"
-msgstr "%1 є недозволеним ім'ям форми"
+msgstr "%1 не є дозволеним %2"
 
 #: templates/oopsleaseconflict.nat.tmpl:18
 msgid "%1 may still be editing %2."
@@ -1703,9 +1696,8 @@ msgstr "Ні"
 
 #: templates/childtopics.nat.tmpl:103 templates/childtopics.nat.tmpl:57
 #: templates/childtopics.nat.tmpl:77
-#, fuzzy
 msgid "No child topics"
-msgstr "Нема дочірніх тем."
+msgstr "Немає дочірніх тем"
 
 #: templates/renamewebbase.nat.tmpl:57
 #, fuzzy
@@ -3198,9 +3190,8 @@ msgstr ""
 "листів, включно зі сповіщеннями та змінами пароля."
 
 #: templates/messages.nat.tmpl:4
-#, fuzzy
 msgid "Your user name has been removed from the Authentication System."
-msgstr "Користувача було вилучено з системи аутентифікації."
+msgstr "Ваше ім'я користувача було вилучено з системи аутентифікації."
 
 #: templates/oopsleaseconflict.nat.tmpl:6
 #, fuzzy
