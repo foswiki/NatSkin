@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-09-30 08:27+0200\n"
+"PO-Revision-Date: 2016-12-27 08:31+0200\n"
 "Last-Translator: CH yang <dr3939@gmail.com>\n"
-"Language-Team: Traditional Chinese <http://translate.foswiki.org/projects/"
-"foswiki/distribution-master/zh_TW/>\n"
+"Language-Team: Traditional Chinese "
+"<http://translate.foswiki.org/projects/foswiki/distribution-master/zh_TW/>\n"
 "Language: zh-tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.1\n"
+"X-Generator: Weblate 2.4\n"
 "X-Poedit-Country: Taiwan\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
@@ -26,29 +26,25 @@ msgid "%1"
 msgstr "%1"
 
 #: templates/mailnotify.nat.tmpl:3
-#, fuzzy
 msgid "%1 - Automated notification of topic changes in %2"
-msgstr "主題更新的自動通知"
+msgstr "%1 - 主題 %2 更新自動通知"
 
 #: templates/opensearch.nat.tmpl:16 templates/opensearch.nat.tmpl:29
-#, fuzzy
 msgid "%1 Content Search"
-msgstr "格式化搜尋"
+msgstr "%1 內容搜尋"
 
 #: templates/opensearch.nat.tmpl:41 templates/opensearch.nat.tmpl:54
-#, fuzzy
 msgid "%1 Person Search"
-msgstr "查詢式檢索"
+msgstr "%1 人員搜尋"
 
 #: templates/backlinks.nat.tmpl:49 templates/backlinks.nat.tmpl:68
 #: templates/backlinks.nat.tmpl:90
 msgid "%1 backlink(s) found"
-msgstr ""
+msgstr "%1 發現反項連結"
 
 #: templates/backlinks.nat.tmpl:117 templates/backlinks.nat.tmpl:142
-#, fuzzy
 msgid "%1 backlink(s) found in all webs"
-msgstr "(所有子網中的反向連結)"
+msgstr "%1 發現所有子網中的反向連結"
 
 #: templates/oopsleaseconflict.nat.tmpl:8
 msgid ""
@@ -57,18 +53,16 @@ msgid ""
 msgstr "%1 正被 %2 編輯中，限制將在 %3 後釋放。"
 
 #: templates/messages.nat.tmpl:297
-#, fuzzy
 msgid "%1 has no permission to %2 %3."
-msgstr "無瀏覽 %1 的權限"
+msgstr "%1 無瀏覽 %2 %3 的權限。"
 
 #: templates/validate.nat.tmpl:17
 msgid "%1 has received a suspicious change request from your browser."
 msgstr "％1 收到來自瀏覽器發出的可疑修改要求。"
 
 #: templates/messages.nat.tmpl:70
-#, fuzzy
 msgid "%1 is an invalid name for a new web."
-msgstr "%1 是個非法的新子網名稱"
+msgstr "%1 是個非法的新子網名稱。"
 
 #: templates/login.nat.tmpl:13 templates/login.sudo.nat.tmpl:4
 msgid "%1 is currently logged in"
@@ -79,9 +73,8 @@ msgid "%1 is currently set to %2"
 msgstr "%1 現在已設為 %2"
 
 #: templates/messages.nat.tmpl:165
-#, fuzzy
 msgid "%1 is not a valid %2"
-msgstr "%1 不是個合適的表單名稱"
+msgstr "%1 不是合適的 %2"
 
 #: templates/oopsleaseconflict.nat.tmpl:18
 msgid "%1 may still be editing %2."
@@ -95,19 +88,16 @@ msgstr "%1 主題不存在"
 #: templates/childtopics.nat.tmpl:52 templates/childtopics.nat.tmpl:71
 #: templates/childtopics.nat.tmpl:94 templates/search.nat.tmpl:21
 #: templates/searchformat.nat.tmpl:5
-#, fuzzy
 msgid "%1 topic(s) found"
-msgstr "無子主題。"
+msgstr "%1 發現主題"
 
 #: data/System/NatSkinWebTopicListViewTemplate.txt:23
-#, fuzzy
 msgid "%1 topics found"
-msgstr "無子主題。"
+msgstr "%1 發現主題"
 
 #: templates/compare.nat.tmpl:6 templates/rdiff.nat.tmpl:8
-#, fuzzy
 msgid "%1 vs. %2"
-msgstr "(%1 比上 %2)"
+msgstr "%1 比 %2"
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:101
 #, fuzzy
@@ -137,11 +127,11 @@ msgstr ""
 
 #: templates/topbar.customato.nat.tmpl:86
 msgid "20 Minutes Tutorial"
-msgstr ""
+msgstr "20 分鐘教學"
 
 #: templates/foswiki.nat.tmpl:232
 msgid "<nop>WebDAV Directory"
-msgstr ""
+msgstr "<nop>WebDAV 目錄"
 
 #: templates/attachnew.nat.tmpl:29
 msgid "<strong>Continue</strong> uploading more files"
@@ -152,9 +142,8 @@ msgid "A =.txt= extension is appended to some filenames for security reasons"
 msgstr "因安全考量，部分檔案會加上 =.txt= 的副檔名"
 
 #: data/System/UserRegistrationViewTemplate.txt:145
-#, fuzzy
 msgid "A valid e-mail address. Will be kept confidential."
-msgstr "您的電子信箱將被視為機密。"
+msgstr "有效的電郵地址。將被維持隱密。"
 
 #: templates/actionform.nat.tmpl:19
 msgid "Abandon changes and exit"
@@ -162,35 +151,31 @@ msgstr "放棄改變並離開"
 
 #: templates/newtopic.wwb.tmpl:21 templates/oops.nat.tmpl:27
 msgid "Abort"
-msgstr ""
+msgstr "放棄"
 
 #: templates/renamesidebar.nat.tmpl:4
-#, fuzzy
 msgid "About topics and webs"
-msgstr "移動主題到子網:"
+msgstr "關於主題和子網"
 
 #: templates/messages.nat.tmpl:296
-#, fuzzy
 msgid "Access denied"
 msgstr "禁止訪問"
 
 #: data/System/UserRegistrationViewTemplate.txt:111
 msgid "Account settings"
-msgstr ""
+msgstr "帳號設定"
 
 #: templates/history.nat.tmpl:77
 msgid "Action"
 msgstr "功能"
 
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:100
-#, fuzzy
 msgid "Add member"
 msgstr "增加成員"
 
 #: data/System/MySideBar.txt:101
-#, fuzzy
 msgid "Add to sidebar"
-msgstr "增加使用者"
+msgstr "加到側欄"
 
 #: data/System/MySideBar.txt:106
 msgid "Add topic %1 to my sidebar navigation"
@@ -2396,9 +2381,8 @@ msgid "Sudo login"
 msgstr "(%1 登入)"
 
 #: data/System/WebCreateNewWeb.txt:18
-#, fuzzy
 msgid "Summary"
-msgstr "摘要"
+msgstr "總結"
 
 #: templates/edit.nat.tmpl:47
 msgid "Swedish"
@@ -2580,9 +2564,8 @@ msgstr "本頁的暫存在 %1 。"
 
 #: templates/newtopic.nat.tmpl:58 templates/newtopic.wwb.tmpl:180
 #: templates/renamebase.nat.tmpl:70 templates/translatetopic.nat.tmpl:110
-#, fuzzy
 msgid "Title"
-msgstr "標題:"
+msgstr "標題"
 
 #: templates/managetags.nat.tmpl:26
 msgid "To"
