@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-27 08:31+0200\n"
+"PO-Revision-Date: 2016-12-30 01:49+0200\n"
 "Last-Translator: CH yang <dr3939@gmail.com>\n"
 "Language-Team: Traditional Chinese "
 "<http://translate.foswiki.org/projects/foswiki/distribution-master/zh_TW/>\n"
@@ -100,13 +100,10 @@ msgid "%1 vs. %2"
 msgstr "%1 比 %2"
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:101
-#, fuzzy
 msgid ""
 "*Administrators:* You can change user's e-mail address using this form. "
 "Enter the users Login or WikiName and the new e-mail address."
-msgstr ""
-"*管理者：* 你能使用此表變更使用者的電郵。輸入使用者 [[%1][登錄名]] 或 [[%1]"
-"[WikiName]] 與新的電郵。"
+msgstr "*管理者：* 你能使用此表變更使用者的電郵。輸入使用者登錄名或 WikiName 與新的電郵。"
 
 #: templates/attachnew.nat.tmpl:8
 msgid ""
@@ -182,9 +179,8 @@ msgid "Add topic %1 to my sidebar navigation"
 msgstr ""
 
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:112
-#, fuzzy
 msgid "Add users or groups to this group"
-msgstr "輸入使用者或群組加入這個群組"
+msgstr "增加使用者或群組到這個群組"
 
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:174
 msgid "Adding"
@@ -199,7 +195,6 @@ msgid "Admin"
 msgstr ""
 
 #: templates/login.sudo.nat.tmpl:3
-#, fuzzy
 msgid "Admin Foswiki user authentication"
 msgstr "Foswiki 管理員認證"
 
@@ -216,9 +211,8 @@ msgid "Advanced Search"
 msgstr "進階搜尋"
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:131
-#, fuzzy
 msgid "After submitting this form the e-mails will be changed."
-msgstr "表單提交後，您的密碼將會更新。"
+msgstr "表單提交後，電郵將會更新。"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:58
 #, fuzzy
