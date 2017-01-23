@@ -1,0 +1,43 @@
+%TMPL:DEF{"user::photo::exts"}%jpe?g|gif|png|bmp|svg|JE?PG|GIF|PNG|BMP|SVG%TMPL:END%
+%TMPL:DEF{"user::photo::size"}%48x60%TMPL:END%
+%TMPL:DEF{"user::photo::filter"}%none%TMPL:END%
+
+%TMPL:DEF{"user::photo::url"}%%IF{
+  "'%web%.%topic%'/Photo"
+  then="%PUBURLPATH%/%web%/%topic%/$percntFORMFIELD{\"Photo\" topic=\"%web%.%topic%\"}$percnt"
+  else="$percntATTACHMENTS{
+    \"%web%.%topic%\"
+    name=\".*%TMPL:P{"user::photo::exts"}%\" 
+    warn=\"off\" 
+    limit=\"1\" 
+    attr=\"t\"
+    hidenull=\"off\"
+    format=\"%PUBURLPATH%/%web%/%topic%/$name\"
+    nullformat=\"%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/images/nobody.gif\"
+  }$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"user::photo"}%%IMAGE{
+    "%TMPL:P{"user::photo::url" web="%web%" topic="%topic%"}%"
+    type="plain"
+    align="%IF{"'%align%'=~'^(left|right)$'" then="%align%"}%"
+    size="%TMPL:P{"user::photo::size"}%"
+    filter="%TMPL:P{"user::photo::filter"}%"
+    crop="center"
+    title="%GETTOPICTITLE{"%web%.%topic%"}%"
+}%%TMPL:END%
+
+%TMPL:DEF{"user::photo::thumb::url"}%%IF{
+  "'%web%.%topic%'/Photo"
+  then="%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=%web%.%topic%&file=$percntFORMFIELD{\"Photo\" topic=\"%web%.%topic%\"}$percnt&size=%TMPL:P{"user::photo::size"}%"
+  else="$percntATTACHMENTS{
+    \"%web%.%topic%\"
+    name=\".*%TMPL:P{"user::photo::exts"}%\" 
+    warn=\"off\" 
+    limit=\"1\" 
+    attr=\"t\"
+    hidenull=\"off\"
+    format=\"%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=%web%.%topic%&file=$name&size=%TMPL:P{"user::photo::size"}%\"
+    nullformat=\"%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=%SYSTEMWEB%.JQueryPlugin&file=%SYSTEMWEB%/JQueryPlugin/images/nobody.gif&size=%TMPL:P{"user::photo::size"}%\"
+  }$percnt"
+}%%TMPL:END%

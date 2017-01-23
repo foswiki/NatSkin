@@ -74,10 +74,10 @@ strong {
 }
 
 ins {
-  text-decoration: none;
+  text-decoration:underline;
 }
 del {
-  text-decoration: line-through;
+  text-decoration:line-through;
 }
 
 table {
@@ -87,14 +87,16 @@ table {
 
 img {
   color:transparent;
-  vertical-align:text-bottom;
+  vertical-align:middle;
   border:0;
   /* For IE.  http://css-tricks.com/ie-fix-bicubic-scaling-for-images */
   -ms-interpolation-mode: bicubic;
 }
+/*
 img.foswikiButton {
   vertical-align:middle;
 }
+*/
 
 svg { /* for IE9.  */
   overflow: hidden;
@@ -102,7 +104,6 @@ svg { /* for IE9.  */
 
 label, input, textarea, select, body, button { 
   vertical-align:middle;
-  line-height:1.385em;
 }
 label {
   margin-right:0.5em;
@@ -159,8 +160,7 @@ a {
 .redDot a:hover,
 .treeview a:hover,
 .wysiwyg_link:hover,
-.hover,
-a:hover {
+.hover {
   color:#ffffff;
   background-color:#0055b5;
   text-decoration:none;
@@ -242,9 +242,9 @@ p {
 }
 
 blockquote {
-  border-left:2px solid #ddd;
+  border-left:4px solid #ddd;
   margin:1.3076em 0px; /* 17px  0px */
-  padding:1.385em; /* 18px */
+  padding:0 0 0 1.385em; /* 18px */
   font-style:italic;
 }
 blockquote i {
@@ -262,7 +262,22 @@ blockquote i {
       word-break: break-all;
   -webkit-hyphens: auto;
      -moz-hyphens: auto;
+      -ms-hyphens: auto;
           hyphens: auto;
+}
+.hyphenate {
+  text-align:justify;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+.donthyphenate {
+  -webkit-hyphens: none; 
+     -moz-hyphens: none; 
+      -ms-hyphens: none;
+          hyphens: none; 
 }
 
 /* lists */
@@ -295,22 +310,14 @@ li li {
 }
 */
 
-dd {
-  margin:0em 0em 1.385em 3.0769em;
-}
 dt {
   font-weight:bold;
 }
-.foswikiHorizontal dt {
-  float:left;
-  width:12em;
-  text-align:right;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-  overflow:hidden;
+dt a {
+  text-decoration:none;
 }
-.foswikiHorizontal dd {
-  margin-left:13em;
+dd {
+  margin:0 0 0.75em 3.0769em;
 }
 table ul,
 table ol {
@@ -318,6 +325,8 @@ table ol {
   padding:0 0 0 1.385em;
 }
 
+ol.foswikiNoIndent,
+.foswikiNoIndent ol,
 ul.foswikiNoIndent,
 .foswikiNoIndent ul {
   padding-left:1.3em;
@@ -547,14 +556,6 @@ th[align=center] {
   vertical-align:top;
 }
 
-/*
-.foswikiNullTable td a,
-.foswikiFlatTable td a,
-.foswikiTable td a {
-  word-break:break-all;
-}
-*/
-
 .foswikiFormSteps .foswikiNullTable,
 .foswikiFormSteps .foswikiNullTable td,
 .foswikiFormSteps .foswikiNullTable th,
@@ -748,8 +749,7 @@ h2.marked,
   line-height:1.385em; /* 18px */
 }
 .foswikiAlt h2,
-.alt h2,
-.jqTabContents h2 {
+.alt h2 {
   font-size:1.2308em; /* 16px */
   line-height:1.125em; /* 18px */
   margin-bottom:0.5625em; /* 9px */
@@ -769,6 +769,7 @@ h2.marked,
 
 input[type=search],
 input[type=text],
+input[type=tel],
 input[type=password],
 .foswikiInputField,
 select,
@@ -788,6 +789,7 @@ select:focus,
 select:focus.ui-pg-selbox, /* jqgrid */
 input[type=search]:focus,
 input[type=text]:focus,
+input[type=tel]:focus,
 input[type=password]:focus,
 .foswikiInputField:focus {
   border-color:#9C3063;
@@ -866,7 +868,7 @@ select[disabled],
 button[disabled],
 input[disabled],
 textarea[disabled] {
-  cursor:default;
+  cursor:default !important;
   color:#cfcfcf;
   background-color: #fafafa;
 }
@@ -952,7 +954,7 @@ fieldset .foswikiFormSteps {
 
 .foswikiErrorSummary,
 .error {
-  color:red;
+  color:#a94442;
 }
 label.error,
 span.foswikiErrorSummary {
@@ -961,6 +963,14 @@ span.foswikiErrorSummary {
 div.error,
 div.foswikiErrorSummary {
   padding:1em 0em;
+}
+
+.foswikiInputField.error,
+input[type="password"].error,
+input[type="tel"].error,
+input[type="search"].error,
+input[type="text"].error {
+  border-color:#a94442;
 }
 
 /* colors */
@@ -1009,7 +1019,6 @@ div.foswikiErrorSummary {
   text-align:center;
   margin-left:auto;
   margin-right:auto;
-  display:table;
 }
 .foswikiLeft {
   float:left;
@@ -1172,10 +1181,56 @@ img.foswikiLeft,
   font-style:italic;
 }
 
-/* diff */
-.natDiffTable {
+/* legacy diff */
+.foswikiDiffTable {
+  border:1px solid #ccc;
+  margin-bottom:2em;
   width:100%;
 }
+.foswikiDiffTable table {
+  border:0px;
+}
+
+.foswikiDiffTable td {
+  border:0px;
+}
+
+.foswikiDiffTable th {
+  background:#dddddd;
+}
+.foswikiDiffLineNumberHeader th {
+  background:#eee;
+}
+
+td.foswikiDiffChangedHeader,
+td.foswikiDiffAddedHeader {
+  background:#D0FFD0;
+  border-top:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+}
+.foswikiDiffAddedMarker {
+  background:#aaaadd;
+}
+.foswikiDiffAddedText {
+  background:#ccccff;
+}
+.foswikiDiffChangedMarker,
+.foswikiDiffChangedText {
+}
+
+.foswikiDiffDeletedHeader { }
+
+.foswikiDiffDeletedMarker {
+  background:#dd7777;
+}
+.foswikiDiffDeletedText {
+ background:#ff9999;
+}
+
+td.foswikiDiffChangedText {
+  color:red;
+}
+
 
 /* oops styles */
 .natErrorMsg {
@@ -1246,7 +1301,9 @@ img.foswikiLeft,
 .natUserAction img,
 .natTopicAction img,
 .natUserAction .fa,
-.natTopicAction .fa {
+.natTopicAction .fa,
+.natUserAction .ma,
+.natTopicAction .ma {
   padding:0 0.5em 0 0;
   font-size:120%;
   width:1em;
@@ -1343,7 +1400,7 @@ img.foswikiLeft,
 
 .natChildTopicsContainer,
 .natBacklinksContainer {
-  height:100%;
+  height:auto;
   overflow:auto;
 }
 .natBacklinks .fltMakeIndexWrapper {
@@ -1431,7 +1488,7 @@ a.natFeedIcon {
 .foswikiTipMessage {
   padding:0.678em 1em 0.678em 3em; /* 9.5px 21px 9.5px 42px */
   background-repeat:no-repeat;
-  background-position:1em 50%;
+  background-position:1em 1em;
 }
 .foswikiSuccessMessage,
 .foswikiErrorMessage,
@@ -1494,6 +1551,12 @@ a.natFeedIcon {
 .foswikiTipMessage a {
   color:#004568;
 }
+.foswikiInfoMessage code,
+.foswikiTipMessage code {
+  background-color:#cadff7;
+  border:0;
+}
+
 .foswikiHelp {
   background-color:#DEEBFA;
   border-color:#A3D9FD;
@@ -1552,56 +1615,6 @@ a.natFeedIcon {
   border:0px;
 }
 
-
-/* diff */
-.foswikiDiffTable {
-  border:1px solid #ccc;
-  margin-bottom:2em;
-  width:100%;
-}
-.foswikiDiffTable table {
-  border:0px;
-}
-
-.foswikiDiffTable td {
-  border:0px;
-}
-
-.foswikiDiffTable th {
-  background:#dddddd;
-}
-.foswikiDiffLineNumberHeader th {
-  background:#eee;
-}
-
-td.foswikiDiffChangedHeader,
-td.foswikiDiffAddedHeader {
-  background:#D0FFD0;
-  border-top:1px solid #ccc;
-  border-bottom:1px solid #ccc;
-}
-.foswikiDiffAddedMarker {
-  background:#aaaadd;
-}
-.foswikiDiffAddedText {
-  background:#ccccff;
-}
-.foswikiDiffChangedMarker,
-.foswikiDiffChangedText {
-}
-
-.foswikiDiffDeletedHeader { }
-
-.foswikiDiffDeletedMarker {
-  background:#dd7777;
-}
-.foswikiDiffDeletedText {
- background:#ff9999;
-}
-
-td.foswikiDiffChangedText {
-  color:red;
-}
 .foswikiWebIndent {
   margin:0 0 0 1em;
 }
@@ -1652,20 +1665,6 @@ td.foswikiDiffChangedText {
 .foswikiToc.foswikiLeft {
   max-width: 40%;
 }
-
-/*
-.natMainContents .natExternalLink:after {
-  content:"";
-  background-image:url("external.png");
-  background-repeat:no-repeat;
-  background-position:0 0;
-  margin:0px 3px;
-  width:12px;
-  height:12px;
-  display:inline-block;
-  vertical-align:middle;
-}
-*/
 
 /* prevent margins to collapse with floating elements next to a list */
 .natMainContents ul,
@@ -1730,21 +1729,6 @@ img.alignleft {
 }
 .twistyTrigger a {
   text-decoration:none;
-}
-
-/* image plugin */
-.imageFloat .natExternalLink:after,
-.imageFrame .natExternalLink:after,
-.imageFloat a:after,
-.imageFrame a:after {
-  content:"";
-  margin:0px;
-}
-.imageFloat .natExternalLink:hover,
-.imageFrame .natExternalLink:hover,
-.imageFloat a:hover,
-.imageFrame a:hover {
-  text-decoration:none !important;
 }
 
 .natSideBar li .imagePlain_right {
@@ -1849,10 +1833,10 @@ table.craSideBySide .craCell {
 .fltMakeIndexWrapper table td ul:last-child {
   margin-bottom:0;
 }
-.fltMakeIndexWrapper table td {
+.fltMakeIndexWrapper table.fltLayoutTable > tbody > tr > td {
   padding-left:2em;
 }
-.fltMakeIndexWrapper table td:first-child {
+.fltMakeIndexWrapper table.fltLayoutTable > tbody > tr > td:first-child {
   padding-left:0;
 }
 .fltMakeIndexWrapper li {
@@ -1868,9 +1852,6 @@ table.craSideBySide .craCell {
 }
 .fltMakeIndexWrapper .foswikiTopicInfo {
   margin:0px;
-}
-.fltMakeIndexWrapper .redDot a {
-  display:inline !important;
 }
 
 /* classification plugin */
@@ -2024,6 +2005,9 @@ a:active.natScrollTop {
 }
 .natAttachBody .foswikiAttachments .foswikiMetaDataHelp {
   display:none; /* already linked in sidebar */
+}
+.natMainContents .foswikiAttachments {
+  padding:1px 0px 0px 0px;
 }
 
 /* InfiniteScrollContrib */
@@ -2339,42 +2323,31 @@ a:active.natScrollTop {
 }
 
 /* login */
-.natLoginBody .natBodyContents {
-  margin:0px !important;
-  padding:0px;
-  width:100% !important;
-  height:100%;
-
-  display:-webkit-box;
-  display:-ms-flexbox;
-  display:-webkit-flexbox;
-  display:flex;
-
-  -webkit-box-pack: center; -moz-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-
-  -webkit-box-align: center; 
-  -ms-flex-align: center; 
-  -webkit-align-items: center;
-  align-items: center;
-
-  position:absolute;
-  top:0;
-  left:0;
+.natLoginBody.natBodyFixed .natBodyContents {
+  width:auto;
 }
 
 .natLogin {
-  width:40em; 
   border:1px solid #d6d6d6;
   border-radius:10px;
   background:#fff;
   box-shadow: 0pt 2px 5px rgba(105, 105, 105,  0.7), 0px 0px 8px 5px rgba(247, 247, 247, 0.4) inset;
+
+  /* modal centered */
+  width:40em; 
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%); /* IE 9 */
+  -webkit-transform: translate(-50%, -50%); /* Safari */
+  transform: translate(-50%, -50%);
 }
 
-.natLoginHeading,
-.natNoteHeading {
+.natLoginHeading {
   border-bottom:0px;
   position:absolute;
   margin-top:-1.666em;
@@ -2458,6 +2431,7 @@ a:active.natScrollTop {
   margin:0px;
 }
 .natEditBody .natBodyContents,
+.natEditBody.natBodyFluid .natBodyContents,
 .natEditBody.natBodyBordered .natBodyContents,
 .natEditBody.natBodyFixed .natBodyContents {
   border:0px;
@@ -2511,7 +2485,8 @@ a:active.natScrollTop {
   margin:0 auto;
 }
 
-.natWebMenu .fa {
+.natWebMenu .fa,
+.natWebMenu .ma {
   font-size:1em;
   width:1.3em;
   text-align:left;
@@ -2668,7 +2643,8 @@ a:active.natScrollTop {
   padding:0em 1em;
 }
 .natTopicActions .natMoreActionsMenu ul li img,
-.natTopicActions .natMoreActionsMenu ul li .fa {
+.natTopicActions .natMoreActionsMenu ul li .fa,
+.natTopicActions .natMoreActionsMenu ul li .ma {
   margin-right:0.3em;
   margin-left:-0.2em;
 }
@@ -2679,6 +2655,14 @@ a:active.natScrollTop {
 }
 .natTopicActions .natMoreActionsMenu hr {
   margin:0.5em -1em;
+}
+
+/* topic-specific settings */
+.natBodyTopic_WebStatistics .natMainContents .foswikiTable td a.foswikiNewLink {
+  display:none;
+}
+.natBodyTopic_WebStatistics .natMainContents .foswikiTable td a {
+  word-break:break-word;
 }
 
 /* slideshow fixes */
@@ -2827,14 +2811,9 @@ a:active.natScrollTop {
   .natLoginBody {
     background:#fff !important;;
   }
-  .natLoginBody .natBodyContents {
-    display:block;
-    width:auto !important;
-  }
   .natLogin {
+    transform:none;
     position:static;
-    margin:5em 0 0;
-    width:auto;
     box-shadow:none;
     border:0;
   }
@@ -2848,6 +2827,8 @@ a:active.natScrollTop {
   }
   .natLoginHeading {
     margin-left:0;
+    position:static;
+    margin-top:1em;
   }
   .natLogin .natContact {
     text-align:left;
@@ -2886,3 +2867,5 @@ a:active.natScrollTop {
 .natChatBody .natNavToggle {
   display:none !important;
 }
+
+/* rdiff */

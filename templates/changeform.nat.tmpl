@@ -34,10 +34,16 @@
   "%DBQUERY{
     "TopicType=~'\bTopicType\b' OR @Target.TopicType=~'\bTopicType\b'"
     header="%FORMATLIST{"%WEBFORMS{default=""}%" 
-              format="$percntGETTOPICTITLE{\"$1\"}$percnt=$percntDBQUERY{topic=\"$1\" format=\"$web.$topic\"}$percnt=fa-file-o" 
+              format="$percntDBQUERY{
+                        topic=\"$1\" 
+                        format=\"$expand(topictitle)=$web.$topic=$expand(@Target.Icon or Icon or 'fa-file-o')\"
+                      }$percnt" 
               separator=", "
            }%"
-    format=", $expand(topictitle)=$expand(Target or topic)=$expand(@Target.Icon or Icon or 'fa-file-o')"
+    format=", $expand(topictitle)=$percntDBQUERY{
+                        topic=\"$expand(Target or topic or 'does not exist')\" 
+                        format=\"$dollarweb.$dollartopic\"
+                      }$percnt=$expand(@Target.Icon or Icon or 'fa-file-o')"
     separator=""
   }%"
   sort="on"
@@ -69,24 +75,7 @@
       </label></div></div>"
 }%
 <literal>
-<script>
-jQuery(function($) {
-  var $formlist = $("#formlist"), 
-      selectClass = "checked";
-  function update() {
-    $formlist.find(".row").removeClass(selectClass);
-    $formlist.find("input:checked").parents(".row:first").addClass(selectClass);
-  }
-  $formlist.find(".row").on("click", function() {
-    update($(this));
-  }).mouseenter(function() {
-    $(this).addClass("hover");
-  }).mouseleave(function() {
-    $(this).removeClass("hover");
-  });
-  update();
-});
-</script>
+%ADDTOZONE{"script" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/changeform.js'></script>" id="NATSKIN::CHANGEFORM::JS"}%
 <style>
 #formlist label {
   display:block;

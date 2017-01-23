@@ -1,0 +1,9 @@
+%TMPL:INCLUDE{"moreformfields"}%
+%TMPL:INCLUDE{"user"}%
+%TMPL:DEF{"user::photo::size"}%32x32%TMPL:END%
+
+%TMPL:DEF{"select2::user::format"}% {
+  \"id\":\"$topic\", 
+  \"text\":\"$expand(topictitle)\",
+  \"thumbnail\":\"$percntTMPL:P{\"user::photo::thumb::url\" web=\"$web\" topic=\"$topic\" size=\"%TMPL:P{"user::photo::size"}%\"}$percnt\"
+} %TMPL:END%

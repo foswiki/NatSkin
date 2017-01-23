@@ -1,7 +1,8 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1456411053" format="1.1" version="1"}%
+%META:TOPICINFO{author="micha" comment="" date="1472640502" format="1.1" version="2"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
-Default sidebar implementation
+
+Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] instead.
 
 <verbatim class="tml">
 %STARTINCLUDE%<!-- -->

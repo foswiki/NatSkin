@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1456411053" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1467208814" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 
 %{<verbatim>}%
@@ -6,7 +6,7 @@
 %TMPL:DEF{"form"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
-%TMPL:DEF{"userlist::query"}%form.name=~'\b(UserForm|EmployeePortal)$'%TMPL:END%
+%TMPL:DEF{"userlist::query"}%form.name=~'UserForm$'%TMPL:END%
 %TMPL:DEF{"userlist::title"}%<h1 >%TOPICTITLE%</h1>%TMPL:END%
 %{</verbatim>}%
 
@@ -106,13 +106,12 @@
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"userlist::javascript"}%<literal>
-%JQREQUIRE{"focus"}%
-<script>
+%TMPL:DEF{"userlist::javascript"}%%JQREQUIRE{"focus"}%%ADDTOZONE{
+  "script" id="NATSKINWIKIUSERS" requiers="JQUERYPLUGIN" text="<script type='text/javascript'>
 jQuery(function($) {
   function filterImages(query) {
-    var regex = new RegExp(query, "gi");
-    $(".userlistContainer h2").each(function() {
+    var regex = new RegExp(query, 'gi');
+    $('.userlistContainer h2').each(function() {
       var $this = $(this),
           text = $(this).text();
       if (text.match(regex)) {
@@ -123,24 +122,23 @@ jQuery(function($) {
     });
   }
 
-  $(".userImage").hover(
+  $('.userImage').hover(
     function() {
-      $(this).addClass("hover");
+      $(this).addClass('hover');
     },
     function() {
-      $(this).removeClass("hover");
+      $(this).removeClass('hover');
     }
   );
 
-  $("#userlistFilter").keyup(function(event) {
+  $('#userlistFilter').keyup(function(event) {
     if (event.which == 13) {
       event.preventDefault();
     }
     filterImages($(this).val());
   });
 });
-</script>
-</literal>%TMPL:END%
+</script>"}%%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%

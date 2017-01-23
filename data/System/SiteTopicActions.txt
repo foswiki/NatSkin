@@ -1,21 +1,25 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1456411053" format="1.1" version="1"}%
+%META:TOPICINFO{author="micha" comment="" date="1473934497" format="1.1" version="2"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ %TOPIC%
-Default site-level configuration for the !WebTopicActions !WebComponent
+Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] instead.
 
 <verbatim class="tml">
 %STARTINCLUDE%%USERACTIONS{
   guest="$action(share, SocialSharePluginEnabled)"
-  restrictedactions="raw, edit, edit_raw, edit_settings, edit_form, delete, move, managetags, harvest"
-  format="$edit$attach$action(like, LikePluginEnabled)$new$menu"
+  restrictedactions="attach,delete,diff,edit,edit_form,edit_raw,edit_settings,harvest,managetags,more,move,raw,restore,translatetopic"
+  format="$edit$action(like, LikePluginEnabled)$new$menu"
   history="<div class='natHistoryTopicActions'>$edit$raw$print$view$history$first$prev$next$last$action(close)</div>"
   menu="
+   * $action(attach)
    * $action(move)
    * $action(delete)
    * $action(edit_raw)
    * $action(edit_settings)
    * $action(edit_form)
    * $action(copy_topic)
+   * <hr />
+   * $action(share, SocialSharePluginEnabled)
+   * $action(like, LikePluginEnabled)
    * $action(chat, WebSocketPluginEnabled)
    * <hr />
    * $action(diff)
@@ -37,3 +41,6 @@ Default site-level configuration for the !WebTopicActions !WebComponent
 "
 }%%STOPINCLUDE%
 </verbatim>
+
+%META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%
+%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

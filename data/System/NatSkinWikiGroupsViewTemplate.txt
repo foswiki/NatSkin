@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1456411053" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1467208814" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%<!-- -->
@@ -58,21 +58,18 @@
   </div>
 </div>
 </form>
-<literal>
-<script>
+%ENDTWISTY%
+%ADDTOZONE{"script" id="WIKIGROUPS::JS" requires="JQUERYPLUGIN" text="<script type='text/javascript'>
 jQuery(function($) {
-  $(".createGroupForm").submit(function() {
+  $('.createGroupForm').submit(function() {
     var $this = $(this),
-        groupName = $this.find("input[name='groupname']").val();
+        groupName = $this.find('input[name=groupname]').val();
     if (groupName !== '') {
-      $this.find("input[name='redirectto']").val('%WEB%.'+groupName);
+      $this.find('input[name=redirectto]').val('%WEB%.'+groupName);
     }
   });
 });
-</script>
-</literal>
-%ENDTWISTY%
-%TMPL:END%
+</script>"}%%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%

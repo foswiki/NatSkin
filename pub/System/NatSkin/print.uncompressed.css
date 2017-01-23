@@ -11,6 +11,7 @@
     content: string(title);
     font-family:arial,Helvetica,sans-serif;
     font-size:12px;
+    width:50%;
   }
   @top-center {
     font-family:arial,Helvetica,sans-serif;
@@ -19,6 +20,7 @@
   @top-right {
     font-family:arial,Helvetica,sans-serif;
     font-size:12px;
+    width:50%;
   }
   @top-right-corner {
     font-family:arial,Helvetica,sans-serif;
@@ -131,9 +133,10 @@ ul, ol, dl {
 
 pre {
   page-break-inside:avoid;
-  overflow:hidden;
   white-space:pre-wrap;
   word-break:break-all;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
 }
 
 .natPageBreakAfter {
@@ -203,6 +206,7 @@ p + p { text-indent: 1.5em }
 
 img {
   page-break-inside: avoid;
+  max-width:100%;
 }
 
 

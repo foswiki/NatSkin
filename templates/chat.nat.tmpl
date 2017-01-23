@@ -1,0 +1,17 @@
+%TMPL:INCLUDE{"page"}%
+%TMPL:INCLUDE{"chatbase"}%
+
+%TMPL:DEF{"bodyclass"}%natChatBody%TMPL:END%
+
+%TMPL:DEF{"topbar"}%%TMPL:END%
+%TMPL:DEF{"toppanel::contents"}%%TMPL:END%
+
+%TMPL:DEF{"bodycontents"}%<div class="natBodyContents" id="PageTop">
+%TMPL:P{"topbar"}%<!-- -->
+%TMPL:P{"main"}%
+<span id="PageBottom"></span>
+</div>%TMPL:END%
+
+%TMPL:DEF{"main::contents"}%%TMPL:END%
+%TMPL:DEF{"afterbodycontents"}%%TMPL:P{"chat"}%%TMPL:PREV%%TMPL:END%
+

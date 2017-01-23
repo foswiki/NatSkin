@@ -11,7 +11,9 @@
       \"initAutoComplete\": %TMPL:P{"initAutoComplete"}%,
       \"initRedDot\": %TMPL:P{"initRedDot"}%,
       \"initBusyIndicator\": %TMPL:P{"initBusyIndicator"}%,
-      \"initExternalLinks\": %TMPL:P{"initExternalLinks"}%
+      \"initExternalLinks\": %TMPL:P{"initExternalLinks"}%,
+      \"sideBar\": \"%NATSKIN_SIDEBAR{default="on"}%\",
+      \"layout\": \"%NATSKIN_LAYOUT{default="fixed"}%\"
     }
 }</script>"
 }%%ADDTOZONE{
@@ -34,7 +36,6 @@
 %TMPL:DEF{"initBusyIndicator"}%true%TMPL:END%
 %TMPL:DEF{"initExternalLinks"}%true%TMPL:END%
 
-%TMPL:DEF{"defaultjavascript"}%<!-- -->
-%TMPL:PREV%%TMPL:END%
+%TMPL:DEF{"defaultjavascript"}%%TMPL:PREV%%TMPL:END%
 
 %TMPL:DEF{"javascript"}%%TMPL:P{"defaultjavascript"}%%TMPL:END%

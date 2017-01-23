@@ -114,17 +114,6 @@ msgid ""
 "Enter the users Login or WikiName and the new e-mail address."
 msgstr ""
 
-#: templates/attachnew.nat.tmpl:8
-msgid ""
-"*Link checkbox*: In case the attached file is a JPG, GIF or PNG image and "
-"you check the box, it will create an inline image (e.g. show the image) at "
-"the end of the topic.  For other file types a simple link will be created."
-msgstr ""
-
-#: templates/attachagain.nat.tmpl:24
-msgid "*Move attachment*: An attachment can be deleted by moving it to %1"
-msgstr ""
-
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:53
 msgid ""
 "*Note:* A group name must be a [[%SYSTEMWEB%.WikiWord][WikiWord]] and end "
@@ -135,12 +124,8 @@ msgstr ""
 msgid "20 Minutes Tutorial"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:232
+#: templates/foswiki.nat.tmpl:207
 msgid "<nop>WebDAV Directory"
-msgstr ""
-
-#: templates/attachnew.nat.tmpl:29
-msgid "<strong>Continue</strong> uploading more files"
 msgstr ""
 
 #: templates/messages.nat.tmpl:255
@@ -149,7 +134,7 @@ msgstr ""
 "Разширение =.txt= се добавя към някои имена на файлове от съображения за "
 "сигурност"
 
-#: data/System/UserRegistrationViewTemplate.txt:145
+#: data/System/UserRegistrationViewTemplate.txt:149
 msgid "A valid e-mail address. Will be kept confidential."
 msgstr ""
 
@@ -157,7 +142,7 @@ msgstr ""
 msgid "Abandon changes and exit"
 msgstr ""
 
-#: templates/newtopic.wwb.tmpl:21 templates/oops.nat.tmpl:27
+#: templates/newtopic.nat.tmpl:21 templates/oops.nat.tmpl:27
 msgid "Abort"
 msgstr ""
 
@@ -171,15 +156,15 @@ msgstr "Преместване на страницата в раздел:"
 msgid "Access denied"
 msgstr "Достъпът отказан"
 
-#: data/System/UserRegistrationViewTemplate.txt:111
+#: data/System/UserRegistrationViewTemplate.txt:115
 msgid "Account settings"
 msgstr ""
 
-#: templates/history.nat.tmpl:77
+#: templates/history.nat.tmpl:84
 msgid "Action"
 msgstr "Действие"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:100
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:97
 #, fuzzy
 msgid "Add member"
 msgstr "Добавяне на ред"
@@ -192,20 +177,20 @@ msgstr ""
 msgid "Add topic %1 to my sidebar navigation"
 msgstr ""
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:112
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:109
 #, fuzzy
 msgid "Add users or groups to this group"
 msgstr "Първо премахнете потребителя от груп(ата/ите) %1."
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:174
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:171
 msgid "Adding"
 msgstr ""
 
-#: data/System/NatSkinUserViewTemplate.txt:52
+#: data/System/NatSkinUserViewTemplate.txt:51
 msgid "Address"
 msgstr ""
 
-#: data/System/SiteMenu.txt:61
+#: data/System/SiteMenu.txt:60
 msgid "Admin"
 msgstr ""
 
@@ -218,7 +203,7 @@ msgstr "Автентикация на Администратора на Foswiki"
 msgid "Admin Tools"
 msgstr ""
 
-#: data/System/SiteMenu.txt:42
+#: data/System/SiteMenu.txt:41
 msgid "Admin docs"
 msgstr ""
 
@@ -287,23 +272,19 @@ msgstr ""
 "Всички промени, направени от вас по страницата преди да дойдете на тази "
 "страница , са запазени."
 
-#: data/System/SiteMenu.txt:65
+#: data/System/SiteMenu.txt:64
 #, fuzzy
 msgid "Applications"
 msgstr "Действие"
 
-#: templates/foswiki.nat.tmpl:30
+#: templates/foswiki.nat.tmpl:27
 msgid "Attach"
 msgstr "Прикрепи"
 
-#: templates/foswiki.nat.tmpl:31
+#: templates/foswiki.nat.tmpl:28
 #, fuzzy
 msgid "Attach files and images"
 msgstr "Прикрепяне на файл към %1"
-
-#: templates/attachtables.nat.tmpl:95
-msgid "Attachment"
-msgstr "Прикрепен файл"
 
 #: templates/messages.nat.tmpl:346
 msgid "Attachment '%1' does not exist"
@@ -317,12 +298,12 @@ msgstr "Изтриването на притурката се провали"
 msgid "Attachment move failed"
 msgstr "Преместването на притурката се провали"
 
-#: templates/attach.nat.tmpl:13 templates/attachtables.nat.tmpl:43
-#: templates/copytopic.nat.tmpl:29 templates/edit.nat.tmpl:250
+#: templates/attach.nat.tmpl:13 templates/copytopic.nat.tmpl:29
+#: templates/edit.nat.tmpl:250
 msgid "Attachments"
 msgstr "Притурки"
 
-#: templates/attach.nat.tmpl:25 templates/attachnew.nat.tmpl:36
+#: templates/attach.nat.tmpl:25
 #, fuzzy
 msgid "Attachments at %1"
 msgstr "Притурки към %1"
@@ -331,17 +312,22 @@ msgstr "Притурки към %1"
 msgid "Attention"
 msgstr "Внимание"
 
-#: templates/history.nat.tmpl:75
+#: templates/history.nat.tmpl:82
 msgid "Author"
 msgstr ""
 
-#: templates/view.nat.tmpl:108
+#: templates/newtopic.nat.tmpl:19
+#, fuzzy
+msgid "Back one step"
+msgstr "Обратно в страницата"
+
+#: templates/view.nat.tmpl:116
 #, fuzzy
 msgid "Back to view mode"
 msgstr "Обратно в страницата"
 
 #: templates/backlinksallwebs.nat.tmpl:6 templates/backlinksweb.nat.tmpl:5
-#: templates/foswiki.nat.tmpl:36
+#: templates/foswiki.nat.tmpl:32
 msgid "Backlinks"
 msgstr "Обратни връзки"
 
@@ -363,11 +349,6 @@ msgstr "Обратни връзки към %1 в %2 Раздел"
 msgid "Base web %1 is missing or does not exist"
 msgstr "Основния раздел %1 липсва или не съществува"
 
-#: templates/attachnew.nat.tmpl:18
-#, fuzzy
-msgid "Batch upload"
-msgstr "Отказ"
-
 #: data/System/NatSkinStyleBrowser.txt:38
 msgid "Bordered"
 msgstr ""
@@ -380,7 +361,7 @@ msgstr ""
 msgid "Breadcrumbs navigation"
 msgstr ""
 
-#: data/System/SiteMenu.txt:53
+#: data/System/SiteMenu.txt:52
 msgid "Bugreport"
 msgstr ""
 
@@ -394,17 +375,17 @@ msgid "Can't get an e-mail address for %1"
 msgstr "невалиден адрес за електронна поща"
 
 #: data/Sandbox/NatSkinTest.txt:527 data/Sandbox/NatSkinTest.txt:552
-#: templates/actionform.nat.tmpl:18 templates/attachagain.nat.tmpl:30
-#: templates/changeform.nat.tmpl:26 templates/copytopic.nat.tmpl:43
-#: templates/kinosearch.nat.tmpl:8 templates/languageselector.nat.tmpl:29
-#: templates/loginbase.nat.tmpl:75 templates/managetags.nat.tmpl:33
-#: templates/messages.nat.tmpl:280 templates/moveattachment.nat.tmpl:67
-#: templates/newtopic.nat.tmpl:73 templates/newtopic.nat.tmpl:81
-#: templates/oopsleaseconflict.nat.tmpl:55 templates/print.nat.tmpl:29
-#: templates/renamebase.nat.tmpl:17 templates/renameconfirm.nat.tmpl:7
-#: templates/renamedelete.nat.tmpl:14 templates/renamewebbase.nat.tmpl:13
-#: templates/renamewebconfirm.nat.tmpl:7 templates/search.nat.tmpl:31
-#: templates/translatetopic.nat.tmpl:131 templates/validate.nat.tmpl:28
+#: templates/actionform.nat.tmpl:18 templates/changeform.nat.tmpl:26
+#: templates/copytopic.nat.tmpl:43 templates/kinosearch.nat.tmpl:8
+#: templates/languageselector.nat.tmpl:29 templates/loginbase.nat.tmpl:75
+#: templates/managetags.nat.tmpl:33 templates/messages.nat.tmpl:280
+#: templates/moveattachment.nat.tmpl:67 templates/newtopic.old.tmpl:73
+#: templates/newtopic.old.tmpl:81 templates/oopsleaseconflict.nat.tmpl:55
+#: templates/print.nat.tmpl:29 templates/renamebase.nat.tmpl:17
+#: templates/renameconfirm.nat.tmpl:7 templates/renamedelete.nat.tmpl:14
+#: templates/renamewebbase.nat.tmpl:13 templates/renamewebconfirm.nat.tmpl:7
+#: templates/search.nat.tmpl:31 templates/translatetopic.nat.tmpl:131
+#: templates/validate.nat.tmpl:28
 msgid "Cancel"
 msgstr "Отказ"
 
@@ -420,7 +401,7 @@ msgstr "Разделът %1 не може да бъде създаден, тъй
 msgid "Cannot rename %1 to %2 because it already exists."
 msgstr "%1 не може да бъде преименуван/а на %2 , тъй като %2  вече съществува."
 
-#: templates/sidebar.nat.tmpl:52
+#: templates/sidebar.nat.tmpl:55
 msgid "Categories"
 msgstr "Категории"
 
@@ -452,12 +433,7 @@ msgstr "Смяна на език"
 msgid "Change password"
 msgstr "Смяна на парола"
 
-#: templates/attachagain.nat.tmpl:29
-#, fuzzy
-msgid "Change properties"
-msgstr "Промяна само на свойствата"
-
-#: templates/foswiki.nat.tmpl:136
+#: templates/foswiki.nat.tmpl:117
 #, fuzzy
 msgid "Change the name and/or the location of this topic"
 msgstr "Промяна на настройките за тази страница"
@@ -467,7 +443,7 @@ msgstr "Промяна на настройките за тази страниц�
 msgid "Changed"
 msgstr "Променен:"
 
-#: templates/sidebar.nat.tmpl:53
+#: templates/sidebar.nat.tmpl:56
 msgid "Changes"
 msgstr "Промени"
 
@@ -490,11 +466,11 @@ msgstr ""
 "премахнати автоматично. =бел.прев.=: Не използвайте кирилица ако не сте "
 "сигурни, че файловата ви система поддържа кирилица в имената на файловете."
 
-#: templates/foswiki.nat.tmpl:79
+#: templates/foswiki.nat.tmpl:70
 msgid "Chat"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:80
+#: templates/foswiki.nat.tmpl:71
 #, fuzzy
 msgid "Chat about this topic"
 msgstr "Създаване на тази Страница"
@@ -509,7 +485,7 @@ msgstr "Подстраници в раздел %1"
 msgid "Child topics of %1"
 msgstr "Подстраници в раздел %1"
 
-#: templates/foswiki.nat.tmpl:48
+#: templates/foswiki.nat.tmpl:42
 msgid "Children"
 msgstr ""
 
@@ -517,12 +493,12 @@ msgstr ""
 msgid "Chinese"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:193
+#: data/System/UserRegistrationViewTemplate.txt:197
 #, fuzzy
 msgid "Choose a <nop>WikiName"
 msgstr "Име на страницата"
 
-#: data/System/UserRegistrationViewTemplate.txt:130
+#: data/System/UserRegistrationViewTemplate.txt:134
 #, fuzzy
 msgid "Choose a login name"
 msgstr "Моля, въведете администраторската парола за Wiki."
@@ -531,7 +507,7 @@ msgstr "Моля, въведете администраторската паро
 msgid "Choose a new form for %1"
 msgstr "Изберете нова форма за %1"
 
-#: data/System/UserRegistrationViewTemplate.txt:154
+#: data/System/UserRegistrationViewTemplate.txt:158
 #, fuzzy
 msgid "Choose a password"
 msgstr "Смяна на парола"
@@ -554,27 +530,27 @@ msgstr ""
 msgid "Clear selection"
 msgstr "Действие"
 
-#: templates/foswiki.nat.tmpl:75
+#: templates/foswiki.nat.tmpl:66
 msgid "Click to like/unlike this topic"
 msgstr ""
 
 #: templates/attach.nat.tmpl:19 templates/backlinks.nat.tmpl:21
 #: templates/backlinksallwebs.nat.tmpl:18 templates/backlinksweb.nat.tmpl:13
 #: templates/childtopics.nat.tmpl:16 templates/childtopics.nat.tmpl:32
-#: templates/foswiki.nat.tmpl:145 templates/history.nat.tmpl:44
+#: templates/foswiki.nat.tmpl:125 templates/history.nat.tmpl:51
 #: templates/oopsmore.nat.tmpl:14 templates/viewraw.nat.tmpl:12
 msgid "Close"
 msgstr "Затваряне"
 
-#: templates/view.nat.tmpl:168
+#: templates/view.nat.tmpl:190
 msgid "Close broadcast message"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:146 templates/foswiki.nat.tmpl:148
+#: templates/foswiki.nat.tmpl:126 templates/foswiki.nat.tmpl:127
 msgid "Close this dialog"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:264
+#: data/System/UserRegistrationViewTemplate.txt:268
 msgid "Collaboration details"
 msgstr ""
 
@@ -582,7 +558,7 @@ msgstr ""
 msgid "Color %1 has an invalid format"
 msgstr "Цвета %1 е с невалиден формат"
 
-#: templates/history.nat.tmpl:76
+#: templates/history.nat.tmpl:83
 msgid "Comment"
 msgstr "Коментар"
 
@@ -596,7 +572,7 @@ msgstr "Коментари:"
 msgid "Comments"
 msgstr "Коментари:"
 
-#: templates/compare.nat.tmpl:17 templates/history.nat.tmpl:43
+#: templates/compare.nat.tmpl:17 templates/history.nat.tmpl:50
 #, fuzzy
 msgid "Compare"
 msgstr "(още)"
@@ -606,7 +582,7 @@ msgstr "(още)"
 msgid "Confidential"
 msgstr "Конфликт"
 
-#: data/System/SiteMenu.txt:73
+#: data/System/SiteMenu.txt:72
 msgid "Configure Foswiki"
 msgstr ""
 
@@ -636,11 +612,11 @@ msgstr "Смяна на език"
 msgid "Continue and try to rename web?"
 msgstr "Продължете и се опитайте да преименувате раздела."
 
-#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:284
+#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:251
 msgid "Copy"
 msgstr ""
 
-#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:285
+#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:252
 msgid "Copy topic"
 msgstr "Копиране на страница"
 
@@ -653,37 +629,37 @@ msgstr "Шаблонът не може да бъде създаден"
 msgid "Could not save %1."
 msgstr "Неуспешен запис на %1."
 
-#: data/System/NatSkinUserViewTemplate.txt:54
-#: data/System/UserRegistrationViewTemplate.txt:237
+#: data/System/NatSkinUserViewTemplate.txt:53
+#: data/System/UserRegistrationViewTemplate.txt:241
 #, fuzzy
 msgid "Country"
 msgstr "Страна:"
 
-#: templates/404.nat.tmpl:50 templates/newtopic.wwb.tmpl:22
+#: templates/404.nat.tmpl:50 templates/newtopic.nat.tmpl:22
 #, fuzzy
 msgid "Create"
 msgstr "Създаване на '%1'"
 
-#: templates/foswiki.nat.tmpl:287
+#: templates/newtopic.old.tmpl:3 templates/newtopic.old.tmpl:4
+#, fuzzy
+msgid "Create a Topic"
+msgstr "Нова Страница"
+
+#: templates/newtopic.nat.tmpl:3 templates/newtopic.old.tmpl:5
+#, fuzzy
+msgid "Create a Topic in %1"
+msgstr "Нова Страница"
+
+#: templates/foswiki.nat.tmpl:253
 msgid "Create a copy of this topic under a new name"
 msgstr ""
 
-#: templates/newtopic.wwb.tmpl:151
-#, fuzzy
-msgid "Create a new %1 in %2:"
-msgstr "Нова Страница"
-
-#: templates/newtopic.nat.tmpl:3 templates/newtopic.nat.tmpl:4
-#, fuzzy
-msgid "Create a new topic"
-msgstr "Нова Страница"
-
-#: templates/foswiki.nat.tmpl:196 templates/newtopic.nat.tmpl:5
+#: templates/foswiki.nat.tmpl:172
 #, fuzzy
 msgid "Create a new topic in the %1 web"
 msgstr "Създаване на нова страница в Раздел %1"
 
-#: templates/foswiki.nat.tmpl:160
+#: templates/foswiki.nat.tmpl:137
 msgid "Create a new topic serving as a translation for this topic"
 msgstr ""
 
@@ -692,12 +668,12 @@ msgstr ""
 msgid "Create a new translation"
 msgstr "Нова Страница"
 
-#: data/System/SiteMenu.txt:75 data/System/WebCreateNewWeb.txt:3
+#: data/System/SiteMenu.txt:74 data/System/WebCreateNewWeb.txt:3
 #, fuzzy
 msgid "Create a new web"
 msgstr "Нова Страница"
 
-#: templates/sidebar.nat.tmpl:20
+#: templates/sidebar.nat.tmpl:23
 #, fuzzy
 msgid "Create a personal sidebar"
 msgstr "Създаване на личен страничен панел"
@@ -732,31 +708,27 @@ msgstr "(редакция на формата)"
 msgid "DataForm"
 msgstr ""
 
-#: templates/attachtables.nat.tmpl:95 templates/history.nat.tmpl:74
+#: templates/history.nat.tmpl:81
 msgid "Date"
 msgstr "Дата"
 
-#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:122
-#: templates/newtopic.wwb.tmpl:130 templates/newtopic.wwb.tmpl:57
+#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:100
+#: templates/newtopic.nat.tmpl:48 templates/newtopic.old.tmpl:122
 #, fuzzy
 msgid "Default"
 msgstr "Шаблон по подразбиране"
 
-#: templates/newtopic.wwb.tmpl:132
-msgid "Default template for the selected type"
-msgstr ""
-
-#: templates/newtopic.nat.tmpl:120
+#: templates/newtopic.old.tmpl:120
 #, fuzzy
 msgid "Default topic as defined in WebTopicEditTemplate"
 msgstr "Формата трябва да е дефинирана в страницата %1"
 
-#: templates/newtopic.wwb.tmpl:59
+#: templates/newtopic.nat.tmpl:121 templates/newtopic.nat.tmpl:50
 #, fuzzy
-msgid "Default wiki topic"
+msgid "Default wiki content"
 msgstr "Изтриване на страница"
 
-#: templates/foswiki.nat.tmpl:127 templates/renamedelete.nat.tmpl:13
+#: templates/foswiki.nat.tmpl:110 templates/renamedelete.nat.tmpl:13
 #: templates/renamedelete.nat.tmpl:6 templates/renamewebdelete.nat.tmpl:3
 msgid "Delete"
 msgstr "Изтриване"
@@ -771,12 +743,7 @@ msgstr "Изтриване"
 msgid "Delete attachment '%1'"
 msgstr "Изтриване на притурка"
 
-#: templates/attachtables.nat.tmpl:78
-#, fuzzy
-msgid "Delete this attachment"
-msgstr "Изтриване на притурка"
-
-#: templates/foswiki.nat.tmpl:128
+#: templates/foswiki.nat.tmpl:111
 #, fuzzy
 msgid "Delete this topic"
 msgstr "Изтриване на страница"
@@ -801,7 +768,7 @@ msgstr ""
 msgid "Destination"
 msgstr "Версия"
 
-#: data/System/SiteMenu.txt:43
+#: data/System/SiteMenu.txt:42
 msgid "Developer docs"
 msgstr ""
 
@@ -814,7 +781,7 @@ msgstr "Забравена парола?"
 msgid "Did you want to [[%1][reset %2's password]]?"
 msgstr "Да не искахте да нулирате [[%1][паролата на %2]]?"
 
-#: templates/foswiki.nat.tmpl:278
+#: templates/foswiki.nat.tmpl:246
 msgid "Diff"
 msgstr ""
 
@@ -833,19 +800,19 @@ msgstr "История"
 msgid "Display settings"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:281
+#: templates/foswiki.nat.tmpl:248
 msgid "Display the most recent change of this topic"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:207
+#: templates/foswiki.nat.tmpl:181
 msgid "Display this topic in PDF format"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:57
+#: templates/foswiki.nat.tmpl:49
 msgid "Display this topic in a printer-friendly manner"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:45
+#: templates/foswiki.nat.tmpl:39
 #, fuzzy
 msgid "Display this version of the topic"
 msgstr "title='Версия за печат на тази страница' accesskey='p'>Версия за печат"
@@ -863,15 +830,15 @@ msgstr ""
 msgid "Don't forget to check your topic settings."
 msgstr "не забравяйте да проверите Настройките на Страницата си"
 
-#: templates/foswiki.nat.tmpl:238
+#: templates/foswiki.nat.tmpl:212
 msgid "Download"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:241
+#: templates/foswiki.nat.tmpl:214
 msgid "Download assets from an external url and attach them to this topic"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:239
+#: templates/foswiki.nat.tmpl:213
 msgid "Download external resource"
 msgstr ""
 
@@ -928,11 +895,11 @@ msgstr ""
 msgid "Dutch"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:97
+#: templates/foswiki.nat.tmpl:85
 msgid "Edit"
 msgstr "Редактиране"
 
-#: templates/foswiki.nat.tmpl:91
+#: templates/foswiki.nat.tmpl:80
 #, fuzzy
 msgid "Edit Raw"
 msgstr "Редактиране"
@@ -942,22 +909,22 @@ msgstr "Редактиране"
 msgid "Edit anyway"
 msgstr "Редактиране все пак!"
 
-#: templates/foswiki.nat.tmpl:103
+#: templates/foswiki.nat.tmpl:90
 #, fuzzy
 msgid "Edit form"
 msgstr "(редакция на формата)"
 
-#: templates/foswiki.nat.tmpl:104
+#: templates/foswiki.nat.tmpl:91
 #, fuzzy
 msgid "Edit form data"
 msgstr "(редакция на формата)"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:101
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:98
 #, fuzzy
 msgid "Edit group"
 msgstr "Нова Страница"
 
-#: templates/foswiki.nat.tmpl:118
+#: templates/foswiki.nat.tmpl:102
 #, fuzzy
 msgid "Edit hidden preference settings of this topic"
 msgstr "Редактиране настройките на тази страница"
@@ -966,51 +933,46 @@ msgstr "Редактиране настройките на тази страни
 msgid "Edit my sidebar"
 msgstr ""
 
-#: templates/attachtables.nat.tmpl:76
-#, fuzzy
-msgid "Edit properties of this attachment"
-msgstr "Преместване или изтриване на притурка"
-
 #: templates/edit.nat.tmpl:93
 #, fuzzy
 msgid "Edit settings"
 msgstr "Редактиране на текст"
 
-#: templates/foswiki.nat.tmpl:109
+#: templates/foswiki.nat.tmpl:95
 msgid "Edit text"
 msgstr "Редактиране на текст"
 
-#: templates/foswiki.nat.tmpl:110
+#: templates/foswiki.nat.tmpl:96
 #, fuzzy
 msgid "Edit text data"
 msgstr "Редактиране на текст"
 
-#: templates/foswiki.nat.tmpl:106
+#: templates/foswiki.nat.tmpl:92
 #, fuzzy
 msgid "Edit the form data of this topic"
 msgstr "Промяна на настройките за тази страница"
 
-#: templates/foswiki.nat.tmpl:94
+#: templates/foswiki.nat.tmpl:82
 #, fuzzy
 msgid "Edit the raw text of this topic"
 msgstr "Промяна на настройките за тази страница"
 
-#: templates/foswiki.nat.tmpl:112
+#: templates/foswiki.nat.tmpl:97
 #, fuzzy
 msgid "Edit the text data of this topic"
 msgstr "Промяна на настройките за тази страница"
 
-#: templates/foswiki.nat.tmpl:100 templates/foswiki.nat.tmpl:98
+#: templates/foswiki.nat.tmpl:86 templates/foswiki.nat.tmpl:87
 #, fuzzy
 msgid "Edit this topic"
 msgstr "Редактиране на текста в тази страница"
 
-#: templates/foswiki.nat.tmpl:116
+#: templates/foswiki.nat.tmpl:101
 #, fuzzy
 msgid "Edit topic preferences"
 msgstr "Редактиране настройките на тази страница"
 
-#: templates/foswiki.nat.tmpl:92
+#: templates/foswiki.nat.tmpl:81
 msgid "Edit wiki markup"
 msgstr ""
 
@@ -1018,13 +980,13 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:356
+#: data/System/UserRegistrationViewTemplate.txt:360
 #, fuzzy
 msgid "Enter a WikiName"
 msgstr "Моля, въведете администраторската парола за Wiki."
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:189
-#: data/System/UserRegistrationViewTemplate.txt:351
+#: data/System/UserRegistrationViewTemplate.txt:355
 #, fuzzy
 msgid "Enter a login name"
 msgstr "Нов родителски раздел:"
@@ -1040,11 +1002,11 @@ msgid "Enter a new username and password to change identity"
 msgstr ""
 "Въведете ново потребителско име и парола, за да промените идентичността си"
 
-#: data/System/UserRegistrationViewTemplate.txt:357
+#: data/System/UserRegistrationViewTemplate.txt:361
 msgid "Enter a valid WikiWord"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:352
+#: data/System/UserRegistrationViewTemplate.txt:356
 #, fuzzy
 msgid "Enter at least %1 characters"
 msgstr "Паролата не може да бъде променена"
@@ -1059,7 +1021,7 @@ msgid "Enter the current password for the given !LoginName."
 msgstr ""
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:199
-#: data/System/UserRegistrationViewTemplate.txt:365
+#: data/System/UserRegistrationViewTemplate.txt:369
 #, fuzzy
 msgid "Enter the same password as above"
 msgstr "Моля, въведете администраторската парола за Wiki."
@@ -1068,12 +1030,12 @@ msgstr "Моля, въведете администраторската паро
 msgid "Enter topic name or a search string"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:348
+#: data/System/UserRegistrationViewTemplate.txt:352
 #, fuzzy
 msgid "Enter your first name"
 msgstr "Моля, въведете администраторската парола за Wiki."
 
-#: data/System/UserRegistrationViewTemplate.txt:349
+#: data/System/UserRegistrationViewTemplate.txt:353
 #, fuzzy
 msgid "Enter your last name"
 msgstr "Моля, въведете администраторската парола за Wiki."
@@ -1090,11 +1052,6 @@ msgstr "Грешка при запис на страницата"
 msgid "Errors"
 msgstr "Грешки"
 
-#: templates/attachnew.nat.tmpl:35
-#, fuzzy
-msgid "Existing files"
-msgstr "Липсващи полета"
-
 #: templates/print.nat.tmpl:28
 msgid "Export"
 msgstr ""
@@ -1103,12 +1060,8 @@ msgstr ""
 msgid "Export to PDF"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:205
+#: templates/foswiki.nat.tmpl:180
 msgid "Export topic to PDF"
-msgstr ""
-
-#: templates/attachnew.nat.tmpl:19
-msgid "Extracts individual files in a zip archive."
 msgstr ""
 
 #: data/System/WebLinks.txt:9
@@ -1129,12 +1082,12 @@ msgstr "Файлът бе качен с различно име"
 msgid "Filter"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:37
+#: templates/foswiki.nat.tmpl:33
 #, fuzzy
 msgid "Find backlinks"
 msgstr "Обратни връзки"
 
-#: templates/foswiki.nat.tmpl:49
+#: templates/foswiki.nat.tmpl:43
 #, fuzzy
 msgid "Find child topics"
 msgstr "Търсене на подобни страници"
@@ -1143,7 +1096,7 @@ msgstr "Търсене на подобни страници"
 msgid "Finnish"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:250
+#: templates/foswiki.nat.tmpl:222
 #, fuzzy
 msgid "First"
 msgstr "Име:"
@@ -1174,7 +1127,7 @@ msgstr ""
 msgid "Format"
 msgstr "*Как да форматирате*"
 
-#: data/System/SiteMenu.txt:51
+#: data/System/SiteMenu.txt:50
 msgid "Foswiki FAQ"
 msgstr ""
 
@@ -1182,7 +1135,7 @@ msgstr ""
 msgid "Free form topic title in target language."
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:66
+#: templates/newtopic.old.tmpl:66
 msgid ""
 "Free form topic title text. The actual topic _name_ will be derived from the "
 "title automatically."
@@ -1204,11 +1157,11 @@ msgstr ""
 msgid "German"
 msgstr ""
 
-#: templates/body.nat.tmpl:63
+#: templates/body.nat.tmpl:65
 msgid "Get a fresh version <a href='%1' rel='nofollow'>here</a>."
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:224
+#: templates/foswiki.nat.tmpl:198 templates/foswiki.nat.tmpl:200
 #, fuzzy
 msgid "Get an email notification whenever this topic changes"
 msgstr "Автоматично известяване при промяна на страницата"
@@ -1238,12 +1191,12 @@ msgstr "Уведомяване за промени в това търсене"
 msgid "Go back in your browser and save your changes locally."
 msgstr "Върнете се назад с браузъра си и запишете локално промените."
 
-#: templates/foswiki.nat.tmpl:259
+#: templates/foswiki.nat.tmpl:230
 #, fuzzy
 msgid "Go to the following version of this topic"
 msgstr "title='Версия за печат на тази страница' accesskey='p'>Версия за печат"
 
-#: templates/foswiki.nat.tmpl:266
+#: templates/foswiki.nat.tmpl:236
 #, fuzzy
 msgid "Go to the previous version of this topic"
 msgstr "title='Версия за печат на тази страница' accesskey='p'>Версия за печат"
@@ -1266,18 +1219,13 @@ msgstr "Групи"
 msgid "Have a look at the list of all pages in this web."
 msgstr ""
 
-#: data/System/SiteMenu.txt:38 templates/attachsidebar.nat.tmpl:3
-#: templates/changeformsidebar.nat.tmpl:3 templates/foswiki.nat.tmpl:199
+#: data/System/SiteMenu.txt:37 templates/attachsidebar.nat.tmpl:3
+#: templates/changeformsidebar.nat.tmpl:3 templates/foswiki.nat.tmpl:175
 #: templates/moveattachmentsidebar.nat.tmpl:3
 #: templates/renamesidebar.nat.tmpl:3 templates/renamewebsidebar.nat.tmpl:3
 #: templates/topbar.customato.nat.tmpl:85
 msgid "Help"
 msgstr "Помощ"
-
-#: templates/attachtables.nat.tmpl:19
-#, fuzzy
-msgid "Hide attachment in normal topic view."
-msgstr "Притурките няма да се показват в страницата."
 
 #: templates/attachsidebar.nat.tmpl:8
 #: templates/moveattachmentsidebar.nat.tmpl:8
@@ -1285,16 +1233,16 @@ msgstr "Притурките няма да се показват в страни
 msgid "Hiding attachments"
 msgstr "Преместване или изтриване на притурка"
 
-#: templates/foswiki.nat.tmpl:139 templates/oopshistory.nat.tmpl:6
+#: templates/foswiki.nat.tmpl:120 templates/oopshistory.nat.tmpl:6
 #, fuzzy
 msgid "History"
 msgstr "История"
 
-#: data/System/SiteMenu.txt:9
+#: data/System/SiteMenu.txt:10
 msgid "Home"
 msgstr ""
 
-#: data/System/NatSkinUserViewTemplate.txt:51
+#: data/System/NatSkinUserViewTemplate.txt:50
 msgid "Homepage"
 msgstr ""
 
@@ -1320,7 +1268,7 @@ msgstr ""
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:81
 #: data/System/NatSkinChangePasswordViewTemplate.txt:89
-#: data/System/UserRegistrationViewTemplate.txt:95
+#: data/System/UserRegistrationViewTemplate.txt:100
 msgid "If you have any questions, please contact %1"
 msgstr "Ако имате някакви въпроси, моля свържете се с %1"
 
@@ -1364,7 +1312,7 @@ msgstr "Невярно %1"
 msgid "Incorrect Password"
 msgstr "Грешна парола"
 
-#: templates/404.nat.tmpl:45 templates/sidebar.nat.tmpl:50
+#: templates/404.nat.tmpl:45 templates/sidebar.nat.tmpl:53
 msgid "Index"
 msgstr "Индекс"
 
@@ -1373,11 +1321,11 @@ msgstr "Индекс"
 msgid "Index of all Topics"
 msgstr "Изчистван на всичко"
 
-#: data/System/SiteMenu.txt:45
+#: data/System/SiteMenu.txt:44
 msgid "Installed plugins"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:152 templates/languageselector.nat.tmpl:4
+#: templates/foswiki.nat.tmpl:131 templates/languageselector.nat.tmpl:4
 #, fuzzy
 msgid "Interface language"
 msgstr "Смяна на език"
@@ -1406,17 +1354,17 @@ msgstr ""
 msgid "Japanese"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:252
+#: templates/foswiki.nat.tmpl:224
 #, fuzzy
 msgid "Jump to the first version of this topic"
 msgstr "title='Версия за печат на тази страница' accesskey='p'>Версия за печат"
 
-#: templates/foswiki.nat.tmpl:273
+#: templates/foswiki.nat.tmpl:242
 #, fuzzy
 msgid "Jump to the most recent version of this topic"
 msgstr "title='Версия за печат на тази страница' accesskey='p'>Версия за печат"
 
-#: data/System/SiteMenu.txt:11
+#: data/System/SiteMenu.txt:12
 msgid "Knowledge"
 msgstr ""
 
@@ -1424,12 +1372,12 @@ msgstr ""
 msgid "Korean"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:151 templates/languageselector.nat.tmpl:14
+#: templates/foswiki.nat.tmpl:130 templates/languageselector.nat.tmpl:14
 #, fuzzy
 msgid "Language"
 msgstr "Български"
 
-#: templates/foswiki.nat.tmpl:271
+#: templates/foswiki.nat.tmpl:240
 #, fuzzy
 msgid "Last"
 msgstr "Фамилия:"
@@ -1442,16 +1390,16 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:65
+#: templates/foswiki.nat.tmpl:57
 msgid "Like"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:67
+#: templates/foswiki.nat.tmpl:59
 #, fuzzy
 msgid "Like this topic"
 msgstr "Създаване на тази Страница"
 
-#: templates/foswiki.nat.tmpl:66
+#: templates/foswiki.nat.tmpl:58
 msgid "Liked"
 msgstr ""
 
@@ -1461,17 +1409,17 @@ msgstr ""
 msgid "Linking to attachments"
 msgstr "Преместване или изтриване на притурка"
 
-#: templates/foswiki.nat.tmpl:39
+#: templates/foswiki.nat.tmpl:34
 #, fuzzy
 msgid "List other topics linking to this topic"
 msgstr "Списък на подобни страници в този раздел"
 
-#: templates/foswiki.nat.tmpl:51
+#: templates/foswiki.nat.tmpl:44
 #, fuzzy
 msgid "List topics that branch off this topic"
 msgstr "Списък на страниците, които започват с буквата:"
 
-#: data/System/NatSkinUserViewTemplate.txt:53
+#: data/System/NatSkinUserViewTemplate.txt:52
 #, fuzzy
 msgid "Location"
 msgstr "Уведомяване"
@@ -1481,7 +1429,7 @@ msgstr "Уведомяване"
 msgid "Locked topics"
 msgstr "Към страница:"
 
-#: templates/foswiki.nat.tmpl:2 templates/loginbase.nat.tmpl:74
+#: templates/foswiki.nat.tmpl:3 templates/loginbase.nat.tmpl:74
 #: templates/topbar.customato.nat.tmpl:126
 msgid "Log in"
 msgstr ""
@@ -1495,7 +1443,7 @@ msgstr "Върнете се към %1."
 msgid "Log out"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:10
+#: templates/foswiki.nat.tmpl:9
 msgid "Log out %1"
 msgstr ""
 
@@ -1505,12 +1453,12 @@ msgstr ""
 msgid "Login"
 msgstr "Вход"
 
-#: data/System/UserRegistrationViewTemplate.txt:124
+#: data/System/UserRegistrationViewTemplate.txt:128
 #, fuzzy
 msgid "Login settings"
 msgstr "Име за вход %1"
 
-#: data/System/UserRegistrationViewTemplate.txt:353
+#: data/System/UserRegistrationViewTemplate.txt:357
 msgid "LoginName %1 is already in use"
 msgstr ""
 
@@ -1527,18 +1475,13 @@ msgstr "Изпрати до"
 msgid "Mail to"
 msgstr "Изпрати до"
 
-#: data/System/UserRegistrationViewTemplate.txt:158
+#: data/System/UserRegistrationViewTemplate.txt:162
 msgid ""
 "Make sure you remember your password, even more when generating one "
 "automatically."
 msgstr ""
 
-#: templates/attachtables.nat.tmpl:33
-#, fuzzy
-msgid "Manage existing attachments"
-msgstr "Преместване или изтриване на притурка"
-
-#: templates/foswiki.nat.tmpl:245
+#: templates/foswiki.nat.tmpl:218
 #, fuzzy
 msgid "Manage tags in this web"
 msgstr "Търсене на повече страници в този раздел"
@@ -1579,12 +1522,12 @@ msgstr ""
 msgid "Moderation"
 msgstr "Уведомяване"
 
-#: templates/foswiki.nat.tmpl:163
+#: templates/foswiki.nat.tmpl:140
 #, fuzzy
 msgid "More"
 msgstr "Още..."
 
-#: templates/foswiki.nat.tmpl:133
+#: templates/foswiki.nat.tmpl:115
 msgid "Move"
 msgstr "Преместване"
 
@@ -1598,7 +1541,7 @@ msgstr "Преместване на притурка"
 msgid "Move this topic into the %1 web"
 msgstr "Преместване на страницата в раздел:"
 
-#: templates/foswiki.nat.tmpl:130
+#: templates/foswiki.nat.tmpl:112
 #, fuzzy
 msgid "Move this topic to the trash"
 msgstr "Преместване на страницата в раздел:"
@@ -1618,16 +1561,16 @@ msgstr "Прикачени файлове към страницата"
 msgid "My Profile"
 msgstr ""
 
-#: templates/sidebar.nat.tmpl:30
+#: templates/sidebar.nat.tmpl:33
 #, fuzzy
 msgid "My links"
 msgstr "Моите Връзки"
 
-#: templates/sidebar.nat.tmpl:11 templates/sidebar.nat.tmpl:18
+#: templates/sidebar.nat.tmpl:14 templates/sidebar.nat.tmpl:21
 msgid "My sidebar"
 msgstr ""
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:130
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:127
 #: data/System/WebCreateNewWeb.txt:10
 #, fuzzy
 msgid "Name"
@@ -1637,7 +1580,7 @@ msgstr "Име на страницата"
 msgid "Name of new web is missing"
 msgstr "Липсва име на новия раздел"
 
-#: templates/foswiki.nat.tmpl:193 templates/newtopic.wwb.tmpl:3
+#: templates/foswiki.nat.tmpl:170
 msgid "New"
 msgstr ""
 
@@ -1665,7 +1608,7 @@ msgstr "Нов родителски раздел:"
 msgid "New password"
 msgstr "Нова парола"
 
-#: templates/foswiki.nat.tmpl:194 templates/translatetopic.nat.tmpl:121
+#: templates/foswiki.nat.tmpl:171 templates/translatetopic.nat.tmpl:121
 #, fuzzy
 msgid "New topic"
 msgstr "Покажи страницата"
@@ -1679,12 +1622,16 @@ msgstr "Името на новата страница %1 не е %2"
 msgid "New web name"
 msgstr "Име на новия раздел:"
 
-#: data/System/SiteMenu.txt:10
+#: data/System/SiteMenu.txt:11
 msgid "News"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:257 templates/newtopic.wwb.tmpl:20
+#: templates/foswiki.nat.tmpl:228
 msgid "Next"
+msgstr ""
+
+#: templates/newtopic.nat.tmpl:20
+msgid "Next step"
 msgstr ""
 
 #: templates/moveattachment.nat.tmpl:47
@@ -1736,27 +1683,26 @@ msgstr "Забележка: тази страница не съществува"
 msgid "Notes"
 msgstr "Бележки:"
 
-#: templates/foswiki.nat.tmpl:290
+#: templates/foswiki.nat.tmpl:256
 msgid "Nothing found. Try again!"
 msgstr ""
 
-#: templates/sidebar.nat.tmpl:54 templates/topbar.customato.nat.tmpl:82
+#: templates/sidebar.nat.tmpl:57 templates/topbar.customato.nat.tmpl:82
 msgid "Notifications"
 msgstr "Уведомяване"
 
-#: templates/foswiki.nat.tmpl:210
+#: templates/foswiki.nat.tmpl:184
 msgid "Notify"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:211
+#: templates/foswiki.nat.tmpl:185
 #, fuzzy
 msgid "Notify on changes"
 msgstr "(промени)"
 
-#: data/System/NatSkinStyleBrowser.txt:54 templates/attachtables.nat.tmpl:24
-#: templates/changeform.nat.tmpl:25 templates/messages.nat.tmpl:104
-#: templates/messages.nat.tmpl:260 templates/messages.nat.tmpl:279
-#: templates/moveattachment.nat.tmpl:66
+#: data/System/NatSkinStyleBrowser.txt:54 templates/changeform.nat.tmpl:25
+#: templates/messages.nat.tmpl:104 templates/messages.nat.tmpl:260
+#: templates/messages.nat.tmpl:279 templates/moveattachment.nat.tmpl:66
 #: templates/oopslanguagechanged.nat.tmpl:11
 #: templates/renameconfirm.nat.tmpl:6 templates/renamewebconfirm.nat.tmpl:6
 #: templates/validate.nat.tmpl:27
@@ -1772,7 +1718,7 @@ msgstr ""
 msgid "On"
 msgstr ""
 
-#: data/System/SiteMenu.txt:50
+#: data/System/SiteMenu.txt:49
 msgid "Online support forum"
 msgstr ""
 
@@ -1780,11 +1726,11 @@ msgstr ""
 msgid "Only members of the %1 are allowed to perform this action."
 msgstr "Само членовете на %1 могат да извършват това действие."
 
-#: templates/foswiki.nat.tmpl:233
+#: templates/foswiki.nat.tmpl:208
 msgid "Open <nop>WebDAV Directory"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:82
+#: templates/foswiki.nat.tmpl:72
 #, fuzzy
 msgid "Open a channel to talk about this topic"
 msgstr "Създаване на тази Страница"
@@ -1794,7 +1740,7 @@ msgstr "Създаване на тази Страница"
 msgid "Open in separate window"
 msgstr "Подробностите в отделен прозорец.щ"
 
-#: data/System/UserRegistrationViewTemplate.txt:213
+#: data/System/UserRegistrationViewTemplate.txt:217
 #, fuzzy
 msgid "Optional information"
 msgstr "Налична информация"
@@ -1808,17 +1754,17 @@ msgstr "Действие"
 msgid "Or just start from the beginning in case you got lost somehow."
 msgstr ""
 
-#: data/System/NatSkinUserViewTemplate.txt:50
+#: data/System/NatSkinUserViewTemplate.txt:49
 #, fuzzy
 msgid "Organisation"
 msgstr "URL на организацията:"
 
-#: data/System/UserRegistrationViewTemplate.txt:219
+#: data/System/UserRegistrationViewTemplate.txt:223
 #, fuzzy
 msgid "Organisation Name"
 msgstr "Име на организацията"
 
-#: data/System/UserRegistrationViewTemplate.txt:228
+#: data/System/UserRegistrationViewTemplate.txt:232
 #, fuzzy
 msgid "Organisation URL"
 msgstr "URL на организацията:"
@@ -1828,7 +1774,7 @@ msgstr "URL на организацията:"
 msgid "Orientation"
 msgstr "текущо местонахождение:"
 
-#: templates/foswiki.nat.tmpl:204
+#: templates/foswiki.nat.tmpl:179
 msgid "PDF"
 msgstr ""
 
@@ -1855,7 +1801,7 @@ msgstr "Парола"
 msgid "Password changed successfully!"
 msgstr "Паролата е променена успешно!"
 
-#: data/System/SiteMenu.txt:48
+#: data/System/SiteMenu.txt:47
 #, fuzzy
 msgid "Password forgotten"
 msgstr "Паролите не съвпадат"
@@ -1872,7 +1818,7 @@ msgstr "Изберете едно от %1."
 msgid "Please e-mail %1 to request this."
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:368
+#: data/System/UserRegistrationViewTemplate.txt:372
 #, fuzzy
 msgid "Please enter a valid e-mail address"
 msgstr "невалиден адрес за електронна поща"
@@ -1903,6 +1849,16 @@ msgstr ""
 "Съобщението не може да бъде доставено. Моля уведомете вашия %1 "
 "администратор, %2"
 
+#: templates/newtopic.nat.tmpl:93
+#, fuzzy
+msgid "Please select a Template"
+msgstr "Шаблон по подразбиране"
+
+#: templates/newtopic.nat.tmpl:34
+#, fuzzy
+msgid "Please select a Topic Type"
+msgstr "Изберете"
+
 #: templates/messages.nat.tmpl:194
 #, fuzzy
 msgid "Please try again."
@@ -1912,12 +1868,12 @@ msgstr "Моля, въведете администраторската паро
 msgid "Portuguese"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:316
+#: templates/foswiki.nat.tmpl:282
 msgid "Powered by Foswiki"
 msgstr ""
 
-#: templates/copytopic.nat.tmpl:30 templates/foswiki.nat.tmpl:115
-#: templates/sidebar.nat.tmpl:56
+#: templates/copytopic.nat.tmpl:30 templates/foswiki.nat.tmpl:100
+#: templates/sidebar.nat.tmpl:59
 msgid "Preferences"
 msgstr "Настройки"
 
@@ -1929,30 +1885,21 @@ msgstr ""
 msgid "Press OK to confirm that this change was intentional."
 msgstr ""
 
-#: templates/newtopic.wwb.tmpl:19
-#, fuzzy
-msgid "Prev"
-msgstr "преглед"
-
-#: templates/foswiki.nat.tmpl:264
+#: templates/foswiki.nat.tmpl:234
 msgid "Previous"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:54
+#: templates/foswiki.nat.tmpl:47
 msgid "Print"
 msgstr ""
 
-#: data/System/SiteMenu.txt:52
+#: data/System/SiteMenu.txt:51
 msgid "Professional help"
 msgstr ""
 
-#: data/System/SiteMenu.txt:12
+#: data/System/SiteMenu.txt:13
 msgid "Projects"
 msgstr ""
-
-#: templates/attachagain.nat.tmpl:11
-msgid "Properties"
-msgstr "Свойства"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:195
 #, fuzzy
@@ -1960,32 +1907,32 @@ msgid "Provide a new password"
 msgstr "Въведете пак новата парола:"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:192
-#: data/System/UserRegistrationViewTemplate.txt:361
+#: data/System/UserRegistrationViewTemplate.txt:365
 #, fuzzy
 msgid "Provide a password"
 msgstr "Грешна парола"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:129
-#: data/System/UserRegistrationViewTemplate.txt:156
+#: data/System/UserRegistrationViewTemplate.txt:160
 #, fuzzy
 msgid "Random password"
 msgstr "Грешна парола"
 
-#: templates/foswiki.nat.tmpl:85
+#: templates/foswiki.nat.tmpl:75
 msgid "Raw"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:162
+#: data/System/UserRegistrationViewTemplate.txt:166
 #, fuzzy
 msgid "Re-enter password"
 msgstr "Нулиране на Парола"
 
-#: templates/topbar.customato.nat.tmpl:80
+#: data/System/SiteRightBar.txt:9 templates/topbar.customato.nat.tmpl:80
 #, fuzzy
 msgid "Recent Changes"
 msgstr "Последно променяни страници"
 
-#: templates/view.nat.tmpl:109
+#: templates/view.nat.tmpl:117
 #, fuzzy
 msgid "Redirect from %1"
 msgstr "Резултати от раздел %1"
@@ -1995,13 +1942,13 @@ msgstr "Резултати от раздел %1"
 msgid "Reference Manual"
 msgstr "Потребителски Настройки"
 
-#: data/System/SiteMenu.txt:44
+#: data/System/SiteMenu.txt:43
 #, fuzzy
 msgid "Reference manual"
 msgstr "Потребителски Настройки"
 
 #: data/System/UserRegistrationViewTemplate.txt:87
-#: templates/foswiki.nat.tmpl:14
+#: templates/foswiki.nat.tmpl:13
 msgid "Register"
 msgstr "Регистрация"
 
@@ -2017,12 +1964,12 @@ msgstr "Запомни ме на този компютър"
 msgid "Remember your password?"
 msgstr "Запомняне на паролата?"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:103
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:100
 #, fuzzy
 msgid "Remove members"
 msgstr "Добавяне на ред"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:174
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:171
 msgid "Removing"
 msgstr ""
 
@@ -2031,7 +1978,7 @@ msgstr ""
 msgid "Rename"
 msgstr "Преименуване"
 
-#: data/System/SiteMenu.txt:76
+#: data/System/SiteMenu.txt:75
 #, fuzzy
 msgid "Rename current web"
 msgstr "Нов родителски раздел:"
@@ -2040,7 +1987,7 @@ msgstr "Нов родителски раздел:"
 msgid "Rename failed"
 msgstr "Грешка при преименуването"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:102
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:99
 #, fuzzy
 msgid "Rename group "
 msgstr "Нова Страница"
@@ -2050,7 +1997,7 @@ msgstr "Нова Страница"
 msgid "Rename or move %1"
 msgstr "Преименувай тази страница"
 
-#: templates/foswiki.nat.tmpl:134
+#: templates/foswiki.nat.tmpl:116
 #, fuzzy
 msgid "Rename or move this topic"
 msgstr "Преименувай тази страница"
@@ -2065,7 +2012,7 @@ msgstr "Добре дошли в раздел %1"
 msgid "Rename, merge or delete tags"
 msgstr "Преименувай, премести или изтрий този раздел"
 
-#: templates/foswiki.nat.tmpl:247
+#: templates/foswiki.nat.tmpl:219
 #, fuzzy
 msgid "Rename, merge or delete tags being used in this web"
 msgstr "Преименувай, премести или изтрий този раздел"
@@ -2075,7 +2022,7 @@ msgstr "Преименувай, премести или изтрий този р
 msgid "Repeat your new password"
 msgstr "Въведете пак новата парола:"
 
-#: data/System/UserRegistrationViewTemplate.txt:364
+#: data/System/UserRegistrationViewTemplate.txt:368
 #, fuzzy
 msgid "Repeat your password"
 msgstr "Запомняне на паролата?"
@@ -2100,17 +2047,17 @@ msgstr "Нулиране на Парола"
 msgid "Restart"
 msgstr "Възстановяване"
 
-#: templates/foswiki.nat.tmpl:121 templates/history.nat.tmpl:98
+#: templates/foswiki.nat.tmpl:105 templates/history.nat.tmpl:105
 #, fuzzy
 msgid "Restore"
 msgstr "Възстановяване"
 
-#: templates/foswiki.nat.tmpl:122
+#: templates/foswiki.nat.tmpl:106
 #, fuzzy
 msgid "Restore previous version"
 msgstr "Възстанови страница до версия:"
 
-#: templates/history.nat.tmpl:97
+#: templates/history.nat.tmpl:104
 #, fuzzy
 msgid "Restore revision %1"
 msgstr "(версия %1)"
@@ -2132,7 +2079,7 @@ msgstr "Въведете пак новата парола:"
 msgid "Review recent changes in:"
 msgstr "Преглед на последните промени в:"
 
-#: templates/history.nat.tmpl:73 templates/rdiff.nat.tmpl:45
+#: templates/history.nat.tmpl:80 templates/rdiff.nat.tmpl:45
 msgid "Revision"
 msgstr "Версия"
 
@@ -2154,7 +2101,7 @@ msgstr ""
 msgid "Russian"
 msgstr ""
 
-#: data/System/SiteMenu.txt:47
+#: data/System/SiteMenu.txt:46
 msgid "Sandbox"
 msgstr ""
 
@@ -2219,7 +2166,7 @@ msgstr "(резултати от търсенето)"
 msgid "See also"
 msgstr "Вижте също"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:130
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:127
 msgid "Select"
 msgstr "Изберете"
 
@@ -2229,17 +2176,7 @@ msgid ""
 "browser."
 msgstr ""
 
-#: templates/newtopic.wwb.tmpl:45
-#, fuzzy
-msgid "Select Type"
-msgstr "Изберете"
-
-#: templates/newtopic.wwb.tmpl:123
-#, fuzzy
-msgid "Select a Template"
-msgstr "Шаблон по подразбиране"
-
-#: templates/foswiki.nat.tmpl:154
+#: templates/foswiki.nat.tmpl:132
 msgid "Select a different language for the wiki interface"
 msgstr ""
 
@@ -2269,7 +2206,7 @@ msgstr ""
 msgid "Select the [[%1.WebHome][%1]] web to delete the topic."
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:287
+#: data/System/UserRegistrationViewTemplate.txt:291
 #, fuzzy
 msgid "Select the groups you want to join."
 msgstr "Избери родителска страница:"
@@ -2280,12 +2217,12 @@ msgid ""
 "them."
 msgstr ""
 
-#: templates/view.nat.tmpl:93
+#: templates/view.nat.tmpl:101
 #, fuzzy
 msgid "Select translation in %1"
 msgstr "Избери родителска страница:"
 
-#: templates/newtopic.nat.tmpl:134
+#: templates/newtopic.old.tmpl:134
 msgid "Select which template to use while creating this topic."
 msgstr ""
 
@@ -2297,15 +2234,15 @@ msgstr "Отбелязване на всички"
 msgid "Settings"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:60
+#: templates/foswiki.nat.tmpl:52
 msgid "Share"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:62
+#: templates/foswiki.nat.tmpl:54
 msgid "Share this topic with others"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:61
+#: templates/foswiki.nat.tmpl:53
 #, fuzzy
 msgid "Share topic"
 msgstr "Смяна на страница"
@@ -2314,7 +2251,7 @@ msgstr "Смяна на страница"
 msgid "Sidebar"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:16
+#: templates/foswiki.nat.tmpl:14
 #, fuzzy
 msgid "Sign on to %1."
 msgstr "Изберете едно от %1."
@@ -2323,23 +2260,19 @@ msgstr "Изберете едно от %1."
 msgid "Site Tools"
 msgstr ""
 
-#: data/System/SiteMenu.txt:72
+#: data/System/SiteMenu.txt:71
 #, fuzzy
 msgid "Site permissions"
 msgstr "Версии"
 
-#: data/System/SiteMenu.txt:71
+#: data/System/SiteMenu.txt:70
 #, fuzzy
 msgid "Site preferences"
 msgstr "(настройки)"
 
-#: data/System/SiteBottomBar.txt:9
+#: data/System/SiteBottomBar.txt:10
 msgid "Sitemap"
 msgstr ""
-
-#: templates/attachtables.nat.tmpl:95
-msgid "Size"
-msgstr "Размер"
 
 #: templates/edit.nat.tmpl:147
 msgid "Skin settings"
@@ -2378,11 +2311,11 @@ msgstr ""
 msgid "State"
 msgstr ""
 
-#: templates/sidebar.nat.tmpl:55
+#: templates/sidebar.nat.tmpl:58
 msgid "Statistics"
 msgstr "Статистика"
 
-#: templates/foswiki.nat.tmpl:224
+#: templates/foswiki.nat.tmpl:198 templates/foswiki.nat.tmpl:200
 #, fuzzy
 msgid "Stop being notified about changes of this topic"
 msgstr "Уведомяване за промени в това търсене"
@@ -2393,24 +2326,24 @@ msgstr ""
 
 #: data/Sandbox/NatSkinTest.txt:526 data/Sandbox/NatSkinTest.txt:551
 #: data/Sandbox/NatSkinTest.txt:578
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:117
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:114
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:57
-#: data/System/WebCreateNewWeb.txt:42 templates/attachnew.nat.tmpl:4
-#: templates/languageselector.nat.tmpl:28 templates/managetags.nat.tmpl:32
-#: templates/messages.nat.tmpl:113 templates/messages.nat.tmpl:199
-#: templates/newtopic.nat.tmpl:72 templates/newtopic.nat.tmpl:80
-#: templates/topbar.customato.nat.tmpl:188
+#: data/System/WebCreateNewWeb.txt:42 templates/languageselector.nat.tmpl:28
+#: templates/managetags.nat.tmpl:32 templates/messages.nat.tmpl:113
+#: templates/messages.nat.tmpl:199 templates/newtopic.old.tmpl:72
+#: templates/newtopic.old.tmpl:80 templates/topbar.customato.nat.tmpl:188
 #: templates/translatetopic.nat.tmpl:130
 msgid "Submit"
 msgstr ""
 
 #: templates/mailnotify.nat.tmpl:40 templates/mailnotify.nat.tmpl:59
+#: templates/newsletter.nat.tmpl:17
 msgid "Subscribe / Unsubscribe in:"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:224
+#: templates/foswiki.nat.tmpl:198 templates/foswiki.nat.tmpl:200
 #, fuzzy
-msgid "Subscribed to ${topicTitle}"
+msgid "Subscribed to %1"
 msgstr "Създаване на тази Страница"
 
 #: templates/login.sudo.nat.tmpl:7
@@ -2426,15 +2359,15 @@ msgstr ""
 msgid "Swedish"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:244 templates/sidebar.nat.tmpl:51
+#: templates/foswiki.nat.tmpl:217 templates/sidebar.nat.tmpl:54
 msgid "Tags"
 msgstr ""
 
-#: data/System/NatSkinUserViewTemplate.txt:64
+#: data/System/NatSkinUserViewTemplate.txt:63
 msgid "Tel"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:118
+#: templates/newtopic.old.tmpl:118
 #, fuzzy
 msgid "Template"
 msgstr "Използване на шаблон"
@@ -2456,7 +2389,7 @@ msgstr "Тялото на текста"
 msgid "Thank you for registering"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:398
+#: templates/foswiki.nat.tmpl:366
 msgid "Thank you!"
 msgstr ""
 
@@ -2516,7 +2449,7 @@ msgstr ""
 msgid "The lease on this topic expired %1 ago."
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:133
+#: data/System/UserRegistrationViewTemplate.txt:137
 msgid "The login name you use to sign in."
 msgstr ""
 
@@ -2571,7 +2504,7 @@ msgid ""
 msgstr ""
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:165
-#: data/System/UserRegistrationViewTemplate.txt:315
+#: data/System/UserRegistrationViewTemplate.txt:319
 msgid "There was an error. Please, see above."
 msgstr ""
 
@@ -2587,11 +2520,11 @@ msgid ""
 "are kept secret and will *not* be published anywhere on this site."
 msgstr ""
 
-#: templates/body.nat.tmpl:61
+#: templates/body.nat.tmpl:63
 msgid "This page was cached on %1."
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:58 templates/newtopic.wwb.tmpl:180
+#: templates/newtopic.nat.tmpl:148 templates/newtopic.old.tmpl:58
 #: templates/renamebase.nat.tmpl:70 templates/translatetopic.nat.tmpl:110
 #, fuzzy
 msgid "Title"
@@ -2630,7 +2563,7 @@ msgid "To web"
 msgstr "Към раздел:"
 
 #: templates/oopsmore.nat.tmpl:4 templates/oopsmore.nat.tmpl:6
-#: templates/sidebar.nat.tmpl:49 templates/topbar.customato.nat.tmpl:79
+#: templates/sidebar.nat.tmpl:52 templates/topbar.customato.nat.tmpl:79
 msgid "Tools"
 msgstr ""
 
@@ -2663,7 +2596,7 @@ msgstr "Прикачени файлове към страницата"
 msgid "Topics per web"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:157 templates/translatetopic.nat.tmpl:9
+#: templates/foswiki.nat.tmpl:135 templates/translatetopic.nat.tmpl:9
 msgid "Translate"
 msgstr ""
 
@@ -2672,12 +2605,12 @@ msgstr ""
 msgid "Translate %1"
 msgstr "Създаване на '%1'"
 
-#: templates/foswiki.nat.tmpl:158
+#: templates/foswiki.nat.tmpl:136
 #, fuzzy
 msgid "Translate this topic"
 msgstr "Създаване на тази Страница"
 
-#: data/System/SiteMenu.txt:69
+#: data/System/SiteMenu.txt:68
 msgid "Trash"
 msgstr ""
 
@@ -2694,7 +2627,7 @@ msgstr ""
 msgid "Tutorial"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:124
+#: templates/foswiki.nat.tmpl:107
 #, fuzzy
 msgid "Undo a previous change to this topic"
 msgstr "Създаване на тази Страница"
@@ -2712,21 +2645,17 @@ msgstr "Моля, въведете администраторската паро
 msgid "Unrecognized action command %1"
 msgstr "Непозната команда %1"
 
-#: templates/foswiki.nat.tmpl:228
+#: templates/foswiki.nat.tmpl:204
 msgid "Unsubscribe"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:229
+#: templates/foswiki.nat.tmpl:205
 msgid "Unsubscribe from changes"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:224
-msgid "Unsubscribed from ${topicTitle}"
+#: templates/foswiki.nat.tmpl:198 templates/foswiki.nat.tmpl:200
+msgid "Unsubscribed from %1"
 msgstr ""
-
-#: templates/attachagain.nat.tmpl:2
-msgid "Update attachment %1 on %2"
-msgstr "Обновяване на прикрепен файл %1 на %2"
 
 #: templates/renamebase.nat.tmpl:118 templates/renamebase.nat.tmpl:128
 #: templates/renamewebbase.nat.tmpl:45
@@ -2743,24 +2672,10 @@ msgstr "Подстраници в раздел %1"
 msgid "Upgrade"
 msgstr ""
 
-#: templates/attachnew.nat.tmpl:2
-#, fuzzy
-msgid "Upload a file to %1"
-msgstr "Качване"
-
-#: templates/attachagain.nat.tmpl:28
-msgid "Upload file"
-msgstr "Качване"
-
-#: templates/foswiki.nat.tmpl:33
+#: templates/foswiki.nat.tmpl:29
 #, fuzzy
 msgid "Upload files and images to this topic"
 msgstr "Каченият файл е твърде голям"
-
-#: templates/attachnew.nat.tmpl:25
-#, fuzzy
-msgid "Upload successful"
-msgstr "Качване"
 
 #: templates/messages.nat.tmpl:216
 #, fuzzy
@@ -2785,7 +2700,7 @@ msgstr "Статистика"
 msgid "Use %1 instead."
 msgstr "Използвай %1 вместо това."
 
-#: data/System/WebLinks.txt:12 templates/sidebar.nat.tmpl:65
+#: data/System/WebLinks.txt:12 templates/sidebar.nat.tmpl:68
 #, fuzzy
 msgid "User Tools"
 msgstr "Потребители"
@@ -2795,7 +2710,7 @@ msgstr "Потребители"
 msgid "User account %1 deleted"
 msgstr "Потребителска сметка %1 - Изтрита"
 
-#: data/System/SiteMenu.txt:41
+#: data/System/SiteMenu.txt:40
 #, fuzzy
 msgid "User docs"
 msgstr "Потребители"
@@ -2808,7 +2723,7 @@ msgstr ""
 msgid "Username"
 msgstr "Потребителско име"
 
-#: data/Main/WebLinks.txt:9 templates/foswiki.nat.tmpl:20
+#: data/Main/WebLinks.txt:9 templates/foswiki.nat.tmpl:18
 msgid "Users"
 msgstr "Потребители"
 
@@ -2817,7 +2732,7 @@ msgstr "Потребители"
 msgid "Users Guide"
 msgstr "Потребители"
 
-#: templates/foswiki.nat.tmpl:21
+#: templates/foswiki.nat.tmpl:19
 #, fuzzy
 msgid "Users directory"
 msgstr "История на версиите"
@@ -2831,89 +2746,76 @@ msgstr ""
 msgid "Variation"
 msgstr "Версия"
 
-#: templates/attachtables.nat.tmpl:95
-msgid "Version"
-msgstr "Версия"
-
-#: templates/view.nat.tmpl:158
+#: templates/view.nat.tmpl:175
 #, fuzzy
 msgid "Version %1"
 msgstr "Версия"
 
-#: templates/attachtables.nat.tmpl:98
-msgid "Version history of %1"
-msgstr "История на версиите на %1"
-
-#: templates/attachagain.nat.tmpl:4
-#, fuzzy
-msgid "Versions"
-msgstr "Версия"
-
-#: templates/foswiki.nat.tmpl:42 templates/history.nat.tmpl:95
-#: templates/view.nat.tmpl:108
+#: templates/foswiki.nat.tmpl:37 templates/history.nat.tmpl:102
+#: templates/view.nat.tmpl:116
 msgid "View"
 msgstr "Виж"
 
-#: templates/foswiki.nat.tmpl:251
+#: templates/foswiki.nat.tmpl:223
 #, fuzzy
 msgid "View first revision"
 msgstr "Виж версия"
 
-#: templates/foswiki.nat.tmpl:43
+#: templates/foswiki.nat.tmpl:38
 #, fuzzy
 msgid "View formatted topic"
 msgstr "Покажи страницата"
 
-#: templates/foswiki.nat.tmpl:279
+#: templates/foswiki.nat.tmpl:247
 #, fuzzy
 msgid "View last change"
 msgstr "Последно променяни страници"
 
-#: templates/foswiki.nat.tmpl:272
+#: templates/foswiki.nat.tmpl:241
 #, fuzzy
 msgid "View last revision"
 msgstr "Виж версия"
 
-#: templates/foswiki.nat.tmpl:258
+#: templates/foswiki.nat.tmpl:229
 #, fuzzy
 msgid "View next revision"
 msgstr "Виж версия"
 
-#: templates/foswiki.nat.tmpl:265
+#: templates/foswiki.nat.tmpl:235
 #, fuzzy
 msgid "View previous revision"
 msgstr "Виж предната версия на страницата"
 
-#: templates/foswiki.nat.tmpl:55
+#: templates/foswiki.nat.tmpl:48
 #, fuzzy
 msgid "View printable version"
 msgstr "Виж версия"
 
-#: templates/history.nat.tmpl:94
+#: templates/history.nat.tmpl:101
 #, fuzzy
 msgid "View revision %1"
 msgstr "Виж версия"
 
-#: templates/foswiki.nat.tmpl:140
+#: templates/foswiki.nat.tmpl:121
 #, fuzzy
 msgid "View revision history"
 msgstr "История на версиите"
 
-#: templates/foswiki.nat.tmpl:88
+#: templates/foswiki.nat.tmpl:77
 #, fuzzy
 msgid "View the raw text of this topic"
 msgstr "Създаване на тази Страница"
 
-#: templates/foswiki.nat.tmpl:142
+#: templates/foswiki.nat.tmpl:122
 #, fuzzy
 msgid "View the revision history of all changes to this topic"
 msgstr "Търсене в Раздел %1 за страници, които сочат насам"
 
-#: templates/foswiki.nat.tmpl:86
+#: templates/foswiki.nat.tmpl:76
 msgid "View wiki markup"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:27
+#: templates/foswiki.nat.tmpl:24
 msgid "Visit your profile page"
 msgstr ""
 
@@ -2925,7 +2827,7 @@ msgstr ""
 msgid "Warning! Confirmation required"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:395
+#: templates/foswiki.nat.tmpl:363
 msgid ""
 "Warning: Your browser isn't supported. Please install a modern one, like %1, "
 "%2, %3, %4 or the latest %5."
@@ -2940,18 +2842,18 @@ msgstr ""
 msgid "Web"
 msgstr "Раздели"
 
-#: data/System/SiteMenu.txt:70
+#: data/System/SiteMenu.txt:69
 #, fuzzy
 msgid "Web preferences"
 msgstr "(настройки)"
 
-#: data/Main/WebLinks.txt:7 data/System/SiteMenu.txt:40
+#: data/Main/WebLinks.txt:7 data/System/SiteMenu.txt:39
 #: templates/topbar.customato.nat.tmpl:98
 msgid "Welcome"
 msgstr ""
 
 #: templates/login.nat.tmpl:12
-msgid "Welcome, please login"
+msgid "Welcome, please log in"
 msgstr ""
 
 #: templates/moveattachment.nat.tmpl:80
@@ -2959,10 +2861,6 @@ msgid ""
 "When the file is deleted, it is moved to the %1 web and attached to the %2 "
 "topic."
 msgstr ""
-
-#: templates/attachtables.nat.tmpl:95
-msgid "Who"
-msgstr "Кой"
 
 #: templates/oopsaccessdenied.nat.tmpl:3
 #, fuzzy
@@ -2977,7 +2875,7 @@ msgstr ""
 msgid "Wiki markup of %1"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:358
+#: data/System/UserRegistrationViewTemplate.txt:362
 #, fuzzy
 msgid "WikiName %1 is already in use"
 msgstr "Страницата %1 вече съществува"
@@ -2986,7 +2884,7 @@ msgstr "Страницата %1 вече съществува"
 msgid "WikiWord"
 msgstr ""
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:178
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:175
 #, fuzzy
 msgid "Woops, there was an error adding/removing a user to this group"
 msgstr "%1 е преместен(а) от %2 на %3 от %4"
@@ -3024,7 +2922,7 @@ msgstr "Вие вече сте регистриран"
 msgid "You are also listed in the %1 topic"
 msgstr "Вие също сте в списъка на страница %1"
 
-#: templates/foswiki.nat.tmpl:294
+#: templates/foswiki.nat.tmpl:260
 #, fuzzy
 msgid "You are here"
 msgstr "Вие сте тук:"
@@ -3093,12 +2991,12 @@ msgid ""
 "(This code is of the form \"YourName.xxxxxxxxxx\")"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:142
+#: data/System/UserRegistrationViewTemplate.txt:146
 #, fuzzy
 msgid "Your e-mail address"
 msgstr "невалиден адрес за електронна поща"
 
-#: data/System/UserRegistrationViewTemplate.txt:175
+#: data/System/UserRegistrationViewTemplate.txt:179
 #, fuzzy
 msgid "Your first name"
 msgstr "Име:"
@@ -3116,7 +3014,7 @@ msgid ""
 "to proceed."
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:184
+#: data/System/UserRegistrationViewTemplate.txt:188
 #, fuzzy
 msgid "Your last name"
 msgstr "Фамилия:"
@@ -3133,7 +3031,7 @@ msgid ""
 "administrator to do this for you."
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:196
+#: data/System/UserRegistrationViewTemplate.txt:200
 msgid ""
 "Your name as displayed online.  Note, this must be a unique [[%1]"
 "[WikiName]]. By default it is derived from your first and last name."
@@ -3201,6 +3099,10 @@ msgstr "(промени)"
 msgid "closed"
 msgstr "Затваряне"
 
+#: templates/history.nat.tmpl:44
+msgid "debug"
+msgstr ""
+
 #: templates/edit.nat.tmpl:107 templates/edit.nat.tmpl:156
 #: templates/edit.nat.tmpl:176 templates/edit.nat.tmpl:201
 #: templates/edit.nat.tmpl:215 templates/edit.nat.tmpl:238
@@ -3212,6 +3114,10 @@ msgstr "Затваряне"
 #, fuzzy
 msgid "default"
 msgstr "Шаблон по подразбиране"
+
+#: templates/newtopic.nat.tmpl:102
+msgid "default template for the selected topic type"
+msgstr ""
 
 #: templates/renamedelete.nat.tmpl:4
 #, fuzzy
@@ -3245,8 +3151,8 @@ msgstr ""
 msgid "go back to %1"
 msgstr "Обратно"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:135
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:204
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:132
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:201
 #, fuzzy
 msgid "group"
 msgstr "Групи"
@@ -3260,7 +3166,7 @@ msgstr "История"
 msgid "indicates mandatory fields"
 msgstr "Указва задължителни полета"
 
-#: templates/history.nat.tmpl:35
+#: templates/history.nat.tmpl:42
 msgid "interweave"
 msgstr ""
 
@@ -3289,16 +3195,12 @@ msgstr ""
 msgid "move attachment"
 msgstr "(преместване на прикаченеия файл)"
 
-#: templates/attachtables.nat.tmpl:77
-msgid "move this attachment to a different topic"
-msgstr ""
-
 #: data/System/MySideBar.txt:68
 #, fuzzy
 msgid "no template"
 msgstr "Използване на шаблон"
 
-#: templates/changeform.nat.tmpl:67
+#: templates/changeform.nat.tmpl:73
 #, fuzzy
 msgid "none "
 msgstr "(нищо)"
@@ -3357,7 +3259,7 @@ msgstr ""
 msgid "printable"
 msgstr "Редактиране на таблица"
 
-#: templates/changeform.nat.tmpl:130 templates/changeform.nat.tmpl:68
+#: templates/changeform.nat.tmpl:119 templates/changeform.nat.tmpl:74
 msgid "remove the current form (caution: possible data loss)"
 msgstr ""
 
@@ -3380,7 +3282,7 @@ msgstr "Възстановяване"
 msgid "right"
 msgstr ""
 
-#: templates/newtopic.wwb.tmpl:121 templates/newtopic.wwb.tmpl:43
+#: templates/newtopic.nat.tmpl:32 templates/newtopic.nat.tmpl:91
 #: templates/searchbase.nat.tmpl:7 templates/searchbox.nat.tmpl:13
 #, fuzzy
 msgid "search"
@@ -3396,7 +3298,7 @@ msgstr "Търсене във всички раздели"
 msgid "showing only %1"
 msgstr ""
 
-#: templates/history.nat.tmpl:36
+#: templates/history.nat.tmpl:43
 msgid "side by side"
 msgstr ""
 
@@ -3422,7 +3324,18 @@ msgstr ""
 msgid "up one folder"
 msgstr ""
 
-#: templates/attachtables.nat.tmpl:110 templates/attachtables.nat.tmpl:53
-#: templates/attachtables.nat.tmpl:70
-msgid "version %1 uploaded by %2 on %3"
-msgstr ""
+#, fuzzy
+#~ msgid "Create a default topic"
+#~ msgstr "Нова Страница"
+
+#, fuzzy
+#~ msgid "Create a new topic"
+#~ msgstr "Нова Страница"
+
+#, fuzzy
+#~ msgid "Create a %1"
+#~ msgstr "Създаване на '%1'"
+
+#, fuzzy
+#~ msgid "Create a new %1 in %2:"
+#~ msgstr "Нова Страница"

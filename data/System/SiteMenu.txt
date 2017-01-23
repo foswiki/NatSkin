@@ -1,7 +1,8 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1456411053" format="1.1"  version="1"}%
+%META:TOPICINFO{author="micha" comment="reprev" date="1479989580" format="1.1" reprev="4" version="5"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ %TOPIC%
-Definition of site wide horizontal menu
+
+Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] instead.
 
 ---++ Implementation
 <verbatim class="tml">
@@ -19,14 +20,12 @@ Definition of site wide horizontal menu
 ---++ Subwebs
 <verbatim class="tml">
 %STARTSECTION{"subwebs"}%%FLEXWEBLIST{
-  include="%URLPARAM{"theweb" default="%theweb%"}%.*"
+  include="%URLPARAM{"theweb" default="%theweb{default=""}%"}%.*"
   exclude="%URLPARAM{"theweb" default="%theweb%"}%|.*(%URLPARAM{"excludeweb" default="does not exist"}%).*"
+  exclude="%URLPARAM{"theweb" default="%theweb{default=""}%"}%|.*(%URLPARAM{"excludeweb" default="%exclude{default="does not exist"}%"}%).*"
   header="<li>"
   subheader="<ul><li>"
-  format="[[$web.%HOMETOPIC%][%JQICON{
-    "%URLPARAM{"icon" 
-       default="%icon{default="bullet_white"}%"
-    }%"}% $title]]"
+  format="[[$web.%HOMETOPIC%][%JQICON{"%URLPARAM{"icon" default="%icon{default="bullet_white"}%"}%"}% $title]]"
   separator="</li><li>"
   subfooter="</li></ul>"  
   footer="</li>"
@@ -37,20 +36,20 @@ Definition of site wide horizontal menu
 <verbatim class="tml">
 %STARTSECTION{"helpmenu"}%<li class="%IF{"$CURRENT_MENU='%SYSTEMWEB%'" then="current" else="notcurrent"}%">[[%SYSTEMWEB%.WebHome][%MAKETEXT{"Help"}%]]
   <ul>
-    <li>[[%SYSTEMWEB%.WelcomeGuest][%JQICON{"fa-home"}% %MAKETEXT{"Welcome"}%]]</li>
-    <li>[[%SYSTEMWEB%.UserDocumentationCategory][%JQICON{"fa-book"}% %MAKETEXT{"User docs"}%]]</li>
-    <li>[[%SYSTEMWEB%.AdminDocumentationCategory][%JQICON{"fa-book"}% %MAKETEXT{"Admin docs"}%]]</li>
-    <li>[[%SYSTEMWEB%.DeveloperDocumentationCategory][%JQICON{"fa-book"}% %MAKETEXT{"Developer docs"}%]]</li>
-    <li>[[%SYSTEMWEB%.ReferenceManual][%JQICON{"fa-list"}% %MAKETEXT{"Reference manual"}%]]</li>
-    <li>[[%SYSTEMWEB%.InstalledPlugins][%JQICON{"fa-puzzle-piece"}% %MAKETEXT{"Installed plugins"}%]]</li>
+    <li>[[%SYSTEMWEB%.WelcomeGuest][%TMPL:P{"HOME_ICON"}% %MAKETEXT{"Welcome"}%]]</li>
+    <li>[[%SYSTEMWEB%.UserDocumentationCategory][%TMPL:P{"DOCU_ICON"}% %MAKETEXT{"User docs"}%]]</li>
+    <li>[[%SYSTEMWEB%.AdminDocumentationCategory][%TMPL:P{"DOCU_ICON"}% %MAKETEXT{"Admin docs"}%]]</li>
+    <li>[[%SYSTEMWEB%.DeveloperDocumentationCategory][%TMPL:P{"DOCU_ICON"}% %MAKETEXT{"Developer docs"}%]]</li>
+    <li>[[%SYSTEMWEB%.ReferenceManual][%TMPL:P{"MANUAL_ICON"}% %MAKETEXT{"Reference manual"}%]]</li>
+    <li>[[%SYSTEMWEB%.InstalledPlugins][%TMPL:P{"PLUGIN_ICON"}% %MAKETEXT{"Installed plugins"}%]]</li>
     <li><hr /></li>
-    <li>[[Sandbox.%HOMETOPIC%][%JQICON{"fa-archive"}% %MAKETEXT{"Sandbox"}%]]</li>%IF{"context passwords_modifyable" then="
-    <li>[[%SYSTEMWEB%.ResetPassword][%JQICON{"fa-key"}% %MAKETEXT{"Password forgotten"}%]]</li>"}%
+    <li>[[Sandbox.%HOMETOPIC%][%TMPL:P{"SANDBOX_ICON"}% %MAKETEXT{"Sandbox"}%]]</li>%IF{"context passwords_modifyable" then="
+    <li>[[%SYSTEMWEB%.ResetPassword][%TMPL:P{"PASSWORD_ICON"}% %MAKETEXT{"Password forgotten"}%]]</li>"}%
     <li><hr /></li>
-    <li>[[http://foswiki.org/Support][%JQICON{"fa-life-ring"}% %MAKETEXT{"Online support forum"}%]]</li>
-    <li>[[http://foswiki.org/Support/FAQ][%JQICON{"fa-question-circle"}% %MAKETEXT{"Foswiki FAQ"}%]]</li>
-    <li>[[http://foswiki.org/Support/WikiConsultants][%JQICON{"fa-medkit"}% %MAKETEXT{"Professional help"}%]]</li>
-    <li>[[http://foswiki.org/Tasks][%JQICON{"fa-bug"}% %MAKETEXT{"Bugreport"}%]]</li>
+    <li>[[https://foswiki.org/Support][%TMPL:P{"HELP_ICON"}% %MAKETEXT{"Online support forum"}%]]</li>
+    <li>[[https://foswiki.org/Support/FAQ][%TMPL:P{"QUESTION_ICON"}% %MAKETEXT{"Foswiki FAQ"}%]]</li>
+    <li>[[https://foswiki.org/Support/WikiConsultants][%TMPL:P{"ONLINE_HELP_ICON"}% %MAKETEXT{"Professional help"}%]]</li>
+    <li>[[https://foswiki.org/Tasks][%TMPL:P{"BUG_ICON"}% %MAKETEXT{"Bugreport"}%]]</li>
   </ul>
 </li>%ENDSECTION{"helpmenu"}%
 </verbatim>
@@ -62,15 +61,15 @@ Definition of site wide horizontal menu
   <ul>
     %IF{"isweb 'Applications'"
        then="<li>
-         [[Applications.%HOMETOPIC%][%JQICON{"fa-folder-open-o"}% %MAKETEXT{"Applications"}%]]
+         [[Applications.%HOMETOPIC%][%TMPL:P{"FOLDER_OPEN_ICON"}% %MAKETEXT{"Applications"}%]]
          <ul class=\"ajaxMenu {url:'%SCRIPTURL{"view"}%/%SYSTEMWEB%/SiteMenu?skin=text;section=subwebs;theweb=Applications;icon=fa-folder-o%IF{"defined EXCLUDEWIKIAPPS" then=";excludeweb=%EXCLUDEWIKIAPPS%"}%'}\"></ul>
        </li>"
     }%<!-- -->
-    <li>[[%TRASHWEB%.%HOMETOPIC%][%JQICON{"fa-trash-o"}% %MAKETEXT{"Trash"}%]]</li>
-    <li>[[%BASEWEB%.%WEBPREFSTOPIC%][%JQICON{"fa-wrench"}% %MAKETEXT{"Web preferences"}%]]</li>
-    <li>[[%LOCALSITEPREFS%][%JQICON{"fa-wrench"}% %MAKETEXT{"Site preferences"}%]]</li>
-    <li>[[%SYSTEMWEB%.SitePermissions][%JQICON{"fa-key"}% %MAKETEXT{"Site permissions"}%]]</li>
-    <li>[[%SCRIPTURLPATH{"configure"}%][%JQICON{"fa-magic"}% %MAKETEXT{"Configure Foswiki"}%]]</li>
+    <li>[[%TRASHWEB%.%HOMETOPIC%][%TMPL:P{"TRASH_ICON"}% %MAKETEXT{"Trash"}%]]</li>
+    <li>[[%BASEWEB%.%WEBPREFSTOPIC%][%TMPL:P{"SETTINGS_ICON"}% %MAKETEXT{"Web preferences"}%]]</li>
+    <li>[[%LOCALSITEPREFS%][%TMPL:P{"SETTINGS_ICON"}% %MAKETEXT{"Site preferences"}%]]</li>
+    <li>[[%SYSTEMWEB%.SitePermissions][%TMPL:P{"PASSWORD_ICON"}% %MAKETEXT{"Site permissions"}%]]</li>
+    <li>[[%SCRIPTURLPATH{"configure"}%][%TMPL:P{"CONFIGURE_ICON"}% %MAKETEXT{"Configure Foswiki"}%]]</li>
     <li> <hr /> </li>
     <li>[[%SYSTEMWEB%.WebCreateNewWeb][%JQICON{"fa-plus"}% %MAKETEXT{"Create a new web"}%]]</li>
     <li>[[%SCRIPTURL{"rename"}%/%BASEWEB%/%BASETOPIC%?action=renameweb][%JQICON{"fa-arrows"}% %MAKETEXT{"Rename current web"}%]]</li>
@@ -78,3 +77,6 @@ Definition of site wide horizontal menu
 </li>
 </noautolink>%ENDSECTION{"adminmenu"}%
 </verbatim>
+
+%META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%
+%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

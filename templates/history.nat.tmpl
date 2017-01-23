@@ -15,7 +15,14 @@
 %TMPL:DEF{"heading"}%%MAKETEXT{"Revision history of [_1]" args="%GETTOPICTITLE{"%BASEWEB%.%BASETOPIC%" encode="entity"}%"}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"formstart"}%%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="formstart_compare" else="formstart_rdiff"}%%TMPL:END%
+%TMPL:DEF{"formstart"}%%TMPL:P{context="DiffPluginEnabled" then="formstart_diff" else="formstart_else"}%%TMPL:END%
+%TMPL:DEF{"formstart_else"}%%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="formstart_compare" else="formstart_rdiff"}%%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"formstart_diff"}%<!-- -->
+<form name="main" action="%SCRIPTURLPATH{"diff"}%/%BASEWEB%/%BASETOPIC%">
+<input type="hidden" name="context" value="2" />
+<!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"formstart_compare"}%<!-- -->
@@ -26,16 +33,16 @@
 %{ ################################################################################ }%
 %TMPL:DEF{"formstart_rdiff"}%<!-- -->
 <form name="main" action="%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%">
-<input type="hidden" name="render" value="sequential" />
+<input type="hidden" name="render" value="%DIFFRENDERSTYLE{default="sequential"}%" />
 <!-- -->%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"options"}%<!-- -->
-<div class="foswikiRight">
+%TMPL:DEF{"options"}%%TMPL:P{context="DiffPluginEnabled" else="options_else"}%%TMPL:END%
+%TMPL:DEF{"options_else"}%<div class="foswikiRight">
 <label><input type="radio" name="render" value="interweave" checked> %MAKETEXT{"interweave"}%</label>
 <label><input type="radio" name="render" value="sidebyside"> %MAKETEXT{"side by side"}%</label>
-</div>
-<!-- -->%TMPL:END%
+<label><input type="radio" name="render" value="debug"> %MAKETEXT{"debug"}%</label>
+</div>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"formend"}%<!-- -->

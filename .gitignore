@@ -1,3 +1,4 @@
+attic
 *.gz
 *.swp
 *,v
@@ -13,6 +14,7 @@ pub/System/JazzyNoteTheme/GreenVariation.css
 pub/System/JazzyNoteTheme/JazzyNoteStyle.css
 pub/System/JazzyNoteTheme/RedVariation.css
 pub/System/NatSkin/angular.js
+pub/System/NatSkin/changeform.js
 pub/System/NatSkin/backlinks.js
 pub/System/NatSkin/BaseStyle.css
 pub/System/NatSkin/childtopics.js
@@ -27,10 +29,10 @@ pub/System/NatSkin/rename.js
 pub/System/NatSkin/subscribe.js
 pub/System/NatSkin/topiccreator.css
 pub/System/NatSkin/topiccreator.js
-NatSkin.md5
-NatSkin.sha1
-NatSkin.tgz
-NatSkin.txt
-NatSkin.zip
-NatSkin_installer
-NatSkin_installer.pl
+/NatSkin.md5
+/NatSkin.sha1
+/NatSkin.tgz
+/NatSkin.txt
+/NatSkin.zip
+/NatSkin_installer
+/NatSkin_installer.pl

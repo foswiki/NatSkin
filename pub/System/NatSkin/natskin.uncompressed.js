@@ -1,4 +1,4 @@
-// (c)opyright 2006-2015 Michael Daum http://michaeldaumconsulting.com
+// (c)opyright 2006-2017 Michael Daum http://michaeldaumconsulting.com
 "use strict";
 
 (function($) {
@@ -196,14 +196,15 @@
       var $form = $(this),
           action = $form.attr("action"),
           $input = $form.find("input[type=text]"),
-          submitButton = $form.find("input[type=submit]"),
+          submitButton = $form.find("input[type=submit]:visible"),
           position = $.extend({
             my: "right top",
             at: "right bottom+11",
           }, {
             my: $form.data("position-my"),
             at: $form.data("position-at"),
-          });
+          }),
+          extraFilter = $form.data("solrExtraFilter");
 
       $form.submit(function() {
         var search = $form.find("input[name='search']"),
@@ -214,6 +215,9 @@
 
       if (typeof($.fn.autosuggest) === 'function') { // make sure autosuggest realy is present
         $input.autosuggest({
+          extraParams: {
+            filter: extraFilter
+          },
           position: position,
           menuClass: 'natSearchBoxMenu',
           search: function() {
@@ -340,8 +344,8 @@
    * note: you will have to enable {NatSkin}{DetectExternalLinks}
    */
   function initExternalLinks() {
-    $(".natMainContents .natExternalLink").livequery(function() {
-      $(this).attr("target", "_blank");
+    $(".natExternalLink").livequery(function() {
+      $(this).attr("target", "_blank").attr("rel", "noopener noreferrer");
     });
   }
 

@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1456411053" format="1.1"  version="1"}%
+%META:TOPICINFO{author="micha" comment="reprev" date="1481302062" format="1.1" reprev="16" version="16"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPICTITLE%
 
@@ -6,12 +6,10 @@ This topic gives you a short overview of the elements styled by NatSkin as well 
 
 %TOC%
 
-<!--
-see 
+---++ Links
    * http://demo.gantry-framework.org/typography
    * http://getbootstrap.com/2.3.2/base-css.html
    * http://getbootstrap.com/css/#type
--->
 
 ---++ Typography
 
@@ -23,13 +21,13 @@ $Foswiki::cfg{NatSkin}{FixTypograpghy} = 1;
 
 <div class="alt">
 
-``Quotes'', ,,More quotes''
+“Quotes'', „More quotes''
 
-(c) copyright, (r) registered, (tm) trademark
+© copyright, ® registered, ™ trademark
 
-... ellipsis
+… ellipsis
 
-<- arrow left ... arrow right ->
+<- arrow left … arrow right ->
 </div>
 
 ---++ Headings
@@ -43,6 +41,9 @@ $Foswiki::cfg{NatSkin}{FixTypograpghy} = 1;
 ---++++++!! Heading 6
 </div>
 </div>
+
+---++ Horizontal Ruler
+---
 
 ---++ Body copy
 !NatSkin takes care of vertical rhythm by taking care line heights of body text and headings obey to a predefined grid. Hit the button to display a grid checking vertical and horizontal
@@ -103,10 +104,10 @@ euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
 </blockquote>
 </div>
 ---++ Code
-Use Foswiki ML to add =inline code= or wrap it into HTML =&lt;code>= .... =&lt;/code>=
+Use Foswiki ML to add =inline code= or wrap it into HTML =&lt;code>= …. =&lt;/code>=
 
-Blocks of code are marked up using =&lt;verbatim>= ... =&lt;/verbatim>= to make sure content inside is
-not executed by Foswiki and proper escaping is performed. Compare this to the normal =&lt;pre>= ... =&lt;/pre>=
+Blocks of code are marked up using =&lt;verbatim>= … =&lt;/verbatim>= to make sure content inside is
+not executed by Foswiki and proper escaping is performed. Compare this to the normal =&lt;pre>= … =&lt;/pre>=
 HTML where macros are still executed whereas results are formatted as code.
 
 <verbatim>
@@ -117,7 +118,7 @@ Code can be prettified using the [[%SYSTEMWEB%.JQueryChili][chili jQuery module]
 
 <verbatim class="tml">
 %JQREQUIRE{"chili"}%
-... if not loaded by default anyway (see configure).
+… if not loaded by default anyway (see configure).
 
 Sample text with makros
 %SEARCH{
@@ -388,29 +389,15 @@ custom icon
 </div>
 %ENDGRID%
 
----++ Descriptions
+---++ Definition list
 <div class="alt">
-description list
-
-   term1: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
-   term2: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
-   term3: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
-
-</div>
-
-<div class="alt">
-=foswikiHorizontal=
-
-<div class="foswikiHorizontal">
    Consectetuer: adipiscing elit, sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
    Dolor: sit amet, consectetuer adipiscing elit, sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
    Adipiscing: elit sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
 </div>
-</div>
 
+---++ Indenting
 <div class="alt">
-indenting
-
    : adipiscing elit, sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
 
       : sit amet, consectetuer adipiscing elit, sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
@@ -418,7 +405,6 @@ indenting
          : elit sed diam nonummy nibh feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
 
 </div>
-
 ---++ Tables
 =foswikiTable=
 

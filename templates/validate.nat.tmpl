@@ -1,6 +1,6 @@
 %TMPL:INCLUDE{"page"}%<!-- template: validate.nat.tmpl-->
 %TMPL:DEF{"bodyclass"}%natValidateBody%TMPL:END%
-%TMPL:DEF{"content"}%<!-- content -->
+%TMPL:DEF{"content"}%<!-- -->
 <div id="foswikiLogin">
   <h1 >%MAKETEXT{"Request validation"}%</h1>
   <div class="foswikiFormSteps">
@@ -30,19 +30,18 @@
     </form>
   </div>
 </div>
-<literal>
-<script>
+%ADDTOZONE{"script" requires="JQUERYPLUGIN" id="VALIDATION::JS" text="
+<script type='text/javascript'>
 jQuery(function($) {
-  var $loginForm = $("form[name='loginform']"), 
-      $responseField = $loginForm.find("input[name='response']");
+  var $loginForm = $('form[name=loginform]'), 
+      $responseField = $loginForm.find('input[name=response]');
 
-  $("#validateChange").click(function() {
+  $('#validateChange').click(function() {
     $responseField.val('OK');
     $loginForm.submit();
     return false;
   });
 
 });
-</script>
-</literal>
-<!-- //content -->%TMPL:END%
+</script>"
+}%<!-- -->%TMPL:END%

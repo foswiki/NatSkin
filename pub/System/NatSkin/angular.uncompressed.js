@@ -15,7 +15,7 @@ foswikiApp.directive("natBody", [ '$rootScope',
 
         // things to do when a page loaded
         scope.$on("foswiki.pageLoaded", function() {
-          if (foswiki.getPreference("NatSkin.initTopPanel")) {
+          if (foswiki.getPreference("NatSkin").initTopPanel) {
             angular.element(".natTopPanel").hide();
           }
           angular.element('ul.sf-js-enabled').superfish("hide"); 
@@ -70,7 +70,7 @@ foswikiApp.directive("natBody", [ '$rootScope',
           }
 
           elem
-            .removeClass("natBodyRight natBodyLeft natBodyBoth natBodyOff natBodyBoth natBodyFixed natBodyFluid natBodyBordered")
+            .removeClass("natBodyRight natBodyLeft natBodyBoth natBodyOff natBodyFixed natBodyFluid natBodyBordered")
             .addClass(classes.join(" "));
         });
 

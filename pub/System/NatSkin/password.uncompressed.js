@@ -1,214 +1,277 @@
 /*
- * pwgen.js
- *
- * Copyright (C) 2003-2006 KATO Kazuyoshi <kzys@8-p.info>
- *
- * This program is a JavaScript port of pwgen.
- * The original C source code written by Theodore Ts'o.
- * <http://sourceforge.net/projects/pwgen/>
+ * Jen is a portable password generator using cryptographic approach
+ * Copyright (C) 2015  Michael VERGOZ @mykiimike
  * 
- * This file may be distributed under the terms of the GNU General
- * Public License.
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
  */
+
 "use strict";
 
-(function($) {
+var _serverSide = false;
 
-  var defaults = {
-      length: 10,
-      capitals: true,
-      numbers: true,
-      duplicates: true
-    },
-    PWGen = function(opts) {
-          this.opts = $.extend({}, defaults, opts);
-    };
+function JenFailsafe() { }
 
-  PWGen.prototype = {
+/* not a cryptographic approach */
+JenFailsafe.getRandomValues = function(buffer) {
+	if (!(buffer instanceof Uint8Array))
+		buffer = new Uint8Array(256);
+	
+	var rd = 0;
+	for(var a=0; a<buffer.length; a++) {
+		while(1) {
+			rd = Math.round(Math.random()*256);
+			if(rd >= 0 && rd <= 255)
+				break;
+		}
+		buffer[a] = rd;
+	}
+	return(buffer);
+};
 
-      generate0: function() {
-          var result = "",
-              prev = 0,
-              isFirst = true,
-              requested = 0,
-              shouldBe,i,str,flags;
+function Jen(hardened) {
+	if(!(this instanceof Jen))
+		return new Jen(hardened);
+	this.hardened = hardened && hardened == true ? hardened : false;
+	this.dump = new Uint8Array(256);
+	this.mode = '';
+	this.version = '1.0.6-dev';
+	if(_serverSide == true) {
+		this.crypto = require("crypto");
+		this.mode = "NodeJS CryptoAPI";
+	}
+	else {
+		this.crypto = window.crypto || window.msCrypto;
+		if(window.crypto) {
+			this.mode = "W3C CryptoAPI";
+			this.crypto = window.crypto;
+		}
+		else if(window.msCrypto) {
+			this.mode = "Microsoft CryptoAPI";
+			this.crypto = window.msCrypto;
+		}
+		if(!this.crypto) {
+			this.mode = "Failsafe";
+			this.crypto = JenFailsafe;
+		}
+	}
+}
 
-          if (this.opts.capitals) {
-              requested |= this.INCLUDE_CAPITAL_LETTER;
-          }
-          
-          if (this.opts.numbers) {
-              requested |= this.INCLUDE_NUMBER;
-          }
+Jen.prototype.engine = function() {
+	return(this.mode);
+};
 
-          if (this.opts.duplicates) {
-              requested |= this.INCLUDE_DUPLICATES;
-          }
-          
-          shouldBe = (Math.random() < 0.5) ? this.VOWEL : this.CONSONANT;
-          
-          while (result.length < this.opts.length) {
-              i = Math.floor((this.ELEMENTS.length - 1) * Math.random());
-              str = this.ELEMENTS[i][0];
-              flags = this.ELEMENTS[i][1];
+Jen.prototype.fill = function() {
+	if(_serverSide == true)
+		this.dump = this.crypto.randomBytes(256);
+	else
+		this.crypto.getRandomValues(this.dump);
+};
 
-              /* Filter on the basic type of the next element */
-              if ((flags & shouldBe) === 0) {
-                  continue;
-              }
-              /* Handle the NOT_FIRST flag */
-              if (isFirst && (flags & this.NOT_FIRST)) {
-                  continue;
-              }
-              /* Don't allow VOWEL followed a Vowel/Dipthong pair */
-              if ((prev & this.VOWEL) && (flags & this.VOWEL) && (flags & this.DIPTHONG)) {
-                  continue;
-              }
-              /* Don't allow us to overflow the buffer */
-              if (result.length + str.length > this.opts.length) {
-                  continue;
-              }
-              
-              if (requested & this.INCLUDE_CAPITAL_LETTER) {
-                  if ((isFirst || (flags & this.CONSONANT)) &&
-                      (Math.random() > 0.3)) {
-                      str = str.slice(0, 1).toUpperCase() + str.slice(1, str.length);
-                      requested &= ~this.INCLUDE_CAPITAL_LETTER;
-                  }
-              }
-              
-              /*
-               * OK, we found an element which matches our criteria,
-               * let's do it!
-               */
-              result += str;
-              
-              if (!(requested & this.INCLUDE_DUPLICATES)) {
-                result = result.replace(/(.)(?=\1)/g, "");
-              }
-              
-              if (requested & this.INCLUDE_NUMBER) {
-                  if (!isFirst && (Math.random() < 0.3)) {
-                      result += Math.floor(10 * Math.random()).toString();
-                      requested &= ~this.INCLUDE_NUMBER;
-                      
-                      isFirst = true;
-                      prev = 0;
-                      shouldBe = (Math.random() < 0.5) ? this.VOWEL : this.CONSONANT;
-                      continue;
-                  }
-              }
-              
-              /*
-               * OK, figure out what the next element should be
-               */
-              if (shouldBe === this.CONSONANT) {
-                  shouldBe = this.VOWEL;
-              } else { /* should_be == VOWEL */
-                  if ((prev & this.VOWEL) ||
-                      (flags & this.DIPTHONG) || (Math.random() > 0.3)) {
-                      shouldBe = this.CONSONANT;
-                  } else {
-                      shouldBe = this.VOWEL;
-                  }
-              }
-              prev = flags;
-              isFirst = false;
-          }
-          
-          if (requested & (this.INCLUDE_NUMBER | this.INCLUDE_CAPITAL_LETTER)) {
-              return null;
-          }
-          
-          return result;
-      },
+Jen.prototype.randomBytes = function(size) {
+	if(size <= 0)
+		size = 1;
+	
+	if(_serverSide == true)
+		return(this.crypto.randomBytes(size));
+	
+	var r = new Uint8Array(size);
+	this.crypto.getRandomValues(r);
+	return(r);
+};
 
-      generate: function() {
-          var result = null;
+Jen.prototype.random = function(size) {
+	if(size <= 0)
+		size = 4;
+	else if(size > 2)
+		size = 4;
+	
+	var d = this.randomBytes(size);
+	
+	if(_serverSide == true) {
+		if(size == 1)
+			return(d.readUInt8(0));
+		else if(size == 2)
+			return(d.readUInt16LE(0));
+		else
+			return(d.readUInt32LE(0));
+	}
 
-          while (! result) {
-              result = this.generate0();
-          }
-          
-          return result;
-      },
+	var dv = new DataView(d.buffer), r;
+	if(size == 1)
+		r = dv.getUint8(0);
+	else if(size == 2)
+		r = dv.getUint16(0);
+	else
+		r = dv.getUint32(0);
+	
+	return(r);
+};
 
-      INCLUDE_NUMBER: 1,
-      INCLUDE_CAPITAL_LETTER: 1 << 1,
-      INCLUDE_DUPLICATES: 1 << 2,
+Jen.prototype.randomBetween = function(max, min) {
+	if(max <= 0)
+		max = Math.pow(2, 32);
+	if(!min)
+		min = 0;
+	if(min >= max)
+		return(NaN);
+	var size = 1;
+	var ml2 = Math.log(max)/Math.log(2);
+	if(ml2 > 16)
+		size = 4;
+	else if(ml2 > 8)
+		size = 2;
+	var num;
+	do {
+		num = this.random(size);
+	} while(num > max || num < min);
+	return(num);
+};
 
-      CONSONANT: 1,
-      VOWEL:     1 << 1,
-      DIPTHONG:  1 << 2,
-      NOT_FIRST: 1 << 3
-  };
+Jen.prototype.hardening = function(bool) {
+	this.hardened = !!bool;
+};
 
-  PWGen.prototype.ELEMENTS = [
-      [ "a",  PWGen.prototype.VOWEL ],
-      [ "ae", PWGen.prototype.VOWEL | PWGen.prototype.DIPTHONG ],
-      [ "ah", PWGen.prototype.VOWEL | PWGen.prototype.DIPTHONG ],
-      [ "ai", PWGen.prototype.VOWEL | PWGen.prototype.DIPTHONG ],
-      [ "b",  PWGen.prototype.CONSONANT ],
-      [ "c",  PWGen.prototype.CONSONANT ],
-      [ "ch", PWGen.prototype.CONSONANT | PWGen.prototype.DIPTHONG ],
-      [ "d",  PWGen.prototype.CONSONANT ],
-      [ "e",  PWGen.prototype.VOWEL ],
-      [ "ee", PWGen.prototype.VOWEL | PWGen.prototype.DIPTHONG ],
-      [ "ei", PWGen.prototype.VOWEL | PWGen.prototype.DIPTHONG ],
-      [ "f",  PWGen.prototype.CONSONANT ],
-      [ "g",  PWGen.prototype.CONSONANT ],
-      [ "gh", PWGen.prototype.CONSONANT | PWGen.prototype.DIPTHONG | PWGen.prototype.NOT_FIRST ],
-      [ "h",  PWGen.prototype.CONSONANT ],
-      [ "i",  PWGen.prototype.VOWEL ],
-      [ "ie", PWGen.prototype.VOWEL | PWGen.prototype.DIPTHONG ],
-      [ "j",  PWGen.prototype.CONSONANT ],
-      [ "k",  PWGen.prototype.CONSONANT ],
-      [ "l",  PWGen.prototype.CONSONANT ],
-      [ "m",  PWGen.prototype.CONSONANT ],
-      [ "n",  PWGen.prototype.CONSONANT ],
-      [ "ng", PWGen.prototype.CONSONANT | PWGen.prototype.DIPTHONG | PWGen.prototype.NOT_FIRST ],
-      [ "o",  PWGen.prototype.VOWEL ],
-      [ "oh", PWGen.prototype.VOWEL | PWGen.prototype.DIPTHONG ],
-      [ "oo", PWGen.prototype.VOWEL | PWGen.prototype.DIPTHONG],
-      [ "p",  PWGen.prototype.CONSONANT ],
-      [ "ph", PWGen.prototype.CONSONANT | PWGen.prototype.DIPTHONG ],
-      [ "qu", PWGen.prototype.CONSONANT | PWGen.prototype.DIPTHONG],
-      [ "r",  PWGen.prototype.CONSONANT ],
-      [ "s",  PWGen.prototype.CONSONANT ],
-      [ "sh", PWGen.prototype.CONSONANT | PWGen.prototype.DIPTHONG],
-      [ "t",  PWGen.prototype.CONSONANT ],
-      [ "th", PWGen.prototype.CONSONANT | PWGen.prototype.DIPTHONG],
-      [ "u",  PWGen.prototype.VOWEL ],
-      [ "v",  PWGen.prototype.CONSONANT ],
-      [ "w",  PWGen.prototype.CONSONANT ],
-      [ "x",  PWGen.prototype.CONSONANT ],
-      [ "y",  PWGen.prototype.CONSONANT ],
-      [ "z",  PWGen.prototype.CONSONANT ]
-  ];
+Jen.prototype.password = function(min, max, regex) {
+	var start = new Date().getTime();
+	if(!(regex instanceof RegExp))
+		regex = null;
+
+	min = min < 4 ? 4 : min;
+	max = max > min ? max : min;
+
+	var b = 0, ret = '';
+	var cur = max;
+
+	if(min != max) {
+		cur = 0;
+		
+		var nBi = Math.ceil(Math.log(max)/Math.log(2)),
+		nBy = Math.ceil(nBi/8), nByBi = nBy*8; 
+		while(cur == 0) {
+			var r = this.random(nBy)>>(nByBi-nBi);
+			if(r >= min && r <= max) {
+				cur = r;
+				break;
+			}
+		}
+	}
+
+	b = 0;
+	while(b < cur) {
+		
+		this.fill();
+		var array = this.dump;
+		for (var a=0; a < array.length && b < cur; a++) {
+			if(
+				(array[a] >= 0x30 && array[a] <= 0x39) ||
+				(array[a] >= 0x41 && array[a] <= 0x5a) ||
+				(array[a] >= 0x61 && array[a] <= 0x7a)) {
+				if(regex) {
+					if(regex.test(String.fromCharCode(array[a]))) {
+						ret += String.fromCharCode(array[a]);
+						b++;
+					}
+				}
+				else {
+					ret += String.fromCharCode(array[a]);
+					b++;
+				}
+			}
+			else if(this.hardened == true && (
+					array[a] == 0x21 ||
+					array[a] == 0x23 ||
+					array[a] == 0x25 ||
+					(array[a] == 0x28 && array[a] <= 0x2f) ||
+					(array[a] == 0x3a && array[a] <= 0x40)
+				)) {
+				if(regex) {
+					if(regex.test(String.fromCharCode(array[a]))) {
+						ret += String.fromCharCode(array[a]);
+						b++;
+					}
+				}
+				else {
+					ret += String.fromCharCode(array[a]);
+					b++;
+				}
+			}
+		}
+	}
+	this.fill();
+	this._time = new Date().getTime()-start;
+	return(ret);
+
+};
+
+Jen.prototype.stats = function(min, max, regex) {
+	return(this._time);
+};
+
+if(typeof module !== 'undefined' && module.exports) {
+	_serverSide = true;
+	module.exports = Jen;
+}
+
+
+
+"use strict";
+jQuery(function($) {
+  var generator,
+      defaults = {
+         length: 15,
+         capitals: true,
+         numbers: true,
+         specialChars: true
+      };
 
   function password (opts) {
-    var pwgen = new PWGen(opts);
-    return pwgen.generate();
+    var regex = opts.regex;
+
+    generator = generator || new Jen(opts.specialChars);
+
+    if (typeof(regex) === 'undefined') {
+      regex = "";
+
+      if (!opts.capitals) {
+        regex += 'A-Z';
+      }
+
+      if (!opts.numbers) {
+        regex += '\\d';
+      }
+
+      if (regex) {
+        regex = new RegExp("[^"+regex+"]");
+      }
+    }
+
+    return generator.password(opts.length, opts.length, regex);
   }
 
-  $(function() {
-    if ($("body").is(".natUnsupportedBrowser")) {
-      $(".jqGeneratePassword").hide();
-    } else {
-      $(document).on("click", ".jqGeneratePassword", function(ev) {
-        var $this = $(this), 
-            opts = $.extend({}, defaults, $this.data()),
-            $passwordField = $(opts.target),
-            $substitute = $("<span />");
+  $(document).on("click", ".jqGeneratePassword", function(ev) {
+    var $this = $(this), 
+        opts = $.extend({}, defaults, $this.data()),
+        $passwordField = $(opts.target),
+        $substitute = $("<span />");
 
-        // detatch password field temporarily, make it a text input, add the password and insert it back to the dom
-        $passwordField.replaceWith($substitute).attr("type", "text").val(password(opts));
-        $substitute.replaceWith($passwordField);
+    // detatch password field temporarily, make it a text input, add the password and insert it back to the dom
+    $passwordField.replaceWith($substitute).attr("type", "text").val(password(opts));
 
-        ev.preventDefault();
-        return false;
-      });
-    }
+    $substitute.replaceWith($passwordField);
+
+    ev.preventDefault();
+    return false;
   });
-
-})(jQuery);
+});

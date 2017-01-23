@@ -1,6 +1,7 @@
 <!-- template: body.nat.tmpl -->
 %TMPL:DEF{"defaultbodyclass"}%natBody%TMPL:END%
-%TMPL:DEF{"body"}%<body id="body" class="foswikiNoJs %TMPL:P{"defaultbodyclass"}%%IF{
+%TMPL:DEF{"body"}%<body id="body" class="%TMPL:P{"body::class"}%">%TMPL:P{"defaultbody"}%%RENDERZONE{"body"}%%TMPL:P{"javascript"}%</body>%TMPL:END%
+%TMPL:DEF{"body::class"}%foswikiNoJs %TMPL:P{"defaultbodyclass"}%%IF{
     "context isadmin" 
     then=" natIsAdminBody"
   }%%IF{
@@ -35,7 +36,8 @@
   }%%IF{
     "context 'natskin_layout_bordered'" 
     then=" natBodyBordered"
-  }% %TMPL:P{"bodyclass"}% natBodyWeb_%WEB% natBodyTopic_%TOPIC%">%TMPL:P{"defaultbody"}%%RENDERZONE{"body"}%</body>%TMPL:END%
+  }% %TMPL:P{"bodyclass"}% natBodyWeb_%WEB% natBodyTopic_%TOPIC%%TMPL:END%
+
 
 %{ container definitions --------------------------------------------------- }%
 %TMPL:DEF{"contentheader"}%<div class="natMainHeaderContents clearfix">%TMPL:P{"contentheader::contents"}%</div>%TMPL:END%
@@ -89,7 +91,7 @@
 </div>%TMPL:END%
 
 %{ body contents ----------------------------------------------------------- }%
-%TMPL:DEF{"beforebodycontents"}%%TMPL:P{"browsersupport"}%%TMPL:P{"broadcast"}%%TMPL:P{"toppanel"}%%TMPL:END%
+%TMPL:DEF{"beforebodycontents"}%%TMPL:P{"broadcast"}%%TMPL:P{"toppanel"}%%TMPL:END%
 
 %TMPL:DEF{"bodycontents"}%<div class="natBodyContents" id="PageTop">
 %TMPL:P{"topbar"}%<!-- -->

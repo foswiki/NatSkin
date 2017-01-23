@@ -1,24 +1,9 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1456411053" format="1.1" version="1"}%
+%META:TOPICINFO{author="micha" comment="reprev" date="1472639949" format="1.1" reprev="4" version="4"}%
 %META:TOPICPARENT{name="NatSkin"}%
----+ %TOPIC%
-Default <nop>WebHtmlHead component for your <nop>%WIKITOOLNAME% site.
-Create a <nop>WebHtmlHead topic in your web to override the content of this topic.
+---+!! %TOPIC%
 
-<verbatim>
-%STARTINCLUDE%
-%STOPINCLUDE% <!-- remove this line 
-                   to enable the example settings below -->
-<style>
-.natSearchBox input,
-.natTopBar {
-  background-color: %WEBBGCOLOR%;
-}
+Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] instead.
 
-/*
-.natBody {
-  background-color: ...
-}
-*/
-</style>
-%STOPINCLUDE% 
+<verbatim class="tml">
+%STARTINCLUDE%%STOPINCLUDE%
 </verbatim>

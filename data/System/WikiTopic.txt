@@ -1,0 +1,7 @@
+%META:TOPICINFO{author="micha" comment="" date="1468139419" format="1.1" version="1"}%
+---+!! %TOPIC%
+
+Default form for wiki topics
+
+| *Name:*| *Type:* | *Size:* | *Values:* | *Description:* | *Attributes:* | *Default:* |
+| <nop>TopicTitle | text | 75 | | | c | | 

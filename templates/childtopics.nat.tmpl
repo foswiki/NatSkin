@@ -81,7 +81,7 @@
 %TMPL:DEF{"childtopicsearch::solr"}%<noautolink>
 %MAKEINDEX{
   "%SOLRSEARCH{
-    "parent:%BASEWEB%.%BASETOPIC%"
+    "parent:%ENCODE{"%BASEWEB%" old="/" new="."}%.%BASETOPIC%"
     header="$percntCALC{\"$SET(total,$count)\"}$percnt"
     format="($percntSUBST{text=\"$percntENCODE{\"$title\" type=\"entity\"}$percnt\" pattern=\"(&#\d+;)|[$]\" format=\"\"}$percnt);$title;$web.$topic"
     sort="title"

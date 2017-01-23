@@ -1,7 +1,7 @@
 /*
  * topic creator for natskin 0.99
  *
- * (c)opyright 2015 Michael Daum http://michaeldaumconsulting.com
+ * (c)opyright 2015-2016 Michael Daum http://michaeldaumconsulting.com
  *
  * Dual licensed under the MIT and GPL licenses:
  *   http://www.opensource.org/licenses/mit-license.php
@@ -117,6 +117,9 @@
       }
     }
 
+    // propagate topic title
+    params["topicTitle"] = self.elem.find("input[name=topicTitle]").val();
+
     // step 0: remove previous pages 
     if (step === 0 || dir < 0) {
       for (i = step; i < self.steps.length; i++) {
@@ -185,15 +188,15 @@
 
     // show/hide navi elems
     if (!foundPrev) {
-      self.elem.find(".tcNaviPrev").hide();
+      self.elem.find(".tcNaviPrev").parent().hide();
     } else {
-      self.elem.find(".tcNaviPrev").show();
+      self.elem.find(".tcNaviPrev").parent().show();
     }
     if (step === self.steps.length -1) {
-      self.elem.find(".tcNaviNext").hide();
+      self.elem.find(".tcNaviNext").parent().hide();
       self.elem.find(".tcAbort, .tcSubmit").show();
     } else {
-      self.elem.find(".tcNaviNext").show();
+      self.elem.find(".tcNaviNext").parent().show();
       self.elem.find(".tcAbort, .tcSubmit").hide();
     }
 
@@ -207,15 +210,8 @@
     }    
 
     // add focus
-    stepElem.find("input[type=text]:first").focus();
-    
-    // add return=submit
-    stepElem.find("input[type=text]:not(.jqTextboxList)").on("keyup", function(ev) {
-      if (ev.keyCode === 13) {
-        self.container.block({message:""});
-        self.elem.find("form").submit();
-        return false;
-      }
+    window.setTimeout(function() {
+      stepElem.find("input[type=text]:first").focus();
     });
 
     // check for init state
@@ -224,8 +220,65 @@
       return;
     }
     stepElem.data("inited", 1);
-
     self.log("init ",stepDesc.id);
+
+    // add return=submit
+    stepElem.find("input[type=text]:not(.jqTextboxList)").on("keyup", function(ev) {
+      var form;
+      if (ev.keyCode === 13) {
+        form = self.elem.find("form");
+
+        if (form.length) {
+          self.container.block({message:""});
+          form.submit();
+
+        } else {
+          self.gotoStep(self.currentStep + 1, 1);
+        }
+        return false;
+      }
+    });
+
+    // keyboard
+    stepElem.on("keydown", function(ev) {
+      var selectedElem = stepElem.find(".tcSelected"),
+          pageElem = stepElem.find(".tcPage"),
+          pageOffset, nextElemOffset,
+          nextElem;
+
+      if (selectedElem.length == 0) {
+        return;
+      }
+      switch(ev.keyCode) {
+        case 39: // right
+          nextElem = selectedElem.next();
+          break;
+        case 40: // down
+          nextElem = selectedElem.next().next().next();
+          break;
+        case 37: // left
+          nextElem = selectedElem.prev();
+          break;
+        case 38: // up
+          nextElem = selectedElem.prev().prev().prev();
+          break;
+      }
+
+      if (nextElem && nextElem.length) {
+        selectedElem.removeClass("tcSelected");
+        nextElem.addClass("tcSelected");
+        stepDesc.selectedElem = nextElem;
+
+        pageOffset = pageElem.offset();
+        nextElemOffset = nextElem.offset();
+        if (nextElemOffset.top + nextElem.outerHeight() > pageOffset.top + pageElem.innerHeight() ||
+            nextElemOffset.top < pageOffset.top) {
+          stepElem.find(".tcPage").scrollTo(nextElem, 250);
+        }
+        
+        return false;
+      }
+    });
 
 
     // select 

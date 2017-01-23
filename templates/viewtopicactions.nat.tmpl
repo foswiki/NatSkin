@@ -1,6 +1,3 @@
 <!-- template: viewtopicaction.nat.tmpl -->
-%TMPL:DEF{"topicactions"}%%TMPL:P{context="static" else="topicactions::contents"}%%TMPL:END%
-
-%TMPL:DEF{"topicactions::contents"}%<div class="natTopicActions jqUITooltip clearfix" id="natTopicActions" data-theme="info" data-arrow="on" data-position="top"><noautolink>
-%WEBCOMPONENT{"TopicActions"}%<!-- -->
-</noautolink></div>%TMPL:END%
+%TMPL:DEF{"topicactions"}%<div class="natTopicActions jqUITooltip clearfix" id="natTopicActions" data-theme="info" data-arrow="on" data-position="top"><noautolink>%TMPL:P{context="static" else="topicactions::contents"}%</noautolink></div>%TMPL:END%
+%TMPL:DEF{"topicactions::contents"}%%WEBCOMPONENT{"TopicActions"}%%TMPL:END%

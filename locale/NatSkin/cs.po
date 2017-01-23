@@ -115,17 +115,6 @@ msgstr ""
 "*Administrátoři:* Emailovou adresu uživatele můžete změnit pomocí tohoto "
 "formuláře. Zadejte [[%1][username]] nebo [[%1][WikiName]] a nový e-mail."
 
-#: templates/attachnew.nat.tmpl:8
-msgid ""
-"*Link checkbox*: In case the attached file is a JPG, GIF or PNG image and "
-"you check the box, it will create an inline image (e.g. show the image) at "
-"the end of the topic.  For other file types a simple link will be created."
-msgstr ""
-
-#: templates/attachagain.nat.tmpl:24
-msgid "*Move attachment*: An attachment can be deleted by moving it to %1"
-msgstr ""
-
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:53
 msgid ""
 "*Note:* A group name must be a [[%SYSTEMWEB%.WikiWord][WikiWord]] and end "
@@ -136,19 +125,15 @@ msgstr ""
 msgid "20 Minutes Tutorial"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:232
+#: templates/foswiki.nat.tmpl:207
 msgid "<nop>WebDAV Directory"
-msgstr ""
-
-#: templates/attachnew.nat.tmpl:29
-msgid "<strong>Continue</strong> uploading more files"
 msgstr ""
 
 #: templates/messages.nat.tmpl:255
 msgid "A =.txt= extension is appended to some filenames for security reasons"
 msgstr "Extenze =.txt= se přidává k některým souborům z důvodu bezpečnosti"
 
-#: data/System/UserRegistrationViewTemplate.txt:145
+#: data/System/UserRegistrationViewTemplate.txt:149
 #, fuzzy
 msgid "A valid e-mail address. Will be kept confidential."
 msgstr "Vaše emailová adresa bude vedena v tajnosti."
@@ -157,7 +142,7 @@ msgstr "Vaše emailová adresa bude vedena v tajnosti."
 msgid "Abandon changes and exit"
 msgstr "Zruš změny a skonči"
 
-#: templates/newtopic.wwb.tmpl:21 templates/oops.nat.tmpl:27
+#: templates/newtopic.nat.tmpl:21 templates/oops.nat.tmpl:27
 msgid "Abort"
 msgstr ""
 
@@ -171,15 +156,15 @@ msgstr "Přesun článku do:"
 msgid "Access denied"
 msgstr "Přístup odepřen"
 
-#: data/System/UserRegistrationViewTemplate.txt:111
+#: data/System/UserRegistrationViewTemplate.txt:115
 msgid "Account settings"
 msgstr ""
 
-#: templates/history.nat.tmpl:77
+#: templates/history.nat.tmpl:84
 msgid "Action"
 msgstr "Akce"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:100
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:97
 #, fuzzy
 msgid "Add member"
 msgstr "Přidej členy"
@@ -192,20 +177,20 @@ msgstr ""
 msgid "Add topic %1 to my sidebar navigation"
 msgstr ""
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:112
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:109
 #, fuzzy
 msgid "Add users or groups to this group"
 msgstr "Vyberte uživatele nebo skupiny, které chcete přidat"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:174
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:171
 msgid "Adding"
 msgstr ""
 
-#: data/System/NatSkinUserViewTemplate.txt:52
+#: data/System/NatSkinUserViewTemplate.txt:51
 msgid "Address"
 msgstr ""
 
-#: data/System/SiteMenu.txt:61
+#: data/System/SiteMenu.txt:60
 msgid "Admin"
 msgstr ""
 
@@ -218,7 +203,7 @@ msgstr "Administrátor Foswiki ověření uživatele"
 msgid "Admin Tools"
 msgstr ""
 
-#: data/System/SiteMenu.txt:42
+#: data/System/SiteMenu.txt:41
 msgid "Admin docs"
 msgstr ""
 
@@ -285,23 +270,19 @@ msgstr ""
 "Všechny změny provedené v článku před příchodem na tuto stránku zůstanou "
 "zachovány."
 
-#: data/System/SiteMenu.txt:65
+#: data/System/SiteMenu.txt:64
 #, fuzzy
 msgid "Applications"
 msgstr "Akce"
 
-#: templates/foswiki.nat.tmpl:30
+#: templates/foswiki.nat.tmpl:27
 msgid "Attach"
 msgstr "Příloha"
 
-#: templates/foswiki.nat.tmpl:31
+#: templates/foswiki.nat.tmpl:28
 #, fuzzy
 msgid "Attach files and images"
 msgstr "Připoj soubor k %1"
-
-#: templates/attachtables.nat.tmpl:95
-msgid "Attachment"
-msgstr "Příloha"
 
 #: templates/messages.nat.tmpl:346
 msgid "Attachment '%1' does not exist"
@@ -315,12 +296,12 @@ msgstr "Vymazání přílohy selhalo"
 msgid "Attachment move failed"
 msgstr "Přesun přílohy selhal"
 
-#: templates/attach.nat.tmpl:13 templates/attachtables.nat.tmpl:43
-#: templates/copytopic.nat.tmpl:29 templates/edit.nat.tmpl:250
+#: templates/attach.nat.tmpl:13 templates/copytopic.nat.tmpl:29
+#: templates/edit.nat.tmpl:250
 msgid "Attachments"
 msgstr "Přílohy"
 
-#: templates/attach.nat.tmpl:25 templates/attachnew.nat.tmpl:36
+#: templates/attach.nat.tmpl:25
 #, fuzzy
 msgid "Attachments at %1"
 msgstr "Přílohy %1"
@@ -329,17 +310,22 @@ msgstr "Přílohy %1"
 msgid "Attention"
 msgstr "Pozor"
 
-#: templates/history.nat.tmpl:75
+#: templates/history.nat.tmpl:82
 msgid "Author"
 msgstr ""
 
-#: templates/view.nat.tmpl:108
+#: templates/newtopic.nat.tmpl:19
+#, fuzzy
+msgid "Back one step"
+msgstr "Zpět na článek"
+
+#: templates/view.nat.tmpl:116
 #, fuzzy
 msgid "Back to view mode"
 msgstr "Zpět na článek"
 
 #: templates/backlinksallwebs.nat.tmpl:6 templates/backlinksweb.nat.tmpl:5
-#: templates/foswiki.nat.tmpl:36
+#: templates/foswiki.nat.tmpl:32
 msgid "Backlinks"
 msgstr "Zpětné odkazy"
 
@@ -361,11 +347,6 @@ msgstr "Zpětné odkazy na %1 v %2 Webu"
 msgid "Base web %1 is missing or does not exist"
 msgstr "Základní web %1 není dostupný nebo neexistuje"
 
-#: templates/attachnew.nat.tmpl:18
-#, fuzzy
-msgid "Batch upload"
-msgstr "Zrušit upload"
-
 #: data/System/NatSkinStyleBrowser.txt:38
 msgid "Bordered"
 msgstr ""
@@ -378,7 +359,7 @@ msgstr ""
 msgid "Breadcrumbs navigation"
 msgstr ""
 
-#: data/System/SiteMenu.txt:53
+#: data/System/SiteMenu.txt:52
 msgid "Bugreport"
 msgstr ""
 
@@ -392,17 +373,17 @@ msgid "Can't get an e-mail address for %1"
 msgstr "Změň emailovou adresu"
 
 #: data/Sandbox/NatSkinTest.txt:527 data/Sandbox/NatSkinTest.txt:552
-#: templates/actionform.nat.tmpl:18 templates/attachagain.nat.tmpl:30
-#: templates/changeform.nat.tmpl:26 templates/copytopic.nat.tmpl:43
-#: templates/kinosearch.nat.tmpl:8 templates/languageselector.nat.tmpl:29
-#: templates/loginbase.nat.tmpl:75 templates/managetags.nat.tmpl:33
-#: templates/messages.nat.tmpl:280 templates/moveattachment.nat.tmpl:67
-#: templates/newtopic.nat.tmpl:73 templates/newtopic.nat.tmpl:81
-#: templates/oopsleaseconflict.nat.tmpl:55 templates/print.nat.tmpl:29
-#: templates/renamebase.nat.tmpl:17 templates/renameconfirm.nat.tmpl:7
-#: templates/renamedelete.nat.tmpl:14 templates/renamewebbase.nat.tmpl:13
-#: templates/renamewebconfirm.nat.tmpl:7 templates/search.nat.tmpl:31
-#: templates/translatetopic.nat.tmpl:131 templates/validate.nat.tmpl:28
+#: templates/actionform.nat.tmpl:18 templates/changeform.nat.tmpl:26
+#: templates/copytopic.nat.tmpl:43 templates/kinosearch.nat.tmpl:8
+#: templates/languageselector.nat.tmpl:29 templates/loginbase.nat.tmpl:75
+#: templates/managetags.nat.tmpl:33 templates/messages.nat.tmpl:280
+#: templates/moveattachment.nat.tmpl:67 templates/newtopic.old.tmpl:73
+#: templates/newtopic.old.tmpl:81 templates/oopsleaseconflict.nat.tmpl:55
+#: templates/print.nat.tmpl:29 templates/renamebase.nat.tmpl:17
+#: templates/renameconfirm.nat.tmpl:7 templates/renamedelete.nat.tmpl:14
+#: templates/renamewebbase.nat.tmpl:13 templates/renamewebconfirm.nat.tmpl:7
+#: templates/search.nat.tmpl:31 templates/translatetopic.nat.tmpl:131
+#: templates/validate.nat.tmpl:28
 msgid "Cancel"
 msgstr "Přerušit"
 
@@ -418,7 +399,7 @@ msgstr "Web %1 nelze vytvoŕít, protože už existuje"
 msgid "Cannot rename %1 to %2 because it already exists."
 msgstr "Nelze přejmenovat %1 do %2 protože už existuje."
 
-#: templates/sidebar.nat.tmpl:52
+#: templates/sidebar.nat.tmpl:55
 msgid "Categories"
 msgstr "Kategorie"
 
@@ -449,12 +430,7 @@ msgstr "Změň jazyk"
 msgid "Change password"
 msgstr "Změň heslo"
 
-#: templates/attachagain.nat.tmpl:29
-#, fuzzy
-msgid "Change properties"
-msgstr "Změň pouze vlastnosti"
-
-#: templates/foswiki.nat.tmpl:136
+#: templates/foswiki.nat.tmpl:117
 #, fuzzy
 msgid "Change the name and/or the location of this topic"
 msgstr "K tomuto článku přidej volby pro nastavení uživatele."
@@ -464,7 +440,7 @@ msgstr "K tomuto článku přidej volby pro nastavení uživatele."
 msgid "Changed"
 msgstr "Změněno:"
 
-#: templates/sidebar.nat.tmpl:53
+#: templates/sidebar.nat.tmpl:56
 msgid "Changes"
 msgstr "Změny"
 
@@ -484,11 +460,11 @@ msgstr ""
 "automatické odkazování. Písmena nepovolená ve jménu článku, jako jsou mezery "
 "budou automaticky odstraněna."
 
-#: templates/foswiki.nat.tmpl:79
+#: templates/foswiki.nat.tmpl:70
 msgid "Chat"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:80
+#: templates/foswiki.nat.tmpl:71
 #, fuzzy
 msgid "Chat about this topic"
 msgstr "Vytvořit tento článek"
@@ -503,7 +479,7 @@ msgstr "Podřízené články v %1 webu"
 msgid "Child topics of %1"
 msgstr "Podřízené články v %1 webu"
 
-#: templates/foswiki.nat.tmpl:48
+#: templates/foswiki.nat.tmpl:42
 msgid "Children"
 msgstr ""
 
@@ -511,12 +487,12 @@ msgstr ""
 msgid "Chinese"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:193
+#: data/System/UserRegistrationViewTemplate.txt:197
 #, fuzzy
 msgid "Choose a <nop>WikiName"
 msgstr "<nop>WikiJméno:"
 
-#: data/System/UserRegistrationViewTemplate.txt:130
+#: data/System/UserRegistrationViewTemplate.txt:134
 #, fuzzy
 msgid "Choose a login name"
 msgstr "Zadejte prosím uživatelské jméno."
@@ -525,7 +501,7 @@ msgstr "Zadejte prosím uživatelské jméno."
 msgid "Choose a new form for %1"
 msgstr "Vyberte nový formulář pro %1"
 
-#: data/System/UserRegistrationViewTemplate.txt:154
+#: data/System/UserRegistrationViewTemplate.txt:158
 #, fuzzy
 msgid "Choose a password"
 msgstr "Změň heslo"
@@ -551,27 +527,27 @@ msgstr ""
 msgid "Clear selection"
 msgstr "Akce"
 
-#: templates/foswiki.nat.tmpl:75
+#: templates/foswiki.nat.tmpl:66
 msgid "Click to like/unlike this topic"
 msgstr ""
 
 #: templates/attach.nat.tmpl:19 templates/backlinks.nat.tmpl:21
 #: templates/backlinksallwebs.nat.tmpl:18 templates/backlinksweb.nat.tmpl:13
 #: templates/childtopics.nat.tmpl:16 templates/childtopics.nat.tmpl:32
-#: templates/foswiki.nat.tmpl:145 templates/history.nat.tmpl:44
+#: templates/foswiki.nat.tmpl:125 templates/history.nat.tmpl:51
 #: templates/oopsmore.nat.tmpl:14 templates/viewraw.nat.tmpl:12
 msgid "Close"
 msgstr "Zavřít"
 
-#: templates/view.nat.tmpl:168
+#: templates/view.nat.tmpl:190
 msgid "Close broadcast message"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:146 templates/foswiki.nat.tmpl:148
+#: templates/foswiki.nat.tmpl:126 templates/foswiki.nat.tmpl:127
 msgid "Close this dialog"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:264
+#: data/System/UserRegistrationViewTemplate.txt:268
 msgid "Collaboration details"
 msgstr ""
 
@@ -579,7 +555,7 @@ msgstr ""
 msgid "Color %1 has an invalid format"
 msgstr "Barva %1 má nesprávný formát"
 
-#: templates/history.nat.tmpl:76
+#: templates/history.nat.tmpl:83
 msgid "Comment"
 msgstr "Komentář"
 
@@ -593,7 +569,7 @@ msgstr "Komentáře:"
 msgid "Comments"
 msgstr "Komentáře:"
 
-#: templates/compare.nat.tmpl:17 templates/history.nat.tmpl:43
+#: templates/compare.nat.tmpl:17 templates/history.nat.tmpl:50
 #, fuzzy
 msgid "Compare"
 msgstr "(porovnat)"
@@ -603,7 +579,7 @@ msgstr "(porovnat)"
 msgid "Confidential"
 msgstr "Konflikt"
 
-#: data/System/SiteMenu.txt:73
+#: data/System/SiteMenu.txt:72
 msgid "Configure Foswiki"
 msgstr ""
 
@@ -636,11 +612,11 @@ msgstr "Změň jazyk"
 msgid "Continue and try to rename web?"
 msgstr "Pokračujte a zkuste přejmenovat web?"
 
-#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:284
+#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:251
 msgid "Copy"
 msgstr ""
 
-#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:285
+#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:252
 msgid "Copy topic"
 msgstr "Kopíruj článek"
 
@@ -653,37 +629,37 @@ msgstr "Nemohu nalézt šablonu"
 msgid "Could not save %1."
 msgstr "Nemohl uložit %1."
 
-#: data/System/NatSkinUserViewTemplate.txt:54
-#: data/System/UserRegistrationViewTemplate.txt:237
+#: data/System/NatSkinUserViewTemplate.txt:53
+#: data/System/UserRegistrationViewTemplate.txt:241
 #, fuzzy
 msgid "Country"
 msgstr "Země:"
 
-#: templates/404.nat.tmpl:50 templates/newtopic.wwb.tmpl:22
+#: templates/404.nat.tmpl:50 templates/newtopic.nat.tmpl:22
 #, fuzzy
 msgid "Create"
 msgstr "Vy&tvořit"
 
-#: templates/foswiki.nat.tmpl:287
+#: templates/newtopic.old.tmpl:3 templates/newtopic.old.tmpl:4
+#, fuzzy
+msgid "Create a Topic"
+msgstr "Vytvoř nový článek"
+
+#: templates/newtopic.nat.tmpl:3 templates/newtopic.old.tmpl:5
+#, fuzzy
+msgid "Create a Topic in %1"
+msgstr "Vytvoř nový článek"
+
+#: templates/foswiki.nat.tmpl:253
 msgid "Create a copy of this topic under a new name"
 msgstr ""
 
-#: templates/newtopic.wwb.tmpl:151
-#, fuzzy
-msgid "Create a new %1 in %2:"
-msgstr "Vytvoř novou skupinu"
-
-#: templates/newtopic.nat.tmpl:3 templates/newtopic.nat.tmpl:4
-#, fuzzy
-msgid "Create a new topic"
-msgstr "Vytvoř nový článek"
-
-#: templates/foswiki.nat.tmpl:196 templates/newtopic.nat.tmpl:5
+#: templates/foswiki.nat.tmpl:172
 #, fuzzy
 msgid "Create a new topic in the %1 web"
 msgstr "Nový článek v %1"
 
-#: templates/foswiki.nat.tmpl:160
+#: templates/foswiki.nat.tmpl:137
 #, fuzzy
 msgid "Create a new topic serving as a translation for this topic"
 msgstr "Vytvoří novou revizi článku při ukládání"
@@ -693,12 +669,12 @@ msgstr "Vytvoří novou revizi článku při ukládání"
 msgid "Create a new translation"
 msgstr "Vytvoř novou tabulku"
 
-#: data/System/SiteMenu.txt:75 data/System/WebCreateNewWeb.txt:3
+#: data/System/SiteMenu.txt:74 data/System/WebCreateNewWeb.txt:3
 #, fuzzy
 msgid "Create a new web"
 msgstr "Vytvoř novou tabulku"
 
-#: templates/sidebar.nat.tmpl:20
+#: templates/sidebar.nat.tmpl:23
 #, fuzzy
 msgid "Create a personal sidebar"
 msgstr "Vaše osobní stránka"
@@ -734,30 +710,26 @@ msgstr "Záznamy"
 msgid "DataForm"
 msgstr "Formulář"
 
-#: templates/attachtables.nat.tmpl:95 templates/history.nat.tmpl:74
+#: templates/history.nat.tmpl:81
 msgid "Date"
 msgstr "Datum"
 
-#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:122
-#: templates/newtopic.wwb.tmpl:130 templates/newtopic.wwb.tmpl:57
+#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:100
+#: templates/newtopic.nat.tmpl:48 templates/newtopic.old.tmpl:122
 msgid "Default"
 msgstr "Výchozí"
 
-#: templates/newtopic.wwb.tmpl:132
-msgid "Default template for the selected type"
-msgstr ""
-
-#: templates/newtopic.nat.tmpl:120
+#: templates/newtopic.old.tmpl:120
 #, fuzzy
 msgid "Default topic as defined in WebTopicEditTemplate"
 msgstr "Výchozí, jak je definováno v %1"
 
-#: templates/newtopic.wwb.tmpl:59
+#: templates/newtopic.nat.tmpl:121 templates/newtopic.nat.tmpl:50
 #, fuzzy
-msgid "Default wiki topic"
+msgid "Default wiki content"
 msgstr "Vymazat článek"
 
-#: templates/foswiki.nat.tmpl:127 templates/renamedelete.nat.tmpl:13
+#: templates/foswiki.nat.tmpl:110 templates/renamedelete.nat.tmpl:13
 #: templates/renamedelete.nat.tmpl:6 templates/renamewebdelete.nat.tmpl:3
 msgid "Delete"
 msgstr "Smazat"
@@ -772,12 +744,7 @@ msgstr "Smazat"
 msgid "Delete attachment '%1'"
 msgstr "Smazat přílohu %1"
 
-#: templates/attachtables.nat.tmpl:78
-#, fuzzy
-msgid "Delete this attachment"
-msgstr "Smazat přílohu %1"
-
-#: templates/foswiki.nat.tmpl:128
+#: templates/foswiki.nat.tmpl:111
 #, fuzzy
 msgid "Delete this topic"
 msgstr "Vymazat článek"
@@ -802,7 +769,7 @@ msgstr ""
 msgid "Destination"
 msgstr "Popis"
 
-#: data/System/SiteMenu.txt:43
+#: data/System/SiteMenu.txt:42
 msgid "Developer docs"
 msgstr ""
 
@@ -815,7 +782,7 @@ msgstr "Zapomněl jste Vaše heslo?"
 msgid "Did you want to [[%1][reset %2's password]]?"
 msgstr "Chtěl jste  [[%1][vynulovat %2 heslo]]?"
 
-#: templates/foswiki.nat.tmpl:278
+#: templates/foswiki.nat.tmpl:246
 msgid "Diff"
 msgstr ""
 
@@ -834,19 +801,19 @@ msgstr "Historie"
 msgid "Display settings"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:281
+#: templates/foswiki.nat.tmpl:248
 msgid "Display the most recent change of this topic"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:207
+#: templates/foswiki.nat.tmpl:181
 msgid "Display this topic in PDF format"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:57
+#: templates/foswiki.nat.tmpl:49
 msgid "Display this topic in a printer-friendly manner"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:45
+#: templates/foswiki.nat.tmpl:39
 #, fuzzy
 msgid "Display this version of the topic"
 msgstr "Verze pro tisk (p)"
@@ -864,15 +831,15 @@ msgstr ""
 msgid "Don't forget to check your topic settings."
 msgstr "nezapomeň zkontrolovat nastavení článku (Topic Settings)"
 
-#: templates/foswiki.nat.tmpl:238
+#: templates/foswiki.nat.tmpl:212
 msgid "Download"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:241
+#: templates/foswiki.nat.tmpl:214
 msgid "Download assets from an external url and attach them to this topic"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:239
+#: templates/foswiki.nat.tmpl:213
 msgid "Download external resource"
 msgstr ""
 
@@ -923,11 +890,11 @@ msgstr ""
 msgid "Dutch"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:97
+#: templates/foswiki.nat.tmpl:85
 msgid "Edit"
 msgstr "Změň"
 
-#: templates/foswiki.nat.tmpl:91
+#: templates/foswiki.nat.tmpl:80
 #, fuzzy
 msgid "Edit Raw"
 msgstr "Změň"
@@ -937,22 +904,22 @@ msgstr "Změň"
 msgid "Edit anyway"
 msgstr "Přesto změň"
 
-#: templates/foswiki.nat.tmpl:103
+#: templates/foswiki.nat.tmpl:90
 #, fuzzy
 msgid "Edit form"
 msgstr "formuláŕ pro editaci"
 
-#: templates/foswiki.nat.tmpl:104
+#: templates/foswiki.nat.tmpl:91
 #, fuzzy
 msgid "Edit form data"
 msgstr "Data formuláře"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:101
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:98
 #, fuzzy
 msgid "Edit group"
 msgstr "Vytvoř skupinu"
 
-#: templates/foswiki.nat.tmpl:118
+#: templates/foswiki.nat.tmpl:102
 #, fuzzy
 msgid "Edit hidden preference settings of this topic"
 msgstr "Změňte nastavení tohoto článku"
@@ -961,51 +928,46 @@ msgstr "Změňte nastavení tohoto článku"
 msgid "Edit my sidebar"
 msgstr ""
 
-#: templates/attachtables.nat.tmpl:76
-#, fuzzy
-msgid "Edit properties of this attachment"
-msgstr "Více informací o skrytých přílohách"
-
 #: templates/edit.nat.tmpl:93
 #, fuzzy
 msgid "Edit settings"
 msgstr "Změňte text"
 
-#: templates/foswiki.nat.tmpl:109
+#: templates/foswiki.nat.tmpl:95
 msgid "Edit text"
 msgstr "Změňte text"
 
-#: templates/foswiki.nat.tmpl:110
+#: templates/foswiki.nat.tmpl:96
 #, fuzzy
 msgid "Edit text data"
 msgstr "Změňte text"
 
-#: templates/foswiki.nat.tmpl:106
+#: templates/foswiki.nat.tmpl:92
 #, fuzzy
 msgid "Edit the form data of this topic"
 msgstr "Změnit nastavení pro tento článek..."
 
-#: templates/foswiki.nat.tmpl:94
+#: templates/foswiki.nat.tmpl:82
 #, fuzzy
 msgid "Edit the raw text of this topic"
 msgstr "Změnit nastavení pro tento článek..."
 
-#: templates/foswiki.nat.tmpl:112
+#: templates/foswiki.nat.tmpl:97
 #, fuzzy
 msgid "Edit the text data of this topic"
 msgstr "Změnit nastavení pro tento článek..."
 
-#: templates/foswiki.nat.tmpl:100 templates/foswiki.nat.tmpl:98
+#: templates/foswiki.nat.tmpl:86 templates/foswiki.nat.tmpl:87
 #, fuzzy
 msgid "Edit this topic"
 msgstr "Změňte text tohoto článku (e)"
 
-#: templates/foswiki.nat.tmpl:116
+#: templates/foswiki.nat.tmpl:101
 #, fuzzy
 msgid "Edit topic preferences"
 msgstr "Změňte nastavení tohoto článku"
 
-#: templates/foswiki.nat.tmpl:92
+#: templates/foswiki.nat.tmpl:81
 msgid "Edit wiki markup"
 msgstr ""
 
@@ -1013,13 +975,13 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:356
+#: data/System/UserRegistrationViewTemplate.txt:360
 #, fuzzy
 msgid "Enter a WikiName"
 msgstr "Vložte prosím WikiJméno."
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:189
-#: data/System/UserRegistrationViewTemplate.txt:351
+#: data/System/UserRegistrationViewTemplate.txt:355
 #, fuzzy
 msgid "Enter a login name"
 msgstr "Zadej jméno \"rodiče\""
@@ -1034,11 +996,11 @@ msgstr ""
 msgid "Enter a new username and password to change identity"
 msgstr "Vložte nové uživatelské jméno a heslo pro změnu identity"
 
-#: data/System/UserRegistrationViewTemplate.txt:357
+#: data/System/UserRegistrationViewTemplate.txt:361
 msgid "Enter a valid WikiWord"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:352
+#: data/System/UserRegistrationViewTemplate.txt:356
 #, fuzzy
 msgid "Enter at least %1 characters"
 msgstr "Tento web vyžaduje nejméně %1 znaková hesla"
@@ -1053,7 +1015,7 @@ msgid "Enter the current password for the given !LoginName."
 msgstr ""
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:199
-#: data/System/UserRegistrationViewTemplate.txt:365
+#: data/System/UserRegistrationViewTemplate.txt:369
 #, fuzzy
 msgid "Enter the same password as above"
 msgstr "Zadejte prosím stejné heslo jako výše."
@@ -1062,12 +1024,12 @@ msgstr "Zadejte prosím stejné heslo jako výše."
 msgid "Enter topic name or a search string"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:348
+#: data/System/UserRegistrationViewTemplate.txt:352
 #, fuzzy
 msgid "Enter your first name"
 msgstr "Zadejte prosím vaše křestní jméno."
 
-#: data/System/UserRegistrationViewTemplate.txt:349
+#: data/System/UserRegistrationViewTemplate.txt:353
 #, fuzzy
 msgid "Enter your last name"
 msgstr "Zadejte prosím vaše příjmení."
@@ -1084,11 +1046,6 @@ msgstr "Chyba při uložení ćlánku"
 msgid "Errors"
 msgstr "Chyby"
 
-#: templates/attachnew.nat.tmpl:35
-#, fuzzy
-msgid "Existing files"
-msgstr "Chybějící pole"
-
 #: templates/print.nat.tmpl:28
 msgid "Export"
 msgstr ""
@@ -1097,12 +1054,8 @@ msgstr ""
 msgid "Export to PDF"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:205
+#: templates/foswiki.nat.tmpl:180
 msgid "Export topic to PDF"
-msgstr ""
-
-#: templates/attachnew.nat.tmpl:19
-msgid "Extracts individual files in a zip archive."
 msgstr ""
 
 #: data/System/WebLinks.txt:9
@@ -1123,12 +1076,12 @@ msgstr "Soubor byl nahrán pod odlišným jménem"
 msgid "Filter"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:37
+#: templates/foswiki.nat.tmpl:33
 #, fuzzy
 msgid "Find backlinks"
 msgstr "Zpětné odkazy"
 
-#: templates/foswiki.nat.tmpl:49
+#: templates/foswiki.nat.tmpl:43
 #, fuzzy
 msgid "Find child topics"
 msgstr "Najít obdobné články"
@@ -1137,7 +1090,7 @@ msgstr "Najít obdobné články"
 msgid "Finnish"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:250
+#: templates/foswiki.nat.tmpl:222
 msgid "First"
 msgstr "První"
 
@@ -1168,7 +1121,7 @@ msgstr "Vstup dat prostřednictvím formuláře"
 msgid "Format"
 msgstr "Formulář"
 
-#: data/System/SiteMenu.txt:51
+#: data/System/SiteMenu.txt:50
 msgid "Foswiki FAQ"
 msgstr ""
 
@@ -1176,7 +1129,7 @@ msgstr ""
 msgid "Free form topic title in target language."
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:66
+#: templates/newtopic.old.tmpl:66
 msgid ""
 "Free form topic title text. The actual topic _name_ will be derived from the "
 "title automatically."
@@ -1198,11 +1151,11 @@ msgstr ""
 msgid "German"
 msgstr ""
 
-#: templates/body.nat.tmpl:63
+#: templates/body.nat.tmpl:65
 msgid "Get a fresh version <a href='%1' rel='nofollow'>here</a>."
 msgstr "Získejte aktuální verzi <a href='%1' rel='nofollow'>zde</a>."
 
-#: templates/foswiki.nat.tmpl:224
+#: templates/foswiki.nat.tmpl:198 templates/foswiki.nat.tmpl:200
 #, fuzzy
 msgid "Get an email notification whenever this topic changes"
 msgstr "Automatické upozorňování na změny článku"
@@ -1232,12 +1185,12 @@ msgstr "Nechte se upozornit o změnách tohoto vyhledávání"
 msgid "Go back in your browser and save your changes locally."
 msgstr "Jděte zpět ve svém prohlížeči a uložte Vaše změny lokálně."
 
-#: templates/foswiki.nat.tmpl:259
+#: templates/foswiki.nat.tmpl:230
 #, fuzzy
 msgid "Go to the following version of this topic"
 msgstr "Verze pro tisk (p)"
 
-#: templates/foswiki.nat.tmpl:266
+#: templates/foswiki.nat.tmpl:236
 #, fuzzy
 msgid "Go to the previous version of this topic"
 msgstr "Verze pro tisk (p)"
@@ -1259,18 +1212,13 @@ msgstr "Skupiny"
 msgid "Have a look at the list of all pages in this web."
 msgstr ""
 
-#: data/System/SiteMenu.txt:38 templates/attachsidebar.nat.tmpl:3
-#: templates/changeformsidebar.nat.tmpl:3 templates/foswiki.nat.tmpl:199
+#: data/System/SiteMenu.txt:37 templates/attachsidebar.nat.tmpl:3
+#: templates/changeformsidebar.nat.tmpl:3 templates/foswiki.nat.tmpl:175
 #: templates/moveattachmentsidebar.nat.tmpl:3
 #: templates/renamesidebar.nat.tmpl:3 templates/renamewebsidebar.nat.tmpl:3
 #: templates/topbar.customato.nat.tmpl:85
 msgid "Help"
 msgstr "Nápověda"
-
-#: templates/attachtables.nat.tmpl:19
-#, fuzzy
-msgid "Hide attachment in normal topic view."
-msgstr "Přílohy nebudou zobrazeny v pohledu s názvem stránky."
 
 #: templates/attachsidebar.nat.tmpl:8
 #: templates/moveattachmentsidebar.nat.tmpl:8
@@ -1278,15 +1226,15 @@ msgstr "Přílohy nebudou zobrazeny v pohledu s názvem stránky."
 msgid "Hiding attachments"
 msgstr "Skryj přílohy"
 
-#: templates/foswiki.nat.tmpl:139 templates/oopshistory.nat.tmpl:6
+#: templates/foswiki.nat.tmpl:120 templates/oopshistory.nat.tmpl:6
 msgid "History"
 msgstr "Historie"
 
-#: data/System/SiteMenu.txt:9
+#: data/System/SiteMenu.txt:10
 msgid "Home"
 msgstr ""
 
-#: data/System/NatSkinUserViewTemplate.txt:51
+#: data/System/NatSkinUserViewTemplate.txt:50
 #, fuzzy
 msgid "Homepage"
 msgstr "Celá stránka"
@@ -1313,7 +1261,7 @@ msgstr ""
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:81
 #: data/System/NatSkinChangePasswordViewTemplate.txt:89
-#: data/System/UserRegistrationViewTemplate.txt:95
+#: data/System/UserRegistrationViewTemplate.txt:100
 msgid "If you have any questions, please contact %1"
 msgstr "Pokud máte jakékoliv otázky, kontaktujte prosím %1"
 
@@ -1357,7 +1305,7 @@ msgstr "Chybné %1"
 msgid "Incorrect Password"
 msgstr "Chybné heslo"
 
-#: templates/404.nat.tmpl:45 templates/sidebar.nat.tmpl:50
+#: templates/404.nat.tmpl:45 templates/sidebar.nat.tmpl:53
 msgid "Index"
 msgstr "Index"
 
@@ -1366,12 +1314,12 @@ msgstr "Index"
 msgid "Index of all Topics"
 msgstr "Vymaž vše"
 
-#: data/System/SiteMenu.txt:45
+#: data/System/SiteMenu.txt:44
 #, fuzzy
 msgid "Installed plugins"
 msgstr "Zhavarované pluginy"
 
-#: templates/foswiki.nat.tmpl:152 templates/languageselector.nat.tmpl:4
+#: templates/foswiki.nat.tmpl:131 templates/languageselector.nat.tmpl:4
 #, fuzzy
 msgid "Interface language"
 msgstr "Změň jazyk"
@@ -1401,17 +1349,17 @@ msgstr "Kurzíva"
 msgid "Japanese"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:252
+#: templates/foswiki.nat.tmpl:224
 #, fuzzy
 msgid "Jump to the first version of this topic"
 msgstr "Verze pro tisk (p)"
 
-#: templates/foswiki.nat.tmpl:273
+#: templates/foswiki.nat.tmpl:242
 #, fuzzy
 msgid "Jump to the most recent version of this topic"
 msgstr "Verze pro tisk (p)"
 
-#: data/System/SiteMenu.txt:11
+#: data/System/SiteMenu.txt:12
 msgid "Knowledge"
 msgstr ""
 
@@ -1419,12 +1367,12 @@ msgstr ""
 msgid "Korean"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:151 templates/languageselector.nat.tmpl:14
+#: templates/foswiki.nat.tmpl:130 templates/languageselector.nat.tmpl:14
 #, fuzzy
 msgid "Language"
 msgstr "Změna jazyka"
 
-#: templates/foswiki.nat.tmpl:271
+#: templates/foswiki.nat.tmpl:240
 msgid "Last"
 msgstr "Poslední"
 
@@ -1436,16 +1384,16 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:65
+#: templates/foswiki.nat.tmpl:57
 msgid "Like"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:67
+#: templates/foswiki.nat.tmpl:59
 #, fuzzy
 msgid "Like this topic"
 msgstr "Vytvořit tento článek"
 
-#: templates/foswiki.nat.tmpl:66
+#: templates/foswiki.nat.tmpl:58
 msgid "Liked"
 msgstr ""
 
@@ -1455,17 +1403,17 @@ msgstr ""
 msgid "Linking to attachments"
 msgstr "Skryj přílohy"
 
-#: templates/foswiki.nat.tmpl:39
+#: templates/foswiki.nat.tmpl:34
 #, fuzzy
 msgid "List other topics linking to this topic"
 msgstr "Podobné články v tomto webu (jestli jsou)"
 
-#: templates/foswiki.nat.tmpl:51
+#: templates/foswiki.nat.tmpl:44
 #, fuzzy
 msgid "List topics that branch off this topic"
 msgstr "Články, které začínají písmenem:"
 
-#: data/System/NatSkinUserViewTemplate.txt:53
+#: data/System/NatSkinUserViewTemplate.txt:52
 #, fuzzy
 msgid "Location"
 msgstr "Poznámka"
@@ -1475,7 +1423,7 @@ msgstr "Poznámka"
 msgid "Locked topics"
 msgstr "Na článek"
 
-#: templates/foswiki.nat.tmpl:2 templates/loginbase.nat.tmpl:74
+#: templates/foswiki.nat.tmpl:3 templates/loginbase.nat.tmpl:74
 #: templates/topbar.customato.nat.tmpl:126
 #, fuzzy
 msgid "Log in"
@@ -1491,7 +1439,7 @@ msgstr "Přihlásit k %1"
 msgid "Log out"
 msgstr "Odhlásit"
 
-#: templates/foswiki.nat.tmpl:10
+#: templates/foswiki.nat.tmpl:9
 #, fuzzy
 msgid "Log out %1"
 msgstr "Přihlásit k %1"
@@ -1502,12 +1450,12 @@ msgstr "Přihlásit k %1"
 msgid "Login"
 msgstr "Přihlásit"
 
-#: data/System/UserRegistrationViewTemplate.txt:124
+#: data/System/UserRegistrationViewTemplate.txt:128
 #, fuzzy
 msgid "Login settings"
 msgstr "Přihlašovací jméno:"
 
-#: data/System/UserRegistrationViewTemplate.txt:353
+#: data/System/UserRegistrationViewTemplate.txt:357
 #, fuzzy
 msgid "LoginName %1 is already in use"
 msgstr "Toto WikiJméno je již používáno."
@@ -1525,18 +1473,13 @@ msgstr "Odeslat mail"
 msgid "Mail to"
 msgstr "Odeslat mail"
 
-#: data/System/UserRegistrationViewTemplate.txt:158
+#: data/System/UserRegistrationViewTemplate.txt:162
 msgid ""
 "Make sure you remember your password, even more when generating one "
 "automatically."
 msgstr ""
 
-#: templates/attachtables.nat.tmpl:33
-#, fuzzy
-msgid "Manage existing attachments"
-msgstr "Více informací o skrytých přílohách"
-
-#: templates/foswiki.nat.tmpl:245
+#: templates/foswiki.nat.tmpl:218
 #, fuzzy
 msgid "Manage tags in this web"
 msgstr "Hledej více článků na tomto webu"
@@ -1577,12 +1520,12 @@ msgstr "Chybějící nebo neplatné jméno webu"
 msgid "Moderation"
 msgstr "Poznámka"
 
-#: templates/foswiki.nat.tmpl:163
+#: templates/foswiki.nat.tmpl:140
 #, fuzzy
 msgid "More"
 msgstr "Více..."
 
-#: templates/foswiki.nat.tmpl:133
+#: templates/foswiki.nat.tmpl:115
 msgid "Move"
 msgstr "Přesun"
 
@@ -1596,7 +1539,7 @@ msgstr "Přesun přílohy"
 msgid "Move this topic into the %1 web"
 msgstr "Přesun článku do:"
 
-#: templates/foswiki.nat.tmpl:130
+#: templates/foswiki.nat.tmpl:112
 #, fuzzy
 msgid "Move this topic to the trash"
 msgstr "Přesun článku do:"
@@ -1616,16 +1559,16 @@ msgstr "Přílohy článku"
 msgid "My Profile"
 msgstr "Můj profil"
 
-#: templates/sidebar.nat.tmpl:30
+#: templates/sidebar.nat.tmpl:33
 #, fuzzy
 msgid "My links"
 msgstr "Mé odkazy"
 
-#: templates/sidebar.nat.tmpl:11 templates/sidebar.nat.tmpl:18
+#: templates/sidebar.nat.tmpl:14 templates/sidebar.nat.tmpl:21
 msgid "My sidebar"
 msgstr ""
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:130
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:127
 #: data/System/WebCreateNewWeb.txt:10
 #, fuzzy
 msgid "Name"
@@ -1635,7 +1578,7 @@ msgstr "Jméno:"
 msgid "Name of new web is missing"
 msgstr "Chybí jméno nového webu"
 
-#: templates/foswiki.nat.tmpl:193 templates/newtopic.wwb.tmpl:3
+#: templates/foswiki.nat.tmpl:170
 #, fuzzy
 msgid "New"
 msgstr "nové"
@@ -1665,7 +1608,7 @@ msgstr "Nový nadřízený web:"
 msgid "New password"
 msgstr "Nové heslo:"
 
-#: templates/foswiki.nat.tmpl:194 templates/translatetopic.nat.tmpl:121
+#: templates/foswiki.nat.tmpl:171 templates/translatetopic.nat.tmpl:121
 #, fuzzy
 msgid "New topic"
 msgstr "Ukaž článek"
@@ -1679,12 +1622,17 @@ msgstr "Nové jméno článku %1 není %2"
 msgid "New web name"
 msgstr "Nové jméno webu:"
 
-#: data/System/SiteMenu.txt:10
+#: data/System/SiteMenu.txt:11
 msgid "News"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:257 templates/newtopic.wwb.tmpl:20
+#: templates/foswiki.nat.tmpl:228
 msgid "Next"
+msgstr "Následující"
+
+#: templates/newtopic.nat.tmpl:20
+#, fuzzy
+msgid "Next step"
 msgstr "Následující"
 
 #: templates/moveattachment.nat.tmpl:47
@@ -1739,27 +1687,26 @@ msgstr "POZNÁMKA: Tento článek ještě neexistuje"
 msgid "Notes"
 msgstr "Poznámky:"
 
-#: templates/foswiki.nat.tmpl:290
+#: templates/foswiki.nat.tmpl:256
 msgid "Nothing found. Try again!"
 msgstr ""
 
-#: templates/sidebar.nat.tmpl:54 templates/topbar.customato.nat.tmpl:82
+#: templates/sidebar.nat.tmpl:57 templates/topbar.customato.nat.tmpl:82
 msgid "Notifications"
 msgstr "Oznámení"
 
-#: templates/foswiki.nat.tmpl:210
+#: templates/foswiki.nat.tmpl:184
 msgid "Notify"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:211
+#: templates/foswiki.nat.tmpl:185
 #, fuzzy
 msgid "Notify on changes"
 msgstr "Beze změn"
 
-#: data/System/NatSkinStyleBrowser.txt:54 templates/attachtables.nat.tmpl:24
-#: templates/changeform.nat.tmpl:25 templates/messages.nat.tmpl:104
-#: templates/messages.nat.tmpl:260 templates/messages.nat.tmpl:279
-#: templates/moveattachment.nat.tmpl:66
+#: data/System/NatSkinStyleBrowser.txt:54 templates/changeform.nat.tmpl:25
+#: templates/messages.nat.tmpl:104 templates/messages.nat.tmpl:260
+#: templates/messages.nat.tmpl:279 templates/moveattachment.nat.tmpl:66
 #: templates/oopslanguagechanged.nat.tmpl:11
 #: templates/renameconfirm.nat.tmpl:6 templates/renamewebconfirm.nat.tmpl:6
 #: templates/validate.nat.tmpl:27
@@ -1775,7 +1722,7 @@ msgstr ""
 msgid "On"
 msgstr ""
 
-#: data/System/SiteMenu.txt:50
+#: data/System/SiteMenu.txt:49
 msgid "Online support forum"
 msgstr ""
 
@@ -1783,11 +1730,11 @@ msgstr ""
 msgid "Only members of the %1 are allowed to perform this action."
 msgstr "Pouze členové %1 jsou oprávnění provést tuto akci."
 
-#: templates/foswiki.nat.tmpl:233
+#: templates/foswiki.nat.tmpl:208
 msgid "Open <nop>WebDAV Directory"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:82
+#: templates/foswiki.nat.tmpl:72
 #, fuzzy
 msgid "Open a channel to talk about this topic"
 msgstr "Opakuj předchozí změnu"
@@ -1797,7 +1744,7 @@ msgstr "Opakuj předchozí změnu"
 msgid "Open in separate window"
 msgstr "Klikněte pro zobrazení detailů v odděleném okně"
 
-#: data/System/UserRegistrationViewTemplate.txt:213
+#: data/System/UserRegistrationViewTemplate.txt:217
 #, fuzzy
 msgid "Optional information"
 msgstr "Dostupné informace"
@@ -1810,17 +1757,17 @@ msgstr "Vlastnosti"
 msgid "Or just start from the beginning in case you got lost somehow."
 msgstr ""
 
-#: data/System/NatSkinUserViewTemplate.txt:50
+#: data/System/NatSkinUserViewTemplate.txt:49
 #, fuzzy
 msgid "Organisation"
 msgstr "URL organizace:"
 
-#: data/System/UserRegistrationViewTemplate.txt:219
+#: data/System/UserRegistrationViewTemplate.txt:223
 #, fuzzy
 msgid "Organisation Name"
 msgstr "Jméno organizace:"
 
-#: data/System/UserRegistrationViewTemplate.txt:228
+#: data/System/UserRegistrationViewTemplate.txt:232
 #, fuzzy
 msgid "Organisation URL"
 msgstr "URL organizace:"
@@ -1830,7 +1777,7 @@ msgstr "URL organizace:"
 msgid "Orientation"
 msgstr "Dokumentace"
 
-#: templates/foswiki.nat.tmpl:204
+#: templates/foswiki.nat.tmpl:179
 msgid "PDF"
 msgstr ""
 
@@ -1857,7 +1804,7 @@ msgstr "Heslo"
 msgid "Password changed successfully!"
 msgstr "Změna hesla byla úspěšná!"
 
-#: data/System/SiteMenu.txt:48
+#: data/System/SiteMenu.txt:47
 #, fuzzy
 msgid "Password forgotten"
 msgstr "Hesla si neodpovídají"
@@ -1877,7 +1824,7 @@ msgstr ""
 "Váš osobní článek nebyl pŕejmenován. Prosím pošlete email %1 s tímto "
 "požadavkem."
 
-#: data/System/UserRegistrationViewTemplate.txt:368
+#: data/System/UserRegistrationViewTemplate.txt:372
 #, fuzzy
 msgid "Please enter a valid e-mail address"
 msgstr "Prosím zadejte korektně emailovou adresu."
@@ -1902,6 +1849,16 @@ msgstr "Uvědomte prosím Vašeho administrátora %1."
 msgid "Please notify your %1 administrator %2."
 msgstr "Uvědomte prosím Vašeho administrátora %1."
 
+#: templates/newtopic.nat.tmpl:93
+#, fuzzy
+msgid "Please select a Template"
+msgstr "Výchozí šablona"
+
+#: templates/newtopic.nat.tmpl:34
+#, fuzzy
+msgid "Please select a Topic Type"
+msgstr "Vyber"
+
 #: templates/messages.nat.tmpl:194
 #, fuzzy
 msgid "Please try again."
@@ -1911,13 +1868,13 @@ msgstr "Zadejte prosím uživatelské jméno."
 msgid "Portuguese"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:316
+#: templates/foswiki.nat.tmpl:282
 #, fuzzy
 msgid "Powered by Foswiki"
 msgstr "Tento web běží na Foswiki"
 
-#: templates/copytopic.nat.tmpl:30 templates/foswiki.nat.tmpl:115
-#: templates/sidebar.nat.tmpl:56
+#: templates/copytopic.nat.tmpl:30 templates/foswiki.nat.tmpl:100
+#: templates/sidebar.nat.tmpl:59
 msgid "Preferences"
 msgstr "Preference"
 
@@ -1929,31 +1886,22 @@ msgstr "Nebo stiskněte Přerušit."
 msgid "Press OK to confirm that this change was intentional."
 msgstr "Stiskněte OK jako potvrzení že tato změna byla mezinárodní."
 
-#: templates/newtopic.wwb.tmpl:19
-#, fuzzy
-msgid "Prev"
-msgstr "Náhled"
-
-#: templates/foswiki.nat.tmpl:264
+#: templates/foswiki.nat.tmpl:234
 msgid "Previous"
 msgstr "Předchozí"
 
-#: templates/foswiki.nat.tmpl:54
+#: templates/foswiki.nat.tmpl:47
 #, fuzzy
 msgid "Print"
 msgstr "&Pro tisk"
 
-#: data/System/SiteMenu.txt:52
+#: data/System/SiteMenu.txt:51
 msgid "Professional help"
 msgstr ""
 
-#: data/System/SiteMenu.txt:12
+#: data/System/SiteMenu.txt:13
 msgid "Projects"
 msgstr ""
-
-#: templates/attachagain.nat.tmpl:11
-msgid "Properties"
-msgstr "Vlastnosti"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:195
 #, fuzzy
@@ -1961,32 +1909,32 @@ msgid "Provide a new password"
 msgstr "Zopakujte vaše nové heslo:"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:192
-#: data/System/UserRegistrationViewTemplate.txt:361
+#: data/System/UserRegistrationViewTemplate.txt:365
 #, fuzzy
 msgid "Provide a password"
 msgstr "Špatné heslo"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:129
-#: data/System/UserRegistrationViewTemplate.txt:156
+#: data/System/UserRegistrationViewTemplate.txt:160
 #, fuzzy
 msgid "Random password"
 msgstr "Špatné heslo"
 
-#: templates/foswiki.nat.tmpl:85
+#: templates/foswiki.nat.tmpl:75
 msgid "Raw"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:162
+#: data/System/UserRegistrationViewTemplate.txt:166
 #, fuzzy
 msgid "Re-enter password"
 msgstr "Znovunastav heslo"
 
-#: templates/topbar.customato.nat.tmpl:80
+#: data/System/SiteRightBar.txt:9 templates/topbar.customato.nat.tmpl:80
 #, fuzzy
 msgid "Recent Changes"
 msgstr "Naposledy změněné články"
 
-#: templates/view.nat.tmpl:109
+#: templates/view.nat.tmpl:117
 #, fuzzy
 msgid "Redirect from %1"
 msgstr "Výsledky z webu %1"
@@ -1996,13 +1944,13 @@ msgstr "Výsledky z webu %1"
 msgid "Reference Manual"
 msgstr "Uživatelské reference"
 
-#: data/System/SiteMenu.txt:44
+#: data/System/SiteMenu.txt:43
 #, fuzzy
 msgid "Reference manual"
 msgstr "Uživatelské reference"
 
 #: data/System/UserRegistrationViewTemplate.txt:87
-#: templates/foswiki.nat.tmpl:14
+#: templates/foswiki.nat.tmpl:13
 msgid "Register"
 msgstr "Registruj"
 
@@ -2018,12 +1966,12 @@ msgstr "Zapomatuj si mě na tomto počítači"
 msgid "Remember your password?"
 msgstr "Pamatujete si Vaše heslo?"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:103
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:100
 #, fuzzy
 msgid "Remove members"
 msgstr "Odstraň členy..."
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:174
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:171
 msgid "Removing"
 msgstr ""
 
@@ -2032,7 +1980,7 @@ msgstr ""
 msgid "Rename"
 msgstr "Přejmenovat"
 
-#: data/System/SiteMenu.txt:76
+#: data/System/SiteMenu.txt:75
 #, fuzzy
 msgid "Rename current web"
 msgstr "Nový nadřízený web:"
@@ -2041,7 +1989,7 @@ msgstr "Nový nadřízený web:"
 msgid "Rename failed"
 msgstr "Přejmenování selhalo"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:102
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:99
 #, fuzzy
 msgid "Rename group "
 msgstr "Vytvoř skupinu"
@@ -2050,7 +1998,7 @@ msgstr "Vytvoř skupinu"
 msgid "Rename or move %1"
 msgstr "Přejmenovat nebo přesunout %1"
 
-#: templates/foswiki.nat.tmpl:134
+#: templates/foswiki.nat.tmpl:116
 #, fuzzy
 msgid "Rename or move this topic"
 msgstr "Přejmenovat nebo přesunout článek"
@@ -2065,7 +2013,7 @@ msgstr "Vítejte do %1 webu"
 msgid "Rename, merge or delete tags"
 msgstr "Přejmenovat, přesunout nebo smazat tento web"
 
-#: templates/foswiki.nat.tmpl:247
+#: templates/foswiki.nat.tmpl:219
 #, fuzzy
 msgid "Rename, merge or delete tags being used in this web"
 msgstr "Přejmenovat, přesunout nebo smazat tento web"
@@ -2075,7 +2023,7 @@ msgstr "Přejmenovat, přesunout nebo smazat tento web"
 msgid "Repeat your new password"
 msgstr "Zopakujte vaše nové heslo:"
 
-#: data/System/UserRegistrationViewTemplate.txt:364
+#: data/System/UserRegistrationViewTemplate.txt:368
 #, fuzzy
 msgid "Repeat your password"
 msgstr "Pamatujete si Vaše heslo?"
@@ -2100,16 +2048,16 @@ msgstr "Znovunastav heslo"
 msgid "Restart"
 msgstr "Obnov"
 
-#: templates/foswiki.nat.tmpl:121 templates/history.nat.tmpl:98
+#: templates/foswiki.nat.tmpl:105 templates/history.nat.tmpl:105
 msgid "Restore"
 msgstr "Obnov"
 
-#: templates/foswiki.nat.tmpl:122
+#: templates/foswiki.nat.tmpl:106
 #, fuzzy
 msgid "Restore previous version"
 msgstr "Obnov revizi článku dle:"
 
-#: templates/history.nat.tmpl:97
+#: templates/history.nat.tmpl:104
 #, fuzzy
 msgid "Restore revision %1"
 msgstr "Poslední revize: %1"
@@ -2131,7 +2079,7 @@ msgstr "Zopakujte vaše nové heslo:"
 msgid "Review recent changes in:"
 msgstr "Zkontrolujte poslední změny v:"
 
-#: templates/history.nat.tmpl:73 templates/rdiff.nat.tmpl:45
+#: templates/history.nat.tmpl:80 templates/rdiff.nat.tmpl:45
 msgid "Revision"
 msgstr "Revize"
 
@@ -2152,7 +2100,7 @@ msgstr ""
 msgid "Russian"
 msgstr ""
 
-#: data/System/SiteMenu.txt:47
+#: data/System/SiteMenu.txt:46
 msgid "Sandbox"
 msgstr ""
 
@@ -2216,7 +2164,7 @@ msgstr "Výsledek hledání"
 msgid "See also"
 msgstr "Také:"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:130
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:127
 msgid "Select"
 msgstr "Vyber"
 
@@ -2226,17 +2174,7 @@ msgid ""
 "browser."
 msgstr ""
 
-#: templates/newtopic.wwb.tmpl:45
-#, fuzzy
-msgid "Select Type"
-msgstr "Vyber"
-
-#: templates/newtopic.wwb.tmpl:123
-#, fuzzy
-msgid "Select a Template"
-msgstr "Výchozí šablona"
-
-#: templates/foswiki.nat.tmpl:154
+#: templates/foswiki.nat.tmpl:132
 msgid "Select a different language for the wiki interface"
 msgstr ""
 
@@ -2266,7 +2204,7 @@ msgstr ""
 msgid "Select the [[%1.WebHome][%1]] web to delete the topic."
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:287
+#: data/System/UserRegistrationViewTemplate.txt:291
 #, fuzzy
 msgid "Select the groups you want to join."
 msgstr "Vyberte skupinu pro přidání:"
@@ -2277,12 +2215,12 @@ msgid ""
 "them."
 msgstr ""
 
-#: templates/view.nat.tmpl:93
+#: templates/view.nat.tmpl:101
 #, fuzzy
 msgid "Select translation in %1"
 msgstr "Vyberte skupiny pro přidání:"
 
-#: templates/newtopic.nat.tmpl:134
+#: templates/newtopic.old.tmpl:134
 msgid "Select which template to use while creating this topic."
 msgstr ""
 
@@ -2294,15 +2232,15 @@ msgstr "Nastav vše"
 msgid "Settings"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:60
+#: templates/foswiki.nat.tmpl:52
 msgid "Share"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:62
+#: templates/foswiki.nat.tmpl:54
 msgid "Share this topic with others"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:61
+#: templates/foswiki.nat.tmpl:53
 #, fuzzy
 msgid "Share topic"
 msgstr "Změna článku"
@@ -2311,7 +2249,7 @@ msgstr "Změna článku"
 msgid "Sidebar"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:16
+#: templates/foswiki.nat.tmpl:14
 #, fuzzy
 msgid "Sign on to %1."
 msgstr "Přihlásit k %1"
@@ -2321,23 +2259,19 @@ msgstr "Přihlásit k %1"
 msgid "Site Tools"
 msgstr "Více nástrojů"
 
-#: data/System/SiteMenu.txt:72
+#: data/System/SiteMenu.txt:71
 #, fuzzy
 msgid "Site permissions"
 msgstr "Oprávnění"
 
-#: data/System/SiteMenu.txt:71
+#: data/System/SiteMenu.txt:70
 #, fuzzy
 msgid "Site preferences"
 msgstr "nastavit předvolby"
 
-#: data/System/SiteBottomBar.txt:9
+#: data/System/SiteBottomBar.txt:10
 msgid "Sitemap"
 msgstr ""
-
-#: templates/attachtables.nat.tmpl:95
-msgid "Size"
-msgstr "Velikost"
 
 #: templates/edit.nat.tmpl:147
 msgid "Skin settings"
@@ -2376,11 +2310,11 @@ msgstr ""
 msgid "State"
 msgstr ""
 
-#: templates/sidebar.nat.tmpl:55
+#: templates/sidebar.nat.tmpl:58
 msgid "Statistics"
 msgstr "Statistiky"
 
-#: templates/foswiki.nat.tmpl:224
+#: templates/foswiki.nat.tmpl:198 templates/foswiki.nat.tmpl:200
 #, fuzzy
 msgid "Stop being notified about changes of this topic"
 msgstr "Nechte se upozornit o změnách tohoto vyhledávání"
@@ -2392,24 +2326,24 @@ msgstr "DobrýStyl"
 
 #: data/Sandbox/NatSkinTest.txt:526 data/Sandbox/NatSkinTest.txt:551
 #: data/Sandbox/NatSkinTest.txt:578
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:117
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:114
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:57
-#: data/System/WebCreateNewWeb.txt:42 templates/attachnew.nat.tmpl:4
-#: templates/languageselector.nat.tmpl:28 templates/managetags.nat.tmpl:32
-#: templates/messages.nat.tmpl:113 templates/messages.nat.tmpl:199
-#: templates/newtopic.nat.tmpl:72 templates/newtopic.nat.tmpl:80
-#: templates/topbar.customato.nat.tmpl:188
+#: data/System/WebCreateNewWeb.txt:42 templates/languageselector.nat.tmpl:28
+#: templates/managetags.nat.tmpl:32 templates/messages.nat.tmpl:113
+#: templates/messages.nat.tmpl:199 templates/newtopic.old.tmpl:72
+#: templates/newtopic.old.tmpl:80 templates/topbar.customato.nat.tmpl:188
 #: templates/translatetopic.nat.tmpl:130
 msgid "Submit"
 msgstr "Potvrdit"
 
 #: templates/mailnotify.nat.tmpl:40 templates/mailnotify.nat.tmpl:59
+#: templates/newsletter.nat.tmpl:17
 msgid "Subscribe / Unsubscribe in:"
 msgstr "Příhlásit/ Odhlásit z:"
 
-#: templates/foswiki.nat.tmpl:224
+#: templates/foswiki.nat.tmpl:198 templates/foswiki.nat.tmpl:200
 #, fuzzy
-msgid "Subscribed to ${topicTitle}"
+msgid "Subscribed to %1"
 msgstr "Přihlásit k odběru tohoto článku"
 
 #: templates/login.sudo.nat.tmpl:7
@@ -2426,15 +2360,15 @@ msgstr "Shrnutí"
 msgid "Swedish"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:244 templates/sidebar.nat.tmpl:51
+#: templates/foswiki.nat.tmpl:217 templates/sidebar.nat.tmpl:54
 msgid "Tags"
 msgstr ""
 
-#: data/System/NatSkinUserViewTemplate.txt:64
+#: data/System/NatSkinUserViewTemplate.txt:63
 msgid "Tel"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:118
+#: templates/newtopic.old.tmpl:118
 #, fuzzy
 msgid "Template"
 msgstr "Použij šablonu:"
@@ -2455,7 +2389,7 @@ msgstr "Text"
 msgid "Thank you for registering"
 msgstr "Díky za Vaši registraci"
 
-#: templates/foswiki.nat.tmpl:398
+#: templates/foswiki.nat.tmpl:366
 msgid "Thank you!"
 msgstr ""
 
@@ -2522,7 +2456,7 @@ msgstr "Soubor byl nahrán a v poŕadku připojen ke článku %1."
 msgid "The lease on this topic expired %1 ago."
 msgstr "Zámek na tomto článku vypršel před %1."
 
-#: data/System/UserRegistrationViewTemplate.txt:133
+#: data/System/UserRegistrationViewTemplate.txt:137
 #, fuzzy
 msgid "The login name you use to sign in."
 msgstr "Jméno, kterým se přihlašujete"
@@ -2582,7 +2516,7 @@ msgstr ""
 "a navíc za použití vaší identity."
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:165
-#: data/System/UserRegistrationViewTemplate.txt:315
+#: data/System/UserRegistrationViewTemplate.txt:319
 msgid "There was an error. Please, see above."
 msgstr ""
 
@@ -2603,11 +2537,11 @@ msgstr ""
 "tento formuláŕ jsou bezpečně uloženy a *nebudou* publikovány nikde na tomto "
 "webu."
 
-#: templates/body.nat.tmpl:61
+#: templates/body.nat.tmpl:63
 msgid "This page was cached on %1."
 msgstr "Tato stránka byla uložena do cache dne %1."
 
-#: templates/newtopic.nat.tmpl:58 templates/newtopic.wwb.tmpl:180
+#: templates/newtopic.nat.tmpl:148 templates/newtopic.old.tmpl:58
 #: templates/renamebase.nat.tmpl:70 templates/translatetopic.nat.tmpl:110
 #, fuzzy
 msgid "Title"
@@ -2645,7 +2579,7 @@ msgid "To web"
 msgstr "Na web"
 
 #: templates/oopsmore.nat.tmpl:4 templates/oopsmore.nat.tmpl:6
-#: templates/sidebar.nat.tmpl:49 templates/topbar.customato.nat.tmpl:79
+#: templates/sidebar.nat.tmpl:52 templates/topbar.customato.nat.tmpl:79
 #, fuzzy
 msgid "Tools"
 msgstr "Nástroje"
@@ -2678,7 +2612,7 @@ msgstr "Přílohy článku"
 msgid "Topics per web"
 msgstr "Články na web"
 
-#: templates/foswiki.nat.tmpl:157 templates/translatetopic.nat.tmpl:9
+#: templates/foswiki.nat.tmpl:135 templates/translatetopic.nat.tmpl:9
 msgid "Translate"
 msgstr ""
 
@@ -2687,12 +2621,12 @@ msgstr ""
 msgid "Translate %1"
 msgstr "Vy&tvořit"
 
-#: templates/foswiki.nat.tmpl:158
+#: templates/foswiki.nat.tmpl:136
 #, fuzzy
 msgid "Translate this topic"
 msgstr "Vytvořit tento článek"
 
-#: data/System/SiteMenu.txt:69
+#: data/System/SiteMenu.txt:68
 msgid "Trash"
 msgstr ""
 
@@ -2709,7 +2643,7 @@ msgstr ""
 msgid "Tutorial"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:124
+#: templates/foswiki.nat.tmpl:107
 #, fuzzy
 msgid "Undo a previous change to this topic"
 msgstr "Opakuj předchozí změnu"
@@ -2727,23 +2661,19 @@ msgstr "Neznámý účet nebo heslo"
 msgid "Unrecognized action command %1"
 msgstr "Nerozeznaný příkaz akce: %1"
 
-#: templates/foswiki.nat.tmpl:228
+#: templates/foswiki.nat.tmpl:204
 msgid "Unsubscribe"
 msgstr "Odhlášení odběru"
 
-#: templates/foswiki.nat.tmpl:229
+#: templates/foswiki.nat.tmpl:205
 #, fuzzy
 msgid "Unsubscribe from changes"
 msgstr "Odhlášení z odběru tohoto článku"
 
-#: templates/foswiki.nat.tmpl:224
+#: templates/foswiki.nat.tmpl:198 templates/foswiki.nat.tmpl:200
 #, fuzzy
-msgid "Unsubscribed from ${topicTitle}"
+msgid "Unsubscribed from %1"
 msgstr "Odhlášení z odběru tohoto článku"
-
-#: templates/attachagain.nat.tmpl:2
-msgid "Update attachment %1 on %2"
-msgstr "Změna přílohy %1 v %2"
 
 #: templates/renamebase.nat.tmpl:118 templates/renamebase.nat.tmpl:128
 #: templates/renamewebbase.nat.tmpl:45
@@ -2760,24 +2690,10 @@ msgstr "Aktualizuj pouze odkazované články na webu %1"
 msgid "Upgrade"
 msgstr "Proveď upgrade"
 
-#: templates/attachnew.nat.tmpl:2
-#, fuzzy
-msgid "Upload a file to %1"
-msgstr "Nahraj přílohu"
-
-#: templates/attachagain.nat.tmpl:28
-msgid "Upload file"
-msgstr "Nahraj přílohu"
-
-#: templates/foswiki.nat.tmpl:33
+#: templates/foswiki.nat.tmpl:29
 #, fuzzy
 msgid "Upload files and images to this topic"
 msgstr "striktně zakaž jakýkoli přístup na tento článek"
-
-#: templates/attachnew.nat.tmpl:25
-#, fuzzy
-msgid "Upload successful"
-msgstr "Nahraj přílohu"
 
 #: templates/messages.nat.tmpl:216
 #, fuzzy
@@ -2802,7 +2718,7 @@ msgstr "Statistiky"
 msgid "Use %1 instead."
 msgstr "Použijte spíše %1."
 
-#: data/System/WebLinks.txt:12 templates/sidebar.nat.tmpl:65
+#: data/System/WebLinks.txt:12 templates/sidebar.nat.tmpl:68
 #, fuzzy
 msgid "User Tools"
 msgstr "Uživatelé"
@@ -2812,7 +2728,7 @@ msgstr "Uživatelé"
 msgid "User account %1 deleted"
 msgstr "Účet %1 byl vymazán"
 
-#: data/System/SiteMenu.txt:41
+#: data/System/SiteMenu.txt:40
 #, fuzzy
 msgid "User docs"
 msgstr "Uživatelé"
@@ -2825,7 +2741,7 @@ msgstr ""
 msgid "Username"
 msgstr "Váš účet"
 
-#: data/Main/WebLinks.txt:9 templates/foswiki.nat.tmpl:20
+#: data/Main/WebLinks.txt:9 templates/foswiki.nat.tmpl:18
 msgid "Users"
 msgstr "Uživatelé"
 
@@ -2834,7 +2750,7 @@ msgstr "Uživatelé"
 msgid "Users Guide"
 msgstr "Uživatelé"
 
-#: templates/foswiki.nat.tmpl:21
+#: templates/foswiki.nat.tmpl:19
 #, fuzzy
 msgid "Users directory"
 msgstr "Historie verzí"
@@ -2849,89 +2765,76 @@ msgstr "&Pro tisk"
 msgid "Variation"
 msgstr "Popis"
 
-#: templates/attachtables.nat.tmpl:95
-msgid "Version"
-msgstr "Verze"
-
-#: templates/view.nat.tmpl:158
+#: templates/view.nat.tmpl:175
 #, fuzzy
 msgid "Version %1"
 msgstr "Verze"
 
-#: templates/attachtables.nat.tmpl:98
-msgid "Version history of %1"
-msgstr "Historické verze %1"
-
-#: templates/attachagain.nat.tmpl:4
-#, fuzzy
-msgid "Versions"
-msgstr "Verze"
-
-#: templates/foswiki.nat.tmpl:42 templates/history.nat.tmpl:95
-#: templates/view.nat.tmpl:108
+#: templates/foswiki.nat.tmpl:37 templates/history.nat.tmpl:102
+#: templates/view.nat.tmpl:116
 msgid "View"
 msgstr "Náhled"
 
-#: templates/foswiki.nat.tmpl:251
+#: templates/foswiki.nat.tmpl:223
 #, fuzzy
 msgid "View first revision"
 msgstr "Zobraz revize"
 
-#: templates/foswiki.nat.tmpl:43
+#: templates/foswiki.nat.tmpl:38
 #, fuzzy
 msgid "View formatted topic"
 msgstr "Ukaž článek"
 
-#: templates/foswiki.nat.tmpl:279
+#: templates/foswiki.nat.tmpl:247
 #, fuzzy
 msgid "View last change"
 msgstr "poslední změna"
 
-#: templates/foswiki.nat.tmpl:272
+#: templates/foswiki.nat.tmpl:241
 #, fuzzy
 msgid "View last revision"
 msgstr "Zobraz revize"
 
-#: templates/foswiki.nat.tmpl:258
+#: templates/foswiki.nat.tmpl:229
 #, fuzzy
 msgid "View next revision"
 msgstr "Zobraz revize"
 
-#: templates/foswiki.nat.tmpl:265
+#: templates/foswiki.nat.tmpl:235
 #, fuzzy
 msgid "View previous revision"
 msgstr "Prohlédni předchozí revize článku"
 
-#: templates/foswiki.nat.tmpl:55
+#: templates/foswiki.nat.tmpl:48
 #, fuzzy
 msgid "View printable version"
 msgstr "Zobraz revize"
 
-#: templates/history.nat.tmpl:94
+#: templates/history.nat.tmpl:101
 #, fuzzy
 msgid "View revision %1"
 msgstr "Zobraz revize"
 
-#: templates/foswiki.nat.tmpl:140
+#: templates/foswiki.nat.tmpl:121
 #, fuzzy
 msgid "View revision history"
 msgstr "Historie verzí"
 
-#: templates/foswiki.nat.tmpl:88
+#: templates/foswiki.nat.tmpl:77
 #, fuzzy
 msgid "View the raw text of this topic"
 msgstr "Vytvořit tento článek"
 
-#: templates/foswiki.nat.tmpl:142
+#: templates/foswiki.nat.tmpl:122
 #, fuzzy
 msgid "View the revision history of all changes to this topic"
 msgstr "Hledej články ve webu %1 které sem odkazují"
 
-#: templates/foswiki.nat.tmpl:86
+#: templates/foswiki.nat.tmpl:76
 msgid "View wiki markup"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:27
+#: templates/foswiki.nat.tmpl:24
 msgid "Visit your profile page"
 msgstr ""
 
@@ -2943,7 +2846,7 @@ msgstr ""
 msgid "Warning! Confirmation required"
 msgstr "Varování! Je vyžadováno potvrzení"
 
-#: templates/foswiki.nat.tmpl:395
+#: templates/foswiki.nat.tmpl:363
 msgid ""
 "Warning: Your browser isn't supported. Please install a modern one, like %1, "
 "%2, %3, %4 or the latest %5."
@@ -2957,18 +2860,18 @@ msgstr ""
 msgid "Web"
 msgstr "Web"
 
-#: data/System/SiteMenu.txt:70
+#: data/System/SiteMenu.txt:69
 #, fuzzy
 msgid "Web preferences"
 msgstr "nastavit předvolby"
 
-#: data/Main/WebLinks.txt:7 data/System/SiteMenu.txt:40
+#: data/Main/WebLinks.txt:7 data/System/SiteMenu.txt:39
 #: templates/topbar.customato.nat.tmpl:98
 msgid "Welcome"
 msgstr ""
 
 #: templates/login.nat.tmpl:12
-msgid "Welcome, please login"
+msgid "Welcome, please log in"
 msgstr ""
 
 #: templates/moveattachment.nat.tmpl:80
@@ -2977,10 +2880,6 @@ msgid ""
 "When the file is deleted, it is moved to the %1 web and attached to the %2 "
 "topic."
 msgstr "Soubor byl nahrán a v poŕadku připojen ke článku %1."
-
-#: templates/attachtables.nat.tmpl:95
-msgid "Who"
-msgstr "Kdo"
 
 #: templates/oopsaccessdenied.nat.tmpl:3
 #, fuzzy
@@ -2995,7 +2894,7 @@ msgstr ""
 msgid "Wiki markup of %1"
 msgstr ""
 
-#: data/System/UserRegistrationViewTemplate.txt:358
+#: data/System/UserRegistrationViewTemplate.txt:362
 #, fuzzy
 msgid "WikiName %1 is already in use"
 msgstr "Toto WikiJméno je již používáno."
@@ -3004,7 +2903,7 @@ msgstr "Toto WikiJméno je již používáno."
 msgid "WikiWord"
 msgstr ""
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:178
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:175
 #, fuzzy
 msgid "Woops, there was an error adding/removing a user to this group"
 msgstr "Došlo k chybám při odstraňování %1 ze skupiny %2."
@@ -3042,7 +2941,7 @@ msgstr "Už jste registrován."
 msgid "You are also listed in the %1 topic"
 msgstr "Také jste uveden v článku %1"
 
-#: templates/foswiki.nat.tmpl:294
+#: templates/foswiki.nat.tmpl:260
 #, fuzzy
 msgid "You are here"
 msgstr "Jste zde:"
@@ -3120,12 +3019,12 @@ msgstr ""
 "nebo vložte kód do pole níže, aby jste aktivoval Vaše členství. (Tento kód "
 "je ve formě \"VašeJméno.xxxxxxxxxx\")"
 
-#: data/System/UserRegistrationViewTemplate.txt:142
+#: data/System/UserRegistrationViewTemplate.txt:146
 #, fuzzy
 msgid "Your e-mail address"
 msgstr "Změň emailovou adresu"
 
-#: data/System/UserRegistrationViewTemplate.txt:175
+#: data/System/UserRegistrationViewTemplate.txt:179
 #, fuzzy
 msgid "Your first name"
 msgstr "Křestní jméno:"
@@ -3149,7 +3048,7 @@ msgstr ""
 "Váš jazyk bude od další obrazovky změněn na %1. Nyní tam budete "
 "přesměrováni. Pokud ne, [[%2][klikněte zde]] pro pokračování."
 
-#: data/System/UserRegistrationViewTemplate.txt:184
+#: data/System/UserRegistrationViewTemplate.txt:188
 #, fuzzy
 msgid "Your last name"
 msgstr "Poslední název:"
@@ -3172,7 +3071,7 @@ msgstr ""
 "Nemůžete změnit vaše uživatelské jméno: za tímto účelem můsíte kontaktovat "
 "administrátora."
 
-#: data/System/UserRegistrationViewTemplate.txt:196
+#: data/System/UserRegistrationViewTemplate.txt:200
 msgid ""
 "Your name as displayed online.  Note, this must be a unique [[%1]"
 "[WikiName]]. By default it is derived from your first and last name."
@@ -3243,6 +3142,10 @@ msgstr "(změny)"
 msgid "closed"
 msgstr "Zavřít"
 
+#: templates/history.nat.tmpl:44
+msgid "debug"
+msgstr ""
+
 #: templates/edit.nat.tmpl:107 templates/edit.nat.tmpl:156
 #: templates/edit.nat.tmpl:176 templates/edit.nat.tmpl:201
 #: templates/edit.nat.tmpl:215 templates/edit.nat.tmpl:238
@@ -3254,6 +3157,10 @@ msgstr "Zavřít"
 #, fuzzy
 msgid "default"
 msgstr "Výchozí"
+
+#: templates/newtopic.nat.tmpl:102
+msgid "default template for the selected topic type"
+msgstr ""
 
 #: templates/renamedelete.nat.tmpl:4
 #, fuzzy
@@ -3286,8 +3193,8 @@ msgstr ""
 msgid "go back to %1"
 msgstr "Přihlásit k %1"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:135
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:204
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:132
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:201
 #, fuzzy
 msgid "group"
 msgstr "Skupina"
@@ -3301,7 +3208,7 @@ msgstr "Historie"
 msgid "indicates mandatory fields"
 msgstr "označuje povinné pole"
 
-#: templates/history.nat.tmpl:35
+#: templates/history.nat.tmpl:42
 msgid "interweave"
 msgstr ""
 
@@ -3331,17 +3238,12 @@ msgstr "Maximálně %1 položek na jeden web"
 msgid "move attachment"
 msgstr "(přesun přílohy)"
 
-#: templates/attachtables.nat.tmpl:77
-#, fuzzy
-msgid "move this attachment to a different topic"
-msgstr "Zkopíruj tento článek (a všechny přílohy) do článku nového."
-
 #: data/System/MySideBar.txt:68
 #, fuzzy
 msgid "no template"
 msgstr "Použij šablonu:"
 
-#: templates/changeform.nat.tmpl:67
+#: templates/changeform.nat.tmpl:73
 #, fuzzy
 msgid "none "
 msgstr "(nic)"
@@ -3402,7 +3304,7 @@ msgstr ""
 msgid "printable"
 msgstr "&Pro tisk"
 
-#: templates/changeform.nat.tmpl:130 templates/changeform.nat.tmpl:68
+#: templates/changeform.nat.tmpl:119 templates/changeform.nat.tmpl:74
 msgid "remove the current form (caution: possible data loss)"
 msgstr ""
 
@@ -3425,7 +3327,7 @@ msgstr "obnov"
 msgid "right"
 msgstr "Zarovnej vpravo"
 
-#: templates/newtopic.wwb.tmpl:121 templates/newtopic.wwb.tmpl:43
+#: templates/newtopic.nat.tmpl:32 templates/newtopic.nat.tmpl:91
 #: templates/searchbase.nat.tmpl:7 templates/searchbox.nat.tmpl:13
 #, fuzzy
 msgid "search"
@@ -3441,7 +3343,7 @@ msgstr "Hledej ve všech webech"
 msgid "showing only %1"
 msgstr ""
 
-#: templates/history.nat.tmpl:36
+#: templates/history.nat.tmpl:43
 #, fuzzy
 msgid "side by side"
 msgstr "Vedle sebe"
@@ -3469,7 +3371,18 @@ msgstr "Více nástrojů"
 msgid "up one folder"
 msgstr ""
 
-#: templates/attachtables.nat.tmpl:110 templates/attachtables.nat.tmpl:53
-#: templates/attachtables.nat.tmpl:70
-msgid "version %1 uploaded by %2 on %3"
-msgstr ""
+#, fuzzy
+#~ msgid "Create a default topic"
+#~ msgstr "Vytvoř nový článek"
+
+#, fuzzy
+#~ msgid "Create a new topic"
+#~ msgstr "Vytvoř nový článek"
+
+#, fuzzy
+#~ msgid "Create a %1"
+#~ msgstr "Vy&tvořit"
+
+#, fuzzy
+#~ msgid "Create a new %1 in %2:"
+#~ msgstr "Vytvoř novou skupinu"

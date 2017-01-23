@@ -16,9 +16,8 @@
 %TMPL:DEF{"meta"}%%TMPL:P{"metagenerator"}%<!-- -->
 %TMPL:P{"metadescription"}%<!-- -->
 %TMPL:P{"metakeywords"}%<!-- -->
-%TMPL:P{"metaauthor"}%<!-- -->
+%TMPL:P{"metasubject"}%<!-- -->
 %TMPL:P{"metaopengraph"}%<!-- -->
-%TMPL:P{"metacanonical"}%<!-- -->
 %TMPL:P{"metarelations"}%<!-- -->
 %TMPL:P{"metaedit"}%<!-- -->
 %TMPL:P{"metaatom"}%<!-- -->
@@ -26,12 +25,23 @@
 %TMPL:P{"metaopensearch"}%%TMPL:END%
 
 %TMPL:DEF{"metaopengraph"}%<!-- -->
-%TMPL:P{"metaopengraph::title"}%<!-- -->
-%TMPL:P{"metaopengraph::sitename"}%<!-- -->
+%TMPL:P{"metaopengraph::fb_app_id"}%<!-- -->
 %TMPL:P{"metaopengraph::url"}%<!-- -->
-%TMPL:P{"metaopengraph::description"}%<!-- -->
+%TMPL:P{"metaopengraph::type"}%<!-- -->
+%TMPL:P{"metaopengraph::title"}%<!-- -->
 %TMPL:P{"metaopengraph::image"}%
+%TMPL:P{"metaopengraph::description"}%<!-- -->
+%TMPL:P{"metaopengraph::sitename"}%<!-- -->
+%TMPL:P{"DIS_metaopengraph::author"}%<!-- -->
 <!-- -->%TMPL:END%
+
+%TMPL:DEF{"metaopengraph::fb_app_id"}%%IF{"'%TMPL:P{"metaopengraph::fb_app_id::content"}%'!=''"
+  then="<meta property=\"fb:app_id\" content=\"%TMPL:P{"metaopengraph::fb_app_id::content"}%\" />"
+}%%TMPL:END%
+%TMPL:DEF{"metaopengraph::fb_app_id::content"}%%METAFBAPPID{default=""}%%TMPL:END%
+
+%TMPL:DEF{"metaopengraph::type"}%<meta property="og:type" content="%TMPL:P{"metaopengraph::type::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::type::content"}%article%TMPL:END%
 
 %TMPL:DEF{"metaopengraph::title"}%<meta property="og:title" content="%TMPL:P{"metaopengraph::title::content"}%" />%TMPL:END%
 %TMPL:DEF{"metaopengraph::title::content"}%%TOPICTITLE%%TMPL:END%
@@ -45,11 +55,26 @@
 %TMPL:DEF{"metaopengraph::description"}%<meta property="og:description" content="%ENCODE{"%TMPL:P{"metaopengraph::description::content"}%" type="html"}%" />%TMPL:END%
 %TMPL:DEF{"metaopengraph::description::content"}%%TMPL:P{"metadescription::content"}%%TMPL:END%
 
+%TMPL:DEF{"metaopengraph::author"}%<meta property="article:author" content="%ENCODE{"%TMPL:P{"metaopengraph::author::content"}%" type="html"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::author::content"}%%TMPL:P{"metaauthor::content"}%%TMPL:END%
+
 %TMPL:DEF{"metadescription"}%<meta name="description" content="%ENCODE{"%TMPL:P{"metadescription::content"}%" type="html"}%" />%TMPL:END%
 %TMPL:DEF{"metadescription::content"}%%METADESCRIPTION{default="%FORMFIELD{"Summary" default="%TOPICTITLE%" alttext="%TOPICTITLE%"}%"}%%TMPL:END%
 
+%TMPL:DEF{"metasubject"}%%IF{"'%METASUBJECT{default=""}%'" then="<meta name=\"subject\" content=\"%ENCODE{"%TMPL:P{"metasubject::content"}%\" type=\"html"}%\" />"}%%TMPL:END%
+%TMPL:DEF{"metasubject::content"}%%METASUBJECT{default=""}%%TMPL:END%
+
 %TMPL:DEF{"metaopengraph::image"}%<meta property="og:image" content="%TMPL:P{"metaopengraph::image::content"}%" />%TMPL:END%
-%TMPL:DEF{"metaopengraph::image::content"}%%METAIMAGE{default="%WIKILOGOIMG%"}%%TMPL:END%
+%TMPL:DEF{"metaopengraph::image::content"}%%METAIMAGE{default="$percntTMPL:P{\"metaopengraph::image::content::default\"}$percnt"}%%TMPL:END%
+%TMPL:DEF{"metaopengraph::image::content::default"}%%ATTACHMENTS{
+  name=".*\.(jpe?g|gif|png|bmp|svg|JE?PG|GIF|PNG|BMP|SVG)"
+  warn="off" 
+  limit="1" 
+  attr="t"
+  format="$url"
+  _format="%SCRIPTURL{"rest"}%/ImagePlugin/resize?topic=$web.$topic&file=$name&size=1200x630^&crop=on"
+  nullformat="%WIKILOGOIMG%"
+}%%TMPL:END%
 
 %TMPL:DEF{"metakeywords"}%<meta name="keywords" content="%ENCODE{"%TMPL:P{"metakeywords::content"}%" type="html"}%" />%TMPL:END%
 %TMPL:DEF{"metakeywords::content"}%%METAKEYWORDS{default="%FORMFIELD{"Tag" default="Foswiki, %WEB%, %TOPIC%" alttext="Foswiki, %WEB%, %TOPIC%"}%"}%%TMPL:END%
@@ -67,14 +92,12 @@
   then="<link rel=\"alternate\" type=\"application/x-wiki\" title=\"Edit this page!\" href=\"%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%\" />"
 }%%TMPL:END%
 
-%TMPL:DEF{"metarss"}%<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="%SCRIPTURLPATH{"view"}%/%WEB%/WebRss?contenttype=text/xml" />%TMPL:END%
+%TMPL:DEF{"metarss"}%<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="%SCRIPTURLPATH{"view"}%/%WEB%/WebRss?contenttype=text/xml&skin=xml" />%TMPL:END%
 %TMPL:DEF{"metaatom"}%<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="%SCRIPTURLPATH{"view"}%/%WEB%/WebAtom?contenttype=text/xml" />%TMPL:END%
 
 %TMPL:DEF{"metarelations"}%%IF{"context i18n_enabled and $MULTILINGUAL = 'on'" 
   then="$percntTMPL:P{\"metarelations::langs\"}$percnt"
 }%%TMPL:END%
-
-%TMPL:DEF{"metacanonical"}%<link rel="canonical" href="%SCRIPTURL{"view"}%/%WEB%/%TOPIC%" />%TMPL:END%
 
 %TMPL:DEF{"metarelations::langs"}%%DBQUERY{
   "(preferences.BASETRANSLATION = '%BASETRANSLATION{default="%TOPIC%"}%' OR topic = '%BASETRANSLATION{default="%TOPIC%"}%')"
@@ -154,9 +177,23 @@
 %TMPL:P{"revinfo::likes"}%<!-- -->
 </div>%TMPL:END%
 
-%TMPL:DEF{"revinfo::datemodified"}%%JQICON{"fa-calendar"}% %REVINFO{"<span itemprop='dateModified' content='$iso'>$date - $hour:$min</span>" rev="%CURREV%"}%%TMPL:END%
-%TMPL:DEF{"revinfo::revision"}%<span class='foswikiRevisionSep'>&#124;</span> %JQICON{"fa-flag"}% %MAKETEXT{"Version [_1]" args="%REVINFO{"<span itemprop='version'>$rev</span>" rev="%CURREV%"}%"}%%TMPL:END%
-%TMPL:DEF{"revinfo::author"}%<span class='foswikiRevisionSep'>&#124;</span> %JQICON{"fa-user"}% <span class='foswikiRevisionAuthor' itemprop='author'>%REVINFO{"[[$wikiusername]]" rev="%CURREV%"}%</span>%TMPL:END%
+%TMPL:DEF{"revinfo::datemodified"}%<span class='foswikiRevisionDate'>%JQICON{"fa-calendar"}% 
+  <a href="%SCRIPTURLPATH{"diff"}%/%WEB%/%TOPIC%?rev=%CURREV%">
+    %REVINFO{
+      "<span itemprop='dateModified' content='$iso'>$date - $hour:$min</span>" 
+      rev="%TMPL:P{"currev"}%"}%
+  </a>
+</span>%TMPL:END%
+%TMPL:DEF{"revinfo::revision"}%<span class='foswikiRevisionSep'>&#124;</span> 
+  <span class='foswikiRevisionID'>
+    %JQICON{"fa-flag"}% 
+    %MAKETEXT{"Version [_1]" args="%REVINFO{"<span itemprop='version'>$rev</span>" rev="%TMPL:P{"currev"}%"}%"}%
+  </span>%TMPL:END%
+%TMPL:DEF{"revinfo::author"}%<span class='foswikiRevisionSep'>&#124;</span> 
+  <span class='foswikiRevisionAuthor' itemprop='author'>
+    %JQICON{"fa-user"}% 
+    %REVINFO{"[[$wikiusername][<span itemprop='name'>$percntGETTOPICTITLE{\"$wikiusername\"}$percnt</span>]]" rev="%TMPL:P{"currev"}%"}%
+  </span>%TMPL:END%
 %TMPL:DEF{"revinfo::likes"}%%DBQUERY{
   "total_likes>0"
   topic="%WEB%.%TOPIC%"
@@ -176,7 +213,7 @@
 <!-- -->%TMPL:END%
 
 %TMPL:DEF{"comments::system::disqus"}%%DISQUS%%TMPL:END%
-%TMPL:DEF{"comments::system::metacomment"}%%JQREQUIRE{"loader"}%<div class="jqLoader {url:'%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=metacomments;expand=metacomments;render=on;topic=%WEB%.%TOPIC%'}"></div>%TMPL:END%
+%TMPL:DEF{"comments::system::metacomment"}%%JQREQUIRE{"loader"}%<div class="jqLoader" data-url="%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=metacomments;expand=metacomments;render=on;topic=%WEB%.%TOPIC%" data-skin=""></div>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"editsettingsform"}%<!-- -->

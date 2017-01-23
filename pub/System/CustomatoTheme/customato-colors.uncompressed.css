@@ -54,11 +54,14 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
   background-color:#3D8FE0;
   color:#fff;
 }
+.natTopicActions .ma,
 .natTopicActions .fa {
   color:#666;
 }
+.natTopicActions .natUserAction:hover .ma,
 .natTopicActions .natUserAction:hover .fa,
 .natTopicActions .natUserAction:hover,
+.natTopicActions .natTopicAction:hover .ma,
 .natTopicActions .natTopicAction:hover .fa,
 .natTopicActions .natTopicAction:hover,
 .natTopicActions .sfHover .natMoreActionsTopicAction,
@@ -90,7 +93,6 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
 .ui-jqgrid .ui-state-hover a:hover,
 a:hover {
   text-decoration:underline;
-  background-color:transparent;
   color:#ED299C;
 }
 .hover,
@@ -154,8 +156,8 @@ h2.marked,
   color:#ED299C;
 }
 
-a.jqButton:link.jqButtonDisabled {
-  color:#888;
+a.jqButton.jqButtonDisabled {
+  color:#888 !important;
 }
 
 .foswikiAlt h3, .foswikiAlt h4, .foswikiAlt h5, .foswikiAlt h6,
@@ -190,6 +192,7 @@ a.jqButton:link.jqButtonDisabled {
 }
 
 input[type=search],
+input[type=tel],
 input[type=text],
 input[type=password],
 .foswikiInputField,
@@ -213,6 +216,7 @@ textarea[disabled] {
 
 input[type=search],
 input[type=text],
+input[type=tel],
 input[type=password],
 .foswikiInputField,
 select,
@@ -231,6 +235,7 @@ select:focus,
 .foswikiSelect:focus,
 input[type=search]:focus,
 input[type=text]:focus,
+input[type=tel]:focus,
 input[type=password]:focus,
 .foswikiInputField:focus {
   border:1px solid #16BEEF;
@@ -289,4 +294,15 @@ pre {
 .natBottomBar {
   background-color:#f4f4f4;
   border-top:1px solid #d1d1d1;
+}
+
+.solrHierarchyChildren a,
+.clsSubCategories a,
+.clsSubCategories {
+  color:#a1a1a1;
+}
+
+.solrTopicInfo .ma,
+.solrTopicInfo .fa {
+  color:#bbb;
 }

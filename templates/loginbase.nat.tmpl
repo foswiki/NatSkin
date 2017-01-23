@@ -42,7 +42,7 @@
 
 %{################################################################################ }%
 %TMPL:DEF{"usernamefield"}%<!-- -->
-<input type="text" class="foswikiInputField jqFocus required" size="20" id="username" name="username" value='%URLPARAM{"usernamestep"}%' /> 
+<input type="text" class="foswikiInputField jqFocus" size="20" id="username" name="username" value='%URLPARAM{"usernamestep"}%' /> 
 <!-- -->%TMPL:END%
 
 %{################################################################################ }%
@@ -55,7 +55,7 @@
 
 %{################################################################################ }%
 %TMPL:DEF{"passwordfield"}%<!-- -->
-<input type="password" class="foswikiInputField required" size="20" id="password" name="password" />
+<input type="password" class="foswikiInputField" size="20" id="password" name="password" />
 <!-- -->%TMPL:END%
 
 %{################################################################################ }%
@@ -79,10 +79,10 @@
 %{################################################################################ }%
 %TMPL:DEF{"login::end"}%<!-- -->
 </form>
-%JQREQUIRE{"validate, focus"}%<!-- -->
+%JQREQUIRE{"focus"}%<!-- -->
 %ADDTOZONE{"script" 
   id="NATSKIN::LOGIN"
-  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/login.js'></script>"
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/login.js'></script>"
   requires="JQUERYPLUGIN, JQUERYPLUGIN::VALIDATE"
 }%<!-- -->
 <!-- -->%TMPL:END%

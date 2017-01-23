@@ -1,8 +1,8 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1456411053" format="1.1" version="1"}%
+%META:TOPICINFO{author="micha" comment="" date="1472639975" format="1.1" version="2"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ %TOPIC%
 
-Standard links in sidebar navigation. 
+Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] instead.
 
 <verbatim class="tml">
 %STARTINCLUDE%%STOPINCLUDE%

@@ -34,6 +34,7 @@ data/System/UserRegistrationViewTemplate.txt 0644
 data/System/WebCreateNewWeb.txt 0644
 data/System/WebLinks.txt 0644
 data/System/WebTopicListViewTemplate.txt 0644
+data/System/WikiTopic.txt 0644
 lib/Foswiki/Contrib/NatSkin/Config.spec 0644
 lib/Foswiki/Contrib/NatSkin/DEPENDENCIES 0644
 lib/Foswiki/Contrib/NatSkin.pm 0644
@@ -114,6 +115,9 @@ pub/System/NatSkin/BaseStyle.uncompressed.css 0644
 pub/System/NatSkin/blank.gif 0644
 pub/System/NatSkin/bullet-toc.gif 0644
 pub/System/NatSkin/busy.gif 0644
+pub/System/NatSkin/changeform.js 0644
+pub/System/NatSkin/changeform.js.gz 0644
+pub/System/NatSkin/changeform.uncompressed.js 0644
 pub/System/NatSkin/childtopics.js 0644
 pub/System/NatSkin/childtopics.js.gz 0644
 pub/System/NatSkin/childtopics.uncompressed.js 0644
@@ -192,6 +196,7 @@ pub/System/NatSkin/icons/wrench.png 0644
 pub/System/NatSkin/icons/x.png 0644
 pub/System/NatSkin/iepngfix.htc 0644
 pub/System/NatSkin/input-bg.png 0644
+pub/System/NatSkin/jen.js 0644
 pub/System/NatSkin/login.js 0644
 pub/System/NatSkin/login.js.gz 0644
 pub/System/NatSkin/login_keys.png 0644
@@ -247,6 +252,7 @@ pub/System/NatSkin/oldrevisionbg.png 0644
 pub/System/NatSkin/oopsmore_diff_debug.gif 0644
 pub/System/NatSkin/oopsmore_diff_sequential.gif 0644
 pub/System/NatSkin/oopsmore_diff_sidebyside.gif 0644
+pub/System/NatSkin/password.init.js 0644
 pub/System/NatSkin/password.js 0644
 pub/System/NatSkin/password.js.gz 0644
 pub/System/NatSkin/password.uncompressed.js 0644
@@ -288,6 +294,7 @@ templates/body.plain.nat.tmpl 0644
 templates/changeform.nat.tmpl 0644
 templates/changeformsidebar.nat.tmpl 0644
 templates/changes.nat.tmpl 0644
+templates/chat.nat.tmpl 0644
 templates/childtopics.nat.tmpl 0644
 templates/compare.nat.tmpl 0644
 templates/copytopic.nat.tmpl 0644
@@ -301,6 +308,10 @@ templates/foswiki.angular.nat.tmpl 0644
 templates/foswiki.jazzynote.nat.tmpl 0644
 templates/foswiki.nat.tmpl 0644
 templates/history.nat.tmpl 0644
+templates/icons.famfamfam.nat.tmpl 0644
+templates/icons.fontawesome.nat.tmpl 0644
+templates/icons.ma.nat.tmpl 0644
+templates/icons.nat.tmpl 0644
 templates/javascript.nat.tmpl 0644
 templates/kinosearch.nat.tmpl 0644
 templates/languageselector.nat.tmpl 0644
@@ -311,13 +322,15 @@ templates/login.sudo.nat.tmpl 0644
 templates/mailnotify.nat.tmpl 0644
 templates/managetags.nat.tmpl 0644
 templates/messages.nat.tmpl 0644
+templates/metacomments.nat.tmpl 0644
 templates/metadata.nat.tmpl 0644
+templates/moreformfields.nat.tmpl 0644
 templates/more.nat.tmpl 0644
 templates/moveattachment.nat.tmpl 0644
 templates/moveattachmentsidebar.nat.tmpl 0644
+templates/newsletter.nat.tmpl 0644
 templates/newtopic.nat.tmpl 0644
-templates/newtopic.tmpl 0644
-templates/newtopic.wwb.tmpl 0644
+templates/newtopic.old.tmpl 0644
 templates/oopsaccessdenied.nat.tmpl 0644
 templates/oopsattention.nat.tmpl 0644
 templates/oopsgeneric.nat.tmpl 0644
@@ -350,6 +363,7 @@ templates/searchmeta.nat.tmpl 0644
 templates/search.nat.tmpl 0644
 templates/settings.nat.tmpl 0644
 templates/sidebar.nat.tmpl 0644
+templates/styles.ma.nat.tmpl 0644
 templates/styles.nat.tmpl 0644
 templates/topbar.customato.nat.tmpl 0644
 templates/topbar.foswiki.tmpl 0644
@@ -357,6 +371,7 @@ templates/topbar.nat.tmpl 0644
 templates/translatetopic.nat.tmpl 0644
 templates/twistyplugin.nat.tmpl 0644
 templates/updatesplugin.nat.tmpl 0644
+templates/user.nat.tmpl 0644
 templates/validate.nat.tmpl 0644
 templates/view.angular.nat.tmpl 0644
 templates/view.nat.tmpl 0644

@@ -9,7 +9,7 @@
 %TMPL:DEF{"contenttitle"}%<h1 class="natLoginHeading">%TMPL:P{"heading"}%</h1>%TMPL:END%
 %TMPL:DEF{"bodyclass"}%natLoginBody%TMPL:END%
 %TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
-%TMPL:DEF{"LOG_IN_BANNER"}%%MAKETEXT{"Welcome, please login"}%.%TMPL:END%
+%TMPL:DEF{"LOG_IN_BANNER"}%%MAKETEXT{"Welcome, please log in"}%.%TMPL:END%
 %TMPL:DEF{"LOGGED_IN_BANNER"}%%MAKETEXT{"[_1] is currently logged in" args="%USERSWEB%.%WIKINAME%"}%.%TMPL:END%
 %TMPL:DEF{"NEW_USER_NOTE"}%%MAKETEXT{"Enter a new username and password to change identity"}%.%TMPL:END%
 %TMPL:DEF{"heading"}%%BANNER%%TMPL:END%
@@ -18,7 +18,7 @@
 %TMPL:DEF{"UNRECOGNISED_USER"}%%MAKETEXT{"Unrecognised user and/or password."}%
 %ADDTOZONE{
   "script"
-  requires="JQUERYPLUGIN::FOSWIKI::PREFERENCES"
+  requires="JQUERYPLUGIN"
   id="NATSKIN::LOGIN::OPTS"
   text="<script type='text/javascript'>jQuery.extend(foswiki.preferences, { 'NatSkin.loginFailed': true });</script>"
 }%%TMPL:END%
@@ -30,7 +30,6 @@
 %TMPL:P{"login"}%<!-- -->
 %TMPL:P{"seealso"}%<!-- -->
 </div>
-%TMPL:P{"poweredby"}%<!-- -->
 <!-- -->%TMPL:END%
 
 %{################################################################################ }%
@@ -40,6 +39,7 @@
 %TMPL:P{"message"}%<!-- -->
 %TMPL:P{"contact"}%<!-- -->
 </div>
+%TMPL:P{"poweredby"}%<!-- -->
 <!-- -->%TMPL:END%
 
 %{################################################################################ }%

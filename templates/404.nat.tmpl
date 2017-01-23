@@ -37,22 +37,22 @@
 <!-- -->%TMPL:END%
 
 %TMPL:DEF{"search::action"}%<tr>
-<th>%BUTTON{"%MAKETEXT{"Search"}%" class="simple" icon="find" href="%TMPL:P{"searchurl"}%"}%</th>
+<th>%BUTTON{"%MAKETEXT{"Search"}%" class="simple" icon="fa-search" href="%TMPL:P{"searchurl"}%"}%</th>
 <td>%MAKETEXT{"The page might be here under a different name."}%</td>
 </tr>%TMPL:END%
 
 %TMPL:DEF{"index::action"}%<tr>
-<th>%BUTTON{"%MAKETEXT{"Index"}%" class="simple" icon="text_list_bullets" target="%BASEWEB%.WebTopicList"}%</th>
+<th>%BUTTON{"%MAKETEXT{"Index"}%" class="simple" icon="fa-list-ol" target="%BASEWEB%.WebTopicList"}%</th>
 <td>%MAKETEXT{"Have a look at the list of all pages in this web."}%</td>
 </tr>%TMPL:END%
 
 %TMPL:DEF{"create::action"}%<tr>
-<th>%BUTTON{"%MAKETEXT{"Create"}%" class="simple" icon="page_white_add" href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%"}%</th>
+<th>%BUTTON{"%MAKETEXT{"Create"}%" class="simple" icon="fa-plus" href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%"}%</th>
 <td>%MAKETEXT{"The page might be missing but it shouldn't."}%</td>
 </tr>%TMPL:END%
 
 %TMPL:DEF{"restart::action"}%<tr>
-<th>%BUTTON{"%MAKETEXT{"Restart"}%" class="simple" icon="house" target="%IF{"istopic '%BASEWEB%.%HOMETOPIC%'" then="%BASEWEB%.%HOMETOPIC%" else="%USERSWEB%.%HOMETOPIC%"}%"}%</th>
+<th>%BUTTON{"%MAKETEXT{"Restart"}%" class="simple" icon="fa-home" target="%IF{"istopic '%BASEWEB%.%HOMETOPIC%'" then="%BASEWEB%.%HOMETOPIC%" else="%USERSWEB%.%HOMETOPIC%"}%"}%</th>
 <td>%MAKETEXT{"Or just start from the beginning in case you got lost somehow."}%</td>
 </tr>%TMPL:END%
 
@@ -63,7 +63,7 @@
 %TMPL:DEF{"similar"}%%TMPL:P{context="SolrPluginEnabled" then="similar::solr" else="similar::default"}%%TMPL:END%
 %TMPL:DEF{"similar::solr"}%%SOLRSEARCH{
   "topic_search:%BASETOPIC%~ OR topic_search:*%BASETOPIC%*"
-  filter="type:topic web:%BASEWEB%"
+  filter="type:topic web:%ENCODE{"%BASEWEB%" old="/" new="."}%"
   rows="1"
   type="edismax"
   format="$percntIF{\"istopic '$web.$topic'\"

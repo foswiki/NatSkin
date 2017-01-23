@@ -76,7 +76,7 @@
 
 %TMPL:DEF{"searchweb::solr"}%<noautolink>%MAKEINDEX{
   "%SOLRSEARCH{
-    "web:%BASEWEB% outgoing:%BASEWEB%.%BASETOPIC%"
+    "web:%ENCODE{"%BASEWEB%" old="/" new="."}% outgoing:%ENCODE{"%BASEWEB%" old="/" new="."}%.%BASETOPIC%"
     header="$percntCALC{\"$SET(total,$count)\"}$percnt"
     format="($title);$web.$topic"
     sort="title"
@@ -103,7 +103,7 @@
 
 %TMPL:DEF{"searchallwebs::solr"}%<noautolink>%MAKEINDEX{
   "%SOLRSEARCH{
-    "outgoing:%BASEWEB%.%BASETOPIC%"
+    "outgoing:%ENCODE{"%BASEWEB%" old="/" new="."}%.%BASETOPIC%"
     header="$percntCALC{\"$SET(total,$count)\"}$percnt"
     format="($percntSUBST{text=\"$percntENCODE{\"$title\" type=\"entity\"}$percnt\" pattern=\"(&#\d+;)|[$]\" format=\"\"}$percnt);$title;$web.$topic"
     sort="title"

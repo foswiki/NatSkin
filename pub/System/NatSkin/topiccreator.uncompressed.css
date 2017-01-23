@@ -8,7 +8,6 @@
 .tcNaviContainer {
   border-top:1px solid #d1d1d1;
   padding-top:1em;
-  color:#888;
   position:absolute;
   bottom:0;
   width:100%;
@@ -89,4 +88,7 @@
 .tcIcon img {
   width:30px;
   height:auto;
+}
+.tcPage form .foswikiLayoutTable th {
+  width:8em;
 }

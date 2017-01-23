@@ -1,14 +1,11 @@
 <!-- template: styles.nat.tmpl -->
-%TMPL:DEF{"defaultstyles"}%<!-- -->
-%ADDTOZONE{
+%TMPL:DEF{"defaultstyles"}%%ADDTOZONE{
   "head" 
   id="TOPICCREATOR"
   text="<link rel='stylesheet' href='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/topiccreator.css' media='all' />"
 }%
 %RENDERZONE{"head"}%<!-- -->
-%RENDERZONE{"skincss"}%<!-- -->
-%TMPL:P{"preferences::styles"}%<!-- -->
-<!-- -->%TMPL:END%
+%RENDERZONE{"skincss"}%<!-- -->%TMPL:P{"preferences::styles"}%%TMPL:END%
 
 %TMPL:DEF{"preferences::styles"}%%ADDTOZONE{"skincss"
   id="NATSKIN::PREFERENCES::STYLES"

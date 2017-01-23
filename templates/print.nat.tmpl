@@ -49,9 +49,9 @@
 %TMPL:DEF{"printform::orientation"}%<tr>
   <th>%MAKETEXT{"Orientation"}%:</th>
   <td><select name="pdforientation" class="foswikiSelect">
-        <option %IF{"'%TMPL:P{"printform::orientation::default"}%'='auto'" then="selected"}%>%MAKETEXT{"auto"}%</option>
-        <option %IF{"'%TMPL:P{"printform::orientation::default"}%'='portrait'" then="selected"}%>%MAKETEXT{"portrait"}%</option>
-        <option %IF{"'%TMPL:P{"printform::orientation::default"}%'='landscape'" then="selected"}%>%MAKETEXT{"landscape"}%</option>
+        <option %IF{"'%TMPL:P{"printform::orientation::default"}%'='auto'" then="selected"}% value="auto">%MAKETEXT{"auto"}%</option>
+        <option %IF{"'%TMPL:P{"printform::orientation::default"}%'='portrait'" then="selected"}% value="portrait">%MAKETEXT{"portrait"}%</option>
+        <option %IF{"'%TMPL:P{"printform::orientation::default"}%'='landscape'" then="selected"}% value="landscape">%MAKETEXT{"landscape"}%</option>
       </select>
   </td>
 </tr>%TMPL:END%
@@ -67,7 +67,7 @@
       <label><input type="radio" class="foswikiRadio" name="watermark_radio" id="watermark_custom">%MAKETEXT{"Custom"}%</label>  %BR%
       <input type="text" size="50" name="pdfwatermark" id="watermark_input" style="display:none;margin-top:0.5em" /> 
 <literal>
-<script>
+<script type='text/javascript'>
 jQuery(function($) {
   $("input[name='watermark_radio']").on("change", function() {
     var $this = $(this);

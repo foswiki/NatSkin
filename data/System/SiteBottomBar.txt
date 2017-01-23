@@ -1,9 +1,10 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1456411053" format="1.1" version="1"}%
+%META:TOPICINFO{author="micha" comment="reprev" date="1472639877" format="1.1" reprev="3" version="3"}%
 %META:TOPICPARENT{name="NatSkin"}%
-<h1 >%TOPIC%</h1>
+---+!! %TOPIC%
 
-Default bottombar component
+Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] instead.
 
+<verbatim class="tml">
 %STARTINCLUDE%<!-- -->
 <div class="natSiteMap">
 <h3>%MAKETEXT{"Sitemap"}%</h3>
@@ -27,6 +28,7 @@ Default bottombar component
 </div>
 <div class="natCopyRight">%WEBCOPYRIGHT%</div>
 <!-- -->%STOPINCLUDE%
+</verbatim>
 
 %META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%
 %META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

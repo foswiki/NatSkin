@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1456411053" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1467208814" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%
@@ -9,6 +9,10 @@
 <style>
 .fltMakeIndexWrapper li {
   word-break:break-all;
+  word-break:break-word;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
 }
 </style>
 <noautolink>
@@ -21,6 +25,7 @@
   format="[[%BASEWEB%.$3][$2]]"
   sort="nocase"
   footer="$n$n$percntMAKETEXT{\"[_1] topics found\" args=\"<span class='foswikiAlert'>$count</span>\"}$percnt"
+  transliterate="%WEBTOPICLIST_TRANSLITERATE{default="on"}%"
 }%
 <!--
 -->

@@ -5,8 +5,11 @@
 %TMPL:DEF{"sidebar"}%%TMPL:P{"defaultsidebar"}%%TMPL:END%
 %TMPL:DEF{"rightsidebar"}%%TMPL:P{context="natskin_sidebar_both" then="webrightbar" else="sidebar"}%%TMPL:END%
 %TMPL:DEF{"mysidebarreddot"}%%REDDOT{"%topic%" icon="pencil" title="%MAKETEXT{"Edit my sidebar"}%"}%%TMPL:END%
-%TMPL:DEF{"thesidebar"}%%USERSWEB%.%WIKINAME%%IF{"defined 'MYSIDEBAR'" then="%MYSIDEBAR%" else="SideBar"}%%TMPL:END%
-%TMPL:DEF{"mysidebar"}%%TMPL:P{context="ListyPluginEnabled" then="mysidebar::listy" else="mysidebar::default"}%%TMPL:END%
+%TMPL:DEF{"thesidebar"}%%USERSWEB%.%WIKINAME%%MYSIDEBAR{default="SideBar"}%%TMPL:END%
+%TMPL:DEF{"mysidebar"}%%IF{"context ListyPluginEnabled and not istopic '%TMPL:P{"thesidebar"}%'" 
+  then="$percntTMPL:P{\"mysidebar::listy\"}$percnt" 
+  else="$percntTMPL:P{\"mysidebar::default\"}$percnt"
+}%%TMPL:END%
 %TMPL:DEF{"mysidebar::default"}%%IF{"istopic '%TMPL:P{"thesidebar"}%'" 
   then="<h2 class='jqInited'>%MAKETEXT{"My sidebar"}%%TMPL:P{
       context="RedDotPluginEnabled" 
