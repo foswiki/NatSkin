@@ -97,7 +97,7 @@ msgstr "siden %1 eksisterer ikke"
 msgid "%1 topic(s) found"
 msgstr "Ingen dattersider er fundet."
 
-#: data/System/NatSkinWebTopicListViewTemplate.txt:23
+#: data/System/NatSkinWebTopicListViewTemplate.txt:27
 #, fuzzy
 msgid "%1 topics found"
 msgstr "Ingen dattersider er fundet."
@@ -145,7 +145,7 @@ msgstr "Din e-mail-adresse vil blive holdt fortrolig."
 msgid "Abandon changes and exit"
 msgstr "Slet ændringer og afbryd"
 
-#: templates/newtopic.nat.tmpl:21 templates/oops.nat.tmpl:27
+#: templates/newtopic.nat.tmpl:22 templates/oops.nat.tmpl:27
 msgid "Abort"
 msgstr ""
 
@@ -307,7 +307,7 @@ msgstr "Fejl under flytning af vedhæftet fil"
 msgid "Attachments"
 msgstr "Vedhæftede filer"
 
-#: templates/attach.nat.tmpl:25
+#: templates/attach.nat.tmpl:26
 #, fuzzy
 msgid "Attachments at %1"
 msgstr "Vedhæftede filer %1"
@@ -320,12 +320,12 @@ msgstr "Bemærk"
 msgid "Author"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:19
+#: templates/newtopic.nat.tmpl:20
 #, fuzzy
 msgid "Back one step"
 msgstr "Tilbage til siden"
 
-#: templates/view.nat.tmpl:116
+#: templates/view.nat.tmpl:131
 #, fuzzy
 msgid "Back to view mode"
 msgstr "Tilbage til siden"
@@ -537,7 +537,7 @@ msgstr "Handling"
 msgid "Click to like/unlike this topic"
 msgstr ""
 
-#: templates/attach.nat.tmpl:19 templates/backlinks.nat.tmpl:21
+#: templates/attach.nat.tmpl:20 templates/backlinks.nat.tmpl:21
 #: templates/backlinksallwebs.nat.tmpl:18 templates/backlinksweb.nat.tmpl:13
 #: templates/childtopics.nat.tmpl:16 templates/childtopics.nat.tmpl:32
 #: templates/foswiki.nat.tmpl:125 templates/history.nat.tmpl:51
@@ -545,7 +545,7 @@ msgstr ""
 msgid "Close"
 msgstr "Luk"
 
-#: templates/view.nat.tmpl:190
+#: templates/view.nat.tmpl:205
 msgid "Close broadcast message"
 msgstr ""
 
@@ -618,11 +618,11 @@ msgstr "Skift sprog"
 msgid "Continue and try to rename web?"
 msgstr "Fortsæt med at omdøbe webbet?"
 
-#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:251
+#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:247
 msgid "Copy"
 msgstr ""
 
-#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:252
+#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:248
 msgid "Copy topic"
 msgstr "Kopier side"
 
@@ -641,7 +641,7 @@ msgstr "%1 kunne ikke gemmes."
 msgid "Country"
 msgstr "Land:"
 
-#: templates/404.nat.tmpl:50 templates/newtopic.nat.tmpl:22
+#: templates/404.nat.tmpl:50 templates/newtopic.nat.tmpl:23
 #, fuzzy
 msgid "Create"
 msgstr "Opret gruppe"
@@ -656,7 +656,7 @@ msgstr "Opret ny side"
 msgid "Create a Topic in %1"
 msgstr "Opret ny side"
 
-#: templates/foswiki.nat.tmpl:253
+#: templates/foswiki.nat.tmpl:249
 msgid "Create a copy of this topic under a new name"
 msgstr ""
 
@@ -720,8 +720,8 @@ msgstr "Formular"
 msgid "Date"
 msgstr "Dato"
 
-#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:100
-#: templates/newtopic.nat.tmpl:48 templates/newtopic.old.tmpl:122
+#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:101
+#: templates/newtopic.nat.tmpl:49 templates/newtopic.old.tmpl:122
 msgid "Default"
 msgstr "Standard"
 
@@ -730,7 +730,7 @@ msgstr "Standard"
 msgid "Default topic as defined in WebTopicEditTemplate"
 msgstr "standard som defineret i %1"
 
-#: templates/newtopic.nat.tmpl:121 templates/newtopic.nat.tmpl:50
+#: templates/newtopic.nat.tmpl:122 templates/newtopic.nat.tmpl:51
 #, fuzzy
 msgid "Default wiki content"
 msgstr "Slet side"
@@ -788,7 +788,7 @@ msgstr "Har du glemt din adgangskode?"
 msgid "Did you want to [[%1][reset %2's password]]?"
 msgstr "Ønskede du at [[%1][nulstille adgangskoden for brugeren %2]]?"
 
-#: templates/foswiki.nat.tmpl:246
+#: templates/foswiki.nat.tmpl:242
 msgid "Diff"
 msgstr ""
 
@@ -807,7 +807,7 @@ msgstr "Historik"
 msgid "Display settings"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:248
+#: templates/foswiki.nat.tmpl:244
 msgid "Display the most recent change of this topic"
 msgstr ""
 
@@ -1190,12 +1190,12 @@ msgstr "Få notificering om ændringer i resultaterne af denne søgning"
 msgid "Go back in your browser and save your changes locally."
 msgstr "Gå tilbage i din browser, og gem dine opdateringer lokalt."
 
-#: templates/foswiki.nat.tmpl:230
+#: templates/foswiki.nat.tmpl:229
 #, fuzzy
 msgid "Go to the following version of this topic"
 msgstr "Printbar version af denne side (p)"
 
-#: templates/foswiki.nat.tmpl:236
+#: templates/foswiki.nat.tmpl:234
 #, fuzzy
 msgid "Go to the previous version of this topic"
 msgstr "Printbar version af denne side (p)"
@@ -1360,7 +1360,7 @@ msgstr ""
 msgid "Jump to the first version of this topic"
 msgstr "Printbar version af denne side (p)"
 
-#: templates/foswiki.nat.tmpl:242
+#: templates/foswiki.nat.tmpl:239
 #, fuzzy
 msgid "Jump to the most recent version of this topic"
 msgstr "Printbar version af denne side (p)"
@@ -1378,7 +1378,7 @@ msgstr ""
 msgid "Language"
 msgstr "Dansk"
 
-#: templates/foswiki.nat.tmpl:240
+#: templates/foswiki.nat.tmpl:237
 msgid "Last"
 msgstr "Sidste"
 
@@ -1632,11 +1632,11 @@ msgstr "Nyt web-navn:"
 msgid "News"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:228
+#: templates/foswiki.nat.tmpl:227
 msgid "Next"
 msgstr "Næste"
 
-#: templates/newtopic.nat.tmpl:20
+#: templates/newtopic.nat.tmpl:21
 #, fuzzy
 msgid "Next step"
 msgstr "Næste"
@@ -1694,7 +1694,7 @@ msgstr "siden %1 eksisterer ikke"
 msgid "Notes"
 msgstr "Noter:"
 
-#: templates/foswiki.nat.tmpl:256
+#: templates/foswiki.nat.tmpl:252
 msgid "Nothing found. Try again!"
 msgstr ""
 
@@ -1853,12 +1853,12 @@ msgstr "Advisér venligst din %1-administrator."
 msgid "Please notify your %1 administrator %2."
 msgstr "Advisér venligst din %1-administrator."
 
-#: templates/newtopic.nat.tmpl:93
+#: templates/newtopic.nat.tmpl:94
 #, fuzzy
 msgid "Please select a Template"
 msgstr "Standard-skabelon"
 
-#: templates/newtopic.nat.tmpl:34
+#: templates/newtopic.nat.tmpl:35
 #, fuzzy
 msgid "Please select a Topic Type"
 msgstr "Vælg"
@@ -1872,7 +1872,7 @@ msgstr "Indtast brugernavn."
 msgid "Portuguese"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:282
+#: templates/foswiki.nat.tmpl:278
 #, fuzzy
 msgid "Powered by Foswiki"
 msgstr "Dette site er drevet af Foswiki"
@@ -1890,7 +1890,7 @@ msgstr "Ellers vælg Fortryd."
 msgid "Press OK to confirm that this change was intentional."
 msgstr "Vælg OK for at bekræfte at denne ændring var tilsigtet."
 
-#: templates/foswiki.nat.tmpl:234
+#: templates/foswiki.nat.tmpl:232
 msgid "Previous"
 msgstr "Forrige"
 
@@ -1937,7 +1937,7 @@ msgstr "Nulstil adgangskode"
 msgid "Recent Changes"
 msgstr "Senest ændrede sider"
 
-#: templates/view.nat.tmpl:117
+#: templates/view.nat.tmpl:132
 #, fuzzy
 msgid "Redirect from %1"
 msgstr "Søgeresultater fra %1-webbet"
@@ -2217,7 +2217,7 @@ msgid ""
 "them."
 msgstr ""
 
-#: templates/view.nat.tmpl:101
+#: templates/view.nat.tmpl:116
 #, fuzzy
 msgid "Select translation in %1"
 msgstr "Vælg hvilke grupper som skal tilmeldes:"
@@ -2391,10 +2391,6 @@ msgstr "Tekst"
 msgid "Thank you for registering"
 msgstr "Tak fordi du registrerede dig"
 
-#: templates/foswiki.nat.tmpl:366
-msgid "Thank you!"
-msgstr ""
-
 #: templates/messages.nat.tmpl:171
 #, fuzzy
 msgid ""
@@ -2548,7 +2544,7 @@ msgstr ""
 msgid "This page was cached on %1."
 msgstr "Denne side er cached på %1."
 
-#: templates/newtopic.nat.tmpl:148 templates/newtopic.old.tmpl:58
+#: templates/newtopic.nat.tmpl:154 templates/newtopic.old.tmpl:58
 #: templates/renamebase.nat.tmpl:70 templates/translatetopic.nat.tmpl:110
 #, fuzzy
 msgid "Title"
@@ -2771,13 +2767,13 @@ msgstr ""
 msgid "Variation"
 msgstr "Beskrivelse"
 
-#: templates/view.nat.tmpl:175
+#: templates/view.nat.tmpl:190
 #, fuzzy
 msgid "Version %1"
 msgstr "Version"
 
 #: templates/foswiki.nat.tmpl:37 templates/history.nat.tmpl:102
-#: templates/view.nat.tmpl:116
+#: templates/view.nat.tmpl:131
 msgid "View"
 msgstr "Vis"
 
@@ -2791,22 +2787,22 @@ msgstr "Vis version"
 msgid "View formatted topic"
 msgstr "Vis side"
 
-#: templates/foswiki.nat.tmpl:247
+#: templates/foswiki.nat.tmpl:243
 #, fuzzy
 msgid "View last change"
 msgstr "seneste ændring"
 
-#: templates/foswiki.nat.tmpl:241
+#: templates/foswiki.nat.tmpl:238
 #, fuzzy
 msgid "View last revision"
 msgstr "Vis version"
 
-#: templates/foswiki.nat.tmpl:229
+#: templates/foswiki.nat.tmpl:228
 #, fuzzy
 msgid "View next revision"
 msgstr "Vis version"
 
-#: templates/foswiki.nat.tmpl:235
+#: templates/foswiki.nat.tmpl:233
 #, fuzzy
 msgid "View previous revision"
 msgstr "Vis en tidligere version af siden"
@@ -2851,12 +2847,6 @@ msgstr ""
 #: templates/validate.nat.tmpl:7
 msgid "Warning! Confirmation required"
 msgstr "Advarsel! Bekræftelse krævet"
-
-#: templates/foswiki.nat.tmpl:363
-msgid ""
-"Warning: Your browser isn't supported. Please install a modern one, like %1, "
-"%2, %3, %4 or the latest %5."
-msgstr ""
 
 #: templates/print.nat.tmpl:62
 msgid "Watermark"
@@ -2949,7 +2939,7 @@ msgstr "Du er allerede registreret."
 msgid "You are also listed in the %1 topic"
 msgstr "Du er også oprettet på siden %1"
 
-#: templates/foswiki.nat.tmpl:260
+#: templates/foswiki.nat.tmpl:256
 #, fuzzy
 msgid "You are here"
 msgstr "Du er her:"
@@ -3171,7 +3161,7 @@ msgstr ""
 msgid "default"
 msgstr "Standard"
 
-#: templates/newtopic.nat.tmpl:102
+#: templates/newtopic.nat.tmpl:103
 msgid "default template for the selected topic type"
 msgstr ""
 
@@ -3311,11 +3301,6 @@ msgstr ""
 msgid "prefs"
 msgstr ""
 
-#: templates/view.print.nat.tmpl:11
-#, fuzzy
-msgid "printable"
-msgstr "Editér tabel"
-
 #: templates/changeform.nat.tmpl:119 templates/changeform.nat.tmpl:74
 msgid "remove the current form (caution: possible data loss)"
 msgstr ""
@@ -3339,7 +3324,7 @@ msgstr "gendan"
 msgid "right"
 msgstr "Juster højre"
 
-#: templates/newtopic.nat.tmpl:32 templates/newtopic.nat.tmpl:91
+#: templates/newtopic.nat.tmpl:33 templates/newtopic.nat.tmpl:92
 #: templates/searchbase.nat.tmpl:7 templates/searchbox.nat.tmpl:13
 #, fuzzy
 msgid "search"
@@ -3382,6 +3367,10 @@ msgstr "Flere værktøjer"
 #: templates/webdav_folder.nat.tmpl:8
 msgid "up one folder"
 msgstr ""
+
+#, fuzzy
+#~ msgid "printable"
+#~ msgstr "Editér tabel"
 
 #, fuzzy
 #~ msgid "Create a default topic"

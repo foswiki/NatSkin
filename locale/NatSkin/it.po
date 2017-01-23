@@ -9,8 +9,8 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-01-20 08:12+0200\n"
 "Last-Translator: Guido Brugnara <gdo@leader.it>\n"
-"Language-Team: Italian <http://translate.foswiki.org/projects/foswiki"
-"/distribution-master/it/>\n"
+"Language-Team: Italian <http://translate.foswiki.org/projects/foswiki/"
+"distribution-master/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -90,7 +90,7 @@ msgstr "La pagina %1 non esiste"
 msgid "%1 topic(s) found"
 msgstr "%1 pagina(e) trovata(e)"
 
-#: data/System/NatSkinWebTopicListViewTemplate.txt:23
+#: data/System/NatSkinWebTopicListViewTemplate.txt:27
 msgid "%1 topics found"
 msgstr "%1 pagine trovate"
 
@@ -107,21 +107,6 @@ msgstr ""
 "questo modulo. Inserire i login o i WikiName degli utenti e i nuovi "
 "indirizzi e-mail."
 
-#: templates/attachnew.nat.tmpl:8
-msgid ""
-"*Link checkbox*: In case the attached file is a JPG, GIF or PNG image and "
-"you check the box, it will create an inline image (e.g. show the image) at "
-"the end of the topic.  For other file types a simple link will be created."
-msgstr ""
-"*Link checkbox*: Nel caso in cui il file allegato è un'immagine PNG JPG, GIF "
-"e si seleziona la checkbox, si creerà un'immagine in linea (ad esempio, "
-"mostrano l'immagine) alla fine della pagina. Per altri tipi di file verrà "
-"creato un collegamento semplice."
-
-#: templates/attachagain.nat.tmpl:24
-msgid "*Move attachment*: An attachment can be deleted by moving it to %1"
-msgstr "*Sposta allegato*: Un allegato può essere cancellato spostandolo in %1"
-
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:53
 msgid ""
 "*Note:* A group name must be a [[%SYSTEMWEB%.WikiWord][WikiWord]] and end "
@@ -134,13 +119,9 @@ msgstr ""
 msgid "20 Minutes Tutorial"
 msgstr "Tutorial di 20 minuti"
 
-#: templates/foswiki.nat.tmpl:232
+#: templates/foswiki.nat.tmpl:207
 msgid "<nop>WebDAV Directory"
 msgstr "Lista <nop>WebDAV"
-
-#: templates/attachnew.nat.tmpl:29
-msgid "<strong>Continue</strong> uploading more files"
-msgstr "<strong>Continua</strong> il caricamento di più file"
 
 #: templates/messages.nat.tmpl:255
 msgid "A =.txt= extension is appended to some filenames for security reasons"
@@ -148,7 +129,7 @@ msgstr ""
 "L'estensione =.txt= è stata aggiunta a qualche nome di file per ragioni di "
 "sicurezza"
 
-#: data/System/UserRegistrationViewTemplate.txt:145
+#: data/System/UserRegistrationViewTemplate.txt:149
 msgid "A valid e-mail address. Will be kept confidential."
 msgstr "Un valido indirizzo e-mail. Verrà mantenuto riservato."
 
@@ -156,7 +137,7 @@ msgstr "Un valido indirizzo e-mail. Verrà mantenuto riservato."
 msgid "Abandon changes and exit"
 msgstr "Annulla le modifiche ed esci"
 
-#: templates/newtopic.wwb.tmpl:21 templates/oops.nat.tmpl:27
+#: templates/newtopic.nat.tmpl:22 templates/oops.nat.tmpl:27
 msgid "Abort"
 msgstr "Interrompe"
 
@@ -168,15 +149,15 @@ msgstr "Riguardo a pagine e web"
 msgid "Access denied"
 msgstr "Accesso negato"
 
-#: data/System/UserRegistrationViewTemplate.txt:111
+#: data/System/UserRegistrationViewTemplate.txt:115
 msgid "Account settings"
 msgstr "Impostazioni dell'account"
 
-#: templates/history.nat.tmpl:77
+#: templates/history.nat.tmpl:84
 msgid "Action"
 msgstr "Azione"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:100
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:97
 msgid "Add member"
 msgstr "Aggiungi membro"
 
@@ -188,19 +169,19 @@ msgstr "Aggiungi alla barra laterale"
 msgid "Add topic %1 to my sidebar navigation"
 msgstr "Aggiungi il link della pagina %1 nella mia barra laterale"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:112
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:109
 msgid "Add users or groups to this group"
 msgstr "Inserire utenti o gruppi da aggiungere a questo gruppo"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:174
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:171
 msgid "Adding"
 msgstr "Aggiunta"
 
-#: data/System/NatSkinUserViewTemplate.txt:52
+#: data/System/NatSkinUserViewTemplate.txt:51
 msgid "Address"
 msgstr "Indirizzo"
 
-#: data/System/SiteMenu.txt:61
+#: data/System/SiteMenu.txt:60
 msgid "Admin"
 msgstr "Amministratore"
 
@@ -212,7 +193,7 @@ msgstr "Autenticazione amministratore Foswiki"
 msgid "Admin Tools"
 msgstr "Strumenti Amministratore"
 
-#: data/System/SiteMenu.txt:42
+#: data/System/SiteMenu.txt:41
 msgid "Admin docs"
 msgstr "Documenti amministratore"
 
@@ -276,21 +257,17 @@ msgstr ""
 "Ogni cambiamento fatto alla pagina prima di arrivare a questo link è stato "
 "preservato."
 
-#: data/System/SiteMenu.txt:65
+#: data/System/SiteMenu.txt:64
 msgid "Applications"
 msgstr "Applicazioni"
 
-#: templates/foswiki.nat.tmpl:30
+#: templates/foswiki.nat.tmpl:27
 msgid "Attach"
 msgstr "Allega"
 
-#: templates/foswiki.nat.tmpl:31
+#: templates/foswiki.nat.tmpl:28
 msgid "Attach files and images"
 msgstr "Allega file e immagini"
-
-#: templates/attachtables.nat.tmpl:95
-msgid "Attachment"
-msgstr "Allegato"
 
 #: templates/messages.nat.tmpl:346
 msgid "Attachment '%1' does not exist"
@@ -304,12 +281,12 @@ msgstr "Cancellazione dell'allegato fallita"
 msgid "Attachment move failed"
 msgstr "Spostamento dell'allegato fallito"
 
-#: templates/attach.nat.tmpl:13 templates/attachtables.nat.tmpl:43
-#: templates/copytopic.nat.tmpl:29 templates/edit.nat.tmpl:250
+#: templates/attach.nat.tmpl:13 templates/copytopic.nat.tmpl:29
+#: templates/edit.nat.tmpl:250
 msgid "Attachments"
 msgstr "Allegati"
 
-#: templates/attach.nat.tmpl:25 templates/attachnew.nat.tmpl:36
+#: templates/attach.nat.tmpl:26
 msgid "Attachments at %1"
 msgstr "Allegati in %1"
 
@@ -317,16 +294,21 @@ msgstr "Allegati in %1"
 msgid "Attention"
 msgstr "Attenzione"
 
-#: templates/history.nat.tmpl:75
+#: templates/history.nat.tmpl:82
 msgid "Author"
 msgstr "Autore"
 
-#: templates/view.nat.tmpl:108
+#: templates/newtopic.nat.tmpl:20
+#, fuzzy
+msgid "Back one step"
+msgstr "Torna all'inizio"
+
+#: templates/view.nat.tmpl:131
 msgid "Back to view mode"
 msgstr "Torna alla modalità di visualizzazione"
 
 #: templates/backlinksallwebs.nat.tmpl:6 templates/backlinksweb.nat.tmpl:5
-#: templates/foswiki.nat.tmpl:36
+#: templates/foswiki.nat.tmpl:32
 msgid "Backlinks"
 msgstr "Collegamenti alla pagina"
 
@@ -346,10 +328,6 @@ msgstr "Collegamenti a %1 nel Web %2"
 msgid "Base web %1 is missing or does not exist"
 msgstr "Il web di base %1 è andato perso o non esiste"
 
-#: templates/attachnew.nat.tmpl:18
-msgid "Batch upload"
-msgstr "Upload insieme"
-
 #: data/System/NatSkinStyleBrowser.txt:38
 msgid "Bordered"
 msgstr "Delimitato"
@@ -362,7 +340,7 @@ msgstr "Entrambi"
 msgid "Breadcrumbs navigation"
 msgstr "Percorso di navigazione"
 
-#: data/System/SiteMenu.txt:53
+#: data/System/SiteMenu.txt:52
 msgid "Bugreport"
 msgstr "Report errori"
 
@@ -375,17 +353,17 @@ msgid "Can't get an e-mail address for %1"
 msgstr "Non è possibile ottenere un indirizzo e-mail per %1"
 
 #: data/Sandbox/NatSkinTest.txt:527 data/Sandbox/NatSkinTest.txt:552
-#: templates/actionform.nat.tmpl:18 templates/attachagain.nat.tmpl:30
-#: templates/changeform.nat.tmpl:26 templates/copytopic.nat.tmpl:43
-#: templates/kinosearch.nat.tmpl:8 templates/languageselector.nat.tmpl:29
-#: templates/loginbase.nat.tmpl:75 templates/managetags.nat.tmpl:33
-#: templates/messages.nat.tmpl:280 templates/moveattachment.nat.tmpl:67
-#: templates/newtopic.nat.tmpl:73 templates/newtopic.nat.tmpl:81
-#: templates/oopsleaseconflict.nat.tmpl:55 templates/print.nat.tmpl:29
-#: templates/renamebase.nat.tmpl:17 templates/renameconfirm.nat.tmpl:7
-#: templates/renamedelete.nat.tmpl:14 templates/renamewebbase.nat.tmpl:13
-#: templates/renamewebconfirm.nat.tmpl:7 templates/search.nat.tmpl:31
-#: templates/translatetopic.nat.tmpl:131 templates/validate.nat.tmpl:28
+#: templates/actionform.nat.tmpl:18 templates/changeform.nat.tmpl:26
+#: templates/copytopic.nat.tmpl:43 templates/kinosearch.nat.tmpl:8
+#: templates/languageselector.nat.tmpl:29 templates/loginbase.nat.tmpl:75
+#: templates/managetags.nat.tmpl:33 templates/messages.nat.tmpl:280
+#: templates/moveattachment.nat.tmpl:67 templates/newtopic.old.tmpl:73
+#: templates/newtopic.old.tmpl:81 templates/oopsleaseconflict.nat.tmpl:55
+#: templates/print.nat.tmpl:29 templates/renamebase.nat.tmpl:17
+#: templates/renameconfirm.nat.tmpl:7 templates/renamedelete.nat.tmpl:14
+#: templates/renamewebbase.nat.tmpl:13 templates/renamewebconfirm.nat.tmpl:7
+#: templates/search.nat.tmpl:31 templates/translatetopic.nat.tmpl:131
+#: templates/validate.nat.tmpl:28
 msgid "Cancel"
 msgstr "Rinuncia"
 
@@ -401,7 +379,7 @@ msgstr "Non posso creare il web %1 perché già esistente"
 msgid "Cannot rename %1 to %2 because it already exists."
 msgstr "Non posso rinominare %1 perché %2 è già esistente."
 
-#: templates/sidebar.nat.tmpl:52
+#: templates/sidebar.nat.tmpl:55
 msgid "Categories"
 msgstr "Categorie"
 
@@ -431,11 +409,7 @@ msgstr "Cambia la lingua"
 msgid "Change password"
 msgstr "Cambia password"
 
-#: templates/attachagain.nat.tmpl:29
-msgid "Change properties"
-msgstr "Cambia le proprietà"
-
-#: templates/foswiki.nat.tmpl:136
+#: templates/foswiki.nat.tmpl:117
 msgid "Change the name and/or the location of this topic"
 msgstr "Cambia il nome e/o la posizione di questa pagina"
 
@@ -443,7 +417,7 @@ msgstr "Cambia il nome e/o la posizione di questa pagina"
 msgid "Changed"
 msgstr "Cambiato"
 
-#: templates/sidebar.nat.tmpl:53
+#: templates/sidebar.nat.tmpl:56
 msgid "Changes"
 msgstr "Variazioni"
 
@@ -463,11 +437,11 @@ msgstr ""
 "I caratteri non permessi nel nome della pagina, come gli spazi, saranno "
 "rimossi automaticamente."
 
-#: templates/foswiki.nat.tmpl:79
+#: templates/foswiki.nat.tmpl:70
 msgid "Chat"
 msgstr "Chat"
 
-#: templates/foswiki.nat.tmpl:80
+#: templates/foswiki.nat.tmpl:71
 msgid "Chat about this topic"
 msgstr "Chat su questa pagina"
 
@@ -479,7 +453,7 @@ msgstr "Pagine figlie"
 msgid "Child topics of %1"
 msgstr "Pagine figlie di %1"
 
-#: templates/foswiki.nat.tmpl:48
+#: templates/foswiki.nat.tmpl:42
 msgid "Children"
 msgstr "Figli"
 
@@ -487,11 +461,11 @@ msgstr "Figli"
 msgid "Chinese"
 msgstr "Cinese"
 
-#: data/System/UserRegistrationViewTemplate.txt:193
+#: data/System/UserRegistrationViewTemplate.txt:197
 msgid "Choose a <nop>WikiName"
 msgstr "Scegli un <nop>NomeWiki"
 
-#: data/System/UserRegistrationViewTemplate.txt:130
+#: data/System/UserRegistrationViewTemplate.txt:134
 msgid "Choose a login name"
 msgstr "Scegli un nome utente"
 
@@ -499,7 +473,7 @@ msgstr "Scegli un nome utente"
 msgid "Choose a new form for %1"
 msgstr "Scegli un nuovo modulo per %1"
 
-#: data/System/UserRegistrationViewTemplate.txt:154
+#: data/System/UserRegistrationViewTemplate.txt:158
 msgid "Choose a password"
 msgstr "Scegli una password"
 
@@ -522,27 +496,27 @@ msgstr "Cancella destinazione prima di copiare"
 msgid "Clear selection"
 msgstr "Cancella la selezione"
 
-#: templates/foswiki.nat.tmpl:75
+#: templates/foswiki.nat.tmpl:66
 msgid "Click to like/unlike this topic"
 msgstr "Clicca se ti piace/non piace questa pagina"
 
-#: templates/attach.nat.tmpl:19 templates/backlinks.nat.tmpl:21
+#: templates/attach.nat.tmpl:20 templates/backlinks.nat.tmpl:21
 #: templates/backlinksallwebs.nat.tmpl:18 templates/backlinksweb.nat.tmpl:13
 #: templates/childtopics.nat.tmpl:16 templates/childtopics.nat.tmpl:32
-#: templates/foswiki.nat.tmpl:145 templates/history.nat.tmpl:44
+#: templates/foswiki.nat.tmpl:125 templates/history.nat.tmpl:51
 #: templates/oopsmore.nat.tmpl:14 templates/viewraw.nat.tmpl:12
 msgid "Close"
 msgstr "Chiudi"
 
-#: templates/view.nat.tmpl:168
+#: templates/view.nat.tmpl:205
 msgid "Close broadcast message"
 msgstr "Chiudi messaggio a tutti"
 
-#: templates/foswiki.nat.tmpl:146 templates/foswiki.nat.tmpl:148
+#: templates/foswiki.nat.tmpl:126 templates/foswiki.nat.tmpl:127
 msgid "Close this dialog"
 msgstr "Chiudi questo dialogo"
 
-#: data/System/UserRegistrationViewTemplate.txt:264
+#: data/System/UserRegistrationViewTemplate.txt:268
 msgid "Collaboration details"
 msgstr "Dettagli collaborazione"
 
@@ -550,7 +524,7 @@ msgstr "Dettagli collaborazione"
 msgid "Color %1 has an invalid format"
 msgstr "Il colore %1 ha un formato non valido"
 
-#: templates/history.nat.tmpl:76
+#: templates/history.nat.tmpl:83
 msgid "Comment"
 msgstr "Commento"
 
@@ -562,7 +536,7 @@ msgstr "Impostazioni commenti"
 msgid "Comments"
 msgstr "Commenti"
 
-#: templates/compare.nat.tmpl:17 templates/history.nat.tmpl:43
+#: templates/compare.nat.tmpl:17 templates/history.nat.tmpl:50
 msgid "Compare"
 msgstr "Confronta"
 
@@ -570,7 +544,7 @@ msgstr "Confronta"
 msgid "Confidential"
 msgstr "Riservato"
 
-#: data/System/SiteMenu.txt:73
+#: data/System/SiteMenu.txt:72
 msgid "Configure Foswiki"
 msgstr "Configura Foswiki"
 
@@ -601,11 +575,11 @@ msgstr "Lingua del contenuto"
 msgid "Continue and try to rename web?"
 msgstr "Continuo e cerco di rinominare il web?"
 
-#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:284
+#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:247
 msgid "Copy"
 msgstr "Copia"
 
-#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:285
+#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:248
 msgid "Copy topic"
 msgstr "Copia la pagina"
 
@@ -617,32 +591,34 @@ msgstr "Non trovo il modello =%1="
 msgid "Could not save %1."
 msgstr "Non posso salvare %1."
 
-#: data/System/NatSkinUserViewTemplate.txt:54
-#: data/System/UserRegistrationViewTemplate.txt:237
+#: data/System/NatSkinUserViewTemplate.txt:53
+#: data/System/UserRegistrationViewTemplate.txt:241
 msgid "Country"
 msgstr "Nazione"
 
-#: templates/404.nat.tmpl:50 templates/newtopic.wwb.tmpl:22
+#: templates/404.nat.tmpl:50 templates/newtopic.nat.tmpl:23
 msgid "Create"
 msgstr "Crea"
 
-#: templates/foswiki.nat.tmpl:287
+#: templates/newtopic.old.tmpl:3 templates/newtopic.old.tmpl:4
+#, fuzzy
+msgid "Create a Topic"
+msgstr "Crea una nuova pagina"
+
+#: templates/newtopic.nat.tmpl:3 templates/newtopic.old.tmpl:5
+#, fuzzy
+msgid "Create a Topic in %1"
+msgstr "Crea una nuova pagina nel Web %1"
+
+#: templates/foswiki.nat.tmpl:249
 msgid "Create a copy of this topic under a new name"
 msgstr "Crea una copia dei questa pagina con un nuovo nome"
 
-#: templates/newtopic.wwb.tmpl:151
-msgid "Create a new %1 in %2:"
-msgstr "Crea un nuovo %1 in %2:"
-
-#: templates/newtopic.nat.tmpl:3 templates/newtopic.nat.tmpl:4
-msgid "Create a new topic"
-msgstr "Crea una nuova pagina"
-
-#: templates/foswiki.nat.tmpl:196 templates/newtopic.nat.tmpl:5
+#: templates/foswiki.nat.tmpl:172
 msgid "Create a new topic in the %1 web"
 msgstr "Crea una nuova pagina nel Web %1"
 
-#: templates/foswiki.nat.tmpl:160
+#: templates/foswiki.nat.tmpl:137
 msgid "Create a new topic serving as a translation for this topic"
 msgstr "Crea una nuova pagina che serve come traduzione di questo pagina"
 
@@ -650,11 +626,11 @@ msgstr "Crea una nuova pagina che serve come traduzione di questo pagina"
 msgid "Create a new translation"
 msgstr "Crea una nuova traduzione"
 
-#: data/System/SiteMenu.txt:75 data/System/WebCreateNewWeb.txt:3
+#: data/System/SiteMenu.txt:74 data/System/WebCreateNewWeb.txt:3
 msgid "Create a new web"
 msgstr "Crea un nuovo web"
 
-#: templates/sidebar.nat.tmpl:20
+#: templates/sidebar.nat.tmpl:23
 msgid "Create a personal sidebar"
 msgstr "Crea una barra laterale personale"
 
@@ -686,28 +662,25 @@ msgstr "Modulo dati"
 msgid "DataForm"
 msgstr "DataForm"
 
-#: templates/attachtables.nat.tmpl:95 templates/history.nat.tmpl:74
+#: templates/history.nat.tmpl:81
 msgid "Date"
 msgstr "Data"
 
-#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:122
-#: templates/newtopic.wwb.tmpl:130 templates/newtopic.wwb.tmpl:57
+#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:101
+#: templates/newtopic.nat.tmpl:49 templates/newtopic.old.tmpl:122
 msgid "Default"
 msgstr "Predefinito"
 
-#: templates/newtopic.wwb.tmpl:132
-msgid "Default template for the selected type"
-msgstr "Modello predefinito per il tipo selezionato"
-
-#: templates/newtopic.nat.tmpl:120
+#: templates/newtopic.old.tmpl:120
 msgid "Default topic as defined in WebTopicEditTemplate"
 msgstr "Pagina predefinita così come definito in WebTopicEditTemplate"
 
-#: templates/newtopic.wwb.tmpl:59
-msgid "Default wiki topic"
+#: templates/newtopic.nat.tmpl:122 templates/newtopic.nat.tmpl:51
+#, fuzzy
+msgid "Default wiki content"
 msgstr "Pagina wiki predefinita"
 
-#: templates/foswiki.nat.tmpl:127 templates/renamedelete.nat.tmpl:13
+#: templates/foswiki.nat.tmpl:110 templates/renamedelete.nat.tmpl:13
 #: templates/renamedelete.nat.tmpl:6 templates/renamewebdelete.nat.tmpl:3
 msgid "Delete"
 msgstr "Elimina"
@@ -720,11 +693,7 @@ msgstr "Elimina %1"
 msgid "Delete attachment '%1'"
 msgstr "Elimina allegato '%1'"
 
-#: templates/attachtables.nat.tmpl:78
-msgid "Delete this attachment"
-msgstr "Elimina questo allegato"
-
-#: templates/foswiki.nat.tmpl:128
+#: templates/foswiki.nat.tmpl:111
 msgid "Delete this topic"
 msgstr "Elimina questa pagina"
 
@@ -745,7 +714,7 @@ msgstr "Deriva dal titolo"
 msgid "Destination"
 msgstr "Destinazione"
 
-#: data/System/SiteMenu.txt:43
+#: data/System/SiteMenu.txt:42
 msgid "Developer docs"
 msgstr "Documenti sviluppatori"
 
@@ -757,7 +726,7 @@ msgstr "Hai dimenticato la password?"
 msgid "Did you want to [[%1][reset %2's password]]?"
 msgstr "Vuoi veramente [[%1][ridefinire la password di %2]]?"
 
-#: templates/foswiki.nat.tmpl:278
+#: templates/foswiki.nat.tmpl:242
 msgid "Diff"
 msgstr "Diff"
 
@@ -774,19 +743,19 @@ msgstr "Elenco"
 msgid "Display settings"
 msgstr "Impostazioni di visualizzazione"
 
-#: templates/foswiki.nat.tmpl:281
+#: templates/foswiki.nat.tmpl:244
 msgid "Display the most recent change of this topic"
 msgstr "Visualizza la modifica più recente di questa pagina"
 
-#: templates/foswiki.nat.tmpl:207
+#: templates/foswiki.nat.tmpl:181
 msgid "Display this topic in PDF format"
 msgstr "Visualizza questa pagina in formato PDF"
 
-#: templates/foswiki.nat.tmpl:57
+#: templates/foswiki.nat.tmpl:49
 msgid "Display this topic in a printer-friendly manner"
 msgstr "Visualizza questa pagina in un modo adatto alla stampa"
 
-#: templates/foswiki.nat.tmpl:45
+#: templates/foswiki.nat.tmpl:39
 msgid "Display this version of the topic"
 msgstr "Visualizza questa versione della pagina"
 
@@ -802,15 +771,15 @@ msgstr "Vuoi diventare un utente registrato?"
 msgid "Don't forget to check your topic settings."
 msgstr "non dimenticare di controllare la configurazione della pagina."
 
-#: templates/foswiki.nat.tmpl:238
+#: templates/foswiki.nat.tmpl:212
 msgid "Download"
 msgstr "Download"
 
-#: templates/foswiki.nat.tmpl:241
+#: templates/foswiki.nat.tmpl:214
 msgid "Download assets from an external url and attach them to this topic"
 msgstr "Scarica risorse da un sito esterno da allegare a questa pagina"
 
-#: templates/foswiki.nat.tmpl:239
+#: templates/foswiki.nat.tmpl:213
 msgid "Download external resource"
 msgstr "Download risorse esterne"
 
@@ -856,11 +825,11 @@ msgstr ""
 msgid "Dutch"
 msgstr "Olandese"
 
-#: templates/foswiki.nat.tmpl:97
+#: templates/foswiki.nat.tmpl:85
 msgid "Edit"
 msgstr "Modifica"
 
-#: templates/foswiki.nat.tmpl:91
+#: templates/foswiki.nat.tmpl:80
 msgid "Edit Raw"
 msgstr "Modifica testo Wiki"
 
@@ -868,19 +837,19 @@ msgstr "Modifica testo Wiki"
 msgid "Edit anyway"
 msgstr "Modifica comunque"
 
-#: templates/foswiki.nat.tmpl:103
+#: templates/foswiki.nat.tmpl:90
 msgid "Edit form"
 msgstr "Modifica modulo"
 
-#: templates/foswiki.nat.tmpl:104
+#: templates/foswiki.nat.tmpl:91
 msgid "Edit form data"
 msgstr "Modifica i dati del modulo"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:101
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:98
 msgid "Edit group"
 msgstr "Modifica gruppo"
 
-#: templates/foswiki.nat.tmpl:118
+#: templates/foswiki.nat.tmpl:102
 msgid "Edit hidden preference settings of this topic"
 msgstr "Modifica preferenze nascoste di questa pagina"
 
@@ -888,43 +857,39 @@ msgstr "Modifica preferenze nascoste di questa pagina"
 msgid "Edit my sidebar"
 msgstr "Modifica la mia barra laterale"
 
-#: templates/attachtables.nat.tmpl:76
-msgid "Edit properties of this attachment"
-msgstr "Modifica proprietà dell'allegato"
-
 #: templates/edit.nat.tmpl:93
 msgid "Edit settings"
 msgstr "Modifica proprietà"
 
-#: templates/foswiki.nat.tmpl:109
+#: templates/foswiki.nat.tmpl:95
 msgid "Edit text"
 msgstr "Edit testo"
 
-#: templates/foswiki.nat.tmpl:110
+#: templates/foswiki.nat.tmpl:96
 msgid "Edit text data"
 msgstr "Modifica il testo dei dati"
 
-#: templates/foswiki.nat.tmpl:106
+#: templates/foswiki.nat.tmpl:92
 msgid "Edit the form data of this topic"
 msgstr "Modifica il modulo di questa pagina"
 
-#: templates/foswiki.nat.tmpl:94
+#: templates/foswiki.nat.tmpl:82
 msgid "Edit the raw text of this topic"
 msgstr "Modifica il testo wiki di questa pagina"
 
-#: templates/foswiki.nat.tmpl:112
+#: templates/foswiki.nat.tmpl:97
 msgid "Edit the text data of this topic"
 msgstr "Modifica i dati testuali di questa pagina"
 
-#: templates/foswiki.nat.tmpl:100 templates/foswiki.nat.tmpl:98
+#: templates/foswiki.nat.tmpl:86 templates/foswiki.nat.tmpl:87
 msgid "Edit this topic"
 msgstr "Modifica questa pagina"
 
-#: templates/foswiki.nat.tmpl:116
+#: templates/foswiki.nat.tmpl:101
 msgid "Edit topic preferences"
 msgstr "Modifica le preferenze della pagina"
 
-#: templates/foswiki.nat.tmpl:92
+#: templates/foswiki.nat.tmpl:81
 msgid "Edit wiki markup"
 msgstr "Modifica markup wiki"
 
@@ -932,12 +897,12 @@ msgstr "Modifica markup wiki"
 msgid "English"
 msgstr "Inglese"
 
-#: data/System/UserRegistrationViewTemplate.txt:356
+#: data/System/UserRegistrationViewTemplate.txt:360
 msgid "Enter a WikiName"
 msgstr "Inserire un WikiName"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:189
-#: data/System/UserRegistrationViewTemplate.txt:351
+#: data/System/UserRegistrationViewTemplate.txt:355
 msgid "Enter a login name"
 msgstr "Inserire un nome di login"
 
@@ -953,11 +918,11 @@ msgstr ""
 msgid "Enter a new username and password to change identity"
 msgstr "Per cambiare identità, inserisci nuovi username e password"
 
-#: data/System/UserRegistrationViewTemplate.txt:357
+#: data/System/UserRegistrationViewTemplate.txt:361
 msgid "Enter a valid WikiWord"
 msgstr "Inserire una WikiWord valida"
 
-#: data/System/UserRegistrationViewTemplate.txt:352
+#: data/System/UserRegistrationViewTemplate.txt:356
 msgid "Enter at least %1 characters"
 msgstr "Inserire almeno %1 caratteri"
 
@@ -972,7 +937,7 @@ msgid "Enter the current password for the given !LoginName."
 msgstr "Inserire la password corrente per il dato !LoginName."
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:199
-#: data/System/UserRegistrationViewTemplate.txt:365
+#: data/System/UserRegistrationViewTemplate.txt:369
 msgid "Enter the same password as above"
 msgstr "Inserire la stessa password come sopra"
 
@@ -980,11 +945,11 @@ msgstr "Inserire la stessa password come sopra"
 msgid "Enter topic name or a search string"
 msgstr "Inserire il nome della pagina o un testo da cercare"
 
-#: data/System/UserRegistrationViewTemplate.txt:348
+#: data/System/UserRegistrationViewTemplate.txt:352
 msgid "Enter your first name"
 msgstr "Inserire il vostro nome"
 
-#: data/System/UserRegistrationViewTemplate.txt:349
+#: data/System/UserRegistrationViewTemplate.txt:353
 msgid "Enter your last name"
 msgstr "Inserire il vostro cognome"
 
@@ -1000,10 +965,6 @@ msgstr "Errore durante il salvataggio della pagina"
 msgid "Errors"
 msgstr "Errori"
 
-#: templates/attachnew.nat.tmpl:35
-msgid "Existing files"
-msgstr "File esistenti"
-
 #: templates/print.nat.tmpl:28
 msgid "Export"
 msgstr "Esporta"
@@ -1012,13 +973,9 @@ msgstr "Esporta"
 msgid "Export to PDF"
 msgstr "Esporta in PDF"
 
-#: templates/foswiki.nat.tmpl:205
+#: templates/foswiki.nat.tmpl:180
 msgid "Export topic to PDF"
 msgstr "Esporta pagina in PDF"
-
-#: templates/attachnew.nat.tmpl:19
-msgid "Extracts individual files in a zip archive."
-msgstr "Estrae i singoli file da un archivio zip."
 
 #: data/System/WebLinks.txt:9
 msgid "FAQ"
@@ -1037,11 +994,11 @@ msgstr "Il file è stato caricato con un nome differente"
 msgid "Filter"
 msgstr "Filtro"
 
-#: templates/foswiki.nat.tmpl:37
+#: templates/foswiki.nat.tmpl:33
 msgid "Find backlinks"
 msgstr "Cerca collegamenti"
 
-#: templates/foswiki.nat.tmpl:49
+#: templates/foswiki.nat.tmpl:43
 msgid "Find child topics"
 msgstr "Cerca pagine figlie"
 
@@ -1049,7 +1006,7 @@ msgstr "Cerca pagine figlie"
 msgid "Finnish"
 msgstr "Finlandese"
 
-#: templates/foswiki.nat.tmpl:250
+#: templates/foswiki.nat.tmpl:222
 msgid "First"
 msgstr "Primo"
 
@@ -1077,7 +1034,7 @@ msgstr "Inserimento con modulo"
 msgid "Format"
 msgstr "Formattazione"
 
-#: data/System/SiteMenu.txt:51
+#: data/System/SiteMenu.txt:50
 msgid "Foswiki FAQ"
 msgstr "FAQ Foswiki"
 
@@ -1085,7 +1042,7 @@ msgstr "FAQ Foswiki"
 msgid "Free form topic title in target language."
 msgstr "Titolo della pagina del modello nella lingua di destinazione."
 
-#: templates/newtopic.nat.tmpl:66
+#: templates/newtopic.old.tmpl:66
 msgid ""
 "Free form topic title text. The actual topic _name_ will be derived from the "
 "title automatically."
@@ -1109,18 +1066,19 @@ msgstr "Da"
 msgid "German"
 msgstr "Tedesco"
 
-#: templates/body.nat.tmpl:63
+#: templates/body.nat.tmpl:65
 msgid "Get a fresh version <a href='%1' rel='nofollow'>here</a>."
 msgstr "Scarica una nuova versione da <a href='%1' rel='nofollow'>qui</a>."
 
-#: templates/foswiki.nat.tmpl:224
+#: templates/foswiki.nat.tmpl:198 templates/foswiki.nat.tmpl:200
 msgid "Get an email notification whenever this topic changes"
 msgstr "Notifica automatizzata dei cambiamenti della pagina"
 
 #: templates/renamesidebar.nat.tmpl:10
 msgid ""
 "Get help on <a href='%1' target='_blank'>Renaming and moving topics</a>."
-msgstr "Aiuto su <a href='%1' target='_blank'>Rinominare e spostare pagine</a>."
+msgstr ""
+"Aiuto su <a href='%1' target='_blank'>Rinominare e spostare pagine</a>."
 
 #: templates/renamewebbase.nat.tmpl:86
 msgid ""
@@ -1138,11 +1096,11 @@ msgstr "Voglio essere avvertito circa le variazioni di questa ricerca"
 msgid "Go back in your browser and save your changes locally."
 msgstr "Torna indietro nel browser e salva le modifiche fatte localmente."
 
-#: templates/foswiki.nat.tmpl:259
+#: templates/foswiki.nat.tmpl:229
 msgid "Go to the following version of this topic"
 msgstr "Passare alla versione successiva di questo pagina"
 
-#: templates/foswiki.nat.tmpl:266
+#: templates/foswiki.nat.tmpl:234
 msgid "Go to the previous version of this topic"
 msgstr "Passare alla versione precedente di questa pagina"
 
@@ -1162,32 +1120,28 @@ msgstr "Gruppi"
 msgid "Have a look at the list of all pages in this web."
 msgstr "Dai un'occhiata alla lista di tutte le pagine di questo sito web."
 
-#: data/System/SiteMenu.txt:38 templates/attachsidebar.nat.tmpl:3
-#: templates/changeformsidebar.nat.tmpl:3 templates/foswiki.nat.tmpl:199
+#: data/System/SiteMenu.txt:37 templates/attachsidebar.nat.tmpl:3
+#: templates/changeformsidebar.nat.tmpl:3 templates/foswiki.nat.tmpl:175
 #: templates/moveattachmentsidebar.nat.tmpl:3
 #: templates/renamesidebar.nat.tmpl:3 templates/renamewebsidebar.nat.tmpl:3
 #: templates/topbar.customato.nat.tmpl:85
 msgid "Help"
 msgstr "Aiuto"
 
-#: templates/attachtables.nat.tmpl:19
-msgid "Hide attachment in normal topic view."
-msgstr "Nascondi l'allegato nella visualizzazione della pagina."
-
 #: templates/attachsidebar.nat.tmpl:8
 #: templates/moveattachmentsidebar.nat.tmpl:8
 msgid "Hiding attachments"
 msgstr "Nascondi gli allegati"
 
-#: templates/foswiki.nat.tmpl:139 templates/oopshistory.nat.tmpl:6
+#: templates/foswiki.nat.tmpl:120 templates/oopshistory.nat.tmpl:6
 msgid "History"
 msgstr "Storia"
 
-#: data/System/SiteMenu.txt:9
+#: data/System/SiteMenu.txt:10
 msgid "Home"
 msgstr "Pagina principale"
 
-#: data/System/NatSkinUserViewTemplate.txt:51
+#: data/System/NatSkinUserViewTemplate.txt:50
 msgid "Homepage"
 msgstr "Pagina pricipale"
 
@@ -1215,7 +1169,7 @@ msgstr ""
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:81
 #: data/System/NatSkinChangePasswordViewTemplate.txt:89
-#: data/System/UserRegistrationViewTemplate.txt:95
+#: data/System/UserRegistrationViewTemplate.txt:100
 msgid "If you have any questions, please contact %1"
 msgstr "Per qualsiasi richiesta si prega di contattare %1"
 
@@ -1256,7 +1210,7 @@ msgstr "%1 non corretto"
 msgid "Incorrect Password"
 msgstr "Password non corretta"
 
-#: templates/404.nat.tmpl:45 templates/sidebar.nat.tmpl:50
+#: templates/404.nat.tmpl:45 templates/sidebar.nat.tmpl:53
 msgid "Index"
 msgstr "Indice"
 
@@ -1264,11 +1218,11 @@ msgstr "Indice"
 msgid "Index of all Topics"
 msgstr "Indice di tutte le Pagine"
 
-#: data/System/SiteMenu.txt:45
+#: data/System/SiteMenu.txt:44
 msgid "Installed plugins"
 msgstr "Plugin installati"
 
-#: templates/foswiki.nat.tmpl:152 templates/languageselector.nat.tmpl:4
+#: templates/foswiki.nat.tmpl:131 templates/languageselector.nat.tmpl:4
 msgid "Interface language"
 msgstr "Lingua dell'interfaccia"
 
@@ -1296,15 +1250,15 @@ msgstr "Italiano"
 msgid "Japanese"
 msgstr "Giapponese"
 
-#: templates/foswiki.nat.tmpl:252
+#: templates/foswiki.nat.tmpl:224
 msgid "Jump to the first version of this topic"
 msgstr "Salta alla prima versione di questa pagina"
 
-#: templates/foswiki.nat.tmpl:273
+#: templates/foswiki.nat.tmpl:239
 msgid "Jump to the most recent version of this topic"
 msgstr "Salta alla versione più recente di questa pagina"
 
-#: data/System/SiteMenu.txt:11
+#: data/System/SiteMenu.txt:12
 msgid "Knowledge"
 msgstr "Conoscenza"
 
@@ -1312,11 +1266,11 @@ msgstr "Conoscenza"
 msgid "Korean"
 msgstr "Coreano"
 
-#: templates/foswiki.nat.tmpl:151 templates/languageselector.nat.tmpl:14
+#: templates/foswiki.nat.tmpl:130 templates/languageselector.nat.tmpl:14
 msgid "Language"
 msgstr "Lingua"
 
-#: templates/foswiki.nat.tmpl:271
+#: templates/foswiki.nat.tmpl:237
 msgid "Last"
 msgstr "Ultimo"
 
@@ -1328,15 +1282,15 @@ msgstr "Disposizione"
 msgid "Left"
 msgstr "Sinistra"
 
-#: templates/foswiki.nat.tmpl:65
+#: templates/foswiki.nat.tmpl:57
 msgid "Like"
 msgstr "Piace"
 
-#: templates/foswiki.nat.tmpl:67
+#: templates/foswiki.nat.tmpl:59
 msgid "Like this topic"
 msgstr "Ti piace questa pagina"
 
-#: templates/foswiki.nat.tmpl:66
+#: templates/foswiki.nat.tmpl:58
 msgid "Liked"
 msgstr "Piaciuto"
 
@@ -1345,15 +1299,15 @@ msgstr "Piaciuto"
 msgid "Linking to attachments"
 msgstr "Collegamento agli allegati"
 
-#: templates/foswiki.nat.tmpl:39
+#: templates/foswiki.nat.tmpl:34
 msgid "List other topics linking to this topic"
 msgstr "Elenco delle pagine collegate a questa pagina"
 
-#: templates/foswiki.nat.tmpl:51
+#: templates/foswiki.nat.tmpl:44
 msgid "List topics that branch off this topic"
 msgstr "Lista delle pagine che si diramano da questa pagina"
 
-#: data/System/NatSkinUserViewTemplate.txt:53
+#: data/System/NatSkinUserViewTemplate.txt:52
 msgid "Location"
 msgstr "Posizione"
 
@@ -1361,7 +1315,7 @@ msgstr "Posizione"
 msgid "Locked topics"
 msgstr "Pagine bloccate"
 
-#: templates/foswiki.nat.tmpl:2 templates/loginbase.nat.tmpl:74
+#: templates/foswiki.nat.tmpl:3 templates/loginbase.nat.tmpl:74
 #: templates/topbar.customato.nat.tmpl:126
 msgid "Log in"
 msgstr "Accesso"
@@ -1374,7 +1328,7 @@ msgstr "Accesso come %1."
 msgid "Log out"
 msgstr "Disconnettersi"
 
-#: templates/foswiki.nat.tmpl:10
+#: templates/foswiki.nat.tmpl:9
 msgid "Log out %1"
 msgstr "Disconnessione %1"
 
@@ -1384,11 +1338,11 @@ msgstr "Disconnessione %1"
 msgid "Login"
 msgstr "Accesso"
 
-#: data/System/UserRegistrationViewTemplate.txt:124
+#: data/System/UserRegistrationViewTemplate.txt:128
 msgid "Login settings"
 msgstr "Impostazioni di accesso"
 
-#: data/System/UserRegistrationViewTemplate.txt:353
+#: data/System/UserRegistrationViewTemplate.txt:357
 msgid "LoginName %1 is already in use"
 msgstr "LoginName %1 è già utilizzato"
 
@@ -1404,7 +1358,7 @@ msgstr "Errore e-mail"
 msgid "Mail to"
 msgstr "Invia una e-mail a"
 
-#: data/System/UserRegistrationViewTemplate.txt:158
+#: data/System/UserRegistrationViewTemplate.txt:162
 msgid ""
 "Make sure you remember your password, even more when generating one "
 "automatically."
@@ -1412,11 +1366,7 @@ msgstr ""
 "Assicurati di essere in grado di ricordare la password, soprattutto quando "
 "si genera automaticamente."
 
-#: templates/attachtables.nat.tmpl:33
-msgid "Manage existing attachments"
-msgstr "Gestisci gli allegati esistenti"
-
-#: templates/foswiki.nat.tmpl:245
+#: templates/foswiki.nat.tmpl:218
 msgid "Manage tags in this web"
 msgstr "Gestisci le etichette in questo Web"
 
@@ -1456,11 +1406,11 @@ msgstr "Nome Web mancante o illegale"
 msgid "Moderation"
 msgstr "Moderazione"
 
-#: templates/foswiki.nat.tmpl:163
+#: templates/foswiki.nat.tmpl:140
 msgid "More"
 msgstr "Altro"
 
-#: templates/foswiki.nat.tmpl:133
+#: templates/foswiki.nat.tmpl:115
 msgid "Move"
 msgstr "Sposta"
 
@@ -1472,7 +1422,7 @@ msgstr "Sposta allegato '%1'"
 msgid "Move this topic into the %1 web"
 msgstr "Sposta questa pagina nel web %1"
 
-#: templates/foswiki.nat.tmpl:130
+#: templates/foswiki.nat.tmpl:112
 msgid "Move this topic to the trash"
 msgstr "Sposta la pagina nel cestino"
 
@@ -1489,15 +1439,15 @@ msgstr "Spostamento degli allegati"
 msgid "My Profile"
 msgstr "Il mio profilo"
 
-#: templates/sidebar.nat.tmpl:30
+#: templates/sidebar.nat.tmpl:33
 msgid "My links"
 msgstr "I miei link"
 
-#: templates/sidebar.nat.tmpl:11 templates/sidebar.nat.tmpl:18
+#: templates/sidebar.nat.tmpl:14 templates/sidebar.nat.tmpl:21
 msgid "My sidebar"
 msgstr "La mia barra laterale"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:130
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:127
 #: data/System/WebCreateNewWeb.txt:10
 msgid "Name"
 msgstr "Nome"
@@ -1506,7 +1456,7 @@ msgstr "Nome"
 msgid "Name of new web is missing"
 msgstr "Manca il nome del nuovo Web"
 
-#: templates/foswiki.nat.tmpl:193 templates/newtopic.wwb.tmpl:3
+#: templates/foswiki.nat.tmpl:170
 msgid "New"
 msgstr "Nuovo"
 
@@ -1530,7 +1480,7 @@ msgstr "Nuovo web padre"
 msgid "New password"
 msgstr "Nuova password"
 
-#: templates/foswiki.nat.tmpl:194 templates/translatetopic.nat.tmpl:121
+#: templates/foswiki.nat.tmpl:171 templates/translatetopic.nat.tmpl:121
 msgid "New topic"
 msgstr "Nuova pagina"
 
@@ -1542,12 +1492,17 @@ msgstr "Il nuovo nome pagina %1 non è %2"
 msgid "New web name"
 msgstr "Nuovo nome web"
 
-#: data/System/SiteMenu.txt:10
+#: data/System/SiteMenu.txt:11
 msgid "News"
 msgstr "Notizie"
 
-#: templates/foswiki.nat.tmpl:257 templates/newtopic.wwb.tmpl:20
+#: templates/foswiki.nat.tmpl:227
 msgid "Next"
+msgstr "Prossimo"
+
+#: templates/newtopic.nat.tmpl:21
+#, fuzzy
+msgid "Next step"
 msgstr "Prossimo"
 
 #: templates/moveattachment.nat.tmpl:47
@@ -1597,26 +1552,25 @@ msgstr "NOTA: questa pagina  non esiste"
 msgid "Notes"
 msgstr "Note"
 
-#: templates/foswiki.nat.tmpl:290
+#: templates/foswiki.nat.tmpl:252
 msgid "Nothing found. Try again!"
 msgstr "Trovato nulla. Riprova!"
 
-#: templates/sidebar.nat.tmpl:54 templates/topbar.customato.nat.tmpl:82
+#: templates/sidebar.nat.tmpl:57 templates/topbar.customato.nat.tmpl:82
 msgid "Notifications"
 msgstr "Notifiche"
 
-#: templates/foswiki.nat.tmpl:210
+#: templates/foswiki.nat.tmpl:184
 msgid "Notify"
 msgstr "Notifica"
 
-#: templates/foswiki.nat.tmpl:211
+#: templates/foswiki.nat.tmpl:185
 msgid "Notify on changes"
 msgstr "Notifica dei cambiamenti"
 
-#: data/System/NatSkinStyleBrowser.txt:54 templates/attachtables.nat.tmpl:24
-#: templates/changeform.nat.tmpl:25 templates/messages.nat.tmpl:104
-#: templates/messages.nat.tmpl:260 templates/messages.nat.tmpl:279
-#: templates/moveattachment.nat.tmpl:66
+#: data/System/NatSkinStyleBrowser.txt:54 templates/changeform.nat.tmpl:25
+#: templates/messages.nat.tmpl:104 templates/messages.nat.tmpl:260
+#: templates/messages.nat.tmpl:279 templates/moveattachment.nat.tmpl:66
 #: templates/oopslanguagechanged.nat.tmpl:11
 #: templates/renameconfirm.nat.tmpl:6 templates/renamewebconfirm.nat.tmpl:6
 #: templates/validate.nat.tmpl:27
@@ -1632,7 +1586,7 @@ msgstr "Spento"
 msgid "On"
 msgstr "Acceso"
 
-#: data/System/SiteMenu.txt:50
+#: data/System/SiteMenu.txt:49
 msgid "Online support forum"
 msgstr "Forum di supporto online"
 
@@ -1640,11 +1594,11 @@ msgstr "Forum di supporto online"
 msgid "Only members of the %1 are allowed to perform this action."
 msgstr "Solo ai membri di %1 è permesso eseguire questa azione."
 
-#: templates/foswiki.nat.tmpl:233
+#: templates/foswiki.nat.tmpl:208
 msgid "Open <nop>WebDAV Directory"
 msgstr "Apri Lista <nop>WebDAV"
 
-#: templates/foswiki.nat.tmpl:82
+#: templates/foswiki.nat.tmpl:72
 msgid "Open a channel to talk about this topic"
 msgstr "Apri un canale per parlare di questo argomento"
 
@@ -1652,7 +1606,7 @@ msgstr "Apri un canale per parlare di questo argomento"
 msgid "Open in separate window"
 msgstr "Apri in una finestra separata"
 
-#: data/System/UserRegistrationViewTemplate.txt:213
+#: data/System/UserRegistrationViewTemplate.txt:217
 msgid "Optional information"
 msgstr "Informazione opzionale"
 
@@ -1665,15 +1619,15 @@ msgid "Or just start from the beginning in case you got lost somehow."
 msgstr ""
 "O semplicemente ricominciare dall'inizio nel caso in cui ti fossi perso."
 
-#: data/System/NatSkinUserViewTemplate.txt:50
+#: data/System/NatSkinUserViewTemplate.txt:49
 msgid "Organisation"
 msgstr "Organizzazione"
 
-#: data/System/UserRegistrationViewTemplate.txt:219
+#: data/System/UserRegistrationViewTemplate.txt:223
 msgid "Organisation Name"
 msgstr "Nome dell'organizzazione"
 
-#: data/System/UserRegistrationViewTemplate.txt:228
+#: data/System/UserRegistrationViewTemplate.txt:232
 msgid "Organisation URL"
 msgstr "URL dell'organizzazione"
 
@@ -1681,7 +1635,7 @@ msgstr "URL dell'organizzazione"
 msgid "Orientation"
 msgstr "Orientamento"
 
-#: templates/foswiki.nat.tmpl:204
+#: templates/foswiki.nat.tmpl:179
 msgid "PDF"
 msgstr "PDF"
 
@@ -1707,7 +1661,7 @@ msgstr "Password"
 msgid "Password changed successfully!"
 msgstr "Nuova password accettata!"
 
-#: data/System/SiteMenu.txt:48
+#: data/System/SiteMenu.txt:47
 msgid "Password forgotten"
 msgstr "Password dimenticata"
 
@@ -1723,7 +1677,7 @@ msgstr "Prendi uno di %1."
 msgid "Please e-mail %1 to request this."
 msgstr "Contatta %1 per richiedere ciò."
 
-#: data/System/UserRegistrationViewTemplate.txt:368
+#: data/System/UserRegistrationViewTemplate.txt:372
 msgid "Please enter a valid e-mail address"
 msgstr "Si prega di inserire un indirizzo e-mail valido"
 
@@ -1744,6 +1698,15 @@ msgstr "Si prega di comunicare il tuo amministratore %1  %2"
 msgid "Please notify your %1 administrator %2."
 msgstr "Si prega di comunicare il tuo amministratore %1 %2."
 
+#: templates/newtopic.nat.tmpl:94
+#, fuzzy
+msgid "Please select a Template"
+msgstr "Seleziona un Modello"
+
+#: templates/newtopic.nat.tmpl:35
+msgid "Please select a Topic Type"
+msgstr ""
+
 #: templates/messages.nat.tmpl:194
 msgid "Please try again."
 msgstr "Si prega di riprovare."
@@ -1752,12 +1715,12 @@ msgstr "Si prega di riprovare."
 msgid "Portuguese"
 msgstr "Portoghese"
 
-#: templates/foswiki.nat.tmpl:316
+#: templates/foswiki.nat.tmpl:278
 msgid "Powered by Foswiki"
 msgstr "Realizzato con Foswiki"
 
-#: templates/copytopic.nat.tmpl:30 templates/foswiki.nat.tmpl:115
-#: templates/sidebar.nat.tmpl:56
+#: templates/copytopic.nat.tmpl:30 templates/foswiki.nat.tmpl:100
+#: templates/sidebar.nat.tmpl:59
 msgid "Preferences"
 msgstr "Preferenze"
 
@@ -1769,57 +1732,49 @@ msgstr "Altrimenti premi Rinuncia."
 msgid "Press OK to confirm that this change was intentional."
 msgstr "Premi OK per confermare che questa modifica era intenzionale."
 
-#: templates/newtopic.wwb.tmpl:19
-msgid "Prev"
-msgstr "Anteprima"
-
-#: templates/foswiki.nat.tmpl:264
+#: templates/foswiki.nat.tmpl:232
 msgid "Previous"
 msgstr "Precedente"
 
-#: templates/foswiki.nat.tmpl:54
+#: templates/foswiki.nat.tmpl:47
 msgid "Print"
 msgstr "Stampa"
 
-#: data/System/SiteMenu.txt:52
+#: data/System/SiteMenu.txt:51
 msgid "Professional help"
 msgstr "Aiuto professionale"
 
-#: data/System/SiteMenu.txt:12
+#: data/System/SiteMenu.txt:13
 msgid "Projects"
 msgstr "Progetti"
-
-#: templates/attachagain.nat.tmpl:11
-msgid "Properties"
-msgstr "Proprietà"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:195
 msgid "Provide a new password"
 msgstr "Fornisci una nuova password"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:192
-#: data/System/UserRegistrationViewTemplate.txt:361
+#: data/System/UserRegistrationViewTemplate.txt:365
 msgid "Provide a password"
 msgstr "Fornisci una password"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:129
-#: data/System/UserRegistrationViewTemplate.txt:156
+#: data/System/UserRegistrationViewTemplate.txt:160
 msgid "Random password"
 msgstr "Password casuale"
 
-#: templates/foswiki.nat.tmpl:85
+#: templates/foswiki.nat.tmpl:75
 msgid "Raw"
 msgstr "Grezzo"
 
-#: data/System/UserRegistrationViewTemplate.txt:162
+#: data/System/UserRegistrationViewTemplate.txt:166
 msgid "Re-enter password"
 msgstr "Reinserire la password"
 
-#: templates/topbar.customato.nat.tmpl:80
+#: data/System/SiteRightBar.txt:9 templates/topbar.customato.nat.tmpl:80
 msgid "Recent Changes"
 msgstr "Cambiamenti recenti"
 
-#: templates/view.nat.tmpl:109
+#: templates/view.nat.tmpl:132
 msgid "Redirect from %1"
 msgstr "Redirezione da %1"
 
@@ -1827,12 +1782,12 @@ msgstr "Redirezione da %1"
 msgid "Reference Manual"
 msgstr "Manuale di riferimento"
 
-#: data/System/SiteMenu.txt:44
+#: data/System/SiteMenu.txt:43
 msgid "Reference manual"
 msgstr "Manuale di riferimento"
 
 #: data/System/UserRegistrationViewTemplate.txt:87
-#: templates/foswiki.nat.tmpl:14
+#: templates/foswiki.nat.tmpl:13
 msgid "Register"
 msgstr "Registra"
 
@@ -1848,11 +1803,11 @@ msgstr "Ricordami su questo computer"
 msgid "Remember your password?"
 msgstr "Ricordi la tua password?"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:103
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:100
 msgid "Remove members"
 msgstr "Rimuovi membri"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:174
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:171
 msgid "Removing"
 msgstr "Rimozione"
 
@@ -1861,7 +1816,7 @@ msgstr "Rimozione"
 msgid "Rename"
 msgstr "Rinomina"
 
-#: data/System/SiteMenu.txt:76
+#: data/System/SiteMenu.txt:75
 msgid "Rename current web"
 msgstr "Rinomica web corrente"
 
@@ -1869,7 +1824,7 @@ msgstr "Rinomica web corrente"
 msgid "Rename failed"
 msgstr "Rinomina fallito"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:102
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:99
 msgid "Rename group "
 msgstr "Rinomina gruppo "
 
@@ -1877,7 +1832,7 @@ msgstr "Rinomina gruppo "
 msgid "Rename or move %1"
 msgstr "Rinomina o sposta %1"
 
-#: templates/foswiki.nat.tmpl:134
+#: templates/foswiki.nat.tmpl:116
 msgid "Rename or move this topic"
 msgstr "Rinomina o sposta questa pagina"
 
@@ -1889,7 +1844,7 @@ msgstr "Rinomina il web %1"
 msgid "Rename, merge or delete tags"
 msgstr "Rinomina, fonde o cancella etichette"
 
-#: templates/foswiki.nat.tmpl:247
+#: templates/foswiki.nat.tmpl:219
 msgid "Rename, merge or delete tags being used in this web"
 msgstr "Rinomina, fonde o cancella le etichette usate in questo web"
 
@@ -1897,7 +1852,7 @@ msgstr "Rinomina, fonde o cancella le etichette usate in questo web"
 msgid "Repeat your new password"
 msgstr "Ridigita la nuova password"
 
-#: data/System/UserRegistrationViewTemplate.txt:364
+#: data/System/UserRegistrationViewTemplate.txt:368
 msgid "Repeat your password"
 msgstr "Ripeti la tua password"
 
@@ -1919,15 +1874,15 @@ msgstr "Azzeramento della password"
 msgid "Restart"
 msgstr "Riavvia"
 
-#: templates/foswiki.nat.tmpl:121 templates/history.nat.tmpl:98
+#: templates/foswiki.nat.tmpl:105 templates/history.nat.tmpl:105
 msgid "Restore"
 msgstr "Ripristina"
 
-#: templates/foswiki.nat.tmpl:122
+#: templates/foswiki.nat.tmpl:106
 msgid "Restore previous version"
 msgstr "Ripristina la versione precedente"
 
-#: templates/history.nat.tmpl:97
+#: templates/history.nat.tmpl:104
 msgid "Restore revision %1"
 msgstr "Ripristina la versione %1"
 
@@ -1947,7 +1902,7 @@ msgstr "Ridigita la nuova password"
 msgid "Review recent changes in:"
 msgstr "Rassegna delle variazioni recenti in:"
 
-#: templates/history.nat.tmpl:73 templates/rdiff.nat.tmpl:45
+#: templates/history.nat.tmpl:80 templates/rdiff.nat.tmpl:45
 msgid "Revision"
 msgstr "Versione"
 
@@ -1967,7 +1922,7 @@ msgstr "Destra"
 msgid "Russian"
 msgstr "Russo"
 
-#: data/System/SiteMenu.txt:47
+#: data/System/SiteMenu.txt:46
 msgid "Sandbox"
 msgstr "Spazio di prova"
 
@@ -2024,7 +1979,7 @@ msgstr "Risultato della ricerca per %1"
 msgid "See also"
 msgstr "Vedi anche"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:130
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:127
 msgid "Select"
 msgstr "Seleziona"
 
@@ -2036,15 +1991,7 @@ msgstr ""
 "Seleziona 'Default' per passare alla lingua predefinita configurata nel "
 "browser."
 
-#: templates/newtopic.wwb.tmpl:45
-msgid "Select Type"
-msgstr "Seleziona il Tipo"
-
-#: templates/newtopic.wwb.tmpl:123
-msgid "Select a Template"
-msgstr "Seleziona un Modello"
-
-#: templates/foswiki.nat.tmpl:154
+#: templates/foswiki.nat.tmpl:132
 msgid "Select a different language for the wiki interface"
 msgstr "Selezionare una lingua diversa per l'interfaccia wiki"
 
@@ -2072,7 +2019,7 @@ msgstr "Selezionare una o più etichette esistenti per essere rinominato."
 msgid "Select the [[%1.WebHome][%1]] web to delete the topic."
 msgstr "Seleziona il web [[%1.WebHome][%1]]  per eliminare la pagina."
 
-#: data/System/UserRegistrationViewTemplate.txt:287
+#: data/System/UserRegistrationViewTemplate.txt:291
 msgid "Select the groups you want to join."
 msgstr "Seleziona il gruppo da unire."
 
@@ -2084,11 +2031,11 @@ msgstr ""
 "Seleziona l'etichetta per rinominare le etichette sopra. Lasciando questo "
 "vuoto verranno cancellate."
 
-#: templates/view.nat.tmpl:93
+#: templates/view.nat.tmpl:116
 msgid "Select translation in %1"
 msgstr "Seleziona la traduzione in %1"
 
-#: templates/newtopic.nat.tmpl:134
+#: templates/newtopic.old.tmpl:134
 msgid "Select which template to use while creating this topic."
 msgstr ""
 "Selezionare il modello da utilizzare durante la creazione di questa pagina."
@@ -2101,15 +2048,15 @@ msgstr "Definisci tutto"
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: templates/foswiki.nat.tmpl:60
+#: templates/foswiki.nat.tmpl:52
 msgid "Share"
 msgstr "Condivisione"
 
-#: templates/foswiki.nat.tmpl:62
+#: templates/foswiki.nat.tmpl:54
 msgid "Share this topic with others"
 msgstr "Condividi questa pagina con altri"
 
-#: templates/foswiki.nat.tmpl:61
+#: templates/foswiki.nat.tmpl:53
 msgid "Share topic"
 msgstr "Condividi la pagina"
 
@@ -2117,7 +2064,7 @@ msgstr "Condividi la pagina"
 msgid "Sidebar"
 msgstr "Barra laterale"
 
-#: templates/foswiki.nat.tmpl:16
+#: templates/foswiki.nat.tmpl:14
 msgid "Sign on to %1."
 msgstr "Iscriviti a %1."
 
@@ -2125,21 +2072,17 @@ msgstr "Iscriviti a %1."
 msgid "Site Tools"
 msgstr "Strumenti del Sito"
 
-#: data/System/SiteMenu.txt:72
+#: data/System/SiteMenu.txt:71
 msgid "Site permissions"
 msgstr "Autorizzazioni Sito"
 
-#: data/System/SiteMenu.txt:71
+#: data/System/SiteMenu.txt:70
 msgid "Site preferences"
 msgstr "Preferenze Sito"
 
-#: data/System/SiteBottomBar.txt:9
+#: data/System/SiteBottomBar.txt:10
 msgid "Sitemap"
 msgstr "Mappa del sito"
-
-#: templates/attachtables.nat.tmpl:95
-msgid "Size"
-msgstr "Dimensione"
 
 #: templates/edit.nat.tmpl:147
 msgid "Skin settings"
@@ -2179,11 +2122,11 @@ msgstr ""
 msgid "State"
 msgstr "Stato"
 
-#: templates/sidebar.nat.tmpl:55
+#: templates/sidebar.nat.tmpl:58
 msgid "Statistics"
 msgstr "Statistiche"
 
-#: templates/foswiki.nat.tmpl:224
+#: templates/foswiki.nat.tmpl:198 templates/foswiki.nat.tmpl:200
 msgid "Stop being notified about changes of this topic"
 msgstr "Interrompi l'invio delle notifiche delle variazioni di questa pagina"
 
@@ -2193,23 +2136,24 @@ msgstr "Stile"
 
 #: data/Sandbox/NatSkinTest.txt:526 data/Sandbox/NatSkinTest.txt:551
 #: data/Sandbox/NatSkinTest.txt:578
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:117
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:114
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:57
-#: data/System/WebCreateNewWeb.txt:42 templates/attachnew.nat.tmpl:4
-#: templates/languageselector.nat.tmpl:28 templates/managetags.nat.tmpl:32
-#: templates/messages.nat.tmpl:113 templates/messages.nat.tmpl:199
-#: templates/newtopic.nat.tmpl:72 templates/newtopic.nat.tmpl:80
-#: templates/topbar.customato.nat.tmpl:188
+#: data/System/WebCreateNewWeb.txt:42 templates/languageselector.nat.tmpl:28
+#: templates/managetags.nat.tmpl:32 templates/messages.nat.tmpl:113
+#: templates/messages.nat.tmpl:199 templates/newtopic.old.tmpl:72
+#: templates/newtopic.old.tmpl:80 templates/topbar.customato.nat.tmpl:188
 #: templates/translatetopic.nat.tmpl:130
 msgid "Submit"
 msgstr "Invia"
 
 #: templates/mailnotify.nat.tmpl:40 templates/mailnotify.nat.tmpl:59
+#: templates/newsletter.nat.tmpl:17
 msgid "Subscribe / Unsubscribe in:"
 msgstr "Sottoscrivi / Cancella in:"
 
-#: templates/foswiki.nat.tmpl:224
-msgid "Subscribed to ${topicTitle}"
+#: templates/foswiki.nat.tmpl:198 templates/foswiki.nat.tmpl:200
+#, fuzzy
+msgid "Subscribed to %1"
 msgstr "Iscritto a ${topicTitle}"
 
 #: templates/login.sudo.nat.tmpl:7
@@ -2224,15 +2168,15 @@ msgstr "Sommario"
 msgid "Swedish"
 msgstr "Svedese"
 
-#: templates/foswiki.nat.tmpl:244 templates/sidebar.nat.tmpl:51
+#: templates/foswiki.nat.tmpl:217 templates/sidebar.nat.tmpl:54
 msgid "Tags"
 msgstr "Etichette"
 
-#: data/System/NatSkinUserViewTemplate.txt:64
+#: data/System/NatSkinUserViewTemplate.txt:63
 msgid "Tel"
 msgstr "Tel."
 
-#: templates/newtopic.nat.tmpl:118
+#: templates/newtopic.old.tmpl:118
 msgid "Template"
 msgstr "Modello"
 
@@ -2251,10 +2195,6 @@ msgstr "Testo"
 #: templates/messages.nat.tmpl:107 templates/messages.nat.tmpl:357
 msgid "Thank you for registering"
 msgstr "Grazie per esserti registrato"
-
-#: templates/foswiki.nat.tmpl:398
-msgid "Thank you!"
-msgstr "Grazie!"
 
 #: templates/messages.nat.tmpl:171
 msgid ""
@@ -2316,7 +2256,7 @@ msgstr "Il file è stato caricato e allegato correttamente alla pagina %1."
 msgid "The lease on this topic expired %1 ago."
 msgstr "La prenotazione della pagina è scaduta %1 fa."
 
-#: data/System/UserRegistrationViewTemplate.txt:133
+#: data/System/UserRegistrationViewTemplate.txt:137
 msgid "The login name you use to sign in."
 msgstr "Il nome di login che utilizzi per collegarti."
 
@@ -2375,7 +2315,7 @@ msgstr ""
 "modificare il contenuto di %1 a vostra insaputa."
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:165
-#: data/System/UserRegistrationViewTemplate.txt:315
+#: data/System/UserRegistrationViewTemplate.txt:319
 msgid "There was an error. Please, see above."
 msgstr "C'è stato un errore. Vedi sopra."
 
@@ -2395,11 +2335,11 @@ msgstr ""
 "dei cambi password. Essi sono mantenuti segreti e *non* saranno pubblicati "
 "in nessuna delle pagina di questo sito."
 
-#: templates/body.nat.tmpl:61
+#: templates/body.nat.tmpl:63
 msgid "This page was cached on %1."
 msgstr "Questa pagina è stata memorizzata nella cache il %1."
 
-#: templates/newtopic.nat.tmpl:58 templates/newtopic.wwb.tmpl:180
+#: templates/newtopic.nat.tmpl:154 templates/newtopic.old.tmpl:58
 #: templates/renamebase.nat.tmpl:70 templates/translatetopic.nat.tmpl:110
 msgid "Title"
 msgstr "Titolo"
@@ -2433,7 +2373,7 @@ msgid "To web"
 msgstr "Al Web"
 
 #: templates/oopsmore.nat.tmpl:4 templates/oopsmore.nat.tmpl:6
-#: templates/sidebar.nat.tmpl:49 templates/topbar.customato.nat.tmpl:79
+#: templates/sidebar.nat.tmpl:52 templates/topbar.customato.nat.tmpl:79
 msgid "Tools"
 msgstr "Strumenti"
 
@@ -2462,7 +2402,7 @@ msgstr "Configurazione della pagina"
 msgid "Topics per web"
 msgstr "Pagine per Web"
 
-#: templates/foswiki.nat.tmpl:157 templates/translatetopic.nat.tmpl:9
+#: templates/foswiki.nat.tmpl:135 templates/translatetopic.nat.tmpl:9
 msgid "Translate"
 msgstr "Traduci"
 
@@ -2470,11 +2410,11 @@ msgstr "Traduci"
 msgid "Translate %1"
 msgstr "Traduci %1"
 
-#: templates/foswiki.nat.tmpl:158
+#: templates/foswiki.nat.tmpl:136
 msgid "Translate this topic"
 msgstr "Traduci questa pagina"
 
-#: data/System/SiteMenu.txt:69
+#: data/System/SiteMenu.txt:68
 msgid "Trash"
 msgstr "Cestino"
 
@@ -2490,7 +2430,7 @@ msgstr "Turco"
 msgid "Tutorial"
 msgstr "Tutorial"
 
-#: templates/foswiki.nat.tmpl:124
+#: templates/foswiki.nat.tmpl:107
 msgid "Undo a previous change to this topic"
 msgstr "Annulla la precedente modifica a questa pagina"
 
@@ -2506,21 +2446,18 @@ msgstr "Utente e/o password sconosciuti."
 msgid "Unrecognized action command %1"
 msgstr "Comando %1 sconosciuto"
 
-#: templates/foswiki.nat.tmpl:228
+#: templates/foswiki.nat.tmpl:204
 msgid "Unsubscribe"
 msgstr "Cancella abbonamento"
 
-#: templates/foswiki.nat.tmpl:229
+#: templates/foswiki.nat.tmpl:205
 msgid "Unsubscribe from changes"
 msgstr "Annulla iscrizione dai cambiamenti"
 
-#: templates/foswiki.nat.tmpl:224
-msgid "Unsubscribed from ${topicTitle}"
-msgstr "Annulla iscrizione a ${topicTitle}"
-
-#: templates/attachagain.nat.tmpl:2
-msgid "Update attachment %1 on %2"
-msgstr "Aggiorna allegato %1 in %2"
+#: templates/foswiki.nat.tmpl:198 templates/foswiki.nat.tmpl:200
+#, fuzzy
+msgid "Unsubscribed from %1"
+msgstr "Annulla iscrizione dai cambiamenti"
 
 #: templates/renamebase.nat.tmpl:118 templates/renamebase.nat.tmpl:128
 #: templates/renamewebbase.nat.tmpl:45
@@ -2535,21 +2472,9 @@ msgstr "Aggiorna i collegamenti nel web '%1'"
 msgid "Upgrade"
 msgstr "Aggiornamento"
 
-#: templates/attachnew.nat.tmpl:2
-msgid "Upload a file to %1"
-msgstr "Carica un file in %1"
-
-#: templates/attachagain.nat.tmpl:28
-msgid "Upload file"
-msgstr "Carica file"
-
-#: templates/foswiki.nat.tmpl:33
+#: templates/foswiki.nat.tmpl:29
 msgid "Upload files and images to this topic"
 msgstr "Carica file e immagini in questa pagina"
-
-#: templates/attachnew.nat.tmpl:25
-msgid "Upload successful"
-msgstr "Caricamento effettuato"
 
 #: templates/messages.nat.tmpl:216
 msgid "Uploaded file %1 does not exist or is empty."
@@ -2571,7 +2496,7 @@ msgstr "Statistiche d'uso"
 msgid "Use %1 instead."
 msgstr "Piuttosto usa %1."
 
-#: data/System/WebLinks.txt:12 templates/sidebar.nat.tmpl:65
+#: data/System/WebLinks.txt:12 templates/sidebar.nat.tmpl:68
 msgid "User Tools"
 msgstr "Strumenti Utente"
 
@@ -2579,7 +2504,7 @@ msgstr "Strumenti Utente"
 msgid "User account %1 deleted"
 msgstr "Account utente %1 cancellato"
 
-#: data/System/SiteMenu.txt:41
+#: data/System/SiteMenu.txt:40
 msgid "User docs"
 msgstr "Documenti utente"
 
@@ -2591,7 +2516,7 @@ msgstr "Guida dell'utente"
 msgid "Username"
 msgstr "Nome utente per l'accesso"
 
-#: data/Main/WebLinks.txt:9 templates/foswiki.nat.tmpl:20
+#: data/Main/WebLinks.txt:9 templates/foswiki.nat.tmpl:18
 msgid "Users"
 msgstr "Utenti"
 
@@ -2599,7 +2524,7 @@ msgstr "Utenti"
 msgid "Users Guide"
 msgstr "Guida Utenti"
 
-#: templates/foswiki.nat.tmpl:21
+#: templates/foswiki.nat.tmpl:19
 msgid "Users directory"
 msgstr "Elenco Utenti"
 
@@ -2611,76 +2536,65 @@ msgstr "Variabili"
 msgid "Variation"
 msgstr "Variazioni"
 
-#: templates/attachtables.nat.tmpl:95
-msgid "Version"
-msgstr "Versione"
-
-#: templates/view.nat.tmpl:158
+#: templates/view.nat.tmpl:190
 msgid "Version %1"
 msgstr "Versione %1"
 
-#: templates/attachtables.nat.tmpl:98
-msgid "Version history of %1"
-msgstr "Storia delle versioni di %1"
-
-#: templates/attachagain.nat.tmpl:4
-msgid "Versions"
-msgstr "Versioni"
-
-#: templates/foswiki.nat.tmpl:42 templates/history.nat.tmpl:95
-#: templates/view.nat.tmpl:108
+#: templates/foswiki.nat.tmpl:37 templates/history.nat.tmpl:102
+#: templates/view.nat.tmpl:131
 msgid "View"
 msgstr "Vista"
 
-#: templates/foswiki.nat.tmpl:251
+#: templates/foswiki.nat.tmpl:223
 msgid "View first revision"
 msgstr "Mostra la prima versione"
 
-#: templates/foswiki.nat.tmpl:43
+#: templates/foswiki.nat.tmpl:38
 msgid "View formatted topic"
 msgstr "Mostra la pagina formattata"
 
-#: templates/foswiki.nat.tmpl:279
+#: templates/foswiki.nat.tmpl:243
 msgid "View last change"
 msgstr "Vilualizza l'ultima variazione"
 
-#: templates/foswiki.nat.tmpl:272
+#: templates/foswiki.nat.tmpl:238
 msgid "View last revision"
 msgstr "Mostra l'ultima versione"
 
-#: templates/foswiki.nat.tmpl:258
+#: templates/foswiki.nat.tmpl:228
 msgid "View next revision"
 msgstr "Mostra la prossima versione"
 
-#: templates/foswiki.nat.tmpl:265
+#: templates/foswiki.nat.tmpl:233
 msgid "View previous revision"
 msgstr "Mostra la versione precedente"
 
-#: templates/foswiki.nat.tmpl:55
+#: templates/foswiki.nat.tmpl:48
 msgid "View printable version"
 msgstr "Mostra la versione stampabile"
 
-#: templates/history.nat.tmpl:94
+#: templates/history.nat.tmpl:101
 msgid "View revision %1"
 msgstr "Mostra la versione %1"
 
-#: templates/foswiki.nat.tmpl:140
+#: templates/foswiki.nat.tmpl:121
 msgid "View revision history"
 msgstr "Mostra la storia delle versioni"
 
-#: templates/foswiki.nat.tmpl:88
+#: templates/foswiki.nat.tmpl:77
 msgid "View the raw text of this topic"
 msgstr "Mostra il testo Wiki di questa pagina"
 
-#: templates/foswiki.nat.tmpl:142
+#: templates/foswiki.nat.tmpl:122
 msgid "View the revision history of all changes to this topic"
-msgstr "Mostra la storia delle versioni di tutti i cambiamenti di questa pagina"
+msgstr ""
+"Mostra la storia delle versioni di tutti i cambiamenti di questa pagina"
 
-#: templates/foswiki.nat.tmpl:86
+#: templates/foswiki.nat.tmpl:76
 msgid "View wiki markup"
 msgstr "Visualizza markup wiki"
 
-#: templates/foswiki.nat.tmpl:27
+#: templates/foswiki.nat.tmpl:24
 msgid "Visit your profile page"
 msgstr "Visita la tua pagina del profilo"
 
@@ -2692,14 +2606,6 @@ msgstr "Voto"
 msgid "Warning! Confirmation required"
 msgstr "Attenzione! È richiesta una conferma"
 
-#: templates/foswiki.nat.tmpl:395
-msgid ""
-"Warning: Your browser isn't supported. Please install a modern one, like %1, "
-"%2, %3, %4 or the latest %5."
-msgstr ""
-"Attenzione: Il tuo browser non è supportato. Si prega di installarne uno più "
-"aggiornato, come % 1,% 2,% 3,% 4 o il più recente %5."
-
 #: templates/print.nat.tmpl:62
 msgid "Watermark"
 msgstr "Filigrana"
@@ -2708,17 +2614,18 @@ msgstr "Filigrana"
 msgid "Web"
 msgstr "Web"
 
-#: data/System/SiteMenu.txt:70
+#: data/System/SiteMenu.txt:69
 msgid "Web preferences"
 msgstr "Preferenze web"
 
-#: data/Main/WebLinks.txt:7 data/System/SiteMenu.txt:40
+#: data/Main/WebLinks.txt:7 data/System/SiteMenu.txt:39
 #: templates/topbar.customato.nat.tmpl:98
 msgid "Welcome"
 msgstr "Benvenuto"
 
 #: templates/login.nat.tmpl:12
-msgid "Welcome, please login"
+#, fuzzy
+msgid "Welcome, please log in"
 msgstr "Benvenuto, effettua la login"
 
 #: templates/moveattachment.nat.tmpl:80
@@ -2728,10 +2635,6 @@ msgid ""
 msgstr ""
 "Quando il file è cancellato, viene spostato nel web %1 e allegato alla "
 "pagina %2."
-
-#: templates/attachtables.nat.tmpl:95
-msgid "Who"
-msgstr "Chi"
 
 #: templates/oopsaccessdenied.nat.tmpl:3
 msgid "Whoops, access denied!"
@@ -2745,7 +2648,7 @@ msgstr "Ops, pagina non trovata!"
 msgid "Wiki markup of %1"
 msgstr "Markup wiki di %1"
 
-#: data/System/UserRegistrationViewTemplate.txt:358
+#: data/System/UserRegistrationViewTemplate.txt:362
 msgid "WikiName %1 is already in use"
 msgstr "WikiName %1 è già utilizzato"
 
@@ -2753,7 +2656,7 @@ msgstr "WikiName %1 è già utilizzato"
 msgid "WikiWord"
 msgstr "WikiWord"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:178
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:175
 msgid "Woops, there was an error adding/removing a user to this group"
 msgstr ""
 "Ops, si è verificato un errore durante l'aggiunta/rimozione di un utente a "
@@ -2789,7 +2692,7 @@ msgstr "Sei già registrato"
 msgid "You are also listed in the %1 topic"
 msgstr "Sei anche elencato nella pagina %1"
 
-#: templates/foswiki.nat.tmpl:294
+#: templates/foswiki.nat.tmpl:256
 msgid "You are here"
 msgstr "Sei qui"
 
@@ -2827,8 +2730,8 @@ msgstr "È inoltre possibile utilizzare i nomi dei colori HTML standard."
 msgid ""
 "You can try out this site hands-on in the [[Sandbox.WebHome][Sandbox]] web."
 msgstr ""
-"È possibile sperimentare questo sito wiki nel web di prova "
-"[[Sandbox.WebHome][Sandbox]]."
+"È possibile sperimentare questo sito wiki nel web di prova [[Sandbox.WebHome]"
+"[Sandbox]]."
 
 #: templates/messages.nat.tmpl:157
 msgid "You cannot register twice, the name %1 is already registered."
@@ -2864,14 +2767,14 @@ msgid ""
 msgstr ""
 "Il codice di attivazione a te riservato è stato inviato a %1. Puoi attivare "
 "direttamente il link nella mail ricevuta oppure inserire il codice nel campo "
-"qui sotto per attivare l'iscrizione. (Il codice ha il seguente formato \""
-"TuoNome.xxxxxxxxxx\")"
+"qui sotto per attivare l'iscrizione. (Il codice ha il seguente formato "
+"\"TuoNome.xxxxxxxxxx\")"
 
-#: data/System/UserRegistrationViewTemplate.txt:142
+#: data/System/UserRegistrationViewTemplate.txt:146
 msgid "Your e-mail address"
 msgstr "Il tuo indirizzo e-mail"
 
-#: data/System/UserRegistrationViewTemplate.txt:175
+#: data/System/UserRegistrationViewTemplate.txt:179
 msgid "Your first name"
 msgstr "Il tuo nome"
 
@@ -2894,7 +2797,7 @@ msgstr ""
 "schermata. La redirezione è automatica. Se non succede puoi [[%1][attivare "
 "questo link]] per procedere."
 
-#: data/System/UserRegistrationViewTemplate.txt:184
+#: data/System/UserRegistrationViewTemplate.txt:188
 msgid "Your last name"
 msgstr "Il tuo cognome"
 
@@ -2914,7 +2817,7 @@ msgstr ""
 "Il tuo nome di login. Nota, non puoi modificare il tuo nome di login. Per "
 "fare questo, devi rivolgerti all'amministratore."
 
-#: data/System/UserRegistrationViewTemplate.txt:196
+#: data/System/UserRegistrationViewTemplate.txt:200
 msgid ""
 "Your name as displayed online.  Note, this must be a unique [[%1]"
 "[WikiName]]. By default it is derived from your first and last name."
@@ -2979,6 +2882,10 @@ msgstr "variazioni"
 msgid "closed"
 msgstr "chiuso"
 
+#: templates/history.nat.tmpl:44
+msgid "debug"
+msgstr ""
+
 #: templates/edit.nat.tmpl:107 templates/edit.nat.tmpl:156
 #: templates/edit.nat.tmpl:176 templates/edit.nat.tmpl:201
 #: templates/edit.nat.tmpl:215 templates/edit.nat.tmpl:238
@@ -2989,6 +2896,11 @@ msgstr "chiuso"
 #: templates/edit.nat.tmpl:378 templates/edit.nat.tmpl:76
 msgid "default"
 msgstr "predefinito"
+
+#: templates/newtopic.nat.tmpl:103
+#, fuzzy
+msgid "default template for the selected topic type"
+msgstr "Modello predefinito per il tipo selezionato"
 
 #: templates/renamedelete.nat.tmpl:4
 msgid "delete"
@@ -3018,8 +2930,8 @@ msgstr "fluido"
 msgid "go back to %1"
 msgstr "torna a %1"
 
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:135
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:204
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:132
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:201
 msgid "group"
 msgstr "gruppo"
 
@@ -3031,7 +2943,7 @@ msgstr "storia"
 msgid "indicates mandatory fields"
 msgstr "indica campi obbligatori"
 
-#: templates/history.nat.tmpl:35
+#: templates/history.nat.tmpl:42
 msgid "interweave"
 msgstr "intrecciato"
 
@@ -3059,15 +2971,11 @@ msgstr "Numero massimo di accessi per web"
 msgid "move attachment"
 msgstr "sposta l'allegato"
 
-#: templates/attachtables.nat.tmpl:77
-msgid "move this attachment to a different topic"
-msgstr "sposta questo allegato in una pagina differente"
-
 #: data/System/MySideBar.txt:68
 msgid "no template"
 msgstr "nessun modello"
 
-#: templates/changeform.nat.tmpl:67
+#: templates/changeform.nat.tmpl:73
 msgid "none "
 msgstr "niente "
 
@@ -3119,11 +3027,7 @@ msgstr "verticale"
 msgid "prefs"
 msgstr "pref"
 
-#: templates/view.print.nat.tmpl:11
-msgid "printable"
-msgstr "stampabile"
-
-#: templates/changeform.nat.tmpl:130 templates/changeform.nat.tmpl:68
+#: templates/changeform.nat.tmpl:119 templates/changeform.nat.tmpl:74
 msgid "remove the current form (caution: possible data loss)"
 msgstr "rimuove il modello attuale (attenzione: possibile perdita di dati)"
 
@@ -3143,7 +3047,7 @@ msgstr "ripristina"
 msgid "right"
 msgstr "destra"
 
-#: templates/newtopic.wwb.tmpl:121 templates/newtopic.wwb.tmpl:43
+#: templates/newtopic.nat.tmpl:33 templates/newtopic.nat.tmpl:92
 #: templates/searchbase.nat.tmpl:7 templates/searchbox.nat.tmpl:13
 msgid "search"
 msgstr "cerca"
@@ -3157,7 +3061,7 @@ msgstr "cerca in tutti i web"
 msgid "showing only %1"
 msgstr "mostrando solo %1"
 
-#: templates/history.nat.tmpl:36
+#: templates/history.nat.tmpl:43
 msgid "side by side"
 msgstr "fianco a fianco"
 
@@ -3181,7 +3085,108 @@ msgstr "strumenti"
 msgid "up one folder"
 msgstr "su di una cartella"
 
-#: templates/attachtables.nat.tmpl:110 templates/attachtables.nat.tmpl:53
-#: templates/attachtables.nat.tmpl:70
-msgid "version %1 uploaded by %2 on %3"
-msgstr "versione %1 caricata da %2 su %3"
+#~ msgid ""
+#~ "*Link checkbox*: In case the attached file is a JPG, GIF or PNG image and "
+#~ "you check the box, it will create an inline image (e.g. show the image) "
+#~ "at the end of the topic.  For other file types a simple link will be "
+#~ "created."
+#~ msgstr ""
+#~ "*Link checkbox*: Nel caso in cui il file allegato è un'immagine PNG JPG, "
+#~ "GIF e si seleziona la checkbox, si creerà un'immagine in linea (ad "
+#~ "esempio, mostrano l'immagine) alla fine della pagina. Per altri tipi di "
+#~ "file verrà creato un collegamento semplice."
+
+#~ msgid "*Move attachment*: An attachment can be deleted by moving it to %1"
+#~ msgstr ""
+#~ "*Sposta allegato*: Un allegato può essere cancellato spostandolo in %1"
+
+#~ msgid "<strong>Continue</strong> uploading more files"
+#~ msgstr "<strong>Continua</strong> il caricamento di più file"
+
+#~ msgid "Attachment"
+#~ msgstr "Allegato"
+
+#~ msgid "Batch upload"
+#~ msgstr "Upload insieme"
+
+#~ msgid "Change properties"
+#~ msgstr "Cambia le proprietà"
+
+#~ msgid "Create a new %1 in %2:"
+#~ msgstr "Crea un nuovo %1 in %2:"
+
+#~ msgid "Delete this attachment"
+#~ msgstr "Elimina questo allegato"
+
+#~ msgid "Edit properties of this attachment"
+#~ msgstr "Modifica proprietà dell'allegato"
+
+#~ msgid "Existing files"
+#~ msgstr "File esistenti"
+
+#~ msgid "Extracts individual files in a zip archive."
+#~ msgstr "Estrae i singoli file da un archivio zip."
+
+#~ msgid "Hide attachment in normal topic view."
+#~ msgstr "Nascondi l'allegato nella visualizzazione della pagina."
+
+#~ msgid "Manage existing attachments"
+#~ msgstr "Gestisci gli allegati esistenti"
+
+#~ msgid "Prev"
+#~ msgstr "Anteprima"
+
+#~ msgid "Properties"
+#~ msgstr "Proprietà"
+
+#~ msgid "Select Type"
+#~ msgstr "Seleziona il Tipo"
+
+#~ msgid "Size"
+#~ msgstr "Dimensione"
+
+#~ msgid "Thank you!"
+#~ msgstr "Grazie!"
+
+#~ msgid "Unsubscribed from ${topicTitle}"
+#~ msgstr "Annulla iscrizione a ${topicTitle}"
+
+#~ msgid "Update attachment %1 on %2"
+#~ msgstr "Aggiorna allegato %1 in %2"
+
+#~ msgid "Upload a file to %1"
+#~ msgstr "Carica un file in %1"
+
+#~ msgid "Upload file"
+#~ msgstr "Carica file"
+
+#~ msgid "Upload successful"
+#~ msgstr "Caricamento effettuato"
+
+#~ msgid "Version"
+#~ msgstr "Versione"
+
+#~ msgid "Version history of %1"
+#~ msgstr "Storia delle versioni di %1"
+
+#~ msgid "Versions"
+#~ msgstr "Versioni"
+
+#~ msgid ""
+#~ "Warning: Your browser isn't supported. Please install a modern one, like "
+#~ "%1, %2, %3, %4 or the latest %5."
+#~ msgstr ""
+#~ "Attenzione: Il tuo browser non è supportato. Si prega di installarne uno "
+#~ "più aggiornato, come % 1,% 2,% 3,% 4 o il più recente %5."
+
+#~ msgid "Who"
+#~ msgstr "Chi"
+
+#~ msgid "move this attachment to a different topic"
+#~ msgstr "sposta questo allegato in una pagina differente"
+
+#~ msgid "printable"
+#~ msgstr "stampabile"
+
+#~ msgid "version %1 uploaded by %2 on %3"
+#~ msgstr "versione %1 caricata da %2 su %3"

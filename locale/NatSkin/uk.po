@@ -92,7 +92,7 @@ msgstr "тема %1 не існує"
 msgid "%1 topic(s) found"
 msgstr "Нема дочірніх тем."
 
-#: data/System/NatSkinWebTopicListViewTemplate.txt:23
+#: data/System/NatSkinWebTopicListViewTemplate.txt:27
 #, fuzzy
 msgid "%1 topics found"
 msgstr "Нема дочірніх тем."
@@ -138,7 +138,7 @@ msgstr "Ваша електронна адреса буде конфіденці
 msgid "Abandon changes and exit"
 msgstr "Відкинути зміни та вийти"
 
-#: templates/newtopic.nat.tmpl:21 templates/oops.nat.tmpl:27
+#: templates/newtopic.nat.tmpl:22 templates/oops.nat.tmpl:27
 msgid "Abort"
 msgstr ""
 
@@ -301,7 +301,7 @@ msgstr "Не вдалося перемістити додаток"
 msgid "Attachments"
 msgstr "Додатки"
 
-#: templates/attach.nat.tmpl:25
+#: templates/attach.nat.tmpl:26
 #, fuzzy
 msgid "Attachments at %1"
 msgstr "Додатки %1"
@@ -314,12 +314,12 @@ msgstr "Увага"
 msgid "Author"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:19
+#: templates/newtopic.nat.tmpl:20
 #, fuzzy
 msgid "Back one step"
 msgstr "Назад до теми"
 
-#: templates/view.nat.tmpl:116
+#: templates/view.nat.tmpl:131
 #, fuzzy
 msgid "Back to view mode"
 msgstr "Назад до теми"
@@ -531,7 +531,7 @@ msgstr "Дія"
 msgid "Click to like/unlike this topic"
 msgstr ""
 
-#: templates/attach.nat.tmpl:19 templates/backlinks.nat.tmpl:21
+#: templates/attach.nat.tmpl:20 templates/backlinks.nat.tmpl:21
 #: templates/backlinksallwebs.nat.tmpl:18 templates/backlinksweb.nat.tmpl:13
 #: templates/childtopics.nat.tmpl:16 templates/childtopics.nat.tmpl:32
 #: templates/foswiki.nat.tmpl:125 templates/history.nat.tmpl:51
@@ -539,7 +539,7 @@ msgstr ""
 msgid "Close"
 msgstr "Закрити"
 
-#: templates/view.nat.tmpl:190
+#: templates/view.nat.tmpl:205
 msgid "Close broadcast message"
 msgstr ""
 
@@ -612,11 +612,11 @@ msgstr "Зміна мови"
 msgid "Continue and try to rename web?"
 msgstr "Продовжити спробу перейменувати розділ?"
 
-#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:251
+#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:247
 msgid "Copy"
 msgstr ""
 
-#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:252
+#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:248
 msgid "Copy topic"
 msgstr "Копіювати тему"
 
@@ -635,7 +635,7 @@ msgstr "Не вдалося зберегти %1."
 msgid "Country"
 msgstr "Країна:"
 
-#: templates/404.nat.tmpl:50 templates/newtopic.nat.tmpl:22
+#: templates/404.nat.tmpl:50 templates/newtopic.nat.tmpl:23
 #, fuzzy
 msgid "Create"
 msgstr "Створити '%1'"
@@ -650,7 +650,7 @@ msgstr "Створити нову тему"
 msgid "Create a Topic in %1"
 msgstr "Створити нову тему в розділі %1"
 
-#: templates/foswiki.nat.tmpl:253
+#: templates/foswiki.nat.tmpl:249
 msgid "Create a copy of this topic under a new name"
 msgstr ""
 
@@ -714,8 +714,8 @@ msgstr "Від"
 msgid "Date"
 msgstr "Дата"
 
-#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:100
-#: templates/newtopic.nat.tmpl:48 templates/newtopic.old.tmpl:122
+#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:101
+#: templates/newtopic.nat.tmpl:49 templates/newtopic.old.tmpl:122
 msgid "Default"
 msgstr "За умовчанням"
 
@@ -724,7 +724,7 @@ msgstr "За умовчанням"
 msgid "Default topic as defined in WebTopicEditTemplate"
 msgstr "замовчення, що задане у %1"
 
-#: templates/newtopic.nat.tmpl:121 templates/newtopic.nat.tmpl:50
+#: templates/newtopic.nat.tmpl:122 templates/newtopic.nat.tmpl:51
 #, fuzzy
 msgid "Default wiki content"
 msgstr "Вилучити тему"
@@ -782,7 +782,7 @@ msgstr "Забули пароль?"
 msgid "Did you want to [[%1][reset %2's password]]?"
 msgstr "Ви хочете [[%1][скинути пароль %2]]?"
 
-#: templates/foswiki.nat.tmpl:246
+#: templates/foswiki.nat.tmpl:242
 msgid "Diff"
 msgstr ""
 
@@ -801,7 +801,7 @@ msgstr "Історія"
 msgid "Display settings"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:248
+#: templates/foswiki.nat.tmpl:244
 msgid "Display the most recent change of this topic"
 msgstr ""
 
@@ -1187,12 +1187,12 @@ msgstr "Отримувати повідомлення про зміни за ц�
 msgid "Go back in your browser and save your changes locally."
 msgstr "Поверніться назад у Вашому браузері та збережіть Ваші зміни локально."
 
-#: templates/foswiki.nat.tmpl:230
+#: templates/foswiki.nat.tmpl:229
 #, fuzzy
 msgid "Go to the following version of this topic"
 msgstr "Версія теми для друку (p)"
 
-#: templates/foswiki.nat.tmpl:236
+#: templates/foswiki.nat.tmpl:234
 #, fuzzy
 msgid "Go to the previous version of this topic"
 msgstr "Версія теми для друку (p)"
@@ -1357,7 +1357,7 @@ msgstr ""
 msgid "Jump to the first version of this topic"
 msgstr "Версія теми для друку (p)"
 
-#: templates/foswiki.nat.tmpl:242
+#: templates/foswiki.nat.tmpl:239
 #, fuzzy
 msgid "Jump to the most recent version of this topic"
 msgstr "Версія теми для друку (p)"
@@ -1375,7 +1375,7 @@ msgstr ""
 msgid "Language"
 msgstr "Язык изменен"
 
-#: templates/foswiki.nat.tmpl:240
+#: templates/foswiki.nat.tmpl:237
 msgid "Last"
 msgstr "Останній"
 
@@ -1629,11 +1629,11 @@ msgstr "Нове ім'я розділу:"
 msgid "News"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:228
+#: templates/foswiki.nat.tmpl:227
 msgid "Next"
 msgstr "Далі"
 
-#: templates/newtopic.nat.tmpl:20
+#: templates/newtopic.nat.tmpl:21
 #, fuzzy
 msgid "Next step"
 msgstr "Далі"
@@ -1688,7 +1688,7 @@ msgstr "Примітка: ця тема не існує"
 msgid "Notes"
 msgstr "Примітки:"
 
-#: templates/foswiki.nat.tmpl:256
+#: templates/foswiki.nat.tmpl:252
 msgid "Nothing found. Try again!"
 msgstr ""
 
@@ -1850,12 +1850,12 @@ msgstr "Повідомте вашого адміністратора %1."
 msgid "Please notify your %1 administrator %2."
 msgstr "Повідомте вашого адміністратора %1."
 
-#: templates/newtopic.nat.tmpl:93
+#: templates/newtopic.nat.tmpl:94
 #, fuzzy
 msgid "Please select a Template"
 msgstr "Шаблон за умовчанням"
 
-#: templates/newtopic.nat.tmpl:34
+#: templates/newtopic.nat.tmpl:35
 msgid "Please select a Topic Type"
 msgstr ""
 
@@ -1868,7 +1868,7 @@ msgstr "Будь ласка, введіть ім&amp;я користувача."
 msgid "Portuguese"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:282
+#: templates/foswiki.nat.tmpl:278
 #, fuzzy
 msgid "Powered by Foswiki"
 msgstr "Цей сайт використовує Foswiki"
@@ -1886,7 +1886,7 @@ msgstr "Інакше натисніть Скасувати."
 msgid "Press OK to confirm that this change was intentional."
 msgstr "Натисніть «Гразад» щоб підтвердити навмисність зміни."
 
-#: templates/foswiki.nat.tmpl:234
+#: templates/foswiki.nat.tmpl:232
 msgid "Previous"
 msgstr "Назад"
 
@@ -1933,7 +1933,7 @@ msgstr "Скинути пароль"
 msgid "Recent Changes"
 msgstr "Недавно змінені теми"
 
-#: templates/view.nat.tmpl:117
+#: templates/view.nat.tmpl:132
 #, fuzzy
 msgid "Redirect from %1"
 msgstr "Результати з розділу %1"
@@ -2213,7 +2213,7 @@ msgid ""
 "them."
 msgstr ""
 
-#: templates/view.nat.tmpl:101
+#: templates/view.nat.tmpl:116
 #, fuzzy
 msgid "Select translation in %1"
 msgstr "Вибір груп для вступу:"
@@ -2387,10 +2387,6 @@ msgstr "Текст"
 msgid "Thank you for registering"
 msgstr "Спасибі за реєстрацію"
 
-#: templates/foswiki.nat.tmpl:366
-msgid "Thank you!"
-msgstr ""
-
 #: templates/messages.nat.tmpl:171
 #, fuzzy
 msgid ""
@@ -2540,7 +2536,7 @@ msgstr ""
 msgid "This page was cached on %1."
 msgstr "Ця тема закешована о %1."
 
-#: templates/newtopic.nat.tmpl:148 templates/newtopic.old.tmpl:58
+#: templates/newtopic.nat.tmpl:154 templates/newtopic.old.tmpl:58
 #: templates/renamebase.nat.tmpl:70 templates/translatetopic.nat.tmpl:110
 #, fuzzy
 msgid "Title"
@@ -2767,13 +2763,13 @@ msgstr ""
 msgid "Variation"
 msgstr "Опис"
 
-#: templates/view.nat.tmpl:175
+#: templates/view.nat.tmpl:190
 #, fuzzy
 msgid "Version %1"
 msgstr "Версія"
 
 #: templates/foswiki.nat.tmpl:37 templates/history.nat.tmpl:102
-#: templates/view.nat.tmpl:116
+#: templates/view.nat.tmpl:131
 msgid "View"
 msgstr "Перегляд"
 
@@ -2787,22 +2783,22 @@ msgstr "Переглянути редакцію"
 msgid "View formatted topic"
 msgstr "Переглянути тему"
 
-#: templates/foswiki.nat.tmpl:247
+#: templates/foswiki.nat.tmpl:243
 #, fuzzy
 msgid "View last change"
 msgstr "остання зміна"
 
-#: templates/foswiki.nat.tmpl:241
+#: templates/foswiki.nat.tmpl:238
 #, fuzzy
 msgid "View last revision"
 msgstr "Переглянути редакцію"
 
-#: templates/foswiki.nat.tmpl:229
+#: templates/foswiki.nat.tmpl:228
 #, fuzzy
 msgid "View next revision"
 msgstr "Переглянути редакцію"
 
-#: templates/foswiki.nat.tmpl:235
+#: templates/foswiki.nat.tmpl:233
 #, fuzzy
 msgid "View previous revision"
 msgstr "Переглянути попередню редакцію"
@@ -2847,12 +2843,6 @@ msgstr ""
 #: templates/validate.nat.tmpl:7
 msgid "Warning! Confirmation required"
 msgstr "Увага! Потрібне підтвердження"
-
-#: templates/foswiki.nat.tmpl:363
-msgid ""
-"Warning: Your browser isn't supported. Please install a modern one, like %1, "
-"%2, %3, %4 or the latest %5."
-msgstr ""
 
 #: templates/print.nat.tmpl:62
 msgid "Watermark"
@@ -2943,7 +2933,7 @@ msgstr "Ви вже зареєстровані."
 msgid "You are also listed in the %1 topic"
 msgstr "Вас також перераховано у темі %1"
 
-#: templates/foswiki.nat.tmpl:260
+#: templates/foswiki.nat.tmpl:256
 #, fuzzy
 msgid "You are here"
 msgstr "Ви зараз тут:"
@@ -3154,7 +3144,7 @@ msgstr ""
 msgid "default"
 msgstr "За умовчанням"
 
-#: templates/newtopic.nat.tmpl:102
+#: templates/newtopic.nat.tmpl:103
 msgid "default template for the selected topic type"
 msgstr ""
 
@@ -3295,11 +3285,6 @@ msgstr ""
 msgid "prefs"
 msgstr ""
 
-#: templates/view.print.nat.tmpl:11
-#, fuzzy
-msgid "printable"
-msgstr "Змінювання можливе"
-
 #: templates/changeform.nat.tmpl:119 templates/changeform.nat.tmpl:74
 msgid "remove the current form (caution: possible data loss)"
 msgstr ""
@@ -3323,7 +3308,7 @@ msgstr "відновити"
 msgid "right"
 msgstr "Рівняти вправо"
 
-#: templates/newtopic.nat.tmpl:32 templates/newtopic.nat.tmpl:91
+#: templates/newtopic.nat.tmpl:33 templates/newtopic.nat.tmpl:92
 #: templates/searchbase.nat.tmpl:7 templates/searchbox.nat.tmpl:13
 #, fuzzy
 msgid "search"
@@ -3366,3 +3351,7 @@ msgstr "Додаткові інструменти"
 #: templates/webdav_folder.nat.tmpl:8
 msgid "up one folder"
 msgstr ""
+
+#, fuzzy
+#~ msgid "printable"
+#~ msgstr "Змінювання можливе"

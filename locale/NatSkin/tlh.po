@@ -96,7 +96,7 @@ msgstr "ghItlh %1 tu&&#39;lu&&#39;be&&#39;"
 msgid "%1 topic(s) found"
 msgstr "pagh puq ghItlhmey Samlu&&#39;."
 
-#: data/System/NatSkinWebTopicListViewTemplate.txt:23
+#: data/System/NatSkinWebTopicListViewTemplate.txt:27
 #, fuzzy
 msgid "%1 topics found"
 msgstr "pagh puq ghItlhmey Samlu&&#39;."
@@ -144,7 +144,7 @@ msgstr "reH QIn <nop>QuvlIj peghlu&&#39;."
 msgid "Abandon changes and exit"
 msgstr "choHmey buSHa&&#39; &&#39;ej mej"
 
-#: templates/newtopic.nat.tmpl:21 templates/oops.nat.tmpl:27
+#: templates/newtopic.nat.tmpl:22 templates/oops.nat.tmpl:27
 msgid "Abort"
 msgstr ""
 
@@ -306,7 +306,7 @@ msgstr "Qagh tep vIHmoHmeH mIw"
 msgid "Attachments"
 msgstr "tepmey"
 
-#: templates/attach.nat.tmpl:25
+#: templates/attach.nat.tmpl:26
 #, fuzzy
 msgid "Attachments at %1"
 msgstr "tepmey %1"
@@ -319,12 +319,12 @@ msgstr "Qu&&#39;vatlh"
 msgid "Author"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:19
+#: templates/newtopic.nat.tmpl:20
 #, fuzzy
 msgid "Back one step"
 msgstr "ghItlhDaq chegh"
 
-#: templates/view.nat.tmpl:116
+#: templates/view.nat.tmpl:131
 #, fuzzy
 msgid "Back to view mode"
 msgstr "ghItlhDaq chegh"
@@ -534,7 +534,7 @@ msgstr ""
 msgid "Click to like/unlike this topic"
 msgstr ""
 
-#: templates/attach.nat.tmpl:19 templates/backlinks.nat.tmpl:21
+#: templates/attach.nat.tmpl:20 templates/backlinks.nat.tmpl:21
 #: templates/backlinksallwebs.nat.tmpl:18 templates/backlinksweb.nat.tmpl:13
 #: templates/childtopics.nat.tmpl:16 templates/childtopics.nat.tmpl:32
 #: templates/foswiki.nat.tmpl:125 templates/history.nat.tmpl:51
@@ -542,7 +542,7 @@ msgstr ""
 msgid "Close"
 msgstr "<nop>SoQmoH"
 
-#: templates/view.nat.tmpl:190
+#: templates/view.nat.tmpl:205
 msgid "Close broadcast message"
 msgstr ""
 
@@ -615,11 +615,11 @@ msgstr "Hol choH"
 msgid "Continue and try to rename web?"
 msgstr "mIch Dapongqa&&#39;rup&&#39;a&&#39;?"
 
-#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:251
+#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:247
 msgid "Copy"
 msgstr ""
 
-#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:252
+#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:248
 msgid "Copy topic"
 msgstr "ghItlh velqa&&#39; <nop>chenmoH"
 
@@ -638,7 +638,7 @@ msgstr "%1 pollaHbe&&#39;."
 msgid "Country"
 msgstr "Sep:"
 
-#: templates/404.nat.tmpl:50 templates/newtopic.nat.tmpl:22
+#: templates/404.nat.tmpl:50 templates/newtopic.nat.tmpl:23
 #, fuzzy
 msgid "Create"
 msgstr "ghom chenmoH"
@@ -653,7 +653,7 @@ msgstr "ghItlh chu&&#39; chenmoH"
 msgid "Create a Topic in %1"
 msgstr "ghItlh chu&&#39; chenmoH"
 
-#: templates/foswiki.nat.tmpl:253
+#: templates/foswiki.nat.tmpl:249
 msgid "Create a copy of this topic under a new name"
 msgstr ""
 
@@ -717,8 +717,8 @@ msgstr "Form"
 msgid "Date"
 msgstr "<nop>HovpoH"
 
-#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:100
-#: templates/newtopic.nat.tmpl:48 templates/newtopic.old.tmpl:122
+#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:101
+#: templates/newtopic.nat.tmpl:49 templates/newtopic.old.tmpl:122
 msgid "Default"
 msgstr "motlh"
 
@@ -727,7 +727,7 @@ msgstr "motlh"
 msgid "Default topic as defined in WebTopicEditTemplate"
 msgstr "%1Daq lISlu&&#39;bogh DuHmey motlh"
 
-#: templates/newtopic.nat.tmpl:121 templates/newtopic.nat.tmpl:50
+#: templates/newtopic.nat.tmpl:122 templates/newtopic.nat.tmpl:51
 #, fuzzy
 msgid "Default wiki content"
 msgstr "ghItlh polHa&&#39;"
@@ -785,7 +785,7 @@ msgstr "chaw&&#39; ngoqlIj <nop>DalIj&&#39;a&&#39;?"
 msgid "Did you want to [[%1][reset %2's password]]?"
 msgstr "[[%1][%2 chaw&&#39; ngoq]] <nop>DachoH <nop>DaneH&&#39;a&&#39;?"
 
-#: templates/foswiki.nat.tmpl:246
+#: templates/foswiki.nat.tmpl:242
 msgid "Diff"
 msgstr ""
 
@@ -804,7 +804,7 @@ msgstr "qun"
 msgid "Display settings"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:248
+#: templates/foswiki.nat.tmpl:244
 msgid "Display the most recent change of this topic"
 msgstr ""
 
@@ -1190,12 +1190,12 @@ msgstr ""
 "&&#39;Internet janDaq yIchegh &&#39;ej juHlIj De&&#39;wI&&#39;lIjDaq "
 "choHmeylIj tIpol."
 
-#: templates/foswiki.nat.tmpl:230
+#: templates/foswiki.nat.tmpl:229
 #, fuzzy
 msgid "Go to the following version of this topic"
 msgstr "ghItlhvam ghItlhwI&&#39; nav (p)"
 
-#: templates/foswiki.nat.tmpl:236
+#: templates/foswiki.nat.tmpl:234
 #, fuzzy
 msgid "Go to the previous version of this topic"
 msgstr "ghItlhvam ghItlhwI&&#39; nav (p)"
@@ -1359,7 +1359,7 @@ msgstr ""
 msgid "Jump to the first version of this topic"
 msgstr "ghItlhvam ghItlhwI&&#39; nav (p)"
 
-#: templates/foswiki.nat.tmpl:242
+#: templates/foswiki.nat.tmpl:239
 #, fuzzy
 msgid "Jump to the most recent version of this topic"
 msgstr "ghItlhvam ghItlhwI&&#39; nav (p)"
@@ -1377,7 +1377,7 @@ msgstr ""
 msgid "Language"
 msgstr "tlhIngan Hol"
 
-#: templates/foswiki.nat.tmpl:240
+#: templates/foswiki.nat.tmpl:237
 msgid "Last"
 msgstr "Qav"
 
@@ -1631,11 +1631,11 @@ msgstr "mIch pong chu&&#39;:"
 msgid "News"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:228
+#: templates/foswiki.nat.tmpl:227
 msgid "Next"
 msgstr "Duv"
 
-#: templates/newtopic.nat.tmpl:20
+#: templates/newtopic.nat.tmpl:21
 #, fuzzy
 msgid "Next step"
 msgstr "Duv"
@@ -1692,7 +1692,7 @@ msgstr "ghItlh %1 tu&&#39;lu&&#39;be&&#39;"
 msgid "Notes"
 msgstr "qeSmey:"
 
-#: templates/foswiki.nat.tmpl:256
+#: templates/foswiki.nat.tmpl:252
 msgid "Nothing found. Try again!"
 msgstr ""
 
@@ -1851,12 +1851,12 @@ msgstr "<nop>DaH %1 loHwI&#39;lIj yIghuHmoH."
 msgid "Please notify your %1 administrator %2."
 msgstr "<nop>DaH %1 loHwI&#39;lIj yIghuHmoH."
 
-#: templates/newtopic.nat.tmpl:93
+#: templates/newtopic.nat.tmpl:94
 #, fuzzy
 msgid "Please select a Template"
 msgstr "ghantoH motlh"
 
-#: templates/newtopic.nat.tmpl:34
+#: templates/newtopic.nat.tmpl:35
 #, fuzzy
 msgid "Please select a Topic Type"
 msgstr "wIv"
@@ -1870,7 +1870,7 @@ msgstr "<nop>DaH lo&&#39;wI&&#39; pong yIghItlh."
 msgid "Portuguese"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:282
+#: templates/foswiki.nat.tmpl:278
 #, fuzzy
 msgid "Powered by Foswiki"
 msgstr "Foswikimo&&#39; Qap Daqvam"
@@ -1888,7 +1888,7 @@ msgstr "<nop>DaneHbe&&#39;chugh vaj qIl yIwIv."
 msgid "Press OK to confirm that this change was intentional."
 msgstr "choHvam <nop>DaHechchugh vaj luq yIwIv."
 
-#: templates/foswiki.nat.tmpl:234
+#: templates/foswiki.nat.tmpl:232
 msgid "Previous"
 msgstr "<nop>HeD"
 
@@ -1935,7 +1935,7 @@ msgstr "chaw&&#39; ngoq chu&&#39;moH"
 msgid "Recent Changes"
 msgstr "qen ghItlhmey luchoHlu&&#39;bogh"
 
-#: templates/view.nat.tmpl:117
+#: templates/view.nat.tmpl:132
 #, fuzzy
 msgid "Redirect from %1"
 msgstr "%1 mIchDaq Dochmey&&#39;e&&#39; luSamlu&&#39;bogh"
@@ -2215,7 +2215,7 @@ msgid ""
 "them."
 msgstr ""
 
-#: templates/view.nat.tmpl:101
+#: templates/view.nat.tmpl:116
 #, fuzzy
 msgid "Select translation in %1"
 msgstr "ghommey Damuv <nop>DaneHbogh tIwIv:"
@@ -2391,10 +2391,6 @@ msgstr "ngoq"
 msgid "Thank you for registering"
 msgstr "batlh vImuvta&&#39;"
 
-#: templates/foswiki.nat.tmpl:366
-msgid "Thank you!"
-msgstr ""
-
 #: templates/messages.nat.tmpl:171
 #, fuzzy
 msgid ""
@@ -2549,7 +2545,7 @@ msgstr ""
 msgid "This page was cached on %1."
 msgstr "%1 ghItlhvam velqa&&#39; pollu&&#39;."
 
-#: templates/newtopic.nat.tmpl:148 templates/newtopic.old.tmpl:58
+#: templates/newtopic.nat.tmpl:154 templates/newtopic.old.tmpl:58
 #: templates/renamebase.nat.tmpl:70 templates/translatetopic.nat.tmpl:110
 #, fuzzy
 msgid "Title"
@@ -2772,13 +2768,13 @@ msgstr ""
 msgid "Variation"
 msgstr "Delbogh mu&&#39;mey"
 
-#: templates/view.nat.tmpl:175
+#: templates/view.nat.tmpl:190
 #, fuzzy
 msgid "Version %1"
 msgstr "Dotlh"
 
 #: templates/foswiki.nat.tmpl:37 templates/history.nat.tmpl:102
-#: templates/view.nat.tmpl:116
+#: templates/view.nat.tmpl:131
 msgid "View"
 msgstr "&&#39;ang"
 
@@ -2792,22 +2788,22 @@ msgstr "Dotlh &&#39;ang"
 msgid "View formatted topic"
 msgstr "ghItlh bej"
 
-#: templates/foswiki.nat.tmpl:247
+#: templates/foswiki.nat.tmpl:243
 #, fuzzy
 msgid "View last change"
 msgstr "choH Qav"
 
-#: templates/foswiki.nat.tmpl:241
+#: templates/foswiki.nat.tmpl:238
 #, fuzzy
 msgid "View last revision"
 msgstr "Dotlh &&#39;ang"
 
-#: templates/foswiki.nat.tmpl:229
+#: templates/foswiki.nat.tmpl:228
 #, fuzzy
 msgid "View next revision"
 msgstr "Dotlh &&#39;ang"
 
-#: templates/foswiki.nat.tmpl:235
+#: templates/foswiki.nat.tmpl:233
 #, fuzzy
 msgid "View previous revision"
 msgstr "nungbogh ghItlh Dotlh &&#39;ang"
@@ -2852,12 +2848,6 @@ msgstr ""
 #: templates/validate.nat.tmpl:7
 msgid "Warning! Confirmation required"
 msgstr "Qu&&#39;vatlh! bI&&#39;ol net poQ"
-
-#: templates/foswiki.nat.tmpl:363
-msgid ""
-"Warning: Your browser isn't supported. Please install a modern one, like %1, "
-"%2, %3, %4 or the latest %5."
-msgstr ""
 
 #: templates/print.nat.tmpl:62
 msgid "Watermark"
@@ -2946,7 +2936,7 @@ msgstr "bImuvta&&#39; rIntaH."
 msgid "You are also listed in the %1 topic"
 msgstr "%1 tetlhDaq <nop>SoH je"
 
-#: templates/foswiki.nat.tmpl:260
+#: templates/foswiki.nat.tmpl:256
 #, fuzzy
 msgid "You are here"
 msgstr "<nop>naDev <nop>SoH:"
@@ -3162,7 +3152,7 @@ msgstr ""
 msgid "default"
 msgstr "motlh"
 
-#: templates/newtopic.nat.tmpl:102
+#: templates/newtopic.nat.tmpl:103
 msgid "default template for the selected topic type"
 msgstr ""
 
@@ -3302,11 +3292,6 @@ msgstr ""
 msgid "prefs"
 msgstr ""
 
-#: templates/view.print.nat.tmpl:11
-#, fuzzy
-msgid "printable"
-msgstr "choHlaH vay&&#39;"
-
 #: templates/changeform.nat.tmpl:119 templates/changeform.nat.tmpl:74
 msgid "remove the current form (caution: possible data loss)"
 msgstr ""
@@ -3330,7 +3315,7 @@ msgstr "polqa&&#39;"
 msgid "right"
 msgstr "nIHDaq lan"
 
-#: templates/newtopic.nat.tmpl:32 templates/newtopic.nat.tmpl:91
+#: templates/newtopic.nat.tmpl:33 templates/newtopic.nat.tmpl:92
 #: templates/searchbase.nat.tmpl:7 templates/searchbox.nat.tmpl:13
 #, fuzzy
 msgid "search"
@@ -3373,6 +3358,10 @@ msgstr "latlh janmey"
 #: templates/webdav_folder.nat.tmpl:8
 msgid "up one folder"
 msgstr ""
+
+#, fuzzy
+#~ msgid "printable"
+#~ msgstr "choHlaH vay&&#39;"
 
 #, fuzzy
 #~ msgid "Create a default topic"

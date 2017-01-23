@@ -82,7 +82,7 @@ msgstr ""
 msgid "%1 topic(s) found"
 msgstr ""
 
-#: data/System/NatSkinWebTopicListViewTemplate.txt:23
+#: data/System/NatSkinWebTopicListViewTemplate.txt:27
 msgid "%1 topics found"
 msgstr ""
 
@@ -122,7 +122,7 @@ msgstr ""
 msgid "Abandon changes and exit"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:21 templates/oops.nat.tmpl:27
+#: templates/newtopic.nat.tmpl:22 templates/oops.nat.tmpl:27
 msgid "Abort"
 msgstr ""
 
@@ -261,7 +261,7 @@ msgstr ""
 msgid "Attachments"
 msgstr ""
 
-#: templates/attach.nat.tmpl:25
+#: templates/attach.nat.tmpl:26
 msgid "Attachments at %1"
 msgstr ""
 
@@ -273,11 +273,11 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:19
+#: templates/newtopic.nat.tmpl:20
 msgid "Back one step"
 msgstr ""
 
-#: templates/view.nat.tmpl:116
+#: templates/view.nat.tmpl:131
 msgid "Back to view mode"
 msgstr ""
 
@@ -468,7 +468,7 @@ msgstr ""
 msgid "Click to like/unlike this topic"
 msgstr ""
 
-#: templates/attach.nat.tmpl:19 templates/backlinks.nat.tmpl:21
+#: templates/attach.nat.tmpl:20 templates/backlinks.nat.tmpl:21
 #: templates/backlinksallwebs.nat.tmpl:18 templates/backlinksweb.nat.tmpl:13
 #: templates/childtopics.nat.tmpl:16 templates/childtopics.nat.tmpl:32
 #: templates/foswiki.nat.tmpl:125 templates/history.nat.tmpl:51
@@ -476,7 +476,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: templates/view.nat.tmpl:190
+#: templates/view.nat.tmpl:205
 msgid "Close broadcast message"
 msgstr ""
 
@@ -541,11 +541,11 @@ msgstr ""
 msgid "Continue and try to rename web?"
 msgstr ""
 
-#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:251
+#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:247
 msgid "Copy"
 msgstr ""
 
-#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:252
+#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:248
 msgid "Copy topic"
 msgstr ""
 
@@ -562,7 +562,7 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: templates/404.nat.tmpl:50 templates/newtopic.nat.tmpl:22
+#: templates/404.nat.tmpl:50 templates/newtopic.nat.tmpl:23
 msgid "Create"
 msgstr ""
 
@@ -574,7 +574,7 @@ msgstr ""
 msgid "Create a Topic in %1"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:253
+#: templates/foswiki.nat.tmpl:249
 msgid "Create a copy of this topic under a new name"
 msgstr ""
 
@@ -630,8 +630,8 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:100
-#: templates/newtopic.nat.tmpl:48 templates/newtopic.old.tmpl:122
+#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:101
+#: templates/newtopic.nat.tmpl:49 templates/newtopic.old.tmpl:122
 msgid "Default"
 msgstr ""
 
@@ -639,7 +639,7 @@ msgstr ""
 msgid "Default topic as defined in WebTopicEditTemplate"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:121 templates/newtopic.nat.tmpl:50
+#: templates/newtopic.nat.tmpl:122 templates/newtopic.nat.tmpl:51
 msgid "Default wiki content"
 msgstr ""
 
@@ -689,7 +689,7 @@ msgstr ""
 msgid "Did you want to [[%1][reset %2's password]]?"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:246
+#: templates/foswiki.nat.tmpl:242
 msgid "Diff"
 msgstr ""
 
@@ -706,7 +706,7 @@ msgstr ""
 msgid "Display settings"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:248
+#: templates/foswiki.nat.tmpl:244
 msgid "Display the most recent change of this topic"
 msgstr ""
 
@@ -1044,11 +1044,11 @@ msgstr ""
 msgid "Go back in your browser and save your changes locally."
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:230
+#: templates/foswiki.nat.tmpl:229
 msgid "Go to the following version of this topic"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:236
+#: templates/foswiki.nat.tmpl:234
 msgid "Go to the previous version of this topic"
 msgstr ""
 
@@ -1194,7 +1194,7 @@ msgstr ""
 msgid "Jump to the first version of this topic"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:242
+#: templates/foswiki.nat.tmpl:239
 msgid "Jump to the most recent version of this topic"
 msgstr ""
 
@@ -1210,7 +1210,7 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:240
+#: templates/foswiki.nat.tmpl:237
 msgid "Last"
 msgstr ""
 
@@ -1432,11 +1432,11 @@ msgstr ""
 msgid "News"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:228
+#: templates/foswiki.nat.tmpl:227
 msgid "Next"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:20
+#: templates/newtopic.nat.tmpl:21
 msgid "Next step"
 msgstr ""
 
@@ -1485,7 +1485,7 @@ msgstr ""
 msgid "Notes"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:256
+#: templates/foswiki.nat.tmpl:252
 msgid "Nothing found. Try again!"
 msgstr ""
 
@@ -1630,11 +1630,11 @@ msgstr ""
 msgid "Please notify your %1 administrator %2."
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:93
+#: templates/newtopic.nat.tmpl:94
 msgid "Please select a Template"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:34
+#: templates/newtopic.nat.tmpl:35
 msgid "Please select a Topic Type"
 msgstr ""
 
@@ -1646,7 +1646,7 @@ msgstr ""
 msgid "Portuguese"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:282
+#: templates/foswiki.nat.tmpl:278
 msgid "Powered by Foswiki"
 msgstr ""
 
@@ -1663,7 +1663,7 @@ msgstr ""
 msgid "Press OK to confirm that this change was intentional."
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:234
+#: templates/foswiki.nat.tmpl:232
 msgid "Previous"
 msgstr ""
 
@@ -1705,7 +1705,7 @@ msgstr ""
 msgid "Recent Changes"
 msgstr ""
 
-#: templates/view.nat.tmpl:117
+#: templates/view.nat.tmpl:132
 msgid "Redirect from %1"
 msgstr ""
 
@@ -1958,7 +1958,7 @@ msgid ""
 "them."
 msgstr ""
 
-#: templates/view.nat.tmpl:101
+#: templates/view.nat.tmpl:116
 msgid "Select translation in %1"
 msgstr ""
 
@@ -2119,10 +2119,6 @@ msgstr ""
 msgid "Thank you for registering"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:366
-msgid "Thank you!"
-msgstr ""
-
 #: templates/messages.nat.tmpl:171
 msgid ""
 "The %1 field must be your first and lastname in %2, e.g. your capitalized "
@@ -2250,7 +2246,7 @@ msgstr ""
 msgid "This page was cached on %1."
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:148 templates/newtopic.old.tmpl:58
+#: templates/newtopic.nat.tmpl:154 templates/newtopic.old.tmpl:58
 #: templates/renamebase.nat.tmpl:70 templates/translatetopic.nat.tmpl:110
 msgid "Title"
 msgstr ""
@@ -2446,12 +2442,12 @@ msgstr ""
 msgid "Variation"
 msgstr ""
 
-#: templates/view.nat.tmpl:175
+#: templates/view.nat.tmpl:190
 msgid "Version %1"
 msgstr ""
 
 #: templates/foswiki.nat.tmpl:37 templates/history.nat.tmpl:102
-#: templates/view.nat.tmpl:116
+#: templates/view.nat.tmpl:131
 msgid "View"
 msgstr ""
 
@@ -2463,19 +2459,19 @@ msgstr ""
 msgid "View formatted topic"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:247
+#: templates/foswiki.nat.tmpl:243
 msgid "View last change"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:241
+#: templates/foswiki.nat.tmpl:238
 msgid "View last revision"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:229
+#: templates/foswiki.nat.tmpl:228
 msgid "View next revision"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:235
+#: templates/foswiki.nat.tmpl:233
 msgid "View previous revision"
 msgstr ""
 
@@ -2513,12 +2509,6 @@ msgstr ""
 
 #: templates/validate.nat.tmpl:7
 msgid "Warning! Confirmation required"
-msgstr ""
-
-#: templates/foswiki.nat.tmpl:363
-msgid ""
-"Warning: Your browser isn't supported. Please install a modern one, like %1, "
-"%2, %3, %4 or the latest %5."
 msgstr ""
 
 #: templates/print.nat.tmpl:62
@@ -2599,7 +2589,7 @@ msgstr ""
 msgid "You are also listed in the %1 topic"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:260
+#: templates/foswiki.nat.tmpl:256
 msgid "You are here"
 msgstr ""
 
@@ -2776,7 +2766,7 @@ msgstr ""
 msgid "default"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:102
+#: templates/newtopic.nat.tmpl:103
 msgid "default template for the selected topic type"
 msgstr ""
 
@@ -2905,10 +2895,6 @@ msgstr ""
 msgid "prefs"
 msgstr ""
 
-#: templates/view.print.nat.tmpl:11
-msgid "printable"
-msgstr ""
-
 #: templates/changeform.nat.tmpl:119 templates/changeform.nat.tmpl:74
 msgid "remove the current form (caution: possible data loss)"
 msgstr ""
@@ -2929,7 +2915,7 @@ msgstr ""
 msgid "right"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:32 templates/newtopic.nat.tmpl:91
+#: templates/newtopic.nat.tmpl:33 templates/newtopic.nat.tmpl:92
 #: templates/searchbase.nat.tmpl:7 templates/searchbox.nat.tmpl:13
 msgid "search"
 msgstr ""

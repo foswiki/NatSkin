@@ -91,7 +91,7 @@ msgstr ""
 msgid "%1 topic(s) found"
 msgstr ""
 
-#: data/System/NatSkinWebTopicListViewTemplate.txt:23
+#: data/System/NatSkinWebTopicListViewTemplate.txt:27
 msgid "%1 topics found"
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr ""
 msgid "Abandon changes and exit"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:21 templates/oops.nat.tmpl:27
+#: templates/newtopic.nat.tmpl:22 templates/oops.nat.tmpl:27
 msgid "Abort"
 msgstr ""
 
@@ -278,7 +278,7 @@ msgstr ""
 msgid "Attachments"
 msgstr ""
 
-#: templates/attach.nat.tmpl:25
+#: templates/attach.nat.tmpl:26
 #, fuzzy
 msgid "Attachments at %1"
 msgstr "%1 e dosya ekle"
@@ -291,12 +291,12 @@ msgstr "Dikkat"
 msgid "Author"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:19
+#: templates/newtopic.nat.tmpl:20
 #, fuzzy
 msgid "Back one step"
 msgstr "Konuya geri dön"
 
-#: templates/view.nat.tmpl:116
+#: templates/view.nat.tmpl:131
 #, fuzzy
 msgid "Back to view mode"
 msgstr "Konuya geri dön"
@@ -504,7 +504,7 @@ msgstr ""
 msgid "Click to like/unlike this topic"
 msgstr ""
 
-#: templates/attach.nat.tmpl:19 templates/backlinks.nat.tmpl:21
+#: templates/attach.nat.tmpl:20 templates/backlinks.nat.tmpl:21
 #: templates/backlinksallwebs.nat.tmpl:18 templates/backlinksweb.nat.tmpl:13
 #: templates/childtopics.nat.tmpl:16 templates/childtopics.nat.tmpl:32
 #: templates/foswiki.nat.tmpl:125 templates/history.nat.tmpl:51
@@ -512,7 +512,7 @@ msgstr ""
 msgid "Close"
 msgstr "Kapat"
 
-#: templates/view.nat.tmpl:190
+#: templates/view.nat.tmpl:205
 msgid "Close broadcast message"
 msgstr ""
 
@@ -581,11 +581,11 @@ msgstr "(dil değiştir)"
 msgid "Continue and try to rename web?"
 msgstr ""
 
-#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:251
+#: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:247
 msgid "Copy"
 msgstr ""
 
-#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:252
+#: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:248
 msgid "Copy topic"
 msgstr "Konuyu kopyala"
 
@@ -602,7 +602,7 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: templates/404.nat.tmpl:50 templates/newtopic.nat.tmpl:22
+#: templates/404.nat.tmpl:50 templates/newtopic.nat.tmpl:23
 #, fuzzy
 msgid "Create"
 msgstr "Grup oluştur"
@@ -617,7 +617,7 @@ msgstr "Yeni bir SSS konusu oluştur"
 msgid "Create a Topic in %1"
 msgstr "Yeni bir SSS konusu oluştur"
 
-#: templates/foswiki.nat.tmpl:253
+#: templates/foswiki.nat.tmpl:249
 msgid "Create a copy of this topic under a new name"
 msgstr ""
 
@@ -679,8 +679,8 @@ msgstr ""
 msgid "Date"
 msgstr "Tarih"
 
-#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:100
-#: templates/newtopic.nat.tmpl:48 templates/newtopic.old.tmpl:122
+#: templates/languageselector.nat.tmpl:17 templates/newtopic.nat.tmpl:101
+#: templates/newtopic.nat.tmpl:49 templates/newtopic.old.tmpl:122
 #, fuzzy
 msgid "Default"
 msgstr "Öntanımlı tema"
@@ -689,7 +689,7 @@ msgstr "Öntanımlı tema"
 msgid "Default topic as defined in WebTopicEditTemplate"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:121 templates/newtopic.nat.tmpl:50
+#: templates/newtopic.nat.tmpl:122 templates/newtopic.nat.tmpl:51
 #, fuzzy
 msgid "Default wiki content"
 msgstr "Konuyu sil"
@@ -747,7 +747,7 @@ msgstr "Şifrenizi mi unuttunuz?"
 msgid "Did you want to [[%1][reset %2's password]]?"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:246
+#: templates/foswiki.nat.tmpl:242
 msgid "Diff"
 msgstr ""
 
@@ -765,7 +765,7 @@ msgstr ""
 msgid "Display settings"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:248
+#: templates/foswiki.nat.tmpl:244
 msgid "Display the most recent change of this topic"
 msgstr ""
 
@@ -1136,13 +1136,13 @@ msgstr ""
 msgid "Go back in your browser and save your changes locally."
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:230
+#: templates/foswiki.nat.tmpl:229
 #, fuzzy
 msgid "Go to the following version of this topic"
 msgstr ""
 "title='Bu konunun yazdırılabilir versiyonu' accesskey='y'>&Yazıcı Önizleme"
 
-#: templates/foswiki.nat.tmpl:236
+#: templates/foswiki.nat.tmpl:234
 #, fuzzy
 msgid "Go to the previous version of this topic"
 msgstr ""
@@ -1296,7 +1296,7 @@ msgid "Jump to the first version of this topic"
 msgstr ""
 "title='Bu konunun yazdırılabilir versiyonu' accesskey='y'>&Yazıcı Önizleme"
 
-#: templates/foswiki.nat.tmpl:242
+#: templates/foswiki.nat.tmpl:239
 #, fuzzy
 msgid "Jump to the most recent version of this topic"
 msgstr ""
@@ -1315,7 +1315,7 @@ msgstr ""
 msgid "Language"
 msgstr "Türkçe"
 
-#: templates/foswiki.nat.tmpl:240
+#: templates/foswiki.nat.tmpl:237
 #, fuzzy
 msgid "Last"
 msgstr "Soyad"
@@ -1555,11 +1555,11 @@ msgstr ""
 msgid "News"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:228
+#: templates/foswiki.nat.tmpl:227
 msgid "Next"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:20
+#: templates/newtopic.nat.tmpl:21
 msgid "Next step"
 msgstr ""
 
@@ -1612,7 +1612,7 @@ msgstr ""
 msgid "Notes"
 msgstr "Notlar:"
 
-#: templates/foswiki.nat.tmpl:256
+#: templates/foswiki.nat.tmpl:252
 msgid "Nothing found. Try again!"
 msgstr ""
 
@@ -1767,12 +1767,12 @@ msgstr ""
 msgid "Please notify your %1 administrator %2."
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:93
+#: templates/newtopic.nat.tmpl:94
 #, fuzzy
 msgid "Please select a Template"
 msgstr "Öntanımlı tema"
 
-#: templates/newtopic.nat.tmpl:34
+#: templates/newtopic.nat.tmpl:35
 #, fuzzy
 msgid "Please select a Topic Type"
 msgstr "Konuyu sil"
@@ -1786,7 +1786,7 @@ msgstr "Wiki admin parolasını giriniz"
 msgid "Portuguese"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:282
+#: templates/foswiki.nat.tmpl:278
 msgid "Powered by Foswiki"
 msgstr ""
 
@@ -1805,7 +1805,7 @@ msgstr ""
 "Bu değişikliği bilinçli olarak yapıyorsanız, değişikliği onaylamak için OK e "
 "tıklayın."
 
-#: templates/foswiki.nat.tmpl:234
+#: templates/foswiki.nat.tmpl:232
 msgid "Previous"
 msgstr ""
 
@@ -1852,7 +1852,7 @@ msgstr "Şifre sıfırla"
 msgid "Recent Changes"
 msgstr "Yakın zamanda değişiklik yapılan konular"
 
-#: templates/view.nat.tmpl:117
+#: templates/view.nat.tmpl:132
 #, fuzzy
 msgid "Redirect from %1"
 msgstr "%1 için arama sonuçları"
@@ -2123,7 +2123,7 @@ msgid ""
 "them."
 msgstr ""
 
-#: templates/view.nat.tmpl:101
+#: templates/view.nat.tmpl:116
 msgid "Select translation in %1"
 msgstr ""
 
@@ -2290,10 +2290,6 @@ msgstr "Metin içinde"
 msgid "Thank you for registering"
 msgstr "Kayıt olduğunuz için teşekkürler"
 
-#: templates/foswiki.nat.tmpl:366
-msgid "Thank you!"
-msgstr ""
-
 #: templates/messages.nat.tmpl:171
 msgid ""
 "The %1 field must be your first and lastname in %2, e.g. your capitalized "
@@ -2425,7 +2421,7 @@ msgstr ""
 msgid "This page was cached on %1."
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:148 templates/newtopic.old.tmpl:58
+#: templates/newtopic.nat.tmpl:154 templates/newtopic.old.tmpl:58
 #: templates/renamebase.nat.tmpl:70 templates/translatetopic.nat.tmpl:110
 #, fuzzy
 msgid "Title"
@@ -2641,13 +2637,13 @@ msgstr ""
 msgid "Variation"
 msgstr "Kayıt"
 
-#: templates/view.nat.tmpl:175
+#: templates/view.nat.tmpl:190
 #, fuzzy
 msgid "Version %1"
 msgstr "Versiyon"
 
 #: templates/foswiki.nat.tmpl:37 templates/history.nat.tmpl:102
-#: templates/view.nat.tmpl:116
+#: templates/view.nat.tmpl:131
 msgid "View"
 msgstr ""
 
@@ -2661,22 +2657,22 @@ msgstr "Revizyonları karşılaştır"
 msgid "View formatted topic"
 msgstr "Konuyu Görüntüle"
 
-#: templates/foswiki.nat.tmpl:247
+#: templates/foswiki.nat.tmpl:243
 #, fuzzy
 msgid "View last change"
 msgstr "(değişiklikler)"
 
-#: templates/foswiki.nat.tmpl:241
+#: templates/foswiki.nat.tmpl:238
 #, fuzzy
 msgid "View last revision"
 msgstr "Revizyonları karşılaştır"
 
-#: templates/foswiki.nat.tmpl:229
+#: templates/foswiki.nat.tmpl:228
 #, fuzzy
 msgid "View next revision"
 msgstr "Yeni revizyona zorla"
 
-#: templates/foswiki.nat.tmpl:235
+#: templates/foswiki.nat.tmpl:233
 #, fuzzy
 msgid "View previous revision"
 msgstr "Revizyonları karşılaştır"
@@ -2719,12 +2715,6 @@ msgstr ""
 #: templates/validate.nat.tmpl:7
 msgid "Warning! Confirmation required"
 msgstr "Dikkat! Doğrulama Gerekiyor"
-
-#: templates/foswiki.nat.tmpl:363
-msgid ""
-"Warning: Your browser isn't supported. Please install a modern one, like %1, "
-"%2, %3, %4 or the latest %5."
-msgstr ""
 
 #: templates/print.nat.tmpl:62
 msgid "Watermark"
@@ -2810,7 +2800,7 @@ msgstr ""
 msgid "You are also listed in the %1 topic"
 msgstr "Ayrıca; kullanıcı adınız %1 başlığında listelenmiştir"
 
-#: templates/foswiki.nat.tmpl:260
+#: templates/foswiki.nat.tmpl:256
 #, fuzzy
 msgid "You are here"
 msgstr "Konumunuz:"
@@ -2997,7 +2987,7 @@ msgstr ""
 msgid "default"
 msgstr "Öntanımlı tema"
 
-#: templates/newtopic.nat.tmpl:102
+#: templates/newtopic.nat.tmpl:103
 msgid "default template for the selected topic type"
 msgstr ""
 
@@ -3132,11 +3122,6 @@ msgstr ""
 msgid "prefs"
 msgstr ""
 
-#: templates/view.print.nat.tmpl:11
-#, fuzzy
-msgid "printable"
-msgstr "Tablo Düzenle"
-
 #: templates/changeform.nat.tmpl:119 templates/changeform.nat.tmpl:74
 msgid "remove the current form (caution: possible data loss)"
 msgstr ""
@@ -3159,7 +3144,7 @@ msgstr ""
 msgid "right"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:32 templates/newtopic.nat.tmpl:91
+#: templates/newtopic.nat.tmpl:33 templates/newtopic.nat.tmpl:92
 #: templates/searchbase.nat.tmpl:7 templates/searchbox.nat.tmpl:13
 #, fuzzy
 msgid "search"
@@ -3199,6 +3184,10 @@ msgstr ""
 #: templates/webdav_folder.nat.tmpl:8
 msgid "up one folder"
 msgstr ""
+
+#, fuzzy
+#~ msgid "printable"
+#~ msgstr "Tablo Düzenle"
 
 #, fuzzy
 #~ msgid "Create a default topic"
