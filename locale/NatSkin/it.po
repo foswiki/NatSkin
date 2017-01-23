@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-15 07:47+0200\n"
+"PO-Revision-Date: 2017-01-20 08:12+0200\n"
 "Last-Translator: Guido Brugnara <gdo@leader.it>\n"
 "Language-Team: Italian <http://translate.foswiki.org/projects/foswiki"
 "/distribution-master/it/>\n"
@@ -2702,7 +2702,7 @@ msgstr ""
 
 #: templates/print.nat.tmpl:62
 msgid "Watermark"
-msgstr "Watermark"
+msgstr "Filigrana"
 
 #: templates/renamebase.nat.tmpl:58
 msgid "Web"
