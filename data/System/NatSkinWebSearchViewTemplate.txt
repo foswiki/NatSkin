@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1467208814" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1485333012" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 
 %{<verbatim class="tml">}%
@@ -85,7 +85,7 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"websearch::form::limit"}%<!-- -->
-<div class="foswikiRight" style="margin-top:1em">
+<div class="foswikiRight" style="margin:1em 0 1em 1em">
   <table class="foswikiLayoutTable">
     <tr>
       <th>
@@ -145,13 +145,6 @@
   reverse="%URLPARAM{"reverse" encode="quote"}%"
   limit="%URLPARAM{"limit" encode="quote"}%"
   zeroresults="%IF{ "defined search and $search!=''" then="on" else="off" }%"
-  header="%IF{"'%URLPARAM{"web"}%'='all'" 
-    then="$percntTMPL:P{\"websearch::hits::header\" 
-      web=\"$web\"
-      count=\"$ntopics\"
-    }$percnt"
-    else="<p>$percntTMPL:P{\"websearch::hits::footer\" count=\"$ntopics\"}$percnt</p>"
-  }%"
   footer="$percntTMPL:P{\"websearch::hits::footer\" count=\"$ntopics\"}$percnt"
   format="$percntTMPL:P{
     \"websearch::hits::topic\"

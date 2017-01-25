@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1467208814" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1485333012" format="1.1" version="1"}%
 ---+!! [[%TOPIC%][The Natural Skin]]
 %FORMFIELD{"Description"}%
 
@@ -114,6 +114,7 @@ to make the setting permanent.
 
 ---++ Change History
 %TABLE{columnwidths="7em" tablewidth="100%"}%
+|  25 Jan 2017: | improved logic how broadcast messages are shown and hidden |
 |  23 Jan 2017: | replace inline css and js by proper files created by <nop>AttachContentPlugin; \
                   added support for material icons; \
                   support for <nop>SocialSharePlugin; \
@@ -159,42 +160,42 @@ to make the setting permanent.
 |  14 Mar 2013: | first beta of new release |
 |  25 Jun 2003: | Initial version |
 
-%META:FILEATTACHMENT{name="NatSkinSnap1.png" attachment="NatSkinSnap1.png" attr="h" comment="" date="1467208814" size="90414" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap1-200.png" attachment="NatSkinSnap1-200.png" attr="ht" comment="" date="1467208814" size="36394" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap2.png" attachment="NatSkinSnap2.png" attr="h" comment="" date="1467208814" size="53315" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap2-200.png" attachment="NatSkinSnap2-200.png" attr="h" comment="" date="1467208814" size="14159" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap10.png" attachment="NatSkinSnap10.png" attr="h" comment="" date="1467208814" size="72803" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap9.png" attachment="NatSkinSnap9.png" attr="h" comment="" date="1467208814" size="39699" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap3.png" attachment="NatSkinSnap3.png" attr="h" comment="" date="1467208814" size="38859" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap4.png" attachment="NatSkinSnap4.png" attr="h" comment="" date="1467208814" size="65346" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap5.png" attachment="NatSkinSnap5.png" attr="h" comment="" date="1467208814" size="110480" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap6.png" attachment="NatSkinSnap6.png" attr="h" comment="" date="1467208814" size="117840" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap7.png" attachment="NatSkinSnap7.png" attr="h" comment="" date="1467208814" size="116892" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap8.png" attachment="NatSkinSnap8.png" attr="h" comment="" date="1467208814" size="67071" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap11.png" attachment="NatSkinSnap11.png" attr="h" comment="" date="1467208814" size="173959" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap4-200.png" attachment="NatSkinSnap4-200.png" attr="h" comment="" date="1467208814" size="23942" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap5-200.png" attachment="NatSkinSnap5-200.png" attr="h" comment="" date="1467208814" size="34327" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap6-200.png" attachment="NatSkinSnap6-200.png" attr="h" comment="" date="1467208814" size="26433" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap7-200.png" attachment="NatSkinSnap7-200.png" attr="h" comment="" date="1467208814" size="26509" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap8-200.png" attachment="NatSkinSnap8-200.png" attr="h" comment="" date="1467208814" size="11870" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap9-200.png" attachment="NatSkinSnap9-200.png" attr="h" comment="" date="1467208814" size="12106" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap10-200.png" attachment="NatSkinSnap10-200.png" attr="h" comment="" date="1467208814" size="9891" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap11-200.png" attachment="NatSkinSnap11-200.png" attr="h" comment="" date="1467208814" size="17800" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap3-200.png" attachment="NatSkinSnap3-200.png" attr="h" comment="" date="1467208814" size="13208" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap12-200.png" attachment="NatSkinSnap12-200.png" attr="h" comment="" date="1467208814" size="27388" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap12.png" attachment="NatSkinSnap12.png" attr="h" comment="" date="1467208814" size="103871" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap13-200.png" attachment="NatSkinSnap13-200.png" attr="h" comment="" date="1467208814" size="14530" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinSnap13.png" attachment="NatSkinSnap13.png" attr="h" comment="" date="1467208814" size="27376" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinThemeSnap2-200.png" attachment="NatSkinThemeSnap2-200.png" attr="h" comment="" date="1467208814" size="44661" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinThemeSnap2.png" attachment="NatSkinThemeSnap2.png" attr="h" comment="" date="1467208814" size="422218" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinThemeSnap3-200.png" attachment="NatSkinThemeSnap3-200.png" attr="h" comment="" date="1467208814" size="35541" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinThemeSnap4-200.png" attachment="NatSkinThemeSnap4-200.png" attr="h" comment="" date="1467208814" size="34134" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinThemeSnap5-200.png" attachment="NatSkinThemeSnap5-200.png" attr="h" comment="" date="1467208814" size="45110" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinThemeSnap5.png" attachment="NatSkinThemeSnap5.png" attr="h" comment="" date="1467208814" size="421865" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinThemeSnap6-200.png" attachment="NatSkinThemeSnap6-200.png" attr="h" comment="" date="1467208814" size="44620" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinThemeSnap6.png" attachment="NatSkinThemeSnap6.png" attr="h" comment="" date="1467208814" size="414253" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinThemeSnap4.png" attachment="NatSkinThemeSnap4.png" attr="h" comment="" date="1467208814" size="135166" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="NatSkinThemeSnap3.png" attachment="NatSkinThemeSnap3.png" attr="h" comment="" date="1467208814" size="126224" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap1.png" attachment="NatSkinSnap1.png" attr="h" comment="" date="1485333012" size="90414" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap1-200.png" attachment="NatSkinSnap1-200.png" attr="ht" comment="" date="1485333012" size="36394" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap2.png" attachment="NatSkinSnap2.png" attr="h" comment="" date="1485333012" size="53315" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap2-200.png" attachment="NatSkinSnap2-200.png" attr="h" comment="" date="1485333012" size="14159" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap10.png" attachment="NatSkinSnap10.png" attr="h" comment="" date="1485333012" size="72803" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap9.png" attachment="NatSkinSnap9.png" attr="h" comment="" date="1485333012" size="39699" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap3.png" attachment="NatSkinSnap3.png" attr="h" comment="" date="1485333012" size="38859" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap4.png" attachment="NatSkinSnap4.png" attr="h" comment="" date="1485333012" size="65346" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap5.png" attachment="NatSkinSnap5.png" attr="h" comment="" date="1485333012" size="110480" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap6.png" attachment="NatSkinSnap6.png" attr="h" comment="" date="1485333012" size="117840" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap7.png" attachment="NatSkinSnap7.png" attr="h" comment="" date="1485333012" size="116892" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap8.png" attachment="NatSkinSnap8.png" attr="h" comment="" date="1485333012" size="67071" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap11.png" attachment="NatSkinSnap11.png" attr="h" comment="" date="1485333012" size="173959" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap4-200.png" attachment="NatSkinSnap4-200.png" attr="h" comment="" date="1485333012" size="23942" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap5-200.png" attachment="NatSkinSnap5-200.png" attr="h" comment="" date="1485333012" size="34327" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap6-200.png" attachment="NatSkinSnap6-200.png" attr="h" comment="" date="1485333012" size="26433" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap7-200.png" attachment="NatSkinSnap7-200.png" attr="h" comment="" date="1485333012" size="26509" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap8-200.png" attachment="NatSkinSnap8-200.png" attr="h" comment="" date="1485333012" size="11870" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap9-200.png" attachment="NatSkinSnap9-200.png" attr="h" comment="" date="1485333012" size="12106" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap10-200.png" attachment="NatSkinSnap10-200.png" attr="h" comment="" date="1485333012" size="9891" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap11-200.png" attachment="NatSkinSnap11-200.png" attr="h" comment="" date="1485333012" size="17800" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap3-200.png" attachment="NatSkinSnap3-200.png" attr="h" comment="" date="1485333012" size="13208" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap12-200.png" attachment="NatSkinSnap12-200.png" attr="h" comment="" date="1485333012" size="27388" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap12.png" attachment="NatSkinSnap12.png" attr="h" comment="" date="1485333012" size="103871" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap13-200.png" attachment="NatSkinSnap13-200.png" attr="h" comment="" date="1485333012" size="14530" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinSnap13.png" attachment="NatSkinSnap13.png" attr="h" comment="" date="1485333012" size="27376" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap2-200.png" attachment="NatSkinThemeSnap2-200.png" attr="h" comment="" date="1485333012" size="44661" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap2.png" attachment="NatSkinThemeSnap2.png" attr="h" comment="" date="1485333012" size="422218" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap3-200.png" attachment="NatSkinThemeSnap3-200.png" attr="h" comment="" date="1485333012" size="35541" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap4-200.png" attachment="NatSkinThemeSnap4-200.png" attr="h" comment="" date="1485333012" size="34134" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap5-200.png" attachment="NatSkinThemeSnap5-200.png" attr="h" comment="" date="1485333012" size="45110" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap5.png" attachment="NatSkinThemeSnap5.png" attr="h" comment="" date="1485333012" size="421865" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap6-200.png" attachment="NatSkinThemeSnap6-200.png" attr="h" comment="" date="1485333012" size="44620" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap6.png" attachment="NatSkinThemeSnap6.png" attr="h" comment="" date="1485333012" size="414253" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap4.png" attachment="NatSkinThemeSnap4.png" attr="h" comment="" date="1485333012" size="135166" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="NatSkinThemeSnap3.png" attachment="NatSkinThemeSnap3.png" attr="h" comment="" date="1485333012" size="126224" user="ProjectContributor" version="1"}%
 %META:FORM{name="PackageForm"}%
 %META:FIELD{name="Author" title="Author" value="Michael Daum"}%
 %META:FIELD{name="Copyright" title="Copyright" value="2003-2017, Michael Daum http://michaeldaumconsulting.com"}%

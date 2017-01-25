@@ -301,29 +301,46 @@
 
     $(".foswikiBroadcastMessage").livequery(function() {
       var $this = $(this), 
-          cookieName = "broadcastMessage_counter",
-          counter = $.cookie(cookieName) || 0;
+          cookieName = "FOSWIKI_NATSKIN_broadcastMessage",
+          cookieDomain = foswiki.getPreference('COOKIEREALM'),
+          cookieSecure = foswiki.getPreference('URLHOST').startsWith('https://'),
+          cookieCheckSum = $.cookie(cookieName),
+          checkSum;
 
-      if (counter > 0) {
-        $this.hide();
-        counter--;
-        $.cookie(cookieName, counter, {path:'/'});
+      if (typeof(cookieCheckSum) === 'undefined') {
+        $this.show();
       } else {
-        $.cookie(cookieName, null, {path:'/'});
+        checkSum = _hashCode($this.text());
+        if (checkSum != cookieCheckSum) {
+          $this.show();
+        }
       }
 
+
       $this.find(".foswikiBroadcastMessageClose").on("click", function() {
-        if (counter > 0) {
-          $this.slideDown("fast");
-          $.cookie(cookieName, null, {path:'/'});
-        } else {
-          $this.slideUp("fast");
-          $.cookie(cookieName, 4, {path:'/'});
-        }
+        checkSum = checkSum || _hashCode($this.text());
+
+        $this.slideUp("fast");
+        $.cookie(cookieName, checkSum, {
+          path:'/',
+          domain: cookieDomain,
+          secure: cookieSecure
+        });
+
         return false;
       });
     });
 
+  }
+
+  function _hashCode(str) { 
+    var hash = 5381, i = str.length
+
+    while(i) {
+      hash = (hash * 33) ^ str.charCodeAt(--i)
+    }
+
+    return hash >>> 0;
   }
 
   /**************************************************************************

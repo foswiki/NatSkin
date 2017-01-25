@@ -1581,6 +1581,7 @@ a.natFeedIcon {
 }
 
 .foswikiBroadcastMessage {
+  display:none; /* switched on by javascript */
   position:relative;
   text-align:left;
   border-top:0;
@@ -2868,4 +2869,8 @@ a:active.natScrollTop {
   display:none !important;
 }
 
-/* rdiff */
+/* like */
+.jqLikeButton.selected .ma,
+.jqLikeButton.selected .fa {
+  color:#3D8FE0;
+}
