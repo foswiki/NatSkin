@@ -7,10 +7,10 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2016-12-30 01:49+0200\n"
+"PO-Revision-Date: 2017-01-30 17:12+0200\n"
 "Last-Translator: CH yang <dr3939@gmail.com>\n"
-"Language-Team: Traditional Chinese <http://translate.foswiki.org/projects/"
-"foswiki/distribution-master/zh_TW/>\n"
+"Language-Team: Traditional Chinese "
+"<http://translate.foswiki.org/projects/foswiki/distribution-master/zh_TW/>\n"
 "Language: zh-tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -111,7 +111,7 @@ msgstr ""
 msgid ""
 "*Note:* A group name must be a [[%SYSTEMWEB%.WikiWord][WikiWord]] and end "
 "in ...Group."
-msgstr ""
+msgstr "*注意:* 群組名必須是 [[%SYSTEMWEB%.WikiWord][WikiWord 維基字串]] 並以 ...Group 結尾。"
 
 #: templates/topbar.customato.nat.tmpl:86
 msgid "20 Minutes Tutorial"
@@ -163,7 +163,7 @@ msgstr "加到側欄"
 
 #: data/System/MySideBar.txt:106
 msgid "Add topic %1 to my sidebar navigation"
-msgstr ""
+msgstr "增加主題 %1 到我的側欄導航"
 
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:109
 msgid "Add users or groups to this group"
@@ -171,15 +171,15 @@ msgstr "增加使用者或群組到這個群組"
 
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:171
 msgid "Adding"
-msgstr ""
+msgstr "增加"
 
 #: data/System/NatSkinUserViewTemplate.txt:51
 msgid "Address"
-msgstr ""
+msgstr "地址"
 
 #: data/System/SiteMenu.txt:60
 msgid "Admin"
-msgstr ""
+msgstr "管理"
 
 #: templates/login.sudo.nat.tmpl:3
 msgid "Admin Foswiki user authentication"
@@ -187,11 +187,11 @@ msgstr "Foswiki 管理員認證"
 
 #: data/System/WebLinks.txt:13
 msgid "Admin Tools"
-msgstr ""
+msgstr "管理工具"
 
 #: data/System/SiteMenu.txt:41
 msgid "Admin docs"
-msgstr ""
+msgstr "管理文件"
 
 #: templates/search.nat.tmpl:5
 msgid "Advanced Search"
@@ -202,11 +202,10 @@ msgid "After submitting this form the e-mails will be changed."
 msgstr "表單提交後，電郵將會更新。"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:58
-#, fuzzy
 msgid ""
 "After submitting this form your password will be changed. If you've "
 "forgotten use %1 to create a new one."
-msgstr "表單提交後，您的密碼將會更新。"
+msgstr "表單提交後，您的密碼將會更新。若您忘記使用 %1 建立一個新的。"
 
 #: data/System/NatSkinResetPasswordViewTemplate.txt:101
 msgid ""
@@ -217,26 +216,23 @@ msgstr ""
 
 #: templates/copytopic.nat.tmpl:38
 msgid "Allow overwrite"
-msgstr ""
+msgstr "允許覆寫"
 
 #: templates/translatetopic.nat.tmpl:27
 msgid "Already existing translations"
-msgstr ""
+msgstr "已存在的翻譯"
 
 #: templates/messages.nat.tmpl:161
-#, fuzzy
 msgid "Alternatively go back in your browser and choose a different username."
-msgstr "請在瀏覽器回到上一頁，並以不同的名字上傳。"
+msgstr "另一方案，可在瀏覽器中回上一頁，並選擇一個不同的使用者名字。"
 
 #: templates/messages.nat.tmpl:204
-#, fuzzy
 msgid "An e-mail address is required before a password can be reset."
-msgstr "無法找到 %1 的電子郵件位址（用於密碼重置時）"
+msgstr "密碼重置前，需要一個電子郵件。"
 
 #: templates/messages.nat.tmpl:139
-#, fuzzy
 msgid "An e-mail could not be delivered."
-msgstr "電子郵件寄送失敗，請通知您的 %1 管理員 %2"
+msgstr "電子郵件無法寄送。"
 
 #: templates/moveattachment.nat.tmpl:94
 msgid ""
@@ -245,23 +241,20 @@ msgid ""
 msgstr "若本主題被其他用戶鎖住，將會出現錯誤頁提示。"
 
 #: templates/changeformsidebar.nat.tmpl:10
-#, fuzzy
 msgid "Any change you made to topic before coming to this page are preserved."
 msgstr "顯示本頁前，您對對本主題的任何修改都已保留。"
 
 #: data/System/SiteMenu.txt:64
-#, fuzzy
 msgid "Applications"
-msgstr "功能"
+msgstr "應用程式"
 
 #: templates/foswiki.nat.tmpl:27
 msgid "Attach"
 msgstr "附件"
 
 #: templates/foswiki.nat.tmpl:28
-#, fuzzy
 msgid "Attach files and images"
-msgstr "為 %1 附檔"
+msgstr "附加檔案和圖片"
 
 #: templates/messages.nat.tmpl:346
 msgid "Attachment '%1' does not exist"
@@ -281,9 +274,8 @@ msgid "Attachments"
 msgstr "附件"
 
 #: templates/attach.nat.tmpl:26
-#, fuzzy
 msgid "Attachments at %1"
-msgstr "附件 %1"
+msgstr "附件在 %1"
 
 #: templates/oopsattention.nat.tmpl:3
 msgid "Attention"
@@ -291,17 +283,15 @@ msgstr "注意"
 
 #: templates/history.nat.tmpl:82
 msgid "Author"
-msgstr ""
+msgstr "作者"
 
 #: templates/newtopic.nat.tmpl:20
-#, fuzzy
 msgid "Back one step"
-msgstr "回到主題"
+msgstr "回上一步"
 
 #: templates/view.nat.tmpl:131
-#, fuzzy
 msgid "Back to view mode"
-msgstr "回到主題"
+msgstr "回到瀏覽模式"
 
 #: templates/backlinksallwebs.nat.tmpl:6 templates/backlinksweb.nat.tmpl:5
 #: templates/foswiki.nat.tmpl:32
@@ -309,18 +299,16 @@ msgid "Backlinks"
 msgstr "反向連結"
 
 #: templates/backlinks.nat.tmpl:5
-#, fuzzy
 msgid "Backlinks to %1"
-msgstr "%2 子網中指向 %1 的反向連結"
+msgstr "%1 的反向連結"
 
 #: templates/backlinksallwebs.nat.tmpl:5
 msgid "Backlinks to %1 in all Webs"
 msgstr "所有子網中指向 %1 的反向連結"
 
 #: templates/backlinksweb.nat.tmpl:6
-#, fuzzy
 msgid "Backlinks to %1 in the %2 web"
-msgstr "%2 子網中指向 %1 的反向連結"
+msgstr "%2 子網中 %1 的反向連結"
 
 #: templates/messages.nat.tmpl:85
 msgid "Base web %1 is missing or does not exist"
@@ -328,28 +316,27 @@ msgstr "基本子網 %1 遺失或不存在"
 
 #: data/System/NatSkinStyleBrowser.txt:38
 msgid "Bordered"
-msgstr ""
+msgstr "邊界"
 
 #: data/System/NatSkinStyleBrowser.txt:44
 msgid "Both"
-msgstr ""
+msgstr "二者"
 
 #: templates/edit.nat.tmpl:306
 msgid "Breadcrumbs navigation"
-msgstr ""
+msgstr "路徑標示導覽"
 
 #: data/System/SiteMenu.txt:52
 msgid "Bugreport"
-msgstr ""
+msgstr "錯誤報告"
 
 #: templates/changes.nat.tmpl:13
 msgid "By"
-msgstr ""
+msgstr "由"
 
 #: templates/messages.nat.tmpl:203
-#, fuzzy
 msgid "Can't get an e-mail address for %1"
-msgstr "改變電子信箱"
+msgstr "無法找到 %1 的電子郵件位址"
 
 #: data/Sandbox/NatSkinTest.txt:527 data/Sandbox/NatSkinTest.txt:552
 #: templates/actionform.nat.tmpl:18 templates/changeform.nat.tmpl:26
@@ -383,9 +370,8 @@ msgid "Categories"
 msgstr "類別"
 
 #: templates/topbar.customato.nat.tmpl:75
-#, fuzzy
 msgid "Change Email Address"
-msgstr "改變電子信箱"
+msgstr "改變電子郵件位址"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:51
 #: data/System/NatSkinChangePasswordViewTemplate.txt:9
@@ -410,14 +396,12 @@ msgid "Change password"
 msgstr "修改密碼"
 
 #: templates/foswiki.nat.tmpl:117
-#, fuzzy
 msgid "Change the name and/or the location of this topic"
-msgstr "為本主題增加使用者管理設定。"
+msgstr "變更這個主題的名字和／或位置"
 
 #: templates/changes.nat.tmpl:12
-#, fuzzy
 msgid "Changed"
-msgstr "變更："
+msgstr "變更"
 
 #: templates/sidebar.nat.tmpl:56
 msgid "Changes"
@@ -427,68 +411,58 @@ msgstr "更新"
 msgid ""
 "Changing the form bares the danger of losing data not storable in the newly "
 "selected form."
-msgstr ""
+msgstr "變更表單的風險在於丟失那些不存於新表單內的數據。"
 
 #: templates/renamewebbase.nat.tmpl:88
-#, fuzzy
 msgid ""
 "Characters not allowed in topic names, such as spaces will automatically be "
 "removed."
-msgstr ""
-"建立新主題時最好使用 %1 ，否則無法自動產生連結。其他不被允許作為主題名稱的字"
-"元，如：空格等將被自動刪除。"
+msgstr "不被允許作為主題名稱的字元，如：空格等將被自動刪除。"
 
 #: templates/foswiki.nat.tmpl:70
 msgid "Chat"
-msgstr ""
+msgstr "聊天"
 
 #: templates/foswiki.nat.tmpl:71
-#, fuzzy
 msgid "Chat about this topic"
-msgstr "建立這個主題"
+msgstr "討論這個主題"
 
 #: templates/childtopics.nat.tmpl:4 templates/childtopics.nat.tmpl:5
-#, fuzzy
 msgid "Child topics"
-msgstr "在 %1 子網內的子主題"
+msgstr "子主題"
 
 #: templates/childtopics.nat.tmpl:10
-#, fuzzy
 msgid "Child topics of %1"
-msgstr "在 %1 子網內的子主題"
+msgstr "%1 的子主題"
 
 #: templates/foswiki.nat.tmpl:42
 msgid "Children"
-msgstr ""
+msgstr "子主題"
 
 #: templates/edit.nat.tmpl:34
 msgid "Chinese"
-msgstr ""
+msgstr "中文"
 
 #: data/System/UserRegistrationViewTemplate.txt:197
-#, fuzzy
 msgid "Choose a <nop>WikiName"
-msgstr "<nop>主題名稱:"
+msgstr "選擇一個 <nop>WikiName 維基名稱"
 
 #: data/System/UserRegistrationViewTemplate.txt:134
-#, fuzzy
 msgid "Choose a login name"
-msgstr "請輸入登入帳號。"
+msgstr "輸入登入名稱"
 
 #: templates/changeform.nat.tmpl:8
 msgid "Choose a new form for %1"
-msgstr "為 %1 選個新表單"
+msgstr "為 %1 選一個新表單"
 
 #: data/System/UserRegistrationViewTemplate.txt:158
-#, fuzzy
 msgid "Choose a password"
-msgstr "修改密碼"
+msgstr "選擇一個密碼"
 
 #: templates/messages.nat.tmpl:41
-#, fuzzy
 msgid ""
 "Chose a topic name that is a %1 or check the allow non-<nop>WikiWord box."
-msgstr "輸入 WikiWord 為主題名或是點選允許非 WikiWord 選項。"
+msgstr "選擇一個主題名稱為 %1 或點選允許非 <nop>WikiWord 選項。"
 
 #: templates/renamebase.nat.tmpl:87 templates/renamewebbase.nat.tmpl:52
 msgid "Clear all"
@@ -496,16 +470,15 @@ msgstr "全部清除"
 
 #: templates/copytopic.nat.tmpl:40
 msgid "Clear destination before copying"
-msgstr ""
+msgstr "複製前清除內容"
 
 #: templates/renamebase.nat.tmpl:87 templates/renamewebbase.nat.tmpl:52
-#, fuzzy
 msgid "Clear selection"
-msgstr "功能"
+msgstr "清除選項"
 
 #: templates/foswiki.nat.tmpl:66
 msgid "Click to like/unlike this topic"
-msgstr ""
+msgstr "選擇喜歡／不喜歡這個主題"
 
 #: templates/attach.nat.tmpl:20 templates/backlinks.nat.tmpl:21
 #: templates/backlinksallwebs.nat.tmpl:18 templates/backlinksweb.nat.tmpl:13
@@ -517,15 +490,15 @@ msgstr "關閉"
 
 #: templates/view.nat.tmpl:205
 msgid "Close broadcast message"
-msgstr ""
+msgstr "關閉廣播訊息"
 
 #: templates/foswiki.nat.tmpl:126 templates/foswiki.nat.tmpl:127
 msgid "Close this dialog"
-msgstr ""
+msgstr "關閉這個對話"
 
 #: data/System/UserRegistrationViewTemplate.txt:268
 msgid "Collaboration details"
-msgstr ""
+msgstr "合作細節"
 
 #: templates/messages.nat.tmpl:90
 msgid "Color %1 has an invalid format"
@@ -536,28 +509,24 @@ msgid "Comment"
 msgstr "評論"
 
 #: templates/edit.nat.tmpl:327
-#, fuzzy
 msgid "Comment settings"
-msgstr "評論:"
+msgstr "評論設定"
 
 #: templates/copytopic.nat.tmpl:33 templates/edit.nat.tmpl:264
-#, fuzzy
 msgid "Comments"
-msgstr "評論:"
+msgstr "評論"
 
 #: templates/compare.nat.tmpl:17 templates/history.nat.tmpl:50
-#, fuzzy
 msgid "Compare"
-msgstr "(比較)"
+msgstr "比較"
 
 #: templates/print.nat.tmpl:66
-#, fuzzy
 msgid "Confidential"
-msgstr "衝突"
+msgstr "機密"
 
 #: data/System/SiteMenu.txt:72
 msgid "Configure Foswiki"
-msgstr ""
+msgstr "設定 Foswiki"
 
 #: templates/renameconfirm.nat.tmpl:4 templates/renamewebconfirm.nat.tmpl:2
 msgid "Confirm rename or move"
@@ -572,13 +541,11 @@ msgid "Contact %1 if you have any questions."
 msgstr "如有問題，請聯繫 %1。"
 
 #: data/System/UserRegistrationViewTemplate.txt:27
-#, fuzzy
 msgid ""
 "Contact <a href='%1'>the site administrator</a> for any further questions."
-msgstr "聯絡 <a href=\\'mailto:%1\\'>網站管理員</a> 尋求協助。"
+msgstr "聯絡<a href='%1'>網站管理員</a>尋求協助。"
 
 #: templates/edit.nat.tmpl:72
-#, fuzzy
 msgid "Content language"
 msgstr "變更語言"
 
@@ -588,16 +555,15 @@ msgstr "繼續為子網改名?"
 
 #: templates/copytopic.nat.tmpl:42 templates/foswiki.nat.tmpl:247
 msgid "Copy"
-msgstr ""
+msgstr "複製"
 
 #: templates/copytopic.nat.tmpl:15 templates/foswiki.nat.tmpl:248
 msgid "Copy topic"
 msgstr "複製主題"
 
 #: templates/messages.nat.tmpl:285
-#, fuzzy
 msgid "Could not find template =%1="
-msgstr "找不到範本"
+msgstr "找不到範本 =%1="
 
 #: templates/messages.nat.tmpl:209
 msgid "Could not save %1."
@@ -605,51 +571,42 @@ msgstr "%1 無法存檔。"
 
 #: data/System/NatSkinUserViewTemplate.txt:53
 #: data/System/UserRegistrationViewTemplate.txt:241
-#, fuzzy
 msgid "Country"
-msgstr "國家："
+msgstr "國家"
 
 #: templates/404.nat.tmpl:50 templates/newtopic.nat.tmpl:23
-#, fuzzy
 msgid "Create"
-msgstr "建立群組"
+msgstr "建立"
 
 #: templates/newtopic.old.tmpl:3 templates/newtopic.old.tmpl:4
-#, fuzzy
 msgid "Create a Topic"
-msgstr "建立新主題"
+msgstr "建立主題"
 
 #: templates/newtopic.nat.tmpl:3 templates/newtopic.old.tmpl:5
-#, fuzzy
 msgid "Create a Topic in %1"
-msgstr "在 %1 子網中建立新主題"
+msgstr "在 %1 建立主題"
 
 #: templates/foswiki.nat.tmpl:249
 msgid "Create a copy of this topic under a new name"
-msgstr ""
+msgstr "用新名稱建立此主題的副本"
 
 #: templates/foswiki.nat.tmpl:172
-#, fuzzy
 msgid "Create a new topic in the %1 web"
 msgstr "在 %1 子網中建立新主題"
 
 #: templates/foswiki.nat.tmpl:137
-#, fuzzy
 msgid "Create a new topic serving as a translation for this topic"
-msgstr "存檔後建立一個新的主題版本"
+msgstr "建一個新主題作為此主題的翻譯"
 
 #: templates/translatetopic.nat.tmpl:84
-#, fuzzy
 msgid "Create a new translation"
-msgstr "建立新表格"
+msgstr "建立新翻譯"
 
 #: data/System/SiteMenu.txt:74 data/System/WebCreateNewWeb.txt:3
-#, fuzzy
 msgid "Create a new web"
-msgstr "建立新表格"
+msgstr "建立新子網"
 
 #: templates/sidebar.nat.tmpl:23
-#, fuzzy
 msgid "Create a personal sidebar"
 msgstr "建立個人的側欄"
 
@@ -658,31 +615,28 @@ msgid "Create the topic"
 msgstr "建立主題"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:115
-#, fuzzy
 msgid "Current password"
-msgstr "目前的密碼:"
+msgstr "目前的密碼"
 
 #: templates/renamewebbase.nat.tmpl:61
 msgid "Currently being edited"
-msgstr ""
+msgstr "目前正在編輯"
 
 #: templates/print.nat.tmpl:67
 msgid "Custom"
-msgstr ""
+msgstr "自定"
 
 #: templates/edit.nat.tmpl:35
 msgid "Danish"
-msgstr ""
+msgstr "丹麥語"
 
 #: templates/edit.nat.tmpl:236
-#, fuzzy
 msgid "Data form"
-msgstr "資料行"
+msgstr "資料表"
 
 #: templates/copytopic.nat.tmpl:32
-#, fuzzy
 msgid "DataForm"
-msgstr "表單"
+msgstr "資料表"
 
 #: templates/history.nat.tmpl:81
 msgid "Date"
@@ -694,14 +648,12 @@ msgid "Default"
 msgstr "預設"
 
 #: templates/newtopic.old.tmpl:120
-#, fuzzy
 msgid "Default topic as defined in WebTopicEditTemplate"
-msgstr "預設定義於 %1 內"
+msgstr "預設主題定義於 WebTopicEditTemplate 中"
 
 #: templates/newtopic.nat.tmpl:122 templates/newtopic.nat.tmpl:51
-#, fuzzy
 msgid "Default wiki content"
-msgstr "刪除主題"
+msgstr "預設維基內容"
 
 #: templates/foswiki.nat.tmpl:110 templates/renamedelete.nat.tmpl:13
 #: templates/renamedelete.nat.tmpl:6 templates/renamewebdelete.nat.tmpl:3
@@ -709,48 +661,41 @@ msgid "Delete"
 msgstr "刪除"
 
 #: templates/renamedelete.nat.tmpl:5
-#, fuzzy
 msgid "Delete %1"
-msgstr "刪除"
+msgstr "刪除 %1"
 
 #: templates/moveattachment.nat.tmpl:9
-#, fuzzy
 msgid "Delete attachment '%1'"
-msgstr "刪除附件 %1"
+msgstr "刪除附件 '%1'"
 
 #: templates/foswiki.nat.tmpl:111
-#, fuzzy
 msgid "Delete this topic"
-msgstr "刪除主題"
+msgstr "刪除此主題"
 
 #: templates/attachsidebar.nat.tmpl:6
 #: templates/moveattachmentsidebar.nat.tmpl:6
-#, fuzzy
 msgid "Deleting attachments"
-msgstr "刪除附件 %1"
+msgstr "刪除附件"
 
 #: templates/renamesidebar.nat.tmpl:6
-#, fuzzy
 msgid "Deleting topics"
 msgstr "刪除主題"
 
 #: templates/rename.nat.tmpl:7 templates/translatetopic.nat.tmpl:123
 msgid "Derive from title"
-msgstr ""
+msgstr "取自標題"
 
 #: templates/copytopic.nat.tmpl:23
-#, fuzzy
 msgid "Destination"
-msgstr "描述"
+msgstr "目的地"
 
 #: data/System/SiteMenu.txt:42
 msgid "Developer docs"
-msgstr ""
+msgstr "開發者文件"
 
 #: templates/login.nat.tmpl:57
-#, fuzzy
 msgid "Did you forget your password?"
-msgstr "忘記密碼?"
+msgstr "您忘記密碼？"
 
 #: templates/messages.nat.tmpl:159
 msgid "Did you want to [[%1][reset %2's password]]?"
@@ -758,73 +703,68 @@ msgstr "您是否想 [[%1][重設 %2 的密碼]]?"
 
 #: templates/foswiki.nat.tmpl:242
 msgid "Diff"
-msgstr ""
+msgstr "差異"
 
 #: templates/compare.nat.tmpl:7 templates/rdiff.nat.tmpl:20
 #: templates/rdiff.nat.tmpl:9
-#, fuzzy
 msgid "Difference"
-msgstr "差異:"
+msgstr "差異"
 
 #: templates/webdav_folder.nat.tmpl:10
-#, fuzzy
 msgid "Directory"
-msgstr "歷史"
+msgstr "目錄"
 
 #: templates/edit.nat.tmpl:128
 msgid "Display settings"
-msgstr ""
+msgstr "顯示設定"
 
 #: templates/foswiki.nat.tmpl:244
 msgid "Display the most recent change of this topic"
-msgstr ""
+msgstr "顯示本主題最近的變更"
 
 #: templates/foswiki.nat.tmpl:181
 msgid "Display this topic in PDF format"
-msgstr ""
+msgstr "本主題以 PDF 格示顯示"
 
 #: templates/foswiki.nat.tmpl:49
 msgid "Display this topic in a printer-friendly manner"
-msgstr ""
+msgstr "本主題有列印友善方式顯示"
 
 #: templates/foswiki.nat.tmpl:39
-#, fuzzy
 msgid "Display this version of the topic"
-msgstr "列印本主題 (p)"
+msgstr "顯示本主題的這個版本"
 
 #: data/System/MySideBar.txt:34
 msgid "Do you want to *delete* the old sidebar and then create a new one?"
-msgstr ""
+msgstr "您要 *刪除* 舊的側欄，然後再創建一個新欄？"
 
 #: templates/login.nat.tmpl:61
 msgid "Do you want to become a registered user?"
-msgstr ""
+msgstr "您想成為一個註冊使用者？"
 
 #: templates/messages.nat.tmpl:293
-#, fuzzy
 msgid "Don't forget to check your topic settings."
-msgstr "別忘了檢查您的主題設定"
+msgstr "別忘了檢查您的主題設定。"
 
 #: templates/foswiki.nat.tmpl:212
 msgid "Download"
-msgstr ""
+msgstr "下載"
 
 #: templates/foswiki.nat.tmpl:214
 msgid "Download assets from an external url and attach them to this topic"
-msgstr ""
+msgstr "從外部網址下載資源並將其附加到此主題"
 
 #: templates/foswiki.nat.tmpl:213
 msgid "Download external resource"
-msgstr ""
+msgstr "下載外部資源"
 
 #: templates/print.nat.tmpl:65
 msgid "Draft"
-msgstr ""
+msgstr "草稿"
 
 #: templates/messages.nat.tmpl:237
-#, fuzzy
 msgid "During deletion of attachment =%1= an error was found."
-msgstr "移動附件 =%1= 到 %2 時發生錯誤。"
+msgstr "刪除附件 =%1= 時發生錯誤。"
 
 #: templates/messages.nat.tmpl:367 templates/messages.nat.tmpl:380
 msgid ""
@@ -833,132 +773,113 @@ msgid ""
 msgstr "刪除附件 =%1= 時發生錯誤。請通知 %2 管理員。"
 
 #: templates/messages.nat.tmpl:368
-#, fuzzy
 msgid ""
 "During move of attachment %1 to %2 an error was found. Please notify your %3 "
 "administrator."
-msgstr "刪除附件 =%1= 時發生錯誤。請通知 %2 管理員。"
+msgstr "移動附件 %1到 %2 時發生錯誤。請通知您的管理員 %3 。"
 
 #: templates/messages.nat.tmpl:46
-#, fuzzy
 msgid "During rename of topic %1 to %2 an error (%3) was found."
-msgstr "變更子網名稱 %1 到 %2 時發生錯誤。"
+msgstr "變更主題名稱 %1 到 %2 時發生錯誤 (%3)。"
 
 #: templates/messages.nat.tmpl:53
-#, fuzzy
 msgid "During rename of web %1 to %2 an error (%3) was found."
-msgstr "變更子網名稱 %1 到 %2 時發生錯誤。"
+msgstr "變更子網名稱 %1 到 %2 時發生錯誤 (%3)。"
 
 #: templates/messages.nat.tmpl:223
-#, fuzzy
 msgid "During save of %1 an error was found by the version control system."
-msgstr "主題 %1 存檔時發生版本控制錯誤。請通知 %2 管理員。"
+msgstr "%1 存檔時版本控制系統發生錯誤。"
 
 #: templates/edit.nat.tmpl:36
 msgid "Dutch"
-msgstr ""
+msgstr "荷蘭語"
 
 #: templates/foswiki.nat.tmpl:85
 msgid "Edit"
 msgstr "編輯"
 
 #: templates/foswiki.nat.tmpl:80
-#, fuzzy
 msgid "Edit Raw"
-msgstr "編輯"
+msgstr "編輯源碼"
 
 #: templates/oopsleaseconflict.nat.tmpl:44
-#, fuzzy
 msgid "Edit anyway"
 msgstr "強制編輯"
 
 #: templates/foswiki.nat.tmpl:90
-#, fuzzy
 msgid "Edit form"
-msgstr "編輯自"
+msgstr "編輯表單"
 
 #: templates/foswiki.nat.tmpl:91
-#, fuzzy
 msgid "Edit form data"
-msgstr "表單資料"
+msgstr "編輯表單資料"
 
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:98
-#, fuzzy
 msgid "Edit group"
-msgstr "建立群組"
+msgstr "編輯群組"
 
 #: templates/foswiki.nat.tmpl:102
-#, fuzzy
 msgid "Edit hidden preference settings of this topic"
-msgstr "編輯主題屬性設定"
+msgstr "編輯本主題的隱藏屬性設定"
 
 #: templates/sidebar.nat.tmpl:7
 msgid "Edit my sidebar"
-msgstr ""
+msgstr "編輯我的側欄"
 
 #: templates/edit.nat.tmpl:93
-#, fuzzy
 msgid "Edit settings"
-msgstr "編輯文本"
+msgstr "編輯設定"
 
 #: templates/foswiki.nat.tmpl:95
 msgid "Edit text"
 msgstr "編輯文本"
 
 #: templates/foswiki.nat.tmpl:96
-#, fuzzy
 msgid "Edit text data"
-msgstr "編輯文本"
+msgstr "編輯內文資料"
 
 #: templates/foswiki.nat.tmpl:92
-#, fuzzy
 msgid "Edit the form data of this topic"
-msgstr "編輯本主題的設定…"
+msgstr "編輯本主題的表單資料"
 
 #: templates/foswiki.nat.tmpl:82
-#, fuzzy
 msgid "Edit the raw text of this topic"
-msgstr "編輯本主題的設定…"
+msgstr "編輯本主題的源碼"
 
 #: templates/foswiki.nat.tmpl:97
-#, fuzzy
 msgid "Edit the text data of this topic"
-msgstr "編輯本主題的設定…"
+msgstr "編輯本主題的內文資料"
 
 #: templates/foswiki.nat.tmpl:86 templates/foswiki.nat.tmpl:87
-#, fuzzy
 msgid "Edit this topic"
-msgstr "編輯本主題內文 (e)"
+msgstr "編輯本主題"
 
 #: templates/foswiki.nat.tmpl:101
-#, fuzzy
 msgid "Edit topic preferences"
-msgstr "編輯主題屬性設定"
+msgstr "編輯主題設定"
 
 #: templates/foswiki.nat.tmpl:81
 msgid "Edit wiki markup"
-msgstr ""
+msgstr "編輯維基標記"
 
 #: templates/edit.nat.tmpl:37
 msgid "English"
-msgstr ""
+msgstr "英文"
 
 #: data/System/UserRegistrationViewTemplate.txt:360
-#, fuzzy
 msgid "Enter a WikiName"
-msgstr "請輸入一個 WikiName。"
+msgstr "請輸入一個 WikiName"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:189
 #: data/System/UserRegistrationViewTemplate.txt:355
-#, fuzzy
 msgid "Enter a login name"
-msgstr "輸入父題名"
+msgstr "輸入登入名稱"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:131
 msgid ""
 "Enter a new password. Please don't use a trivial password that could easily "
 "be guessed."
-msgstr ""
+msgstr "輸入一個新的密碼。請不要使用容易猜到的簡易密碼。"
 
 #: templates/login.nat.tmpl:14
 msgid "Enter a new username and password to change identity"
@@ -966,41 +887,36 @@ msgstr "輸入新用戶名和密碼以改變身份"
 
 #: data/System/UserRegistrationViewTemplate.txt:361
 msgid "Enter a valid WikiWord"
-msgstr ""
+msgstr "輸入一個合適的維基字"
 
 #: data/System/UserRegistrationViewTemplate.txt:356
-#, fuzzy
 msgid "Enter at least %1 characters"
-msgstr "本站的密碼至少要 %1 個字元"
+msgstr "請輸入至少 %1 個字元"
 
 #: templates/login.sudo.nat.tmpl:19
-#, fuzzy
 msgid "Enter the %WIKITOOLNAME% administrator user or login as set in %1"
-msgstr "輸入 Wiki 管理員或依 %1 設定登入"
+msgstr "輸入 %WIKITOOLNAME% 管理員或依 %1 設定登入"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:118
 msgid "Enter the current password for the given !LoginName."
-msgstr ""
+msgstr "輸入 !LoginName 的目前密碼。"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:199
 #: data/System/UserRegistrationViewTemplate.txt:369
-#, fuzzy
 msgid "Enter the same password as above"
-msgstr "請輸入和上面相同的密碼。"
+msgstr "輸入和上面相同的密碼"
 
 #: templates/searchbox.nat.tmpl:6
 msgid "Enter topic name or a search string"
-msgstr ""
+msgstr "輸入主題名稱或一搜尋字串"
 
 #: data/System/UserRegistrationViewTemplate.txt:352
-#, fuzzy
 msgid "Enter your first name"
-msgstr "請輸入您的名字。"
+msgstr "輸入您的名字"
 
 #: data/System/UserRegistrationViewTemplate.txt:353
-#, fuzzy
 msgid "Enter your last name"
-msgstr "請輸入您的姓。"
+msgstr "輸入您的姓"
 
 #: templates/messages.nat.tmpl:132
 msgid "Error registering user %1"
@@ -1016,25 +932,24 @@ msgstr "錯誤"
 
 #: templates/print.nat.tmpl:28
 msgid "Export"
-msgstr ""
+msgstr "輸出"
 
 #: templates/print.nat.tmpl:7
 msgid "Export to PDF"
-msgstr ""
+msgstr "輸出成 PDF"
 
 #: templates/foswiki.nat.tmpl:180
 msgid "Export topic to PDF"
-msgstr ""
+msgstr "主題輸出成 PDF"
 
 #: data/System/WebLinks.txt:9
 msgid "FAQ"
-msgstr ""
+msgstr "常問問題"
 
 #: templates/attachsidebar.nat.tmpl:4
 #: templates/moveattachmentsidebar.nat.tmpl:4
-#, fuzzy
 msgid "File attachments"
-msgstr "主題附件"
+msgstr "檔案附件"
 
 #: templates/messages.nat.tmpl:248
 msgid "File has been uploaded with different name"
@@ -1042,21 +957,19 @@ msgstr "檔案已用其他名稱上傳"
 
 #: data/System/NatSkinWikiUsersViewTemplate.txt:26
 msgid "Filter"
-msgstr ""
+msgstr "篩選器"
 
 #: templates/foswiki.nat.tmpl:33
-#, fuzzy
 msgid "Find backlinks"
-msgstr "反向連結"
+msgstr "尋找反向連結"
 
 #: templates/foswiki.nat.tmpl:43
-#, fuzzy
 msgid "Find child topics"
-msgstr "尋找相似主題"
+msgstr "尋找子主題"
 
 #: templates/edit.nat.tmpl:38
 msgid "Finnish"
-msgstr ""
+msgstr "芬蘭語"
 
 #: templates/foswiki.nat.tmpl:222
 msgid "First"
@@ -1064,14 +977,13 @@ msgstr "名"
 
 #: data/System/NatSkinStyleBrowser.txt:36
 msgid "Fixed"
-msgstr ""
+msgstr "固定"
 
 #: data/System/NatSkinStyleBrowser.txt:37
 msgid "Fluid"
-msgstr ""
+msgstr "液體"
 
 #: templates/copytopic.nat.tmpl:39
-#, fuzzy
 msgid "Force a new revision"
 msgstr "強制新版本"
 
@@ -1080,18 +992,16 @@ msgid "Form"
 msgstr "表單"
 
 #: templates/changeformsidebar.nat.tmpl:4
-#, fuzzy
 msgid "Form-based input"
-msgstr "由表格輸入"
+msgstr "基於表單的輸入"
 
 #: templates/edit.nat.tmpl:336
-#, fuzzy
 msgid "Format"
-msgstr "表單"
+msgstr "格式"
 
 #: data/System/SiteMenu.txt:50
 msgid "Foswiki FAQ"
-msgstr ""
+msgstr "Foswiki 常問問題"
 
 #: templates/translatetopic.nat.tmpl:113
 msgid "Free form topic title in target language."
@@ -1124,26 +1034,19 @@ msgid "Get a fresh version <a href='%1' rel='nofollow'>here</a>."
 msgstr "取得新版 <a href='%1' rel='nofollow'>這裡</a>。"
 
 #: templates/foswiki.nat.tmpl:198 templates/foswiki.nat.tmpl:200
-#, fuzzy
 msgid "Get an email notification whenever this topic changes"
-msgstr "主題更新的自動通知"
+msgstr "主題更新時取得電郵通知"
 
 #: templates/renamesidebar.nat.tmpl:10
-#, fuzzy
 msgid ""
 "Get help on <a href='%1' target='_blank'>Renaming and moving topics</a>."
-msgstr ""
-"<a target='ManagingTopics' class='foswikiPopUp' href='%1' rel='nofollow'>主題"
-"移動和改名</a>的說明。"
+msgstr "<a href='%1' target='_blank'>主題移動和改名</a>的說明。"
 
 #: templates/renamewebbase.nat.tmpl:86
-#, fuzzy
 msgid ""
 "Get help on <a target='_blank' href='%1' rel='nofollow'>Renaming and moving "
 "webs</a>."
-msgstr ""
-"<a target='ManagingWebs' class='foswikiPopUp' href='%1' rel='nofollow'>子網移"
-"動和改名</a>的說明。"
+msgstr "<a target='_blank' href='%1' rel='nofollow'>子網移動和改名</a>的說明。"
 
 #: data/System/NatSkinWebSearchViewTemplate.txt:67
 msgid "Get notified on changes on this search"
@@ -1154,19 +1057,16 @@ msgid "Go back in your browser and save your changes locally."
 msgstr "回瀏覽器的上一頁並儲存本地所有變更。"
 
 #: templates/foswiki.nat.tmpl:229
-#, fuzzy
 msgid "Go to the following version of this topic"
-msgstr "列印本主題 (p)"
+msgstr "至本主題的以下版本"
 
 #: templates/foswiki.nat.tmpl:234
-#, fuzzy
 msgid "Go to the previous version of this topic"
-msgstr "列印本主題 (p)"
+msgstr "至本主題的前一個版本"
 
 #: templates/messages.nat.tmpl:174
-#, fuzzy
 msgid "Good examples"
-msgstr "好範例:"
+msgstr "好範例"
 
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:50
 msgid "Group name"
@@ -1190,9 +1090,8 @@ msgstr "説明"
 
 #: templates/attachsidebar.nat.tmpl:8
 #: templates/moveattachmentsidebar.nat.tmpl:8
-#, fuzzy
 msgid "Hiding attachments"
-msgstr "更多隱藏附件說明"
+msgstr "隱藏附件"
 
 #: templates/foswiki.nat.tmpl:120 templates/oopshistory.nat.tmpl:6
 msgid "History"
@@ -1203,9 +1102,8 @@ msgid "Home"
 msgstr ""
 
 #: data/System/NatSkinUserViewTemplate.txt:50
-#, fuzzy
 msgid "Homepage"
-msgstr "全頁"
+msgstr "首頁"
 
 #: templates/messages.nat.tmpl:250
 msgid ""
@@ -1238,9 +1136,8 @@ msgid "If you want to create the topic"
 msgstr "讓您想建立這主題"
 
 #: templates/messages.nat.tmpl:331
-#, fuzzy
 msgid "If you want to create the topic then [[%1][click here]]."
-msgstr "讓您想建立這主題"
+msgstr "若您想建立主題請 [[%1][點這兒]]。"
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:35
 msgid ""
@@ -1251,16 +1148,14 @@ msgstr ""
 "助。"
 
 #: templates/updatesplugin.nat.tmpl:7
-#, fuzzy
 msgid "Ignore for %1 days"
-msgstr "忽略七天"
+msgstr "忽略 %1 天"
 
 #: templates/messages.nat.tmpl:253
-#, fuzzy
 msgid ""
 "In some cases, Foswiki changes the name of the uploaded file to make it safe "
 "and accessible across all platforms"
-msgstr "某些情況下，系統會修改上傳的檔名以確保各平台都能使用:"
+msgstr "某些情況下，系統會修改上傳的檔名以確保各平台都能安全使用"
 
 #: templates/messages.nat.tmpl:164 templates/messages.nat.tmpl:170
 #: templates/messages.nat.tmpl:174
@@ -1276,19 +1171,16 @@ msgid "Index"
 msgstr "索引"
 
 #: templates/topbar.customato.nat.tmpl:81
-#, fuzzy
 msgid "Index of all Topics"
-msgstr "清除所有主題"
+msgstr "所有主題的索引"
 
 #: data/System/SiteMenu.txt:44
-#, fuzzy
 msgid "Installed plugins"
-msgstr "外掛失敗"
+msgstr "已安裝的外掛"
 
 #: templates/foswiki.nat.tmpl:131 templates/languageselector.nat.tmpl:4
-#, fuzzy
 msgid "Interface language"
-msgstr "變更語言"
+msgstr "介面語言"
 
 #: templates/messages.nat.tmpl:257
 msgid ""
@@ -1305,23 +1197,20 @@ msgid "Invalid e-mail address"
 msgstr "電子郵件地址錯誤"
 
 #: templates/edit.nat.tmpl:41
-#, fuzzy
 msgid "Italian"
-msgstr "斜體"
+msgstr "意大利文"
 
 #: templates/edit.nat.tmpl:42
 msgid "Japanese"
 msgstr ""
 
 #: templates/foswiki.nat.tmpl:224
-#, fuzzy
 msgid "Jump to the first version of this topic"
-msgstr "列印本主題 (p)"
+msgstr "跳至本主題的第一個版本"
 
 #: templates/foswiki.nat.tmpl:239
-#, fuzzy
 msgid "Jump to the most recent version of this topic"
-msgstr "列印本主題 (p)"
+msgstr "跳至本主題的最近版本"
 
 #: data/System/SiteMenu.txt:12
 msgid "Knowledge"
@@ -1333,13 +1222,12 @@ msgstr ""
 
 # please enter the name of your language here (written in the native language):
 #: templates/foswiki.nat.tmpl:130 templates/languageselector.nat.tmpl:14
-#, fuzzy
 msgid "Language"
-msgstr "正體中文"
+msgstr "語言"
 
 #: templates/foswiki.nat.tmpl:237
 msgid "Last"
-msgstr "姓"
+msgstr "最後"
 
 #: data/System/NatSkinStyleBrowser.txt:34 templates/edit.nat.tmpl:173
 msgid "Layout"
@@ -1354,9 +1242,8 @@ msgid "Like"
 msgstr ""
 
 #: templates/foswiki.nat.tmpl:59
-#, fuzzy
 msgid "Like this topic"
-msgstr "建立這個主題"
+msgstr "喜歡這個主題"
 
 #: templates/foswiki.nat.tmpl:58
 msgid "Liked"
@@ -1364,50 +1251,41 @@ msgstr ""
 
 #: templates/attachsidebar.nat.tmpl:7
 #: templates/moveattachmentsidebar.nat.tmpl:7
-#, fuzzy
 msgid "Linking to attachments"
-msgstr "更多隱藏附件說明"
+msgstr "連至附件"
 
 #: templates/foswiki.nat.tmpl:34
-#, fuzzy
 msgid "List other topics linking to this topic"
-msgstr "編輯本主題的設定…"
+msgstr "列出連至本主題的其他主題"
 
 #: templates/foswiki.nat.tmpl:44
-#, fuzzy
 msgid "List topics that branch off this topic"
-msgstr "列出所有以某字母開頭的主題:"
+msgstr "列出由本主題分支的主題"
 
 #: data/System/NatSkinUserViewTemplate.txt:52
-#, fuzzy
 msgid "Location"
-msgstr "通知"
+msgstr "地點"
 
 #: templates/renamewebbase.nat.tmpl:56
-#, fuzzy
 msgid "Locked topics"
-msgstr "到主題"
+msgstr "鎖定主題"
 
 #: templates/foswiki.nat.tmpl:3 templates/loginbase.nat.tmpl:74
 #: templates/topbar.customato.nat.tmpl:126
-#, fuzzy
 msgid "Log in"
 msgstr "登入"
 
 #: templates/foswiki.nat.tmpl:4
-#, fuzzy
 msgid "Log in to %1."
-msgstr "登入至 %1"
+msgstr "登入至 %1。"
 
 #: templates/foswiki.nat.tmpl:8 templates/topbar.customato.nat.tmpl:77
-#, fuzzy
 msgid "Log out"
 msgstr "登出"
 
 #: templates/foswiki.nat.tmpl:9
-#, fuzzy
 msgid "Log out %1"
-msgstr "登入至 %1"
+msgstr "登出 %1"
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:97
 #: data/System/NatSkinChangePasswordViewTemplate.txt:103
@@ -1416,23 +1294,20 @@ msgid "Login"
 msgstr "登入"
 
 #: data/System/UserRegistrationViewTemplate.txt:128
-#, fuzzy
 msgid "Login settings"
-msgstr "登入名:"
+msgstr "登入設定"
 
 #: data/System/UserRegistrationViewTemplate.txt:357
-#, fuzzy
 msgid "LoginName %1 is already in use"
-msgstr "這 WikiName 已被使用。"
+msgstr "這登入名字 %1 已被使用"
 
 #: data/System/WebLinks.txt:11
 msgid "Macros"
 msgstr "巨集"
 
 #: templates/messages.nat.tmpl:138
-#, fuzzy
 msgid "Mail error"
-msgstr "郵寄給"
+msgstr "郵寄錯誤"
 
 #: templates/messages.nat.tmpl:141
 msgid "Mail to"
@@ -1445,14 +1320,12 @@ msgid ""
 msgstr ""
 
 #: templates/foswiki.nat.tmpl:218
-#, fuzzy
 msgid "Manage tags in this web"
-msgstr "搜尋本子網的更多主題"
+msgstr "管理本子網的標籤"
 
 #: templates/renamesidebar.nat.tmpl:5
-#, fuzzy
 msgid "Managing topics"
-msgstr "改變主題"
+msgstr "管理主題"
 
 #: templates/renamewebsidebar.nat.tmpl:4
 msgid "Managing webs"
@@ -1481,51 +1354,43 @@ msgid "Missing or illegal web name"
 msgstr "無子網或名稱不符"
 
 #: templates/edit.nat.tmpl:364
-#, fuzzy
 msgid "Moderation"
-msgstr "通知"
+msgstr "審核"
 
 #: templates/foswiki.nat.tmpl:140
-#, fuzzy
 msgid "More"
-msgstr "更多..."
+msgstr "更多"
 
 #: templates/foswiki.nat.tmpl:115
 msgid "Move"
 msgstr "移動"
 
 #: templates/moveattachment.nat.tmpl:10
-#, fuzzy
 msgid "Move attachment '%1'"
-msgstr "移動附件 %1"
+msgstr "移動附件 '%1'"
 
 #: templates/renamedelete.nat.tmpl:33
-#, fuzzy
 msgid "Move this topic into the %1 web"
-msgstr "移動主題到子網:"
+msgstr "移動主題到子網 %1"
 
 #: templates/foswiki.nat.tmpl:112
-#, fuzzy
 msgid "Move this topic to the trash"
-msgstr "移動主題到子網:"
+msgstr "移動本主題到垃圾子網"
 
 #: templates/renamewebbase.nat.tmpl:33
-#, fuzzy
 msgid "Move to %1"
-msgstr "移到子網: %1"
+msgstr "移到 %1"
 
 #: templates/attachsidebar.nat.tmpl:5
 #: templates/moveattachmentsidebar.nat.tmpl:5
-#, fuzzy
 msgid "Moving attachments"
-msgstr "主題附件"
+msgstr "移動附件"
 
 #: templates/topbar.customato.nat.tmpl:74
 msgid "My Profile"
 msgstr "我的個資"
 
 #: templates/sidebar.nat.tmpl:33
-#, fuzzy
 msgid "My links"
 msgstr "我的連結"
 
@@ -1535,57 +1400,48 @@ msgstr ""
 
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:127
 #: data/System/WebCreateNewWeb.txt:10
-#, fuzzy
 msgid "Name"
-msgstr "名:"
+msgstr "名"
 
 #: templates/messages.nat.tmpl:66
 msgid "Name of new web is missing"
 msgstr "新子網名稱遺失"
 
 #: templates/foswiki.nat.tmpl:170
-#, fuzzy
 msgid "New"
 msgstr "新"
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:140
-#, fuzzy
 msgid "New e-mails"
-msgstr "寄信"
+msgstr "新的電子郵件"
 
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:40
-#, fuzzy
 msgid "New group"
-msgstr "建立群組"
+msgstr "新群組"
 
 #: templates/mailnotify.nat.tmpl:25 templates/mailnotify.nat.tmpl:45
-#, fuzzy
 msgid "New or changed topics in the %1 web, since %2 GMT"
-msgstr "自 %2 起，%1 中新的或變更過的主題:"
+msgstr "自 %2 GMT 起，%1 子網中新的或變更過的主題"
 
 #: templates/renamewebbase.nat.tmpl:28
-#, fuzzy
 msgid "New parent web"
-msgstr "新的父子網:"
+msgstr "新的父子網"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:127
-#, fuzzy
 msgid "New password"
-msgstr "新密碼:"
+msgstr "新密碼"
 
 #: templates/foswiki.nat.tmpl:171 templates/translatetopic.nat.tmpl:121
-#, fuzzy
 msgid "New topic"
-msgstr "檢視主題"
+msgstr "新主題"
 
 #: templates/messages.nat.tmpl:40
 msgid "New topic name %1 is not a %2"
 msgstr "新主題名 %1 不是 %2"
 
 #: templates/renamewebbase.nat.tmpl:24
-#, fuzzy
 msgid "New web name"
-msgstr "新子網名稱:"
+msgstr "新子網名稱"
 
 #: data/System/SiteMenu.txt:11
 msgid "News"
@@ -1596,9 +1452,8 @@ msgid "Next"
 msgstr "下一個"
 
 #: templates/newtopic.nat.tmpl:21
-#, fuzzy
 msgid "Next step"
-msgstr "下一個"
+msgstr "下一步"
 
 #: templates/moveattachment.nat.tmpl:47
 msgid "No"
@@ -1606,14 +1461,12 @@ msgstr "不"
 
 #: templates/childtopics.nat.tmpl:103 templates/childtopics.nat.tmpl:57
 #: templates/childtopics.nat.tmpl:77
-#, fuzzy
 msgid "No child topics"
-msgstr "無子主題。"
+msgstr "無子主題"
 
 #: templates/renamewebbase.nat.tmpl:57
-#, fuzzy
 msgid "No permission"
-msgstr "權限"
+msgstr "無權限"
 
 #: data/System/MySideBar.txt:38
 msgid "No, thanks"
@@ -1624,9 +1477,8 @@ msgid "None"
 msgstr ""
 
 #: templates/messages.nat.tmpl:252
-#, fuzzy
 msgid "Note"
-msgstr "注意:"
+msgstr "注意"
 
 #: templates/moveattachment.nat.tmpl:35
 msgid ""
@@ -1639,16 +1491,14 @@ msgid "Note that you may change the title from within the editor as well."
 msgstr ""
 
 #: data/System/SiteNothingFound.txt:2
-#, fuzzy
 msgid "Note: This topic does not exist"
-msgstr "%1 主題不存在"
+msgstr "注意：本主題不存在"
 
 #: templates/attachsidebar.nat.tmpl:9 templates/changeformsidebar.nat.tmpl:8
 #: templates/moveattachmentsidebar.nat.tmpl:9
 #: templates/renamesidebar.nat.tmpl:8 templates/renamewebsidebar.nat.tmpl:6
-#, fuzzy
 msgid "Notes"
-msgstr "注意:"
+msgstr "注意"
 
 #: templates/foswiki.nat.tmpl:252
 msgid "Nothing found. Try again!"
@@ -1663,9 +1513,8 @@ msgid "Notify"
 msgstr ""
 
 #: templates/foswiki.nat.tmpl:185
-#, fuzzy
 msgid "Notify on changes"
-msgstr "無變更"
+msgstr "變更通知"
 
 #: data/System/NatSkinStyleBrowser.txt:54 templates/changeform.nat.tmpl:25
 #: templates/messages.nat.tmpl:104 templates/messages.nat.tmpl:260
@@ -1698,19 +1547,16 @@ msgid "Open <nop>WebDAV Directory"
 msgstr ""
 
 #: templates/foswiki.nat.tmpl:72
-#, fuzzy
 msgid "Open a channel to talk about this topic"
-msgstr "重做前入改變"
+msgstr "打開一個頻道來談論這個主題"
 
 #: templates/viewraw.nat.tmpl:11
-#, fuzzy
 msgid "Open in separate window"
-msgstr "細節顯示於另一視窗"
+msgstr "於另一視窗開啟"
 
 #: data/System/UserRegistrationViewTemplate.txt:217
-#, fuzzy
 msgid "Optional information"
-msgstr "可用的資訊"
+msgstr "可選資訊"
 
 #: templates/copytopic.nat.tmpl:37
 msgid "Options"
@@ -1721,24 +1567,20 @@ msgid "Or just start from the beginning in case you got lost somehow."
 msgstr ""
 
 #: data/System/NatSkinUserViewTemplate.txt:49
-#, fuzzy
 msgid "Organisation"
-msgstr "組織連結:"
+msgstr "組織"
 
 #: data/System/UserRegistrationViewTemplate.txt:223
-#, fuzzy
 msgid "Organisation Name"
-msgstr "組織名稱："
+msgstr "組織名稱"
 
 #: data/System/UserRegistrationViewTemplate.txt:232
-#, fuzzy
 msgid "Organisation URL"
-msgstr "組織連結:"
+msgstr "組織連結"
 
 #: templates/print.nat.tmpl:50
-#, fuzzy
 msgid "Orientation"
-msgstr "文件"
+msgstr "方針"
 
 #: templates/foswiki.nat.tmpl:179
 msgid "PDF"
@@ -1753,9 +1595,8 @@ msgid "Parent"
 msgstr ""
 
 #: templates/edit.nat.tmpl:66
-#, fuzzy
 msgid "Parent topic"
-msgstr "建立主題"
+msgstr "父主題"
 
 #: data/Main/WebLinks.txt:11
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:115
@@ -1768,9 +1609,8 @@ msgid "Password changed successfully!"
 msgstr "密碼修改成功!"
 
 #: data/System/SiteMenu.txt:47
-#, fuzzy
 msgid "Password forgotten"
-msgstr "密碼不相同"
+msgstr "忘記密碼"
 
 #: templates/messages.nat.tmpl:126
 msgid "Passwords do not match"
@@ -1781,55 +1621,47 @@ msgid "Pick one of the %1."
 msgstr "從 %1 選一個。"
 
 #: templates/messages.nat.tmpl:8
-#, fuzzy
 msgid "Please e-mail %1 to request this."
-msgstr "您的用戶主題尚未更名。請用電子郵件向 %1 申請。"
+msgstr "請用電子郵件向 %1 申請。"
 
 #: data/System/UserRegistrationViewTemplate.txt:372
-#, fuzzy
 msgid "Please enter a valid e-mail address"
-msgstr "請輸入一個有效的電子郵件地址。"
+msgstr "請輸入一個有效的電子郵件地址"
 
 #: templates/oops.nat.tmpl:23
 msgid "Please go back in your browser and try again."
 msgstr "請返回瀏覽器的上一頁，並再試一次."
 
 #: templates/messages.nat.tmpl:243
-#, fuzzy
 msgid "Please notify your %1"
-msgstr "請通知您的 %1 管理員。"
+msgstr "請通知您的 %1"
 
 #: templates/messages.nat.tmpl:49
-#, fuzzy
 msgid "Please notify your %1 administrator %2"
-msgstr "請通知您的 %1 管理員。"
+msgstr "請通知您的 %1 管理員 %2"
 
 #: templates/messages.nat.tmpl:134 templates/messages.nat.tmpl:151
 #: templates/messages.nat.tmpl:230 templates/messages.nat.tmpl:56
-#, fuzzy
 msgid "Please notify your %1 administrator %2."
-msgstr "請通知您的 %1 管理員。"
+msgstr "請通知您的 %1 管理員 %2。"
 
 #: templates/newtopic.nat.tmpl:94
-#, fuzzy
 msgid "Please select a Template"
-msgstr "預設範本"
+msgstr "請選擇一個範本"
 
 #: templates/newtopic.nat.tmpl:35
 msgid "Please select a Topic Type"
 msgstr ""
 
 #: templates/messages.nat.tmpl:194
-#, fuzzy
 msgid "Please try again."
-msgstr "請輸入登入帳號。"
+msgstr "請再試一次。"
 
 #: templates/edit.nat.tmpl:44
 msgid "Portuguese"
 msgstr ""
 
 #: templates/foswiki.nat.tmpl:278
-#, fuzzy
 msgid "Powered by Foswiki"
 msgstr "本站使用 Foswiki"
 
@@ -1863,50 +1695,42 @@ msgid "Projects"
 msgstr ""
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:195
-#, fuzzy
 msgid "Provide a new password"
-msgstr "重新輸入新密碼:"
+msgstr "請輸入新的密碼"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:192
 #: data/System/UserRegistrationViewTemplate.txt:365
-#, fuzzy
 msgid "Provide a password"
-msgstr "密碼錯誤"
+msgstr "輸入密碼"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:129
 #: data/System/UserRegistrationViewTemplate.txt:160
-#, fuzzy
 msgid "Random password"
-msgstr "密碼錯誤"
+msgstr "隨機密碼"
 
 #: templates/foswiki.nat.tmpl:75
 msgid "Raw"
 msgstr ""
 
 #: data/System/UserRegistrationViewTemplate.txt:166
-#, fuzzy
 msgid "Re-enter password"
-msgstr "重設密碼"
+msgstr "再打一次密碼"
 
 #: data/System/SiteRightBar.txt:9 templates/topbar.customato.nat.tmpl:80
-#, fuzzy
 msgid "Recent Changes"
-msgstr "最近更新的主題"
+msgstr "最近的更新"
 
 #: templates/view.nat.tmpl:132
-#, fuzzy
 msgid "Redirect from %1"
-msgstr "%1 子網中的結果"
+msgstr "由 %1 轉向"
 
 #: data/System/WebLinks.txt:10 templates/topbar.customato.nat.tmpl:89
-#, fuzzy
 msgid "Reference Manual"
-msgstr "用戶手冊"
+msgstr "參考手冊"
 
 #: data/System/SiteMenu.txt:43
-#, fuzzy
 msgid "Reference manual"
-msgstr "用戶手冊"
+msgstr "參考手冊"
 
 #: data/System/UserRegistrationViewTemplate.txt:87
 #: templates/foswiki.nat.tmpl:13
@@ -1926,9 +1750,8 @@ msgid "Remember your password?"
 msgstr "記住您的密碼?"
 
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:100
-#, fuzzy
 msgid "Remove members"
-msgstr "移除使用者…"
+msgstr "移除使用者"
 
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:171
 msgid "Removing"
@@ -1940,55 +1763,46 @@ msgid "Rename"
 msgstr "改名"
 
 #: data/System/SiteMenu.txt:75
-#, fuzzy
 msgid "Rename current web"
-msgstr "新的父子網:"
+msgstr "目前子網更名"
 
 #: templates/messages.nat.tmpl:28 templates/messages.nat.tmpl:34
 msgid "Rename failed"
 msgstr "改名失敗"
 
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:99
-#, fuzzy
 msgid "Rename group "
-msgstr "建立群組"
+msgstr "群組更名 "
 
 #: templates/renamebase.nat.tmpl:10
 msgid "Rename or move %1"
 msgstr "改名或移動 %1"
 
 #: templates/foswiki.nat.tmpl:116
-#, fuzzy
 msgid "Rename or move this topic"
 msgstr "主題改名或移動"
 
 #: templates/renamewebbase.nat.tmpl:10
-#, fuzzy
 msgid "Rename the %1 web"
-msgstr "歡迎來到 %1 子網"
+msgstr "更名子網 %1"
 
 #: templates/managetags.nat.tmpl:10
-#, fuzzy
 msgid "Rename, merge or delete tags"
-msgstr "改名，移動或刪除子網"
+msgstr "改名，合併或刪除標籤"
 
 #: templates/foswiki.nat.tmpl:219
-#, fuzzy
 msgid "Rename, merge or delete tags being used in this web"
-msgstr "改名，移動或刪除子網"
+msgstr "改名，合併或刪除本子網中使用中的標籤"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:198
-#, fuzzy
 msgid "Repeat your new password"
-msgstr "重新輸入新密碼:"
+msgstr "再次輸入您的新密碼"
 
 #: data/System/UserRegistrationViewTemplate.txt:368
-#, fuzzy
 msgid "Repeat your password"
-msgstr "記住您的密碼?"
+msgstr "再入輸入您的密碼"
 
 #: templates/validate.nat.tmpl:5
-#, fuzzy
 msgid "Request validation"
 msgstr "請求驗證"
 
@@ -2003,23 +1817,20 @@ msgid "Reset password"
 msgstr "重設密碼"
 
 #: templates/404.nat.tmpl:55
-#, fuzzy
 msgid "Restart"
-msgstr "還原"
+msgstr "重新開始"
 
 #: templates/foswiki.nat.tmpl:105 templates/history.nat.tmpl:105
 msgid "Restore"
 msgstr "還原"
 
 #: templates/foswiki.nat.tmpl:106
-#, fuzzy
 msgid "Restore previous version"
-msgstr "還原主題至版本:"
+msgstr "還原至前一版本"
 
 #: templates/history.nat.tmpl:104
-#, fuzzy
 msgid "Restore revision %1"
-msgstr "最新版本: %1"
+msgstr "還原至版本 %1"
 
 #: data/System/NatSkinWebSearchViewTemplate.txt:189
 msgid "Results from %1 web"
@@ -2030,9 +1841,8 @@ msgid "Retry"
 msgstr ""
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:135
-#, fuzzy
 msgid "Retype new password"
-msgstr "重新輸入新密碼:"
+msgstr "再次輸入新密碼"
 
 #: templates/mailnotify.nat.tmpl:39 templates/mailnotify.nat.tmpl:58
 msgid "Review recent changes in:"
@@ -2047,9 +1857,8 @@ msgid "Revision history of %1"
 msgstr "%1 的版本歷史"
 
 #: templates/edit.nat.tmpl:292
-#, fuzzy
 msgid "Revision information"
-msgstr "可用的資訊"
+msgstr "修訂資訊"
 
 #: data/System/NatSkinStyleBrowser.txt:43
 msgid "Right"
@@ -2074,14 +1883,12 @@ msgid "Search"
 msgstr "搜尋"
 
 #: templates/backlinksallwebs.nat.tmpl:21
-#, fuzzy
 msgid "Search %1 web only"
-msgstr "只搜尋 %1 子網"
+msgstr "只搜尋子網 %1"
 
 #: templates/backlinksallwebs.nat.tmpl:24
-#, fuzzy
 msgid "Search %1 web only for topics that link to here"
-msgstr "在 %1 子網中搜尋連結至此的主題"
+msgstr "在子網 %1 中搜尋連結至此的主題"
 
 #: templates/backlinksweb.nat.tmpl:16
 msgid "Search all webs"
@@ -2093,19 +1900,16 @@ msgstr "搜尋在所有子網中連結至此的主題"
 
 #: templates/renamebase.nat.tmpl:19 templates/renamedelete.nat.tmpl:16
 #: templates/renamewebbase.nat.tmpl:75
-#, fuzzy
 msgid "Search for backlinks in all webs"
-msgstr "(所有子網中的反向連結)"
+msgstr "搜尋所有子網中的反向連結"
 
 #: templates/opensearch.nat.tmpl:30
-#, fuzzy
 msgid "Search for content on %1"
-msgstr "為 %1 附圖"
+msgstr "搜尋 %1 內的內容"
 
 #: templates/opensearch.nat.tmpl:55
-#, fuzzy
 msgid "Search for persons on %1"
-msgstr "搜尋更新"
+msgstr "搜尋 %1 內的人員"
 
 #: data/System/NatSkinWebSearchViewTemplate.txt:118
 #: templates/backlinks.nat.tmpl:26 templates/renamebase.nat.tmpl:19
@@ -2114,14 +1918,12 @@ msgid "Search in all webs"
 msgstr "搜尋所有子網"
 
 #: templates/search.nat.tmpl:14
-#, fuzzy
 msgid "Search result for %1"
-msgstr "搜尋結果"
+msgstr "%1 的搜尋結果"
 
 #: templates/messages.nat.tmpl:301 templates/messages.nat.tmpl:308
-#, fuzzy
 msgid "See also"
-msgstr "也可查看:"
+msgstr "也可查看"
 
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:127
 msgid "Select"
@@ -2150,9 +1952,8 @@ msgid "Select existing translation"
 msgstr ""
 
 #: templates/translatetopic.nat.tmpl:66
-#, fuzzy
 msgid "Select language"
-msgstr "變更語言"
+msgstr "選擇語言"
 
 #: templates/managetags.nat.tmpl:22
 msgid "Select one or more existing tags to be renamed."
@@ -2163,9 +1964,8 @@ msgid "Select the [[%1.WebHome][%1]] web to delete the topic."
 msgstr ""
 
 #: data/System/UserRegistrationViewTemplate.txt:291
-#, fuzzy
 msgid "Select the groups you want to join."
-msgstr "選擇群組加入:"
+msgstr "選擇您想要加入的群組。"
 
 #: templates/managetags.nat.tmpl:29
 msgid ""
@@ -2174,9 +1974,8 @@ msgid ""
 msgstr ""
 
 #: templates/view.nat.tmpl:116
-#, fuzzy
 msgid "Select translation in %1"
-msgstr "選擇群組加入:"
+msgstr "選擇 %1 內的語言"
 
 #: templates/newtopic.old.tmpl:134
 msgid "Select which template to use while creating this topic."
@@ -2208,24 +2007,20 @@ msgid "Sidebar"
 msgstr ""
 
 #: templates/foswiki.nat.tmpl:14
-#, fuzzy
 msgid "Sign on to %1."
-msgstr "登入至 %1"
+msgstr "登入至 %1 。"
 
 #: data/System/WebLinks.txt:14
-#, fuzzy
 msgid "Site Tools"
-msgstr "更多工具"
+msgstr "網站工具"
 
 #: data/System/SiteMenu.txt:71
-#, fuzzy
 msgid "Site permissions"
-msgstr "權限"
+msgstr "網站權限"
 
 #: data/System/SiteMenu.txt:70
-#, fuzzy
 msgid "Site preferences"
-msgstr "設定屬性"
+msgstr "網站設定"
 
 #: data/System/SiteBottomBar.txt:10
 msgid "Sitemap"
@@ -2240,9 +2035,8 @@ msgid "Some characters such as =&#126;=, =$=, =@=, =%= are removed"
 msgstr "已刪除一些字元如 =&#126;=, =$=, =@=, =%="
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:30
-#, fuzzy
 msgid "Sorry, passwords can't be changed."
-msgstr "您的密碼已變更。"
+msgstr "對不起，您的密碼無法變更。"
 
 #: data/System/UserRegistrationViewTemplate.txt:26
 msgid "Sorry, registration has been temporarily disabled."
@@ -2273,14 +2067,12 @@ msgid "Statistics"
 msgstr "統計"
 
 #: templates/foswiki.nat.tmpl:198 templates/foswiki.nat.tmpl:200
-#, fuzzy
 msgid "Stop being notified about changes of this topic"
-msgstr "得到此搜尋的修改通知"
+msgstr "停止收到本主題的修改通知"
 
 #: data/System/NatSkinStyleBrowser.txt:18 templates/edit.nat.tmpl:152
-#, fuzzy
 msgid "Style"
-msgstr "好格式"
+msgstr "格式"
 
 #: data/Sandbox/NatSkinTest.txt:526 data/Sandbox/NatSkinTest.txt:551
 #: data/Sandbox/NatSkinTest.txt:578
@@ -2300,14 +2092,12 @@ msgid "Subscribe / Unsubscribe in:"
 msgstr "訂閱/退訂:"
 
 #: templates/foswiki.nat.tmpl:198 templates/foswiki.nat.tmpl:200
-#, fuzzy
 msgid "Subscribed to %1"
-msgstr "訂閱這個主題"
+msgstr "訂閱 %1"
 
 #: templates/login.sudo.nat.tmpl:7
-#, fuzzy
 msgid "Sudo login"
-msgstr "(%1 登入)"
+msgstr "Sudo 登入"
 
 #: data/System/WebCreateNewWeb.txt:18
 msgid "Summary"
@@ -2326,9 +2116,8 @@ msgid "Tel"
 msgstr ""
 
 #: templates/newtopic.old.tmpl:118
-#, fuzzy
 msgid "Template"
-msgstr "使用範本:"
+msgstr "範本"
 
 #: templates/messages.nat.tmpl:334
 msgid "Template %1 does not exist"
@@ -2336,7 +2125,7 @@ msgstr "範本 %1 不存在"
 
 #: data/System/WebCreateNewWeb.txt:27
 msgid "Template web"
-msgstr ""
+msgstr "範本子網"
 
 #: templates/copytopic.nat.tmpl:28
 msgid "Text"
