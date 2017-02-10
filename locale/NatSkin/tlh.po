@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2015-09-29 20:21+0200\n"
+"PO-Revision-Date: 2017-02-10 11:48+0200\n"
 "Last-Translator: Lieven L. Litaer <qephom@gmx.de>\n"
 "Language-Team: none\n"
 "Language: tlh\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.1\n"
+"X-Generator: Weblate 2.4\n"
 
 #: templates/oopsgeneric.nat.tmpl:5 templates/oopsgeneric.nat.tmpl:7
 #: templates/oopsgeneric.nat.tmpl:9
@@ -1117,7 +1117,7 @@ msgstr "Dotlh chu&&#39; raD"
 
 #: templates/form.nat.tmpl:13
 msgid "Form"
-msgstr "Form"
+msgstr "yu&&#39;muD"
 
 #: templates/changeformsidebar.nat.tmpl:4
 #, fuzzy
@@ -2517,6 +2517,8 @@ msgstr "qay&&#39;taH mIchvam pongqa&&#39;meH mIw:"
 #: templates/messages.nat.tmpl:133
 msgid "There has been a problem adding your user id to the Password system."
 msgstr ""
+"ngoq pegh patDaq lo&&#39;wI&&#39; <nop>ponglIj <nop>cheltaHvIS Qapbe&&#39; "
+"De&&#39;wI&&#39;."
 
 #: templates/validate.nat.tmpl:18
 msgid ""
@@ -3167,7 +3169,7 @@ msgstr "choH"
 
 #: templates/editform.nat.tmpl:2 templates/editform.nat.tmpl:4
 msgid "edit form"
-msgstr "Form choH"
+msgstr "yu&&#39;muD choH"
 
 #: templates/edittext.nat.tmpl:2 templates/edittext.nat.tmpl:3
 #, fuzzy
