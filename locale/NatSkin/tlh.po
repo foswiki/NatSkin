@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2017-02-10 11:48+0200\n"
+"PO-Revision-Date: 2017-07-18 15:12+0200\n"
 "Last-Translator: Lieven L. Litaer <qephom@gmx.de>\n"
 "Language-Team: none\n"
 "Language: tlh\n"
@@ -2666,7 +2666,7 @@ msgstr "lo&&#39;wI&&#39;, chaw&&#39; ngoq joq ghovbe&&#39;lu&&#39;"
 
 #: templates/messages.nat.tmpl:18
 msgid "Unrecognized action command %1"
-msgstr ""
+msgstr "%1 mIw yajbe&&#39;lu&&#39;"
 
 #: templates/foswiki.nat.tmpl:204
 msgid "Unsubscribe"
