@@ -122,6 +122,7 @@ pub/System/MatterTheme/geopattern.js 0644
 pub/System/MatterTheme/geopattern.js.gz 0644
 pub/System/MatterTheme/geopattern.uncompressed.js 0644
 pub/System/MatterTheme/images/bubbles.png 0644
+pub/System/MatterTheme/images/foswiki-logo.png 0644
 pub/System/MatterTheme/images/foswiki-logo.svg 0644
 pub/System/MatterTheme/Makefile 0644
 pub/System/MatterTheme/matter.css 0644
@@ -257,6 +258,8 @@ pub/System/NatSkin/NatSkinSnap12-200.png 0644
 pub/System/NatSkin/NatSkinSnap12.png 0644
 pub/System/NatSkin/NatSkinSnap13-200.png 0644
 pub/System/NatSkin/NatSkinSnap13.png 0644
+pub/System/NatSkin/NatSkinSnap14-200.jpg 0644
+pub/System/NatSkin/NatSkinSnap14.jpg 0644
 pub/System/NatSkin/NatSkinSnap1.png 0644
 pub/System/NatSkin/NatSkinSnap2-200.png 0644
 pub/System/NatSkin/NatSkinSnap2.png 0644
