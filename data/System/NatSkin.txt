@@ -123,6 +123,7 @@ to make the setting permanent.
 
 ---++ Change History
 %TABLE{columnwidths="7em" tablewidth="100%"}%
+|  12 Feb 2019: | release 6.0 comes with a new default theme "matter" |
 |  25 Jan 2017: | improved logic how broadcast messages are shown and hidden |
 |  23 Jan 2017: | replace inline css and js by proper files created by <nop>AttachContentPlugin; \
                   added support for material icons; \
@@ -175,7 +176,7 @@ to make the setting permanent.
 %META:FIELD{name="Release" title="Release" value="%25$RELEASE%25"}%
 %META:FIELD{name="Description" title="Description" value="%25$SHORTDESCRIPTION%25"}%
 %META:FIELD{name="Repository" title="Repository" value="https://github.com/foswiki/%25TOPIC%25"}%
-%META:FIELD{name="Copyright" title="Copyright" value="2003-2017, Michael Daum http://michaeldaumconsulting.com"}%
+%META:FIELD{name="Copyright" title="Copyright" value="2003-2019, Michael Daum http://michaeldaumconsulting.com"}%
 %META:FIELD{name="License" title="License" value="GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]])"}%
 %META:FIELD{name="Home" title="Home" value="Foswiki:Extensions/NatSkin"}%
 %META:FIELD{name="Support" title="Support" value="Foswiki:Support/NatSkin"}%

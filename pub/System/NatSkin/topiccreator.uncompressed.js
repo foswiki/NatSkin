@@ -1,7 +1,7 @@
 /*
  * topic creator for natskin 1.10
  *
- * (c)opyright 2015-2018 Michael Daum http://michaeldaumconsulting.com
+ * (c)opyright 2015-2019 Michael Daum http://michaeldaumconsulting.com
  *
  * Dual licensed under the MIT and GPL licenses:
  *   http://www.opensource.org/licenses/mit-license.php
