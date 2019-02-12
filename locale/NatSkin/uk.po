@@ -417,7 +417,6 @@ msgstr ""
 msgid "Can't get an e-mail address for %1"
 msgstr "Змінити електронну адресу"
 
-#: data/Sandbox/NatSkinTest.txt:527 data/Sandbox/NatSkinTest.txt:552
 #: templates/actionform.nat.tmpl:15 templates/changeform.nat.tmpl:27
 #: templates/copytopic.nat.tmpl:61 templates/kinosearch.nat.tmpl:8
 #: templates/languageselector.nat.tmpl:29 templates/loginbase.nat.tmpl:71
@@ -2508,8 +2507,6 @@ msgstr "Отримувати повідомлення про зміни за ц�
 msgid "Style"
 msgstr "ГарнийСтиль"
 
-#: data/Sandbox/NatSkinTest.txt:526 data/Sandbox/NatSkinTest.txt:551
-#: data/Sandbox/NatSkinTest.txt:578
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:114
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:57
 #: data/System/WebCreateNewWeb.txt:42 templates/languageselector.nat.tmpl:28

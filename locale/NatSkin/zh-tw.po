@@ -389,7 +389,6 @@ msgstr "由"
 msgid "Can't get an e-mail address for %1"
 msgstr "無法找到 %1 的電子郵件位址"
 
-#: data/Sandbox/NatSkinTest.txt:527 data/Sandbox/NatSkinTest.txt:552
 #: templates/actionform.nat.tmpl:15 templates/changeform.nat.tmpl:27
 #: templates/copytopic.nat.tmpl:61 templates/kinosearch.nat.tmpl:8
 #: templates/languageselector.nat.tmpl:29 templates/loginbase.nat.tmpl:71
@@ -2281,8 +2280,6 @@ msgstr "停止收到本主題的修改通知"
 msgid "Style"
 msgstr "格式"
 
-#: data/Sandbox/NatSkinTest.txt:526 data/Sandbox/NatSkinTest.txt:551
-#: data/Sandbox/NatSkinTest.txt:578
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:114
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:57
 #: data/System/WebCreateNewWeb.txt:42 templates/languageselector.nat.tmpl:28
