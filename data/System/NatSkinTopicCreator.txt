@@ -1,0 +1,103 @@
+%META:TOPICINFO{author="micha" comment="reprev" date="1525353990" format="1.1" reprev="1" version="1"}%
+%META:TOPICPARENT{name="NatSkin"}%
+---+!! %TOPIC%
+
+%TOC%
+
+---++ Description
+The NatSkin !TopicCreator is a unified way to create topics in your wiki. It especially is tailored towards the [[Foswiki:Extensions/WikiWorkbenchContrib][WikiWorkbench framework]] of wiki applications and !TopicTypes.
+The !TopicCreator automatically lets you choose the type of content as well as templates for it once deployed from within your wiki application.
+The !TopicCreator opens up in a modal dialog when clicking on the "New" button available on every page.
+
+---++ Modes of operation
+
+The !TopicCreator can operate in two modes:
+
+   1 Standard mode
+   1 !TopicType mode
+
+In Standard mode the !TopicCreator offers the same features available in standard Foswiki using the WebTopicCreator and the WebTopicEditTemplate if present.
+
+%IMAGE{"standard_mode.png" size="400x" type="frame" caption="Standard Mode" align="center"}%
+
+In this mode you simply enter a free-form !TopicTitle and optionally select a template available in the current web to create a new topic.
+
+Once a !TopicType is deployed to a web will the dialog switch over to !TopicType mode. 
+
+---++ !TopicType mode
+Creating a topic in !TopicType mode is a process in 2-3 steps:
+
+   1 select the type of content
+   1 optionally select a template
+   1 enter title and initial !DataForm details
+
+<div class="foswikiCenter">
+%IMAGE{"topictype_mode.png" size="400x" type="frame" caption="<nop>TopicType Mode, example 1"}%
+%IMAGE{"topictype_mode_2.png" size="400x" type="frame" caption="<nop>TopicType Mode, example 2"}%
+</div>
+
+In the first example there are 5 !TopicTypes deployed to the Sandbox web "Category", "Classified Topic", "Controlled Topic", "Tagged Topic" and "Workflow Definition" that you can choose from in a first step
+creating a new topic. Note further that there is a selection "Default" to create wiki content in Standard mode. 
+
+Once you selected the type of content to be created there is an optional second step to select the !TopicTemplate available in the current web tailored towards the selected !TopicType. This step will be skipped 
+automatically if there are no templates available for the selected !TopicType. Of course you may skip this step manually yourself if you like to do so.
+
+%IMAGE{"topictemplate_step.png" size="400x" type="frame" caption="Select a <nop>TopicTemplate" align="center"}%
+
+In above example "Classified Topic" has been selected in the first step. Now there are 3 additional !TopicTemplates available for this !TopicType: "ArticleTemplate", "Bookmark" and "SprintBoardTemplate" which will
+be used to seed the content area of the topic about to be created. Note that the actual choices available in each step heavily depends on the data of your wiki. You don't necessarily have these templates available
+on your system.
+
+<div class="foswikiCenter">
+%IMAGE{"create_step.png" size="400x" type="frame" caption="Select a <nop>TopicTemplate, example 1"}%
+%IMAGE{"create_step_2.png" size="400x" type="frame" caption="Select a <nop>TopicTemplate, example 2"}%
+</div>
+
+Depending on the actual implementation of the !TopicType will the final step offer a form to specify the initial properties of the topic. Most importantly will it ask for a !TopicTitle and derive a !WikiWord from it.
+
+---++ Configuring the "new link" foramt
+
+Foswiki allows to create new topic for UnknownWikiWords by rendering a specific "new topic" link as defined in the =NEWLINKFORMAT= preference settings that are best customized in your %LOCALSITEPREFS%.
+
+<verbatim class="tml">
+   * Set NEWLINKFORMAT = <a class='foswikiNewLink jqUIDialogLink' href='%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=newtopic;expand=dialog;topic=$web.$topic;render=on;topictitle=%ENCODE{"$text"}%'>$text</a>
+</verbatim>
+
+Above settings will pop up the !TopicCreator dialog whenever clicking on an unknown !WikiWord
+(given that auto-linking is enabled as well and _not_ disabled using the =NOAUTOLINK= setting).
+
+---++ Configuring the !TopicCreator steps
+
+There are a couple of preference settings that let you control which !TopicTypes and !TopicTemplates are available in the !TopicCreator dialog, besides the actual settings of the !TopicType itself.
+
+
+| *Preference* | *Description* | *Default* |
+| <b>TopicType step:</b> |||
+| =TOPICCREATOR_SHOW_DEFAULT_TYPE= | boolean switch to show/hide the "Default" choice to create topics in Standard mode | on |
+| =TOPICCREATOR_SELECT_TYPE= | name of the !TopicType initially selected | Default |
+| =TOPICCREATOR_INCLUDE_TYPE= | regular expression that !TopicTypes must match to be listed | |
+| =TOPICCREATOR_EXCLUDE_TYPE= | regular expression to exclude !TopicTypes from the list | |
+| <b>TopicTemplate step:</b> |||
+| =TOPICCREATOR_SHOW_DEFAULT_TEMPLATE= | boolean switch to show/hide the "Default" template of a !TopicType | on |
+| =TOPICCREATOR_SELECT_TEMPLATE= | name of the !TopicTempalte initially selected; this is the !TopicTemplate as configured in the !TopicType itself | Default |
+| =TOPICCREATOR_INCLUDE_TEMPLATE= | regular expression that !TopicTemplates must match to be listed | |
+| =TOPICCREATOR_EXCLUDE_TEMPLATE= | regular expression to exclude !TopicTemplates from the list | |
+| <b>Standard mode:</b> |||
+| =TOPICCREATOR_DEFAULT_INCLUDE_TEMPLATE= | regular expression that templates must match to be included in the list of templates | |
+| =TOPICCREATOR_DEFAULT_EXCLUDE_TEMPLATE= | regular expression to exclude templates from the list | |
+
+For instance in above screenshot "<nop>TopicType Mode, example 2", the default type was disabled and the "ClassifiedTopic" was selected by default using below settings:
+
+<verbatim class="tml">
+   * Set TOPICCREATOR_SHOW_DEFAULT_TYPE = off
+   * Set TOPICCREATOR_SELECT_TYPE = ClassifiedTopic
+</verbatim>
+
+
+%META:FILEATTACHMENT{name="standard_mode.png" attachment="standard_mode.png" attr="" comment="" date="1525350944" size="28045" user="micha" version="2"}%
+%META:FILEATTACHMENT{name="topictype_mode.png" attachment="topictype_mode.png" attr="" comment="" date="1525351411" size="59000" user="micha" version="2"}%
+%META:FILEATTACHMENT{name="topictype_mode_2.png" attachment="topictype_mode_2.png" attr="" comment="" date="1525351387" size="75174" user="micha" version="2"}%
+%META:FILEATTACHMENT{name="topictemplate_step.png" attachment="topictemplate_step.png" attr="" comment="" date="1525351966" size="48700" user="micha" version="1"}%
+%META:FILEATTACHMENT{name="create_step.png" attachment="create_step.png" attr="" comment="" date="1525352414" size="34754" user="micha" version="1"}%
+%META:FILEATTACHMENT{name="create_step_2.png" attachment="create_step_2.png" attr="" comment="" date="1525352521" size="44085" user="micha" version="1"}%
+%META:PREFERENCE{name="TOPICTITLE" title="TOPICTITLE" type="Local" value="NatSkin TopicCreator"}%

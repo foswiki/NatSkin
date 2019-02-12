@@ -1,1 +1,5 @@
-%TMPL:INCLUDE{"metadata.topicinteraction"}%
+%TMPL:INCLUDE{"metadata"}%
+
+%TMPL:DEF{"uploadbutton"}%%IF{"'%NATSKIN_UPLOADERENABLED{default="on"}%'='on'" 
+  then="$percntTMPL:P{\"uploadbutton::impl\"}$percnt"
+}%%TMPL:END%

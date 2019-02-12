@@ -20,7 +20,7 @@ jQuery(function($) {
       $rev1Elem.parent().parent().addClass("selected");
       $rev2Elem.parent().parent().addClass("selected");
 
-      $this.find(".natHistoryRadio").attr('disabled', 'disabled').each(function() {
+      $this.find(".natHistoryRadio").prop('disabled', true).each(function() {
         var $this = $(this),
             rev = $this.attr('name'),
             val = parseInt($this.val(), 10);
@@ -28,7 +28,7 @@ jQuery(function($) {
         if (val > 0) {
           if ((rev === 'rev2' && val > rev1) ||
               (rev === 'rev1' && val < rev2)) {
-            $this.removeAttr('disabled');
+            $this.prop('disabled', false);
           }
         }
       });
@@ -36,8 +36,8 @@ jQuery(function($) {
 
     // init gui
     updateRadio();
-    $this.find("input[name=rev1]:first").attr('disabled','disabled').attr('value', '0');
-    $this.find("input[name=rev2]:last").attr('disabled','disabled').attr('value', '0');
+    $this.find("input[name=rev1]:first").prop('disabled', true).attr('value', '0');
+    $this.find("input[name=rev2]:last").prop('disabled', true).attr('value', '0');
     $this.find(".natHistoryRadio").change(updateRadio);
 
     $this.find(".natHistoryNavi").click(function() {

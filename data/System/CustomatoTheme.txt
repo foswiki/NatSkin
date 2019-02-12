@@ -1,0 +1,5 @@
+%META:TOPICINFO{author="ProjectContributor" date="1512398496" format="1.1" version="1"}%
+%META:TOPICPARENT{name="NatSkin"}%
+---+!! %TOPIC%
+
+Foswiki theme for NatSkin. 

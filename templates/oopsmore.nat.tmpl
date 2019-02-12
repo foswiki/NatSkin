@@ -1,4 +1,4 @@
-%TMPL:INCLUDE{"oops"}%<!-- template: oopsmore.nat.tmpl -->
+%TMPL:INCLUDE{"oops"}%%{}%
 %TMPL:DEF{"bodyclass"}%natOopsMoreBody%TMPL:END%
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"tools"}%%TMPL:END%
 %TMPL:DEF{"heading"}%[[%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=more"}%][%MAKETEXT{"Tools"}%]]%TMPL:END%
@@ -9,14 +9,14 @@
 %TMPL:DEF{"message"}% <span class='foswikiAlert'>deprecated use of template '%URLPARAM{"template" default="more"}%'</span>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"content"}%<!-- -->
+%TMPL:DEF{"content"}%%{}%
 %BUTTON{
   "%MAKETEXT{"Close"}%" 
   class="foswikiRight simple"
   target="%BASEWEB%.%BASETOPIC%" 
-  icon="cross"
+  icon="%TMPL:P{"CANCEL_ICON"}%"
 }%
-%TMPL:P{"contenttitle"}%<!-- -->
-%TMPL:P{"message"}%<!-- -->
-<!-- -->%TMPL:END%
+%TMPL:P{"contenttitle"}%%{}%
+%TMPL:P{"message"}%%{}%
+%{}%%TMPL:END%
 

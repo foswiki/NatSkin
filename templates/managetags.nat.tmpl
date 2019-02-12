@@ -2,16 +2,15 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<div class="jqUIDialog foswikiFormSteps" data-modal="true" data-width="450" data-draggable="true" title="%TMPL:P{"heading"}%" id="renameTagDialog">
-%TMPL:P{"content"}%<!-- -->
-%TMPL:P{"managetags::javascript"}%<!-- -->
+%TMPL:P{"content"}%%{}%
+%TMPL:P{"managetags::javascript"}%%{}%
 </div>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"heading"}%%MAKETEXT{"Rename, merge or delete tags"}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"content"}%<!-- -->
-<form class="jqRenameTag" name="renametagform" action="%SCRIPTURLPATH{"rest"}%/ClassificationPlugin/renametag" method="post">
+%TMPL:DEF{"content"}%<form class="jqRenameTag" name="renametagform" action="%SCRIPTURLPATH{"rest"}%/ClassificationPlugin/renametag" method="post">
   <input type="hidden" name="web" value="%BASEWEB%" />
   <input type="hidden" name="topic" value="%BASEWEB%.%BASETOPIC%" />
   <div class="foswikiFormStep">
@@ -31,8 +30,7 @@
   </div>
   <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-circle-check'}">%MAKETEXT{"Submit"}%</a>
   <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Cancel"}%</a>
-</form>
-<!-- -->%TMPL:END%
+</form>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"managetags::javascript"}%<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/ClassificationPlugin/renametag.js?t=%GMTIME{"$epoch"}%'></script>%TMPL:END%

@@ -1,6 +1,5 @@
-<!-- template: body.nat.tmpl -->
 %TMPL:DEF{"defaultbodyclass"}%natBody%TMPL:END%
-%TMPL:DEF{"body"}%<body id="body" class="%TMPL:P{"body::class"}%">%TMPL:P{"defaultbody"}%%RENDERZONE{"body"}%%TMPL:P{"javascript"}%</body>%TMPL:END%
+%TMPL:DEF{"body"}%<body id="body" class="%TMPL:P{"body::class"}%">%TMPL:P{"defaultbody"}%%RENDERZONE{"body"}%</body>%TMPL:END%
 %TMPL:DEF{"body::class"}%foswikiNoJs %TMPL:P{"defaultbodyclass"}%%IF{
     "context isadmin" 
     then=" natIsAdminBody"
@@ -9,8 +8,8 @@
     then="jqFluidFont {%NATSKIN_FLUIDFONT%} "
   }%%IF{
     "'%WEB%.%TOPIC%' allows 'change'" 
-    then=" natBodyAuthorized" 
-    else=" natBodyNotAuthorized"
+    then=" natBodyAuthorized foswikiHasChangePermission" 
+    else=" natBodyNotAuthorized foswikiHasNoChangePermission"
   }%%IF{
     "context authenticated" 
     then=" natBodyAuthenticated" 
@@ -46,59 +45,76 @@
 %TMPL:DEF{"breadcrumbs"}%<div class='natBreadCrumbs'> %TMPL:P{"breadcrumbs::title"}% %TMPL:P{"breadcrumbs::contents"}%</div>
 %TMPL:DEF{"contentheader::contents"}%%TMPL:P{"breadcrumbs"}%%TMPL:END%
 %TMPL:DEF{"webmenu"}%<div class="natWebMenu clearfix foswikiContents" name="webmenu::contents" reload="web">
-%TMPL:P{"webmenu::contents"}%<!-- -->
+%TMPL:P{"webmenu::contents"}%%{}%
 </div>%TMPL:END%
 
 %TMPL:DEF{"webmenu::contents"}%<div class="natWebMenuContents clearfix"> 
-  %WEBCOMPONENT{"Menu"}% <!-- -->
+  %WEBCOMPONENT{"Menu"}% %{}%
 </div>%TMPL:END%
 
-%TMPL:DEF{"bottombar"}%<div class="natBottomBar"><div class="natBottomBarContents">
-%TMPL:P{"bottombar::contents"}%<!-- -->
-%TMPL:P{"cacheinfo"}%<!-- -->
-</div></div>%TMPL:END%
+%TMPL:DEF{"bottombar"}%<div class="natBottomBar">
+<div class="natBottomBarContents">
+%TMPL:P{"bottombar::contents"}%%{}%
+%TMPL:P{"redirectbutton"}%%{}%
+%TMPL:P{"cacheinfo"}%%{}%
+%TMPL:P{context="cookie_info" then="cookieinfo"}%%{}%
+</div>
+</div>%TMPL:END%
 
 %TMPL:DEF{"cacheinfo"}%%IF{"{Cache}{Enabled} and context view and $CACHEABLE != 'off'" 
-  then="<div class='natPageCacheBanner foswikiGrayText'>
+  then="<div class='natPageCacheBanner'>
           %MAKETEXT{"This page was cached on [_1]." args="%SERVERTIME%"}%
           %IF{"context authenticated" 
             then="%MAKETEXT{"Get a fresh version <a href='[_1]' rel='nofollow'>here</a>." args="%SCRIPTURLPATH{view}%/%BASEWEB%/%BASETOPIC%?refresh=cache"}%"
           }%</div>"
 }%%TMPL:END%
 
-%TMPL:DEF{"sidebar_container"}%<div class="natSideBar"><div class="natSideBarContents">
-%TMPL:P{"sidebar"}%
-</div></div>%TMPL:END%
+%TMPL:DEF{"cookieinfo"}%<div class='natCookieInfo'>
+  <div class='natCookieInfoContents'>
+    %MAKETEXT{"This website is using cookies. <a href='[_1]' target='_blank'>More info</a>." args="%TMPL:P{"cookieinfo::url"}%"}% 
+    <a class="natCookieInfoOK">%MAKETEXT{"That's Fine"}%</a>
+  </div>
+</div>%TMPL:END%
 
-%TMPL:DEF{"rightsidebar_container"}%<div class="natSideBar natSideBarRight"><div class="natSideBarContents">
+%TMPL:DEF{"cookieinfo::url"}%%NATSKIN_COOKIEINFO_URL{default="http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm"}%%TMPL:END%
+
+%TMPL:DEF{"sidebar_container"}%<div class="natSideBar">
+<div class="natSideBarContents">
+%TMPL:P{"sidebar"}%
+</div>
+</div>%TMPL:END%
+
+%TMPL:DEF{"rightsidebar_container"}%<div class="natSideBar natSideBarRight">
+<div class="natSideBarContents">
 %TMPL:P{"rightsidebar"}%
-</div></div>%TMPL:END%
+</div>
+</div>%TMPL:END%
 
 %TMPL:DEF{"sidebars"}%%TMPL:P{"sidebar_container"}%%TMPL:P{context="natskin_sidebar_both" then="rightsidebar_container"}%%TMPL:END%
 
 %{ columns ----------------------------------------------------------------- }%
 %TMPL:DEF{"main"}%<div class="natMiddle foswikiContents" name="main::contents" page-in-effect="%TMPL:P{"pageineffect"}%" page-out-effect="%TMPL:P{"pageouteffect"}%">
-%TMPL:P{"main::contents"}%<!-- -->
+%TMPL:P{"main::contents"}%%{}%
 </div>%TMPL:END%
 
 %TMPL:DEF{"main::contents"}%<div class="natMiddleContents clearfix">
-%TMPL:P{context="natskin_sidebar_off" else="sidebars"}%<!-- -->
+%TMPL:P{context="natskin_sidebar_off" else="sidebars"}%%{}%
 <div itemscope itemtype="http://schema.org/Article" class="natMain clearfix">
-%TMPL:P{"contentheader"}%<!-- -->
-%TMPL:P{"content_container"}%<!-- -->
-%TMPL:P{"contentfooter"}%<!-- -->
+%TMPL:P{"contentheader"}%%{}%
+%TMPL:P{"content_container"}%%{}%
+%TMPL:P{"contentfooter"}%%{}%
 </div>
 </div>%TMPL:END%
 
 %{ body contents ----------------------------------------------------------- }%
-%TMPL:DEF{"beforebodycontents"}%%TMPL:P{"broadcast"}%%TMPL:P{"toppanel"}%%TMPL:END%
+%TMPL:DEF{"beforebodycontents"}%%TMPL:P{"broadcast"}%%TMPL:P{"flashnote"}%%TMPL:P{"toppanel"}%%TMPL:END%
 
 %TMPL:DEF{"bodycontents"}%<div class="natBodyContents" id="PageTop">
-%TMPL:P{"topbar"}%<!-- -->
-%TMPL:P{context="natskin_menu_on" then="webmenu"}%<!-- -->
+%TMPL:P{"topbar"}%%{}%
+%TMPL:P{context="natskin_menu_on" then="webmenu"}%%{}%
 %TMPL:P{"main"}%
-%TMPL:P{"bottombar"}%<!-- -->
-%TMPL:P{"scrolltop"}%<!-- -->
+%TMPL:P{"bottombar"}%%{}%
+%TMPL:P{"scrolltop"}%%{}%
 <span id="PageBottom"></span>
 </div>%TMPL:END%
 

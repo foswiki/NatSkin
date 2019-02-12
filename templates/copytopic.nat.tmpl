@@ -1,45 +1,87 @@
-%TMPL:INCLUDE{"foswiki"}%<!-- template: copytopic.nat.tmpl -->
+%TMPL:INCLUDE{"foswiki"}%%{}%
 
-%{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
 <div class="jqUIDialog foswikiFormSteps" data-modal="true" data-draggable="true" data-width="450" title="%TMPL:P{"heading"}%">
-  %TMPL:P{"content"}%<!-- -->
-  %TMPL:P{"javascript"}%<!-- -->
+  %TMPL:P{"content"}%%{}%
 </div>
 </noautolink>%TMPL:END%
 
-%{ ################################################################################ }%
 %TMPL:DEF{"content"}% %TMPL:P{"copyform"}%%TMPL:END%
 
-%{ ################################################################################ }%
 %TMPL:DEF{"heading"}%%MAKETEXT{"Copy topic"}%%TMPL:END%
 
-%{ ################################################################################ }%
-%TMPL:DEF{"copyform"}%<!-- -->
+%TMPL:DEF{"copyform"}%%{}%
+%TMPL:P{"copyform::start"}%
+%TMPL:P{"copyform::destinationstep"}%
+%TMPL:P{"copyform::partsstep"}%
+%TMPL:P{"copyform::optionsstep"}%
+%TMPL:P{"copyform::advancedoptions"}%
+%TMPL:P{"copyform::end"}%
+%{}%%TMPL:END%
+
+%TMPL:DEF{"copyform::start"}%%{}%
 <form action="%SCRIPTURL{"copy"}%/%WEB%/" method="post">
 <input type="hidden" name="mode" value="topic" />
 <input type="hidden" name="source" value="%WEB%.%TOPIC%" />
+%{}%%TMPL:END%
+
+%TMPL:DEF{"copyform::destinationstep"}%%{}%
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Destination"}%:</h3>
   <input type="text" name="destination" class="foswikiInputField" value="%TOPIC%Copy" size="30" style="width:98%" /> 
 </div>
-  <div class="foswikiFormStep">
-     <h3>Parts:</h3>
-     <label><input type="checkbox" name="includepart" value="text" />%MAKETEXT{"Text"}%</label> %BR%
-     <label><input type="checkbox" name="includepart" value="attachments" />%MAKETEXT{"Attachments"}%</label> %BR%
-     <label><input type="checkbox" name="includepart" value="preferences" />%MAKETEXT{"Preferences"}%</label>%BR%
-     <label><input type="checkbox" name="includepart" value="parent" />%MAKETEXT{"Parent"}%</label>%BR%
-     <label><input type="checkbox" name="includeparts" value="form, fields" />%MAKETEXT{"DataForm"}%</label> %BR%
-     <label><input type="checkbox" name="includepart" value="comment" />%MAKETEXT{"Comments"}%</label> 
-     <div class="foswikiGrayText">%MAKETEXT{"leave unchecked to copy all"}%</div>
-   </div>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"copyform::partsstep"}%%{}%
+---
+<div class="foswikiFormStep">
+   <h3>%MAKETEXT{"Parts"}%:</h3>
+   <label><input type="checkbox" name="includepart" value="text" />%MAKETEXT{"Text"}%</label> %BR%
+   <label><input type="checkbox" name="includepart" value="attachments" />%MAKETEXT{"Attachments"}%</label> %BR%
+   <label><input type="checkbox" name="includepart" value="preferences" />%MAKETEXT{"Preferences"}%</label>%BR%
+   <label><input type="checkbox" name="includepart" value="parent" />%MAKETEXT{"Parent"}%</label>%BR%
+   <label><input type="checkbox" name="includeparts" value="form, fields" />%MAKETEXT{"DataForm"}%</label> %BR%
+   <label><input type="checkbox" name="includepart" value="comment" />%MAKETEXT{"Comments"}%</label> 
+   <div class="foswikiGrayText">%MAKETEXT{"leave unchecked to copy all"}%</div>
+</div>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"copyform::optionsstep"}%%{}%
+---
 <div class="foswikiFormStep">
   <h3>%MAKETEXT{"Options"}%:</h3>
   <label><input type="checkbox" name="onlynew" value="off">%MAKETEXT{"Allow overwrite"}%</label> %BR%
   <label><input type="checkbox" name="forcenewrevision" value="off">%MAKETEXT{"Force a new revision"}%</label> %BR%
   <label><input type="checkbox" name="clear" vlaue="on">%MAKETEXT{"Clear destination before copying"}%</label>
 </div>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"copyform::end"}%%{}%
 <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-copy'}">%MAKETEXT{"Copy"}%</a>
 <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Cancel"}%</a>
 </form>
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%
+
+%TMPL:DEF{"copyform::advancedoptions"}%%{}%
+---
+<div class="foswikiFormStep">
+<h3>%MAKETEXT{"Advanced Options"}%:</h3>
+%TMPL:P{"copyform::revisionstep"}%
+</div>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"copyform::revisionstep"}%<!-- -->
+
+  <table class='foswikiLayoutTable'>
+    <tr>
+      <th>%MAKETEXT{"From Version"}%</th>
+      <td><input type="text" name="fromrev" class="foswikiInputField" value="%REVINFO{format="$rev" rev="%URLPARAM{"rev"}%"}%" size="3" /></td>
+    </tr>
+    <tr>
+      <th>%MAKETEXT{"To Version"}%</th>
+      <td><input type="text" name="torev" class="foswikiInputField" value="%REVINFO{format="$rev" rev="%URLPARAM{"rev"}%"}%" size="3" /></td>
+    </tr>
+  </table>
+  <label><input type="checkbox" name="preservetopicinfo" value="on" checked />%MAKETEXT{"Preserver author and revision information"}%</label>
+%{}%%TMPL:END%
+

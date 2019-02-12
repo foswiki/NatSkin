@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1485333012" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ %TOPIC%
 
@@ -7,10 +7,10 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
 ---++ Implementation
 <verbatim class="tml">
 %STARTINCLUDE%<ul>
-  <li class="%IF{"$CURRENT_MENU='%USERSWEB%'" then="current" else="notcurrent"}%">[[%USERSWEB%.%HOMETOPIC%][%MAKETEXT{"Home"}%]]</li>
-  <!-- li class="%IF{"$CURRENT_MENU='News'" then="current" else="notcurrent"}%">[[News.%HOMETOPIC%][%MAKETEXT{"News"}%]]</li -->
-  <!-- li class="%IF{"$CURRENT_MENU='Knowledge'" then="current" else="notcurrent"}%">[[Knowledge.%HOMETOPIC%][%MAKETEXT{"Knowledge"}%]]</li -->
-  <!-- li class="%IF{"$CURRENT_MENU='Projects'" then="current" else="notcurrent"}%">[[Projects.%HOMETOPIC%][%MAKETEXT{"Projects"}%]]</li -->
+  <li>[[%USERSWEB%.%HOMETOPIC%][%MAKETEXT{"Home"}%]]</li>
+  <!-- li>[[News.%HOMETOPIC%]]</li -->
+  <!-- li>[[Knowledge.%HOMETOPIC%]]</li -->
+  <!-- li>[[Projects.%HOMETOPIC%]]</li -->
 %IF{"'%USERNAME%' ingroup 'AdminGroup'" 
   then="$percntINCLUDE{\"%SYSTEMWEB%.SiteMenu\" section=\"adminmenu\"}$percnt"
 }% %INCLUDE{"%SYSTEMWEB%.SiteMenu" section="helpmenu"}%
@@ -34,7 +34,7 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
 
 ---++ Help menu
 <verbatim class="tml">
-%STARTSECTION{"helpmenu"}%<li class="%IF{"$CURRENT_MENU='%SYSTEMWEB%'" then="current" else="notcurrent"}%">[[%SYSTEMWEB%.WebHome][%MAKETEXT{"Help"}%]]
+%STARTSECTION{"helpmenu"}%<li>[[%SYSTEMWEB%.WebHome][%MAKETEXT{"Help"}%]]
   <ul>
     <li>[[%SYSTEMWEB%.WelcomeGuest][%TMPL:P{"HOME_ICON"}% %MAKETEXT{"Welcome"}%]]</li>
     <li>[[%SYSTEMWEB%.UserDocumentationCategory][%TMPL:P{"DOCU_ICON"}% %MAKETEXT{"User docs"}%]]</li>

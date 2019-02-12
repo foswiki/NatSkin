@@ -1,0 +1,284 @@
+%TMPL:INCLUDE{"edit"}%
+
+%TMPL:DEF{"banner"}%%TMPL:END%
+%TMPL:DEF{"skinsettings"}%%TMPL:P{"bannersettings"}%%TMPL:PREV%%TMPL:END%
+
+%TMPL:DEF{"bannersettings"}%%TMPL:P{"bannersettings::title"}%
+%TMPL:P{"bannersettings::start"}%%{}%
+%TMPL:P{"bannersettings::mode"}%%{}%
+%TMPL:P{"bannersettings::end"}%%{}%
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::title"}%<h2>%MAKETEXT{"Banner settings"}%</h2>%TMPL:END%
+
+%TMPL:DEF{"bannersettings::start"}%%{}%
+<input type='hidden' name='Default+NATSKIN_BANNERMODE' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERTITLE' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERIMAGE' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERVIDEO' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERVIDEOLOOP' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERFOREGROUND' value='light' />
+<input type='hidden' name='Default+NATSKIN_BANNERCOLOR' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERCOLOR2' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERGRADIENT' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERTITLEENABLED' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERANIMATIONENABLED' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERTEXTEFFECT' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERPALETTE' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERSEED' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERCELLSIZE' value='30' />
+<input type='hidden' name='Default+NATSKIN_BANNERPARTICLESENABLED' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERCONNECTPARTICLES' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERSPEED' value='0.5' />
+<input type='hidden' name='Default+NATSKIN_BANNERMAXPARTICLES' value='70' />
+<input type='hidden' name='Default+NATSKIN_BANNERSIZEVARIATION' value='3' />
+<input type='hidden' name='Default+NATSKIN_BANNERPARTICLESCOLOR' value='#ffffff' />
+<div class="foswikiFormSteps">
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::mode"}%<div class="foswikiFormStep">
+<table class="foswikiLayoutTable">
+%TMPL:P{"bannersettings::mode::list"}%
+%TMPL:P{"bannersettings::mode::title"}%
+%TMPL:P{"bannersettings::mode::text"}%
+%TMPL:P{"bannersettings::mode::texteffects"}%
+%TMPL:P{"bannersettings::mode::seed"}%
+%TMPL:P{"bannersettings::mode::foreground"}%
+%TMPL:P{"bannersettings::mode::background"}%
+%TMPL:P{"bannersettings::mode::gradient"}%
+%TMPL:P{"bannersettings::mode::image"}%
+%TMPL:P{"bannersettings::mode::cellsize"}%
+%TMPL:P{"bannersettings::mode::video"}%
+%TMPL:P{"bannersettings::mode::palette"}%
+%TMPL:P{"bannersettings::mode::particles"}%
+</table>
+%TMPL:P{"bannersettings::mode::javascript"}%%{}%
+</div>%TMPL:END%
+
+
+%TMPL:DEF{"bannersettings::mode::list"}%%{}%
+  <tr class="natBannerModeSettings">
+    <th>%MAKETEXT{"Style"}%</th>
+    <td>
+      <select class="foswikiSelect" name="Local+NATSKIN_BANNERMODE">
+        <option value="" %IF{"preferences[name='NATSKIN_BANNERMODE'].value=''" then="selected"}%>%MAKETEXT{"default"}%</option>
+        <option value="off" %IF{"preferences[name='NATSKIN_BANNERMODE'].value='off'" then="selected"}%>%MAKETEXT{"off"}%</option>
+        <option value="monochrome" %IF{"preferences[name='NATSKIN_BANNERMODE'].value='monochrome'" then="selected"}%>%MAKETEXT{"monochrome"}%</option>
+        <option value="gradient" %IF{"preferences[name='NATSKIN_BANNERMODE'].value='gradient'" then="selected"}%>%MAKETEXT{"gradient"}%</option>
+        <option value="image" %IF{"preferences[name='NATSKIN_BANNERMODE'].value='image'" then="selected"}%>%MAKETEXT{"image"}%</option>
+        <option value="video" %IF{"preferences[name='NATSKIN_BANNERMODE'].value='video'" then="selected"}%>%MAKETEXT{"video"}%</option>
+        <option value="geopattern" %IF{"preferences[name='NATSKIN_BANNERMODE'].value='geopattern'" then="selected"}%>%MAKETEXT{"geo pattern"}%</option>
+        <option value="trianglify" %IF{"preferences[name='NATSKIN_BANNERMODE'].value='trianglify'" then="selected"}%>%MAKETEXT{"trianglify"}%</option>
+      </select>
+    </td>
+  </tr>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::mode::title"}%%{}%
+  <tr class="natBannerSettings natBannerTitleToggle show_on_monochrome show_on_gradient show_on_image show_on_geopattern show_on_trianglify show_on_video" style="display:none">
+    <th>%MAKETEXT{"Title"}%</th>
+    <td>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERTITLEENABLED' value="" %IF{"preferences[name='NATSKIN_BANNERTITLEENABLED'].value=''" then="checked"}% />%MAKETEXT{"default"}%</label>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERTITLEENABLED' value="on" %IF{"preferences[name='NATSKIN_BANNERTITLEENABLED'].value='on'" then="checked"}% />%MAKETEXT{"on"}%</label>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERTITLEENABLED' value="off" %IF{"preferences[name='NATSKIN_BANNERTITLEENABLED'].value='off'" then="checked"}% />%MAKETEXT{"off"}%</label>
+    </td>
+  </tr>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::mode::text"}%%{}%
+  <tr class="natBannerSettings natBannerTitleSettings show_on_monochrome show_on_gradient show_on_image show_on_geopattern show_on_trianglify show_on_video" style="display:none">
+    <th>%MAKETEXT{"Text"}%</th>
+    <td>
+      <input type="text" class="foswikiInputField" placeholder="%MAKETEXT{"default"}%" name="Local+NATSKIN_BANNERTITLE" size="80" value="%IF{
+      "preferences[name='NATSKIN_BANNERTITLE']" 
+      then="$percntENCODE{\"$percntNATSKIN_BANNERTITLE$percnt\" type=\"html\"}$percnt"
+    }%" />
+    </td>
+  </tr>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::mode::texteffects"}%%{}%
+  <tr class="natBannerSettings natBannerTitleSettings natBannerTextEffects show_on_monochrome show_on_gradient show_on_image show_on_video show_on_geopattern show_on_trianglify" style="display:none">
+    <th>%MAKETEXT{"Text Effect"}%</th>
+    <td>
+      <select class="foswikiSelect" name="Local+NATSKIN_BANNERTEXTEFFECT" data-selected="%NATSKIN_BANNERTEXTEFFECT{default=""}%">
+        <option value="" %IF{"preferences[name='NATSKIN_BANNERTEXTEFFECT'].value=''" then="selected"}%>%MAKETEXT{"default"}%</option>
+        <option value="off" %IF{"preferences[name='NATSKIN_BANNERTEXTEFFECT'].value='off'" then="selected"}%>%MAKETEXT{"off"}%</option>
+      </select>
+    <td>
+  </tr>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::mode::foreground"}%%{}%
+  <tr class="natBannerSettings natBannerTitleSettings show_on_monochrome show_on_gradient show_on_image show_on_geopattern show_on_video show_on_trianglify" style="display:none">
+    <th>%MAKETEXT{"Foreground Color"}%</th>
+    <td>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERFOREGROUND' value="light" %IF{"preferences[name='NATSKIN_BANNERFOREGROUND'].value!='dark'" then="checked"}% />%MAKETEXT{"light"}%</label>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERFOREGROUND' value="dark" %IF{"preferences[name='NATSKIN_BANNERFOREGROUND'].value='dark'" then="checked"}% />%MAKETEXT{"dark"}%</label>
+    </td>
+  </tr>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::mode::seed"}%%{}%
+  <tr class="natBannerSettings natBannerSeed show_on_trianglify show_on_geopattern" style="display:none">
+    <th>%MAKETEXT{"Seed"}%</th>
+    <td>
+      <input type="text" class="foswikiInputField" name="Local+NATSKIN_BANNERSEED" size="20" value="%NATSKIN_BANNERSEED{default=""}%" />
+    </td>
+  </tr>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::mode::background"}%%{}%
+  <tr class="natBannerSettings show_on_monochrome show_on_gradient show_on_image show_on_geopattern" style="display:none">
+    <th>%MAKETEXT{"Background Color"}%</th>
+    <td>
+      <input type="text" class="foswikiInputField jqFarbtastic" name="Local+NATSKIN_BANNERCOLOR" size="20" value="%NATSKIN_BANNERCOLOR{default=""}%" />
+    </td>
+  </tr>
+  <tr class="natBannerSettings show_on_gradient" style="display:none">
+    <th>%MAKETEXT{"Background Color"}% 2</th>
+    <td>
+      <input type="text" class="foswikiInputField jqFarbtastic" name="Local+NATSKIN_BANNERCOLOR2" size="20" value="%NATSKIN_BANNERCOLOR2{default=""}%" />
+    </td>
+  </tr>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::mode::gradient"}%%{}%
+  <tr class="natBannerSettings show_on_gradient" style="display:none">
+    <th>%MAKETEXT{"Gradient Style"}%</th>
+    <td>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERGRADIENT' value="" %IF{"preferences[name='NATSKIN_BANNERGRADIENT'].value=''" then="checked"}% />%MAKETEXT{"default"}%</label>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERGRADIENT' value="radial" %IF{"preferences[name='NATSKIN_BANNERGRADIENT'].value='radial'" then="checked"}% />%MAKETEXT{"radial"}%</label>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERGRADIENT' value="linear" %IF{"preferences[name='NATSKIN_BANNERGRADIENT'].value='linear'" then="checked"}% />%MAKETEXT{"linear"}%</label>
+    </td>
+  </tr>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::mode::cellsize"}%%{}%
+  <tr class="natBannerSettings show_on_trianglify" style="display:none">
+    <th>%MAKETEXT{"Cell Size"}%</th>
+    <td>
+      <input type="text" class="foswikiInputField" name="Local+NATSKIN_BANNERCELLSIZE" size="20" value="%NATSKIN_BANNERCELLSIZE{default="30"}%" />
+    </td>
+  </tr>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::mode::palette"}%%{}%
+  <tr class="natBannerSettings natBannerPaletteToggle show_on_trianglify" style="display:none">
+    <th>%MAKETEXT{"Colors"}%</th>
+    <td>
+      <input type="hidden" name="Local+NATSKIN_BANNERPALETTE" value="" />
+      <label><input type="radio" class="foswikiRadioButton" name="paletteToggle" value="" %IF{"preferences[name='NATSKIN_BANNERPALETTE'].value=''" then="checked"}% />%MAKETEXT{"automatic"}%</label>
+      <label><input type="radio" class="foswikiRadioButton" name="paletteToggle" value="on" %IF{"preferences[name='NATSKIN_BANNERPALETTE'].value!=''" then="checked"}% />%MAKETEXT{"palette"}%</label>
+      <div class='jqTrianglifyPaletteSelector clearfix' data-selected="%NATSKIN_BANNERPALETTE{default""}%" style="display:none">
+        <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERPALETTE' value="" /><span class='swatch clearfix'></span></label>
+      </div>
+    </td>
+  </tr>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::mode::image"}%%{}%
+  <tr class="natBannerSettings show_on_image" style="display:none">
+    <th>%MAKETEXT{"Image"}%</th>
+    <td>
+      %RENDERFOREDIT{
+        form="%SYSTEMWEB%.MoreFormfieldsPlugin"
+        field="Attachment"
+        Attachment_name="Local+NATSKIN_BANNERIMAGE"
+        Attachment_value="%NATSKIN_BANNERIMAGE{default=""}%"
+        Attachment_values="filter=\"jpe?g,JPE?G,png,PNG,gif,GIF,svg,SVG,webp,WEBP\""
+        Attachment_size="30"
+        header=""
+        footer=""
+      }%
+    </td>
+  </tr>
+  <tr class="natBannerSettings show_on_image" style="display:none">
+    <th>%MAKETEXT{"Animation"}%</th>
+    <td>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERANIMATIONENABLED' value="" %IF{"preferences[name='NATSKIN_BANNERANIMATIONENABLED'].value=''" then="checked"}% />%MAKETEXT{"default"}%</label>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERANIMATIONENABLED' value="on" %IF{"preferences[name='NATSKIN_BANNERANIMATIONENABLED'].value='on'" then="checked"}% />%MAKETEXT{"on"}%</label>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERANIMATIONENABLED' value="off" %IF{"preferences[name='NATSKIN_BANNERANIMATIONENABLED'].value='off'" then="checked"}% />%MAKETEXT{"off"}%</label>
+    </td>
+  </tr>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::mode::particles"}%%{}%
+  <tr class="natBannerSettings natBannerParticlesToggle show_on_monochrome show_on_gradient show_on_image" style="display:none">
+    <th>%MAKETEXT{"Particles"}%</th>
+    <td>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERPARTICLESENABLED' value="" %IF{"preferences[name='NATSKIN_BANNERPARTICLESENABLED'].value=''" then="checked"}% />%MAKETEXT{"default"}%</label>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERPARTICLESENABLED' value="on" %IF{"preferences[name='NATSKIN_BANNERPARTICLESENABLED'].value='on'" then="checked"}% />%MAKETEXT{"on"}%</label>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERPARTICLESENABLED' value="off" %IF{"preferences[name='NATSKIN_BANNERPARTICLESENABLED'].value='off'" then="checked"}% />%MAKETEXT{"off"}%</label>
+    </td>
+  </tr>
+  <tr class="natBannerSettings natBannerParticlesSettings show_on_monochrome show_on_gradient show_on_image" style="display:none">
+    <th>%MAKETEXT{"Particle Color"}%</th>
+    <td>
+      <input type="text" class="foswikiInputField jqFarbtastic" name="Local+NATSKIN_BANNERPARTICLESCOLOR" size="20" value="%ENCODE{"%NATSKIN_BANNERPARTICLESCOLOR{default="#ffffff"}%" type="safe"}%" />
+    </td>
+  </tr>
+  <tr class="natBannerSettings natBannerParticlesSettings show_on_monochrome show_on_gradient show_on_image" style="display:none">
+    <th>%MAKETEXT{"Connect Particles"}%</th>
+    <td>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERCONNECTPARTICLES' value="" %IF{"preferences[name='NATSKIN_BANNERCONNECTPARTICLES'].value=''" then="checked"}% />%MAKETEXT{"default"}%</label>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERCONNECTPARTICLES' value="true" %IF{"preferences[name='NATSKIN_BANNERCONNECTPARTICLES'].value='true'" then="checked"}% />%MAKETEXT{"on"}%</label>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERCONNECTPARTICLES' value="false" %IF{"preferences[name='NATSKIN_BANNERCONNECTPARTICLES'].value='false'" then="checked"}% />%MAKETEXT{"off"}%</label>
+    </td>
+  </tr>
+  <tr class="natBannerSettings natBannerParticlesSettings show_on_monochrome show_on_gradient show_on_image" style="display:none">
+    <th>%MAKETEXT{"Animation Speed"}%</th>
+    <td>
+      <input type="text" class="foswikiInputField" name="Local+NATSKIN_BANNERSPEED" size="20" value="%NATSKIN_BANNERSPEED{default="0.5"}%" />
+    </td>
+  </tr>
+  <tr class="natBannerSettings natBannerParticlesSettings show_on_monochrome show_on_gradient show_on_image" style="display:none">
+    <th>%MAKETEXT{"Maximum Particles"}%</th>
+    <td>
+      <input type="text" class="foswikiInputField" name="Local+NATSKIN_BANNERMAXPARTICLES" size="20" value="%NATSKIN_BANNERMAXPARTICLES{default="70"}%" />
+    </td>
+  </tr>
+  <tr class="natBannerSettings natBannerParticlesSettings show_on_monochrome show_on_gradient show_on_image" style="display:none">
+    <th>%MAKETEXT{"Size Variation"}%</th>
+    <td>
+      <input type="text" class="foswikiInputField" name="Local+NATSKIN_BANNERSIZEVARIATION" size="20" value="%NATSKIN_BANNERSIZEVARIATION{default="3"}%" />
+    </td>
+  </tr>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::mode::video"}%%{}%
+  <tr class="natBannerSettings show_on_video" style="display:none">
+    <th>%MAKETEXT{"Video"}%</th>
+    <td>
+      %RENDERFOREDIT{
+        form="%SYSTEMWEB%.MoreFormfieldsPlugin"
+        field="Attachment"
+        Attachment_name="Local+NATSKIN_BANNERVIDEO"
+        Attachment_value="%NATSKIN_BANNERVIDEO{default=""}%"
+        Attachment_values="filter=\"mp4,MP4,ogv,OGV,mkv,MKV,avi,AVI\""
+        Attachment_size="30"
+        header=""
+        footer=""
+      }%
+    </td>
+  </tr>
+  <tr class="natBannerSettings show_on_video" style="display:none">
+    <th>%MAKETEXT{"Loop"}%</th>
+    <td>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERVIDEOLOOP' value="" %IF{"preferences[name='NATSKIN_BANNERVIDEOLOOP'].value=''" then="checked"}% />%MAKETEXT{"default"}%</label>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERVIDEOLOOP' value="on" %IF{"preferences[name='NATSKIN_BANNERVIDEOLOOP'].value='on'" then="checked"}% />%MAKETEXT{"on"}%</label>
+      <label><input type="radio" class="foswikiRadioButton" name='Local+NATSKIN_BANNERVIDEOLOOP' value="off" %IF{"preferences[name='NATSKIN_BANNERVIDEOLOOP'].value='off'" then="checked"}% />%MAKETEXT{"off"}%</label>
+    </td>
+  </tr>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::mode::javascript"}%%JQREQUIRE{"farbtastic, select2, animate"}%%ADDTOZONE{"script" 
+  id="TRIANGLIFY"
+  requires="JQUERYPLUGIN::LIVEQUERY" 
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/trianglify.js'></script>
+<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/trianglify.init.js'></script>"
+}%%ADDTOZONE{"script"
+  id="EDIT::BANNERSETTINGS"
+  requires="JQUERYPLUGIN"
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/bannerSettings.js'></script>"
+}%</div> %TMPL:END%

@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1485333012" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 %TOC%
@@ -23,7 +23,7 @@ This is the list of variables to configure the skin style:
 
 | *Name%BR%(url param)*  | *Values* | *Description* | *Default* |
 | NATSKIN_STYLE (style) | <noautolink>%KNOWNSTYLES%</noautolink> \
-| select a predefined style | customato |
+| select a predefined style | matter |
 | NATSKIN_VARIATION (skinvariation) | <noautolink>%KNOWNVARIATIONS%</noautolink> \
 | select a style variation | none |
 | NATSKIN_LAYOUT (skinlayout) | fixed, fluid, bordered \
@@ -76,4 +76,3 @@ to the WebPreferences and add extra keyword data _per topic_ like this
 
 Caution: don't add meta data to your [[%WIKIUSERNAME%][home topic]] because it will override all
 other meta data preferences.
-

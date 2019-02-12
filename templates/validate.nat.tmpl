@@ -1,34 +1,35 @@
-%TMPL:INCLUDE{"page"}%<!-- template: validate.nat.tmpl-->
-%TMPL:DEF{"bodyclass"}%natValidateBody%TMPL:END%
-%TMPL:DEF{"content"}%<!-- -->
-<div id="foswikiLogin">
-  <h1 >%MAKETEXT{"Request validation"}%</h1>
-  <div class="foswikiFormSteps">
-    <h2 >%MAKETEXT{"Warning! Confirmation required"}%</h2>
-    <form action='%SCRIPTURLPATH{"login"}%/%WEB%/%TOPIC%' name='loginform' method='post'>
-      <input type="hidden" name="origurl" value="%ORIGURL%" />
-      <input type="hidden" name="foswikiloginaction" value="validate" />
-      <input type="hidden" name="response" value="Cancel" />
-      <literal>
-        %QUERYPARAMS{encoding="entity" format="<input type='hidden' name='$name' value='$value' />"}%
-      </literal>
-      <div class="foswikiFormStep">
-        <div class="natErrorMessage">
-          %MAKETEXT{"[_1] has received a suspicious change request from your browser." args="<nop>%WIKITOOLNAME%"}%
-          %MAKETEXT{"There is a risk that someone may be trying to use your identity to change content on [_1] without your knowledge." args="<nop>%WIKITOOLNAME%"}%
-        </div>
-        <ul>
-          <li>%MAKETEXT{"Press OK to confirm that this change was intentional."}%</li>
-          <li>%MAKETEXT{"Press Cancel otherwise."}%</li>
-        </ul>
-        %MAKETEXT{"If you are unsure what this means, read <a href='[_1]' class='foswikiPopUp'>why you are being asked to confirm</a>" args="http://foswiki.org/Support/WhyYouAreAskedToConfirm"}%:
-      </div>
-      <div class="foswikiFormStep">
-        %BUTTON{"%MAKETEXT{"OK"}%" icon="tick" id="validateChange"}%
-        %BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" type="submit"}%
-      </div>
-    </form>
-  </div>
+%TMPL:INCLUDE{"viewplain"}%%{}%
+
+%TMPL:DEF{"bodyclass"}%natValidateBody natCenteredBody%TMPL:END%
+%TMPL:DEF{"titleaction"}%%MAKETEXT{"bad request"}%%TMPL:END%
+%TMPL:DEF{"metadata"}%%TMPL:END%
+%TMPL:DEF{"banner"}%%TMPL:END%
+%TMPL:DEF{"sidebar"}%%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+
+%TMPL:DEF{"content"}%<div class="natOopsMessage" id="foswikiLogin">
+  <h1 >400 - %MAKETEXT{"Request validation"}%</h1>
+  <form action='%SCRIPTURLPATH{"login"}%/%WEB%/%TOPIC%' name='loginform' method='post'>
+    <input type="hidden" name="origurl" value="%ORIGURL%" />
+    <input type="hidden" name="foswikiloginaction" value="validate" />
+    <input type="hidden" name="response" value="Cancel" />
+    <literal>
+      %QUERYPARAMS{encoding="entity" format="<input type='hidden' name='$name' value='$value' />"}%
+    </literal>
+    <div class="natErrorMessage">
+      %MAKETEXT{"[_1] has received a suspicious change request from your browser." args="<nop>%WIKITOOLNAME%"}%
+      %MAKETEXT{"There is a risk that someone may be trying to use your identity to change content on [_1] without your knowledge." args="<nop>%WIKITOOLNAME%"}%
+    </div>
+    <ul>
+      <li>%MAKETEXT{"Press OK to confirm that this change was intentional."}%</li>
+      <li>%MAKETEXT{"Press Cancel otherwise."}%</li>
+    </ul>
+    %MAKETEXT{"If you are unsure what this means, read <a href='[_1]' class='foswikiPopUp'>why you are being asked to confirm</a>" args="http://foswiki.org/Support/WhyYouAreAskedToConfirm"}%:
+    <p>
+    %BUTTON{"%MAKETEXT{"OK"}%" icon="%TMPL:P{"OK_ICON"}%" id="validateChange"}%
+    %BUTTON{"%MAKETEXT{"Cancel"}%" icon="%TMPL:P{"CANCEL_ICON"}%" type="submit"}%
+    </p>
+  </form>
 </div>
 %ADDTOZONE{"script" requires="JQUERYPLUGIN" id="VALIDATION::JS" text="
 <script type='text/javascript'>
@@ -44,4 +45,4 @@ jQuery(function($) {
 
 });
 </script>"
-}%<!-- -->%TMPL:END%
+}%%{}%%TMPL:END%

@@ -14,7 +14,12 @@ TARGET= \
   topiccreator.css \
   childtopics.js \
   backlinks.js \
-  changeform.js
+  changeform.js \
+  polyfills.js
+
+POLYFILLS_SOURCE= \
+  array-polyfill.uncompressed.js \
+  string-polyfill.uncompressed.js
 
 -include Makefile.include
 
@@ -22,3 +27,9 @@ SUBDIRS=../JazzyNoteTheme ../CustomatoTheme
 
 password.uncompressed.js: jen.js password.init.js 
 	cat $^ > $@
+
+polyfills.uncompressed.js: $(POLYFILLS_SOURCE)
+	cat $^ > $@
+
+clean: 
+	rm -f $(TARGET) *.gz

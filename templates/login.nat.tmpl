@@ -1,18 +1,19 @@
-%TMPL:INCLUDE{"page"}%<!-- template: login.nat.tmpl -->
-%TMPL:INCLUDE{"loginbase"}%<!-- -->
-%TMPL:INCLUDE{"loginbody"}%<!-- -->
-%TMPL:INCLUDE{"logintopicactions"}%<!-- -->
-%TMPL:INCLUDE{"loginsidebar"}%<!-- -->
+%TMPL:INCLUDE{"page"}%%{}%
+%TMPL:INCLUDE{"loginbase"}%%{}%
+%TMPL:INCLUDE{"loginbody"}%%{}%
+%TMPL:INCLUDE{"logintopicactions"}%%{}%
+%TMPL:INCLUDE{"loginsidebar"}%%{}%
 
 %{################################################################################ }%
-%TMPL:DEF{"title"}%Login - %WIKITOOLNAME%%TMPL:END%
+%TMPL:DEF{"title"}%%MAKETEXT{"Login"}% %TMPL:P{"titlesep"}% %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1 class="natLoginHeading">%TMPL:P{"heading"}%</h1>%TMPL:END%
-%TMPL:DEF{"bodyclass"}%natLoginBody%TMPL:END%
+%TMPL:DEF{"bodyclass"}%natLoginBody%IF{"defined NATSKIN_LOGINBANNER" then=" natLoginBanner"}%%TMPL:END%
 %TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
 %TMPL:DEF{"LOG_IN_BANNER"}%%MAKETEXT{"Welcome, please log in"}%.%TMPL:END%
 %TMPL:DEF{"LOGGED_IN_BANNER"}%%MAKETEXT{"[_1] is currently logged in" args="%USERSWEB%.%WIKINAME%"}%.%TMPL:END%
 %TMPL:DEF{"NEW_USER_NOTE"}%%MAKETEXT{"Enter a new username and password to change identity"}%.%TMPL:END%
 %TMPL:DEF{"heading"}%%BANNER%%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
 
 %{################################################################################ }%
 %TMPL:DEF{"UNRECOGNISED_USER"}%%MAKETEXT{"Unrecognised user and/or password."}%
@@ -24,43 +25,25 @@
 }%%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"message"}%<!-- -->
-<div class="foswikiFormSteps">
-%NOTE%<!-- -->
-%TMPL:P{"login"}%<!-- -->
-%TMPL:P{"seealso"}%<!-- -->
-</div>
-<!-- -->%TMPL:END%
+%TMPL:DEF{"message"}%<div class="foswikiFormSteps">
+%TMPL:P{"note"}%%{}%
+%TMPL:P{"login"}%%{}%
+</div>%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"content"}%<!-- -->
-<div class="natLogin">
-%TMPL:P{"contenttitle"}%<!-- -->
-%TMPL:P{"message"}%<!-- -->
-%TMPL:P{"contact"}%<!-- -->
-</div>
-%TMPL:P{"poweredby"}%<!-- -->
-<!-- -->%TMPL:END%
+%TMPL:DEF{"note"}%%NOTE%%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"contact"}%<!-- -->
-<p class="foswikiGrayText natContact"> 
+%TMPL:DEF{"content"}%<div class="natLogin">
+%TMPL:P{"contenttitle"}%%{}%
+%TMPL:P{"message"}%%{}%
+%TMPL:P{"contact"}%%{}%
+</div>
+%TMPL:P{"poweredby"}%%{}%
+%{}%%TMPL:END%
+
+%{################################################################################ }%
+%TMPL:DEF{"contact"}%<p class="foswikiGrayText natContact"> 
 %MAKETEXT{"Contact [_1] if you have any questions." args="<a href='mailto:%WIKIWEBMASTER%?subject=%ENCODE{\"%WIKITOOLNAME%: Request for support\"}%&&body=%ENCODE{\"Hello, I have got a question ...\"}%'>%WIKIWEBMASTER%</a>"}%
-</p> 
-<!-- -->%TMPL:END%
-
-%{################################################################################ }%
-%TMPL:DEF{"seealso"}%<!-- -->
-
-<div class="foswikiFormStep">
-%IF{"context passwords_modifyable"
-  then="[[%SYSTEMWEB%.ResetPassword][%MAKETEXT{"Did you forget your password?"}%]] %BR%"
-  else="<!-- passwords not modifiable -->"
-}%
-%IF{"context registration_enabled" 
-  then="[[%SYSTEMWEB%.UserRegistration][%MAKETEXT{"Do you want to become a registered user?"}%]]"
-  else="<!-- registration disabled -->"
-}%
-</div>
-<!-- -->%TMPL:END%
+</p>%TMPL:END%
 

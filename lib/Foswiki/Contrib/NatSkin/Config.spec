@@ -19,6 +19,19 @@ $Foswiki::cfg{NatSkin}{Themes} = {
     logoUrl => '%PUBURLPATH%/%SYSTEMWEB%/CustomatoTheme/foswiki-logo.png',
     styles => {
        customato => 'customato.css',
+    },
+    variations => {
+      blue => 'blue.css'
+    }
+  },
+  Matter => {
+    baseUrl => '%PUBURLPATH%/%SYSTEMWEB%/MatterTheme',
+    logoUrl => '%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/images/foswiki-logo.svg',
+    styles => {
+       matter => 'matter.css',
+    },
+    variations => {
+      topmenu => 'topmenuVariation.css',
     }
   },
 };

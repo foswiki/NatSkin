@@ -1,19 +1,15 @@
-%TMPL:DEF{"defaulttopbar"}%<!-- -->
-%TMPL:P{"useractions"}%<!-- -->
-%TMPL:P{"langswitcher"}%<!-- -->
-<a href="#" class="natNavToggle fa fa-bars"></a>
-<div class="natTopBar clearfix">%TMPL:P{"topbar::contents"}%</div>
-<!-- -->%TMPL:END%
+%TMPL:DEF{"defaulttopbar"}%%{}%
+%TMPL:P{"useractions"}%%{}%
+%TMPL:P{"langswitcher"}%<a href="#" class="natNavToggle fa fa-bars"></a>
+<div class="natTopBar clearfix">%TMPL:P{"topbar::contents"}%</div>%TMPL:END%
 
-%TMPL:DEF{"topbar::contents"}%<!-- -->
-  <div class="natTopRight">
-    <div class="natTopRightContents">%TMPL:P{"searchbox"}%</div>
+%TMPL:DEF{"topbar::contents"}%<div class="natTopRight">
+  <div class="natTopRightContents">%TMPL:P{"searchbox"}%</div>
+</div>
+<div class="natTopLeft">
+  <div class="natTopLeftContents clearfix">
+    <div class="natWebTitle">%TMPL:P{"logo"}%</div>
   </div>
-  <div class="natTopLeft">
-    <div class="natTopLeftContents">
-      <div class="natWebTitle">%TMPL:P{"logo"}%</div>
-    </div>
-  </div>
-<!-- -->%TMPL:END%
+</div>%TMPL:END%
 
 %TMPL:DEF{"topbar"}%%TMPL:P{"defaulttopbar"}%%TMPL:END%

@@ -1,32 +1,24 @@
-%TMPL:INCLUDE{"page"}%<!-- template: attach.nat.tmpl -->
-%TMPL:INCLUDE{"attachtopicactions"}%<!-- -->
-%TMPL:INCLUDE{"attachbody"}%<!-- -->
-%TMPL:INCLUDE{"attachsidebar"}%<!-- -->
-%TMPL:INCLUDE{"metadata"}%<!-- -->
+%TMPL:INCLUDE{"view"}%%{ template: attach.nat.tmpl }%
+%TMPL:INCLUDE{"attachsidebar"}%%{}%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"attach"}%%TMPL:END%
 %TMPL:DEF{"bodyclass"}%natAttachBody%TMPL:END%
 %TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
-%TMPL:DEF{"attachments::hidden"}%%URLPARAM{"attachments_hidden" default="on"}%%TMPL:END%
-%TMPL:DEF{"attachments::showuploader"}%%URLPARAM{"attachments_showuploader" default="on"}%%TMPL:END%
+%TMPL:DEF{"attachments::showhidden"}%%URLPARAM{"attachments_showhidden" default="true"}%%TMPL:END%
+%TMPL:DEF{"attachments::showuploader"}%%URLPARAM{"attachments_showuploader" default="true"}%%TMPL:END%
 %TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%">%MAKETEXT{"Attachments"}%</a>%TMPL:END%
 %TMPL:DEF{"form"}%%TMPL:END%
+%TMPL:DEF{"banner"}%%TMPL:END%
 %TMPL:DEF{"contentfooter::contents"}%%TMPL:END%
+%TMPL:DEF{"topicactions::contents"}%%USERACTIONS{"$action(close)"}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"content"}%<div class="foswikiMetaData %IF{"not '%WEB%.%TOPIC%' allows 'change'" then="foswikiMetaDataNotAllowed"}%">
-%BUTTON{
-  "%MAKETEXT{"Close"}%" 
-  class="foswikiRight simple"
-  href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%" 
-  icon="fa-times-circle"
-}%
 <h1>
-  <noautolink>%MAKETEXT{"Attachments at [_1]" args="%TMPL:P{"topictitle"}%"}%</noautolink>
+  <noautolink>%MAKETEXT{"Attachments at [_1]" args="%GETTOPICTITLE%"}%</noautolink>
   <span class='foswikiAttachmentsCount foswikiSmall foswikiGrayText'>()</span>
 </h1>
-%CLEAR%
 <div>%TMPL:P{"attachments"}%</div>
 %TMPL:P{"metadata::css"}%
 %TMPL:P{"metadata::javascript"}%

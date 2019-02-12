@@ -1,0 +1,8 @@
+%TMPL:INCLUDE{"searchbox"}%%{}%
+%TMPL:DEF{"searchbox"}%<div class="natSearchBox foswikiHideOnPrint solrSearchBox" %TMPL:P{"searchbox::params"}%>
+  <form name="searchbox" id="searchbox" class="natSearchForm" action="%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebSearch">
+    <input type="text" class="foswikiInputField" placeholder="%TMPL:P{"searchbox::placeholder"}%" size="20" name="search" value="%TMPL:P{"searchbox::value"}%" title="%TMPL:P{"searchbox::tooltip::text"}%" accesskey="f" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" /> 
+  </form>
+</div>%TMPL:END%
+%TMPL:DEF{"searchbox::params"}%data-position-my="left top" data-position-at="left bottom" data-limit="3" data-limit-persons="3" data-limit-topics="3" data-limit-attachments="3" data-groups="persons, topics, attachments"%TMPL:END%
+%TMPL:DEF{"searchbox::tooltip::params"}%%TMPL:END%

@@ -1,10 +1,12 @@
-%TMPL:DEF{"user::photo::exts"}%jpe?g|gif|png|bmp|svg|JE?PG|GIF|PNG|BMP|SVG%TMPL:END%
-%TMPL:DEF{"user::photo::size"}%48x60%TMPL:END%
+%TMPL:DEF{"user::photo::exts"}%jpe?g|gif|png|bmp|webp|svg|JE?PG|GIF|PNG|BMP|WEBP|SVG%TMPL:END%
+%TMPL:DEF{"user::photo::size"}%32x32>%TMPL:END%
 %TMPL:DEF{"user::photo::filter"}%none%TMPL:END%
+%TMPL:DEF{"user::photo::formfield"}%Photo%TMPL:END%
+%TMPL:DEF{"user::photo::default"}%%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/images/nobody.gif%TMPL:END%
 
 %TMPL:DEF{"user::photo::url"}%%IF{
-  "'%web%.%topic%'/Photo"
-  then="%PUBURLPATH%/%web%/%topic%/$percntFORMFIELD{\"Photo\" topic=\"%web%.%topic%\"}$percnt"
+  "'%web%.%topic%'/%TMPL:P{"user::photo::formfield"}%"
+  then="%PUBURLPATH%/%web%/%topic%/$percntFORMFIELD{\"%TMPL:P{"user::photo::formfield"}%\" topic=\"%web%.%topic%\"}$percnt"
   else="$percntATTACHMENTS{
     \"%web%.%topic%\"
     name=\".*%TMPL:P{"user::photo::exts"}%\" 
@@ -13,23 +15,27 @@
     attr=\"t\"
     hidenull=\"off\"
     format=\"%PUBURLPATH%/%web%/%topic%/$name\"
-    nullformat=\"%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/images/nobody.gif\"
+    nullformat=\"%TMPL:P{"user::photo::default"}%\"
   }$percnt"
 }%%TMPL:END%
 
 %TMPL:DEF{"user::photo"}%%IMAGE{
-    "%TMPL:P{"user::photo::url" web="%web%" topic="%topic%"}%"
+    "%TMPL:P{"user::photo::url" 
+      web="%web%" 
+      topic="%topic%" 
+      size="%TMPL:P{"user::photo::size"}%"
+    }%"
     type="plain"
     align="%IF{"'%align%'=~'^(left|right)$'" then="%align%"}%"
     size="%TMPL:P{"user::photo::size"}%"
     filter="%TMPL:P{"user::photo::filter"}%"
-    crop="center"
-    title="%GETTOPICTITLE{"%web%.%topic%"}%"
+    crop="on"
+    title=""
 }%%TMPL:END%
 
-%TMPL:DEF{"user::photo::thumb::url"}%%IF{
-  "'%web%.%topic%'/Photo"
-  then="%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=%web%.%topic%&file=$percntFORMFIELD{\"Photo\" topic=\"%web%.%topic%\"}$percnt&size=%TMPL:P{"user::photo::size"}%"
+%TMPL:DEF{"user::photo::thumbnail::url"}%%IF{
+  "'%web%.%topic%'/%TMPL:P{"user::photo::formfield"}%"
+  then="%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=%web%.%topic%;file=$percntFORMFIELD{\"%TMPL:P{"user::photo::formfield"}%\" topic=\"%web%.%topic%\"}$percnt;size=%size%;crop=on;filter=%TMPL:P{"user::photo::filter"}%"
   else="$percntATTACHMENTS{
     \"%web%.%topic%\"
     name=\".*%TMPL:P{"user::photo::exts"}%\" 
@@ -37,7 +43,7 @@
     limit=\"1\" 
     attr=\"t\"
     hidenull=\"off\"
-    format=\"%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=%web%.%topic%&file=$name&size=%TMPL:P{"user::photo::size"}%\"
-    nullformat=\"%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=%SYSTEMWEB%.JQueryPlugin&file=%SYSTEMWEB%/JQueryPlugin/images/nobody.gif&size=%TMPL:P{"user::photo::size"}%\"
+    format=\"%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=%web%.%topic%;file=$name;size=%size%;crop=on;filter=%TMPL:P{"user::photo::filter"}%\"
+    nullformat=\"%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=%SYSTEMWEB%.JQueryPlugin;file=%TMPL:P{"user::photo::default"}%;size=%size%;crop=on;filter=%TMPL:P{"user::photo::filter"}%\"
   }$percnt"
 }%%TMPL:END%

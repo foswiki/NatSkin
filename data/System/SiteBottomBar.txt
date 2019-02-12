@@ -1,13 +1,12 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1485333012" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 
 Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] instead.
 
 <verbatim class="tml">
-%STARTINCLUDE%<!-- -->
-<div class="natSiteMap">
-<h3>%MAKETEXT{"Sitemap"}%</h3>
+%STARTINCLUDE%<div class="natSiteMap clearfix">
+<h3 >%MAKETEXT{"Sitemap"}%</h3>
 <noautolink>
 %FORMATLIST{
   "%FLEXWEBLIST{
@@ -19,15 +18,13 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
   }%"
   split="\s*,\s*"
   pattern="(.*)=(.*)"
-  format="<div class='natSiteMapItem'><a href='%SCRIPTURLPATH{"view"}%/$2/WebHome'>$1</a></div>$n"
+  format="<div class='natSiteMapItem'><a href='%SCRIPTURLPATH{"view"}%/$2/WebHome'>$1</a></div>"
   sort="on"
-  separator=""
+  separator="$n"
 }%
 </noautolink>
-%CLEAR%
 </div>
-<div class="natCopyRight">%WEBCOPYRIGHT%</div>
-<!-- -->%STOPINCLUDE%
+<div class="natCopyRight">%WEBCOPYRIGHT%</div>%STOPINCLUDE%
 </verbatim>
 
 %META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%

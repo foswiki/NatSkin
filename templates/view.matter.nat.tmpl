@@ -1,0 +1,103 @@
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{"banner"}%%TMPL:P{
+  "banner::content::%NATSKIN_BANNERMODE{default="off"}%"
+}%%TMPL:P{"banner::javascript"}%%TMPL:END%
+
+%TMPL:DEF{"banner::content"}%<div class="natBannerContents">
+<div class="natBannerTextEffect %IF{"'%NATSKIN_BANNERTEXTEFFECT{default="off"}%'!='off'" then="jqAnimateCSS"}%" data-effect="%NATSKIN_BANNERTEXTEFFECT{default=""}%">
+%IF{"'%NATSKIN_BANNERTITLEENABLED{default="on"}%'='on'"
+  then="$percntTMPL:P{\"banner::title\"}$percnt"
+}%</div></div>%TMPL:END%
+
+%TMPL:DEF{"banner::title"}%<div class='natBannerTitle%IF{"'%NATSKIN_BANNERFOREGROUND{default="light"}%'='dark'" then=" natBannerDarkTitle" }%'>
+%TRANSLATE{
+  "%IF{"'%NATSKIN_BANNERTITLEENABLED{default=""}%'='on'"
+    then="$percntNATSKIN_BANNERTITLE{default=\"$dollarpercntGETTOPICTITLE$dollarpercnt\"}$percnt"
+    else="$percntGETTOPICTITLE$percnt"
+  }%"
+}%
+</div>
+<div class='natBannerSubtitle %IF{"'%NATSKIN_BANNERFOREGROUND{default="light"}%'='dark'" then="natBannerDarkSubtitle"}%'>
+%TRANSLATE{"%NATSKIN_BANNERSUBTITLE{default="$percntFORMFIELD{\"Summary\"}$percnt"}%"}%</div>%TMPL:END%
+
+%TMPL:DEF{"banner::particles::params"}%data-color='%NATSKIN_BANNERPARTICLESCOLOR{default="#ffffff"}%' data-connect-particles="%NATSKIN_BANNERCONNECTPARTICLES{default="true"}%" data-speed="%NATSKIN_BANNERSPEED{default="0.5"}%" data-max-particles="%NATSKIN_BANNERMAXPARTICLES{default="70"}%" data-size-variations="%NATSKIN_BANNERSIZEVARIATION{default="3"}%"%TMPL:END%
+
+%TMPL:DEF{"banner::content::monochrome"}%<div class='natBanner natBannerColor %IF{"'%NATSKIN_BANNERPARTICLESENABLED{default="off"}%'='on'" then="jqParticles"}%' %TMPL:P{"banner::particles::params"}% style='background-color:%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR%"}%'>
+%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::particles"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::content::gradient"}%<div class='natBanner natBannerGradient %IF{"'%NATSKIN_BANNERPARTICLESENABLED{default="off"}%'='on'" then="jqParticles"}%' %TMPL:P{"banner::particles::params"}% style='background:%IF{
+  "'%NATSKIN_BANNERGRADIENT{default="radial"}%'='radial'"
+  then="radial-gradient(circle farthest-side at 33%,%NATSKIN_BANNERCOLOR{default="transparent"}% 0,%NATSKIN_BANNERCOLOR2{default="%WEBBGCOLOR%"}% 100%)"
+  else="linear-gradient(to bottom,%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR%"}% 0,%NATSKIN_BANNERCOLOR2{default="transparent"}% 100%)"
+}%'>
+%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::particles"}%
+</div>%TMPL:END%
+
+
+%TMPL:DEF{"banner::content::image"}%<div class='natBanner natBannerImage'>
+<div class='natBannerPhoto %IF{"'%NATSKIN_BANNERANIMATIONENABLED{default="off"}%'='on'" then="natBannerAnimate"}% %IF{"'%NATSKIN_BANNERPARTICLESENABLED{default="off"}%'='on'" then="jqParticles"}%' %TMPL:P{"banner::particles::params"}% style='background-color:%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR%"}%;background-image:url(%IF{"'%NATSKIN_BANNERIMAGE{default=""}%'='' or not '%TOPIC%'/attachments[name='%NATSKIN_BANNERIMAGE%']"
+  then="%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/images/bubbles.png"
+  else="%ATTACHURLPATH%/%ENCODE{"%NATSKIN_BANNERIMAGE%" type="url"}%"
+}%);background-position:50% %NATSKIN_BANNERPOSITION{default="50"}%%'></div>
+%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::editor"}%%TMPL:P{"banner::javascript::particles"}%
+</div>%TMPL:END%
+
+
+%TMPL:DEF{"banner::content::video"}%<div class='natBanner natBannerVideo'>%SET{"banner_video" 
+  value="%IF{"'%NATSKIN_BANNERVIDEO{default=""}%'='' or not '%TOPIC%'/attachments[name='%NATSKIN_BANNERVIDEO%']"
+    then="%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/videos/clouds.mp4"
+    else="%ATTACHURLPATH%/%NATSKIN_BANNERVIDEO%"
+  }%"
+}%
+<video autoplay muted %IF{"'%NATSKIN_BANNERVIDEOLOOP{default="on"}%'='on'" then="loop"}% class="noMediaPlayer" poster="%SCRIPTURLPATH{"rest"}%/ImagePlugin/process?file=%banner_video%" style="top:%NATSKIN_BANNERPOSITION{default="50"}%%"> 
+    <source src="%banner_video%" type="video/%IF{"'%banner_video%'=~'\.mp4$'" then="mp4"}%%IF{"'%banner_video%'=~'\.ogv$'" then="ogg"}%%IF{"'%banner_video%'=~'\.webm$'" then="webm"}%" />
+</video> 
+%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::editor"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::content::geopattern"}%<div class='natBanner jqGeoPattern' data-color='%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR%"}%' data-seed='%NATSKIN_BANNERSEED{default=""}%'>
+%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::geopattern"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::content::trianglify"}%<div class='natBanner jqTrianglify' data-cell-size='%NATSKIN_BANNERCELLSIZE{default="30"}%' data-palette='%NATSKIN_BANNERPALETTE{default="random"}%' data-variance="%NATSKIN_BANNERVARIANCE{default="0.75"}%" data-seed="%NATSKIN_BANNERSEED{default=""}%">
+%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::trianglify"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::javascript"}%%IF{
+  "'%NATSKIN_BANNERTEXTEFFECT{default="off"}%'!='off'" 
+  then="$percntJQREQUIRE{\"animate\"}$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"banner::javascript::editor"}%%IF{
+  "'%WEB%.%TOPIC%' allows 'change'"
+  then="$percntADDTOZONE{\"script\" 
+          id=\"BANNEREDITOR\" 
+          requires=\"JQUERYPLUGIN::LIVEQUERY\" 
+          text=\"<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/bannerEditor.js'></script>\"
+        }$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"banner::javascript::trianglify"}%%ADDTOZONE{"script" 
+  id="TRIANGLIFY"
+  requires="JQUERYPLUGIN::LIVEQUERY" 
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/trianglify.js'></script>
+<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/trianglify.init.js'></script>"
+}%%TMPL:END%
+
+%TMPL:DEF{"banner::javascript::geopattern"}%%ADDTOZONE{"script" 
+  id="GEOPATTERN"
+  requires="JQUERYPLUGIN::LIVEQUERY" 
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/geopattern.js'></script>
+<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/geopattern.init.js'></script>"
+}%%TMPL:END%
+
+%TMPL:DEF{"banner::javascript::particles"}%%IF{"'%NATSKIN_BANNERPARTICLESENABLED{default="off"}%'='on'"
+  then="$percntADDTOZONE{\"script\" 
+    id=\"PARTICLEJS\"
+    requires=\"JQUERYPLUGIN::LIVEQUERY\" 
+    text=\"<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/particles.js'></script>
+	  <script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/particles.init.js'></script>\"
+  }$percnt"
+}%%TMPL:END%

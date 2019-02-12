@@ -1,10 +1,11 @@
 %TMPL:INCLUDE{"updatesplugin"}%
 
+%TMPL:DEF{"messagetmpl::icon"}%%TMPL:END%
+
 %TMPL:DEF{"messagetmpl"}%<script id="foswikiUpdatesTmpl" type="text/x-jsrender"> 
 <div class="foswikiWarningMessage foswikiUpdatesMessage">
 %TMPL:P{"messagetmpl::text"}%
-<a href="%SCRIPTURL{configure}%">%JQICON{"tick"}% %MAKETEXT{"Upgrade"}%</a>
-<a href="#" id="foswikiUpdatesIgnore">%JQICON{"cross"}% %MAKETEXT{"Ignore for [_1] days" args="{{:cookieExpires}}"}%</a>
+%TMPL:P{"messagetmpl::buttons"}%
 %CLEAR%
 </div>
 </script>%TMPL:END%

@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1485333012" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%<!-- -->
@@ -199,7 +199,7 @@ jQuery(function($) {
       then=\"[[%USERSWEB%.$1]]\"
       else=\"$percntIF{\"'$percntUSERINFO{\"$1\" format=\"$isgroup\"}$percnt'='true'\"
           then=\"<a href='%SCRIPTURLPATH{"view"}%/%USERSWEB%/WikiGroups?group=$1'>$1</a> (%MAKETEXT{"group"}%)\"
-          else=\"[[$1]]\"
+          else=\"<nop>$1\"
         }$percnt\"
     }$percnt</li>"
   separator="$n"

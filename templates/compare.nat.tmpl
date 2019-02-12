@@ -1,25 +1,25 @@
-%TMPL:INCLUDE{"page"}%<!-- template: compare.nat.tmpl -->
-%TMPL:INCLUDE{"rdifftopicactions"}%<!-- -->
+%TMPL:INCLUDE{"page"}%%{}%
+%TMPL:INCLUDE{"rdifftopicactions"}%%{}%
 
 %{################################################################################}%
 %TMPL:DEF{"bodyclass"}%natCompareBody%TMPL:END%
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"[_1] vs. [_2]" args="%REVTITLE1%, %REVTITLE2%"}%%TMPL:END%
-%TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Difference"}%: %TMPL:P{"topictitle"}% (%TMPL:P{"titleaction"}%)</h1>%TMPL:END%
+%TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Difference"}%: %GETTOPICTITLE% (%TMPL:P{"titleaction"}%)</h1>%TMPL:END%
 %TMPL:DEF{"bottombar"}%%TMPL:END%
 
 %{################################################################################}%
-%TMPL:DEF{"contentheader::contents"}%<!-- -->
+%TMPL:DEF{"contentheader::contents"}%%{}%
 %TMPL:P{"topicactions"}%
 %TMPL:PREV%
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%
 
 %{################################################################################}%
 %TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"compare"}%/%BASEWEB%/%BASETOPIC%?%QUERYSTRING%">%MAKETEXT{"Compare"}%</a>%TMPL:END%
 
 %{################################################################################}%
-%TMPL:DEF{"content"}%<!-- -->
-%TMPL:P{"beforetext"}%<!-- -->
-%TMPL:P{"contenttitle"}%<!-- -->
-%TMPL:P{"rendercontent"}%<!-- -->
-%TMPL:P{"aftertext"}%<!-- -->
-<!-- -->%TMPL:END%
+%TMPL:DEF{"content"}%%{}%
+%TMPL:P{"beforetext"}%%{}%
+%TMPL:P{"contenttitle"}%%{}%
+%TMPL:P{"rendercontent"}%%{}%
+%TMPL:P{"aftertext"}%%{}%
+%{}%%TMPL:END%

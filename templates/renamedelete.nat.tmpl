@@ -1,4 +1,4 @@
-%TMPL:INCLUDE{"rename"}%<!-- template: renamedelete.nat.tmpl -->
+%TMPL:INCLUDE{"rename"}%%{}%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"delete"}%%TMPL:END%
@@ -9,33 +9,27 @@
 %TMPL:DEF{"backlinks::checked"}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"buttons"}%<!-- -->
-%BUTTON{type="save" "%MAKETEXT{"Delete"}%" icon="bin"}%
-%BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" target="%WEB%.%TOPIC%"}%
+%TMPL:DEF{"buttons"}%%{}%
+%BUTTON{type="save" "%MAKETEXT{"Delete"}%" icon="fa-trash"}%
+%BUTTON{"%MAKETEXT{"Cancel"}%" icon="%TMPL:P{"CANCEL_ICON"}%" target="%WEB%.%TOPIC%"}%
 %IF{"$'URLPARAM{currentwebonly}'='on' and not context SolrPluginEnabled"
-  then="$percntBUTTON{\"%MAKETEXT{"Search in all webs"}%\" icon=\"find\" target=\"%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?newweb=%URLPARAM{"newweb"}%\" title=\"%MAKETEXT{"Search for backlinks in all webs"}%\"}$percnt"
-}%
-<!-- -->%TMPL:END%
+  then="$percntBUTTON{\"%MAKETEXT{"Search in all webs"}%\" icon=\"fa-search\" target=\"%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?newweb=%URLPARAM{"newweb"}%\" title=\"%MAKETEXT{"Search for backlinks in all webs"}%\"}$percnt"
+}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"formstart"}%<!-- -->
-<form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
+%TMPL:DEF{"formstart"}%<form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
 <input type="hidden" name="nonwikiword" value="on" />
 <input type="hidden" name="newweb" value="%TRASHWEB%" />
 <input type="hidden" name="newtopic" value="%NEW_TOPIC%" />
 <!--input type="hidden" name="confirm" value="on"-->
-<div class="foswikiFormSteps">
-<!-- -->%TMPL:END%
+<div class="foswikiFormSteps">%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"changetostep"}%<!-- -->
-<div class="foswikiFormStep">
+%TMPL:DEF{"changetostep"}%<div class="foswikiFormStep">
   <b>%MAKETEXT{"Move this topic into the [_1] web" args="<span class='foswikiAlert'>[[%TRASHWEB%.%HOMETOPIC%][%TRASHWEB%]]</span>"}%</b>
 
   <div class="foswikiFormDescription">
     %MAKETEXT{"The topic will be renamed to [_1]." args="_%TRASHWEB%.%NEW_TOPIC%_"}%
   </div>
 </div>
----
-<!-- -->%TMPL:END%
-
+<hr />%TMPL:END%

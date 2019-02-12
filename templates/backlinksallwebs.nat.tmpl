@@ -1,4 +1,4 @@
-%TMPL:INCLUDE{"backlinksweb"}%<!-- template: backlinksallwebs.nat.tmpl -->
+%TMPL:INCLUDE{"backlinksweb"}%%{ template: backlinksallwebs.nat.tmpl }%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"backlinks"}%%TMPL:END%
@@ -6,20 +6,20 @@
 %TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=backlinksallwebs">%MAKETEXT{"Backlinks"}%</a>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"content"}%<!-- content -->
-%TMPL:P{"beforetext"}%<!-- beforetext// -->
-%TMPL:P{"contenttitle"}%<!-- contenttitle// -->
-%TMPL:P{"aftertext"}%<!-- aftertext// -->
-<!-- //content -->%TMPL:END%
+%TMPL:DEF{"content"}%%{}%
+%TMPL:P{"beforetext"}%%{}%
+%TMPL:P{"contenttitle"}%%{}%
+%TMPL:P{"aftertext"}%%{}%
+%{}%%TMPL:END%
 
-%TMPL:DEF{"content"}%<!-- -->
-%TMPL:P{"beforetext"}%<!-- // -->
+%TMPL:DEF{"content"}%%{}%
+%TMPL:P{"beforetext"}%%{}%
 <div class="foswikiRight">
-  %BUTTON{"%MAKETEXT{"Close"}%" icon="cross" target="%WEB%.%TOPIC%" class="simple foswikiRight"}%
+  %BUTTON{"%MAKETEXT{"Close"}%" icon="%TMPL:P{"CANCEL_ICON"}%" target="%WEB%.%TOPIC%" class="simple foswikiRight"}%
 </div>
-%TMPL:P{"contenttitle"}%<!-- // -->
+%TMPL:P{"contenttitle"}%%{}%
 %BUTTON{"%MAKETEXT{"Search [_1] web only" args="<nop>%WEB%"}%" 
-  icon="find" 
+  icon="fa-search" 
   href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=backlinksallwebs" 
   title="%MAKETEXT{"Search [_1] web only for topics that link to here" args="<nop>%WEB%"}%"
   class="simple"
@@ -32,5 +32,5 @@
   nosearch="on" 
   excludetopic="%TOPIC%"
 }%
-%TMPL:P{"aftertext"}%<!-- -->
-<!-- -->%TMPL:END%
+%TMPL:P{"aftertext"}%%{}%
+%{}%%TMPL:END%

@@ -238,7 +238,7 @@ input[type=text]:focus,
 input[type=tel]:focus,
 input[type=password]:focus,
 .foswikiInputField:focus {
-  border:1px solid #16BEEF;
+  border-color:#16BEEF;
 }
 
 

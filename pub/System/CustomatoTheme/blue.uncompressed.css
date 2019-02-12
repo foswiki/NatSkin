@@ -1,0 +1,40 @@
+.natTopShadow {
+  border-color:#2375C5;
+  border-color:#2196F3;
+}
+
+.natTopicActions .natUserAction:hover .ma,
+.natTopicActions .natUserAction:hover .fa,
+.natTopicActions .natUserAction:hover,
+.natTopicActions .natTopicAction:hover .ma,
+.natTopicActions .natTopicAction:hover .fa,
+.natTopicActions .natTopicAction:hover,
+.natTopicActions .sfHover .natMoreActionsTopicAction,
+.natWebMenu li a:hover,
+.natWebMenu li.sfHover,
+.natWebMenu li.sfHover>a,
+.natWebMenuContents>ul>li>a:hover,
+.natWebMenuContents>ul>li>li>a.current,
+.natWebMenuContents>ul>li>li>a.current:hover,
+.natWebMenuContents>ul>li>.foswikiCurrentWebHomeLink,
+.natWebMenuContents>ul>li>.foswikiCurrentWebHomeLink:hover,
+.natPanelToggle,
+.natPanelToggle a {
+  background-color:#2196F3;
+}
+
+.natWebMenuContents >ul >li, 
+.natWebMenuContents >ul > li >a ,
+.natWebMenuContents>ul>li>.foswikiCurrentWebHomeLink {
+  background-color:#777;
+}
+
+.natWebMenuContents > ul > li {
+  line-height:2.5em;
+}
+.natWebMenuContents > ul > li > a {
+  padding:0 1.5em;
+}
+.natWebMenuContents .natSearchBox .foswikiInputField {
+  height:35px;
+}

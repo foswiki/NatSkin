@@ -1,5 +1,5 @@
-%TMPL:INCLUDE{"oops"}%<!-- template: oopslanguagechanged.nat.tmpl -->
-%TMPL:DEF{"title"}%%MAKETEXT{"Change language"}% - %WIKITOOLNAME%%TMPL:END%
+%TMPL:INCLUDE{"oops"}%%{}%
+%TMPL:DEF{"title"}%%MAKETEXT{"Change language"}% %TMPL:P{"titlesep"}% %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"heading"}%%MAKETEXT{"Change language"}%%TMPL:END%
 %TMPL:DEF{"headingstyle"}%natNoteHeading%TMPL:END%
 %TMPL:DEF{"message"}%
@@ -8,6 +8,6 @@
   else="$percntSESSION_VARIABLE{\"LANGUAGE\" set=\"%URLPARAM{language}%\"}$percnt %MAKETEXT{"Your language will be changed to [_1] from the next screen. You will be redirected to there right now. If you aren't, ~[~[[_2]~]~[click here~]~] to proceed." args="*%URLPARAM{language}%*, %SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%"}%"
 }%
 
-%BUTTON{"%MAKETEXT{"OK"}%" target="%WEB%.%TOPIC%" icon="tick"}%
+%BUTTON{"%MAKETEXT{"OK"}%" target="%WEB%.%TOPIC%" icon="%TMPL:P{"OK_ICON"}%"}%
 %ADDTOZONE{"head" text="<meta http-equiv='refresh' content='0;url=%SCRIPTURL{view}%/%WEB%/%TOPIC%' />"}%
 %TMPL:END%

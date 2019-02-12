@@ -1,7 +1,7 @@
 /*
- * topic creator for natskin 0.99
+ * topic creator for natskin 1.10
  *
- * (c)opyright 2015-2016 Michael Daum http://michaeldaumconsulting.com
+ * (c)opyright 2015-2018 Michael Daum http://michaeldaumconsulting.com
  *
  * Dual licensed under the MIT and GPL licenses:
  *   http://www.opensource.org/licenses/mit-license.php
@@ -11,6 +11,10 @@
 /*eslint no-console: 0 */
 "use strict";
 (function($) {
+
+  var defaults = {
+    debug: false
+  };
 
   /***************************************************************************
    * class definition
@@ -40,7 +44,7 @@
     self.container = self.elem.find(".tcContainer");
     self.opts = $.extend({
       "topic": foswiki.getPreference("WEB") + "." + foswiki.getPreference("TOPIC")
-    }, self.elem.data(), opts);
+    }, defaults, self.elem.data(), opts);
 
     //self.log("new TopicCreator", self);
 
@@ -65,8 +69,11 @@
 
     // submit button
     self.elem.find(".tcSubmit").on("click", function() {
-      self.container.block({message:""});
-      self.elem.find("form").submit();
+      var topic = self.elem.find("input[name=topic]").val();
+      if (topic !== '' && !$(this).is(".jqButtonDisabled")) {
+	self.container.block({message:""});
+	self.elem.find("form").submit();
+      }
       return false;
     });
 
@@ -86,11 +93,13 @@
    * logging
    */
   TopicCreator.prototype.log = function() {
-    var args = $.makeArray(arguments);
+    var self = this, args;
 
-    args.unshift("TC:");
-    //console.log.apply(console, args);
-    //$.log.apply(self, args);
+    if (self.opts.debug) {
+      args = $.makeArray(arguments);
+      args.unshift("TC:");
+      console.log.apply(console, args);
+    }
   };
 
   /***************************************************************************
@@ -117,7 +126,7 @@
       }
     }
 
-    // propagate topic title
+    // propagate topic title provided to the dialog, e.g. via NEWTOPICFORMAT
     params["topicTitle"] = self.elem.find("input[name=topicTitle]").val();
 
     // step 0: remove previous pages 
@@ -148,7 +157,7 @@
         }
       });
 
-      //console.log("loading params=",params);
+      self.log("loading params=",params);
 
       foswiki.loadTemplate(params);
     } else {
@@ -172,6 +181,12 @@
     if (stepElem.length && optElems.length !== 1) {
       self.log("got something to select");
       self.elem.find(".tcViewPort").scrollTo(stepDesc.id, 250);
+    } else if (stepElem.length && optElems.length == 1) {
+      self.log("selecting the one element");
+      stepDesc.selectedElem = optElems;
+      stepDesc.isHidden = true;
+      stepElem.hide();
+      self.gotoStep(self.currentStep + dir, dir);
     } else {
       self.log("nothing to select ... next");
       stepDesc.isHidden = true;
@@ -208,6 +223,26 @@
         );
       }
     }    
+    
+    // layout toggle
+    stepElem.find(".tcLayoutToggle:not(.inited)").on("click", function() {
+      var $this = $(this).addClass("inited"),
+          visible = $this.find(":visible"),
+          hidden = $this.find(":hidden");
+
+      visible.hide();
+      hidden.show();
+      self.elem.toggleClass("tcListLayout");
+      sessionStorage.tcListLayout = self.elem.is(".tcListLayout")?"true":"false";
+      stepElem.find("input[type=text]:first").focus();
+      return false;
+    });
+
+    if (sessionStorage.tcListLayout == "true" || self.elem.is(".tcListLayout")) {
+      self.elem.addClass("tcListLayout");
+      stepElem.find(".tcLayoutToggleList").show();
+      stepElem.find(".tcLayoutToggleGrid").hide();
+    }
 
     // add focus
     window.setTimeout(function() {
@@ -222,16 +257,24 @@
     stepElem.data("inited", 1);
     self.log("init ",stepDesc.id);
 
+    // move selected elemet to start of tcPage
+    stepElem.find(".tcPage").each(function() {
+      var $page = $(this);
+      $page.find(".tcSelected").detach().prependTo($page);
+    });
+
     // add return=submit
     stepElem.find("input[type=text]:not(.jqTextboxList)").on("keyup", function(ev) {
-      var form;
+      var form, topic;
       if (ev.keyCode === 13) {
-        form = self.elem.find("form");
+        form = stepElem.find("form");
+        topic = form.find("input[name=topic]").val();
 
         if (form.length) {
-          self.container.block({message:""});
-          form.submit();
-
+          if (topic) {
+            self.container.block({message:""});
+            form.submit();
+          }
         } else {
           self.gotoStep(self.currentStep + 1, 1);
         }
@@ -246,22 +289,46 @@
           pageOffset, nextElemOffset,
           nextElem;
 
-      if (selectedElem.length == 0) {
+      if (selectedElem.length === 0) {
         return;
       }
-      switch(ev.keyCode) {
-        case 39: // right
-          nextElem = selectedElem.next();
-          break;
-        case 40: // down
-          nextElem = selectedElem.next().next().next();
-          break;
-        case 37: // left
-          nextElem = selectedElem.prev();
-          break;
-        case 38: // up
-          nextElem = selectedElem.prev().prev().prev();
-          break;
+      self.log("pressed key",ev.keyCode);
+      if (self.elem.is(".tcListLayout")) {
+        switch(ev.keyCode) {
+          case 32: // space
+          case 39: // right
+          case 40: // down
+            nextElem = selectedElem.nextAll("div:eq(0)");
+            break;
+          case 37: // left
+          case 38: // up
+            nextElem = selectedElem.prevAll("div:eq(0)")
+            break;
+          case 9: // tab
+            ev.preventDefault()
+            break;
+          default:
+        }
+      } else {
+        switch(ev.keyCode) {
+          case 32: // space
+          case 39: // right
+            nextElem = selectedElem.nextAll("div:eq(0)");
+            break;
+          case 40: // down
+            nextElem = selectedElem.nextAll("div:eq(2)");
+            break;
+          case 37: // left
+            nextElem = selectedElem.prevAll("div:eq(0)");
+            break;
+          case 38: // up
+            nextElem = selectedElem.prevAll("div:eq(2)");
+            break;
+          case 9: // tab
+            ev.preventDefault()
+            break;
+          default:
+        }
       }
 
       if (nextElem && nextElem.length) {
@@ -297,9 +364,8 @@
     }
 
     // filter
-    stepElem.find("input.tcFilter").on("keyup", function() {
+    stepElem.find(".tcFilter .foswikiInputField").on("keyup", function() {
       var pattern = $(this).val().toLowerCase();
-
         optElems.each(function() {
           var $cell = $(this), text = $cell.text().toLowerCase();
           if (text.indexOf(pattern) >= 0) {
@@ -309,6 +375,21 @@
           }
         });
     });
+
+    // topic
+    function _updateSubmitButton() {
+      var val = stepElem.find("input[name=topic]").val(),
+	  submitButton = self.elem.find(".tcSubmit");
+
+      self.log("topic=",val);
+      if (val === '') {
+	submitButton.addClass("jqButtonDisabled");
+      } else {
+	submitButton.removeClass("jqButtonDisabled");
+      }
+    }
+    stepElem.find("input[name=topic]").on("change", _updateSubmitButton);
+    _updateSubmitButton();
 
   };
 

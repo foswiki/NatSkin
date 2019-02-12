@@ -1,4 +1,4 @@
-%TMPL:P{"page"}%<!-- template: page.nat.tmpl -->
+%TMPL:P{"page"}%%{}%
 %TMPL:DEF{"page"}%<!DOCTYPE html>
 <html class="natHtml" %TMPL:P{"xmlns"}% lang="%CONTENT_LANGUAGE{default="%DEFAULTLANGUAGE%"}%" %TMPL:P{"ngapp"}% %TMPL:P{"ngcontroller"}%>
 %TMPL:P{"head"}%
@@ -7,20 +7,25 @@
 %TMPL:END%
 
 %TMPL:DEF{"xmlns"}%xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#"%TMPL:END%
+%TMPL:DEF{"base"}%<base href="%SCRIPTURL{%SCRIPTNAME%}%/%WEB%/%TOPIC%" /><!--[if IE]></base><![endif]-->%TMPL:END%
 
 %TMPL:DEF{"head"}%<head>
 <meta charset="%CHARSET%" />
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
-%TMPL:P{"pagetitle"}%<!-- -->
-%TMPL:P{"favicon"}%<!-- -->
-%TMPL:P{"meta"}%%TMPL:P{"metaflags"}%%TMPL:P{"styles"}%%WEBCOMPONENT{"HtmlHead"}%
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+%TMPL:P{"pagetitle"}%
+%TMPL:P{"favicon"}%
+%TMPL:P{"manifest"}%%{}%
+%TMPL:P{"meta"}%%TMPL:P{"metaflags"}%%TMPL:P{"styles"}%%TMPL:P{"javascript"}%
+%TMPL:P{"base"}%%WEBCOMPONENT{"HtmlHead"}%
 </head>%TMPL:END%
-%TMPL:INCLUDE{"user"}%
-%TMPL:INCLUDE{"foswiki"}%
-%TMPL:INCLUDE{"head"}%
-%TMPL:INCLUDE{"body"}%
-%TMPL:INCLUDE{"sidebar"}%
-%TMPL:INCLUDE{"topbar"}%
-%TMPL:INCLUDE{"styles"}%
-%TMPL:INCLUDE{"javascript"}%
+%TMPL:INCLUDE{"foswiki"}%%{}%
+%TMPL:INCLUDE{"head"}%%{}%
+%TMPL:INCLUDE{"body"}%%{}%
+%TMPL:INCLUDE{"sidebar"}%%{}%
+%TMPL:INCLUDE{"topbar"}%%{}%
+%TMPL:INCLUDE{"styles"}%%{}%
+%TMPL:INCLUDE{"javascript"}%%{}%

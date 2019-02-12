@@ -1,13 +1,79 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1485333012" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ %TOPIC%
 Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] instead.
 
+---++ Implementation
 <verbatim class="tml">
-%STARTINCLUDE%%USERACTIONS{
+%STARTINCLUDE%%INCLUDE{"%SYSTEMWEB%.SiteTopicActions" section="%NATSKIN_MENU_STYLE{default="mega"}%"}%%STOPINCLUDE%
+</verbatim>
+
+---++ Mega Menu
+<verbatim class="tml">
+%STARTSECTION{"mega"}%%USERACTIONS{
   guest="$action(share, SocialSharePluginEnabled)"
   restrictedactions="attach,delete,diff,edit,edit_form,edit_raw,edit_settings,harvest,managetags,more,move,raw,restore,translatetopic"
-  format="$edit$action(like, LikePluginEnabled)$new$menu"
+  format="$new$edit$menu"
+  history="<div class='natHistoryTopicActions'>$edit$raw$print$view$history$first$prev$next$last$action(close)</div>"
+  menu_header="<div class='natMoreActionsMenu' data-menu='.natMegaMenu'><span class='natTopicAction natMoreActionsTopicAction'>%TMPL:P{"MENU_ICON"}%$label</span>
+<div class='natMegaMenu clearfix' style='display:none' data-theme='info' data-arrow='on' data-position='left'>"
+  menu_footer="</div></div>"
+  menu="<div class='natMegaMenuCol'>
+<h3 >%MAKETEXT{"Tools"}%</h3>
+   * $action(subscribe)
+   * $action(changelanguage, i18n_enabled) 
+   * $action(translatetopic, MultiLingualPluginEnabled)
+   * $action(managetags, ClassificationPluginEnabled)
+   * $action(harvest, HarvestPluginEnabled)
+   * $action(webdavdir)
+---
+<h3 >%MAKETEXT{"Social"}%</h3>
+   * $action(favorite, ListyPluginEnabled)
+   * $action(like, LikePluginEnabled)
+   * $action(share, SocialSharePluginEnabled)
+   * $action(chat, WebSocketPluginEnabled)
+</div><div class='natMegaMenuCol'>
+<h3 >%MAKETEXT{"View"}%</h3>
+   * $action(raw)
+   * $action(raw_data)
+   * $action(attachments)
+   * $action(sections, SectionListPluginEnabled)
+   * $action(backlinks)
+   * $action(childtopics)
+   * $action(print)
+   * $action(pdf, can_generate_pdf)
+---
+<h3 >%MAKETEXT{"History"}%</h3>
+   * $action(history)
+   * $action(prev)
+   * $action(diff)
+   * $action(restore)
+</div><div class='natMegaMenuCol'>
+<h3 >%MAKETEXT{"Change"}%</h3>
+   * $action(attach)
+   * $action(edit_raw)
+   * $action(edit_settings)
+   * $action(edit_form)
+   * $action(copy_topic)
+   * $action(move)
+   * $action(delete)
+---
+<h3 >%MAKETEXT{"Account"}%</h3>
+   * $action(profile)
+   * $action(twofactorauth, TwoFactorAuthPluginEnabled)
+   * $action(changepassword)
+   * $action(changeemail)
+   * $action(logout)
+</div>"
+}%%ENDSECTION{"mega"}%
+</verbatim>
+
+---++ Linear Menu
+<verbatim class="tml">
+%STARTSECTION{"linear"}%%USERACTIONS{
+  guest="$action(share, SocialSharePluginEnabled)"
+  restrictedactions="attach,delete,diff,edit,edit_form,edit_raw,edit_settings,harvest,managetags,more,move,raw,restore,translatetopic"
+  format="$new$edit$menu"
   history="<div class='natHistoryTopicActions'>$edit$raw$print$view$history$first$prev$next$last$action(close)</div>"
   menu="
    * $action(attach)
@@ -18,15 +84,19 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
    * $action(edit_form)
    * $action(copy_topic)
    * <hr />
-   * $action(share, SocialSharePluginEnabled)
+   * $action(favorite, ListyPluginEnabled)
    * $action(like, LikePluginEnabled)
+   * $action(share, SocialSharePluginEnabled)
    * $action(chat, WebSocketPluginEnabled)
    * <hr />
+   * $action(prev)
    * $action(diff)
    * $action(restore)
    * $action(history)
    * <hr />
    * $action(raw)
+   * $action(raw_data)
+   * $action(attachments)
    * $action(print)
    * $action(backlinks)
    * $action(childtopics)
@@ -39,8 +109,7 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
    * $action(harvest, HarvestPluginEnabled)
    * $action(webdavdir)
 "
-}%%STOPINCLUDE%
+}%%ENDSECTION{"linear"}%
 </verbatim>
 
-%META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%
 %META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

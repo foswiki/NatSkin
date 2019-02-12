@@ -1,9 +1,8 @@
-%TMPL:INCLUDE{"page"}%<!-- template: edit.nat.tmpl -->
-%TMPL:INCLUDE{"editbody"}%<!-- -->
-%TMPL:INCLUDE{"edittopicactions"}%<!-- -->
-%TMPL:INCLUDE{"edithelp"}%<!-- -->
-%TMPL:INCLUDE{"edittoolbar"}%<!-- -->
-%TMPL:INCLUDE{"metacomments"}%<!-- -->
+%TMPL:INCLUDE{"page"}%%{}%
+%TMPL:INCLUDE{"editbody"}%%{}%
+%TMPL:INCLUDE{"edittopicactions"}%%{}%
+%TMPL:INCLUDE{"edittoolbar"}%%{}%
+%TMPL:INCLUDE{"metacomments"}%%{}%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"useractions"}%%TMPL:END%
@@ -58,7 +57,7 @@
 %TMPL:DEF{"settings"}%%TMPL:P{"topicsettings"}%%TMPL:P{"editsettings"}%%TMPL:P{"skinsettings"}%%TMPL:P{"displaysettings"}%%TMPL:P{"commentsettings"}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"topicsettings"}%<h2>%MAKETEXT{"Topic settings"}%</h2>
+%TMPL:DEF{"topicsettings"}%<h2 >%MAKETEXT{"Topic settings"}%</h2>
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep">
     <table class="foswikiLayoutTable">
@@ -72,7 +71,7 @@
         <th>%MAKETEXT{"Content language"}%</th>
         <td>
           <input type='hidden' name='Default+CONTENT_LANGUAGE' value='undefined' />
-          <select name="Local+CONTENT_LANGUAGE" class="foswikiSelect">
+          <select name="Local+CONTENT_LANGUAGE" class="jqSelect2" data-width="23em">
             <option value="undefined">%MAKETEXT{"default"}%</option>
             %FORMATLIST{
               "%TMPL:P{context="MultiLingualPluginEnabled" then="supportedlanguages::multiling" else="supportedlanguages::default"}%"
@@ -89,16 +88,14 @@
 </div>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"editsettings"}%<!-- -->
-<h2>%MAKETEXT{"Edit settings"}%</h2>
+%TMPL:DEF{"editsettings"}%<h2 >%MAKETEXT{"Editor settings"}%</h2>
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep">
     <table class="foswikiLayoutTable">
 %TMPL:P{"editsettings::wysiwyg"}%
     </table>
   </div>
-</div>
-<!-- -->%TMPL:END%
+</div>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"editsettings::wysiwyg"}%<tr>
@@ -124,27 +121,25 @@
 }%+NOWYSIWYG%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"displaysettings"}%<!-- -->
-<h2>%MAKETEXT{"Display settings"}%</h2>
+%TMPL:DEF{"displaysettings"}%<h2 >%MAKETEXT{"Display settings"}%</h2>
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep">
     <table class="foswikiLayoutTable">
-%TMPL:P{"showonscreen::sidebar"}%<!-- -->
-%TMPL:P{"showonscreen::menu"}%<!-- -->
-%TMPL:P{"showonscreen::topicactions"}%<!-- -->
-%TMPL:P{"showonscreen::breadcrumbs"}%<!-- -->
-%TMPL:P{"showonscreen::revinfo"}%<!-- -->
-%TMPL:P{"showonscreen::dataform"}%<!-- -->
-%TMPL:P{"showonscreen::attachments"}%<!-- -->
-%TMPL:P{context="MetaCommentPluginEnabled" then="showonscreen::comments"}%<!-- -->
+%TMPL:P{"showonscreen::sidebar"}%%{}%
+%TMPL:P{"showonscreen::menu"}%%{}%
+%TMPL:P{"showonscreen::topicactions"}%%{}%
+%TMPL:P{"showonscreen::breadcrumbs"}%%{}%
+%TMPL:P{"showonscreen::topictitle"}%%{}%
+%TMPL:P{"showonscreen::revinfo"}%%{}%
+%TMPL:P{"showonscreen::dataform"}%%{}%
+%TMPL:P{"showonscreen::attachments"}%%{}%
+%TMPL:P{context="MetaCommentPluginEnabled" then="showonscreen::comments"}%%{}%
     </table>
   </div>
-</div>
-<!-- -->%TMPL:END%
+</div>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"skinsettings"}%<!-- -->
-<h2 class="natSkinSettingsTitle">%MAKETEXT{"Skin settings"}%</h2>
+%TMPL:DEF{"skinsettings"}%<h2 class="natSkinSettingsTitle">%MAKETEXT{"Skin settings"}%</h2>
 <div class="foswikiFormSteps natSkinSettings">
   <div class="foswikiFormStep">
     <table class="foswikiLayoutTable">
@@ -190,9 +185,7 @@
     }%},
     \"selectedVariation\": \"%QUERY{"preferences[name='NATSKIN_VARIATION'].value"}%\"
   }
-}</script>"}%<!-- -->
-</div>
-<!-- -->%TMPL:END%
+}</script>"}%</div>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"showonscreen::menu"}%<tr>
@@ -316,15 +309,30 @@
 </tr>%TMPL:END%
 
 %{ ################################################################################ }%
+%TMPL:DEF{"showonscreen::topictitle"}%<tr>
+  <th>%MAKETEXT{"Topic Title"}%<input type='hidden' name='Default+DISPLAYTOPICTITLE' value="undefined" /></th>
+  <td>
+    <label><input type="radio" class="foswikiRadioButton" name="Local+DISPLAYTOPICTITLE" value="undefined" %IF{"preferences[name='DISPLAYTOPICTITLE'].value=''" then="checked"}% />%MAKETEXT{"default"}%</label>
+  </td>
+  <td>
+    <label><input type="radio" class="foswikiRadioButton" name="Local+DISPLAYTOPICTITLE" value="on" %IF{"preferences[name='DISPLAYTOPICTITLE'].value='on'" then="checked"}% />%MAKETEXT{"on"}%</label>
+  </td>
+  <td>
+    <label><input type='radio' class="foswikiRadioButton" name='Local+DISPLAYTOPICTITLE' value="off" %IF{"preferences[name='DISPLAYTOPICTITLE'].value='off'" then="checked"}% />%MAKETEXT{"off"}%</label>
+  </td>
+</tr>%TMPL:END%
+
+
+%{ ################################################################################ }%
 %TMPL:DEF{"commentsettings"}%%TMPL:P{
   "comment::system::%COMMENTSYSTEM{default="metacomment"}%::settings"
 }%%ADDTOZONE{"script" requires="JQUERYPLUGIN::FOSWIKI" id="NATSKIN::EDIT" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/edit.js'></script>"}%
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"comment::system::metacomment::settings"}%
 <div id="cmtPreferences" %IF{"isempty 'DISPLAYCOMMENTS' or $'DISPLAYCOMMENTS'='off'" then="style='display:none'"}%>
-<h2>%MAKETEXT{"Comment settings"}%</h2>
+<h2 >%MAKETEXT{"Comment settings"}%</h2>
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep">
     <input type='hidden' name='Default+COMMENTFORMAT' value="undefined" />

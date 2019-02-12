@@ -1,4 +1,4 @@
-%TMPL:INCLUDE{"listyPlugin"}%<!-- template: sidebar.nat.tmpl -->
+%TMPL:INCLUDE{"listyPlugin"}%
 %TMPL:DEF{"webrightbar"}%%WEBCOMPONENT{"RightBar"}%%TMPL:END%
 %TMPL:DEF{"websidebar"}%%WEBCOMPONENT{"SideBar"}%%TMPL:END%
 %TMPL:DEF{"defaultsidebar"}%%TMPL:P{"websidebar"}%%TMPL:END%
@@ -16,7 +16,7 @@
       then="mysidebarreddot" 
       topic="%TMPL:P{"thesidebar"}%"
     }%</h2>
-$percntINCLUDE{\"%TMPL:P{"thesidebar"}%\"}$percnt<!-- -->
+$percntINCLUDE{\"%TMPL:P{"thesidebar"}%\"}$percnt%{}%
 $percntTMPL:P{\"mysidebar::add::bookmark\"}$percnt"
   else="<h2 class='jqInited'>%MAKETEXT{"My sidebar"}%</h2>
     <ul>
@@ -29,27 +29,24 @@ $percntTMPL:P{\"mysidebar::add::bookmark\"}$percnt"
   </li>
 </ul>%TMPL:END%
 
-%TMPL:DEF{"mysidebar::listy"}%<!-- -->
-<h2 >%MAKETEXT{"My links"}%</h2>
+%TMPL:DEF{"mysidebar::listy"}%<h2 >%MAKETEXT{"My links"}%</h2>
 %LISTY{"mylinks" 
   hidenull="off" 
   width="100%"
   topic="%WIKIUSERNAME%"
   type="topic,text,external"
-}%<!-- -->
-<!-- -->%TMPL:END%
+}%%TMPL:END%
 
-%TMPL:DEF{"sidebar::header"}%<!-- -->
+%TMPL:DEF{"sidebar::header"}%%{}%
 <noautolink>
 %WEBLINK{format="<h2 class='webLink'><a class='$marker' href='$url'>$title</a></h2>"}%
 </noautolink>
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%
 
 %TMPL:DEF{"sidebar::links"}%%WEBCOMPONENT{"Links"}%%TMPL:END%
 
 %TMPL:DEF{"sidebar::tools"}%%TMPL:P{context="authenticated" then="sidebar::tools::content"}%%TMPL:END%
-%TMPL:DEF{"sidebar::tools::content"}%<!-- -->
-<h2 >%MAKETEXT{"Tools"}%</h2>
+%TMPL:DEF{"sidebar::tools::content"}%<h2 >%MAKETEXT{"Tools"}%</h2>
    * [[WebTopicList][%MAKETEXT{"Index"}%]]%IF{"istopic 'WebTagList'" then="
    * [[WebTagList][%MAKETEXT{"Tags"}%]]"}%%IF{"istopic 'Category'" then="
    * [[Category][%MAKETEXT{"Categories"}%]]"}%
@@ -57,17 +54,16 @@ $percntTMPL:P{\"mysidebar::add::bookmark\"}$percnt"
    * [[WebNotify][%MAKETEXT{"Notifications"}%]]%IF{"istopic '%BASEWEB%.WebStatistics'" then="
    * [[WebStatistics][%MAKETEXT{"Statistics"}%]]"}%
    * [[WebPreferences][%MAKETEXT{"Preferences"}%]]
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%
 
 %TMPL:DEF{"sidebar::mysidebar"}%%IF{
   "$'MYSIDEBAR'!='off' and context authenticated" 
    then="$percntTMPL:P{\"mysidebar\"}$percnt" 
-}%<!-- -->%TMPL:END%
+}%%{}%%TMPL:END%
 
-%TMPL:DEF{"sidebar::usertools"}%<!-- -->
-<h2 class='webLink'>[[%SYSTEMWEB%.UserToolsCategory][%MAKETEXT{"User Tools"}%]]</h2>
+%TMPL:DEF{"sidebar::usertools"}%<h2 class='webLink'>[[%SYSTEMWEB%.UserToolsCategory][%MAKETEXT{"User Tools"}%]]</h2>
    * [[%SYSTEMWEB%.UserRegistration][Register on %WIKITOOLNAME%]]
    * [[%SYSTEMWEB%.ResetPassword][Reset Password]] 
    * [[%SYSTEMWEB%.ChangeEmailAddress][Change Email Address]]
    * [[%SYSTEMWEB%.ChangePassword][Change Password]] 
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%

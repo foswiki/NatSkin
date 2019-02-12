@@ -1,0 +1,34 @@
+%TMPL:INCLUDE{"view"}%
+%TMPL:INCLUDE{"diff"}%
+%TMPL:DEF{"content"}%%TMPL:P{"diff"}%%TMPL:END%
+
+%TMPL:DEF{"attachments"}%%TMPL:END%
+%TMPL:DEF{"metadata"}%%TMPL:END%
+%TMPL:DEF{"bodyclass"}%natDiffBody%TMPL:END%
+%TMPL:DEF{"sidebar"}%%TMPL:END%
+%TMPL:DEF{"banner"}%%TMPL:END%
+%TMPL:DEF{"form"}%%TMPL:END%
+%TMPL:DEF{"bottombar"}%%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+%TMPL:DEF{"titleaction"}%%TRANSLATE{"diff"}%%TMPL:END%
+
+%TMPL:DEF{"topicactions"}%%DIFFCONTROL{
+  template="topicactions::diff"
+  newrev="%TMPL:P{"newrev"}%"
+  oldrev="%TMPL:P{"oldrev"}%"
+  context="%TMPL:P{"context"}%"
+  offset="%TMPL:P{"offset"}%"
+}%%TMPL:END%
+
+%TMPL:DEF{"topicactions::diff"}%<div class='natTopicActions natHistoryTopicActions'>
+%TMPL:P{"diff::control::start"}%
+%TMPL:P{"diff::control::prev"}%
+%TMPL:P{"diff::control::next"}%
+%TMPL:P{"diff::control::end"}%
+%TMPL:P{"diff::control::quit"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"diff::control"}%%TMPL:END%
+%TMPL:DEF{"diff::control::quit"}%%USERACTIONS{format="$action(close)"}%%TMPL:END%
+
+%TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"diff"}%/%WEB%/%TOPIC%">%MAKETEXT{"Differences"}%</a>%TMPL:END%

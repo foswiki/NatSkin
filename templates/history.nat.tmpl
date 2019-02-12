@@ -1,13 +1,13 @@
-%TMPL:INCLUDE{"oops"}%<!-- template: history.nat.tmpl -->
+%TMPL:INCLUDE{"oops"}%%{}%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
 <div class="jqUIDialog foswikiFormSteps" data-modal="true" data-draggable="true" data-width="auto" title="%TMPL:P{"heading"}%">
-%TMPL:P{"formstart"}%<!-- -->
-%TMPL:P{"revtable"}%<!-- -->
-%TMPL:P{"formend"}%<!-- -->
-%TMPL:P{"restoreform"}%<!-- -->
-%TMPL:P{"historyscript"}%<!-- -->
+%TMPL:P{"formstart"}%%{}%
+%TMPL:P{"revtable"}%%{}%
+%TMPL:P{"formend"}%%{}%
+%TMPL:P{"restoreform"}%%{}%
+%TMPL:P{"historyscript"}%%{}%
 </div>
 </noautolink>%TMPL:END%
 
@@ -19,22 +19,22 @@
 %TMPL:DEF{"formstart_else"}%%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="formstart_compare" else="formstart_rdiff"}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"formstart_diff"}%<!-- -->
+%TMPL:DEF{"formstart_diff"}%%{}%
 <form name="main" action="%SCRIPTURLPATH{"diff"}%/%BASEWEB%/%BASETOPIC%">
 <input type="hidden" name="context" value="2" />
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"formstart_compare"}%<!-- -->
+%TMPL:DEF{"formstart_compare"}%%{}%
 <form name="main" action="%SCRIPTURLPATH{"compare"}%/%BASEWEB%/%BASETOPIC%">
 <input type="hidden" name="context" value="1" />
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"formstart_rdiff"}%<!-- -->
+%TMPL:DEF{"formstart_rdiff"}%%{}%
 <form name="main" action="%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%">
 <input type="hidden" name="render" value="%DIFFRENDERSTYLE{default="sequential"}%" />
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"options"}%%TMPL:P{context="DiffPluginEnabled" else="options_else"}%%TMPL:END%
@@ -45,14 +45,14 @@
 </div>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"formend"}%<!-- -->
+%TMPL:DEF{"formend"}%%{}%
 <!-- input type="hidden" name="render" value="interweave" -->
   <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-clock'}">%MAKETEXT{"Compare"}%</a>
   <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Close"}%</a>
 </form>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"historyjavascript"}%<!-- -->
+%TMPL:DEF{"historyjavascript"}%%{}%
 %ADDTOZONE{
   "script"
   id="NATSKIN::HISTORY"
@@ -62,13 +62,13 @@
 %TMPL:DEF{"historyscript"}%<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/history.js'></script>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"restoreform"}%<!-- -->
+%TMPL:DEF{"restoreform"}%%{}%
 <form name="restore" action='%SCRIPTURLPATH{"manage"}%/%WEB%/%TOPIC%' method='post'>
   <input type='hidden' type='text' name='rev' value='' />
   <input type='hidden' name='action' value='restoreRevision' />
   <input type='hidden' name='nowysiwyg' value='1' />
 </form>
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"revtable"}%<div class="natHistoryTable">
@@ -80,7 +80,7 @@
       <th style='width:6em'>%MAKETEXT{"Revision"}%</th>
       <th>%MAKETEXT{"Date"}%</th>
       <th>%MAKETEXT{"Author"}%</th>
-      %IF{"context 'RevCommentPluginEnabled'" then="<th>%MAKETEXT{"Comment"}%</th>"}%<!-- -->
+      %IF{"context 'RevCommentPluginEnabled'" then="<th>%MAKETEXT{"Comment"}%</th>"}%%{}%
       <th><span class='natHistoryAction'>%MAKETEXT{"Action"}%</span></th>
     </tr>"
   format="<tr>
@@ -96,8 +96,7 @@
     </td>
     %IF{"context 'RevCommentPluginEnabled'" 
       then="<td>$dollarpercntREVCOMMENT{\\"$rev\\" pre=\\"\\" post=\\"\\"}$dollarpercnt</td>"
-    }%<!-- -->
-    <td>
+    }%<td>
       <a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?rev=$rev' title='%MAKETEXT{"View revision [_1]" args="$rev"}%' class='natHistoryAction'>
         %JQICON{"fa-eye"}% %MAKETEXT{"View"}%
       </a>
@@ -108,7 +107,7 @@
     </tr>" 
   footer="</table></div>
     <div class='foswikiFormStep'>
-      $percntTMPL:P{\"options\"}$percnt<!-- -->
+      $percntTMPL:P{\"options\"}$percnt%{}%
       $percntIF{\"'$next{'test'}'='test'\" 
         then=\"<a href='%SCRIPTURLPATH{oops}%/%BASEWEB%/%BASETOPIC%?template=oopshistory' class='natHistoryNavi'>
           <img src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/icons/control-start.png' alt='%MAKETEXT{show last revisions}%' title='%MAKETEXT{show last revisions}%' />

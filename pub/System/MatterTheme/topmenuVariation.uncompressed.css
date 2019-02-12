@@ -1,0 +1,17 @@
+.natTopBar .natUserActions {
+  display:none;
+}
+.natTopBar .natWebMenu {
+  display:block;
+  width:100%;
+}
+.natTopBar .natWebMenuContents {
+  float:right;
+}
+.natMainHeaderContents .natNewAction {
+  display:inline;
+}
+.natTopicActions .natTopicAction,
+.natTopicActions .natTopicAction:hover {
+  margin-left:8px;
+}

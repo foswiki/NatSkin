@@ -1,6 +1,6 @@
-%TMPL:INCLUDE{"search"}%<!-- template: kinosearch.nat.tmpl -->
+%TMPL:INCLUDE{"search"}%%{}%
 %TMPL:DEF{"seealso"}%%TMPL:END%
-%TMPL:DEF{"searchform"}%<!-- searchform -->
+%TMPL:DEF{"searchform"}%%{}%
 <div class="foswikiPageForm natSearchForm">
 <form name="searchform" action="%SCRIPTURLPATH{"kinosearch"}%/%BASEWEB%/%BASETOPIC%">
 <input type="text" class="foswikiInputField" name="search" size="30" value="%URLPARAM{"search" encode="entity"}%" accesskey="f" /> 
@@ -36,10 +36,9 @@
 </select>
 </td></tr></table>
 </form>
-</div>
-<!-- //searchform -->%TMPL:END%
+</div>%TMPL:END%
 
-%TMPL:DEF{"searchhit"}%<!-- searchhit -->
+%TMPL:DEF{"searchhit"}%%{}%
 <div class="foswikiRight">%SCORE% </div>
 %ICON% 
   <span class="natSearchTarget">%MATCH%</span>
@@ -48,4 +47,4 @@
   <div class="natSearchRevision">
     changed on <a rel='nofollow' href='%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPICNAME%?type=last'>%TIME%</a> by <span class='natSearchAuthor'> %AUTHOR% </span>
   </div>
-<!-- //searchit -->%TMPL:END%
+%{}%%TMPL:END%

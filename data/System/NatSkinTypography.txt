@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1485333012" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPICTITLE%
 
@@ -31,15 +31,20 @@ $Foswiki::cfg{NatSkin}{FixTypograpghy} = 1;
 </div>
 
 ---++ Headings
-<div class="alt headings">
-<div class="foswikiNormal">
 ---+!! Heading 1
 ---++!! Heading 2
 ---+++!! Heading 3
 ---++++!! Heading 4
 ---+++++!! Heading 5
 ---++++++!! Heading 6
-</div>
+
+<div class="alt headings">
+---+!! Heading 1
+---++!! Heading 2
+---+++!! Heading 3
+---++++!! Heading 4
+---+++++!! Heading 5
+---++++++!! Heading 6
 </div>
 
 ---++ Horizontal Ruler
@@ -496,5 +501,22 @@ custom icon
 
 ---++ Forms
 input, textarea, select, check boxes, radio boxes, buttons, form steps, horizontal, vertical
+
+<form>
+<div class="foswikiFormSteps" style="width:25em;margin:0 auto">
+<div class="foswikiFormStep">
+---++ Username
+<input type="text" name="username" class="foswikiInputField" style="width:100%" />
+</div>
+<div class="foswikiFormStep">
+---++ Password
+<input type="password" name="password" class="foswikiInputField" style="width:100%" />
+</div>
+---
+<div class="foswkiFormStep">
+%BUTTON{"Login" icon="fa-sign-in" type="submit"}%
+</div>
+</div>
+</form>
 
 %META:PREFERENCE{name="NOWYSIWYG" title="NOWYSIWYG" type="Set" value="on"}%

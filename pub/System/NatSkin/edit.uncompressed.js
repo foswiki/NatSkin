@@ -2,7 +2,7 @@
 jQuery(function($) {
   var prefs = foswiki.getPreference("NatSkinEdit");
 
-  $('.natDisplayComments').change(function() {
+  $('.natDisplayComments').on("change", function() {
     var val = $(this).val();
     if (val == 'on') {
       $('#cmtPreferences').fadeIn();
@@ -11,31 +11,31 @@ jQuery(function($) {
     }
   });
 
-  function setVariations() {
-    var style = jQuery('#style').val(),
-        varSelect = jQuery('#variation'),
-        variation, selected, i;
+  function updateVariations() {
+    var selectedStyle = $('#style').val(),
+        variationElem = $('#variation');
 
-    varSelect.empty()
-        .append("<option value='undefined'>default</option>")
-        .append("<option value='none'>none</option>");
+    variationElem.empty().append("<option value='undefined'>default</option>")
 
-    if (prefs.knownVariations[style]) {
-      varSelect.removeAttr('disabled');
+    $("<option value='none'>none</option>").prop("selected", prefs.selectedVariation === "none")
+      .appendTo(variationElem);
 
-      for (i = 0; i < prefs.knownVariations[style].length; i++) {
-        variation = prefs.knownVariations[style][i],
-        selected = variation == prefs.selectedVariation ? 'selected':'';
-        varSelect.append('<option '+selected+'>'+prefs.knownVariations[style][i]+'</option>');
-      }
+    if (prefs.knownVariations[selectedStyle]) {
+      variationElem.prop('disabled', false);
+
+      $.each(prefs.knownVariations[selectedStyle], function(i, variation) {
+        $('<option>' + variation + '</option>').prop("selected", prefs.selectedVariation === variation)
+          .appendTo(variationElem);
+      });
     } else {
-      varSelect.attr('disabled', 'disabled');
+      variationElem.val("undefined");
     }
   }
 
-  jQuery('#style').change(function() {
-    setVariations();
-  }).change();
+  $('#style').on("change", function() {
+    updateVariations();
+  });
 
+  updateVariations();
 });
 

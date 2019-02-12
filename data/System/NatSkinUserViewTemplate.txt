@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1485333012" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%<!-- -->
@@ -10,11 +10,10 @@
 %{<verbatim class="tml">}%
 %TMPL:DEF{"userinfo"}%<!-- -->
 <noautolink>
-<div class="foswikiProfileInfo">
+<div class="foswikiProfileInfo clearfix">
 %TMPL:P{"userinfo::photo"}%<!-- -->
 %TMPL:P{"userinfo::title"}%<!-- -->
 %TMPL:P{"userinfo::details"}%<!-- -->
-%CLEAR%
 </div>
 </noautolink>
 <!-- -->%TMPL:END%
@@ -32,13 +31,12 @@
 </span>
 <span itemprop='description' class='foswikiTopicSummary'>%FORMFIELD{"Profession"}%</span>
 </h1>
-%CLEAR%
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"userinfo::details"}%%BEGINGRID{border="on"}%
-%BEGINCOL{"6"}%
+%TMPL:DEF{"userinfo::details"}%%BEGINGRID%
+%BEGINCOL{"6"}%<!-- -->
 %RENDERFORDISPLAY{
   topic="%BASEWEB%.%BASETOPIC%"
   revision="%URLPARAM{"rev"}%"
@@ -46,13 +44,13 @@
   hideempty="on"
   format="<b>$title:</b> $value <br />"
   separator="$n"
-  OrganisationName_format="<b>%MAKETEXT{"Organisation"}%:</b> <a href='%FORMFIELD{"OrganisationURL" rev="%URLPARAM{"rev"}%"}%'>$value</a><br/>"
+  OrganisationName_title="%MAKETEXT{"Organisation"}%"
   HomePage_title="%MAKETEXT{"Homepage"}%"
   Address_title="%MAKETEXT{"Address"}%"
   Location_title="%MAKETEXT{"Location"}%"
   Country_title="%MAKETEXT{"Country"}%"
-}%
-%BEGINCOL%
+}%<!-- -->
+%BEGINCOL{border="on"}%<!-- -->
 %RENDERFORDISPLAY{
   topic="%BASEWEB%.%BASETOPIC%"
   revision="%URLPARAM{"rev"}%"
@@ -62,25 +60,8 @@
   separator="$n"
   Telephone_title="%MAKETEXT{"Tel"}%"
   Email_default="%USERINFO{"%BASETOPIC%" format="$emails"}%"
-}%
-%ENDGRID%
-<literal>
-<style> 
-.foswikiProfileInfo { 
-  margin-bottom:1.5em; 
-  position:relative; 
-  padding-left:140px; 
-  min-height:160px; 
-} 
-.foswikiProfileInfo .imagePlain { 
-  position:absolute; 
-  max-width:140px; 
-  top:0; 
-  left:0; 
-} 
-</style>
-</literal>
-%TMPL:END%
+}%<!-- -->
+%ENDGRID%%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
@@ -166,3 +147,5 @@
    }$percnt"
 }%%TMPL:END%
 %{</verbatim>}%
+
+%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

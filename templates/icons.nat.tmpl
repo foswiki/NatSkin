@@ -1,2 +1,15 @@
-%TMPL:INCLUDE{"icons"}%<!-- foswiki defaults -->
-%TMPL:INCLUDE{"icons.ma.nat"}%
+%TMPL:INCLUDE{"icons"}%%TMPL:INCLUDE{"icons.ma.nat"}%%{ ... }%
+
+%TMPL:DEF{"OK_ICON"}%fa-check%TMPL:END%
+%TMPL:DEF{"CANCEL_ICON"}%fa-times%TMPL:END%
+
+%TMPL:DEF{"diff::control::start::icon"}%%TMPL:P{"FIRST_ICON"}%%TMPL:END%
+%TMPL:DEF{"diff::control::start::disabled::icon"}%%TMPL:P{"FIRST_ICON_RESTRICTED"}%%TMPL:END%
+%TMPL:DEF{"diff::control::prev::icon"}%%TMPL:P{"PREV_ICON"}%%TMPL:END%
+%TMPL:DEF{"diff::control::prev::disabled::icon"}%%TMPL:P{"PREV_ICON_RESTRICTED"}%%TMPL:END%
+%TMPL:DEF{"diff::control::next::icon"}%%TMPL:P{"NEXT_ICON"}%%TMPL:END%
+%TMPL:DEF{"diff::control::next::disabled::icon"}%%TMPL:P{"NEXT_ICON_RESTRICTED"}%%TMPL:END%
+%TMPL:DEF{"diff::control::end::icon"}%%TMPL:P{"LAST_ICON"}%%TMPL:END%
+%TMPL:DEF{"diff::control::end::disabled::icon"}%%TMPL:P{"LAST_ICON_RESTRICTED"}%%TMPL:END%
+%TMPL:DEF{"diff::control::quit::icon"}%%TMPL:P{"CLOSE_ICON"}%%TMPL:END%
+

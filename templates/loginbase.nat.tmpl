@@ -1,89 +1,84 @@
-<!-- template: loginbase.tmpl -->
-%TMPL:DEF{"useractions"}%<div class='natGreeter'>&nbsp;</div>%TMPL:END%
+%TMPL:DEF{"useractions"}%<div class='natUserActions'>&nbsp;</div>%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"login"}%<!-- -->
+%TMPL:DEF{"login"}%%{}%
 %TMPL:P{"login::start"}%
 %TMPL:P{"login::usernamestep"}%
 %TMPL:P{"login::passwordstep"}%
-%TMPL:P{context="can_remember_login" then="rememberstep"}%<!-- -->
+%TMPL:P{context="can_remember_login" then="rememberstep"}%%{}%
 %TMPL:P{"login::buttonstep"}%
+%TMPL:P{"seealso"}%%{}%
 %TMPL:P{"login::end"}%
-<!--  -->%TMPL:END%
+%{}%%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"login::start"}%<!-- -->
-<form class="natLoginForm" name="LoginForm" action="%SCRIPTURL{"login"}%/%WEB%/%TOPIC%" method="post">
+%TMPL:DEF{"login::start"}%<form class="natLoginForm" name="LoginForm" action="%SCRIPTURL{"login"}%/%WEB%/%TOPIC%" method="post">
   <literal>
     %FORMATLIST{"%QUERYPARAMS{encoding="entity" format="$name;$value"}%"
       split="\n"
       pattern="(.*);(.*)"
-      exclude="usernamestep.*"
+      exclude="(usernamestep|foswiki&#95;origin).*"
       format="<input type='hidden' name='$1' value='$2' />"
       separator="$n"
     }%
   </literal>
-  %IF{"defined 'FOSWIKI_ORIGIN'" 
+  %IF{
+    "defined 'FOSWIKI_ORIGIN'" 
     then="<input type='hidden' name='foswiki_origin' value='$percntFOSWIKI_ORIGIN$percnt' />
-  "}%<!-- -->
-  %IF{"defined 'ORIGURL'" 
+  "}%%IF{
+    "defined 'ORIGURL'" 
     then="<input type='hidden' name='origurl' value='$percntORIGURL$percnt' />"
-  }%<!-- -->
+  }%%{}%
   <input type="submit" style="display:none" />
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"login::usernamestep"}%<!-- -->
-<div class="foswikiFormStep">
+%TMPL:DEF{"login::end"}%</form>%JQREQUIRE{"focus"}%%ADDTOZONE{"script" 
+  id="NATSKIN::LOGIN"
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/login.js'></script>"
+  requires="JQUERYPLUGIN, JQUERYPLUGIN::VALIDATE"
+}%%TMPL:END%
+
+%{################################################################################ }%
+%TMPL:DEF{"login::usernamestep"}%<div class="foswikiFormStep">
   <h3>%MAKETEXT{"Username"}%:</h3>
   %TMPL:P{"usernamefield"}%
-</div>
-<!-- -->%TMPL:END%
+</div>%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"usernamefield"}%<!-- -->
-<input type="text" class="foswikiInputField jqFocus" size="20" id="username" name="username" value='%URLPARAM{"usernamestep"}%' /> 
-<!-- -->%TMPL:END%
+%TMPL:DEF{"usernamefield"}%<input type="text" class="foswikiInputField jqFocus" size="20" id="username" name="username" value='%URLPARAM{"usernamestep"}%' />%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"login::passwordstep"}%<!-- -->
-<div class="foswikiFormStep">
+%TMPL:DEF{"login::passwordstep"}%<div class="foswikiFormStep">
   <h3>%MAKETEXT{"Password"}%:</h3>
   %TMPL:P{"passwordfield"}%
-</div>
-<!-- -->%TMPL:END%
+</div>%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"passwordfield"}%<!-- -->
-<input type="password" class="foswikiInputField" size="20" id="password" name="password" />
-<!-- -->%TMPL:END%
+%TMPL:DEF{"passwordfield"}%<input type="password" class="foswikiInputField" size="20" id="password" name="password" />%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"rememberstep"}%<!-- -->
-<div class="foswikiFormStep">
+%TMPL:DEF{"rememberstep"}%<div class="foswikiFormStep">
   <label>
     <input name="remember" class="foswikiCheckbox" type="checkbox" value="1" />
     %MAKETEXT{"Remember me on this computer"}%
   </label>
-</div>
-<!-- -->%TMPL:END%
+</div>%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"login::buttonstep"}%<!-- -->
-<div class="foswikiFormStep foswikiFormButtons">
-  %BUTTON{"%MAKETEXT{"Log in"}%" icon="tick" type="save"}% 
-  %BUTTON{"%MAKETEXT{"Cancel"}%" icon="cross" target="%WIKILOGOURL%"}%
-</div>
-<!-- -->%TMPL:END%
+%TMPL:DEF{"login::buttonstep"}%<div class="foswikiFormStep clearfix">
+  %BUTTON{"%MAKETEXT{"Log in"}%" icon="%TMPL:P{"OK_ICON"}%" type="save" class="natLoginButton"}% 
+  %BUTTON{"%MAKETEXT{"Cancel"}%" icon="%TMPL:P{"CANCEL_ICON"}%" target="%WIKILOGOURL%" class="natLoginAbortButton"}%
+</div>%TMPL:END%
+
 
 %{################################################################################ }%
-%TMPL:DEF{"login::end"}%<!-- -->
-</form>
-%JQREQUIRE{"focus"}%<!-- -->
-%ADDTOZONE{"script" 
-  id="NATSKIN::LOGIN"
-  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/login.js'></script>"
-  requires="JQUERYPLUGIN, JQUERYPLUGIN::VALIDATE"
-}%<!-- -->
-<!-- -->%TMPL:END%
-
+%TMPL:DEF{"seealso"}%<div class="foswikiFormStep">
+%IF{"context passwords_modifyable"
+  then="[[%SYSTEMWEB%.ResetPassword][%MAKETEXT{"Did you forget your password?"}%]] %BR%"
+  else="<!-- passwords not modifiable -->"
+}%
+%IF{"context registration_enabled" 
+  then="[[%SYSTEMWEB%.UserRegistration][%MAKETEXT{"Do you want to become a registered user?"}%]]"
+  else="<!-- registration disabled -->"
+}%</div>%TMPL:END%

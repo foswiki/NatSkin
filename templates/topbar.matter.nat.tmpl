@@ -1,0 +1,24 @@
+%TMPL:DEF{"topbar"}%%{}%
+<a href="#" class="natNavToggle fa fa-bars"></a>
+<div class="natTopBar clearfix">%TMPL:P{"langswitcher"}%%TMPL:P{"topbar::contents"}%</div>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"topbar::contents"}%<div class="natTopBarContents clearfix">
+<div class="natWebTitle">%TMPL:P{"logo"}%</div>
+%TMPL:P{context="natskin_menu_on" then="webmenu"}%%{}%
+%TMPL:P{"paneltoggle"}%%{}%
+%TMPL:P{"useractions"}%%{}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"paneltoggle"}%<div class="natPanelToggle">
+<a class="natPanelToggleSearch">%JQICON{"fa-search"}% %MAKETEXT{"Search"}%</a>
+<a class="natPanelToggleClose">%JQICON{"fa-times"}% %MAKETEXT{"Close"}%</a>
+</div>%TMPL:END%
+
+%TMPL:DEF{"toppanel"}%<div class="natTopPanel" style="display:none">
+%TMPL:P{"toppanel::contents"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"toppanel::contents"}%<div class="natTopPanelContents">
+%TMPL:P{"searchbox"}%%{}%
+</div>%TMPL:END%

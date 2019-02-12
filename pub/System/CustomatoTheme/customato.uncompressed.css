@@ -5,7 +5,7 @@
 .natBody {
   font-size:14px;
   line-height:1.5;
-  font-family: Roboto, Arial, 'Liberation Sans', FreeSans, sans-serif;
+  font-family: Roboto, Arial, 'Liberation Sans', FreeSans, 'Arial', sans-serif;
   background-color:#fff;
   color:#333;
 }
@@ -44,7 +44,6 @@ u {
   border-bottom:1px solid #333;
 }
 
-blockquote i,
 address:first-line,
 dt, 
 b, 
@@ -56,7 +55,7 @@ strong {
 h1,
 .foswikiNormal h1 {
   font-size:2em; /* 28px */
-  /*line-height:1.5em;  42px */
+  line-height:1.5;
   margin-top:0;
   margin-bottom:0.5em; /* 14px */
   border-bottom:1px solid #D5D6DD;
@@ -83,7 +82,7 @@ h1 .foswikiTopicSummary {
 h2,
 .foswikiNormal h2 {
   font-size:1.5em; /* 21px */
-  line-height:1em; /* 21px */
+  line-height:1.5; 
   margin:2em 0 1em;
   border-bottom:1px solid #D5D6DD;
   font-weight:normal;
@@ -95,7 +94,7 @@ h2,
 h3,
 .foswikiNormal h3 {
   font-size:1.2857em; /* 18px */
-  line-height: 1.1667em; /* 21px */
+  line-height: 1.5;
   margin: 2.3333em 0 1.1667em; /* 42px 0 21px */
   font-weight:normal;
 }
@@ -103,7 +102,7 @@ h3,
 h4,
 .foswikiNormal h4 {
   font-size: 1.1429em; /* 16px */
-  line-height: 1.3125em; /* 21px */
+  line-height: 1.5;
   margin: 1.3125em 0;
   font-weight:normal;
 }
@@ -111,7 +110,7 @@ h4,
 h5,
 .foswikiNormal h5 {
   font-size: 1.0714em; /* 15px */
-  line-height: 1.4em; /* 21px */
+  line-height: 1.5;
   margin-top: 1.4em;
   margin-bottom: 0em;
   font-weight:normal;
@@ -120,7 +119,7 @@ h5,
 h6,
 .foswikiNormal h6 {
   font-size: 1em; /* 14px */
-  line-height: 1.5em; /* 21px */
+  line-height: 1.5;
   margin-top: 1.5em;
   margin-bottom: 0;
   font-weight:normal;
@@ -260,7 +259,7 @@ a {
 
 .natEditBody .natMainContents {
   margin:0;
-  padding:1em 2em;
+  padding:1em;
 }
 
 /* bottombar */
@@ -463,7 +462,11 @@ a {
   border-bottom:1px solid #D5D6DD;
   margin-bottom:1em;
 }
-@media (max-width:620px) {
+.natWebMenu li a {
+  font-weight:600;
+}
+
+@media screen and (max-width:620px) {
   .natWebMenu {
     border-bottom:0;
   }
@@ -516,7 +519,7 @@ a {
   margin:2.5em 0 0.5em;
   font-weight:normal;
   font-size: 1.1429em; /* 16px */
-  line-height: 1.3125em; /* 21px */
+  line-height: 1.5;
 }
 .natSideBar h2,
 .natSideBar h2 a {
@@ -532,7 +535,7 @@ a {
 }
 .natSideBar h3 {
   font-size:100%; 
-  line-height:1.5em;
+  line-height:1.5;
   margin:1em 0 0.5em;
 }
 
@@ -555,16 +558,24 @@ a {
 }
 
 /* tables */
+.mce-content-body table,
 .foswikiTable {
   margin:0 0 1.5em 0;
   font-size:0.9285em; /* 13px */
-  line-height:1.4615em; /* 19px */
+  line-height:1.5;
   border:1px solid #e4e4e4;
 }
-.foswikiTable th, 
-.foswikiTable td {
+.mce-content-body th, 
+.mce-content-body td,
+.foswikiTable > thead > tr > th, 
+.foswikiTable > tbody > tr > th, 
+.foswikiTable > tbody > tr > td {
   border:1px solid #e4e4e4;
 }
+.mce-content-body th,
+.mce-content-body th h2,
+.mce-content-body th h3,
+.mce-content-body th h4,
 .foswikiTable th,
 .foswikiTable th h2,
 .foswikiTable th h3,
@@ -575,6 +586,9 @@ a {
   background-color: #f4f4f4;
   vertical-align:top;
 }
+.mce-content-body th a,
+.mce-content-body th a:hover,
+.mce-content-body th span,
 .foswikiTable th a,
 .foswikiTable th a:hover,
 .foswikiTable th span {
@@ -633,7 +647,7 @@ a {
   text-decoration:none;
 }
 
-@media (max-width: 1180px) {
+@media screen and (max-width: 1180px) {
   .natBody .natTopPanelContents,
   .natBody .natBottomBarContents {
     width:auto;
@@ -648,7 +662,7 @@ a {
   }
 }
 
-@media (max-width:870px) {
+@media screen and (max-width:870px) {
   .natBody .natMiddleContents {
     margin-right:0 !important;
     margin-left:0 !important;
@@ -714,13 +728,11 @@ a {
     margin-left:0;
   }
 }
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .natBreadCrumbs {
     display:none;
   }
   .natMainHeaderContents .natTopicActions {
-    float:none;
-    width:345px;
     margin:0 auto;
     font-size:1em;
   }
@@ -973,7 +985,7 @@ input[type=text]:focus,
 input[type=tel]:focus,
 input[type=password]:focus,
 .foswikiInputField:focus {
-  border:1px solid #16BEEF;
+  border-color:#16BEEF;
 }
 
 

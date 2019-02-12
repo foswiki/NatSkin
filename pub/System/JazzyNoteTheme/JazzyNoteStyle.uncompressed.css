@@ -28,7 +28,7 @@ h1,
 }
 
 /* layout */
-.natGreeter {
+.natUserActions {
   margin:0.5em 0;
 }
 .natMiddle {
@@ -75,6 +75,10 @@ h1,
   color:#444;
 }
 
+.natMoreActionsMenu .natMegaMenu h3 {
+  background-color:transparent;
+}
+
 .natMoreActionsMenu ul {
   border:1px solid #c2c4c4;
   box-shadow:2px 2px 2px rgba(128,128,128,0.2);
@@ -88,6 +92,20 @@ h1,
   background-color:#0055b5;
   color:#fff;
 }
+
+.natMoreActionsMenu .natMegaMenu {
+  top:3.2em;
+  max-width:92em;
+  right:-1px;
+  box-sizing:content-box;
+}
+.natMoreActionsMenu .natMegaMenu h3 {
+  background-color:transparent;
+}
+.natMoreActionsMenu .natMegaMenu ul {
+  box-shadow:none;
+}
+
 
 /* web menu */
 .natSideBarHeader,
@@ -636,7 +654,7 @@ a:hover.natScrollTop {
   color:#fff;
 }
 
-@media (max-width: 1180px) {
+@media screen and (max-width: 1180px) {
   .natBodyFixed .natTopBarContents,
   .natBodyFixed .natBottomBarContents {
     width:auto;
@@ -652,12 +670,12 @@ a:hover.natScrollTop {
   .natTopLeftContents {
     padding-left:1.385em;
   }
-  .natGreeter {
+  .natUserActions {
     display:none;
   }
 }
 
-@media (max-width:870px) {
+@media screen and (max-width:870px) {
   .natBody .natMiddleContents {
     margin-right:0;
     margin-left:0;
@@ -712,7 +730,7 @@ a:hover.natScrollTop {
   }
 }
 
-@media (max-width:485px) {
+@media screen and (max-width:485px) {
   .natBreadCrumbs,
   .natTopBar .natSearchBox {
     display:none;

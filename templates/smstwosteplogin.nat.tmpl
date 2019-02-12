@@ -1,0 +1,11 @@
+%TMPL:INCLUDE{"smstwostepbase"}%%{}%
+
+%TMPL:DEF{"heading"}%%MAKETEXT{"Please enter the access code received via [_1]" args="SMS"}%%TMPL:END%
+
+%TMPL:DEF{"login::usernamestep"}%<input type='hidden' name='username' value='%LOGINNAME%' />%TMPL:END%
+
+%TMPL:DEF{"login::passwordstep"}%<div class="foswikiFormStep">
+<h3>%MAKETEXT{"Access code"}%:</h3>
+<input type='text' class='foswikiInputField foswikiFocus' size='40' name='accesscode' autocomplete="off" />
+</div>%TMPL:END%
+

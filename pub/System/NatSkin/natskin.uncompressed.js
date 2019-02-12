@@ -1,4 +1,4 @@
-// (c)opyright 2006-2017 Michael Daum http://michaeldaumconsulting.com
+// (c)opyright 2006-2019 Michael Daum http://michaeldaumconsulting.com
 "use strict";
 
 (function($) {
@@ -56,7 +56,7 @@
       }).appendTo(sel);
 
       // Populate dropdown with menu items
-      $this.find(".natWebMenuContents > ul > li > a").each(function() {
+      $this.find(".natWebMenuContents > ul > li > a[href]").each(function() {
         var el = $(this);
         $("<option />", {
             "value"   : el.attr("href"),
@@ -64,7 +64,7 @@
         }).appendTo(sel);
       });
 
-      sel.change(function() {
+      sel.on("change", function() {
         window.location.href = $(this).find("option:selected").val();
       });
 
@@ -100,19 +100,113 @@
    * 
    */
   function initTopPanel() {
+    var $panel = $(".natTopPanel"), 
+        $toggle = $(".natPanelToggle"),
+        $searchBox = $panel.find(".natSearchBox .foswikiInputField"),
+        url = $panel.find("form").attr("action"),
+        openTimer,
+        opts = $.extend({
+          openDuration: 200,
+          openEasing: "shagga",
+          closeDuration: 200,
+          closeEasing: "shagga"
+        }, $panel.data());
 
-    $(document).on("click", ".natPanelToggle a", function() {
-      var $toggle = $(this);
-      $(".natTopPanel").slideToggle({
-        duration:200, 
-        easing: "shagga",
+    function openPanel() {
+      if (typeof(openTimer) === 'undefined') {
+        openTimer = window.setTimeout(function() {
+          $toggle.addClass("open");
+          openTimer = undefined;
+
+          $panel.slideDown({
+            duration: opts.openDuration,
+            easing: opts.openEasing,
+            complete: function() {
+              $panel.addClass("open");
+            }
+          });
+
+          window.scrollTo(0,0);
+          $searchBox.focus();
+        }, 250); // timeout to detect a double click
+      }
+    }
+
+    function closePanel() {
+      $toggle.removeClass("open");
+
+      $panel.slideUp({
+        duration: opts.closeDuration,
+        easing: opts.closeEasing,
         complete: function() {
-          $(this).toggleClass("open");
-          $toggle.parent().toggleClass("open");
+          $panel.removeClass("open");
         }
       });
+    }
+
+    function togglePanel(e) {
+      if ($panel.is(".open")) {
+        closePanel();
+      } else {
+        openPanel();
+      }
+    }
+
+    $(document).on("dblclick", ".natPanelToggleSearch", function(e) {
+      window.clearTimeout(openTimer);
+      $(this).addClass("natWaiting");
+      window.location.href = url;
+      e.preventDefault();  
       return false;
     });
+
+
+    $(document)
+      .on("open_panel", openPanel)
+      .on("close_panel", closePanel)
+      .on("click", ".natPanelToggle a", togglePanel)
+      .on("keydown", function(e) {
+        if (e.altKey && e.shiftKey && e.keyCode === 70) { /* alt+shift+f */
+          openPanel();
+        } 
+      });
+
+    $searchBox.on("keydown", function(e) {
+      if (e.keyCode === 27) {
+        closePanel();
+      }
+    }).on("blur", function() {
+      window.setTimeout(function() {
+        closePanel();
+      }, 100);
+    });
+  }
+
+  /**************************************************************************
+   * add behavior when the hash of the window.location changes
+   * 
+   */
+  function initHashChange() {
+
+    function animateHashChange() {
+      var hash = window.location.hash.substring(1).replace(/([#\.])/g, '\\$1'), elem;
+      if (hash !== '' && !hash.match(/^GoSlide\d/) ) { // prevent blinking SlideShowPlugin slides
+        try {
+          elem = $("#"+hash);
+          elem.addClass("natBlinker");
+          window.setTimeout(function() {
+            elem.removeClass("natBlinker");
+          }, 2500);
+        } catch (error) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    $(window).on("hashchange", animateHashChange);
+    animateHashChange();
   }
 
   /**************************************************************************
@@ -127,28 +221,28 @@
       return false;
     });
 
-    /* fix topic actions menu */
-    $(".natMoreActionsMenu:first").livequery(function() {
-      // hide hr if all prev list items are disabled
-      // ... or all following list items are disabled
-      $(this).find("hr").parent().each(function() {
-        var $this = $(this);
-        if ($this.prevAll().find(".natTopicAction").not(".natDisabledTopicAction").length === 0 ||
-            $this.nextAll().find(".natTopicAction").not(".natDisabledTopicAction").length === 0) {
-          $this.hide();
-        }
-      });
-    });
-
     // init more actions menu
     $(".natMoreActionsMenu:not(.natInitedMoreActionsMenu)").livequery(function() {
-      var $this = $(this), 
-          opts = $.extend({}, $this.metadata());
-      $this.addClass("natInitedMoreActionsMenu").superfish(opts);
+      var $this = $(this),
+          opts = $.extend({menu: "ul:first"}, $this.data()),
+          $menu = $this.find(opts.menu);
+
+      $this.hoverIntent({
+        over: function() {
+          $menu.fadeIn("fast");
+          //$menu.show();
+        }, 
+        out: function() {
+          $menu.hide();
+        },
+        timeout: 500,
+        sensitivity: 3
+      });
       $this.find("a[href]").click(function() {
-        $this.superfish("hide");
+        $menu.hide();
       });
     });
+      
   }
 
   /**************************************************************************
@@ -186,52 +280,6 @@
     });
 
     $('.natSideBarContents > h2:first-of-type').addClass('natFirstOfType');
-  }
-
-  /**************************************************************************
-   * init the autosuggestion feature on the search field
-   */
-  function initSearchBox() {
-    $(".solrSearchBox form").livequery(function() {
-      var $form = $(this),
-          action = $form.attr("action"),
-          $input = $form.find("input[type=text]"),
-          submitButton = $form.find("input[type=submit]:visible"),
-          position = $.extend({
-            my: "right top",
-            at: "right bottom+11",
-          }, {
-            my: $form.data("position-my"),
-            at: $form.data("position-at"),
-          }),
-          extraFilter = $form.data("solrExtraFilter");
-
-      $form.submit(function() {
-        var search = $form.find("input[name='search']"),
-            href = action + ((search && search.val())?'#q='+search.val():'');
-        window.location.href = href;
-        return false;
-      });
-
-      if (typeof($.fn.autosuggest) === 'function') { // make sure autosuggest realy is present
-        $input.autosuggest({
-          extraParams: {
-            filter: extraFilter
-          },
-          position: position,
-          menuClass: 'natSearchBoxMenu',
-          search: function() {
-            submitButton.hide();
-          },
-          response: function() {
-            submitButton.show();
-          },
-          open: function() {
-            submitButton.show();
-          }
-        });
-      }
-    });
   }
 
   /**************************************************************************
@@ -301,21 +349,22 @@
 
     $(".foswikiBroadcastMessage").livequery(function() {
       var $this = $(this), 
-          cookieName = "FOSWIKI_NATSKIN_broadcastMessage",
+          id = $this.attr("id"),
+          cookieNamePrefix = foswiki.getPreference("COOKIENAMEPREFIX") || '',
+          cookieName = cookieNamePrefix + "FOSWIKI_NATSKIN_broadcastMessage_"+id,
           cookieDomain = foswiki.getPreference('COOKIEREALM'),
-          cookieSecure = foswiki.getPreference('URLHOST').startsWith('https://'),
-          cookieCheckSum = $.cookie(cookieName),
+          cookieSecure = foswiki.getPreference('URLHOST').indexOf('https://') === 0,
+          cookieCheckSum = parseInt($.cookie(cookieName), 10),
           checkSum;
 
       if (typeof(cookieCheckSum) === 'undefined') {
         $this.show();
       } else {
         checkSum = _hashCode($this.text());
-        if (checkSum != cookieCheckSum) {
+        if (checkSum !== cookieCheckSum) {
           $this.show();
         }
       }
-
 
       $this.find(".foswikiBroadcastMessageClose").on("click", function() {
         checkSum = checkSum || _hashCode($this.text());
@@ -334,14 +383,45 @@
   }
 
   function _hashCode(str) { 
-    var hash = 5381, i = str.length
+    var hash = 5381, i = str.length;
 
     while(i) {
-      hash = (hash * 33) ^ str.charCodeAt(--i)
+      hash = (hash * 33) ^ str.charCodeAt(--i);
     }
 
     return hash >>> 0;
   }
+
+  /**************************************************************************
+   * add behavior to cookie info
+   * 
+   */
+  function initCookieInfo() {
+
+    $(".natCookieInfo").livequery(function() {
+      var $this = $(this),
+          cookieName = "FOSWIKI_NATSKIN_cookieInfo",
+          cookieDomain = foswiki.getPreference('COOKIEREALM'),
+          cookieSecure = foswiki.getPreference('URLHOST').indexOf('https://') === 0,
+          cookieAgreed = $.cookie(cookieName);
+
+      if (!cookieAgreed) {
+        window.setTimeout(function () {
+          $this.fadeIn(200);
+        }, 2000);
+      
+        $this.find(".natCookieInfoOK").click(function() {
+          $this.fadeOut(200);
+          $.cookie(cookieName, true, {
+            path:'/',
+            domain: cookieDomain,
+            secure: cookieSecure
+          });
+        }); 
+      }
+    });
+  }
+
 
   /**************************************************************************
    * init address element
@@ -357,6 +437,39 @@
   }
 
   /**************************************************************************
+   * init top bar to shrink when scrolling
+   */
+  function initTopBar() {
+    var $panel = $(".natTopPanel"),
+        timer;
+
+    function updateTopBar() {
+      var scrollTop = $(window).scrollTop();
+
+      //console.log("scrollTop=",scrollTop);
+
+      if (scrollTop >= 100) {
+        //console.log("... making it smaller");
+        if ($panel.is(".open")) {
+          $(document).trigger("close_panel");
+        } else {
+          $("body").addClass("natBodyStickyTopBar");
+        }
+      } else {
+        //console.log("... making it larger again");
+        $("body").removeClass("natBodyStickyTopBar");
+      }
+    }
+
+    $(window).on('scroll', function() {
+      window.cancelAnimationFrame(timer);
+      timer = window.requestAnimationFrame(function() {
+        updateTopBar();
+      }); 
+    });
+  }
+
+  /**************************************************************************
    * init external links: open them in a separate window.
    * note: you will have to enable {NatSkin}{DetectExternalLinks}
    */
@@ -364,6 +477,33 @@
     $(".natExternalLink").livequery(function() {
       $(this).attr("target", "_blank").attr("rel", "noopener noreferrer");
     });
+  }
+
+  /**************************************************************************
+   * show accesskeys on the current page
+   */
+  function showAccessKeys() {
+    var text = "", keys = [], descr = {};
+
+    $("[accesskey]").each(function() {
+      var $this = $(this), 
+          key = $this.attr("accesskey");
+      if (typeof(descr[key]) === 'undefined') {
+        descr[key] = $this.attr("title") || "???";
+        keys.push(key);
+      }
+    });
+    if (keys.length) {
+      $(keys.sort()).each(function(i, key) {
+        text += "<tr><th>"+key+":</th><td>"+descr[key]+"</td></tr>"
+      });
+      text = "<table class='foswikiLayoutTable'><tbody>"+text+"</tbody></table>";
+      $.pnotify({
+        title: $.i18n("Access Keys"),
+        text: text,
+        type: "notice"
+      });
+    }
   }
 
   /**************************************************************************
@@ -390,16 +530,20 @@
       initSideBar();
     }
 
-    if (prefs.initAutoComplete) {
-      initSearchBox();
-    }
-
     if (prefs.initExternalLinks) {
       initExternalLinks();
     }
 
     if (prefs.initTopPanel) {
       initTopPanel();
+    }
+
+    if (prefs.initTopBar) {
+      initTopBar();
+    }
+
+    if (prefs.initCookieInfo) {
+      initCookieInfo();
     }
 
     // flag a dialog being open to the body element
@@ -414,7 +558,14 @@
       }
     });
 
+    // show access keys
+    $(document).on("keydown", function(e) {
+      if (e.altKey && e.shiftKey && e.keyCode === 219) { /* alt+shift+? */
+        showAccessKeys();          
+      }
+    });
 
+    initHashChange(); 
     initTopicActions(); 
     initScrollToTop();
     initResponsiveNavi();

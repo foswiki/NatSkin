@@ -1,35 +1,31 @@
-%TMPL:INCLUDE{"topbar"}%<!-- template: topbar.customato.nat.tmpl -->
+%TMPL:INCLUDE{"topbar"}%%{}%
 
 %{################################################################################ }%
-%TMPL:DEF{"topbar"}%<!-- -->
-%TMPL:P{"langswitcher"}%<!-- -->
+%TMPL:DEF{"topbar"}%%TMPL:P{"langswitcher"}%%{}%
 <a class="natNavToggle fa fa-bars"></a>
 <div class="natTopBar clearfix foswikiContents" name="topbar::contents" reload="web">
 %TMPL:P{"topbar::contents"}%
-</div>
-<!-- -->%TMPL:END%
+</div>%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"topbar::contents"}%<!-- -->
-  <div class="natTopRight">
-    <div class="natTopRightContents">
-      %TMPL:P{"topbar::navi"}%<!-- -->
-      %TMPL:P{"topbar::notifications"}%<!-- -->
-      %TMPL:P{context="authenticated" then="topbar::authenticated" else="topbar::notauthenticated"}%<!-- -->
-    </div>
+%TMPL:DEF{"topbar::contents"}%<div class="natTopRight">
+  <div class="natTopRightContents">
+    %TMPL:P{"topbar::navi"}%%{}%
+    %TMPL:P{"topbar::notifications"}%%{}%
+    %TMPL:P{context="authenticated" then="topbar::authenticated" else="topbar::notauthenticated"}%%{}%
   </div>
-  <div class="natTopLeft">
-    <div class="natTopLeftContents">
-      <div class="natWebTitle">%TMPL:P{"logo"}%</div>
-    </div>
+</div>
+<div class="natTopLeft">
+  <div class="natTopLeftContents clearfix">
+    <div class="natWebTitle">%TMPL:P{"logo"}%</div>
   </div>
-<!-- -->%TMPL:END%
+</div>%TMPL:END%
 
 %{################################################################################ }%
 %TMPL:DEF{"topbar::navi"}%%WEBCOMPONENT{"NetworkNavi"
   header="<div class='natNetworkNavi'>"
   footer="</div>"
-}%<!-- -->%TMPL:END%
+}%%{}%%TMPL:END%
 
 %{################################################################################ }%
 %TMPL:DEF{"DIS_topbar::notifications"}%<div class='natNotifications jqUITooltip' data-theme='info' data-arrow='on' data-position='bottom'>
@@ -56,8 +52,7 @@
 %TMPL:DEF{"toppanel"}%<div class="natTopPanel foswikiContents" name="toppanel::contents" reload="web" style="display:none">
 %TMPL:P{"toppanel::contents"}%
 </div>
-<div class="natTopShadow"></div>
-<!-- -->%TMPL:END%
+<div class="natTopShadow"></div>%TMPL:END%
 
 %{################################################################################ }%
 %TMPL:DEF{"toppanel::contents"}%%TMPL:P{context="authenticated" then="toppanel::authenticated" else="toppanel::notauthenticated"}%%TMPL:END%
@@ -72,8 +67,8 @@
 %BEGINCOL{"4"}%
 <h3 >My <nop>%WIKITOOLNAME%</h3>
    * [[%%WIKIUSERNAME%][%MAKETEXT{"My Profile"}%]]
-   * [[%SYSTEMWEB%.ChangeEmailAddress][%MAKETEXT{"Change Email Address"}%]]
-   * [[%SYSTEMWEB%.ChangePassword][%MAKETEXT{"Change Password"}%]] %IF{"$ LOGOUT" then="
+   * [[%SYSTEMWEB%.ChangeEmailAddress][%MAKETEXT{"Change email address"}%]]
+   * [[%SYSTEMWEB%.ChangePassword][%MAKETEXT{"Change password"}%]] %IF{"$ LOGOUT" then="
    * [[%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?logout=1][%MAKETEXT{"Log out"}%]]"}%
 %BEGINCOL{"4"}%
 <h3 >%MAKETEXT{"Tools"}%</h3>
@@ -98,13 +93,11 @@
 <h3 >%MAKETEXT{"Welcome"}%</h3>
 %IF{"context registration_enabled"
   then="   * [[%SYSTEMWEB%.UserRegistration][Register on %WIKITOOLNAME%]]"
-  else="<!-- -->"
 }%%IF{"context passwords_modifyable"
   then="
-   * [[%SYSTEMWEB%.ResetPassword][Reset Password]]
-   * [[%SYSTEMWEB%.ChangeEmailAddress][Change Email Address]]
-   * [[%SYSTEMWEB%.ChangePassword][Change Password]]"
-  else="<!-- -->"
+   * [[%SYSTEMWEB%.ResetPassword][%MAKETEXT{"Reset password"}%]]
+   * [[%SYSTEMWEB%.ChangeEmailAddress][%MAKETEXT{"Change email address"}%]]
+   * [[%SYSTEMWEB%.ChangePassword][%MAKETEXT{"Change password"}%]]"
 }%
 %BEGINCOL{"6"}%
 %TMPL:P{"toppanel::login"}%
@@ -112,18 +105,17 @@
 </div>%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"toppanel::login"}%<!-- -->
-%TMPL:P{"toppanel::login::start"}%
-%TMPL:P{"toppanel::login::usernamestep"}%
-%TMPL:P{"toppanel::login::passwordstep"}%
-%TMPL:P{context="can_remember_login" then="toppanel::login::rememberstep"}%<!-- -->
+%TMPL:DEF{"toppanel::login"}%%{}%
+%TMPL:P{"toppanel::login::start"}%%{}%
+%TMPL:P{"toppanel::login::usernamestep"}%%{}%
+%TMPL:P{"toppanel::login::passwordstep"}%%{}%
+%TMPL:P{context="can_remember_login" then="toppanel::login::rememberstep"}%%{}%
 %TMPL:P{"toppanel::login::buttonstep"}%
 %TMPL:P{"toppanel::login::end"}%
-<!--  -->%TMPL:END%
+%{}%%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"toppanel::login::start"}%<!-- -->
-<h3 >%MAKETEXT{"Log in"}%</h3>
+%TMPL:DEF{"toppanel::login::start"}%<h3 >%MAKETEXT{"Log in"}%</h3>
 <form class="natLoginForm" name="LoginForm" action="%SCRIPTURLPATH{"login"}%/%WEB%/%TOPIC%" method="post">
   <literal>
     %FORMATLIST{"%QUERYPARAMS{encoding="entity" format="$name;$value"}%"
@@ -136,69 +128,51 @@
   </literal>
   %IF{"defined 'FOSWIKI_ORIGIN'" 
     then="<input type='hidden' name='foswiki_origin' value='$percntFOSWIKI_ORIGIN$percnt' />
-  "}%<!-- -->
-  %IF{"defined 'ORIGURL'" 
+  "}%%IF{"defined 'ORIGURL'" 
     then="<input type='hidden' name='origurl' value='$percntORIGURL$percnt' />"
-  }%<!-- -->
+  }%%{}%
   <input type="submit" style="display:none" />
-  <table class="foswikiLayoutTable">
-<!-- -->%TMPL:END%
+  <table class="foswikiLayoutTable">%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"toppanel::login::usernamestep"}%<!-- -->
-<tr>
+%TMPL:DEF{"toppanel::login::usernamestep"}%<tr>
   <th>%MAKETEXT{"Username"}%:</th> 
   <td>%TMPL:P{"toppanel::login::usernamefield"}%</td>
-</tr>
-<!-- -->%TMPL:END%
+</tr>%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"toppanel::login::usernamefield"}%<!-- -->
-<input type="text" class="foswikiInputField required" size="20" id="username" name="username" value='%URLPARAM{"usernamestep"}%' /> 
-<!-- -->%TMPL:END%
+%TMPL:DEF{"toppanel::login::usernamefield"}%<input type="text" class="foswikiInputField required" size="20" id="username" name="username" value='%URLPARAM{"usernamestep"}%' />%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"toppanel::login::passwordstep"}%<!-- -->
-<tr>
+%TMPL:DEF{"toppanel::login::passwordstep"}%<tr>
   <th>%MAKETEXT{"Password"}%:</th>
   <td>%TMPL:P{"toppanel::login::passwordfield"}%</td>
-</tr>
-<!-- -->%TMPL:END%
+</tr>%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"toppanel::login::passwordfield"}%<!-- -->
-<input type="password" class="foswikiInputField required" size="20" id="password" name="password" />
-<!-- -->%TMPL:END%
+%TMPL:DEF{"toppanel::login::passwordfield"}%<input type="password" class="foswikiInputField required" size="20" id="password" name="password" />%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"toppanel::login::rememberstep"}%<!-- -->
-<tr><td colspan="2">
-  <label>
-    <input name="remember" class="foswikiCheckbox" type="checkbox" value="1" />
-    %MAKETEXT{"Remember me on this computer"}%
-  </label>
-</td>
-</tr>
-<!-- -->%TMPL:END%
-
-%{################################################################################ }%
-%TMPL:DEF{"toppanel::login::buttonstep"}%<!-- -->
-<tr>
-  <td colspan="2" style="padding-top:1em">
-    %BUTTON{"%MAKETEXT{"Submit"}%" icon="key" type="save" class="foswikiRight"}%
+%TMPL:DEF{"toppanel::login::rememberstep"}%<tr>
+  <td colspan="2">
+    <label>
+      <input name="remember" class="foswikiCheckbox" type="checkbox" value="1" />
+      %MAKETEXT{"Remember me on this computer"}%
+    </label>
   </td>
-</tr>
-<!-- -->%TMPL:END%
+</tr>%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"toppanel::login::end"}%<!-- -->
-</table>
-</form>
-%JQREQUIRE{"validate"}%<!-- -->
-%ADDTOZONE{"script" 
+%TMPL:DEF{"toppanel::login::buttonstep"}%<tr>
+  <td colspan="2" style="padding-top:1em">
+    %BUTTON{"%MAKETEXT{"Submit"}%" icon="%TMPL:P{"OK_ICON"}%" type="save" class="foswikiRight"}%
+  </td>
+</tr>%TMPL:END%
+
+%{################################################################################ }%
+%TMPL:DEF{"toppanel::login::end"}%</table>
+</form>%JQREQUIRE{"validate"}%%ADDTOZONE{"script" 
   id="NATSKIN::LOGIN"
   text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/login.js'></script>"
   requires="JQUERYPLUGIN, JQUERYPLUGIN::VALIDATE"
-}%<!-- -->
-%CLEAR%
-<!-- -->%TMPL:END%
+}%%CLEAR%%TMPL:END%

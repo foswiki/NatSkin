@@ -1,40 +1,65 @@
-%TMPL:DEF{"defaultjavascript"}%<!-- -->
-%ADDTOZONE{"script" 
+%TMPL:DEF{"defaultjavascript"}%%{}%
+%TMPL:P{"javascript::prefs"}%%{}%
+%TMPL:P{"javascript::require"}%%{}%
+%TMPL:P{"javascript::topiccreator"}%%{}%
+%TMPL:P{context="SolrPluginEnabled" then="javascript::solr"}%%{}%
+%RENDERZONE{"script"}%
+%RENDERZONE{"skinjs"}%
+%{}%%TMPL:END%
+
+%TMPL:DEF{"javascript::require"}%%JQREQUIRE{
+  "validate, superfish, ui, blockui, pnotify, farscroll, scrollto, imagetooltip, autosuggest, ui::tooltip, cookie, fontawesome, wikiword, like" 
+  warn="off"
+}%%TMPL:P{"javascript::require::uploader"}%%TMPL:END%
+
+%TMPL:DEF{"javascript::require::uploader"}%%IF{"'%NATSKIN_UPLOADERENABLED{default="on"}%'='on'" 
+  then="$percntJQREQUIRE{\"uploader\" warn=\"off\"}$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"javascript::prefs"}%%ADDTOZONE{"script" 
   requires="JQUERYPLUGIN::FOSWIKI::PREFERENCES"
   id="NATSKIN::PREFERENCES"
   text="<script class='$zone $id foswikiPreferences' type='text/json'>{
     \"NatSkin\" : {
       \"initWebMenu\": %TMPL:P{"initWebMenu"}%,
       \"initTopPanel\": %TMPL:P{"initTopPanel"}%,
+      \"initTopBar\": %TMPL:P{"initTopBar"}%,
       \"initOverflows\": %TMPL:P{"initOverflows"}%,
       \"initSideBar\": %TMPL:P{"initSideBar"}%,
-      \"initAutoComplete\": %TMPL:P{"initAutoComplete"}%,
       \"initRedDot\": %TMPL:P{"initRedDot"}%,
       \"initBusyIndicator\": %TMPL:P{"initBusyIndicator"}%,
       \"initExternalLinks\": %TMPL:P{"initExternalLinks"}%,
+      \"initCookieInfo\": %TMPL:P{"initCookieInfo"}%,
       \"sideBar\": \"%NATSKIN_SIDEBAR{default="on"}%\",
       \"layout\": \"%NATSKIN_LAYOUT{default="fixed"}%\"
     }
 }</script>"
-}%%ADDTOZONE{
+}%%TMPL:END%
+
+%TMPL:DEF{"javascript::topiccreator"}%%ADDTOZONE{
   "script" 
   id="TOPICCREATOR" 
   requires="JQUERYPLUGIN::WIKIWORD, JQUERYPLUGIN::SCROLLTO"
   text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/RenderPlugin/foswikiTemplate.js'></script>
 <script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/topiccreator.js'></script>"
-}%%JQREQUIRE{"validate, superfish, ui, blockui, farscroll, scrollto, imagetooltip, autosuggest, ui::tooltip, cookie, fontawesome, wikiword, like" warn="off"}%<!--  -->
-%RENDERZONE{"script"}%
-%RENDERZONE{"skinjs"}%
-<!-- -->%TMPL:END%
+}%%TMPL:END%
+
+%TMPL:DEF{"javascript::solr"}%%ADDTOZONE{
+  "script" 
+  id="SOLRPLUGIN::SEARCHBOX" 
+  requires="JQUERYPLUGIN::AUTOSUGGEST" 
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/SolrPlugin/solr-searchbox.js'></script>"
+}%%TMPL:END%
 
 %TMPL:DEF{"initWebMenu"}%true%TMPL:END%
-%TMPL:DEF{"initTopPanel"}%true%TMPL:END%
+%TMPL:DEF{"initTopPanel"}%false%TMPL:END%
+%TMPL:DEF{"initTopBar"}%false%TMPL:END%
 %TMPL:DEF{"initOverflows"}%false%TMPL:END%
 %TMPL:DEF{"initSideBar"}%false%TMPL:END%
-%TMPL:DEF{"initAutoComplete"}%%IF{"context SolrPluginEnabled" then="true" else="false"}%%TMPL:END%
 %TMPL:DEF{"initRedDot"}%true%TMPL:END%
-%TMPL:DEF{"initBusyIndicator"}%true%TMPL:END%
+%TMPL:DEF{"initBusyIndicator"}%false%TMPL:END%
 %TMPL:DEF{"initExternalLinks"}%true%TMPL:END%
+%TMPL:DEF{"initCookieInfo"}%%IF{"context cookie_info" then="true" else="false"}%%TMPL:END%
 
 %TMPL:DEF{"defaultjavascript"}%%TMPL:PREV%%TMPL:END%
 

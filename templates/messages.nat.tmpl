@@ -101,7 +101,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 %TMPL:DEF{"password_changed"}%<!-- huh -->
 ---+++ %MAKETEXT{"Password changed successfully!"}%
 
-%BUTTON{"%MAKETEXT{"OK"}%" target="%USERSWEB%.%WIKINAME%" icon="tick"}%
+%BUTTON{"%MAKETEXT{"OK"}%" target="%USERSWEB%.%WIKINAME%" icon="%TMPL:P{"OK_ICON"}%"}%
 %TMPL:END%
 %TMPL:DEF{"confirm"}%<!-- confirm -->
 ---+++ %MAKETEXT{"Thank you for registering"}%
@@ -110,7 +110,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 <form action="%SCRIPTURLPATH{"register"}%" method="post">
 <input type="hidden" name="action" value="verify" size="20" />
 <input type="text" name="code" size="20" />
-%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="tick"}%
+%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="%TMPL:P{"OK_ICON"}%"}%
 </form>
 
 %TMPL:END%
@@ -196,7 +196,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 <form action="%SCRIPTURLPATH{"register"}%" method="post">
 <input type="hidden" name="action" value="verify" size="20" />
 <input type="text" name="code" size="20" />
-%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="tick"}%
+%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="%TMPL:P{"OK_ICON"}%"}%
 </form>
 %TMPL:END%
 %TMPL:DEF{"no_email_for"}%<!-- nach %2 umbenennenbetter dialog -->
@@ -257,7 +257,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
    * %MAKETEXT{"International (8-bit) characters are removed (replaced by US-ASCII equivalents for Latin-1)"}%
 %MAKETEXT{"You may be able to get your Wiki administrator to change the settings if they are inappropriate for your environment."}%
 
-%BUTTON{"%MAKETEXT{"OK"}%" target="%WEB%.%TOPIC%" icon="tick"}%
+%BUTTON{"%MAKETEXT{"OK"}%" target="%WEB%.%TOPIC%" icon="%TMPL:P{"OK_ICON"}%"}%
 %TMPL:END%
 %TMPL:DEF{"rename_web_prerequisites"}%<!-- better buttons -->
 ---+++ %MAKETEXT{"There are problems with renaming this web"}%:
@@ -276,8 +276,8 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 <form class="natOopsButtons" name="ButtonBox" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%HOMETOPIC%" method="post">
   <input type="hidden" name="action" value="renameweb">
   <input type="hidden" name="confirm" value="continue">
-  %BUTTON{"%MAKETEXT{"OK"}%" type="submit" icon="tick"}%
-  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WEB%.%HOMETOPIC%" icon="cross"}%
+  %BUTTON{"%MAKETEXT{"OK"}%" type="submit" icon="%TMPL:P{"OK_ICON"}%"}%
+  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WEB%.%HOMETOPIC%" icon="%TMPL:P{"CANCEL_ICON"}%"}%
 </form> 
 </div>
 %TMPL:END%
@@ -292,15 +292,14 @@ template that doesn't exist." args="%PARAM2%"}%
 
 (%MAKETEXT{"Don't forget to check your topic settings."}%)
 %TMPL:END%
-%TMPL:DEF{"topic_access"}% <!-- -->
+%TMPL:DEF{"topic_access"}% %{}%
 ---++ %MAKETEXT{"Access denied"}%
 %MAKETEXT{"[_1] has no permission to [_2] [_3]." args="[[%WIKIUSERNAME%]], <b>%PARAM1%</b> ,[[%TOPIC%]]"}%
 
 %TMPL:P{"login"}%
 
-%MAKETEXT{"See also"}%: [[%USERSWEB%.WikiGroups]], [[%SYSTEMWEB%.AccessControl]], [[%SYSTEMWEB%.UserRegistration]]
 %TMPL:END%
-%TMPL:DEF{"only_group"}% <!-- -->
+%TMPL:DEF{"only_group"}% %{}%
 %MAKETEXT{"Only members of the [_1] are allowed to perform this action." args="%PARAM1%"}%
 
 %TMPL:P{"login"}%
@@ -313,7 +312,7 @@ template that doesn't exist." args="%PARAM2%"}%
 
 %TMPL:P{"goback"}%
 %TMPL:END%
-%TMPL:DEF{"no_such_web"}% <!-- -->
+%TMPL:DEF{"no_such_web"}% %{}%
 ---++ %MAKETEXT{"The [_1] web does not exist" args="%WEB%"}%
 %MAKETEXT{"You are trying to [_1] in a web that does not exist." args="%PARAM1%"}%
 
@@ -324,7 +323,7 @@ template that doesn't exist." args="%PARAM2%"}%
 [[%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%SERVERTIME{"$year$mo$day$min$sec"}%][%MAKETEXT{"Create the topic"}%]]
 
 %TMPL:END%
-%TMPL:DEF{"no_such_topic"}% <!-- -->
+%TMPL:DEF{"no_such_topic"}% %{}%
 ---++ %MAKETEXT{"[_1] topic does not exist" args="%WEB%.%TOPIC%"}%
 %MAKETEXT{"You are trying to [_1] a topic that does not exist." args="%PARAM1%"}%
 
@@ -343,9 +342,8 @@ template that doesn't exist." args="%PARAM2%"}%
 %TMPL:P{"goback"}%
 %TMPL:END%
 %TMPL:DEF{"no_such_attachment"}% <!-- removed contact -->
----++ %MAKETEXT{"Attachment '[_1]' does not exist" args="%PARAM2%"}%
-%MAKETEXT{"You are trying to [_1] an attachment that does not exist." args="%PARAM1%"}%
-
+---++ %MAKETEXT{"Attachment '[_1]' does not exist" args="%PARAM1%"}%
+%MAKETEXT{"You are trying to access an attachment that does not exist."}%
 %TMPL:END%
 %TMPL:DEF{"oversized_upload"}%
 ---+++ %MAKETEXT{"Uploaded file is too big"}%

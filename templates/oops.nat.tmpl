@@ -1,38 +1,36 @@
-%TMPL:INCLUDE{"page"}%<!-- template: oops.nat.tmpl -->
-%TMPL:INCLUDE{"oopsbody"}%<!-- -->
-%TMPL:INCLUDE{"oopstopicactions"}%<!-- -->
-%TMPL:INCLUDE{"oopssidebar"}%<!--  -->
+%TMPL:INCLUDE{"page"}%%{}%
+%TMPL:INCLUDE{"oopsbody"}%%{}%
+%TMPL:INCLUDE{"oopstopicactions"}%%{}%
+%TMPL:INCLUDE{"oopssidebar"}%%{}%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"bodyclass"}%natOopsBody%TMPL:END%
-%TMPL:DEF{"title"}%%HTMLTITLE{"%TOPICTITLE% (%MAKETEXT{"oops"}%)" separator=" %TMPL:P{"titlesep"}% "}%%TMPL:END%
+%TMPL:DEF{"title"}%%HTMLTITLE{"%GETTOPICTITLE% (%MAKETEXT{"oops"}%)" separator=" %TMPL:P{"titlesep"}% "}%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1 class="%TMPL:P{"headingstyle"}%">%TMPL:P{"heading"}%</h1>%TMPL:END%
 %TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
 %TMPL:DEF{"headingstyle"}%natOopsHeading%TMPL:END%
-%TMPL:DEF{"breadcrumbs::contents"}%%TMPL:END%
 %TMPL:DEF{"bottombar"}%%TMPL:END%
+%TMPL:DEF{"metadata"}%%TMPL:END%
+%TMPL:DEF{"breadcrumbs"}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"contact"}%<!-- -->
-<hr />
+%TMPL:DEF{"contact"}%<hr />
 %MAKETEXT{"Contact [_1] if you have any questions." args="<a href=\"mailto:%WIKIWEBMASTER%?subject=%ENCODE{\"%WIKITOOLNAME%: Request for support\"}%&&body=%ENCODE{\"Hello, I have got a question ...\"}%\">%WIKIWEBMASTER%</a>"}%
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"goback"}%<!-- -->
+%TMPL:DEF{"goback"}%%{}%
 %MAKETEXT{"Please go back in your browser and try again."}%
 
 <form class="natOopsButtons" name="ButtonBox" action="%WIKILOGOURL%">
-  %BUTTON{"%MAKETEXT{"Retry"}%" icon="tick" onclick="history.back()"}%
-  %BUTTON{"%MAKETEXT{"Abort"}%" target="%IF{"not '%target%' ~ '%*'" then="%target%" else="%WIKILOGOURL%"}%" icon="cross"}%
-</form> 
-<!-- -->%TMPL:END%
+  %BUTTON{"%MAKETEXT{"Retry"}%" icon="%TMPL:P{"OK_ICON"}%" onclick="history.back()"}%
+  %BUTTON{"%MAKETEXT{"Abort"}%" target="%IF{"not '%target%' ~ '%*'" then="%target%" else="%WIKILOGOURL%"}%" icon="%TMPL:P{"CANCEL_ICON"}%"}%
+</form>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"content"}%<!-- -->
-%TMPL:P{"contenttitle"}%<!-- -->
-%TMPL:P{"message"}%<!-- -->
+%TMPL:DEF{"content"}%%{}%
+%TMPL:P{"contenttitle"}%%{}%
+%TMPL:P{"message"}%%{}%
 <div class="natContact"> 
-  %TMPL:P{"contact"}% 
-</div>
-<!-- -->%TMPL:END%
+%TMPL:P{"contact"}% 
+</div>%TMPL:END%

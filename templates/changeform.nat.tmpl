@@ -1,13 +1,13 @@
-%TMPL:INCLUDE{"page"}%<!-- template: changeform.nat.tmpl -->
-%TMPL:INCLUDE{"changeformbody"}%<!-- changeformbody// -->
-%TMPL:INCLUDE{"changeformtopicactions"}%<!-- changeformtopicactions// -->
-%TMPL:INCLUDE{"changeformsidebar"}%<!-- changeformsidebar// -->
+%TMPL:INCLUDE{"page"}%%{ template: changeform.nat.tmpl }%
+%TMPL:INCLUDE{"changeformbody"}%%{}%
+%TMPL:INCLUDE{"changeformtopicactions"}%%{}%
+%TMPL:INCLUDE{"changeformsidebar"}%%{}%
 %TMPL:DEF{"bodyclass"}%natChangeFormBody%TMPL:END%
 %TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
-%TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"edit"}%) - %WIKITOOLNAME%%TMPL:END%
+%TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"edit"}%) %TMPL:P{"titlesep"}% %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Choose a new form for [_1]" args="[[%TOPIC%]]"}%</h1>%TMPL:END%
-%TMPL:DEF{"content"}%<!-- content -->
-%TMPL:P{"contenttitle"}%<!-- contenttitle// -->
+%TMPL:DEF{"content"}%%{}%
+%TMPL:P{"contenttitle"}%%{}%
 <noautolink>
 <form name="EditForm" method="post" action="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$year$mo$day$hours$minutes$seconds"}%">
 <input type="hidden" name="action" value="%URLPARAM{"action"}%" />
@@ -15,6 +15,7 @@
 <input type="hidden" name="redirectto" value="%URLPARAM{"redirectto"}%" />
 <input type="hidden" name="skin" value="%URLPARAM{"skin"}%" />
 <input type="hidden" name="cover" value="%URLPARAM{"cover"}%" />
+<input type="hidden" name="%TOPICTITLE_FIELD{default="TopicTitle"}%" value="%URLPARAM{"%TOPICTITLE_FIELD{default="TopicTitle"}%"}%" />
 <input type="hidden" name="nowysiwyg" value="%URLPARAM{"nowysiwyg"}%" />%EDITACTION%
 %TEXT%
 <div class="foswikiFormSteps">
@@ -22,13 +23,12 @@
 %TMPL:P{"formlist"}%
 </div>
 <div class="foswikiFormStep foswikiFormButtons">
-  %BUTTON{"%MAKETEXT{"OK"}%" accesskey="o" type="save" icon="tick"}%
-  %BUTTON{"%MAKETEXT{"Cancel"}%" accesskey="c" onclick="history.back()" icon="cross"}%
+  %BUTTON{"%MAKETEXT{"OK"}%" accesskey="o" type="save" icon="%TMPL:P{"OK_ICON"}%"}%
+  %BUTTON{"%MAKETEXT{"Cancel"}%" accesskey="c" onclick="history.back()" icon="%TMPL:P{"CANCEL_ICON"}%"}%
 </div>
 </div>
 </form>
-</noautolink>
-<!-- //content -->%TMPL:END%
+</noautolink>%TMPL:END%
 
 %TMPL:DEF{"formlist"}%%FORMATLIST{
   "%DBQUERY{
@@ -70,7 +70,7 @@
   footer="<div class='row'><label>
       <input type='radio' name='formtemplate' value='none' />
       %JQICON{"fa-remove"}%
-      <i class='title'>%MAKETEXT{"none "}%</i> ... 
+      <i class='title'>%MAKETEXT{"none"}%</i> ... 
       <span class='foswikiGrayText desc'>%MAKETEXT{"remove the current form (caution: possible data loss)"}%</div>
       </label></div></div>"
 }%

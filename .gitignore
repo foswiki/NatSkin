@@ -6,6 +6,7 @@ attic
 genpdf_*
 igp_*
 *~
+pub/System/CustomatoTheme/blue.css
 pub/System/CustomatoTheme/customato-base.css
 pub/System/CustomatoTheme/customato-colors.css
 pub/System/CustomatoTheme/customato.css
@@ -29,6 +30,22 @@ pub/System/NatSkin/rename.js
 pub/System/NatSkin/subscribe.js
 pub/System/NatSkin/topiccreator.css
 pub/System/NatSkin/topiccreator.js
+pub/System/NatSkin/polyfills.js
+
+pub/System/MatterTheme/particles.git
+pub/System/MatterTheme/trianglify.git
+pub/System/MatterTheme/geopattern.git
+pub/System/MatterTheme/bannerEditor.js
+pub/System/MatterTheme/bannerSettings.js
+pub/System/MatterTheme/geopattern.init.js
+pub/System/MatterTheme/geopattern.js
+pub/System/MatterTheme/matter.css
+pub/System/MatterTheme/particles.init.js
+pub/System/MatterTheme/particles.js
+pub/System/MatterTheme/topmenuVariation.css
+pub/System/MatterTheme/trianglify.init.js
+pub/System/MatterTheme/trianglify.js
+
 /NatSkin.md5
 /NatSkin.sha1
 /NatSkin.tgz
@@ -36,3 +53,5 @@ pub/System/NatSkin/topiccreator.js
 /NatSkin.zip
 /NatSkin_installer
 /NatSkin_installer.pl
+locale/**/*.mo
+

@@ -1,8 +1,8 @@
-%TMPL:INCLUDE{"page"}%<!-- template: searchbase.nat.tmpl -->
-%TMPL:INCLUDE{"searchbody"}%<!-- searchbody// -->
-%TMPL:INCLUDE{"searchsidebar"}%<!-- searchsidebar// -->
-%TMPL:INCLUDE{"searchtopicactions"}%<!-- searchtopicactions// -->
-%TMPL:INCLUDE{"searchbox"}%<!-- searchbox// -->
+%TMPL:INCLUDE{"page"}%%{}%
+%TMPL:INCLUDE{"searchbody"}%%{}%
+%TMPL:INCLUDE{"searchsidebar"}%%{}%
+%TMPL:INCLUDE{"searchtopicactions"}%%{}%
+%TMPL:INCLUDE{"searchbox"}%%{}%
 %TMPL:DEF{"bodyclass"}%natSearchBody%TMPL:END%
-%TMPL:DEF{"title"}%HTMLTITLE{"%TOPICTITLE% (%MAKETEXT{"search"}%)" separator=" %TMPL:P{"titlesep"}% "}%%TMPL:END%
+%TMPL:DEF{"title"}%HTMLTITLE{"%GETTOPICTITLE% (%MAKETEXT{"search"}%)" separator=" %TMPL:P{"titlesep"}% "}%%TMPL:END%
 %TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%

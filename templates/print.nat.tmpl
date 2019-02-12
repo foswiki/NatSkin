@@ -6,25 +6,23 @@
 
 %TMPL:DEF{"formtitle"}%%MAKETEXT{"Export to PDF"}%%TMPL:END%
 
-%TMPL:DEF{"printform"}%<!-- -->
+%TMPL:DEF{"printform"}%%{}%
 %TMPL:P{"printform::start"}%
-%TMPL:P{"printform::pagesize"}%<!-- -->
-%TMPL:P{"printform::orientation"}%<!-- -->
-%TMPL:P{"printform::watermark"}%<!-- -->
+%TMPL:P{"printform::pagesize"}%%{}%
+%TMPL:P{"printform::orientation"}%%{}%
+%TMPL:P{context="isadmin" then="printform::disposition"}%%{}%
+%TMPL:P{"printform::watermark"}%%{}%
 %TMPL:P{"printform::end"}%
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%
 
-%TMPL:DEF{"printform::start"}%<!-- -->
-<form action="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%">
-  <input type="hidden" name="section" value="%URLPARAM{"section"}%" />
+%TMPL:DEF{"printform::start"}%<form action="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%">
   <input type="hidden" name="contenttype" value="application/pdf" />
-  <input type="hidden" name="cover" value="print.nat" />
-  <input type="hidden" name="pdfdisposition" value="redirect" />
-  <table class='foswikiLayoutTable'>
-<!-- -->%TMPL:END%
+  <input type="hidden" name="cover" value="print.nat" />%IF{"not context isadmin" then="
+  <input type='hidden' name='pdfdisposition' value='redirect' />"}%
+%QUERYPARAMS{format="  <input type='hidden' name='$name' value='$value' />"}%
+  <table class='foswikiLayoutTable'>%TMPL:END%
 
-%TMPL:DEF{"printform::end"}%<!-- -->
-  </table>
+%TMPL:DEF{"printform::end"}%</table>
   <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-circle-check'}">%MAKETEXT{"Export"}%</a>
   <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Cancel"}%</a>
 </form>%TMPL:END%
@@ -57,6 +55,14 @@
 </tr>%TMPL:END%
 
 %TMPL:DEF{"printform::orientation::default"}%%PDFORIENTATION{default="portrait"}%%TMPL:END%
+
+%TMPL:DEF{"printform::disposition"}%<tr>
+  <th>%MAKETEXT{"Disposition"}%:</th>
+  <td>
+    <label><input type="radio" name="pdfdisposition" value="redirect" checked>%MAKETEXT{"redirect"}%</label>
+    <label><input type="radio" name="pdfdisposition" value="inline">%MAKETEXT{"inline"}%</label>
+  </td>
+</tr>%TMPL:END%
 
 %TMPL:DEF{"printform::watermark"}%<tr>
   <th>%MAKETEXT{"Watermark"}%</th>

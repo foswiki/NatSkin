@@ -1,21 +1,20 @@
-%TMPL:INCLUDE{"page"}%<!-- template: renamewebbase.nat.tmpl-->
-%TMPL:INCLUDE{"renamewebbody"}%<!-- renamewebbody// -->
-%TMPL:INCLUDE{"renamewebsidebar"}%<!-- renamewebsidebar// -->
-%TMPL:INCLUDE{"renamewebtopicactions"}%<!-- renamewebtopicactions// -->
+%TMPL:INCLUDE{"page"}%%{}%
+%TMPL:INCLUDE{"renamewebbody"}%%{}%
+%TMPL:INCLUDE{"renamewebsidebar"}%%{}%
+%TMPL:INCLUDE{"renamewebtopicactions"}%%{}%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"bodyclass"}%natRenameWebBody%TMPL:END%
 %TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
-%TMPL:DEF{"title"}%%WEB% (%MAKETEXT{"rename web"}%) - %WIKITOOLNAME%%TMPL:END%
+%TMPL:DEF{"title"}%%WEB% (%MAKETEXT{"rename web"}%) %TMPL:P{"titlesep"}% %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%%MAKETEXT{"Rename the [_1] web" args="<nop>%WEB%"}%%TMPL:END%
-%TMPL:DEF{"buttons"}%<!-- buttons -->
-  %BUTTON{type="save" value="%MAKETEXT{"Rename"}%" icon="tick"}%
-  %BUTTON{type="button" value="%MAKETEXT{"Cancel"}%" icon="cross" target="%WEB%.%TOPIC%"}%
-<!-- //buttons -->%TMPL:END%
+%TMPL:DEF{"buttons"}%%{}%
+%BUTTON{type="save" value="%MAKETEXT{"Rename"}%" icon="%TMPL:P{"OK_ICON"}%"}%
+%BUTTON{type="button" value="%MAKETEXT{"Cancel"}%" icon="%TMPL:P{"CANCEL_ICON"}%" target="%WEB%.%TOPIC%"}%
+%{}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"content"}%<!-- content -->
-<h1>%TMPL:P{"contenttitle"}%</h1>
+%TMPL:DEF{"content"}%<h1>%TMPL:P{"contenttitle"}%</h1>
 <form name="renameweb" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
 <input type="hidden" name="action" value="renameweb" />
 <input type="hidden" name="confirm" value="getlock" />
@@ -48,8 +47,8 @@
       </div>
     </div>
     <div class="foswikiFormStep">
-      %BUTTON{"%MAKETEXT{"Set all"}%" icon="add" class="natRenameSetAll" title="%MAKETEXT{"Select all topics"}%"}%
-      %BUTTON{"%MAKETEXT{"Clear all"}%" icon="delete" class="natRenameClearAll" title="%MAKETEXT{"Clear selection"}%"}%
+      %BUTTON{"%MAKETEXT{"Set all"}%" icon="fa-plus-square" class="natRenameSetAll" title="%MAKETEXT{"Select all topics"}%"}%
+      %BUTTON{"%MAKETEXT{"Clear all"}%" icon="fa-minus-square" class="natRenameClearAll" title="%MAKETEXT{"Clear selection"}%"}%
     </div>
 ---
     <div class="foswikiFormStep">
@@ -70,19 +69,16 @@
 ---
   </div>
   <div class="foswikiFormStep foswikiFormButtons">
-    %TMPL:P{"buttons"}%<!-- buttons// -->
+    %TMPL:P{"buttons"}%%{}%
     %IF{"$'URLPARAM{currentwebonly}'='on'"
-      then="$percntBUTTON{\"%MAKETEXT{"Search in all webs"}%\" icon=\"find\" target=\"%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?action=renameweb\" title=\"%MAKETEXT{"Search for backlinks in all webs"}%\"}$percnt"
+      then="$percntBUTTON{\"%MAKETEXT{"Search in all webs"}%\" icon=\"fa-search\" target=\"%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?action=renameweb\" title=\"%MAKETEXT{"Search for backlinks in all webs"}%\"}$percnt"
     }%
   </div>
 </div>
-</form>
-%TMPL:P{"rename::javascript"}%
-<!-- //content -->%TMPL:END%
+</form>%TMPL:P{"rename::javascript"}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"notes"}%<!-- notes -->
-
+%TMPL:DEF{"notes"}%
 %MAKETEXT{"Get help on <a target='_blank' href='[_1]' rel='nofollow'>Renaming and moving webs</a>." args="%SCRIPTURLPATH{"view"}%/%SYSTEMWEB%/ManagingWebs"}% 
 
 %MAKETEXT{"Characters not allowed in topic names, such as spaces will automatically be removed."}%
@@ -92,13 +88,12 @@
     rename it to [_2]/[_3]. " args="%SCRIPTURLPATH{"view"}%,%TRASHWEB%,%WEB%"}%
 
 %MAKETEXT{"The checkmarked topics will be updated."}%
-<!-- //notes -->%TMPL:END%
+%{}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"rename::javascript"}%<!-- -->
-%ADDTOZONE{
+%TMPL:DEF{"rename::javascript"}%%ADDTOZONE{
   "script"
   id="NATSKIN::RENAME"
   text="<script type='text/javascript' class='$id' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/rename.js'></script>"
   requires="JQUERYPLUGIN"
-}%<!-- -->%TMPL:END%
+}%%TMPL:END%

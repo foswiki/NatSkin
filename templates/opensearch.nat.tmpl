@@ -1,10 +1,8 @@
-%TMPL:DEF{"metaopensearch"}%%TMPL:P{"opensearch::profile"}%
-%TMPL:P{"opensearch::content::link"}%
-%TMPL:P{"opensearch::person::link"}%%TMPL:END%
+%TMPL:DEF{"metaopensearch"}%%TMPL:P{"opensearch::content::link"}%
+%TMPL:P{"opensearch::person::link"}%
+%TMPL:END%
 
-%TMPL:DEF{"opensearch::profile"}%<link rel="profile" href="http://a9.com/-/spec/opensearch/1.1/" />%TMPL:END%
-
-%TMPL:DEF{"opensearch::header"}%<?xml version="1.0" encoding="UTF-8"?><OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">%TMPL:END%
+%TMPL:DEF{"opensearch::header"}%<?xml version="1.0" encoding="UTF-8"?><OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">%TMPL:END%
 %TMPL:DEF{"opensearch::footer"}%</OpenSearchDescription>%TMPL:END% 
 %TMPL:DEF{"opensearch::encoding"}%<InputEncoding>%CHARSET%</InputEncoding><OutputEncoding>%CHARSET%</OutputEncoding>%TMPL:END%
 %TMPL:DEF{"opensearch::tags"}%<Tags>Foswiki Search</Tags>%TMPL:END%
@@ -13,12 +11,16 @@
 %{ Image height="64" width="64" type="image/png">http://example.com/websearch.png</Image --> }%
 
 %{ content search }%
-%TMPL:DEF{"opensearch::content::link"}%<link rel="search" type="application/opensearchdescription+xml" href="%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?topic=%SYSTEMWEB%.WebSearch&name=opensearch&expand=opensearch::content&contenttype=text/xml" title="%MAKETEXT{"[_1] Content Search" args="%WIKITOOLNAME%"}%" />%TMPL:END%
+%TMPL:DEF{"opensearch::content::link"}%<link rel="search" type="application/opensearchdescription+xml" href="%TMPL:P{"opensearch::content::link::href"}%" title="%MAKETEXT{"[_1] Content Search" args="%WIKITOOLNAME%"}%" />%TMPL:END%
+%TMPL:DEF{"opensearch::content::link::href"}%%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?topic=%WEB%.WebSearch&amp;name=opensearch&amp;expand=opensearch::content&amp;contenttype=application/xml%TMPL:END%
 
 %TMPL:DEF{"opensearch::content"}%%TMPL:P{"opensearch::content::header"}%
-%TMPL:P{"opensearch::content::name"}%
+%TMPL:P{"opensearch::content::shortname"}%
+%TMPL:P{"opensearch::content::longname"}%
 %TMPL:P{"opensearch::content::description"}%
 %TMPL:P{"opensearch::content::url"}%
+%TMPL:P{"opensearch::content::self"}%
+%TMPL:P{"opensearch::content::searchform"}%
 %TMPL:P{"opensearch::content::tags"}%
 %TMPL:P{"opensearch::content::contact"}%
 %TMPL:P{"opensearch::content::image"}%
@@ -26,9 +28,12 @@
 %TMPL:P{"opensearch::content::footer"}%%TMPL:END%
 
 %TMPL:DEF{"opensearch::content::header"}%%TMPL:P{"opensearch::header"}%%TMPL:END%
-%TMPL:DEF{"opensearch::content::name"}%<ShortName>%MAKETEXT{"[_1] Content Search" args="%WIKITOOLNAME%"}%</ShortName>%TMPL:END%
+%TMPL:DEF{"opensearch::content::shortname"}%<ShortName>Foswiki</ShortName>%TMPL:END%
+%TMPL:DEF{"opensearch::content::longname"}%<LongName>%MAKETEXT{"[_1] Content Search" args="%WIKITOOLNAME%"}%</LongName>%TMPL:END%
 %TMPL:DEF{"opensearch::content::description"}%<Description>%MAKETEXT{"Search for content on [_1]" args="%WIKITOOLNAME%"}%</Description>%TMPL:END%
-%TMPL:DEF{"opensearch::content::url"}%<Url type="text/html" template="%SCRIPTURL{"view"}%/%SYSTEMWEB%/WebSearch#q={searchTerms}&amp;start={startIndex?}&amp;rows={count?}" />%TMPL:END%
+%TMPL:DEF{"opensearch::content::url"}%<Url type="text/html" template="%SCRIPTURL{"view"}%/%WEB%/WebSearch#q={searchTerms}&amp;start={startIndex?}&amp;rows={count?}" method="get" />%TMPL:END%
+%TMPL:DEF{"opensearch::content::searchform"}%<moz:SearchForm>%SCRIPTURL{"view"}%/%WEB%/WebSearch</moz:SearchForm>%TMPL:END%
+%TMPL:DEF{"opensearch::content::self"}%<Url type="application/opensearchdescription+xml" method="get" template="%TMPL:P{"opensearch::content::link::href"}%" />%TMPL:END%
 %TMPL:DEF{"opensearch::content::tags"}%%TMPL:P{"opensearch::tags"}%%TMPL:END%
 %TMPL:DEF{"opensearch::content::contact"}%%TMPL:P{"opensearch::contact"}%%TMPL:END%
 %TMPL:DEF{"opensearch::content::image"}%%TMPL:P{"opensearch::image"}%%TMPL:END%
@@ -38,12 +43,16 @@
 
 
 %{ person search }%
-%TMPL:DEF{"opensearch::person::link"}%<link rel="search" type="application/opensearchdescription+xml" href="%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?topic=%USERSWEB%.WikiUsers&name=opensearch&expand=opensearch::person&contenttype=text/xml" title="%MAKETEXT{"[_1] Person Search" args="%WIKITOOLNAME%"}%" />%TMPL:END%
+%TMPL:DEF{"opensearch::person::link"}%<link rel="search" type="application/opensearchdescription+xml" href="%TMPL:P{"opensearch::person::link::href"}%" title="%MAKETEXT{"[_1] Person Search" args="%WIKITOOLNAME%"}%" />%TMPL:END%
+%TMPL:DEF{"opensearch::person::link::href"}%%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?topic=%USERSWEB%.WikiUsers&amp;name=opensearch&amp;expand=opensearch::person&amp;contenttype=application/xml%TMPL:END%
 
 %TMPL:DEF{"opensearch::person"}%%TMPL:P{"opensearch::person::header"}%
-%TMPL:P{"opensearch::person::name"}%
+%TMPL:P{"opensearch::person::shortname"}%
+%TMPL:P{"opensearch::person::longname"}%
 %TMPL:P{"opensearch::person::description"}%
 %TMPL:P{"opensearch::person::url"}%
+%TMPL:P{"opensearch::person::self"}%
+%TMPL:P{"opensearch::person::searchform"}%
 %TMPL:P{"opensearch::person::tags"}%
 %TMPL:P{"opensearch::person::contact"}%
 %TMPL:P{"opensearch::person::image"}%
@@ -51,9 +60,13 @@
 %TMPL:P{"opensearch::person::footer"}%%TMPL:END%
 
 %TMPL:DEF{"opensearch::person::header"}%%TMPL:P{"opensearch::header"}%%TMPL:END%
-%TMPL:DEF{"opensearch::person::name"}%<ShortName>%MAKETEXT{"[_1] Person Search" args="%WIKITOOLNAME%"}%</ShortName>%TMPL:END%
+%TMPL:DEF{"opensearch::person::shortname"}%<ShortName>%WIKITOOLNAME%</ShortName>%TMPL:END%
+%TMPL:DEF{"opensearch::person::longname"}%<LongName>%MAKETEXT{"[_1] Person Search" args="%WIKITOOLNAME%"}%</LongName>%TMPL:END%
 %TMPL:DEF{"opensearch::person::description"}%<Description>%MAKETEXT{"Search for persons on [_1]" args="%WIKITOOLNAME%"}%</Description>%TMPL:END%
-%TMPL:DEF{"opensearch::person::url"}%<Url type="text/html" template="%SCRIPTURL{"view"}%/%USERSWEB%/WikiUsers#q={searchTerms}&amp;start={startIndex?}&amp;rows={count?}" />%TMPL:END%
+%TMPL:DEF{"opensearch::person::url"}%<Url type="text/html" template="%SCRIPTURL{"view"}%/%USERSWEB%/WikiUsers#q={searchTerms}&amp;start={startIndex?}&amp;rows={count?}" method="get" />%TMPL:END%
+%TMPL:DEF{"opensearch::person::self"}%<Url type="application/opensearchdescription+xml" method="get" template="%TMPL:P{"opensearch::person::link}%" />%TMPL:END%
+%TMPL:DEF{"opensearch::person::searchform"}%<moz:SearchForm>%SCRIPTURL{"view"}%/%USERSWEB%/WikiUsers</moz:SearchForm>%TMPL:END%
+%TMPL:DEF{"opensearch::person::self"}%<Url type="application/opensearchdescription+xml" method="get" template="%TMPL:P{"opensearch::person::link::href"}%" />%TMPL:END%
 %TMPL:DEF{"opensearch::person::tags"}%%TMPL:P{"opensearch::tags"}%%TMPL:END%
 %TMPL:DEF{"opensearch::person::contact"}%%TMPL:P{"opensearch::contact"}%%TMPL:END%
 %TMPL:DEF{"opensearch::person::image"}%%TMPL:P{"opensearch::image"}%%TMPL:END%

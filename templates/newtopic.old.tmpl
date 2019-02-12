@@ -1,8 +1,5 @@
-%TMPL:INCLUDE{"view"}%
+%TMPL:INCLUDE{"view"}%%{}%
 
-%TMPL:DEF{"title"}%%HTMLTITLE{"%MAKETEXT{"Create a Topic"}%" separator=" %TMPL:P{"titlesep"}% "}%%TMPL:END%
-%TMPL:DEF{"breadcrumbstail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=newtopic" title="%TMPL:P{"NEW_HELP"}%">%MAKETEXT{"Create a Topic"}%</a>%TMPL:END%
-%TMPL:DEF{"formtitle"}%%MAKETEXT{"Create a Topic in [_1]" args="%WEBLINK{"%BASEWEB%" format="$percntENCODE{\"$title\" type=\"html\"}$percnt"}%"}%%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 
@@ -10,37 +7,39 @@
 %TMPL:DEF{"content"}%<noautolink>
 %TMPL:P{"formtitlestep"}%
 <div class="foswikiFormSteps">
+%TMPL:P{"formstartstep"}%%{}%
 %TMPL:P{"createform"}%
+%TMPL:P{"formbuttons::default"}%%{}%
+%TMPL:P{"formendstep"}%%{}%
 </div>
 </noautolink>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
 <div class="jqUIDialog foswikiFormSteps" data-width="%TMPL:P{"dialog::width"}%" data-modal="true" data-draggable="true" data-close-on-escape="true" data-auto-center="true" title="%TMPL:P{"formtitle"}%">
+%TMPL:P{"formstartstep"}%%{}%
 %TMPL:P{"createform"}%
+%TMPL:P{"formbuttons::dialog"}%%{}%
+%TMPL:P{"formendstep"}%%{}%
 </div>
 </noautolink>%TMPL:END%
 
 %TMPL:DEF{"dialog::width"}%500%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"createform"}%<!-- -->
-%TMPL:P{"formstartstep"}%<!-- -->
-%TMPL:P{"topictitlestep"}%<!-- -->
-%TMPL:P{"topictemplatestep"}%<!-- -->
-%TMPL:P{"hiddenoptionsstep"}%<!-- -->
-%TMPL:P{"formbuttons::dialog"}%<!-- -->
-%TMPL:P{"formendstep"}%<!-- -->
-<!-- -->%TMPL:END%
+%TMPL:DEF{"createform"}%%{}%
+%TMPL:P{"topictitlestep"}%%{}%
+%TMPL:P{"topictemplatestep"}%%{}%
+%TMPL:P{"hiddenoptionsstep"}%%{}%
+%{}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"formstartstep"}%%TMPL:P{"formstart"}%%TMPL:END%
-%TMPL:DEF{"formstart"}%<!-- -->
-%JQREQUIRE{"wikiword, focus"}%<!-- -->
+%TMPL:DEF{"formstart"}%%JQREQUIRE{"wikiword, focus"}%%{}%
 <form name="newTopicForm" id="newTopicForm" action="%SCRIPTURLPATH{edit}%/%BASEWEB%/">
 <input type="hidden" name="t" value="%GMTIME{"$epoch"}%" />
 <input type="hidden" name="onlynewtopic" value="on" />
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"formendstep"}%%TMPL:P{"formend"}%%TMPL:END%
@@ -48,37 +47,34 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"formtitlestep"}%<h1>%TMPL:P{"formtitle"}%</h1>%TMPL:END%
+%TMPL:DEF{"formtitle"}%%MAKETEXT{"Create new content in [_1]" args="%WEBLINK{"%BASEWEB%" format="$percntENCODE{\"$title\" type=\"html\"}$percnt"}%"}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"newtopictitle"}%%URLPARAM{"topictitle"}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"topictitlestep"}%<!-- -->
-<div class='foswikiFormStep'>
+%TMPL:DEF{"topictitlestep"}%<div class='foswikiFormStep'>
 <h3 >%MAKETEXT{"Title"}%:</h3>
 %TMPL:P{"topictitleinput"}%
-</div>
-<!-- -->%TMPL:END%
+</div>%TMPL:END%
 
-%TMPL:DEF{"topictitleinput"}%<!-- -->
+%TMPL:DEF{"topictitleinput"}%%{}%
 <input type="text" class="foswikiInputField jqFocus" name="TopicTitle" id="topictitle" size="40" value="%TMPL:P{"newtopictitle"}%" style="width:98%" />
 <div class="foswikiFormDescription">
-%MAKETEXT{"Free form topic title text. The actual topic _name_ will be derived from the title automatically."}%
-</div>
-<!---->%TMPL:END%
+%MAKETEXT{"Free form title text. The actual topic _name_ will be derived from the title automatically."}%
+</div>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"formbuttons::dialog"}%<!-- -->
-  <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-check'}">%MAKETEXT{"Submit"}%</a>
-  <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Cancel"}%</a>
-<!-- -->%TMPL:END%
+%TMPL:DEF{"formbuttons::dialog"}%%{}%
+  <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-check'}">%MAKETEXT{"Create"}%</a>
+  <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Abort"}%</a>
+%{}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"formbuttons::default"}%<!-- -->
-<hr />
+%TMPL:DEF{"formbuttons::default"}%<hr />
 <div class='foswikiFormStep foswikiFormButtons'>
-%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="fa-check"}%
-%BUTTON{"%MAKETEXT{"Cancel"}%" 
+%BUTTON{"%MAKETEXT{"Create"}%" type="submit" icon="fa-check"}%
+%BUTTON{"%MAKETEXT{"Abort"}%" 
   icon="fa-times" 
   target="%URLPARAM{"origurl" 
     default="%IF{"'%BASEWEB%.%BASETOPIC%'='%WEB%.%TOPIC%'"
@@ -87,8 +83,7 @@
     }%"
   }%"
 }%
-</div>
-<!-- -->%TMPL:END%
+</div>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"hiddenoptionsstep"}%%TMPL:P{"hiddentopicnamestep"}%%TMPL:P{"hiddentopicparentstep"}%%TMPL:END%
@@ -102,14 +97,13 @@
 }%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"topictemplatestep"}%<!-- -->
+%TMPL:DEF{"topictemplatestep"}%%{}%
 %TMPL:P{"topictemplatestep::templates"}%
 %TMPL:P{"topictemplatestep::css"}%
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"topictemplatestep::templates"}%<!-- -->
----
+%TMPL:DEF{"topictemplatestep::templates"}%<hr />
 <noautolink>
 %DBQUERY{
   "topic=~'Template\b' AND topic!~'(View|Edit)Template\b'"
@@ -134,8 +128,7 @@
         %MAKETEXT{"Select which template to use while creating this topic."}%
       </div>
     </div>"
-}%
-<!-- -->%TMPL:END%
+}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"topictemplatestep::css"}%<literal>

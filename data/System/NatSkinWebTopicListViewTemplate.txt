@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1485333012" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%
@@ -20,7 +20,7 @@
   "%TMPL:P{"topiclist::default"}%"
   pattern="\((.*)\);(.*);(.*)"
   split="\n"
-  cols="%IF{"defined WEBTOPICLIST_COLS" then="%WEBTOPICLIST_COLS%" else="3"}%"
+  cols="%WEBTOPICLIST_COLS{default=""}%"
   header="$anchors"
   format="[[%BASEWEB%.$3][$2]]"
   sort="nocase"

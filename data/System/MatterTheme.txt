@@ -1,0 +1,46 @@
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1512398496" format="1.1"  version="1"}%
+%META:TOPICPARENT{name="NatSkin"}%
+---+!! %TOPIC%
+
+"Matter" is a modern look & feel theme for [[NatSkin]] with a strong focus on simplicity yet still flexibility. With a few clicks pages can be customized to give them a unique touch 
+and thus make content more memorizable. The theme is inspired by google's material and flat design but does not strictly follow the trend in full detail.
+
+The theme is the default theme setting if not specified otherwise, or can be set using
+
+<verbatim class="tml">   * Set NATSKIN_STYLE = matter</verbatim>
+
+---++ Variations
+
+<verbatim class="tml">   * Set NATSKIN_VARIATION = topmenu</verbatim>
+
+There is one variation called =topmenu= that can be enabled optionally to the =matter= theme. This will move the menu at the top to the far right making room for larger logos.
+Note that this will disable the "greeter" section that normally holds the authentication/registration links or a logged in user's avatar and link to the account page.
+
+---++ Parameter
+This theme comes with a set of own preference settings that can be either set on a per topic base using on the "Settings" tab of the editor, or may be set in the <nop>WebPreferences, <nop>SitePreferences
+and a user's private settings. In addition to the usual preferences of <nop>NatSkin below settings mainly are used to customize a banner at the top of a topic.
+
+| *Preference* | *Description* | *Default* |
+| =NATSKIN_BANNERMODE= | select the kind of banner to be displayed; possible values: \
+                         <ul>\
+                           <li> =off=: no banner</li>\
+                           <li> =flat=: a flat color</li>\
+                           <li> =gradient=: a radial or linear gradient background</li>\
+                           <li> =image=: an image background that may be animated optionally</li>\
+                           <li> =video=: a video background; an mp4 file is recommended </li>\
+                           <li> =pattern=: an abstract pattern automatically computed based on the banner title</li>\
+                         </ul> | =off= |
+| =NATSKIN_BANNERIMAGE= | url to image to be displayed; used in =image= mode | =%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/images/bubbles.png= |
+| =NATSKIN_BANNERVIDEO= | url to vide to be displayed; used in =video= mode | =%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/videos/clouds.mp4= |
+| =NATSKIN_BANNERVIDEOLOOP= | boolean flag to specify whether the banner video should be looped or halted after being played once | =on= |
+| =NATSKIN_BANNERFOREGROUND= | possible values: =light=, =dark=; specify the contrast of the font on the banner; use =light= when the banner background is dark, or =dark= otherwise | =light= | 
+| =NATSKIN_BANNERCOLOR= | this color is used in modes =flat=, =image=, =gradient= and =pattern= to specify the background color of the banner | =%<nop>WEBBGCOLOR%= |
+| =NATSKIN_BANNERCOLOR2= | second color used in =gradient= mode | =transparent= |
+| =NATSKIN_BANNERGRADIENT= | specifies whether the gradient should be =radial= or =linear= | =radial= |
+| =NATSKIN_BANNERTITLE= | title text to be displayed on the banner | =<nop>TopicTitle= of the current topic |
+| =NATSKIN_BANNERSUBTITLE= | subtitle to be displayed on the banner | =Summary= formfield of the current topic |
+| =NATSKIN_ENABLEBANNERTITLE= | boolean switch that allows to show/hide the title on the banner | =on= |
+| =NATSKIN_BANNERANIMATION= | boolean switch used in =image= mode to enable a kenburns-like animation of the background image | =off= |
+| =NATSKIN_BANNERPOSITION= | vertical position in percent of the background image; only used in =image= mode; note that this parameter can be specified interactively by dragging the background image and the clicking on the "save" icon | =50= |
+
+%META:TOPICMOVED{by="micha" date="1512396167" from="System.NatSkinMatterhTheme" to="System.MatterTheme"}%

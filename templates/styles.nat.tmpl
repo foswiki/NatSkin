@@ -1,39 +1,43 @@
-<!-- template: styles.nat.tmpl -->
 %TMPL:DEF{"defaultstyles"}%%ADDTOZONE{
   "head" 
   id="TOPICCREATOR"
   text="<link rel='stylesheet' href='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/topiccreator.css' media='all' />"
 }%
-%RENDERZONE{"head"}%<!-- -->
-%RENDERZONE{"skincss"}%<!-- -->%TMPL:P{"preferences::styles"}%%TMPL:END%
+%RENDERZONE{"head"}%
+%RENDERZONE{"skincss"}%
+%TMPL:P{"preferences::styles"}%%TMPL:END%
 
 %TMPL:DEF{"preferences::styles"}%%ADDTOZONE{"skincss"
   id="NATSKIN::PREFERENCES::STYLES"
   requires="NATSKIN"
-  text="<literal>
-%IF{"defined NATSKIN_SIDEBARWIDTH" 
-  then="<style class='$id' type='text/css'>
-  .natSideBar { 
-    width:%NATSKIN_SIDEBARWIDTH%; 
-  }
-  .natBodyBoth .natSideBar,
-  .natBodyRight .natSideBar {
-    margin-right:-%NATSKIN_SIDEBARWIDTH%;
-  }
-  .natBodyBoth .natMiddleContents,
-  .natBodyRight .natMiddleContents {
-    margin-right:%NATSKIN_SIDEBARWIDTH%;
-  }
-  .natBodyLeft .natSideBar {
-    margin-left:-%NATSKIN_SIDEBARWIDTH%;
-  }
-  .natBodyLeft .natWebMenuContents,
-  .natBodyLeft .natMiddleContents {
-    margin-left:%NATSKIN_SIDEBARWIDTH%;
-  }
-</style>"
-  else="<!-- -->"
-}%</literal>"
+  text="%IF{"defined NATSKIN_LOGINBANNER"
+    then="<style text='text/css'>
+	    .natLoginBody { 
+	      background-image:linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.1) 40%,rgba(0,0,0,0) 60%,rgba(0,0,0,0.65) 100%), url(%NATSKIN_LOGINBANNER%); 
+	    }
+	  </style>"
+  }%%IF{"defined NATSKIN_SIDEBARWIDTH" 
+    then="<style type='text/css'>
+    .natSideBar { 
+      width:%NATSKIN_SIDEBARWIDTH%; 
+    }
+    .natBodyBoth .natSideBar,
+    .natBodyRight .natSideBar {
+      margin-right:-%NATSKIN_SIDEBARWIDTH%;
+    }
+    .natBodyBoth .natMiddleContents,
+    .natBodyRight .natMiddleContents {
+      margin-right:%NATSKIN_SIDEBARWIDTH%;
+    }
+    .natBodyLeft .natSideBar {
+      margin-left:-%NATSKIN_SIDEBARWIDTH%;
+    }
+    .natBodyLeft .natWebMenuContents,
+    .natBodyLeft .natMiddleContents {
+      margin-left:%NATSKIN_SIDEBARWIDTH%;
+    }
+  </style>"
+  }%"
 }%%TMPL:END%
 
 %TMPL:DEF{"styles"}%%TMPL:P{"defaultstyles"}%%TMPL:END%

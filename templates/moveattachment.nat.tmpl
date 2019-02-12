@@ -1,19 +1,15 @@
-%TMPL:INCLUDE{"page"}%<!-- template: moveattachment.nat.tmpl -->
-%TMPL:INCLUDE{"moveattachmentbody"}%<!-- moveattachmentbody// -->
-%TMPL:INCLUDE{"moveattachmentsidebar"}%<!-- moveattachmentsidebar// -->
-%TMPL:INCLUDE{"moveattachmenttopicactions"}%<!-- moveattachmenttopicactions// -->
+%TMPL:INCLUDE{"page"}%%{}%
+%TMPL:INCLUDE{"moveattachmentbody"}%%{}%
+%TMPL:INCLUDE{"moveattachmentsidebar"}%%{}%
+%TMPL:INCLUDE{"moveattachmenttopicactions"}%%{}%
 %TMPL:DEF{"bodyclass"}%natMoveAttachmentBody%TMPL:END%
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"move attachment"}%%TMPL:END%
-%TMPL:DEF{"contenttitle"}%<!-- contenttitle-->
-<h1>%IF{"$'URLPARAM{newweb}'='%TRASHWEB%'"
+%TMPL:DEF{"contenttitle"}%<h1>%IF{"$'URLPARAM{newweb}'='%TRASHWEB%'"
   then="%MAKETEXT{"Delete attachment '[_1]'" args="<nop>%FILENAME%"}%"
   else="%MAKETEXT{"Move attachment '[_1]'" args="<nop>%FILENAME%"}%"
-}%</h1>
-<!-- //contenttitle -->%TMPL:END%
+}%</h1>%TMPL:END%
 %TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
-%TMPL:DEF{"content"}%<!-- content -->
-%JQREQUIRE{"focus, ui, ui::autocomplete"}%<!-- -->
-%TMPL:P{"contenttitle"}%<!-- contenttitle// -->
+%TMPL:DEF{"content"}%%JQREQUIRE{"focus, ui, ui::autocomplete"}%%TMPL:P{"contenttitle"}%%{}%
 <form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
 %IF{"$'URLPARAM{newweb}'='%TRASHWEB%'" 
   then="$percntTMPL:P{\"content_trash\"}$percnt" 
@@ -24,32 +20,25 @@
 <input type="hidden" name="changeRefs" value="0" />
 <input type="hidden" name="nonwikiword" value="on" />
 </div>
-</form>
-<!-- //content -->%TMPL:END%
-%TMPL:DEF{"notes"}%<!-- notes -->
-%IF{"$'URLPARAM{newweb}'='%TRASHWEB%'" 
+</form>%TMPL:END%
+%TMPL:DEF{"notes"}%%IF{"$'URLPARAM{newweb}'='%TRASHWEB%'" 
   then="$percntTMPL:P{\"notes_trash\"}$percnt" 
   else="$percntTMPL:P{\"notes_move\"}$percnt" 
-}%
-<p> 
+}%<p> 
   %MAKETEXT{"Note that any URLs that refer to the attachment will be broken after this move."}%
-</p>
-<!-- //notes -->%TMPL:END%
-%TMPL:DEF{"content_trash"}%<!-- content_trash -->
-<input type="hidden" name="newweb" value="%TRASHWEB%" />
+</p>%TMPL:END%
+%TMPL:DEF{"content_trash"}%<input type="hidden" name="newweb" value="%TRASHWEB%" />
 <input type="hidden" name="newtopic" value="%URLPARAM{"newtopic" default="TrashAttachment"}%" />
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep">
   <h2>Are you sure?</h2>
   </div>
   <div class="foswikiFormStep foswikiFormButtons">
-  %BUTTON{"%MAKETEXT{"Yes"}%" icon="tick" type="save"}%
-  %BUTTON{"%MAKETEXT{"No"}%" icon="cross" target="%WEB%.%TOPIC%"}%
+  %BUTTON{"%MAKETEXT{"Yes"}%" icon="%TMPL:P{"OK_ICON"}%" type="save"}%
+  %BUTTON{"%MAKETEXT{"No"}%" icon="%TMPL:P{"CANCEL_ICON"}%" target="%WEB%.%TOPIC%"}%
   </div>
-</div>
-<!-- //content_trash -->%TMPL:END%
-%TMPL:DEF{"content_move"}%<!-- content_move -->
-<div class="foswikiFormSteps">
+</div>%TMPL:END%
+%TMPL:DEF{"content_move"}%<div class="foswikiFormSteps">
 <div class="foswikiFormStep">
   <h4>%MAKETEXT{"To web"}%:</h4>
   <input type="text" class="foswikiInputField jqUIAutocomplete" name="newweb" id="newweb" autocomplete="%SCRIPTURL{"view"}%/%SYSTEMWEB%/JQueryAjaxHelper?section=web;contenttype=text/plain" size="60" value="%IF{"defined NEW_WEB" then="%NEW_WEB%" else="%WEB%"}%" />
@@ -63,11 +52,10 @@
 </div>
 %IF{"$PLUGINVERSION >= 2.1" then="$percntTMPL:P{\"toattachment\"}$percnt"}%
 <div class="foswikiFormStep foswikiFormButtons">
-  %BUTTON{"%MAKETEXT{"OK"}%" type="save" icon="tick"}%
-  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WEB%.%TOPIC%" icon="cross"}%
+  %BUTTON{"%MAKETEXT{"OK"}%" type="save" icon="%TMPL:P{"OK_ICON"}%"}%
+  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WEB%.%TOPIC%" icon="%TMPL:P{"CANCEL_ICON"}%"}%
 </div>
-</div>
-<!-- //content_move -->%TMPL:END%
+</div>%TMPL:END%
 %TMPL:DEF{"toattachment"}%<div class="foswikiFormStep">
   <h4>%MAKETEXT{"To attachment"}%:</h4>
   <input name="newattachment" class="foswikiInputField" value="%URLPARAM{"attachment"}%" size="36" />
@@ -75,16 +63,13 @@
     %MAKETEXT{"The attachment may be renamed (by appending a number to the name) if an attachment of that name already exists in the target topic."}%
   </div>
 </div>%TMPL:END%
-%TMPL:DEF{"notes_trash"}%<!-- notes_trash -->
-<p>
+%TMPL:DEF{"notes_trash"}%<p>
   %MAKETEXT{"When the file is deleted, it is moved to the [_1] web and attached to the [_2] topic." args="%TRASHWEB%, %TRASHWEB%.TrashAttachment"}%
 </p>
 <p> 
   %MAKETEXT{"The attachment and its history will be moved as well."}%
-</p>
-<!-- //notes_trash -->%TMPL:END%
-%TMPL:DEF{"notes_move"}%<!-- notes_move -->
-<p>
+</p>%TMPL:END%
+%TMPL:DEF{"notes_move"}%<p>
   %MAKETEXT{"To delete an attachment move it to the [_1] topic." args="%TRASHWEB%.TrashAttachment"}%
 </p>
 <p> 
@@ -95,5 +80,4 @@
 </p>
 <p> 
   %MAKETEXT{"The new topic chosen must already exist."}%
-</p>
-<!-- //notes_move -->%TMPL:END%
+</p>%TMPL:END%

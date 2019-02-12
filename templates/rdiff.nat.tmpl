@@ -1,34 +1,34 @@
-%TMPL:INCLUDE{"page"}%<!-- template: rdiff.nat.tmpl -->
-%TMPL:INCLUDE{"rdiffsidebar"}%<!-- -->
-%TMPL:INCLUDE{"rdifftopicactions"}%<!-- -->
-%TMPL:INCLUDE{"rdiffbody"}%<!-- -->
+%TMPL:INCLUDE{"page"}%%{}%
+%TMPL:INCLUDE{"rdiffsidebar"}%%{}%
+%TMPL:INCLUDE{"rdifftopicactions"}%%{}%
+%TMPL:INCLUDE{"rdiffbody"}%%{}%
 
 %{################################################################################}%
 %TMPL:DEF{"bodyclass"}%natRdiffBody%TMPL:END%
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"[_1] vs. [_2]" args="%REVTITLE1%, %REVTITLE2%"}%%TMPL:END%
-%TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Difference"}%: %TMPL:P{"topictitle"}% (%TMPL:P{"titleaction"}%)</h1>%TMPL:END%
+%TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Difference"}%: %GETTOPICTITLE% (%TMPL:P{"titleaction"}%)</h1>%TMPL:END%
 %TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
 %TMPL:DEF{"bottombar"}%%TMPL:END%
 
 %{################################################################################}%
-%TMPL:DEF{"contentheader::contents"}%<!-- -->
+%TMPL:DEF{"contentheader::contents"}%%{}%
 %TMPL:P{"topicactions"}%
 %TMPL:PREV%
-<!-- -->%TMPL:END%
+%{}%%TMPL:END%
 
 %{################################################################################}%
 %TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?%QUERYSTRING%">%MAKETEXT{"Difference"}%</a>%TMPL:END%
 
 %{################################################################################}%
-%TMPL:DEF{"content"}%<!-- -->
-%TMPL:P{"beforetext"}%<!-- -->
-%TMPL:P{"contenttitle"}%<!-- -->
-%TMPL:P{"text"}%<!-- -->
-%TMPL:P{"aftertext"}%<!-- -->
-<!-- -->%TMPL:END%
+%TMPL:DEF{"content"}%%{}%
+%TMPL:P{"beforetext"}%%{}%
+%TMPL:P{"contenttitle"}%%{}%
+%TMPL:P{"text"}%%{}%
+%TMPL:P{"aftertext"}%%{}%
+%{}%%TMPL:END%
 
 %{################################################################################}%
-%TMPL:DEF{"text"}%<!-- -->
+%TMPL:DEF{"text"}%%{}%
 %REPEAT%<table class="foswikiDiffTable" cellspacing="0" cellpadding="0">
 <th>
 <a href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?rev=%REVTITLE1%">%TOPIC% %REVTITLE1% - %REVINFO1%</a>
@@ -40,6 +40,5 @@
 <br clear="all" />%REPEAT%
 <table class="foswikiTable">
 %TAIL%
-</table>
-<!-- -->%TMPL:END%
+</table>%TMPL:END%
 %REPEAT%<tr><td>%MAKETEXT{"Revision"}% %REVTITLE%</td><td>%REVINFO%</td></tr>

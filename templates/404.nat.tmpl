@@ -1,40 +1,32 @@
 %TMPL:INCLUDE{"viewplain"}%
 
-%TMPL:DEF{"defaultbodyclass"}%natBody nat404Body%TMPL:END%
+%TMPL:DEF{"bodyclass"}%nat404Body natCenteredBody%TMPL:END%
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"page not found"}%%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
 
-%TMPL:DEF{"content"}%<!-- -->
-%BEGINGRID{border="on"}%
-%BEGINCOL{"4"}%
-<div class="nat404">404</div>
-%BEGINCOL%
+%TMPL:DEF{"content"}%
 <div class="natOopsMessage clearfix">
-%TMPL:P{"heading"}%<!-- -->
-%TMPL:P{"message"}%<!-- -->
-%TMPL:P{"similar"}%<!-- -->
-%TMPL:P{"actions"}%<!-- -->
+%TMPL:P{"heading"}%%{}%
+%TMPL:P{"message"}%%{}%
+%TMPL:P{"similar"}%%{}%
+%TMPL:P{"actions"}%%{}%
 </div>
-%ENDGRID%
-%TMPL:P{"poweredby"}%
-<!-- -->%TMPL:END%
+%ADDTOZONE{"body" id="poweredby" text="$percntTMPL:P{\"poweredby\"}$percnt"}%%{}%%TMPL:END%
 
-%TMPL:DEF{"heading"}%<h2>%MAKETEXT{"Whoops, page not found!"}%</h2>%TMPL:END%
+%TMPL:DEF{"heading"}%<h1>%MAKETEXT{"404 - page not found"}%</h1>%TMPL:END%
 
-%TMPL:DEF{"message"}%<!-- -->
+%TMPL:DEF{"message"}%<p>
 %MAKETEXT{"I am afraid this page slipped between the cracks."}%
 %MAKETEXT{"Maybe you simply got here by accident. Then move back in your browser and try something else."}%
-<!-- -->%TMPL:END%
+%MAKETEXT{"Or you'd like to proceed as follows:"}%
+</p>%TMPL:END%
 
-%TMPL:DEF{"actions"}%<!-- -->
-<p>
-<table class='foswikiLayoutTable'>
-%TMPL:P{"search::action"}%<!-- -->
-%TMPL:P{"index::action"}%<!-- -->
-%TMPL:P{context="authenticated" then="create::action"}%<!-- -->
-%TMPL:P{"restart::action"}%<!-- -->
-</table>
-</p>
-<!-- -->%TMPL:END%
+%TMPL:DEF{"actions"}%<table class='foswikiLayoutTable'>
+%TMPL:P{"search::action"}%%{}%
+%TMPL:P{"index::action"}%%{}%
+%TMPL:P{context="authenticated" then="create::action"}%%{}%
+%TMPL:P{"restart::action"}%%{}%
+</table>%TMPL:END%
 
 %TMPL:DEF{"search::action"}%<tr>
 <th>%BUTTON{"%MAKETEXT{"Search"}%" class="simple" icon="fa-search" href="%TMPL:P{"searchurl"}%"}%</th>
@@ -47,13 +39,18 @@
 </tr>%TMPL:END%
 
 %TMPL:DEF{"create::action"}%<tr>
-<th>%BUTTON{"%MAKETEXT{"Create"}%" class="simple" icon="fa-plus" href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%"}%</th>
+<th>%BUTTON{"%MAKETEXT{"Create"}%" class="simple" icon="fa-plus" href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%&%QUERYSTRING%"}%</th>
 <td>%MAKETEXT{"The page might be missing but it shouldn't."}%</td>
 </tr>%TMPL:END%
 
 %TMPL:DEF{"restart::action"}%<tr>
-<th>%BUTTON{"%MAKETEXT{"Restart"}%" class="simple" icon="fa-home" target="%IF{"istopic '%BASEWEB%.%HOMETOPIC%'" then="%BASEWEB%.%HOMETOPIC%" else="%USERSWEB%.%HOMETOPIC%"}%"}%</th>
-<td>%MAKETEXT{"Or just start from the beginning in case you got lost somehow."}%</td>
+<th>%BUTTON{"%MAKETEXT{"Restart"}%" class="simple" icon="fa-home" target="%IF{
+    "'%BASEWEB%.%HOMETOPIC%' allows 'view'" 
+    then="%BASEWEB%.%HOMETOPIC%" 
+    else="%WIKILOGOURL%"
+  }%"
+}%</th>
+<td>%MAKETEXT{"Or just start from the beginning."}%</td>
 </tr>%TMPL:END%
 
 %TMPL:DEF{"searchurl"}%%TMPL:P{context="SolrPluginEnabled" then="searchurl::solr" else="searchurl::default"}%%TMPL:END%
@@ -66,7 +63,7 @@
   filter="type:topic web:%ENCODE{"%BASEWEB%" old="/" new="."}%"
   rows="1"
   type="edismax"
-  format="$percntIF{\"istopic '$web.$topic'\"
+  format="$percntIF{\"'$web.$topic' allows 'view'\"
       then=\"<p>%MAKETEXT{"There's a similar page called [_1]." args="[[$web.$topic][$title]]"}%</p>\"
     }$percnt"
   fields="web,topic,title"
