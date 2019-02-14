@@ -8,7 +8,7 @@
 %{}%%TMPL:END%
 
 %TMPL:DEF{"javascript::require"}%%JQREQUIRE{
-  "validate, superfish, ui, blockui, pnotify, farscroll, scrollto, imagetooltip, autosuggest, ui::tooltip, cookie, fontawesome, wikiword, like" 
+  "validate, superfish, ui, blockui, pnotify, farscroll, scrollto, imagetooltip, autosuggest, ui::tooltip, cookie, fontawesome, wikiword, like, foswikitemplate" 
   warn="off"
 }%%TMPL:P{"javascript::require::uploader"}%%TMPL:END%
 
@@ -39,9 +39,8 @@
 %TMPL:DEF{"javascript::topiccreator"}%%ADDTOZONE{
   "script" 
   id="TOPICCREATOR" 
-  requires="JQUERYPLUGIN::WIKIWORD, JQUERYPLUGIN::SCROLLTO"
-  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/RenderPlugin/foswikiTemplate.js'></script>
-<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/topiccreator.js'></script>"
+  requires="JQUERYPLUGIN::WIKIWORD, JQUERYPLUGIN::SCROLLTO, JQUERYPLUGIN::FOSWIKITEMPLATE"
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/topiccreator.js'></script>"
 }%%TMPL:END%
 
 %TMPL:DEF{"javascript::solr"}%%ADDTOZONE{
