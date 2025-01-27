@@ -3,6 +3,7 @@ Foswiki::Contrib::FamFamFamContrib,>=2075,perl,Required
 Foswiki::Contrib::JQAjaxFormContrib,>=0,perl,Required
 Foswiki::Contrib::JQPasswordGeneratorContrib,>=0,perl,Required
 Foswiki::Contrib::JQSelect2Contrib,>1.01,perl,Required
+Foswiki::Contrib::JQHoverMenuContrib,>1.01,perl,Required
 Foswiki::Contrib::WebFontsContrib,>=7.0,perl,Required
 Foswiki::Plugins::AutoTemplatePlugin,>=2.01,perl,Required
 Foswiki::Plugins::BreadCrumbsPlugin,>=4318,perl,Required
