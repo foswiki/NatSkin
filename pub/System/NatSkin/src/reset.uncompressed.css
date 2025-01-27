@@ -1,0 +1,183 @@
+/* reset *********************************************************************/
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote,
+body, button, canvas, caption, center, cite, code, dd, del, details, dfn, dialog, div,
+dl, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2,
+h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, input, ins, kbd, label,
+legend, li, mark, menu, meter, nav, object, ol, output, p, pre, progress, q,
+rp, rt, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup,
+table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video, xmp {
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  background: transparent;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+dialog {
+  margin:auto;
+  overflow:auto;
+}
+
+embed, object {
+  position: relative;
+  z-index: 0;
+}
+
+svg text {
+  font-family: var(--font-family-regular);
+}
+svg a {
+  text-decoration:none;
+  cursor:pointer;
+}
+
+/*
+.natHtml {
+  overflow-y: scroll; 
+  min-height:100%;
+}
+*/
+
+/* correct block display not defined in IE 8/9.  */
+article, aside, details, figcaption, figure, footer,
+header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* Correct `inline-block` display not defined in IE 8/9. */
+audio, canvas, video {
+  display: inline-block;
+}
+
+/* prevent modern browsers from displaying `audio` without controls.
+   remove excess height in iOS 5 devices.  */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* address [hidden] styling not present in IE 8/9. hide the template element in IE, Safari, and Firefox < 22.  */
+[hidden],
+template {
+  display: none;
+}
+
+b,
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+ins {
+  text-decoration:underline;
+}
+del {
+  text-decoration:line-through;
+}
+
+table {
+  border-collapse:collapse;
+  border-spacing: 0;
+}
+
+img {
+  color:transparent;
+  vertical-align:middle;
+  border:0;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+svg { /* for IE9.  */
+  overflow: hidden;
+}
+
+label, input, textarea, select, body, button { 
+  vertical-align:middle;
+}
+label {
+  margin-right:0.5em;
+}
+label input {
+  margin-right:0.2em;
+}
+label .foswikiIcon {
+  vertical-align:middle;
+}
+
+blockquote, q {
+  quotes:none;
+}
+
+input, textarea, select, button {
+  -webkit-box-sizing:border-box; 
+          box-sizing:border-box;
+}
+
+/* address box sizing set to `content-box` in IE 8/9/10. */
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0; 
+}
+
+/* appearance set to searchfield in Safari 5 and Chrome.  * box-sizing set to border-box in Safari 5 and Chrome.  */
+input[type="search"] {
+  -webkit-appearance: textfield; 
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content:'';
+  content:none;
+}
+
+.foswikiEmulatedLink,
+a {
+  color: var(--color-anchor);
+  text-decoration:underline;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+a:active,
+:focus {
+  outline:none;
+}
+a:focus-visible {
+  outline: 1px dotted currentColor;
+}
+
+a:hover:active {
+  color: var(--color-active-foreground);
+  background-color: var(--color-active-background);
+}
+
+.redDot a:hover,
+.treeview a:hover,
+.hover {
+  color: var(--color-hover-foreground);
+  background-color: var(--color-hover-background);
+  text-decoration:none;
+}
+
+.hr:before, hr:before {
+  clear:both;
+}
+.hr, hr {
+  border:0px;
+  padding:0px;
+  border-bottom:1px solid var(--color-border);
+  margin: var(--margin) 0;
+}
+
+progress[value]::-webkit-progress-bar {
+  background: var(--color-gray-2);
+  border-radius: 0.5rem;
+}
+progress[value]::-webkit-progress-value {
+  background:var(--color-primary);
+  border-radius: 0.5rem;
+}

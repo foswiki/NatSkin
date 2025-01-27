@@ -1,0 +1,27 @@
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{"bodyclass"}%natBookmarksBody%TMPL:END%
+%TMPL:DEF{"title"}%%HTMLTITLE{"%GETTOPICTITLE% (%MAKETEXT{"Bookmarks"}%)" separator=" %TMPL:P{"titlesep"}% "}%%TMPL:END%
+
+%TMPL:DEF{"bottombar"}%%TMPL:END%
+%TMPL:DEF{"metadata"}%%TMPL:END%
+%TMPL:DEF{"banner"}%%TMPL:END%
+%TMPL:DEF{"sidebar"}%%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+%TMPL:DEF{"BOOKMARKS_ACTION"}%%TMPL:END%
+%TMPL:DEF{"NEW_ACTION"}%%TMPL:END%
+%TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view" topic="%WEB%.%TOPIC%" template="bookmarks"}%">%MAKETEXT{"Bookmarks"}%</a>%TMPL:END%
+%TMPL:DEF{"topicactions::contents"}%%USERACTIONS{"$action(close)"}%%TMPL:END%
+%TMPL:DEF{"heading"}%<h1 >%MAKETEXT{"Manage bookmarks"}%</h1>%TMPL:END%
+
+%TMPL:DEF{"content"}%<!-- -->
+%TMPL:P{"heading"}%%{}%
+<div style="display:inline-block">
+%LISTY{"mylinks" 
+  hidenull="off" 
+  width="100%"
+  topic="%WIKIUSERNAME%"
+  type="topic,text,external"
+}%
+</div>
+%TMPL:END%

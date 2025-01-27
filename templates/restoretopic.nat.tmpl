@@ -1,0 +1,26 @@
+%TMPL:DEF{"dialog"}%<div class="jqUIDialog foswikiFormSteps" id="restoreDialog" data-modal="true" data-width="350" data-draggable="true" data-destroy-on-close="true" title="%MAKETEXT{"Restore Topic"}%" id="restoreTopicDialog">
+%TMPL:P{"content"}%%{}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"content"}%<form action="%SCRIPTURLPATH{"jsonrpc"}%/NatSkinPlugin/restore" method="post" class="jqAjaxForm" data-message="%MAKETEXT{"Restoring topic ..."}%" data-reload="true" data-before-submit="jQuery('#restoreDialog').dialog('widget').hide();return true;">
+  <input type="hidden" name="topic" value="%WEB%.%TOPIC%"  />
+  <input type="hidden" name="rev" value="%URLPARAM{"rev"}%"  />
+  %TMPL:P{"thumbnail"}%%{}%
+  %TRANSLATE{"Are you sure that you want to restore [_1] to revision [_2]?" 
+    arg1="<b>%GETTOPICTITLE{"%WEB%.%TOPIC%" encode="entity"}%</b>"
+    arg2="<b>%URLPARAM{"rev"}%</b>"
+  }%
+  <a class="jqUIDialogButton jqUIDialogSubmit jqUIDialogClose" data-icon="ui-icon-trash">%MAKETEXT{"Yes, restore"}%</a> 
+  <a class="jqUIDialogButton jqUIDialogClose" data-icon="ui-icon-cancel">%MAKETEXT{"No, thanks"}%</a> 
+</form>%JQREQUIRE{"ajaxform"}%%TMPL:END%
+
+%TMPL:DEF{"thumbnail"}%%IF{"istopic 'Applications.RenderTopicThumbnail'"
+  then="$percntDBCALL{\"%WEB%.%TOPIC%->Applications.RenderTopicThumbnail\"
+	  TOOLTIP=\"off\"
+	  TYPE=\"plain\"
+	  CROP=\"northwest\"
+	  SIZE=\"96x96>^\"
+	}$percnt"
+}%%TMPL:END%
+
+

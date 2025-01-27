@@ -1,8 +1,8 @@
-%TMPL:INCLUDE{"foswiki"}%%{ }%
+%TMPL:INCLUDE{"foswiki"}%%{}%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="jqUIDialog" data-modal="true" data-height="600" data-width="800" data-draggable="true" data-resizable="true" title="%MAKETEXT{"Backlinks to [_1]" args="%GETTOPICTITLE{"%BASEWEB%.%BASETOPIC%" encode="entity"}%"}%">
+<div class="jqUIDialog" data-modal="true" data-height="600" data-width="930" data-draggable="true" data-resizable="true" data-destroy-on-close="true" title="%MAKETEXT{"Backlinks to [_1]" args="%GETTOPICTITLE{"%BASEWEB%.%BASETOPIC%" encode="entity"}%"}%">
 %TMPL:P{"content"}%%{}%
 %TMPL:P{"backlinksjavascript"}%%{}%
 </div>
@@ -12,13 +12,16 @@
 %TMPL:DEF{"backlinks::limit"}%500%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"backlinksjavascript"}%<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/backlinks.js'></script>%TMPL:END%
+%TMPL:DEF{"backlinksjavascript"}%%ADDTOZONE{"script"
+  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/build/backlinks.js'></script>"
+  id="NATSKIN::BACKLINKS"
+}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"content"}%%{}%
 %TMPL:P{"checkbox"}%%{}%
 <div class="natBacklinksContainer"></div>
-<a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Close"}%</a>
+<a class="jqUIDialogButton jqUIDialogClose" data-icon="ui-icon-cancel">%MAKETEXT{"Close"}%</a>
 %{}%%TMPL:END%
 
 %{ ################################################################################ }%
@@ -45,10 +48,10 @@
   }%"
   pattern="\((.*)\);(.*)"
   split="\n"
-  cols="3"
   header="%MAKETEXT{"[_1] backlink(s) found" args="<span class='foswikiAlert'>$count</span>"}%$n$n $percntCALC{\"$SET(found,1)\"}$percnt"
   format="[[$2][$1]]"
   sort="nocase"
+  transliterate="%BACKLINKS_TRANSLITERATE{default="%MAKEINDEX_TRANSLITERATE{default=""}%"}%"
 }%%IF{"'%CALC{"$GET(found)"}%'=''"
   then="<span class='foswikiAlert'>%MAKETEXT{"nothing found"}%</span>"
 }%%{}%%TMPL:END%
@@ -63,10 +66,10 @@
   }%"
   pattern="\((.*)\);(.*)"
   split="\n"
-  cols="3"
   header="%MAKETEXT{"[_1] backlink(s) found" args="<span class='foswikiAlert'>$count</span>"}%$n$n $percntCALC{\"$SET(found,1)\"}$percnt"
   format="[[$2][$1]]"
   sort="nocase"
+  transliterate="%BACKLINKS_TRANSLITERATE{default="%MAKEINDEX_TRANSLITERATE{default=""}%"}%"
 }%%IF{"'%CALC{"$GET(found)"}%'=''"
   then="<span class='foswikiAlert'>%MAKETEXT{"nothing found"}%</span>"
 }%%{}%%TMPL:END%
@@ -83,7 +86,6 @@
   }%"
   pattern="\((.*)\);(.*)"
   split="\n"
-  cols="3"
   sort="nocase"
   header="%MAKETEXT{"[_1] backlink(s) found" args="<span class='foswikiAlert'>%CALC{"$GET(total)"}%</span>"}%
     $percntIF{\"%CALC{"$GET(total)"}%>%TMPL:P{"backlinks::limit"}%\"
@@ -91,6 +93,7 @@
     }$percnt<!-- -->$n
   "
   format="[[$2][$1]]"
+  transliterate="%BACKLINKS_TRANSLITERATE{default="%MAKEINDEX_TRANSLITERATE{default=""}%"}%"
 }</noautolink>
 %IF{"'%CALC{"$GET(total)"}%'=''"
   then="<span class='foswikiAlert'>%MAKETEXT{"nothing found"}%</span>"
@@ -110,7 +113,6 @@
   }%"
   pattern="\((.*)\);(.*);(.*)"
   split="\n"
-  cols="3"
   sort="nocase"
   header="%MAKETEXT{"[_1] backlink(s) found in all webs" args="<span class='foswikiAlert'>%CALC{"$GET(total)"}%</span>"}%
     $percntIF{\"%CALC{"$GET(total)"}%>%TMPL:P{"backlinks::limit"}%\"
@@ -118,6 +120,7 @@
     }$percnt<!-- -->$n$n
   "
   format="[[$3][$2]]"
+  transliterate="%BACKLINKS_TRANSLITERATE{default="%MAKEINDEX_TRANSLITERATE{default=""}%"}%"
 }%</noautolink>
 %IF{"'%CALC{"$GET(total)"}%'=''"
   then="<span class='foswikiAlert'>%MAKETEXT{"nothing found"}%</span>"
@@ -136,10 +139,10 @@
     }%"
   pattern="\((.*)\);(.*)"
   split="\n"
-  cols="3"
   header="%MAKETEXT{"[_1] backlink(s) found in all webs" args="<span class='foswikiAlert'>$count</span>"}%$n$n $percntCALC{\"$SET(found,1)\"}$percnt"
   format="[[$2][$1]]"
   sort="nocase"
+  transliterate="%BACKLINKS_TRANSLITERATE{default="%MAKEINDEX_TRANSLITERATE{default=""}%"}%"
 }%%IF{"'%CALC{"$GET(found)"}%'=''"
   then="<span class='foswikiAlert'>%MAKETEXT{"nothing found"}%</span>"
 }%%{}%%TMPL:END%

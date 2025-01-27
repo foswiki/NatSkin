@@ -1,7 +1,18 @@
 %TMPL:INCLUDE{"page"}%%{ template: changeform.nat.tmpl }%
-%TMPL:INCLUDE{"changeformbody"}%%{}%
-%TMPL:INCLUDE{"changeformtopicactions"}%%{}%
-%TMPL:INCLUDE{"changeformsidebar"}%%{}%
+
+%TMPL:DEF{"sidebar"}%%{}%
+<nop><h2>%MAKETEXT{"Help"}%</h2>
+   * <a href="%SCRIPTURLPATH{"view" topic="%SYSTEMWEB%.DataForms"}%" target="_blank">%MAKETEXT{"Form-based input"}%</a>
+   * <a href="%SCRIPTURLPATH{"view" topic="%SYSTEMWEB%.MetaData"}%" target="_blank">%MAKETEXT{"Topic meta data"}%</a>
+   * <a href="%SCRIPTURLPATH{"view" topic="%SYSTEMWEB%.Macros"}%" target="_blank">%MAKETEXT{"Variables"}%</a>
+   * <a href="%SCRIPTURLPATH{"view" topic="%BASEWEB%.WebPreferences"}%" target="_blank">WebPreferences</a>
+<nop><h2>%MAKETEXT{"Notes"}%</h2>
+<div class="natNotes">
+%MAKETEXT{"Any change you made to topic before coming to this page are preserved."}%
+
+%MAKETEXT{"Changing the form bares the danger of losing data not storable in the newly selected form."}%
+</div>%TMPL:END%
+
 %TMPL:DEF{"bodyclass"}%natChangeFormBody%TMPL:END%
 %TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
 %TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"edit"}%) %TMPL:P{"titlesep"}% %WIKITOOLNAME%%TMPL:END%
@@ -15,16 +26,17 @@
 <input type="hidden" name="redirectto" value="%URLPARAM{"redirectto"}%" />
 <input type="hidden" name="skin" value="%URLPARAM{"skin"}%" />
 <input type="hidden" name="cover" value="%URLPARAM{"cover"}%" />
-<input type="hidden" name="%TOPICTITLE_FIELD{default="TopicTitle"}%" value="%URLPARAM{"%TOPICTITLE_FIELD{default="TopicTitle"}%"}%" />
+<input type="hidden" name="TopicTitle" value="%URLPARAM{"TopicTitle"}%" />
 <input type="hidden" name="nowysiwyg" value="%URLPARAM{"nowysiwyg"}%" />%EDITACTION%
 %TEXT%
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep">
 %TMPL:P{"formlist"}%
 </div>
+---
 <div class="foswikiFormStep foswikiFormButtons">
-  %BUTTON{"%MAKETEXT{"OK"}%" accesskey="o" type="save" icon="%TMPL:P{"OK_ICON"}%"}%
-  %BUTTON{"%MAKETEXT{"Cancel"}%" accesskey="c" onclick="history.back()" icon="%TMPL:P{"CANCEL_ICON"}%"}%
+  %BUTTON{"%MAKETEXT{"OK"}%" accesskey="o" type="save" icon="%TMPL:P{"icon::ok::name"}%"}%
+  %BUTTON{"%MAKETEXT{"Cancel"}%" accesskey="c" onclick="history.back()" icon="%TMPL:P{"icon::cancel::name"}%"}%
 </div>
 </div>
 </form>
@@ -63,19 +75,19 @@
   format="<div class='row'><label>
     <input type='radio' name='formtemplate' $marker value='$2' />
     $percntJQICON{\"$3\"}$percnt
-    <b class='title'>$1</b> ... 
-    <span class='foswikiGrayText desc'>$percntFORMFIELD{\"Summary\" topic=\"$2\"}$percnt (<a href='%SCRIPTURLPATH{"view"}%/$2' target='_blank'>?</a>)</span>
+    <b class='title'>$percntTRANSLATE{\"$1\"}$percnt</b> ... 
+    <span class='foswikiGrayText desc'>$percntTRANSLATE{\"$percntFORMFIELD{\"Summary\" topic=\"$2\"}$percnt\"}$percnt (<a href='$percntSCRIPTURLPATH{\"view\" topic=\"$2\"}$percnt' target='_blank'>?</a>)</span>
     </label></div>"
   separator="$n"
   footer="<div class='row'><label>
       <input type='radio' name='formtemplate' value='none' />
-      %JQICON{"fa-remove"}%
-      <i class='title'>%MAKETEXT{"none"}%</i> ... 
-      <span class='foswikiGrayText desc'>%MAKETEXT{"remove the current form (caution: possible data loss)"}%</div>
+      %TMPL:P{"icon::cancel"}%
+      <i class='title'>%MAKETEXT{"remove current form"}%</i> ... 
+      <span class='foswikiGrayText desc'>%MAKETEXT{"remove the current form (caution: possible data loss)"}%</span>
       </label></div></div>"
 }%
 <literal>
-%ADDTOZONE{"script" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/changeform.js'></script>" id="NATSKIN::CHANGEFORM::JS"}%
+%ADDTOZONE{"script" text="<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/build/changeform.js'></script>" id="NATSKIN::CHANGEFORM::JS"}%
 <style>
 #formlist label {
   display:block;
@@ -96,7 +108,7 @@
 }
 #formlist .desc {
 }
-#formlist .fa {
+#formlist .jqIcon {
   text-align:center;
   font-size:1.5em;
   width:1em;
@@ -117,7 +129,7 @@
       </td>
       <td>$percntIF{\"'$name'='none'\" 
           then=\"%MAKETEXT{"remove the current form (caution: possible data loss)"}%\" 
-          else=\"$percntFORMFIELD{\"Summary\" topic=\"$formWeb.$formTopic\"}$percnt (<a href='%SCRIPTURLPATH{"view"}%/$formWeb/$formTopic' target='_blank'>?</a>)\"
+          else=\"$percntFORMFIELD{\"Summary\" topic=\"$formWeb.$formTopic\"}$percnt (<a href='$percntSCRIPTURLPATH{\"view\" topic=\"$formWeb.$formTopic\"}$percnt' target='_blank'>?</a>)\"
         }$percnt
       </td>
     </tr>"

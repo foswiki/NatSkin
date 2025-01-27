@@ -6,7 +6,7 @@
 %TMPL:P{"metabase"}%
 %TMPL:PREV%%TMPL:END%
 
-%TMPL:DEF{"metabase"}%<base href="%SCRIPTURLPATH{"diff"}%/"/><!--[if IE]></base><![endif]-->%TMPL:END%
+%TMPL:DEF{"metabase"}%<base href="%SCRIPTURLPATH{"diff"}%/">%TMPL:END%
 
 %TMPL:DEF{"styles"}%%TMPL:PREV%%TMPL:P{"css::angular"}%%TMPL:END%
 
@@ -15,6 +15,6 @@
   "script"
   id="NATSKIN::ANGULAR"
   requires="ANGULARSKIN"
-  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/angular.js'></script>"
+  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/build/angular.js'></script>"
 }%
 %TMPL:P{"javascript::angular"}%%RENDERZONE{"script"}%%RENDERZONE{"skinjs"}%%TMPL:END%

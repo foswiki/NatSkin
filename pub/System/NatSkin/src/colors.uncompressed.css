@@ -1,0 +1,323 @@
+/* standard colors */
+.foswikiGrayText, .foswikiGrayText a, a.foswikiGrayText { color: var(--color-gray); }
+
+.foswikiYellowFG, .foswikiYellowFG a { color:var(--color-yellow); } 
+.foswikiOrangeFG, .foswikiOrangeFG a { color:var(--color-orange); } 
+.foswikiRedFG, .foswikiRedFG a { color:var(--color-red); } 
+.foswikiPinkFG, .foswikiPinkFG a { color:var(--color-pink); } 
+.foswikiPurpleFG, .foswikiPurpleFG a { color:var(--color-purple); } 
+.foswikiNavyFG, .foswikiNavyFG a   { color:var(--color-navy); } 
+.foswikiBlueFG, .foswikiBlueFG a   { color:var(--color-blue); } 
+.foswikiTealFG, .foswikiTealFG a   { color:var(--color-teal); } 
+.foswikiAquaFG, .foswikiAquaFG a   { color:var(--color-aqua); } 
+.foswikiLimeFG, .foswikiLimeFG a   { color:var(--color-lime); } 
+.foswikiGreenFG, .foswikiGreenFG a  { color:var(--color-green); } 
+.foswikiOliveFG, .foswikiOliveFG a  { color:var(--color-olive); } 
+.foswikiMaroonFG, .foswikiMaroonFG a { color:var(--color-maroon); } 
+.foswikiBrownFG, .foswikiBrownFG a  { color:var(--color-brown); } 
+.foswikiBlackFG, .foswikiBlackFG a  { color:var(--color-black); } 
+.foswikiGrayFG, .foswikiGrayFG a   { color:var(--color-gray); } 
+.foswikiSilverFG, .foswikiSilverFG a { color:var(--color-silver); } 
+.foswikiWhiteFG, .foswikiWhiteFG a  { color:var(--color-white); } 
+
+.foswikiYellowBG { background-color:var(--color-yellow); }
+.foswikiOrangeBG { background-color:var(--color-orange); } 
+.foswikiRedBG    { background-color:var(--color-red); } 
+.foswikiPinkBG   { background-color:var(--color-pink); } 
+.foswikiPurpleBG { background-color:var(--color-purple); } 
+.foswikiNavyBG   { background-color:var(--color-navy); } 
+.foswikiBlueBG   { background-color:var(--color-blue); } 
+.foswikiTealBG   { background-color:var(--color-teal); } 
+.foswikiAquaBG   { background-color:var(--color-aqua); } 
+.foswikiLimeBG   { background-color:var(--color-lime); } 
+.foswikiGreenBG  { background-color:var(--color-green); } 
+.foswikiOliveBG  { background-color:var(--color-olive); } 
+.foswikiMaroonBG { background-color:var(--color-maroon); } 
+.foswikiBrownBG  { background-color:var(--color-brown); } 
+.foswikiBlackBG  { background-color:var(--color-black); } 
+.foswikiGrayBG   { background-color:var(--color-gray); } 
+.foswikiSilverBG { background-color:var(--color-silver); } 
+.foswikiWhiteBG  { background-color:var(--color-white); } 
+
+/* theming colors */
+/*
+.foswikiPrimaryFG, .foswikiPrimaryFG a { color:var(--color-primary); }
+
+.foswikiPrimaryLighter1FG, .foswikiPrimaryLighter1FG a { color:var(--color-primary-lighter-1);}
+.foswikiPrimaryLighter2FG, .foswikiPrimaryLighter2FG a { color:var(--color-primary-lighter-2);}
+.foswikiPrimaryLighter3FG, .foswikiPrimaryLighter3FG a { color:var(--color-primary-lighter-3);}
+.foswikiPrimaryLighter4FG, .foswikiPrimaryLighter4FG a { color:var(--color-primary-lighter-4);}
+.foswikiPrimaryLighter5FG, .foswikiPrimaryLighter5FG a { color:var(--color-primary-lighter-5);}
+.foswikiPrimaryLighter6FG, .foswikiPrimaryLighter6FG a { color:var(--color-primary-lighter-6);}
+.foswikiPrimaryLighter7FG, .foswikiPrimaryLighter7FG a { color:var(--color-primary-lighter-7);}
+.foswikiPrimaryLighter8FG, .foswikiPrimaryLighter8FG a { color:var(--color-primary-lighter-8);}
+.foswikiPrimaryLighter9FG, .foswikiPrimaryLighter9FG a { color:var(--color-primary-lighter-9);}
+.foswikiPrimaryLighter10FG, .foswikiPrimaryLighter10FG a { color:var(--color-primary-lighter-10);}
+
+.foswikiPrimaryDarker1FG, .foswikiPrimaryDarker1FG a { color:var(--color-primary-darker-1);}
+.foswikiPrimaryDarker2FG, .foswikiPrimaryDarker2FG a { color:var(--color-primary-darker-2);}
+.foswikiPrimaryDarker3FG, .foswikiPrimaryDarker3FG a { color:var(--color-primary-darker-3);}
+.foswikiPrimaryDarker4FG, .foswikiPrimaryDarker4FG a { color:var(--color-primary-darker-4);}
+.foswikiPrimaryDarker5FG, .foswikiPrimaryDarker5FG a { color:var(--color-primary-darker-5);}
+.foswikiPrimaryDarker6FG, .foswikiPrimaryDarker6FG a { color:var(--color-primary-darker-6);}
+.foswikiPrimaryDarker7FG, .foswikiPrimaryDarker7FG a { color:var(--color-primary-darker-7);}
+.foswikiPrimaryDarker8FG, .foswikiPrimaryDarker8FG a { color:var(--color-primary-darker-8);}
+.foswikiPrimaryDarker9FG, .foswikiPrimaryDarker9FG a { color:var(--color-primary-darker-9);}
+.foswikiPrimaryDarker10FG, .foswikiPrimaryDarker10FG a { color:var(--color-primary-darker-10);}
+
+.foswikiPrimaryAlpha1FG, .foswikiPrimaryAlpha1FG a { color:var(--color-primary-alpha-1);}
+.foswikiPrimaryAlpha2FG, .foswikiPrimaryAlpha2FG a { color:var(--color-primary-alpha-2);}
+.foswikiPrimaryAlpha3FG, .foswikiPrimaryAlpha3FG a { color:var(--color-primary-alpha-3);}
+.foswikiPrimaryAlpha4FG, .foswikiPrimaryAlpha4FG a { color:var(--color-primary-alpha-4);}
+.foswikiPrimaryAlpha5FG, .foswikiPrimaryAlpha5FG a { color:var(--color-primary-alpha-5);}
+.foswikiPrimaryAlpha6FG, .foswikiPrimaryAlpha6FG a { color:var(--color-primary-alpha-6);}
+.foswikiPrimaryAlpha7FG, .foswikiPrimaryAlpha7FG a { color:var(--color-primary-alpha-7);}
+.foswikiPrimaryAlpha8FG, .foswikiPrimaryAlpha8FG a { color:var(--color-primary-alpha-8);}
+.foswikiPrimaryAlpha9FG, .foswikiPrimaryAlpha9FG a { color:var(--color-primary-alpha-9);}
+.foswikiPrimaryAlpha10FG, .foswikiPrimaryAlpha10FG a { color:var(--color-primary-alpha-10);}
+
+.foswikiSecondaryFG, .foswikiSecondaryFG a { color:var(--color-secondary);}
+
+.foswikiSecondaryLighter1FG, .foswikiSecondaryLighter1FG a { color:var(--color-secondary-lighter-1);}
+.foswikiSecondaryLighter2FG, .foswikiSecondaryLighter2FG a { color:var(--color-secondary-lighter-2);}
+.foswikiSecondaryLighter3FG, .foswikiSecondaryLighter3FG a { color:var(--color-secondary-lighter-3);}
+.foswikiSecondaryLighter4FG, .foswikiSecondaryLighter4FG a { color:var(--color-secondary-lighter-4);}
+.foswikiSecondaryLighter5FG, .foswikiSecondaryLighter5FG a { color:var(--color-secondary-lighter-5);}
+.foswikiSecondaryLighter6FG, .foswikiSecondaryLighter6FG a { color:var(--color-secondary-lighter-6);}
+.foswikiSecondaryLighter7FG, .foswikiSecondaryLighter7FG a { color:var(--color-secondary-lighter-7);}
+.foswikiSecondaryLighter8FG, .foswikiSecondaryLighter8FG a { color:var(--color-secondary-lighter-8);}
+.foswikiSecondaryLighter9FG, .foswikiSecondaryLighter9FG a { color:var(--color-secondary-lighter-9);}
+.foswikiSecondaryLighter10FG, .foswikiSecondaryLighter10FG a { color:var(--color-secondary-lighter-10);}
+
+.foswikiSecondaryDarker1FG, .foswikiSecondaryDarker1FG a { color:var(--color-secondary-darker-1);}
+.foswikiSecondaryDarker2FG, .foswikiSecondaryDarker2FG a { color:var(--color-secondary-darker-2);}
+.foswikiSecondaryDarker3FG, .foswikiSecondaryDarker3FG a { color:var(--color-secondary-darker-3);}
+.foswikiSecondaryDarker4FG, .foswikiSecondaryDarker4FG a { color:var(--color-secondary-darker-4);}
+.foswikiSecondaryDarker5FG, .foswikiSecondaryDarker5FG a { color:var(--color-secondary-darker-5);}
+.foswikiSecondaryDarker6FG, .foswikiSecondaryDarker6FG a { color:var(--color-secondary-darker-6);}
+.foswikiSecondaryDarker7FG, .foswikiSecondaryDarker7FG a { color:var(--color-secondary-darker-7);}
+.foswikiSecondaryDarker8FG, .foswikiSecondaryDarker8FG a { color:var(--color-secondary-darker-8);}
+.foswikiSecondaryDarker9FG, .foswikiSecondaryDarker9FG a { color:var(--color-secondary-darker-9);}
+.foswikiSecondaryDarker10FG, .foswikiSecondaryDarker10FG a { color:var(--color-secondary-darker-10);}
+
+.foswikiSecondaryAlpha1FG, .foswikiSecondaryAlpha1FG a { color:var(--color-secondary-alpha-1);}
+.foswikiSecondaryAlpha2FG, .foswikiSecondaryAlpha2FG a { color:var(--color-secondary-alpha-2);}
+.foswikiSecondaryAlpha3FG, .foswikiSecondaryAlpha3FG a { color:var(--color-secondary-alpha-3);}
+.foswikiSecondaryAlpha4FG, .foswikiSecondaryAlpha4FG a { color:var(--color-secondary-alpha-4);}
+.foswikiSecondaryAlpha5FG, .foswikiSecondaryAlpha5FG a { color:var(--color-secondary-alpha-5);}
+.foswikiSecondaryAlpha6FG, .foswikiSecondaryAlpha6FG a { color:var(--color-secondary-alpha-6);}
+.foswikiSecondaryAlpha7FG, .foswikiSecondaryAlpha7FG a { color:var(--color-secondary-alpha-7);}
+.foswikiSecondaryAlpha8FG, .foswikiSecondaryAlpha8FG a { color:var(--color-secondary-alpha-8);}
+.foswikiSecondaryAlpha9FG, .foswikiSecondaryAlpha9FG a { color:var(--color-secondary-alpha-9);}
+.foswikiSecondaryAlpha10FG, .foswikiSecondaryAlpha10FG a { color:var(--color-secondary-alpha-10);}
+
+.foswikiTernaryFG, .foswikiTernaryFG a { color:var(--color-ternary);}
+
+.foswikiTernaryLighter1FG, .foswikiTernaryLighter1FG a { color:var(--color-ternary-lighter-1);}
+.foswikiTernaryLighter2FG, .foswikiTernaryLighter2FG a { color:var(--color-ternary-lighter-2);}
+.foswikiTernaryLighter3FG, .foswikiTernaryLighter3FG a { color:var(--color-ternary-lighter-3);}
+.foswikiTernaryLighter4FG, .foswikiTernaryLighter4FG a { color:var(--color-ternary-lighter-4);}
+.foswikiTernaryLighter5FG, .foswikiTernaryLighter5FG a { color:var(--color-ternary-lighter-5);}
+.foswikiTernaryLighter6FG, .foswikiTernaryLighter6FG a { color:var(--color-ternary-lighter-6);}
+.foswikiTernaryLighter7FG, .foswikiTernaryLighter7FG a { color:var(--color-ternary-lighter-7);}
+.foswikiTernaryLighter8FG, .foswikiTernaryLighter8FG a { color:var(--color-ternary-lighter-8);}
+.foswikiTernaryLighter9FG, .foswikiTernaryLighter9FG a { color:var(--color-ternary-lighter-9);}
+.foswikiTernaryLighter10FG, .foswikiTernaryLighter10FG a { color:var(--color-ternary-lighter-10);}
+
+.foswikiTernaryDarker1FG, .foswikiTernaryDarker1FG a { color:var(--color-ternary-darker-1);}
+.foswikiTernaryDarker2FG, .foswikiTernaryDarker2FG a { color:var(--color-ternary-darker-2);}
+.foswikiTernaryDarker3FG, .foswikiTernaryDarker3FG a { color:var(--color-ternary-darker-3);}
+.foswikiTernaryDarker4FG, .foswikiTernaryDarker4FG a { color:var(--color-ternary-darker-4);}
+.foswikiTernaryDarker5FG, .foswikiTernaryDarker5FG a { color:var(--color-ternary-darker-5);}
+.foswikiTernaryDarker6FG, .foswikiTernaryDarker6FG a { color:var(--color-ternary-darker-6);}
+.foswikiTernaryDarker7FG, .foswikiTernaryDarker7FG a { color:var(--color-ternary-darker-7);}
+.foswikiTernaryDarker8FG, .foswikiTernaryDarker8FG a { color:var(--color-ternary-darker-8);}
+.foswikiTernaryDarker9FG, .foswikiTernaryDarker9FG a { color:var(--color-ternary-darker-9);}
+.foswikiTernaryDarker10FG, .foswikiTernaryDarker10FG a { color:var(--color-ternary-darker-10);}
+
+.foswikiTernaryAlpha1FG, .foswikiTernaryAlpha1FG a { color:var(--color-ternary-alpha-1);}
+.foswikiTernaryAlpha2FG, .foswikiTernaryAlpha2FG a { color:var(--color-ternary-alpha-2);}
+.foswikiTernaryAlpha3FG, .foswikiTernaryAlpha3FG a { color:var(--color-ternary-alpha-3);}
+.foswikiTernaryAlpha4FG, .foswikiTernaryAlpha4FG a { color:var(--color-ternary-alpha-4);}
+.foswikiTernaryAlpha5FG, .foswikiTernaryAlpha5FG a { color:var(--color-ternary-alpha-5);}
+.foswikiTernaryAlpha6FG, .foswikiTernaryAlpha6FG a { color:var(--color-ternary-alpha-6);}
+.foswikiTernaryAlpha7FG, .foswikiTernaryAlpha7FG a { color:var(--color-ternary-alpha-7);}
+.foswikiTernaryAlpha8FG, .foswikiTernaryAlpha8FG a { color:var(--color-ternary-alpha-8);}
+.foswikiTernaryAlpha9FG, .foswikiTernaryAlpha9FG a { color:var(--color-ternary-alpha-9);}
+.foswikiTernaryAlpha10FG, .foswikiTernaryAlpha10FG a { color:var(--color-ternary-alpha-10);}
+
+.foswikiComplementaryFG, .foswikiComplementaryFG a { color:var(--color-complementary);}
+
+.foswikiComplementaryLighter1FG, .foswikiComplementaryLighter1FG a { color:var(--color-complementary-lighter-1);}
+.foswikiComplementaryLighter2FG, .foswikiComplementaryLighter2FG a { color:var(--color-complementary-lighter-2);}
+.foswikiComplementaryLighter3FG, .foswikiComplementaryLighter3FG a { color:var(--color-complementary-lighter-3);}
+.foswikiComplementaryLighter4FG, .foswikiComplementaryLighter4FG a { color:var(--color-complementary-lighter-4);}
+.foswikiComplementaryLighter5FG, .foswikiComplementaryLighter5FG a { color:var(--color-complementary-lighter-5);}
+.foswikiComplementaryLighter6FG, .foswikiComplementaryLighter6FG a { color:var(--color-complementary-lighter-6);}
+.foswikiComplementaryLighter7FG, .foswikiComplementaryLighter7FG a { color:var(--color-complementary-lighter-7);}
+.foswikiComplementaryLighter8FG, .foswikiComplementaryLighter8FG a { color:var(--color-complementary-lighter-8);}
+.foswikiComplementaryLighter9FG, .foswikiComplementaryLighter9FG a { color:var(--color-complementary-lighter-9);}
+.foswikiComplementaryLighter10FG, .foswikiComplementaryLighter10FG a { color:var(--color-complementary-lighter-10);}
+
+.foswikiComplementaryDarker1FG, .foswikiComplementaryDarker1FG a { color:var(--color-complementary-darker-1);}
+.foswikiComplementaryDarker2FG, .foswikiComplementaryDarker2FG a { color:var(--color-complementary-darker-2);}
+.foswikiComplementaryDarker3FG, .foswikiComplementaryDarker3FG a { color:var(--color-complementary-darker-3);}
+.foswikiComplementaryDarker4FG, .foswikiComplementaryDarker4FG a { color:var(--color-complementary-darker-4);}
+.foswikiComplementaryDarker5FG, .foswikiComplementaryDarker5FG a { color:var(--color-complementary-darker-5);}
+.foswikiComplementaryDarker6FG, .foswikiComplementaryDarker6FG a { color:var(--color-complementary-darker-6);}
+.foswikiComplementaryDarker7FG, .foswikiComplementaryDarker7FG a { color:var(--color-complementary-darker-7);}
+.foswikiComplementaryDarker8FG, .foswikiComplementaryDarker8FG a { color:var(--color-complementary-darker-8);}
+.foswikiComplementaryDarker9FG, .foswikiComplementaryDarker9FG a { color:var(--color-complementary-darker-9);}
+.foswikiComplementaryDarker10FG, .foswikiComplementaryDarker10FG a { color:var(--color-complementary-darker-10);}
+
+.foswikiComplementaryAlpha1FG, .foswikiComplementaryAlpha1FG a { color:var(--color-complementary-alpha-1);}
+.foswikiComplementaryAlpha2FG, .foswikiComplementaryAlpha2FG a { color:var(--color-complementary-alpha-2);}
+.foswikiComplementaryAlpha3FG, .foswikiComplementaryAlpha3FG a { color:var(--color-complementary-alpha-3);}
+.foswikiComplementaryAlpha4FG, .foswikiComplementaryAlpha4FG a { color:var(--color-complementary-alpha-4);}
+.foswikiComplementaryAlpha5FG, .foswikiComplementaryAlpha5FG a { color:var(--color-complementary-alpha-5);}
+.foswikiComplementaryAlpha6FG, .foswikiComplementaryAlpha6FG a { color:var(--color-complementary-alpha-6);}
+.foswikiComplementaryAlpha7FG, .foswikiComplementaryAlpha7FG a { color:var(--color-complementary-alpha-7);}
+.foswikiComplementaryAlpha8FG, .foswikiComplementaryAlpha8FG a { color:var(--color-complementary-alpha-8);}
+.foswikiComplementaryAlpha9FG, .foswikiComplementaryAlpha9FG a { color:var(--color-complementary-alpha-9);}
+.foswikiComplementaryAlpha10FG, .foswikiComplementaryAlpha10FG a { color:var(--color-complementary-alpha-10);}
+
+.foswikiPrimaryBG, .foswikiPrimaryBG a { background-color:var(--color-primary);}
+
+.foswikiPrimaryLighter1BG, .foswikiPrimaryLighter1BG a { background-color:var(--color-primary-lighter-1);}
+.foswikiPrimaryLighter2BG, .foswikiPrimaryLighter2BG a { background-color:var(--color-primary-lighter-2);}
+.foswikiPrimaryLighter3BG, .foswikiPrimaryLighter3BG a { background-color:var(--color-primary-lighter-3);}
+.foswikiPrimaryLighter4BG, .foswikiPrimaryLighter4BG a { background-color:var(--color-primary-lighter-4);}
+.foswikiPrimaryLighter5BG, .foswikiPrimaryLighter5BG a { background-color:var(--color-primary-lighter-5);}
+.foswikiPrimaryLighter6BG, .foswikiPrimaryLighter6BG a { background-color:var(--color-primary-lighter-6);}
+.foswikiPrimaryLighter7BG, .foswikiPrimaryLighter7BG a { background-color:var(--color-primary-lighter-7);}
+.foswikiPrimaryLighter8BG, .foswikiPrimaryLighter8BG a { background-color:var(--color-primary-lighter-8);}
+.foswikiPrimaryLighter9BG, .foswikiPrimaryLighter9BG a { background-color:var(--color-primary-lighter-9);}
+.foswikiPrimaryLighter10BG, .foswikiPrimaryLighter10BG a { background-color:var(--color-primary-lighter-10);}
+
+.foswikiPrimaryDarker1BG, .foswikiPrimaryDarker1BG a { background-color:var(--color-primary-darker-1);}
+.foswikiPrimaryDarker2BG, .foswikiPrimaryDarker2BG a { background-color:var(--color-primary-darker-2);}
+.foswikiPrimaryDarker3BG, .foswikiPrimaryDarker3BG a { background-color:var(--color-primary-darker-3);}
+.foswikiPrimaryDarker4BG, .foswikiPrimaryDarker4BG a { background-color:var(--color-primary-darker-4);}
+.foswikiPrimaryDarker5BG, .foswikiPrimaryDarker5BG a { background-color:var(--color-primary-darker-5);}
+.foswikiPrimaryDarker6BG, .foswikiPrimaryDarker6BG a { background-color:var(--color-primary-darker-6);}
+.foswikiPrimaryDarker7BG, .foswikiPrimaryDarker7BG a { background-color:var(--color-primary-darker-7);}
+.foswikiPrimaryDarker8BG, .foswikiPrimaryDarker8BG a { background-color:var(--color-primary-darker-8);}
+.foswikiPrimaryDarker9BG, .foswikiPrimaryDarker9BG a { background-color:var(--color-primary-darker-9);}
+.foswikiPrimaryDarker10BG, .foswikiPrimaryDarker10BG a { background-color:var(--color-primary-darker-10);}
+
+.foswikiPrimaryAlpha1BG, .foswikiPrimaryAlpha1BG a { background-color:var(--color-primary-alpha-1);}
+.foswikiPrimaryAlpha2BG, .foswikiPrimaryAlpha2BG a { background-color:var(--color-primary-alpha-2);}
+.foswikiPrimaryAlpha3BG, .foswikiPrimaryAlpha3BG a { background-color:var(--color-primary-alpha-3);}
+.foswikiPrimaryAlpha4BG, .foswikiPrimaryAlpha4BG a { background-color:var(--color-primary-alpha-4);}
+.foswikiPrimaryAlpha5BG, .foswikiPrimaryAlpha5BG a { background-color:var(--color-primary-alpha-5);}
+.foswikiPrimaryAlpha6BG, .foswikiPrimaryAlpha6BG a { background-color:var(--color-primary-alpha-6);}
+.foswikiPrimaryAlpha7BG, .foswikiPrimaryAlpha7BG a { background-color:var(--color-primary-alpha-7);}
+.foswikiPrimaryAlpha8BG, .foswikiPrimaryAlpha8BG a { background-color:var(--color-primary-alpha-8);}
+.foswikiPrimaryAlpha9BG, .foswikiPrimaryAlpha9BG a { background-color:var(--color-primary-alpha-9);}
+.foswikiPrimaryAlpha10BG, .foswikiPrimaryAlpha10BG a { background-color:var(--color-primary-alpha-10);}
+
+.foswikiSecondaryBG, .foswikiSecondaryBG a { background-color:var(--color-secondary);}
+
+.foswikiSecondaryLighter1BG, .foswikiSecondaryLighter1BG a { background-color:var(--color-secondary-lighter-1);}
+.foswikiSecondaryLighter2BG, .foswikiSecondaryLighter2BG a { background-color:var(--color-secondary-lighter-2);}
+.foswikiSecondaryLighter3BG, .foswikiSecondaryLighter3BG a { background-color:var(--color-secondary-lighter-3);}
+.foswikiSecondaryLighter4BG, .foswikiSecondaryLighter4BG a { background-color:var(--color-secondary-lighter-4);}
+.foswikiSecondaryLighter5BG, .foswikiSecondaryLighter5BG a { background-color:var(--color-secondary-lighter-5);}
+.foswikiSecondaryLighter6BG, .foswikiSecondaryLighter6BG a { background-color:var(--color-secondary-lighter-6);}
+.foswikiSecondaryLighter7BG, .foswikiSecondaryLighter7BG a { background-color:var(--color-secondary-lighter-7);}
+.foswikiSecondaryLighter8BG, .foswikiSecondaryLighter8BG a { background-color:var(--color-secondary-lighter-8);}
+.foswikiSecondaryLighter9BG, .foswikiSecondaryLighter9BG a { background-color:var(--color-secondary-lighter-9);}
+.foswikiSecondaryLighter10BG, .foswikiSecondaryLighter10BG a { background-color:var(--color-secondary-lighter-10);}
+
+.foswikiSecondaryDarker1BG, .foswikiSecondaryDarker1BG a { background-color:var(--color-secondary-darker-1);}
+.foswikiSecondaryDarker2BG, .foswikiSecondaryDarker2BG a { background-color:var(--color-secondary-darker-2);}
+.foswikiSecondaryDarker3BG, .foswikiSecondaryDarker3BG a { background-color:var(--color-secondary-darker-3);}
+.foswikiSecondaryDarker4BG, .foswikiSecondaryDarker4BG a { background-color:var(--color-secondary-darker-4);}
+.foswikiSecondaryDarker5BG, .foswikiSecondaryDarker5BG a { background-color:var(--color-secondary-darker-5);}
+.foswikiSecondaryDarker6BG, .foswikiSecondaryDarker6BG a { background-color:var(--color-secondary-darker-6);}
+.foswikiSecondaryDarker7BG, .foswikiSecondaryDarker7BG a { background-color:var(--color-secondary-darker-7);}
+.foswikiSecondaryDarker8BG, .foswikiSecondaryDarker8BG a { background-color:var(--color-secondary-darker-8);}
+.foswikiSecondaryDarker9BG, .foswikiSecondaryDarker9BG a { background-color:var(--color-secondary-darker-9);}
+.foswikiSecondaryDarker10BG, .foswikiSecondaryDarker10BG a { background-color:var(--color-secondary-darker-10);}
+
+.foswikiSecondaryAlpha1BG, .foswikiSecondaryAlpha1BG a { background-color:var(--color-secondary-alpha-1);}
+.foswikiSecondaryAlpha2BG, .foswikiSecondaryAlpha2BG a { background-color:var(--color-secondary-alpha-2);}
+.foswikiSecondaryAlpha3BG, .foswikiSecondaryAlpha3BG a { background-color:var(--color-secondary-alpha-3);}
+.foswikiSecondaryAlpha4BG, .foswikiSecondaryAlpha4BG a { background-color:var(--color-secondary-alpha-4);}
+.foswikiSecondaryAlpha5BG, .foswikiSecondaryAlpha5BG a { background-color:var(--color-secondary-alpha-5);}
+.foswikiSecondaryAlpha6BG, .foswikiSecondaryAlpha6BG a { background-color:var(--color-secondary-alpha-6);}
+.foswikiSecondaryAlpha7BG, .foswikiSecondaryAlpha7BG a { background-color:var(--color-secondary-alpha-7);}
+.foswikiSecondaryAlpha8BG, .foswikiSecondaryAlpha8BG a { background-color:var(--color-secondary-alpha-8);}
+.foswikiSecondaryAlpha9BG, .foswikiSecondaryAlpha9BG a { background-color:var(--color-secondary-alpha-9);}
+.foswikiSecondaryAlpha10BG, .foswikiSecondaryAlpha10BG a { background-color:var(--color-secondary-alpha-10);}
+
+.foswikiTernaryBG, .foswikiTernaryBG a { background-color:var(--color-ternary);}
+
+.foswikiTernaryLighter1BG, .foswikiTernaryLighter1BG a { background-color:var(--color-ternary-lighter-1);}
+.foswikiTernaryLighter2BG, .foswikiTernaryLighter2BG a { background-color:var(--color-ternary-lighter-2);}
+.foswikiTernaryLighter3BG, .foswikiTernaryLighter3BG a { background-color:var(--color-ternary-lighter-3);}
+.foswikiTernaryLighter4BG, .foswikiTernaryLighter4BG a { background-color:var(--color-ternary-lighter-4);}
+.foswikiTernaryLighter5BG, .foswikiTernaryLighter5BG a { background-color:var(--color-ternary-lighter-5);}
+.foswikiTernaryLighter6BG, .foswikiTernaryLighter6BG a { background-color:var(--color-ternary-lighter-6);}
+.foswikiTernaryLighter7BG, .foswikiTernaryLighter7BG a { background-color:var(--color-ternary-lighter-7);}
+.foswikiTernaryLighter8BG, .foswikiTernaryLighter8BG a { background-color:var(--color-ternary-lighter-8);}
+.foswikiTernaryLighter9BG, .foswikiTernaryLighter9BG a { background-color:var(--color-ternary-lighter-9);}
+.foswikiTernaryLighter10BG, .foswikiTernaryLighter10BG a { background-color:var(--color-ternary-lighter-10);}
+
+.foswikiTernaryDarker1BG, .foswikiTernaryDarker1BG a { background-color:var(--color-ternary-darker-1);}
+.foswikiTernaryDarker2BG, .foswikiTernaryDarker2BG a { background-color:var(--color-ternary-darker-2);}
+.foswikiTernaryDarker3BG, .foswikiTernaryDarker3BG a { background-color:var(--color-ternary-darker-3);}
+.foswikiTernaryDarker4BG, .foswikiTernaryDarker4BG a { background-color:var(--color-ternary-darker-4);}
+.foswikiTernaryDarker5BG, .foswikiTernaryDarker5BG a { background-color:var(--color-ternary-darker-5);}
+.foswikiTernaryDarker6BG, .foswikiTernaryDarker6BG a { background-color:var(--color-ternary-darker-6);}
+.foswikiTernaryDarker7BG, .foswikiTernaryDarker7BG a { background-color:var(--color-ternary-darker-7);}
+.foswikiTernaryDarker8BG, .foswikiTernaryDarker8BG a { background-color:var(--color-ternary-darker-8);}
+.foswikiTernaryDarker9BG, .foswikiTernaryDarker9BG a { background-color:var(--color-ternary-darker-9);}
+.foswikiTernaryDarker10BG, .foswikiTernaryDarker10BG a { background-color:var(--color-ternary-darker-10);}
+
+.foswikiTernaryAlpha1BG, .foswikiTernaryAlpha1BG a { background-color:var(--color-ternary-alpha-1);}
+.foswikiTernaryAlpha2BG, .foswikiTernaryAlpha2BG a { background-color:var(--color-ternary-alpha-2);}
+.foswikiTernaryAlpha3BG, .foswikiTernaryAlpha3BG a { background-color:var(--color-ternary-alpha-3);}
+.foswikiTernaryAlpha4BG, .foswikiTernaryAlpha4BG a { background-color:var(--color-ternary-alpha-4);}
+.foswikiTernaryAlpha5BG, .foswikiTernaryAlpha5BG a { background-color:var(--color-ternary-alpha-5);}
+.foswikiTernaryAlpha6BG, .foswikiTernaryAlpha6BG a { background-color:var(--color-ternary-alpha-6);}
+.foswikiTernaryAlpha7BG, .foswikiTernaryAlpha7BG a { background-color:var(--color-ternary-alpha-7);}
+.foswikiTernaryAlpha8BG, .foswikiTernaryAlpha8BG a { background-color:var(--color-ternary-alpha-8);}
+.foswikiTernaryAlpha9BG, .foswikiTernaryAlpha9BG a { background-color:var(--color-ternary-alpha-9);}
+.foswikiTernaryAlpha10BG, .foswikiTernaryAlpha10BG a { background-color:var(--color-ternary-alpha-10);}
+
+.foswikiComplementaryBG, .foswikiComplementaryBG a { background-color:var(--color-complementary);}
+
+.foswikiComplementaryLighter1BG, .foswikiComplementaryLighter1BG a { background-color:var(--color-complementary-lighter-1);}
+.foswikiComplementaryLighter2BG, .foswikiComplementaryLighter2BG a { background-color:var(--color-complementary-lighter-2);}
+.foswikiComplementaryLighter3BG, .foswikiComplementaryLighter3BG a { background-color:var(--color-complementary-lighter-3);}
+.foswikiComplementaryLighter4BG, .foswikiComplementaryLighter4BG a { background-color:var(--color-complementary-lighter-4);}
+.foswikiComplementaryLighter5BG, .foswikiComplementaryLighter5BG a { background-color:var(--color-complementary-lighter-5);}
+.foswikiComplementaryLighter6BG, .foswikiComplementaryLighter6BG a { background-color:var(--color-complementary-lighter-6);}
+.foswikiComplementaryLighter7BG, .foswikiComplementaryLighter7BG a { background-color:var(--color-complementary-lighter-7);}
+.foswikiComplementaryLighter8BG, .foswikiComplementaryLighter8BG a { background-color:var(--color-complementary-lighter-8);}
+.foswikiComplementaryLighter9BG, .foswikiComplementaryLighter9BG a { background-color:var(--color-complementary-lighter-9);}
+.foswikiComplementaryLighter10BG, .foswikiComplementaryLighter10BG a { background-color:var(--color-complementary-lighter-10);}
+
+.foswikiComplementaryDarker1BG, .foswikiComplementaryDarker1BG a { background-color:var(--color-complementary-darker-1);}
+.foswikiComplementaryDarker2BG, .foswikiComplementaryDarker2BG a { background-color:var(--color-complementary-darker-2);}
+.foswikiComplementaryDarker3BG, .foswikiComplementaryDarker3BG a { background-color:var(--color-complementary-darker-3);}
+.foswikiComplementaryDarker4BG, .foswikiComplementaryDarker4BG a { background-color:var(--color-complementary-darker-4);}
+.foswikiComplementaryDarker5BG, .foswikiComplementaryDarker5BG a { background-color:var(--color-complementary-darker-5);}
+.foswikiComplementaryDarker6BG, .foswikiComplementaryDarker6BG a { background-color:var(--color-complementary-darker-6);}
+.foswikiComplementaryDarker7BG, .foswikiComplementaryDarker7BG a { background-color:var(--color-complementary-darker-7);}
+.foswikiComplementaryDarker8BG, .foswikiComplementaryDarker8BG a { background-color:var(--color-complementary-darker-8);}
+.foswikiComplementaryDarker9BG, .foswikiComplementaryDarker9BG a { background-color:var(--color-complementary-darker-9);}
+.foswikiComplementaryDarker10BG, .foswikiComplementaryDarker10BG a { background-color:var(--color-complementary-darker-10);}
+
+.foswikiComplementaryAlpha1BG, .foswikiComplementaryAlpha1BG a { background-color:var(--color-complementary-alpha-1);}
+.foswikiComplementaryAlpha2BG, .foswikiComplementaryAlpha2BG a { background-color:var(--color-complementary-alpha-2);}
+.foswikiComplementaryAlpha3BG, .foswikiComplementaryAlpha3BG a { background-color:var(--color-complementary-alpha-3);}
+.foswikiComplementaryAlpha4BG, .foswikiComplementaryAlpha4BG a { background-color:var(--color-complementary-alpha-4);}
+.foswikiComplementaryAlpha5BG, .foswikiComplementaryAlpha5BG a { background-color:var(--color-complementary-alpha-5);}
+.foswikiComplementaryAlpha6BG, .foswikiComplementaryAlpha6BG a { background-color:var(--color-complementary-alpha-6);}
+.foswikiComplementaryAlpha7BG, .foswikiComplementaryAlpha7BG a { background-color:var(--color-complementary-alpha-7);}
+.foswikiComplementaryAlpha8BG, .foswikiComplementaryAlpha8BG a { background-color:var(--color-complementary-alpha-8);}
+.foswikiComplementaryAlpha9BG, .foswikiComplementaryAlpha9BG a { background-color:var(--color-complementary-alpha-9);}
+.foswikiComplementaryAlpha10BG, .foswikiComplementaryAlpha10BG a { background-color:var(--color-complementary-alpha-10);}
+*/

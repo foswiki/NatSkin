@@ -1,75 +1,60 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 
-%{<verbatim class="tml">}%
 %{ ###########################################################################
    inherit settings from standard view template
 }%
 %TMPL:INCLUDE{"view"}%
-%{</verbatim>}%
 
-%{<verbatim class="tml">}%
 %{ ###########################################################################
    websearch - default settings and switches
 }%
 %TMPL:DEF{"searchbox"}%%TMPL:END%
 %TMPL:DEF{"sidebar"}%%TMPL:END%
-%TMPL:DEF{"bodyclass"}%natViewBody natSearchBody%TMPL:END%
+%TMPL:DEF{"bodyclass"}%natViewBody natSearchBody natBodyRight%TMPL:END%
+%TMPL:DEF{"body::class::toggle"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
 %TMPL:DEF{"meta"}% <meta name="robots" content="noindex, nofollow" /> %TMPL:END%
-%{</verbatim>}%
 
-%{<verbatim class="tml">}%
 %{ ###########################################################################
    content: main definition that puts together all pieces
 }%
 %TMPL:DEF{"content"}%<div class="natSearch">
 %TMPL:P{"websearch::form"}%
 %TMPL:P{"websearch::hits"}%
-%JQREQUIRE{"focus"}%<!-- -->
+%JQREQUIRE{"focus"}%%{}%
 </form>
 </div>%TMPL:END%
-%{</verbatim>}%
 
-%{<verbatim class="tml">}%
 %{ ###########################################################################
    websearch::form: this is the form to be submitted; it consists of several 
    steps that make up the rows of the form; all form steps are wraped into
    a start and end part
 }%
 
-%TMPL:DEF{"websearch::form"}%<!-- -->
+%TMPL:DEF{"websearch::form"}%%{}%
 %TMPL:P{"websearch::form::start"}%
 %TMPL:P{"websearch::form::rssstep"}%
 %TMPL:P{"websearch::form::inputstep"}%
 %TMPL:P{"websearch::form::end"}%
 %TMPL:P{"websearch::form::limit"}%
-<!-- -->%TMPL:END%
-%{</verbatim>}%
+%{}%%TMPL:END%
 
-%{<verbatim class="tml">}%
 %{ ###########################################################################
    websearch::form::start - this is the head of the form
 }%
-%TMPL:DEF{"websearch::form::start"}%<!-- -->
-<form id="searchform" name="searchform" action="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%">
+%TMPL:DEF{"websearch::form::start"}%<form id="searchform" name="searchform" action="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%">
 <div class="foswikiFormSteps">
-<!-- -->%TMPL:END%
-%{</verbatim>}%
+%{}%%TMPL:END%
 
-%{<verbatim class="tml">}%
 %{ ###########################################################################
    websearch::form::rss - this one holds the rss link
 }%
-%TMPL:DEF{"websearch::form::rssstep"}%<!-- -->
-<div class="foswikiRight">
+%TMPL:DEF{"websearch::form::rssstep"}%<div class="foswikiRight">
 <a href='%SCRIPTURL{"view"}%/%BASEWEB%/WebRss?search=%URLPARAM{"search" encode="url"}%;limit=%URLPARAM{"limit" encode="url" default="all"}%;web=%URLPARAM{"web" default="%BASEWEB%"}%' title='%MAKETEXT{"Get notified on changes on this search"}%'>%JQICON{"feed"}%</a>
-</div>
-<!-- -->%TMPL:END%
-%{</verbatim>}%
+</div>%TMPL:END%
 
-%{<verbatim class="tml">}%
 %{ ###########################################################################
    websearch::form::inputstep - this one holds the input field together with the submit/cancel buttons
 }%
@@ -78,14 +63,11 @@
   <input type="text" class="foswikiInputField jqFocus foswikiRight" id="search" name="search" size="50" value="%URLPARAM{"search" encode="entity"}%" style="float:left;margin-right:8px;"/>
   %BUTTON{"%MAKETEXT{"Search"}%" type="submit" title="%MAKETEXT{"submit the query"}%" icon="find"}%
   %CLEAR%
-  %TMPL:P{"websearch::form::options"}%<!-- -->
+  %TMPL:P{"websearch::form::options"}%%{}%
 </div>
-<!-- -->%TMPL:END%
-%{</verbatim>}%
+%{}%%TMPL:END%
 
-%{<verbatim class="tml">}%
-%TMPL:DEF{"websearch::form::limit"}%<!-- -->
-<div class="foswikiRight" style="margin:1em 0 1em 1em">
+%TMPL:DEF{"websearch::form::limit"}%<div class="foswikiRight" style="margin:1em 0 1em 1em">
   <table class="foswikiLayoutTable">
     <tr>
       <th>
@@ -105,11 +87,8 @@
       </td>
     </tr>
   </table>
-</div>
-<!-- -->%TMPL:END%
-%{</verbatim>}%
+</div>%TMPL:END%
 
-%{<verbatim class="tml">}%
 %{ ###########################################################################
    websearch::form::options - this one renders the row of search options
 }%
@@ -117,21 +96,16 @@
 <input type="checkbox" class="foswikiCheckbox" id="web" name="web" value="all" %IF{"$'URLPARAM{web}'='all'" then=" checked"}%/>
 <label class="foswikiLabel" for="web">%MAKETEXT{"Search in all webs"}%</label>
 <!-- //websearch::form::options -->%TMPL:END%
-%{</verbatim>}%
 
-%{<verbatim class="tml">}%
 %{ ###########################################################################
    websearch::form::end - finally close the form
 }%
 %TMPL:DEF{"websearch::form::end"}%</div>%TMPL:END%
-%{</verbatim>}%
 
-%{<verbatim class="tml">}%
 %{ ###########################################################################
    websearch::hits - this block displays the list of hits as found by SEARCH
 }%
-%TMPL:DEF{"websearch::hits"}%<!-- -->
-%SEARCH{
+%TMPL:DEF{"websearch::hits"}%%SEARCH{
   "%URLPARAM{"search" encode="quote"}%"
   nosearch="on"
   type="%URLPARAM{"type" default="keyword"}%"
@@ -154,43 +128,31 @@
     changed=\"$date\"
     summary=\"$summary\"
   }$percnt"
-}%
-<!-- -->%TMPL:END%
-%{</verbatim>}%
+}%%TMPL:END%
 
-%{<verbatim class="tml">}%
 %{ ###########################################################################
    websearch::hits::topic - this is called for each found hit
 }%
-%TMPL:DEF{"websearch::hits::topic"}%<!-- -->
-<div class="natSearchHit">
+%TMPL:DEF{"websearch::hits::topic"}%<div class="natSearchHit">
 <span class="natSearchTarget">[[%web%.%topic%]]</span>
 <span class="natSearchTargetWeb foswikiGrayText">in <nop>%WEBLINK{format="$web" web="%web%"}% </span>
 <div class="natSearchSummary"> <noautolink> %summary% </noautolink> </div>
 <div class="natSearchRevision">
   <a href='%SCRIPTURLPATH{"rdiff"}%/%web%/%topic%?type=last'>%changed%</a>, <span class='natSearchAuthor'> [[%USERSWEB%.%author%]] </span>
 </div>
-</div>
-<!-- -->%TMPL:END%
-%{</verbatim>}%
+</div>%TMPL:END%
 
-%{<verbatim class="tml">}%
 %{ ###########################################################################
    websearch::hits::header - this prepended to the hit set of a web
 }%
 %TMPL:DEF{"websearch::hits::header"}%<!-- -->
 ---+++ %MAKETEXT{"Results from [_1] web" args="<nop>%web%"}%%TMPL:END%
 <!-- -->%TMPL:END%
-%{</verbatim>}%
 
-%{<verbatim class="tml">}%
 %{ ###########################################################################
    websearch::hits::footer - this appended to the hit set of a web
 }%
-%TMPL:DEF{"websearch::hits::footer"}%<!-- -->
-<div class='natSearchTotal'>%MAKETEXT{"[_1] topic(s) found" args="<span>%count%</span>"}%</div>
-<!-- -->%TMPL:END%
-%{</verbatim>}%
+%TMPL:DEF{"websearch::hits::footer"}%<div class='natSearchTotal'>%MAKETEXT{"[_1] topic(s) found" args="<span>%count%</span>"}%</div>%TMPL:END%
 
 %META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%
 %META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

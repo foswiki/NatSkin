@@ -1,0 +1,19 @@
+%META:TOPICINFO{author="micha" comment="reprev" date="1647681918" format="1.1" reprev="2" version="2"}%
+%META:TOPICPARENT{name="NatSkin"}%
+---+!! %TOPIC%
+
+Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] instead.
+
+---++ Implementation
+<verbatim class="tml">
+%STARTINCLUDE%<ul>
+  <li>$action(myaccount)</li>
+  <li>$action(darkmode, darkmode_feature_enabled)</li>
+  <li>$action(changelanguage, i18n_enabled)</li>
+  <li>$action(changeadmin)</li>
+  <li>$action(twofactorauth, two_factor_auth)</li>
+  <li>$action(changepassword)</li>
+  <li>$action(changeemail)</li>
+  <li>$action(logout)</li>
+</ul>%STOPINCLUDE%
+</verbatim>

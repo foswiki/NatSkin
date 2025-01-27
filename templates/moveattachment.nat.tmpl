@@ -1,9 +1,18 @@
 %TMPL:INCLUDE{"page"}%%{}%
-%TMPL:INCLUDE{"moveattachmentbody"}%%{}%
-%TMPL:INCLUDE{"moveattachmentsidebar"}%%{}%
-%TMPL:INCLUDE{"moveattachmenttopicactions"}%%{}%
+
+%TMPL:DEF{"sidebar"}%<nop><h2>%MAKETEXT{"Help"}%</h2>
+   * <a href="%SCRIPTURLPATH{"view" topic="%SYSTEMWEB%.FileAttachment}%" target="_blank">%MAKETEXT{"File attachments"}%</a>
+   * <a href="%SCRIPTURLPATH{"view" topic="%SYSTEMWEB%.FileAttachment"}%#Moving_Attachment_Files" target="_blank">%MAKETEXT{"Moving attachments"}%</a>
+   * <a href="%SCRIPTURLPATH{"view" topic="%SYSTEMWEB%.FileAttachment"}%#Deleting_Attachments" target="_blank">%MAKETEXT{"Deleting attachments"}%</a>
+   * <a href="%SCRIPTURLPATH{"view" topic="%SYSTEMWEB%.FileAttachment"}%#Linking_to_Attached_Files" target="_blank">%MAKETEXT{"Linking to attachments"}%</a>
+   * <a href="%SCRIPTURLPATH{"view" topic="%SYSTEMWEB%.HiddenAttachment" target="_blank">%MAKETEXT{"Hiding attachments"}%</a>
+<nop><h2>%MAKETEXT{"Notes"}%</h2>
+<div class="natNotes">
+%TMPL:P{"notes"}% </div>
+%TMPL:END%
+
 %TMPL:DEF{"bodyclass"}%natMoveAttachmentBody%TMPL:END%
-%TMPL:DEF{"titleaction"}%%MAKETEXT{"move attachment"}%%TMPL:END%
+%TMPL:DEF{"titleaction"}%%MAKETEXT{"Move attachment"}%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1>%IF{"$'URLPARAM{newweb}'='%TRASHWEB%'"
   then="%MAKETEXT{"Delete attachment '[_1]'" args="<nop>%FILENAME%"}%"
   else="%MAKETEXT{"Move attachment '[_1]'" args="<nop>%FILENAME%"}%"
@@ -34,26 +43,26 @@
   <h2>Are you sure?</h2>
   </div>
   <div class="foswikiFormStep foswikiFormButtons">
-  %BUTTON{"%MAKETEXT{"Yes"}%" icon="%TMPL:P{"OK_ICON"}%" type="save"}%
-  %BUTTON{"%MAKETEXT{"No"}%" icon="%TMPL:P{"CANCEL_ICON"}%" target="%WEB%.%TOPIC%"}%
+  %BUTTON{"%MAKETEXT{"Yes"}%" icon="%TMPL:P{"icon::ok::name"}%" type="save"}%
+  %BUTTON{"%MAKETEXT{"No"}%" icon="%TMPL:P{"icon::cancel::name"}%" target="%WEB%.%TOPIC%"}%
   </div>
 </div>%TMPL:END%
 %TMPL:DEF{"content_move"}%<div class="foswikiFormSteps">
 <div class="foswikiFormStep">
   <h4>%MAKETEXT{"To web"}%:</h4>
-  <input type="text" class="foswikiInputField jqUIAutocomplete" name="newweb" id="newweb" autocomplete="%SCRIPTURL{"view"}%/%SYSTEMWEB%/JQueryAjaxHelper?section=web;contenttype=text/plain" size="60" value="%IF{"defined NEW_WEB" then="%NEW_WEB%" else="%WEB%"}%" />
+  <input type="text" class="foswikiInputField jqUIAutocomplete" name="newweb" id="newweb" autocomplete="%SCRIPTURL{"view" topic="%SYSTEMWEB%.JQueryAjaxHelper" section="web" contenttype="text/plain"}%" size="60" value="%IF{"defined NEW_WEB" then="%NEW_WEB%" else="%WEB%"}%" />
 </div>
 <div class="foswikiFormStep">
   <h4>%MAKETEXT{"To topic"}%:</h4>
-  <input type="text" class="foswikiInputField jqUIAutocomplete {extraParams:{baseweb:function() {return jQuery('#neweb').val()}}}" name="newtopic" id="newtopic" autocomplete="%SCRIPTURL{"view"}%/%SYSTEMWEB%/JQueryAjaxHelper?section=topic;contenttype=text/plain;skin=text" size="60" value="%TOPIC%" />
+  <input type="text" class="foswikiInputField jqUIAutocomplete {extraParams:{baseweb:function() {return jQuery('#neweb').val()}}}" name="newtopic" id="newtopic" autocomplete="%SCRIPTURL{"view" topic="%SYSTEMWEB%.JQueryAjaxHelper" section="topic" contenttype="text/plain" skin="text"}%" size="60" value="%TOPIC%" />
   <div class="foswikiFormDescription">
     %MAKETEXT{"The new topic chosen must already exist."}%
   </div>
 </div>
 %IF{"$PLUGINVERSION >= 2.1" then="$percntTMPL:P{\"toattachment\"}$percnt"}%
 <div class="foswikiFormStep foswikiFormButtons">
-  %BUTTON{"%MAKETEXT{"OK"}%" type="save" icon="%TMPL:P{"OK_ICON"}%"}%
-  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WEB%.%TOPIC%" icon="%TMPL:P{"CANCEL_ICON"}%"}%
+  %BUTTON{"%MAKETEXT{"OK"}%" type="save" icon="%TMPL:P{"icon::ok::name"}%"}%
+  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WEB%.%TOPIC%" icon="%TMPL:P{"icon::cancel::name"}%"}%
 </div>
 </div>%TMPL:END%
 %TMPL:DEF{"toattachment"}%<div class="foswikiFormStep">

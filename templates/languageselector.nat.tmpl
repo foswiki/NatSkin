@@ -5,42 +5,23 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="jqUIDialog foswikiFormSteps" data-width="480" data-modal="true" data-draggable="true" title="%TMPL:P{"heading"}%">
-  <form name="changelanguage" action="%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%" method="post">
+<div class="jqUIDialog foswikiFormSteps" data-width="500" data-modal="true" data-draggable="true" data-destroy-on-close="true" title="%TMPL:P{"heading"}%">
+  <form class='jqAjaxForm' name="changelanguage" action="%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%" method="post" data-reload="true" data-block=".ui-dialog">
     <input type="hidden" name="template" value="oopslanguagechanged" />
     <div class="foswikiFormStep">
-      <table class='foswikiLayoutTable'>
-        <tr>
-          <th>%MAKETEXT{"Language"}%:</th>
-          <td>
-            <select name="language" class="foswikiSelect">
-              <option value="default">%MAKETEXT{"Default"}%</option>
-              %TMPL:P{context="MultiLingualPluginEnabled" then="languages::multilingual" else="languages::default"}%
-            </select>
-          </td>
-        </tr>
-      </table>
-
-      <div class="foswikiFormDescription">
+      <b>%MAKETEXT{"Language"}%:</b>
+      <select name="language" class="foswikiSelect">
+        <option value="default">%MAKETEXT{"Default"}%</option>
+        %TMPL:P{context="MultiLingualPluginEnabled" then="languages::multilingual" else="languages::default"}%
+      </select>
+      <p class="foswikiFormDescription">
         %MAKETEXT{"Select 'Default' to switch to the default language configured in your browser."}%
-      </div>
+      </p>
     </div>
-    <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-circle-check'}">%MAKETEXT{"Submit"}%</a>
-    <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Cancel"}%</a>
+    <a class="jqUIDialogButton jqUIDialogSubmit" data-icon="ui-icon-circle-check">%MAKETEXT{"Submit"}%</a>
+    <a class="jqUIDialogButton jqUIDialogClose" data-icon="ui-icon-cancel">%MAKETEXT{"Cancel"}%</a>
   </form>
-</div>
-%JQREQUIRE{"form"}%%{}%
-<literal>
-<script type="text/javascript">
-jQuery(function($) {
-  $("form[name='changelanguage']").ajaxForm({
-    success: function() {
-      window.location.href = '%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%';
-    }
-  });  
-});
-</script>
-</literal>
+</div>%JQREQUIRE{"ajaxform"}%
 </noautolink>%TMPL:END%
 
 %{ ################################################################################ }%

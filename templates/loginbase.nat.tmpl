@@ -1,5 +1,10 @@
 %TMPL:DEF{"useractions"}%<div class='natUserActions'>&nbsp;</div>%TMPL:END%
 
+%TMPL:DEF{"metadescription"}%%TMPL:END%
+%TMPL:DEF{"metakeywords"}%%TMPL:END%
+%TMPL:DEF{"metasubject"}%%TMPL:END%
+%TMPL:DEF{"metaopengraph"}%%TMPL:END%
+
 %{################################################################################ }%
 %TMPL:DEF{"login"}%%{}%
 %TMPL:P{"login::start"}%
@@ -12,30 +17,15 @@
 %{}%%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"login::start"}%<form class="natLoginForm" name="LoginForm" action="%SCRIPTURL{"login"}%/%WEB%/%TOPIC%" method="post">
-  <literal>
-    %FORMATLIST{"%QUERYPARAMS{encoding="entity" format="$name;$value"}%"
-      split="\n"
-      pattern="(.*);(.*)"
-      exclude="(usernamestep|foswiki&#95;origin).*"
-      format="<input type='hidden' name='$1' value='$2' />"
-      separator="$n"
-    }%
-  </literal>
-  %IF{
-    "defined 'FOSWIKI_ORIGIN'" 
-    then="<input type='hidden' name='foswiki_origin' value='$percntFOSWIKI_ORIGIN$percnt' />
-  "}%%IF{
-    "defined 'ORIGURL'" 
-    then="<input type='hidden' name='origurl' value='$percntORIGURL$percnt' />"
-  }%%{}%
+%TMPL:DEF{"login::start"}%<form class="natLoginForm" name="LoginForm" action="%SCRIPTURLPATH{"login"}%/%WEB%/%TOPIC%" method="post">
+  <literal>%QUERYPARAMS{encoding="entity" format="<input type='hidden' name='$name' value='$value' />"}%</literal>
   <input type="submit" style="display:none" />
 %{}%%TMPL:END%
 
 %{################################################################################ }%
 %TMPL:DEF{"login::end"}%</form>%JQREQUIRE{"focus"}%%ADDTOZONE{"script" 
   id="NATSKIN::LOGIN"
-  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/login.js'></script>"
+  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/build/login.js'></script>"
   requires="JQUERYPLUGIN, JQUERYPLUGIN::VALIDATE"
 }%%TMPL:END%
 
@@ -66,11 +56,10 @@
 </div>%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"login::buttonstep"}%<div class="foswikiFormStep clearfix">
-  %BUTTON{"%MAKETEXT{"Log in"}%" icon="%TMPL:P{"OK_ICON"}%" type="save" class="natLoginButton"}% 
-  %BUTTON{"%MAKETEXT{"Cancel"}%" icon="%TMPL:P{"CANCEL_ICON"}%" target="%WIKILOGOURL%" class="natLoginAbortButton"}%
+%TMPL:DEF{"login::buttonstep"}%<div class="foswikiFormStep foswikiFormButtons">
+  %BUTTON{"%MAKETEXT{"Log in"}%" icon="%TMPL:P{"icon::ok::name"}%" type="save" class="natLoginButton"}% 
+  %BUTTON{"%MAKETEXT{"Cancel"}%" icon="%TMPL:P{"icon::cancel::name"}%" target="%WIKILOGOURL%" class="natLoginAbortButton"}%
 </div>%TMPL:END%
-
 
 %{################################################################################ }%
 %TMPL:DEF{"seealso"}%<div class="foswikiFormStep">

@@ -1,3 +1,10 @@
 %TMPL:INCLUDE{"moreformfields"}%
+%TMPL:INCLUDE{"user"}%
 
-%TMPL:DEF{"select2::user::thumbnail::url"}%%TMPL:P{"user::photo::thumbnail::url"}%%TMPL:END%
+%TMPL:DEF{"select2::user::thumbnail::url"}%%TMPL:P{"user::photo::thumbnail::url"
+  %IF{"'%topic%'=~'^%'"
+    then="web=\"%WEB%\" topic=\"%TOPIC%\""
+    else="web=\"%web%\" topic=\"%topic%\""
+  }%
+  size="%TMPL:P{"user::photo::size"}%"
+}%%TMPL:END%

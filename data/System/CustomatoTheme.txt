@@ -1,5 +1,7 @@
-%META:TOPICINFO{author="ProjectContributor" date="1512398496" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 
-Foswiki theme for NatSkin. 
+Foswiki theme for NatSkin. Note that this theme is deprecated.
+
+<verbatim>   * Set NATSKIN_STYLE = customato</verbatim>

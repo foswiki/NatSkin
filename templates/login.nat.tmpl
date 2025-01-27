@@ -1,46 +1,49 @@
 %TMPL:INCLUDE{"page"}%%{}%
 %TMPL:INCLUDE{"loginbase"}%%{}%
-%TMPL:INCLUDE{"loginbody"}%%{}%
-%TMPL:INCLUDE{"logintopicactions"}%%{}%
-%TMPL:INCLUDE{"loginsidebar"}%%{}%
 
 %{################################################################################ }%
 %TMPL:DEF{"title"}%%MAKETEXT{"Login"}% %TMPL:P{"titlesep"}% %WIKITOOLNAME%%TMPL:END%
-%TMPL:DEF{"contenttitle"}%<h1 class="natLoginHeading">%TMPL:P{"heading"}%</h1>%TMPL:END%
-%TMPL:DEF{"bodyclass"}%natLoginBody%IF{"defined NATSKIN_LOGINBANNER" then=" natLoginBanner"}%%TMPL:END%
-%TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
-%TMPL:DEF{"LOG_IN_BANNER"}%%MAKETEXT{"Welcome, please log in"}%.%TMPL:END%
-%TMPL:DEF{"LOGGED_IN_BANNER"}%%MAKETEXT{"[_1] is currently logged in" args="%USERSWEB%.%WIKINAME%"}%.%TMPL:END%
-%TMPL:DEF{"NEW_USER_NOTE"}%%MAKETEXT{"Enter a new username and password to change identity"}%.%TMPL:END%
-%TMPL:DEF{"heading"}%%BANNER%%TMPL:END%
+%TMPL:DEF{"contenttitle"}%%TMPL:P{"heading"}%%TMPL:END%
+%TMPL:DEF{"bodyclass"}%natLoginBody%TMPL:END%
+%TMPL:DEF{"bodycontents"}%<div class="natBodyContents">%TMPL:P{"content"}%</div>%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 
+%TMPL:DEF{"LOG_IN_BANNER"}%<h1 class='natLoginHeading'>%NATSKIN_LOGINTITLE{default="%MAKETEXT{"Welcome to the [_1] website" args="%WIKITOOLNAME%"}%"}%</h1>%TMPL:END%
+%TMPL:DEF{"LOGGED_IN_BANNER"}%<h1 class='natLoginHeading'>%%MAKETEXT{"[_1] is currently logged in" args="%USERSWEB%.%WIKINAME%"}%</h1>%TMPL:END%
+%TMPL:DEF{"NEW_USER_NOTE"}%%MAKETEXT{"Enter a new username and password to change identity"}%.%TMPL:END%
+%TMPL:DEF{"heading"}%%IF{"defined BANNER AND $BANNER != ''" then="%BANNER%"}%%TMPL:END%
+%TMPL:DEF{"error"}%%IF{"defined ERROR and $ERROR !='' and $ERROR !='Invalid user/password'" 
+  then="<div class='foswikiErrorMessage natLoginMessage'>$percntERROR$percnt</div>"
+}%%TMPL:END%
+%TMPL:DEF{"note"}%%IF{"defined NOTE and $NOTE!=''"
+  then="<div class='foswikiInfoMessage natLoginMessage'>$percntNOTE$percnt</div>"
+}%%TMPL:END%
+
 %{################################################################################ }%
-%TMPL:DEF{"UNRECOGNISED_USER"}%%MAKETEXT{"Unrecognised user and/or password."}%
+%TMPL:DEF{"UNRECOGNISED_USER"}%<h1 class='natLoginHeading foswikiAlert'>%MAKETEXT{"Unrecognised user and/or password"}%</h1>
 %ADDTOZONE{
   "script"
   requires="JQUERYPLUGIN"
   id="NATSKIN::LOGIN::OPTS"
-  text="<script type='text/javascript'>jQuery.extend(foswiki.preferences, { 'NatSkin.loginFailed': true });</script>"
+  text="<script>jQuery.extend(foswiki.preferences, { 'NatSkin.loginFailed': true });</script>"
 }%%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"message"}%<div class="foswikiFormSteps">
-%TMPL:P{"note"}%%{}%
+%TMPL:DEF{"message"}%<div class="foswikiFormSteps natLoginContainer">
 %TMPL:P{"login"}%%{}%
 </div>%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"note"}%%NOTE%%TMPL:END%
-
-%{################################################################################ }%
-%TMPL:DEF{"content"}%<div class="natLogin">
+%TMPL:DEF{"content"}%<noautolink>
 %TMPL:P{"contenttitle"}%%{}%
+<div class="natLogin">
 %TMPL:P{"message"}%%{}%
-%TMPL:P{"contact"}%%{}%
+%TMPL:P{"DIScontact"}%%{}%
 </div>
+%TMPL:P{"note"}%%{}%
+%TMPL:P{"error"}%%{}%
 %TMPL:P{"poweredby"}%%{}%
-%{}%%TMPL:END%
+</noautolink>%TMPL:END%
 
 %{################################################################################ }%
 %TMPL:DEF{"contact"}%<p class="foswikiGrayText natContact"> 

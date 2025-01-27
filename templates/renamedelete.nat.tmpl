@@ -1,7 +1,7 @@
 %TMPL:INCLUDE{"rename"}%%{}%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"titleaction"}%%MAKETEXT{"delete"}%%TMPL:END%
+%TMPL:DEF{"titleaction"}%%MAKETEXT{"Delete"}%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Delete [_1]"  args="<nop>%TOPIC%"}%</h1>%TMPL:END%
 %TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%?%QUERYSTRING%">%MAKETEXT{"Delete"}%</a>%TMPL:END%
 %TMPL:DEF{"changefromstep"}%%TMPL:END%
@@ -11,7 +11,7 @@
 %{ ################################################################################ }%
 %TMPL:DEF{"buttons"}%%{}%
 %BUTTON{type="save" "%MAKETEXT{"Delete"}%" icon="fa-trash"}%
-%BUTTON{"%MAKETEXT{"Cancel"}%" icon="%TMPL:P{"CANCEL_ICON"}%" target="%WEB%.%TOPIC%"}%
+%BUTTON{"%MAKETEXT{"Cancel"}%" icon="%TMPL:P{"icon::cancel::name"}%" target="%WEB%.%TOPIC%"}%
 %IF{"$'URLPARAM{currentwebonly}'='on' and not context SolrPluginEnabled"
   then="$percntBUTTON{\"%MAKETEXT{"Search in all webs"}%\" icon=\"fa-search\" target=\"%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%?newweb=%URLPARAM{"newweb"}%\" title=\"%MAKETEXT{"Search for backlinks in all webs"}%\"}$percnt"
 }%%TMPL:END%

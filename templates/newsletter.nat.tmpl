@@ -1,4 +1,4 @@
-%TMPL:DEF{"NEWS:header"}%From: %IF{ "defined WIKIAGENTNAME" then="$percntWIKIAGENTNAME$percnt" else="$percntWIKIWEBMASTERNAME$percnt" }% <%IF{ "defined WIKIAGENTEMAIL" then="$percntWIKIAGENTEMAIL$percnt" else="$percntWIKIWEBMASTER$percnt"}%>
+%TMPL:DEF{"NEWS:header"}%From: %WIKIAGENTNAME% <%WIKIAGENTEMAIL%>
 To: %EMAILTO%
 Subject: %WIKITOOLNAME% %WEB%.%TOPIC%
 Auto-Submitted: auto-generated
@@ -15,6 +15,6 @@ Content-Transfer-Encoding: 8bit
 
 %TMPL:DEF{"NEWS:footer"}%
 %MAKETEXT{"Subscribe / Unsubscribe in:"}%
-<a href="%SCRIPTURL{"view"}%/%WEB%/%NOTIFYTOPIC%">%SCRIPTURL{"view"}%/%WEB%/%NOTIFYTOPIC%</a> 
+<a href="%SCRIPTURL{"view" topic="%WEB%.%NOTIFYTOPIC%"}%">%SCRIPTURL{"view" topic="%WEB%.%NOTIFYTOPIC%"}%</a> 
 %TMPL:END%
 

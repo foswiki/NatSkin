@@ -1,0 +1,24 @@
+%TMPL:P{"page"}%
+
+%TMPL:DEF{"page"}%<!DOCTYPE html>
+<html lang="%CONTENT_LANGUAGE{default="%DEFAULTLANGUAGE%"}%">
+%TMPL:P{"head"}%
+%TMPL:P{"body"}%
+</html>
+%TMPL:END%
+
+%TMPL:DEF{"head"}%<head>
+<meta charset="%CHARSET%" />
+%TMPL:P{"styles"}%%{}%
+%TMPL:P{"javascript"}%%{}%
+</head>%TMPL:END%
+
+%TMPL:DEF{"styles"}%%RENDERZONE{"head"}%%RENDERZONE{"skincss"}%%TMPL:P{"styles::mail"}%%TMPL:END%
+%TMPL:DEF{"styles::mail"}%%TMPL:END%
+%TMPL:DEF{"javascript"}%%RENDERZONE{"script" format=""}%%TMPL:END%
+
+%TMPL:DEF{"body"}%<body class='natMailBody'>%TMPL:P{"content"}%</body>%TMPL:END%
+%TMPL:DEF{"content"}%%TMPL:P{"beforetext"}%%TMPL:P{"text"}%%TMPL:P{"aftertext"}%%TMPL:END%
+%TMPL:DEF{"text"}%%TEXT%%TMPL:END%
+
+%TMPL:DEF{"pagination"}%%TMPL:END%

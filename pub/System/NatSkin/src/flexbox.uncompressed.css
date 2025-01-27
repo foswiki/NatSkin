@@ -1,0 +1,95 @@
+/* see https://primer.style/css/utilities/flexbox */
+
+/* container */
+.foswikiFlex       { display: flex; }
+.foswikiInlineFlex { display: inline-flex; }
+
+.foswikiFlex,
+.foswikiFlex > * {
+   box-sizing: border-box; 
+}
+
+/* flex stretch */
+.foswikiStretch {
+  flex-grow:1;
+  display:flex;
+  flex-direction:column;
+}
+
+/* base */
+.foswikiFlexBase2 { flex-basis: 50%; }
+.foswikiFlexBase3 { flex-basis: 33%; }
+.foswikiFlexBase4 { flex-basis: 25%; }
+.foswikiFlexBase5 { flex-basis: 20%; }
+
+/* gap */
+.foswikiFlexNoGap { gap: 0;}
+.foswikiFlexGap   { gap: calc(var(--margin) * 0.2); }
+.foswikiFlex,
+.foswikiFlexGap2  { gap: calc(var(--margin) * 0.4); }
+.foswikiFlexGap3  { gap: calc(var(--margin) * 0.6); }
+.foswikiFlexGap4  { gap: calc(var(--margin) * 0.8); }
+.foswikiFlexGap5  { gap: var(--margin) };
+
+/* flex direction */
+.foswikiFlexRow            { flex-direction: row; }
+.foswikiFlexRow-reverse    { flex-direction: row-reverse; }
+.foswikiFlexColumn         { flex-direction: column; }
+.foswikiFlexColumn-reverse { flex-direction: column-reverse; }
+
+/* wrap */
+.foswikiFlexWrap        { flex-wrap: wrap; }
+.foswikiFlexNowrap      { flex-wrap: nowrap; }
+.foswikiFlexWrapReverse { flex-wrap: wrap-reverse; }
+
+/* justify */
+.foswikiFlexJustifyAround   { justify-content: space-around; }
+.foswikiFlexJustifyBetween  { justify-content: space-between; }
+.foswikiFlexJustifyCenter   { justify-content: center; }
+.foswikiFlexJustifyEnd      { justify-content: end; }
+.foswikiFlexJustifyNormal   { justify-content: normal; }
+.foswikiFlexJustifyStart    { justify-content: start; }
+.foswikiFlexJustifyStretch  { justify-content: stretch; }
+
+/* align items */
+.foswikiFlexItemsStart      { align-items: flex-start; }
+.foswikiFlexItemsEnd        { align-items: flex-end; }
+.foswikiFlexItemsCenter     { align-items: center; }
+.foswikiFlexItemsBaseline   { align-items: baseline; }
+.foswikiFlexItemsStretch    { align-items: stretch; }
+
+/* align content */
+.foswikiFlexContentStart    { align-content: flex-start; }
+.foswikiFlexContentEnd      { align-content: flex-end; }
+.foswikiFlexContentCenter   { align-content: center; }
+.foswikiFlexContentBetween  { align-content: space-between; }
+.foswikiFlexContentAround   { align-content: space-around; }
+.foswikiFlexContentStretch  { align-content: stretch; }
+
+/* flex grow and shring */
+.foswikiFlexGrow     { flex-grow: 1; }
+.foswikiFlexAuto     { flex-grow: auto; }
+.foswikiFlexNoGrow   { flex-grow: 0; }
+.foswikiFlexNoShrink { flex-shrink: 0; } 
+
+/* align self */
+.foswikiFlexSelfAuto        { align-self: auto; }
+.foswikiFlexSelfStart       { align-self: flex-start; }
+.foswikiFlexSelfEnd         { align-self: flex-end; }
+.foswikiFlexSelfCenter      { align-self: center; }
+.foswikiFlexSelfBaseline    { align-self: baseline; }
+.foswikiFlexSelfStretch     { align-self: stretch; }
+
+/* order */
+.foswikiFlexNoOrder   { order: inherit; }
+.foswikiFlexOrder1    { order: 1; }
+.foswikiFlexOrder2    { order: 2; }
+.foswikiFlexOrder3    { order: 3; }
+.foswikiFlexOrder4    { order: 4; }
+.foswikiFlexOrder5    { order: 5; }
+.foswikiFlexOrder6    { order: 6; }
+.foswikiFlexOrder7    { order: 7; }
+.foswikiFlexOrder8    { order: 8; }
+.foswikiFlexOrder9    { order: 9; }
+.foswikiFlexOrder10   { order: 10; }
+.foswikiFlexOrderLast { order: 9999; }

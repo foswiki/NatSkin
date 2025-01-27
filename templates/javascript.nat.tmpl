@@ -1,18 +1,23 @@
+%TMPL:DEF{"javascript"}%%TMPL:P{"defaultjavascript"}%%TMPL:END%
+
 %TMPL:DEF{"defaultjavascript"}%%{}%
 %TMPL:P{"javascript::prefs"}%%{}%
 %TMPL:P{"javascript::require"}%%{}%
-%TMPL:P{"javascript::topiccreator"}%%{}%
-%TMPL:P{context="SolrPluginEnabled" then="javascript::solr"}%%{}%
+%TMPL:P{context="darkmode_feature_enabled" then="javascript::darkmode"}%%{}%
 %RENDERZONE{"script"}%
 %RENDERZONE{"skinjs"}%
 %{}%%TMPL:END%
 
 %TMPL:DEF{"javascript::require"}%%JQREQUIRE{
-  "validate, superfish, ui, blockui, pnotify, farscroll, scrollto, imagetooltip, autosuggest, ui::tooltip, cookie, fontawesome, wikiword, like, foswikitemplate" 
+  "superfish, blockui, pnotify, farscroll, imagetooltip, autosuggest, cookie, fontawesome, like, foswikitemplate, hovermenu, scrollto" 
   warn="off"
-}%%TMPL:P{"javascript::require::uploader"}%%TMPL:END%
+}%%TMPL:P{"javascript::require::uploader"}%%TMPL:P{"javascript::require::solr"}%%TMPL:END%
 
-%TMPL:DEF{"javascript::require::uploader"}%%IF{"'%NATSKIN_UPLOADERENABLED{default="on"}%'='on'" 
+
+%TMPL:DEF{"javascript::require::solr"}%%JQREQUIRE{"SearchBox" warn="off"}%%TMPL:END%
+
+%TMPL:DEF{"javascript::require::uploader"}%%IF{
+  "'%TOPICINTERACTION_UPLOADERENABLED{default="on"}%'='on' and context 'authenticated'" 
   then="$percntJQREQUIRE{\"uploader\" warn=\"off\"}$percnt"
 }%%TMPL:END%
 
@@ -20,46 +25,37 @@
   requires="JQUERYPLUGIN::FOSWIKI::PREFERENCES"
   id="NATSKIN::PREFERENCES"
   text="<script class='$zone $id foswikiPreferences' type='text/json'>{
-    \"NatSkin\" : {
-      \"initWebMenu\": %TMPL:P{"initWebMenu"}%,
-      \"initTopPanel\": %TMPL:P{"initTopPanel"}%,
-      \"initTopBar\": %TMPL:P{"initTopBar"}%,
-      \"initOverflows\": %TMPL:P{"initOverflows"}%,
-      \"initSideBar\": %TMPL:P{"initSideBar"}%,
-      \"initRedDot\": %TMPL:P{"initRedDot"}%,
-      \"initBusyIndicator\": %TMPL:P{"initBusyIndicator"}%,
-      \"initExternalLinks\": %TMPL:P{"initExternalLinks"}%,
-      \"initCookieInfo\": %TMPL:P{"initCookieInfo"}%,
-      \"sideBar\": \"%NATSKIN_SIDEBAR{default="on"}%\",
-      \"layout\": \"%NATSKIN_LAYOUT{default="fixed"}%\"
-    }
+  \"NatSkin\": { 
+    %TMPL:P{"javascript::prefs::contents"}% 
+  }
 }</script>"
 }%%TMPL:END%
 
-%TMPL:DEF{"javascript::topiccreator"}%%ADDTOZONE{
+%TMPL:DEF{"javascript::prefs::contents"}%\"initConsole\": %TMPL:P{"initConsole"}%,
+    \"initWebMenu\": %TMPL:P{"initWebMenu"}%,
+    \"initTopPanel\": %TMPL:P{"initTopPanel"}%,
+    \"initTopBar\": %TMPL:P{"initTopBar"}%,
+    \"initOverflows\": %TMPL:P{"initOverflows"}%,
+    \"initBusyIndicator\": %TMPL:P{"initBusyIndicator"}%,
+    \"initCookieInfo\": %TMPL:P{"initCookieInfo"}%,
+    \"initUserTooltips\": %TMPL:P{"initUserTooltips"}%,
+    \"initHeaderAnchors\": %TMPL:P{"initHeaderAnchors"}%,
+    \"sideBar\": \"%NATSKIN_SIDEBAR{default="on"}%\",
+    \"layout\": \"%NATSKIN_LAYOUT{default="fixed"}%\"%TMPL:END%
+
+%TMPL:DEF{"javascript::darkmode"}%%ADDTOZONE{
   "script" 
-  id="TOPICCREATOR" 
-  requires="JQUERYPLUGIN::WIKIWORD, JQUERYPLUGIN::SCROLLTO, JQUERYPLUGIN::FOSWIKITEMPLATE"
-  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/topiccreator.js'></script>"
+  id="NATSKIN::DARKMODE" 
+  requires="JQUERYPLUGIN::COOKIE"
+  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/build/darkmode.js'></script>"
 }%%TMPL:END%
 
-%TMPL:DEF{"javascript::solr"}%%ADDTOZONE{
-  "script" 
-  id="SOLRPLUGIN::SEARCHBOX" 
-  requires="JQUERYPLUGIN::AUTOSUGGEST" 
-  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/SolrPlugin/solr-searchbox.js'></script>"
-}%%TMPL:END%
-
+%TMPL:DEF{"initConsole"}%true%TMPL:END%
 %TMPL:DEF{"initWebMenu"}%true%TMPL:END%
 %TMPL:DEF{"initTopPanel"}%false%TMPL:END%
 %TMPL:DEF{"initTopBar"}%false%TMPL:END%
 %TMPL:DEF{"initOverflows"}%false%TMPL:END%
-%TMPL:DEF{"initSideBar"}%false%TMPL:END%
-%TMPL:DEF{"initRedDot"}%true%TMPL:END%
 %TMPL:DEF{"initBusyIndicator"}%false%TMPL:END%
-%TMPL:DEF{"initExternalLinks"}%true%TMPL:END%
+%TMPL:DEF{"initUserTooltips"}%true%TMPL:END%
+%TMPL:DEF{"initHeaderAnchors"}%false%TMPL:END%
 %TMPL:DEF{"initCookieInfo"}%%IF{"context cookie_info" then="true" else="false"}%%TMPL:END%
-
-%TMPL:DEF{"defaultjavascript"}%%TMPL:PREV%%TMPL:END%
-
-%TMPL:DEF{"javascript"}%%TMPL:P{"defaultjavascript"}%%TMPL:END%

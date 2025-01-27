@@ -4,13 +4,9 @@
 %TMPL:DEF{"lease_active"}%%{}%
 %MAKETEXT{"[[[_1]]] is editing [[[_2]]]." args="%PARAM1%, %WEB%.%TOPIC%"}%
 
-%MAKETEXT{"[_1] has been editing the topic for [_2] and the lease is still active for another [_3]." args="%PARAM1%,%PARAM2%,%PARAM3%"}%
+%MAKETEXT{"[[[_1]]] has been editing the topic for [_2] and the lease is still active for another [_3]." args="%PARAM1%,%PARAM2%,%PARAM3%"}%
 
-%MAKETEXT{"It is probably OK to go ahead and edit - unless you intend to change data in a
-form attached to the topic. If [_1] actually _does_ save the topic while
-you are editing, your changes will be merged, and nothing will be lost. Form
-data cannot easily be merged though, so in this case you are recommended to
-check with [_1] first." args="%PARAM1%"}%
+%MAKETEXT{"It is probably OK to go ahead and edit - unless you intend to change data in a form attached to the topic. If [[[_1]]] actually _does_ save the topic while you are editing, your changes will be merged, and nothing will be lost. Form data cannot easily be merged though, so in this case you are recommended to check with [[[_1]]] first." args="%PARAM1%"}%
 
 %TMPL:END%
 %TMPL:DEF{"lease_old"}% %{}%
@@ -51,6 +47,6 @@ first." args="%PARAM1%"}%
 </form>
 </td>
 <td style='vertical-align:top'>
-  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%IF{"defined redirectto" then="%URLPARAM{"redirectto"}%" else="%WEB%.%TOPIC%"}%" icon="%TMPL:P{"CANCEL_ICON"}%"}%
+  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%IF{"defined redirectto" then="%URLPARAM{"redirectto"}%" else="%WEB%.%TOPIC%"}%" icon="%TMPL:P{"icon::cancel::name"}%"}%
 </td>
 </tr></table> %TMPL:END%

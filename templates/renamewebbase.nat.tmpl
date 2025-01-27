@@ -1,7 +1,13 @@
 %TMPL:INCLUDE{"page"}%%{}%
-%TMPL:INCLUDE{"renamewebbody"}%%{}%
-%TMPL:INCLUDE{"renamewebsidebar"}%%{}%
-%TMPL:INCLUDE{"renamewebtopicactions"}%%{}%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"sidebar"}%<h2 >%MAKETEXT{"Help"}%</h2>
+	* <a href="%SCRIPTURLPATH{"view" topic="%SYSTEMWEB%.ManagingWebs"}%" target="_blank">%MAKETEXT{"Managing webs"}%</a> 
+	* <a href="%SCRIPTURLPATH{"view" topic="%SYSTEMWEB%.WikiWord"}%" target="_blank">%MAKETEXT{"WikiWord"}%</a> 
+<h2 >%MAKETEXT{"Notes"}%</h2>
+<div class="natNotes">
+%TMPL:P{"notes"}%%{}%
+</div>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"bodyclass"}%natRenameWebBody%TMPL:END%
@@ -9,31 +15,43 @@
 %TMPL:DEF{"title"}%%WEB% (%MAKETEXT{"rename web"}%) %TMPL:P{"titlesep"}% %WIKITOOLNAME%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%%MAKETEXT{"Rename the [_1] web" args="<nop>%WEB%"}%%TMPL:END%
 %TMPL:DEF{"buttons"}%%{}%
-%BUTTON{type="save" value="%MAKETEXT{"Rename"}%" icon="%TMPL:P{"OK_ICON"}%"}%
-%BUTTON{type="button" value="%MAKETEXT{"Cancel"}%" icon="%TMPL:P{"CANCEL_ICON"}%" target="%WEB%.%TOPIC%"}%
+%BUTTON{type="save" value="%MAKETEXT{"Rename"}%" icon="%TMPL:P{"icon::ok::name"}%"}%
+%BUTTON{type="button" value="%MAKETEXT{"Cancel"}%" icon="%TMPL:P{"icon::cancel::name"}%" target="%WEB%.%TOPIC%"}%
 %{}%%TMPL:END%
+%TMPL:DEF{"bottombar"}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"content"}%<h1>%TMPL:P{"contenttitle"}%</h1>
-<form name="renameweb" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
+%TMPL:DEF{"content"}%%{}%
+%TMPL:P{"renameform::title"}%%{}%
+%TMPL:P{"renameform::start"}%%{}%
+%TMPL:P{"renameform::newweb"}%%{}%
+%TMPL:P{"renameform::parentweb"}%%{}%
+%TMPL:P{"renameform::backlinks"}%%{}%
+%TMPL:P{"renameform::lockedtopics"}%%{}%
+%TMPL:P{"renameform::end"}%%{}%
+%TMPL:END%
+
+%TMPL:DEF{"renameform::title"}%<h1>%TMPL:P{"contenttitle"}%</h1>%TMPL:END%
+
+%TMPL:DEF{"renameform::start"}%<form name="renameweb" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
 <input type="hidden" name="action" value="renameweb" />
 <input type="hidden" name="confirm" value="getlock" />
-<div class="foswikiFormSteps">
-  <div class="foswikiFormStep">
-    <h3>%MAKETEXT{"New web name"}%:</h3>
-    %TMPL:P{"newsubweb"}%
-  </div>
-  <div class="foswikiFormStep">
-    <h3>%MAKETEXT{"New parent web"}%:</h3>
-    %TMPL:P{"newparentweb"}%
+<input type="hidden" name="currentwebonly" value="on">
+<div class="foswikiFormSteps">%TMPL:END%
 
-    <input type="checkbox" class="foswikiCheckbox" name="totrash" id="totrash" onclick="document.renameweb.newparentweb.value = (this.checked)?'Trash':'';this.blur();">&nbsp;
-    <label for="totrash">
-      %MAKETEXT{"Move to [_1]" args="%TRASHWEB%"}%
-    </label>
-  </div>
+%TMPL:DEF{"renameform::newweb"}%<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"New web name"}%:</h3>
+  %TMPL:P{"newsubweb"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"renameform::parentweb"}%<div class="foswikiFormStep">
+  <h3>%MAKETEXT{"New parent web"}%:</h3>
+  %TMPL:P{"newparentweb"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"renameform::backlinks"}%<!-- -->
 ---
-  <div class="natSearchBacklinks" %IF{"'%SEARCH_COUNT%'='0'" then="style='display:none'"}%>
+  <div class="natSearchBacklinks">
     <div class="foswikiFormStep">
       <h3>%MAKETEXT{"Update links in the '[_1]' web" args="<nop>%WEB%"}%:</h3>
       <div class="natSearchRenameContents">
@@ -47,9 +65,13 @@
       </div>
     </div>
     <div class="foswikiFormStep">
-      %BUTTON{"%MAKETEXT{"Set all"}%" icon="fa-plus-square" class="natRenameSetAll" title="%MAKETEXT{"Select all topics"}%"}%
-      %BUTTON{"%MAKETEXT{"Clear all"}%" icon="fa-minus-square" class="natRenameClearAll" title="%MAKETEXT{"Clear selection"}%"}%
+      %BUTTON{"%MAKETEXT{"Set all"}%" icon="ma-done-all" class="natRenameSetAll" title="%MAKETEXT{"Select all topics"}%"}%
+      %BUTTON{"%MAKETEXT{"Clear all"}%" icon="ma-clear-all" class="natRenameClearAll" title="%MAKETEXT{"Clear selection"}%"}%
     </div>
+  </div>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"renameform::lockedtopics"}%<!-- -->
 ---
     <div class="foswikiFormStep">
       <h3>%MAKETEXT{"Locked topics"}%:</h3>
@@ -66,8 +88,10 @@
 %REF_LOCKED%
       </div>
     </div>
+%TMPL:END%
+
+%TMPL:DEF{"renameform::end"}%<!-- -->
 ---
-  </div>
   <div class="foswikiFormStep foswikiFormButtons">
     %TMPL:P{"buttons"}%%{}%
     %IF{"$'URLPARAM{currentwebonly}'='on'"
@@ -79,13 +103,13 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"notes"}%
-%MAKETEXT{"Get help on <a target='_blank' href='[_1]' rel='nofollow'>Renaming and moving webs</a>." args="%SCRIPTURLPATH{"view"}%/%SYSTEMWEB%/ManagingWebs"}% 
+%MAKETEXT{"Get help on <a target='_blank' href='[_1]' rel='nofollow'>Renaming and moving webs</a>." args="%SCRIPTURLPATH{"view" topic="%SYSTEMWEB%.ManagingWebs"}%"}% 
 
 %MAKETEXT{"Characters not allowed in topic names, such as spaces will automatically be removed."}%
 
-%MAKETEXT{"Select the <a target='_blank' href='[_1]/[_2]/WebHome'>[_2]</a>
+%MAKETEXT{"Select the <a target='_blank' href='[_1]'>[_2]</a>
     web to *delete* this web, that is
-    rename it to [_2]/[_3]. " args="%SCRIPTURLPATH{"view"}%,%TRASHWEB%,%WEB%"}%
+    rename it to [_2]/[_3]. " args="%SCRIPTURLPATH{"view" topic="%TRASHWEB%.%HOMETOPIC%"}%,%TRASHWEB%,%WEB%"}%
 
 %MAKETEXT{"The checkmarked topics will be updated."}%
 %{}%%TMPL:END%
@@ -94,6 +118,6 @@
 %TMPL:DEF{"rename::javascript"}%%ADDTOZONE{
   "script"
   id="NATSKIN::RENAME"
-  text="<script type='text/javascript' class='$id' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/rename.js'></script>"
+  text="<script class='$id' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/build/rename.js'></script>"
   requires="JQUERYPLUGIN"
 }%%TMPL:END%

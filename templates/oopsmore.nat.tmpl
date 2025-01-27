@@ -1,9 +1,9 @@
 %TMPL:INCLUDE{"oops"}%%{}%
 %TMPL:DEF{"bodyclass"}%natOopsMoreBody%TMPL:END%
-%TMPL:DEF{"titleaction"}%%MAKETEXT{"tools"}%%TMPL:END%
-%TMPL:DEF{"heading"}%[[%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=more"}%][%MAKETEXT{"Tools"}%]]%TMPL:END%
+%TMPL:DEF{"titleaction"}%%MAKETEXT{"Tools"}%%TMPL:END%
+%TMPL:DEF{"heading"}%[[%SCRIPTURLPATH{"view" topic="%WEB%.%TOPIC%" template="more"}%][%MAKETEXT{"Tools"}%]]%TMPL:END%
 %TMPL:DEF{"headingstyle"}%natNoteHeading%TMPL:END%
-%TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?%QUERYSTRING%">%MAKETEXT{"Tools"}%</a>%TMPL:END%
+%TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%"}%?%QUERYSTRING%">%MAKETEXT{"Tools"}%</a>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"message"}% <span class='foswikiAlert'>deprecated use of template '%URLPARAM{"template" default="more"}%'</span>%TMPL:END%
@@ -14,7 +14,7 @@
   "%MAKETEXT{"Close"}%" 
   class="foswikiRight simple"
   target="%BASEWEB%.%BASETOPIC%" 
-  icon="%TMPL:P{"CANCEL_ICON"}%"
+  icon="%TMPL:P{"icon::cancel::name"}%"
 }%
 %TMPL:P{"contenttitle"}%%{}%
 %TMPL:P{"message"}%%{}%

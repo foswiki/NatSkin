@@ -1,0 +1,66 @@
+.natBanner {
+  overflow:visible;
+  justify-content:flex-end;
+}
+.natBanner .imagePlain {
+   position:absolute;
+   bottom:-60px;
+   left:var(--margin);
+   border-radius:50%;
+   border:var(--profile-image-border, 0.5rem solid var(--color-background));
+   float:none;
+   margin:0;
+   background-color:var(--color-background);
+}
+.foswikiProfileInfo {
+  padding:0;
+  min-height:0;
+  margin:var(--margin-half) 0 var(--margin);;
+}
+.foswikiProfileInfo a {
+   text-decoration:none;
+}
+.foswikiProfileInfo a:hover {
+   text-decoration:underline;
+}
+.foswikiProfileInfo h1 {
+  border:0;
+  position:relative;
+  margin:1em 0 var(--margin-half);
+}
+.foswikiProfileInfo .sep {
+   color:var(--color-gray);
+   font-size:170%;
+   vertical-align:middle;
+   line-height:1;
+   margin:0 0.25rem;
+}
+.foswikiTitleExtra {
+  position:absolute;
+  bottom:0;
+  right:0;
+}
+
+.foswikiColumns {
+   column-width:25em;
+}
+.foswikiColumns h2 {
+   margin-top:0;
+   border:0;
+}
+.foswikiColumnGroup {
+  break-inside:avoid;
+  margin-bottom:var(--margin);
+}
+
+.foswikiUserInfoTable table {
+  display:block;
+  column-width:30em;
+}
+.foswikiUserInfoTable tr {
+  break-inside:avoid;
+}
+
+:root[data-theme='dark'] {
+   --profile-image-border:none;
+}

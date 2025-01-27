@@ -1,117 +1,63 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 
-%{<verbatim>}%
-%TMPL:INCLUDE{"view"}%<!-- -->
+%TMPL:INCLUDE{"view"}%%{}%
+%TMPL:INCLUDE{"user"}%%{}%
 %TMPL:DEF{"form"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
-%TMPL:DEF{"userlist::query"}%form.name=~'UserForm$'%TMPL:END%
+%TMPL:DEF{"userlist::query"}%form=~'UserForm$'%TMPL:END%
 %TMPL:DEF{"userlist::title"}%<h1 >%TOPICTITLE%</h1>%TMPL:END%
-%{</verbatim>}%
 
-%{<verbatim>}%
-%TMPL:DEF{"content"}%<!-- -->
+%TMPL:DEF{"content"}%%{}%
 %TMPL:P{"userlist::title"}%
 %TMPL:P{"userlist::filter"}%
 %TMPL:P{"userlist::result"}%
 %TMPL:P{"userlist::javascript"}%
 %TMPL:P{"userlist::css"}%
-<!-- -->%TMPL:END%
-%{</verbatim>}%
+%{}%%TMPL:END%
 
-%{<verbatim>}%
-%TMPL:DEF{"userlist::filter"}%<!-- -->
-<div class="foswikiPageForm">
+%TMPL:DEF{"userlist::filter"}%<div class="foswikiPageForm">
   <b>%MAKETEXT{"Filter"}%:</b> 
   <input type="text" class="foswikiInputField jqFocus" name="userlistFilter" value="%URLPARAM{"filter"}%" size="50" id="userlistFilter" />
-</div>
-<!-- -->%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim>}%
-%TMPL:DEF{"userlist::result"}%<!-- -->
-<noautolink>
-<div class="userlistContainer">
-%SEARCH{
-  "%TMPL:P{"userlist::query"}%" 
-  type="query" 
-  nonoise="on" 
-  separator="" 
-  format="$percntTMPL:P{\"userlist::format\" OBJECT=\"$web.$topic\"}$percnt"
-  excludetopic="NewUserTemplate"
-}%
-%CLEAR%
-</div>
-</noautolink>
-<!-- -->%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim>}%
-%TMPL:DEF{"userlist::format"}%%ATTACHMENTS{ 
-   "%OBJECT%" 
-   name=".*\.(jpe?g|gif|png|JE?PG|GIF|PNG)" 
-   warn="off" 
-   limit="1" 
-   sort="%IF{"defined SORT" then="%SORT%" else="comment:name"}%" 
-   reverse="%IF{"'%SORT%' = 'date'" then="on" else="off"}%" 
-   hidenull="off" 
-   nullheader="<div class='userImage'>
-      <h2><a href='%SCRIPTURLPATH{"view"}%/%OBJECT%'>$percntTMPL:P{\"userlist::name\" OBJECT=\"%OBJECT%\"}$percnt</a></h2>"
-   nullfooter="$percntTMPL:P{\"userlist::info\" OBJECT=\"%OBJECT%\"}$percnt</div>"
-   header="<div class='userImage'>
-      <h2><a href='%SCRIPTURLPATH{"view"}%/%OBJECT%' title='$percntTMPL:P{\"userlist::name\" OBJECT=\"%OBJECT%\"}$percnt'>$percntTMPL:P{\"userlist::name\" OBJECT=\"%OBJECT%\"}$percnt</a></h2>"
-   footer="$percntTMPL:P{\"userlist::info\" OBJECT=\"%OBJECT%\"}$percnt</div>"
-   format="$percntIMAGE{ 
-     \"$name\" 
-     topic=\"$web.$topic\" 
-     href=\"%SCRIPTURLPATH{"view"}%/$web/$topic\" 
-     type=\"user\" 
-     size=\"160x160^\" 
-     crop=\"northwest\" 
-     title=\"$percntTMPL:P{\"userlist::name\" OBJECT=\"$web.$topic\"}$percnt\" 
-     warn=\"off\" 
-   }$percnt" 
-   nullformat="$percntIMAGE{ 
-     \"%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/images/nobody.gif\" 
-     href=\"%SCRIPTURLPATH{"view"}%/$web/$topic\" 
-     type=\"user\" 
-     size=\"160x160^\" 
-     crop=\"northwest\" 
-     title=\"$percntTMPL:P{\"userlist::name\" OBJECT=\"$web.$topic\"}$percnt\" 
-     warn=\"off\" 
-   }$percnt" 
-}%%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim>}%
-%TMPL:DEF{"userlist::name"}%%IF{
-  "'%OBJECT%'/FirstName"
-  then="%FORMFIELD{"FirstName" topic="%OBJECT%"}% %FORMFIELD{"LastName" topic="%OBJECT%"}%"
-  else="%GETTOPICTITLE{"%OBJECT%"}%"
-}%%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim>}%
-%TMPL:DEF{"DISuserlist::info"}%<div class='userlistInfo'>
-%IF{
-  "'%OBJECT%'/Telephone"
-  then="Tel: %FORMFIELD{"Telephone" topic="%OBJECT%"}%"
-}%
 </div>%TMPL:END%
-%{</verbatim>}%
 
-%{<verbatim>}%
-%TMPL:DEF{"image:user"}%<a class='imageHref' title='$title' href='$href'><img border='0' src='$src' alt='$alt'/></a>%TMPL:END%
-%{</verbatim>}%
+%TMPL:DEF{"userlist::result"}%<noautolink>
+<div class="userListContainer clearfix">
+%DBQUERY{
+  "%TMPL:P{"userlist::query"}%" 
+  format="$percntTMPL:P{\"userlist::format\" web=\"$web\" topic=\"$topic\"}$percnt"
+  exclude="NewUserTemplate"
+}%
+</div>
+</noautolink>%TMPL:END%
 
-%{<verbatim>}%
+%TMPL:DEF{"userlist::format"}%<div class="userInfo alt clearfix">
+    %TMPL:P{"user::photo"
+      web="%web%"
+      topic="%topic%"
+      crop="off"
+      size="80x120^"
+    }%
+    <h5><a href='%SCRIPTURLPATH{"view"}%/%web%/%topic%'>%GETTOPICTITLE{"%web%.%topic%"}%</a></h5>
+    <ul class='foswikiTopicInfo'>
+      %IF{"'%web%.%topic%'/Telephone"
+        then="%FORMFIELD{"Telephone" topic="%web%.%topic%" format="<li>%JQICON{"fa-phone"}% <a href='tel:$value'>$value</a></li>"}%"
+      }%%IF{"'%web%.%topic%'/Email"
+        then="%FORMFIELD{"Email" topic="%web%.%topic%" format="<li>%JQICON{"fa-inbox"}% <a href='tel:$value'>$value</a></li>"}%"
+        else="%USERINFO{"%web%.%topic%" format="<li>%JQICON{"fa-inbox"}% <a href='mailto:$emails'>$emails</a></li>"}%"
+      }%%IF{"'%web%.%topic%'/Location"
+        then="%FORMFIELD{"Location" topic="%web%.%topic%" format="<li>%JQICON{"fa-tag"}% $value</li>"}%"
+      }%<!-- -->
+    </ul>
+</div>%TMPL:END%
+
 %TMPL:DEF{"userlist::javascript"}%%JQREQUIRE{"focus"}%%ADDTOZONE{
-  "script" id="NATSKINWIKIUSERS" requiers="JQUERYPLUGIN" text="<script type='text/javascript'>
+  "script" id="NATSKINWIKIUSERS" requires="JQUERYPLUGIN" text="<script>
 jQuery(function($) {
   function filterImages(query) {
-    var regex = new RegExp(query, 'gi');
-    $('.userlistContainer h2').each(function() {
+    var regex = new RegExp(query, 'i');
+    $('.userInfo h5').each(function() {
       var $this = $(this),
           text = $(this).text();
       if (text.match(regex)) {
@@ -122,15 +68,6 @@ jQuery(function($) {
     });
   }
 
-  $('.userImage').hover(
-    function() {
-      $(this).addClass('hover');
-    },
-    function() {
-      $(this).removeClass('hover');
-    }
-  );
-
   $('#userlistFilter').keyup(function(event) {
     if (event.which == 13) {
       event.preventDefault();
@@ -139,64 +76,52 @@ jQuery(function($) {
   });
 });
 </script>"}%%TMPL:END%
-%{</verbatim>}%
 
-%{<verbatim>}%
 %TMPL:DEF{"userlist::css"}%<literal>
 <style>
-.userImage.hover {
-  border-color:#aaa;
-          box-shadow: 2pt 2px 8px rgba(105, 105, 105,  0.3);
-     -moz-box-shadow: 2pt 2px 8px rgba(105, 105, 105,  0.3);
-  -webkit-box-shadow: 2pt 2px 8px rgba(105, 105, 105,  0.3);
-}
-.userImage.hover h2 a {
-  background-color:#0055b5;
-  color:#fff;
-}
-.userImage {
-  overflow:hidden;
-  float:left;
-  width:110px;
-  height:135px;
-  padding:0;
-  margin:0 1.2em 1.2em 0;
-  border:1px solid #ccc;
-          border-radius:8px;
-     -moz-border-radius:8px;
-  -webkit-border-radius:8px;
-  background:#fff;
-          box-shadow: 2pt 2px 8px rgba(105, 105, 105,  0.1);
-     -moz-box-shadow: 2pt 2px 8px rgba(105, 105, 105,  0.1);
-  -webkit-box-shadow: 2pt 2px 8px rgba(105, 105, 105,  0.1);
-}
-.userImage img {
-  width:110px;
-}
-.userlistContainer {
+.userListContainer {
   margin-top:1.5em;
+  display:flex;
+  flex-wrap:wrap;
 }
-.userlistContainer .imageHref {
-  display:block;
-  margin:0;
-}
-.userImage h2 {
+.userInfo {
+  margin:var(--margin) var(--margin) 0 0;
+  padding:0.75em 0.75em 0.75em calc(.75em + 85px);
+  flex-grow:1;
+  overfloW:hidden;
+  box-sizing:border-box;
+  min-height:95px;
+  max-width:calc(33% - 1em);
   font-size:95%;
-  line-height:1.3em;
-  font-weight:bold;
-  margin:0;
-  background-color:#F2F1F3;
+  position:relative;
 }
-.userImage h2 a {
-  display:block;
-  padding:0.4em 0.5em;
+.userInfo h5 {
+  margin:0 0 0.5em;
+}
+.userInfo .imagePlain {
+  width: 80px;
+  height: 100%;
+  object-fit:cover;
+  background-size:cover;
+  background-position:center center;
+  position:absolute;
+  top:0;
+  left:0;
+}
+.userInfo ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.userInfo li {
+  margin:0;
+  padding:0;
   white-space:nowrap;
-  text-overflow:ellipsis;
   overflow:hidden;
+  text-overflow:ellipsis;
 }
 </style>
 </literal>%TMPL:END%
-%{</verbatim>}%
 
 %META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%
 %META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

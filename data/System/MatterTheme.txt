@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1512398496" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 
@@ -24,14 +24,21 @@ and a user's private settings. In addition to the usual preferences of <nop>NatS
 | =NATSKIN_BANNERMODE= | select the kind of banner to be displayed; possible values: \
                          <ul>\
                            <li> =off=: no banner</li>\
-                           <li> =flat=: a flat color</li>\
+                           <li> =autocolor=: compute a color automatically based on the banner title</li> \
+                           <li> =geopattern=: an abstract pattern automatically computed based on the banner title</li>\
                            <li> =gradient=: a radial or linear gradient background</li>\
                            <li> =image=: an image background that may be animated optionally</li>\
+                           <li> =monochrome=: a single color </li> \
+                           <li> =pixabay_image=: an image background fetched from pixabay (requires Foswiki:Extensions/PixabayPlugin)</li>\
+                           <li> =pixabay_video=: a video background fetched from pixabay (requires Foswiki:Extensions/PixabayPlugin)</li>\
+                           <li> =section=: the content of a named topic section</li>\
+                           <li> =slideshow=: a slideshow of image attachments or a set of named topic sections </li>\
+                           <li> =trianglify=: an abstract pattern made if triangular shapes</li>\
                            <li> =video=: a video background; an mp4 file is recommended </li>\
-                           <li> =pattern=: an abstract pattern automatically computed based on the banner title</li>\
                          </ul> | =off= |
-| =NATSKIN_BANNERIMAGE= | url to image to be displayed; used in =image= mode | =%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/images/bubbles.png= |
-| =NATSKIN_BANNERVIDEO= | url to vide to be displayed; used in =video= mode | =%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/videos/clouds.mp4= |
+| =NATSKIN_BANNERTOPIC= | topic holding the image or video attachments usedin image or video mode | current topic |
+| =NATSKIN_BANNERIMAGE= | name of an image attachment to be displayed; used in =image= mode | =%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/images/bubbles.png= |
+| =NATSKIN_BANNERVIDEO= | name of a vide to be displayed; used in =video= mode | =%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/videos/clouds.mp4= |
 | =NATSKIN_BANNERVIDEOLOOP= | boolean flag to specify whether the banner video should be looped or halted after being played once | =on= |
 | =NATSKIN_BANNERFOREGROUND= | possible values: =light=, =dark=; specify the contrast of the font on the banner; use =light= when the banner background is dark, or =dark= otherwise | =light= | 
 | =NATSKIN_BANNERCOLOR= | this color is used in modes =flat=, =image=, =gradient= and =pattern= to specify the background color of the banner | =%<nop>WEBBGCOLOR%= |
@@ -42,5 +49,41 @@ and a user's private settings. In addition to the usual preferences of <nop>NatS
 | =NATSKIN_ENABLEBANNERTITLE= | boolean switch that allows to show/hide the title on the banner | =on= |
 | =NATSKIN_BANNERANIMATION= | boolean switch used in =image= mode to enable a kenburns-like animation of the background image | =off= |
 | =NATSKIN_BANNERPOSITION= | vertical position in percent of the background image; only used in =image= mode; note that this parameter can be specified interactively by dragging the background image and the clicking on the "save" icon | =50= |
+| =NATSKIN_BANNERANIMATIONENABLED= | | off |
+| =NATSKIN_BANNERATTACHMENTS= | | |
+| =NATSKIN_BANNERAUTOCOLORHUEFROM= | | 0 | 
+| =NATSKIN_BANNERAUTOCOLORHUETO= | | 359 |
+| =NATSKIN_BANNERAUTOCOLORLIGHTNESS= | | [50,65,80] |
+| =NATSKIN_BANNERAUTOCOLORSATURATION= | | [50,65,80] |
+| =NATSKIN_BANNERAUTOCOLORSEED= | | |
+| =NATSKIN_BANNERCOLOR2= | | %WEBBGCOLOR | 
+| =NATSKIN_BANNERCOLOR= | | %WEBBGCOLOR% |
+| =NATSKIN_BANNERCONNECTPARTICLES= | | true |
+| =NATSKIN_BANNERCONTENT= | | attachments |
+| =NATSKIN_BANNERHEIGHT= | | |
+| =NATSKIN_BANNERMAXPARTICLES= | | 70 |
+| =NATSKIN_BANNERPARALLAXENABLED= | | off |
+| =NATSKIN_BANNERPARTICLESCOLOR= | | #ffffff |
+| =NATSKIN_BANNERPARTICLESENABLED= | | off |
+| =NATSKIN_BANNERPIXABAYCATEGORY= | | |
+| =NATSKIN_BANNERPIXABAYEDITORSCHOICE= | | |
+| =NATSKIN_BANNERPIXABAYIMAGETYPE= | | allimages |
+| =NATSKIN_BANNERPIXABAYQUERY= | | |
+| =NATSKIN_BANNERPIXABAYRANDOM= | | |
+| =NATSKIN_BANNERPIXABAYVIDEOTYPE= | | allvideos |
+| =NATSKIN_BANNERSECTION= | | |
+| =NATSKIN_BANNERSEED= | | |
+| =NATSKIN_BANNERSIZEVARIATION= | | 3 |
+| =NATSKIN_BANNERSLIDESHOWDELAY= | | 5000 |
+| =NATSKIN_BANNERSLIDESHOWDIRECTION= | | |
+| =NATSKIN_BANNERSLIDESHOWEFFECT= | | slide |
+| =NATSKIN_BANNERSLIDESHOWNAVIGATIONENABLED= | | off |
+| =NATSKIN_BANNERSLIDESHOWPAGINATION= | | |
+| =NATSKIN_BANNERSLIDESHOWSPEED= | | 2000 |
+| =NATSKIN_BANNERSLIDESHOWTOPIC= | | current topic |
+| =NATSKIN_BANNERSPEED= | | 0.5 |
+| =NATSKIN_BANNERTEXTALIGN= | | |
+| =NATSKIN_BANNERTEXT= | | |
+| =NATSKIN_BANNERTEXTEFFECT= | | off |
 
 %META:TOPICMOVED{by="micha" date="1512396167" from="System.NatSkinMatterhTheme" to="System.MatterTheme"}%

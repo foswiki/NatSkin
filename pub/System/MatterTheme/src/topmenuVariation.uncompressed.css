@@ -1,0 +1,20 @@
+.natTopBar .natUserActions {
+  display:none;
+}
+.natTopBar .clearfix:after {
+  display:none;
+}
+.natTopBarContents {
+  justify-content:space-between;
+}
+.natTopBar .natWebMenuSpacer {
+  flex-grow:0;
+}
+.natMainHeaderContents .natLoginAction,
+.natMainHeaderContents .natNewAction {
+  display:inline;
+}
+.natTopicActions .natTopicAction,
+.natTopicActions .natTopicAction:hover {
+  margin-left:8px;
+}

@@ -1,0 +1,18 @@
+Source: foswiki-nat-skin
+Section: web
+Priority: optional
+Maintainer: Michael Daum <debian@michaeldaumconsulting.com>
+Build-Depends: debhelper (>= 8)
+Standards-Version: 3.9.2
+Homepage: http://foswiki.org/Extensions/NatSkin
+#Vcs-Git: git://git.debian.org/collab-maint/foswiki.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/foswiki.git;a=summary
+
+Package: foswiki-nat-skin
+Architecture: all
+Depends: ${misc:Depends}, foswiki-auto-template-plugin, foswiki-bread-crumbs-plugin, foswiki-copy-contrib, foswiki-core, foswiki-db-cache-plugin, foswiki-diff-plugin, foswiki-fam-fam-fam-contrib, foswiki-filter-plugin, foswiki-flex-form-plugin, foswiki-flex-web-list-plugin, foswiki-grid-layout-plugin, foswiki-image-plugin, foswiki-j-query-plugin, foswiki-jq-ajax-form-contrib, foswiki-jq-password-generator-contrib, foswiki-jq-select-2-contrib, foswiki-listy-plugin, foswiki-mime-icon-plugin, foswiki-more-formfields-plugin, foswiki-multi-lingual-plugin, foswiki-nat-edit-plugin, foswiki-nat-skin-plugin, foswiki-red-dot-plugin, foswiki-render-plugin, foswiki-topic-interaction-plugin, foswiki-web-creator-plugin, foswiki-web-fonts-contrib, foswiki-web-link-plugin 
+Suggests: foswiki-captcha-plugin, foswiki-meta-comment-plugin, foswiki-pixabay-plugin, foswiki-section-list-plugin, foswiki-security-headers-plugin
+Description: Userfriendly Foswiki Design
+ (...add your text here...)
+ .
+ See http://foswiki.org/Extensions/NatSkin for more.

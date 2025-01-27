@@ -1,19 +1,19 @@
 %TMPL:INCLUDE{"searchbase"}%%{}%
-%TMPL:DEF{"searchbox"}%%TMPL:END%
 %TMPL:DEF{"seealso"}%[[WebSearchAdvanced][%MAKETEXT{"Advanced Search"}%]]%TMPL:END%
+%TMPL:DEF{"searchbox"}%%TMPL:END%
 %TMPL:DEF{"searchhit"}%%{}%
-  <a class="natSearchTarget" href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPICNAME%">%GETTOPICTITLE{"%TOPICNAME%"}%</a>
+  <a class="natSearchTarget" href="%SCRIPTURLPATH{"view" topic="%WEB%.%TOPICNAME%"}%">%GETTOPICTITLE{"%TOPICNAME%"}%</a>
   <span class="natSearchTargetWeb foswikiGrayText foswikiSmallish">in <nop>%WEBLINK{format="$web" web="%WEB%"}% </span>
   <div class="natSearchSummary"> <noautolink> %TEXTHEAD% </noautolink> </div>
   <div class="natSearchRevision">
-    <a href='%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPICNAME%?type=last' rel'nofollow'>%TIME%</a>, <span class='natSearchAuthor'> %IF{"istopic '%USERSWEB%.$wikiname'" then="[[%USERSWEB%.$wikiname]]" else="!$wikiname"}% </span>
+    <a href='%SCRIPTURLPATH{"diff"}%/%WEB%/%TOPICNAME%?type=last' rel'nofollow'>%TIME%</a>, <span class='natSearchAuthor'> %IF{"istopic '%USERSWEB%.$wikiname'" then="[[%USERSWEB%.$wikiname]]" else="!$wikiname"}% </span>
   </div>
 %{}%%TMPL:END%
 %TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Search result for [_1]" args="<span class='natSearchString'>\"%URLPARAM{"search"}%\"</span>"}%</h1>%TMPL:END%
 %TMPL:DEF{"content"}%%{}%
 %TMPL:P{"contenttitle"}%%{}%
-%SPLIT%%TMPL:P{"searchform"}%%SPLIT% 
-%REPEAT%<div class="natSearchHit">
+%SPLIT%%TMPL:P{"searchform"}%%SPLIT%<!-- -->
+<!-- -->%REPEAT%<div class="natSearchHit">
 %TMPL:P{"searchhit"}%
 </div>%REPEAT%%SPLIT%<div class="natSearchTotal">
   %MAKETEXT{"[_1] topic(s) found" args="%NTOPICS%"}% 
@@ -24,7 +24,7 @@
 <div class="foswikiFormStep">
 <input type="text" class="foswikiInputField jqFocus" id="search" name="search" size="30" value="%URLPARAM{"search" encode="entity"}%" style="float:left;margin-right:8px;"/>
 %BUTTON{"%MAKETEXT{"Search"}%" type="submit" title="submit the query" icon="fa-search"}%
-%BUTTON{"%MAKETEXT{"Cancel"}%" target="%BASEWEB%.%BASETOPIC%" title="%MAKETEXT{"go back to [_1]" args="<nop>%WEB%.%TOPIC%"}%" icon="%TMPL:P{"CANCEL_ICON"}%"}%
+%BUTTON{"%MAKETEXT{"Cancel"}%" target="%BASEWEB%.%BASETOPIC%" title="%MAKETEXT{"go back to [_1]" args="<nop>%WEB%.%TOPIC%"}%" icon="%TMPL:P{"icon::cancel::name"}%"}%
 %TMPL:P{"seealso"}%
 </div>
 <div class="foswikiFormStep">

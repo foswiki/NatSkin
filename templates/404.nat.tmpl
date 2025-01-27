@@ -1,11 +1,12 @@
 %TMPL:INCLUDE{"viewplain"}%
 
-%TMPL:DEF{"bodyclass"}%nat404Body natCenteredBody%TMPL:END%
-%TMPL:DEF{"titleaction"}%%MAKETEXT{"page not found"}%%TMPL:END%
+%TMPL:DEF{"bodyclass"}%nat404Body natErrorBody natCenteredBody%TMPL:END%
+%TMPL:DEF{"titleaction"}%%MAKETEXT{"Page not found"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 
 %TMPL:DEF{"content"}%
 <div class="natOopsMessage clearfix">
+%TMPL:P{"code"}%%{}%
 %TMPL:P{"heading"}%%{}%
 %TMPL:P{"message"}%%{}%
 %TMPL:P{"similar"}%%{}%
@@ -13,7 +14,10 @@
 </div>
 %ADDTOZONE{"body" id="poweredby" text="$percntTMPL:P{\"poweredby\"}$percnt"}%%{}%%TMPL:END%
 
-%TMPL:DEF{"heading"}%<h1>%MAKETEXT{"404 - page not found"}%</h1>%TMPL:END%
+%TMPL:DEF{"heading"}%<h1>%TMPL:P{"heading::code"}%</h1><h2>%TMPL:P{"heading::text"}%</h2>%TMPL:END%
+
+%TMPL:DEF{"heading::code"}%404%TMPL:END%
+%TMPL:DEF{"heading::text"}%%MAKETEXT{"Page not found"}%%TMPL:END%
 
 %TMPL:DEF{"message"}%<p>
 %MAKETEXT{"I am afraid this page slipped between the cracks."}%
@@ -34,7 +38,7 @@
 </tr>%TMPL:END%
 
 %TMPL:DEF{"index::action"}%<tr>
-<th>%BUTTON{"%MAKETEXT{"Index"}%" class="simple" icon="fa-list-ol" target="%BASEWEB%.WebTopicList"}%</th>
+<th>%BUTTON{"%MAKETEXT{"Index"}%" class="simple" icon="fa-list" target="%BASEWEB%.WebTopicList"}%</th>
 <td>%MAKETEXT{"Have a look at the list of all pages in this web."}%</td>
 </tr>%TMPL:END%
 
@@ -47,20 +51,20 @@
 <th>%BUTTON{"%MAKETEXT{"Restart"}%" class="simple" icon="fa-home" target="%IF{
     "'%BASEWEB%.%HOMETOPIC%' allows 'view'" 
     then="%BASEWEB%.%HOMETOPIC%" 
-    else="%WIKILOGOURL%"
+    else="%USERSWEB%.%WIKINAME%"
   }%"
 }%</th>
 <td>%MAKETEXT{"Or just start from the beginning."}%</td>
 </tr>%TMPL:END%
 
 %TMPL:DEF{"searchurl"}%%TMPL:P{context="SolrPluginEnabled" then="searchurl::solr" else="searchurl::default"}%%TMPL:END%
-%TMPL:DEF{"searchurl::default"}%%SCRIPTURL{"view"}%/%BASEWEB%/WebSearch?search=%BASETOPIC%%TMPL:END%
+%TMPL:DEF{"searchurl::default"}%%SCRIPTURL{"view" topic="%BASEWEB%.WebSearch" search="%BASETOPIC%"}%%TMPL:END%
 %TMPL:DEF{"searchurl::solr"}%%SOLRSCRIPTURL{"topic_search:%BASETOPIC%~ OR topic_search:*%BASETOPIC%*"}%%TMPL:END%
 
 %TMPL:DEF{"similar"}%%TMPL:P{context="SolrPluginEnabled" then="similar::solr" else="similar::default"}%%TMPL:END%
 %TMPL:DEF{"similar::solr"}%%SOLRSEARCH{
   "topic_search:%BASETOPIC%~ OR topic_search:*%BASETOPIC%*"
-  filter="type:topic web:%ENCODE{"%BASEWEB%" old="/" new="."}%"
+  filter="type:topic web:%ENCODE{"%BASEWEB%" old="/" new="."}% -topic:403"
   rows="1"
   type="edismax"
   format="$percntIF{\"'$web.$topic' allows 'view'\"
@@ -75,5 +79,6 @@
   limit="1"
   scope="topic" 
   web="%BASEWEB%" 
+  excludetopic="403"
   nonoise="on" 
 }%%TMPL:END%

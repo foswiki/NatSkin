@@ -1,7 +1,4 @@
 %TMPL:INCLUDE{"page"}%%{}%
-%TMPL:INCLUDE{"rdiffsidebar"}%%{}%
-%TMPL:INCLUDE{"rdifftopicactions"}%%{}%
-%TMPL:INCLUDE{"rdiffbody"}%%{}%
 
 %{################################################################################}%
 %TMPL:DEF{"bodyclass"}%natRdiffBody%TMPL:END%
@@ -31,7 +28,7 @@
 %TMPL:DEF{"text"}%%{}%
 %REPEAT%<table class="foswikiDiffTable" cellspacing="0" cellpadding="0">
 <th>
-<a href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?rev=%REVTITLE1%">%TOPIC% %REVTITLE1% - %REVINFO1%</a>
+<a href="%SCRIPTURLPATH{"view" topic="%WEB%.%TOPIC%" rev="%REVTITLE1%"}%">%TOPIC% %REVTITLE1% - %REVINFO1%</a>
 </th>
 <tr><td style="padding-left:0px; padding-right:0px; border:0px">
 %TEXT%

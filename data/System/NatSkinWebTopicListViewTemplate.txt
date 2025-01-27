@@ -1,6 +1,5 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
-%{<verbatim class="tml">}%
 %TMPL:INCLUDE{"view"}%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
@@ -32,20 +31,7 @@
 </noautolink>
 %TMPL:END%
 %TMPL:DEF{"sidebar"}%%TMPL:END%
-%{</verbatim>}%
 
-%{<verbatim class="tml">}%
-%TMPL:DEF{"topiclist::old"}%%TOPICLIST{
-  "($percntSUBST{
-      text=\"$percntGETTOPICTITLE{\"$name\" encode=\"entity\"}$percnt\" 
-      pattern=\"(&#\d+;)|[$]\" 
-      format=\"\"
-    }$percnt);$percntGETTOPICTITLE{\"$name\" encode=\"entity\"}$percnt;$name"
-  separator="$n"
-}%%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim class="tml">}%
 %TMPL:DEF{"topiclist::default"}%%DBQUERY{
   format="($percntSUBST{
       text=\"$encode($expand(topictitle))\"
@@ -53,7 +39,6 @@
       format=\"\"
     }$percnt);$encode($expand(topictitle));$topic"
 }%%TMPL:END%
-%{</verbatim>}%
 
 
 %META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%

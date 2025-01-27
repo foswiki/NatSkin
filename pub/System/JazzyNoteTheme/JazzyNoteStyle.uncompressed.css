@@ -1,5 +1,4 @@
 /* JazzyNoteStyle */
-@import url(../NatSkin/BaseStyle.css);
 
 /* html elements */
 /* see http://drewish.com/tools/vertical-rhythm */
@@ -52,10 +51,6 @@ h1,
 }
 .natBottomBarContents {
   padding-top:1.385em;
-}
-
-.natSiteMap {
-  margin-bottom:2em;
 }
 
 /* fluid layout */
@@ -180,9 +175,6 @@ h1,
   background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#f0f0f0));
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f0f0f0));
   background-image: -webkit-linear-gradient(top, #fff, #f0f0f0);
-  background-image:    -moz-linear-gradient(top, #fff, #f0f0f0);
-  background-image:     -ms-linear-gradient(top, #fff, #f0f0f0);
-  background-image:      -o-linear-gradient(top, #fff, #f0f0f0);
   background-image:         linear-gradient(top, #fff, #f0f0f0);
   box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
   text-shadow: 0 1px 0 rgba(255,255,255,.5); 
@@ -457,7 +449,7 @@ h1,
 
 /* toc */
 .foswikiToc li {
-  background-image:url(../NatSkin/bullet-toc.gif);
+  background-image:url(../NatSkin/images/bullet-toc.gif);
   background-position:0 0.4em;
   background-repeat:no-repeat;
 }
@@ -485,27 +477,6 @@ h1,
   border-top:1px solid;
   border-color:#DDD;
   background-color:#FAF8F7;
-}
-.natTopicAttachments .natTopicAction:hover {
-  background-color:#FEE7B5;
-}
-
-/* attachments */
-.natTopicAttachments {
-  margin-top:1.3846em;
-}
-.natTopicAttachments h2 {
-  margin-bottom:0px;
-}
-.natTopicAttachments .foswikiFormStep {
-  margin-top:1.3846em;
-}
-.jqTabContents .natTopicAttachments {
-  margin:0px;
-  padding:0px;
-}
-.natTopicAttachments a {
-  text-decoration:none;
 }
 
 /* search tables */

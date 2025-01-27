@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 %TOC%
@@ -8,8 +8,7 @@ If you need help, there are a couple of options:
    * Create a support request on Foswiki:Support/WebHome.
    * Explain the problem on Foswiki:Development/NatSkin.
    * Join the [[irc://irc.freenode.net/foswiki][#foswiki]] IRC channel and ask for help.
-   * Contact the [[mailto:daum@wikiring.com][WikiRing]] in case you need 
-     professional support.
+   * Contact the author of this extension in case you need professional support.
 
 In any case, helping out improving documentation, fixing bugs, helping others
 with the same problems is very welcome.
@@ -45,12 +44,6 @@ templates. While the theming engine controls the css files being loaded,
 it also maintains the =SKIN= path to allow themes and their variations to override
 the standard markup. 
 
-!NatSkin's templates also integrate well into [[Foswiki:Extensions/AngularPlugin][AngularPlugin]] where
-pages are loaded asynchronously and patched into an existing skeleton while navigating across topics and webs.
-
 ---++ Can I enable offsite link detection?
 Yes. Use the ={NatSkin}{DetectExternalLinks}= configuration setting.
 
----++ Does <nop>NatSkin support <nop>QuietSave?
-This feature confuses more than provide any added value and has thus been removed from
-the =edit= page to simplify the interface.

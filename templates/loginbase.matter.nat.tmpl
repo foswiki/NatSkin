@@ -1,0 +1,21 @@
+%TMPL:INCLUDE{"loginbase"}%
+
+%TMPL:DEF{"login::end"}%%TMPL:PREV%%IF{"defined NATSKIN_LOGINBANNER"
+  then="$percntADDTOZONE{\"skincss\"
+	  id=\"NATSKIN::LOGIN::STYLES\"
+	  requires=\"NATSKIN\"
+	  text=\"$dollarpercntTMPL:P{\\"login::css\\"}$dollarpercnt\"
+	}$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"login::css"}%<style>
+:root {
+  --login-banner: url(%NATSKIN_LOGINBANNER%);
+}
+.natLoginBody { 
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.95) 100%), var(--login-banner); 
+}
+:root[data-theme='dark'] .natLoginBody { 
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%,       rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.95) 100%), var(--login-banner); 
+}
+</style>%TMPL:END%

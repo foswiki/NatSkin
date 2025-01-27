@@ -1,0 +1,331 @@
+/* forms **********************************************************************/
+.foswikiDialog,
+.foswikiFormSteps,
+.foswikiPageForm {
+  padding:var(--margin);
+  margin:var(--margin) 0 0; 
+  border-top:1px solid;
+  border-bottom:1px solid;
+  border-color:var(--color-border);
+  background-color:#FAF8F7; /* SMELL */
+}
+
+
+.natMainContents > .foswikiFormSteps:first-child,
+.natMainContents > .foswikiPageForm:first-child {
+  margin-top:0;
+}
+
+.foswikiFormStep {
+  margin:0 0 var(--margin) 0;
+}
+.foswikiLast,
+.foswikiFormStep:last-child {
+  margin-bottom: 0;
+}
+.foswikiFormStep:first-child {
+  margin-top: 0;
+}
+
+.foswikiDialog .hr,
+.foswikiDialog hr,
+.foswikiFormSteps .hr,
+.foswikiFormSteps hr {
+  margin-left: -1.3076em;
+  margin-right: -1.3076em;
+}
+.foswikiDialog table .hr,
+.foswikiDialog table hr,
+.foswikiFormSteps table .hr,
+.foswikiFormSteps table hr {
+  margin-left:0;
+  margin-right:0;
+}
+
+h2.marked {
+  margin-top:2px;
+}
+h2.marked.foswikiLeft {
+  margin-right:0.5em;
+  margin-bottom:0;
+}
+h2.marked.foswikiRight {
+  margin-left:0.5em;
+  margin-bottom:0;
+}
+
+.foswikiDialog h2:first-of-type,
+.foswikiDialogForm h2 a,
+.foswikiPageForm h2:first-of-type,
+.foswikiPageForm h2 a,
+.foswikiFormSteps h2:first-of-type,
+.foswikiFormSteps h2 a {
+  margin-top:0;
+}
+.foswikiFormSteps h3:first-of-type,
+.foswikiFormSteps h3 a,
+.foswikiPageForm h3:first-of-type,
+.foswikiPageForm h3 a,
+.foswikiFormSteps h4:first-of-type,
+.foswikiFormSteps h4 a,
+.foswikiPageForm h4:first-of-type,
+.foswikiPageForm h4 a {
+  margin-top:0;
+  margin-bottom:0.5em;
+}
+
+.foswikiDialog h2 a:hover,
+.foswikiPageForm h2 a:hover,
+.foswikiFormSteps h2 a:hover {
+  color:#fff;
+}
+h2.marked,
+.foswikiDialog h2,
+.foswikiPageForm h2,
+.foswikiFormSteps h2 { 
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-h5);
+  font-weight:var(--font-weight-semi-bold);
+  border: 0;
+  padding: 0;
+}
+
+.foswikiPageForm h3,
+.foswikiPageForm h4,
+.foswikiPageForm h5,
+.foswikiPageForm h6,
+.foswikiFormSteps h3,
+.foswikiFormSteps h4,
+.foswikiFormSteps h5,
+.foswikiFormSteps h6,
+.jqTabContents .foswikiFormSteps h3,
+.jqTabContents .foswikiFormSteps h4,
+.jqTabContents .foswikiFormSteps h5,
+.jqTabContents .foswikiFormSteps h6 {
+  font-size:100%;  
+  line-height:1.385em; /* 18px */
+  font-weight:var(--font-weight-semi-bold);
+}
+
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=password],
+.foswikiInputField,
+select,
+.foswikiSelect,
+.foswikiTextarea, textarea {
+  margin: 0;
+  border:1px solid #bbb;
+  background-color: var(--color-background);
+  padding:4px;
+  font-size:var(--input-font-size);
+  max-width:100%;
+
+  padding:0.4em 0.5em;
+  color: var(--input-foreground);
+  background-color: var(--input-background); 
+  border: var(--input-border);
+  box-shadow: var(--input-box-shadow);
+}
+
+.foswikiTextarea:focus, textarea:focus,
+select:focus,
+.foswikiSelect:focus,
+input[type=search]:focus,
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=password]:focus,
+.foswikiInputField:focus {
+  border-color: var(--input-focus-color);
+}
+
+select,
+.foswikiSelect {
+  padding-left:2px;
+}
+select option,
+.foswikiSelect option {
+  padding: 0 5px;
+}
+
+button,
+input[type=button],
+input[type=submit],
+input[type=file]::file-selector-button,
+.foswikiSubmit,
+.foswikiButton {
+  font-size:var(--button-font-size);
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  text-decoration: none !important;
+  cursor: pointer;
+  text-align: center;
+
+  padding: 4px 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  user-select: none;
+  border-radius: 3px;
+
+  text-shadow:  0 1px #fff;
+  background: linear-gradient(#ffffff 0%,#dfdfdf 100%); 
+
+  border: 1px solid var(--button-border, #bcbcbc);
+  color: var(--button-foreground, #111);
+  background: var(--button-background-gradient);
+}
+
+.jqButton,
+a.jqButton:visited,
+a.jqButton:link {
+  color: var(--button-foreground, #111);
+}
+
+input[type=button]:active,
+input[type=submit]:active,
+input[type=file]::file-selector-button:active,
+.foswikiSubmit:active,
+.foswikiButton:active {
+  background: var(--button-active-background-gradient);
+  border-color:var(--button-active-border);
+  box-shadow: var(--button-active-box-shadow);
+  color: var(--button-active-foreground);
+}
+
+.jqButton.jqButtonDisabled,
+a.jqButton:link.jqButtonDisabled,
+a.jqButton:visited.jqButtonDisabled,
+select:disabled,
+button:disabled,
+input:disabled,
+textarea:disabled {
+  cursor:default !important;
+}
+.jqButtonDisabled .jqButtonText,
+.jqButtonDisabled .jqButtonIcon {
+  color: var(--button-disabled-foreground, #cfcfcf);
+}
+
+
+fieldset {
+  padding:0 0.5em 0.5em;
+  border:1px #ccc solid;
+}
+legend {
+  margin:0 1.3em;
+  font-size:100%;
+  color: var(--color-anchor);
+}
+
+fieldset .foswikiFormSteps {
+  border: 0;
+}
+
+.foswikiFormLegend,
+.foswikiFormDescription,
+.foswikiFormDescription a {
+  color:#828282;
+}
+
+.foswikiFormStep p {
+  margin:0.35em 0;
+}
+.foswikiFormOptions {
+  margin:0.35em 0;
+  line-height:160%;
+}
+.foswikiFormSteps .foswikiFormButtons {
+  margin-top:1.5384em; /* 20px */
+}
+.foswikiFormOptions .foswikiCheckbox {
+  margin:4px 3px 3px 3px;
+}
+.foswikiFormButtons input {
+  padding:3px 5px;
+}
+
+.foswikiErrorSummary,
+.error {
+  color: var(--color-error);
+}
+label.error,
+span.foswikiErrorSummary {
+  padding:0 0 0 1.0em;
+}
+div.error,
+div.foswikiErrorSummary {
+  padding:1em 0;
+}
+
+.foswikiInputField.error,
+select.error,
+input[type="password"].error,
+input[type="tel"].error,
+input[type="search"].error,
+input[type="text"].error {
+  border-color: var(--color-error);
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--input-foreground);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.inlineTitleEditor form {
+  display:flex;
+  align-items:center;
+}
+.inlineTitleEditor form input[type=text] {
+  flex-grow:1;
+  margin-right:0.5rem;
+  max-width:calc(100% - 6rem);
+}
+.inlineTitleEditor .TopicTitle input[type=text] {
+  font-size:var(--font-size-h3);
+}
+.inlineTitleEditor .inlineEditButtonBox {
+  display:flex;
+  gap:5px;
+}
+.inlineTitleEditor .inlineEditButtonBox button {
+  margin:0;
+}
+.inlineTitleEditor .inlineEditButton {
+  line-height:1;
+}
+.inlineTitleEditor .inlineEditButton .foswikiIcon {
+  font-size:var(--font-size-normal);
+}
+.inlineTitleEditor.inlineEditorLocked .foswikiTopicPrefix,
+.inlineTitleEditor.inlineEditorLocked .foswikiTopicExtra,
+.inlineTitleEditor.inlineEditorLocked .foswikiFormDescription {
+  display:none;
+}
+.foswikiRevision .inlineEditorLocked .inlineEditValueContainer {
+  margin:var(--margin) 0;
+  transition:none;
+}
+.foswikiRevisionSep {
+  margin:0 0.25em;
+}
+.foswikiRevision .inlineEditorLocked .foswikiRevisionSep,
+.foswikiRevision .inlineEditorLocked .inlineEditValueContainer > .foswikiIcon,
+.foswikiRevision .inlineEditorLocked .inlineEditValueContainer {
+  display:none;
+}
+.foswikiRevision .inlineEditorLocked .inlineEditValueContainer.inlineEditActive {
+  display:block;
+}
+.foswikiTopicInfo .inlineEditValueContainer:hover .inlineEditButton {
+  background:var(--color-background, #fff);
+}

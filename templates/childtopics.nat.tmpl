@@ -2,7 +2,7 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"Child topics"}%) %TMPL:P{"titlesep"}% %WIKITOOLNAME%%TMPL:END%
-%TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=childtopics;%QUERYSTRING%">%MAKETEXT{"Child topics"}%</a>%TMPL:END%
+%TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%" template="childtopics"}%&%QUERYSTRING%">%MAKETEXT{"Child topics"}%</a>%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
 %TMPL:DEF{"bottombar"}%%TMPL:END%
 %TMPL:DEF{"sidebar"}%%TMPL:END%
@@ -16,7 +16,7 @@
   "%MAKETEXT{"Close"}%" 
   class="foswikiRight simple"
   target="%BASEWEB%.%BASETOPIC%" 
-  icon="%TMPL:P{"CANCEL_ICON"}%"
+  icon="%TMPL:P{"icon::cancel::name"}%"
 }%
 <h1>%TMPL:P{"heading"}%</h1>
 %TMPL:P{"childtopicsjavascript"}%%{}%
@@ -26,10 +26,10 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="jqUIDialog foswikiFormSteps" data-modal="true" data-height="600" data-width="800" data-draggable="true" data-resizable="true" title="%TMPL:P{"heading"}%">
-  <div class="foswikiFormStep natChildTopicsContainer"></div>
+<div class="jqUIDialog" data-modal="true" data-height="600" data-width="930" data-draggable="true" data-resizable="true" data-destroy-on-close="true" title="%TMPL:P{"heading"}%">
+  <div class="natChildTopicsContainer"></div>
   %TMPL:P{"childtopicsjavascript"}%%{}%
-  <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Close"}%</a>
+  <a class="jqUIDialogButton jqUIDialogClose" data-icon="ui-icon-cancel">%MAKETEXT{"Close"}%</a>
 </div>
 </noautolink>%TMPL:END%
 
@@ -48,10 +48,10 @@
   }%"
   pattern="\((.*)\);(.*);(.*)"
   split="\n"
-  cols="3"
   header="%MAKETEXT{"[_1] topic(s) found" args="<span class='foswikiAlert'>$count</span>"}%$n$n $percntCALC{\"$SET(found,1)\"}$percnt"
   format="[[$3][$2]]"
   sort="nocase"
+  transliterate="%CHILDTOPICS_TRANSLITERATE{default="%MAKEINDEX_TRANSLITERATE{default=""}%"}%"
 }%%IF{"'%CALC{"$GET(found)"}%'=''"
   then="<span class='foswikiAlert'>%MAKETEXT{"No child topics"}%</span>"
 }%%{}%%TMPL:END%
@@ -66,11 +66,11 @@
   }%"
   pattern="\((.*)\);(.*);(.*)"
   split="\n"
-  cols="3"
   header="%MAKETEXT{"[_1] topic(s) found" args="<span class='foswikiAlert'>$count</span>"}%$n$n $percntCALC{\"$SET(found,1)\"}$percnt"
   format="[[$3][$2]]"
   sort="nocase"
   limit="%TMPL:P{"childtopics::limit"}%"
+  transliterate="%CHILDTOPICS_TRANSLITERATE{default="%MAKEINDEX_TRANSLITERATE{default=""}%"}%"
 }%
 %IF{"'%CALC{"$GET(found)"}%'=''"
   then="<span class='foswikiAlert'>%MAKETEXT{"No child topics"}%</span>"
@@ -89,7 +89,6 @@
   }%"
   pattern="\((.*)\);(.*);(.*)"
   split="\n"
-  cols="3"
   header="%MAKETEXT{"[_1] topic(s) found" args="<span class='foswikiAlert'>%CALC{"$GET(total)"}%</span>"}%
     $percntIF{\"%CALC{"$GET(total)"}%>%TMPL:P{"childtopics::limit"}%\"
       then=\"(%MAKETEXT{"showing only [_1]" args="%TMPL:P{"childtopics::limit"}%"}%)\"
@@ -97,10 +96,14 @@
   "
   format="[[$3][$2]]"
   sort="nocase"
+  transliterate="%CHILDTOPICS_TRANSLITERATE{default="%MAKEINDEX_TRANSLITERATE{default=""}%"}%"
 }%</noautolink>
 %IF{"'%CALC{"$GET(total)"}%'=''"
   then="<span class='foswikiAlert'>%MAKETEXT{"No child topics"}%</span>"
 }%%{}%%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"childtopicsjavascript"}%<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/childtopics.js'></script>%TMPL:END%
+%TMPL:DEF{"childtopicsjavascript"}%%ADDTOZONE{"script"
+  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/build/childtopics.js'></script>"
+  id="NATSKIN::CHILDTOPICS"
+}%%TMPL:END%

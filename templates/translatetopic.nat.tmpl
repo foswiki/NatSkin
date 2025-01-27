@@ -2,12 +2,12 @@
 %TMPL:DEF{"bodyclass"}%natTranslateBody%TMPL:END%
 %TMPL:DEF{"form"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
-%TMPL:DEF{"searchbox"}%%TMPL:END%
-%TMPL:DEF{"topicactions"}%%TMPL:END%
 %TMPL:DEF{"langswitcher"}%%TMPL:END%
 %TMPL:DEF{"bottombar"}%%TMPL:END%
 %TMPL:DEF{"metadata"}%%TMPL:END%
-%TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=translatetopic">%MAKETEXT{"Translate"}%</a>%TMPL:END%
+%TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%" template="translatetopic"}%">%MAKETEXT{"Translate"}%</a>%TMPL:END%
+
+%TMPL:DEF{"topicactions::contents"}%%USERACTIONS{"$action(close)"}%%TMPL:END%
 
 %{#################################################################}%
 %TMPL:DEF{"content"}%%{}%
@@ -17,7 +17,7 @@
 %{}%%TMPL:END%
 
 %{#################################################################}%
-%TMPL:DEF{"translate::title"}%<h1 ><noautolink>%MAKETEXT{"Translate [_1]" args="%GETTOPICTITLE%"}%</noautolink></h1>
+%TMPL:DEF{"translate::title"}%<h1 ><noautolink>%MAKETEXT{"Translate [_1]" args="%GETTOPICTITLE{encode="entity"}%"}%</noautolink></h1>
 %TMPL:END%
 
 %{#################################################################}%
@@ -27,7 +27,7 @@
 <ul class='foswikiNoBullets'>$n"
   format="<li>
     $percntLANGUAGES{\"$expand(preferences.CONTENT_LANGUAGE or '%DEFAULTLANGUAGE%')\" format=\"$icon\"}$percnt
-    <a href='%SCRIPTURLPATH{"view"}%/$web/$topic?template=translatetopic'>$expand(topictitle)</a>$percntIF{
+    <a href='$percntSCRIPTURLPATH{\"view\" topic=\"$web.$topic\" template=\"translatetopic\"}$percnt'>$expand(topictitle)</a>$percntIF{
       \"'$topic'='%BASETRANSLATION{default="%TOPIC%"}%'\" then=\", (%MAKETEXT{"base language"}%)\"
     }$percnt%{}%
     </li>"
@@ -39,11 +39,11 @@
 %{#################################################################}%
 %TMPL:DEF{"translate::form"}%%{}%
 %TMPL:P{"translate::form::start"}%%{}%
-%TMPL:P{"translate::form::language_step"}%%{}%
-%TMPL:P{"translate::form::checkbox_step"}%
-%TMPL:P{"translate::form::title_step"}%%{}%
-%TMPL:P{"translate::form::new_topic_step"}%%{}%
-%TMPL:P{"translate::form::topic_step"}%%{}%
+%TMPL:P{context="DeeplPluginEnabled" then="translate::form::languagestep::deepl" else="translate::form::languagestep"}%%{}%
+%TMPL:P{"translate::form::checkboxstep"}%
+%TMPL:P{"translate::form::titlestep"}%%{}%
+%TMPL:P{context="DeeplPluginEnabled" then="translate::form::fields"}%%{}%
+%TMPL:P{"translate::form::topicstep"}%%{}%
 %TMPL:P{"translate::form::list_existing"}%%{}%
 %TMPL:P{"translate::form::end"}%%{}%
 %{}%%TMPL:END%
@@ -56,35 +56,63 @@
 <div class='foswikiFormSteps'>%TMPL:END%
 
 %{#################################################################}%
-%TMPL:DEF{"translate::form::language_step"}%<div class='foswikiFormStep'>
+%TMPL:DEF{"translate::form::languagestep"}%<div class='foswikiFormStep'>
   <h4 >%MAKETEXT{"Select language"}%:</h4>
   <select class='jqSelect2' name='Set+CONTENT_LANGUAGE' data-width="23em">
-  <option></option>
-  %LANGUAGES{
-    format="<option value='$code' class='$code' $marker>$label_name</option>" 
-    marker="selected='selected'"
-    separator="$n  "
-    sort="label"
-  }%
+  <option value=''>&nbsp;</option>
+  %TMPL:P{"translate::form::languages"}%
   </select>
 </div>%TMPL:END%
 
+%TMPL:DEF{"translate::form::languages"}%%LANGUAGES{
+  format="<option value='$code' $marker>$label_name</option>" 
+  separator="$n  "
+  sort="label"
+}%%TMPL:END%
+
 %{#################################################################}%
-%TMPL:DEF{"translate::form::checkbox_step"}%<div class="foswikiFormStep">
+%TMPL:DEF{"translate::form::languagestep::deepl"}%%{}%
+<div class='foswikiFormStep'>
+%BEGINGRID%
+%BEGINCOL{"6"}%
+  <h4 >%MAKETEXT{"Source language"}%:</h4>
+  <select class='jqSelect2' id="source_lang" name='source_lang' data-width="23em">
+  <option value=''>&nbsp;</option>
+  %TMPL:P{"translate::form::languages::deepl" 
+    select="%CONTENT_LANGUAGE{default="%DEFAULTLANGUAGE%"}%"
+  }%
+  </select>
+%BEGINCOL{"6"}%
+  <h4 >%MAKETEXT{"Target language"}%:</h4>
+  <select class='jqSelect2' id="target_lang" name='Set+CONTENT_LANGUAGE' data-width="23em">
+  <option value=''>&nbsp;</option>
+  %TMPL:P{"translate::form::languages::deepl" select=""}%
+  </select>
+%ENDGRID%
+</div>%TMPL:END%
+
+%TMPL:DEF{"translate::form::languages::deepl"}%%DEEPL_LANGUAGES{
+  format="<option value='$code' $percntIF{\"'$code'='%select%'\" then=\"selected\"}$percnt>$name</option>" 
+  separator="$n  "
+  sort="name"
+}%%TMPL:END%
+
+%{#################################################################}%
+%TMPL:DEF{"translate::form::checkboxstep"}%<div class="foswikiFormStep">
 <p>
   <label>
-    <input class='foswikiCheckbox' type='radio' value='on' name='onlynewtopic' checked='checked' />%MAKETEXT{"Create a new translation"}%
+    <input class='foswikiRadioButton' type='radio' value='on' name='onlynewtopic' checked='checked' />%MAKETEXT{"Create a new translation"}%
   </label>
 </p>
 <p>
   <label>
-    <input class='foswikiCheckbox' type='radio' value='off' name='onlynewtopic' />%MAKETEXT{"Select existing translation"}%
+    <input class='foswikiRadioButton' type='radio' value='off' name='onlynewtopic' />%MAKETEXT{"Select existing translation"}%
   </label>
 </p>
 </div>%TMPL:END%
 
 %{#################################################################}%
-%TMPL:DEF{"translate::form::topic_step"}%<div class='foswikiFormStep reuse_topic' style='display:none'>
+%TMPL:DEF{"translate::form::topicstep"}%<div class='foswikiFormStep reuse_topic' style='display:none'>
   <h4 >%MAKETEXT{"Topic"}%:</h4>
   %RENDERFOREDIT{
     form="%SYSTEMWEB%.MoreFormfieldsPlugin"
@@ -101,25 +129,68 @@
 </div>%TMPL:END%
 
 %{#################################################################}%
-%TMPL:DEF{"translate::form::title_step"}%<div class='foswikiFormStep new_topic'>
+%TMPL:DEF{"translate::form::titlestep"}%<div class='foswikiFormStep new_topic'>
+%BEGINGRID%
+%BEGINCOL{"6"}%
   <h4 >%MAKETEXT{"Title"}%:</h4>
-  <input type='text' class='foswikiInputField topictitle' size='50' name='Set+TOPICTITLE' value='%ENCODE{"%GETTOPICTITLE{"%WEB%.%TOPIC%"}%" type="safe"}%' />
-  <div class="foswikiFormDescription">
-    %MAKETEXT{"Free form topic title in target language."}%
-  </div>
-</div>%TMPL:END%
-
-%{#################################################################}%
-%TMPL:DEF{"translate::form::new_topic_step"}%<div class='foswikiFormStep new_topic'>
+  <input type='text' class='foswikiInputField topictitle' size='50' name='TopicTitle' value='%ENCODE{"%GETTOPICTITLE{"%WEB%.%TOPIC%"}%" type="safe"}%' />
+%TMPL:P{context="DeeplPluginEnabled" then="translate::form::titlestep::translatebutton"}%%{}%
+%BEGINCOL{"6"}%
   <h4 >%MAKETEXT{"New topic"}%</h4>
   <input type='text' class='foswikiInputField topic' size='50' name='topic' value='%TOPIC%' />
   <p><label><input class='foswikiCheckbox wikify' type="checkbox" name="wikify" checked="checked" />%MAKETEXT{"Derive from title"}%</label></p>
+%ENDGRID%
 </div>%TMPL:END%
+
+%TMPL:DEF{"translate::form::titlestep::translatebutton"}%<p>
+    %BUTTON{"%MAKETEXT{"Translate"}%" 
+      class="simple jqDeepl" 
+      data_source_lang="#source_lang" 
+      data_target_lang="#target_lang" 
+      data_source=".topictitle"
+      icon="fa-language"
+    }%
+    %JQREQUIRE{"deepl"}%
+</p>%TMPL:END%
+
+%{#################################################################}%
+%TMPL:DEF{"translate::form::fields"}%<hr />
+<div class="foswikiFormStep">
+<h4>%MAKETEXT{"Translate formfields"}%:</h4>
+<input type='hidden' name='deepl_translate' value='on' />
+<input type='hidden' name='translate_fields' value='text, attachments' />
+<label><input type='checkbox' class='foswikiCheckbox' id='selectAllFormfields'><i>%TRANSLATE{"select all"}%</i></label>
+
+%RENDERFORMDEF{
+  topic="%BASEWEB%.%BASETOPIC%"
+  separator="$n"
+  exclude="^(TopicTitle)$"
+  excludeattr="h"
+  includetype="text|natedit"
+  format="<label style='display:block'>
+      <input class='foswikiCheckbox' type='checkbox' value='$name' name='translate_fields' $percntIF{
+          \"'%TMPL:P{"translate::form::fields::default"}%'=~'\b$name\b'\"
+          then=\"checked='checked'\"
+      }$percnt />$name
+    </label>"
+}%
+<script>
+jQuery(function($) {
+  $("#selectAllFormfields").on("change", function() {
+    var $this = $(this);
+    $(this.form).find("input[name='translate_fields']").prop("checked", $this.is(":checked"));
+  });
+});
+</script>
+</div>
+%TMPL:END%
+
+%TMPL:DEF{"translate::form::fields::default"}%TopicTitle, Summary%TMPL:END%
 
 %{#################################################################}%
 %TMPL:DEF{"translate::form::end"}%<div class='foswikiFormStep'>
-    %BUTTON{"%MAKETEXT{"Submit"}%" icon="%TMPL:P{"OK_ICON"}%" type="submit"}%
-    %BUTTON{"%MAKETEXT{"Cancel"}%" icon="%TMPL:P{"CANCEL_ICON"}%" target="%WEB%.%TOPIC%"}%
+    %BUTTON{"%MAKETEXT{"Submit"}%" icon="%TMPL:P{"icon::ok::name"}%" type="submit"}%
+    %BUTTON{"%MAKETEXT{"Cancel"}%" icon="%TMPL:P{"icon::cancel::name"}%" target="%WEB%.%TOPIC%"}%
   </div>
 </div>
 </form>%TMPL:END%
@@ -130,7 +201,7 @@
   requires="JQUERYPLUGIN::WIKIWORD" 
   id="translate" 
   text="<literal>
-<script class='$id' type='text/javascript'>
+<script class='$id'>
 'use strict';
 jQuery(function($) {
   var $form = $('form[name=translate]'),
@@ -142,7 +213,10 @@ jQuery(function($) {
   function updateWikify() {
     if ($wikify.is(':checked')) {
       $target.prop('disabled', true);
-      $target.wikiword({source: $source});
+      $target.wikiword({
+        transliterate: true,
+        source: $source
+      });
     } else {
       $target.prop('disabled', false);
       $source.unbind();
@@ -160,8 +234,8 @@ jQuery(function($) {
     }
   }
 
-  $onlyNew.change(updateForm);
-  $wikify.change(updateWikify);
+  $onlyNew.on('change', updateForm);
+  $wikify.on('change', updateWikify);
 
   $form.submit(function() {
     if ($target.parent().is(':visible')) {

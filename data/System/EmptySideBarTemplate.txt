@@ -1,4 +1,0 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1" version="1"}%
-%META:TOPICPARENT{name="MySideBar"}%
-%META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%
-%META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

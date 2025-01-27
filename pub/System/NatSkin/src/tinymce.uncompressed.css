@@ -1,0 +1,105 @@
+.mceContentBody,
+.mce-content-body {
+  font-size: var(--tinymce-font-size);
+  font-family: var(--tinymce-font-family);
+  line-height: var(--tinymce-line-height);
+  font-weight: normal;
+  color: var(--tinymce-foreground);
+  background: var(--tinymce-background);
+  margin:0;
+  padding:0;
+}
+.ui-natedit .tox .tox-edit-area__iframe {
+  background-color:transparent;
+}
+.ui-natedit .tox-tinymce {
+  padding:4px 6px;
+}
+.ui-natedit .tox-tinymce,
+.mce-tinymce .mce-edit-area,
+.mce-tinymce.mce-panel {
+  border-color: var(--tinymce-border);
+  background-color: var(--tinymce-background);
+}
+.mceContentBody .WYSIWYG_PROTECTED,
+.mce-content-body .WYSIWYG_PROTECTED {
+  background: var(--tinymce-protected-background);
+  color: var(--tinymce-protected-foreground);
+}
+.mceContentBody .WYSIWYG_PROTECTED,
+.mceContentBody .WYSIWYG_STICKY, 
+.mceContentBody .WYSIWYG_LITERAL, 
+.mceContentBody .TMLverbatim, 
+.mceContentBody .WYSIWYG_TT,
+.mce-content-body .WYSIWYG_PROTECTED,
+.mce-content-body .WYSIWYG_STICKY, 
+.mce-content-body .WYSIWYG_LITERAL, 
+.mce-content-body .TMLverbatim, 
+.mce-content-body .WYSIWYG_TT {
+  font-family: var(--font-family-regular);
+}
+
+.mce-content-body table,
+.mceContentBody table {
+  background: var(--table-background);
+  color: var(--table-foreground);
+  border:1px solid var(--table-border);
+  font-size:0.923em;
+  line-height:1.5em;
+  margin:1px 0 1.3076em;
+}
+
+.mceContentBody th,
+.mceContentBody td,
+.mce-content-body th,
+.mce-content-body td {
+  padding:0.6em;
+  border:1px solid var(--table-border);
+  font-family: var(--tinymce-font-family);
+}
+
+.mceContentBody table th,
+.mce-content-body table th {
+  background: var(--table-header-background);
+  color: var(--table-header-foreground);
+  font-weight: bold;
+}
+.mceContentBody b, 
+.mceContentBody strong,
+.mce-content-body b, 
+.mce-content-body strong {
+  font-weight: bold;
+  text-decoration:none;
+}
+.mceContentBody .WYSIWYG_LINK,
+.mce-content-body .WYSIWYG_LINK {
+  color: var(--color-anchor);  
+}
+.mceContentBody .WYSIWYG_LINK:hover,
+.mce-content-body .WYSIWYG_LINK:hover {
+  color: var(--color-hover-foreground);
+  background-color: var(--color-hover-background);
+}
+.mceContentBody p,
+.mce-content-body p {
+  margin-bottom:0;
+}
+.mceContentBody p:first-child,
+.mce-content-body p:first-child {
+  margin-top:0;
+}
+
+.mceContentBody *[data-mce-selected="inline-boundary"],
+.mce-content-body *[data-mce-selected="inline-boundary"] {
+  background: var(--tinymce-selected-background);
+  color: var(--tinymce-selected-foreground);
+}
+
+.mce-content-body > h2:first-child {
+  margin-top:0;
+}
+.mce-content-body p:has(br[data-mce-bogus="1"]),
+.mce-content-body p.WYSIWYG_NBNL:has(br) {
+  margin:0;
+  height:0;
+}

@@ -1,6 +1,6 @@
 %TMPL:DEF{"defaultbodyclass"}%natBody%TMPL:END%
-%TMPL:DEF{"body"}%<body id="body" class="%TMPL:P{"body::class"}%">%TMPL:P{"defaultbody"}%%RENDERZONE{"body"}%</body>%TMPL:END%
-%TMPL:DEF{"body::class"}%foswikiNoJs %TMPL:P{"defaultbodyclass"}%%IF{
+%TMPL:DEF{"body"}%<body id="body" class="%TMPL:P{"body::class"}%" data-multi-file-upload='%IF{"context SUPPORTS_MULTIUPLOAD" then="true" else="false"}%'>%TMPL:P{"defaultbody"}%%RENDERZONE{"body"}%</body>%TMPL:END%
+%TMPL:DEF{"body::class"}%foswikiNoJs %TMPL:P{"defaultbodyclass"}%%TMPL:P{"body::class::toggle"}%%IF{
     "context isadmin" 
     then=" natIsAdminBody"
   }%%IF{
@@ -15,36 +15,53 @@
     then=" natBodyAuthenticated" 
     else=" natBodyNotAuthenticated"
   }%%IF{
-    "context 'natskin_sidebar_left'" 
+    "(context 'natskin_sidebar_left' and '%TMPL:P{"body::layout"}%'='') or '%TMPL:P{"body::layout"}%'=~'\bleft\b'" 
     then=" natBodyLeft"
   }%%IF{
-    "context 'natskin_sidebar_right'" 
+    "(context 'natskin_sidebar_right' and '%TMPL:P{"body::layout"}%'='') or '%TMPL:P{"body::layout"}%'=~'\bright\b'" 
     then=" natBodyRight"
   }%%IF{
-    "context 'natskin_sidebar_both'" 
+    "(context 'natskin_sidebar_both' and '%TMPL:P{"body::layout"}%'='') or '%TMPL:P{"body::layout"}%'=~'\bboth\b'" 
     then=" natBodyBoth"
   }%%IF{
-    "context 'natskin_sidebar_off'" 
+    "(context 'natskin_sidebar_off' and '%TMPL:P{"body::layout"}%'='') or '%TMPL:P{"body::layout"}%'=~'\boff\b'" 
     then=" natBodyOff"
   }%%IF{
-    "context 'natskin_layout_fluid'" 
+    "(context 'natskin_layout_sticky' and '%TMPL:P{"body::layout"}%'='') or '%TMPL:P{"body::layout"}%'=~'\bsticky\b'" 
+    then=" natBodySticky"
+  }%%IF{
+    "(context 'natskin_layout_fullscreen' and '%TMPL:P{"body::layout"}%'='') or '%TMPL:P{"body::layout"}%'=~'\bfullscreen\b'" 
+    then=" natBodyFullscreen"
+  }%%IF{
+    "(context 'natskin_layout_fluid' and '%TMPL:P{"body::layout"}%'='') or '%TMPL:P{"body::layout"}%'=~'\bfluid\b'" 
     then=" natBodyFluid"
   }%%IF{
-    "context 'natskin_layout_fixed'" 
+    "(context 'natskin_layout_fixed' and '%TMPL:P{"body::layout"}%'='') or '%TMPL:P{"body::layout"}%'=~'\bfixed\b'" 
     then=" natBodyFixed"
   }%%IF{
-    "context 'natskin_layout_bordered'" 
+    "(context 'natskin_layout_bordered' and '%TMPL:P{"body::layout"}%'='')  or '%TMPL:P{"body::layout"}%'=~'\bbordered\b'" 
     then=" natBodyBordered"
+  }%%IF{
+    "context 'natskin_topbar_off'"
+    then=" natBodyTopBarOff"
+    else=" natBodyTopBarOn"
+  }%%IF{
+    "context TableOfContentsPluginEnabled and '%DISPLAYTOCINSIDEBAR{default="off"}%'!='off' and not context natskin_sidebar_off" 
+    then=" natBodySideBarSticky"
   }% %TMPL:P{"bodyclass"}% natBodyWeb_%WEB% natBodyTopic_%TOPIC%%TMPL:END%
 
+%TMPL:DEF{"body::class::toggle"}%%IF{
+  "context 'natskin_sidebar_toggle'"
+  then=" natBodyNavToggleEnabled"
+}%%TMPL:END%
 
 %{ container definitions --------------------------------------------------- }%
 %TMPL:DEF{"contentheader"}%<div class="natMainHeaderContents clearfix">%TMPL:P{"contentheader::contents"}%</div>%TMPL:END%
 %TMPL:DEF{"content_container"}%<div class="natMainContents clearfix" id="natMainContents">%TMPL:P{"content"}%<span id="ContentBottom"></span></div>%TMPL:END%
 %TMPL:DEF{"contentfooter"}%<div class="natMainFooterContents">%TMPL:P{"contentfooter::contents"}%</div>%TMPL:END%
-%TMPL:DEF{"breadcrumbs"}%<div class='natBreadCrumbs'> %TMPL:P{"breadcrumbs::title"}% %TMPL:P{"breadcrumbs::contents"}%</div>
+%TMPL:DEF{"breadcrumbs"}%<div class='natBreadCrumbs'> %TMPL:P{"breadcrumbs::title"}% %TMPL:P{"breadcrumbs::contents"}%</div>%TMPL:END%
 %TMPL:DEF{"contentheader::contents"}%%TMPL:P{"breadcrumbs"}%%TMPL:END%
-%TMPL:DEF{"webmenu"}%<div class="natWebMenu clearfix foswikiContents" name="webmenu::contents" reload="web">
+%TMPL:DEF{"webmenu"}%<div class="natWebMenu clearfix">
 %TMPL:P{"webmenu::contents"}%%{}%
 </div>%TMPL:END%
 
@@ -65,17 +82,19 @@
   then="<div class='natPageCacheBanner'>
           %MAKETEXT{"This page was cached on [_1]." args="%SERVERTIME%"}%
           %IF{"context authenticated" 
-            then="%MAKETEXT{"Get a fresh version <a href='[_1]' rel='nofollow'>here</a>." args="%SCRIPTURLPATH{view}%/%BASEWEB%/%BASETOPIC%?refresh=cache"}%"
+            then="%MAKETEXT{"Get a fresh version <a href='[_1]' rel='nofollow'>here</a>." args="%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%" refresh="cache"}%"}%"
           }%</div>"
 }%%TMPL:END%
 
 %TMPL:DEF{"cookieinfo"}%<div class='natCookieInfo'>
   <div class='natCookieInfoContents'>
-    %MAKETEXT{"This website is using cookies. <a href='[_1]' target='_blank'>More info</a>." args="%TMPL:P{"cookieinfo::url"}%"}% 
-    <a class="natCookieInfoOK">%MAKETEXT{"That's Fine"}%</a>
+    %TMPL:P{"cookieinfo::message"}%<!-- -->
+    %TMPL:P{"cookieinfo::button"}%<!-- -->
   </div>
 </div>%TMPL:END%
 
+%TMPL:DEF{"cookieinfo::message"}%%NATSKIN_COOKIEINFO_MESSAGE{default="%MAKETEXT{"This website is using cookies. <a href='[_1]' target='_blank'>More info</a>." args="%TMPL:P{"cookieinfo::url"}%"}%"}%%TMPL:END%
+%TMPL:DEF{"cookieinfo::button"}%<a class="natCookieInfoOK">%MAKETEXT{"That's Fine"}%</a>%TMPL:END%
 %TMPL:DEF{"cookieinfo::url"}%%NATSKIN_COOKIEINFO_URL{default="http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm"}%%TMPL:END%
 
 %TMPL:DEF{"sidebar_container"}%<div class="natSideBar">
@@ -93,7 +112,7 @@
 %TMPL:DEF{"sidebars"}%%TMPL:P{"sidebar_container"}%%TMPL:P{context="natskin_sidebar_both" then="rightsidebar_container"}%%TMPL:END%
 
 %{ columns ----------------------------------------------------------------- }%
-%TMPL:DEF{"main"}%<div class="natMiddle foswikiContents" name="main::contents" page-in-effect="%TMPL:P{"pageineffect"}%" page-out-effect="%TMPL:P{"pageouteffect"}%">
+%TMPL:DEF{"main"}%<div class="natMiddle">
 %TMPL:P{"main::contents"}%%{}%
 </div>%TMPL:END%
 
@@ -107,18 +126,18 @@
 </div>%TMPL:END%
 
 %{ body contents ----------------------------------------------------------- }%
-%TMPL:DEF{"beforebodycontents"}%%TMPL:P{"broadcast"}%%TMPL:P{"flashnote"}%%TMPL:P{"toppanel"}%%TMPL:END%
+%TMPL:DEF{"beforebodycontents"}%%TMPL:P{"broadcast"}%%TMPL:P{"toppanel"}%%TMPL:END%
 
 %TMPL:DEF{"bodycontents"}%<div class="natBodyContents" id="PageTop">
-%TMPL:P{"topbar"}%%{}%
+%TMPL:P{context="natskin_topbar_on" then="topbar"}%%{}%
 %TMPL:P{context="natskin_menu_on" then="webmenu"}%%{}%
 %TMPL:P{"main"}%
-%TMPL:P{"bottombar"}%%{}%
+%TMPL:P{context="natskin_layout_fullscreen" else="bottombar"}%%{}%
 %TMPL:P{"scrolltop"}%%{}%
 <span id="PageBottom"></span>
 </div>%TMPL:END%
 
-%TMPL:DEF{"afterbodycontents"}%%WEBCOMPONENT{"HtmlBottom"}%%TMPL:END%
+%TMPL:DEF{"afterbodycontents"}%%WEBCOMPONENT{"HtmlBottom"}%%TMPL:P{"flashnote"}%%TMPL:END%
 
 %{ assembly stage ---------------------------------------------------------- }%
 %TMPL:DEF{"defaultbody"}%%TMPL:P{"beforebodycontents"}%%TMPL:P{"bodycontents"}%%TMPL:P{"afterbodycontents"}%%TMPL:END%

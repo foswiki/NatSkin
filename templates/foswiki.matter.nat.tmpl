@@ -1,13 +1,8 @@
 %TMPL:INCLUDE{"foswiki"}%
-%TMPL:DEF{"useractions"}%%USERACTIONS{
-  guest="<div class='natUserActions natGuestGreeter'>$login$sep$register</div>"
-  format="<div class='natUserActions natUserGreeter'>$new$sep$account</div>"
-  separator=""
-}%%TMPL:END%
 
-%TMPL:DEF{"ACCOUNT_ACTION"}%<a class='natUserAction natAccountAction' title='%MAKETEXT{"Visit your profile page"}%' href='%SCRIPTURLPATH{"view"}%/%USERSWEB%/%WIKINAME%'>%TMPL:P{"user::photo" 
+%TMPL:DEF{"ACCOUNT"}%%TMPL:END%
+%TMPL:DEF{"ACCOUNT_ACTION"}%<span class='natUserAction natAccountAction'>%TMPL:P{"user::photo" 
   web="%USERSWEB%" 
   topic="%WIKINAME%"
   size="32x32>^"
-}%$label</a>%TMPL:END%
-
+}%$label</span>%TMPL:END%

@@ -1,10 +1,8 @@
 %TMPL:INCLUDE{"page"}%%{}%
-%TMPL:INCLUDE{"changesbody"}%%{}%
-%TMPL:INCLUDE{"changessidebar"}%%{}%
-%TMPL:INCLUDE{"changestopicactions"}%%{}%
+
 %TMPL:DEF{"bodyclass"}%natChangesBody%TMPL:END%
 %TMPL:DEF{"title"}%%TOPIC% (%MAKETEXT{"changes"}%) %TMPL:P{"titlesep"}% %WIKITOOLNAME%%TMPL:END%
-%TMPL:DEF{"meta"}% %HTTP_EQUIV_ON_VIEW% %TMPL:END%
+
 %TMPL:DEF{"content"}%%{}%
 <table class="natSearchTable" cellpadding="0" cellspacing="0" width=100%>
 <tr>
@@ -17,9 +15,9 @@
 <!-- debug: before repeat -->%REPEAT%<!-- debug: after repeat -->  
 <tr>
   <th width="50%">
-    <a href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPICNAME%"><b>%TOPICNAME%</b></a>
+    <a href="%SCRIPTURLPATH{"view" topic="%WEB%.%TOPICNAME%"}%"><b>%TOPICNAME%</b></a>
   </th><th width="30%">
-    <a rel="nofollow" href="%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPICNAME%?type=last">%TIME%</a> - %REVISION%
+    <a rel="nofollow" href="%SCRIPTURLPATH{"diff"}%/%WEB%/%TOPICNAME%?type=last">%TIME%</a> - %REVISION%
   </th><th width="20%">
     %AUTHOR%
   </th>

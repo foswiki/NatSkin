@@ -1,18 +1,19 @@
-%TMPL:DEF{"topbar"}%%{}%
-<a href="#" class="natNavToggle fa fa-bars"></a>
-<div class="natTopBar clearfix">%TMPL:P{"langswitcher"}%%TMPL:P{"topbar::contents"}%</div>
-%{}%%TMPL:END%
+%TMPL:INCLUDE{"topbar"}%
+
+%TMPL:DEF{"topbar"}%%TMPL:P{"navtoggle"}%<div class="natTopBar clearfix">%TMPL:P{"langswitcher"}%%TMPL:P{"topbar::contents"}%</div>%TMPL:END%
 
 %TMPL:DEF{"topbar::contents"}%<div class="natTopBarContents clearfix">
 <div class="natWebTitle">%TMPL:P{"logo"}%</div>
+<div class="natWebMenuSpacer">
 %TMPL:P{context="natskin_menu_on" then="webmenu"}%%{}%
 %TMPL:P{"paneltoggle"}%%{}%
+</div>
 %TMPL:P{"useractions"}%%{}%
 </div>%TMPL:END%
 
 %TMPL:DEF{"paneltoggle"}%<div class="natPanelToggle">
-<a class="natPanelToggleSearch">%JQICON{"fa-search"}% %MAKETEXT{"Search"}%</a>
-<a class="natPanelToggleClose">%JQICON{"fa-times"}% %MAKETEXT{"Close"}%</a>
+<a class="natPanelToggleSearch">%TMPL:P{"icon::search"}% <span>%MAKETEXT{"Search"}%</span></a>
+<a class="natPanelToggleClose">%TMPL:P{"icon::close"}% <span>%MAKETEXT{"Close"}%</span></a>
 </div>%TMPL:END%
 
 %TMPL:DEF{"toppanel"}%<div class="natTopPanel" style="display:none">

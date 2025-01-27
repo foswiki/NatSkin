@@ -1,11 +1,17 @@
 TARGET= \
-  customato.css \
-  customato-base.css \
-  customato-colors.css \
-  blue.css 
+  $(BUILD_DIR)/customato.css \
+  $(BUILD_DIR)/blue.css 
+
+CUSTOMATOSTYLE_SOURCE=\
+  $(SRC_DIR)/base.uncompressed.css \
+  $(SRC_DIR)/colors.uncompressed.css \
+  $(SRC_DIR)/vars.uncompressed.css 
 
 -include ../NatSkin/Makefile.include
 
-customato.uncompressed.css: customato-base.uncompressed.css customato-colors.uncompressed.css
-	@echo creating $@ from $^; echo "/* WARNING: THIS IS A DERIVED FILE. DON'T MODIFIY. */" > $@; $(CAT) $^ >> $@
+clean: 
+	rm -f $(TARGET) *.gz *jslint igp_*
 
+$(BUILD_DIR)/customato.uncompressed.css: $(CUSTOMATOSTYLE_SOURCE)
+	@echo generating $@
+	@cat $^ > $@

@@ -1,49 +1,193 @@
-%TMPL:DEF{"user::photo::exts"}%jpe?g|gif|png|bmp|webp|svg|JE?PG|GIF|PNG|BMP|WEBP|SVG%TMPL:END%
 %TMPL:DEF{"user::photo::size"}%32x32>%TMPL:END%
 %TMPL:DEF{"user::photo::filter"}%none%TMPL:END%
 %TMPL:DEF{"user::photo::formfield"}%Photo%TMPL:END%
-%TMPL:DEF{"user::photo::default"}%%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/images/nobody.gif%TMPL:END%
+%TMPL:DEF{"user::photo::default"}%%GENIMAGE{
+  text="%IF{"istopic '%web%.%topic%'"
+          then="$percntGETTOPICTITLE{\"%web%.%topic%\"}$percnt"
+          else="%topic%"
+       }%"
+  format="$url"
+  from="initials"
+}%%TMPL:END%
+%TMPL:DEF{"user::tooltip::photo::size"}%%NATSKIN_USERTOOLTIP_SIZE{default="60x90>"}%%TMPL:END%
+%TMPL:DEF{"user::tooltip"}%%TMPL:P{"user::tooltip::default"}%%TMPL:END%
+%TMPL:DEF{"user::tooltip::formfields"}%%NATSKIN_USERTOOLTIP_FORMFIELDS{default="Profession,Address,Telephone,Email"}%%TMPL:END%
 
-%TMPL:DEF{"user::photo::url"}%%IF{
+%TMPL:DEF{"user::photo::url"}%%TMPL:P{context="PluggableAuthEnabled" 
+  then="user::photo::url::pauth" 
+  else="user::photo::url::impl"
+  web="%web%"
+  topic="%topic%"
+}%%TMPL:END%
+
+%TMPL:DEF{"user::photo::url::pauth"}%%IF{
+  "'%USERINFO{"%topic%" format="$picture"}%'=''"
+  then="$percntTMPL:P{\"user::photo::url::impl\" 
+          topic=\"%topic%\" 
+          web=\"%web%\"
+        }$percnt"
+  else="%USERINFO{"%topic%" format="$picture"}%"
+}%%TMPL:END%
+
+%TMPL:DEF{"user::photo::url::impl"}%%IF{
   "'%web%.%topic%'/%TMPL:P{"user::photo::formfield"}%"
   then="%PUBURLPATH%/%web%/%topic%/$percntFORMFIELD{\"%TMPL:P{"user::photo::formfield"}%\" topic=\"%web%.%topic%\"}$percnt"
   else="$percntATTACHMENTS{
     \"%web%.%topic%\"
-    name=\".*%TMPL:P{"user::photo::exts"}%\" 
-    warn=\"off\" 
+    name=\".*%TMPL:P{"image::exts"}%\" 
     limit=\"1\" 
-    attr=\"t\"
-    hidenull=\"off\"
+    attr=\".*t.*\"
     format=\"%PUBURLPATH%/%web%/%topic%/$name\"
-    nullformat=\"%TMPL:P{"user::photo::default"}%\"
+    nullformat=\"$dollarpercntTMPL:P{\\"user::photo::url::default\\"
+		    web=\\"%web%\\"
+		    topic=\\"%topic%\\"
+		}$dollarpercnt\"
   }$percnt"
 }%%TMPL:END%
 
-%TMPL:DEF{"user::photo"}%%IMAGE{
+%TMPL:DEF{"user::photo::url::default"}%%ATTACHMENTS{
+    "%web%.%topic%"
+    name=".*%TMPL:P{"image::exts"}%" 
+    limit="1"
+    sort="comment:name"
+    format="%PUBURLPATH%/%web%/%topic%/$name"
+    nullformat="$percntTMPL:P{\"user::photo::default\"
+      web=\"%web%\"
+      topic=\"%topic%\"
+    }$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"user::photo"}%%TMPL:P{context="ImagePluginEnabled" 
+  then="user::photo::image" 
+  else="user::photo::genimage"
+  web="%web%"
+  topic="%topic%"
+  crop="%crop%"
+  filter="%filter%"
+  align="%align%"
+  size="%size%"
+}%%TMPL:END%
+
+%TMPL:DEF{"user::photo::image"}%%IMAGE{
     "%TMPL:P{"user::photo::url" 
       web="%web%" 
       topic="%topic%" 
-      size="%TMPL:P{"user::photo::size"}%"
     }%"
     type="plain"
+    class="natUserPhoto"
     align="%IF{"'%align%'=~'^(left|right)$'" then="%align%"}%"
-    size="%TMPL:P{"user::photo::size"}%"
-    filter="%TMPL:P{"user::photo::filter"}%"
+    size="%IF{"'%size%'=~'^%size'" then="%TMPL:P{"user::photo::size"}%" else="%size%"}%"
+    filter="%IF{"'%filter%'=~'^%filter'" then="%TMPL:P{"user::photo::filter"}%" else="%filter%"}%"
+    crop="%IF{"'%crop%'=~'^%crop'" then="on" else="%crop%"}%"
+    title=""
+}%%TMPL:END%
+
+%TMPL:DEF{"user::photo::genimage"}%%GENIMAGE{
+  text="%IF{"istopic '%web%.%topic%'"
+          then="$percntGETTOPICTITLE{\"%web%.%topic%\"}$percnt"
+          else="%topic%"
+       }%"
+  from="initials"
+  class="natUserPhoto"
+  size="%IF{"'%size%'=~'^%size'" then="%TMPL:P{"user::photo::size"}%" else="%size%"}%"
+}%%TMPL:END%
+
+%{ used by user formfield of MoreFormfieldsPlugin }%
+%TMPL:DEF{"user::photo::thumbnail::url"}%%SCRIPTURLPATH{"rest"}%/ImagePlugin/process?topic=%web%.%topic%;file=%TMPL:P{"user::photo::url" 
+    web="%web%" 
+    topic="%topic%" 
+  }%;size=%size%;crop=on;filter=%TMPL:P{"user::photo::filter"}%%TMPL:END%
+
+%TMPL:DEF{"user::tooltip::default"}%<div class='natUserTooltip'>
+<div class='natUserTooltipContent'>
+<h3>%IF{"istopic '%WEB%.%TOPIC%'" then="[[%WEB%.%TOPIC%]]" else="<nop>%TOPIC%"}%</h3>
+%TMPL:P{"user::tooltip::default::format"}%
+</div>
+%TMPL:P{"user::tooltip::photo"
+  web="%WEB%"
+  topic="%TOPIC%"
+}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"user::tooltip::default::format"}%%RENDERFORDISPLAY{
+  fields="%TMPL:P{"user::tooltip::formfields"}%"
+  format=" $value "
+  separator="<br />"
+  Email_value="%USERINFO{"%TOPIC%" format="$emails"}%"
+  hideempty="on"
+}%%TMPL:END%
+
+%TMPL:DEF{"user::tooltip::photo"}%%IMAGE{
+    "%TMPL:P{"user::photo::url" 
+      web="%web%" 
+      topic="%topic%" 
+    }%"
+    type="plain"
+    size="%TMPL:P{"user::tooltip::photo::size"}%"
     crop="on"
     title=""
 }%%TMPL:END%
 
-%TMPL:DEF{"user::photo::thumbnail::url"}%%IF{
-  "'%web%.%topic%'/%TMPL:P{"user::photo::formfield"}%"
-  then="%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=%web%.%topic%;file=$percntFORMFIELD{\"%TMPL:P{"user::photo::formfield"}%\" topic=\"%web%.%topic%\"}$percnt;size=%size%;crop=on;filter=%TMPL:P{"user::photo::filter"}%"
-  else="$percntATTACHMENTS{
-    \"%web%.%topic%\"
-    name=\".*%TMPL:P{"user::photo::exts"}%\" 
-    warn=\"off\" 
-    limit=\"1\" 
-    attr=\"t\"
-    hidenull=\"off\"
-    format=\"%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=%web%.%topic%;file=$name;size=%size%;crop=on;filter=%TMPL:P{"user::photo::filter"}%\"
-    nullformat=\"%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=%SYSTEMWEB%.JQueryPlugin;file=%TMPL:P{"user::photo::default"}%;size=%size%;crop=on;filter=%TMPL:P{"user::photo::filter"}%\"
-  }$percnt"
+%TMPL:DEF{"user::tooltip::ldap"}%<div class='natUserTooltip'>
+<div class='natUserTooltipContent'>
+<h3>[[%WEB%.%TOPIC%]]</h3>
+%TMPL:P{"user::tooltip::ldap::format"}%
+</div>
+%TMPL:P{"user::tooltip::photo"
+  web="%WEB%"
+  topic="%TOPIC%"
+}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"ifdefined"}%$percntIF{\"'%attr%'!=''\" then=\"%format% <br />\" else=\"<!-- -->\"}$percnt%TMPL:END%
+
+%TMPL:DEF{"user::tooltip::ldap::format"}%%LDAP{
+    "(sAMAccountName=%USERINFO{"%BASETOPIC%" format="$username"}%)" 
+   limit="1"
+   clear="$department,$telephoneNumber,$title,$mail"
+   format="<!-- -->
+%TMPL:P{"ifdefined" attr="$title" format="$title"}%
+%TMPL:P{"ifdefined" attr="$department" format="$department"}%
+%TMPL:P{"ifdefined" attr="$mail" format="$mail"}%
+%TMPL:P{"ifdefined" attr="$telephoneNumber" format="<a href='tel:$telephoneNumber'>$telephoneNumber</a>"}%
+<!-- -->"
 }%%TMPL:END%
+
+%TMPL:DEF{"user::remove::title"}%%MAKETEXT{"Remove user account"}%%TMPL:END%
+
+%TMPL:DEF{"user::remove::dialog"}%<noautolink>
+<div class="jqUIDialog" data-width="500" data-modal="true" data-draggable="true" data-destroy-on-close="true" title="%TMPL:P{"user::remove::title"}%">
+  <form class='jqAjaxForm' id="removeUserForm" action="%SCRIPTURLPATH{"manage" topic="%WEB%.%TOPIC%"}%" method="post" data-message="%MAKETEXT{"Removing ..."}%">
+    <input type="hidden" name="topicPrefix" value="DeletedUser" />
+    <input type="hidden" name="action" value="deleteUserAccount" />
+    <input type="hidden" name="user" value="%TOPIC%" />
+    <input type="hidden" name="removeTopic" value="on" />
+    <input type="hidden" name="redirect" value="%WEBLOGOURL%" />
+    %MAKETEXT{"Are you sure that you want to remove this user account:"}%
+    %TMPL:P{"user::photo"
+      web="%WEB%"
+      topic="%TOPIC%"
+      align="right"
+    }%%{}%
+    <p class="foswikiBold foswikiCenter">
+      %USERINFO{"%WEB%.%TOPIC%" format="$wikiname <nobr>($username)</nobr>"}%
+    </p>
+    <a class="jqUIDialogButton jqUIDialogSubmit" data-icon="ui-icon-trash">%MAKETEXT{"Yes, remove"}%</a> 
+    <a class="jqUIDialogButton jqUIDialogClose" data-icon="ui-icon-cancel">%MAKETEXT{"No, thanks"}%</a> 
+  </form>
+</div>%JQREQUIRE{"ajaxform"}%
+<script>
+jQuery(function($) {
+  $("#removeUserForm").on("beforeSubmit", function() {
+    $(this).parent().dialog("destroy");
+  }).on("success", function() {
+    $.pnotify({
+      type: "success",
+      title: "%MAKETEXT{"Success"}%",
+      text: "%MAKETEXT{"Account has been removed"}%"
+    });
+  });
+});
+</script>
+</noautolink>%TMPL:END%
+

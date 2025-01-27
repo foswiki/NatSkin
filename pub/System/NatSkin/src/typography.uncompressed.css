@@ -1,0 +1,284 @@
+html {
+  font-family: var(--font-family-regular);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background: var(--color-background);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  font-variation-settings: var(--font-variation-settings);
+}
+
+.showgrid {
+  --h-color: var(--color-primary-lighter-5);
+  --v-color: #fbe1f0;
+
+  background-position: 0 0;
+  background-image: 
+    repeating-linear-gradient( 
+      var(--h-color) 0 1px, 
+      transparent 1px calc(var(--font-baseline) * 1px)
+    ),
+    repeating-linear-gradient(to right, 
+      var(--v-color) 0 1px,
+      transparent 0 calc(25% - 0.25px)
+    );
+}
+:root[data-theme='dark'] .showgrid {
+  --h-color: var(--color-secondary-darker-3);
+  --v-color: #6b4c5e;
+}
+
+pre, pre i, code, textarea {
+  font-family: var(--font-family-monospace);
+  font-size:var(--font-size-monospace);
+}
+
+pre.foswikiInlinePre,
+code {
+  padding: 1px 2px;
+  background-color: var(--pre-background);
+  color: var(--pre-foreground);
+}
+code b {
+  font-weight:var(--font-weight-bold);
+}
+
+del,
+del a {
+  background-color: var(--del-background);
+  color: var(--del-foreground);
+}
+
+ins,
+ins a {
+  background-color: var(--ins-background);
+  color: var(--ins-foreground);
+}
+
+address {
+  font-style:normal;
+  white-space:pre-line;
+}
+code b,
+dt, th, 
+address:first-line {
+  font-weight: var(--font-weight-bold);
+}
+
+p {
+  font-size: var(--font-size-normal);
+  margin: var(--margin) 0;
+}
+
+blockquote {
+  border-left:4px solid var(--color-border);
+  margin: var(--margin) 0;
+  padding:0 0 0 var(--margin); /* 18px */
+}
+
+.alt blockquote {
+  margin:0;
+}
+
+em,
+blockquote,
+i,
+.italic,
+.foswikiItalic {
+  font-family: var(--font-family-italic);
+  font-style:italic;
+}
+
+.noBreakout {
+      word-break: break-all;
+  -webkit-hyphens: auto;
+          hyphens: auto;
+}
+.hyphenate {
+  -webkit-hyphens: auto;
+          hyphens: auto;
+}
+
+pre,
+.donthyphenate {
+  -webkit-hyphens: none; 
+          hyphens: none; 
+}
+
+/* headings */
+h1 { color:var(--color-h1); }
+h2 { color:var(--color-h2); }
+h3 { color:var(--color-h3); }
+h4 { color:var(--color-h4); }
+h5 { color:var(--color-h5); }
+h6 { color:var(--color-h6); }
+
+.foswikiTocTitle { color: var(--color-h2); }
+
+.foswikiTopicInfo h1,
+.foswikiTopicInfo h1 a,
+h1 .foswikiEmulatedLink,
+h1 a {
+  color: var(--color-h1);
+  text-decoration:none !important;
+}
+
+h2 .foswikiEmulatedLink,
+h2 a {
+  color:var(--color-h2);
+  text-decoration:none !important;
+}
+
+h3 .foswikiEmulatedLink,
+h3 a {
+  color:var(--color-h3);
+  text-decoration:none !important;
+}
+
+h4 .foswikiEmulatedLink,
+h4 a {
+  color:var(--color-h4);
+  text-decoration:none !important;
+}
+
+h5 .foswikiEmulatedLink,
+h5 a {
+  color:var(--color-h5);
+  text-decoration:none !important;
+}
+
+h6 .foswikiEmulatedLink,
+h6 a {
+  color:var(--color-h6);
+  text-decoration:none !important;
+}
+
+h1 { 
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  font-family: var(--font-family-h1);
+  font-weight: var(--font-weight-h1);
+  border-bottom:1px solid var(--color-border);
+  margin: calc(var(--font-baseline) * 3 * 1px) 0 
+          calc(var(--font-baseline) * 3 * 1px - var(--line-height-h1) * var(--font-size-h1));
+}
+
+body > h1:first-of-type,
+.foswikiMetaData h1,
+#solrSearch > h1,
+.foswikiTopicInfo h1,
+.foswikiProfileInfo h1,
+.natMainContents > h1:first-of-type {
+  margin-top:0;
+  margin-bottom:calc(var(--font-baseline) * 2 * 1px - var(--line-height-h1) * var(--font-size-h1));
+}
+
+h2 { 
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  font-family: var(--font-family-h2);
+  font-weight: var(--font-weight-h2);
+  border-bottom:1px solid var(--color-border);
+  margin: calc(var(--font-baseline) * 2 * 1px) 0 
+          calc(var(--font-baseline) * 2 * 1px - var(--line-height-h2) * var(--font-size-h2));
+}
+
+.natMainContents > h2:first-child {
+  margin-top:0;
+}
+
+h3 { 
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  font-family: var(--font-family-h3);
+  font-weight: var(--font-weight-h3);
+  margin: calc(var(--font-baseline) * 2 * 1px) 0 
+          calc(var(--font-baseline) * 2 * 1px - var(--line-height-h3) * var(--font-size-h3));
+}
+h4 { 
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+  font-family: var(--font-family-h4);
+  font-weight: var(--font-weight-h4);
+  margin: calc(var(--font-baseline) * 1px) 0
+          calc(var(--font-baseline) * 2 * 1px - var(--line-height-h4) * var(--font-size-h4));
+}
+h5 { 
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-h5);
+  font-family: var(--font-family-h5);
+  font-weight: var(--font-weight-h5);
+  margin: calc(var(--font-baseline) * 1px) 0 
+          calc(var(--font-baseline) * 2 * 1px - var(--line-height-h5) * var(--font-size-h5));
+}
+h6 { 
+  font-size: var(--font-size-h6);
+  line-height: var(--line-height-h6);
+  font-family: var(--font-family-h6);
+  font-weight: var(--font-weight-h6);
+  margin: calc(var(--font-baseline) * 1px) 0 0;
+}
+h4 + p,
+h5 + p,
+h6 + p { 
+  margin-top: 0; 
+}
+
+.foswikiNormal,
+.foswikiNormal * {
+  font-size: var(--font-size-normal) !important;
+}
+.foswikiSmall,
+.foswikiSmall * {
+  font-size: var(--font-size-small) !important;  
+}
+.foswikiSmallish,
+.foswikiSmallish * {
+  font-size: var(--font-size-smallish)!important;
+}
+.foswikiBig,
+.foswikiBig  * {
+  font-size: var(--font-size-big)!important;
+}
+.foswikiLarge,
+.foswikiLarge * {
+  font-size: var(--font-size-large) !important;
+}
+.foswikiHuge,
+.foswikiHuge * {
+  font-size: var(--font-size-huge) !important;
+}
+
+.foswikiThin {
+  font-weight:var(--font-weight-thin);
+}
+.foswikiExtraLight {
+  font-weight:var(--font-weight-extra-light);
+}
+.foswikiLight {
+  font-weight:var(--font-weight-light);
+}
+.foswikiNormal {
+  font-weight:var(--font-weight-normal);
+}
+.foswikiMedium {
+  font-weight:var(--font-weight-medium);
+}
+.foswikiSemiBold {
+  font-weight:var(--font-weight-semi-bold);
+}
+.foswikiBold {
+  font-weight:var(--font-weight-bold);
+}
+.foswikiExtraBold {
+  font-weight:var(--font-weight-extra-bold);
+}
+.foswikiBlack {
+  font-weight:var(--font-weight-black);
+}
+.foswikiExtraBlack {
+  font-weight:var(--font-weight-extra-black);
+}
+

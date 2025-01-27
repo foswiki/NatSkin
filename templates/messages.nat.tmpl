@@ -8,7 +8,6 @@
 %MAKETEXT{"Please e-mail [_1] to request this."
  args="<a href='mailto:%WIKIWEBMASTER%?subject=%ENCODE{"%WIKITOOLNAME% Delete User"}%&amp;body=%ENCODE{"%PARAM1%"}%'>%WIKIWEBMASTER%</a>"
 }%
-<style>.natContact {display:none}</style>
 %TMPL:END%
 %TMPL:DEF{"missing_action"}%<!-- uses goback template -->
 ---+++ %MAKETEXT{"Missing action command"}%
@@ -47,14 +46,12 @@
  args="<nop>%WEB%.<nop>%TOPIC%,<nop>%PARAM2%.<nop>%PARAM3%,%PARAM1%"}%
 
 %MAKETEXT{"Please notify your [_1] administrator [_2]" args="<nop>%WIKITOOLNAME%,%WIKIWEBMASTER%"}%.
-<style>.natContact {display:none}</style>
 %TMPL:END%
 %TMPL:DEF{"rename_web_err"}%<!-- removes contact -->
 %MAKETEXT{"During rename of web [_1] to [_2] an error ([_3]) was found."
  args="<nop>%WEB%,<nop>%PARAM2%,%PARAM1%"}%
 
 %MAKETEXT{"Please notify your [_1] administrator [_2]." args="<nop>%WIKITOOLNAME%,%WIKIWEBMASTER%"}%
-<style>.natContact {display:none}</style>
 %TMPL:END%
 %TMPL:DEF{"wrong_password"}%<!-- uses goback def -->
 ---+++ %MAKETEXT{"Incorrect Password"}%
@@ -101,7 +98,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 %TMPL:DEF{"password_changed"}%<!-- huh -->
 ---+++ %MAKETEXT{"Password changed successfully!"}%
 
-%BUTTON{"%MAKETEXT{"OK"}%" target="%USERSWEB%.%WIKINAME%" icon="%TMPL:P{"OK_ICON"}%"}%
+%BUTTON{"%MAKETEXT{"OK"}%" target="%USERSWEB%.%WIKINAME%" icon="%TMPL:P{"icon::ok::name"}%"}%
 %TMPL:END%
 %TMPL:DEF{"confirm"}%<!-- confirm -->
 ---+++ %MAKETEXT{"Thank you for registering"}%
@@ -110,7 +107,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 <form action="%SCRIPTURLPATH{"register"}%" method="post">
 <input type="hidden" name="action" value="verify" size="20" />
 <input type="text" name="code" size="20" />
-%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="%TMPL:P{"OK_ICON"}%"}%
+%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="%TMPL:P{"icon::ok::name"}%"}%
 </form>
 
 %TMPL:END%
@@ -132,7 +129,6 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 ---+++ %MAKETEXT{"Error registering user [_1]" args="<nop>%PARAM1%"}%
 %MAKETEXT{"There has been a problem adding your user id to the Password system."}%
 %MAKETEXT{"Please notify your [_1] administrator [_2]." args="<nop>%WIKITOOLNAME%,%WIKIWEBMASTER%"}%
-<style>.natContact {display:none}</style>
 %TMPL:END%
 %TMPL:DEF{"send_mail_error"}%<!-- better dialog, removes contact -->
 ---+++ %MAKETEXT{"Mail error"}%
@@ -150,13 +146,12 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 
 %MAKETEXT{"Please notify your [_1] administrator [_2]."
  args="<nop>%WIKITOOLNAME%,<a href='mailto:%WIKIWEBMASTER%?subject=%ENCODE{"%WIKITOOLNAME% Send Mail Error"}%'>%WIKIWEBMASTER%</a>"}%
-<style>.natContact {display:none}</style>
 %TMPL:END%
 %TMPL:DEF{"already_exists"}%<!-- only one contact message -->
 ---+++ %MAKETEXT{"You are already registered"}%
 %MAKETEXT{"You cannot register twice, the name [_1] is already registered." args="'%PARAM1%'"}%
 
-%MAKETEXT{"Did you want to ~[~[[_1]~]~[reset [_2]'s password~]~]?" args="%SCRIPTURLPATH{"view"}%/%SYSTEMWEB%/ResetPassword?username=%PARAM1%,%PARAM1%"}%
+%MAKETEXT{"Did you want to ~[~[[_1]~]~[reset [_2]'s password~]~]?" args="%SCRIPTURLPATH{"view" topic="%SYSTEMWEB%.ResetPassword" username="%PARAM1%"}%,%PARAM1%"}%
 
 %MAKETEXT{"Alternatively go back in your browser and choose a different username."}%
 %TMPL:END%
@@ -196,7 +191,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 <form action="%SCRIPTURLPATH{"register"}%" method="post">
 <input type="hidden" name="action" value="verify" size="20" />
 <input type="text" name="code" size="20" />
-%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="%TMPL:P{"OK_ICON"}%"}%
+%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="%TMPL:P{"icon::ok::name"}%"}%
 </form>
 %TMPL:END%
 %TMPL:DEF{"no_email_for"}%<!-- nach %2 umbenennenbetter dialog -->
@@ -230,7 +225,6 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 %MAKETEXT{"Please notify your [_1] administrator [_2]." args="<nop>%WIKITOOLNAME%,%WIKIWEBMASTER%"}%
 
 %MAKETEXT{"Go back in your browser and save your changes locally."}%
-<style>.natContact {display:none}</style>
 %TMPL:END%
 %TMPL:DEF{"delete_err"}%<!-- better dialog, removes contact -->
 ---+++ %MAKETEXT{"Attachment delete failed"}%
@@ -242,7 +236,6 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 
 %MAKETEXT{"Please notify your [_1]" args="<nop>%WIKITOOLNAME%"}% 
 <a href="mailto:%WIKIWEBMASTER%?subject=%ENCODE{"%WIKITOOLNAME% Delete Error"}%&amp;body=%ENCODE{"%PARAM4%"}%">%WIKIWEBMASTER%</a>.
-<style>.natContact {display:none}</style>
 %TMPL:END%
 %TMPL:DEF{"upload_name_changed"}%<!-- uses goback def -->
 ---+++ %MAKETEXT{"File has been uploaded with different name"}%
@@ -257,7 +250,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
    * %MAKETEXT{"International (8-bit) characters are removed (replaced by US-ASCII equivalents for Latin-1)"}%
 %MAKETEXT{"You may be able to get your Wiki administrator to change the settings if they are inappropriate for your environment."}%
 
-%BUTTON{"%MAKETEXT{"OK"}%" target="%WEB%.%TOPIC%" icon="%TMPL:P{"OK_ICON"}%"}%
+%BUTTON{"%MAKETEXT{"OK"}%" target="%WEB%.%TOPIC%" icon="%TMPL:P{"icon::ok::name"}%"}%
 %TMPL:END%
 %TMPL:DEF{"rename_web_prerequisites"}%<!-- better buttons -->
 ---+++ %MAKETEXT{"There are problems with renaming this web"}%:
@@ -276,8 +269,9 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 <form class="natOopsButtons" name="ButtonBox" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%HOMETOPIC%" method="post">
   <input type="hidden" name="action" value="renameweb">
   <input type="hidden" name="confirm" value="continue">
-  %BUTTON{"%MAKETEXT{"OK"}%" type="submit" icon="%TMPL:P{"OK_ICON"}%"}%
-  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WEB%.%HOMETOPIC%" icon="%TMPL:P{"CANCEL_ICON"}%"}%
+  <input type="hidden" name="currentwebonly" value="on">
+  %BUTTON{"%MAKETEXT{"OK"}%" type="submit" icon="%TMPL:P{"icon::ok::name"}%"}%
+  %BUTTON{"%MAKETEXT{"Cancel"}%" target="%WEB%.%HOMETOPIC%" icon="%TMPL:P{"icon::cancel::name"}%"}%
 </form> 
 </div>
 %TMPL:END%
@@ -293,8 +287,9 @@ template that doesn't exist." args="%PARAM2%"}%
 (%MAKETEXT{"Don't forget to check your topic settings."}%)
 %TMPL:END%
 %TMPL:DEF{"topic_access"}% %{}%
+---+ 403
 ---++ %MAKETEXT{"Access denied"}%
-%MAKETEXT{"[_1] has no permission to [_2] [_3]." args="[[%WIKIUSERNAME%]], <b>%PARAM1%</b> ,[[%TOPIC%]]"}%
+%MAKETEXT{"You do not have permission to access this page."}%
 
 %TMPL:P{"login"}%
 

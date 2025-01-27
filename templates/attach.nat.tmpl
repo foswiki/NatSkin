@@ -1,25 +1,27 @@
 %TMPL:INCLUDE{"view"}%%{ template: attach.nat.tmpl }%
-%TMPL:INCLUDE{"attachsidebar"}%%{}%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"titleaction"}%%MAKETEXT{"attach"}%%TMPL:END%
+%TMPL:DEF{"titleaction"}%%MAKETEXT{"Attachments"}%%TMPL:END%
 %TMPL:DEF{"bodyclass"}%natAttachBody%TMPL:END%
 %TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
 %TMPL:DEF{"attachments::showhidden"}%%URLPARAM{"attachments_showhidden" default="true"}%%TMPL:END%
 %TMPL:DEF{"attachments::showuploader"}%%URLPARAM{"attachments_showuploader" default="true"}%%TMPL:END%
-%TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%">%MAKETEXT{"Attachments"}%</a>%TMPL:END%
+%TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%" template="attach"}%">%MAKETEXT{"Attachments"}%</a>%TMPL:END%
 %TMPL:DEF{"form"}%%TMPL:END%
+%TMPL:DEF{"sidebar"}%%TMPL:END%
 %TMPL:DEF{"banner"}%%TMPL:END%
 %TMPL:DEF{"contentfooter::contents"}%%TMPL:END%
 %TMPL:DEF{"topicactions::contents"}%%USERACTIONS{"$action(close)"}%%TMPL:END%
+%TMPL:DEF{"metadata::uploader"}%%JQREQUIRE{"uploader"}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"content"}%<div class="foswikiMetaData %IF{"not '%WEB%.%TOPIC%' allows 'change'" then="foswikiMetaDataNotAllowed"}%">
 <h1>
   <noautolink>%MAKETEXT{"Attachments at [_1]" args="%GETTOPICTITLE%"}%</noautolink>
-  <span class='foswikiAttachmentsCount foswikiSmall foswikiGrayText'>()</span>
+  <span class='foswikiAttachmentsCount foswikiGrayText'></span>
 </h1>
 <div>%TMPL:P{"attachments"}%</div>
 %TMPL:P{"metadata::css"}%
 %TMPL:P{"metadata::javascript"}%
 </div>%TMPL:END%
+

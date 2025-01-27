@@ -3,7 +3,7 @@
 %{################################################################################ }%
 %TMPL:DEF{"topbar"}%%TMPL:P{"langswitcher"}%%{}%
 <a class="natNavToggle fa fa-bars"></a>
-<div class="natTopBar clearfix foswikiContents" name="topbar::contents" reload="web">
+<div class="natTopBar clearfix">
 %TMPL:P{"topbar::contents"}%
 </div>%TMPL:END%
 
@@ -28,7 +28,7 @@
 }%%{}%%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"DIS_topbar::notifications"}%<div class='natNotifications jqUITooltip' data-theme='info' data-arrow='on' data-position='bottom'>
+%TMPL:DEF{"DIS_topbar::notifications"}%<div class='natNotifications'>
 <ul>
   <li>%CHATNOTIFIER{
         debug="on"
@@ -40,7 +40,7 @@
 
 %{################################################################################ }%
 %TMPL:DEF{"topbar::authenticated"}%<div class='natUserAction natPanelToggle'>
-%TMPL:P{"ACCOUNT_ICON"}%<a><nop>%GETTOPICTITLE{"%WIKIUSERNAME%"}%</a>
+%TMPL:P{"icon::account"}%<a><nop>%GETTOPICTITLE{"%WIKIUSERNAME%"}%</a>
 </div>%TMPL:END%
 
 %{################################################################################ }%
@@ -49,7 +49,7 @@
 </div>%TMPL:END%
 
 %{################################################################################ }%
-%TMPL:DEF{"toppanel"}%<div class="natTopPanel foswikiContents" name="toppanel::contents" reload="web" style="display:none">
+%TMPL:DEF{"toppanel"}%<div class="natTopPanel" style="display:none">
 %TMPL:P{"toppanel::contents"}%
 </div>
 <div class="natTopShadow"></div>%TMPL:END%
@@ -69,7 +69,7 @@
    * [[%%WIKIUSERNAME%][%MAKETEXT{"My Profile"}%]]
    * [[%SYSTEMWEB%.ChangeEmailAddress][%MAKETEXT{"Change email address"}%]]
    * [[%SYSTEMWEB%.ChangePassword][%MAKETEXT{"Change password"}%]] %IF{"$ LOGOUT" then="
-   * [[%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?logout=1][%MAKETEXT{"Log out"}%]]"}%
+   * [[%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%" logout="1"}%][%MAKETEXT{"Log out"}%]]"}%
 %BEGINCOL{"4"}%
 <h3 >%MAKETEXT{"Tools"}%</h3>
    * [[WebChanges][%MAKETEXT{"Recent Changes"}%]]
@@ -165,7 +165,7 @@
 %{################################################################################ }%
 %TMPL:DEF{"toppanel::login::buttonstep"}%<tr>
   <td colspan="2" style="padding-top:1em">
-    %BUTTON{"%MAKETEXT{"Submit"}%" icon="%TMPL:P{"OK_ICON"}%" type="save" class="foswikiRight"}%
+    %BUTTON{"%MAKETEXT{"Submit"}%" icon="%TMPL:P{"icon::ok::name"}%" type="save" class="foswikiRight"}%
   </td>
 </tr>%TMPL:END%
 
@@ -173,6 +173,6 @@
 %TMPL:DEF{"toppanel::login::end"}%</table>
 </form>%JQREQUIRE{"validate"}%%ADDTOZONE{"script" 
   id="NATSKIN::LOGIN"
-  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/login.js'></script>"
+  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/build/login.js'></script>"
   requires="JQUERYPLUGIN, JQUERYPLUGIN::VALIDATE"
 }%%CLEAR%%TMPL:END%

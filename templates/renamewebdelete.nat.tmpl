@@ -1,12 +1,16 @@
-%TMPL:INCLUDE{"renamewebbase"}%%{}%
-%TMPL:DEF{"titleaction"}%%MAKETEXT{"rename web"}%%TMPL:END%
-%TMPL:DEF{"webaction"}%%MAKETEXT{"Delete"}%%TMPL:END%
-%TMPL:DEF{"newsubweb"}%<input type="text" name="newsubweb" value="%NEW_SUBWEB%" size="36" class="jqFocus" />%TMPL:END%
-%TMPL:DEF{"newparentweb"}%<select name="newparentweb" class="jqSelect2" data-width="element">
-%FLEXWEBLIST{
-  webs="%TRASHWEB%,public" 
-  exclude="%WEB%" format="<option $marker value=\"$web\">$web</option>" 
-  selection="%NEW_PARENTWEB%" 
-  marker="selected=\"selected\""
-}%
-</select>%JQREQUIRE{"select2"}%%TMPL:END%
+%TMPL:INCLUDE{"foswiki"}%%{}%
+
+%TMPL:DEF{"dialog"}%<div class="jqUIDialog foswikiFormSteps" data-modal="true" data-width="450" data-draggable="true" data-destroy-on-close="true" title="%MAKETEXT{"Delete Web"}%" id="deleteTopicDialog">
+%TMPL:P{"deletewebform"}%%{}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"deletewebform"}%<form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
+  <input type="hidden" name="action" value="renameweb" />
+  <input type="hidden" name="confirm" value="getlock" />
+  <input type="hidden" name="currentwebonly" value="on" />
+  <input type="hidden" name="newparentweb" value="%IF{"'%TRASHWEB%'=~'^%WEB%\b'" then="%QUERY{"{TrashWebName}"}%" else="%TRASHWEB%"}%"  />
+  <input type="hidden" name="newsubweb" value="%FORMATLIST{"%WEB%" split="/" reverse="on" limit="1"}%%GMTIME{"$epoch"}%"  />
+  %MAKETEXT{"Are you sure that you want to delete [_1]?" args="<b>%GETTOPICTITLE{"%WEB%.%HOMETOPIC%" encode="entity"}%</b>"}%
+  <a class="jqUIDialogButton jqUIDialogSubmit" data-icon="ui-icon-trash">%MAKETEXT{"Yes, delete"}%</a> 
+  <a class="jqUIDialogButton jqUIDialogClose" data-icon="ui-icon-cancel">%MAKETEXT{"No, thanks"}%</a> 
+</form>%TMPL:END%

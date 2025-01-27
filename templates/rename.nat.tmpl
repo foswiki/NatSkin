@@ -1,19 +1,46 @@
 %TMPL:INCLUDE{"renamebase"}%%{}%
 
-%{ ################################################################################ }%
+%TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%">%MAKETEXT{"Rename"}%</a>%TMPL:END%
+
+%TMPL:DEF{"newweb"}%%RENDERFOREDIT{
+  form="%SYSTEMWEB%.MoreFormfieldsPlugin"
+  field="Web"
+  Web_name="newweb"
+  Web_size="20"
+  format="$edit"
+  Web_default="%WEB%"
+}%%TMPL:END%
+
 %TMPL:DEF{"newtopic"}%%{}%
-<input type="text" class="foswikiInputField required notequal" name="newtopic" value="%NEW_TOPIC%" size="40" />
-<p>
-  <label><input type="checkbox" name="wikify" id="wikifynewtopic" />%MAKETEXT{"Derive from title"}%</label>
+%TMPL:P{"newtopic::input"}%%{}%
+%IF{
+  "not '%TOPIC%'=~'^(Web|Site)'" 
+  then="$percntTMPL:P{\"newtopic::wikify\"}$percnt"
+}%%{}%
+%TMPL:P{"newtopic::restore"}%%TMPL:END%
+
+%TMPL:DEF{"newtopic::input"}%<input type="text" class="foswikiInputField required notequal" name="newtopic" value="%NEW_TOPIC%" size="41" />%TMPL:END%
+%TMPL:DEF{"newtopic::wikify"}%<p>
+  <label><input type="checkbox" name="wikify" class="foswikiCheckbox" id="wikifynewtopic" %TMPL:P{"newtopic::wikify::checked"}% />%MAKETEXT{"Derive from title"}%</label>
+</p>%TMPL:END%
+%TMPL:DEF{"newtopic::wikify::checked"}%%TMPL:END%
+%TMPL:DEF{"newtopic::restore"}%%IF{"moved and isweb 
+  '%FORMATLIST{
+    "%FORMATLIST{"%QUERY{"moved.from"}%" 
+        split="\." 
+        reverse="on" 
+        skip="1" 
+        separator="."
+    }%" 
+    split="\." 
+    reverse="on"
+    separator="."
+  }%'"
+  then="$percntTMPL:P{\"newtopic::moved\"}$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"newtopic::moved"}%<p>
+  <label><input type="checkbox" name="restore" class="foswikiCheckbox" id="restoretopic" value="%QUERY{"moved.from"}%" />%MAKETEXT{"Restore topic"}%</label>
 </p>%TMPL:END%
 
-%{ ################################################################################ }%
-%TMPL:DEF{"newweb"}%<select class="jqSelect2" name="newweb" data-width="element"> 
-%WEBLIST{
-  "<option $marker value='$name' class='foswikiOption'>$name</option>" 
-  webs="%TRASHWEB%,%NEW_WEB%,public" 
-  selection="%NEW_WEB%" 
-  separator=" "
-}% 
-</select>%JQREQUIRE{"select2"}%%TMPL:END%
-%TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"rename"}%/%BASEWEB%/%BASETOPIC%">%MAKETEXT{"Rename"}%</a>%TMPL:END%
+

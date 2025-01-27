@@ -1,12 +1,12 @@
 %TMPL:DEF{"searchbox"}%<div class="natSearchBox foswikiHideOnPrint solrSearchBox" %TMPL:P{"searchbox::params"}%>
-  <form name="searchbox" id="searchbox" class="natSearchForm" action="%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebSearch">
-    <input type="text" class="foswikiInputField jqUITooltip" %TMPL:P{"searchbox::tooltip::params"}% placeholder="%TMPL:P{"searchbox::placeholder"}%" size="20" title="%TMPL:P{"searchbox::tooltip::text"}%" name="search" value="%TMPL:P{"searchbox::value"}%" accesskey="f" /> 
+  <form name="searchbox" id="searchbox" class="natSearchForm" action="%SCRIPTURLPATH{"view" topic="%BASEWEB%.WebSearch"}%">
+    <input type="search" class="foswikiInputField" placeholder="%TMPL:P{"searchbox::placeholder"}%" size="20" name="search" value="%TMPL:P{"searchbox::value"}%" accesskey="f" title="%MAKETEXT{"Search"}%" /> 
     <input type="submit" class="foswikiSubmit" value="" />
+    <input type="hidden" name="origin" value="%WEB%.%TOPIC%" />
   </form>
 </div>%TMPL:END%
 
-%TMPL:DEF{"searchbox::params"}%data-position-my="right top" data-position-at="right bottom+11" data-limit="3" data-limit-persons="3" data-limit-topics="3" data-limit-attachments="3" data-groups="persons, topics, attachments"%TMPL:END%
-%TMPL:DEF{"searchbox::tooltip::params"}%data-theme="info" data-arrow="on" data-position="bottom"%TMPL:END%
+%TMPL:DEF{"searchbox::params"}%data-position-my="right top" data-position-at="right bottom+11" data-limit="3" data-limit-persons="3" data-limit-topics="3" data-limit-other="3" data-groups="persons, topics, other" data-solr-query-fields="%TMPL:P{"searchbox::params::solrqueryfields"}%"%TMPL:END%
+%TMPL:DEF{"searchbox::params::solrqueryfields"}%%SOLR_QUERYFIELDS{default="title_search^10 title^10 title_prefix^5 title_substr^2 summary^5 catchall text_ws"}%%TMPL:END%
 %TMPL:DEF{"searchbox::placeholder"}%%MAKETEXT{"search"}%%TMPL:END%
-%TMPL:DEF{"searchbox::tooltip::text"}%%MAKETEXT{"Search"}%%TMPL:END%
 %TMPL:DEF{"searchbox::value"}%%URLPARAM{"search" encode="entity"}%%TMPL:END%

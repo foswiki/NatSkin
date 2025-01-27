@@ -1,2 +1,12 @@
 %TMPL:INCLUDE{"diff"}%
 %TMPL:INCLUDE{"icons"}%
+
+%TMPL:DEF{"diff::control::start::icon"}%%TMPL:P{"icon::first"}%%TMPL:END%
+%TMPL:DEF{"diff::control::start::disabled::icon"}%%TMPL:P{"icon::first"}%%TMPL:END%
+%TMPL:DEF{"diff::control::prev::icon"}%%TMPL:P{"icon::prev"}%%TMPL:END%
+%TMPL:DEF{"diff::control::prev::disabled::icon"}%%TMPL:P{"icon::prev"}%%TMPL:END%
+%TMPL:DEF{"diff::control::next::icon"}%%TMPL:P{"icon::next"}%%TMPL:END%
+%TMPL:DEF{"diff::control::next::disabled::icon"}%%TMPL:P{"icon::next"}%%TMPL:END%
+%TMPL:DEF{"diff::control::end::icon"}%%TMPL:P{"icon::last"}%%TMPL:END%
+%TMPL:DEF{"diff::control::end::disabled::icon"}%%TMPL:P{"icon::last"}%%TMPL:END%
+%TMPL:DEF{"diff::control::quit"}%%USERACTIONS{"$action(close)"}%%TMPL:END%

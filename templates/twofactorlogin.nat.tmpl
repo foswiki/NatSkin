@@ -1,0 +1,14 @@
+%TMPL:INCLUDE{"login"}%%{}%
+
+%TMPL:DEF{"bodyclass"}%%TMPL:PREV% natTwoFactorAuthBody%TMPL:END%
+%TMPL:DEF{"title"}%%MAKETEXT{"Two-factor authentication"}%%TMPL:END%
+%TMPL:DEF{"seealso"}%%TMPL:END%
+
+%TMPL:DEF{"LOG_IN_BANNER"}%<h1 class='natLoginHeading'>%MAKETEXT{"Please enter the access code"}%</h1>%TMPL:END%
+%TMPL:DEF{"UNRECOGNISED_USER"}%<h1 class='natLoginHeading'>%MAKETEXT{"Error, access code does not match"}%</h1>%TMPL:END%
+
+%TMPL:DEF{"login::usernamestep"}%<input type='hidden' name='username' value='%LOGINNAME%' />%TMPL:END%
+
+%TMPL:DEF{"login::passwordstep"}%<div class="foswikiFormStep">
+<input type='text' class='foswikiInputField jqCodeInput' size='6' name='accesscode' data-placeholder="&bull;" data-focus-char="0" />
+</div>%JQREQUIRE{"codeinput"}%%TMPL:END%

@@ -1,0 +1,1008 @@
+@import url(../WebFontsContrib/roboto/font-face.css);
+
+.jqTextboxListValue,
+label,
+.ui-menu,
+.natWebMenu ul ul li,
+.natTopicActions,
+.ui-natedit-toolbar,
+.jqTabGroup,
+.jqButton {
+  font-family: Arial, 'Liberation Sans', FreeSans, sans-serif;
+}
+
+/* revert some fixed sizes */
+.natBody .natEditBottomBar li {
+  font-size:inherit;
+}
+
+.foswikiInfo, .foswikiRevision {
+  margin-bottom: 1.5em;
+}
+.solrSearchHits h3,
+.natEditTitle {
+  font-family:inherit;
+}
+
+.blogCategoryTitle h1,
+.blogCategoryTitle h1 a {
+  border-bottom:0px;
+  color:#808080;
+}
+
+.foswikiGrid h2 {
+  border-bottom:0;
+}
+
+blockquote {
+  margin:1.5em 0;
+  padding:0 0 0 1.4285em; /* 20px */
+}
+
+ul, ol {
+  margin:1.5em 0;
+  /*padding-left:3em;*/
+}
+
+.foswikiHelp,
+.foswikiAlt {
+  padding:0.678em 1em; /* 9.5px 21px */
+}
+
+
+/* borders */
+.foswikiMetaData .jqTab,
+.foswikiDataForm .foswikiLayoutTable,
+.foswikiDataForm .foswikiLayoutTable td,
+.foswikiGrid .border,
+.hr, hr {
+  border-style:solid;
+  border-color:var(--color-border);
+}
+.foswikiDataForm .foswikiLayoutTable td,
+.foswikiDataForm .foswikiLayoutTable th {
+  padding-top:0.4285em;
+  padding-bottom:0.4285em;
+}
+.foswikiGrid h3,
+.foswikiGrid h2 {
+  margin-top:0;
+}
+
+/* layout */
+.natSideBarContents {
+  margin-top:-1em;
+}
+.natBodyRight .natSideBarContents {
+  border-left:1px solid var(--color-border);
+  padding:1em 1px 0 1.5em;
+}
+.natBodyLeft .natSideBarContents {
+  border-right:1px solid var(--color-border);
+  padding:1em 1em 0 1px;
+}
+.natBodyBoth .natSideBarContents {
+  padding:1em 0 0 0;
+}
+.natMainHeaderContents,
+.natMainFooterContents {
+  padding:0;
+}
+
+.natMainContents {
+  margin-top:1.5em;
+  padding:0;
+}
+.natMainFooterContents {
+  padding:0;
+}
+.natBodyBoth .natMainHeaderContents,
+.natBodyBoth .natMainFooterContents,
+.natBodyBoth .natMainContents,
+.natBodyRight .natMainHeaderContents,
+.natBodyRight .natMainFooterContents,
+.natBodyRight .natMainContents {
+  margin-right:1.5em;
+}
+.natBodyBoth .natMainHeaderContents,
+.natBodyBoth .natMainFooterContents,
+.natBodyBoth .natMainContents,
+.natBodyLeft .natMainHeaderContents,
+.natBodyLeft .natMainFooterContents,
+.natBodyLeft .natMainContents {
+  margin-left:1.5em;
+}
+.natBodyFixed .natTopPanelContents,
+.natBodyFixed .natBottomBarContents,
+.natBodyFixed .natBodyContents {
+  width:80em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.natTopPanelContents {
+  padding:1em;
+}
+.natBodyBordered {
+  margin:0;
+}
+.natBodyBordered .natBottomBarContents,
+.natBodyBordered .natBodyContents {
+  margin-left:1em;
+  margin-right:1em;
+}
+.natBodyFluid .natTopPanelContents,
+.natBodyFluid .natBottomBarContents,
+.natBodyFluid .natBodyContents {
+  margin-left:10%;
+  margin-right:10%;
+}
+.natBodyFluid .natBottomBarContents,
+.natBodyFluid .natTopPanelContents {
+  padding-left:0;
+  padding-right:0;
+}
+
+.natLoginForm input[type=text], 
+.natLoginForm input[type=password] {
+  width:100%;
+} 
+
+.natEditBody .natMainContents {
+  margin:0;
+  padding:1em;
+}
+
+/* bottombar */
+.natBottomBar { 
+  position:absolute;
+  width:100%;
+  left:0px;
+  margin-top:4.28em; /* 60px */
+}
+.natRenameBody .natBottomBar,
+.natValidateBody .natBottomBar,
+.natAttachBody .natBottomBar,
+.natSolrBody .natBottomBar {
+  visibility:hidden;
+}
+.natBottomBarContents {
+  margin:0em 1.9231em;
+  padding:2em 2em 3.5em;
+}
+
+.natBottomBar .natPageCacheBanner {
+  margin:2em 0 0 0;
+  text-align:left;
+}
+
+.natBottomBar .natCopyRight br,
+.natBottomBar .natCopyRight .foswikiRight {
+  display:none;
+}
+
+.natBottomBarContents h2,
+.natBottomBarContents h3,
+.natBottomBarContents h4 {
+  margin-top:0;
+}
+
+/* form elements */
+.select2-container .select2-choice:hover,
+.select2-container .select2-choice {
+  border-color:#ccc;
+}
+.select2-container .select2-choice:hover,
+.select2-container .select2-choice,
+.select2-container .select2-choice:hover > div,
+.select2-container .select2-choice > div {
+  background:#fff !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+}
+.select2-container .select2-choice div {
+  border:0;
+}
+.select2-results {
+  margin-left:0;
+  margin-right:0;
+  margin-bottom:0;
+  padding:0;
+}
+.select2-results .select2-highlighted {
+  background-color:#16BEEF;
+}
+
+.select2-drop input[type=text] {
+  border-radius:0 !important;
+}
+.select2-drop {
+  box-shadow:2px 4px 5px rgba(0, 0, 0, .15);
+}
+
+/* search box */
+.natSolrBody .natSearchBox {
+  display:none;
+}
+.natSearchBox .foswikiInputField {
+  width:100%;
+  border-color:#ccc;
+  display:inline-block;
+  height:32px;
+  border-bottom-style:none;
+}
+
+.natBodyLeft .natWebMenuContents {
+  margin-left:0;
+}
+.natWebMenu li {
+  margin-right:1px;
+}
+.natWebMenu ul ul li {
+  margin-right:0;
+}
+.natWebMenu .natSearchBox {
+  width:20em;
+}
+.natWebMenu .natSearchBox  form {
+  height:32px;
+}
+.natSearchBox .foswikiInputField:focus {
+  color:var(--color-text);
+}
+
+
+/* topbar */
+.natTopPanel {
+  position:relative;
+  z-index:1;
+}
+.natTopLeft {
+  padding:2em 0;
+}
+.natTopRight {
+  position:relative;
+  width:100%;
+}
+.natTopRightContents {
+  position:absolute;
+  top:0;
+  right:0;
+  z-index:2;
+}
+.natTopShadow {
+  position:relative;
+  z-index:1;
+  box-shadow:0px 6px 10px -6px rgba(0,0,0,0.3) inset;
+  height:10px;
+}
+.natEditBody .natTopPanel,
+.natEditBody .natTopShadow {
+  display:none;
+}
+
+.natBody .natBodyContents {
+  margin-top:-10px;
+}
+
+.natNetworkNavi {
+  text-transform:uppercase;
+  line-height:2em;
+  display:inline-block;
+}
+.natNetworkNavi ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.natNetworkNavi li {
+  margin:0;
+  padding:0;
+  display:inline;
+}
+.natNetworkNavi a {
+  text-decoration:none;
+  padding:0.5em 1em;
+}
+
+.natNotifications {
+  line-height:2em;
+  display:inline-block;
+  font-size:120%;
+}
+.natNotifications > ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.natNotifications > ul > li {
+  margin:0;
+  padding:0;
+  display:inline;
+}
+.natNotifications > ul > li > a {
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:0.5em 1em;
+  color:#999;
+}
+.natNotifications .fa {
+  margin-right:0.5em;
+}
+
+.natPanelToggle {
+  border-radius:0 0 5px 5px;
+  padding:1.3em 0.7em 0.5em 0.7em;
+  display:inline-block;
+}
+
+.natPanelToggle,
+.natPanelToggle a {
+  text-decoration:none;
+}
+.natPanelToggle .fa,
+.natPanelToggle .ma,
+.natPanelToggle .img {
+  padding-right:0.5em;
+}
+
+.natLangs {
+  position:absolute;
+  top:1em;
+  right:0;
+}
+
+/* menu */
+.natWebMenu {
+  border-bottom:1px solid var(--color-border);
+  margin-bottom:1em;
+}
+
+@media screen and (max-width:620px) {
+  .natWebMenu {
+    border-bottom:0;
+  }
+}
+
+.natMoreActionsMenu ul {
+  margin-top:3px;
+}
+
+
+/* profile settings */
+.natProfile {
+  float:left;
+  line-height:25px;
+  margin-left:1em;
+}
+.natProfile img {
+  margin-right:1em;
+  border-radius: 2px; 
+}
+
+/* sidebar */
+.natSideBarHeader,
+.natSideBar {
+  width:20em; 
+}
+
+/* right */
+.natBodyBoth .natSideBar,
+.natBodyRight .natSideBar {
+  margin-right:-20em;
+}
+.natBodyBoth .natMiddleContents,
+.natBodyRight .natMiddleContents {
+  margin-right:20em;
+}
+
+/* left */
+.natBodyBoth .natSideBar,
+.natBodyLeft .natSideBar {
+  margin-left:-20em;
+}
+.natBodyBoth .natMiddleContents,
+.natBodyLeft .natMiddleContents {
+  margin-left:20em;
+}
+
+.natSideBarContents h2.natFirstOfType {
+  margin-top:0;
+}
+
+.natSideBar li {
+  padding:0.4285em 0;
+  border-bottom:1px solid var(--color-border);
+}
+
+.natSideBar li a {
+  display:block;
+  background-color:transparent;
+}
+
+.natSolrBody .natSideBar li {
+  padding:0.1em 0;
+}
+
+.natMiddle {
+  background-color:transparent;
+}
+
+/* tables */
+.mce-content-body table,
+.foswikiTable {
+  margin:0 0 1.5em 0;
+  font-size:0.9285em; /* 13px */
+  line-height:1.5;
+  border:1px solid #e4e4e4;
+}
+.mce-content-body th, 
+.mce-content-body td,
+.foswikiTable > thead > tr > th, 
+.foswikiTable > tbody > tr > th, 
+.foswikiTable > tbody > tr > td {
+  border:1px solid #e4e4e4;
+}
+.mce-content-body th,
+.mce-content-body th h2,
+.mce-content-body th h3,
+.mce-content-body th h4,
+.foswikiTable th,
+.foswikiTable th h2,
+.foswikiTable th h3,
+.foswikiTable th h4 {
+  font-weight:var(--font-weight-bold);
+  text-decoration:none;
+  background-color: #f4f4f4;
+  vertical-align:top;
+}
+
+/* toc */
+.foswikiToc ul {
+  margin:1.5em 0;
+  padding:1.4285em 0 0 0;
+}
+.foswikiToc li {
+  background-image:url(../NatSkin/images/bullet-toc.gif);
+  background-position:0 0.4em;
+  background-repeat:no-repeat;
+}
+
+/* classification plugin */
+.tagCloud a:hover,
+.clsBrowser .current,
+.jstree .jstree-clicked,
+.jstree .jstree-clicked a,
+.clsTagCloud a:hover,
+.clsTagCloud .hilite,
+.clsTagCloud .current {
+  background-color: #3E89D3 !important;
+  color:#fff !important;
+}
+
+/* profile page */
+.foswikiProfileInfo .imagePlain {
+  border-radius: 6px;
+  padding:0;
+  border:1px solid #CCD6DD;
+}
+
+/* image plugin */
+.imageFrame {
+  border-radius: 6px;
+  box-shadow: 2px 2px 10px -5px rgba(0, 0, 0, 0.5);
+  padding:0;
+}
+.imageFrame img {
+  border:0;
+  padding:0;
+  margin:-1px;
+}
+.imageFrame .imageHref {
+  border:0;
+}
+.imageCaption {
+  text-align:center;
+  color:inherit;
+  padding:0.4em 2px;
+}
+.imageCaption a {
+  text-decoration:none;
+}
+
+@media screen and (max-width: 1180px) {
+  .natBody .natTopPanelContents,
+  .natBody .natBottomBarContents {
+    width:auto;
+  }
+  .natBody .natTopPanelContents {
+    padding:1em;
+    margin:0;
+  }
+  .natBody .natBodyContents {
+    width:auto;
+    margin:-10px 1em 0;
+  }
+}
+
+@media screen and (max-width:870px) {
+  .natNetworkNavi,
+  .natLangSwitcher {
+    display:none;
+  }
+
+  .natTopLeft {
+    padding-bottom:1em;
+  }
+  .natWebMenu .natSearchBox {
+    float:none;
+    margin:0em auto 2em;
+    width:50%;
+    min-width:300px;
+  }
+  .natWebMenu .natSearchBox .foswikiInputField {
+    border-bottom-style:solid;
+  }
+
+  .natTopRightContents {
+    margin-right:-1em;
+  }
+  .natTopRight .natPanelToggle {
+    padding-right:60px;
+    border-radius:0 0 0 5px;
+  }
+
+  .natBody .natSideBarContents {
+    padding-top:2em;
+    padding-left:1.5em;
+    border:0;
+  }
+  .natBody .natSideBar {
+    position:fixed;
+    top:0;
+    right:0;
+    height:100%;
+    overflow:auto;
+    margin:0 -15px 0 0 !important;
+    z-index:999;
+    background:#fff;
+    box-shadow:-5px 0px 5px rgba(0,0,0,0.05);
+    border:1px solid #dbdbdb;
+  }
+
+  .natBody .natMainHeaderContents,
+  .natBody .natMainFooterContents,
+  .natBody .natMainContents {
+    margin-right:0;
+    margin-left:0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .natBreadCrumbs {
+    display:none;
+  }
+  .natMainHeaderContents .natTopicActions {
+    margin:0 auto;
+    font-size:1em;
+  }
+
+  .natBodyNotAuthenticated .natMainHeaderContents {
+    display:none;
+  }
+  .natBodyNotAuthenticated .natTopBar {
+    margin-bottom:0;
+  }
+
+}
+.natBody {
+  background:linear-gradient(#eee, var(--color-background) 120px);
+}
+.natEditBody {
+  background:#fff;
+}
+.natMiddle,
+.natMiddleContents {
+  background-color:transparent;
+}
+
+/*
+h1 {
+  color:#303030;
+}
+h2, h3, h4, h5, h6,
+h2 a, h3 a, h4 a, h5 a, h6 a {
+  color:#339000;
+  color:#2375C5;
+}
+*/
+.natTopShadow {
+  border-top:5px solid var(--toppanel-border);
+}
+.natPanelToggle,
+.natPanelToggle:hover {
+  background-color:var(--toppanel-border);
+  color:#fff;
+  text-decoration:none;
+}
+.natPanelToggle a,
+.natPanelToggle:hover a,
+.natPanelToggle a:hover {
+  color:inherit;
+}
+
+.natNavToggle:hover,
+.natNavToggle {
+  color:#fff;
+}
+
+.natWebMenuContents > ul > li,
+.natWebMenuContents > ul > li > a {
+  text-decoration: none;
+  background-color: var(--menu-top-background);
+  color: var(--menu-top-foreground);
+}
+.natTopicActions .natUserAction:hover .ma,
+.natTopicActions .natUserAction:hover .fa,
+.natTopicActions .natUserAction:hover,
+.natTopicActions .natTopicAction:hover .ma,
+.natTopicActions .natTopicAction:hover .fa,
+.natTopicActions .natTopicAction:hover,
+.natTopicActions .sfHover .natMoreActionsTopicAction,
+.natWebMenu li a:hover,
+.natWebMenu li.sfHover,
+.natWebMenu li.sfHover > a,
+.natWebMenuContents > ul > li > a:hover,
+.natWebMenuContents > ul > li > li > a.current,
+.natWebMenuContents > ul > li > li > a.current:hover,
+.natWebMenuContents > ul > li > .foswikiCurrentWebHomeLink,
+.natWebMenuContents > ul > li > .foswikiCurrentWebHomeLink:hover {
+  background-color: var(--menu-top-hover-background);
+  color: var(--menu-top-hover-foreground);
+}
+
+/*
+.natSideBar li a:hover {
+  text-decoration:none;
+  color: var(--color-hover-foreground);
+  background-color:transparent;
+}
+*/
+
+.redDot a:hover,
+.ui-jqgrid .ui-state-hover a:hover,
+.foswikiRevision a:hover,
+a:hover {
+  text-decoration:underline;
+  background-color: var(--color-hover-background);
+  color: var(--color-hover-foreground);
+}
+.hover,
+.hover a,
+.hover a:hover {
+  background-color: var(--color-hover-background);
+  color: var(--color-hover-foreground);
+}
+
+.foswikiGrayText,
+.foswikiGrayText a,
+h1 .foswikiTopicSummary,
+.foswikiTopicSummary,
+.foswikiTopicInfo, 
+.foswikiTopicInfo a,
+.foswikiRevision a,
+.foswikiRevision,
+.natBreadCrumbs,
+.natBreadCrumbs a,
+.natBreadCrumbs .natSep {
+  color: var(--color-gray);
+}
+
+a.jqButton:link {
+  color: var(-color-anchor);
+}
+
+.natLoginHeading,
+.natNoteHeading,
+.natBreadCrumbs a:hover,
+a:hover .foswikiGrayText,
+.foswikiGrayText a:hover ,
+.foswikiTopicInfo a:hover,
+.natTopPanelContents a:hover,
+.natBottomBarContents a:hover,
+.ui-dialog .ui-dialog-titlebar,
+.natBottomBarContents .jqButton:hover,
+.ui-state-active a,
+.ui-state-active,
+.ui-state-active a:hover,
+.ui-state-active.ui-state-hover,
+a.ui-state-active:hover,
+.jqButton:hover,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+#natLoginBanner,
+.natMainContents .foswikiNewLink,
+.natSideBar .foswikiCurrentTopicLink,
+.foswikiCurrentHash,
+.jqTabPanePlain >.jqTabGroup a:hover, 
+.jqTabPaneSimple >.jqTabGroup a:hover,
+.foswikiAlt h2,
+.alt h2,
+h2.marked,
+.jqTabContents h2,
+.jqTabContents h2 a,
+.foswikiPageForm h2,
+.foswikiPageForm h2 a,
+.foswikiFormSteps h2,
+.foswikiFormSteps h2 a,
+.foswikiFormSteps h2 a:hover {
+  color: var(--color-hover-foreground);
+}
+
+a.jqButton.jqButtonDisabled {
+  color:#888 !important;
+}
+
+.foswikiAlt h3, .foswikiAlt h4, .foswikiAlt h5, .foswikiAlt h6,
+.alt h3, .alt h4, .alt h5, .alt h6,
+.jqTabContents h3, .jqTabContents h4, .jqTabContents h5, .jqTabContents h6,
+.jqTabContents h3 a, .jqTabContents h4 a, .jqTabContents h5 a, .jqTabContents h6 a,
+.foswikiPageForm h3, .foswikiPageForm h4, .foswikiPageForm h5, .foswikiPageForm h6,
+.foswikiPageForm h3 a, .foswikiPageForm h4 a, .foswikiPageForm h5 a, .foswikiPageForm h6 a,
+.foswikiFormSteps h3, .foswikiFormSteps h4, .foswikiFormSteps h5, .foswikiFormSteps h6,
+.foswikiFormSteps h3 a, .foswikiFormSteps h4 a, .foswikiFormSteps h5 a, .foswikiFormSteps h6 a {
+  color:#2375C5;
+}
+.foswikiAlt h2,
+.foswikiAlt h3,
+.foswikiAlt h4,
+.foswikiAlt h5,
+.foswikiAlt h6,
+.alt h2,
+.alt h3,
+.alt h4,
+.alt h5,
+.alt h6 {
+  font-weight:500;
+}
+.natTopPanel {
+  background-color: var(--toppanel-background);
+}
+
+.natTopPanelContents a,
+.natPageCacheBanner,
+.natPageCacheBanner a,
+.natBottomBarContents,
+.natBottomBarContents a {
+  color: var(--toppanel-foreground);
+}
+
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=password],
+.foswikiInputField,
+select.ui-pg-selbox, /* jqgrid */
+select,
+.foswikiSelect,
+.foswikiTextarea, textarea {
+  border-radius:0;
+  background-color:#fff;
+  border:1px solid #ccc;
+  box-shadow:none;
+  box-shadow:inset 2px 2px 4px #f4f4f4;
+}
+
+select[disabled],
+input[disabled],
+textarea[disabled] {
+  color:#aaa;
+  background-color: #f8f8f8;
+}
+
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=password],
+.foswikiInputField,
+select,
+.foswikiSelect,
+.foswikiTextarea, textarea {
+  padding:4px 6px;
+}
+input::-ms-reveal,
+input::-ms-clear {
+  display:none;
+}
+
+.foswikiTextarea:focus, textarea:focus,
+select.ui-pg-selbox:focus, /* jqgrid */
+select:focus,
+.foswikiSelect:focus,
+input[type=search]:focus,
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=password]:focus,
+.foswikiInputField:focus {
+  border-color:#16BEEF;
+}
+
+
+fieldset,
+.foswikiAlt,
+.alt,
+.cmtCommentOdd,
+.foswikiPageForm,
+.foswikiFormSteps {
+  border-radius:2px;
+  border:1px solid #d1d1d1;
+  box-shadow:0 0 10px #f4f4f4;
+
+  /* http://colorzilla.com/gradient-editor/#ffffff+0,f4f4f4+100;Custom */
+  background: #f4f4f4; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #f4f4f4 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f4f4f4)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#f4f4f4 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%,#f4f4f4 100%); /* Opera 11.10+ */
+  background: linear-gradient(to bottom, #ffffff 0%,#f4f4f4 100%); /* W3C */
+}
+.cmtSubComments .cmtCommentOdd,
+.ui-dialog .foswikiFormSteps, 
+.foswikiMetaData .foswikiDataForm, 
+.foswikiMetaData .foswikiAttachments, 
+.foswikiMetaData .foswikiComments, 
+.foswikiMetaData .foswikiAttachmentsProcess {
+  background:transparent;
+  box-shadow:none;
+}
+.cmtSubComments .cmtCommentOdd {
+  border:0
+}
+pre {
+/*
+  border-radius:2px;
+  border:1px solid #d1d1d1;
+*/
+  border:0;
+}
+
+.jqTextboxListValue {
+  background-color:#f7f7f7;
+  border:1px solid #cfcfcf;
+  border-radius:4px;
+  -webkit-box-shadow: 0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05);
+  -moz-box-shadow   : 0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05);
+  box-shadow        : 0 0 2px #ffffff inset, 0 1px 0 rgba(0,0,0,0.05);
+}
+
+.natBottomBar {
+  background-color: var(--bottombar-background);
+  border-top:1px solid var(--bottombar-border);
+}
+
+.solrHierarchyChildren a,
+.clsSubCategories a,
+.clsSubCategories {
+  color:#a1a1a1;
+}
+
+.solrTopicInfo .ma,
+.solrTopicInfo .fa {
+  color:#bbb;
+}
+:root {
+
+/* main colors:
+
+   blue: #3D8FE0, #2375C5
+   orange: #FF9100
+   green: #52AF00, #339000
+   magenta: #FF45B1 / #ED299C
+*/
+
+  --color-secondary-hue: 34;
+  --color-secondary-saturation: 100%;
+  --color-secondary-lightness: 50%;
+
+  --color-ternary-hue: 100;
+  --color-ternary-saturation: 80%;
+  --color-ternary-lightness: 34%;
+
+  --color-complementary-hue-offset: 150;
+
+  --color-background: #fff;
+  --color-border: #ddd;
+  --color-text: #444;
+  --color-error: #a94442;
+  --color-active-foreground: var(--color-complementary);
+  --color-active-background: inherit;
+
+  --color-hover-foreground: var(--color-complementary);
+  --color-hover-background: inherit;
+
+  --color-h1: #303030;
+  --color-h2: var(--color-primary);
+  --color-h3: var(--color-primary);
+  --color-h4: var(--color-primary);
+  --color-h5: var(--color-primary);
+  --color-h6: var(--color-primary);
+
+  --font-size: 14;
+  --font-baseline: 21;
+  --color-background: #fff;
+  --color-anchor: #333;
+  --color-text: #333;
+  --font-weight-bold: 600;
+
+  --menu-border: var(--color-border);
+  --menu-background: var(--color-background);
+  --menu-foreground: var(--color-foreground);
+  --menu-top-background: var(--color-primary);
+  --menu-top-foreground: #fff;
+  --menu-top-hover-background: var(--color-primary-darker-1);
+  --menu-top-hover-foreground: #fff;
+
+  --toppanel-border: var(--color-secondary);
+  --toppanel-background: var(--color-gray-9);
+  --toppanel-foreground: var(--color-gray-1);
+
+  --bottombar-background: var(--toppanel-background);
+  --bottombar-border: #d1d1d1;
+}
+
+:root[data-theme='dark'] {
+  --color-background: var(--color-primary-darker-4);
+  --color-border: var(--color-primary-darker-2);
+
+  --color-h2: var(--color-primary);
+  --color-h3: var(--color-primary);
+  --color-h4: var(--color-primary);
+  --color-h5: var(--color-primary);
+  --color-h6: var(--color-primary);
+
+  --color-gray: var(--color-gray-1);
+  --color-text: #fff;
+  --color-anchor: #fff;
+  --color-hover-foreground: var(--color-gray-3);
+
+  --menu-background: var(--color-primary-darker-3);
+  --menu-foreground: var(--color-foreground);
+  --menu-top-background: var(--color-primary-darker-1);
+  --menu-top-hover-background: var(--color-primary-darker-2);
+
+  --alt-border: var(--color-primary-darker-3);
+  --alt-shadow: var(--color-primary-darker-3);
+  --alt-box-shadow: 0 0 10px -2px var(--alt-shadow);
+  --alt-background: var(--color-primary-darker-5);
+
+  --input-border: 1px solid var(--color-primary-darker-3);
+  --input-background: var(--color-primary-darker-3);
+  --input-foreground: var(--color-foreground);
+  --input-focus-color: var(--color-primary);
+  --input-box-shadow: inset 2px 2px 4px var(--color-primary-darker-5);
+
+  --pre-background: var(--color-primary-darker-3);
+  --pre-foreground: var(--color-foreground);
+  --pre-border: var(--color-border);
+
+  --button-border: var(--color-border);
+  --button-background: var(--color-primary-darker-3);
+  --button-background-gradient: linear-gradient(var(--button-background) 0%, var(--color-background) 100%); */
+  --button-foreground: var(--color-text);
+
+  --table-border: var(--color-border);
+  --table-header-border: var(--table-border);
+  --table-header-foreground: var(--color-text);
+  --table-header-background: var(--color-primary-alpha-4);
+  --table-stripes: var(--color-alpha-1);
+
+  --toppanel-border: var(--color-secondary-alpha-1);
+  --toppanel-background: var(--color-primary-darker-5);
+  --toppanel-foreground: var(--color-gray-3);
+
+  --bottombar-background: var(--color-primary-darker-5);
+  --bottombar-border: var(--color-primary-darker-3);
+}
+
+:root[data-theme='dark'] .natBody {
+  background:linear-gradient(var(--top-panel-background), var(--color-background) 120px);
+}
+

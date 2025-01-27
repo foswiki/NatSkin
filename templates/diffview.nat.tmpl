@@ -9,15 +9,17 @@
 %TMPL:DEF{"banner"}%%TMPL:END%
 %TMPL:DEF{"form"}%%TMPL:END%
 %TMPL:DEF{"bottombar"}%%TMPL:END%
+%TMPL:DEF{"paneltoggle"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
-%TMPL:DEF{"titleaction"}%%TRANSLATE{"diff"}%%TMPL:END%
+%TMPL:DEF{"titleaction"}%%TRANSLATE{"Diff"}%%TMPL:END%
 
 %TMPL:DEF{"topicactions"}%%DIFFCONTROL{
   template="topicactions::diff"
-  newrev="%TMPL:P{"newrev"}%"
-  oldrev="%TMPL:P{"oldrev"}%"
-  context="%TMPL:P{"context"}%"
-  offset="%TMPL:P{"offset"}%"
+  newrev="%TMPL:P{"diff::newrev"}%"
+  oldrev="%TMPL:P{"diff::oldrev"}%"
+  context="%TMPL:P{"diff::context"}%"
+  offset="%TMPL:P{"diff::offset"}%"
+  exclude="%TMPL:P{"diff::exclude"}%"
 }%%TMPL:END%
 
 %TMPL:DEF{"topicactions::diff"}%<div class='natTopicActions natHistoryTopicActions'>

@@ -1,7 +1,6 @@
-###############################################################################
-# NatSkin.pm 
+# NatSkin
 #
-# Copyright (C) 2003-2019 MichaelDaum http://michaeldaumconsulting.com
+# Copyright (C) 2003-2025 MichaelDaum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -13,16 +12,23 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details, published at
 # http://www.gnu.org/copyleft/gpl.html
-#
-###############################################################################
 
 package Foswiki::Contrib::NatSkin;
+
+=begin TML
+
+---+ package Foswiki::Contrib::NatSkin
+
+contains version and release information
+
+=cut
 
 use strict;
 use warnings;
 
-our $VERSION = '6.01';
-our $RELEASE = '14 Feb 2019';
+our $VERSION = '7.00';
+our $RELEASE = '%$RELEASE%';
 our $SHORTDESCRIPTION = 'Userfriendly Foswiki skin providing a flexible theming engine for professional webdesigns';
+our $LICENSECODE = '%$LICENSECODE%';
 
 1;

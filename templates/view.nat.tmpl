@@ -1,7 +1,4 @@
 %TMPL:INCLUDE{"page"}%
-%TMPL:INCLUDE{"viewbody"}%
-%TMPL:INCLUDE{"viewtopicactions"}%
-%TMPL:INCLUDE{"viewsidebar"}%
 %TMPL:INCLUDE{"searchbox"}%
 %TMPL:INCLUDE{"metadata"}%
 %TMPL:INCLUDE{"metacomments"}%
@@ -10,7 +7,8 @@
 %{ ################################################################################ }%
 %TMPL:DEF{"bodyclass"}%natViewBody %IF{"context 'natskin_history_1'" then="natViewHistoryBody"}%%TMPL:END%
 %TMPL:DEF{"bottombar::contents"}%%WEBCOMPONENT{"BottomBar"}%%TMPL:END%
-%TMPL:DEF{"scrolltop"}%<a class="natScrollTop jqScrollToLink" data-target="0"  data-duration="500" title="%MAKETEXT{"Scroll to top"}%">%JQICON{"fa-angle-double-up"}%</a>%TMPL:END%
+%TMPL:DEF{"scrolltop"}%<a href="#PageTop" class="natScrollTop foswikiHideOnPrint jqScrollToLink" style="display:none" data-target="0" data-duration="500" title="%MAKETEXT{"Scroll to top"}%">%TMPL:P{"icon::scrolltop"}%</a>%TMPL:END%
+%TMPL:DEF{"titleaction"}%%IF{"$'URLPARAM{section}'!=''" then="%MAKETEXT{"Section"}%"}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"meta"}%%{}%
@@ -22,9 +20,10 @@
 %TMPL:P{"metaopengraph"}%
 %TMPL:P{"metarelations"}%
 %TMPL:P{"metaedit"}%
-%TMPL:P{"metaatom"}%
-%TMPL:P{"metarss"}%
-%TMPL:P{"metaopensearch"}%
+%TMPL:P{"metacanonical"}%
+%TMPL:P{context="WebHome" then="metaopensearch"}%
+%TMPL:P{context="WebHome" then="DISmanifest"}%
+%TMPL:P{context="WebHome" then="metarss"}%
 %{}%%TMPL:END%
 
 %TMPL:DEF{"metarobots"}%%{}%
@@ -34,61 +33,101 @@
 
 %TMPL:DEF{"metaopengraph"}%%{}%
 %TMPL:P{"metaopengraph::fb_app_id"}%
-%TMPL:P{"metaopengraph::url"}%
-%TMPL:P{"metaopengraph::type"}%
 %TMPL:P{"metaopengraph::title"}%
+%TMPL:P{"metaopengraph::type"}%
+%TMPL:P{"metaopengraph::url"}%
+%TMPL:P{"metaopengraph::logo"}%
 %TMPL:P{"metaopengraph::image"}%
 %TMPL:P{"metaopengraph::description"}%
-%TMPL:P{"metaopengraph::sitename"}%%{}%
-%TMPL:P{"DISmetaopengraph::author"}%
+%TMPL:P{"metaopengraph::sitename"}%
+%IF{"'%TMPL:P{"metaopengraph::type::content"}%'='article'"
+  then="$percntTMPL:P{\"metaopengraph::article\"}$percnt"
+}%%{}%
 %{}%%TMPL:END%
 
 %TMPL:DEF{"metaopengraph::fb_app_id"}%%IF{"'%TMPL:P{"metaopengraph::fb_app_id::content"}%'!=''"
-  then="<meta property=\"fb:app_id\" content=\"%TMPL:P{"metaopengraph::fb_app_id::content"}%\" />"
+  then="<meta name=\"fg:app_id\" property=\"fb:app_id\" content=\"%TMPL:P{"metaopengraph::fb_app_id::content"}%\" />"
 }%%TMPL:END%
 %TMPL:DEF{"metaopengraph::fb_app_id::content"}%%METAFBAPPID{default=""}%%TMPL:END%
 
-%TMPL:DEF{"metaopengraph::type"}%<meta property="og:type" content="%TMPL:P{"metaopengraph::type::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::type"}%<meta name="og:type" property="og:type" content="%TMPL:P{"metaopengraph::type::content"}%" />%TMPL:END%
 %TMPL:DEF{"metaopengraph::type::content"}%article%TMPL:END%
 
-%TMPL:DEF{"metaopengraph::title"}%<meta property="og:title" content="%TMPL:P{"metaopengraph::title::content"}%" />%TMPL:END%
-%TMPL:DEF{"metaopengraph::title::content"}%%GETTOPICTITLE%%TMPL:END%
+%TMPL:DEF{"metaopengraph::title"}%<meta name="og:title" property="og:title" content="%TMPL:P{"metaopengraph::title::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::title::content"}%%GETTOPICTITLE{encode="entity"}%%TMPL:END%
 
-%TMPL:DEF{"metaopengraph::url"}%<meta property="og:url" content="%TMPL:P{"metaopengraph::url::content"}%" />%TMPL:END%
-%TMPL:DEF{"metaopengraph::url::content"}%%SCRIPTURL{"view"}%/%WEB%/%TOPIC%%TMPL:END%
+%TMPL:DEF{"metaopengraph::url"}%<meta name="og:url" property="og:url" content="%TMPL:P{"metaopengraph::url::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::url::content"}%%SCRIPTURL{"view" topic="%WEB%.%TOPIC%"}%%TMPL:END%
 
-%TMPL:DEF{"metaopengraph::sitename"}%<meta property="og:site_name" content="%TMPL:P{"metaopengraph::sitename::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::sitename"}%<meta name="og:site_name" property="og:site_name" content="%TMPL:P{"metaopengraph::sitename::content"}%" />%TMPL:END%
 %TMPL:DEF{"metaopengraph::sitename::content"}%%WIKITOOLNAME{default="Foswiki"}%%TMPL:END%
 
-%TMPL:DEF{"metaopengraph::description"}%<meta property="og:description" content="%ENCODE{"%TMPL:P{"metaopengraph::description::content"}%" type="html"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::description"}%<meta name="og:description" property="og:description" content="%ENCODE{"%TMPL:P{"metaopengraph::description::content"}%" type="html"}%" />%TMPL:END%
 %TMPL:DEF{"metaopengraph::description::content"}%%TMPL:P{"metadescription::content"}%%TMPL:END%
 
-%TMPL:DEF{"metaopengraph::author"}%<meta property="article:author" content="%ENCODE{"%TMPL:P{"metaopengraph::author::content"}%" type="html"}%" />%TMPL:END%
-%TMPL:DEF{"metaopengraph::author::content"}%%TMPL:P{"metaauthor::content"}%%TMPL:END%
-
 %TMPL:DEF{"metadescription"}%<meta name="description" content="%ENCODE{"%TMPL:P{"metadescription::content"}%" type="html"}%" />%TMPL:END%
-%TMPL:DEF{"metadescription::content"}%%METADESCRIPTION{default="%FORMFIELD{"Summary" default="%GETTOPICTITLE%" alttext="%GETTOPICTITLE%"}%"}%%TMPL:END%
+%TMPL:DEF{"metadescription::content"}%%METADESCRIPTION{default="%FORMFIELD{"Summary" default="%GETTOPICTITLE{encode="entity"}%" alttext="%GETTOPICTITLE{encode="entity"}%"}%"}%%TMPL:END%
 
 %TMPL:DEF{"metasubject"}%%IF{"'%METASUBJECT{default=""}%'" then="<meta name=\"subject\" content=\"%ENCODE{"%TMPL:P{"metasubject::content"}%\" type=\"html"}%\" />"}%%TMPL:END%
 %TMPL:DEF{"metasubject::content"}%%METASUBJECT{default=""}%%TMPL:END%
 
-%TMPL:DEF{"metaopengraph::image"}%<meta property="og:image" content="%TMPL:P{"metaopengraph::image::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::logo"}%<meta name="og:logo" property="og:logo" content="%TMPL:P{"metaopengraph::logo::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::logo::content"}%%TMPL:P{"manifest::logo"}%%TMPL:END%
+
+%TMPL:DEF{"metaopengraph::image"}%<meta name="og:image" property="og:image" content="%TMPL:P{"metaopengraph::image::content"}%" />%TMPL:END%
 %TMPL:DEF{"metaopengraph::image::content"}%%METAIMAGE{default="$percntTMPL:P{\"metaopengraph::image::content::default\"}$percnt"}%%TMPL:END%
 %TMPL:DEF{"metaopengraph::image::content::default"}%%ATTACHMENTS{
-  name=".*\.(jpe?g|gif|png|bmp|webp|svg|JE?PG|GIF|PNG|BMP|WEBP|SVG)"
+  name=".*\.(%TMPL:P{"image::exts"}%)$"
   warn="off" 
   limit="1" 
   attr="t"
   format="$urlpath"
-  _format="%SCRIPTURL{"rest"}%/ImagePlugin/resize?topic=$web.$topic&file=$name&size=1200x630>^&crop=on"
   nullformat="%WIKILOGOIMG%"
 }%%TMPL:END%
 
-%TMPL:DEF{"metakeywords"}%<meta name="keywords" content="%ENCODE{"%TMPL:P{"metakeywords::content"}%" type="html"}%" />%TMPL:END%
-%TMPL:DEF{"metakeywords::content"}%%METAKEYWORDS{default="%FORMFIELD{"Tag" default="Foswiki, %WEB%, %TOPIC%" alttext="Foswiki, %WEB%, %TOPIC%"}%"}%%TMPL:END%
+%TMPL:DEF{"metaopengraph::article"}%<!-- -->
+%TMPL:P{"metaopengraph::article::author"}%
+%TMPL:P{"metaopengraph::article::published"}%
+%TMPL:P{"metaopengraph::article::modified"}%
+%TMPL:P{"metaopengraph::article::category"}%
+%TMPL:P{"metaopengraph::article::tag"}%
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"metaopengraph::article::author"}%<meta name="article:author" property="article:author" content="%ENCODE{"%TMPL:P{"metaopengraph::article::author::content"}%" type="html"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::article::author::content"}%%TMPL:P{"metaauthor::content"}%%TMPL:END%
+
+%TMPL:DEF{"metaopengraph::article::published"}%<meta name="article:published_time" property="article:published_time" content="%TMPL:P{"metaopengraph::article::published::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::article::published::content"}%%TMPL:P{context="DBCachePluginEnabled" then="metaopengraph::article::published::dbcache" else="metaopengraph::article::published::default"}%%TMPL:END%
+%TMPL:DEF{"metaopengraph::article::published::dbcache"}%%IF{"'%WEB%.%TOPIC%'/PublishDate"
+  then="$percntDBQUERY{topic=\"%WEB%.%TOPIC%\" format=\"$formatTime(publishdate, '$iso')\"}$percnt"
+  else="$percntTMPL:P{\"metaopengraph::article::published::default\"}$percnt"
+}%%TMPL:END%
+%TMPL:DEF{"metaopengraph::article::published::default"}%%REVINFO{"$iso"}%%TMPL:END%
+
+%TMPL:DEF{"metaopengraph::article::modified"}%<meta name="article:modified_time" property="article:modified_time" content="%TMPL:P{"metaopengraph::article::modified::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::article::modified::content"}%%REVINFO{"$iso"}%%TMPL:END%
+
+%TMPL:DEF{"metaopengraph::article::tag"}%<meta name="article:tag" property="article:tag" content="%METAKEYWORDS{default="%IF{"'%WEB%.%TOPIC%'/Tag" 
+  then="$percntTMPL:P{\"metaopengraph::article::tag::content\"}$percnt"
+}%"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::article::tag::content"}%%TMPL:P{context="ClassificationPluginEnabled" then="metaopengraph::article::tag::classification" else="metaopengraph::article::tag::default"}%%TMPL:END%
+%TMPL:DEF{"metaopengraph::article::tag::classification"}%%TAGINFO{topic="%WEB%.%TOPIC%" format="$title"}%%TMPL:END%
+%TMPL:DEF{"metaopengraph::article::tag::default"}%%FORMFIELD{"Tag"}%%TMPL:END%
+
+%TMPL:DEF{"metaopengraph::article::category"}%%IF{"'%WEB%.%TOPIC%'/Category" 
+  then="<meta name=\"article:section\" property=\"article:section\" content=\"$percntTMPL:P{\"metaopengraph::article::section::content\"}$percnt\" />"
+  else="<!-- -->"
+}%%TMPL:END%
+%TMPL:DEF{"metaopengraph::article::section::content"}%%TMPL:P{context="ClassificationPluginEnabled" then="metaopengraph::article::section::classification" else="metaopengraph::article::section::default"}%%TMPL:END%
+%TMPL:DEF{"metaopengraph::article::section::classification"}%%CATINFO{topic="%WEB%.%TOPIC%" format="$title"}%%TMPL:END%
+%TMPL:DEF{"metaopengraph::article::section::default"}%%FORMFIELD{"Category"}%%TMPL:END%
+
+%TMPL:DEF{"metakeywords"}%<meta name="keywords" content="%METAKEYWORDS{default="%IF{"'%WEB%.%TOPIC%'/Tag" 
+  then="$percntTMPL:P{\"metaopengraph::article::tag::content\"}$percnt" 
+}%"}%" type="html" />%TMPL:END%
 
 %TMPL:DEF{"metagenerator"}%<meta name="generator" content="%TMPL:P{"metagenerator::content"}%" />%TMPL:END%
-%TMPL:DEF{"metagenerator::content"}%Foswiki %WIKIVERSION%%TMPL:END%
+%TMPL:DEF{"metagenerator::content"}%%METAGENERATOR{default="Foswiki"}%%TMPL:END%
 
 %TMPL:DEF{"metaauthor"}%<meta name="author" content="%ENCODE{"%TMPL:P{"metaauthor::content"}%" type="html"}%" />%TMPL:END%
 %TMPL:DEF{"metaauthor::content"}%%METAAUTHOR{default="%SPACEOUT{"%USERINFO{"%TMPL:P{context="DBCachePluginEnabled" then="metaauthor::content::dbcache" else="metaauthor::content::default"}%" format="$wikiname"}%"}%"}%%TMPL:END%
@@ -100,8 +139,20 @@
   then="<link rel=\"alternate\" type=\"application/x-wiki\" title=\"Edit this page!\" href=\"%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%\" />"
 }%%TMPL:END%
 
-%TMPL:DEF{"metarss"}%<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="%SCRIPTURLPATH{"view"}%/%WEB%/WebRss?contenttype=text/xml&skin=xml" />%TMPL:END%
-%TMPL:DEF{"metaatom"}%<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="%SCRIPTURLPATH{"view"}%/%WEB%/WebAtom?contenttype=text/xml" />%TMPL:END%
+%TMPL:DEF{"metacanonical"}%%IF{
+  "context view"
+  then="<link rel=\"canonical\" href=\"%SCRIPTURL{"view" topic="%WEB%.%TOPIC%"}%%FORMATLIST{
+      "%QUERYPARAMS{encoding="url" format="$name=$value"}%"
+      split="\n"
+      pattern="^(.*)=(.*)$"
+      exclude="^(t|sortcol|table|up|refresh|SEARCH.*)=.*$"
+      header="?"
+      format="$1=$2"
+      separator="&"
+    }%\" />"
+}%%TMPL:END%
+
+%TMPL:DEF{"metarss"}%<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="%SCRIPTURLPATH{"view" topic="%WEB%.WebRss"}%?contenttype=text/xml&skin=xml" />%TMPL:END%
 
 %TMPL:DEF{"metarelations"}%%IF{"context i18n_enabled and context MultiLingualPluginEnabled and '%CONTENT_LANGUAGE{default=""}%'!=''" 
   then="$percntTMPL:P{\"metarelations::langs\"}$percnt"
@@ -109,21 +160,29 @@
 
 %TMPL:DEF{"metarelations::langs"}%%DBQUERY{
   "(preferences.BASETRANSLATION = '%BASETRANSLATION{default="%TOPIC%"}%' OR topic = '%BASETRANSLATION{default="%TOPIC%"}%')"
-  format="<link rel=\"alternate\" hreflang=\"$expand(preferences.CONTENT_LANGUAGE or '%DEFAULTLANGUAGE{default="en"}%')\" href=\"%SCRIPTURL{"view"}%/$web/$topic\" />" 
+  format="<link rel=\"alternate\" hreflang=\"$expand(preferences.CONTENT_LANGUAGE or '%DEFAULTLANGUAGE{default="en"}%')\" href=\"$percntSCRIPTURL{\"view\" topic=\"$web.$topic\"}$percnt\" />" 
   separator="$n"
 }%%TMPL:END%
 
 %{ ########################################################################## }%
-%TMPL:DEF{"langswitcher"}%%IF{"context i18n_enabled and context MultiLingualPluginEnabled and '%CONTENT_LANGUAGE{default=""}%'!=''" then="$percntTMPL:P{\"langswitcher::impl\"}$percnt"}%%TMPL:END%
+%TMPL:DEF{"langswitcher"}%%IF{"context i18n_enabled and context MultiLingualPluginEnabled and '%CONTENT_LANGUAGE{default=""}%'!=''"
+  then="$percntIF{\"$percntDBQUERY{
+                      \"(preferences.BASETRANSLATION = '%BASETRANSLATION{default="%TOPIC%"}%' OR topic = '%BASETRANSLATION{default="%TOPIC%"}%')\"
+                      header=\"$count\"
+                      format=\"\"
+                    }$percnt > 1\"
+                then=\"$dollarpercntTMPL:P{\\"langswitcher::impl\\"}$dollarpercnt\" 
+        }$percnt"
+}%%TMPL:END%
 
 %{ ########################################################################## }%
-%TMPL:DEF{"langswitcher::impl"}%<div class="natLangs foswikiContents" name="langswitcher::contents">%TMPL:P{"langswitcher::contents"}%</div>%TMPL:END%
+%TMPL:DEF{"langswitcher::impl"}%<div class="natLangs">%TMPL:P{"langswitcher::contents"}%</div>%TMPL:END%
 %TMPL:DEF{"langswitcher::contents"}%<literal>%DBQUERY{
   "(preferences.BASETRANSLATION = '%BASETRANSLATION{default="%TOPIC%"}%' OR topic = '%BASETRANSLATION{default="%TOPIC%"}%')"
   format="$percntLANGUAGES{\"$expand(preferences.CONTENT_LANGUAGE or '%DEFAULTLANGUAGE{default="en"}%')\"
       format=\"$percntIF{\"'$topic'='%TOPIC%'\"
-                then=\"<a class='jqUITooltip natCurrentLang' data-theme='info' data-delay='0' title='$percntMAKETEXT{\"Current translation is [_1]\" args=\"$dollarlabel_name\"}$percnt'>$icon(24)</a>\"
-                else=\"<a href='%SCRIPTURLPATH{"view"}%/$web/$topic' class='jqUITooltip' data-theme='info' data-delay='0' title='$percntMAKETEXT{\"Select translation in [_1]\" args=\"$dollarlabel_name\"}$percnt'>$icon(24)</a>\"
+                then=\"<a class='natCurrentLang' title='$percntMAKETEXT{\"Current translation is [_1]\" args=\"$dollarlabel_name\"}$percnt'>$icon(24)</a>\"
+                else=\"<a href='$percntSCRIPTURLPATH{\"view\" topic=\"$web.$topic\"}$percnt' title='$percntMAKETEXT{\"Select translation in [_1]\" args=\"$dollarlabel_name\"}$percnt'>$icon(24)</a>\"
               }$percnt\"
     }$percnt"
   separator="$n"
@@ -135,18 +194,20 @@
 %TMPL:P{"text"}%%{}%
 %TMPL:P{"rawbutton"}%%{}%
 %TMPL:P{"aftertext"}%%{}%
-%TMPL:P{"DIS_socialbar"}%%{}%
 %TMPL:P{"comments"}%%{}%
 %{}%%TMPL:END%
 
 %TMPL:DEF{"rawbutton"}%%IF{"$'URLPARAM{raw}'='on'" then="<p class='clearfix'>$percntBUTTON{\"%MAKETEXT{"View"}%\" title=\"%MAKETEXT{"Back to view mode"}%\" style=\"float:right\" icon=\"fa-eye\" target=\"%WEB%.%TOPIC%\"}$percnt</p>"}%%TMPL:END%
-%TMPL:DEF{"redirectbutton"}%%IF{"$'URLPARAM{redirectedfrom}'!=''" then="<div class='natRedirectFrom'>%TMPL:P{"REDIRECT_ICON"}% %MAKETEXT{"Redirect from [_1]" args="[[%URLPARAM{"redirectedfrom"}%?noredirect=on"}%]]</div>"}%%TMPL:END%
+%TMPL:DEF{"redirectbutton"}%%IF{"$'URLPARAM{redirectedfrom}'!=''" then="<div class='natRedirectFrom'>%TMPL:P{"icon::redirect"}% %MAKETEXT{"Redirect from [_1]" args="[[%URLPARAM{"redirectedfrom"}%?noredirect=on"}%]]</div>"}%%TMPL:END%
 %TMPL:DEF{"text"}%%TEXT%%TMPL:END%
 %TMPL:DEF{"rawtext"}%<textarea rows="22" cols="70" class="foswikiTextarea foswikiTextareaRawView" readonly="readonly" style="width:99%">%TEXT%</textarea>%TMPL:END%
 
+%TMPL:DEF{"topicactions"}%<div class="natTopicActions clearfix" id="natTopicActions"><noautolink>%TMPL:P{context="static" else="topicactions::contents"}%</noautolink></div>%TMPL:END%
+%TMPL:DEF{"topicactions::contents"}%%WEBCOMPONENT{"TopicActions"}%%TMPL:END%
+
 %{ ################################################################################ }%
 %TMPL:DEF{"contentheader"}%<div class="natMainHeaderContents clearfix" %IF{"$'DISPLAYTOPICACTIONS'='off' and $'DISPLAYBREADCRUMBS'='off'" then="style='display:none'"}%>%TMPL:P{"contentheader::contents"}%</div>%TMPL:END%
-%TMPL:DEF{"contentheader::contents"}%%IF{
+%TMPL:DEF{"contentheader::contents"}%%TMPL:P{context="natskin_layout_sticky" then="broadcast"}%%IF{
   "$'DISPLAYTOPICACTIONS'='off'" 
   else="$percntTMPL:P{\"topicactions\"}$percnt"
 }%%IF{
@@ -155,7 +216,7 @@
 }%%TMPL:END%
 
 %TMPL:DEF{"breadcrumbs::tail"}%%IF{"$'URLPARAM{section}'!=''" 
-  then="%TMPL:P{"sep"}%<a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?rev=$percntURLPARAM{\"rev\"}$percnt;section=$percntURLPARAM{\"section\"}$percnt'>$percntURLPARAM{\"section\"}$percnt</a>"
+  then="%TMPL:P{"sep"}%<a href='%SCRIPTURLPATH{"view" topic="%WEB%.%TOPIC%" rev="%URLPARAM{"rev"}%" section="%URLPARAM{"section"}%"}%'>$percntURLPARAM{\"section\"}$percnt</a>"
 }%%TMPL:END%
 
 %{ ################################################################################ }%
@@ -180,71 +241,96 @@
 %TMPL:DEF{"socialbar::share::services"}%Facebook,Twitter,Xing,LinkedIn,WhatsApp%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"revinfo"}%<div class="foswikiRevision">
-%TMPL:P{"revinfo::datemodified"}%%{}%
-%TMPL:P{"revinfo::revision"}%%{}%
-%TMPL:P{"revinfo::author"}%%{}%
-%TMPL:P{"revinfo::likes"}%%{}%
-</div>%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:P{"revinfo::impl"}%%TMPL:END%
 
-%TMPL:DEF{"revinfo::datemodified"}%<span class='foswikiRevisionDate'>%JQICON{"fa-calendar"}% 
+%TMPL:DEF{"revinfo::impl"}%<div class="foswikiRevision"><noautolink>
+%TMPL:P{"revinfo::date"}%<!-- -->
+%TMPL:P{"revinfo::revision"}%<!-- -->
+%TMPL:P{"revinfo::author"}%<!-- -->
+%TMPL:P{context="LikePluginEnabled" then="revinfo::likes"}%<!-- -->
+%TMPL:P{"revinfo::comments"}%<!-- -->
+%TMPL:P{"revinfo::more"}%<!-- -->
+</noautolink></div>%TMPL:END%
+
+%TMPL:DEF{"revinfo::sep"}% <span class='foswikiRevisionSep'>&#124;</span> %TMPL:END%
+
+%TMPL:DEF{"revinfo::date"}%<span class='foswikiRevisionDate'>%TMPL:P{"icon::calendar"}%
   <a href="%SCRIPTURLPATH{"diff"}%/%WEB%/%TOPIC%?rev=%CURREV%">
     %REVINFO{
       "<span itemprop='dateModified' content='$iso'>$date - $hour:$min</span>" 
       rev="%TMPL:P{"currev"}%"}%
   </a>
 </span>%TMPL:END%
-%TMPL:DEF{"revinfo::revision"}%<span class='foswikiRevisionSep'>&#124;</span> 
+
+%TMPL:DEF{"revinfo::revision"}%%TMPL:P{"revinfo::sep"}%
   <span class='foswikiRevisionID'>
-    %JQICON{"fa-flag"}% 
+    %TMPL:P{"icon::revision"}%
     %MAKETEXT{"Version [_1]" args="%REVINFO{"<span itemprop='version'>$rev</span>" rev="%TMPL:P{"currev"}%"}%"}%
   </span>%TMPL:END%
-%TMPL:DEF{"revinfo::author"}%<span class='foswikiRevisionSep'>&#124;</span> 
+
+%TMPL:DEF{"revinfo::author"}%%TMPL:P{"revinfo::sep"}% 
   <span class='foswikiRevisionAuthor' itemprop='author'>
-    %JQICON{"fa-user"}% 
-    %REVINFO{"[[$wikiusername][<span itemprop='name'>$percntGETTOPICTITLE{\"$wikiusername\"}$percnt</span>]]" rev="%TMPL:P{"currev"}%"}%
+    %TMPL:P{"icon::account"}%
+    %REVINFO{
+      "$percntIF{\"istopic '$wikiusername'\" 
+        then=\"<a href='$percntSCRIPTURLPATH{\"view\" topic=\"$wikiusername\"}$percnt' data-wiki-name='$wikiname' class='foswikiUserField' itemprop='name'>$percntGETTOPICTITLE{\"$wikiusername\"}$percnt</a>\" 
+        else=\"$wikiname\"
+      }$percnt"
+      rev="%TMPL:P{"currev"}%"
+    }%
   </span>%TMPL:END%
-%TMPL:DEF{"revinfo::likes"}%%DBQUERY{
-  "total_likes>0"
-  topic="%WEB%.%TOPIC%"
-  format="<span class='foswikiRevisionSep'>&#124;</span> %JQICON{"fa-thumbs-o-up" class="fa-flip-horizontal"}% $percntTRANSLATE{\"[quant,_1,like,likes]\" args=\"$expand(total_likes)\"}$percnt"
+
+%TMPL:DEF{"revinfo::likes"}%%LIKE{ 
+   format="$percntTMPL:P{\"revinfo::sep\"}$percnt <div class='jqLike jqLikeSimple %editable%' %params% style='margin:0'>%like%</div>" 
+   likelabel="" 
+   likeicon="fa-thumbs-o-up" 
+   hidenull="on" 
+}%%TMPL:END%
+
+%TMPL:DEF{"revinfo::comments"}%%DBQUERY{
+  "comments" 
+  topic="%TMPL:P{"comments::topic"}%"
+  format="$percntTMPL:P{\"revinfo::sep\"}$percnt %TMPL:P{"icon::comment"}% $expand(comments[])" 
 }%%TMPL:END%
 
 %TMPL:DEF{"rdiff"}%%SCRIPTURLPATH{"rdiff"}%/%WEB%/%TOPIC%?type=last;render=sequential%TMPL:END%
 %TMPL:DEF{"compare"}%%SCRIPTURLPATH{"compare"}%/%WEB%/%TOPIC%?type=last;render=interweave;context=1%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"broadcast"}%%IF{"not isempty 'BROADCASTMESSAGE'" 
+%TMPL:DEF{"broadcast"}%%IF{"$FOSWIKI_BROADCAST!=''"
+  then="$percntTMPL:P{\"broadcast::system\"}$percnt"
+}%%IF{"$BROADCASTMESSAGE!=''" 
   then="$percntTMPL:P{\"broadcast::contents\"}$percnt"
 }%%TMPL:END%
 %TMPL:DEF{"broadcast::contents"}%<div class='foswikiWarningMessage foswikiBroadcastMessage' id="broadcast">
-  <a title='%MAKETEXT{"Close broadcast message"}%' class='foswikiBroadcastMessageClose ui-icon ui-icon-closethick'></a> 
-%BROADCASTMESSAGE% 
+%BROADCASTMESSAGE% %TMPL:P{"broadcast::close"}%
 </div>%TMPL:END% 
+%TMPL:DEF{"broadcast::system"}%<div class='foswikiBroadcastMessage' id="broadcast">
+%FOSWIKI_BROADCAST% %TMPL:P{"broadcast::close"}%
+</div>%TMPL:END% 
+
+%TMPL:DEF{"broadcast::close"}%<a title='%MAKETEXT{"Close broadcast message"}%' class='foswikiBroadcastMessageClose ui-icon ui-icon-closethick'></a>%TMPL:END%
 
 %{ ################################################################################ }%
-%TMPL:DEF{"flashnote"}%%IF{"not isempty 'FLASHNOTE' or $'URLPARAM{flashnote}'!=''" 
-  then="$percntTMPL:P{\"flashnote::contents\"}$percnt"
-}%%TMPL:END%
-
-%TMPL:DEF{"flashnote::contents"}%<div class='foswikiInfoMessage foswikiBroadcastMessage' id="flashnote">
-  <a title='%MAKETEXT{"Close broadcast message"}%' class='foswikiBroadcastMessageClose ui-icon ui-icon-closethick'></a> 
-%IF{"not isempty 'FLASHNOTE'"
-  then="$percntFLASHNOTE$percnt"
-}% %IF{"$'URLPARAM{flashnote}'!=''"
-  then="$percntURLPARAM{\"flashnote\"}$percnt"
-}%
-</div>%TMPL:END% 
-
+%TMPL:DEF{"flashnote"}%%IF{"not isempty FLASHNOTE"
+  then="<div class='foswikiHidden foswikiFlashNote'>$percntFLASHNOTE$percnt</div>"
+}%%IF{"$'URLPARAM{flashnote}'!=''"
+  then="<div class='foswikiHidden foswikiFlashNote'>$percntURLPARAM{\"flashnote\"}$percnt</div>"
+}%%TMPL:END% 
 
 %{ ################################################################################ }%
 %TMPL:DEF{"comments"}%%IF{
-  "$'DISPLAYCOMMENTS'='on' and $'COMMENTFORMAT'!='insidetab' and not context save and not context preview and not context edit"
+  "'%DISPLAYCOMMENTS{default="%TMPL:P{"comments::default"}%"}%'='on' and $'COMMENTFORMAT'!='insidetab' and not context save and not context preview and not context edit"
   then="$percntTMPL:P{\"comments::system::%COMMENTSYSTEM{default="metacomment"}%\"}$percnt"
-}%%TMPL:P{"metacomments::init"}%%TMPL:END%
+}%%TMPL:END%
 
+%TMPL:DEF{"comments::topic"}%%WEB%.%BASETRANSLATION{default="%TOPIC%"}%%TMPL:END%
+%TMPL:DEF{"comments::default"}%off%TMPL:END%
 %TMPL:DEF{"comments::system::disqus"}%%DISQUS%%TMPL:END%
-%TMPL:DEF{"comments::system::metacomment"}%%JQREQUIRE{"loader"}%<div class="jqLoader" data-url="%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=metacomments;expand=metacomments;render=on;topic=%WEB%.%TOPIC%" data-skin=""></div>%TMPL:END%
+%TMPL:DEF{"comments::system::metacomment"}%%TMPL:P{"metacomments::init"}%%TMPL:P{context="static" then="comments::system::metacomment::static" else="comments::system::metacomment::async"}%%TMPL:END%
+%TMPL:DEF{"comments::system::metacomment::template"}%metacomments%TMPL:END%
+%TMPL:DEF{"comments::system::metacomment::async"}%%JQREQUIRE{"loader"}%<div class="jqLoader" data-url="%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=%TMPL:P{"comments::system::metacomment::template"}%;expand=metacomments;render=on;topic=%WEB%.%TOPIC%;commentstopic=%TMPL:P{"comments::topic"}%;rev=%URLPARAM{"rev"}%;cachecontrol=0" data-mode="auto" data-skin=""></div>%TMPL:END%
+%TMPL:DEF{"comments::system::metacomment::static"}%%TMPL:P{"metacomments"}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"editsettingsform"}%<form id="editSettingsForm" name="editSettingsForm" class="foswikiHidden" action="%SCRIPTURLPATH{"manage"}%/%BASEWEB%/%BASETOPIC%" method="post"> 

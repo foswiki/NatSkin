@@ -1,21 +1,57 @@
 TARGET=\
-  matter.css \
-  topmenuVariation.css \
-  bannerEditor.js \
-  bannerSettings.js \
-  geopattern.js \
-  geopattern.init.js \
-  trianglify.js \
-  trianglify.init.js \
-  particles.js \
-  particles.init.js
+  $(BUILD_DIR)/matter.css \
+  $(BUILD_DIR)/topmenuVariation.css \
+  $(BUILD_DIR)/profile.css \
+  $(BUILD_DIR)/bannerEditor.js \
+  $(BUILD_DIR)/bannerSettings.js \
+  $(BUILD_DIR)/geopattern.js \
+  $(BUILD_DIR)/particles.js \
+  $(BUILD_DIR)/parallax.js \
+  $(BUILD_DIR)/trianglify.js
+
+TRIANGLIFY_SOURCE=\
+  $(LIB_DIR)/trianglify.uncompressed.js\
+  $(SRC_DIR)/trianglify.init.uncompressed.js
+
+PARTICLES_SOURCE=\
+  $(LIB_DIR)/particles.uncompressed.js\
+  $(SRC_DIR)/particles.init.uncompressed.js
+
+GEOPATTERN_SOURCE=\
+  $(LIB_DIR)/geopattern.uncompressed.js \
+  $(SRC_DIR)/geopattern.init.uncompressed.js \
+
+MATTERSTYLE_SOURCE=\
+  $(SRC_DIR)/base.uncompressed.css \
+  $(SRC_DIR)/jquery-ui.uncompressed.css \
+  $(SRC_DIR)/forms.uncompressed.css \
+  $(SRC_DIR)/vars.uncompressed.css 
 
 -include ../NatSkin/Makefile.include
 
-.PHONY: geopattern.git trianglify.git clean
+.PHONY: geopattern.git trianglify.git particles.git git clean
 
 clean: 
-	rm -f $(TARGET) *.gz
+	rm -f $(BUILD_DIR)/* *.gz *jslint
+
+$(BUILD_DIR)/matter.uncompressed.css: $(MATTERSTYLE_SOURCE)
+	@echo generating $@
+	@cat $^ > $@
+
+$(BUILD_DIR)/particles.js: $(PARTICLES_SOURCE)
+	@echo minifying $@
+	@$(JSMIN) $^ > $@
+
+$(BUILD_DIR)/geopattern.js: $(GEOPATTERN_SOURCE)
+	@echo minifying $@
+	@$(JSMIN) $^ > $@
+
+$(BUILD_DIR)/trianglify.js: $(TRIANGLIFY_SOURCE)
+	@echo minifying $@
+	@$(JSMIN) $^ > $@
+
+
+git: geopattern.git trianglify.git particles.git
 
 geopattern.git:
 	@if test -d geopattern.git; then \
@@ -39,7 +75,7 @@ particles.git:
 	fi
 
 ifneq (,$(wildcard geopattern.git))
-geopattern.uncompressed.js: geopattern.git/js/geopattern.js
+$(LIB_DIR)/geopattern.uncompressed.js: geopattern.git/js/geopattern.js
 	@echo getting $@ from geopattern
 	@cp $< $@ 
 
@@ -49,13 +85,13 @@ geopattern.git/js/geopattern.js:
 endif
 
 ifneq (,$(wildcard trianglify.git))
-trianglify.js: trianglify.git/dist/trianglify.min.js
+$(LIB_DIR)/trianglify.uncompressed.js: trianglify.git/dist/trianglify.bundle.js
 	@echo getting $@ from trianglify.git
 	@cp $< $@ 
 endif
 
 ifneq (,$(wildcard particles.git))
-particles.uncompressed.js: particles.git/src/particles.js
+$(LIB_DIR)/particles.uncompressed.js: particles.git/src/particles.js
 	@echo getting $@ from particles.git
 	@cp $< $@ 
 endif

@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPICTITLE%
 
@@ -20,14 +20,15 @@ $Foswiki::cfg{NatSkin}{FixTypograpghy} = 1;
 </verbatim>
 
 <div class="alt">
-
-“Quotes'', „More quotes''
-
-© copyright, ® registered, ™ trademark
-
-… ellipsis
-
-<- arrow left … arrow right ->
+   *  ``Quotes''
+   *  ,,More quotes''
+   * (c) copyright
+   * (r) registered
+   * (tm) trademark
+   * ... ellipsis
+   * <- arrow left
+   * -> arrow right
+   * <-> arrow left-right
 </div>
 
 ---++ Headings
@@ -76,6 +77,10 @@ __bold italic text__
 <u>underlined text</u>
 
 <strike>strike through text</strike>
+
+<del>deleted text</del>
+
+<ins>inserted text</ins>
 </div>
 
 ---++ Citations
@@ -133,10 +138,30 @@ Sample text with makros
 </verbatim>
 
 ---++ Font sizes
-Use classes =foswikiLarge=, =foswikiNormal=, =foswikiSmallish= and =foswikiSmall= to control font sizes:
+Use classes =foswikiHuge= =foswikiLarge=, =foswikiBig=, =foswikiNormal=, =foswikiSmallish= and =foswikiSmall= to control font sizes:
+
+<div class="alt foswikiHuge">
+*foswikiHuge:*
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui.
+</div>
 
 <div class="alt foswikiLarge">
 *foswikiLarge:*
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui.
+</div>
+
+<div class="alt foswikiBig">
+*foswikiBig:*
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
 euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
 ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
@@ -202,34 +227,64 @@ first.last@gmail.com
 </div>
 
 ---++ Message styles
-Use css classes =foswikiSuccessMessage=, =foswikiErrorMessage=, =foswikiWarningMessage=, =foswikiInfoMessage=, =foswikiHelp= or =foswikiAlt= to give paragraphs special meaning.
+Use css classes =foswikiSuccessMessage=, =foswikiErrorMessage=, =foswikiWarningMessage=, =foswikiInfoMessage=, =foswikiMessage=, =foswikiHelp=, or =foswikiAlt= to give paragraphs special meaning.
+Use an additional class =foswikiNoIcon= for any of those message styles to dispable the icon.
 
-<div class="foswikiSuccessMessage">
-Success, everything is fine. Click [[%TOPIC%][here]].
-</div>
+Message boxes can be rendered using the =%MESSAGEBOX= macro.
 
-<div class="foswikiWarningMessage">
-Warning, could not connect to server. Click [[%TOPIC%][here]].
-</div>
+%MESSAGEBOX{"*Success*, everything is fine. Click [[%TOPIC%][here]]." type="success"}%
 
-<div class="foswikiErrorMessage">
-Error, something is wrong.  Click [[%TOPIC%][here]].
-</div>
+%MESSAGEBOX{"*Warning*, could not connect to server. Click [[%TOPIC%][here]]." type="warning"}%
 
-<div class="foswikiInfoMessage">
-Check this out.  Click [[%TOPIC%][here]].
-</div>
+%MESSAGEBOX{"*Error*, something went wrong.  Click [[%TOPIC%][here]]." type="error"}%
 
-<div class="foswikiHelp">
-%JQICON{"medal_gold_1"}% Some note with a custom icon and a bit of a style around it.
-</div>
+%MESSAGEBOX{"*Info:* Check this out.  Click [[%TOPIC%][here]]." type="info"}%
 
-<div class="foswikiAlt">
-A paragraph to stand out from the rest.
-</div>
+%MESSAGEBOX{"*Help*, some note without an icon. Click [[%TOPIC%][here]]." type="help"}%
+
+%MESSAGEBOX{"*Message:* a generic message box. Click [[%TOPIC%][here]]."}%
+
+%MESSAGEBOX{"*Alt*, a paragraph to stand out from the rest. Click [[%TOPIC%][here]]." type="alt"}%
+
+%MESSAGEBOX{"*Success*, everything is fine even though there is no icon. Click [[%TOPIC%][here]]." showicon="off" type="success"}%
+
+%MESSAGEBOX{"*Error*, this is a sticky error message." sticky="on" type="error"}%
+
+   * Set BROADCASTMESSAGE = This is worth a click or two covfefe.
 
 ---++ Lists
 
+---+++ Unordered Lists
+
+   * item
+   * Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+   * item
+   * item
+
+---+++ Ordered Lists
+
+   1 item
+   1 item
+   1 item
+   1 item
+   1 item
+   1 item
+   1 item
+   1 item
+   1 item
+   1 item
+---+++ Nested Lists
+
+   * item
+   * item
+      * item
+      * item
+         * item
+         * item
+      * item
+   * item
+
+---+++ List Styles
 %BEGINGRID%
 %BEGINCOL{"4"}%
 <div class="alt">
@@ -242,6 +297,24 @@ ordered
 </div>
 %BEGINCOL{"4"}%
 <div class="alt">
+lower apha
+
+   a. item
+   a. item
+   a. item
+   a. item
+</div>
+%BEGINCOL{"4"}%
+<div class="alt">
+lower roman
+
+   i. item
+   i. item
+   i. item
+   i. item
+</div>
+%BEGINCOL{"4"}%
+<div class="alt">
 unordered
 
    * item
@@ -250,147 +323,121 @@ unordered
    * item
 </div>
 %BEGINCOL{"4"}%
-<div class="alt">
-no indent
+<div class="alt foswikiNoIndent">
+=foswikiNoIndent=
 
-<div class="foswikiNoIndent">
    * item
    * item
    * item
    * item
-</div>
 </div>
 %BEGINCOL{"4"}%
-<div class="alt">
-=foswikiOrangeBullets=
-
-<div class="foswikiOrangeBullets">
-   * item
-   * item
-   * item
-   * item
-</div>
-</div>
-%BEGINCOL{"4"}%
-<div class="alt">
-=foswikiBlueBullets=
-
-<div class="foswikiBlueBullets">
-   * item
-   * item
-   * item
-   * item
-</div>
-</div>
-%BEGINCOL{"4"}%
-<div class="alt">
-=foswikiBlackBullets=
-
-<div class="foswikiBlackBullets">
-   * item
-   * item
-   * item
-   * item
-</div>
-</div>
-%BEGINCOL{"4"}%
-<div class="alt">
-=foswikiGreenBullets=
-
-<div class="foswikiGreenBullets">
-   * item
-   * item
-   * item
-   * item
-</div>
-</div>
-%BEGINCOL{"4"}%
-<div class="alt">
-=foswikiPinkBullets=
-
-<div class="foswikiPinkBullets">
-   * item
-   * item
-   * item
-   * item
-</div>
-</div>
-%BEGINCOL{"4"}%
-<div class="alt">
-=foswikiRedBullets=
-
-<div class="foswikiRedBullets">
-   * item
-   * item
-   * item
-   * item
-</div>
-</div>
-%BEGINCOL{"4"}%
-<div class="alt">
-=foswikiStarBullets=
-
-<div class="foswikiStarBullets">
-   * item
-   * item
-   * item
-   * item
-</div>
-</div>
-%BEGINCOL{"4"}%
-<div class="alt">
-=foswikiWhiteBullets=
-
-<div class="foswikiWhiteBullets">
-   * item
-   * item
-   * item
-   * item
-</div>
-</div>
-%BEGINCOL{"4"}%
-<div class="alt">
-=foswikiArrowBullets=
-
-<div class="foswikiArrowBullets">
-   * item
-   * item
-   * item
-   * item
-</div>
-</div>
-%BEGINCOL{"4"}%
-<div class="alt">
-=foswikiAddBullets=
-
-<div class="foswikiAddBullets">
-   * item
-   * item
-   * item
-   * item
-</div>
-</div>
-%BEGINCOL{"4"}%
-<div class="alt">
+<div class="alt foswikiNoBullets">
 =foswikiNoBullets=
 
-<div class="foswikiNoBullets">
    * item
    * item
    * item
    * item
-</div>
 </div>
 %BEGINCOL{"4"}%
-<div class="alt">
-custom icon
+<div class="alt foswikiOrangeBullets">
+=foswikiOrangeBullets=
 
-<div class="foswikiNoBullets">
-   * %JQICON{"user"}% item
-   * %JQICON{"emoticon_smile"}% item
-   * %JQICON{"user_red"}% item
-   * %JQICON{"user_green"}% item
+   * item
+   * item
+   * item
+   * item
 </div>
+%BEGINCOL{"4"}%
+<div class="alt foswikiBlueBullets">
+=foswikiBlueBullets=
+
+   * item
+   * item
+   * item
+   * item
+</div>
+%BEGINCOL{"4"}%
+<div class="alt foswikiBlackBullets">
+=foswikiBlackBullets=
+
+   * item
+   * item
+   * item
+   * item
+</div>
+%BEGINCOL{"4"}%
+<div class="alt foswikiGreenBullets">
+=foswikiGreenBullets=
+
+   * item
+   * item
+   * item
+   * item
+</div>
+%BEGINCOL{"4"}%
+<div class="alt foswikiPinkBullets">
+=foswikiPinkBullets=
+
+   * item
+   * item
+   * item
+   * item
+</div>
+%BEGINCOL{"4"}%
+<div class="alt foswikiRedBullets">
+=foswikiRedBullets=
+
+   * item
+   * item
+   * item
+   * item
+</div>
+%BEGINCOL{"4"}%
+<div class="alt foswikiWhiteBullets">
+=foswikiWhiteBullets=
+
+   * item
+   * item
+   * item
+   * item
+</div>
+%BEGINCOL{"4"}%
+<div class="alt foswikiStarBullets">
+=foswikiStarBullets=
+
+   * item
+   * item
+   * item
+   * item
+</div>
+%BEGINCOL{"4"}%
+<div class="alt foswikiArrowBullets">
+=foswikiArrowBullets=
+
+   * item
+   * item
+   * item
+   * item
+</div>
+%BEGINCOL{"4"}%
+<div class="alt foswikiAddBullets">
+=foswikiAddBullets=
+
+   * item
+   * item
+   * item
+   * item
+</div>
+%BEGINCOL{"4"}%
+<div class="alt foswikiTickBullets">
+=foswikiTickBullets=
+
+   * item
+   * item
+   * item
+   * item
 </div>
 %ENDGRID%
 
@@ -505,13 +552,35 @@ input, textarea, select, check boxes, radio boxes, buttons, form steps, horizont
 <form>
 <div class="foswikiFormSteps" style="width:25em;margin:0 auto">
 <div class="foswikiFormStep">
----++ Username
+---++!! Username
 <input type="text" name="username" class="foswikiInputField" style="width:100%" />
 </div>
 <div class="foswikiFormStep">
----++ Password
+---++!! Password
 <input type="password" name="password" class="foswikiInputField" style="width:100%" />
 </div>
+<div class="foswikiFormStep">
+---++!! Join Groups
+<label>
+   <input type="checkbox" name="groups" class="foswikiCheckbox"  /> Forum Group
+</label> %BR%
+<label>
+   <input type="checkbox" name="groups" class="foswikiCheckbox"  checked /> News Group
+</label> %BR%
+<label>
+   <input type="checkbox" name="groups" class="foswikiCheckbox"  /> Community Group
+</label> 
+</div>
+---++!! Level
+<label>
+   <input type="radio" name="level" class="foswikiRadioButton"  /> Low
+</label> %BR%
+<label>
+   <input type="radio" name="level" class="foswikiRadioButton"  checked /> Medium
+</label> %BR%
+<label>
+   <input type="radio" name="level" class="foswikiRadioButton"  /> High
+</label> 
 ---
 <div class="foswkiFormStep">
 %BUTTON{"Login" icon="fa-sign-in" type="submit"}%

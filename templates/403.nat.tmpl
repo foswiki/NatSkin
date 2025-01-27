@@ -1,0 +1,23 @@
+%TMPL:INCLUDE{"404"}%
+
+%TMPL:DEF{"bodyclass"}%nat403Body natErrorBody natCenteredBody%TMPL:END%
+%TMPL:DEF{"titleaction"}%%MAKETEXT{"Access denied"}%%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+%TMPL:DEF{"similar"}%%TMPL:END%
+
+%TMPL:DEF{"heading::code"}%403%TMPL:END%
+%TMPL:DEF{"heading::text"}%%MAKETEXT{"Forbidden"}%%TMPL:END%
+
+%TMPL:DEF{"actions"}%<table class='foswikiLayoutTable'>
+%TMPL:P{"restart::action"}%
+</table>%TMPL:END%
+
+%TMPL:DEF{"restart::action"}%<tr>
+<th>%BUTTON{"%MAKETEXT{"Restart"}%" class="simple" icon="fa-home" target="%IF{
+    "'%BASEWEB%.%HOMETOPIC%' allows 'view'" 
+    then="%BASEWEB%.%HOMETOPIC%" 
+    else="%USERSWEB%.%WIKINAME%"
+  }%"
+}%</th>
+<td>%MAKETEXT{"Just start from the beginning."}%</td>
+</tr>%TMPL:END%

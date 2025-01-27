@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ %TOPIC%
 Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] instead.
@@ -11,27 +11,20 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
 ---++ Mega Menu
 <verbatim class="tml">
 %STARTSECTION{"mega"}%%USERACTIONS{
-  guest="$action(share, SocialSharePluginEnabled)"
-  restrictedactions="attach,delete,diff,edit,edit_form,edit_raw,edit_settings,harvest,managetags,more,move,raw,restore,translatetopic"
-  format="$new$edit$menu"
-  history="<div class='natHistoryTopicActions'>$edit$raw$print$view$history$first$prev$next$last$action(close)</div>"
-  menu_header="<div class='natMoreActionsMenu' data-menu='.natMegaMenu'><span class='natTopicAction natMoreActionsTopicAction'>%TMPL:P{"MENU_ICON"}%$label</span>
+  guest="$login$action(share, SocialSharePluginEnabled)"
+  restrictedactions="attach,delete,archive,diff,edit,edit_form,edit_raw,edit_settings,harvest,managetags,more,move,raw,restore,translatetopic"
+  format="%NATSKIN_TOPICACTIONS{default="$new$edit$menu"}%"
+  history="<div class='natHistoryTopicActions'>$edit$raw$view$first$prev$next$last$action(close)</div>"
+  menu_header="<div class='foswikiHoverMenu natMoreActionsMenu' data-menu='.natMegaMenu'><span class='natTopicAction natMoreActionsTopicAction'>%TMPL:P{"icon::menu"}%$label</span>
 <div class='natMegaMenu clearfix' style='display:none' data-theme='info' data-arrow='on' data-position='left'>"
   menu_footer="</div></div>"
   menu="<div class='natMegaMenuCol'>
 <h3 >%MAKETEXT{"Tools"}%</h3>
    * $action(subscribe)
-   * $action(changelanguage, i18n_enabled) 
    * $action(translatetopic, MultiLingualPluginEnabled)
    * $action(managetags, ClassificationPluginEnabled)
    * $action(harvest, HarvestPluginEnabled)
-   * $action(webdavdir)
----
-<h3 >%MAKETEXT{"Social"}%</h3>
-   * $action(favorite, ListyPluginEnabled)
-   * $action(like, LikePluginEnabled)
-   * $action(share, SocialSharePluginEnabled)
-   * $action(chat, WebSocketPluginEnabled)
+   * $action(removeuser)
 </div><div class='natMegaMenuCol'>
 <h3 >%MAKETEXT{"View"}%</h3>
    * $action(raw)
@@ -41,13 +34,14 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
    * $action(backlinks)
    * $action(childtopics)
    * $action(print)
+   * $action(plain)
    * $action(pdf, can_generate_pdf)
 ---
-<h3 >%MAKETEXT{"History"}%</h3>
-   * $action(history)
-   * $action(prev)
-   * $action(diff)
-   * $action(restore)
+<h3 >%MAKETEXT{"Social"}%</h3>
+   * $action(like, LikePluginEnabled)
+   * $action(share, SocialSharePluginEnabled)
+   * $action(email, EmailPluginEnabled)
+   * $action(chat, ChatClientEnabled)
 </div><div class='natMegaMenuCol'>
 <h3 >%MAKETEXT{"Change"}%</h3>
    * $action(attach)
@@ -56,14 +50,16 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
    * $action(edit_form)
    * $action(copy_topic)
    * $action(move)
+   * $action(archive)
    * $action(delete)
 ---
-<h3 >%MAKETEXT{"Account"}%</h3>
-   * $action(profile)
-   * $action(twofactorauth, TwoFactorAuthPluginEnabled)
-   * $action(changepassword)
-   * $action(changeemail)
-   * $action(logout)
+<h3 >%MAKETEXT{"History"}%</h3>
+   * $action(history)
+   * $action(contributors)
+   * $action(workflow, QMPluginEnabled)
+   * $action(prev)
+   * $action(diff)
+   * $action(restore)
 </div>"
 }%%ENDSECTION{"mega"}%
 </verbatim>
@@ -72,13 +68,14 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
 <verbatim class="tml">
 %STARTSECTION{"linear"}%%USERACTIONS{
   guest="$action(share, SocialSharePluginEnabled)"
-  restrictedactions="attach,delete,diff,edit,edit_form,edit_raw,edit_settings,harvest,managetags,more,move,raw,restore,translatetopic"
+  restrictedactions="attach,delete,archive,diff,edit,edit_form,edit_raw,edit_settings,harvest,managetags,more,move,raw,restore,translatetopic"
   format="$new$edit$menu"
   history="<div class='natHistoryTopicActions'>$edit$raw$print$view$history$first$prev$next$last$action(close)</div>"
   menu="
    * $action(attach)
    * $action(move)
    * $action(delete)
+   * $action(archive)
    * $action(edit_raw)
    * $action(edit_settings)
    * $action(edit_form)
@@ -107,9 +104,9 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
    * $action(translatetopic, i18n_enabled)"}%
    * $action(managetags, ClassificationPluginEnabled)
    * $action(harvest, HarvestPluginEnabled)
-   * $action(webdavdir)
 "
 }%%ENDSECTION{"linear"}%
 </verbatim>
 
+%META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%
 %META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

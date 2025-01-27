@@ -1,151 +1,131 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
-%{<verbatim class="tml">}%
-%TMPL:INCLUDE{"view"}%<!-- -->
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{"sidebar"}%%TMPL:END%
+%TMPL:DEF{"userinfo::fields::title"}%Title|FirstName|MiddleName|LastName%TMPL:END%
+%TMPL:DEF{"userinfo::fields::subtitle"}%OrganisationName|Profession%TMPL:END%
+%TMPL:DEF{"userinfo::fields::table::exclude"}%%TMPL:P{"userinfo::fields::title"}%|TopicType|TopicTitle|Initials|%TMPL:P{"userinfo::fields::subtitle"}%%TMPL:END%
+
+%TMPL:DEF{"breadcrumbs"}%%TMPL:END%
 %TMPL:DEF{"form"}%%TMPL:END%
-%TMPL:DEF{"userinfo::photo::size"}%120x150^%TMPL:END%
-%TMPL:DEF{"beforetext"}%%TMPL:P{"userinfo"}%%TMPL:END%
-%{</verbatim>}%
 
-%{<verbatim class="tml">}%
-%TMPL:DEF{"userinfo"}%<!-- -->
-<noautolink>
-<div class="foswikiProfileInfo clearfix">
-%TMPL:P{"userinfo::photo"}%<!-- -->
-%TMPL:P{"userinfo::title"}%<!-- -->
-%TMPL:P{"userinfo::details"}%<!-- -->
+%TMPL:DEF{"DELETE_ACTION"}%%TMPL:END%
+%TMPL:DEF{"COPY_TOPIC_ACTION"}%%TMPL:END%
+
+%TMPL:DEF{"banner::mode"}%%NATSKIN_BANNERMODE{default="autocolor"}%%TMPL:END%
+%TMPL:DEF{"banner::mode::autocolor::property"}%radial-gradient%TMPL:END%
+%TMPL:DEF{"banner::mode::autocolor::text"}%%TOPICTITLE%%TMPL:END%
+%TMPL:DEF{"banner::inlinestyle"}%style='%TMPL:P{"banner::height"}%'%TMPL:END%
+
+%TMPL:DEF{"banner::mode::autocolor::huefrom"}%%NATSKIN_BANNERAUTOCOLORHUEFROM{default="30"}%%TMPL:END% 
+%TMPL:DEF{"banner::mode::autocolor::hueto"}%%NATSKIN_BANNERAUTOCOLORHUETO{default="260"}%%TMPL:END% 
+%TMPL:DEF{"banner::mode::autocolor::saturation"}%%NATSKIN_BANNERAUTOCOLORSATURATION{default="[25,30,35]"}%%TMPL:END%
+%TMPL:DEF{"banner::mode::autocolor::lightness"}%%NATSKIN_BANNERAUTOCOLORLIGHTNESS{default="80"}%%TMPL:END%
+%TMPL:DEF{"banner::mode::autocolor::seed"}%%NATSKIN_BANNERAUTOCOLORSEED{default="0"}%%TMPL:END%
+
+%TMPL:DEF{"banner::content"}%<div class="natBannerContents natParallax %NATSKIN_BANNERTEXTALIGN{default=""}%" data-distance="1" data-direction="up">
+<div class="natBannerTextEffect %IF{"'%NATSKIN_BANNERTEXTEFFECT{default="off"}%'!='off'" then="jqAnimateCSS"}%" data-effect="%NATSKIN_BANNERTEXTEFFECT{default=""}%" >
+%TMPL:P{
+  "banner::content::%NATSKIN_BANNERCONTENT{default="off"}%"
+}%<!-- -->
 </div>
-</noautolink>
-<!-- -->%TMPL:END%
-%{</verbatim>}%
+%TMPL:P{"banner::content::image"}%
+</div>%TMPL:END%
 
-%{<verbatim class="tml">}%
-%TMPL:DEF{"userinfo::title"}%<!-- -->
+%TMPL:DEF{"banner::content::image"}%%IMAGE{
+  "%IF{"context PluggableAuthEnabled" 
+    then="%USERINFO{"%TOPIC%" format="$picture"}%"
+    else="$percntTMPL:P{\"user::photo::url\" web=\"%WEB%\" topic=\"%TOPIC%\"}$percnt"
+  }%"
+  type="plain"
+  size="%TMPL:P{"banner::content::image::size"}%"
+  crop="on"
+  title=""
+}%%TMPL:END%
+
+%TMPL:DEF{"banner::content::image::size"}%120x120^%TMPL:END%
+
+%TMPL:DEF{"banner::style"}%%TMPL:PREV%%ADDTOZONE{
+  "skincss"
+  id="NATSKIN::PROFILE"
+  requires="NATSKIN"
+  text="<link rel='stylesheet' href='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/build/profile.css' type='text/css' media='all' />"
+}%%TMPL:END%
+
+%TMPL:DEF{"beforetext"}%%IF{"({AntiSpam}{HideUserDetails}=1 or context isadmin) and '%USERINFO{"%BASETOPIC%" format="$username"}%'=''"
+  then="$percntTMPL:P{\"userinfo::disabled\"}$percnt"
+  else="$percntTMPL:P{\"userinfo\"}$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"userinfo::disabled"}%<div class='foswikiInfoMessage'>%MAKETEXT{"This account is inactive."}%</div>%TMPL:END%
+
+%TMPL:DEF{"userinfo"}%<div class='foswikiProfileInfo'><noautolink>
 <h1>
-<span itemprop='name'>
-  %IF{
-    "'%WEB%.%TOPIC%'/FirstName or '%WEB%.%TOPIC'/LastName" 
-    then="%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%" 
-    else="%TOPICTITLE%"
-  }%
-</span>
-<span itemprop='description' class='foswikiTopicSummary'>%FORMFIELD{"Profession"}%</span>
-</h1>
-<!-- -->%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim class="tml">}%
-%TMPL:DEF{"userinfo::details"}%%BEGINGRID%
-%BEGINCOL{"6"}%<!-- -->
 %RENDERFORDISPLAY{
-  topic="%BASEWEB%.%BASETOPIC%"
-  revision="%URLPARAM{"rev"}%"
-  fields="OrganisationName, Address, Location, Country"
+   include="^(%TMPL:P{"userinfo::fields::title"}%)$"
+   header="<a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%'>"
+   format="$value"
+   separator=" "
+   footer="</a>$percntTMPL:P{\"titleextra\"}$percnt"
+}%%RENDERFORDISPLAY{
+  exclude="^(%TMPL:P{"userinfo::fields::title"}%|TopicType)$"
+  include="^(%TMPL:P{"userinfo::fields::subtitle"}%)$"
   hideempty="on"
-  format="<b>$title:</b> $value <br />"
-  separator="$n"
-  OrganisationName_title="%MAKETEXT{"Organisation"}%"
-  HomePage_title="%MAKETEXT{"Homepage"}%"
-  Address_title="%MAKETEXT{"Address"}%"
-  Location_title="%MAKETEXT{"Location"}%"
-  Country_title="%MAKETEXT{"Country"}%"
-}%<!-- -->
-%BEGINCOL{border="on"}%<!-- -->
-%RENDERFORDISPLAY{
-  topic="%BASEWEB%.%BASETOPIC%"
-  revision="%URLPARAM{"rev"}%"
-  exclude="FirstName|LastName|OrganisationName|OrganisationURL|Profession|HomePage|Comment|Location|Address|Country|State"
-  hideempty="on"
-  format="<b>$title:</b> $value <br />"
-  separator="$n"
-  Telephone_title="%MAKETEXT{"Tel"}%"
-  Email_default="%USERINFO{"%BASETOPIC%" format="$emails"}%"
-}%<!-- -->
-%ENDGRID%%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim class="tml">}%
-%TMPL:DEF{"userinfo::photo"}%<!-- -->
-%TMPL:P{context="TopicInteractionPluginEnabled" then="userinfo::photo::topicinteraction" else="userinfo::photo::default"}%<!-- -->
-<!-- -->%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim class="tml">}%
-%TMPL:DEF{"userinfo::photo::default"}%<!-- -->
-%IMAGE{
-   "%IF{"'%BASEWEB%.%BASETOPIC%'/Photo"
-     then="$percntFORMFIELD{\"Photo\" topic=\"%BASEWEB%.%BASETOPIC%\"}$percnt" 
-     else="%IF{"'%BASEWEB%.%BASETOPIC%'/attachments[name=~'\.(gif|png|jpe?g|svg)$']"
-       then="%QUERY{"'%BASEWEB%.%BASETOPIC%'/attachments[name=~'\.(gif|png|jpe?g|svg)'][0].name"}%"
-       else="%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/images/nobody.gif"
-
-     }%"
-   }%"
-   topic="%BASEWEB%.%BASETOPIC%"
-   type="plain"
-   align="left"
-   size="%TMPL:P{"userinfo::photo::size"}%"
+  format="$value"
+  header="<div class='foswikiTopicSummary'>"
+  separator=" <span class='sep'>&bull;</span> "
+  footer="</div>"
 }%
-<!-- -->%TMPL:END%
-%{</verbatim>}%
+</h1>
+%TMPL:P{"userinfo::table"}%<!-- -->
+</noautolink></div>%TMPL:END%
 
-%{<verbatim class="tml">}%
-%TMPL:DEF{"userinfo::photo::topicinteraction"}%%IF{"'%BASEWEB%.%BASETOPIC%'/attachments[attr=~'.*t.*']!=''" 
-  then="$percntTMPL:P{\"userinfo::photo::topicinteraction::thumbnailed\"}$percnt" 
-  else="$percntTMPL:P{\"userinfo::photo::topicinteraction::defaultthumbnail\"}$percnt" 
+%TMPL:DEF{"userinfo::table"}%%RENDERFORDISPLAY{
+   editable="on"
+   hideempty="on"
+   exclude="^(%TMPL:P{"userinfo::fields::table::exclude"}%)$" 
+   Email_default="%USERINFO{"%TOPIC%" format="$emails"}%"
+   header="<div class='alt inlineEditor foswikiUserInfoTable'><table class='foswikiLayoutTable'>"
+   Email_format="<tr>
+         <th>$title:</th>
+         <td > $value </td>
+      </tr>"
+   format="<tr>
+         <th>$title:</th>
+         <td class='inlineEditValue' data-formfield='$name'> $value $editicon</td>
+      </tr>"
+   footer="</table></div>"
+   Address_format="<tr>
+    <th>$title:</th>
+    <td class='inlineEditValue' data-formfields='$name'>
+       <ul class='foswikiNoBullets inlineEditValue' data-formfield='$name' data-view-def='renderAddressView'>
+         $percntFORMATLIST{\"$value\" 
+           separator=\"$n\" 
+           format=\"<li> $1 </li>\"
+         }$percnt 
+       </ul>
+    </td></tr>"
 }%%TMPL:END%
-%{</verbatim>}%
 
-%{<verbatim class="tml">}%
-%TMPL:DEF{"userinfo::photo::topicinteraction::thumbnailed"}%<!-- -->
-%ATTACHMENTS{
-   "%BASEWEB%.%BASETOPIC%"
-   attr=".*t.*"
-   warn="off"
-   hidenull="off"
-   format="$percntIMAGE{
-     \"$name\"
-     topic=\"$web.$topic\"
-     align=\"left\"
-     type=\"plain\"
-     size=\"%TMPL:P{"userinfo::photo::size"}%\"
-     crop=\"on\"
-     title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
-     warn=\"off\"
-   }$percnt"
+%TMPL:DEF{"renderAddressView"}%%RENDERFORDISPLAY{
+  editable="on"
+  form="%URLPARAM{"form"}%"
+  typemapping="%URLPARAM{"typemapping"}%"
+  field="%URLPARAM{"formfield" default="NoSuchThing"}%"
+  %IF{"$'URLPARAM{value}'"
+    then="value=\"%URLPARAM{"value"}%\""
+  }%
+  %URLPARAM{"formfield" default="NoSuchThing"}%_default="%URLPARAM{"default"}%"
+  format="<div>
+    <ul class='inlineEditValue' data-formfield='$name' data-view-def='renderAddressView'>
+      $percntFORMATLIST{\"$value\" 
+        separator=\"$n\" 
+        format=\"<li> $1 </li>\"
+      }$percnt 
+    </ul>
+    </div>"
 }%%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim class="tml">}%
-%TMPL:DEF{"userinfo::photo::topicinteraction::defaultthumbnail"}%<!-- -->
-%ATTACHMENTS{
-   "%BASEWEB%.%BASETOPIC%"
-   name=".*\.(jpe?g|gif|png|svg|JE?PG|GIF|PNG|SVG)"
-   warn="off"
-   limit="1"
-   sort="comment:name"
-   hidenull="off"
-   nullformat="$percntIMAGE{
-     \"nobody.gif\"
-     topic=\"System.MetaCommentPlugin\"
-     align=\"left\"
-     type=\"plain\"
-     size=\"%TMPL:P{"userinfo::photo::size"}%\"
-     crop=\"on\"
-     title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
-     warn=\"off\"
-   }$percnt"
-   format="$percntIMAGE{
-     \"$name\"
-     topic=\"$web.$topic\"
-     align=\"left\"
-     type=\"plain\"
-     size=\"%TMPL:P{"userinfo::photo::size"}%\"
-     crop=\"on\"
-     title=\"%FORMFIELD{"FirstName"}% %FORMFIELD{"LastName"}%\"
-     warn=\"off\"
-   }$percnt"
-}%%TMPL:END%
-%{</verbatim>}%
 
 %META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%
+%META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%

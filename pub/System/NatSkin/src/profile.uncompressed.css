@@ -1,0 +1,37 @@
+/* UNUSED */
+.foswikiProfileInfo { 
+  margin-bottom:1.5em; 
+  position:relative;
+  padding-left:140px;
+  min-height:160px;
+} 
+.foswikiProfileInfo .foswikiGrid h1 {
+  margin-bottom:0;
+}
+.foswikiProfileInfo .imagePlain {
+  margin:0;
+  position:absolute;
+  top:0;
+  left:0;
+  max-width:120px;
+  height:auto;
+}
+.foswikiProfileInfo .foswikiLayoutTable th,
+.foswikiProfileInfo .foswikiLayoutTable td {
+  padding-top:0;
+  padding-bottom:0;
+}
+
+@media screen and (max-width:620px) {
+  .foswikiProfileInfo {
+    padding-left:0;
+  }
+  .foswikiProfileInfo h1 {
+    padding-left:65px;
+  }
+  .foswikiProfileInfo .imagePlain {
+    height:auto;
+    position:initial;
+    margin: 0 1em 0.5em 0;
+  }
+}

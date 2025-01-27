@@ -1,0 +1,612 @@
+:root {
+
+  --page-width-fixed: 85em;
+  --page-width-bordered: 100%;
+  --sidebar-width:16em;
+
+  /* named colors */
+  --color-yellow: #ffff00;
+  --color-orange: #ff6600;
+  --color-red: #ff0000;
+  --color-pink: #ff00ff;
+  --color-purple: #800080;
+  --color-navy: #000080;
+  --color-blue: #0000ff;
+  --color-teal: #008080;
+  --color-aqua: #00ffff;
+  --color-lime: #00ff00; 
+  --color-green: #008000;
+  --color-olive: #808000;
+  --color-maroon: #800000;
+  --color-brown: #996633;
+  --color-black: #000000;
+  --color-silver: #c0c0c0;
+  --color-white: #ffffff;
+
+  /* grays */
+  --color-gray:   hsl(0,0%,50%);
+  --color-gray-1: hsl(0,0%,54%); 
+  --color-gray-2: hsl(0,0%,58%); 
+  --color-gray-3: hsl(0,0%,62%);
+  --color-gray-4: hsl(0,0%,66%);
+  --color-gray-5: hsl(0,0%,72%);
+  --color-gray-6: hsl(0,0%,78%);
+  --color-gray-7: hsl(0,0%,84%);
+  --color-gray-8: hsl(0,0%,90%);
+  --color-gray-9: hsl(0,0%,93%);
+  --color-gray-10: #f4f4f4; /*hsl(0,0%,95.5%);*/
+
+  /* blacks */
+  --color-black-1:   hsl(0,0%,2%);
+  --color-black-2:   hsl(0,0%,6%);
+  --color-black-3:   hsl(0,0%,10%);
+  --color-black-4:   hsl(0,0%,15%);
+  --color-black-5:   hsl(0,0%,20%);
+  --color-black-6:   hsl(0,0%,25%);
+  --color-black-7:   hsl(0,0%,30%);
+  --color-black-8:   hsl(0,0%,35%);
+  --color-black-9:   hsl(0,0%,40%);
+  --color-black-10:   hsl(0,0%,45%);
+
+  /* transparencies */
+  --color-alpha-1: hsl(0, 100%, 100%, 0.10);
+  --color-alpha-2: hsl(0, 100%, 100%, 0.20);
+  --color-alpha-3: hsl(0, 100%, 100%, 0.30);
+  --color-alpha-4: hsl(0, 100%, 100%, 0.40);
+  --color-alpha-5: hsl(0, 100%, 100%, 0.50);
+  --color-alpha-6: hsl(0, 100%, 100%, 0.60);
+  --color-alpha-7: hsl(0, 100%, 100%, 0.70);
+  --color-alpha-8: hsl(0, 100%, 100%, 0.80);
+  --color-alpha-9: hsl(0, 100%, 100%, 0.90);
+  --color-alpha-10: hsl(0, 100%, 100%, 1.00);
+
+  /* theme colors */
+  --color-primary-hue:        210; 
+  --color-primary-saturation: 63%; 
+  --color-primary-lightness:  54%; 
+  --color-primary: hsl(var(--color-primary-hue), var(--color-primary-saturation), var(--color-primary-lightness));  
+  --color-primary-lighter-1: hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) + 10%));
+  --color-primary-lighter-2: hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) + 15%));
+  --color-primary-lighter-3: hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) + 20%));  
+  --color-primary-lighter-4: hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) + 25%));  
+  --color-primary-lighter-5: hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) + 30%));  
+  --color-primary-lighter-6: hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) + 35%));  
+  --color-primary-lighter-7: hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) + 40%));  
+  --color-primary-lighter-8: hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) + 45%));  
+  --color-primary-lighter-9: hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) + 50%));  
+  --color-primary-lighter-10: hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) + 55%));  
+
+  --color-primary-darker-1:  hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) - 10%));  
+  --color-primary-darker-2:  hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) - 15%));  
+  --color-primary-darker-3:  hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) - 20%));  
+  --color-primary-darker-4:  hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) - 25%));  
+  --color-primary-darker-5:  hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) - 30%));  
+  --color-primary-darker-6:  hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) - 35%));  
+  --color-primary-darker-7:  hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) - 40%));  
+  --color-primary-darker-8:  hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) - 45%));  
+  --color-primary-darker-9:  hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) - 50%));  
+  --color-primary-darker-10:  hsl(var(--color-primary-hue), var(--color-primary-saturation), calc(var(--color-primary-lightness) - 55%));  
+
+  --color-primary-alpha-1:   hsl(var(--color-primary-hue), var(--color-primary-saturation), var(--color-primary-lightness), 0.9);  
+  --color-primary-alpha-2:   hsl(var(--color-primary-hue), var(--color-primary-saturation), var(--color-primary-lightness), 0.8);  
+  --color-primary-alpha-3:   hsl(var(--color-primary-hue), var(--color-primary-saturation), var(--color-primary-lightness), 0.7);  
+  --color-primary-alpha-4:   hsl(var(--color-primary-hue), var(--color-primary-saturation), var(--color-primary-lightness), 0.6);  
+  --color-primary-alpha-5:   hsl(var(--color-primary-hue), var(--color-primary-saturation), var(--color-primary-lightness), 0.5);  
+  --color-primary-alpha-6:   hsl(var(--color-primary-hue), var(--color-primary-saturation), var(--color-primary-lightness), 0.4);  
+  --color-primary-alpha-7:   hsl(var(--color-primary-hue), var(--color-primary-saturation), var(--color-primary-lightness), 0.3);  
+  --color-primary-alpha-8:   hsl(var(--color-primary-hue), var(--color-primary-saturation), var(--color-primary-lightness), 0.2);  
+  --color-primary-alpha-9:   hsl(var(--color-primary-hue), var(--color-primary-saturation), var(--color-primary-lightness), 0.1);  
+  --color-primary-alpha-10:   hsl(var(--color-primary-hue), var(--color-primary-saturation), var(--color-primary-lightness), 0.05);  
+
+  --color-secondary-hue-offset: -110;
+  --color-secondary-saturation: 80%; 
+  --color-secondary-lightness:  40%; 
+  --color-secondary-hue:        calc(var(--color-primary-hue) + var(--color-secondary-hue-offset)); 
+  --color-secondary:            hsl(var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lightness));  
+  --color-secondary-lighter-1:  hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) + 10%));  
+  --color-secondary-lighter-2:  hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) + 15%));  
+  --color-secondary-lighter-3:  hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) + 20%));  
+  --color-secondary-lighter-4:  hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) + 25%));  
+  --color-secondary-lighter-5:  hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) + 30%));  
+  --color-secondary-lighter-6:  hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) + 35%));  
+  --color-secondary-lighter-7:  hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) + 40%));  
+  --color-secondary-lighter-8:  hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) + 45%));  
+  --color-secondary-lighter-9:  hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) + 50%));  
+  --color-secondary-lighter-10:  hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) + 55%));  
+
+  --color-secondary-darker-1:   hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) - 10%));  
+  --color-secondary-darker-2:   hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) - 15%));  
+  --color-secondary-darker-3:   hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) - 20%));  
+  --color-secondary-darker-4:   hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) - 25%));  
+  --color-secondary-darker-5:   hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) - 30%));  
+  --color-secondary-darker-6:   hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) - 35%));  
+  --color-secondary-darker-7:   hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) - 40%));  
+  --color-secondary-darker-8:   hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) - 45%));  
+  --color-secondary-darker-9:   hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) - 50%));  
+  --color-secondary-darker-10:   hsl(var(--color-secondary-hue), var(--color-secondary-saturation), calc(var(--color-secondary-lightness) - 55%));  
+
+  --color-secondary-alpha-1:    hsl(var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lightness), 0.9);  
+  --color-secondary-alpha-2:    hsl(var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lightness), 0.8);  
+  --color-secondary-alpha-3:    hsl(var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lightness), 0.7);  
+  --color-secondary-alpha-4:    hsl(var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lightness), 0.6);  
+  --color-secondary-alpha-5:    hsl(var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lightness), 0.5);  
+  --color-secondary-alpha-6:    hsl(var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lightness), 0.4);  
+  --color-secondary-alpha-7:    hsl(var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lightness), 0.3);  
+  --color-secondary-alpha-8:    hsl(var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lightness), 0.2);  
+  --color-secondary-alpha-9:    hsl(var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lightness), 0.1);  
+  --color-secondary-alpha-10:    hsl(var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lightness), 0.05);  
+
+  --color-ternary-hue-offset: 110;
+  --color-ternary-saturation: 60%; 
+  --color-ternary-lightness:  34%; 
+  --color-ternary-hue:        calc(var(--color-primary-hue) + var(--color-ternary-hue-offset)); 
+  --color-ternary:            hsl(var(--color-ternary-hue), var(--color-ternary-saturation), var(--color-ternary-lightness));  
+
+  --color-ternary-lighter-10:  hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) + 55%));  
+  --color-ternary-lighter-9:  hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) + 50%));  
+  --color-ternary-lighter-8:  hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) + 45%));  
+  --color-ternary-lighter-7:  hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) + 40%));  
+  --color-ternary-lighter-6:  hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) + 35%));  
+  --color-ternary-lighter-5:  hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) + 30%));  
+  --color-ternary-lighter-4:  hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) + 25%));  
+  --color-ternary-lighter-3:  hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) + 20%));  
+  --color-ternary-lighter-2:  hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) + 15%));  
+  --color-ternary-lighter-1:  hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) + 10%));  
+
+  --color-ternary-darker-1:   hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) - 10%)); 
+  --color-ternary-darker-2:   hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) - 15%)); 
+  --color-ternary-darker-3:   hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) - 20%)); 
+  --color-ternary-darker-4:   hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) - 25%)); 
+  --color-ternary-darker-5:   hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) - 30%)); 
+  --color-ternary-darker-6:   hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) - 35%)); 
+  --color-ternary-darker-7:   hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) - 40%)); 
+  --color-ternary-darker-8:   hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) - 45%)); 
+  --color-ternary-darker-9:   hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) - 50%)); 
+  --color-ternary-darker-10:   hsl(var(--color-ternary-hue), var(--color-ternary-saturation), calc(var(--color-ternary-lightness) - 55%)); 
+
+  --color-ternary-alpha-1:    hsl(var(--color-ternary-hue), var(--color-ternary-saturation), var(--color-ternary-lightness), 0.9);  
+  --color-ternary-alpha-2:    hsl(var(--color-ternary-hue), var(--color-ternary-saturation), var(--color-ternary-lightness), 0.8);  
+  --color-ternary-alpha-3:    hsl(var(--color-ternary-hue), var(--color-ternary-saturation), var(--color-ternary-lightness), 0.7);  
+  --color-ternary-alpha-4:    hsl(var(--color-ternary-hue), var(--color-ternary-saturation), var(--color-ternary-lightness), 0.6);  
+  --color-ternary-alpha-5:    hsl(var(--color-ternary-hue), var(--color-ternary-saturation), var(--color-ternary-lightness), 0.5);  
+  --color-ternary-alpha-6:    hsl(var(--color-ternary-hue), var(--color-ternary-saturation), var(--color-ternary-lightness), 0.4);  
+  --color-ternary-alpha-7:    hsl(var(--color-ternary-hue), var(--color-ternary-saturation), var(--color-ternary-lightness), 0.3);  
+  --color-ternary-alpha-8:    hsl(var(--color-ternary-hue), var(--color-ternary-saturation), var(--color-ternary-lightness), 0.2);  
+  --color-ternary-alpha-9:    hsl(var(--color-ternary-hue), var(--color-ternary-saturation), var(--color-ternary-lightness), 0.1);  
+  --color-ternary-alpha-10:    hsl(var(--color-ternary-hue), var(--color-ternary-saturation), var(--color-ternary-lightness), 0.05);  
+
+  --color-complementary-hue-offset: 180;
+  --color-complementary-saturation: var(--color-primary-saturation); 
+  --color-complementary-lightness:  var(--color-primary-lightness); 
+  --color-complementary-hue:        calc(var(--color-primary-hue) + var(--color-complementary-hue-offset)); 
+  --color-complementary:            hsl(var(--color-complementary-hue), var(--color-complementary-saturation), var(--color-complementary-lightness));  
+
+  --color-complementary-lighter-1:  hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) + 10%));  
+  --color-complementary-lighter-2:  hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) + 15%));  
+  --color-complementary-lighter-3:  hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) + 20%));  
+  --color-complementary-lighter-4:  hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) + 25%));  
+  --color-complementary-lighter-5:  hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) + 30%));  
+  --color-complementary-lighter-6:  hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) + 35%));  
+  --color-complementary-lighter-7:  hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) + 40%));  
+  --color-complementary-lighter-8:  hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) + 45%));  
+  --color-complementary-lighter-9:  hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) + 50%));  
+  --color-complementary-lighter-10:  hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) + 55%));  
+
+  --color-complementary-darker-1:   hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) - 10%));  
+  --color-complementary-darker-2:   hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) - 15%));  
+  --color-complementary-darker-3:   hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) - 20%));  
+  --color-complementary-darker-4:   hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) - 25%));  
+  --color-complementary-darker-5:   hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) - 30%));  
+  --color-complementary-darker-6:   hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) - 35%));  
+  --color-complementary-darker-7:   hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) - 40%));  
+  --color-complementary-darker-8:   hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) - 45%));  
+  --color-complementary-darker-9:   hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) - 50%));  
+  --color-complementary-darker-10:   hsl(var(--color-complementary-hue), var(--color-complementary-saturation), calc(var(--color-complementary-lightness) - 55%));  
+
+  --color-complementary-alpha-1:    hsl(var(--color-complementary-hue), var(--color-complementary-saturation), var(--color-complementary-lightness), 0.9);  
+  --color-complementary-alpha-2:    hsl(var(--color-complementary-hue), var(--color-complementary-saturation), var(--color-complementary-lightness), 0.8);  
+  --color-complementary-alpha-3:    hsl(var(--color-complementary-hue), var(--color-complementary-saturation), var(--color-complementary-lightness), 0.7);  
+  --color-complementary-alpha-4:    hsl(var(--color-complementary-hue), var(--color-complementary-saturation), var(--color-complementary-lightness), 0.6);  
+  --color-complementary-alpha-5:    hsl(var(--color-complementary-hue), var(--color-complementary-saturation), var(--color-complementary-lightness), 0.5);  
+  --color-complementary-alpha-6:    hsl(var(--color-complementary-hue), var(--color-complementary-saturation), var(--color-complementary-lightness), 0.4);  
+  --color-complementary-alpha-7:    hsl(var(--color-complementary-hue), var(--color-complementary-saturation), var(--color-complementary-lightness), 0.3);  
+  --color-complementary-alpha-8:    hsl(var(--color-complementary-hue), var(--color-complementary-saturation), var(--color-complementary-lightness), 0.2);  
+  --color-complementary-alpha-9:    hsl(var(--color-complementary-hue), var(--color-complementary-saturation), var(--color-complementary-lightness), 0.1);  
+  --color-complementary-alpha-10:    hsl(var(--color-complementary-hue), var(--color-complementary-saturation), var(--color-complementary-lightness), 0.01);  
+
+  --color-background: #fff;
+  --color-foreground: #444;
+  --color-text: var(--color-foreground);
+  --color-border: var(--color-gray-6);
+  --color-bold: #222;
+  --color-error: #a94442;
+  --color-h1: #222;
+  --color-h2: #222;
+  --color-h3: #222;
+  --color-h4: #222;
+  --color-h5: #222;
+  --color-h6: #222;
+  --color-anchor: var(--color-text);
+  --color-target: var(--color-secondary);
+
+  --color-highlight-foreground: var(--color-primary-lighter-1);
+  --color-active-foreground: var(--color-secondary);
+  --color-hover-foreground: var(--color-background);
+  --color-hover-background: var(--color-primary);
+  --color-selected-foreground: #599e00;
+  --color-selected-background: #efffd8;
+
+  --color-disabled-foreground: var(--color-gray-3);
+
+  --color-selection-background: var(--color-primary);
+  --color-selection-foreground: var(--color-background);
+  --color-selection-border: var(--color-primary);
+
+  --creator-selection-background: var(--alt-background);
+  --creator-selection-foreground: var(--alt-foreground);
+  --creator-selection-border: var(--alt-border);
+
+  /* typographics */
+  --font-size: 13;
+  --font-baseline: calc(var(--font-size) * var(--line-height));
+  --line-height: 1.5;
+  --margin-half: calc(var(--line-height) * 0.5rem);
+  --margin: calc(var(--line-height) * 1rem);
+  --margin-1: var(--margin);
+  --margin-2: calc(var(--line-height) * 2rem);
+  --margin-3: calc(var(--line-height) * 3rem);
+  --margin-4: calc(var(--line-height) * 4rem);
+  --margin-5: calc(var(--line-height) * 5rem);
+  --margin-6: calc(var(--line-height) * 6rem);
+  --margin-7: calc(var(--line-height) * 7rem);
+  --margin-8: calc(var(--line-height) * 8rem);
+  --margin-9: calc(var(--line-height) * 9rem);
+  --margin-10: calc(var(--line-height) * 10rem);
+
+  --font-weight-thin: 100;
+  --font-weight-extra-light: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+  --font-weight-extra-black: 1000;
+
+  --font-family-regular: "Roboto", Arial, "Liberation Sans", FreeSans, sans-serif;
+  --font-family-alt: var(--font-family-regular);
+  --font-family-monospace: "Bitstream Vera Sans Mono", "Andale Mono", monospace;
+  --font-family-italic: var(--font-family-regular);
+
+  /* default axis values */
+  --font-variation-wght: 400;
+  --font-variation-wdth: 100;
+  --font-variation-opsz: 14;
+  --font-variation-grad: 0;
+  --font-variation-slnt: 0;
+  --font-variation-xtra: 468;
+  --font-variation-xopq: 96;
+  --font-variation-yopq: 79;
+  --font-variation-ytlc: 514;
+  --font-variation-ytuc: 712;
+  --font-variation-ytas: 750;
+  --font-variation-ytde: -203;
+  --font-variation-ytfi: 738;
+
+  /* roboto-flex axis */
+  --font-variation-settings: 
+    'opsz' var(--font-variation-opsz),
+    'GRAD' var(--font-variation-grad), 
+    'slnt' var(--font-variation-slnt), 
+    'XTRA' var(--font-variation-xtra), 
+    'XOPQ' var(--font-variation-xopq), 
+    'YOPQ' var(--font-variation-yopq), 
+    'YTLC' var(--font-variation-ytlc), 
+    'YTUC' var(--font-variation-ytuc), 
+    'YTAS' var(--font-variation-ytas), 
+    'YTDE' var(--font-variation-ytde), 
+    'YTFI' var(--font-variation-ytfi);
+
+/*
+    'wdth' var(--font-variation-wdth), 
+    'wght' var(--font-variation-wght), 
+*/
+
+  --font-family-h1: var(--font-family-alt);
+  --font-family-h2: var(--font-family-alt);
+  --font-family-h3: var(--font-family-alt);
+  --font-family-h4: var(--font-family-alt);
+  --font-family-h5: var(--font-family-alt);
+  --font-family-h6: var(--font-family-alt);
+
+  --font-weight-h1: var(--font-weight-normal);
+  --font-weight-h2: var(--font-weight-normal);
+  --font-weight-h3: var(--font-weight-normal);
+  --font-weight-h4: var(--font-weight-normal);
+  --font-weight-h5: var(--font-weight-normal);
+  --font-weight-h6: var(--font-weight-normal);
+
+  --font-size-h1: 2rem;
+  --font-size-h2: 1.5rem;
+  --font-size-h3: 1.4rem;
+  --font-size-h4: 1.3rem;
+  --font-size-h5: 1.2rem;
+  --font-size-h6: 1.1rem;
+
+  --line-height-h1: calc(var(--line-height) * 0.8);
+  --line-height-h2: calc(var(--line-height) * 0.9);
+  --line-height-h3: calc(var(--line-height) * 0.9);
+  --line-height-h4: calc(var(--line-height) * 0.9);
+  --line-height-h5: calc(var(--line-height) * 0.9);
+  --line-height-h6: calc(var(--line-height) * 0.9);
+
+  --font-size-tiny: 0.79rem;
+  --font-size-small: 0.86rem;
+  --font-size-smallish: 0.93rem;
+  --font-size-normal: calc(var(--font-size) * 1px);
+  --font-size-big: 1.33rem;
+  --font-size-large: 1.66rem;
+  --font-size-huge: 2rem;
+  --font-size-monospace: calc(1rem - 1px);
+
+  --top-bar-height: auto; /* will be set by javascript */
+
+  /* components */
+  --newlink-background: #eee;
+  --newlink-foreground: var(--color-text);
+
+  --menu-border: var(--color-border);
+  --menu-background: var(--color-background);
+  --menu-foreground: var(--color-foreground);
+  --menu-hover-background: var(--color-hover-background);
+  --menu-hover-foreground: var(--color-hover-foreground);
+  --menu-active-foreground: var(--color-background);
+  --menu-active-background: var(--color-primary);
+
+  --alt-border: var(--color-gray-4);
+  --alt-inner-border: var(--alt-border);
+  --alt-background: #f8f8f8;
+  --alt-foreground: var(--color-foreground);
+  --alt-background-gradient: linear-gradient(to bottom, var(--color-background) 0%, var(--alt-background) 100%); 
+  --alt-shadow: var(--color-gray-9);
+  --alt-box-shadow: 0 0 10px -2px var(--alt-shadow);
+
+  --input-border: var(--color-gray-5);
+  --input-background: #f8f8f8;
+  --input-foreground: var(--color-foreground);
+  --input-focus-color: #16beef;
+  --input-box-shadow: inset 2px 2px 4px var(--color-gray-9);
+  --input-font-size: calc((var(--font-size) - 1) *1px);
+
+  --checkbox-active: var(--color-primary);
+  --checkbox-active-inner: #fff;
+
+  --ui-natedit-background: var(--input-background);
+  --ui-natedit-foreground: var(--input-foreground);
+
+  --ui-natedit-menu-border: var(--ui-menu-border);
+  --ui-natedit-menu-background: var(--ui-menu-background);
+  --ui-natedit-menu-foreground: var(--ui-menu-foreground);
+  --ui-natedit-toolbar-background: transparent;
+  --ui-natedit-toolbar-foreground: var(--ui-menu-foreground);
+
+  --ui-widget-background: var(--color-background);
+  --ui-widget-foreground: var(--color-foreground);
+  --ui-widget-border: var(--color-border);
+
+  --ui-widget-header-background: var(--color-gray-9,#f3f3f3);
+  --ui-widget-header-background-gradient: linear-gradient(var(--color-background) 0%, var(--ui-header-background)  100%);
+  --ui-widget-header-foreground: var(--color-foreground);
+  --ui-widget-header-border: #ddd;
+
+  --ui-dialog-border: 0;
+  --ui-dialog-background: var(--ui-widget-background);
+  --ui-dialog-foreground: var(--ui-widget-foreground);
+  --ui-dialog-box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+  --ui-dialog-title-background: var(--color-gray-9);
+  --ui-dialog-title-foreground: var(--color-primary);
+  --ui-dialog-title-border: var(--color-border);
+
+  --ui-overlay-background: rgba(255,255,255,0.4);
+
+  --ui-block-msg-foreground: var(--ui-widget-foreground, #333);
+  --ui-block-msg-background: var(--ui-widget-background, #fff);
+  --ui-block-msg-box-shadow: 0 1px 5px 0 rgba(0,0,0,0.5);
+
+  --ui-user-tooltip-background: var(--ui-widget-background);
+
+  --searchbox-background: var(--input-background);
+  --searchbox-foreground: var(--input-foreground);
+  --searchbox-placeholder: var(--color-gray-2);
+
+  --pre-background: var(--color-gray-10);
+  --pre-foreground: var(--color-foreground);
+  --pre-border: var(--color-border);
+
+  --del-background: #ffd3d8;
+  --del-foreground: var(--color-foreground);
+
+  --ins-background: #ace2ac;
+  --ins-foreground: var(--color-foreground);
+
+  --table-border: var(--color-border);
+  --table-background: var(--color-background);
+  --table-header-border: var(--table-border);
+  --table-header-foreground: #222;
+  --table-header-background: var(--color-gray-10);
+  --table-stripes: var(--color-gray-10);
+
+  --toc-border: var(--color-border);
+
+  --button-border: #bdbec5;
+  --button-background: #ececec;
+  --button-background-gradient: linear-gradient(var(--color-background) 0%, var(--button-background) 100%); 
+  --button-foreground: var(--color-text);
+  --button-disabled-foreground: var(--color-disabled-foreground);
+  --button-font-size: calc((var(--font-size) - 1) *1px);
+
+  --scrolltop-foreground: var(--color-text);
+  --scrolltop-background: var(--color-background);
+  --scrolltop-background-gradient: linear-gradient(var(--scrolltop-background) 0%, var(--color-gray-8) 100%);
+  --scrolltop-border: var(--color-border);
+  --scrolltop-box-shadow: 1px 1px 0 0 rgba(0,0,0,0.5);
+
+  --scrolltop-hover-foreground: var(--color-primary);
+  --scrolltop-hover-background: var(--scrolltop-background);
+  --scrolltop-hover-background-gradient: linear-gradient(var(--scrolltop-hover-background) 0%, var(--color-gray-8) 100%);
+  --scrolltop-hover-box-shadow: var(--scrolltop-box-shadow);
+
+  --scrolltop-active-foreground: var(--color-primary);
+  --scrolltop-active-background: var(--scrolltop-hover-background);
+  --scrolltop-active-background-gradient: var(--scrolltop-hover-background-gradient);
+  --scrolltop-active-box-shadow: inset 1px 1px 0px 0 var(--color-gray-5); 
+
+  --login-background: var(--color-background);
+  --login-border: var(--color-border);
+  --login-box-shadow: 0 2px 5px rgba(105, 105, 105,  0.7), 0 0 8px 5px rgba(247, 247, 247, 0.4) inset;
+  --login-image: url(../../NatSkin/images/login-keys.png);
+
+  --message-success-background: #efffd8;
+  --message-success-bold: #477D00;
+  --message-success-border: #acdb6f;
+  --message-success-foreground: #599e00;
+
+  --message-warning-background: #FFF6BF;
+  --message-warning-bold: #A2772F;
+  --message-warning-border: #FDD845;
+  --message-warning-foreground: #c09853;
+
+  --message-error-background: #fbe3e4;
+  --message-error-bold: #9E1D1D;
+  --message-error-border: #fbc7c9;
+  --message-error-foreground: #b22222;
+
+  --message-info-background: #DEEBFA;
+  --message-info-bold #004568;;
+  --message-info-border: #7FBEE9;
+  --message-info-foreground: #005884;
+
+  --message-background: #fef7e3;
+  --message-bold: #3e3008;
+  --message-border: #efe5ca;
+  --message-foreground: #6b6860;
+
+  --message-sticky-position:0;
+
+  --editor-background: var(--input-background);
+  --editor-foreground: var(--input-foreground);
+  --editor-border: var(--input-border);
+  --editor-focus-border: #16BEEF;
+
+  --codemirror-font-size:13px;
+  --codemirror-line-height:1.4;
+  --codemirror-background: var(--editor-background);
+  --codemirror-foreground: var(--editor-foreground);
+  --codemirror-border: var(--editor-border);
+  --codemirror-focus-border: var(--editor-focus-border);
+  --codemirror-atom-foreground: blue; 
+  --codemirror-error-foreground: var(--color-red);
+  --codemirror-attribute-foreground: #00c;
+  --codemirror-bracket-foreground: #997;
+  --codemirror-builtin-foreground: #30a;
+  --codemirror-comment-foreground: #a50;
+  --codemirror-cursor-background: #7e7;
+  --codemirror-cursor-border: var(--input-foreground);
+  --codemirror-def-foreground: #00f;
+  --codemirror-error: #f00;
+  --codemirror-header-foreground: #333;
+  --codemirror-hr-foreground: #708; 
+  --codemirror-keyword-foreground: #708;
+  --codemirror-meta-foreground: #555;
+  --codemirror-mono-background: #f6f6f6;
+  --codemirror-mono-border: #ddd;
+  --codemirror-number-foreground: #164;
+  --codemirror-operator-foreground: black;
+  --codemirror-property-foreground: black;
+  --codemirror-qualifier-foreground: #555;
+  --codemirror-quote-foreground: #090;
+  --codemirror-string-2-foreground: #f50;
+  --codemirror-string-foreground: #a11;
+  --codemirror-tag-foreground: #170;
+  --codemirror-variable-2-foreground: #05a;
+  --codemirror-variable-3-foreground: #085;
+  --codemirror-variable-foreground: black;
+  --codemirror-verbatim-background: #f6f6f6;
+  --codemirror-selected-background: var(--color-primary-alpha-7, #c7c7c7);
+  --codemirror-searching-background: var(--color-primary-alpha-5);
+  --codemirror-searching-foreground: var(--color-foreground);
+
+  --tinymce-font-size: var(--font-size-normal);
+  --tinymce-line-height: var(--line-normal);
+  --tinymce-font-family: var(--font-family-regular);
+  --tinymce-foreground: var(--editor-foreground);
+  --tinymce-background: var(--editor-background);
+  --tinymce-border: var(--editor-border);
+  --tinymce-protected-foreground: #7A4707;
+  --tinymce-protected-background: inherit;
+  --tinymce-selected-foreground: var(--color-selected-foreground);
+  --tinymce-selected-background: var(--color-selected-background);
+
+  --swiper-theme-color:var(--color-primary);
+}
+
+:root[data-theme='dark'] {
+  --color-background: #212121;
+  --color-foreground: #fff;
+  --color-anchor: #fff;
+  --color-bold: #fff;
+  --color-error: #ff6a67;
+
+  --color-selection-background: var(--color-primary-darker-2);
+  --color-selection-border: var(--color-selection-background);
+  --color-selection-foreground: var(--color-foreground);
+
+  /*--creator-selection-background: var(--color-primary-darker-6);
+  --creator-selection-border: var(--color-primary-darker-6);
+  */
+  --creator-selection-background: #2b2b2b;
+  --creator-selection-border: #2b2b2b;
+  --creator-selection-foreground: var(--color-foreground);
+
+  --color-alpha-1: hsl(0, 0%, 0%, 0.10);
+  --color-alpha-2: hsl(0, 0%, 0%, 0.20);
+  --color-alpha-3: hsl(0, 0%, 0%, 0.30);
+  --color-alpha-4: hsl(0, 0%, 0%, 0.40);
+  --color-alpha-5: hsl(0, 0%, 0%, 0.50);
+  --color-alpha-6: hsl(0, 0%, 0%, 0.60);
+  --color-alpha-7: hsl(0, 0%, 0%, 0.70);
+  --color-alpha-8: hsl(0, 0%, 0%, 0.80);
+  --color-alpha-9: hsl(0, 0%, 0%, 0.90);
+  --color-alpha-10: hsl(0, 0%, 0%, 1.00);
+
+  --login-box-shadow: none;
+  --login-image: none;
+
+  --editor-background: #303030;
+  --editor-foreground: var(--color-gray-6);
+  --editor-focus-border: var(--color-primary-darker-1);
+
+  --codemirror-verbatim-background: #202020;
+  --codemirror-tag-foreground: #98c379; /* green */
+  --codemirror-attribute-foreground: #61afef; /*blue */
+  --codemirror-string-foreground: #d4527b; /* red */
+  --codemirror-atom-foreground: #61afef;
+  --codemirror-mono-background: #000;
+  --codemirror-mono-border: var(--codemirror-mono-background);
+  --codemirror-header-foreground: #fff;
+  --codemirror-property-foreground: #d18857; /* orange */
+  --codemirror-operator-foreground: #d18857;
+  --codemirror-number-foreground: #867591; /* flieder */
+  --codemirror-qualifier-foreground: #f4f4f4;
+  --codemirror-keyword-foreground: #b4af50; /* senf */
+  --codemirror-variable-foreground: #479c9c; /* light blue */
+
+  --tinymce-protected-foreground: #98c379; /* green */
+  --tinymce-selected-foreground: var(--color-text);
+
+  --del-foreground: var(--color-background);
+  --ins-foreground: var(--color-background);
+
+  --ui-overlay-background: rgba(0,0,0,0.2);
+}

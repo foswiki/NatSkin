@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 %TOC%
@@ -22,25 +22,21 @@ persistent.
 This is the list of variables to configure the skin style:
 
 | *Name%BR%(url param)*  | *Values* | *Description* | *Default* |
-| NATSKIN_STYLE (style) | <noautolink>%KNOWNSTYLES%</noautolink> \
-| select a predefined style | matter |
-| NATSKIN_VARIATION (skinvariation) | <noautolink>%KNOWNVARIATIONS%</noautolink> \
-| select a style variation | none |
-| NATSKIN_LAYOUT (skinlayout) | fixed, fluid, bordered \
-| select a page layout | fixed |
-| NATSKIN_MENU (skinmenu) | on, off \
-| switch on/of the horizontal menu above the topic area | on |
-| NATSKIN_SIDEBAR (skinsidebar) | left, right, both, off \
-| configure where to display the sidebar | right |
+| NATSKIN_DARKMODE | on, off, auto | switch on/off the dark mode; if left undefined or set to 'auto' the user's system settings take effect; there is a dark mode toggle button as well which sets a cookie with the preferences; note that you need to enable the =$Foswiki::cfg{NatSkin}{DarkModeFeature}=  | |
+| NATSKIN_LAYOUT (skinlayout) | fixed, fluid, bordered, fullscreen, sticky | select a page layout | fixed |
+| NATSKIN_MENU (skinmenu) | on, off  | switch on/off the horizontal menu above the topic area | on |
+| NATSKIN_SIDEBAR (skinsidebar) | left, right, both, off, toggle  | configure where to display the sidebar | right |
+| NATSKIN_STYLE (style) | <noautolink>%KNOWNSTYLES%</noautolink>  | select a predefined style | matter |
+| NATSKIN_TOPBAR | on, off | switch on/off the top bar, the one that normally contains the logo and the horizontal menu | on |
+| NATSKIN_VARIATION (skinvariation) | <noautolink>%KNOWNVARIATIONS%</noautolink>  | select a style variation | none |
 
 There are a couple of special url parameters:
-   * =togglesidebar=: disable the sidebar for this request only. 
    * =style=reset=: switch back to the user and server settings by reverting any 
      session preferences
 
 *Example*: 
 <verbatim>
-  * Set NATSKIN_STYLE = customato
+  * Set NATSKIN_STYLE = matter
   * Set NATSKIN_LAYOUT = fixed
   * Set NATSKIN_MENU = on
   * Set NATSKIN_SIDEBAR = right
@@ -51,6 +47,8 @@ There are a couple of special url parameters:
 There is a set of variables that can be used influence how NatSkin behaves or renders pages.
 
 | *Name* | *Description* |
+| =NATSKIN_LOGINTITLE= | text displayed when logging in, defaults to "Welcome to ..." |
+| =NATSKIN_LOGINBANNER= | image url to be displayed in the background of the login screen (see [[MatterTheme]]) |
 | =CONTENT_LANGUAGE= | the language of the current topic; this is used by search engines like !SolrPlugin to run different stemming procedures while indexing the topic (defaults to auto-detect) |
 | =HTMLTITLE= | the &lt;title>...</title> of the html page; if no HTMLTITLE is defined the NatSkin \
                 will check for some formfields (Headlines, <nop>TopicDescription) to be used as a html page title \
@@ -59,6 +57,7 @@ There is a set of variables that can be used influence how NatSkin behaves or re
 | =METAAUTHOR= | the value of this variable will be used to construct &lt;meta name="author" ... /> in the html head |
 | =METADESCRIPTION= | the value of this variable will be used to construct &lt;meta name="description" ... /> in the html head |
 | =METAKEYWORDS= | the value of this variable will be used to construct &lt;meta name="keywords" ... /> in the html head |
+| =METAKGENERATOR= | this is the &lt;meta name="generator" ... /> tag, defaulting to Foswiki |
 | =TOPICTITLE= | the title to be used displaying a !WikiWord link to the current page; this is set automatically using !NatEditPlugin |
 
 Hint: Assign default meta data _per web_ by adding

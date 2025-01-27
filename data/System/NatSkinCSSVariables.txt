@@ -1,0 +1,461 @@
+%META:TOPICINFO{author="micha" comment="reprev" date="1725367137" format="1.1" reprev="9" version="14"}%
+%META:TOPICPARENT{name="NatSkin"}%
+---+!! %TOPIC%
+
+%TOC%
+
+---++ Introduction
+
+CSS variables are a key technology to manage theming in modern web design. While NatSkin does have the ability to switch between
+different sets of CSS files, CSS variables offer a wide range of configurability without creating yet another theme. CSS variables
+are stored in =pub/System/NatSkin/src/vars.uncompressed.css= for the base set of variables as well as =pub/System/MatterTheme/src/vars.uncompressed.css=
+for the MatterTheme. CSS variables are organized in tires to best flexibility. On the first tire all basic color values, fonts and geometries are defined.
+The second tire uses those variables by applying them to the according HTML element such as a button or a menu, tables, dialogs, a part of the page such as the top bar,
+sidebar or bottom bar.
+
+Note that only the base style and !MatterTheme fully suport css variables. Legacy styles such as [[JazzyNoteTheme]] or [[CustomatoTheme]] are not customizable that way.
+Do not use them as a base theme for your own themes. 
+
+CSS variables can be set  either in a full theme of its own to customize a base style or via the <nop>HtmlHead <nop>WebComponent. For example use this to change basic 
+typographic properties such as font sizes
+
+<verbatim>
+:root {
+   --font-size: 14;
+   --line-height: 1.5;
+   --font-family-regular: Arial, FreeSans, sans-serif;
+
+   --font-size-h1: 2rem;
+   --font-size-h2: 1.6rem;
+   --font-size-h3: 1.5rem;
+   --font-size-h4: 1.4rem;
+   --font-size-h5: 1.3rem;
+   --font-size-h6: 1.2rem;
+}
+</verbatim>
+
+Note that all values of css variables are specified in the =:root= namespace. Colors for dark mode are in =:root[data-theme='dark']=. For example
+the page background color for light and dark mode is specified like this:
+
+<verbatim>
+:root {
+   --color-background:#fff;   
+}
+:root[data-theme='dark'] {
+   --color-background:#000;   
+}
+</verbatim>
+
+In general only colors differ in dark and light mode but you may change other settings as well of course.
+
+<div class="foswikiFlatTable foswikiStripes">
+---++ Named colors
+<!--
+   * Set COLORTILE = <span style='display:inline-block;width:1em;height:1em;background:%DEFAULT{default="#fff"}%'></span>
+-->
+
+| *CSS Variable* | *Description* |
+| --color-yellow | %COLORTILE{"#ffff00"}% |
+| --color-orange | %COLORTILE{"#ff6600"}% |
+| --color-red | %COLORTILE{"#ff0000"}% |
+| --color-pink | %COLORTILE{"#ff00ff"}% |
+| --color-purple | %COLORTILE{"#800080"}% |
+| --color-navy | %COLORTILE{"#000080"}% |
+| --color-blue | %COLORTILE{"#0000ff"}% |
+| --color-teal | %COLORTILE{"#008080"}% |
+| --color-aqua | %COLORTILE{"#00ffff"}% |
+| --color-lime | %COLORTILE{"#00ff00"}% | 
+| --color-green | %COLORTILE{"#008000"}% |
+| --color-olive | %COLORTILE{"#808000"}% |
+| --color-maroon | %COLORTILE{"#800000"}% |
+| --color-brown | %COLORTILE{"#996633"}% |
+| --color-black | %COLORTILE{"#000000"}% |
+| --color-silver | %COLORTILE{"#c0c0c0"}% |
+| --color-white | %COLORTILE{"#ffffff"}% |
+
+---++ Gray tones
+| *CSS Variable* | *Description* |
+| --color-gray | %COLORTILE{"hsl(0,0%,50%)"}% |
+| --color-gray-1 | %COLORTILE{"hsl(0,0%,54%)"}% | 
+| --color-gray-2 | %COLORTILE{"hsl(0,0%,58%)"}% | 
+| --color-gray-3 | %COLORTILE{"hsl(0,0%,62%)"}% |
+| --color-gray-4 | %COLORTILE{"hsl(0,0%,66%)"}% |
+| --color-gray-5 | %COLORTILE{"hsl(0,0%,72%)"}% |
+| --color-gray-6 | %COLORTILE{"hsl(0,0%,78%)"}% |
+| --color-gray-7 | %COLORTILE{"hsl(0,0%,84%)"}% |
+| --color-gray-8 | %COLORTILE{"hsl(0,0%,90%)"}% |
+| --color-gray-9 | %COLORTILE{"hsl(0,0%,93%)"}% |
+| --color-gray-10 |%COLORTILE{"#f4f4f4"}% |
+
+---++ Black tones
+| *CSS Variable* | *Description* |
+| --color-black-1 | %COLORTILE{"hsl(0,0%,2%)"}% |
+| --color-black-2 | %COLORTILE{"hsl(0,0%,6%)"}% |
+| --color-black-3 | %COLORTILE{"hsl(0,0%,10%)"}% |
+| --color-black-4 | %COLORTILE{"hsl(0,0%,15%)"}% |
+| --color-black-5 | %COLORTILE{"hsl(0,0%,20%)"}% |
+| --color-black-6 | %COLORTILE{"hsl(0,0%,25%)"}% |
+| --color-black-7 | %COLORTILE{"hsl(0,0%,30%)"}% |
+| --color-black-8 | %COLORTILE{"hsl(0,0%,35%)"}% |
+| --color-black-9 | %COLORTILE{"hsl(0,0%,40%)"}% |
+| --color-black-10 |%COLORTILE{" hsl(0,0%,45%)"}% |
+
+---++ Alpha tones
+| *CSS Variable* | *Description* |
+| --color-alpha-1 | %COLORTILE{"hsl(0, 100%, 100%, 0.10)"}% |
+| --color-alpha-2 | %COLORTILE{"hsl(0, 100%, 100%, 0.20)"}% |
+| --color-alpha-3 | %COLORTILE{"hsl(0, 100%, 100%, 0.30)"}% |
+| --color-alpha-4 | %COLORTILE{"hsl(0, 100%, 100%, 0.40)"}% |
+| --color-alpha-5 | %COLORTILE{"hsl(0, 100%, 100%, 0.50)"}% |
+| --color-alpha-6 | %COLORTILE{"hsl(0, 100%, 100%, 0.60)"}% |
+| --color-alpha-7 | %COLORTILE{"hsl(0, 100%, 100%, 0.70)"}% |
+| --color-alpha-8 | %COLORTILE{"hsl(0, 100%, 100%, 0.80)"}% |
+| --color-alpha-9 | %COLORTILE{"hsl(0, 100%, 100%, 0.90)"}% |
+| --color-alpha-10 |%COLORTILE{"hsl(0, 100%, 100%, 1.00)"}% |
+
+---++ Theme colors
+
+| *CSS Variable* | *Description* |
+| --color-primary-hue | 210 | 
+| --color-primary-saturation | 63% | 
+| --color-primary-lightness | 54% | 
+| --color-primary | %COLORTILE{"var(--color-primary)"}% hls value created from --color-primary-hue, --color-primary-lightness and --color-primary-saturation |
+| --color-secondary-hue-offset | -110 (relative to --color-primary-hue) |
+| --color-secondary-saturation |80% |
+| --color-secondary-lightness | 40% |
+| --color-secondary-hue | computed based on --color-secondary-hue-offset |
+| --color-secondary | %COLORTILE{"var(--color-secondary)"}% hls value created from --color-secondary-hue, --color-secondary-lightness and --color-secondary-saturation |
+| --color-ternary-hue-offset | 110 (relative to --color-primary-hue) |
+| --color-ternary-saturation | 60% | 
+| --color-ternary-lightness | 34% |
+| --color-ternary-hue | computed based on --color-ternary-hue-offset |
+| --color-ternary | %COLORTILE{"var(--color-ternary)"}% hls value created from --color-ternary-hue, --color-ternary-lightness and --color-ternary-saturation |
+| --color-complementary-hue-offset | 180 (relative to --color-primary-hue) |
+| --color-complementary-saturation | same as --color-primary-saturation |
+| --color-complementary-lightness | same as --color-primary-lightness |
+| --color-complementary-hue | computed based on --color-compementary-hue-offset |
+| --color-complementary | %COLORTILE{"var(--color-complementary)"}% hls value created from --color-complementary-hue, --color-complementary-lightness and --color-complementary-saturation |
+
+Theme colors all have lighter, darker and alpha variations computed automatically based on above values such as:
+
+%BEGINGRID%
+%BEGINCOL{"6"}%
+| *CSS Variable* | *Description* |
+| --color-primary-lighter-1 | %COLORTILE{"var(--color-primary-lighter-1"}% |
+| --color-primary-lighter-2 | %COLORTILE{"var(--color-primary-lighter-2"}% |
+| --color-primary-lighter-3 | %COLORTILE{"var(--color-primary-lighter-3"}% |
+| --color-primary-lighter-4 | %COLORTILE{"var(--color-primary-lighter-4"}% |
+| --color-primary-lighter-5 | %COLORTILE{"var(--color-primary-lighter-5"}% |
+| --color-primary-lighter-6 | %COLORTILE{"var(--color-primary-lighter-6"}% |
+| --color-primary-lighter-7 | %COLORTILE{"var(--color-primary-lighter-7"}% |
+| --color-primary-lighter-8 | %COLORTILE{"var(--color-primary-lighter-8"}% |
+| --color-primary-lighter-9 | %COLORTILE{"var(--color-primary-lighter-9"}% |
+| --color-primary-lighter-10 | %COLORTILE{"var(--color-primary-lighter-10"}% |
+| --color-primary-darker-1 | %COLORTILE{"var(--color-primary-darker-1"}% |
+| --color-primary-darker-2 | %COLORTILE{"var(--color-primary-darker-2"}% |
+| --color-primary-darker-3 | %COLORTILE{"var(--color-primary-darker-3"}% |
+| --color-primary-darker-4 | %COLORTILE{"var(--color-primary-darker-4"}% |
+| --color-primary-darker-5 | %COLORTILE{"var(--color-primary-darker-5"}% |
+| --color-primary-darker-6 | %COLORTILE{"var(--color-primary-darker-6"}% |
+| --color-primary-darker-7 | %COLORTILE{"var(--color-primary-darker-7"}% |
+| --color-primary-darker-8 | %COLORTILE{"var(--color-primary-darker-8"}% |
+| --color-primary-darker-9 | %COLORTILE{"var(--color-primary-darker-9"}% |
+| --color-primary-darker-10 | %COLORTILE{"var(--color-primary-darker-10"}% |
+| --color-primary-alpha-1 | %COLORTILE{"var(--color-primary-alpha-1"}% |
+| --color-primary-alpha-2 | %COLORTILE{"var(--color-primary-alpha-2"}% |
+| --color-primary-alpha-3 | %COLORTILE{"var(--color-primary-alpha-3"}% |
+| --color-primary-alpha-4 | %COLORTILE{"var(--color-primary-alpha-4"}% |
+| --color-primary-alpha-5 | %COLORTILE{"var(--color-primary-alpha-5"}% |
+| --color-primary-alpha-6 | %COLORTILE{"var(--color-primary-alpha-6"}% |
+| --color-primary-alpha-7 | %COLORTILE{"var(--color-primary-alpha-7"}% |
+| --color-primary-alpha-8 | %COLORTILE{"var(--color-primary-alpha-8"}% |
+| --color-primary-alpha-9 | %COLORTILE{"var(--color-primary-alpha-9"}% |
+| --color-primary-alpha-10 | %COLORTILE{"var(--color-primary-alpha-10"}% |
+
+%BEGINCOL{"6"}%
+| *CSS Variable* | *Description* |
+| --color-secondary-lighter-1 | %COLORTILE{"var(--color-secondary-lighter-1"}% |
+| --color-secondary-lighter-2 | %COLORTILE{"var(--color-secondary-lighter-2"}% |
+| --color-secondary-lighter-3 | %COLORTILE{"var(--color-secondary-lighter-3"}% |
+| --color-secondary-lighter-4 | %COLORTILE{"var(--color-secondary-lighter-4"}% |
+| --color-secondary-lighter-5 | %COLORTILE{"var(--color-secondary-lighter-5"}% |
+| --color-secondary-lighter-6 | %COLORTILE{"var(--color-secondary-lighter-6"}% |
+| --color-secondary-lighter-7 | %COLORTILE{"var(--color-secondary-lighter-7"}% |
+| --color-secondary-lighter-8 | %COLORTILE{"var(--color-secondary-lighter-8"}% |
+| --color-secondary-lighter-9 | %COLORTILE{"var(--color-secondary-lighter-9"}% |
+| --color-secondary-lighter-10 | %COLORTILE{"var(--color-secondary-lighter-10"}% |
+| --color-secondary-darker-1 | %COLORTILE{"var(--color-secondary-darker-1"}% |
+| --color-secondary-darker-2 | %COLORTILE{"var(--color-secondary-darker-2"}% |
+| --color-secondary-darker-3 | %COLORTILE{"var(--color-secondary-darker-3"}% |
+| --color-secondary-darker-4 | %COLORTILE{"var(--color-secondary-darker-4"}% |
+| --color-secondary-darker-5 | %COLORTILE{"var(--color-secondary-darker-5"}% |
+| --color-secondary-darker-6 | %COLORTILE{"var(--color-secondary-darker-6"}% |
+| --color-secondary-darker-7 | %COLORTILE{"var(--color-secondary-darker-7"}% |
+| --color-secondary-darker-8 | %COLORTILE{"var(--color-secondary-darker-8"}% |
+| --color-secondary-darker-9 | %COLORTILE{"var(--color-secondary-darker-9"}% |
+| --color-secondary-darker-10 | %COLORTILE{"var(--color-secondary-darker-10"}% |
+| --color-secondary-alpha-1 | %COLORTILE{"var(--color-secondary-alpha-1"}% |
+| --color-secondary-alpha-2 | %COLORTILE{"var(--color-secondary-alpha-2"}% |
+| --color-secondary-alpha-3 | %COLORTILE{"var(--color-secondary-alpha-3"}% |
+| --color-secondary-alpha-4 | %COLORTILE{"var(--color-secondary-alpha-4"}% |
+| --color-secondary-alpha-5 | %COLORTILE{"var(--color-secondary-alpha-5"}% |
+| --color-secondary-alpha-6 | %COLORTILE{"var(--color-secondary-alpha-6"}% |
+| --color-secondary-alpha-7 | %COLORTILE{"var(--color-secondary-alpha-7"}% |
+| --color-secondary-alpha-8 | %COLORTILE{"var(--color-secondary-alpha-8"}% |
+| --color-secondary-alpha-9 | %COLORTILE{"var(--color-secondary-alpha-9"}% |
+| --color-secondary-alpha-10 | %COLORTILE{"var(--color-secondary-alpha-10"}% |
+%BEGINCOL{"6"}%
+| *CSS Variable* | *Description* |
+| --color-ternary-lighter-1 | %COLORTILE{"var(--color-ternary-lighter-1"}% |
+| --color-ternary-lighter-2 | %COLORTILE{"var(--color-ternary-lighter-2"}% |
+| --color-ternary-lighter-3 | %COLORTILE{"var(--color-ternary-lighter-3"}% |
+| --color-ternary-lighter-4 | %COLORTILE{"var(--color-ternary-lighter-4"}% |
+| --color-ternary-lighter-5 | %COLORTILE{"var(--color-ternary-lighter-5"}% |
+| --color-ternary-lighter-6 | %COLORTILE{"var(--color-ternary-lighter-6"}% |
+| --color-ternary-lighter-7 | %COLORTILE{"var(--color-ternary-lighter-7"}% |
+| --color-ternary-lighter-8 | %COLORTILE{"var(--color-ternary-lighter-8"}% |
+| --color-ternary-lighter-9 | %COLORTILE{"var(--color-ternary-lighter-9"}% |
+| --color-ternary-lighter-10 | %COLORTILE{"var(--color-ternary-lighter-10"}% |
+| --color-ternary-darker-1 | %COLORTILE{"var(--color-ternary-darker-1"}% |
+| --color-ternary-darker-2 | %COLORTILE{"var(--color-ternary-darker-2"}% |
+| --color-ternary-darker-3 | %COLORTILE{"var(--color-ternary-darker-3"}% |
+| --color-ternary-darker-4 | %COLORTILE{"var(--color-ternary-darker-4"}% |
+| --color-ternary-darker-5 | %COLORTILE{"var(--color-ternary-darker-5"}% |
+| --color-ternary-darker-6 | %COLORTILE{"var(--color-ternary-darker-6"}% |
+| --color-ternary-darker-7 | %COLORTILE{"var(--color-ternary-darker-7"}% |
+| --color-ternary-darker-8 | %COLORTILE{"var(--color-ternary-darker-8"}% |
+| --color-ternary-darker-9 | %COLORTILE{"var(--color-ternary-darker-9"}% |
+| --color-ternary-darker-10 | %COLORTILE{"var(--color-ternary-darker-10"}% |
+| --color-ternary-alpha-1 | %COLORTILE{"var(--color-ternary-alpha-1"}% |
+| --color-ternary-alpha-2 | %COLORTILE{"var(--color-ternary-alpha-2"}% |
+| --color-ternary-alpha-3 | %COLORTILE{"var(--color-ternary-alpha-3"}% |
+| --color-ternary-alpha-4 | %COLORTILE{"var(--color-ternary-alpha-4"}% |
+| --color-ternary-alpha-5 | %COLORTILE{"var(--color-ternary-alpha-5"}% |
+| --color-ternary-alpha-6 | %COLORTILE{"var(--color-ternary-alpha-6"}% |
+| --color-ternary-alpha-7 | %COLORTILE{"var(--color-ternary-alpha-7"}% |
+| --color-ternary-alpha-8 | %COLORTILE{"var(--color-ternary-alpha-8"}% |
+| --color-ternary-alpha-9 | %COLORTILE{"var(--color-ternary-alpha-9"}% |
+| --color-ternary-alpha-10 | %COLORTILE{"var(--color-ternary-alpha-10"}% |
+%BEGINCOL{"6"}%
+| *CSS Variable* | *Description* |
+| --color-complementary-lighter-1 | %COLORTILE{"var(--color-complementary-lighter-1"}% |
+| --color-complementary-lighter-2 | %COLORTILE{"var(--color-complementary-lighter-2"}% |
+| --color-complementary-lighter-3 | %COLORTILE{"var(--color-complementary-lighter-3"}% |
+| --color-complementary-lighter-4 | %COLORTILE{"var(--color-complementary-lighter-4"}% |
+| --color-complementary-lighter-5 | %COLORTILE{"var(--color-complementary-lighter-5"}% |
+| --color-complementary-lighter-6 | %COLORTILE{"var(--color-complementary-lighter-6"}% |
+| --color-complementary-lighter-7 | %COLORTILE{"var(--color-complementary-lighter-7"}% |
+| --color-complementary-lighter-8 | %COLORTILE{"var(--color-complementary-lighter-8"}% |
+| --color-complementary-lighter-9 | %COLORTILE{"var(--color-complementary-lighter-9"}% |
+| --color-complementary-lighter-10 | %COLORTILE{"var(--color-complementary-lighter-10"}% |
+| --color-complementary-darker-1 | %COLORTILE{"var(--color-complementary-darker-1"}% |
+| --color-complementary-darker-2 | %COLORTILE{"var(--color-complementary-darker-2"}% |
+| --color-complementary-darker-3 | %COLORTILE{"var(--color-complementary-darker-3"}% |
+| --color-complementary-darker-4 | %COLORTILE{"var(--color-complementary-darker-4"}% |
+| --color-complementary-darker-5 | %COLORTILE{"var(--color-complementary-darker-5"}% |
+| --color-complementary-darker-6 | %COLORTILE{"var(--color-complementary-darker-6"}% |
+| --color-complementary-darker-7 | %COLORTILE{"var(--color-complementary-darker-7"}% |
+| --color-complementary-darker-8 | %COLORTILE{"var(--color-complementary-darker-8"}% |
+| --color-complementary-darker-9 | %COLORTILE{"var(--color-complementary-darker-9"}% |
+| --color-complementary-darker-10 | %COLORTILE{"var(--color-complementary-darker-10"}% |
+| --color-complementary-alpha-1 | %COLORTILE{"var(--color-complementary-alpha-1"}% |
+| --color-complementary-alpha-2 | %COLORTILE{"var(--color-complementary-alpha-2"}% |
+| --color-complementary-alpha-3 | %COLORTILE{"var(--color-complementary-alpha-3"}% |
+| --color-complementary-alpha-4 | %COLORTILE{"var(--color-complementary-alpha-4"}% |
+| --color-complementary-alpha-5 | %COLORTILE{"var(--color-complementary-alpha-5"}% |
+| --color-complementary-alpha-6 | %COLORTILE{"var(--color-complementary-alpha-6"}% |
+| --color-complementary-alpha-7 | %COLORTILE{"var(--color-complementary-alpha-7"}% |
+| --color-complementary-alpha-8 | %COLORTILE{"var(--color-complementary-alpha-8"}% |
+| --color-complementary-alpha-9 | %COLORTILE{"var(--color-complementary-alpha-9"}% |
+| --color-complementary-alpha-10 | %COLORTILE{"var(--color-complementary-alpha-10"}% |
+%ENDGRID%
+
+The full set of all theme colors is available at the [[NatSkinColorScheme]].
+
+---++ Base colors
+
+These colors apply the theme colors to the first tier HTML elements such as the text's foreground and
+background color, coloring of anchors, hovered anchors, active anchors, selections, disabled HTML elements.
+
+| *CSS Variable* | *Description* |
+| --color-background | %COLORTILE{"var(--color-background)"}% background of the HTML page |
+| --color-foreground | %COLORTILE{"var(--color-foreground)"}% foreground color |
+| --color-text | %COLORTILE{"var(--color-foreground)"}% text color, same as --color-foreground but may differ in dark mode |
+| --color-border | %COLORTILE{"var(--color-border)"}% border color used whenever an HTML element has got a border as per =border:1px solid var(--color-border);= |
+| --color-bold | %COLORTILE{"var(--color-bold)"}% color of bold elements |
+| --color-error | %COLORTILE{"var(--color-error)"}% color of error text |
+| --color-h1 | %COLORTILE{"var(--color-h1)"}% heading colors |
+| --color-h2 | %COLORTILE{"var(--color-h2)"}% heading colors |
+| --color-h3 | %COLORTILE{"var(--color-h3)"}% heading colors |
+| --color-h4 | %COLORTILE{"var(--color-h4)"}% heading colors |
+| --color-h5 | %COLORTILE{"var(--color-h5)"}% heading colors |
+| --color-h6 | %COLORTILE{"var(--color-h6)"}% heading colors |
+| --color-anchor | %COLORTILE{"var(--color-anchor)"}% link color |
+| --color-target | %COLORTILE{"var(--color-target)"}% target color |
+| --color-highlight-foreground | %COLORTILE{"var(--color-highlight-foreground)"}% foreground color of an element to be highlighted |
+| --color-active-foreground | %COLORTILE{"var(--color-active-foreground)"}% foreground color of a link being clicked |
+| --color-hover-foreground | %COLORTILE{"var(--color-hover-foreground)"}% colors of a link being hovered wit the mouse |
+| --color-hover-background | %COLORTILE{"var(--color-hover-background)"}% |
+| --color-selected-foreground | %COLORTILE{"var(--color-selected-foreground)"}% |
+| --color-selected-background | %COLORTILE{"var(--color-selected-background)"}% |
+| --color-disabled-foreground | %COLORTILE{"var(--color-disabled-foreground)"}% |
+| --color-selection-foreground | %COLORTILE{"var(--color-selection-foreground)"}% |
+| --color-selection-background | %COLORTILE{"var(--color-selection-background)"}% |
+| --color-selection-border | %COLORTILE{"var(--color-selection-border)"}% |
+
+---++ Typography
+
+| *CSS Variable* | *Description* |
+| --font-size | basic font size, i.e. 14 |
+| --font-baseline | calculated by --font-size and --line-height | 
+| --font-weight-light | 300 |
+| --font-weight-normal | 400 |
+| --font-weight-semi-bold | 500 |
+| --font-weight-bold | 700 |
+| --font-weight-black | 900 |
+| --font-family-regular | font for regular text |
+| --font-family-alt | font for text in ".alt" boxes |
+| --font-family-monospace | monospace fonts |
+| --font-family-italic | font being used for italics |
+| --font-family-h1, %BR% \
+  --font-family-h2, %BR% \
+  --font-family-h3, %BR% \
+  --font-family-h4, %BR% \
+  --font-family-h5, %BR% \
+  --font-family-h6, %BR% | font family for headings |
+| --font-weight-h1, %BR% \
+  --font-weight-h2  %BR% \
+  --font-weight-h3  %BR% \
+  --font-weight-h4  %BR% \
+  --font-weight-h5  %BR% \
+  --font-weight-h6 | weights for headings |
+| --font-size-h1, %BR% \
+  --font-size-h2, %BR% \
+  --font-size-h3, %BR% \
+  --font-size-h4, %BR% \
+  --font-size-h5, %BR% \
+  --font-size-h6 | font sizes for headings, see the [[NatSkinTypography]] for a visual impression of these fonts in relation to each other |
+| --line-height | line height for normal text |
+| --line-height-h1, %BR% \
+  --line-height-h2, %BR% \
+  --line-height-h3, %BR% \
+  --line-height-h4, %BR% \
+  --line-height-h5, %BR% \
+  --line-height-h6 | heights of the various headings |
+| --font-size-normal, %BR% \
+  --font-size-small, %BR% \
+  --font-size-smallish, %BR% \
+  --font-size-large, %BR% \
+  --font-size-huge | these are the actual font sizes being used in pixel based on the value of --font-size |
+| --font-size-monospace | font size used for monospace text |
+
+---++ Spaces and Layout
+
+| *CSS Variable* | *Description* |
+| --margin | this is a value for white space that can be used in various situations. its value is based on the --font-baseline and --font-size by default |
+| --page-fixed-width | width of a page in fixed-width layout. use values around 80em for good readability of text |
+| --page-width-bordered | width of page in "bordered" layout. this one uses 100% of the viewport by default. good for wide tables of media elements |
+| --sidebar-width | width of the sidebar navigation, left and/or right |
+
+---++ Misc component 
+
+"Components" are all sorts of buttons, menus, input elements, editors whatever widget in the broader sense you have.
+
+| *CSS Variable* | *Description* |
+| --newlink-background, %BR% \
+  --newlink-foreground | colors for [[DoesNotExist][non existing wiki words]] |
+| --menu-border, %BR% \
+  --menu-background, %BR% \
+  --menu-foreground, %BR% \
+  --menu-hover-background, %BR% \
+  --menu-hover-foreground, %BR% \
+  --menu-active-foreground, %BR% \
+  --menu-active-background | colors for all sorts of menus; note while various menus may use these colors, they still have more specific css variables for them to be more flexible in design |
+| --alt-border, %BR% \
+  --alt-inner-border, %BR% \
+  --alt-background, %BR% \
+  --alt-foreground, %BR% \
+  --alt-background-gradient, %BR% \
+  --alt-shadow, %BR% \
+  --alt-box-shadow | styles to be used for boxes with a =.alt= class on them; the =alt= component is similar to a regular message box, however more used as a box or container for further components rather than holding a message string of some sort |
+| --input-border: %BR% \
+  --input-background: %BR% \
+  --input-foreground: %BR% \
+  --input-focus-color: %BR% \
+  --input-box-shadow: %BR% \
+  --input-font-size | styles for input elements, mostly an input text field; these variables may be further refined in additional input elements the less they are used for single-line text input fields |
+| --searchbox-background, %BR% \
+  --searchbox-foreground, %BR% \
+  --searchbox-placeholder | colors for the search box |
+| --pre-background, %BR% \
+  --pre-foreground, %BR% \
+  --pre-border | styles for =pre= and =verbatim= elements |
+| --del-background, %BR% \
+  --del-foreground | colors for =del= elements, e.g. <del>this text has been deleted</del> |
+| --ins-background, %BR% \
+  --ins-foreground | colors for =ins= elements, e.g. <ins> this text has been inserted</ins> |
+| --table-border, %BR% \
+  --table-background, %BR% \
+  --table-header-border, %BR% \
+  --table-header-foreground, %BR% \
+  --table-header-background, %BR% \
+  --table-stripes | TML table styles |
+| --toc-border | border color for [[VarTOC]] elements |
+| --button-border, %BR% \
+  --button-disabled-foreground, %BR% \
+  --button-background, %BR% \
+  --button-background-gradient, %BR% \
+  --button-foreground, %BR% \
+  --button-hover-border, %BR% \
+  --button-hover-box-shadow, %BR% \
+  --button-hover-background, %BR% \
+  --button-hover-background-gradient, %BR% \
+  --button-hover-foreground, %BR% \
+  --button-focus-border, %BR% \
+  --button-focus-box-shadow, %BR% \
+  --button-focus-background, %BR% \
+  --button-focus-background-gradient, %BR% \
+  --button-focus-foreground, %BR% \
+  --button-active-border, %BR% \
+  --button-active-box-shadow, %BR% \
+  --button-active-background, %BR% \
+  --button-active-background-gradient, %BR% \
+  --button-active-foreground, %BR% \
+  --button-font-size | button styles used for [[VarBUTTON]] as well as [[JQueryUI]] buttons |
+
+---++ jQuery variables
+
+These variables aim towards an initiative to make !JQueryPlugin [[https://foswiki.org/Tasks/Item15217][fully customizable using CSS variables only]]. For now jQuery still relies on its theme styles. Here in Foswiki basically only one theme is usable with the other 3rd party themes being rarely
+used. 
+
+| *CSS Variable* | *Description* |
+| --ui-natedit-background, %BR% \
+  --ui-natedit-foreground  | !NatEdit textarea background; note that in wysiwyg mode or codemirror mode these values may further be refined in different css variables below |
+| --ui-natedit-menu-border | defaults to --ui-menu-border |
+| --ui-natedit-menu-background | defaults to --ui-menu-background |
+| --ui-natedit-menu-foreground | defaults to --ui-menu-foreground |
+| --ui-natedit-toolbar-background | |
+| --ui-natedit-toolbar-foreground | defaults to --ui-menu-foreground |
+| --ui-widget-background, %BR% \
+  --ui-widget-foreground, %BR% \
+  --ui-widget-border, %BR% \
+  --ui-widget-header-foreground, %BR% \
+  --ui-widget-header-background, %BR% \
+  --ui-widget-header-border, %BR% \
+  --ui-widget-header-background-gradient  | base background and foreground colors for any [[JQueryUI]] widget |
+| --ui-dialog-border, %BR% \
+  --ui-dialog-background, %BR% \
+  --ui-dialog-foreground, %BR% \
+  --ui-dialog-box-shadow, %BR% \
+  --ui-dialog-title-background, %BR% \
+  --ui-dialog-title-foreground, %BR% \
+  --ui-dialog-title-border | colors for [[JQueryUIDialog]] elements |
+| --ui-overlay-background | overlay background color |
+| --ui-block-msg-foreground, %BR% \
+  --ui-block-msg-background, %BR% \
+  --ui-block-msg-box-shadow | colors for [[JQueryBlockUI]] elements |
+
+</div>
+%ADDTOZONE{"head" id="%TOPIC%" text="<style>.foswikiTableCol0 { min-width:20em; }</style>"}%
+
+%META:PREFERENCE{name="TOPICTITLE" title="TOPICTITLE" type="local" value="NatSkin CSS-Variables"}%

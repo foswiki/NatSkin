@@ -1,0 +1,38 @@
+%TMPL:INCLUDE{"view"}%
+%TMPL:INCLUDE{"newweb"}%
+%TMPL:DEF{"metadata"}%%TMPL:END%
+
+%TMPL:DEF{"formtitle"}%%MAKETEXT{"Create web"}%%TMPL:END%
+%TMPL:DEF{"bodyclass"}%natCreateWebBody%TMPL:END%
+%TMPL:DEF{"titleaction"}%%MAKETEXT{"Create web"}%%TMPL:END%
+%TMPL:DEF{"contenttitle"}%<h1>%MAKETEXT{"Create a new web"}%</h1>%TMPL:END%
+%TMPL:DEF{"banner"}%%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+%TMPL:DEF{"topicactions::contents"}%%USERACTIONS{format="$action(close)"}%%TMPL:END%
+
+%TMPL:DEF{"content"}%%TMPL:P{"contenttitle"}%%TMPL:P{"newwebform"}%%TMPL:END%
+
+%TMPL:DEF{"dialog"}%<noautolink><div class="jqUIDialog foswikiFormSteps" id="createNewWebDialog" data-width="790" data-modal="true" data-draggable="true" data-close-on-escape="true" data-destroy-on-close="true" data-auto-open="true" title="%TMPL:P{"formtitle"}%">
+%TMPL:P{"newwebform"}%
+<script>
+jQuery(function($) {
+  $("#createNewWeb").on("beforeSubmit", function() {
+    $("#createNewWebDialog").dialog("close");
+  });
+});
+</script>
+</div></noautolink>%TMPL:END%
+
+%TMPL:DEF{"newwebform::buttons"}%%{}%
+<a class="jqUIDialogButton jqUIDialogSubmit" data-icon="ui-icon-circle-check">%MAKETEXT{"Submit"}%</a>
+<a class="jqUIDialogButton jqUIDialogClose" data-icon="ui-icon-cancel">%MAKETEXT{"Cancel"}%</a>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"newwebform::buttonsstep"}%<hr />
+<div class="foswikiFormStep">
+%BUTTON{"%MAKETEXT{"Create web"}%" type="submit" icon="%TMPL:P{"icon::new::name"}%"}%
+%BUTTON{"%MAKETEXT{"Cancel"}%" icon="%TMPL:P{"icon::cancel::name"}%" href="%SCRIPTURLPATH{"view" topic="%WEB%.%TOPIC%"}%"}%
+</div>%TMPL:END%
+
+
+

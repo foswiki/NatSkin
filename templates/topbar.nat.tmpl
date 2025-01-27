@@ -1,7 +1,7 @@
-%TMPL:DEF{"defaulttopbar"}%%{}%
-%TMPL:P{"useractions"}%%{}%
-%TMPL:P{"langswitcher"}%<a href="#" class="natNavToggle fa fa-bars"></a>
+%TMPL:DEF{"defaulttopbar"}%%TMPL:P{"useractions"}%%TMPL:P{"langswitcher"}%%TMPL:P{"navtoggle"}%%{}%
 <div class="natTopBar clearfix">%TMPL:P{"topbar::contents"}%</div>%TMPL:END%
+
+%TMPL:DEF{"navtoggle"}%<a href="#" class="natNavToggle" title="%TRANSLATE{"Toggle sidebar navigation"}%"></a>%TMPL:END%
 
 %TMPL:DEF{"topbar::contents"}%<div class="natTopRight">
   <div class="natTopRightContents">%TMPL:P{"searchbox"}%</div>

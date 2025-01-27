@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ %TOPIC%
 
@@ -7,25 +7,36 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
 ---++ Implementation
 <verbatim class="tml">
 %STARTINCLUDE%<ul>
-  <li>[[%USERSWEB%.%HOMETOPIC%][%MAKETEXT{"Home"}%]]</li>
-  <!-- li>[[News.%HOMETOPIC%]]</li -->
-  <!-- li>[[Knowledge.%HOMETOPIC%]]</li -->
-  <!-- li>[[Projects.%HOMETOPIC%]]</li -->
-%IF{"'%USERNAME%' ingroup 'AdminGroup'" 
+  %IF{"isweb 'News'" 
+   then="<li>[[News.%HOMETOPIC%]]</li>"
+  }%%IF{"isweb 'Knowledge'"
+   then="<li>[[Knowledge.%HOMETOPIC%]]</li>"
+  }%%IF{"isweb 'Projects'"
+   then="<li>[[Projects.%HOMETOPIC%]]</li>"
+  }%%FLEXWEBLIST{
+    exclude="^(%USERSWEB%|%SYSTEMWEB%|Sandbox|Trash.*|Applications.*|Knowledge|Projects|News)$"
+    header="<li><a href='#'>%MAKETEXT{"Others"}%</a><ul><li>"
+    subheader="<ul><li>"
+    format="[[$web.%HOMETOPIC%][$title]]"
+    separator="</li><li>"
+    subfooter="</li></ul>"  
+    footer="</ul></li>"
+  }%<!-- -->
+%IF{"context isadmin" 
   then="$percntINCLUDE{\"%SYSTEMWEB%.SiteMenu\" section=\"adminmenu\"}$percnt"
-}% %INCLUDE{"%SYSTEMWEB%.SiteMenu" section="helpmenu"}%
-</ul>%STOPINCLUDE% 
+}%%IF{"context authenticated"
+  then="$percntINCLUDE{\"%SYSTEMWEB%.SiteMenu\" section=\"helpmenu\"}$percnt"
+}%</ul>%STOPINCLUDE% 
 </verbatim>
 
 ---++ Subwebs
 <verbatim class="tml">
 %STARTSECTION{"subwebs"}%%FLEXWEBLIST{
   include="%URLPARAM{"theweb" default="%theweb{default=""}%"}%.*"
-  exclude="%URLPARAM{"theweb" default="%theweb%"}%|.*(%URLPARAM{"excludeweb" default="does not exist"}%).*"
   exclude="%URLPARAM{"theweb" default="%theweb{default=""}%"}%|.*(%URLPARAM{"excludeweb" default="%exclude{default="does not exist"}%"}%).*"
   header="<li>"
   subheader="<ul><li>"
-  format="[[$web.%HOMETOPIC%][%JQICON{"%URLPARAM{"icon" default="%icon{default="bullet_white"}%"}%"}% $title]]"
+  format="[[$web.%HOMETOPIC%][%JQICON{"fa-folder-o"}% $title]]"
   separator="</li><li>"
   subfooter="</li></ul>"  
   footer="</li>"
@@ -36,20 +47,20 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
 <verbatim class="tml">
 %STARTSECTION{"helpmenu"}%<li>[[%SYSTEMWEB%.WebHome][%MAKETEXT{"Help"}%]]
   <ul>
-    <li>[[%SYSTEMWEB%.WelcomeGuest][%TMPL:P{"HOME_ICON"}% %MAKETEXT{"Welcome"}%]]</li>
-    <li>[[%SYSTEMWEB%.UserDocumentationCategory][%TMPL:P{"DOCU_ICON"}% %MAKETEXT{"User docs"}%]]</li>
-    <li>[[%SYSTEMWEB%.AdminDocumentationCategory][%TMPL:P{"DOCU_ICON"}% %MAKETEXT{"Admin docs"}%]]</li>
-    <li>[[%SYSTEMWEB%.DeveloperDocumentationCategory][%TMPL:P{"DOCU_ICON"}% %MAKETEXT{"Developer docs"}%]]</li>
-    <li>[[%SYSTEMWEB%.ReferenceManual][%TMPL:P{"MANUAL_ICON"}% %MAKETEXT{"Reference manual"}%]]</li>
-    <li>[[%SYSTEMWEB%.InstalledPlugins][%TMPL:P{"PLUGIN_ICON"}% %MAKETEXT{"Installed plugins"}%]]</li>
+    <li>[[%SYSTEMWEB%.WelcomeGuest][%TMPL:P{"icon::home"}% %MAKETEXT{"Welcome"}%]]</li>
+    <li>[[%SYSTEMWEB%.UserDocumentationCategory][%TMPL:P{"icon::docu"}% %MAKETEXT{"User docs"}%]]</li>
+    <li>[[%SYSTEMWEB%.AdminDocumentationCategory][%TMPL:P{"icon::docu"}% %MAKETEXT{"Admin docs"}%]]</li>
+    <li>[[%SYSTEMWEB%.DeveloperDocumentationCategory][%TMPL:P{"icon::docu"}% %MAKETEXT{"Developer docs"}%]]</li>
+    <li>[[%SYSTEMWEB%.ReferenceManual][%TMPL:P{"icon::manual"}% %MAKETEXT{"Reference manual"}%]]</li>
+    <li>[[%SYSTEMWEB%.InstalledPlugins][%TMPL:P{"icon::plugin"}% %MAKETEXT{"Installed plugins"}%]]</li>
     <li><hr /></li>
-    <li>[[Sandbox.%HOMETOPIC%][%TMPL:P{"SANDBOX_ICON"}% %MAKETEXT{"Sandbox"}%]]</li>%IF{"context passwords_modifyable" then="
-    <li>[[%SYSTEMWEB%.ResetPassword][%TMPL:P{"PASSWORD_ICON"}% %MAKETEXT{"Password forgotten"}%]]</li>"}%
+    <li>[[Sandbox.%HOMETOPIC%][%TMPL:P{"icon::sandbox"}% %MAKETEXT{"Sandbox"}%]]</li>%IF{"context passwords_modifyable" then="
+    <li>[[%SYSTEMWEB%.ResetPassword][%TMPL:P{"icon::password"}% %MAKETEXT{"Password forgotten"}%]]</li>"}%
     <li><hr /></li>
-    <li>[[https://foswiki.org/Support][%TMPL:P{"HELP_ICON"}% %MAKETEXT{"Online support forum"}%]]</li>
-    <li>[[https://foswiki.org/Support/FAQ][%TMPL:P{"QUESTION_ICON"}% %MAKETEXT{"Foswiki FAQ"}%]]</li>
-    <li>[[https://foswiki.org/Support/WikiConsultants][%TMPL:P{"ONLINE_HELP_ICON"}% %MAKETEXT{"Professional help"}%]]</li>
-    <li>[[https://foswiki.org/Tasks][%TMPL:P{"BUG_ICON"}% %MAKETEXT{"Bugreport"}%]]</li>
+    <li>[[https://foswiki.org/Support][%TMPL:P{"icon::help"}% %MAKETEXT{"Online support forum"}%]]</li>
+    <li>[[https://foswiki.org/Support/FAQ][%TMPL:P{"icon::question"}% %MAKETEXT{"Foswiki FAQ"}%]]</li>
+    <li>[[https://foswiki.org/Support/WikiConsultants][%TMPL:P{"icon::online_help"}% %MAKETEXT{"Professional help"}%]]</li>
+    <li>[[https://foswiki.org/Tasks][%TMPL:P{"icon::bug"}% %MAKETEXT{"Bugreport"}%]]</li>
   </ul>
 </li>%ENDSECTION{"helpmenu"}%
 </verbatim>
@@ -57,22 +68,51 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
 ---++ Admin menu
 <verbatim class="tml">
 %STARTSECTION{"adminmenu"}%<noautolink>
-<li><a>%MAKETEXT{"Admin"}%</a>
+<li><a href='#'>%MAKETEXT{"Admin"}%</a>
   <ul>
     %IF{"isweb 'Applications'"
        then="<li>
-         [[Applications.%HOMETOPIC%][%TMPL:P{"FOLDER_OPEN_ICON"}% %MAKETEXT{"Applications"}%]]
-         <ul class=\"ajaxMenu {url:'%SCRIPTURL{"view"}%/%SYSTEMWEB%/SiteMenu?skin=text;section=subwebs;theweb=Applications;icon=fa-folder-o%IF{"defined EXCLUDEWIKIAPPS" then=";excludeweb=%EXCLUDEWIKIAPPS%"}%'}\"></ul>
+         [[Applications.%HOMETOPIC%][%TMPL:P{"icon::folder_open"}% %MAKETEXT{"Applications"}%]]
+         <ul class='ajaxMenu' data-url='%SCRIPTURL{"view"}%/%SYSTEMWEB%/SiteMenu?skin=text;section=subwebs;theweb=Applications%IF{"defined EXCLUDEWIKIAPPS" then=";excludeweb=%EXCLUDEWIKIAPPS%"}%'}'></ul>
        </li>"
     }%<!-- -->
-    <li>[[%TRASHWEB%.%HOMETOPIC%][%TMPL:P{"TRASH_ICON"}% %MAKETEXT{"Trash"}%]]</li>
-    <li>[[%BASEWEB%.%WEBPREFSTOPIC%][%TMPL:P{"SETTINGS_ICON"}% %MAKETEXT{"Web preferences"}%]]</li>
-    <li>[[%LOCALSITEPREFS%][%TMPL:P{"SETTINGS_ICON"}% %MAKETEXT{"Site preferences"}%]]</li>
-    <li>[[%SYSTEMWEB%.SitePermissions][%TMPL:P{"PASSWORD_ICON"}% %MAKETEXT{"Site permissions"}%]]</li>
-    <li>[[%SCRIPTURLPATH{"configure"}%][%TMPL:P{"CONFIGURE_ICON"}% %MAKETEXT{"Configure Foswiki"}%]]</li>
+    <li>[[%TRASHWEB%.%HOMETOPIC%][%TMPL:P{"icon::trash"}% %MAKETEXT{"Trash"}%]]</li>
     <li> <hr /> </li>
-    <li>[[%SYSTEMWEB%.WebCreateNewWeb][%JQICON{"fa-plus"}% %MAKETEXT{"Create a new web"}%]]</li>
-    <li>[[%SCRIPTURL{"rename"}%/%BASEWEB%/%BASETOPIC%?action=renameweb][%JQICON{"fa-arrows"}% %MAKETEXT{"Rename current web"}%]]</li>
+    <li>[[%LOCALSITEPREFS%][%TMPL:P{"icon::settings"}% %MAKETEXT{"Site preferences"}%]]
+      %DBQUERY{
+         web="%HOMEWEB{default="%USERSWEB%"}%"
+         topics="SiteMenu, SiteSideBar, SiteLinks, SiteBottomBar, SiteHtmlHead, SiteHtmlBottom, SiteTopicActions, SiteUserMenu"
+         sort="on"
+         hidenull="on"
+         header="<ul>"
+         format="<li>[[$web.$topic]]</li>"
+         separator="$n"
+         footer="</ul>"
+      }%<!-- -->
+    </li>
+    <li>%IF{"context PluggableAuthEnabled"
+         then="[[%SYSTEMWEB%.PluggableAuthUsers][%TMPL:P{"icon::users"}% %MAKETEXT{"User Management"}%]]"
+        }%</li>
+    <li>[[%SYSTEMWEB%.SitePermissions][%TMPL:P{"icon::permissions"}% %MAKETEXT{"Site permissions"}%]]</li>
+    <li>[[%SCRIPTURLPATH{"configure"}%][%TMPL:P{"icon::configure"}% %MAKETEXT{"Configure Foswiki"}%]]</li>
+    <li> <hr /> </li>
+    <li>[[%BASEWEB%.%WEBPREFSTOPIC%][%TMPL:P{"icon::settings"}% %MAKETEXT{"Web preferences"}%]] 
+      %DBQUERY{
+         topics="WebMenu, WebSideBar, WebLinks, WebBottomBar, WebHtmlHead, WebHtmlBottom, WebTopicActions, WebUserMenu"
+         sort="on"
+         header="<ul>"
+         hidenull="on"
+         format="<li>[[$web.$topic]]</li>"
+         separator="$n"
+         footer="</ul>"
+      }%<!-- -->
+    </li>
+    <li>%IF{"context WebCreatorPluginEnabled" 
+          then="<a href='#newweb' class='foswikiDialogLink'>%TMPL:P{"icon::new"}% %MAKETEXT{"Create a new web"}%</a>"
+          else="[[%SYSTEMWEB%.WebCreateNewWeb][%TMPL:P{"icon::new"}% %MAKETEXT{"Create a new web"}%]]"
+        }%</li>
+    <li><a href='renamewebdelete' class='foswikiDialogLink' title='%TRANSLATE{"Move this web to the trash"}%' rel='nofollow'>%TMPL:P{"icon::delete"}% %MAKETEXT{"Delete this web"}%</a>
+    <li>[[%SCRIPTURL{"rename"}%/%BASEWEB%/%BASETOPIC%?action=renameweb&currentwebonly=on][%TMPL:P{"icon::move"}% %MAKETEXT{"Rename this web"}%]]</li>
   </ul>
 </li>
 </noautolink>%ENDSECTION{"adminmenu"}%
@@ -80,3 +120,4 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
 
 %META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%
 %META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%
+%META:PREFERENCE{name="NATEDIT_PURIFY" title="NATEDIT_PURIFY" type="Set" value="off"}%

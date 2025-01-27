@@ -1,16 +1,16 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 
 Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] instead.
 
 <verbatim class="tml">
-%STARTINCLUDE%<!-- -->
+%STARTINCLUDE%<noautolink>
 %TMPL:P{"sidebar::header"}%<!-- -->
 %TMPL:P{"sidebar::links"}%<!-- -->
 %TMPL:P{"sidebar::mysidebar"}%<!-- -->
 %TMPL:P{"sidebar::tools"}%<!-- -->
-<!-- -->%STOPINCLUDE%
+</noautolink>%STOPINCLUDE%
 </verbatim>
 
 %META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%

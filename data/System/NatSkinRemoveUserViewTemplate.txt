@@ -1,0 +1,50 @@
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1" version="1"}%
+%META:TOPICPARENT{name="NatSkin"}%
+
+%TMPL:INCLUDE{"view"}%
+%TMPL:DEF{"topicactions"}%%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+
+%TMPL:DEF{"content"}%%TMPL:P{context="isadmin" then="removeuser" else="noremoveuser"}%%TMPL:END%
+
+%TMPL:DEF{"removeuser"}%%{}%
+%TMPL:P{"removeuser::title"}%
+%TMPL:P{"removeuser::text"}%
+%TMPL:P{"removeuser::form"}%
+
+%TMPL:DEF{"removeuser::form"}%%{}%
+<form name="admin" action="%SCRIPTURLPATH{"manage" topic="%BASEWEB%.%BASETOPIC%"}%" method="post">
+  <input type="hidden" name="topicPrefix" value="DeletedUser" />
+  <input type="hidden" name="action" value="deleteUserAccount" />
+  <div class="foswikiFormSteps">
+    <div class="foswikiFormStep">
+      <h3>%MAKETEXT{"Username"}%</h3>
+%RENDERFOREDIT{
+  form="%SYSTEMWEB%.MoreFormfieldsPlugin"
+  field="User"
+  header=""
+  footer=""
+  User_name="user"
+  User_values="exclude=\"UnknownUser|AdminUser|Nobody|RegistrationAgent|WikiGuest|ProjectContributor\" showlogin=\"on\""
+}%
+    </div>
+    <div class="foswikiFormStep">
+      <h3>%MAKETEXT{"Options"}%</h3>
+        <label>
+          <input type="checkbox" id="removeTopic" name="removeTopic" class="foswikiCheckbox" checked="checked" /> %MAKETEXT{"Remove user account?"}%
+        </label>
+    </div>
+---
+    <div class="foswikiFormStep">
+      %BUTTON{"%MAKETEXT{"Remove"}%" type="submit" icon="fa-trash-o"}%
+    </div>
+  </div>
+</form>%JQREQUIRE{"ui, ui::autocomplete"}%%TMPL:END%
+
+%TMPL:DEF{"noremoveuser"}%<div class='foswikiErrorMessage'>%MAKETEXT{"Users may only be removed by the administrators. Please contact <a href='mailto:[_1]'>[_2]</a> to remove your account." args="%WIKIWEBMASTER%, %WIKIWEBMASTERNAME%"}%</div>%TMPL:END%
+
+%TMPL:DEF{"removeuser::title"}%
+---+ %MAKETEXT{"Remove user account"}%
+%TMPL:END%
+
+%TMPL:DEF{"removeuser::text"}%%MAKETEXT{"Utility for removing registered users."}%%TMPL:END%

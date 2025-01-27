@@ -1,10 +1,15 @@
 %TMPL:INCLUDE{"listyPlugin"}%
 %TMPL:DEF{"webrightbar"}%%WEBCOMPONENT{"RightBar"}%%TMPL:END%
 %TMPL:DEF{"websidebar"}%%WEBCOMPONENT{"SideBar"}%%TMPL:END%
-%TMPL:DEF{"defaultsidebar"}%%TMPL:P{"websidebar"}%%TMPL:END%
 %TMPL:DEF{"sidebar"}%%TMPL:P{"defaultsidebar"}%%TMPL:END%
 %TMPL:DEF{"rightsidebar"}%%TMPL:P{context="natskin_sidebar_both" then="webrightbar" else="sidebar"}%%TMPL:END%
-%TMPL:DEF{"mysidebarreddot"}%%REDDOT{"%topic%" icon="pencil" title="%MAKETEXT{"Edit my sidebar"}%"}%%TMPL:END%
+
+%TMPL:DEF{"defaultsidebar"}%%IF{
+  "context TableOfContentsPluginEnabled and '%DISPLAYTOCINSIDEBAR{default="off"}%'!='off'" 
+  then="$percntTMPL:P{\"sidebar::toc\"}$percnt"
+  else="$percntTMPL:P{\"websidebar\"}$percnt"
+}%%TMPL:END%
+
 %TMPL:DEF{"thesidebar"}%%USERSWEB%.%WIKINAME%%MYSIDEBAR{default="SideBar"}%%TMPL:END%
 %TMPL:DEF{"mysidebar"}%%IF{"context ListyPluginEnabled and not istopic '%TMPL:P{"thesidebar"}%'" 
   then="$percntTMPL:P{\"mysidebar::listy\"}$percnt" 
@@ -39,7 +44,7 @@ $percntTMPL:P{\"mysidebar::add::bookmark\"}$percnt"
 
 %TMPL:DEF{"sidebar::header"}%%{}%
 <noautolink>
-%WEBLINK{format="<h2 class='webLink'><a class='$marker' href='$url'>$title</a></h2>"}%
+%WEBLINK{format="<h2 class='webLink'><a class='$marker' href='$url'>$percntTRANSLATE{\"$title\"}$percnt</a></h2>"}%
 </noautolink>
 %{}%%TMPL:END%
 
@@ -49,7 +54,8 @@ $percntTMPL:P{\"mysidebar::add::bookmark\"}$percnt"
 %TMPL:DEF{"sidebar::tools::content"}%<h2 >%MAKETEXT{"Tools"}%</h2>
    * [[WebTopicList][%MAKETEXT{"Index"}%]]%IF{"istopic 'WebTagList'" then="
    * [[WebTagList][%MAKETEXT{"Tags"}%]]"}%%IF{"istopic 'Category'" then="
-   * [[Category][%MAKETEXT{"Categories"}%]]"}%
+   * [[Category][%MAKETEXT{"Categories"}%]]"}%%IF{"istopic 'WebComments'" then="
+   * [[WebComments][%MAKETEXT{"Comments"}%]]"}%
    * [[WebChanges][%MAKETEXT{"Changes"}%]]
    * [[WebNotify][%MAKETEXT{"Notifications"}%]]%IF{"istopic '%BASEWEB%.WebStatistics'" then="
    * [[WebStatistics][%MAKETEXT{"Statistics"}%]]"}%
@@ -57,7 +63,7 @@ $percntTMPL:P{\"mysidebar::add::bookmark\"}$percnt"
 %{}%%TMPL:END%
 
 %TMPL:DEF{"sidebar::mysidebar"}%%IF{
-  "$'MYSIDEBAR'!='off' and context authenticated" 
+  "'%MYSIDEBAR{default="off"}%'!='off' and context authenticated" 
    then="$percntTMPL:P{\"mysidebar\"}$percnt" 
 }%%{}%%TMPL:END%
 
@@ -67,3 +73,11 @@ $percntTMPL:P{\"mysidebar::add::bookmark\"}$percnt"
    * [[%SYSTEMWEB%.ChangeEmailAddress][Change Email Address]]
    * [[%SYSTEMWEB%.ChangePassword][Change Password]] 
 %{}%%TMPL:END%
+
+%TMPL:DEF{"sidebar::toc"}%%TOC2{
+  header="<h2 >%MAKETEXT{"Table of Contents"}%</h2><div class='jqTreeview' data-open='1'>$n"
+  depth="%TMPL:P{"sidebar::toc::depth"}%"
+  footer="$n</div>"
+}%%TMPL:END%
+
+%TMPL:DEF{"sidebar::toc::depth"}%3%TMPL:END%

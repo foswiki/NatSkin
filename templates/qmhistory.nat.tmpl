@@ -1,0 +1,21 @@
+%TMPL:INCLUDE{"view"}%
+%TMPL:DEF{"bodyclass"}%natWorkflowBody%TMPL:END%
+%TMPL:DEF{"form"}%%TMPL:END%
+%TMPL:DEF{"revinfo"}%%TMPL:END%
+%TMPL:DEF{"langswitcher"}%%TMPL:END%
+%TMPL:DEF{"bottombar"}%%TMPL:END%
+%TMPL:DEF{"sidebar"}%%TMPL:END%
+%TMPL:DEF{"metadata"}%%TMPL:END%
+%TMPL:DEF{"titleaction"}%%TRANSLATE{"Workflow"}%%TMPL:END%
+%TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%" template="qmhistory" rev="%URLPARAM{"rev"}%"}%">%TRANSLATE{"Workflow History"}%</a>%TMPL:END%
+
+%TMPL:DEF{"content"}%%QMHISTORY{
+  title="<h1>%TRANSLATE{"Workflow History"}%</h1>$n"
+  rev="%URLPARAM{"rev"}%"
+  reverse="on"
+  workflow="%FORMFIELD{"Workflow" topic="%OBJECT{default=""}%"}%"
+}%
+%TMPL:END%
+
+%TMPL:DEF{"topicactions"}%<div class='natTopicActions'>%USERACTIONS{format="$action(close)"}%</div>%TMPL:END%
+

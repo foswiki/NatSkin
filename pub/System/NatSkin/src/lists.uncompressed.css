@@ -1,0 +1,148 @@
+/* lists */
+ul,
+ol {
+  margin:var(--margin) 0em;
+  padding:0 0 0 3.0769em;
+}
+dl {
+  margin:var(--margin) 0em;
+}
+ol ol,
+ul ol,
+ol ul,
+ul ul {
+  margin-top:0em;
+  margin-bottom:0em;
+}
+.foswikiIndent {
+  margin:0;
+  padding-left:3.0769em;
+}
+/*
+li {
+  margin:0em 0em 0em 2.623em;
+  padding:0em 0em 0em 0.3846em;
+}
+li li {
+  margin:0em 0em 0em 0.7em;
+}
+*/
+ul,
+ul ul,
+ul ul ul {
+  list-style-type:disc;
+}
+
+dt {
+  font-weight:var(--font-weight-semi-bold);
+}
+dd {
+  margin:0 0 0.75em 3.0769em;
+}
+table ul,
+table ol {
+  margin:0;
+  padding:0 0 0 var(--margin);
+}
+
+ol.foswikiNoIndent,
+.foswikiNoIndent ol,
+ul.foswikiNoIndent,
+.foswikiNoIndent ul {
+  padding-left:1.3em;
+}
+
+ul.foswikiNoBullets,
+ul.foswikiOrangeBullets,
+ul.foswikiBlueBullets,
+ul.foswikiBlackBullets,
+ul.foswikiGreenBullets,
+ul.foswikiPinkBullets,
+ul.foswikiRedBullets,
+ul.foswikiStarBullets,
+ul.foswikiWhiteBullets,
+ul.foswikiArrowBullets,
+ul.foswikiAddBullets,
+ul.foswikiTickBullets,
+.foswikiOrangeBullets ul,
+.foswikiBlueBullets ul,
+.foswikiBlackBullets ul,
+.foswikiGreenBullets ul,
+.foswikiPinkBullets ul,
+.foswikiRedBullets ul,
+.foswikiStarBullets ul,
+.foswikiWhiteBullets ul,
+.foswikiArrowBullets ul,
+.foswikiAddBullets ul,
+.foswikiNoBullets ul,
+.foswikiTickBullets ul {
+  list-style:none;
+  padding-left:0 !important;
+}
+.foswikiOrangeBullets li,
+.foswikiBlueBullets li,
+.foswikiBlackBullets li,
+.foswikiGreenBullets li,
+.foswikiPinkBullets li,
+.foswikiRedBullets li,
+.foswikiWhiteBullets li,
+.foswikiStarBullets li,
+.foswikiArrowBullets li,
+.foswikiAddBullets li,
+.foswikiTickBullets li {
+  padding-left:1.5em;
+  position:relative;
+}
+.foswikiNoBullets li:before,
+.foswikiOrangeBullets li:before,
+.foswikiBlueBullets li:before,
+.foswikiBlackBullets li:before,
+.foswikiGreenBullets li:before,
+.foswikiPinkBullets li:before,
+.foswikiRedBullets li:before,
+.foswikiStarBullets li:before,
+.foswikiWhiteBullets li:before,
+.foswikiArrowBullets li:before,
+.foswikiAddBullets li:before,
+.foswikiTickBullets li:before {
+  content:"•";
+  font-weight:var(--font-weight-semi-bold);
+  font-family:var(--font-family-monospace);
+  background-repeat:no-repeat;
+  display:inline-block;
+  position:absolute;
+  left:0;
+  top:0;
+  text-align:center;
+  vertical-align:middle;
+  width:1em;
+}
+.foswikiOrangeBullets li:before { color:orange; }
+.foswikiBlueBullets li:before { color:#2196F3; }
+.foswikiBlackBullets li:before { color:#333; }
+.foswikiGreenBullets li:before { color:#4caf50; }
+.foswikiPinkBullets li:before { color:#faa1f5; }
+.foswikiRedBullets li:before { color:#ff5722; }
+.foswikiWhiteBullets li:before { 
+  color: #fff; 
+  text-shadow: 1px 1px 2px rgba(100, 100, 100, 0.5);
+}
+.foswikiStarBullets li:before,
+.foswikiArrowBullets li:before,
+.foswikiTickBullets li:before,
+.foswikiAddBullets li:before {
+  font-family:"FontAwesome";
+  font-weight:normal;
+  top:0;
+}
+
+.foswikiStarBullets li:before { color:#ffc107; content:"\f005"; }
+.foswikiArrowBullets li:before { color:#4caf50; content:"\f0a9"; }
+.foswikiAddBullets li:before { color:#4caf50; content:"\f055"; }
+.foswikiTickBullets li:before { color:#4caf50; content:"\f058"; }
+
+.foswikiNoBullets li:before {
+  content:"";
+  width:0;
+}
+

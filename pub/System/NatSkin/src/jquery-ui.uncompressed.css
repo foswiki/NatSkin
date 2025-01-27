@@ -1,0 +1,307 @@
+.ui-dialog .natPreviewRaw textarea {
+  width:99%;
+}
+.natMainContents .sf-menu,
+.natMainContents .sf-menu ul,
+.natMainContents .ui-menu {
+  overflow:visible;
+}
+
+/* edit */
+.ui-natedit {
+  background:transparent;
+}
+.ui-natedit textarea {
+  margin:0;
+  background: var(--ui-natedit-background);
+  color: var(--ui-natedit-foreground);
+}
+.ui-natedit-toolbar {
+  background: var(--ui-natedit-toolbar-background);
+  color: var(--ui-natedit-toolbar-foreground);
+}
+.ui-natedit-container {
+  margin:0;
+}
+
+.ui-natedit .ui-menu { 
+  color: var(--ui-natedit-menu-foreground);
+  border-color: var(--ui-natedit-menu-border);
+  background:  var(--ui-natedit-menu-background);
+  text-shadow: none;
+}
+
+.ui-natedit .ui-natedit-menu:before {
+  border-color: transparent transparent var(--ui-natedit-menu-border, #bcbcbc);
+}
+.ui-natedit .ui-natedit-menu:after {
+  border-color: transparent transparent var(--ui-natedit-menu-background, #fff);
+}
+
+
+/* basics */
+.ui-widget-content {
+  /*border-color:#bdbec5;*/
+  background: var(--ui-widget-background);
+  color: var(--ui-widget-foreground);
+  border-color: var(--ui-widget-border);
+}
+.ui-widget-overlay {
+  opacity:1;
+  background: var(--ui-overlay-background);
+  cursor:progress;
+}
+.ui-state-active a,
+.ui-state-active,
+.ui-state-active.ui-state-hover,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+  color:var(--color-secondary);
+}
+.ui-autocomplete .ui-menu-item a, 
+a.ui-button, 
+a:link.ui-button, 
+a:visited.ui-button {
+  color: var(--button-foreground);
+}
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default {
+  color: var(--button-foreground);
+}
+.ui-menu .ui-menu-item a:hover,
+.ui-menu .ui-menu-item .ui-state-active, 
+.ui-menu .ui-menu-item .ui-state-focus, 
+.ui-menu .ui-menu-item .ui-state-hover {
+  background: var(--ui-menu-hover-background);
+  color: var(--ui-menu-hover-foreground);
+}
+.ui-icon {
+  vertical-align:text-bottom;
+}
+.ui-menu .ui-menu-item .ui-state-active .icon {
+  color: var(--ui-menu-hover-foreground);
+}
+.ui-menu .ui-menu-item a:hover .foswikiGrayText, 
+.ui-menu .ui-menu-item .ui-state-active .foswikiGrayText, 
+.ui-menu .ui-menu-item .ui-state-focus .foswikiGrayText, 
+.ui-menu .ui-menu-item .ui-state-hover  .foswikiGrayText {
+  color: var(--ui-menu-hover-foreground);
+}
+
+.ui-state-default a, 
+.ui-state-default a:link, 
+.ui-state-default a:visited, 
+a.ui-state-default {
+  color: var(--color-foreground);
+}
+.ui-widget-header {
+  background: var(--ui-widget-header-background-gradient);
+  color: var(--ui-widget-header-foreground);
+  border-bottom: 1px solid var(--ui-widget-header-border);
+}
+.ui-widget-content {
+  /*border-color:#bdbec5;*/
+  background: var(--ui-widget-background);
+  color: var(--ui-widget-foreground);
+  border-color: var(--ui-widget-border);
+}
+.ui-dialog {
+  border:var(--ui-dialog-border);
+  border-radius:4px;
+  box-shadow: var(--ui-dialog-box-shadow);
+  background: var(--ui-dialog-background);
+  overflow:hidden;
+}
+.ui-dialog .ui-dialog-titlebar {
+  background:var(--ui-dialog-title-background);
+  border-color: var(--ui-dialog-title-border);
+  color:var(--ui-dialog-title-foreground);
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+}
+.ui-dialog .ui-dialog-buttonpane {
+  border-top: var(--ui-dialog-border);
+}
+.ui-menu {
+  background: var(--ui-menu-background);
+  color: var(--ui-menu-foreground);
+  border: 1px solid var(--ui-menu-border);
+}
+
+/* datepicker */
+.ui-datepicker td,
+.ui-datepicker td a:hover,
+.ui-datepicker td .ui-state-active,
+.ui-datepicker td .ui-state-default {
+  border:0;
+}
+.ui-datepicker td .ui-state-default {
+  color: var(--color-foreground);
+}
+.ui-datepicker .ui-datepicker-week-end, 
+.ui-datepicker .ui-datepicker-week-end a {
+  color: var(--color-gray-1);
+}
+.ui-datepicker .ui-datepicker-today {
+  background-color:transparent;
+}
+.ui-datepicker .ui-datepicker-today a {
+  background: var(--color-selected-foreground);
+  color: var(--color-selected-background);
+}
+.ui-datepicker .ui-datepicker-title select option {
+  background-color: var(--input-background);
+  color: var(--input-foreground);
+}
+
+/* blockui */
+.blockMsg {
+  color: var(--ui-block-msg-foreground);
+  background: var(--ui-block-msg-background);
+  box-shadow: var(--ui-block-msg-box-shadow);
+  border: 0;
+  border-radius:4px;
+  overflow:hidden;
+  transition:all 0.3s ease 0s;
+  padding:2.5em 2em;
+}
+.blockUI h1, .blockUI h2, .blockUI h3 {
+  color: var(--color-foreground, #333);
+  font-size:1.6em;
+  margin:0;
+}
+.blockOverlay {
+  opacity:1;
+  background: var(--ui-overlay-background);
+  cursor:progress;
+}
+
+/* pnotify */
+.ui-pnotify-title {
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-h5);
+}
+.ui-pnotify-text:after { /* clearfix */
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.ui-pnotify .ui-pnotify-container {
+  background-color: var(--message-info-background);
+  color: var(--message-info-foreground);
+  border-color: var(--message-info-border);
+}
+.ui-pnotify a {
+  color: var(--message-info-foreground);
+}
+.ui-pnotify .ui-state-highlight {
+  background-color: var(--message-warning-background);
+  color: var(--message-warning-foreground);
+  border-color: var(--message-warning-border);
+}
+.ui-pnotify .ui-state-highlight a {
+  color: var(--message-warning-foreground);
+}
+.ui-pnotify .ui-state-default {
+  background-color: var(--message-success-background);
+  color: var(--message-success-foreground);
+  border-color: var(--message-success-border);
+}
+.ui-pnotify .ui-state-highlight a {
+  color: var(--message-sucess-foreground);
+}
+.ui-pnotify .ui-state-error {
+  background-color: var(--message-error-background);
+  color: var(--message-error-foreground);
+  border-color: var(--message-error-border);
+}
+.ui-pnotify .ui-state-highlight a {
+  color: var(--message-error-foreground);
+}
+
+/* tooltips */
+.ui-widget.ui-user-tooltip {
+  background-color:var(--ui-user-tooltip-background, #fff);
+
+  border-color:var(--ui-tooltip-border, var(--ui-widget-border, #444));
+  color:var(--ui-tooltip-foreground, var(--color-foreground));
+}
+div.ui-tooltip.error {
+  padding:8px;
+}
+.ui-tooltip.position-top .ui-arrow {
+  border-top-color:var(--ui-tooltip-border, var(--ui-widget-border, #444));
+}
+.ui-tooltip.position-bottom .ui-arrow {
+  border-bottom-color:var(--ui-tooltip-border, var(--ui-widget-border, #444));
+}
+.ui-tooltip.position-right .ui-arrow {
+  border-right-color:var(--ui-tooltip-border, var(--ui-widget-border, #444));
+}
+.ui-tooltip.position-left .ui-arrow { 
+  border-left-color:var(--ui-tooltip-border, var(--ui-widget-border, #444));
+}
+.ui-tooltip.default {
+  border-color:var(--ui-tooltip-border, var(--ui-widget-border, #444));
+  background-color:var(--ui-tooltip-background, #fff);
+  color:var(--ui-tooltip-foreground, var(--color-foreground));
+}
+
+/* clockpicker */
+.clockpicker-popover {
+  background-color: var(--ui-widget-background);
+  color: var(--ui-widget-foreground);
+}
+.clockpicker-popover .popover-title {
+  background:var(--ui-dialog-title-background);
+  border-color: var(--ui-dialog-title-border);
+  color:var(--ui-dialog-title-foreground);
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+  font-weight: var(--font-weight-semi-bold);
+}
+.clockpicker-popover .popover-content {
+  background: var(--ui-widget-background);
+  color: var(--ui-widget-foreground);
+  border-color: var(--ui-widget-border);
+}
+.clockpicker-plate {
+  background-color: var(--ui-widget-background);
+  color: var(--ui-widget-foreground);
+  border-color: var(--ui-widget-border);
+}
+.clockpicker-tick {
+  color: var(--ui-widget-foreground);
+}
+/*
+.clockpicker-tick:hover {
+  background-color: var(--color-hover-background);
+  color: var(--color-hover-foreground);
+}
+*/
+.clockpicker-canvas-bg {
+  fill: var(--color-secondary);
+  fill: rgba(0,149,221,.25)
+}
+.clockpicker-popover .text-primary {
+  color: var(--ui-dialog-title-foreground);
+}
+
+.clockpicker-popover.top > .arrow:after {
+  border-top-color: var(--ui-widget-border);
+}
+.clockpicker-popover.right > .arrow:after {
+  border-right-color: var(--ui-widget-border);
+}
+.clockpicker-popover.bottom > .arrow:after {
+  border-bottom-color: var(--ui-widget-border);
+}
+.clockpicker-popover.left > .arrow:after {
+  border-left-color: var(--ui-widget-border);
+}

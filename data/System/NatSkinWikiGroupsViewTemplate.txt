@@ -1,209 +1,195 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
-%{<verbatim class="tml">}%
-%TMPL:INCLUDE{"view"}%<!-- -->
-%TMPL:DEF{"revinfo"}%%TMPL:END%
-%TMPL:DEF{"topicactions"}%%TMPL:END%
+%TMPL:INCLUDE{"view"}%
+%TMPL:DEF{"sidebar"}%%TMPL:END%
 %TMPL:DEF{"breadcrumbs::tail"}%%IF{"$'URLPARAM{group}'!=''" then="%TMPL:P{"sep"}%<a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?group=%URLPARAM{"group"}%'>%URLPARAM{"group"}%</a>"}%%TMPL:END%
-%{</verbatim>}%
 
-%{<verbatim class="tml">}%
+%TMPL:DEF{"wikigroups::javascript"}%%JQREQUIRE{"form, blockui, validate, wikiword"}%%ADDTOZONE{
+  "script" 
+  id="WIKIGROUPS::JAVASCRIPT" 
+  requires="JQUERYPLUGIN::VALIDATE, JQUERYPLUGIN::WIKIWORD, JQUERYPLUGIN::FORM, JQUERYPLUGIN::BLOCKUI" 
+  text="<script class='$id' src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/build/groups.js'></script>"
+}%%TMPL:END%
+
 %TMPL:DEF{"title"}%<noautolink>%HTMLTITLE{
   separator=" %TMPL:P{"titlesep"}% "
   format="%URLPARAM{"group" default="%TOPIC%"}%$sep$webtitle$wikitoolname"
 }%</noautolink>%TMPL:END%
-%{</verbatim>}%
 
-%{<verbatim class="tml">}%
 %TMPL:DEF{"content"}%<noautolink>%IF{"$'URLPARAM{group}' != ''"
   then="$percntTMPL:P{\"displaygroup\" group=\"$percntURLPARAM{group}$percnt\"}$percnt"
   else="$percntTMPL:P{\"listgroups\"}$percnt"
 }%</noautolink>%TMPL:END%
-%{</verbatim>}%
 
-%{<verbatim class="tml">}%
-%TMPL:DEF{"listgroups"}%<!-- -->
-<h1 > %TOPICTITLE% </h1>
-%TMPL:P{context="authenticated" "creategroup"}%<!-- -->
+%TMPL:DEF{"listgroups"}%<h1 > %TOPICTITLE% </h1>
+%TMPL:P{context="authenticated" "creategroup"}%%{}%
 %MAKEINDEX{"%GROUPINFO%"
   header="$anchors$n"
   sort="nocase"
-  format="<a href='%SCRIPTURLPATH{"view"}%/%WEB%/$percntIF{\"istopic '%WEB%.$item'\" then=\"$item\" else=\"%TOPIC%?group=$item\"}$percnt'>$item</a>"
+  format="$percntIF{\"istopic '%WEB%.$item'\"
+          then=\"[[%WEB%.$item]]\"
+          else=\"[[%WEB%.%TOPIC%?group=$item][$item]]\"
+        }$percnt"    
   footer="<p><span class='foswikiAlert'>$count</span> groups found</p>"
 }%
-<!-- -->%TMPL:END%
-%{</verbatim>}%
+%TMPL:P{"wikigroups::javascript"}%%TMPL:END%
 
-%{<verbatim class="tml">}%
+%TMPL:DEF{"grouptemplate"}%%IF{
+  "istopic '%USERSWEB%.GroupTemplate'"
+  then="%USERSWEB%.GroupTemplate"
+  else="%IF{
+    "istopic '%SYSTEMWEB%.GroupTemplate'"
+    then="%SYSTEMWEB%.GroupTemplate"
+  }%"
+}%%TMPL:END%
+
 %TMPL:DEF{"creategroup"}%
 %TWISTY{
-  link="%BUTTON{"%MAKETEXT{"New group"}%" icon="group"}%"
+  link="%BUTTON{"%MAKETEXT{"New group"}%" icon="fa-users"}%"
   mode="div"
 }%
-<form class="createGroupForm" action="%SCRIPTURLPATH{"manage"}%/%WEB%/%TOPIC%" method="post">
-<input type="hidden" name="action" value="addUserToGroup" />
-<input type="hidden" name="create" value="1" />
-<input type="hidden" name="username" value=" " />
-<input type="hidden" name="redirectto" value="%WEB%.%TOPIC%" />
+<form class="createGroupForm jqValidate" action="%SCRIPTURLPATH{"save"}%/%WEB%" method="post">
+<input type="hidden" name="onlynewtopic" value="on" />
+<input type="hidden" name="onlywikiname" value="off" />
+<input type="hidden" name="topicparent" value="%BASETOPIC%" />
+<input type="hidden" name="templatetopic" value="%TMPL:P{"grouptemplate"}%" />
+<input type="hidden" name="topic" value="" class="jqWikiWord" data-source="#groupName" data-suffix="Group" data-transliterate="true" />
+<input type="hidden" name="Set+ALLOWTOPICCHANGE" value="" class="allowTopicChange" />
+<input type="hidden" name="Set+PERMSET_CHANGE_DETAILS" value="" class="allowTopicChange" />
+<input type="hidden" name="Set+PERMSET_CHANGE" value="details" />
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep ">
     <h3>%MAKETEXT{"Group name"}%</h3>
-    <input type="text" name="groupname" size="30" class="foswikiInputField" value="%URLPARAM{"groupname"}%" /> 
-    <div class="foswikiFormDescription">
-      %MAKETEXT{"*Note:* A group name must be a [[%SYSTEMWEB%.WikiWord][WikiWord]] and end in ...Group."}%
-    </div>
+    <input type="text" name="TopicTitle" id="groupName" size="30" class="foswikiInputField required" value="%URLPARAM{"groupname"}%" /> 
   </div>
   <div class="foswikiFormStep">
-    %BUTTON{"%MAKETEXT{"Submit"}%" icon="tick" type="submit"}%%CLEAR%
+    %BUTTON{"%MAKETEXT{"Submit"}%" icon="fa-check" type="submit"}%%CLEAR%
   </div>
 </div>
 </form>
-%ENDTWISTY%
-%ADDTOZONE{"script" id="WIKIGROUPS::JS" requires="JQUERYPLUGIN" text="<script type='text/javascript'>
-jQuery(function($) {
-  $('.createGroupForm').submit(function() {
-    var $this = $(this),
-        groupName = $this.find('input[name=groupname]').val();
-    if (groupName !== '') {
-      $this.find('input[name=redirectto]').val('%WEB%.'+groupName);
-    }
-  });
-});
-</script>"}%%TMPL:END%
-%{</verbatim>}%
+%ENDTWISTY%%TMPL:END%
 
-%{<verbatim class="tml">}%
-%TMPL:DEF{"displaygroup"}%<!-- -->
-<h1 >
-  %IF{"istopic '%USERSWEB%.%group%'" 
-  then="[[%USERSWEB%.%group%][%group%]]" 
-  else="<nop>%group%"
-}%</h1>
+%TMPL:DEF{"displaygroup"}%%IF{"istopic '%USERSWEB%.%group%'" 
+   then="$percntTMPL:P{\"displaygroup::intern\" group=\"%group%\"}$percnt"
+   else="$percntTMPL:P{\"displaygroup::extern\" group=\"%group%\"}$percnt"
+}%%TMPL:END%
 
-%IF{"istopic '%USERSWEB%.%group%'"
-  then="$percntINCLUDE{\"%WEB%.%group%\"}$percnt"
-  else="<!-- -->"
+%TMPL:DEF{"displaygroup::intern"}%<h1 >[[%USERSWEB%.%group%]]</h1>
+%IF{
+   "'%DISPLAYREVISIONINFO{default="on"}%'='on'"
+   then="$percntTMPL:P{\"revinfo::impl\"}$percnt"
 }%
 
-%IF{"'%USERSWEB%.%group%' allows 'change' and istopic '%USERSWEB%.%group%' and '%group%' != 'NobodyGroup'"
+%INCLUDE{"%WEB%.%group%" warn="off"}%<!-- -->
+
+%IF{"'%USERSWEB%.%group%' allows 'change' and '%group%' != 'NobodyGroup'"
   then="$percntTMPL:P{\"editablegroup\" group=\"%group%\"}$percnt"
   else="$percntTMPL:P{\"noneditablegroup\"  group=\"%group%\"}$percnt"
 }%
-<!-- -->%TMPL:END%
-%{</verbatim>}%
 
-%{<verbatim class="tml">}%
+%TMPL:P{"wikigroups::accessrights"}%
+%TMPL:P{"wikigroups::javascript"}%%TMPL:END%
+
+%TMPL:DEF{"displaygroup::extern"}%<h1 ><nop>%group%</h1>
+%TMPL:P{"noneditablegroup" group="%group%"}%
+%TMPL:END%
+
 %TMPL:DEF{"editablegroup"}%
-%TWISTYBUTTON{id="add" mode="span" link="%BUTTON{"%MAKETEXT{"Add member"}%" icon="add" class="addButton"}%"}%
-%BUTTON{"%MAKETEXT{"Edit group"}%" icon="pencil" href="%SCRIPTURLPATH{"edit"}%/%WEB%/%URLPARAM{"group" default="%TOPIC%"}%?t=%GMTIME{"$epoch"}%"}%
-%BUTTON{"%MAKETEXT{"Rename group "}%" icon="page_white_go" href="%SCRIPTURLPATH{"rename"}%/%WEB%/%URLPARAM{"group" default="%TOPIC%"}%"}%
-%BUTTON{"%MAKETEXT{"Remove members"}%" icon="delete" class="removeButton" style="display:none"}%
+%TWISTYBUTTON{id="add" mode="span" link="%BUTTON{"%MAKETEXT{"Add member"}%" icon="fa-plus" class="addButton"}%"}%
+%BUTTON{"%MAKETEXT{"Remove members"}%" icon="fa-trash" class="removeButton" style="display:none"}%
 %CLEAR%
 %TWISTYTOGGLE{id="add"}%
 
-<form class='jqAjaxForm' action='%SCRIPTURLPATH{"manage"}%/%WEB%/%group%' method='post'> 
-<input type='hidden' name='groupname' value='%group%'/> 
-<input type='hidden' name='action' value='addUserToGroup'/>
+<form class='addMemberForm' action='%SCRIPTURLPATH{"save"}%/%WEB%/%group%' method='post'> 
+<input type='hidden' name='groupname' value='%group%' /> 
+<input type='hidden' name='Set+GROUP' value='%GROUP{default=""}%' class="groupMembers" /> 
 <div class='foswikiFormSteps'>
   <div class='foswikiFormStep'>
-     <h3>%MAKETEXT{"Add users or groups to this group"}%</h3>%JQREQUIRE{"textboxlist, form, blockui"}%
+     <h3>%MAKETEXT{"Add users or groups to this group"}%</h3>
 
-     <input type='text' name='username' value='' size='30' class='foswikiInputField jqTextboxList' autocomplete='%SCRIPTURL{"view"}%/%SYSTEMWEB%/JQueryAjaxHelper?section=user;skin=text;contenttype=application/json;baseweb=%USERSWEB%' />
+     %RENDERFOREDIT{
+        form="%SYSTEMWEB%.MoreFormfieldsPlugin"
+        field="UserOrGroup"
+        UserOrGroup_name="username"
+        UserOrGroup_type="userorgroup+multi"
+        UserOrGroup_values="exclude=\"%TOPIC%\""
+        header=""
+        footer=""
+     }%
   </div>
   <div class='foswikiFormStep'>
-     %BUTTON{"%MAKETEXT{"Submit"}%" icon="add" type="submit"}%
+     %BUTTON{"%MAKETEXT{"Submit"}%" icon="fa-plus" type="submit"}%
      %CLEAR%
   </div>
 </div>
 </form>
 %ENDTWISTY%
 
-%FORMATLIST{"%GROUPINFO{"%group%" format="$wikiname" separator=", " expand="0"}%"
-  header="<form class='editGroupForm jqAjaxForm' action='%SCRIPTURLPATH{"manage"}%/%WEB%/%group%' method='post'>
-    <input type='hidden' name='groupname' value='%group%' />
-    <input type='hidden' name='action' value='removeUserFromGroup' />
+%FORMATLIST{
+  "%FORMATLIST{"%GROUPINFO{"%group%" format="$wikiname" separator=", " expand="0"}%"
+      format="($percntGETTOPICTITLE{\"$1\"}$percnt);$1"
+      separator="$n"
+  }%"
+  header="<form class='removeMemberForm' action='%SCRIPTURLPATH{"save"}%/%WEB%/%group%' method='post'>
+    <input type='hidden' name='Set+GROUP' value='%GROUP%' class='groupMembers' /> 
     <div class='foswikiPageForm'>
       <table class='foswikiLayoutTable'>
       <tr><th>#</th><th>%MAKETEXT{"Name"}%</th><th>%MAKETEXT{"Select"}%</th></tr>"
   format="<tr> 
       <td> $index. </td> 
       <td> 
-        $percntIF{\"'$percntUSERINFO{\"$1\" format=\"$isgroup\"}$percnt'='true'\"
-          then=\"<a href='%SCRIPTURLPATH{"view"}%/%USERSWEB%/WikiGroups?group=$1'>$1</a> (%MAKETEXT{"group"}%)\"
-          else=\"[[$1]]\"
-        }$percnt
+        $percntIF{\"istopic '%USERSWEB%.$2'\"
+          then=\"[[%USERSWEB%.$2]] $percntIF{\"'$percntUSERINFO{\"$2\" format=\"$isgroup\"}$percnt'='true'\" then=\" (%MAKETEXT{"group"}%)\"}$percnt\"
+          else=\"$percntIF{\"'$percntUSERINFO{\"$2\" format=\"$isgroup\"}$percnt'='true'\"
+                    then=\"<a href='%SCRIPTURLPATH{"view"}%/%USERSWEB%/WikiGroups?group=$2'>$2</a> (%MAKETEXT{"group"}%)\"
+                    else=\"<nop>$2\"
+                  }$percnt\"
+          }$percnt
       </td> 
-      <td align='right'><input type='checkbox' name='username' value='$1' class='foswikiCheckbox' /></td>
+      <td align='right'><input type='checkbox' name='username' value='$2' class='foswikiCheckbox' autocomplete='off' /></td>
     </tr>"
   separator="$n"
   footer="</table></div>"
   sort="on"
   casesensitive="off"
+  pattern="\((.*)\);(.*)"
+  split="\n"
 }%
 </form>
-%ADDTOZONE{"script"
-  id="WIKIGROUPS::JAVASCRIPT"
-  requires="JQUERYPLUGIN::FORM, JQUERYPLUGIN::BLOCKUI"
-  text="<script class='$id'>
-jQuery(function($) {
-  $('.editGroupForm').each(function() {
-    var $this = $(this);
+%TMPL:END%
 
-    $this.find('input[type=\"checkbox\"]').change(function() {
-      if ($this.find('input[type=\"checkbox\"]:checked').length) {
-        $('.removeButton').fadeIn();
-      } else {
-        $('.removeButton').hide();
-      }
-    });
-  });
-
-  $('.jqAjaxForm').each(function() {
-    var $this = $(this),
-        action = $this.find('input[name=\"action\"]').val();
-
-    $this.removeAttr('onsubmit');
-    $this.ajaxForm({
-      beforeSerialize: function() {
-        if (typeof(StrikeOne) !== 'undefined') {
-          StrikeOne.submit($this[0]);
-        }
-        $.blockUI({message:'<h1>' + (action == 'removeUserFromGroup'?'%MAKETEXT{"Removing"}%':'%MAKETEXT{"Adding"}%') + ' ...'});
-      }, 
-      error: function() {
-        $.unblockUI();
-        alert('%MAKETEXT{"Woops, there was an error adding/removing a user to this group"}%');
-      },
-      success: function() {
-        $.unblockUI();
-        window.location.reload();
-      }
-    });
-  });
-
-  $('.removeButton').click(function() {
-    $('.editGroupForm').submit();
-    return false;
-  });
-});
-</script>"
-}%%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim class="tml">}%
-%TMPL:DEF{"noneditablegroup"}%<!-- -->
-%FORMATLIST{"%GROUPINFO{"%group%" format="$wikiname" separator=", " expand="0"}%"
+%TMPL:DEF{"noneditablegroup"}%%FORMATLIST{
+  "%FORMATLIST{"%GROUPINFO{"%group%" format="$wikiname" separator=", " expand="0"}%"
+      format="($percntGETTOPICTITLE{\"$1\"}$percnt);$1"
+      separator="$n"
+  }%"
   header="<ol>"
   footer="</ol>"
-  format="<li>$percntIF{\"istopic '%USERSWEB%.$1'\"
-      then=\"[[%USERSWEB%.$1]]\"
-      else=\"$percntIF{\"'$percntUSERINFO{\"$1\" format=\"$isgroup\"}$percnt'='true'\"
-          then=\"<a href='%SCRIPTURLPATH{"view"}%/%USERSWEB%/WikiGroups?group=$1'>$1</a> (%MAKETEXT{"group"}%)\"
-          else=\"<nop>$1\"
+  format="<li>$percntIF{\"istopic '%USERSWEB%.$2'\"
+      then=\"[[%USERSWEB%.$2]] $percntIF{\"'$percntUSERINFO{\"$2\" format=\"$isgroup\"}$percnt'='true'\" then=\" (%MAKETEXT{"group"}%)\"}$percnt\"
+      else=\"$percntIF{\"'$percntUSERINFO{\"$2\" format=\"$isgroup\"}$percnt'='true'\"
+          then=\"<a href='%SCRIPTURLPATH{"view"}%/%USERSWEB%/WikiGroups?group=$2'>$2</a> (%MAKETEXT{"group"}%)\"
+          else=\"<nop>$2\"
         }$percnt\"
     }$percnt</li>"
   separator="$n"
   expand="0"
   sort="on"
+  pattern="\((.*)\);(.*)"
+  split="\n"
 }%%TMPL:END%
-%{</verbatim>}%
+
+%TMPL:DEF{"wikigroups::accessrights"}%%MAKETEXT{"Write access for this group:"}% <noautolink> 
+%FORMATLIST{
+  "$percntALLOWTOPICCHANGE{default=\"\"}$percnt"
+  pattern="^(?:.*\.)?(.*?)$"
+  format="$percntIF{\"istopic '%USERSWEB%.$1'\"
+      then=\"[[%USERSWEB%.$1]]\"
+      else=\"$percntIF{\"'$percntUSERINFO{\"$1\" format=\"$isgroup\"}$percnt'='true'\"
+          then=\"<a href='%SCRIPTURLPATH{"view"}%/%USERSWEB%/WikiGroups?group=$1'>$1</a> (%MAKETEXT{"group"}%)\"
+          else=\"<nop>$1\"
+        }$percnt\"
+    }$percnt"
+}%</noautolink> %TMPL:END%
+
+%META:PREFERENCE{name="NATEDIT_PURIFY" title="NATEDIT_PURIFY" type="Set" value="off"}%

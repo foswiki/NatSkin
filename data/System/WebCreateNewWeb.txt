@@ -1,10 +1,10 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1549972661" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1" version="1"}%
 %META:TOPICPARENT{name="ManagingWebs"}%
 ---+!! %MAKETEXT{"Create a new web"}%
 <form id="createNewWeb" name="admin" action="%SCRIPTURLPATH{manage}%/%WEB%/%TOPIC%" method="post" class="jqValidate">
 <input name="newtopic" type="hidden" value="%URLPARAM{"newtopic"}%" />
 <input name="action" type="hidden" value="createweb" />
-<input name="WEBBGCOLOR" type="hidden" value="#efefef" size="20" />
+<input name="WEBBGCOLOR" type="hidden" value="#ffffff" />
 <div class="foswikiFormSteps">
   <div class="foswikiFormStep">
     <h3>%MAKETEXT{"Name"}%:</h3>

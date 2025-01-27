@@ -1,0 +1,25 @@
+%TMPL:DEF{"dialog"}%<div class="jqUIDialog foswikiFormSteps" data-modal="true" data-width="450" data-draggable="true" data-destroy-on-close="true" title="%MAKETEXT{"Archive Topic"}%" id="archiveTopicDialog">
+%TMPL:P{"content"}%%{}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"content"}%<form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
+  <input type="hidden" name="nonwikiword" value="on" />
+  <input type="hidden" name="oldtopic" value="%TOPIC%" />
+  <input type="hidden" name="newtopic" value="%TOPIC%%GMTIME{"$epoch"}%" />
+  <input type="hidden" name="newweb" value="%WEB%.Archive"  />
+  %TMPL:P{"thumbnail"}%%{}%
+  %MAKETEXT{"Are you sure that you want to archive [_1]?" args="<b>%GETTOPICTITLE{"%WEB%.%TOPIC%" encode="entity"}%</b>"}%
+  <a class="jqUIDialogButton jqUIDialogSubmit" data-icon="ui-icon-trash">%MAKETEXT{"Yes, archive"}%</a> 
+  <a class="jqUIDialogButton jqUIDialogClose" data-icon="ui-icon-cancel">%MAKETEXT{"No, thanks"}%</a> 
+</form>%TMPL:END%
+
+%TMPL:DEF{"thumbnail"}%%IF{"istopic 'Applications.RenderTopicThumbnail'"
+  then="$percntDBCALL{\"%WEB%.%TOPIC%->Applications.RenderTopicThumbnail\"
+	  TOOLTIP=\"off\"
+	  TYPE=\"plain\"
+	  CROP=\"northwest\"
+	  SIZE=\"96x96>^\"
+	}$percnt"
+}%%TMPL:END%
+
+

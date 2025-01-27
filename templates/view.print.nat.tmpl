@@ -1,22 +1,35 @@
 %TMPL:INCLUDE{"view"}%%{}%
+
 %TMPL:DEF{"bodyclass"}%natPrintBody%TMPL:END%
+%TMPL:DEF{"darkmode"}%data-theme="none"%TMPL:END%
+
 %TMPL:DEF{"defaultbody"}%<div class="natBodyContents"> 
 <div class="natMainContents" id="natMainContents">
 %TMPL:P{"content"}%
 </div>
 </div>%TMPL:END%
+
 %TMPL:DEF{"head"}%<head>
 <meta charset="%CHARSET%" />
 <title>%TMPL:P{"title"}%</title>
 %TMPL:P{"favicon"}%
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="date" content="%REVINFO{"$http" rev="%TMPL:P{"currev"}%"}%" /> 
-<base href="%SCRIPTURL{%SCRIPTNAME%}%/%WEB%/%TOPIC%"><!--[if IE]></base><![endif]-->
-%TMPL:P{"meta"}%%TMPL:P{"styles"}%%TMPL:P{"javascript"}%%WEBCOMPONENT{"HtmlHead"}%
+<base href="%SCRIPTURL{"%SCRIPTNAME%" topic="%WEB%.%TOPIC%"}%" />
+%TMPL:P{"pagedjs"}%%TMPL:P{"meta"}%%TMPL:P{"styles"}%%TMPL:P{"javascript"}%%WEBCOMPONENT{"HtmlHead"}%
 </head>%TMPL:END%
+
 %TMPL:DEF{"meta"}%%TMPL:END%
 %TMPL:DEF{"searchbox"}%%TMPL:END%
 %TMPL:DEF{"title"}%<noautolink>%HTMLTITLE{"$title"}%</noautolink>%TMPL:END%
+
+%TMPL:DEF{"DISpagedjs"}%%ADDTOZONE{
+  "script"
+  id="PAGEDJS"
+  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/build/paged.polyfill.js'></script>"
+}%%TMPL:END%
+
+%TMPL:DEF{"DISdefaultstyles"}%<link rel='stylesheet' href='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/build/paged.interface.css' type='text/css' media='all' />%TMPL:PREV%%TMPL:END%

@@ -1,0 +1,134 @@
+.foswikiFormDescription {
+  margin-bottom: calc(var(--margin) * 0.5);
+}
+
+.foswikiToggleButton,
+.foswikiCheckbox,
+.foswikiRadioButton {
+
+  --active: var(--checkbox-active);
+  --active-inner: var(--checkbox-active-inner);
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border: 1px solid var(--border-color, var(--input-border));
+  background: var(--background, var(--input-background));
+
+  position: relative;
+  height: 1em;
+  width: 1em;
+  outline: none;
+  display: inline-block;
+  margin: 0;
+  cursor: pointer;
+  transition: background 150ms, border-color 150ms;
+  vertical-align:text-bottom;
+}
+
+.foswikiToggleButton::after,
+.foswikiCheckbox::after,
+.foswikiRadioButton::after {
+  content: "";
+  display: block;
+  left: -1px;
+  top: -1px;
+  position: absolute;
+  transition: transform 150ms, opacity 150ms;
+  opacity: var(--opacity, 0);
+}
+
+.foswikiToggleButton:checked,
+.foswikiCheckbox:checked,
+.foswikiCheckbox:checked,
+.foswikiRadioButton:checked {
+  --background: var(--active);
+  --border-color: var(--active);
+  --opacity: 1;
+}
+
+.foswikiToggleButton:disabled,
+.foswikiCheckbox:disabled,
+.foswikiRadioButton:disabled {
+  --background: var(--color-disabled-foreground);
+  --border: var(--color-disabled-foreground);
+  cursor: default;
+  opacity: 0.6;
+}
+
+/*
+.foswikiCheckbox:disabled:checked,
+.foswikiRadioButton:disabled:checked {
+  --background: var(--disabled-inner);
+  --border-color: var(--input-border);
+}
+*/
+
+.foswikiToggleButton:disabled + label,
+.foswikiCheckbox:disabled + label,
+.foswikiRadioButton:disabled + label {
+  cursor: default;
+}
+
+.foswikiRadioButton {
+  border-radius: 50%;
+}
+.foswikiRadioButton::after {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: #fff;
+  transform: scale(0.5);
+}
+
+.foswikiCheckboxGroup label,
+.foswikiRadioButtonGroup label,
+label > .foswikiToggleButton,
+label > .foswikiCheckbox,
+label > .foswikiRadioButton {
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+.foswikiCheckbox + label,
+.foswikiRadioButton + label {
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 0.5em;
+}
+
+.foswikiCheckbox: {
+  border-radius: 7px;
+}
+.foswikiCheckbox::after {
+  width: 0.25em;
+  height: 0.5em;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  left: 0.25em;
+  top: 0;
+  transform: rotate(43deg);
+}
+
+.foswikiToggleButton {
+   width: 2em;
+   border-radius: 1em;
+}
+.foswikiToggleButton::after {
+   left: 0;
+   top: 0;
+   border-radius: 50%;
+   width: calc(1em - 2px);
+   height: calc(1em - 2px);
+   background: var(--active-background, var(--input-border));
+   transform: translateX(var(--translate-x, 0));
+   opacity: 1;
+}
+.foswikiToggleButton:checked {
+   --active-background: var(--active-inner);
+   --translate-x: 1em;
+}
+.foswikiToggleButton:disabled:not(:checked):after {
+  opacity: 0.6;
+}

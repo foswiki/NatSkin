@@ -1,0 +1,334 @@
+%META:TOPICINFO{author="micha" comment="reprev" date="1678300723" format="1.1" reprev="13" version="13"}%
+%META:TOPICPARENT{name="NatSkin"}%
+%TOC%
+---++ Alpha
+<table class="boxes foswikiLayoutTable">
+<tr>
+   <th></th>
+   <th>base</th>
+   <th>1</th>
+   <th>2</th>
+   <th>3</th>
+   <th>4</th>
+   <th>5</th>
+   <th>6</th>
+   <th>7</th>
+   <th>8</th>
+   <th>9</th>
+   <th>10</th>
+</tr>
+<tr>
+   <th>primary</th>
+   <td style="background:var(--color-primary)" title="--color-primary"></td>
+   <td style="background:var(--color-primary-alpha-1)" title="--color-primary-alpha-1"></td>
+   <td style="background:var(--color-primary-alpha-2)" title="--color-primary-alpha-2"></td>
+   <td style="background:var(--color-primary-alpha-3)" title="--color-primary-alpha-3"></td>
+   <td style="background:var(--color-primary-alpha-4)" title="--color-primary-alpha-4"></td>
+   <td style="background:var(--color-primary-alpha-5)" title="--color-primary-alpha-5"></td>
+   <td style="background:var(--color-primary-alpha-6)" title="--color-primary-alpha-6"></td>
+   <td style="background:var(--color-primary-alpha-7)" title="--color-primary-alpha-7"></td>
+   <td style="background:var(--color-primary-alpha-8)" title="--color-primary-alpha-8"></td>
+   <td style="background:var(--color-primary-alpha-9)" title="--color-primary-alpha-9"></td>
+   <td style="background:var(--color-primary-alpha-10)" title="--color-primary-alpha-10"></td>
+</tr>
+<tr>
+   <th>secondary</th>
+   <td style="background:var(--color-secondary)" title="--color-secondary"></td>
+   <td style="background:var(--color-secondary-alpha-1)" title="--color-secondary-alpha-1"></td>
+   <td style="background:var(--color-secondary-alpha-2)" title="--color-secondary-alpha-2"></td>
+   <td style="background:var(--color-secondary-alpha-3)" title="--color-secondary-alpha-3"></td>
+   <td style="background:var(--color-secondary-alpha-4)" title="--color-secondary-alpha-4"></td>
+   <td style="background:var(--color-secondary-alpha-5)" title="--color-secondary-alpha-5"></td>
+   <td style="background:var(--color-secondary-alpha-6)" title="--color-secondary-alpha-6"></td>
+   <td style="background:var(--color-secondary-alpha-7)" title="--color-secondary-alpha-7"></td>
+   <td style="background:var(--color-secondary-alpha-8)" title="--color-secondary-alpha-8"></td>
+   <td style="background:var(--color-secondary-alpha-9)" title="--color-secondary-alpha-9"></td>
+   <td style="background:var(--color-secondary-alpha-10)" title="--color-secondary-alpha-10"></td>
+</tr>
+<tr>
+   <th>ternary</th>
+   <td style="background:var(--color-ternary)" title="--color-ternary"></td>
+   <td style="background:var(--color-ternary-alpha-1)" title="--color-ternary-alpha-1"></td>
+   <td style="background:var(--color-ternary-alpha-2)" title="--color-ternary-alpha-1"></td>
+   <td style="background:var(--color-ternary-alpha-3)" title="--color-ternary-alpha-1"></td>
+   <td style="background:var(--color-ternary-alpha-4)" title="--color-ternary-alpha-1"></td>
+   <td style="background:var(--color-ternary-alpha-5)" title="--color-ternary-alpha-1"></td>
+   <td style="background:var(--color-ternary-alpha-6)" title="--color-ternary-alpha-6"></td>
+   <td style="background:var(--color-ternary-alpha-7)" title="--color-ternary-alpha-7"></td>
+   <td style="background:var(--color-ternary-alpha-8)" title="--color-ternary-alpha-8"></td>
+   <td style="background:var(--color-ternary-alpha-9)" title="--color-ternary-alpha-9"></td>
+   <td style="background:var(--color-ternary-alpha-10)" title="--color-ternary-alpha-10"></td>
+</tr>
+<tr>
+   <th>complementary</th>
+   <td style="background:var(--color-complementary)" title="--color-complementary"></td>
+   <td style="background:var(--color-complementary-alpha-1)" title="--color-complementary-alpha-1"></td>
+   <td style="background:var(--color-complementary-alpha-2)" title="--color-complementary-alpha-2"></td>
+   <td style="background:var(--color-complementary-alpha-3)" title="--color-complementary-alpha-3"></td>
+   <td style="background:var(--color-complementary-alpha-4)" title="--color-complementary-alpha-4"></td>
+   <td style="background:var(--color-complementary-alpha-5)" title="--color-complementary-alpha-5"></td>
+   <td style="background:var(--color-complementary-alpha-6)" title="--color-complementary-alpha-6"></td>
+   <td style="background:var(--color-complementary-alpha-7)" title="--color-complementary-alpha-7"></td>
+   <td style="background:var(--color-complementary-alpha-8)" title="--color-complementary-alpha-8"></td>
+   <td style="background:var(--color-complementary-alpha-9)" title="--color-complementary-alpha-9"></td>
+   <td style="background:var(--color-complementary-alpha-10)" title="--color-complementary-alpha-10"></td>
+</tr>
+</table>
+
+---++ Lighter
+<table class="boxes foswikiLayoutTable">
+<tr>
+   <th></th>
+   <th>base</th>
+   <th>1</th>
+   <th>2</th>
+   <th>3</th>
+   <th>4</th>
+   <th>5</th>
+   <th>6</th>
+   <th>7</th>
+   <th>8</th>
+   <th>9</th>
+   <th>10</th>
+</tr>
+<tr>
+   <th>primary</th>
+   <td style="background:var(--color-primary)" title="--color-primary"></td>
+   <td style="background:var(--color-primary-lighter-1)" title="--color-primary-lighter-1"></td>
+   <td style="background:var(--color-primary-lighter-2)" title="--color-primary-lighter-2"></td>
+   <td style="background:var(--color-primary-lighter-3)" title="--color-primary-lighter-3"></td>
+   <td style="background:var(--color-primary-lighter-4)" title="--color-primary-lighter-4"></td>
+   <td style="background:var(--color-primary-lighter-5)" title="--color-primary-lighter-5"></td>
+   <td style="background:var(--color-primary-lighter-6)" title="--color-primary-lighter-6"></td>
+   <td style="background:var(--color-primary-lighter-7)" title="--color-primary-lighter-7"></td>
+   <td style="background:var(--color-primary-lighter-8)" title="--color-primary-lighter-8"></td>
+   <td style="background:var(--color-primary-lighter-9)" title="--color-primary-lighter-9"></td>
+   <td style="background:var(--color-primary-lighter-10)" title="--color-primary-lighter-10"></td>
+</tr>
+<tr>
+   <th>secondary</th>
+   <td style="background:var(--color-secondary)" title="--color-secondary"></td>
+   <td style="background:var(--color-secondary-lighter-1)" title="--color-secondary-lighter-1"></td>
+   <td style="background:var(--color-secondary-lighter-2)" title="--color-secondary-lighter-2"></td>
+   <td style="background:var(--color-secondary-lighter-3)" title="--color-secondary-lighter-3"></td>
+   <td style="background:var(--color-secondary-lighter-4)" title="--color-secondary-lighter-4"></td>
+   <td style="background:var(--color-secondary-lighter-5)" title="--color-secondary-lighter-5"></td>
+   <td style="background:var(--color-secondary-lighter-6)" title="--color-secondary-lighter-6"></td>
+   <td style="background:var(--color-secondary-lighter-7)" title="--color-secondary-lighter-7"></td>
+   <td style="background:var(--color-secondary-lighter-8)" title="--color-secondary-lighter-8"></td>
+   <td style="background:var(--color-secondary-lighter-9)" title="--color-secondary-lighter-9"></td>
+   <td style="background:var(--color-secondary-lighter-10)" title="--color-secondary-lighter-10"></td>
+</tr>
+<tr>
+   <th>ternary</th>
+   <td style="background:var(--color-ternary)" title="--color-ternary"></td>
+   <td style="background:var(--color-ternary-lighter-1)" title="--color-ternary-lighter-1"></td>
+   <td style="background:var(--color-ternary-lighter-2)" title="--color-ternary-lighter-1"></td>
+   <td style="background:var(--color-ternary-lighter-3)" title="--color-ternary-lighter-1"></td>
+   <td style="background:var(--color-ternary-lighter-4)" title="--color-ternary-lighter-1"></td>
+   <td style="background:var(--color-ternary-lighter-5)" title="--color-ternary-lighter-1"></td>
+   <td style="background:var(--color-ternary-lighter-6)" title="--color-ternary-lighter-6"></td>
+   <td style="background:var(--color-ternary-lighter-7)" title="--color-ternary-lighter-7"></td>
+   <td style="background:var(--color-ternary-lighter-8)" title="--color-ternary-lighter-8"></td>
+   <td style="background:var(--color-ternary-lighter-9)" title="--color-ternary-lighter-9"></td>
+   <td style="background:var(--color-ternary-lighter-10)" title="--color-ternary-lighter-10"></td>
+</tr>
+<tr>
+   <th>complementary</th>
+   <td style="background:var(--color-complementary)" title="--color-complementary"></td>
+   <td style="background:var(--color-complementary-lighter-1)" title="--color-complementary-lighter-1"></td>
+   <td style="background:var(--color-complementary-lighter-2)" title="--color-complementary-lighter-2"></td>
+   <td style="background:var(--color-complementary-lighter-3)" title="--color-complementary-lighter-3"></td>
+   <td style="background:var(--color-complementary-lighter-4)" title="--color-complementary-lighter-4"></td>
+   <td style="background:var(--color-complementary-lighter-5)" title="--color-complementary-lighter-5"></td>
+   <td style="background:var(--color-complementary-lighter-6)" title="--color-complementary-lighter-6"></td>
+   <td style="background:var(--color-complementary-lighter-7)" title="--color-complementary-lighter-7"></td>
+   <td style="background:var(--color-complementary-lighter-8)" title="--color-complementary-lighter-8"></td>
+   <td style="background:var(--color-complementary-lighter-9)" title="--color-complementary-lighter-9"></td>
+   <td style="background:var(--color-complementary-lighter-10)" title="--color-complementary-lighter-10"></td>
+</tr>
+</table>
+---++ Darker
+<table class="boxes foswikiLayoutTable">
+<tr>
+   <th></th>
+   <th>base</th>
+   <th>1</th>
+   <th>2</th>
+   <th>3</th>
+   <th>4</th>
+   <th>5</th>
+   <th>6</th>
+   <th>7</th>
+   <th>8</th>
+   <th>9</th>
+   <th>10</th>
+</tr>
+<tr>
+   <th>primary</th>
+   <td style="background:var(--color-primary)" title="--color-primary"></td>
+   <td style="background:var(--color-primary-darker-1)" title="--color-primary-darker-1"></td>
+   <td style="background:var(--color-primary-darker-2)" title="--color-primary-darker-2"></td>
+   <td style="background:var(--color-primary-darker-3)" title="--color-primary-darker-3"></td>
+   <td style="background:var(--color-primary-darker-4)" title="--color-primary-darker-4"></td>
+   <td style="background:var(--color-primary-darker-5)" title="--color-primary-darker-5"></td>
+   <td style="background:var(--color-primary-darker-6)" title="--color-primary-darker-6"></td>
+   <td style="background:var(--color-primary-darker-7)" title="--color-primary-darker-7"></td>
+   <td style="background:var(--color-primary-darker-8)" title="--color-primary-darker-8"></td>
+   <td style="background:var(--color-primary-darker-9)" title="--color-primary-darker-9"></td>
+   <td style="background:var(--color-primary-darker-10)" title="--color-primary-darker-10"></td>
+</tr>
+<tr>
+   <th>secondary</th>
+   <td style="background:var(--color-secondary)" title="--color-secondary"></td>
+   <td style="background:var(--color-secondary-darker-1)" title="--color-secondary-darker-1"></td>
+   <td style="background:var(--color-secondary-darker-2)" title="--color-secondary-darker-2"></td>
+   <td style="background:var(--color-secondary-darker-3)" title="--color-secondary-darker-3"></td>
+   <td style="background:var(--color-secondary-darker-4)" title="--color-secondary-darker-4"></td>
+   <td style="background:var(--color-secondary-darker-5)" title="--color-secondary-darker-5"></td>
+   <td style="background:var(--color-secondary-darker-6)" title="--color-secondary-darker-6"></td>
+   <td style="background:var(--color-secondary-darker-7)" title="--color-secondary-darker-7"></td>
+   <td style="background:var(--color-secondary-darker-8)" title="--color-secondary-darker-8"></td>
+   <td style="background:var(--color-secondary-darker-9)" title="--color-secondary-darker-9"></td>
+   <td style="background:var(--color-secondary-darker-10)" title="--color-secondary-darker-10"></td>
+</tr>
+<tr>
+   <th>ternary</th>
+   <td style="background:var(--color-ternary)" title="--color-ternary"></td>
+   <td style="background:var(--color-ternary-darker-1)" title="--color-ternary-darker-1"></td>
+   <td style="background:var(--color-ternary-darker-2)" title="--color-ternary-darker-1"></td>
+   <td style="background:var(--color-ternary-darker-3)" title="--color-ternary-darker-1"></td>
+   <td style="background:var(--color-ternary-darker-4)" title="--color-ternary-darker-1"></td>
+   <td style="background:var(--color-ternary-darker-5)" title="--color-ternary-darker-1"></td>
+   <td style="background:var(--color-ternary-darker-6)" title="--color-ternary-darker-6"></td>
+   <td style="background:var(--color-ternary-darker-7)" title="--color-ternary-darker-7"></td>
+   <td style="background:var(--color-ternary-darker-8)" title="--color-ternary-darker-8"></td>
+   <td style="background:var(--color-ternary-darker-9)" title="--color-ternary-darker-9"></td>
+   <td style="background:var(--color-ternary-darker-10)" title="--color-ternary-darker-10"></td>
+</tr>
+<tr>
+   <th>complementary</th>
+   <td style="background:var(--color-complementary)" title="--color-complementary"></td>
+   <td style="background:var(--color-complementary-darker-1)" title="--color-complementary-darker-1"></td>
+   <td style="background:var(--color-complementary-darker-2)" title="--color-complementary-darker-2"></td>
+   <td style="background:var(--color-complementary-darker-3)" title="--color-complementary-darker-3"></td>
+   <td style="background:var(--color-complementary-darker-4)" title="--color-complementary-darker-4"></td>
+   <td style="background:var(--color-complementary-darker-5)" title="--color-complementary-darker-5"></td>
+   <td style="background:var(--color-complementary-darker-6)" title="--color-complementary-darker-6"></td>
+   <td style="background:var(--color-complementary-darker-7)" title="--color-complementary-darker-7"></td>
+   <td style="background:var(--color-complementary-darker-8)" title="--color-complementary-darker-8"></td>
+   <td style="background:var(--color-complementary-darker-9)" title="--color-complementary-darker-9"></td>
+   <td style="background:var(--color-complementary-darker-10)" title="--color-complementary-darker-10"></td>
+</tr>
+</table>
+
+---++ Gray
+<table class="boxes foswikiLayoutTable">
+<tr>
+   <th>gray</th>
+   <th>1</th>
+   <th>2</th>
+   <th>3</th>
+   <th>4</th>
+   <th>5</th>
+   <th>6</th>
+   <th>7</th>
+   <th>8</th>
+   <th>9</th>
+   <th>10</th>
+   <th>white</th>
+</tr>
+<tr>
+   <td style="background:var(--color-gray)" title="--color-gray"></td>
+   <td style="background:var(--color-gray-1)" title="--color-gray-1"></td>
+   <td style="background:var(--color-gray-2)" title="--color-gray-2"></td>
+   <td style="background:var(--color-gray-3)" title="--color-gray-3"></td>
+   <td style="background:var(--color-gray-4)" title="--color-gray-4"></td>
+   <td style="background:var(--color-gray-5)" title="--color-gray-5"></td>
+   <td style="background:var(--color-gray-6)" title="--color-gray-6"></td>
+   <td style="background:var(--color-gray-7)" title="--color-gray-7"></td>
+   <td style="background:var(--color-gray-8)" title="--color-gray-8"></td>
+   <td style="background:var(--color-gray-9)" title="--color-gray-9"></td>
+   <td style="background:var(--color-gray-10)" title="--color-gray-10"></td>
+   <td style="background:var(--color-white)" title="--color-white"></td>
+</tr>
+<tr>
+   <td style="background:var(--color-black)" title="--color-black"></td>
+   <td style="background:var(--color-black-1)" title="--color-black-1"></td>
+   <td style="background:var(--color-black-2)" title="--color-black-2"></td>
+   <td style="background:var(--color-black-3)" title="--color-black-3"></td>
+   <td style="background:var(--color-black-4)" title="--color-black-4"></td>
+   <td style="background:var(--color-black-5)" title="--color-black-5"></td>
+   <td style="background:var(--color-black-6)" title="--color-black-6"></td>
+   <td style="background:var(--color-black-7)" title="--color-black-7"></td>
+   <td style="background:var(--color-black-8)" title="--color-black-8"></td>
+   <td style="background:var(--color-black-9)" title="--color-black-9"></td>
+   <td style="background:var(--color-black-10)" title="--color-black-10"></td>
+   <td style="background:var(--color-gray)" title="--color-gray"></td>
+</tr>
+<tr>
+   <th>black</th>
+   <th>1</th>
+   <th>2</th>
+   <th>3</th>
+   <th>4</th>
+   <th>5</th>
+   <th>6</th>
+   <th>7</th>
+   <th>8</th>
+   <th>9</th>
+   <th>10</th>
+   <th>gray</th>
+</tr>
+</table>
+
+---++ Trancparency
+<div class="foswikiHelp">
+<table class="boxes foswikiLayoutTable">
+<tr>
+   <th>0</th>
+   <th>1</th>
+   <th>2</th>
+   <th>3</th>
+   <th>4</th>
+   <th>5</th>
+   <th>6</th>
+   <th>7</th>
+   <th>8</th>
+   <th>9</th>
+   <th>10</th>
+</tr>
+<tr>
+   <th title="transparent"></th>
+   <td style="background:var(--color-alpha-1)" title="--color-alpha-1"></td>
+   <td style="background:var(--color-alpha-2)" title="--color-alpha-2"></td>
+   <td style="background:var(--color-alpha-3)" title="--color-alpha-3"></td>
+   <td style="background:var(--color-alpha-4)" title="--color-alpha-4"></td>
+   <td style="background:var(--color-alpha-5)" title="--color-alpha-5"></td>
+   <td style="background:var(--color-alpha-6)" title="--color-alpha-6"></td>
+   <td style="background:var(--color-alpha-7)" title="--color-alpha-7"></td>
+   <td style="background:var(--color-alpha-8)" title="--color-alpha-8"></td>
+   <td style="background:var(--color-alpha-9)" title="--color-alpha-9"></td>
+   <td style="background:var(--color-alpha-10)" title="--color-alpha-10"></td>
+</tr>
+</table>
+</div>
+
+<style>
+.boxes th {
+   text-align:center;
+   vertical-align:middle;
+}
+.boxes td {
+   width:3em;
+   height:3em;
+}
+</style>
+
+%META:FORM{name="Applications/ClassificationApp.ClassifiedTopic"}%
+%META:FIELD{name="TopicType" title="TopicType" value="ClassifiedTopic, CategorizedTopic, TaggedTopic, WikiTopic"}%
+%META:FIELD{name="TopicTitle" title="<nop>TopicTitle" value="NatSkin Color Scheme"}%
+%META:FIELD{name="Summary" title="Summary" value=""}%
+%META:FIELD{name="Tag" title="Tag" value=""}%
+%META:FIELD{name="Category" title="Category" value=""}%
+%META:TOPICMOVED{by="micha" date="1610958310" from="Sandbox.NatSkinColorScheme" to="System.NatSkinColorScheme"}%

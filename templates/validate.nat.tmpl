@@ -1,14 +1,15 @@
 %TMPL:INCLUDE{"viewplain"}%%{}%
 
-%TMPL:DEF{"bodyclass"}%natValidateBody natCenteredBody%TMPL:END%
-%TMPL:DEF{"titleaction"}%%MAKETEXT{"bad request"}%%TMPL:END%
+%TMPL:DEF{"bodyclass"}%natValidateBody natErrorBody natCenteredBody%TMPL:END%
+%TMPL:DEF{"titleaction"}%%MAKETEXT{"Bad request"}%%TMPL:END%
 %TMPL:DEF{"metadata"}%%TMPL:END%
 %TMPL:DEF{"banner"}%%TMPL:END%
 %TMPL:DEF{"sidebar"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 
 %TMPL:DEF{"content"}%<div class="natOopsMessage" id="foswikiLogin">
-  <h1 >400 - %MAKETEXT{"Request validation"}%</h1>
+  <h1>400</h1>
+  <h2>%MAKETEXT{"Request validation"}%</h2>
   <form action='%SCRIPTURLPATH{"login"}%/%WEB%/%TOPIC%' name='loginform' method='post'>
     <input type="hidden" name="origurl" value="%ORIGURL%" />
     <input type="hidden" name="foswikiloginaction" value="validate" />
@@ -25,14 +26,14 @@
       <li>%MAKETEXT{"Press Cancel otherwise."}%</li>
     </ul>
     %MAKETEXT{"If you are unsure what this means, read <a href='[_1]' class='foswikiPopUp'>why you are being asked to confirm</a>" args="http://foswiki.org/Support/WhyYouAreAskedToConfirm"}%:
-    <p>
-    %BUTTON{"%MAKETEXT{"OK"}%" icon="%TMPL:P{"OK_ICON"}%" id="validateChange"}%
-    %BUTTON{"%MAKETEXT{"Cancel"}%" icon="%TMPL:P{"CANCEL_ICON"}%" type="submit"}%
+    <p class='foswikiFlex foswikiFlexJustifyCenter'>
+    %BUTTON{"%MAKETEXT{"OK"}%" icon="%TMPL:P{"icon::ok::name"}%" id="validateChange"}%
+    %BUTTON{"%MAKETEXT{"Cancel"}%" icon="%TMPL:P{"icon::cancel::name"}%" type="submit"}%
     </p>
   </form>
 </div>
 %ADDTOZONE{"script" requires="JQUERYPLUGIN" id="VALIDATION::JS" text="
-<script type='text/javascript'>
+<script>
 jQuery(function($) {
   var $loginForm = $('form[name=loginform]'), 
       $responseField = $loginForm.find('input[name=response]');

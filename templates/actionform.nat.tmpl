@@ -7,17 +7,17 @@
 %BUTTON{
   "%MAKETEXT{"Save"}%" 
   type="submit"
-  icon="%TMPL:P{"OK_ICON"}%" 
+  icon="%TMPL:P{"icon::ok::name"}%" 
   id="save" 
   accesskey="s" 
 }%
 %BUTTON{
   "%MAKETEXT{"Cancel"}%" 
   title="%MAKETEXT{"Abandon changes and exit"}%" 
-  icon="%TMPL:P{"CANCEL_ICON"}%" 
+  icon="%TMPL:P{"icon::cancel::name"}%" 
   id="cancel" 
   accesskey="c" 
-  target="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?unlock=on"
+  target="%SCRIPTURLPATH{"view" topic="%WEB%.%TOPIC%" unlock="on"}%"
 }%
 </form>
 </div>

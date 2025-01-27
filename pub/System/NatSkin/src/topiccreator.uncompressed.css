@@ -1,0 +1,110 @@
+.jqTopicCreator {
+  position:relative;
+}
+.tcViewPort {
+  width:790px;
+  overflow:hidden;
+}
+.tcNaviContainer {
+  border-top:1px solid var(--color-border, #d1d1d1);
+  padding-top:1em;
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
+.jqTopicCreator .foswikiPageForm {
+  box-shadow:none;
+  border:0;
+  background:transparent;
+  float:left;
+  width:790px;
+  margin:0 15px 0 0;
+  padding:0;
+  position:relative;
+}
+.jqTopicCreator .foswikiPageForm h2 {
+  font-weight:var(--font-weight-normal);
+  line-height:2;
+  border-bottom:1px solid var(--color-border);
+}
+.tcContainer {
+  width:39000px;
+  position:relative;
+  height:35em;
+}
+.tcPage {
+  height:27em;
+  overflow-x:hide;
+  overflow-y:auto;
+  padding-right:5px;
+  padding-bottom:5px;
+  box-sizing:border-box;
+  display:-webkit-flex;
+  display:flex;
+  flex-wrap:wrap;
+  align-content:flex-start;
+  align-items:flex-start;
+}
+.tcTopicTemplate,
+.tcTopicType {
+  box-sizing:border-box;
+  padding:0.7em 0.7em 0.7em 45px;
+  line-height:1.3;
+  border:1px solid transparent;
+  border-radius:0.5em;
+  float:left;
+  min-height:5.5em;
+  width:31%;
+  margin: 0 1em 1em 0;
+  overflow:hidden;
+}
+.tcTopicTemplate h3,
+.tcTopicType h3 {
+  margin-top:0;
+  margin-bottom:0;
+}
+
+.tcFilter .foswikiInputField {
+  width:210px;
+}
+
+.tcLayoutToggle {
+  font-size:120%;
+  color:var(--color-gray);
+  margin:0 0 0 0.5rem;
+}
+
+.tcSelected,
+.tcTopicTemplate:hover,
+.tcTopicType:hover {
+  background: var(--creator-selection-background, #f6f6f6);
+  color: var(--creator-selection-foreground, #333);
+  border-color: var(--creator-selection-border, #d5d6dd);
+}
+.tcIcon {
+  margin:0 0 0 -35px;
+  float:left;
+  max-height:50px;
+  max-width:30px;
+  overflow:hidden;
+}
+.tcIcon .jqIcon {
+  font-size:24px;
+  line-height:1;
+}
+.tcIcon img {
+  width:30px;
+  height:auto;
+}
+.tcPage form .foswikiLayoutTable th {
+  width:8em;
+}
+
+.tcListLayout .tcTopicType,
+.tcListLayout .tcTopicTemplate {
+  width:100%;
+  float:none;
+  min-height:auto;
+  margin:0 0.75em 0.25em 0;
+  position:relative;
+}

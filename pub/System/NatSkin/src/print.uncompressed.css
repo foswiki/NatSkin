@@ -1,0 +1,431 @@
+/* page layout */
+@page {
+  size: a4; 
+  margin:2cm 2cm 2cm 2cm;
+
+  @top-left-corner {
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+  }
+  @top-left {
+    content: string(title);
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+  }
+  @top-center {
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+  }
+  @top-right {
+/*
+    content: string(chapter);
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+*/
+  }
+  @top-right-corner {
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+  }
+  @bottom-left-corner {
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+  }
+  @bottom-left {
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+  }
+  @bottom-center {
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+  }
+  @bottom-right {
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+  }
+  @bottom-right-corner {
+    font-family:arial,Helvetica,sans-serif;
+    font-size:12px;
+    content: counter(page) "/" counter(pages);
+    text-align:center;
+  }
+  @prince-overlay {
+    font-family:arial,Helvetica,sans-serif;
+  }
+}
+@page:first {
+  @top-left {
+    content: none;
+  }
+  @top-right {
+    content: none;
+  }
+  @bottom-left {
+    content: string(date) string(revisionid) string(author);
+  }
+}
+
+h1:first-of-type { 
+  string-set: title content(); 
+}
+h1:first-of-type > a { 
+  string-set: title content(); 
+}
+h1:first-of-type .foswikiTopicSummary {
+  string-set: subtitle content();
+}
+/*
+h2 { 
+  string-set: chapter content();
+}
+*/
+.foswikiRevision { 
+  visibility:hidden;
+  /* position:absolute; 
+     note: cannot make this absolute as weasyprint will hide the string-set elements 
+           we have to use display + height instead to collapse the element
+   */
+  display:block !important;
+  height:0px;
+}
+.foswikiRevisionID { 
+  string-set: revisionid content() " | ";
+}
+.foswikiRevisionDate { 
+  string-set: date content() " | ";
+}
+.foswikiRevisionAuthor { 
+  string-set: author content();
+}
+
+html {
+  background:transparent !important;
+}
+body {
+  margin:0 !important;
+  padding:0 !important;
+  width:auto !important;
+  background:transparent !important;
+  hyphens: auto;
+  prince-linebreak-magic: auto;
+  color:#000;
+}
+
+/* color */
+h1, h2, h3, h4, h5, h6, 
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, 
+body {
+  color:#000;
+}
+
+/* pagination */
+h1, h2, h3, h4, h5, h6 {
+  page-break-after:avoid;
+  page-break-inside:avoid;
+}
+ul, ol, dl {
+  page-break-before:avoid;
+}
+.natMainContents table {
+  page-break-before:avoid;
+}
+
+pre {
+  page-break-inside:avoid;
+  white-space:pre-wrap;
+  word-break:break-all;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+  font-size:85% !important;
+  hyphens: none;
+}
+
+.natPageBreakAfter {
+  page-break-after:always;
+}
+.natPageBreakBefore {
+  page-break-before:always;
+}
+
+/* hidden elements */
+.foswikiBroadcastMessage,
+.ui-toolbar,
+.foswikiHideOnPrint,
+.natBottomBar,
+.natBreadCrumbs,
+.natFeedIcon,
+.natUserActions,
+.natMainHeaderContents,
+.natSideBar,
+.natSideBarHeader,
+.natTopicActions,
+.natWebMenu,
+.natTopBar {
+  display:none !important;
+}
+.natBody .foswikiShowOnPrint,
+.natBody .foswikiShowBlockOnPrint {
+  display:block;
+}
+.natBody .foswikiShowInlineOnPrint {
+  display:inline;
+}
+
+.jqButton {
+  display:none !important;
+}
+
+
+/* spacings */
+.natBody .natBodyContents {
+  width:auto !important;
+  padding:0 !important;
+  margin:0 !important;
+  border:0 !important;
+}
+.natMain,
+.natMiddle,
+.natMiddleContents {
+  border: 0 !important;
+  padding: 0 !important;
+  margin:0 !important;
+  background:transparent !important;
+  width:auto !important;
+}
+
+.natMainContents {
+  background:transparent;
+  min-height:auto;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+p {
+  margin: 0.5em 0em;
+  text-indent: 0;
+  text-align:justify;
+  orphans:4;
+  widows:2;
+}
+
+.imageSimple,
+img {
+  page-break-inside: avoid;
+  max-width:100%;
+  height:auto;
+  border: 0 solid transparent !important; /* bugfix */
+}
+
+
+/* watermark */
+.natWatermark {
+  position: fixed;
+  display: block;
+  width:120%;
+  top:50%;
+  left:50%;
+  margin:0;
+  padding:0;
+  font-size: 5em;
+  line-height:1.1;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg); /* Safari */
+  transform: translate(-50%, -50%) rotate(-45deg);
+  opacity:0.2;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
+
+/* links */
+.foswikiNewLink {
+  color:inherit !important;
+  background:inherit !important;
+  text-decoration:none;
+}
+a[name] {
+  display:none;
+}
+a {
+  word-break:break-all;
+  hyphens: none;;
+}
+
+/* clear overflow properties */
+.natMainContents,
+.overflow,
+pre {
+  overflow:visible !important;
+}
+
+/* RedDotPlugin */
+.redDot {
+  display:none;
+}
+
+/* TwistyPlugin */
+.twistyHidden,
+.twistyTrigger {
+  display:none;
+}
+
+/* CommentPlugin */
+.commentPlugin {
+  display:none;
+}
+
+/* EditTablePlugin */
+.editTableEditImageButton {
+  display:none;
+}
+
+/* toc */
+.foswikiToc ul {
+  border:0 !important;
+  padding:0 !important;
+}
+.foswikiToc > ul > li {
+  padding-left:0;
+}
+.foswikiToc a {
+  display:block;
+  position:relative;
+}
+.foswikiToc a:before {
+  position:absolute;
+  display:inline-block;
+  background-color:#fff;
+  z-index:1;
+  content: target-counter(attr(href), page);
+  text-align:right;
+  padding-left:0.5em;
+  right:0;
+}
+.foswikiToc a:after {
+  white-space:nowrap;
+  position:absolute;
+  bottom:0;
+  color:#aaa;
+  content: "....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................";
+}
+
+/* undo calc for printing as that's not well supported among pdf generators 
+  see https://github.com/Kozea/WeasyPrint/issues/357
+
+  SMELL: once calc and nested vars work fine we can remove below stuff
+*/
+
+:root {
+  --font-size: 13;
+  --font-baseline: 20;
+
+  --line-height: 1.5385; /* calc(var(--font-baseline) / var(--font-size)); */
+  --line-height-h1: 1.2308; /* calc(var(--line-height) * 0.8); */
+  --line-height-h2: 1.3846; /* calc(var(--line-height) * 0.9); */
+  --line-height-h3: 1.3846; /* calc(var(--line-height) * 0.9); */
+  --line-height-h4: 1.3846; /* calc(var(--line-height) * 0.9); */
+  --line-height-h5: 1.3846; /* calc(var(--line-height) * 0.9); */
+  --line-height-h6: 1.3846; /* calc(var(--line-height) * 0.9); */
+
+  --font-size-normal: 13px; /* calc(var(--font-size) * 1px); */
+  --font-size-small: 11.3855px; /* calc(var(--font-size) * 0.7692 * 1px); */
+  --font-size-smallish: 12.116px; /*calc(var(--font-size) * 0.932 * 1px); */
+  --font-size-large: 18px /* calc(var(--font-size) * 1.3846 * 1px); */
+  --font-size-huge: 24px /* calc(var(--font-size) * 1.8461 * 1px); */
+
+  --margin: 1.5385em; /* calc(var(--line-height) * 1rem); */
+
+  --color-foreground: #000;
+  --color-text: #000;
+  --color-anchor: #000;
+
+}
+h1 { 
+  border-bottom:1pt solid #d0d0d0;
+  margin: 4.6155em 0 10px;
+}
+h2 { 
+  border-bottom:1pt solid #d0d0d0;
+  margin: 48px 0 15px;
+}
+h3 { 
+  margin: 48px 0 17.76px;
+}
+h4 { 
+  margin: 24px 0 20px;
+}
+h5 { 
+  margin: 24px 0 20px;
+}
+h6 { 
+  margin: 24px 0 0;
+}
+pre {
+  background-color: #f0f0f0;
+}
+
+.foswikiTable {
+  border:1px solid #d0d0d0;
+}
+.foswikiTable > thead > tr > th,
+.foswikiTable > thead > tr > td,
+.foswikiTable > tfoot > tr > th,
+.foswikiTable > tfoot > tr > td,
+.foswikiTable > tbody > tr > th,
+.foswikiTable > tbody > tr > td,
+.foswikiTable > thead > tr > th,
+.foswikiTable > tfoot > tr > th,
+.foswikiTable > tbody > tr > th {
+  border:1px solid #d0d0d0;
+}
+.foswikiTable th,
+.foswikiTable th h2,
+.foswikiTable th h3,
+.foswikiTable th h4 {
+  background: #efefef;
+  color: #222;
+  font-weight: bold;
+}
+.foswikiTable th a,
+.foswikiTable th a:hover,
+.foswikiTable th span {
+  font-weight: bold;
+  color: #222;
+}
+.foswikiFlatTable table > tbody > tr > td,
+.foswikiFlatTable table > tbody > tr > th,
+.foswikiFlatTable table > tfoot > tr > td,
+.foswikiFlatTable table > tfoot > tr > th,
+.foswikiFlatTable table > thead > tr > td,
+.foswikiFlatTable table > thead > tr > th,
+table.foswikiFlatTable > tbody > tr > td ,
+table.foswikiFlatTable > tbody > tr > th 
+table.foswikiFlatTable > tfoot > tr > td,
+table.foswikiFlatTable > tfoot > tr > th,
+table.foswikiFlatTable > thead > tr > td,
+table.foswikiFlatTable > thead > tr > th {
+  border-bottom:1px solid #d0d0d0;
+}
+.foswikiFlatTable table > thead > tr > td,
+.foswikiFlatTable table > thead > tr > th,
+.foswikiFlatTable table > thead > tr > th,
+table.foswikiFlatTable > thead > tr > td,
+table.foswikiFlatTable > thead > tr > th {
+  border-bottom:2px solid #d0d0d0;
+}
+.foswikiFlatTable.foswikiStripes table > tfoot > tr > td,
+.foswikiFlatTable.foswikiStripes table > tfoot > tr > th,
+.foswikiFlatTable.foswikiStripes table > thead > tr > td,
+.foswikiFlatTable.foswikiStripes table > thead > tr > th,
+table.foswikiFlatTable.foswikiStripes > tfoot > tr > td,
+table.foswikiFlatTable.foswikiStripes > tfoot > tr > th,
+table.foswikiFlatTable.foswikiStripes > thead > tr > td,
+table.foswikiFlatTable.foswikiStripes > thead > tr > th {
+  border-color: #d0d0d0;
+}
+.foswikiStripes table > tbody > tr:nth-child(2n+1) > th,
+.foswikiStripes table > tbody > tr:nth-child(2n+1) > td,
+table.foswikiStripes > tbody > tr:nth-child(2n+1) > th,
+table.foswikiStripes > tbody > tr:nth-child(2n+1) > td {
+  background-color: #efefef;
+}

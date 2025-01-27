@@ -1,0 +1,47 @@
+%{ ################################################################################ }%
+%TMPL:DEF{"dialog"}%<noautolink>
+<div class="jqUIDialog foswikiFormSteps" data-modal="true" data-draggable="true" data-resizable="true" data-width="auto" data-destroy-on-close="true" title="%TMPL:P{"heading"}%" style="min-width:30em">
+%TMPL:P{context="ContributorsPluginEnabled" then="contributors::plugin" else="contributors::default"}%
+  <a class="jqUIDialogButton jqUIDialogClose" data-icon="ui-icon-cancel">%MAKETEXT{"Close"}%</a>
+</div>
+</noautolink>%TMPL:END%
+
+%TMPL:DEF{"heading"}%%TRANSLATE{"Contributors to this topic"}%%TMPL:END%
+%TMPL:DEF{"exclude"}%ProjectContributor|UnknownUser%TMPL:END%
+
+%TMPL:DEF{"contributors::default"}%%FORMATLIST{
+  "%FORMATLIST{
+    "%HISTORY{
+      format="($percntGETTOPICTITLE{\"$wikiusername\"}$percnt);$wikiname"
+      versions="1.."
+    }%"
+    pattern="\((.*)\);(.*)"
+    split="\n"
+    exclude=".*\b(%TMPL:P{"exclude"}%)\b"
+    unique="on"
+    sort="on"
+    format="$2" 
+  }%"
+  format="<div>$percntIF{
+                \"istopic '%USERSWEB%.$1'\" 
+                then=\"[[%USERSWEB%.$1]]\" 
+                else=\"<nop>$1\"
+              }$percnt</div>"
+  null="<div>%TRANSLATE{"Nobody contributed to this topic."}%</div>"
+  separator="$n"
+}%%TMPL:END%
+
+%TMPL:DEF{"contributors::plugin"}%%CONTRIBUTORS{
+  topic="%WEB%.%TOPIC%"
+  nodups="on"
+  header="<table class='foswikiLayoutTable'>"
+  format="<tr>
+      <td>$dollarpercntIF{
+                \\"istopic '$wikiusername'\\" 
+                then=\\"[[$wikiusername]]\\" 
+                else=\\"<nop>$wikiname\\"
+           }$dollarpercnt</td>
+      <td> $date</td>
+    </tr>"
+  footer="</table>"
+}%%TMPL:END%

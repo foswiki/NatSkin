@@ -1,103 +1,266 @@
 %TMPL:INCLUDE{"view"}%
 
 %TMPL:DEF{"banner"}%%TMPL:P{
-  "banner::content::%NATSKIN_BANNERMODE{default="off"}%"
-}%%TMPL:P{"banner::javascript"}%%TMPL:END%
-
-%TMPL:DEF{"banner::content"}%<div class="natBannerContents">
-<div class="natBannerTextEffect %IF{"'%NATSKIN_BANNERTEXTEFFECT{default="off"}%'!='off'" then="jqAnimateCSS"}%" data-effect="%NATSKIN_BANNERTEXTEFFECT{default=""}%">
-%IF{"'%NATSKIN_BANNERTITLEENABLED{default="on"}%'='on'"
-  then="$percntTMPL:P{\"banner::title\"}$percnt"
-}%</div></div>%TMPL:END%
-
-%TMPL:DEF{"banner::title"}%<div class='natBannerTitle%IF{"'%NATSKIN_BANNERFOREGROUND{default="light"}%'='dark'" then=" natBannerDarkTitle" }%'>
-%TRANSLATE{
-  "%IF{"'%NATSKIN_BANNERTITLEENABLED{default=""}%'='on'"
-    then="$percntNATSKIN_BANNERTITLE{default=\"$dollarpercntGETTOPICTITLE$dollarpercnt\"}$percnt"
-    else="$percntGETTOPICTITLE$percnt"
-  }%"
-}%
-</div>
-<div class='natBannerSubtitle %IF{"'%NATSKIN_BANNERFOREGROUND{default="light"}%'='dark'" then="natBannerDarkSubtitle"}%'>
-%TRANSLATE{"%NATSKIN_BANNERSUBTITLE{default="$percntFORMFIELD{\"Summary\"}$percnt"}%"}%</div>%TMPL:END%
-
-%TMPL:DEF{"banner::particles::params"}%data-color='%NATSKIN_BANNERPARTICLESCOLOR{default="#ffffff"}%' data-connect-particles="%NATSKIN_BANNERCONNECTPARTICLES{default="true"}%" data-speed="%NATSKIN_BANNERSPEED{default="0.5"}%" data-max-particles="%NATSKIN_BANNERMAXPARTICLES{default="70"}%" data-size-variations="%NATSKIN_BANNERSIZEVARIATION{default="3"}%"%TMPL:END%
-
-%TMPL:DEF{"banner::content::monochrome"}%<div class='natBanner natBannerColor %IF{"'%NATSKIN_BANNERPARTICLESENABLED{default="off"}%'='on'" then="jqParticles"}%' %TMPL:P{"banner::particles::params"}% style='background-color:%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR%"}%'>
-%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::particles"}%
-</div>%TMPL:END%
-
-%TMPL:DEF{"banner::content::gradient"}%<div class='natBanner natBannerGradient %IF{"'%NATSKIN_BANNERPARTICLESENABLED{default="off"}%'='on'" then="jqParticles"}%' %TMPL:P{"banner::particles::params"}% style='background:%IF{
-  "'%NATSKIN_BANNERGRADIENT{default="radial"}%'='radial'"
-  then="radial-gradient(circle farthest-side at 33%,%NATSKIN_BANNERCOLOR{default="transparent"}% 0,%NATSKIN_BANNERCOLOR2{default="%WEBBGCOLOR%"}% 100%)"
-  else="linear-gradient(to bottom,%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR%"}% 0,%NATSKIN_BANNERCOLOR2{default="transparent"}% 100%)"
-}%'>
-%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::particles"}%
-</div>%TMPL:END%
-
-
-%TMPL:DEF{"banner::content::image"}%<div class='natBanner natBannerImage'>
-<div class='natBannerPhoto %IF{"'%NATSKIN_BANNERANIMATIONENABLED{default="off"}%'='on'" then="natBannerAnimate"}% %IF{"'%NATSKIN_BANNERPARTICLESENABLED{default="off"}%'='on'" then="jqParticles"}%' %TMPL:P{"banner::particles::params"}% style='background-color:%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR%"}%;background-image:url(%IF{"'%NATSKIN_BANNERIMAGE{default=""}%'='' or not '%TOPIC%'/attachments[name='%NATSKIN_BANNERIMAGE%']"
-  then="%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/images/bubbles.png"
-  else="%ATTACHURLPATH%/%ENCODE{"%NATSKIN_BANNERIMAGE%" type="url"}%"
-}%);background-position:50% %NATSKIN_BANNERPOSITION{default="50"}%%'></div>
-%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::editor"}%%TMPL:P{"banner::javascript::particles"}%
-</div>%TMPL:END%
-
-
-%TMPL:DEF{"banner::content::video"}%<div class='natBanner natBannerVideo'>%SET{"banner_video" 
-  value="%IF{"'%NATSKIN_BANNERVIDEO{default=""}%'='' or not '%TOPIC%'/attachments[name='%NATSKIN_BANNERVIDEO%']"
-    then="%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/videos/clouds.mp4"
-    else="%ATTACHURLPATH%/%NATSKIN_BANNERVIDEO%"
-  }%"
-}%
-<video autoplay muted %IF{"'%NATSKIN_BANNERVIDEOLOOP{default="on"}%'='on'" then="loop"}% class="noMediaPlayer" poster="%SCRIPTURLPATH{"rest"}%/ImagePlugin/process?file=%banner_video%" style="top:%NATSKIN_BANNERPOSITION{default="50"}%%"> 
-    <source src="%banner_video%" type="video/%IF{"'%banner_video%'=~'\.mp4$'" then="mp4"}%%IF{"'%banner_video%'=~'\.ogv$'" then="ogg"}%%IF{"'%banner_video%'=~'\.webm$'" then="webm"}%" />
-</video> 
-%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::editor"}%
-</div>%TMPL:END%
-
-%TMPL:DEF{"banner::content::geopattern"}%<div class='natBanner jqGeoPattern' data-color='%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR%"}%' data-seed='%NATSKIN_BANNERSEED{default=""}%'>
-%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::geopattern"}%
-</div>%TMPL:END%
-
-%TMPL:DEF{"banner::content::trianglify"}%<div class='natBanner jqTrianglify' data-cell-size='%NATSKIN_BANNERCELLSIZE{default="30"}%' data-palette='%NATSKIN_BANNERPALETTE{default="random"}%' data-variance="%NATSKIN_BANNERVARIANCE{default="0.75"}%" data-seed="%NATSKIN_BANNERSEED{default=""}%">
-%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::trianglify"}%
-</div>%TMPL:END%
-
-%TMPL:DEF{"banner::javascript"}%%IF{
-  "'%NATSKIN_BANNERTEXTEFFECT{default="off"}%'!='off'" 
-  then="$percntJQREQUIRE{\"animate\"}$percnt"
+  "banner::mode::%TMPL:P{"banner::mode"}%" 
 }%%TMPL:END%
+%TMPL:DEF{"banner::mode"}%%NATSKIN_BANNERMODE{default="none"}%%TMPL:END%
+
+%TMPL:DEF{"banner::inlinestyle"}%style='background-color:%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR{default="#000"}%"}%;%TMPL:P{"banner::height"}%'%TMPL:END%
+%TMPL:DEF{"banner::cssvars"}%<style>
+:root {
+  --nat-bannercolor:%NATSKIN_BANNERCOLOR{default="rgb(0 0 0 / 50%)"}%;
+}
+</style>%TMPL:END%
+%TMPL:DEF{"banner::height"}%%IF{"'%NATSKIN_BANNERHEIGHT{default=""}%'!=''" then="$percntTMPL:P{\"banner::height::%NATSKIN_BANNERHEIGHT%\"}$percnt" }%%TMPL:END%
+%TMPL:DEF{"banner::height::small"}%height:15vh%TMPL:END%
+%TMPL:DEF{"banner::height::medium"}%height:20vh%TMPL:END%
+%TMPL:DEF{"banner::height::third"}%height:33vh%TMPL:END%
+%TMPL:DEF{"banner::height::half"}%height:50vh%TMPL:END%
+%TMPL:DEF{"banner::height::twothird"}%height:60vh%TMPL:END%
+%TMPL:DEF{"banner::height::full"}%height:calc(100vh - 95px)%TMPL:END%
+
+%TMPL:DEF{"banner::class"}%%IF{
+  "'%NATSKIN_BANNERFOREGROUND{default=""}%'='light'" 
+  then="natBannerLight "
+}%%IF{
+  "'%NATSKIN_BANNERFOREGROUND{default=""}%'='dark'" 
+  then="natBannerDark "
+}%%TMPL:END%
+
+%TMPL:DEF{"banner::particles::class"}%%IF{"'%NATSKIN_BANNERPARTICLESENABLED{default="off"}%'='on'" then="jqParticles"}%%TMPL:END%
+%TMPL:DEF{"banner::particles::params"}%%IF{"'%NATSKIN_BANNERPARTICLESENABLED{default="off"}%'='on'"
+ then="data-color='$percntNATSKIN_BANNERPARTICLESCOLOR{default=\"#ffffff\"}$percnt' \
+       data-connect-particles='$percntNATSKIN_BANNERCONNECTPARTICLES{default=\"true\"}$percnt' \
+       data-speed='$percntNATSKIN_BANNERSPEED{default=\"0.5\"}$percnt' \
+       data-max-particles='$percntNATSKIN_BANNERMAXPARTICLES{default=\"70\"}$percnt' \
+       data-size-variations='$percntNATSKIN_BANNERSIZEVARIATION{default=\"3\"}$percnt'"
+}%%TMPL:END%
+
+%TMPL:DEF{"banner::mode::monochrome"}%<div class='natBanner natBannerColor %TMPL:P{"banner::class"}% %TMPL:P{"banner::particles::class"}%' %TMPL:P{"banner::particles::params"}% %TMPL:P{"banner::inlinestyle"}%>
+%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::particles"}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::mode::autocolor"}%<div class='natBanner natBannerAutoColor jqAutoColor %TMPL:P{"banner::class"}% %TMPL:P{"banner::particles::class"}%' %TMPL:P{"banner::particles::params"}% %TMPL:P{"banner::inlinestyle"}% \
+  data-property="%TMPL:P{"banner::mode::autocolor::property"}%" \
+  data-source="%TMPL:P{"banner::mode::autocolor::source"}%" \
+  data-text="<noautolink>%TMPL:P{"banner::mode::autocolor::text"}%</noautolink>" \
+  data-hue-from="%TMPL:P{"banner::mode::autocolor::huefrom"}%" \
+  data-hue-to="%TMPL:P{"banner::mode::autocolor::hueto"}%" \
+  data-saturation="%TMPL:P{"banner::mode::autocolor::saturation"}%" \
+  data-lightness="%TMPL:P{"banner::mode::autocolor::lightness"}%" \
+  data-seed="%TMPL:P{"banner::mode::autocolor::seed"}%">
+%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::particles"}%%JQREQUIRE{"autocolor" warn="off"}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%
+</div>%TMPL:END%
+%TMPL:DEF{"banner::mode::autocolor::property"}%background%TMPL:END% %{ also: radial-gradient }%
+%TMPL:DEF{"banner::mode::autocolor::source"}%.natBannerContents, h1%TMPL:END% 
+%TMPL:DEF{"banner::mode::autocolor::text"}%%TMPL:END% 
+%TMPL:DEF{"banner::mode::autocolor::huefrom"}%%NATSKIN_BANNERAUTOCOLORHUEFROM{default="0"}%%TMPL:END% 
+%TMPL:DEF{"banner::mode::autocolor::hueto"}%%NATSKIN_BANNERAUTOCOLORHUETO{default="359"}%%TMPL:END% 
+%TMPL:DEF{"banner::mode::autocolor::saturation"}%%NATSKIN_BANNERAUTOCOLORSATURATION{default="[50,65,80]"}%%TMPL:END%
+%TMPL:DEF{"banner::mode::autocolor::lightness"}%%NATSKIN_BANNERAUTOCOLORLIGHTNESS{default="[50,65,80]"}%%TMPL:END%
+%TMPL:DEF{"banner::mode::autocolor::seed"}%%NATSKIN_BANNERAUTOCOLORSEED{default=""}%%TMPL:END%
+
+%TMPL:DEF{"banner::mode::gradient"}%<div class='natBanner natBannerGradient %TMPL:P{"banner::class"}% %TMPL:P{"banner::particles::class"}%' %TMPL:P{"banner::particles::params"}% style='background:%IF{
+  "'%NATSKIN_BANNERGRADIENT{default="linear"}%'='radial'"
+  then="radial-gradient(circle farthest-side at %NATSKIN_BANNERGRADIENTPOSITION{default="33"}%%,%NATSKIN_BANNERCOLOR{default="transparent"}% 0,%NATSKIN_BANNERCOLOR2{default="%WEBBGCOLOR{default="#000"}%"}% 100%)"
+  else="linear-gradient(%NATSKIN_BANNERGRADIENTDEGREE{default="135"}%deg,%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR{default="#000"}%"}% 0%,%NATSKIN_BANNERCOLOR2{default="transparent"}% 100%)"
+}%;%TMPL:P{"banner::height"}%'>
+%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::particles"}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::mode::image"}%<div class='natBanner natBannerImage %TMPL:P{"banner::class"}% natBannerEditable' %TMPL:P{"banner::inlinestyle"}%>
+<div class='natBannerPhoto %IF{"'%NATSKIN_BANNERANIMATIONENABLED{default="off"}%'='on'" then="natBannerAnimate"}% %TMPL:P{"banner::particles::class"}%' %TMPL:P{"banner::particles::params"}% style='background-image:url(%IF{"'%NATSKIN_BANNERIMAGE{default=""}%'='' or not '%NATSKIN_BANNERTOPIC{default="%WEB%.%TOPIC%"}%'/attachments[name='%NATSKIN_BANNERIMAGE%']"
+  then="%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/images/bubbles.png"
+  else="%PUBURLPATH{web="%WEB%" topic="%NATSKIN_BANNERTOPIC{default="%WEB%.%TOPIC%"}%"}%/%ENCODE{"%NATSKIN_BANNERIMAGE%" type="url"}%"
+}%);background-position:50% %NATSKIN_BANNERPOSITION{default="50"}%%'></div>
+%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::editor"}%%TMPL:P{"banner::javascript::particles"}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::mode::pixabay_image"}%<div class='natBanner natBannerImage %TMPL:P{"banner::class"}% natBannerEditable' %TMPL:P{"banner::inlinestyle"}%><dirtyarea>
+%PIXABAY{
+  "%NATSKIN_BANNERPIXABAYQUERY{default=""}%"
+  category="%NATSKIN_BANNERPIXABAYCATEGORY{default=""}%"
+  type="%NATSKIN_BANNERPIXABAYIMAGETYPE{default="allimages"}%"
+  editors_choice="%NATSKIN_BANNERPIXABAYEDITORSCHOICE{default=""}%"
+  size="large"
+  random="%NATSKIN_BANNERPIXABAYRANDOM{default=""}%"
+  format="<div class='natBannerPhoto %IF{"'%NATSKIN_BANNERANIMATIONENABLED{default="off"}%'='on'" then="natBannerAnimate"}%' style='background-color:%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR{default="#000"}%"}%;background-image:url($url);background-position:50% %NATSKIN_BANNERPOSITION{default="50"}%%' title='$id, $tags'></div>"
+}%</dirtyarea>%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::editor"}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::mode::pixabay_video"}%<div class='natBanner natBannerVideo %TMPL:P{"banner::class"}% natBannerEditable' %TMPL:P{"banner::inlinestyle"}%><dirtyarea>
+%PIXABAY{
+  "%NATSKIN_BANNERPIXABAYQUERY{default=""}%"
+  category="%NATSKIN_BANNERPIXABAYCATEGORY{default=""}%"
+  type="%NATSKIN_BANNERPIXABAYVIDEOTYPE{default="allvideos"}%"
+  editors_choice="%NATSKIN_BANNERPIXABAYEDITORSCHOICE{default=""}%"
+  size="medium"
+  lang="en"
+  random="%NATSKIN_BANNERPIXABAYRANDOM{default=""}%"
+  loop="%NATSKIN_BANNERVIDEOLOOP{default="on"}%"
+  format="<video autoplay muted %IF{"'%NATSKIN_BANNERVIDEOLOOP{default="on"}%'='on'" then="loop"}% class='noMediaPlayer' style='top:%NATSKIN_BANNERPOSITION{default="50"}%%' title='$id, $tags'>
+            <source src='$url' type='$percntTMPL:P{\"getMimeTypeOfVideo\" video=\"$url\"}$percnt' />
+          </video>"
+}%</dirtyarea>%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::editor"}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::mode::pexels_image"}%<div class='natBanner natBannerImage %TMPL:P{"banner::class"}% natBannerEditable' %TMPL:P{"banner::inlinestyle"}%><dirtyarea>
+%PEXELS{
+  "%NATSKIN_BANNERPEXELSQUERY{default=""}%"
+  size="landscape"
+  random="%NATSKIN_BANNERPEXELSRANDOM{default=""}%"
+  format="<div class='natBannerPhoto %IF{"'%NATSKIN_BANNERANIMATIONENABLED{default="off"}%'='on'" then="natBannerAnimate"}%' style='background-color:%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR{default="#000"}%"}%;background-image:url($url);background-position:50% %NATSKIN_BANNERPOSITION{default="50"}%%' title='$id'></div>"
+  limit="1"
+}%
+</dirtyarea>%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::editor"}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::mode::pexels_video"}%<div class='natBanner natBannerVideo %TMPL:P{"banner::class"}% natBannerEditable' %TMPL:P{"banner::inlinestyle"}%><dirtyarea>
+%PEXELS{
+  "%NATSKIN_BANNERPEXELSQUERY{default=""}%"
+  type="search_videos"
+  size="landscape"
+  random="%NATSKIN_BANNERPEXELSRANDOM{default=""}%"
+  limit="1"
+  loop="%NATSKIN_BANNERVIDEOLOOP{default="on"}%"
+  width="1200"
+  format="<video autoplay muted %IF{"'%NATSKIN_BANNERVIDEOLOOP{default="on"}%'='on'" then="loop"}% class='noMediaPlayer' style='top:%NATSKIN_BANNERPOSITION{default="50"}%%' title='$id'>
+            <source src='$url' type='$percntTMPL:P{\"getMimeTypeOfVideo\" video=\"$url\"}$percnt' />
+          </video>"
+}%</dirtyarea>%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::editor"}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::mode::video"}%<div class='natBanner natBannerVideo %TMPL:P{"banner::class"}% natBannerEditable' %TMPL:P{"banner::inlinestyle"}%>%SET{"banner_video" 
+  value="%IF{"'%NATSKIN_BANNERVIDEO{default=""}%'='' or not '%NATSKIN_BANNERTOPIC{default="%WEB%.%TOPIC%"}%'/attachments[name='%NATSKIN_BANNERVIDEO%']"
+    then="%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/videos/clouds.mp4"
+    else="%PUBURLPATH{web="%WEB%" topic="%NATSKIN_BANNERTOPIC{default="%WEB%.%TOPIC%"}%"}%/%ENCODE{"%NATSKIN_BANNERVIDEO%" type="url"}%"
+  }%"
+}%
+<video autoplay muted %IF{"'%NATSKIN_BANNERVIDEOLOOP{default="on"}%'='on'" then="loop"}% class="noMediaPlayer" style="top:%NATSKIN_BANNERPOSITION{default="50"}%%"> 
+    <source src="%banner_video%" type="%TMPL:P{"getMimeTypeOfVideo" video="%banner_video%"}%" />
+</video> 
+%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::editor"}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::mode::geopattern"}%<div class='natBanner natBannerGeopPattern %TMPL:P{"banner::class"}% jqGeoPattern' style='%TMPL:P{"banner::height"}%' data-color='%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR{default="#000"}%"}%' data-seed='%NATSKIN_BANNERSEED{default=""}%'>
+%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::geopattern"}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::mode::trianglify"}%<div class='natBanner natBannerTrianglify %TMPL:P{"banner::class"}% jqTrianglify' style='%TMPL:P{"banner::height"}%' data-cell-size='%NATSKIN_BANNERCELLSIZE{default="30"}%' data-palette='%NATSKIN_BANNERPALETTE{default="random"}%' data-variance="%NATSKIN_BANNERVARIANCE{default="0.75"}%" data-seed="%NATSKIN_BANNERSEED{default=""}%">
+%TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::trianglify"}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::mode::section"}%<div class="natBanner %TMPL:P{"banner::class"}%" %TMPL:P{"banner::inlinestyle"}%>
+%TMPL:P{"banner::content::topic"}%%{}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::mode::slideshow"}%<div class="natBanner %TMPL:P{"banner::class"}%" %TMPL:P{"banner::inlinestyle"}%> 
+<div class="natBannerSwiper natBannerCenter swiper-container%IF{
+    "'%NATSKIN_BANNERANIMATIONENABLED{default="off"}%'='on'" 
+    then=" natBannerAnimate"
+  }%"%IF{
+    "'%NATSKIN_BANNERSLIDESHOWDIRECTION{default=""}%'!=''"
+    then=" data-direction=\"%NATSKIN_BANNERSLIDESHOWDIRECTION%\""
+  }% \
+  data-prevent-clicks="false" \
+  data-centered-slides="true" \
+  data-auto-height="true" \
+  data-loop="true" \
+  data-watch-overflow="true" \
+  data-effect="%NATSKIN_BANNERSLIDESHOWEFFECT{default="fade"}%" \
+  data-autoplay='{"delay": %NATSKIN_BANNERSLIDESHOWDELAY{default="5000"}%, "disableOnInteraction": false}' \
+  data-speed="%NATSKIN_BANNERSLIDESHOWSPEED{default="2000"}%" style="background-color:transparent" \
+  data-navigation="%IF{"'%NATSKIN_BANNERSLIDESHOWNAVIGATIONENABLED{default="off"}%'!='off'" then="true" else="false"}%"  \
+  data-pagination="%IF{"'%NATSKIN_BANNERSLIDESHOWPAGINATION{default="off"}%'!='off'" then="true" else="false"}%"  \
+  data-pagination-type="%NATSKIN_BANNERSLIDESHOWPAGINATION{default=""}%">
+%TMPL:P{
+  "banner::content::%NATSKIN_BANNERCONTENT{default="attachments"}%"
+}%</div></div>%JQREQUIRE{"swiper"}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%%TMPL:END%
+
+%TMPL:DEF{"banner::content"}%<noautolink><div class="natBannerContents natParallax %NATSKIN_BANNERTEXTALIGN{default=""}%" data-distance="1" data-direction="up">
+<div class="natBannerTextEffect %IF{"'%NATSKIN_BANNERTEXTEFFECT{default="off"}%'!='off'" then="jqAnimateCSS"}%" data-effect="%NATSKIN_BANNERTEXTEFFECT{default=""}%" >
+%TMPL:P{
+  "banner::content::%NATSKIN_BANNERCONTENT{default="off"}%"
+}%<!-- -->
+</div>
+</div></noautolink>%TMPL:END%
+
+%TMPL:DEF{"banner::content::title"}%<div class='natBannerTitle'>
+%GETTOPICTITLE{translate="on"}%
+</div>
+<div class='natBannerSubtitle'>
+%TRANSLATE{"%NATSKIN_BANNERSUBTITLE{default="$percntFORMFIELD{\"Summary\"}$percnt"}%"}%<!-- -->
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::content::text"}%<div class='natBannerTitle'>
+%NATSKIN_BANNERTEXT{default=""}%<!-- -->
+</div>%TMPL:END%
+
+%TMPL:DEF{"banner::content::topic"}%%INCLUDE{
+  "%NATSKIN_BANNERTOPIC{default="%WEB%.%TOPIC%"}%" 
+  section="%NATSKIN_BANNERSECTION{default=""}%" 
+  warn="off"
+}%%TMPL:END%
+
+%TMPL:DEF{"banner::content::attachments"}%%ATTACHMENTS{
+  topic="%NATSKIN_BANNERSLIDESHOWTOPIC{default="%WEB%.%TOPIC%"}%"
+  name="\.(%TMPL:P{"image::exts"}%)$"
+  warn="off" 
+  header="<div class='swiper-wrapper'>"
+  format="<div class='swiper-slide' style='background-image:url($percntENCODE{\"$url\"}$percnt)'></div>"
+  footer="</div>"
+  attr="%IF{"'%NATSKIN_BANNERATTACHMENTS{default=""}%'=''" then="^[^h]*$"}%"
+  sort="%NATSKIN_BANNERATTACHMENTS{default="random"}%"
+}%%TMPL:END%
+
+%TMPL:DEF{"banner::style"}%%IF{"'%NATSKIN_BANNERCSSENABLED{default="off"}%'='on'"
+  then="$percntADDTOZONE{\"skincss\" 
+    id=\"BANNERCSS\"
+    requires=\"NATSKIN\"
+    text=\"<style>$dollarpercntNATSKIN_BANNERCSS{default=\\"\\"}$dollarpercnt</style>\"
+  }$percnt"
+}%%TMPL:P{"banner::cssvars"}%%TMPL:END%
+
+%TMPL:DEF{"banner::javascript"}%%TMPL:P{"banner::javascript::texteffect"}%%TMPL:P{"banner::javascript::parallax"}%%TMPL:END%
 
 %TMPL:DEF{"banner::javascript::editor"}%%IF{
   "'%WEB%.%TOPIC%' allows 'change'"
   then="$percntADDTOZONE{\"script\" 
           id=\"BANNEREDITOR\" 
-          requires=\"JQUERYPLUGIN::LIVEQUERY\" 
-          text=\"<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/bannerEditor.js'></script>\"
+          text=\"<script src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/build/bannerEditor.js'></script>\"
+          requires=\"JQUERYPLUGIN\"
         }$percnt"
 }%%TMPL:END%
 
 %TMPL:DEF{"banner::javascript::trianglify"}%%ADDTOZONE{"script" 
   id="TRIANGLIFY"
-  requires="JQUERYPLUGIN::LIVEQUERY" 
-  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/trianglify.js'></script>
-<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/trianglify.init.js'></script>"
+  requires="JQUERYPLUGIN"
+  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/build/trianglify.js'></script>"
 }%%TMPL:END%
 
 %TMPL:DEF{"banner::javascript::geopattern"}%%ADDTOZONE{"script" 
   id="GEOPATTERN"
-  requires="JQUERYPLUGIN::LIVEQUERY" 
-  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/geopattern.js'></script>
-<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/geopattern.init.js'></script>"
+  requires="JQUERYPLUGIN"
+  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/build/geopattern.js'></script>"
 }%%TMPL:END%
 
 %TMPL:DEF{"banner::javascript::particles"}%%IF{"'%NATSKIN_BANNERPARTICLESENABLED{default="off"}%'='on'"
   then="$percntADDTOZONE{\"script\" 
     id=\"PARTICLEJS\"
-    requires=\"JQUERYPLUGIN::LIVEQUERY\" 
-    text=\"<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/particles.js'></script>
-	  <script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/particles.init.js'></script>\"
+    requires=\"JQUERYPLUGIN\"
+    text=\"<script src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/build/particles.js'></script>\"
   }$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"banner::javascript::parallax"}%%IF{"'%NATSKIN_BANNERPARALLAXENABLED{default="off"}%'='on'"
+  then="$percntADDTOZONE{\"script\" 
+    id=\"PARALLAXJS\"
+    requires=\"JQUERYPLUGIN\"
+    text=\"<script src='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/build/parallax.js'></script>\"
+  }$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"banner::javascript::texteffect"}%%IF{
+  "'%NATSKIN_BANNERTEXTEFFECT{default="off"}%'!='off'" 
+  then="$percntJQREQUIRE{\"animate\"}$percnt"
 }%%TMPL:END%

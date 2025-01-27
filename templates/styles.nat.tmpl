@@ -1,23 +1,21 @@
-%TMPL:DEF{"defaultstyles"}%%ADDTOZONE{
-  "head" 
-  id="TOPICCREATOR"
-  text="<link rel='stylesheet' href='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/topiccreator.css' media='all' />"
-}%
+%TMPL:DEF{"defaultstyles"}%%{}%
+%TMPL:P{"print::styles"}%%TMPL:P{"preferences::styles"}%
 %RENDERZONE{"head"}%
 %RENDERZONE{"skincss"}%
-%TMPL:P{"preferences::styles"}%%TMPL:END%
+%TMPL:END%
+
+%TMPL:DEF{"print::styles"}%%ADDTOZONE{
+  "skincss"
+  id="NATSKIN::PRINT::STYLES"
+  requires="NATSKIN"
+  text="<link rel='stylesheet' href='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/build/print.css' type='text/css' media='print' />"
+}%%TMPL:END%
 
 %TMPL:DEF{"preferences::styles"}%%ADDTOZONE{"skincss"
   id="NATSKIN::PREFERENCES::STYLES"
   requires="NATSKIN"
-  text="%IF{"defined NATSKIN_LOGINBANNER"
-    then="<style text='text/css'>
-	    .natLoginBody { 
-	      background-image:linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.1) 40%,rgba(0,0,0,0) 60%,rgba(0,0,0,0.65) 100%), url(%NATSKIN_LOGINBANNER%); 
-	    }
-	  </style>"
-  }%%IF{"defined NATSKIN_SIDEBARWIDTH" 
-    then="<style type='text/css'>
+  text="%IF{"defined NATSKIN_SIDEBARWIDTH" 
+    then="<style media='screen'>
     .natSideBar { 
       width:%NATSKIN_SIDEBARWIDTH%; 
     }
