@@ -169,7 +169,7 @@ msgstr "Достъпът отказан"
 msgid "Access denied"
 msgstr "Достъпът отказан"
 
-#: templates/user.nat.tmpl:166
+#: templates/user.nat.tmpl:187
 msgid "Account has been removed"
 msgstr ""
 
@@ -291,7 +291,7 @@ msgstr "Ако желаете да създадете страницата"
 msgid "Are you sure that you want to delete %1?"
 msgstr "Ако желаете да създадете страницата"
 
-#: templates/user.nat.tmpl:145
+#: templates/user.nat.tmpl:166
 #, fuzzy
 msgid "Are you sure that you want to remove this user account:"
 msgstr "Ако желаете да създадете страницата"
@@ -363,23 +363,13 @@ msgstr "Обратно в страницата"
 msgid "Background Color"
 msgstr ""
 
-#: templates/backlinksallwebs.nat.tmpl:4 templates/backlinksallwebs.nat.tmpl:6
-#: templates/backlinksweb.nat.tmpl:5 templates/foswiki.nat.tmpl:101
+#: templates/foswiki.nat.tmpl:101
 msgid "Backlinks"
 msgstr "Обратни връзки"
 
 #: templates/backlinks.nat.tmpl:5
 #, fuzzy
 msgid "Backlinks to %1"
-msgstr "Обратни връзки към %1 в %2 Раздел"
-
-#: templates/backlinksallwebs.nat.tmpl:5
-msgid "Backlinks to %1 in all Webs"
-msgstr "Обратни връзки към %1 във всички раздели"
-
-#: templates/backlinksweb.nat.tmpl:6
-#, fuzzy
-msgid "Backlinks to %1 in the %2 web"
 msgstr "Обратни връзки към %1 в %2 Раздел"
 
 #: templates/validate.nat.tmpl:4
@@ -452,7 +442,7 @@ msgstr "невалиден адрес за електронна поща"
 #: templates/actionform.nat.tmpl:15 templates/changeform.nat.tmpl:39
 #: templates/copytopic.nat.tmpl:81 templates/email.nat.tmpl:31
 #: templates/languageselector.nat.tmpl:22 templates/loginbase.nat.tmpl:61
-#: templates/managetags.nat.tmpl:32 templates/messages.nat.tmpl:274
+#: templates/managetags.nat.tmpl:31 templates/messages.nat.tmpl:274
 #: templates/moveattachment.nat.tmpl:65 templates/newweb.nat.tmpl:28
 #: templates/newweb.nat.tmpl:34 templates/oopsleaseconflict.nat.tmpl:50
 #: templates/print.nat.tmpl:28 templates/renamebase.nat.tmpl:19
@@ -630,11 +620,10 @@ msgstr "Действие"
 msgid "Click to like/unlike this topic"
 msgstr "Създаване на тази Страница"
 
-#: templates/backlinks.nat.tmpl:24 templates/backlinksallwebs.nat.tmpl:18
-#: templates/backlinksweb.nat.tmpl:13 templates/childtopics.nat.tmpl:16
+#: templates/backlinks.nat.tmpl:24 templates/childtopics.nat.tmpl:16
 #: templates/childtopics.nat.tmpl:32 templates/contributors.nat.tmpl:5
 #: templates/foswiki.nat.tmpl:252 templates/history.nat.tmpl:51
-#: templates/oopsmore.nat.tmpl:14 templates/topbar.matter.nat.tmpl:16
+#: templates/oopsmore.nat.tmpl:9 templates/topbar.matter.nat.tmpl:16
 msgid "Close"
 msgstr "Затваряне"
 
@@ -853,7 +842,7 @@ msgid "Dear %1"
 msgstr ""
 
 #: templates/languageselector.nat.tmpl:14 templates/newtopic.nat.tmpl:100
-#: templates/newtopic.nat.tmpl:241 templates/newtopic.nat.tmpl:56
+#: templates/newtopic.nat.tmpl:243 templates/newtopic.nat.tmpl:56
 #: templates/newtopic.old.tmpl:116
 #, fuzzy
 msgid "Default"
@@ -864,7 +853,7 @@ msgstr "Шаблон по подразбиране"
 msgid "Default topic as defined in WebTopicEditTemplate"
 msgstr "Формата трябва да е дефинирана в страницата %1"
 
-#: templates/newtopic.nat.tmpl:211 templates/newtopic.nat.tmpl:58
+#: templates/newtopic.nat.tmpl:213 templates/newtopic.nat.tmpl:58
 #, fuzzy
 msgid "Default wiki content"
 msgstr "Изтриване на страница"
@@ -909,6 +898,10 @@ msgstr "Изтриване на притурка"
 #, fuzzy
 msgid "Deleting topics"
 msgstr "Изтриване на страница"
+
+#: templates/oopsmore.nat.tmpl:5
+msgid "Deprecated use of template %1"
+msgstr ""
 
 #: templates/rename.nat.tmpl:24 templates/translatetopic.nat.tmpl:141
 msgid "Derive from title"
@@ -1311,11 +1304,6 @@ msgstr ""
 msgid "Form-based input"
 msgstr ""
 
-#: templates/edit.nat.tmpl:416
-#, fuzzy
-msgid "Format"
-msgstr "*Как да форматирате*"
-
 #: data/System/SiteMenu.txt:61
 msgid "Foswiki FAQ"
 msgstr ""
@@ -1344,7 +1332,7 @@ msgstr ""
 msgid "Frequently Asked Questions"
 msgstr ""
 
-#: templates/managetags.nat.tmpl:17 templates/renamebase.nat.tmpl:52
+#: templates/managetags.nat.tmpl:16 templates/renamebase.nat.tmpl:52
 msgid "From"
 msgstr ""
 
@@ -1776,7 +1764,7 @@ msgstr ""
 msgid "Missing or illegal web name"
 msgstr ""
 
-#: templates/edit.nat.tmpl:444
+#: templates/edit.nat.tmpl:428
 #, fuzzy
 msgid "Moderation"
 msgstr "Уведомяване"
@@ -1927,7 +1915,7 @@ msgstr "Версии"
 #: templates/renametopicarchive.nat.tmpl:13
 #: templates/renametopicdelete.nat.tmpl:14
 #: templates/renamewebdelete.nat.tmpl:15 templates/restoretopic.nat.tmpl:14
-#: templates/user.nat.tmpl:155
+#: templates/user.nat.tmpl:176
 msgid "No, thanks"
 msgstr ""
 
@@ -2336,6 +2324,10 @@ msgstr ""
 msgid "Print"
 msgstr ""
 
+#: templates/managetags.nat.tmpl:12
+msgid "Processing ..."
+msgstr ""
+
 #: data/System/SiteMenu.txt:62
 msgid "Professional help"
 msgstr ""
@@ -2439,7 +2431,7 @@ msgid "Remove user"
 msgstr "Добавяне на ред"
 
 #: data/System/NatSkinRemoveUserViewTemplate.txt:47
-#: templates/foswiki.nat.tmpl:259 templates/user.nat.tmpl:135
+#: templates/foswiki.nat.tmpl:259 templates/user.nat.tmpl:156
 msgid "Remove user account"
 msgstr ""
 
@@ -2448,7 +2440,7 @@ msgstr ""
 msgid "Remove user account?"
 msgstr "Възстановяване"
 
-#: templates/user.nat.tmpl:139
+#: templates/user.nat.tmpl:160
 msgid "Removing ..."
 msgstr ""
 
@@ -2482,7 +2474,7 @@ msgstr "Добре дошли в раздел %1"
 msgid "Rename this web"
 msgstr "Добре дошли в раздел %1"
 
-#: templates/managetags.nat.tmpl:10
+#: templates/managetags.nat.tmpl:9
 #, fuzzy
 msgid "Rename, merge or delete tags"
 msgstr "Преименувай, премести или изтрий този раздел"
@@ -2617,24 +2609,6 @@ msgstr ""
 msgid "Search"
 msgstr "Търсене"
 
-#: templates/backlinksallwebs.nat.tmpl:21
-#, fuzzy
-msgid "Search %1 web only"
-msgstr "Търсене само в раздел %1"
-
-#: templates/backlinksallwebs.nat.tmpl:24
-#, fuzzy
-msgid "Search %1 web only for topics that link to here"
-msgstr "Търсене в Раздел %1 за страници, които сочат насам"
-
-#: templates/backlinksweb.nat.tmpl:16
-msgid "Search all webs"
-msgstr "Търсене във всички раздели"
-
-#: templates/backlinksweb.nat.tmpl:19
-msgid "Search all webs for topics that link to here"
-msgstr "Търсене във всички раздели за връзки, които сочат насам"
-
 #: templates/renamebase.nat.tmpl:21 templates/renamedelete.nat.tmpl:16
 #: templates/renamewebbase.nat.tmpl:98
 #, fuzzy
@@ -2713,7 +2687,7 @@ msgstr ""
 msgid "Select language"
 msgstr "Смяна на език"
 
-#: templates/managetags.nat.tmpl:21
+#: templates/managetags.nat.tmpl:20
 msgid "Select one or more existing tags to be renamed."
 msgstr ""
 
@@ -2721,7 +2695,7 @@ msgstr ""
 msgid "Select the [[%1.WebHome][%1]] web to delete the topic."
 msgstr ""
 
-#: templates/managetags.nat.tmpl:28
+#: templates/managetags.nat.tmpl:27
 msgid ""
 "Select the tag to rename the above tags to. Leaving this empty will delete "
 "them."
@@ -2732,7 +2706,7 @@ msgstr ""
 msgid "Select translation in %1"
 msgstr "Избери родителска страница:"
 
-#: templates/newtopic.nat.tmpl:246 templates/newtopic.old.tmpl:128
+#: templates/newtopic.nat.tmpl:248 templates/newtopic.old.tmpl:128
 msgid "Select which template to use while creating this topic."
 msgstr ""
 
@@ -2881,7 +2855,7 @@ msgstr ""
 msgid "Specify one or more space separated emails."
 msgstr ""
 
-#: templates/edit.nat.tmpl:432
+#: templates/edit.nat.tmpl:416
 msgid "State"
 msgstr ""
 
@@ -2900,7 +2874,7 @@ msgstr ""
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:121
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:66
 #: data/System/WebCreateNewWeb.txt:42 templates/languageselector.nat.tmpl:21
-#: templates/managetags.nat.tmpl:31 templates/messages.nat.tmpl:110
+#: templates/managetags.nat.tmpl:30 templates/messages.nat.tmpl:110
 #: templates/messages.nat.tmpl:194 templates/newweb.nat.tmpl:27
 #: templates/topbar.customato.nat.tmpl:168
 #: templates/translatetopic.nat.tmpl:192
@@ -2916,7 +2890,7 @@ msgstr "Създаване на тази Страница"
 msgid "Subscribe / Unsubscribe in:"
 msgstr ""
 
-#: templates/user.nat.tmpl:165
+#: templates/user.nat.tmpl:186
 msgid "Success"
 msgstr ""
 
@@ -2946,7 +2920,7 @@ msgstr ""
 msgid "Target language"
 msgstr "Смяна на език"
 
-#: templates/newtopic.nat.tmpl:252 templates/newtopic.old.tmpl:112
+#: templates/newtopic.nat.tmpl:254 templates/newtopic.old.tmpl:112
 #, fuzzy
 msgid "Template"
 msgstr "Използване на шаблон"
@@ -3124,14 +3098,14 @@ msgstr ""
 "Помощ относно <a target='ManagingTopics' class='foswikiPopUp' href='%1' "
 "rel='nofollow'>Преименуване и преместване на страници</a>."
 
-#: templates/edit.matter.nat.tmpl:152 templates/newtopic.nat.tmpl:180
+#: templates/edit.matter.nat.tmpl:152 templates/newtopic.nat.tmpl:181
 #: templates/newtopic.old.tmpl:57 templates/renamebase.nat.tmpl:71
 #: templates/translatetopic.nat.tmpl:135
 #, fuzzy
 msgid "Title"
 msgstr "Заглавие на страницата"
 
-#: templates/managetags.nat.tmpl:25
+#: templates/managetags.nat.tmpl:24
 msgid "To"
 msgstr ""
 
@@ -3181,9 +3155,8 @@ msgstr ""
 msgid "Toggle sidebar navigation"
 msgstr "Версия"
 
-#: data/System/SiteTopicActions.txt:22 templates/oopsmore.nat.tmpl:3
-#: templates/oopsmore.nat.tmpl:4 templates/oopsmore.nat.tmpl:6
-#: templates/sidebar.nat.tmpl:54 templates/topbar.customato.nat.tmpl:74
+#: data/System/SiteTopicActions.txt:22 templates/sidebar.nat.tmpl:54
+#: templates/topbar.customato.nat.tmpl:74
 msgid "Tools"
 msgstr ""
 
@@ -3538,7 +3511,7 @@ msgstr "Създаване на тази Страница"
 msgid "View wiki markup"
 msgstr ""
 
-#: templates/edit.nat.tmpl:456
+#: templates/edit.nat.tmpl:440
 msgid "Voting"
 msgstr ""
 
@@ -3632,7 +3605,7 @@ msgstr "(изтриване)"
 msgid "Yes, delete"
 msgstr "(изтриване)"
 
-#: templates/user.nat.tmpl:154
+#: templates/user.nat.tmpl:175
 #, fuzzy
 msgid "Yes, remove"
 msgstr "(изтриване)"
@@ -3826,11 +3799,6 @@ msgstr ""
 msgid "backgrounds"
 msgstr "Обратни връзки"
 
-#: templates/backlinksweb.nat.tmpl:4
-#, fuzzy
-msgid "backlinks"
-msgstr "Обратни връзки"
-
 #: templates/translatetopic.nat.tmpl:31
 #, fuzzy
 msgid "base language"
@@ -3861,7 +3829,7 @@ msgstr ""
 msgid "changes"
 msgstr "(промени)"
 
-#: templates/edit.nat.tmpl:440
+#: templates/edit.nat.tmpl:424
 #, fuzzy
 msgid "closed"
 msgstr "Затваряне"
@@ -3918,9 +3886,8 @@ msgstr ""
 #: templates/edit.nat.tmpl:317 templates/edit.nat.tmpl:331
 #: templates/edit.nat.tmpl:345 templates/edit.nat.tmpl:359
 #: templates/edit.nat.tmpl:373 templates/edit.nat.tmpl:387
-#: templates/edit.nat.tmpl:419 templates/edit.nat.tmpl:434
-#: templates/edit.nat.tmpl:446 templates/edit.nat.tmpl:458
-#: templates/edit.nat.tmpl:96
+#: templates/edit.nat.tmpl:418 templates/edit.nat.tmpl:430
+#: templates/edit.nat.tmpl:442 templates/edit.nat.tmpl:96
 #, fuzzy
 msgid "default"
 msgstr "Шаблон по подразбиране"
@@ -3996,7 +3963,7 @@ msgstr ""
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:144
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:169
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:171
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:188
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:189
 #, fuzzy
 msgid "group"
 msgstr "Групи"
@@ -4099,8 +4066,8 @@ msgstr ""
 #: templates/edit.nat.tmpl:309 templates/edit.nat.tmpl:323
 #: templates/edit.nat.tmpl:337 templates/edit.nat.tmpl:351
 #: templates/edit.nat.tmpl:365 templates/edit.nat.tmpl:379
-#: templates/edit.nat.tmpl:393 templates/edit.nat.tmpl:452
-#: templates/edit.nat.tmpl:464
+#: templates/edit.nat.tmpl:393 templates/edit.nat.tmpl:436
+#: templates/edit.nat.tmpl:448
 msgid "off"
 msgstr ""
 
@@ -4116,7 +4083,7 @@ msgstr ""
 #: templates/edit.nat.tmpl:320 templates/edit.nat.tmpl:334
 #: templates/edit.nat.tmpl:348 templates/edit.nat.tmpl:362
 #: templates/edit.nat.tmpl:376 templates/edit.nat.tmpl:390
-#: templates/edit.nat.tmpl:449 templates/edit.nat.tmpl:461
+#: templates/edit.nat.tmpl:433 templates/edit.nat.tmpl:445
 msgid "on"
 msgstr ""
 
@@ -4125,7 +4092,7 @@ msgstr ""
 msgid "oops"
 msgstr "(опаа)"
 
-#: templates/edit.nat.tmpl:437
+#: templates/edit.nat.tmpl:421
 msgid "open"
 msgstr ""
 
@@ -4283,6 +4250,35 @@ msgstr ""
 #: templates/edit.matter.nat.tmpl:114
 msgid "video"
 msgstr ""
+
+#~ msgid "Backlinks to %1 in all Webs"
+#~ msgstr "Обратни връзки към %1 във всички раздели"
+
+#, fuzzy
+#~ msgid "Backlinks to %1 in the %2 web"
+#~ msgstr "Обратни връзки към %1 в %2 Раздел"
+
+#, fuzzy
+#~ msgid "Format"
+#~ msgstr "*Как да форматирате*"
+
+#, fuzzy
+#~ msgid "Search %1 web only"
+#~ msgstr "Търсене само в раздел %1"
+
+#, fuzzy
+#~ msgid "Search %1 web only for topics that link to here"
+#~ msgstr "Търсене в Раздел %1 за страници, които сочат насам"
+
+#~ msgid "Search all webs"
+#~ msgstr "Търсене във всички раздели"
+
+#~ msgid "Search all webs for topics that link to here"
+#~ msgstr "Търсене във всички раздели за връзки, които сочат насам"
+
+#, fuzzy
+#~ msgid "backlinks"
+#~ msgstr "Обратни връзки"
 
 #, fuzzy
 #~ msgid "Open in separate window"

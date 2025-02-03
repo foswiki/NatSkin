@@ -25,6 +25,7 @@ MATTERSTYLE_SOURCE=\
   $(SRC_DIR)/base.uncompressed.css \
   $(SRC_DIR)/jquery-ui.uncompressed.css \
   $(SRC_DIR)/forms.uncompressed.css \
+  $(SRC_DIR)/comments.uncompressed.css \
   $(SRC_DIR)/vars.uncompressed.css 
 
 -include ../NatSkin/Makefile.include

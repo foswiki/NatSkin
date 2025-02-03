@@ -32,6 +32,7 @@
 
   --comments-background: var(--color-gray-9);
   --comments-foreground: var(--color-text);
+  --comments-background-pre: var(--color-gray-7);
 
   --font-size-banner: var(--font-size-h1);
   --line-height-banner: var(--line-height-h1);
@@ -179,6 +180,7 @@
   --color-disabled-foreground: var(--color-gray);
 
   --comments-background: var(--color-alpha-2);
+  --comments-background-pre: var(--pre-background);
 
   --color-selected-foreground: #599e00;
   --color-selected-background: #3a452b;

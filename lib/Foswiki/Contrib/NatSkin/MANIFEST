@@ -111,7 +111,6 @@ pub/System/MatterTheme/build/bannerEditor.js 0644
 pub/System/MatterTheme/build/bannerEditor.js.gz 0644
 pub/System/MatterTheme/build/bannerSettings.js 0644
 pub/System/MatterTheme/build/bannerSettings.js.gz 0644
-pub/System/MatterTheme/build/geopattern.init.js.gz 0644
 pub/System/MatterTheme/build/geopattern.js 0644
 pub/System/MatterTheme/build/geopattern.js.gz 0644
 pub/System/MatterTheme/build/matter.css 0644
@@ -119,14 +118,12 @@ pub/System/MatterTheme/build/matter.css.gz 0644
 pub/System/MatterTheme/build/matter.uncompressed.css 0644
 pub/System/MatterTheme/build/parallax.js 0644
 pub/System/MatterTheme/build/parallax.js.gz 0644
-pub/System/MatterTheme/build/particles.init.js.gz 0644
 pub/System/MatterTheme/build/particles.js 0644
 pub/System/MatterTheme/build/particles.js.gz 0644
 pub/System/MatterTheme/build/profile.css 0644
 pub/System/MatterTheme/build/profile.css.gz 0644
 pub/System/MatterTheme/build/topmenuVariation.css 0644
 pub/System/MatterTheme/build/topmenuVariation.css.gz 0644
-pub/System/MatterTheme/build/trianglify.init.js.gz 0644
 pub/System/MatterTheme/build/trianglify.js 0644
 pub/System/MatterTheme/build/trianglify.js.gz 0644
 pub/System/MatterTheme/images/bubbles.png 0644
@@ -141,6 +138,7 @@ pub/System/MatterTheme/Makefile 0644
 pub/System/MatterTheme/src/bannerEditor.uncompressed.js 0644
 pub/System/MatterTheme/src/bannerSettings.uncompressed.js 0644
 pub/System/MatterTheme/src/base.uncompressed.css 0644
+pub/System/MatterTheme/src/comments.uncompressed.css 0644
 pub/System/MatterTheme/src/forms.uncompressed.css 0644
 pub/System/MatterTheme/src/geopattern.init.uncompressed.js 0644
 pub/System/MatterTheme/src/jquery-ui.uncompressed.css 0644

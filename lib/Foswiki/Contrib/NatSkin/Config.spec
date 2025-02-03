@@ -1,6 +1,6 @@
 # ---+ Extensions
 # ---++ NatSkin
-# ---+++ Themes
+# ---+++ NatSkin Themes
 
 # **PERL LABEL="Matter" **
 $Foswiki::cfg{NatSkin}{Themes}{Matter} = {
@@ -14,7 +14,7 @@ $Foswiki::cfg{NatSkin}{Themes}{Matter} = {
   }
 };
 
-# ---+++ Deprecated Themes
+# ---+++ Deprecated NatSkin Themes
 # **PERL LABEL="JazzyNote" **
 $Foswiki::cfg{NatSkin}{Themes}{JazzyNote} = {
   baseUrl => '%PUBURLPATH%/%SYSTEMWEB%/JazzyNoteTheme',

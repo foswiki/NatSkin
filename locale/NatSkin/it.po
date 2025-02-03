@@ -160,7 +160,7 @@ msgstr "Accesso negato"
 msgid "Access denied"
 msgstr "Accesso negato"
 
-#: templates/user.nat.tmpl:166
+#: templates/user.nat.tmpl:187
 msgid "Account has been removed"
 msgstr ""
 
@@ -275,7 +275,7 @@ msgstr "Se vuoi creare la pagina"
 msgid "Are you sure that you want to delete %1?"
 msgstr "Se vuoi creare la pagina"
 
-#: templates/user.nat.tmpl:145
+#: templates/user.nat.tmpl:166
 #, fuzzy
 msgid "Are you sure that you want to remove this user account:"
 msgstr "Se vuoi creare la pagina"
@@ -345,22 +345,13 @@ msgstr "Torna alla modalità di visualizzazione"
 msgid "Background Color"
 msgstr ""
 
-#: templates/backlinksallwebs.nat.tmpl:4 templates/backlinksallwebs.nat.tmpl:6
-#: templates/backlinksweb.nat.tmpl:5 templates/foswiki.nat.tmpl:101
+#: templates/foswiki.nat.tmpl:101
 msgid "Backlinks"
 msgstr "Collegamenti alla pagina"
 
 #: templates/backlinks.nat.tmpl:5
 msgid "Backlinks to %1"
 msgstr "Collegamenti a %1"
-
-#: templates/backlinksallwebs.nat.tmpl:5
-msgid "Backlinks to %1 in all Webs"
-msgstr "Collegamenti a %1 in tutti i Webs"
-
-#: templates/backlinksweb.nat.tmpl:6
-msgid "Backlinks to %1 in the %2 web"
-msgstr "Collegamenti a %1 nel Web %2"
 
 #: templates/validate.nat.tmpl:4
 msgid "Bad request"
@@ -431,7 +422,7 @@ msgstr "Non è possibile ottenere un indirizzo e-mail per %1"
 #: templates/actionform.nat.tmpl:15 templates/changeform.nat.tmpl:39
 #: templates/copytopic.nat.tmpl:81 templates/email.nat.tmpl:31
 #: templates/languageselector.nat.tmpl:22 templates/loginbase.nat.tmpl:61
-#: templates/managetags.nat.tmpl:32 templates/messages.nat.tmpl:274
+#: templates/managetags.nat.tmpl:31 templates/messages.nat.tmpl:274
 #: templates/moveattachment.nat.tmpl:65 templates/newweb.nat.tmpl:28
 #: templates/newweb.nat.tmpl:34 templates/oopsleaseconflict.nat.tmpl:50
 #: templates/print.nat.tmpl:28 templates/renamebase.nat.tmpl:19
@@ -597,11 +588,10 @@ msgstr "Cancella la selezione"
 msgid "Click to like/unlike this topic"
 msgstr "Clicca se ti piace/non piace questa pagina"
 
-#: templates/backlinks.nat.tmpl:24 templates/backlinksallwebs.nat.tmpl:18
-#: templates/backlinksweb.nat.tmpl:13 templates/childtopics.nat.tmpl:16
+#: templates/backlinks.nat.tmpl:24 templates/childtopics.nat.tmpl:16
 #: templates/childtopics.nat.tmpl:32 templates/contributors.nat.tmpl:5
 #: templates/foswiki.nat.tmpl:252 templates/history.nat.tmpl:51
-#: templates/oopsmore.nat.tmpl:14 templates/topbar.matter.nat.tmpl:16
+#: templates/oopsmore.nat.tmpl:9 templates/topbar.matter.nat.tmpl:16
 msgid "Close"
 msgstr "Chiudi"
 
@@ -809,7 +799,7 @@ msgid "Dear %1"
 msgstr ""
 
 #: templates/languageselector.nat.tmpl:14 templates/newtopic.nat.tmpl:100
-#: templates/newtopic.nat.tmpl:241 templates/newtopic.nat.tmpl:56
+#: templates/newtopic.nat.tmpl:243 templates/newtopic.nat.tmpl:56
 #: templates/newtopic.old.tmpl:116
 msgid "Default"
 msgstr "Predefinito"
@@ -818,7 +808,7 @@ msgstr "Predefinito"
 msgid "Default topic as defined in WebTopicEditTemplate"
 msgstr "Pagina predefinita così come definito in WebTopicEditTemplate"
 
-#: templates/newtopic.nat.tmpl:211 templates/newtopic.nat.tmpl:58
+#: templates/newtopic.nat.tmpl:213 templates/newtopic.nat.tmpl:58
 msgid "Default wiki content"
 msgstr "Contenuti wiki predefiniti"
 
@@ -858,6 +848,10 @@ msgstr "Elimina gli allegati"
 #: templates/renamesidebar.nat.tmpl:4
 msgid "Deleting topics"
 msgstr "Elimina le pagine"
+
+#: templates/oopsmore.nat.tmpl:5
+msgid "Deprecated use of template %1"
+msgstr ""
 
 #: templates/rename.nat.tmpl:24 templates/translatetopic.nat.tmpl:141
 msgid "Derive from title"
@@ -1228,10 +1222,6 @@ msgstr "Modulo"
 msgid "Form-based input"
 msgstr "Inserimento con modulo"
 
-#: templates/edit.nat.tmpl:416
-msgid "Format"
-msgstr "Formattazione"
-
 #: data/System/SiteMenu.txt:61
 msgid "Foswiki FAQ"
 msgstr "FAQ Foswiki"
@@ -1263,7 +1253,7 @@ msgstr "Francese"
 msgid "Frequently Asked Questions"
 msgstr "Domande frequenti"
 
-#: templates/managetags.nat.tmpl:17 templates/renamebase.nat.tmpl:52
+#: templates/managetags.nat.tmpl:16 templates/renamebase.nat.tmpl:52
 msgid "From"
 msgstr "Da"
 
@@ -1684,7 +1674,7 @@ msgstr "Campi mancanti =<span class='foswikiAlert'>**</span>="
 msgid "Missing or illegal web name"
 msgstr "Nome Web mancante o illegale"
 
-#: templates/edit.nat.tmpl:444
+#: templates/edit.nat.tmpl:428
 msgid "Moderation"
 msgstr "Moderazione"
 
@@ -1819,7 +1809,7 @@ msgstr "Nessun permesso"
 #: templates/renametopicarchive.nat.tmpl:13
 #: templates/renametopicdelete.nat.tmpl:14
 #: templates/renamewebdelete.nat.tmpl:15 templates/restoretopic.nat.tmpl:14
-#: templates/user.nat.tmpl:155
+#: templates/user.nat.tmpl:176
 msgid "No, thanks"
 msgstr "No grazie"
 
@@ -2212,6 +2202,11 @@ msgstr "Precedente"
 msgid "Print"
 msgstr "Stampa"
 
+#: templates/managetags.nat.tmpl:12
+#, fuzzy
+msgid "Processing ..."
+msgstr "Rimozione"
+
 #: data/System/SiteMenu.txt:62
 msgid "Professional help"
 msgstr "Aiuto professionale"
@@ -2310,7 +2305,7 @@ msgid "Remove user"
 msgstr "Rimuovi membri"
 
 #: data/System/NatSkinRemoveUserViewTemplate.txt:47
-#: templates/foswiki.nat.tmpl:259 templates/user.nat.tmpl:135
+#: templates/foswiki.nat.tmpl:259 templates/user.nat.tmpl:156
 #, fuzzy
 msgid "Remove user account"
 msgstr "Deriva dal titolo"
@@ -2320,7 +2315,7 @@ msgstr "Deriva dal titolo"
 msgid "Remove user account?"
 msgstr "Deriva dal titolo"
 
-#: templates/user.nat.tmpl:139
+#: templates/user.nat.tmpl:160
 #, fuzzy
 msgid "Removing ..."
 msgstr "Rimozione"
@@ -2353,7 +2348,7 @@ msgstr "Rinomina il web %1"
 msgid "Rename this web"
 msgstr "Rinomina il web %1"
 
-#: templates/managetags.nat.tmpl:10
+#: templates/managetags.nat.tmpl:9
 msgid "Rename, merge or delete tags"
 msgstr "Rinomina, fonde o cancella etichette"
 
@@ -2476,22 +2471,6 @@ msgstr ""
 msgid "Search"
 msgstr "Cerca"
 
-#: templates/backlinksallwebs.nat.tmpl:21
-msgid "Search %1 web only"
-msgstr "Cerca solo nel web %1"
-
-#: templates/backlinksallwebs.nat.tmpl:24
-msgid "Search %1 web only for topics that link to here"
-msgstr "Cerca nelle pagine del web %1 qui collegate"
-
-#: templates/backlinksweb.nat.tmpl:16
-msgid "Search all webs"
-msgstr "Cerca in tutti i Web"
-
-#: templates/backlinksweb.nat.tmpl:19
-msgid "Search all webs for topics that link to here"
-msgstr "Cerca in tutti i Web collegati qui"
-
 #: templates/renamebase.nat.tmpl:21 templates/renamedelete.nat.tmpl:16
 #: templates/renamewebbase.nat.tmpl:98
 msgid "Search for backlinks in all webs"
@@ -2565,7 +2544,7 @@ msgstr "Seleziona una traduzione esistente"
 msgid "Select language"
 msgstr "Seleziona la lingua"
 
-#: templates/managetags.nat.tmpl:21
+#: templates/managetags.nat.tmpl:20
 msgid "Select one or more existing tags to be renamed."
 msgstr "Selezionare una o più etichette esistenti per essere rinominato."
 
@@ -2573,7 +2552,7 @@ msgstr "Selezionare una o più etichette esistenti per essere rinominato."
 msgid "Select the [[%1.WebHome][%1]] web to delete the topic."
 msgstr "Seleziona il web [[%1.WebHome][%1]]  per eliminare la pagina."
 
-#: templates/managetags.nat.tmpl:28
+#: templates/managetags.nat.tmpl:27
 msgid ""
 "Select the tag to rename the above tags to. Leaving this empty will delete "
 "them."
@@ -2585,7 +2564,7 @@ msgstr ""
 msgid "Select translation in %1"
 msgstr "Seleziona la traduzione in %1"
 
-#: templates/newtopic.nat.tmpl:246 templates/newtopic.old.tmpl:128
+#: templates/newtopic.nat.tmpl:248 templates/newtopic.old.tmpl:128
 msgid "Select which template to use while creating this topic."
 msgstr ""
 "Selezionare il modello da utilizzare durante la creazione di questa pagina."
@@ -2734,7 +2713,7 @@ msgid "Specify one or more space separated emails."
 msgstr ""
 "Specificare uno o più indirizzi di posta elettronica, separati da spazio."
 
-#: templates/edit.nat.tmpl:432
+#: templates/edit.nat.tmpl:416
 msgid "State"
 msgstr "Stato"
 
@@ -2753,7 +2732,7 @@ msgstr ""
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:121
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:66
 #: data/System/WebCreateNewWeb.txt:42 templates/languageselector.nat.tmpl:21
-#: templates/managetags.nat.tmpl:31 templates/messages.nat.tmpl:110
+#: templates/managetags.nat.tmpl:30 templates/messages.nat.tmpl:110
 #: templates/messages.nat.tmpl:194 templates/newweb.nat.tmpl:27
 #: templates/topbar.customato.nat.tmpl:168
 #: templates/translatetopic.nat.tmpl:192
@@ -2769,7 +2748,7 @@ msgstr "Cancella abbonamento"
 msgid "Subscribe / Unsubscribe in:"
 msgstr "Sottoscrivi / Cancella in:"
 
-#: templates/user.nat.tmpl:165
+#: templates/user.nat.tmpl:186
 msgid "Success"
 msgstr ""
 
@@ -2798,7 +2777,7 @@ msgstr "Etichette"
 msgid "Target language"
 msgstr "Cambia la lingua"
 
-#: templates/newtopic.nat.tmpl:252 templates/newtopic.old.tmpl:112
+#: templates/newtopic.nat.tmpl:254 templates/newtopic.old.tmpl:112
 msgid "Template"
 msgstr "Modello"
 
@@ -2981,13 +2960,13 @@ msgid ""
 msgstr ""
 "Aiuto su <a href='%1' target='_blank'>Rinominare e spostare pagine</a>."
 
-#: templates/edit.matter.nat.tmpl:152 templates/newtopic.nat.tmpl:180
+#: templates/edit.matter.nat.tmpl:152 templates/newtopic.nat.tmpl:181
 #: templates/newtopic.old.tmpl:57 templates/renamebase.nat.tmpl:71
 #: templates/translatetopic.nat.tmpl:135
 msgid "Title"
 msgstr "Titolo"
 
-#: templates/managetags.nat.tmpl:25
+#: templates/managetags.nat.tmpl:24
 msgid "To"
 msgstr "A"
 
@@ -3033,9 +3012,8 @@ msgstr ""
 msgid "Toggle sidebar navigation"
 msgstr "Aggiungi il link della pagina %1 nella mia barra laterale"
 
-#: data/System/SiteTopicActions.txt:22 templates/oopsmore.nat.tmpl:3
-#: templates/oopsmore.nat.tmpl:4 templates/oopsmore.nat.tmpl:6
-#: templates/sidebar.nat.tmpl:54 templates/topbar.customato.nat.tmpl:74
+#: data/System/SiteTopicActions.txt:22 templates/sidebar.nat.tmpl:54
+#: templates/topbar.customato.nat.tmpl:74
 msgid "Tools"
 msgstr "Strumenti"
 
@@ -3364,7 +3342,7 @@ msgstr "Mostra il testo Wiki di questa pagina"
 msgid "View wiki markup"
 msgstr "Visualizza markup wiki"
 
-#: templates/edit.nat.tmpl:456
+#: templates/edit.nat.tmpl:440
 msgid "Voting"
 msgstr "Voto"
 
@@ -3456,7 +3434,7 @@ msgstr "Sì, cancella"
 msgid "Yes, delete"
 msgstr "Sì, cancella"
 
-#: templates/user.nat.tmpl:154
+#: templates/user.nat.tmpl:175
 #, fuzzy
 msgid "Yes, remove"
 msgstr "Sì, cancella"
@@ -3664,10 +3642,6 @@ msgstr "auto"
 msgid "backgrounds"
 msgstr "collegamenti"
 
-#: templates/backlinksweb.nat.tmpl:4
-msgid "backlinks"
-msgstr "collegamenti"
-
 #: templates/translatetopic.nat.tmpl:31
 msgid "base language"
 msgstr "lingua di base"
@@ -3696,7 +3670,7 @@ msgstr ""
 msgid "changes"
 msgstr "variazioni"
 
-#: templates/edit.nat.tmpl:440
+#: templates/edit.nat.tmpl:424
 msgid "closed"
 msgstr "chiuso"
 
@@ -3752,9 +3726,8 @@ msgstr "debug"
 #: templates/edit.nat.tmpl:317 templates/edit.nat.tmpl:331
 #: templates/edit.nat.tmpl:345 templates/edit.nat.tmpl:359
 #: templates/edit.nat.tmpl:373 templates/edit.nat.tmpl:387
-#: templates/edit.nat.tmpl:419 templates/edit.nat.tmpl:434
-#: templates/edit.nat.tmpl:446 templates/edit.nat.tmpl:458
-#: templates/edit.nat.tmpl:96
+#: templates/edit.nat.tmpl:418 templates/edit.nat.tmpl:430
+#: templates/edit.nat.tmpl:442 templates/edit.nat.tmpl:96
 msgid "default"
 msgstr "predefinito"
 
@@ -3829,7 +3802,7 @@ msgstr "Aggiornamento"
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:144
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:169
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:171
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:188
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:189
 msgid "group"
 msgstr "gruppo"
 
@@ -3932,8 +3905,8 @@ msgstr "trovato nulla"
 #: templates/edit.nat.tmpl:309 templates/edit.nat.tmpl:323
 #: templates/edit.nat.tmpl:337 templates/edit.nat.tmpl:351
 #: templates/edit.nat.tmpl:365 templates/edit.nat.tmpl:379
-#: templates/edit.nat.tmpl:393 templates/edit.nat.tmpl:452
-#: templates/edit.nat.tmpl:464
+#: templates/edit.nat.tmpl:393 templates/edit.nat.tmpl:436
+#: templates/edit.nat.tmpl:448
 msgid "off"
 msgstr "spento"
 
@@ -3949,7 +3922,7 @@ msgstr "spento"
 #: templates/edit.nat.tmpl:320 templates/edit.nat.tmpl:334
 #: templates/edit.nat.tmpl:348 templates/edit.nat.tmpl:362
 #: templates/edit.nat.tmpl:376 templates/edit.nat.tmpl:390
-#: templates/edit.nat.tmpl:449 templates/edit.nat.tmpl:461
+#: templates/edit.nat.tmpl:433 templates/edit.nat.tmpl:445
 msgid "on"
 msgstr "attivo"
 
@@ -3957,7 +3930,7 @@ msgstr "attivo"
 msgid "oops"
 msgstr "oops"
 
-#: templates/edit.nat.tmpl:437
+#: templates/edit.nat.tmpl:421
 msgid "open"
 msgstr "aperto"
 
@@ -4111,6 +4084,30 @@ msgstr ""
 #: templates/edit.matter.nat.tmpl:114
 msgid "video"
 msgstr ""
+
+#~ msgid "Backlinks to %1 in all Webs"
+#~ msgstr "Collegamenti a %1 in tutti i Webs"
+
+#~ msgid "Backlinks to %1 in the %2 web"
+#~ msgstr "Collegamenti a %1 nel Web %2"
+
+#~ msgid "Format"
+#~ msgstr "Formattazione"
+
+#~ msgid "Search %1 web only"
+#~ msgstr "Cerca solo nel web %1"
+
+#~ msgid "Search %1 web only for topics that link to here"
+#~ msgstr "Cerca nelle pagine del web %1 qui collegate"
+
+#~ msgid "Search all webs"
+#~ msgstr "Cerca in tutti i Web"
+
+#~ msgid "Search all webs for topics that link to here"
+#~ msgstr "Cerca in tutti i Web collegati qui"
+
+#~ msgid "backlinks"
+#~ msgstr "collegamenti"
 
 #~ msgid "Open in separate window"
 #~ msgstr "Apri in una finestra separata"

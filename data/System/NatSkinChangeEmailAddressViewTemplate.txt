@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1738603560" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 
 %TMPL:INCLUDE{"view"}%
@@ -8,7 +8,7 @@
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 %MAKETEXT{"Change e-mail address"}%
 
-%TMPL:DEF{"content"}%%IF{"context PluggableAuthEnabled or passwords_modifyable"
+%TMPL:DEF{"content"}%%IF{"{EnableEmail} AND (context PluggableAuthEnabled or context passwords_modifyable)"
   then="$percntTMPL:P{\"changeemailform\"}$percnt"
   else="$percntTMPL:P{\"nochangeemail\"}$percnt"
 }%%TMPL:END%

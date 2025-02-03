@@ -159,7 +159,7 @@ msgstr "禁止訪問"
 msgid "Access denied"
 msgstr "禁止訪問"
 
-#: templates/user.nat.tmpl:166
+#: templates/user.nat.tmpl:187
 msgid "Account has been removed"
 msgstr ""
 
@@ -268,7 +268,7 @@ msgstr "讓您想建立這主題"
 msgid "Are you sure that you want to delete %1?"
 msgstr "讓您想建立這主題"
 
-#: templates/user.nat.tmpl:145
+#: templates/user.nat.tmpl:166
 #, fuzzy
 msgid "Are you sure that you want to remove this user account:"
 msgstr "讓您想建立這主題"
@@ -338,22 +338,13 @@ msgstr "回到瀏覽模式"
 msgid "Background Color"
 msgstr ""
 
-#: templates/backlinksallwebs.nat.tmpl:4 templates/backlinksallwebs.nat.tmpl:6
-#: templates/backlinksweb.nat.tmpl:5 templates/foswiki.nat.tmpl:101
+#: templates/foswiki.nat.tmpl:101
 msgid "Backlinks"
 msgstr "反向連結"
 
 #: templates/backlinks.nat.tmpl:5
 msgid "Backlinks to %1"
 msgstr "%1 的反向連結"
-
-#: templates/backlinksallwebs.nat.tmpl:5
-msgid "Backlinks to %1 in all Webs"
-msgstr "所有子網中指向 %1 的反向連結"
-
-#: templates/backlinksweb.nat.tmpl:6
-msgid "Backlinks to %1 in the %2 web"
-msgstr "%2 子網中 %1 的反向連結"
 
 #: templates/validate.nat.tmpl:4
 msgid "Bad request"
@@ -424,7 +415,7 @@ msgstr "無法找到 %1 的電子郵件位址"
 #: templates/actionform.nat.tmpl:15 templates/changeform.nat.tmpl:39
 #: templates/copytopic.nat.tmpl:81 templates/email.nat.tmpl:31
 #: templates/languageselector.nat.tmpl:22 templates/loginbase.nat.tmpl:61
-#: templates/managetags.nat.tmpl:32 templates/messages.nat.tmpl:274
+#: templates/managetags.nat.tmpl:31 templates/messages.nat.tmpl:274
 #: templates/moveattachment.nat.tmpl:65 templates/newweb.nat.tmpl:28
 #: templates/newweb.nat.tmpl:34 templates/oopsleaseconflict.nat.tmpl:50
 #: templates/print.nat.tmpl:28 templates/renamebase.nat.tmpl:19
@@ -584,11 +575,10 @@ msgstr "清除選項"
 msgid "Click to like/unlike this topic"
 msgstr "選擇喜歡／不喜歡這個主題"
 
-#: templates/backlinks.nat.tmpl:24 templates/backlinksallwebs.nat.tmpl:18
-#: templates/backlinksweb.nat.tmpl:13 templates/childtopics.nat.tmpl:16
+#: templates/backlinks.nat.tmpl:24 templates/childtopics.nat.tmpl:16
 #: templates/childtopics.nat.tmpl:32 templates/contributors.nat.tmpl:5
 #: templates/foswiki.nat.tmpl:252 templates/history.nat.tmpl:51
-#: templates/oopsmore.nat.tmpl:14 templates/topbar.matter.nat.tmpl:16
+#: templates/oopsmore.nat.tmpl:9 templates/topbar.matter.nat.tmpl:16
 msgid "Close"
 msgstr "關閉"
 
@@ -794,7 +784,7 @@ msgid "Dear %1"
 msgstr ""
 
 #: templates/languageselector.nat.tmpl:14 templates/newtopic.nat.tmpl:100
-#: templates/newtopic.nat.tmpl:241 templates/newtopic.nat.tmpl:56
+#: templates/newtopic.nat.tmpl:243 templates/newtopic.nat.tmpl:56
 #: templates/newtopic.old.tmpl:116
 msgid "Default"
 msgstr "預設"
@@ -803,7 +793,7 @@ msgstr "預設"
 msgid "Default topic as defined in WebTopicEditTemplate"
 msgstr "預設主題定義於 WebTopicEditTemplate 中"
 
-#: templates/newtopic.nat.tmpl:211 templates/newtopic.nat.tmpl:58
+#: templates/newtopic.nat.tmpl:213 templates/newtopic.nat.tmpl:58
 msgid "Default wiki content"
 msgstr "預設維基內容"
 
@@ -843,6 +833,10 @@ msgstr "刪除附件"
 #: templates/renamesidebar.nat.tmpl:4
 msgid "Deleting topics"
 msgstr "刪除主題"
+
+#: templates/oopsmore.nat.tmpl:5
+msgid "Deprecated use of template %1"
+msgstr ""
 
 #: templates/rename.nat.tmpl:24 templates/translatetopic.nat.tmpl:141
 msgid "Derive from title"
@@ -1203,10 +1197,6 @@ msgstr "表單"
 msgid "Form-based input"
 msgstr "基於表單的輸入"
 
-#: templates/edit.nat.tmpl:416
-msgid "Format"
-msgstr "格式"
-
 #: data/System/SiteMenu.txt:61
 msgid "Foswiki FAQ"
 msgstr "Foswiki 常問問題"
@@ -1236,7 +1226,7 @@ msgstr "法文"
 msgid "Frequently Asked Questions"
 msgstr "常問問題"
 
-#: templates/managetags.nat.tmpl:17 templates/renamebase.nat.tmpl:52
+#: templates/managetags.nat.tmpl:16 templates/renamebase.nat.tmpl:52
 msgid "From"
 msgstr "來自"
 
@@ -1640,7 +1630,7 @@ msgstr "缺少欄位 =<span class='foswikiAlert'>**</span>="
 msgid "Missing or illegal web name"
 msgstr "無子網或名稱不符"
 
-#: templates/edit.nat.tmpl:444
+#: templates/edit.nat.tmpl:428
 msgid "Moderation"
 msgstr "審核"
 
@@ -1775,7 +1765,7 @@ msgstr "無權限"
 #: templates/renametopicarchive.nat.tmpl:13
 #: templates/renametopicdelete.nat.tmpl:14
 #: templates/renamewebdelete.nat.tmpl:15 templates/restoretopic.nat.tmpl:14
-#: templates/user.nat.tmpl:155
+#: templates/user.nat.tmpl:176
 msgid "No, thanks"
 msgstr "不，謝謝"
 
@@ -2165,6 +2155,11 @@ msgstr "上一個"
 msgid "Print"
 msgstr "列印"
 
+#: templates/managetags.nat.tmpl:12
+#, fuzzy
+msgid "Processing ..."
+msgstr "移除"
+
 #: data/System/SiteMenu.txt:62
 msgid "Professional help"
 msgstr "專業輔助"
@@ -2263,7 +2258,7 @@ msgid "Remove user"
 msgstr "移除使用者"
 
 #: data/System/NatSkinRemoveUserViewTemplate.txt:47
-#: templates/foswiki.nat.tmpl:259 templates/user.nat.tmpl:135
+#: templates/foswiki.nat.tmpl:259 templates/user.nat.tmpl:156
 #, fuzzy
 msgid "Remove user account"
 msgstr "取自標題"
@@ -2273,7 +2268,7 @@ msgstr "取自標題"
 msgid "Remove user account?"
 msgstr "取自標題"
 
-#: templates/user.nat.tmpl:139
+#: templates/user.nat.tmpl:160
 #, fuzzy
 msgid "Removing ..."
 msgstr "移除"
@@ -2306,7 +2301,7 @@ msgstr "更名子網 %1"
 msgid "Rename this web"
 msgstr "更名子網 %1"
 
-#: templates/managetags.nat.tmpl:10
+#: templates/managetags.nat.tmpl:9
 msgid "Rename, merge or delete tags"
 msgstr "改名，合併或刪除標籤"
 
@@ -2429,22 +2424,6 @@ msgstr ""
 msgid "Search"
 msgstr "搜尋"
 
-#: templates/backlinksallwebs.nat.tmpl:21
-msgid "Search %1 web only"
-msgstr "只搜尋子網 %1"
-
-#: templates/backlinksallwebs.nat.tmpl:24
-msgid "Search %1 web only for topics that link to here"
-msgstr "在子網 %1 中搜尋連結至此的主題"
-
-#: templates/backlinksweb.nat.tmpl:16
-msgid "Search all webs"
-msgstr "搜尋所有子網"
-
-#: templates/backlinksweb.nat.tmpl:19
-msgid "Search all webs for topics that link to here"
-msgstr "搜尋在所有子網中連結至此的主題"
-
 #: templates/renamebase.nat.tmpl:21 templates/renamedelete.nat.tmpl:16
 #: templates/renamewebbase.nat.tmpl:98
 msgid "Search for backlinks in all webs"
@@ -2516,7 +2495,7 @@ msgstr "選擇存在的翻譯"
 msgid "Select language"
 msgstr "選擇語言"
 
-#: templates/managetags.nat.tmpl:21
+#: templates/managetags.nat.tmpl:20
 msgid "Select one or more existing tags to be renamed."
 msgstr "選擇一個或多個要重命名的存在標籤。"
 
@@ -2524,7 +2503,7 @@ msgstr "選擇一個或多個要重命名的存在標籤。"
 msgid "Select the [[%1.WebHome][%1]] web to delete the topic."
 msgstr "選擇 [[%1.WebHome][%1]] 子網刪除主題。"
 
-#: templates/managetags.nat.tmpl:28
+#: templates/managetags.nat.tmpl:27
 msgid ""
 "Select the tag to rename the above tags to. Leaving this empty will delete "
 "them."
@@ -2534,7 +2513,7 @@ msgstr "選擇上述標籤來改名。留空將會刪除它們。"
 msgid "Select translation in %1"
 msgstr "選擇 %1 內的語言"
 
-#: templates/newtopic.nat.tmpl:246 templates/newtopic.old.tmpl:128
+#: templates/newtopic.nat.tmpl:248 templates/newtopic.old.tmpl:128
 msgid "Select which template to use while creating this topic."
 msgstr "選擇創建此主題時要使用的範本。"
 
@@ -2680,7 +2659,7 @@ msgstr "在改名／移動主題時指定新的主題標題。"
 msgid "Specify one or more space separated emails."
 msgstr "指定一個或多個以空格分隔的電子郵件。"
 
-#: templates/edit.nat.tmpl:432
+#: templates/edit.nat.tmpl:416
 msgid "State"
 msgstr "敘述"
 
@@ -2699,7 +2678,7 @@ msgstr ""
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:121
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:66
 #: data/System/WebCreateNewWeb.txt:42 templates/languageselector.nat.tmpl:21
-#: templates/managetags.nat.tmpl:31 templates/messages.nat.tmpl:110
+#: templates/managetags.nat.tmpl:30 templates/messages.nat.tmpl:110
 #: templates/messages.nat.tmpl:194 templates/newweb.nat.tmpl:27
 #: templates/topbar.customato.nat.tmpl:168
 #: templates/translatetopic.nat.tmpl:192
@@ -2715,7 +2694,7 @@ msgstr "退訂"
 msgid "Subscribe / Unsubscribe in:"
 msgstr "訂閱/退訂:"
 
-#: templates/user.nat.tmpl:165
+#: templates/user.nat.tmpl:186
 msgid "Success"
 msgstr ""
 
@@ -2744,7 +2723,7 @@ msgstr "標籤"
 msgid "Target language"
 msgstr "變更語言"
 
-#: templates/newtopic.nat.tmpl:252 templates/newtopic.old.tmpl:112
+#: templates/newtopic.nat.tmpl:254 templates/newtopic.old.tmpl:112
 msgid "Template"
 msgstr "範本"
 
@@ -2915,13 +2894,13 @@ msgid ""
 "This website is using cookies. <a href='%1' target='_blank'>More info</a>."
 msgstr "<a href='%1' target='_blank'>主題移動和改名</a>的說明。"
 
-#: templates/edit.matter.nat.tmpl:152 templates/newtopic.nat.tmpl:180
+#: templates/edit.matter.nat.tmpl:152 templates/newtopic.nat.tmpl:181
 #: templates/newtopic.old.tmpl:57 templates/renamebase.nat.tmpl:71
 #: templates/translatetopic.nat.tmpl:135
 msgid "Title"
 msgstr "標題"
 
-#: templates/managetags.nat.tmpl:25
+#: templates/managetags.nat.tmpl:24
 msgid "To"
 msgstr "給"
 
@@ -2967,9 +2946,8 @@ msgstr ""
 msgid "Toggle sidebar navigation"
 msgstr "增加主題 %1 到我的側欄導航"
 
-#: data/System/SiteTopicActions.txt:22 templates/oopsmore.nat.tmpl:3
-#: templates/oopsmore.nat.tmpl:4 templates/oopsmore.nat.tmpl:6
-#: templates/sidebar.nat.tmpl:54 templates/topbar.customato.nat.tmpl:74
+#: data/System/SiteTopicActions.txt:22 templates/sidebar.nat.tmpl:54
+#: templates/topbar.customato.nat.tmpl:74
 msgid "Tools"
 msgstr "工具"
 
@@ -3296,7 +3274,7 @@ msgstr "檢視本主題的源碼"
 msgid "View wiki markup"
 msgstr "檢視維基格式"
 
-#: templates/edit.nat.tmpl:456
+#: templates/edit.nat.tmpl:440
 msgid "Voting"
 msgstr "投票"
 
@@ -3386,7 +3364,7 @@ msgstr "是，刪除"
 msgid "Yes, delete"
 msgstr "是，刪除"
 
-#: templates/user.nat.tmpl:154
+#: templates/user.nat.tmpl:175
 #, fuzzy
 msgid "Yes, remove"
 msgstr "是，刪除"
@@ -3578,10 +3556,6 @@ msgstr "自動"
 msgid "backgrounds"
 msgstr "反向連結"
 
-#: templates/backlinksweb.nat.tmpl:4
-msgid "backlinks"
-msgstr "反向連結"
-
 #: templates/translatetopic.nat.tmpl:31
 msgid "base language"
 msgstr "系統語言"
@@ -3610,7 +3584,7 @@ msgstr ""
 msgid "changes"
 msgstr "變更"
 
-#: templates/edit.nat.tmpl:440
+#: templates/edit.nat.tmpl:424
 msgid "closed"
 msgstr "關閉"
 
@@ -3666,9 +3640,8 @@ msgstr "除錯"
 #: templates/edit.nat.tmpl:317 templates/edit.nat.tmpl:331
 #: templates/edit.nat.tmpl:345 templates/edit.nat.tmpl:359
 #: templates/edit.nat.tmpl:373 templates/edit.nat.tmpl:387
-#: templates/edit.nat.tmpl:419 templates/edit.nat.tmpl:434
-#: templates/edit.nat.tmpl:446 templates/edit.nat.tmpl:458
-#: templates/edit.nat.tmpl:96
+#: templates/edit.nat.tmpl:418 templates/edit.nat.tmpl:430
+#: templates/edit.nat.tmpl:442 templates/edit.nat.tmpl:96
 msgid "default"
 msgstr "預設"
 
@@ -3743,7 +3716,7 @@ msgstr "升級"
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:144
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:169
 #: data/System/NatSkinWikiGroupsViewTemplate.txt:171
-#: data/System/NatSkinWikiGroupsViewTemplate.txt:188
+#: data/System/NatSkinWikiGroupsViewTemplate.txt:189
 msgid "group"
 msgstr "群組"
 
@@ -3846,8 +3819,8 @@ msgstr "未找到"
 #: templates/edit.nat.tmpl:309 templates/edit.nat.tmpl:323
 #: templates/edit.nat.tmpl:337 templates/edit.nat.tmpl:351
 #: templates/edit.nat.tmpl:365 templates/edit.nat.tmpl:379
-#: templates/edit.nat.tmpl:393 templates/edit.nat.tmpl:452
-#: templates/edit.nat.tmpl:464
+#: templates/edit.nat.tmpl:393 templates/edit.nat.tmpl:436
+#: templates/edit.nat.tmpl:448
 msgid "off"
 msgstr "關閉"
 
@@ -3863,7 +3836,7 @@ msgstr "關閉"
 #: templates/edit.nat.tmpl:320 templates/edit.nat.tmpl:334
 #: templates/edit.nat.tmpl:348 templates/edit.nat.tmpl:362
 #: templates/edit.nat.tmpl:376 templates/edit.nat.tmpl:390
-#: templates/edit.nat.tmpl:449 templates/edit.nat.tmpl:461
+#: templates/edit.nat.tmpl:433 templates/edit.nat.tmpl:445
 msgid "on"
 msgstr "開啟"
 
@@ -3871,7 +3844,7 @@ msgstr "開啟"
 msgid "oops"
 msgstr "哎呀"
 
-#: templates/edit.nat.tmpl:437
+#: templates/edit.nat.tmpl:421
 msgid "open"
 msgstr "打開"
 
@@ -4025,6 +3998,30 @@ msgstr ""
 #: templates/edit.matter.nat.tmpl:114
 msgid "video"
 msgstr ""
+
+#~ msgid "Backlinks to %1 in all Webs"
+#~ msgstr "所有子網中指向 %1 的反向連結"
+
+#~ msgid "Backlinks to %1 in the %2 web"
+#~ msgstr "%2 子網中 %1 的反向連結"
+
+#~ msgid "Format"
+#~ msgstr "格式"
+
+#~ msgid "Search %1 web only"
+#~ msgstr "只搜尋子網 %1"
+
+#~ msgid "Search %1 web only for topics that link to here"
+#~ msgstr "在子網 %1 中搜尋連結至此的主題"
+
+#~ msgid "Search all webs"
+#~ msgstr "搜尋所有子網"
+
+#~ msgid "Search all webs for topics that link to here"
+#~ msgstr "搜尋在所有子網中連結至此的主題"
+
+#~ msgid "backlinks"
+#~ msgstr "反向連結"
 
 #~ msgid "Open in separate window"
 #~ msgstr "於另一視窗開啟"

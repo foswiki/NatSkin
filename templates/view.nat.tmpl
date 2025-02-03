@@ -50,19 +50,19 @@
 }%%TMPL:END%
 %TMPL:DEF{"metaopengraph::fb_app_id::content"}%%METAFBAPPID{default=""}%%TMPL:END%
 
-%TMPL:DEF{"metaopengraph::type"}%<meta name="og:type" property="og:type" content="%TMPL:P{"metaopengraph::type::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::type"}%<meta property="og:type" content="%TMPL:P{"metaopengraph::type::content"}%" />%TMPL:END%
 %TMPL:DEF{"metaopengraph::type::content"}%article%TMPL:END%
 
-%TMPL:DEF{"metaopengraph::title"}%<meta name="og:title" property="og:title" content="%TMPL:P{"metaopengraph::title::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::title"}%<meta property="og:title" content="%TMPL:P{"metaopengraph::title::content"}%" />%TMPL:END%
 %TMPL:DEF{"metaopengraph::title::content"}%%GETTOPICTITLE{encode="entity"}%%TMPL:END%
 
-%TMPL:DEF{"metaopengraph::url"}%<meta name="og:url" property="og:url" content="%TMPL:P{"metaopengraph::url::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::url"}%<meta property="og:url" content="%TMPL:P{"metaopengraph::url::content"}%" />%TMPL:END%
 %TMPL:DEF{"metaopengraph::url::content"}%%SCRIPTURL{"view" topic="%WEB%.%TOPIC%"}%%TMPL:END%
 
-%TMPL:DEF{"metaopengraph::sitename"}%<meta name="og:site_name" property="og:site_name" content="%TMPL:P{"metaopengraph::sitename::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::sitename"}%<meta property="og:site_name" content="%TMPL:P{"metaopengraph::sitename::content"}%" />%TMPL:END%
 %TMPL:DEF{"metaopengraph::sitename::content"}%%WIKITOOLNAME{default="Foswiki"}%%TMPL:END%
 
-%TMPL:DEF{"metaopengraph::description"}%<meta name="og:description" property="og:description" content="%ENCODE{"%TMPL:P{"metaopengraph::description::content"}%" type="html"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::description"}%<meta property="og:description" content="%ENCODE{"%TMPL:P{"metaopengraph::description::content"}%" type="html"}%" />%TMPL:END%
 %TMPL:DEF{"metaopengraph::description::content"}%%TMPL:P{"metadescription::content"}%%TMPL:END%
 
 %TMPL:DEF{"metadescription"}%<meta name="description" content="%ENCODE{"%TMPL:P{"metadescription::content"}%" type="html"}%" />%TMPL:END%
@@ -71,10 +71,10 @@
 %TMPL:DEF{"metasubject"}%%IF{"'%METASUBJECT{default=""}%'" then="<meta name=\"subject\" content=\"%ENCODE{"%TMPL:P{"metasubject::content"}%\" type=\"html"}%\" />"}%%TMPL:END%
 %TMPL:DEF{"metasubject::content"}%%METASUBJECT{default=""}%%TMPL:END%
 
-%TMPL:DEF{"metaopengraph::logo"}%<meta name="og:logo" property="og:logo" content="%TMPL:P{"metaopengraph::logo::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::logo"}%<meta property="og:logo" content="%TMPL:P{"metaopengraph::logo::content"}%" />%TMPL:END%
 %TMPL:DEF{"metaopengraph::logo::content"}%%TMPL:P{"manifest::logo"}%%TMPL:END%
 
-%TMPL:DEF{"metaopengraph::image"}%<meta name="og:image" property="og:image" content="%TMPL:P{"metaopengraph::image::content"}%" />%TMPL:END%
+%TMPL:DEF{"metaopengraph::image"}%<meta property="og:image" content="%TMPL:P{"metaopengraph::image::content"}%" />%TMPL:END%
 %TMPL:DEF{"metaopengraph::image::content"}%%METAIMAGE{default="$percntTMPL:P{\"metaopengraph::image::content::default\"}$percnt"}%%TMPL:END%
 %TMPL:DEF{"metaopengraph::image::content::default"}%%ATTACHMENTS{
   name=".*\.(%TMPL:P{"image::exts"}%)$"

@@ -1,0 +1,44 @@
+.cmtComments .alt {
+  background:var(--comments-background);
+  color:var(--comments-foreground);
+  border:0;
+  box-shadow:none;
+  margin:0;
+}
+.cmtComments .alt pre {
+  background:var(--comments-background-pre);
+}
+.cmtComments h5 {
+  margin-bottom:calc(var(--margin) * 0.75);
+}
+.cmtComment .imagePlain_left, 
+.cmtComment .imageSimple_left {
+  border-radius:50%;
+}
+.cmtCommentOdd,
+.cmtCommentContainer.cmtCommentOdd,
+.cmtSubComments .cmtCommentOdd {
+  background:transparent;
+  box-shadow:none;
+  color: var(--color-text);
+  border:0;
+}
+.cmtSubComments {
+  /*border-left-color:var(--color-border);*/
+  border:0;
+  margin:var(--margin) 0 0 4.5em;
+}
+h3.cmtCommentNr {
+  color:var(--color-foreground);
+  display:none;
+}
+
+@media screen and (max-width: 600px) {
+  .cmtComment > .alt {
+    margin-left:-4.5em;
+    margin-top:var(--margin);
+  }
+  .cmtSubComments {
+    margin-left:0;
+  }
+}

@@ -448,10 +448,6 @@ a {
   width:34px;
   height:34px;
 }
-.cmtComment .imagePlain_left, 
-.cmtComment .imageSimple_left {
-  border-radius:50%;
-}
 .natTopBar .natPanelToggle.open a,
 .natTopBar a:hover {
   background-color:var(--menu-hover-background);
@@ -1590,24 +1586,6 @@ fieldset,
   transition: box-shadow 500ms ease, border 200ms ease; 
 }
 
-.cmtComments h5 {
-  margin-bottom:calc(var(--margin) * 0.75);
-}
-.cmtComments .alt {
-  background:var(--comments-background);
-  color:var(--comments-foreground);
-  border:0;
-  box-shadow:none;
-  margin:0;
-}
-.cmtCommentOdd,
-.cmtCommentContainer.cmtCommentOdd,
-.cmtSubComments .cmtCommentOdd {
-  background:transparent;
-  box-shadow:none;
-  color: var(--color-text);
-  border:0;
-}
 .ui-dialog .foswikiFormSteps, 
 .foswikiMetaData .foswikiDataForm, 
 .foswikiMetaData .foswikiAttachments, 
@@ -1620,18 +1598,6 @@ fieldset,
 .foswikiAttachmentsContainer {
   border-top: 1px solid var(--table-border);
   border-bottom: 1px solid var(--table-border);
-}
-.cmtSubComments {
-  /*border-left-color:var(--color-border);*/
-  border:0;
-  margin:var(--margin) 0 0 4.5em;
-}
-.cmtSubComments .cmtCommentOdd {
-  border:0
-}
-h3.cmtCommentNr {
-  color:var(--color-foreground);
-  display:none;
 }
 pre {
   border:0;
@@ -1763,16 +1729,6 @@ ul.jqTabGroup a {
 .jqListyItemTools {
   background: var(--color-background);
 }
-@media screen and (max-width:1600px) {
-  .natViewBody.natBodyFluid .natBannerContents,
-  .natViewBody.natBodyFluid .natTopPanelContents,
-  .natViewBody.natBodyFluid .natTopBarContents,
-  .natViewBody.natBodyFluid .natBottomBarContents,
-  .natViewBody.natBodyFluid .natMiddle {
-    margin-left:5%;
-    margin-right:5%;
-  }
-}
 
 @media screen and (max-width:1260px) {
   .natUserActions .natAccountAction .natTopicActionShortLabel {
@@ -1858,6 +1814,9 @@ ul.jqTabGroup a {
   .natBreadCrumbs,
   .DISnatUserActions .natUserAction {
     display:none;
+  }
+  .natMainContents {
+    margin-top:0;
   }
   .natUserActions {
     margin-right:30px;
@@ -2090,6 +2049,50 @@ label > .foswikiRadioButton {
 .foswikiToggleButton:disabled:not(:checked):after {
   opacity: 0.6;
 }
+.cmtComments .alt {
+  background:var(--comments-background);
+  color:var(--comments-foreground);
+  border:0;
+  box-shadow:none;
+  margin:0;
+}
+.cmtComments .alt pre {
+  background:var(--comments-background-pre);
+}
+.cmtComments h5 {
+  margin-bottom:calc(var(--margin) * 0.75);
+}
+.cmtComment .imagePlain_left, 
+.cmtComment .imageSimple_left {
+  border-radius:50%;
+}
+.cmtCommentOdd,
+.cmtCommentContainer.cmtCommentOdd,
+.cmtSubComments .cmtCommentOdd {
+  background:transparent;
+  box-shadow:none;
+  color: var(--color-text);
+  border:0;
+}
+.cmtSubComments {
+  /*border-left-color:var(--color-border);*/
+  border:0;
+  margin:var(--margin) 0 0 4.5em;
+}
+h3.cmtCommentNr {
+  color:var(--color-foreground);
+  display:none;
+}
+
+@media screen and (max-width: 600px) {
+  .cmtComment > .alt {
+    margin-left:-4.5em;
+    margin-top:var(--margin);
+  }
+  .cmtSubComments {
+    margin-left:0;
+  }
+}
 :root {
   --font-family-regular: 'Roboto', Arial, 'Liberation Sans', FreeSans, sans-serif;
   --font-size: 15;
@@ -2124,6 +2127,7 @@ label > .foswikiRadioButton {
 
   --comments-background: var(--color-gray-9);
   --comments-foreground: var(--color-text);
+  --comments-background-pre: var(--color-gray-7);
 
   --font-size-banner: var(--font-size-h1);
   --line-height-banner: var(--line-height-h1);
@@ -2271,6 +2275,7 @@ label > .foswikiRadioButton {
   --color-disabled-foreground: var(--color-gray);
 
   --comments-background: var(--color-alpha-2);
+  --comments-background-pre: var(--pre-background);
 
   --color-selected-foreground: #599e00;
   --color-selected-background: #3a452b;
