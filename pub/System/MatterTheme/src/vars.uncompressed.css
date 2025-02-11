@@ -157,6 +157,18 @@
 
 }
 
+@media screen and (max-width:1260px) {
+  :root {
+    --font-size:14;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  :root {
+    --font-size:13;
+  }
+}
+
 /*****************************/
 
 :root[data-theme='dark'] {

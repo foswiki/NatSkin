@@ -54,17 +54,14 @@ PKG_SOURCE=\
 
 SUBDIRS=../JazzyNoteTheme ../CustomatoTheme
 
-$(BUILD_DIR)/polyfills.uncompressed.js: Makefile $(POLYFILLS_SOURCE)
-	@echo generating $@
-	@cat $(POLYFILLS_SOURCE) > $@
+$(BUILD_DIR)/polyfills.js: $(POLYFILLS_SOURCE)
+	@echo generating $@; $(JSMIN) $^ > $@; \
 
-$(BUILD_DIR)/BaseStyle.uncompressed.css: Makefile $(BASESTYLE_SOURCE)
-	@echo generating $@
-	@cat $(BASESTYLE_SOURCE) > $@
+$(BUILD_DIR)/BaseStyle.css: $(BASESTYLE_SOURCE)
+	@echo generating $@; cat $^ | $(CSSMIN) $(CSSMIN_ARGS)> $@
 
-$(BUILD_DIR)/pkg.uncompressed.js: Makefile $(PKG_SOURCE)
-	@echo generating $@
-	@cat $(PKG_SOURCE) > $@
+$(BUILD_DIR)/pkg.js: $(PKG_SOURCE)
+	@echo generating $@; $(JSMIN) $^ > $@; \
 
 clean: 
 	rm -f *.jslint $(BUILD_DIR)/*

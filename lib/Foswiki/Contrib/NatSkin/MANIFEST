@@ -71,7 +71,6 @@ pub/System/CustomatoTheme/build/blue.css 0644
 pub/System/CustomatoTheme/build/blue.css.gz 0644
 pub/System/CustomatoTheme/build/customato.css 0644
 pub/System/CustomatoTheme/build/customato.css.gz 0644
-pub/System/CustomatoTheme/build/customato.uncompressed.css 0644
 pub/System/CustomatoTheme/images/foswiki-logo.png 0644
 pub/System/CustomatoTheme/Makefile 0644
 pub/System/CustomatoTheme/src/base.uncompressed.css 0644
@@ -115,7 +114,6 @@ pub/System/MatterTheme/build/geopattern.js 0644
 pub/System/MatterTheme/build/geopattern.js.gz 0644
 pub/System/MatterTheme/build/matter.css 0644
 pub/System/MatterTheme/build/matter.css.gz 0644
-pub/System/MatterTheme/build/matter.uncompressed.css 0644
 pub/System/MatterTheme/build/parallax.js 0644
 pub/System/MatterTheme/build/parallax.js.gz 0644
 pub/System/MatterTheme/build/particles.js 0644
@@ -153,7 +151,6 @@ pub/System/NatSkin/build/backlinks.js 0644
 pub/System/NatSkin/build/backlinks.js.gz 0644
 pub/System/NatSkin/build/BaseStyle.css 0644
 pub/System/NatSkin/build/BaseStyle.css.gz 0644
-pub/System/NatSkin/build/BaseStyle.uncompressed.css 0644
 pub/System/NatSkin/build/changeform.js 0644
 pub/System/NatSkin/build/changeform.js.gz 0644
 pub/System/NatSkin/build/changepassword.js 0644
@@ -172,10 +169,8 @@ pub/System/NatSkin/build/login.js 0644
 pub/System/NatSkin/build/login.js.gz 0644
 pub/System/NatSkin/build/pkg.js 0644
 pub/System/NatSkin/build/pkg.js.gz 0644
-pub/System/NatSkin/build/pkg.uncompressed.js 0644
 pub/System/NatSkin/build/polyfills.js 0644
 pub/System/NatSkin/build/polyfills.js.gz 0644
-pub/System/NatSkin/build/polyfills.uncompressed.js 0644
 pub/System/NatSkin/build/print.css 0644
 pub/System/NatSkin/build/print.css.gz 0644
 pub/System/NatSkin/build/rename.js 0644

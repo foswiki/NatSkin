@@ -33,24 +33,19 @@ MATTERSTYLE_SOURCE=\
 .PHONY: geopattern.git trianglify.git particles.git git clean
 
 clean: 
-	rm -f $(BUILD_DIR)/* *.gz *jslint
+	rm -f $(BUILD_DIR)/* 
 
-$(BUILD_DIR)/matter.uncompressed.css: $(MATTERSTYLE_SOURCE)
-	@echo generating $@
-	@cat $^ > $@
+$(BUILD_DIR)/matter.css: $(MATTERSTYLE_SOURCE)
+	@echo generating $@; cat $^ | $(CSSMIN) $(CSSMIN_ARGS)> $@
 
 $(BUILD_DIR)/particles.js: $(PARTICLES_SOURCE)
-	@echo minifying $@
-	@$(JSMIN) $^ > $@
+	@echo generating $@; $(JSMIN) $^ > $@; \
 
 $(BUILD_DIR)/geopattern.js: $(GEOPATTERN_SOURCE)
-	@echo minifying $@
-	@$(JSMIN) $^ > $@
+	@echo generating $@; $(JSMIN) $^ > $@; \
 
 $(BUILD_DIR)/trianglify.js: $(TRIANGLIFY_SOURCE)
-	@echo minifying $@
-	@$(JSMIN) $^ > $@
-
+	@echo generating $@; $(JSMIN) $^ > $@; \
 
 git: geopattern.git trianglify.git particles.git
 

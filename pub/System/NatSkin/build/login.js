@@ -1,1 +1,0 @@
-"use strict";jQuery((function(i){var e=i(".natLoginForm");e.find("input").on("keydown",(function(i){if(13===i.keyCode)return e.trigger("submit"),!1})),foswiki.getPreference("NatSkin.loginFailed")&&(i(".natBody").addClass("natLoginFailed"),i(".natLogin .foswikiFormSteps").effect("shake",{times:3,distance:10},50))}));

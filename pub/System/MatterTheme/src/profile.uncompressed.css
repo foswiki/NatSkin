@@ -1,13 +1,19 @@
+:root {
+  --profile-image-size:120px;
+  --profile-image-border: 0.5rem solid var(--color-background);
+}
 .natBanner {
   overflow:visible;
   justify-content:flex-end;
 }
 .natBanner .imagePlain {
    position:absolute;
-   bottom:-60px;
+   width:var(--profile-image-size);
+   height:var(--profile-image-size);
+   bottom:calc(var(--profile-image-size) * -0.5);
    left:var(--margin);
    border-radius:50%;
-   border:var(--profile-image-border, 0.5rem solid var(--color-background));
+   border:var(--profile-image-border);
    float:none;
    margin:0;
    background-color:var(--color-background);
@@ -63,4 +69,23 @@
 
 :root[data-theme='dark'] {
    --profile-image-border:none;
+}
+
+@media screen and (max-width: 440px) {
+  :root {
+    --profile-image-size:100px;
+  }
+
+  .natBanner .imagePlain {
+    left:50%;
+    margin-left:calc(var(--profile-image-size) * -0.5);
+  }
+  .natMiddle {
+    margin-top:calc(var(--profile-image-size) * 0.5);
+  }
+
+  .natMainHeaderContents {
+    display:flex;
+    justify-content:center;
+  }
 }

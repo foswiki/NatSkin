@@ -118,6 +118,7 @@
 %SOLRSEARCH{
   id="solr1"
   "outgoing:%ENCODE{"%BASEWEB%" old="/" new="."}%.%BASETOPIC%"
+  checktopics="on"
   header="$percntCALC{\"$SET(total,$count)\"}$percnt"
   format="<div class='foswikiTopRow $percntIF{\"not istopic '$web.$topic'\" then=\"foswikiHidden\"}$percnt'>
             <input type='checkbox' name='referring_topics' class='foswikiGlobalCheckable foswikiCheckbox' value='$web.$topic' %IF{"'%TMPL:P{"backlinks::checked"}%'='checked'" then="checked='checked'"}% />

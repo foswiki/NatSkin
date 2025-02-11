@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1739280908" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %TMPL:INCLUDE{"view"}%
 
@@ -81,7 +81,9 @@
 %TMPL:P{"userinfo::table"}%<!-- -->
 </noautolink></div>%TMPL:END%
 
-%TMPL:DEF{"userinfo::table"}%%RENDERFORDISPLAY{
+%TMPL:DEF{"userinfo::table"}%%TMPL:P{"userinfo::table::default"}%%TMPL:END%
+
+%TMPL:DEF{"userinfo::table::default"}%%RENDERFORDISPLAY{
    editable="on"
    hideempty="on"
    exclude="^(%TMPL:P{"userinfo::fields::table::exclude"}%)$" 

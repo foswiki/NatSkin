@@ -54,7 +54,7 @@
 %TMPL:DEF{"metaopengraph::type::content"}%article%TMPL:END%
 
 %TMPL:DEF{"metaopengraph::title"}%<meta property="og:title" content="%TMPL:P{"metaopengraph::title::content"}%" />%TMPL:END%
-%TMPL:DEF{"metaopengraph::title::content"}%%GETTOPICTITLE{encode="entity"}%%TMPL:END%
+%TMPL:DEF{"metaopengraph::title::content"}%%TMPL:P{"title"}%%TMPL:END%
 
 %TMPL:DEF{"metaopengraph::url"}%<meta property="og:url" content="%TMPL:P{"metaopengraph::url::content"}%" />%TMPL:END%
 %TMPL:DEF{"metaopengraph::url::content"}%%SCRIPTURL{"view" topic="%WEB%.%TOPIC%"}%%TMPL:END%
@@ -72,7 +72,7 @@
 %TMPL:DEF{"metasubject::content"}%%METASUBJECT{default=""}%%TMPL:END%
 
 %TMPL:DEF{"metaopengraph::logo"}%<meta property="og:logo" content="%TMPL:P{"metaopengraph::logo::content"}%" />%TMPL:END%
-%TMPL:DEF{"metaopengraph::logo::content"}%%TMPL:P{"manifest::logo"}%%TMPL:END%
+%TMPL:DEF{"metaopengraph::logo::content"}%%FAVLOGOIMG{default="%WIKILOGOIMG%"}%%TMPL:END%
 
 %TMPL:DEF{"metaopengraph::image"}%<meta property="og:image" content="%TMPL:P{"metaopengraph::image::content"}%" />%TMPL:END%
 %TMPL:DEF{"metaopengraph::image::content"}%%METAIMAGE{default="$percntTMPL:P{\"metaopengraph::image::content::default\"}$percnt"}%%TMPL:END%
@@ -152,7 +152,7 @@
     }%\" />"
 }%%TMPL:END%
 
-%TMPL:DEF{"metarss"}%<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="%SCRIPTURLPATH{"view" topic="%WEB%.WebRss"}%?contenttype=text/xml&skin=xml" />%TMPL:END%
+%TMPL:DEF{"metarss"}%<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="%SCRIPTURLPATH{"view" topic="%WEB%.WebRss"}%" />%TMPL:END%
 
 %TMPL:DEF{"metarelations"}%%IF{"context i18n_enabled and context MultiLingualPluginEnabled and '%CONTENT_LANGUAGE{default=""}%'!=''" 
   then="$percntTMPL:P{\"metarelations::langs\"}$percnt"
@@ -254,13 +254,9 @@
 
 %TMPL:DEF{"revinfo::sep"}% <span class='foswikiRevisionSep'>&#124;</span> %TMPL:END%
 
-%TMPL:DEF{"revinfo::date"}%<span class='foswikiRevisionDate'>%TMPL:P{"icon::calendar"}%
-  <a href="%SCRIPTURLPATH{"diff"}%/%WEB%/%TOPIC%?rev=%CURREV%">
-    %REVINFO{
-      "<span itemprop='dateModified' content='$iso'>$date - $hour:$min</span>" 
-      rev="%TMPL:P{"currev"}%"}%
-  </a>
-</span>%TMPL:END%
+%TMPL:DEF{"revinfo::date"}%<span class='foswikiRevisionDate'>%TMPL:P{"icon::calendar"}% %TMPL:P{context="authenticated" then="revinfo::date::link" else="revinfo::date::text"}%</span>%TMPL:END%
+%TMPL:DEF{"revinfo::date::link"}%<a href="%SCRIPTURLPATH{"diff" topic="%WEB%.%TOPIC%" rev="%TMPL:P{"currev"}%"}%">%TMPL:P{"revinfo::date::text"}%</a>%TMPL:END%
+%TMPL:DEF{"revinfo::date::text"}%%REVINFO{"<span itemprop='dateModified' content='$iso'>$date - $hour:$min</span>" rev="%TMPL:P{"currev"}%"}%%TMPL:END%
 
 %TMPL:DEF{"revinfo::revision"}%%TMPL:P{"revinfo::sep"}%
   <span class='foswikiRevisionID'>
@@ -329,7 +325,8 @@
 %TMPL:DEF{"comments::system::disqus"}%%DISQUS%%TMPL:END%
 %TMPL:DEF{"comments::system::metacomment"}%%TMPL:P{"metacomments::init"}%%TMPL:P{context="static" then="comments::system::metacomment::static" else="comments::system::metacomment::async"}%%TMPL:END%
 %TMPL:DEF{"comments::system::metacomment::template"}%metacomments%TMPL:END%
-%TMPL:DEF{"comments::system::metacomment::async"}%%JQREQUIRE{"loader"}%<div class="jqLoader" data-url="%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=%TMPL:P{"comments::system::metacomment::template"}%;expand=metacomments;render=on;topic=%WEB%.%TOPIC%;commentstopic=%TMPL:P{"comments::topic"}%;rev=%URLPARAM{"rev"}%;cachecontrol=0" data-mode="auto" data-skin=""></div>%TMPL:END%
+%TMPL:DEF{"comments::system::metacomment::async"}%%JQREQUIRE{"loader"}%<div class="jqLoader" data-url="%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=%TMPL:P{"comments::system::metacomment::template"}%;expand=metacomments;render=on;topic=%WEB%.%TOPIC%;commentstopic=%TMPL:P{"comments::topic"}%;rev=%URLPARAM{"rev"}%;cachecontrol=0" data-mode="auto" data-skin="" data-hide-effect="">%TMPL:P{"comments::system::metacomment::spinner"}%</div>%TMPL:END%
+%TMPL:DEF{"comments::system::metacomment::spinner"}%<p class='foswikiCenter'>%JQICON{"fa-circle-o" animate="burst" style="color:var(--color-foreground);font-size:var(--font-size-large)"}%</p>%TMPL:END%
 %TMPL:DEF{"comments::system::metacomment::static"}%%TMPL:P{"metacomments"}%%TMPL:END%
 
 %{ ################################################################################ }%

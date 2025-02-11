@@ -12,6 +12,5 @@ CUSTOMATOSTYLE_SOURCE=\
 clean: 
 	rm -f $(TARGET) *.gz *jslint igp_*
 
-$(BUILD_DIR)/customato.uncompressed.css: $(CUSTOMATOSTYLE_SOURCE)
-	@echo generating $@
-	@cat $^ > $@
+$(BUILD_DIR)/customato.css: $(CUSTOMATOSTYLE_SOURCE)
+	@echo generating $@; cat $^ | $(CSSMIN) $(CSSMIN_ARGS)> $@

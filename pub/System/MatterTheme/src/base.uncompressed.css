@@ -144,9 +144,6 @@ ul, ol {
   margin:var(--margin) 0;
 }
 
-.foswikiTopicInfo .foswikiIcon {
-  line-height:1;
-}
 .foswikiTopicInfo .fa {
   vertical-align:baseline;
 }

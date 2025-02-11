@@ -26,7 +26,7 @@ contains version and release information
 use strict;
 use warnings;
 
-our $VERSION = '7.10';
+our $VERSION = '7.20';
 our $RELEASE = '%$RELEASE%';
 our $SHORTDESCRIPTION = 'Userfriendly Foswiki skin providing a flexible theming engine for professional webdesigns';
 our $LICENSECODE = '%$LICENSECODE%';

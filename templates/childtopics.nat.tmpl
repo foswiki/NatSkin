@@ -84,6 +84,7 @@
     header="$percntCALC{\"$SET(total,$count)\"}$percnt"
     format="($percntSUBST{text=\"$percntENCODE{\"$title\" type=\"entity\"}$percnt\" pattern=\"(&#\d+;)|[$]\" format=\"\"}$percnt);$title;$web.$topic"
     sort="title"
+    checktopics="on"
     separator="$n"
     rows="%TMPL:P{"childtopics::limit"}%"
   }%"

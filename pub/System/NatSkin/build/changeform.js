@@ -1,1 +1,0 @@
-"use strict";jQuery((function(e){var s=e("#formlist"),n="checked";function i(){s.find(".row").removeClass(n),s.find("input:checked").parents(".row:first").addClass(n)}s.find(".row").on("click",(function(){i(e(this))})).mouseenter((function(){e(this).addClass("hover")})).mouseleave((function(){e(this).removeClass("hover")})),i()}));

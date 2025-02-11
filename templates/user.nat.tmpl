@@ -4,7 +4,7 @@
 %TMPL:DEF{"user::photo::default"}%%GENIMAGE{
   text="%IF{"istopic '%web%.%topic%'"
           then="$percntGETTOPICTITLE{\"%web%.%topic%\"}$percnt"
-          else="%topic%"
+          else="%FORMATLIST{"%topic%" split="_"}%"
        }%"
   format="$url"
   from="initials"
@@ -85,7 +85,7 @@
 %TMPL:DEF{"user::photo::genimage"}%%GENIMAGE{
   text="%IF{"istopic '%web%.%topic%'"
           then="$percntGETTOPICTITLE{\"%web%.%topic%\"}$percnt"
-          else="%topic%"
+          else="%FORMATLIST{"%topic%" split="_"}%"
        }%"
   from="initials"
   class="natUserPhoto"
