@@ -19,6 +19,7 @@
   then="$percntTMPL:P{\"user::photo::url::formfield\" 
           web=\"%web%\"
           topic=\"%topic%\" 
+          size=\"%size%\"
         }$percnt"
   else="%USERINFO{"%topic%" format="$picture"}%"
 }%%TMPL:END%
@@ -29,6 +30,7 @@
   else="$percntTMPL:P{\"user::photo::url::attachment\"
             web=\"%web%\"
             topic=\"%topic%\"
+            size=\"%size%\"
         }$percnt"
 }%%TMPL:END%
 
@@ -38,7 +40,24 @@
   limit="1"
   attr=".*t.*"
   format="%PUBURLPATH%/%web%/%topic%/$name"
-  nullformat="$percntTMPL:P{\"user::photo::url::default\"}$percnt"
+  nullformat="$percntTMPL:P{context=\"ImageGeneratorPluginEnabled\"
+    then=\"user::photo::url::genimage\"
+    else=\"user::photo::url::default\"
+    web=\"%web%\"
+    topic=\"%topic%\"
+    size=\"%size%\"
+  }$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"user::photo::url::genimage"}%%GENIMAGE{
+  text="%IF{"istopic '%web%.%topic%'"
+          then="$percntGETTOPICTITLE{\"%web%.%topic%\"}$percnt"
+          else="%FORMATLIST{"%topic%" split="_"}%"
+       }%"
+  from="initials"
+  class="natUserPhoto imagePlain"
+  size="%IF{"'%size%'=~'^%size'" then="%TMPL:P{"user::photo::size"}%" else="%size%"}%"
+  format="$url"
 }%%TMPL:END%
 
 %{img}%
@@ -57,6 +76,7 @@
   "%TMPL:P{"user::photo::url" 
     web="%web%" 
     topic="%topic%" 
+    size="%size%"
   }%"
   type="plain"
   class="natUserPhoto"
