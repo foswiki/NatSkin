@@ -209,7 +209,7 @@
    */
   $(function() {
     if (foswiki.getPreference("NatSkin").initUserTooltips) {
-      $(".jqUserTooltip:not(.inited), .foswikiUserField:not(.inited)").livequery(function() {
+      $(".jqUserTooltip:not(.inited), .foswikiUserField:not(.inited):not(.foswikiTopicFieldEditor").livequery(function() {
         $(this).addClass("inited").userTooltip();
       });
     } else {

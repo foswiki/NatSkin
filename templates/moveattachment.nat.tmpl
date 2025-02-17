@@ -17,7 +17,7 @@
   then="%MAKETEXT{"Delete attachment '[_1]'" args="<nop>%FILENAME%"}%"
   else="%MAKETEXT{"Move attachment '[_1]'" args="<nop>%FILENAME%"}%"
 }%</h1>%TMPL:END%
-%TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
+%TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow">%TMPL:END%
 %TMPL:DEF{"content"}%%JQREQUIRE{"focus, ui, ui::autocomplete"}%%TMPL:P{"contenttitle"}%%{}%
 <form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
 %IF{"$'URLPARAM{newweb}'='%TRASHWEB%'" 

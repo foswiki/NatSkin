@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1739280908" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1739795603" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %TMPL:INCLUDE{"view"}%
 
@@ -33,15 +33,13 @@
 %TMPL:P{"banner::content::image"}%
 </div>%TMPL:END%
 
-%TMPL:DEF{"banner::content::image"}%%IMAGE{
-  "%IF{"context PluggableAuthEnabled" 
-    then="%USERINFO{"%TOPIC%" format="$picture"}%"
-    else="$percntTMPL:P{\"user::photo::url\" web=\"%WEB%\" topic=\"%TOPIC%\"}$percnt"
-  }%"
+%TMPL:DEF{"banner::content::image"}%%TMPL:P{"user::photo"
   type="plain"
   size="%TMPL:P{"banner::content::image::size"}%"
   crop="on"
   title=""
+  web="%WEB%"
+  topic="%TOPIC%"
 }%%TMPL:END%
 
 %TMPL:DEF{"banner::content::image::size"}%120x120^%TMPL:END%

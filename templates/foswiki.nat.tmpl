@@ -178,7 +178,7 @@
 
 %TMPL:DEF{"RAW_SHORT"}%<span class='natTopicActionShortLabel'>%TRANSLATE{"Raw"}%</span>%TMPL:END%
 %TMPL:DEF{"RAW_LONG"}%<span class='natTopicActionLongLabel'>%TRANSLATE{"View wiki markup"}%</span>%TMPL:END%
-%TMPL:DEF{"RAW_ACTION"}%<a href='%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%" raw="text"}%' class='natTopicAction natRawAction' title='%TRANSLATE{"View the raw text of this topic"}%' rel='nofollow' accesskey='v' data-rev='$rev'>%TMPL:P{"icon::raw"}%$label</a>%TMPL:END%
+%TMPL:DEF{"RAW_ACTION"}%<a href='%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%" raw="text" rev="$rev"}%' class='natTopicAction natRawAction' title='%TRANSLATE{"View the raw text of this topic"}%' rel='nofollow' accesskey='v' data-rev='$rev'>%TMPL:P{"icon::raw"}%$label</a>%TMPL:END%
 %TMPL:DEF{"RAW_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natRawAction'>%TMPL:P{"icon::raw"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"RAW_DATA_SHORT"}%<span class='natTopicActionShortLabel'>%TRANSLATE{"Raw data"}%</span>%TMPL:END%
@@ -438,9 +438,9 @@
 %TMPL:DEF{"titlesep"}%%HTMLTITLESEP{default="-"}%%TMPL:END%
 
 %TMPL:DEF{"favicon"}%%TMPL:P{context="msie" then="favicon::msie" else="favicon::default"}%%TMPL:END%
-%TMPL:DEF{"favicon::msie"}%<link rel="shortcut icon" href="%TMPL:P{"favicon::msie::url"}%" />%TMPL:END%
+%TMPL:DEF{"favicon::msie"}%<link rel="shortcut icon" href="%TMPL:P{"favicon::msie::url"}%">%TMPL:END%
 %TMPL:DEF{"favicon::msie::url"}%%TMPL:P{"favicon::url"}%%TMPL:END%
-%TMPL:DEF{"favicon::default"}%<link rel="icon" href="%TMPL:P{"favicon::default::url"}%" />%TMPL:END%
+%TMPL:DEF{"favicon::default"}%<link rel="icon" href="%TMPL:P{"favicon::default::url"}%">%TMPL:END%
 %TMPL:DEF{"favicon::default::url"}%%TMPL:P{"favicon::url"}%%TMPL:END%
 %TMPL:DEF{"favicon::url"}%%FAVICON%%TMPL:END%
 

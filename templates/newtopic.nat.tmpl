@@ -143,7 +143,6 @@
       <input type='hidden' name='onlynewtopic' value='on' />
       <input type='hidden' name='onlywikiname' value='off' />
       <input type='hidden' name='topicparent' value='%URLPARAM{"topicparent"}%' />
-      <input type='hidden' name='Category' value='%URLPARAM{"category"}%' />
       %TMPL:P{"topiccreator::inputform::clear" 
         topictemplate="%TMPL:P{"topiccreator::inputform::topictemplate"}%"
       }%<!-- -->
@@ -201,6 +200,11 @@
                  <td>$edit
                     <div class='foswikiFormDescription'>$description</div>
                  </td></tr>$n"
+          %RENDERFORMDEF{"%URLPARAM{"form"}%"
+            includetype="cat"
+            format="$name_default=\"%URLPARAM{"category"}%\""
+            limit="1"
+          }%
         }%
         %IF{"$'URLPARAM{topicTemplate}'~'*WebTopicEditTemplate'" 
           then="$percntTMPL:P{\"topiccreator::inputform::templates\"}$percnt"

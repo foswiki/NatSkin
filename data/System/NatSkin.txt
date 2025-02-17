@@ -132,6 +132,12 @@ to make the setting permanent.
 
 ---++ Change History
 %TABLE{columnwidths="7em" tablewidth="100%"}%
+|  17 Feb 2025: | fixed change password and change email address; \
+                  improved user photo not to depend on optional plugins; \
+                  added missing optional dependency on <nop>ImageGeneratorPlugin; \
+                  fixed js for user tooltips not to conflict with formields of type =user=; \
+                  css fix for monospace strings in headings; \
+                  removed self-closing from html meta and link tags |
 |  11 Feb 2025: | improve mobile view of user profile pages; \
                   improved Makefile system; \
                   use smaller fonts on mobile devices; \

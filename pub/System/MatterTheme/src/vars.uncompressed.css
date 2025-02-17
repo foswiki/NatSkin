@@ -236,7 +236,6 @@
   --input-background: #252525;
   --editor-background: var(--input-background);
   --codemirror-background: var(--input-background);
-  --input-foreground: #b2b2b2;
   /*--input-border: var(--color-primary-darker-3);*/
   --input-border: var(--color-border);
   --input-foreground: var(--color-foreground);

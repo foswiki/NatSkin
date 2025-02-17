@@ -13,7 +13,7 @@
 
 %{ content search }%
 %TMPL:DEF{"opensearch::content::topic"}%%USERSWEB%.WebSearch%TMPL:END%
-%TMPL:DEF{"opensearch::content::link"}%<link rel="search" type="application/opensearchdescription+xml" title="%WIKITOOLNAME%" href="%TMPL:P{"opensearch::content::link::href"}%" />%TMPL:END%
+%TMPL:DEF{"opensearch::content::link"}%<link rel="search" type="application/opensearchdescription+xml" title="%WIKITOOLNAME%" href="%TMPL:P{"opensearch::content::link::href"}%">%TMPL:END%
 %TMPL:DEF{"opensearch::content::link::href"}%%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?topic=%TMPL:P{"opensearch::content::topic"}%&amp;name=opensearch&amp;expand=opensearch::content&amp;contenttype=%ENCODE{"application/opensearchdescription+xml"}%%TMPL:END%
 
 %TMPL:DEF{"opensearch::content"}%%TMPL:P{"opensearch::content::header"}%
@@ -46,7 +46,7 @@
 
 %{ person search }%
 %TMPL:DEF{"opensearch::person::topic"}%%USERSWEB%.WikiUsers%TMPL:END%
-%TMPL:DEF{"opensearch::person::link"}%<link rel="search" type="application/opensearchdescription+xml" title="%WIKITOOLNAME%-People" href="%TMPL:P{"opensearch::person::link::href"}%" />%TMPL:END%
+%TMPL:DEF{"opensearch::person::link"}%<link rel="search" type="application/opensearchdescription+xml" title="%WIKITOOLNAME%-People" href="%TMPL:P{"opensearch::person::link::href"}%">%TMPL:END%
 %TMPL:DEF{"opensearch::person::link::href"}%%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?topic=%TMPL:P{"opensearch::person::topic"}%&amp;name=opensearch&amp;expand=opensearch::person&amp;contenttype=%ENCODE{"application/opensearchdescription+xml"}%%TMPL:END%
 
 %TMPL:DEF{"opensearch::person"}%%TMPL:P{"opensearch::person::header"}%

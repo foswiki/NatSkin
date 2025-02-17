@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1738603560" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1739795603" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 
 %TMPL:INCLUDE{"view"}%
@@ -86,7 +86,7 @@
 %TMPL:DEF{"passwordstep"}%%IF{"not context isadmin" then="$percntTMPL:P{\"passwordstep::user\"}$percnt"}%%TMPL:END%
 %TMPL:DEF{"passwordstep::user"}%<div class="foswikiFormStep">
   <h3 >%MAKETEXT{"Password"}%:</h3>
-  <input type='password' autocomplete='off' name='password' value='%URLPARAM{"password"}%' size='40' class='foswikiInputField required' />
+  <input type='password' autocomplete='off' name='oldpassword' value='%URLPARAM{"password"}%' size='40' class='foswikiInputField required' />
   <div class="foswikiFormDescription">
     %MAKETEXT{"You are required to enter your password to change your e-mail address."}%
   </div>

@@ -1,62 +1,47 @@
 %TMPL:DEF{"user::photo::size"}%32x32>%TMPL:END%
 %TMPL:DEF{"user::photo::filter"}%none%TMPL:END%
 %TMPL:DEF{"user::photo::formfield"}%Photo%TMPL:END%
-%TMPL:DEF{"user::photo::default"}%%GENIMAGE{
-  text="%IF{"istopic '%web%.%topic%'"
-          then="$percntGETTOPICTITLE{\"%web%.%topic%\"}$percnt"
-          else="%FORMATLIST{"%topic%" split="_"}%"
-       }%"
-  format="$url"
-  from="initials"
-}%%TMPL:END%
+
 %TMPL:DEF{"user::tooltip::photo::size"}%%NATSKIN_USERTOOLTIP_SIZE{default="60x90>"}%%TMPL:END%
 %TMPL:DEF{"user::tooltip"}%%TMPL:P{"user::tooltip::default"}%%TMPL:END%
 %TMPL:DEF{"user::tooltip::formfields"}%%NATSKIN_USERTOOLTIP_FORMFIELDS{default="Profession,Address,Telephone,Email"}%%TMPL:END%
 
+%{url}%
 %TMPL:DEF{"user::photo::url"}%%TMPL:P{context="PluggableAuthEnabled" 
   then="user::photo::url::pauth" 
-  else="user::photo::url::impl"
+  else="user::photo::url::formfield"
   web="%web%"
   topic="%topic%"
 }%%TMPL:END%
 
 %TMPL:DEF{"user::photo::url::pauth"}%%IF{
   "'%USERINFO{"%topic%" format="$picture"}%'=''"
-  then="$percntTMPL:P{\"user::photo::url::impl\" 
-          topic=\"%topic%\" 
+  then="$percntTMPL:P{\"user::photo::url::formfield\" 
           web=\"%web%\"
+          topic=\"%topic%\" 
         }$percnt"
   else="%USERINFO{"%topic%" format="$picture"}%"
 }%%TMPL:END%
 
-%TMPL:DEF{"user::photo::url::impl"}%%IF{
+%TMPL:DEF{"user::photo::url::formfield"}%%IF{
   "'%web%.%topic%'/%TMPL:P{"user::photo::formfield"}%"
   then="%PUBURLPATH%/%web%/%topic%/$percntFORMFIELD{\"%TMPL:P{"user::photo::formfield"}%\" topic=\"%web%.%topic%\"}$percnt"
-  else="$percntATTACHMENTS{
-    \"%web%.%topic%\"
-    name=\".*%TMPL:P{"image::exts"}%\" 
-    limit=\"1\" 
-    attr=\".*t.*\"
-    format=\"%PUBURLPATH%/%web%/%topic%/$name\"
-    nullformat=\"$dollarpercntTMPL:P{\\"user::photo::url::default\\"
-		    web=\\"%web%\\"
-		    topic=\\"%topic%\\"
-		}$dollarpercnt\"
-  }$percnt"
+  else="$percntTMPL:P{\"user::photo::url::attachment\"
+            web=\"%web%\"
+            topic=\"%topic%\"
+        }$percnt"
 }%%TMPL:END%
 
-%TMPL:DEF{"user::photo::url::default"}%%ATTACHMENTS{
-    "%web%.%topic%"
-    name=".*%TMPL:P{"image::exts"}%" 
-    limit="1"
-    sort="comment:name"
-    format="%PUBURLPATH%/%web%/%topic%/$name"
-    nullformat="$percntTMPL:P{\"user::photo::default\"
-      web=\"%web%\"
-      topic=\"%topic%\"
-    }$percnt"
+%TMPL:DEF{"user::photo::url::attachment"}%%ATTACHMENTS{
+  "%web%.%topic%"
+  name=".*%TMPL:P{"image::exts"}%" 
+  limit="1"
+  attr=".*t.*"
+  format="%PUBURLPATH%/%web%/%topic%/$name"
+  nullformat="$percntTMPL:P{\"user::photo::url::default\"}$percnt"
 }%%TMPL:END%
 
+%{img}%
 %TMPL:DEF{"user::photo"}%%TMPL:P{context="ImagePluginEnabled" 
   then="user::photo::image" 
   else="user::photo::genimage"
@@ -65,21 +50,32 @@
   crop="%crop%"
   filter="%filter%"
   align="%align%"
-  size="%size%"
+  size="%IF{"'%size%'=~'^%size'" then="%TMPL:P{"user::photo::size"}%" else="%size%"}%"
 }%%TMPL:END%
 
 %TMPL:DEF{"user::photo::image"}%%IMAGE{
-    "%TMPL:P{"user::photo::url" 
-      web="%web%" 
-      topic="%topic%" 
-    }%"
-    type="plain"
-    class="natUserPhoto"
-    align="%IF{"'%align%'=~'^(left|right)$'" then="%align%"}%"
-    size="%IF{"'%size%'=~'^%size'" then="%TMPL:P{"user::photo::size"}%" else="%size%"}%"
-    filter="%IF{"'%filter%'=~'^%filter'" then="%TMPL:P{"user::photo::filter"}%" else="%filter%"}%"
-    crop="%IF{"'%crop%'=~'^%crop'" then="on" else="%crop%"}%"
-    title=""
+  "%TMPL:P{"user::photo::url" 
+    web="%web%" 
+    topic="%topic%" 
+  }%"
+  type="plain"
+  class="natUserPhoto"
+  align="%IF{"'%align%'=~'^(left|right)$'" then="%align%"}%"
+  size="%size%"
+  filter="%IF{"'%filter%'=~'^%filter'" then="%TMPL:P{"user::photo::filter"}%" else="%filter%"}%"
+  crop="%IF{"'%crop%'=~'^%crop'" then="on" else="%crop%"}%"
+  title=""
+}%%TMPL:END%
+
+%TMPL:DEF{"user::photo::genimage"}%%TMPL:P{context="ImageGeneratorPluginEnabled"
+  then="user::photo::genimage"
+  else="user::photo::default"
+  web="%web%"
+  topic="%topic%"
+  crop="%crop%"
+  filter="%filter%"
+  align="%align%"
+  size="%size%"
 }%%TMPL:END%
 
 %TMPL:DEF{"user::photo::genimage"}%%GENIMAGE{
@@ -88,9 +84,13 @@
           else="%FORMATLIST{"%topic%" split="_"}%"
        }%"
   from="initials"
-  class="natUserPhoto"
+  class="natUserPhoto imagePlain"
   size="%IF{"'%size%'=~'^%size'" then="%TMPL:P{"user::photo::size"}%" else="%size%"}%"
 }%%TMPL:END%
+
+%TMPL:DEF{"user::photo::url::default"}%%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/images/nobody.png%TMPL:END%
+%TMPL:DEF{"user::photo::default"}%<img class='imagePlain' src='%TMPL:P{"user::photo::url::default' style='float:%align%' %FORMATLIST{"%size%" pattern="(.*)x(.*)" format="width='$1px' height='$2px'"}% />%TMPL:END%
+
 
 %{ used by user formfield of MoreFormfieldsPlugin }%
 %TMPL:DEF{"user::photo::thumbnail::url"}%%SCRIPTURLPATH{"rest"}%/ImagePlugin/process?topic=%web%.%topic%;file=%TMPL:P{"user::photo::url" 
@@ -118,14 +118,14 @@
 }%%TMPL:END%
 
 %TMPL:DEF{"user::tooltip::photo"}%%IMAGE{
-    "%TMPL:P{"user::photo::url" 
-      web="%web%" 
-      topic="%topic%" 
-    }%"
-    type="plain"
-    size="%TMPL:P{"user::tooltip::photo::size"}%"
-    crop="on"
-    title=""
+  "%TMPL:P{"user::photo::url" 
+    web="%web%" 
+    topic="%topic%" 
+  }%"
+  type="plain"
+  size="%TMPL:P{"user::tooltip::photo::size"}%"
+  crop="on"
+  title=""
 }%%TMPL:END%
 
 %TMPL:DEF{"user::tooltip::ldap"}%<div class='natUserTooltip'>

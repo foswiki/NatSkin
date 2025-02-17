@@ -3,7 +3,7 @@
 %{ ################################################################################ }%
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"Attachments"}%%TMPL:END%
 %TMPL:DEF{"bodyclass"}%natAttachBody%TMPL:END%
-%TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow" />%TMPL:END%
+%TMPL:DEF{"meta"}%<meta name="robots" content="noindex, nofollow">%TMPL:END%
 %TMPL:DEF{"attachments::showhidden"}%%URLPARAM{"attachments_showhidden" default="true"}%%TMPL:END%
 %TMPL:DEF{"attachments::showuploader"}%%URLPARAM{"attachments_showuploader" default="true"}%%TMPL:END%
 %TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%" template="attach"}%">%MAKETEXT{"Attachments"}%</a>%TMPL:END%
