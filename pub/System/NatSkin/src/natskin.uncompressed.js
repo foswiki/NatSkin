@@ -617,20 +617,19 @@
    */
   function initTopBar() {
     var topBar = $(".natTopBar"),
-        panel, topBarHeight, body, observer;
+        panel, body, observer;
 
     if (!topBar.length) {
       return;
     }
 
     function updateTopBarHeight() {
-      topBarHeight = topBar.height();
-      cssVar("--top-bar-height", topBarHeight+"px");
+      var height = topBar.height();
+      topBar.css("top", (height * -1) + "px"); /* SMELL: ... to make transitions work */
+      cssVar("--top-bar-height", height+"px");
     }
 
     updateTopBarHeight();
-
-    //console.log("topBarHeight=",topBarHeight);
 
     body = $("body");
     panel = $(".natTopPanel");
@@ -651,6 +650,7 @@
       if (body.is(".natBodyStickyTopBar")) {
         if (ratio == 1) {
           body.removeClass("natBodyStickyTopBar");
+          updateTopBarHeight();
         }
       } else {
         if (ratio <= 0.1) {
@@ -658,7 +658,6 @@
           updateTopBarHeight();
         }
       }
-
     }, {
       threshold: [0.1, 1]
     });

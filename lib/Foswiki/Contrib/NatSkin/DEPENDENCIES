@@ -3,7 +3,7 @@ Foswiki::Contrib::FamFamFamContrib,>=2075,perl,Required
 Foswiki::Contrib::JQAjaxFormContrib,>=0,perl,Required
 Foswiki::Contrib::JQPasswordGeneratorContrib,>=0,perl,Required
 Foswiki::Contrib::JQSelect2Contrib,>1.01,perl,Required
-Foswiki::Contrib::JQHoverMenuContrib,>1.01,perl,Required
+Foswiki::Contrib::JQHoverMenuContrib,>1.00,perl,Required
 Foswiki::Contrib::WebFontsContrib,>=7.0,perl,Required
 Foswiki::Plugins::AutoTemplatePlugin,>=2.01,perl,Required
 Foswiki::Plugins::BreadCrumbsPlugin,>=4318,perl,Required
@@ -28,7 +28,7 @@ Foswiki::Plugins::PixabayPlugin,>=0,perl,Optional
 Foswiki::Plugins::RedDotPlugin,>=1,perl,Required
 Foswiki::Plugins::RenderPlugin,>=6.00,perl,Required
 Foswiki::Plugins::SectionListPlugin,>=0,perl,Optional
-Foswiki::Plugins::SecurityHeadersPlugin,>=2.00,perl,Optional
+Foswiki::Plugins::SecurityHeadersPlugin,>=1.30,perl,Optional
 Foswiki::Plugins::TopicInteractionPlugin,>=1340,perl,Required
 Foswiki::Plugins::WebCreatorPlugin,>=1,perl,Required
 Foswiki::Plugins::WebLinkPlugin,>=2.1,perl,Required

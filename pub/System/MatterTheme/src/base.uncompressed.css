@@ -350,7 +350,7 @@ a {
   position:-webkit-sticky;
   position:sticky;
   top: calc(var(--top-bar-height, 100) * -1px);
-  transition: top 500ms;
+  transition: top 500ms; /* SMELL: doesn't work  with css vars ... height updated via js */
   border-bottom:1px solid var(--topbar-border);
   z-index:100; /* see ui-natedit-* */
   background-color: var(--topbar-background);
