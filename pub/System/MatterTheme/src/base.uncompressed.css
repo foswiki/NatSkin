@@ -131,17 +131,12 @@ html {
 
 .natViewBody .natMainContents [name],
 .natViewBody .natMainContents [id] {
-  scroll-margin-top: calc(var(--top-bar-height, 100) + var(--margin));
+  scroll-margin-top: calc(var(--top-bar-height, 100) + var(--margin-half));
 }
 
 blockquote {
   margin:1.5em 0;
   padding:0 0 0 1.4285em; 
-}
-
-
-ul, ol {
-  margin:var(--margin) 0;
 }
 
 .foswikiTopicInfo .fa {
@@ -165,9 +160,6 @@ a {
 .foswikiGrid .border,
 .hr, hr {
   border-style:solid;
-  border-color:var(--color-border);
-}
-.foswikiGrid>.foswikiRow>.foswikiBorder {
   border-color:var(--color-border);
 }
 .foswikiPageForm .hr,
@@ -276,10 +268,15 @@ a {
   padding-top:var(--margin);
 }
 
+.natBodyFullscreen .natTopPanelContents,
 .natBodySticky .natTopPanelContents,
 .natBodyBordered .natTopPanelContents {
   padding-left:1em;
   padding-right:1em;
+}
+
+.natBodyPanelOpen.natBodyFullscreen .natTopicActions {
+  display:none;
 }
 
 .natBodySticky .natBannerContents,
@@ -368,6 +365,7 @@ a {
 }
 .natBodySticky .natTopBar,
 .natBodyStickyTopBar .natTopBar {
+  background:var(--topbar-sticky-background);
   box-shadow:var(--topbar-sticky-box-shadow);
   top:-1px !important;
 }
@@ -414,7 +412,7 @@ a {
   vertical-align:middle;
 }
 .natPanelToggle a {
-  padding:0 1em;
+  padding:0 1rem;
   text-decoration:none;
   box-shadow:none;
   color:var(--topbar-anchor);
@@ -481,13 +479,16 @@ a {
   height:9em;
   min-height:7em;
   box-sizing:border-box;
-  background-color:#607D8B;  /* TODO */
+  background-color: var(--nat-bannercolor);
   overflow:hidden;
   position:relative;
   display:flex;
   flex-direction:column;
   justify-content:center;
   font-weight: var(--font-weight-normal);
+}
+.natBannerColor {
+  background-color: var(--nat-bannercolor);
 }
 .natBannerContents {
   z-index:2;
@@ -706,7 +707,7 @@ a {
 .natCopyRight a,
 .natPageCacheBanner,
 .natPageCacheBanner a {
-  color:#aaa; /* TODO */
+  color:var(--bottombar-foreground);
 }
 .natSideMap,
 .natCopyRight,
@@ -958,7 +959,7 @@ a {
 .natSideBar h2,
 .natSideBar h2 a {
   color:var(--color-h2);
-  font-weight:var(--font-weight-semi-bold);
+  font-weight:var(--font-weight-medium);
 }
 /*
 .foswikiTocTitle,
@@ -1039,16 +1040,6 @@ a.natScrollTop {
 .foswikiTable {
   margin:0 0 var(--margin) 0;
   font-size: var(--font-size-smaller);
-  border:1px solid var(--table-border);
-}
-
-/* toc */
-.foswikiToc ul {
-  margin-top:0.5em;
-  padding:0.5em 0 0;
-}
-.foswikiToc li {
-  margin-left:0;
 }
 
 /* classification plugin */
@@ -1122,11 +1113,15 @@ h2.marked {
 .clsIndexItem h3,
 .clsIndexItem h4,
 .clsIndexItem h5,
-.clsIndexItem h6,
+.clsIndexItem h6 {
+  color:var(--color-foreground);
+}
 .clsIndexItem h3 a,
 .clsIndexItem h4 a,
 .clsIndexItem h5 a,
-.clsIndexItem h6 a,
+.clsIndexItem h6 a {
+  color:var(--color-anchor);
+}
 .foswikiAlt h3,
 .foswikiAlt h4,
 .foswikiAlt h5,
@@ -1160,6 +1155,20 @@ h2.marked {
 .foswikiFormSteps h5 a,
 .foswikiFormSteps h6 a {
   color: var(--alt-header-foreground);
+}
+.foswikiPageForm h3 a:hover,
+.foswikiPageForm h4 a:hover,
+.foswikiPageForm h5 a:hover,
+.foswikiPageForm h6 a:hover,
+.foswikiFormSteps h3 a:hover,
+.foswikiFormSteps h4 a:hover,
+.foswikiFormSteps h5 a:hover,
+.foswikiFormSteps h6 a:hover,
+.clsIndexItem h3 a:hover,
+.clsIndexItem h4 a:hover,
+.clsIndexItem h5 a:hover,
+.clsIndexItem h6 a:hover {
+  color: var(--color-hover-foreground);
 }
 
 .foswikiGridForm h3, 
@@ -1255,12 +1264,15 @@ h2.marked {
 */
 
 /* image plugin */
+.imageFrame_center a.imageHref,
 .imageFrame {
   border-radius: 6px;
   box-shadow: 2px 2px 10px -5px rgba(0, 0, 0, 0.5);
   padding:0;
 }
-
+.imageFrame_center {
+  box-shadow:none;
+}
 .imageFrame img {
   border:0;
   padding:0;
@@ -1359,7 +1371,7 @@ input[type=file]::file-selector-button,
   color: var(--button-foreground);
   background: var(--button-background-gradient);
   padding:5px 10px; /* not using ems here as to subpixel issues 0.4em 0.7em */
-  border-radius: 4px; 
+  border-radius: 4px;; 
 }
 
 .erp-edittable {
@@ -1469,10 +1481,12 @@ a.jqButtonSimple:focus,
 span.jqButtonSimple:focus,
 a.jqButtonSimple:active,
 span.jqButtonSimple:active,
+label.jqButtonSimple:hover:active,
 a.jqButtonSimple:hover:active,
 span.jqButtonSimple:hover:active,
 span.jqButtonSimple:hover,
-a.jqButtonSimple:hover {
+a.jqButtonSimple:hover,
+label.jqButtonSimple:hover {
   box-shadow:none;
   color:var(--color-hover-foreground);
   background:transparent;
@@ -1808,12 +1822,8 @@ ul.jqTabGroup a {
   }
 }
 @media screen and (max-width: 600px) {
-  .natBreadCrumbs,
-  .DISnatUserActions .natUserAction {
+  .natBreadCrumbs {
     display:none;
-  }
-  .natMainContents {
-    margin-top:0;
   }
   .natUserActions {
     margin-right:30px;
@@ -1837,8 +1847,11 @@ ul.jqTabGroup a {
 }
 
 @media screen and (max-width: 500px) {
-  .natWebTitle {
-    margin-bottom:0.75em;
+  .natPanelToggle a .jqIcon {
+    padding:0;
+  }
+  .natPanelToggle span {
+    display:none;
   }
 }
 @media print {

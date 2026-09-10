@@ -162,7 +162,7 @@
 
 %TMPL:DEF{"metarelations::langs"}%%DBQUERY{
   "(preferences.BASETRANSLATION = '%BASETRANSLATION{default="%TOPIC%"}%' OR topic = '%BASETRANSLATION{default="%TOPIC%"}%')"
-  format="<link rel=\"alternate\" hreflang=\"$expand(preferences.CONTENT_LANGUAGE or '%DEFAULTLANGUAGE{default="en"}%')\" href=\"$percntSCRIPTURL{\"view\" topic=\"$web.$topic\"}$percnt\">" 
+  format="<link rel=\"alternate\" hreflang=\"$expand(preferences.CONTENT_LANGUAGE or '%LANGUAGE%')\" href=\"$percntSCRIPTURL{\"view\" topic=\"$web.$topic\"}$percnt\">" 
   separator="$n"
 }%%TMPL:END%
 
@@ -181,7 +181,7 @@
 %TMPL:DEF{"langswitcher::impl"}%<div class="natLangs">%TMPL:P{"langswitcher::contents"}%</div>%TMPL:END%
 %TMPL:DEF{"langswitcher::contents"}%<literal>%DBQUERY{
   "(preferences.BASETRANSLATION = '%BASETRANSLATION{default="%TOPIC%"}%' OR topic = '%BASETRANSLATION{default="%TOPIC%"}%')"
-  format="$percntLANGUAGES{\"$expand(preferences.CONTENT_LANGUAGE or '%DEFAULTLANGUAGE{default="en"}%')\"
+  format="$percntLANGUAGES{\"$expand(preferences.CONTENT_LANGUAGE or '%LANGUAGE%')\"
       format=\"$percntIF{\"'$topic'='%TOPIC%'\"
                 then=\"<a class='natCurrentLang' title='$percntMAKETEXT{\"Current translation is [_1]\" args=\"$dollarlabel_name\"}$percnt'>$icon(24)</a>\"
                 else=\"<a href='$percntSCRIPTURLPATH{\"view\" topic=\"$web.$topic\"}$percnt' title='$percntMAKETEXT{\"Select translation in [_1]\" args=\"$dollarlabel_name\"}$percnt'>$icon(24)</a>\"
@@ -199,12 +199,37 @@
 %TMPL:P{"comments"}%%{}%
 %{}%%TMPL:END%
 
+%TMPL:DEF{"beforetext"}%%IF{
+   "'%DISPLAYTOPICTITLE{default="off"}%'='on'"
+   then="$percntTMPL:P{\"topicinfo\"}$percnt"
+   else="<!-- -->"
+}%%TMPL:END%
+%TMPL:DEF{"topicinfo"}%<noautolink><div class='foswikiTopicInfo'><h1 itemprop='headline' class='inlineEditor inlineTitleEditor'>%TMPL:P{"topicinfo::prefix"}%%TMPL:P{"topicinfo::title"}%%TMPL:P{"topicinfo::suffix"}%</h1>
+%IF{
+   "'%DISPLAYREVISIONINFO{default="off"}%'='on'"
+   then="$percntTMPL:P{\"revinfo::impl\"}$percnt"
+}%</div></noautolink>%TMPL:END%
+%TMPL:DEF{"topicinfo::title"}%[[%TOPIC%]]%TMPL:END%
+
 %TMPL:DEF{"rawbutton"}%%IF{"$'URLPARAM{raw}'='on'" then="<p class='clearfix'>$percntBUTTON{\"%MAKETEXT{"View"}%\" title=\"%MAKETEXT{"Back to view mode"}%\" style=\"float:right\" icon=\"fa-eye\" target=\"%WEB%.%TOPIC%\"}$percnt</p>"}%%TMPL:END%
 %TMPL:DEF{"text"}%%TEXT%%TMPL:END%
 %TMPL:DEF{"rawtext"}%<textarea rows="22" cols="70" class="foswikiTextarea foswikiTextareaRawView" readonly="readonly" style="width:99%">%TEXT%</textarea>%TMPL:END%
 
 %TMPL:DEF{"topicactions"}%<div class="natTopicActions clearfix" id="natTopicActions"><noautolink>%TMPL:P{context="static" else="topicactions::contents"}%</noautolink></div>%TMPL:END%
 %TMPL:DEF{"topicactions::contents"}%%WEBCOMPONENT{"TopicActions"}%%TMPL:END%
+
+%TMPL:DEF{"aftertext"}%%IF{
+   "'%DISPLAYREFERENCES{default="on"}%'='on' and context RefNotesPluginEnabled"
+   then="$percntTMPL:P{\"refnotes\"}$percnt"
+}%%TMPL:END%
+
+%TMPL:DEF{"refnotes"}%<noautolink>%REFERENCES{
+  header="<div class='refNotesContainer $group'>
+<h2>$percntMAKETEXT{\"$title\"}$percnt</h2>
+<table class='foswikiLayoutTable refNotes'>"
+  format="<tr id='$id'><th>$label</th><td> $text </td></tr>"
+  footer="</table></div>$n"
+}%</noautolink>%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"contentheader"}%<div class="natMainHeaderContents clearfix" %IF{"$'DISPLAYTOPICACTIONS'='off' and $'DISPLAYBREADCRUMBS'='off'" then="style='display:none'"}%>%TMPL:P{"contentheader::contents"}%</div>%TMPL:END%
@@ -256,7 +281,7 @@
 %TMPL:DEF{"revinfo::sep"}% <span class='foswikiRevisionSep'>&#124;</span> %TMPL:END%
 
 %TMPL:DEF{"revinfo::date"}%<span class='foswikiRevisionDate'>%TMPL:P{"icon::calendar"}% %TMPL:P{context="authenticated" then="revinfo::date::link" else="revinfo::date::text"}%</span>%TMPL:END%
-%TMPL:DEF{"revinfo::date::link"}%<a href="%SCRIPTURLPATH{"diff" topic="%WEB%.%TOPIC%" rev="%TMPL:P{"currev"}%"}%">%TMPL:P{"revinfo::date::text"}%</a>%TMPL:END%
+%TMPL:DEF{"revinfo::date::link"}%<a rel="nofollow" href="%SCRIPTURLPATH{"diff" topic="%WEB%.%TOPIC%" rev="%TMPL:P{"currev"}%"}%">%TMPL:P{"revinfo::date::text"}%</a>%TMPL:END%
 %TMPL:DEF{"revinfo::date::text"}%%REVINFO{"<span itemprop='dateModified' content='$iso'>$date - $hour:$min</span>" rev="%TMPL:P{"currev"}%"}%%TMPL:END%
 
 %TMPL:DEF{"revinfo::revision"}%%TMPL:P{"revinfo::sep"}%
@@ -317,18 +342,14 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"comments"}%%IF{
-  "'%DISPLAYCOMMENTS{default="%TMPL:P{"comments::default"}%"}%'='on' and $'COMMENTFORMAT'!='insidetab' and not context save and not context preview and not context edit"
+  "'%DISPLAYCOMMENTS{default="%TMPL:P{"comments::default"}%"}%'='on' and not context save and not context preview and not context edit"
   then="$percntTMPL:P{\"comments::system::%COMMENTSYSTEM{default="metacomment"}%\"}$percnt"
 }%%TMPL:END%
 
-%TMPL:DEF{"comments::topic"}%%WEB%.%BASETRANSLATION{default="%TOPIC%"}%%TMPL:END%
+%TMPL:DEF{"comments::topic"}%%URLPARAM{"commentstopic" default="%WEB%.%BASETRANSLATION{default="%TOPIC%"}%"}%%TMPL:END%
 %TMPL:DEF{"comments::default"}%off%TMPL:END%
 %TMPL:DEF{"comments::system::disqus"}%%DISQUS%%TMPL:END%
-%TMPL:DEF{"comments::system::metacomment"}%%TMPL:P{"metacomments::init"}%%TMPL:P{context="static" then="comments::system::metacomment::static" else="comments::system::metacomment::async"}%%TMPL:END%
-%TMPL:DEF{"comments::system::metacomment::template"}%metacomments%TMPL:END%
-%TMPL:DEF{"comments::system::metacomment::async"}%%JQREQUIRE{"loader"}%<div class="jqLoader" data-url="%SCRIPTURLPATH{"rest"}%/RenderPlugin/template?name=%TMPL:P{"comments::system::metacomment::template"}%;expand=metacomments;render=on;topic=%WEB%.%TOPIC%;commentstopic=%TMPL:P{"comments::topic"}%;rev=%URLPARAM{"rev"}%;cachecontrol=0" data-mode="auto" data-skin="" data-hide-effect="">%TMPL:P{"comments::system::metacomment::spinner"}%</div>%TMPL:END%
-%TMPL:DEF{"comments::system::metacomment::spinner"}%<p class='foswikiCenter'>%JQICON{"fa-circle-o" animate="burst" style="color:var(--color-foreground);font-size:var(--font-size-large)"}%</p>%TMPL:END%
-%TMPL:DEF{"comments::system::metacomment::static"}%%TMPL:P{"metacomments"}%%TMPL:END%
+%TMPL:DEF{"comments::system::metacomment"}%%TMPL:P{"metacomments"}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"editsettingsform"}%<form id="editSettingsForm" name="editSettingsForm" class="foswikiHidden" action="%SCRIPTURLPATH{"manage"}%/%BASEWEB%/%BASETOPIC%" method="post"> 

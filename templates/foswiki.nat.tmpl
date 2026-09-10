@@ -21,10 +21,10 @@
       class="natTopicAction natFavAction"
       autosubscribe="%TMPL:P{"listy::autosubscribe"}%"
 }%</li>
-<li>[[%WIKIUSERNAME%?template=bookmarks&origin=%WEB%.%TOPIC%][%TMPL:P{"icon::edit"}%<span class='natTopicActionLongLabel'>%TRANSLATE{"Manage bookmarks"}%</span>]]</li>
+<li>[[%USERINFO{format="$wikiusername"}%?template=bookmarks&origin=%WEB%.%TOPIC%][%TMPL:P{"icon::edit"}%<span class='natTopicActionLongLabel'>%TRANSLATE{"Manage bookmarks"}%</span>]]</li>
 <li><hr /></li>
 %RENDERMETADATA{"listy"
-   topic="%WIKIUSERNAME%"
+   topic="%USERINFO{format="$wikiusername"}%"
    sort="index"
    filter="collection='mylinks'"
    header=""
@@ -32,12 +32,17 @@
                   web=\"$origweb\"
                   topic=\"$origtopic\"
                   url=\"$url\"
-                  title=\"$percntIF{\"'$title'!=''\" then=\"[$title]\" else=\"\"}$percnt\"
+                  title=\"$percntIF{
+                    \"'$percntENCODE{$title}$percnt'!='' and '$type'=~'topic|external'\" 
+                    then=\"[$title]\"
+                    else=\"$title\"
+                  }$percnt\"
             }$percnt<!-- -->"
    footer=""
   separator="$n"
 }%
 </ul></noautolink>%TMPL:END%
+%TMPL:DEF{"BOOKMARKS::format::text"}%<li class='natActionNoIcon'>%title%</li>%TMPL:END%
 %TMPL:DEF{"BOOKMARKS::format::topic"}%<li class='natActionNoIcon'>[[%web%.%topic%]%title%]</li>%TMPL:END%
 %TMPL:DEF{"BOOKMARKS::format::external"}%<li class='natActionNoIcon'>[[%url%]%title%]</li>%TMPL:END%
 
@@ -68,7 +73,7 @@
    <input type='hidden' name='create' value='1'/> 
    <input type='hidden' name='redirectto' value='%BASEWEB%.%BASETOPIC%?refresh=cache' /> 
    <input type='hidden' name='groupname' value='AdminGroup' />  
-   <input type='hidden' name='username' value='%WIKINAME%' /> 
+   <input type='hidden' name='username' value='%USERINFO{format="$wikiname"}%' /> 
    <a href="#" onclick="jQuery(this).parent().submit();return false;" class='natUserAction natChangeAdminAction' rel='nofollow'>%TMPL:P{"icon::changeadmin"}%$label</a>
 </form>%TMPL:END%
 
@@ -77,18 +82,18 @@
 %TMPL:DEF{"USERS_ACTION"}%<a href='%SCRIPTURLPATH{"view" topic="%USERSWEB%.%WIKIUSERSTOPIC%"}%' class='natUserAction natUsersAction'>$label</a>%TMPL:END%
 %TMPL:DEF{"USERS_ACTION_RESTRICTED"}%<span class='natUserAction natDisabledUserAction natUsersAction'>$label</span>%TMPL:END%
 
-%TMPL:DEF{"ACCOUNT"}%<span class='natTopicActionShortLabel'>%GETTOPICTITLE{"%WIKIUSERNAME%"}%</span>%TMPL:END%
-%TMPL:DEF{"ACCOUNT_ACTION"}%<a href='%SCRIPTURLPATH{"view" topic="%USERSWEB%.%WIKINAME%"}%' class='natUserAction natAccountAction'>%TMPL:P{"icon::account"}%$label</a>%TMPL:END%
+%TMPL:DEF{"ACCOUNT"}%<span class='natTopicActionShortLabel'>%GETTOPICTITLE{"%USERINFO{format="$wikiusername"}%"}%</span>%TMPL:END%
+%TMPL:DEF{"ACCOUNT_ACTION"}%<a href='%SCRIPTURLPATH{"view" topic="%USERINFO{format="$wikiusername"}%"}%' class='natUserAction natAccountAction'>%TMPL:P{"icon::account"}%$label</a>%TMPL:END%
 %TMPL:DEF{"ACCOUNT_ACTION_RESTRICTED"}%<span class='natUserAction natDisabledUserAction natAccountAction'>%TMPL:P{"icon::account"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"MYACCOUNT_SHORT"}%<span class='natTopicActionShortLabel'>%TRANSLATE{"My Account"}%</span>%TMPL:END%
 %TMPL:DEF{"MYACCOUNT_LONG"}%<span class='natTopicActionLongLabel'>%TRANSLATE{"My Account"}%</span>%TMPL:END%
-%TMPL:DEF{"MYACCOUNT_ACTION"}%<a href='%SCRIPTURLPATH{"view" topic="%USERSWEB%/%WIKINAME%"}%' class='natTopicAction natMyAccountAction'>%TMPL:P{"icon::account"}%$label</a>%TMPL:END%
+%TMPL:DEF{"MYACCOUNT_ACTION"}%<a href='%SCRIPTURLPATH{"view" topic="%USERINFO{format="$wikiusername"}%"}%' class='natTopicAction natMyAccountAction'>%TMPL:P{"icon::account"}%$label</a>%TMPL:END%
 %TMPL:DEF{"MYACCOUNT_ACTION_RESTRICTED"}%<span class='natUserAction natDisabledUserAction natAccountAction'>%TMPL:P{"icon::account"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"PROFILE_SHORT"}%<span class='natTopicActionShortLabel'>%TRANSLATE{"View profile"}%</span>%TMPL:END%
 %TMPL:DEF{"PROFILE_LONG"}%<span class='natTopicActionLongLabel'>%TRANSLATE{"View profile"}%</span>%TMPL:END%
-%TMPL:DEF{"PROFILE_ACTION"}%<a href='%SCRIPTURLPATH{"view" topic="%USERSWEB%.%WIKINAME%"}%' class='natUserAction natProfileAction'>%TMPL:P{"icon::account"}%$label</a>%TMPL:END%
+%TMPL:DEF{"PROFILE_ACTION"}%<a href='%SCRIPTURLPATH{"view" topic="%USERINFO{format="$wikiusername"}%"}%' class='natUserAction natProfileAction'>%TMPL:P{"icon::account"}%$label</a>%TMPL:END%
 %TMPL:DEF{"PROFILE_ACTION_RESTRICTED"}%<span class='natUserAction natDisabledUserAction natProfileAction'>%TMPL:P{"icon::account"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"ATTACH_SHORT"}%<span class='natTopicActionShortLabel'>%TRANSLATE{"Upload"}%</span>%TMPL:END%
@@ -177,7 +182,7 @@
 %TMPL:DEF{"CHAT_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natChatAction'>%TMPL:P{"icon::chat"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"RAW_SHORT"}%<span class='natTopicActionShortLabel'>%TRANSLATE{"Raw"}%</span>%TMPL:END%
-%TMPL:DEF{"RAW_LONG"}%<span class='natTopicActionLongLabel'>%TRANSLATE{"View wiki markup"}%</span>%TMPL:END%
+%TMPL:DEF{"RAW_LONG"}%<span class='natTopicActionLongLabel'>%TRANSLATE{"View markup"}%</span>%TMPL:END%
 %TMPL:DEF{"RAW_ACTION"}%<a href='%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%" raw="text" rev="$rev"}%' class='natTopicAction natRawAction' title='%TRANSLATE{"View the raw text of this topic"}%' rel='nofollow' accesskey='v' data-rev='$rev'>%TMPL:P{"icon::raw"}%$label</a>%TMPL:END%
 %TMPL:DEF{"RAW_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natRawAction'>%TMPL:P{"icon::raw"}%$label</span>%TMPL:END%
 
@@ -186,14 +191,14 @@
 %TMPL:DEF{"RAW_DATA_ACTION"}%<a href='%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%" raw="all" skin="text"}%' class='natTopicAction natRawDataAction' title='%TRANSLATE{"View the data of this topic"}%' rel='nofollow' accesskey='r'>%TMPL:P{"icon::raw_data"}%$label</a>%TMPL:END%
 %TMPL:DEF{"RAW_DATA_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natRawDataAction'>%TMPL:P{"icon::raw_data"}%$label</span>%TMPL:END%
 
-%TMPL:DEF{"EDIT_RAW_SHORT"}%<span class='natTopicActionShortLabel'>%TRANSLATE{"Edit Raw"}%</span>%TMPL:END%
-%TMPL:DEF{"EDIT_RAW_LONG"}%<span class='natTopicActionLongLabel'>%TRANSLATE{"Edit wiki markup"}%</span>%TMPL:END%
+%TMPL:DEF{"EDIT_RAW_SHORT"}%<span class='natTopicActionShortLabel'>%TRANSLATE{"Edit markup"}%</span>%TMPL:END%
+%TMPL:DEF{"EDIT_RAW_LONG"}%<span class='natTopicActionLongLabel'>%TRANSLATE{"Edit markup"}%</span>%TMPL:END%
 %TMPL:DEF{"EDIT_RAW_ACTION"}%<a href='$editurl&nowysiwyg=on' class='natTopicAction natEditRawAction' title='%TRANSLATE{"Edit the raw text of this topic"}%' rel='nofollow'>%TMPL:P{"icon::edit_raw"}%$label</a>%TMPL:END%
 %TMPL:DEF{"EDIT_RAW_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natEditRawAction'>%TMPL:P{"icon::edit_raw"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"EDIT_SHORT"}%<span class='natTopicActionShortLabel'>%TRANSLATE{"Edit"}%</span>%TMPL:END%
 %TMPL:DEF{"EDIT_LONG"}%<span class='natTopicActionLongLabel'>%TRANSLATE{"Edit this topic"}%</span>%TMPL:END%
-%TMPL:DEF{"EDIT_ACTION"}%<a href='$editurl' class='natTopicAction natEditAction' title='%TRANSLATE{"Edit this topic"}%' rel='nofollow' accesskey='e'>%TMPL:P{"icon::edit"}%$label</a>%TMPL:END%
+%TMPL:DEF{"EDIT_ACTION"}%<a href='$editurl%IF{"'%EDITACTION{default=""}%'!=''" then="&action=$percntEDITACTION$percnt"}%' class='natTopicAction natEditAction' title='%TRANSLATE{"Edit this topic"}%' rel='nofollow' accesskey='e'>%TMPL:P{"icon::edit"}%$label</a>%TMPL:END%
 %TMPL:DEF{"EDIT_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natEditAction'>%TMPL:P{"icon::edit"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"EDIT_FORM_SHORT"}%<span class='natTopicActionShortLabel'>%TRANSLATE{"Edit form"}%</span>%TMPL:END%
@@ -245,6 +250,7 @@
 %TMPL:DEF{"WORKFLOW_LONG"}%<span class='natTopicActionLongLabel'>%TRANSLATE{"Workflow History"}%</span>%TMPL:END%
 %TMPL:DEF{"WORKFLOW_ACTION"}%%IF{
   "'%QUERY{"'%BASEWEB%.%BASETOPIC%'/qmstate.id"}%'!=''" 
+  _then="<a href='#qmhistory' class='natTopicAction natWorkflowAction foswikiDialogLink' rel='nofollow' data-rev='$rev' title='%TRANSLATE{"View the workflow history of this topic"}%'>%TMPL:P{"icon::workflow"}%$label</a>"
   then="<a href='%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%" template="qmhistory"}%' class='natTopicAction natWorkflowAction' rel='nofollow' title='%TRANSLATE{"View the workflow history of this topic"}%'>%TMPL:P{"icon::workflow"}%$label</a>"
 }%%TMPL:END%
 %TMPL:DEF{"WORKFLOW_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natHistoryAction'>%TMPL:P{"icon::history"}%$label</span>%TMPL:END%
@@ -277,7 +283,7 @@
 
 %TMPL:DEF{"CHANGELANGUAGE_SHORT"}%<span class='natTopicActionShortLabel'>%TRANSLATE{"Language"}%</span>%TMPL:END%
 %TMPL:DEF{"CHANGELANGUAGE_LONG"}%<span class='natTopicActionLongLabel'>%TRANSLATE{"Interface language"}%</span>%TMPL:END%
-%TMPL:DEF{"CHANGELANGUAGE_ACTION"}%<a href='#languageselector' class='natTopicAction foswikiDialogLink natChangeLanguageAction' title='%TRANSLATE{"Select a different language for the wiki interface"}%' rel='nofollow' >%TMPL:P{"icon::changelanguage"}%$label</a>%TMPL:END%
+%TMPL:DEF{"CHANGELANGUAGE_ACTION"}%<a href='#languageselector' class='natTopicAction foswikiDialogLink natChangeLanguageAction' title='%TRANSLATE{"Select a different language for the user interface"}%' rel='nofollow' >%TMPL:P{"icon::changelanguage"}%$label</a>%TMPL:END%
 %TMPL:DEF{"CHANGELANGUAGE_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natChangeLanguageAction'>%TMPL:P{"icon::changelanguage"}%$label</span>%TMPL:END%
 
 %TMPL:DEF{"TRANSLATETOPIC_SHORT"}%<span class='natTopicActionShortLabel'>%TRANSLATE{"Translate"}%</span>%TMPL:END%
@@ -306,8 +312,10 @@
 
 %TMPL:DEF{"PDF_SHORT"}%<span class='natTopicActionShortLabel'>%TRANSLATE{"PDF"}%</span>%TMPL:END%
 %TMPL:DEF{"PDF_LONG"}%<span class='natTopicActionLongLabel'>%TRANSLATE{"Export topic to PDF"}%</span>%TMPL:END%
-%TMPL:DEF{"PDF_ACTION"}%<a href='#print' class='natTopicAction natPdfAction foswikiDialogLink' accesskey='p' title='%TRANSLATE{"Display this topic in PDF format"}%' rel='nofollow' data-section='%URLPARAM{"section"}%' data-rev='$rev' %QUERYPARAMS{format="data-$name='$value'" separator=" "}%>%TMPL:P{"icon::pdf"}%$label</a>%TMPL:END%
+%TMPL:DEF{"PDF_ACTION"}%<a href='#print' class='natTopicAction natPdfAction foswikiDialogLink' accesskey='p' title='%TRANSLATE{"Display this topic in PDF format"}%' rel='nofollow' data-section='%URLPARAM{"section"}%' data-rev='$rev' data-pdforientation='%TMPL:P{"PDFORIENTATION"}%' data-pdfpagesize='%TMPL:P{"PDFPAGESIZE"}%' %QUERYPARAMS{format="data-$name='$value'" separator=" "}%>%TMPL:P{"icon::pdf"}%$label</a>%TMPL:END%
 %TMPL:DEF{"PDF_ACTION_RESTRICTED"}%<span class='natTopicAction natDisabledTopicAction natPdfAction'>%TMPL:P{"icon::pdf"}%$label</span>%TMPL:END%
+%TMPL:DEF{"PDFORIENTATION"}%%PDFORIENTATION{default="portrait"}%%TMPL:END%
+%TMPL:DEF{"PDFPAGESIZE"}%%PDFPAGESIZE{default="a4"}%%TMPL:END%
 
 %TMPL:DEF{"FAVORITE_SHORT"}%<span class='natTopicActionShortLabel'>%TRANSLATE{"Favorite"}%</span>%TMPL:END%
 %TMPL:DEF{"FAVORITE_LONG"}%<span class='natTopicActionLongLabel'>%TRANSLATE{"Add to favorites"}%</span>%TMPL:END%
@@ -361,7 +369,7 @@
   then="%TRANSLATE{"Disable two-factor authentication"}%"
   else="%TRANSLATE{"Enable two-factor authentication"}%"
 }%</span>%TMPL:END%
-%TMPL:DEF{"TWOFACTORAUTH_ENABLE_ACTION"}%<a href='%SCRIPTURLPATH{"view" topic="%WIKIUSERNAME%"}%?template=twofactorauth' class='natTopicAction natTwoFactorAuthAction' rel='nofollow'>%TMPL:P{"icon::twofactorauth"}%%label%</a>%TMPL:END%
+%TMPL:DEF{"TWOFACTORAUTH_ENABLE_ACTION"}%<a href='%SCRIPTURLPATH{"view" topic="%USERINFO{format="$wikiusername"}%"}%?template=twofactorauth' class='natTopicAction natTwoFactorAuthAction' rel='nofollow'>%TMPL:P{"icon::twofactorauth"}%%label%</a>%TMPL:END%
 %TMPL:DEF{"TWOFACTORAUTH_DISABLE_ACTION"}%<a href='#twofactorauth' class='natTopicAction foswikiDialogLink natTwoFactorAuthAction' rel='nofollow' data-expand='twofactorauth::disable::dialog'>%TMPL:P{"icon::twofactorauth"}%%label%</a>%TMPL:END%
 %TMPL:DEF{"TWOFACTORAUTH_ACTION"}%%IF{"context two_factor_auth_enabled"
   then="$dollarpercntTMPL:P{\"TWOFACTORAUTH_DISABLE_ACTION\" label=\"$label\"}$dollarpercnt"
@@ -453,6 +461,7 @@
   guest="<div class='natUserActions natGuestGreeter'>$login$register</div>"
   format="<div class='natUserActions natUserGreeter'>$new$sep$action(bookmarks)$sep$usermenu</div>"
   separator=""
+  multiple="new"
   usermenu="<ul class='foswikiHoverMenu natUserActionsMenu'><li>$account%TMPL:P{"usermenu"}%</li></ul>"
 }%%TMPL:END%
 

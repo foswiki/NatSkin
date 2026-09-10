@@ -50,7 +50,7 @@
   Web_default="%WEB%"
 }%%TMPL:END%
 
-%TMPL:DEF{"copyform::dsttopic"}%<input type="text" autocomplete="off" spellcheck="false" name="dstTopic" class="foswikiInputField foswikiFocus required" value="%SUBST{text="%TOPIC%" pattern="Copy\d+$"}%AUTOINC1" size="30" style="width:98%" />%TMPL:END%
+%TMPL:DEF{"copyform::dsttopic"}%<input type="text" autocomplete="off" spellcheck="false" name="dstTopic" class="foswikiInputField foswikiFocus required" value="%SUBST{text="%TOPIC%" pattern="^(.*?)(?:Copy\d*)?$" format="$1"}%CopyAUTOINC1" size="30" style="width:98%" />%TMPL:END%
 
 %TMPL:DEF{"copyform::partsstep"}%%{}%
 ---

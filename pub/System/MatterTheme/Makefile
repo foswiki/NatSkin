@@ -81,7 +81,7 @@ geopattern.git/js/geopattern.js:
 endif
 
 ifneq (,$(wildcard trianglify.git))
-$(LIB_DIR)/trianglify.uncompressed.js: trianglify.git/dist/trianglify.bundle.js
+$(LIB_DIR)/trianglify.uncompressed.js: trianglify.git/dist/trianglify.bundle.debug.js
 	@echo getting $@ from trianglify.git
 	@cp $< $@ 
 endif

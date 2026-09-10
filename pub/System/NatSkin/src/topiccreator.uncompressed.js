@@ -1,7 +1,7 @@
 /*
  * TopicCreator for NatSkin 1.15
  *
- * (c)opyright 2015-2024 Michael Daum http://michaeldaumconsulting.com
+ * (c)opyright 2015-2026 Michael Daum http://michaeldaumconsulting.com
  *
  * Licensed under the GPL license http://www.gnu.org/licenses/gpl.html
  *
@@ -241,7 +241,7 @@
       hidden.show();
       self.elem.toggleClass("tcListLayout");
       sessionStorage.tcListLayout = self.elem.is(".tcListLayout")?"true":"false";
-      stepElem.find("input[type=search],input[type=text]").first().focus();
+      stepElem.find("input[type=search],input[type=text]").first().trigger("focus");
       return false;
     });
 
@@ -257,7 +257,7 @@
 
     // add focus
     window.setTimeout(function() {
-      stepElem.find("input[type=search],input[type=text]").first().focus();
+      stepElem.find("input[type=search],input[type=text]").first().trigger("focus");
     });
 
     // check for init state

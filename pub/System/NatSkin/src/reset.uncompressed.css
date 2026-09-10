@@ -34,13 +34,6 @@ svg a {
   cursor:pointer;
 }
 
-/*
-.natHtml {
-  overflow-y: scroll; 
-  min-height:100%;
-}
-*/
-
 /* correct block display not defined in IE 8/9.  */
 article, aside, details, figcaption, figure, footer,
 header, hgroup, main, menu, nav, section, summary {

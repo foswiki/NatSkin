@@ -20,7 +20,13 @@
   <input type="hidden" name="outfile" value="%PDFOUTFILE{default=""}%" />
   <input type="hidden" name="cover" value="%NATSKIN_PRINTCOVER{default="print"}%" />%IF{"not context isadmin" then="
   <input type='hidden' name='pdfdisposition' value='redirect' />"}%
-%QUERYPARAMS{format="  <input type='hidden' name='$name' value='$value' />"}%
+%QUERYPARAMS{
+   format="$percntIF{
+      \"not '$name'=~'\b(pdfpagesize|pdforientation|render|expand|debug|zones|async|cachecontrol)\b'\"
+      then=\"  <input type='hidden' name='$name' value='$value' />$n\"
+   }$percnt"
+   separator=""
+}%
   <table class='foswikiLayoutTable'>%TMPL:END%
 
 %TMPL:DEF{"printform::end"}%</table>
@@ -44,7 +50,7 @@
   </td>
 </tr>%TMPL:END%
 
-%TMPL:DEF{"printform::pagesize::default"}%%PDFPAGESIZE{default="a4"}%%TMPL:END%
+%TMPL:DEF{"printform::pagesize::default"}%%URLPARAM{"pdfpagesize" default="%PDFPAGESIZE{default="a4"}%"}%%TMPL:END%
 
 %TMPL:DEF{"printform::orientation"}%<tr>
   <th>%MAKETEXT{"Orientation"}%:</th>
@@ -57,7 +63,7 @@
   </td>
 </tr>%TMPL:END%
 
-%TMPL:DEF{"printform::orientation::default"}%%PDFORIENTATION{default="portrait"}%%TMPL:END%
+%TMPL:DEF{"printform::orientation::default"}%%URLPARAM{"pdforientation" default="%PDFORIENTATION{default="portrait"}%"}%%TMPL:END%
 
 %TMPL:DEF{"printform::disposition"}%<tr>
   <th>%MAKETEXT{"Disposition"}%:</th>

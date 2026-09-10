@@ -10,6 +10,7 @@ data/System/NatSkinColorScheme.txt 0644
 data/System/NatSkinConfiguration.txt 0644
 data/System/NatSkinCSSVariables.txt 0644
 data/System/NatSkinFAQ.txt 0644
+data/System/NatSkinFlexbox.txt 0644
 data/System/NatSkinGroupViewTemplate.txt 0644
 data/System/NatSkinRemoveUserViewTemplate.txt 0644
 data/System/NatSkinResetPasswordViewTemplate.txt 0644
@@ -315,6 +316,7 @@ pub/System/NatSkin/src/natskin.uncompressed.js 0644
 pub/System/NatSkin/src/obfuscator.uncompressed.js 0644
 pub/System/NatSkin/src/print.uncompressed.css 0644
 pub/System/NatSkin/src/profile.uncompressed.css 0644
+pub/System/NatSkin/src/qmhistory.uncompressed.js 0644
 pub/System/NatSkin/src/rename.uncompressed.js 0644
 pub/System/NatSkin/src/reset.uncompressed.css 0644
 pub/System/NatSkin/src/string-polyfill.uncompressed.js 0644
@@ -377,6 +379,7 @@ templates/icons.fontawesome.nat.tmpl 0644
 templates/icons.ma.nat.tmpl 0644
 templates/icons.nat.tmpl 0644
 templates/icons.tabler.nat.tmpl 0644
+templates/imageplugin.editor.nat.tmpl 0644
 templates/javascript.customato.nat.tmpl 0644
 templates/javascript.matter.nat.tmpl 0644
 templates/javascript.nat.tmpl 0644

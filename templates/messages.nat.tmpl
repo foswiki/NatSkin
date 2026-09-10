@@ -98,7 +98,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 %TMPL:DEF{"password_changed"}%<!-- huh -->
 ---+++ %MAKETEXT{"Password changed successfully!"}%
 
-%BUTTON{"%MAKETEXT{"OK"}%" target="%USERSWEB%.%WIKINAME%" icon="%TMPL:P{"icon::ok::name"}%"}%
+%BUTTON{"%MAKETEXT{"OK"}%" target="%USERINFO{format="$wikiusername"}%" icon="%TMPL:P{"icon::ok::name"}%"}%
 %TMPL:END%
 %TMPL:DEF{"confirm"}%<!-- confirm -->
 ---+++ %MAKETEXT{"Thank you for registering"}%
@@ -266,7 +266,7 @@ white, maroon, red, purple, fuchsia, green, lime, olive, yellow, navy, blue, tea
 <div %PARAM5%>
 %MAKETEXT{"Continue and try to rename web?"}%
 
-<form class="natOopsButtons" name="ButtonBox" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%HOMETOPIC%" method="post">
+<form name="ButtonBox" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%HOMETOPIC%" method="post">
   <input type="hidden" name="action" value="renameweb">
   <input type="hidden" name="confirm" value="continue">
   <input type="hidden" name="currentwebonly" value="on">

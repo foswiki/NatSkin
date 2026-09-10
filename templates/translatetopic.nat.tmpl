@@ -227,9 +227,9 @@ jQuery(function($) {
     var val = $onlyNew.filter(':checked').val();
     if (val === 'on') {
       $form.find('.new_topic').show().find('input').prop('disabled', false);
-      $form.find('.reuse_topic').hide().find('input').prop('disabled', true);
+      console.log($form.find('.reuse_topic').hide().find('input.select2-input').prop('disabled', true));
     } else {
-      $form.find('.reuse_topic').show().find('input').prop('disabled', false);
+      console.log($form.find('.reuse_topic').show().find('input.select2-input').prop('disabled', false));
       $form.find('.new_topic').hide().find('input').prop('disabled', true);
     }
   }

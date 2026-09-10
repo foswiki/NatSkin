@@ -1,11 +1,10 @@
 /* lists */
-ul,
-ol {
-  margin:var(--margin) 0em;
-  padding:0 0 0 3.0769em;
+ul, ol {
+  margin:var(--margin-half) 0em;
+  padding:0 0 0 calc(var(--margin) * 1.3);
 }
 dl {
-  margin:var(--margin) 0em;
+  margin:var(--margin-half) 0em;
 }
 ol ol,
 ul ol,
@@ -15,8 +14,11 @@ ul ul {
   margin-bottom:0em;
 }
 .foswikiIndent {
+  padding:0 0 0 calc(var(--margin) * 1.3);
+}
+.foswikiIndent,
+.foswikiIndentWysiwyg {
   margin:0;
-  padding-left:3.0769em;
 }
 /*
 li {
@@ -35,9 +37,14 @@ ul ul ul {
 
 dt {
   font-weight:var(--font-weight-semi-bold);
+  position:relative;
+}
+dt:after {
+  content:":";
+  position:absolute;
 }
 dd {
-  margin:0 0 0.75em 3.0769em;
+  margin:0 0 0 calc(var(--margin) * 1.3);
 }
 table ul,
 table ol {

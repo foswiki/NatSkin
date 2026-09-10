@@ -35,16 +35,16 @@ BASESTYLE_SOURCE=\
   $(SRC_DIR)/lists.uncompressed.css \
   $(SRC_DIR)/tables.uncompressed.css \
   $(SRC_DIR)/tinymce.uncompressed.css \
-  $(SRC_DIR)/highcharts.uncompressed.css \
   $(SRC_DIR)/vars.uncompressed.css \
-  $(SRC_DIR)/highcharts-vars.uncompressed.css \
-  $(SRC_DIR)/topiccreator.uncompressed.css
+  $(SRC_DIR)/topiccreator.uncompressed.css \
+  $(SRC_DIR)/highcharts.uncompressed.css \
+  $(SRC_DIR)/highcharts-vars.uncompressed.css 
 
 PKG_SOURCE=\
   $(SRC_DIR)/natskin.uncompressed.js \
   $(SRC_DIR)/topiccreator.uncompressed.js \
   $(SRC_DIR)/subscribe.uncompressed.js \
-  $(SRC_DIR)/usertooltip.uncompressed.js 
+  $(SRC_DIR)/usertooltip.uncompressed.js
 
 #  $(SRC_DIR)/obfuscator.uncompressed.js \
 #  $(SRC_DIR)/vars.uncompressed.js \
@@ -57,11 +57,11 @@ SUBDIRS=../JazzyNoteTheme ../CustomatoTheme
 $(BUILD_DIR)/polyfills.js: $(POLYFILLS_SOURCE)
 	@echo generating $@; $(JSMIN) $^ > $@; \
 
-$(BUILD_DIR)/BaseStyle.css: $(BASESTYLE_SOURCE)
-	@echo generating $@; cat $^ | $(CSSMIN) $(CSSMIN_ARGS)> $@
+$(BUILD_DIR)/BaseStyle.css: $(BASESTYLE_SOURCE) Makefile
+	@echo generating $@; cat $(BASESTYLE_SOURCE) | $(CSSMIN) $(CSSMIN_ARGS)> $@
 
-$(BUILD_DIR)/pkg.js: $(PKG_SOURCE)
-	@echo generating $@; $(JSMIN) $^ > $@; \
+$(BUILD_DIR)/pkg.js: $(PKG_SOURCE) Makefile
+	@echo generating $@; $(JSMIN) $(PKG_SOURCE) > $@; \
 
 clean: 
 	rm -f *.jslint $(BUILD_DIR)/*

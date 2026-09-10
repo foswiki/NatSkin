@@ -1,4 +1,16 @@
 %TMPL:INCLUDE{"view"}%
+%TMPL:INCLUDE{"icons"}%%{}%
+
+%TMPL:DEF{"qm::control::start::icon"}%%TMPL:P{"icon::first"}%%TMPL:END%
+%TMPL:DEF{"qm::control::start::disabled::icon"}%%TMPL:P{"icon::first"}%%TMPL:END%
+%TMPL:DEF{"qm::control::prev::icon"}%%TMPL:P{"icon::prev"}%%TMPL:END%
+%TMPL:DEF{"qm::control::prev::disabled::icon"}%%TMPL:P{"icon::prev"}%%TMPL:END%
+%TMPL:DEF{"qm::control::next::icon"}%%TMPL:P{"icon::next"}%%TMPL:END%
+%TMPL:DEF{"qm::control::next::disabled::icon"}%%TMPL:P{"icon::next"}%%TMPL:END%
+%TMPL:DEF{"qm::control::end::icon"}%%TMPL:P{"icon::last"}%%TMPL:END%
+%TMPL:DEF{"qm::control::end::disabled::icon"}%%TMPL:P{"icon::last"}%%TMPL:END%
+%TMPL:DEF{"qm::control::quit"}%%USERACTIONS{"$action(close)"}%%TMPL:END%
+
 %TMPL:DEF{"bodyclass"}%natWorkflowBody%TMPL:END%
 %TMPL:DEF{"form"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
@@ -6,16 +18,51 @@
 %TMPL:DEF{"bottombar"}%%TMPL:END%
 %TMPL:DEF{"sidebar"}%%TMPL:END%
 %TMPL:DEF{"metadata"}%%TMPL:END%
-%TMPL:DEF{"titleaction"}%%TRANSLATE{"Workflow"}%%TMPL:END%
-%TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%" template="qmhistory" rev="%URLPARAM{"rev"}%"}%">%TRANSLATE{"Workflow History"}%</a>%TMPL:END%
+%TMPL:DEF{"titleaction"}%%MAKETEXT{"Workflow"}%%TMPL:END%
+%TMPL:DEF{"breadcrumbs::tail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%" template="qmhistory" rev="%URLPARAM{"rev"}%"}%">%MAKETEXT{"Workflow History"}%</a>%TMPL:END%
+%TMPL:DEF{"heading"}%%MAKETEXT{"Workflow History"}%%TMPL:END%
 
-%TMPL:DEF{"content"}%%QMHISTORY{
-  title="<h1>%TRANSLATE{"Workflow History"}%</h1>$n"
-  rev="%URLPARAM{"rev"}%"
-  reverse="on"
-  workflow="%FORMFIELD{"Workflow" topic="%OBJECT{default=""}%"}%"
-}%
+%TMPL:DEF{"content"}%<h1>%TMPL:P{"heading"}%</h1>
+%TMPL:P{"qmtable"}%
+%TMPL:P{"qmtable::navi"}%
 %TMPL:END%
+
+%TMPL:DEF{"qmtable"}%<div class="natQMHistoryTable" data-limit='%URLPARAM{"limit" default="10"}%' data-skip='%URLPARAM{"skip" default="0"}%'>
+%QMHISTORY{
+  topic="%WEB%.%TOPIC%"
+  title="<!-- -->"
+  reverse="on"
+  _limit="%URLPARAM{"limit" default="10"}%"
+  %IF{"$'URLPARAM{from}'!=''"
+    then="from_date=\"%DATETIME{"%URLPARAM{"from"}%" format="$epoch"}%\""
+  }%
+}%</div>%TMPL:END%
 
 %TMPL:DEF{"topicactions"}%<div class='natTopicActions'>%USERACTIONS{format="$action(close)"}%</div>%TMPL:END%
 
+%TMPL:DEF{"DIS_qmtable::navi"}%<div class="clearfix">
+%CALCULATE{"
+  $SET(prevSkip,$EVAL(%URLPARAM{"skip" default="0"}%-%URLPARAM{"limit" default="10"}%))
+  $IF($GET(prevSkip < 0,$SET(prevSkip,0)))
+  $SET(nextSkip,$EVAL(%URLPARAM{"skip" default="0"}%+%URLPARAM{"limit" default="10"}%))
+  $IF($GET(nextSkip > %NATMAXREV%,$SET(nextSkip,%NATMAXREV%)))
+"}%<!-- -->
+<a href='#' class='natHistoryNavi %CALCULATE{"$IF($GET(prevSkip)==0,natDisabledTopicAction)"}%' data-skip="0">
+  %TMPL:P{"qm::control::start::icon"}%
+</a>
+<a href='#' class='natHistoryNavi %CALCULATE{"$IF($GET(prevSkip)==0,natDisabledTopicAction)"}%' data-skip="%CALCULATE{"$GET(prevSkip)"}%">
+  %TMPL:P{"qm::control::prev::icon"}%
+</a>
+<a href='#' class='natHistoryNavi' data-skip="%CALCULATE{"$GET(nextSkip)"}%" >
+  %TMPL:P{"qm::control::next::icon"}%
+</a>
+<a href='#' class='natHistoryNavi %CALCULATE{"$IF($GET(nextSkip)>%NATMAXREV%,natDisabledTopicAction)"}%' data-skip="%NATMAXREV%">
+  %TMPL:P{"qm::control::end::icon"}%
+</a>
+</div>%TMPL:END%
+
+%TMPL:DEF{"dialog"}%<div class="jqUIDialog foswikiFormSteps" data-modal="true" data-draggable="true" data-width="auto" title="%TMPL:P{"heading"}%">
+%TMPL:P{"qmtable"}%
+%TMPL:P{"qmtable::navi"}%
+<a class="jqUIDialogButton jqUIDialogDestroy" data-icon="ui-icon-cancel">%MAKETEXT{"Close"}%</a>
+</div>%TMPL:END%

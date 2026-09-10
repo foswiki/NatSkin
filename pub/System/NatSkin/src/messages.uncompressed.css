@@ -2,6 +2,7 @@
 .alt,
 .foswikiHelp,
 .foswikiMessage,
+.foswikiNotification,
 .foswikiSuccessMessage,
 .foswikiErrorMessage,
 .foswikiWarningMessage,
@@ -12,6 +13,7 @@
 }
 .foswikiHelp,
 .foswikiMessage,
+.foswikiNotification,
 .foswikiSuccessMessage,
 .foswikiErrorMessage,
 .foswikiWarningMessage,
@@ -23,6 +25,7 @@
 .alt .jqButton,
 .foswikiHelp .jqButton,
 .foswikiMessage .jqButton,
+.foswikiNotification .jqButton,
 .foswikiSuccessMessage .jqButton,
 .foswikiErrorMessage .jqButton,
 .foswikiWarningMessage .jqButton,
@@ -36,7 +39,8 @@
   padding:1em;
 }
 .foswikiHelp,
-.foswikiMessage {
+.foswikiMessage,
+.foswikiNotification {
   padding:var(--margin-half) 1em; 
 }
 .foswikiSuccessMessage,
@@ -78,6 +82,7 @@
 .foswikiWarningMessage,
 .foswikiHelp,
 .foswikiMessage,
+.foswikiNotification,
 .foswikiInfoMessage,
 .foswikiTipMessage {
   -webkit-border-radius: 4px; 
@@ -90,8 +95,19 @@
 .foswikiWarningMessage h2:first-child,
 .foswikiHelp h2:first-child,
 .foswikiMessage h2:first-child,
+.foswikiNotification h2:first-child,
 .foswikiInfoMessage h2:first-child,
-.foswikiTipMessage h2:first-child {
+.foswikiTipMessage h2:first-child,
+.alt h3:first-child,
+.foswikiAlt h3:first-child,
+.foswikiSuccessMessage h3:first-child,
+.foswikiErrorMessage h3:first-child,
+.foswikiWarningMessage h3:first-child,
+.foswikiHelp h3:first-child,
+.foswikiMessage h3:first-child,
+.foswikiNotification h3:first-child,
+.foswikiInfoMessage h3:first-child,
+.foswikiTipMessage h3:first-child {
   margin-top:0;
   margin-bottom:var(--margin-half);
   border-bottom:0;
@@ -132,6 +148,7 @@
 .foswikiErrorMessage a {
   color: var(--message-error-bold, #9E1D1D);
 }
+.foswikiNotification,
 .foswikiWarningMessage {
   background-color: var(--message-warning-background, #FFF6BF);
   border-color: var(--message-warning-border, #FDD845);
@@ -143,6 +160,12 @@
 .foswikiWarningMessage:before {
   content:"\f071"; /* fa-exclamation-triangle */
 }
+.foswikiNotification .jqButtonIcon,
+.foswikiNotification .foswikiIcon,
+.foswikiNotification h2,
+.foswikiNotification b,
+.foswikiNotification strong,
+.foswikiNotification a,
 .foswikiWarningMessage .jqButtonIcon,
 .foswikiWarningMessage .foswikiIcon,
 .foswikiWarningMessage h2,
@@ -194,10 +217,35 @@
   border-color: var(--message-info-border, #7FBEE9);
   color: var(--message-info-foreground, #005884);
 }
+.foswikiHelp h2,
+.foswikiHelp h2 a,
+.foswikiHelp h3,
+.foswikiHelp h3 a,
+.foswikiHelp h4,
+.foswikiHelp h4 a,
+.foswikiHelp h5,
+.foswikiHelp h5 a,
+.foswikiHelp h6,
+.foswikiHelp h6 a {
+  color: var(--message-info-foreground, #005884);
+  font-weight: var(--font-weight-semi-bold);
+}
 .foswikiMessage {
   background-color: var(--message-background, #fef7e3);
   border-color: var(--message-border, #efe5ca);
   color: var(--message-foreground, #6b6860);
+}
+.foswikiMessage h2,
+.foswikiMessage h2 a,
+.foswikiMessage h3,
+.foswikiMessage h3 a,
+.foswikiMessage h4,
+.foswikiMessage h4 a,
+.foswikiMessage h5,
+.foswikiMessage h5 a,
+.foswikiMessage h6,
+.foswikiMessage h6 a {
+  color: var(--message-foreground, #005884);
 }
 .foswikiMessage h2,
 .foswikiMessage a,
@@ -269,5 +317,3 @@
   border:0;
   box-shadow:none;
 }
-
-

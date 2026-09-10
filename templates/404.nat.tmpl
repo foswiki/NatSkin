@@ -4,8 +4,7 @@
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"Page not found"}%%TMPL:END%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
 
-%TMPL:DEF{"content"}%
-<div class="natOopsMessage clearfix">
+%TMPL:DEF{"content"}%<div class="natOopsMessage clearfix">
 %TMPL:P{"code"}%%{}%
 %TMPL:P{"heading"}%%{}%
 %TMPL:P{"message"}%%{}%
@@ -51,7 +50,7 @@
 <th>%BUTTON{"%MAKETEXT{"Restart"}%" class="simple" icon="fa-home" target="%IF{
     "'%BASEWEB%.%HOMETOPIC%' allows 'view'" 
     then="%BASEWEB%.%HOMETOPIC%" 
-    else="%USERSWEB%.%WIKINAME%"
+    else="%USERINFO{format="$wikiusername"}%"
   }%"
 }%</th>
 <td>%MAKETEXT{"Or just start from the beginning."}%</td>

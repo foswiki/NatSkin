@@ -3,7 +3,7 @@
 %{ default icon names }%
 %TMPL:DEF{"icon::account::name"}%ma-person%TMPL:END%
 %TMPL:DEF{"icon::attachments::name"}%ma-attach-file%TMPL:END%
-%TMPL:DEF{"icon::attach::name"}%ma-file-upload%TMPL:END%
+%TMPL:DEF{"icon::attach::name"}%fa-upload%TMPL:END%
 %TMPL:DEF{"icon::backlinks::name"}%ma-games%TMPL:END%
 %TMPL:DEF{"icon::bookmarks::name"}%ma-bookmarks%TMPL:END%
 %TMPL:DEF{"icon::bug::name"}%ma-bug-report%TMPL:END%
@@ -25,7 +25,7 @@
 %TMPL:DEF{"icon::docu::name"}%ma-book%TMPL:END%
 %TMPL:DEF{"icon::edit_form::name"}%fa-pencil-square-o%TMPL:END%
 %TMPL:DEF{"icon::edit::name"}%fa-pencil%TMPL:END%
-%TMPL:DEF{"icon::edit_raw::name"}%ma-keyboard%TMPL:END%
+%TMPL:DEF{"icon::edit_raw::name"}%fa-pencil%TMPL:END%
 %TMPL:DEF{"icon::edit_settings::name"}%ma-build%TMPL:END%
 %TMPL:DEF{"icon::edit_text::name"}%%TMPL:P{"icon::edit::name"}%%TMPL:END%
 %TMPL:DEF{"icon::email::name"}%ma-email%TMPL:END%
@@ -34,7 +34,7 @@
 %TMPL:DEF{"icon::first::name"}%ma-first-page%TMPL:END%
 %TMPL:DEF{"icon::folder::name"}%fa-folder-o%TMPL:END%
 %TMPL:DEF{"icon::folder_open::name"}%fa-folder-open-o%TMPL:END%
-%TMPL:DEF{"icon::harvest::name"}%ma-file-download%TMPL:END%
+%TMPL:DEF{"icon::harvest::name"}%fa-download%TMPL:END%
 %TMPL:DEF{"icon::help::name"}%ma-help%TMPL:END%
 %TMPL:DEF{"icon::history::name"}%ma-history%TMPL:END%
 %TMPL:DEF{"icon::home::name"}%ma-home%TMPL:END%
@@ -55,11 +55,11 @@
 %TMPL:DEF{"icon::next::name"}%ma-chevron-right%TMPL:END%
 %TMPL:DEF{"icon::ok::name"}%fa-check%TMPL:END%
 %TMPL:DEF{"icon::online_help::name"}%ma-live-help%TMPL:END%
-%TMPL:DEF{"icon::password::name"}%ma-vpn-key%TMPL:END%
+%TMPL:DEF{"icon::password::name"}%fa-key%TMPL:END%
 %TMPL:DEF{"icon::pdf::name"}%ma-picture-as-pdf%TMPL:END%
 %TMPL:DEF{"icon::permissions::name"}%ma-shield%TMPL:END%
 %TMPL:DEF{"icon::plain::name"}%ma-remove-red-eye%TMPL:END%
-%TMPL:DEF{"icon::plugin::name"}%ma-extension%TMPL:END%
+%TMPL:DEF{"icon::plugin::name"}%fa-puzzle-piece%TMPL:END%
 %TMPL:DEF{"icon::prev::name"}%ma-chevron-left%TMPL:END%
 %TMPL:DEF{"icon::print::name"}%ma-print%TMPL:END%
 %TMPL:DEF{"icon::question::name"}%ma-help-outline%TMPL:END%
@@ -82,6 +82,7 @@
 %TMPL:DEF{"icon::translatetopic::name"}%ma-translate%TMPL:END%
 %TMPL:DEF{"icon::trash::name"}%ma-delete%TMPL:END%
 %TMPL:DEF{"icon::twofactorauth::name"}%ma-phone-android%TMPL:END%
+%TMPL:DEF{"icon::redo::name"}%fa-undo%TMPL:END%
 %TMPL:DEF{"icon::unfavorite::name"}%ma-bookmark-remove%TMPL:END%
 %TMPL:DEF{"icon::unsubscribe::name"}%ma-notifications-off%TMPL:END%
 %TMPL:DEF{"icon::users::name"}%ma-manage-accounts%TMPL:END%
@@ -170,6 +171,7 @@
 %TMPL:DEF{"icon::translatetopic"}%%JQICON{"%TMPL:P{"icon::translatetopic::name"}%"}%%TMPL:END%
 %TMPL:DEF{"icon::trash"}%%JQICON{"%TMPL:P{"icon::trash::name"}%"}%%TMPL:END%
 %TMPL:DEF{"icon::twofactorauth"}%%JQICON{"%TMPL:P{"icon::twofactorauth::name"}%"}%%TMPL:END%
+%TMPL:DEF{"icon::redo"}%%JQICON{"%TMPL:P{"icon::redo::name"}%"}%%TMPL:END%
 %TMPL:DEF{"icon::unfavorite"}%%JQICON{"%TMPL:P{"icon::unfavorite::name"}%"}%%TMPL:END%
 %TMPL:DEF{"icon::unsubscribe"}%%JQICON{"%TMPL:P{"icon::unsubscribe::name"}%"}%%TMPL:END%
 %TMPL:DEF{"icon::users"}%%JQICON{"%TMPL:P{"icon::users::name"}%"}%%TMPL:END%
@@ -178,7 +180,7 @@
 
 %{ TopicInteractionPlugin }%
 %TMPL:DEF{"metadata::spinner::icon"}%fa-spinner%TMPL:END%
-%TMPL:DEF{"metadata::uploadbutton::icon"}%ma ma-upload%TMPL:END%
+%TMPL:DEF{"metadata::uploadbutton::icon"}%fa fa-upload%TMPL:END%
 %TMPL:DEF{"metadata::optionsbutton::icon"}%ma-settings%TMPL:END%
 %TMPL:DEF{"metadata::selectall::icon"}%ma-done-all%TMPL:END%
 %TMPL:DEF{"metadata::clearall::icon"}%ma-clear-all%TMPL:END%

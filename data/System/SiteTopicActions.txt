@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1789038739" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ %TOPIC%
 Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] instead.
@@ -14,6 +14,7 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
   guest="$login$action(share, SocialSharePluginEnabled)"
   restrictedactions="attach,delete,archive,diff,edit,edit_form,edit_raw,edit_settings,harvest,managetags,more,move,raw,restore,translatetopic"
   format="%NATSKIN_TOPICACTIONS{default="$new$edit$menu"}%"
+  multiple="new"
   history="<div class='natHistoryTopicActions'>$edit$raw$view$first$prev$next$last$action(close)</div>"
   menu_header="<div class='foswikiHoverMenu natMoreActionsMenu' data-menu='.natMegaMenu'><span class='natTopicAction natMoreActionsTopicAction'>%TMPL:P{"icon::menu"}%$label</span>
 <div class='natMegaMenu clearfix' style='display:none' data-theme='info' data-arrow='on' data-position='left'>"
@@ -55,8 +56,8 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
 ---
 <h3 >%MAKETEXT{"History"}%</h3>
    * $action(history)
-   * $action(contributors)
    * $action(workflow, QMPluginEnabled)
+   * $action(contributors)
    * $action(prev)
    * $action(diff)
    * $action(restore)

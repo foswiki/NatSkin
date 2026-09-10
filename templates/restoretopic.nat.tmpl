@@ -5,6 +5,7 @@
 %TMPL:DEF{"content"}%<form action="%SCRIPTURLPATH{"jsonrpc"}%/NatSkinPlugin/restore" method="post" class="jqAjaxForm" data-message="%MAKETEXT{"Restoring topic ..."}%" data-reload="true" data-before-submit="jQuery('#restoreDialog').dialog('widget').hide();return true;">
   <input type="hidden" name="topic" value="%WEB%.%TOPIC%"  />
   <input type="hidden" name="rev" value="%URLPARAM{"rev"}%"  />
+  <input type="hidden" name="revcomment" value="restored revision %URLPARAM{"rev"}%"  />
   %TMPL:P{"thumbnail"}%%{}%
   %TRANSLATE{"Are you sure that you want to restore [_1] to revision [_2]?" 
     arg1="<b>%GETTOPICTITLE{"%WEB%.%TOPIC%" encode="entity"}%</b>"

@@ -58,14 +58,16 @@ pre {
 .foswikiBlockQuote .foswikiCiteChar {
   display:none;
 }
+.foswikiBlockQuote p {
+  margin:0;
+}
 
 textarea.foswikiFullWidth,
 .foswikiFullWidth > textarea,
 table.foswikiTable.foswikiFullWidth,
 table.foswikiFlatTable.foswikiFullWidth,
 table.foswikiLayoutTable.foswikiFullWidth,
-.foswikiFullWidth > form > table, /* edit table plugin inserts a form */
-.foswikiFullWidth > table {
+.foswikiFullWidth table {
    width:100%;
 }
 
@@ -167,7 +169,6 @@ a.foswikiSelected,
   display:flex;
   align-items:center;
   justify-content:center;
-  flex-direction:column;
 }
 .foswikiLeft {
   float:left;
@@ -277,7 +278,7 @@ img.foswikiLeft,
   text-align:left;
 }
 .natSearchHit {
-  margin:0 0 2em;
+  margin:0 0 var(--margin-half);
   break-inside:avoid;
 }
 .natSearchRevision,
@@ -289,7 +290,7 @@ img.foswikiLeft,
   text-decoration:underline;
 }
 .natSearchTotal {
-  margin:1em 0;
+  margin:var(--margin-half) 0 0;
   font-weight:var(--font-weight-semi-bold);
 }
 .natSearchTotal span {
@@ -565,7 +566,7 @@ a.natFeedIcon {
 fieldset,
 .foswikiPageForm,
 .foswikiFormSteps {
-  padding: calc(var(--margin) * 0.75);
+  padding: var(--margin-half);
   font-weight:var(--font-weight-normal);
   color: var(--alt-foreground);
   background: var(--alt-background-gradient);
@@ -574,7 +575,7 @@ fieldset,
 }
 .cmtReply, 
 .cmtReply:hover {
-  margin-top: calc(var(--margin) * 0.75);
+  margin-top: var(--margin-half);
 }
 .foswikiAlt h2,
 .alt h2 {
@@ -587,30 +588,32 @@ fieldset,
 
 /* TOC */
 .foswikiToc {
-  margin:var(--margin) 0;
+  margin:var(--margin-half) 0;
   padding:0;
 }
-.foswikiTocTitle {
-  font-size: var(--font-size-h5);
-  margin: var(--margin) 0 0; 
+span.foswikiTocTitle {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
   display:block;
+  border-bottom:0;
+  margin-bottom:0;
 }
 .foswikiToc ul {
   list-style:none;
-  margin:var(--margin) 0;
-  padding:var(--margin) 0;
+  margin:0;
+  padding:var(--margin-half) 0 0 0;
   border-top:1px solid var(--toc-border);
   border-left:4px solid var(--toc-border);
 }
 .foswikiToc ul ul {
-  padding:0 0 0 .5em;
+  padding:0;
   margin-top:0;
   margin-bottom:0;
   border:0;
 }
 .foswikiToc li {
-  margin-left:1em;
-  padding-left:1em;
+  margin:0;
+  padding-left:var(--margin);
 }
 .foswikiToc a {
   text-decoration:none;
@@ -618,11 +621,11 @@ fieldset,
 .jqTreeview .foswikiToc ul {
   border:0;
   padding:0;
-  margin:1em 0;
+  margin:var(--margin-half) 0;
 }
 
 .jqTreeview .foswikiTocTitle {
-  margin-bottom:0.5em;
+  margin-bottom:var(--margin-half);
 }
 
 .natSideBar .foswikiToc {
@@ -718,23 +721,17 @@ img.alignleft {
 }
 
 .natSideBar li .imagePlain_right {
-  margin:2px 0 7px 7px;
+  margin:2px 0 0 7px;
+  border-radius:var(--thumbnail-border-radius, 3px);
 }
 .natSideBar li .imagePlain_left {
-  margin:2px 7px 7px 0;
+  margin:2px 7px 0 0;
+  border-radius:var(--thumbnail-border-radius, 3px);
 }
 
 /* math mode plugin */
 .mmpImage {
   vertical-align:middle;
-}
-
-/* emoji plugin */
-.emoji {
-  height:1.2em;
-  width:auto;
-  vertical-align:text-bottom;
-  margin:0 2px;
 }
 
 /* WikiWorkbench basics */
@@ -811,7 +808,8 @@ h2 .foswikiTopicSummary {
   color:#808080;
   font-weight:var(--font-weight-normal);
   font-size: var(--font-size-normal);
-  margin-bottom:calc(0.25 * var(--margin));
+  line-height:calc(var(--line-height) * 0.9);
+  margin:calc(0.1 * var(--margin)) 0;
 }
 .foswikiTopicSummary:empty {
   display:none;
@@ -1231,7 +1229,7 @@ a:active.natScrollTop {
 
 .foswikiTopicPrefix {
   float:left;
-  margin:0 0.4em 0 0;
+  margin:0 0.4rem 0 0;
   color: var(--color-foreground);
 }
 h1 .foswikiTopicPrefix {
@@ -1397,6 +1395,8 @@ h1 .foswikiTopicPrefix {
 }
 
 .natSideBar .foswikiCurrentTopicLink,
+tr[id]:target, 
+li[id]:target, 
 span[id]:target, 
 h1[id]:target, 
 h2[id]:target, 
@@ -1499,6 +1499,9 @@ h6[id]:target {
   margin-bottom:-4em;
   text-align:center;
 }
+.natLoginSeeAlso {
+  padding-top:var(--margin-half);
+}
 
 .natPoweredBy {
   width:15em;
@@ -1586,11 +1589,13 @@ h6[id]:target {
 /* web menu ******************************************************************/
 .natWebMenu select {
   display:none;
-  min-width:5em;
+  width:6rem;
   margin:0 auto;
 }
 
+.foswikiHoverMenu .foswikiIcon,
 .natWebMenu .foswikiIcon {
+  font-size:1em;
   width:1.3em;
   text-align:left;
 }
@@ -1924,20 +1929,24 @@ h6[id]:target {
   color:var(--color-text);
 }
 .natErrorBody h1 {
-  font-size:9em;
+  font-size:8.5em;
   font-weight:var(--font-weight-bold);
   margin:0;
   line-height:1;
 }
 .natErrorBody h2 {
-  margin:var(--margin) 0;
+  margin:0 0 var(--margin-2);
 }
 .natErrorBody .jqButtonSimple,
 .natErrorBody .jqButtonSimple:hover {
   text-decoration:underline;
 }
 .natErrorBody .natOopsMessage .foswikiLayoutTable {
-  margin:3em auto;
+  margin:var(--margin-2) auto;
+}
+.natErrorBody.natCenteredBoy .natMainContents {
+  margin:0;
+  padding:0;
 }
 
 .natBusy {
@@ -2023,6 +2032,9 @@ h6[id]:target {
 }
 
 /* select2 */
+.select2-container {
+  font-size:var(--input-font-size);
+}
 .select2-container-multi .select2-choices {
   background-color:transparent;
   border:0;
@@ -2078,6 +2090,8 @@ h6[id]:target {
   opacity:1;
 }
 
+tr[id]:target,
+li[id]:target,
 span[id]:target,
 h1[id]:target,
 h2[id]:target,
@@ -2130,14 +2144,6 @@ html,
   overflow:hidden;
 }
 
-.natCacheHits {
-  position:fixed;
-  bottom:1em;
-  right:1em;
-  text-align:right;
-  color:var(--color-gray);
-}
-
 /* html dialog */
 dialog {
   background:var(--ui-dialog-background);
@@ -2158,4 +2164,26 @@ dialog > h1:first-child {
   color:var(--ui-dialog-title-foreground);
   border-bottom-right-radius:0;
   border-bottom-left-radius:0;
+}
+
+/* katex plugin */
+.katex-display {
+  margin:var(--margin-half) 0;
+}
+.katex-display.fleqn > .katex {
+  padding:0;
+}
+
+/* refnotes plugin */
+.refLink a {
+  color:var(--refnotes-foreground);
+  margin:0 0.25em;
+}
+.refNotes th a,
+.refNotes th {
+  font-weight:normal;
+  color:var(--refnotes-foreground);
+}
+.refNotes td {
+  width:100%;
 }

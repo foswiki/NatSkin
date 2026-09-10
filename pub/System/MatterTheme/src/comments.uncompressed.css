@@ -28,9 +28,15 @@
   border:0;
   margin:var(--margin) 0 0 4.5em;
 }
-h3.cmtCommentNr {
-  color:var(--color-foreground);
+.cmtCommentNr {
   display:none;
+}
+
+@media print {
+  .cmtComment .natUserPhoto,
+  .cmtComment .cmtUserPhoto {
+    
+  }
 }
 
 @media screen and (max-width: 600px) {

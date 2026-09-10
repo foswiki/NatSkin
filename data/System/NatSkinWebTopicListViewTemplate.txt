@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1789038739" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %TMPL:INCLUDE{"view"}%
 %TMPL:DEF{"revinfo"}%%TMPL:END%
@@ -17,27 +17,21 @@
 <noautolink>
 %MAKEINDEX{
   "%TMPL:P{"topiclist::default"}%"
-  pattern="\((.*)\);(.*);(.*)"
+  pattern="\((.*)\);(.*)"
   split="\n"
   cols="%WEBTOPICLIST_COLS{default=""}%"
   header="$anchors"
-  format="[[%BASEWEB%.$3][$2]]"
+  format="[[%BASEWEB%.$2]]"
   sort="nocase"
   footer="$n$n$percntMAKETEXT{\"[_1] topics found\" args=\"<span class='foswikiAlert'>$count</span>\"}$percnt"
   transliterate="%WEBTOPICLIST_TRANSLITERATE{default="on"}%"
 }%
-<!--
--->
 </noautolink>
 %TMPL:END%
 %TMPL:DEF{"sidebar"}%%TMPL:END%
 
 %TMPL:DEF{"topiclist::default"}%%DBQUERY{
-  format="($percntSUBST{
-      text=\"$encode($expand(topictitle))\"
-      pattern=\"(&#\d+;)|[$]\"
-      format=\"\"
-    }$percnt);$encode($expand(topictitle));$topic"
+  format="($expandEncoded(topictitle)));$topic"
 }%%TMPL:END%
 
 

@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1789038739" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %TMPL:INCLUDE{"view"}%
 %TMPL:DEF{"sidebar"}%%TMPL:END%
@@ -192,4 +192,4 @@
     }$percnt"
 }%</noautolink> %TMPL:END%
 
-%META:PREFERENCE{name="NATEDIT_PURIFY" title="NATEDIT_PURIFY" type="Set" value="off"}%
+%META:PREFERENCE{name="NATEDIT_SECURITY" title="NATEDIT_SECURITY" type="Set" value="off"}%

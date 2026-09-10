@@ -1,7 +1,7 @@
 /*
  * Rename 
  *
- * (c)opyright 2008-2023 Michael Daum http://michaeldaumconsulting.com
+ * (c)opyright 2008-2026 Michael Daum http://michaeldaumconsulting.com
  *
  * Licensed under the GPL license http://www.gnu.org/licenses/gpl.html
  *
@@ -48,7 +48,11 @@ jQuery(function($) {
     }
 
     if (web) {
-      $newWebElem.select2("val", web);
+      $newWebElem.select2("data", {
+        id: web,
+        text: web,
+        title: web,
+      });
     }
   }
 

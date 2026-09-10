@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="micha" comment="" date="1666629862" format="1.1" version="2"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1789038739" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %TMPL:INCLUDE{"view"}%%{}%
 %TMPL:INCLUDE{"captcha"}%%{}%
@@ -35,7 +35,7 @@
 
 %TMPL:DEF{"formsep"}%<hr />%TMPL:END%
 
-%TMPL:DEF{"formstart"}%<form id="registrationForm" action="%SCRIPTURLPATH{"register"}%/%SYSTEMWEB%/%HOMETOPIC%" method="post" autocomplete="off" data-min-length="%QUERY{"{MinPasswordLength}"}%">
+%TMPL:DEF{"formstart"}%<form id="registrationForm" action="%SCRIPTURLPATH{"register"}%/%WEB%/%TOPIC%" method="post" autocomplete="off" data-min-length="%QUERY{"{MinPasswordLength}"}%">
 <script id="messages" type="application/json"> {
     "Fwk1FirstName": "%MAKETEXT{"Enter your first name"}%",
     "Fwk1LastName": "%MAKETEXT{"Enter your last name"}%",

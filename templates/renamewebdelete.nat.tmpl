@@ -5,6 +5,7 @@
 </div>%TMPL:END%
 
 %TMPL:DEF{"deletewebform"}%<form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
+  <input type="hidden" name="redirectto" value="%SCRIPTURLPATH{"view" topic="%HOMEWEB{default="%USERSWEB%"}%.%HOMETOPIC%"}%" />
   <input type="hidden" name="action" value="renameweb" />
   <input type="hidden" name="confirm" value="getlock" />
   <input type="hidden" name="currentwebonly" value="on" />

@@ -1,9 +1,8 @@
 %TMPL:DEF{"heading"}%%MAKETEXT{"Send topic as email"}%%TMPL:END%
 
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="jqUIDialog" data-width="500" data-modal="true" data-draggable="true" title="%TMPL:P{"heading"}%">
-  <form class='jqEmailForm' action="%SCRIPTURLPATH{"jsonrpc"}%/EmailPlugin/sendTopic" method="post" data-feedback-mode="notify+close">
-    <input type="hidden" name="topic" value="%BASEWEB%.%BASETOPIC%" />
+<div class="jqUIDialog" data-width="500" data-modal="true" data-destroy-on-close="true" data-draggable="true" title="%TMPL:P{"heading"}%">
+%EMAILFORM{"sendTopic" feedback_mode="notify+close" submit_button=".jqUIDialogSubmit"}%
     <table class="foswikiLayoutTable">
       <tr>
         <th>%MAKETEXT{"Subject"}%:</th>
@@ -27,10 +26,10 @@
         </td>
       </tr>
     <table>
-    <a class="jqUIDialogButton jqUIDialogSubmit jqUIDialogClose" data-icon="ui-icon-circle-check">%MAKETEXT{"Send"}%</a>
-    <a class="jqUIDialogButton jqUIDialogClose" data-icon="ui-icon-cancel">%MAKETEXT{"Cancel"}%</a>
-  </form>
-</div>%JQREQUIRE{"emailform"}%
+    <a class="jqUIDialogButton jqUIDialogSubmit jqUIDialogClose jqEmailSubmit" data-icon="ui-icon-circle-check">%MAKETEXT{"Send"}%</a>
+    <a class="jqUIDialogButton jqUIDialogDestroy" data-icon="ui-icon-cancel">%MAKETEXT{"Cancel"}%</a>
+%ENDEMAILFORM%
+</div>
 </noautolink>%TMPL:END%
 
 %TMPL:DEF{"mail::subject"}%%GETTOPICTITLE{"%BASEWEB%.%BASETOPIC%" encode="safe"}%%IF{"'%BASEWEB%.%BASETOPIC%'/Summary!=''" then=" - $percntENCODE{\"$percntFORMFIELD{\"Summary\"}$percnt\" type=\"safe\"}$percnt"}%%TMPL:END%

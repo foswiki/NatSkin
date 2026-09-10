@@ -10,7 +10,7 @@
   else="$percntTMPL:P{\"websidebar\"}$percnt"
 }%%TMPL:END%
 
-%TMPL:DEF{"thesidebar"}%%USERSWEB%.%WIKINAME%%MYSIDEBAR{default="SideBar"}%%TMPL:END%
+%TMPL:DEF{"thesidebar"}%%USERINFO{format="$wikiusername"}%%MYSIDEBAR{default="SideBar"}%%TMPL:END%
 %TMPL:DEF{"mysidebar"}%%IF{"context ListyPluginEnabled and not istopic '%TMPL:P{"thesidebar"}%'" 
   then="$percntTMPL:P{\"mysidebar::listy\"}$percnt" 
   else="$percntTMPL:P{\"mysidebar::default\"}$percnt"
@@ -38,7 +38,7 @@ $percntTMPL:P{\"mysidebar::add::bookmark\"}$percnt"
 %LISTY{"mylinks" 
   hidenull="off" 
   width="100%"
-  topic="%WIKIUSERNAME%"
+  topic="%USERINFO{format="$wikiusername"}%"
   type="topic,text,external"
 }%%TMPL:END%
 

@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1789038739" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+ %TOPIC%
 
@@ -34,12 +34,10 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
 %STARTSECTION{"subwebs"}%%FLEXWEBLIST{
   include="%URLPARAM{"theweb" default="%theweb{default=""}%"}%.*"
   exclude="%URLPARAM{"theweb" default="%theweb{default=""}%"}%|.*(%URLPARAM{"excludeweb" default="%exclude{default="does not exist"}%"}%).*"
-  header="<li>"
-  subheader="<ul><li>"
-  format="[[$web.%HOMETOPIC%][%JQICON{"fa-folder-o"}% $title]]"
-  separator="</li><li>"
-  subfooter="</li></ul>"  
-  footer="</li>"
+  subheader="<ul>$n"
+  format="<li>[[$web.%HOMETOPIC%][%JQICON{"fa-folder-o"}% $title]]"
+  separator="</li>$n"
+  subfooter="</li></ul>"
 }%%ENDSECTION{"subwebs"}%
 </verbatim>
 
@@ -120,4 +118,4 @@ Default %TOPIC% component. Please do __not__ modify. Use [[%USERSWEB%.%TOPIC%]] 
 
 %META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="*"}%
 %META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%
-%META:PREFERENCE{name="NATEDIT_PURIFY" title="NATEDIT_PURIFY" type="Set" value="off"}%
+%META:PREFERENCE{name="NATEDIT_SECURITY" title="NATEDIT_SECURITY" type="Set" value="off"}%

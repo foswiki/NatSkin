@@ -19,6 +19,11 @@ msgstr ""
 "X-Poedit-Country: Taiwan\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+#: templates/view.nat.tmpl:228
+#, fuzzy
+msgid "$title"
+msgstr "主题标题"
+
 #: templates/oopsgeneric.nat.tmpl:5 templates/oopsgeneric.nat.tmpl:7
 #: templates/oopsgeneric.nat.tmpl:9
 msgid "%1"
@@ -32,7 +37,7 @@ msgstr "主题更新的自动通知"
 #: templates/mailresetpassword.nat.tmpl:3
 #: templates/passwordresetmail.nat.tmpl:3
 #, fuzzy
-msgid "%1 - New passwort for %2"
+msgid "%1 - New password for %2"
 msgstr "新密码"
 
 #: templates/opensearch.nat.tmpl:34
@@ -46,16 +51,16 @@ msgid "%1 Person Search"
 msgstr "查询式检索"
 
 #: templates/backlinks.nat.tmpl:51 templates/backlinks.nat.tmpl:69
-#: templates/backlinks.nat.tmpl:90
+#: templates/backlinks.nat.tmpl:91
 msgid "%1 backlink(s) found"
 msgstr ""
 
-#: templates/backlinks.nat.tmpl:117 templates/backlinks.nat.tmpl:142
+#: templates/backlinks.nat.tmpl:119 templates/backlinks.nat.tmpl:144
 #, fuzzy
 msgid "%1 backlink(s) found in all webs"
 msgstr "(所有子网中的反向连结)"
 
-#: templates/validate.nat.tmpl:21
+#: templates/validate.nat.tmpl:19
 msgid "%1 has received a suspicious change request from your browser."
 msgstr "％1 已收到来自您浏览器发出的可疑修改要求。"
 
@@ -87,7 +92,7 @@ msgstr "%1 主题不存在"
 
 #: data/System/NatSkinWebSearchViewTemplate.txt:155
 #: templates/childtopics.nat.tmpl:51 templates/childtopics.nat.tmpl:69
-#: templates/childtopics.nat.tmpl:92 templates/search.nat.tmpl:19
+#: templates/childtopics.nat.tmpl:93 templates/search.nat.tmpl:19
 #, fuzzy
 msgid "%1 topic(s) found"
 msgstr "无子主题"
@@ -106,7 +111,7 @@ msgstr ""
 msgid "%1 vs. %2"
 msgstr "(%1 比上 %2)"
 
-#: templates/view.matter.nat.tmpl:192
+#: templates/view.matter.nat.tmpl:198
 msgid "%NATSKIN_BANNERSUBTITLE{default="
 msgstr ""
 
@@ -142,7 +147,7 @@ msgstr ""
 msgid "Abandon changes and exit"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:22 templates/newtopic.old.tmpl:70
+#: templates/newtopic.nat.tmpl:23 templates/newtopic.old.tmpl:70
 #: templates/newtopic.old.tmpl:77 templates/oops.nat.tmpl:25
 msgid "Abort"
 msgstr ""
@@ -167,7 +172,7 @@ msgstr "禁止访问"
 msgid "Access denied"
 msgstr "禁止访问"
 
-#: templates/user.nat.tmpl:187
+#: templates/user.nat.tmpl:208
 msgid "Account has been removed"
 msgstr ""
 
@@ -175,7 +180,7 @@ msgstr ""
 msgid "Account settings"
 msgstr ""
 
-#: templates/history.nat.tmpl:75
+#: templates/history.nat.tmpl:65
 msgid "Action"
 msgstr "功能"
 
@@ -184,7 +189,7 @@ msgstr "功能"
 msgid "Add member"
 msgstr "加一列"
 
-#: templates/foswiki.nat.tmpl:313 templates/foswiki.nat.tmpl:318
+#: templates/foswiki.nat.tmpl:321 templates/foswiki.nat.tmpl:326
 msgid "Add to favorites"
 msgstr ""
 
@@ -193,7 +198,7 @@ msgstr ""
 msgid "Add users or groups to this group"
 msgstr "请先将用户从 %1 群组删除。"
 
-#: data/System/SiteMenu.txt:71
+#: data/System/SiteMenu.txt:69
 msgid "Admin"
 msgstr ""
 
@@ -206,7 +211,7 @@ msgstr "Foswiki 管理员认证"
 msgid "Admin Tools"
 msgstr ""
 
-#: data/System/SiteMenu.txt:52
+#: data/System/SiteMenu.txt:50
 msgid "Admin docs"
 msgstr ""
 
@@ -248,7 +253,7 @@ msgid ""
 "user."
 msgstr "若本主题被其他用户锁住，将会出现错误页提示。"
 
-#: templates/edit.matter.nat.tmpl:419
+#: templates/edit.matter.nat.tmpl:430
 #, fuzzy
 msgid "Animation Speed"
 msgstr "功能"
@@ -258,12 +263,12 @@ msgstr "功能"
 msgid "Any change you made to topic before coming to this page are preserved."
 msgstr "显示本页前，您对对本主题的任何修改都已保留。"
 
-#: data/System/SiteMenu.txt:75
+#: data/System/SiteMenu.txt:73
 #, fuzzy
 msgid "Applications"
 msgstr "功能"
 
-#: templates/foswiki.nat.tmpl:224 templates/foswiki.nat.tmpl:225
+#: templates/foswiki.nat.tmpl:229 templates/foswiki.nat.tmpl:230
 msgid "Archive"
 msgstr ""
 
@@ -272,23 +277,28 @@ msgstr ""
 msgid "Archive Topic"
 msgstr "还原"
 
-#: templates/renametopicarchive.nat.tmpl:11
+#: templates/renametopicarchive.nat.tmpl:13
 #, fuzzy
 msgid "Are you sure that you want to archive %1?"
 msgstr "让您想建立这主题"
 
-#: templates/renametopicdelete.nat.tmpl:12
-#: templates/renamewebdelete.nat.tmpl:13
+#: templates/renametopicdelete.nat.tmpl:17
+#: templates/renamewebdelete.nat.tmpl:14
 #, fuzzy
 msgid "Are you sure that you want to delete %1?"
 msgstr "让您想建立这主题"
 
-#: templates/user.nat.tmpl:166
+#: templates/renametopicdelete.nat.tmpl:34
+#, fuzzy
+msgid "Are you sure that you want to finally delete %1?"
+msgstr "让您想建立这主题"
+
+#: templates/user.nat.tmpl:187
 #, fuzzy
 msgid "Are you sure that you want to remove this user account:"
 msgstr "让您想建立这主题"
 
-#: templates/restoretopic.nat.tmpl:9
+#: templates/restoretopic.nat.tmpl:10
 #, fuzzy
 msgid "Are you sure that you want to restore %1 to revision %2?"
 msgstr "让您想建立这主题"
@@ -306,9 +316,9 @@ msgid "Attachment move failed"
 msgstr "附件移动失败"
 
 #: templates/attach.nat.tmpl:4 templates/attach.nat.tmpl:9
-#: templates/copytopic.nat.tmpl:60 templates/edit.matter.nat.tmpl:155
-#: templates/edit.matter.nat.tmpl:206 templates/edit.nat.tmpl:301
-#: templates/foswiki.nat.tmpl:128 templates/foswiki.nat.tmpl:129
+#: templates/copytopic.nat.tmpl:60 templates/edit.matter.nat.tmpl:157
+#: templates/edit.matter.nat.tmpl:208 templates/edit.nat.tmpl:318
+#: templates/foswiki.nat.tmpl:133 templates/foswiki.nat.tmpl:134
 msgid "Attachments"
 msgstr "附件 "
 
@@ -321,41 +331,41 @@ msgstr "%1 的附件"
 msgid "Attention"
 msgstr "注意"
 
-#: templates/history.nat.tmpl:73
+#: templates/history.nat.tmpl:63
 msgid "Author"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:290
+#: templates/edit.matter.nat.tmpl:292
 msgid "Autocolor Hue"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:304
+#: templates/edit.matter.nat.tmpl:306
 msgid "Autocolor Lightness"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:298
+#: templates/edit.matter.nat.tmpl:300
 msgid "Autocolor Saturation"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:310
+#: templates/edit.matter.nat.tmpl:312
 msgid "Autocolor Seed"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:20
+#: templates/newtopic.nat.tmpl:21
 #, fuzzy
 msgid "Back one step"
 msgstr "回到主题"
 
-#: templates/view.nat.tmpl:200
+#: templates/view.nat.tmpl:214
 #, fuzzy
 msgid "Back to view mode"
 msgstr "回到主题"
 
-#: templates/edit.matter.nat.tmpl:278 templates/edit.matter.nat.tmpl:284
+#: templates/edit.matter.nat.tmpl:280 templates/edit.matter.nat.tmpl:286
 msgid "Background Color"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:101
+#: templates/foswiki.nat.tmpl:106
 msgid "Backlinks"
 msgstr "反向连结"
 
@@ -372,7 +382,7 @@ msgstr ""
 msgid "Banner"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:102
+#: templates/edit.matter.nat.tmpl:104
 #, fuzzy
 msgid "Banner Mode"
 msgstr "登录名 %1"
@@ -403,19 +413,19 @@ msgstr ""
 msgid "Both"
 msgstr ""
 
-#: templates/edit.nat.tmpl:371
+#: templates/edit.nat.tmpl:374
 msgid "Breadcrumbs navigation"
 msgstr ""
 
-#: data/System/SiteMenu.txt:63
+#: data/System/SiteMenu.txt:61
 msgid "Bugreport"
 msgstr ""
 
-#: templates/edit.nat.tmpl:38
+#: templates/edit.nat.tmpl:40
 msgid "Bulgarian"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:593
+#: templates/edit.matter.nat.tmpl:604
 msgid "Bullets"
 msgstr ""
 
@@ -430,14 +440,14 @@ msgstr "电子邮件地址错误"
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:103
 #: data/System/NatSkinChangePasswordViewTemplate.txt:45
-#: data/System/NatSkinResetPasswordViewTemplate.txt:77
+#: data/System/NatSkinResetPasswordViewTemplate.txt:78
 #: templates/actionform.nat.tmpl:15 templates/changeform.nat.tmpl:39
-#: templates/copytopic.nat.tmpl:81 templates/email.nat.tmpl:31
-#: templates/languageselector.nat.tmpl:22 templates/loginbase.nat.tmpl:61
+#: templates/copytopic.nat.tmpl:81 templates/email.nat.tmpl:30
+#: templates/languageselector.nat.tmpl:22 templates/loginbase.nat.tmpl:56
 #: templates/managetags.nat.tmpl:31 templates/messages.nat.tmpl:274
 #: templates/moveattachment.nat.tmpl:65 templates/newweb.nat.tmpl:28
-#: templates/newweb.nat.tmpl:34 templates/oopsleaseconflict.nat.tmpl:50
-#: templates/print.nat.tmpl:28 templates/renamebase.nat.tmpl:19
+#: templates/newweb.nat.tmpl:34 templates/oopsleaseconflict.nat.tmpl:41
+#: templates/print.nat.tmpl:34 templates/renamebase.nat.tmpl:19
 #: templates/renameconfirm.nat.tmpl:7 templates/renamedelete.nat.tmpl:14
 #: templates/renamewebbase.nat.tmpl:19 templates/renamewebconfirm.nat.tmpl:7
 #: templates/search.nat.tmpl:27 templates/translatetopic.nat.tmpl:193
@@ -461,11 +471,11 @@ msgstr "无法将 %1 改名为 %2，因 %2 已经存在。"
 msgid "Categories"
 msgstr "类别"
 
-#: templates/edit.matter.nat.tmpl:348
+#: templates/edit.matter.nat.tmpl:350
 msgid "Cell Size"
 msgstr ""
 
-#: data/System/SiteTopicActions.txt:46
+#: data/System/SiteTopicActions.txt:47
 #, fuzzy
 msgid "Change"
 msgstr "已变更:"
@@ -477,12 +487,12 @@ msgstr "已变更:"
 msgid "Change e-mail address"
 msgstr "电子邮件地址错误"
 
-#: templates/foswiki.nat.tmpl:268
+#: templates/foswiki.nat.tmpl:274
 #, fuzzy
 msgid "Change email"
 msgstr "电子邮件地址错误"
 
-#: templates/foswiki.nat.tmpl:269 templates/topbar.customato.nat.tmpl:70
+#: templates/foswiki.nat.tmpl:275 templates/topbar.customato.nat.tmpl:70
 #: templates/topbar.customato.nat.tmpl:99
 #, fuzzy
 msgid "Change email address"
@@ -495,12 +505,12 @@ msgstr "改变语言"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:35
 #: data/System/NatSkinChangePasswordViewTemplate.txt:5
-#: templates/foswiki.nat.tmpl:264 templates/topbar.customato.nat.tmpl:100
+#: templates/foswiki.nat.tmpl:270 templates/topbar.customato.nat.tmpl:100
 #: templates/topbar.customato.nat.tmpl:71
 msgid "Change password"
 msgstr "修改密码"
 
-#: templates/foswiki.nat.tmpl:231
+#: templates/foswiki.nat.tmpl:236
 #, fuzzy
 msgid "Change the name and/or the location of this topic"
 msgstr "编辑本主题的设定"
@@ -540,11 +550,11 @@ msgstr ""
 "rel='nofollow'>WikiWord</a> ，否则无法自动产生连结。其他不被允许作为主题名称"
 "的字元，如：空格等将被自动删除。"
 
-#: templates/foswiki.nat.tmpl:172
+#: templates/foswiki.nat.tmpl:177
 msgid "Chat"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:173
+#: templates/foswiki.nat.tmpl:178
 #, fuzzy
 msgid "Chat about this topic"
 msgstr "建立这个主题"
@@ -559,11 +569,11 @@ msgstr "在%1子网中的子主题"
 msgid "Child topics of %1"
 msgstr "在%1子网中的子主题"
 
-#: templates/foswiki.nat.tmpl:135
+#: templates/foswiki.nat.tmpl:140
 msgid "Children"
 msgstr ""
 
-#: templates/edit.nat.tmpl:39
+#: templates/edit.nat.tmpl:41
 msgid "Chinese"
 msgstr ""
 
@@ -607,23 +617,24 @@ msgstr ""
 msgid "Clear selection"
 msgstr "功能"
 
-#: templates/foswiki.nat.tmpl:168
+#: templates/foswiki.nat.tmpl:173
 #, fuzzy
 msgid "Click to like/unlike this topic"
 msgstr "建立这个主题"
 
 #: templates/backlinks.nat.tmpl:24 templates/childtopics.nat.tmpl:16
 #: templates/childtopics.nat.tmpl:32 templates/contributors.nat.tmpl:5
-#: templates/foswiki.nat.tmpl:252 templates/history.nat.tmpl:51
-#: templates/oopsmore.nat.tmpl:9 templates/topbar.matter.nat.tmpl:16
+#: templates/foswiki.nat.tmpl:258 templates/history.nat.tmpl:43
+#: templates/oopsmore.nat.tmpl:9 templates/qmhistory.nat.tmpl:67
+#: templates/topbar.matter.nat.tmpl:16
 msgid "Close"
 msgstr "关闭"
 
-#: templates/view.nat.tmpl:312
+#: templates/view.nat.tmpl:334
 msgid "Close broadcast message"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:253 templates/foswiki.nat.tmpl:255
+#: templates/foswiki.nat.tmpl:259 templates/foswiki.nat.tmpl:261
 msgid "Close this dialog"
 msgstr ""
 
@@ -635,40 +646,40 @@ msgstr ""
 msgid "Color %1 has an invalid format"
 msgstr "颜色 %1包含非法格式"
 
-#: templates/edit.matter.nat.tmpl:357
+#: templates/edit.matter.nat.tmpl:368
 msgid "Colors"
 msgstr ""
 
-#: templates/history.nat.tmpl:74
+#: templates/history.nat.tmpl:64
 msgid "Comment"
 msgstr "评论"
 
-#: templates/edit.nat.tmpl:407
+#: templates/edit.nat.tmpl:409
 #, fuzzy
 msgid "Comment settings"
 msgstr "评论:"
 
-#: templates/copytopic.nat.tmpl:64 templates/edit.nat.tmpl:329
+#: templates/copytopic.nat.tmpl:64 templates/edit.nat.tmpl:332
 #: templates/sidebar.nat.tmpl:58
 #, fuzzy
 msgid "Comments"
 msgstr "评论:"
 
-#: templates/compare.nat.tmpl:16 templates/history.nat.tmpl:50
+#: templates/compare.nat.tmpl:16 templates/history.nat.tmpl:42
 #, fuzzy
 msgid "Compare"
 msgstr "(更多)"
 
-#: templates/print.nat.tmpl:75
+#: templates/print.nat.tmpl:81
 #, fuzzy
 msgid "Confidential"
 msgstr "冲突"
 
-#: data/System/SiteMenu.txt:97
+#: data/System/SiteMenu.txt:95
 msgid "Configure Foswiki"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:333 templates/foswiki.nat.tmpl:346
+#: templates/foswiki.nat.tmpl:341 templates/foswiki.nat.tmpl:354
 #, fuzzy
 msgid "Configure e-mail notifications for this topic"
 msgstr "主题更新的自动通知"
@@ -681,7 +692,7 @@ msgstr "确认更名和移动"
 msgid "Conflict"
 msgstr "冲突"
 
-#: templates/edit.matter.nat.tmpl:411
+#: templates/edit.matter.nat.tmpl:422
 msgid "Connect Particles"
 msgstr ""
 
@@ -694,12 +705,12 @@ msgid ""
 "Contact <a href='%1'>the site administrator</a> for any further questions."
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:148
+#: templates/edit.matter.nat.tmpl:150
 #, fuzzy
 msgid "Content"
 msgstr "改变语言"
 
-#: templates/edit.nat.tmpl:92
+#: templates/edit.nat.tmpl:94
 #, fuzzy
 msgid "Content language"
 msgstr "改变语言"
@@ -708,7 +719,7 @@ msgstr "改变语言"
 msgid "Continue and try to rename web?"
 msgstr "继续为子网改名?"
 
-#: templates/foswiki.nat.tmpl:239 templates/foswiki.nat.tmpl:240
+#: templates/foswiki.nat.tmpl:244 templates/foswiki.nat.tmpl:245
 msgid "Contributors"
 msgstr ""
 
@@ -717,8 +728,8 @@ msgstr ""
 msgid "Contributors to this topic"
 msgstr "建立这个主题"
 
-#: templates/copytopic.nat.tmpl:80 templates/foswiki.nat.tmpl:408
-#: templates/foswiki.nat.tmpl:409
+#: templates/copytopic.nat.tmpl:80 templates/foswiki.nat.tmpl:416
+#: templates/foswiki.nat.tmpl:417
 msgid "Copy"
 msgstr ""
 
@@ -740,17 +751,17 @@ msgstr "%1 无法保存。"
 msgid "Country"
 msgstr "国家:"
 
-#: templates/404.nat.tmpl:46 templates/newtopic.nat.tmpl:23
+#: templates/404.nat.tmpl:45 templates/newtopic.nat.tmpl:24
 #: templates/newtopic.old.tmpl:69 templates/newtopic.old.tmpl:76
 #, fuzzy
 msgid "Create"
 msgstr "建立新主题"
 
-#: templates/foswiki.nat.tmpl:410
+#: templates/foswiki.nat.tmpl:418
 msgid "Create a copy of this topic under a new name"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:285
+#: templates/foswiki.nat.tmpl:291
 msgid "Create a new topic serving as a translation for this topic"
 msgstr ""
 
@@ -759,7 +770,7 @@ msgstr ""
 msgid "Create a new translation"
 msgstr "建立新主题"
 
-#: data/System/SiteMenu.txt:111 data/System/SiteMenu.txt:112
+#: data/System/SiteMenu.txt:109 data/System/SiteMenu.txt:110
 #: data/System/WebCreateNewWeb.txt:3 templates/newweb.nat.tmpl:8
 #, fuzzy
 msgid "Create a new web"
@@ -785,12 +796,12 @@ msgstr "建立主题"
 msgid "Create web"
 msgstr "(更名)"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:119
+#: data/System/NatSkinChangePasswordViewTemplate.txt:120
 #, fuzzy
 msgid "Current password"
 msgstr "目前密码"
 
-#: templates/view.nat.tmpl:184
+#: templates/view.nat.tmpl:186
 #, fuzzy
 msgid "Current translation is %1"
 msgstr "选择父主题:"
@@ -799,24 +810,24 @@ msgstr "选择父主题:"
 msgid "Currently being edited"
 msgstr ""
 
-#: templates/print.nat.tmpl:76
+#: templates/print.nat.tmpl:82
 msgid "Custom"
 msgstr ""
 
-#: templates/edit.nat.tmpl:40
+#: templates/edit.nat.tmpl:42
 msgid "Czech"
 msgstr ""
 
-#: templates/edit.nat.tmpl:41
+#: templates/edit.nat.tmpl:43
 msgid "Danish"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:123
+#: templates/foswiki.nat.tmpl:128
 #, fuzzy
 msgid "Dark Mode"
 msgstr "登录名 %1"
 
-#: templates/edit.nat.tmpl:287
+#: templates/edit.nat.tmpl:304
 #, fuzzy
 msgid "Data form"
 msgstr "(编辑表单)"
@@ -825,7 +836,7 @@ msgstr "(编辑表单)"
 msgid "DataForm"
 msgstr ""
 
-#: templates/history.nat.tmpl:72
+#: templates/history.nat.tmpl:62
 msgid "Date"
 msgstr "日期"
 
@@ -833,8 +844,8 @@ msgstr "日期"
 msgid "Dear %1"
 msgstr ""
 
-#: templates/languageselector.nat.tmpl:14 templates/newtopic.nat.tmpl:100
-#: templates/newtopic.nat.tmpl:243 templates/newtopic.nat.tmpl:56
+#: templates/languageselector.nat.tmpl:14 templates/newtopic.nat.tmpl:104
+#: templates/newtopic.nat.tmpl:253 templates/newtopic.nat.tmpl:58
 #: templates/newtopic.old.tmpl:116
 #, fuzzy
 msgid "Default"
@@ -845,12 +856,12 @@ msgstr "预设范本"
 msgid "Default topic as defined in WebTopicEditTemplate"
 msgstr "主题 %1 内应定义此表单"
 
-#: templates/newtopic.nat.tmpl:213 templates/newtopic.nat.tmpl:58
+#: templates/newtopic.nat.tmpl:223 templates/newtopic.nat.tmpl:60
 #, fuzzy
 msgid "Default wiki content"
 msgstr "删除主题"
 
-#: templates/foswiki.nat.tmpl:219 templates/foswiki.nat.tmpl:220
+#: templates/foswiki.nat.tmpl:224 templates/foswiki.nat.tmpl:225
 #: templates/renamedelete.nat.tmpl:13 templates/renamedelete.nat.tmpl:4
 #: templates/renamedelete.nat.tmpl:6
 msgid "Delete"
@@ -861,7 +872,7 @@ msgstr "删除"
 msgid "Delete %1"
 msgstr "删除"
 
-#: templates/renametopicdelete.nat.tmpl:1
+#: templates/renametopicdelete.nat.tmpl:6
 #, fuzzy
 msgid "Delete Topic"
 msgstr "删除主题"
@@ -876,7 +887,7 @@ msgstr "删除"
 msgid "Delete attachment '%1'"
 msgstr "删除附件"
 
-#: data/System/SiteMenu.txt:114
+#: data/System/SiteMenu.txt:112
 #, fuzzy
 msgid "Delete this web"
 msgstr "删除主题"
@@ -904,11 +915,11 @@ msgstr ""
 msgid "Destination"
 msgstr "版本"
 
-#: data/System/SiteMenu.txt:53
+#: data/System/SiteMenu.txt:51
 msgid "Developer docs"
 msgstr ""
 
-#: templates/loginbase.nat.tmpl:67
+#: templates/loginbase.nat.tmpl:62
 #, fuzzy
 msgid "Did you forget your password?"
 msgstr "忘记密码?"
@@ -917,7 +928,7 @@ msgstr "忘记密码?"
 msgid "Did you want to [[%1][reset %2's password]]?"
 msgstr "您是否想 [[%1][重设 %2 的密码]]?"
 
-#: templates/diffview.nat.tmpl:14 templates/foswiki.nat.tmpl:403
+#: templates/diffview.nat.tmpl:14 templates/foswiki.nat.tmpl:411
 msgid "Diff"
 msgstr ""
 
@@ -932,51 +943,51 @@ msgstr "差异:"
 msgid "Differences"
 msgstr "差异:"
 
-#: templates/foswiki.nat.tmpl:357
+#: templates/foswiki.nat.tmpl:365
 msgid "Disable 2FA"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:64 templates/foswiki.nat.tmpl:65
+#: templates/foswiki.nat.tmpl:69 templates/foswiki.nat.tmpl:70
 msgid "Disable admin rights"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:361
+#: templates/foswiki.nat.tmpl:369
 #, fuzzy
 msgid "Disable two-factor authentication"
 msgstr "Foswiki 管理员认证"
 
-#: templates/edit.nat.tmpl:147
+#: templates/edit.nat.tmpl:149
 msgid "Display settings"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:405
+#: templates/foswiki.nat.tmpl:413
 #, fuzzy
 msgid "Display the most recent change of this topic"
 msgstr "title='列印本主题' accesskey='p' >列印(&P)"
 
-#: templates/foswiki.nat.tmpl:309
+#: templates/foswiki.nat.tmpl:315
 msgid "Display this topic in PDF format"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:142
+#: templates/foswiki.nat.tmpl:147
 msgid "Display this topic in a printer-friendly manner"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:148
+#: templates/foswiki.nat.tmpl:153
 msgid "Display this topic in a reduced manner"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:120
+#: templates/foswiki.nat.tmpl:125
 #, fuzzy
 msgid "Display this version of the topic"
 msgstr "title='列印本主题' accesskey='p' >列印(&P)"
 
-#: templates/print.nat.tmpl:63
+#: templates/print.nat.tmpl:69
 #, fuzzy
 msgid "Disposition"
 msgstr "版本"
 
-#: templates/loginbase.nat.tmpl:71
+#: templates/loginbase.nat.tmpl:66
 msgid "Do you want to become a registered user?"
 msgstr ""
 
@@ -985,19 +996,19 @@ msgstr ""
 msgid "Don't forget to check your topic settings."
 msgstr "别忘了检查您的主题设定"
 
-#: templates/foswiki.nat.tmpl:372
+#: templates/foswiki.nat.tmpl:380
 msgid "Download"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:374
+#: templates/foswiki.nat.tmpl:382
 msgid "Download assets from an external url and upload them to this topic"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:373
+#: templates/foswiki.nat.tmpl:381
 msgid "Download external resource"
 msgstr ""
 
-#: templates/print.nat.tmpl:74
+#: templates/print.nat.tmpl:80
 msgid "Draft"
 msgstr ""
 
@@ -1034,80 +1045,75 @@ msgstr "移动附件 %1 到 %2 时发生错误。请通知 %3 管理员。"
 msgid "During save of %1 an error was found by the version control system."
 msgstr "主题 %1 保存时发生版本控制错误。请通知 %2 管理员。"
 
-#: templates/edit.nat.tmpl:42
+#: templates/edit.nat.tmpl:44
 msgid "Dutch"
 msgstr ""
 
-#: templates/edit.nat.tmpl:13 templates/foswiki.nat.tmpl:194
+#: templates/edit.nat.tmpl:13 templates/foswiki.nat.tmpl:199
 msgid "Edit"
 msgstr "编辑"
 
-#: templates/foswiki.nat.tmpl:189
-#, fuzzy
-msgid "Edit Raw"
-msgstr "编辑"
-
-#: templates/oopsleaseconflict.nat.tmpl:39
+#: templates/oopsleaseconflict.nat.tmpl:34
 #, fuzzy
 msgid "Edit anyway"
 msgstr "强制编辑"
 
-#: templates/foswiki.nat.tmpl:199
+#: templates/foswiki.nat.tmpl:204
 #, fuzzy
 msgid "Edit form"
 msgstr "(编辑表单)"
 
-#: templates/foswiki.nat.tmpl:200
+#: templates/foswiki.nat.tmpl:205
 #, fuzzy
 msgid "Edit form data"
 msgstr "(编辑表单)"
 
-#: templates/foswiki.nat.tmpl:211
+#: templates/foswiki.nat.tmpl:216
 #, fuzzy
 msgid "Edit hidden preference settings of this topic"
 msgstr "编辑主题属性设定"
 
-#: templates/foswiki.nat.tmpl:210
+#: templates/foswiki.nat.tmpl:194 templates/foswiki.nat.tmpl:195
+#, fuzzy
+msgid "Edit markup"
+msgstr "建立新主题"
+
+#: templates/foswiki.nat.tmpl:215
 #, fuzzy
 msgid "Edit preferences"
 msgstr "(设定属性)"
 
 #: templates/edittext.nat.tmpl:2 templates/edittext.nat.tmpl:3
-#: templates/foswiki.nat.tmpl:204
+#: templates/foswiki.nat.tmpl:209
 msgid "Edit text"
 msgstr "编辑文本"
 
-#: templates/foswiki.nat.tmpl:205
+#: templates/foswiki.nat.tmpl:210
 #, fuzzy
 msgid "Edit text data"
 msgstr "编辑文本"
 
-#: templates/foswiki.nat.tmpl:201
+#: templates/foswiki.nat.tmpl:206
 #, fuzzy
 msgid "Edit the form data of this topic"
 msgstr "编辑本主题的设定"
 
-#: templates/foswiki.nat.tmpl:191
+#: templates/foswiki.nat.tmpl:196
 #, fuzzy
 msgid "Edit the raw text of this topic"
 msgstr "编辑本主题的设定"
 
-#: templates/foswiki.nat.tmpl:206
+#: templates/foswiki.nat.tmpl:211
 #, fuzzy
 msgid "Edit the text data of this topic"
 msgstr "编辑本主题的设定"
 
-#: templates/foswiki.nat.tmpl:195 templates/foswiki.nat.tmpl:196
+#: templates/foswiki.nat.tmpl:200 templates/foswiki.nat.tmpl:201
 #, fuzzy
 msgid "Edit this topic"
 msgstr "编辑这个主题"
 
-#: templates/foswiki.nat.tmpl:190
-#, fuzzy
-msgid "Edit wiki markup"
-msgstr "建立新主题"
-
-#: templates/edit.nat.tmpl:118
+#: templates/edit.nat.tmpl:120
 #, fuzzy
 msgid "Editor settings"
 msgstr "编辑文本"
@@ -1117,35 +1123,35 @@ msgstr "编辑文本"
 msgid "Email"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:274
+#: templates/foswiki.nat.tmpl:280
 #, fuzzy
 msgid "Email this topic"
 msgstr "编辑这个主题"
 
-#: templates/foswiki.nat.tmpl:273
+#: templates/foswiki.nat.tmpl:279
 #, fuzzy
 msgid "Email topic"
 msgstr "在%1子网中的子主题"
 
-#: templates/foswiki.nat.tmpl:358
+#: templates/foswiki.nat.tmpl:366
 msgid "Enable 2FA"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:362
+#: templates/foswiki.nat.tmpl:370
 #, fuzzy
 msgid "Enable two-factor authentication"
 msgstr "Foswiki 管理员认证"
 
-#: templates/edit.nat.tmpl:43
+#: templates/edit.nat.tmpl:45
 msgid "English"
 msgstr ""
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:86
+#: data/System/NatSkinChangePasswordViewTemplate.txt:87
 #, fuzzy
 msgid "Enter a new password"
 msgstr "重新输入新密码"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:131
+#: data/System/NatSkinChangePasswordViewTemplate.txt:132
 msgid ""
 "Enter a new password. Please don't use a trivial password that could easily "
 "be guessed."
@@ -1160,17 +1166,17 @@ msgstr "输入新用户名和密码以改变身份"
 msgid "Enter the %WIKITOOLNAME% administrator user or login as set in %1"
 msgstr "输入 Wiki 管理员或依 %1 设定登录"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:122
+#: data/System/NatSkinChangePasswordViewTemplate.txt:123
 msgid "Enter the current password for the given !LoginName."
 msgstr ""
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:95
+#: data/System/NatSkinChangePasswordViewTemplate.txt:96
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:62
 #, fuzzy
 msgid "Enter the same password as above"
 msgstr "请输入 Wiki 管理员的密码"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:83
+#: data/System/NatSkinChangePasswordViewTemplate.txt:84
 #, fuzzy
 msgid "Enter your current password"
 msgstr "目前密码"
@@ -1202,7 +1208,7 @@ msgstr "密码不相同"
 msgid "Errors"
 msgstr "错误"
 
-#: templates/print.nat.tmpl:27
+#: templates/print.nat.tmpl:33
 msgid "Export"
 msgstr ""
 
@@ -1210,7 +1216,7 @@ msgstr ""
 msgid "Export to PDF"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:308
+#: templates/foswiki.nat.tmpl:314
 msgid "Export topic to PDF"
 msgstr ""
 
@@ -1218,7 +1224,7 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:312
+#: templates/foswiki.nat.tmpl:320
 msgid "Favorite"
 msgstr ""
 
@@ -1235,21 +1241,26 @@ msgstr "档案已用其他名称上传"
 msgid "Filter"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:102
+#: templates/renametopicdelete.nat.tmpl:22
+#, fuzzy
+msgid "Finally Delete Topic"
+msgstr "删除主题"
+
+#: templates/foswiki.nat.tmpl:107
 #, fuzzy
 msgid "Find backlinks"
 msgstr "反向连结"
 
-#: templates/foswiki.nat.tmpl:136
+#: templates/foswiki.nat.tmpl:141
 #, fuzzy
 msgid "Find child topics"
 msgstr "寻找相似主题"
 
-#: templates/edit.nat.tmpl:44
+#: templates/edit.nat.tmpl:46
 msgid "Finnish"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:383
+#: templates/foswiki.nat.tmpl:391
 #, fuzzy
 msgid "First"
 msgstr "名:"
@@ -1271,7 +1282,7 @@ msgstr ""
 msgid "Force a new revision"
 msgstr "强制新版本"
 
-#: templates/edit.matter.nat.tmpl:270
+#: templates/edit.matter.nat.tmpl:272
 msgid "Foreground Color"
 msgstr ""
 
@@ -1283,7 +1294,7 @@ msgstr ""
 msgid "Form-based input"
 msgstr ""
 
-#: data/System/SiteMenu.txt:61
+#: data/System/SiteMenu.txt:59
 msgid "Foswiki FAQ"
 msgstr ""
 
@@ -1292,7 +1303,7 @@ msgstr ""
 msgid "Foswiki Two Factor Authentication"
 msgstr "Foswiki 管理员认证"
 
-#: templates/edit.matter.nat.tmpl:595
+#: templates/edit.matter.nat.tmpl:606
 #, fuzzy
 msgid "Fraction"
 msgstr "功能"
@@ -1303,7 +1314,7 @@ msgid ""
 "automatically."
 msgstr ""
 
-#: templates/edit.nat.tmpl:45
+#: templates/edit.nat.tmpl:47
 msgid "French"
 msgstr ""
 
@@ -1320,19 +1331,19 @@ msgstr ""
 msgid "From Version"
 msgstr "修订版"
 
-#: templates/edit.matter.nat.tmpl:141
+#: templates/edit.matter.nat.tmpl:143
 msgid "Full"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:64 templates/foswiki.nat.tmpl:65
+#: templates/foswiki.nat.tmpl:69 templates/foswiki.nat.tmpl:70
 msgid "Gain admin rights"
 msgstr ""
 
-#: templates/edit.nat.tmpl:46
+#: templates/edit.nat.tmpl:48
 msgid "German"
 msgstr ""
 
-#: templates/body.nat.tmpl:85
+#: templates/body.nat.tmpl:84
 msgid "Get a fresh version <a href='%1' rel='nofollow'>here</a>."
 msgstr ""
 
@@ -1361,12 +1372,12 @@ msgstr "得到此搜寻的修改通知"
 msgid "Go back in your browser and save your changes locally."
 msgstr "回浏览器上一页并储存本地所有变更。"
 
-#: templates/foswiki.nat.tmpl:390
+#: templates/foswiki.nat.tmpl:398
 #, fuzzy
 msgid "Go to the following version of this topic"
 msgstr "title='列印本主题' accesskey='p' >列印(&P)"
 
-#: templates/foswiki.nat.tmpl:395
+#: templates/foswiki.nat.tmpl:403
 #, fuzzy
 msgid "Go to the previous version of this topic"
 msgstr "title='列印本主题' accesskey='p' >列印(&P)"
@@ -1376,16 +1387,16 @@ msgstr "title='列印本主题' accesskey='p' >列印(&P)"
 msgid "Good examples"
 msgstr "好范例:"
 
-#: templates/edit.matter.nat.tmpl:330
+#: templates/edit.matter.nat.tmpl:332
 msgid "Gradient Degree"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:339
+#: templates/edit.matter.nat.tmpl:341
 #, fuzzy
 msgid "Gradient Position"
 msgstr "目前位置:"
 
-#: templates/edit.matter.nat.tmpl:319
+#: templates/edit.matter.nat.tmpl:321
 msgid "Gradient Style"
 msgstr ""
 
@@ -1398,15 +1409,15 @@ msgstr "主题名称"
 msgid "Groups"
 msgstr "群组"
 
-#: templates/edit.matter.nat.tmpl:139
+#: templates/edit.matter.nat.tmpl:141
 msgid "Half"
 msgstr ""
 
-#: templates/404.nat.tmpl:42
+#: templates/404.nat.tmpl:41
 msgid "Have a look at the list of all pages in this web."
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:133
+#: templates/edit.matter.nat.tmpl:135
 msgid "Height"
 msgstr ""
 
@@ -1415,8 +1426,8 @@ msgstr ""
 msgid "Hello"
 msgstr ""
 
-#: data/System/SiteMenu.txt:48 templates/changeform.nat.tmpl:4
-#: templates/foswiki.nat.tmpl:303 templates/moveattachment.nat.tmpl:3
+#: data/System/SiteMenu.txt:46 templates/changeform.nat.tmpl:4
+#: templates/foswiki.nat.tmpl:309 templates/moveattachment.nat.tmpl:3
 #: templates/renamesidebar.nat.tmpl:1 templates/renamewebbase.nat.tmpl:4
 #: templates/topbar.customato.nat.tmpl:80
 msgid "Help"
@@ -1427,7 +1438,7 @@ msgstr "说明"
 msgid "Hiding attachments"
 msgstr "移动或删除附件"
 
-#: data/System/SiteTopicActions.txt:56 templates/foswiki.nat.tmpl:234
+#: data/System/SiteTopicActions.txt:57 templates/foswiki.nat.tmpl:239
 #: templates/oopshistory.nat.tmpl:4 templates/oopshistory.nat.tmpl:6
 #, fuzzy
 msgid "History"
@@ -1439,22 +1450,22 @@ msgid ""
 "it."
 msgstr "档案已从 %1 改名为 %2。请加上备注。"
 
-#: templates/404.nat.tmpl:23
+#: templates/404.nat.tmpl:22
 msgid "I am afraid this page slipped between the cracks."
 msgstr ""
 
-#: templates/oopsleaseconflict.nat.tmpl:32
+#: templates/oopsleaseconflict.nat.tmpl:28
 msgid "If unsure, click 'Cancel'."
 msgstr ""
 
-#: templates/validate.nat.tmpl:28
+#: templates/validate.nat.tmpl:27
 msgid ""
 "If you are unsure what this means, read <a href='%1' "
 "class='foswikiPopUp'>why you are being asked to confirm</a>"
 msgstr ""
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:66
-#: data/System/NatSkinChangePasswordViewTemplate.txt:103
+#: data/System/NatSkinChangePasswordViewTemplate.txt:104
 msgid "If you have any questions, please contact %1"
 msgstr "任何问题，请联系 %1。"
 
@@ -1474,7 +1485,7 @@ msgstr "让您想建立这主题"
 msgid "If you want to create the topic then [[%1][click here]]."
 msgstr "让您想建立这主题"
 
-#: templates/edit.matter.nat.tmpl:371
+#: templates/edit.matter.nat.tmpl:382
 msgid "Image"
 msgstr ""
 
@@ -1493,7 +1504,7 @@ msgid ""
 "and accessible across all platforms"
 msgstr "某些情况下，系统会修改上传的档名以确保各平台都能使用:"
 
-#: templates/foswiki.nat.tmpl:45
+#: templates/foswiki.nat.tmpl:50
 msgid "Inbox"
 msgstr ""
 
@@ -1506,7 +1517,7 @@ msgstr "不正确的 %1"
 msgid "Incorrect Password"
 msgstr "不正确的密码"
 
-#: templates/404.nat.tmpl:41 templates/sidebar.nat.tmpl:55
+#: templates/404.nat.tmpl:40 templates/sidebar.nat.tmpl:55
 msgid "Index"
 msgstr "索引"
 
@@ -1519,11 +1530,11 @@ msgstr "全部清除"
 msgid "Installation Error"
 msgstr ""
 
-#: data/System/SiteMenu.txt:55
+#: data/System/SiteMenu.txt:53
 msgid "Installed plugins"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:279 templates/languageselector.nat.tmpl:4
+#: templates/foswiki.nat.tmpl:285 templates/languageselector.nat.tmpl:4
 #, fuzzy
 msgid "Interface language"
 msgstr "改变语言"
@@ -1551,20 +1562,20 @@ msgid ""
 "check with [[%1]] first."
 msgstr ""
 
-#: templates/edit.nat.tmpl:47
+#: templates/edit.nat.tmpl:49
 msgid "Italian"
 msgstr ""
 
-#: templates/edit.nat.tmpl:48
+#: templates/edit.nat.tmpl:50
 msgid "Japanese"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:385
+#: templates/foswiki.nat.tmpl:393
 #, fuzzy
 msgid "Jump to the first version of this topic"
 msgstr "title='列印本主题' accesskey='p' >列印(&P)"
 
-#: templates/foswiki.nat.tmpl:400
+#: templates/foswiki.nat.tmpl:408
 #, fuzzy
 msgid "Jump to the most recent version of this topic"
 msgstr "title='列印本主题' accesskey='p' >列印(&P)"
@@ -1573,26 +1584,26 @@ msgstr "title='列印本主题' accesskey='p' >列印(&P)"
 msgid "Just start from the beginning."
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:386
+#: templates/edit.matter.nat.tmpl:397
 msgid "Kenburns Effect"
 msgstr ""
 
-#: templates/edit.nat.tmpl:49
+#: templates/edit.nat.tmpl:51
 msgid "Korean"
 msgstr ""
 
 # please enter the name of your language here (written in the native language):
-#: templates/foswiki.nat.tmpl:278 templates/languageselector.nat.tmpl:12
+#: templates/foswiki.nat.tmpl:284 templates/languageselector.nat.tmpl:12
 #, fuzzy
 msgid "Language"
 msgstr "简体中文"
 
-#: templates/foswiki.nat.tmpl:398
+#: templates/foswiki.nat.tmpl:406
 #, fuzzy
 msgid "Last"
 msgstr "姓:"
 
-#: data/System/NatSkinStyleBrowser.txt:34 templates/edit.nat.tmpl:194
+#: data/System/NatSkinStyleBrowser.txt:34 templates/edit.nat.tmpl:198
 msgid "Layout"
 msgstr ""
 
@@ -1600,20 +1611,20 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:157
+#: templates/foswiki.nat.tmpl:162
 msgid "Like"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:158
+#: templates/foswiki.nat.tmpl:163
 #, fuzzy
 msgid "Like this topic"
 msgstr "建立这个主题"
 
-#: templates/foswiki.nat.tmpl:159
+#: templates/foswiki.nat.tmpl:164
 msgid "Liked"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:160
+#: templates/foswiki.nat.tmpl:165
 #, fuzzy
 msgid "Liked this topic"
 msgstr "建立这个主题"
@@ -1623,12 +1634,12 @@ msgstr "建立这个主题"
 msgid "Linking to attachments"
 msgstr "移动或删除附件"
 
-#: templates/foswiki.nat.tmpl:103
+#: templates/foswiki.nat.tmpl:108
 #, fuzzy
 msgid "List other topics linking to this topic"
 msgstr "编辑本主题的设定"
 
-#: templates/foswiki.nat.tmpl:137
+#: templates/foswiki.nat.tmpl:142
 #, fuzzy
 msgid "List topics that branch off this topic"
 msgstr "列出所有以某字母开头的主题:"
@@ -1638,17 +1649,17 @@ msgstr "列出所有以某字母开头的主题:"
 msgid "Locked topics"
 msgstr "到主题:"
 
-#: templates/foswiki.nat.tmpl:49 templates/loginbase.nat.tmpl:60
+#: templates/foswiki.nat.tmpl:54 templates/loginbase.nat.tmpl:55
 #: templates/topbar.customato.nat.tmpl:118
 msgid "Log in"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:50
+#: templates/foswiki.nat.tmpl:55
 #, fuzzy
 msgid "Log in to %1."
 msgstr "回到 %1."
 
-#: templates/foswiki.nat.tmpl:54 templates/foswiki.nat.tmpl:55
+#: templates/foswiki.nat.tmpl:59 templates/foswiki.nat.tmpl:60
 #: templates/topbar.customato.nat.tmpl:72
 msgid "Log out"
 msgstr ""
@@ -1696,7 +1707,7 @@ msgstr ""
 msgid "Manage bookmarks"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:379
+#: templates/foswiki.nat.tmpl:387
 #, fuzzy
 msgid "Manage tags in this web"
 msgstr "搜寻本子网的更多主题"
@@ -1710,21 +1721,21 @@ msgstr "改变主题"
 msgid "Managing webs"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:425
+#: templates/edit.matter.nat.tmpl:436
 msgid "Maximum Particles"
 msgstr ""
 
-#: templates/404.nat.tmpl:24
+#: templates/404.nat.tmpl:23
 msgid ""
 "Maybe you simply got here by accident. Then move back in your browser and "
 "try something else."
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:137
+#: templates/edit.matter.nat.tmpl:139
 msgid "Medium"
 msgstr ""
 
-#: data/System/NatSkinStyleBrowser.txt:47 templates/edit.nat.tmpl:220
+#: data/System/NatSkinStyleBrowser.txt:47 templates/edit.nat.tmpl:224
 msgid "Menu"
 msgstr ""
 
@@ -1740,21 +1751,21 @@ msgstr ""
 msgid "Missing or illegal web name"
 msgstr ""
 
-#: templates/edit.nat.tmpl:428
+#: templates/edit.nat.tmpl:429
 #, fuzzy
 msgid "Moderation"
 msgstr "通知"
 
-#: templates/edit.nat.tmpl:50
+#: templates/edit.nat.tmpl:52
 msgid "Modern Greek"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:288
+#: templates/foswiki.nat.tmpl:294
 #, fuzzy
 msgid "More"
 msgstr "更多..."
 
-#: templates/foswiki.nat.tmpl:229
+#: templates/foswiki.nat.tmpl:234
 msgid "Move"
 msgstr "移动"
 
@@ -1773,17 +1784,17 @@ msgstr "移动附件"
 msgid "Move this topic into the %1 web"
 msgstr "移动主题到子网:"
 
-#: templates/foswiki.nat.tmpl:226
+#: templates/foswiki.nat.tmpl:231
 #, fuzzy
 msgid "Move this topic to the archive"
 msgstr "移动主题到子网:"
 
-#: templates/foswiki.nat.tmpl:221
+#: templates/foswiki.nat.tmpl:226
 #, fuzzy
 msgid "Move this topic to the trash"
 msgstr "移动主题到子网:"
 
-#: data/System/SiteMenu.txt:114
+#: data/System/SiteMenu.txt:112
 #, fuzzy
 msgid "Move this web to the trash"
 msgstr "移动主题到子网:"
@@ -1793,7 +1804,7 @@ msgstr "移动主题到子网:"
 msgid "Moving attachments"
 msgstr "主题附件"
 
-#: templates/foswiki.nat.tmpl:84 templates/foswiki.nat.tmpl:85
+#: templates/foswiki.nat.tmpl:89 templates/foswiki.nat.tmpl:90
 msgid "My Account"
 msgstr ""
 
@@ -1820,7 +1831,7 @@ msgstr "主题名称"
 msgid "Name of new web is missing"
 msgstr "新子网名称遗失"
 
-#: templates/foswiki.nat.tmpl:298
+#: templates/foswiki.nat.tmpl:304
 #, fuzzy
 msgid "New"
 msgstr "新子网名称:"
@@ -1845,12 +1856,12 @@ msgstr "自 %2 起，%1 中新的或变更过的主题"
 msgid "New parent web"
 msgstr "新的父子网:"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:127
+#: data/System/NatSkinChangePasswordViewTemplate.txt:128
 #, fuzzy
 msgid "New password"
 msgstr "新密码"
 
-#: templates/foswiki.nat.tmpl:299 templates/foswiki.nat.tmpl:300
+#: templates/foswiki.nat.tmpl:305 templates/foswiki.nat.tmpl:306
 #: templates/newtopic.nat.tmpl:4 templates/translatetopic.nat.tmpl:139
 #, fuzzy
 msgid "New topic"
@@ -1865,11 +1876,11 @@ msgstr "新主题名 %1 不是 %2"
 msgid "New web name"
 msgstr "新子网名称:"
 
-#: templates/foswiki.nat.tmpl:388
+#: templates/foswiki.nat.tmpl:396
 msgid "Next"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:21
+#: templates/newtopic.nat.tmpl:22
 msgid "Next step"
 msgstr ""
 
@@ -1877,7 +1888,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: templates/childtopics.nat.tmpl:102 templates/childtopics.nat.tmpl:56
+#: templates/childtopics.nat.tmpl:103 templates/childtopics.nat.tmpl:56
 #: templates/childtopics.nat.tmpl:76
 #, fuzzy
 msgid "No child topics"
@@ -1888,10 +1899,11 @@ msgstr "无子主题"
 msgid "No permission"
 msgstr "修订版"
 
-#: templates/renametopicarchive.nat.tmpl:13
-#: templates/renametopicdelete.nat.tmpl:14
-#: templates/renamewebdelete.nat.tmpl:15 templates/restoretopic.nat.tmpl:14
-#: templates/user.nat.tmpl:176
+#: templates/renametopicarchive.nat.tmpl:15
+#: templates/renametopicdelete.nat.tmpl:19
+#: templates/renametopicdelete.nat.tmpl:37
+#: templates/renamewebdelete.nat.tmpl:16 templates/restoretopic.nat.tmpl:15
+#: templates/user.nat.tmpl:197
 msgid "No, thanks"
 msgstr ""
 
@@ -1899,11 +1911,11 @@ msgstr ""
 msgid "Nobody contributed to this topic."
 msgstr ""
 
-#: templates/print.nat.tmpl:73
+#: templates/print.nat.tmpl:79
 msgid "None"
 msgstr ""
 
-#: templates/edit.nat.tmpl:51
+#: templates/edit.nat.tmpl:53
 msgid "Norwegian"
 msgstr ""
 
@@ -1917,6 +1929,10 @@ msgid ""
 "Note that any URLs that refer to the attachment will be broken after this "
 "move."
 msgstr "移动后，任何引用此附件的 URL 都将失效。"
+
+#: templates/renametopicdelete.nat.tmpl:35
+msgid "Note that this action cannot be undone."
+msgstr ""
 
 #: templates/renamebase.nat.tmpl:76
 msgid "Note that you may change the title from within the editor as well."
@@ -1933,7 +1949,7 @@ msgstr "%1 主题不存在"
 msgid "Notes"
 msgstr "注意:"
 
-#: templates/foswiki.nat.tmpl:413
+#: templates/foswiki.nat.tmpl:421
 msgid "Nothing found. Try again!"
 msgstr ""
 
@@ -1943,7 +1959,7 @@ msgstr "通知"
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:97
 #: data/System/NatSkinChangePasswordViewTemplate.txt:39
-#: data/System/NatSkinResetPasswordViewTemplate.txt:71
+#: data/System/NatSkinResetPasswordViewTemplate.txt:72
 #: data/System/NatSkinStyleBrowser.txt:54 templates/changeform.nat.tmpl:38
 #: templates/messages.nat.tmpl:101 templates/messages.nat.tmpl:253
 #: templates/messages.nat.tmpl:273 templates/moveattachment.nat.tmpl:64
@@ -1961,7 +1977,7 @@ msgstr ""
 msgid "On"
 msgstr ""
 
-#: data/System/SiteMenu.txt:60
+#: data/System/SiteMenu.txt:58
 msgid "Online support forum"
 msgstr ""
 
@@ -1969,7 +1985,7 @@ msgstr ""
 msgid "Only members of the %1 are allowed to perform this action."
 msgstr "只有 %1 的成员允许使用这些功能。"
 
-#: templates/foswiki.nat.tmpl:175
+#: templates/foswiki.nat.tmpl:180
 #, fuzzy
 msgid "Open a channel to talk about this topic"
 msgstr "建立这个主题"
@@ -1980,16 +1996,16 @@ msgid "Optional information"
 msgstr "可用的资讯"
 
 #: data/System/NatSkinRemoveUserViewTemplate.txt:32
-#: templates/copytopic.nat.tmpl:72 templates/email.nat.tmpl:21
+#: templates/copytopic.nat.tmpl:72 templates/email.nat.tmpl:20
 #, fuzzy
 msgid "Options"
 msgstr "功能"
 
-#: templates/404.nat.tmpl:57
+#: templates/404.nat.tmpl:56
 msgid "Or just start from the beginning."
 msgstr ""
 
-#: templates/404.nat.tmpl:25
+#: templates/404.nat.tmpl:24
 msgid "Or you'd like to proceed as follows:"
 msgstr ""
 
@@ -2003,7 +2019,7 @@ msgstr "组织名称:"
 msgid "Organisation URL"
 msgstr "组织连结:"
 
-#: templates/print.nat.tmpl:50
+#: templates/print.nat.tmpl:56
 #, fuzzy
 msgid "Orientation"
 msgstr "目前位置:"
@@ -2012,28 +2028,23 @@ msgstr "目前位置:"
 msgid "Others"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:307
+#: templates/foswiki.nat.tmpl:313
 msgid "PDF"
 msgstr ""
 
-#: templates/edit.nat.tmpl:109
+#: templates/edit.nat.tmpl:111
 msgid "Page Caching"
 msgstr ""
 
-#: templates/404.nat.tmpl:20 templates/404.nat.tmpl:4
+#: templates/404.nat.tmpl:19 templates/404.nat.tmpl:4
 msgid "Page not found"
 msgstr ""
 
-#: templates/print.nat.tmpl:32
+#: templates/print.nat.tmpl:38
 msgid "Page size"
 msgstr ""
 
-#: templates/edit.nat.tmpl:315
-#, fuzzy
-msgid "Pagination"
-msgstr "版本"
-
-#: templates/edit.matter.nat.tmpl:221
+#: templates/edit.matter.nat.tmpl:223
 msgid "Parallax Effect"
 msgstr ""
 
@@ -2041,16 +2052,16 @@ msgstr ""
 msgid "Parent"
 msgstr ""
 
-#: templates/edit.nat.tmpl:85
+#: templates/edit.nat.tmpl:87
 #, fuzzy
 msgid "Parent topic"
 msgstr "建立主题"
 
-#: templates/edit.matter.nat.tmpl:405
+#: templates/edit.matter.nat.tmpl:416
 msgid "Particle Color"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:397
+#: templates/edit.matter.nat.tmpl:408
 msgid "Particles"
 msgstr ""
 
@@ -2060,7 +2071,7 @@ msgstr ""
 
 #: data/Main/WebLinks.txt:11
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:88
-#: templates/foswiki.nat.tmpl:263 templates/loginbase.nat.tmpl:43
+#: templates/foswiki.nat.tmpl:269 templates/loginbase.nat.tmpl:38
 #: templates/mailresetpassword.nat.tmpl:16
 #: templates/topbar.customato.nat.tmpl:148
 msgid "Password"
@@ -2075,7 +2086,7 @@ msgstr "密码不相同"
 msgid "Password changed successfully!"
 msgstr "密码修改成功!"
 
-#: data/System/SiteMenu.txt:58
+#: data/System/SiteMenu.txt:56
 #, fuzzy
 msgid "Password forgotten"
 msgstr "密码不相同"
@@ -2093,21 +2104,21 @@ msgstr ""
 msgid "Passwords do not match"
 msgstr "密码不相同"
 
-#: templates/edit.matter.nat.tmpl:124
+#: templates/edit.matter.nat.tmpl:126
 #, fuzzy
 msgid "Pexels Image"
 msgstr "类别"
 
-#: templates/edit.matter.nat.tmpl:471
+#: templates/edit.matter.nat.tmpl:482
 msgid "Pexels Random"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:465
+#: templates/edit.matter.nat.tmpl:476
 #, fuzzy
 msgid "Pexels Search"
 msgstr "查询式检索"
 
-#: templates/edit.matter.nat.tmpl:125
+#: templates/edit.matter.nat.tmpl:127
 #, fuzzy
 msgid "Pexels Video"
 msgstr "类别"
@@ -2116,44 +2127,44 @@ msgstr "类别"
 msgid "Pick one of the %1."
 msgstr "从 %1 选一个。"
 
-#: templates/edit.matter.nat.tmpl:503
+#: templates/edit.matter.nat.tmpl:514
 #, fuzzy
 msgid "Pixabay Category"
 msgstr "类别"
 
-#: templates/edit.matter.nat.tmpl:531
+#: templates/edit.matter.nat.tmpl:542
 #, fuzzy
 msgid "Pixabay Editor's Choice"
 msgstr "编辑这个主题"
 
-#: templates/edit.matter.nat.tmpl:121
+#: templates/edit.matter.nat.tmpl:123
 #, fuzzy
 msgid "Pixabay Image"
 msgstr "类别"
 
-#: templates/edit.matter.nat.tmpl:545
+#: templates/edit.matter.nat.tmpl:556
 msgid "Pixabay Random"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:539
+#: templates/edit.matter.nat.tmpl:550
 #, fuzzy
 msgid "Pixabay Search"
 msgstr "搜寻"
 
-#: templates/edit.matter.nat.tmpl:482 templates/edit.matter.nat.tmpl:493
+#: templates/edit.matter.nat.tmpl:493 templates/edit.matter.nat.tmpl:504
 msgid "Pixabay Type"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:122
+#: templates/edit.matter.nat.tmpl:124
 #, fuzzy
 msgid "Pixabay Video"
 msgstr "类别"
 
-#: templates/foswiki.nat.tmpl:146
+#: templates/foswiki.nat.tmpl:151
 msgid "Plain"
 msgstr ""
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:91
+#: data/System/NatSkinChangePasswordViewTemplate.txt:92
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:58
 #, fuzzy
 msgid "Please add at least one special character"
@@ -2169,7 +2180,7 @@ msgstr "您的用户主题尚未更名。请用电子邮件向 %1 申请。"
 msgid "Please enter a valid e-mail address"
 msgstr "电子邮件地址错误"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:87
+#: data/System/NatSkinChangePasswordViewTemplate.txt:88
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:44
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:54
 #, fuzzy
@@ -2206,7 +2217,7 @@ msgstr "电子邮件寄送失败，请通知您的 %1 管理员 %2"
 msgid "Please notify your %1 administrator %2."
 msgstr "电子邮件寄送失败，请通知您的 %1 管理员 %2"
 
-#: templates/newtopic.nat.tmpl:118
+#: templates/newtopic.nat.tmpl:123
 #, fuzzy
 msgid "Please select a Template"
 msgstr "预设范本"
@@ -2216,7 +2227,7 @@ msgstr "预设范本"
 msgid "Please select the groups you want to join."
 msgstr "选择父主题:"
 
-#: templates/newtopic.nat.tmpl:85
+#: templates/newtopic.nat.tmpl:89
 msgid "Please select the type of content you'd like to create"
 msgstr ""
 
@@ -2230,19 +2241,19 @@ msgstr "请输入 Wiki 管理员的密码"
 msgid "Please use a valid WikiWord"
 msgstr "电子邮件地址错误"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:88
+#: data/System/NatSkinChangePasswordViewTemplate.txt:89
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:55
 #, fuzzy
 msgid "Please use at least one digit"
 msgstr "本站的密码至少要 %1 个字元"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:90
+#: data/System/NatSkinChangePasswordViewTemplate.txt:91
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:57
 #, fuzzy
 msgid "Please use lower case characters"
 msgstr "本站的密码至少要 %1 个字元"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:89
+#: data/System/NatSkinChangePasswordViewTemplate.txt:90
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:56
 #, fuzzy
 msgid "Please use upper case characters"
@@ -2253,20 +2264,20 @@ msgid ""
 "Please visit %1 to change your password to something more memorable for you."
 msgstr ""
 
-#: templates/edit.nat.tmpl:52
+#: templates/edit.nat.tmpl:54
 msgid "Polish"
 msgstr ""
 
-#: templates/edit.nat.tmpl:53
+#: templates/edit.nat.tmpl:55
 msgid "Portuguese"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:448
+#: templates/foswiki.nat.tmpl:456
 #, fuzzy
 msgid "Powered by Foswiki"
 msgstr "本站使用 Foswiki"
 
-#: templates/copytopic.nat.tmpl:61 templates/foswiki.nat.tmpl:209
+#: templates/copytopic.nat.tmpl:61 templates/foswiki.nat.tmpl:214
 #: templates/sidebar.nat.tmpl:62
 msgid "Preferences"
 msgstr "设定"
@@ -2281,19 +2292,19 @@ msgstr "设定"
 msgid "Preserver author and revision information"
 msgstr "可用的资讯"
 
-#: templates/validate.nat.tmpl:26
+#: templates/validate.nat.tmpl:24
 msgid "Press Cancel otherwise."
 msgstr "其他，按「取消」。"
 
-#: templates/validate.nat.tmpl:25
+#: templates/validate.nat.tmpl:23
 msgid "Press OK to confirm that this change was intentional."
 msgstr "按「OK」确认此修改是故意的。"
 
-#: templates/foswiki.nat.tmpl:393
+#: templates/foswiki.nat.tmpl:401
 msgid "Previous"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:140
+#: templates/foswiki.nat.tmpl:145
 msgid "Print"
 msgstr ""
 
@@ -2301,7 +2312,7 @@ msgstr ""
 msgid "Processing ..."
 msgstr ""
 
-#: data/System/SiteMenu.txt:62
+#: data/System/SiteMenu.txt:60
 msgid "Professional help"
 msgstr ""
 
@@ -2310,25 +2321,25 @@ msgstr ""
 msgid "Profile Page"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:594
+#: templates/edit.matter.nat.tmpl:605
 msgid "Progress Bar"
 msgstr ""
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:129
+#: data/System/NatSkinChangePasswordViewTemplate.txt:130
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:131
 #, fuzzy
 msgid "Random password"
 msgstr "密码错误"
 
-#: templates/foswiki.nat.tmpl:179
+#: templates/foswiki.nat.tmpl:184
 msgid "Raw"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:241
+#: templates/edit.matter.nat.tmpl:243
 msgid "Raw CSS"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:184 templates/foswiki.nat.tmpl:185
+#: templates/foswiki.nat.tmpl:189 templates/foswiki.nat.tmpl:190
 msgid "Raw data"
 msgstr ""
 
@@ -2342,27 +2353,27 @@ msgstr "重设密码"
 msgid "Recent Changes"
 msgstr "最近更新的主题"
 
-#: templates/email.nat.tmpl:15
+#: templates/email.nat.tmpl:14
 msgid "Recipient"
 msgstr ""
-
-#: templates/view.nat.tmpl:201
-#, fuzzy
-msgid "Redirect from %1"
-msgstr "%1 子网中的结果"
 
 #: data/System/WebLinks.txt:10 templates/topbar.customato.nat.tmpl:84
 #, fuzzy
 msgid "Reference Manual"
 msgstr "用户手册"
 
-#: data/System/SiteMenu.txt:54
+#: data/System/SiteMenu.txt:52
 #, fuzzy
 msgid "Reference manual"
 msgstr "用户手册"
 
+#: templates/edit.nat.tmpl:290
+#, fuzzy
+msgid "References"
+msgstr "设定"
+
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:77
-#: templates/foswiki.nat.tmpl:59
+#: templates/foswiki.nat.tmpl:64
 msgid "Register"
 msgstr "注册"
 
@@ -2371,7 +2382,7 @@ msgstr "注册"
 msgid "Registration"
 msgstr "注册"
 
-#: templates/loginbase.nat.tmpl:54 templates/topbar.customato.nat.tmpl:160
+#: templates/loginbase.nat.tmpl:49 templates/topbar.customato.nat.tmpl:160
 msgid "Remember me on this computer"
 msgstr "在此电脑上记住我"
 
@@ -2384,7 +2395,7 @@ msgstr "记住密码?"
 msgid "Remove"
 msgstr "加一列"
 
-#: templates/foswiki.nat.tmpl:321 templates/foswiki.nat.tmpl:328
+#: templates/foswiki.nat.tmpl:329 templates/foswiki.nat.tmpl:336
 msgid "Remove from favorites"
 msgstr ""
 
@@ -2398,13 +2409,13 @@ msgstr "加一列"
 msgid "Remove this topic from bookmarks"
 msgstr "移动主题到子网:"
 
-#: templates/foswiki.nat.tmpl:258
+#: templates/foswiki.nat.tmpl:264
 #, fuzzy
 msgid "Remove user"
 msgstr "加一列"
 
 #: data/System/NatSkinRemoveUserViewTemplate.txt:47
-#: templates/foswiki.nat.tmpl:259 templates/user.nat.tmpl:156
+#: templates/foswiki.nat.tmpl:265 templates/user.nat.tmpl:177
 msgid "Remove user account"
 msgstr ""
 
@@ -2413,7 +2424,7 @@ msgstr ""
 msgid "Remove user account?"
 msgstr "还原"
 
-#: templates/user.nat.tmpl:160
+#: templates/user.nat.tmpl:181
 msgid "Removing ..."
 msgstr ""
 
@@ -2427,7 +2438,7 @@ msgstr "改名"
 msgid "Rename failed"
 msgstr "改名失败"
 
-#: templates/foswiki.nat.tmpl:230
+#: templates/foswiki.nat.tmpl:235
 #, fuzzy
 msgid "Rename or move"
 msgstr "主题改名或移动"
@@ -2442,7 +2453,7 @@ msgstr "主题改名或移动"
 msgid "Rename the %1 web"
 msgstr "欢迎来到 %1 子网"
 
-#: data/System/SiteMenu.txt:115
+#: data/System/SiteMenu.txt:113
 #, fuzzy
 msgid "Rename this web"
 msgstr "欢迎来到 %1 子网"
@@ -2452,12 +2463,12 @@ msgstr "欢迎来到 %1 子网"
 msgid "Rename, merge or delete tags"
 msgstr "改名，移动或删除子网:"
 
-#: templates/foswiki.nat.tmpl:380
+#: templates/foswiki.nat.tmpl:388
 #, fuzzy
 msgid "Rename, merge or delete tags being used in this web"
 msgstr "改名，移动或删除子网:"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:94
+#: data/System/NatSkinChangePasswordViewTemplate.txt:95
 #, fuzzy
 msgid "Repeat your new password"
 msgstr "重新输入新密码"
@@ -2482,13 +2493,13 @@ msgstr ""
 msgid "Reset password"
 msgstr "重设密码"
 
-#: templates/403.nat.tmpl:16 templates/404.nat.tmpl:51
+#: templates/403.nat.tmpl:16 templates/404.nat.tmpl:50
 #, fuzzy
 msgid "Restart"
 msgstr "还原"
 
-#: templates/edit.nat.tmpl:13 templates/foswiki.nat.tmpl:214
-#: templates/history.nat.tmpl:95
+#: templates/edit.nat.tmpl:13 templates/foswiki.nat.tmpl:219
+#: templates/history.nat.tmpl:85
 #, fuzzy
 msgid "Restore"
 msgstr "还原"
@@ -2498,7 +2509,7 @@ msgstr "还原"
 msgid "Restore Topic"
 msgstr "还原"
 
-#: templates/history.nat.tmpl:94
+#: templates/history.nat.tmpl:84
 #, fuzzy
 msgid "Restore revision %1"
 msgstr "(修订版 %1)"
@@ -2508,7 +2519,7 @@ msgstr "(修订版 %1)"
 msgid "Restore topic"
 msgstr "还原"
 
-#: templates/foswiki.nat.tmpl:215
+#: templates/foswiki.nat.tmpl:220
 #, fuzzy
 msgid "Restore version"
 msgstr "还原主题至版本:"
@@ -2526,7 +2537,7 @@ msgstr "%1 子网中的结果"
 msgid "Retry"
 msgstr ""
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:135
+#: data/System/NatSkinChangePasswordViewTemplate.txt:136
 #, fuzzy
 msgid "Retype new password"
 msgstr "重新输入新密码"
@@ -2536,21 +2547,21 @@ msgstr "重新输入新密码"
 msgid "Review recent changes in %1"
 msgstr "检查最近的更新:"
 
-#: templates/history.nat.tmpl:71 templates/rdiff.nat.tmpl:41
+#: templates/history.nat.tmpl:61 templates/rdiff.nat.tmpl:41
 msgid "Revision"
 msgstr "修订版"
 
-#: templates/foswiki.nat.tmpl:235
+#: templates/foswiki.nat.tmpl:240
 #, fuzzy
 msgid "Revision History"
 msgstr "%1 的版本历史"
 
-#: templates/history.nat.tmpl:15
+#: templates/history.nat.tmpl:13
 #, fuzzy
 msgid "Revision history of %1"
 msgstr "%1 的版本历史"
 
-#: templates/edit.nat.tmpl:357
+#: templates/edit.nat.tmpl:360
 #, fuzzy
 msgid "Revision information"
 msgstr "可用的资讯"
@@ -2559,11 +2570,11 @@ msgstr "可用的资讯"
 msgid "Right"
 msgstr ""
 
-#: templates/edit.nat.tmpl:54
+#: templates/edit.nat.tmpl:56
 msgid "Russian"
 msgstr ""
 
-#: data/System/SiteMenu.txt:57
+#: data/System/SiteMenu.txt:55
 msgid "Sandbox"
 msgstr ""
 
@@ -2576,7 +2587,7 @@ msgstr "存到:"
 msgid "Scroll to top"
 msgstr ""
 
-#: data/System/NatSkinWebSearchViewTemplate.txt:64 templates/404.nat.tmpl:36
+#: data/System/NatSkinWebSearchViewTemplate.txt:64 templates/404.nat.tmpl:35
 #: templates/search.nat.tmpl:26 templates/searchbox.matter.nat.tmpl:4
 #: templates/searchbox.nat.tmpl:3 templates/topbar.matter.nat.tmpl:15
 msgid "Search"
@@ -2609,12 +2620,12 @@ msgstr "搜寻所有子网"
 msgid "Search result for %1"
 msgstr "(搜寻结果)"
 
-#: templates/edit.matter.nat.tmpl:182 templates/view.nat.tmpl:11
+#: templates/edit.matter.nat.tmpl:184 templates/view.nat.tmpl:11
 #, fuzzy
 msgid "Section"
 msgstr "功能"
 
-#: templates/foswiki.nat.tmpl:106
+#: templates/foswiki.nat.tmpl:111
 #, fuzzy
 msgid "Sections"
 msgstr "功能"
@@ -2624,7 +2635,7 @@ msgstr "功能"
 msgid "See also"
 msgstr "也可查看:"
 
-#: templates/edit.matter.nat.tmpl:232
+#: templates/edit.matter.nat.tmpl:234
 msgid "Seed"
 msgstr ""
 
@@ -2638,8 +2649,8 @@ msgid ""
 "browser."
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:280
-msgid "Select a different language for the wiki interface"
+#: templates/foswiki.nat.tmpl:286
+msgid "Select a different language for the user interface"
 msgstr ""
 
 #: templates/renamebase.nat.tmpl:83 templates/renamewebbase.nat.tmpl:68
@@ -2674,16 +2685,16 @@ msgid ""
 "them."
 msgstr ""
 
-#: templates/view.nat.tmpl:185
+#: templates/view.nat.tmpl:187
 #, fuzzy
 msgid "Select translation in %1"
 msgstr "选择父主题:"
 
-#: templates/newtopic.nat.tmpl:248 templates/newtopic.old.tmpl:128
+#: templates/newtopic.nat.tmpl:259 templates/newtopic.old.tmpl:128
 msgid "Select which template to use while creating this topic."
 msgstr ""
 
-#: templates/email.nat.tmpl:30
+#: templates/email.nat.tmpl:29
 msgid "Send"
 msgstr ""
 
@@ -2695,29 +2706,29 @@ msgstr ""
 msgid "Set all"
 msgstr "设定所有"
 
-#: templates/edit.nat.tmpl:67
+#: templates/edit.nat.tmpl:69
 msgid "Settings"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:152
+#: templates/foswiki.nat.tmpl:157
 msgid "Share"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:153
+#: templates/foswiki.nat.tmpl:158
 #, fuzzy
 msgid "Share this topic"
 msgstr "改变主题"
 
-#: templates/foswiki.nat.tmpl:154
+#: templates/foswiki.nat.tmpl:159
 #, fuzzy
 msgid "Share this topic with others"
 msgstr "改变主题"
 
-#: data/System/NatSkinStyleBrowser.txt:40 templates/edit.nat.tmpl:249
+#: data/System/NatSkinStyleBrowser.txt:40 templates/edit.nat.tmpl:253
 msgid "Sidebar"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:60
+#: templates/foswiki.nat.tmpl:65
 #, fuzzy
 msgid "Sign on to %1."
 msgstr "从 %1 选一个。"
@@ -2726,58 +2737,58 @@ msgstr "从 %1 选一个。"
 msgid "Site Tools"
 msgstr ""
 
-#: data/System/SiteMenu.txt:96
+#: data/System/SiteMenu.txt:94
 #, fuzzy
 msgid "Site permissions"
 msgstr "修订版"
 
-#: data/System/SiteMenu.txt:81
+#: data/System/SiteMenu.txt:79
 #, fuzzy
 msgid "Site preferences"
 msgstr "(设定属性)"
 
-#: templates/edit.matter.nat.tmpl:431
+#: templates/edit.matter.nat.tmpl:442
 #, fuzzy
 msgid "Size Variation"
 msgstr "版本"
 
-#: templates/edit.nat.tmpl:168
+#: templates/edit.nat.tmpl:172
 msgid "Skin settings"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:569
+#: templates/edit.matter.nat.tmpl:580
 msgid "Slideshow Delay"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:600
+#: templates/edit.matter.nat.tmpl:611
 #, fuzzy
 msgid "Slideshow Direction"
 msgstr "版本"
 
-#: templates/edit.matter.nat.tmpl:581
+#: templates/edit.matter.nat.tmpl:592
 #, fuzzy
 msgid "Slideshow Navigation"
 msgstr "版本"
 
-#: templates/edit.matter.nat.tmpl:589
+#: templates/edit.matter.nat.tmpl:600
 #, fuzzy
 msgid "Slideshow Pagination"
 msgstr "版本"
 
-#: templates/edit.matter.nat.tmpl:575
+#: templates/edit.matter.nat.tmpl:586
 msgid "Slideshow Speed"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:556
+#: templates/edit.matter.nat.tmpl:567
 #, fuzzy
 msgid "Slideshow Transition"
 msgstr "版本"
 
-#: templates/edit.matter.nat.tmpl:136
+#: templates/edit.matter.nat.tmpl:138
 msgid "Small"
 msgstr ""
 
-#: data/System/SiteTopicActions.txt:40
+#: data/System/SiteTopicActions.txt:41
 msgid "Social"
 msgstr ""
 
@@ -2819,7 +2830,7 @@ msgstr "改变语言"
 msgid "Spaces are replaced by underscores"
 msgstr "空格已以下划线替代"
 
-#: templates/edit.nat.tmpl:55
+#: templates/edit.nat.tmpl:57
 msgid "Spanish"
 msgstr ""
 
@@ -2831,7 +2842,7 @@ msgstr ""
 msgid "Specify one or more space separated emails."
 msgstr ""
 
-#: templates/edit.nat.tmpl:416
+#: templates/edit.nat.tmpl:417
 msgid "State"
 msgstr ""
 
@@ -2839,11 +2850,11 @@ msgstr ""
 msgid "Statistics"
 msgstr "统计"
 
-#: data/System/NatSkinStyleBrowser.txt:18 templates/edit.nat.tmpl:173
+#: data/System/NatSkinStyleBrowser.txt:18 templates/edit.nat.tmpl:177
 msgid "Style"
 msgstr ""
 
-#: templates/email.nat.tmpl:9
+#: templates/email.nat.tmpl:8
 msgid "Subject"
 msgstr ""
 
@@ -2857,7 +2868,7 @@ msgstr ""
 msgid "Submit"
 msgstr "提交"
 
-#: templates/foswiki.nat.tmpl:353
+#: templates/foswiki.nat.tmpl:361
 #, fuzzy
 msgid "Subscribe"
 msgstr "建立这个主题"
@@ -2866,7 +2877,7 @@ msgstr "建立这个主题"
 msgid "Subscribe / Unsubscribe in:"
 msgstr "订阅/退订:"
 
-#: templates/user.nat.tmpl:186
+#: templates/user.nat.tmpl:207
 msgid "Success"
 msgstr ""
 
@@ -2880,15 +2891,15 @@ msgstr "(%1 登录)"
 msgid "Summary"
 msgstr "摘要"
 
-#: templates/edit.nat.tmpl:56
+#: templates/edit.nat.tmpl:58
 msgid "Swedish"
 msgstr ""
 
-#: templates/edit.nat.tmpl:272 templates/sidebar.nat.tmpl:78
+#: templates/edit.nat.tmpl:276 templates/sidebar.nat.tmpl:78
 msgid "Table of Contents"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:378 templates/sidebar.nat.tmpl:56
+#: templates/foswiki.nat.tmpl:386 templates/sidebar.nat.tmpl:56
 msgid "Tags"
 msgstr ""
 
@@ -2897,7 +2908,7 @@ msgstr ""
 msgid "Target language"
 msgstr "改变语言"
 
-#: templates/newtopic.nat.tmpl:254 templates/newtopic.old.tmpl:112
+#: templates/newtopic.nat.tmpl:265 templates/newtopic.old.tmpl:112
 #, fuzzy
 msgid "Template"
 msgstr "使用范本:"
@@ -2910,17 +2921,17 @@ msgstr "范本 %1 不存在"
 msgid "Template web"
 msgstr ""
 
-#: templates/copytopic.nat.tmpl:59 templates/edit.matter.nat.tmpl:153
-#: templates/edit.matter.nat.tmpl:159
+#: templates/copytopic.nat.tmpl:59 templates/edit.matter.nat.tmpl:155
+#: templates/edit.matter.nat.tmpl:161
 #, fuzzy
 msgid "Text"
 msgstr "内容"
 
-#: templates/edit.matter.nat.tmpl:188
+#: templates/edit.matter.nat.tmpl:190
 msgid "Text Alignment"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:197
+#: templates/edit.matter.nat.tmpl:199
 msgid "Text Effect"
 msgstr ""
 
@@ -2932,7 +2943,7 @@ msgstr "谢谢您注册"
 msgid "Thanks you for participating in this workflow."
 msgstr ""
 
-#: templates/body.nat.tmpl:97
+#: templates/body.nat.tmpl:96
 msgid "That's Fine"
 msgstr ""
 
@@ -2972,9 +2983,10 @@ msgid ""
 msgstr ""
 
 #: templates/oopsleaseconflict.nat.tmpl:17
+#, fuzzy
 msgid ""
-"The chances are good that %1 has simply navigated away from the edit page "
-"without saving."
+"The chances are good that [[%1]] has simply navigated away from the edit "
+"page without saving."
 msgstr "若 %1 仅浏览到编辑页而未保存是没有问题的。"
 
 #: templates/renamewebbase.nat.tmpl:114
@@ -3002,12 +3014,12 @@ msgstr ""
 msgid "The new topic chosen must already exist."
 msgstr "选择的新主题必须已经存在."
 
-#: templates/404.nat.tmpl:37
+#: templates/404.nat.tmpl:36
 #, fuzzy
 msgid "The page might be here under a different name."
 msgstr "您能为本子网改名。"
 
-#: templates/404.nat.tmpl:47
+#: templates/404.nat.tmpl:46
 msgid "The page might be missing but it shouldn't."
 msgstr ""
 
@@ -3044,7 +3056,7 @@ msgstr "此子网改名时出现错误:"
 msgid "There has been a problem adding your user id to the Password system."
 msgstr "新增您的用户资料到密码系统时出现错误。"
 
-#: templates/validate.nat.tmpl:22
+#: templates/validate.nat.tmpl:20
 msgid ""
 "There is a risk that someone may be trying to use your identity to change "
 "content on %1 without your knowledge."
@@ -3055,11 +3067,11 @@ msgstr ""
 msgid "There's a similar page called %1."
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:138
+#: templates/edit.matter.nat.tmpl:140
 msgid "Third"
 msgstr ""
 
-#: data/System/NatSkinUserViewTemplate.txt:61
+#: data/System/NatSkinUserViewTemplate.txt:62
 #, fuzzy
 msgid "This account is inactive."
 msgstr "可用的资讯"
@@ -3068,11 +3080,11 @@ msgstr "可用的资讯"
 msgid "This link will only be valid for a brief time nd can only be used once!"
 msgstr ""
 
-#: templates/body.nat.tmpl:83
+#: templates/body.nat.tmpl:82
 msgid "This page was cached on %1."
 msgstr ""
 
-#: templates/body.nat.tmpl:96
+#: templates/body.nat.tmpl:95
 #, fuzzy
 msgid ""
 "This website is using cookies. <a href='%1' target='_blank'>More info</a>."
@@ -3080,7 +3092,7 @@ msgstr ""
 "<a target='ManagingTopics' class='foswikiPopUp' href='%1' rel='nofollow'>主题"
 "移动和改名</a>的说明。"
 
-#: templates/edit.matter.nat.tmpl:152 templates/newtopic.nat.tmpl:181
+#: templates/edit.matter.nat.tmpl:154 templates/newtopic.nat.tmpl:185
 #: templates/newtopic.old.tmpl:57 templates/renamebase.nat.tmpl:71
 #: templates/translatetopic.nat.tmpl:135
 #, fuzzy
@@ -3106,12 +3118,12 @@ msgstr "主题附件"
 msgid "To delete an attachment move it to the %1 topic."
 msgstr "档案已上传并附于主题 %1 内。"
 
-#: templates/oopsleaseconflict.nat.tmpl:30
+#: templates/oopsleaseconflict.nat.tmpl:26
 #, fuzzy
 msgid "To edit the topic anyway, hit 'Edit Anyway'."
 msgstr "强制编辑本主题，请按"
 
-#: templates/oopsleaseconflict.nat.tmpl:31
+#: templates/oopsleaseconflict.nat.tmpl:27
 #, fuzzy
 msgid "To see if they have finished their edit yet, click 'Try Again'"
 msgstr "检查 %1 是否已编辑完毕，请按"
@@ -3126,11 +3138,11 @@ msgstr "到主题:"
 msgid "To web"
 msgstr "到子网:"
 
-#: templates/foswiki.nat.tmpl:124 templates/foswiki.nat.tmpl:125
+#: templates/foswiki.nat.tmpl:129 templates/foswiki.nat.tmpl:130
 msgid "Toggle Dark Mode"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:27
+#: templates/newtopic.nat.tmpl:28
 msgid "Toggle layout"
 msgstr ""
 
@@ -3139,29 +3151,29 @@ msgstr ""
 msgid "Toggle sidebar navigation"
 msgstr "版本"
 
-#: data/System/SiteTopicActions.txt:22 templates/sidebar.nat.tmpl:54
+#: data/System/SiteTopicActions.txt:23 templates/sidebar.nat.tmpl:54
 #: templates/topbar.customato.nat.tmpl:74
 #, fuzzy
 msgid "Tools"
 msgstr "工具箱"
 
-#: templates/edit.nat.tmpl:234
+#: templates/edit.nat.tmpl:238
 msgid "Top bar"
 msgstr ""
 
 #: templates/changes.nat.tmpl:9 templates/copytopic.nat.tmpl:37
-#: templates/edit.matter.nat.tmpl:154 templates/edit.matter.nat.tmpl:168
+#: templates/edit.matter.nat.tmpl:156 templates/edit.matter.nat.tmpl:170
 #: templates/renamebase.nat.tmpl:65 templates/translatetopic.nat.tmpl:116
 #, fuzzy
 msgid "Topic"
 msgstr "到主题:"
 
-#: templates/edit.nat.tmpl:385
+#: templates/edit.nat.tmpl:388
 #, fuzzy
 msgid "Topic Title"
 msgstr "主题标题"
 
-#: templates/edit.nat.tmpl:343
+#: templates/edit.nat.tmpl:346
 #, fuzzy
 msgid "Topic actions"
 msgstr "更多主题功能..."
@@ -3175,7 +3187,7 @@ msgstr "主题名称"
 msgid "Topic save error"
 msgstr "主题保存错误"
 
-#: templates/edit.nat.tmpl:82
+#: templates/edit.nat.tmpl:84
 #, fuzzy
 msgid "Topic settings"
 msgstr "主题附件"
@@ -3184,7 +3196,7 @@ msgstr "主题附件"
 msgid "Topics per web"
 msgstr "每个子网的主题"
 
-#: templates/foswiki.nat.tmpl:283 templates/translatetopic.nat.tmpl:146
+#: templates/foswiki.nat.tmpl:289 templates/translatetopic.nat.tmpl:146
 #: templates/translatetopic.nat.tmpl:8
 msgid "Translate"
 msgstr ""
@@ -3198,21 +3210,21 @@ msgstr ""
 msgid "Translate formfields"
 msgstr "建立这个主题"
 
-#: templates/foswiki.nat.tmpl:284
+#: templates/foswiki.nat.tmpl:290
 #, fuzzy
 msgid "Translate this topic"
 msgstr "建立这个主题"
 
-#: data/System/SiteMenu.txt:79
+#: data/System/SiteMenu.txt:77
 msgid "Trash"
 msgstr ""
 
-#: templates/oopsleaseconflict.nat.tmpl:45
+#: templates/oopsleaseconflict.nat.tmpl:38
 #, fuzzy
 msgid "Try again"
 msgstr "再试一次"
 
-#: templates/edit.nat.tmpl:57
+#: templates/edit.nat.tmpl:59
 msgid "Turkish"
 msgstr ""
 
@@ -3220,7 +3232,7 @@ msgstr ""
 msgid "Tutorial"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:140
+#: templates/edit.matter.nat.tmpl:142
 msgid "Two Third"
 msgstr ""
 
@@ -3229,16 +3241,16 @@ msgstr ""
 msgid "Two-factor authentication"
 msgstr "Foswiki 管理员认证"
 
-#: templates/edit.nat.tmpl:58
+#: templates/edit.nat.tmpl:60
 msgid "Ukrainian"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:216
+#: templates/foswiki.nat.tmpl:221
 #, fuzzy
 msgid "Undo changes to this topic"
 msgstr "title='列印本主题' accesskey='p' >列印(&P)"
 
-#: templates/foswiki.nat.tmpl:327
+#: templates/foswiki.nat.tmpl:335
 msgid "Unfavorite"
 msgstr ""
 
@@ -3259,7 +3271,7 @@ msgstr "无法识别用户和/或密码"
 msgid "Unrecognized action command %1"
 msgstr "无法识别的功能 %1"
 
-#: templates/foswiki.nat.tmpl:354
+#: templates/foswiki.nat.tmpl:362
 #, fuzzy
 msgid "Unsubscribe"
 msgstr "建立这个主题"
@@ -3280,12 +3292,12 @@ msgstr "(所有子网中的反向连结)"
 msgid "Update links in the '%1' web"
 msgstr "在%1子网中的子主题"
 
-#: templates/foswiki.nat.tmpl:94
+#: templates/foswiki.nat.tmpl:99
 #, fuzzy
 msgid "Upload"
 msgstr "上传的档案过大"
 
-#: templates/foswiki.nat.tmpl:95
+#: templates/foswiki.nat.tmpl:100
 #, fuzzy
 msgid "Upload files"
 msgstr "上传的档案过大"
@@ -3313,7 +3325,7 @@ msgstr "统计"
 msgid "Use %1 instead."
 msgstr "用 %1 取代."
 
-#: data/System/SiteMenu.txt:94
+#: data/System/SiteMenu.txt:92
 #, fuzzy
 msgid "User Management"
 msgstr "密码不相同"
@@ -3334,7 +3346,7 @@ msgstr "删除用户帐号 %1"
 msgid "User account information"
 msgstr "可用的资讯"
 
-#: data/System/SiteMenu.txt:51
+#: data/System/SiteMenu.txt:49
 #, fuzzy
 msgid "User docs"
 msgstr "用户"
@@ -3344,19 +3356,19 @@ msgid "User's guide"
 msgstr ""
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:76
-#: data/System/NatSkinChangePasswordViewTemplate.txt:108
+#: data/System/NatSkinChangePasswordViewTemplate.txt:109
 #: data/System/NatSkinRemoveUserViewTemplate.txt:21
-#: data/System/NatSkinResetPasswordViewTemplate.txt:63
-#: templates/loginbase.nat.tmpl:34 templates/topbar.customato.nat.tmpl:139
+#: data/System/NatSkinResetPasswordViewTemplate.txt:64
+#: templates/loginbase.nat.tmpl:29 templates/topbar.customato.nat.tmpl:139
 msgid "Username"
 msgstr "用户名"
 
-#: data/System/NatSkinResetPasswordViewTemplate.txt:62
+#: data/System/NatSkinResetPasswordViewTemplate.txt:63
 #, fuzzy
 msgid "Username or email address"
 msgstr "电子邮件地址错误"
 
-#: data/Main/WebLinks.txt:9 templates/foswiki.nat.tmpl:75
+#: data/Main/WebLinks.txt:9 templates/foswiki.nat.tmpl:80
 msgid "Users"
 msgstr "用户"
 
@@ -3365,7 +3377,7 @@ msgstr "用户"
 msgid "Users Guide"
 msgstr "用户"
 
-#: templates/foswiki.nat.tmpl:76
+#: templates/foswiki.nat.tmpl:81
 #, fuzzy
 msgid "Users directory"
 msgstr "版本历史"
@@ -3384,122 +3396,128 @@ msgstr ""
 msgid "Variables"
 msgstr ""
 
-#: data/System/NatSkinStyleBrowser.txt:29 templates/edit.nat.tmpl:187
+#: templates/edit.matter.nat.tmpl:359
+#, fuzzy
+msgid "Variance"
+msgstr "版本"
+
+#: data/System/NatSkinStyleBrowser.txt:29 templates/edit.nat.tmpl:191
 #, fuzzy
 msgid "Variation"
 msgstr "版本"
 
-#: templates/view.nat.tmpl:268
+#: templates/view.nat.tmpl:290
 #, fuzzy
 msgid "Version %1"
 msgstr "版本"
 
-#: templates/edit.matter.nat.tmpl:440
+#: templates/edit.matter.nat.tmpl:451
 msgid "Video"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:454
+#: templates/edit.matter.nat.tmpl:465
 msgid "Video Loop"
 msgstr ""
 
-#: data/System/SiteTopicActions.txt:29 templates/foswiki.nat.tmpl:118
-#: templates/history.nat.tmpl:92 templates/view.nat.tmpl:200
+#: data/System/SiteTopicActions.txt:30 templates/foswiki.nat.tmpl:123
+#: templates/history.nat.tmpl:82 templates/view.nat.tmpl:214
 msgid "View"
 msgstr "浏览"
 
-#: templates/foswiki.nat.tmpl:131
+#: templates/foswiki.nat.tmpl:136
 #, fuzzy
 msgid "View files uploaded to this topic"
 msgstr "建立这个主题"
 
-#: templates/foswiki.nat.tmpl:384
+#: templates/foswiki.nat.tmpl:392
 #, fuzzy
 msgid "View first revision"
 msgstr "检视修订版:"
 
-#: templates/foswiki.nat.tmpl:119
+#: templates/foswiki.nat.tmpl:124
 #, fuzzy
 msgid "View formatted topic"
 msgstr "检视主题"
 
-#: templates/foswiki.nat.tmpl:404
+#: templates/foswiki.nat.tmpl:412
 #, fuzzy
 msgid "View last change"
 msgstr "最近更新的主题"
 
-#: templates/foswiki.nat.tmpl:399
+#: templates/foswiki.nat.tmpl:407
 #, fuzzy
 msgid "View last revision"
 msgstr "检视修订版:"
 
-#: templates/foswiki.nat.tmpl:389
+#: templates/foswiki.nat.tmpl:185
+#, fuzzy
+msgid "View markup"
+msgstr "建立新主题"
+
+#: templates/foswiki.nat.tmpl:397
 #, fuzzy
 msgid "View next revision"
 msgstr "检视修订版:"
 
-#: templates/foswiki.nat.tmpl:147
+#: templates/foswiki.nat.tmpl:152
 #, fuzzy
 msgid "View plain version"
 msgstr "检视修订版:"
 
-#: templates/foswiki.nat.tmpl:394
+#: templates/foswiki.nat.tmpl:402
 #, fuzzy
 msgid "View previous revision"
 msgstr "检视主题的前一个版本"
 
-#: templates/foswiki.nat.tmpl:141
+#: templates/foswiki.nat.tmpl:146
 #, fuzzy
 msgid "View printable version"
 msgstr "检视修订版:"
 
-#: templates/foswiki.nat.tmpl:89 templates/foswiki.nat.tmpl:90
+#: templates/foswiki.nat.tmpl:94 templates/foswiki.nat.tmpl:95
 msgid "View profile"
 msgstr ""
 
-#: templates/history.nat.tmpl:91
+#: templates/history.nat.tmpl:81
 #, fuzzy
 msgid "View revision %1"
 msgstr "检视修订版:"
 
-#: templates/foswiki.nat.tmpl:107
+#: templates/foswiki.nat.tmpl:112
 #, fuzzy
 msgid "View sections"
 msgstr "检视修订版:"
 
-#: templates/foswiki.nat.tmpl:186
+#: templates/foswiki.nat.tmpl:191
 #, fuzzy
 msgid "View the data of this topic"
 msgstr "建立这个主题"
 
-#: templates/foswiki.nat.tmpl:241
+#: templates/foswiki.nat.tmpl:246
 #, fuzzy
 msgid "View the list of people that contributed to this topic"
 msgstr "在 %1 子网中搜寻连结至此的主题"
 
-#: templates/foswiki.nat.tmpl:181
+#: templates/foswiki.nat.tmpl:186
 #, fuzzy
 msgid "View the raw text of this topic"
 msgstr "建立这个主题"
 
-#: templates/foswiki.nat.tmpl:236
+#: templates/foswiki.nat.tmpl:241
 #, fuzzy
 msgid "View the revision history of all changes to this topic"
 msgstr "在 %1 子网中搜寻连结至此的主题"
 
-#: templates/foswiki.nat.tmpl:248
+#: templates/foswiki.nat.tmpl:253 templates/foswiki.nat.tmpl:254
 #, fuzzy
 msgid "View the workflow history of this topic"
 msgstr "建立这个主题"
 
-#: templates/foswiki.nat.tmpl:180
-msgid "View wiki markup"
-msgstr ""
-
-#: templates/edit.nat.tmpl:440
+#: templates/edit.nat.tmpl:441
 msgid "Voting"
 msgstr ""
 
-#: templates/print.nat.tmpl:71
+#: templates/print.nat.tmpl:77
 msgid "Watermark"
 msgstr ""
 
@@ -3514,7 +3532,7 @@ msgstr ""
 msgid "Web"
 msgstr "子网"
 
-#: data/System/SiteMenu.txt:99
+#: data/System/SiteMenu.txt:97
 #, fuzzy
 msgid "Web preferences"
 msgstr "(设定属性)"
@@ -3524,7 +3542,7 @@ msgstr "(设定属性)"
 msgid "WebDAV Directory"
 msgstr "历史(&H)"
 
-#: data/Main/WebLinks.txt:7 data/System/SiteMenu.txt:50
+#: data/Main/WebLinks.txt:7 data/System/SiteMenu.txt:48
 #: templates/topbar.customato.nat.tmpl:93
 msgid "Welcome"
 msgstr ""
@@ -3555,13 +3573,13 @@ msgstr "用户已经启动"
 msgid "WikiWord"
 msgstr ""
 
-#: templates/qmhistory.nat.tmpl:9
+#: templates/qmhistory.nat.tmpl:21
 #, fuzzy
 msgid "Workflow"
 msgstr "历史(&H)"
 
-#: templates/foswiki.nat.tmpl:244 templates/foswiki.nat.tmpl:245
-#: templates/qmhistory.nat.tmpl:10 templates/qmhistory.nat.tmpl:13
+#: templates/foswiki.nat.tmpl:249 templates/foswiki.nat.tmpl:250
+#: templates/qmhistory.nat.tmpl:22 templates/qmhistory.nat.tmpl:23
 #, fuzzy
 msgid "Workflow History"
 msgstr "历史(&H)"
@@ -3571,7 +3589,7 @@ msgstr "历史(&H)"
 msgid "Write access for this group:"
 msgstr "请先将用户从 %1 群组删除。"
 
-#: templates/edit.nat.tmpl:129
+#: templates/edit.nat.tmpl:131
 msgid "Wysiwyg"
 msgstr ""
 
@@ -3579,23 +3597,24 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: templates/renametopicarchive.nat.tmpl:12
+#: templates/renametopicarchive.nat.tmpl:14
 #, fuzzy
 msgid "Yes, archive"
 msgstr "(删除)"
 
-#: templates/renametopicdelete.nat.tmpl:13
-#: templates/renamewebdelete.nat.tmpl:14
+#: templates/renametopicdelete.nat.tmpl:18
+#: templates/renametopicdelete.nat.tmpl:36
+#: templates/renamewebdelete.nat.tmpl:15
 #, fuzzy
 msgid "Yes, delete"
 msgstr "(删除)"
 
-#: templates/user.nat.tmpl:175
+#: templates/user.nat.tmpl:196
 #, fuzzy
 msgid "Yes, remove"
 msgstr "(删除)"
 
-#: templates/restoretopic.nat.tmpl:13
+#: templates/restoretopic.nat.tmpl:14
 #, fuzzy
 msgid "Yes, restore"
 msgstr "(删除)"
@@ -3619,7 +3638,16 @@ msgstr "您已注册"
 msgid "You are also listed in the %1 topic"
 msgstr "您也被列在%1主题中"
 
-#: templates/foswiki.nat.tmpl:417
+#: templates/oopsleaseconflict.nat.tmpl:19
+msgid ""
+"You are encouraged to go ahead and edit - unless you intend to change data "
+"in a form attached to the topic. If [[%1]] actually _does_ save while you "
+"are editing, your changes will be merged, and nothing will be lost. Form "
+"data cannot easily be merged though, so in this case you are recommended to "
+"check with [[%1]] first."
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:425
 #, fuzzy
 msgid "You are here"
 msgstr "您在:"
@@ -3731,7 +3759,7 @@ msgstr ""
 msgid "Your last name"
 msgstr "姓:"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:111
+#: data/System/NatSkinChangePasswordViewTemplate.txt:112
 #, fuzzy
 msgid ""
 "Your login name. Note, you can't change your login name. Contact the "
@@ -3766,28 +3794,28 @@ msgstr "%1 正被 %2 编辑中，限制将在 %3 后释放。"
 msgid "[[%1]] is editing [[%2]]."
 msgstr "%1 正在编辑 %2."
 
-#: templates/edit.matter.nat.tmpl:507
+#: templates/edit.matter.nat.tmpl:518
 msgid "animals"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:498
+#: templates/edit.matter.nat.tmpl:509
 #, fuzzy
 msgid "animation"
 msgstr "功能"
 
-#: templates/print.nat.tmpl:53
+#: templates/print.nat.tmpl:59
 msgid "auto"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:109
+#: templates/edit.matter.nat.tmpl:111
 msgid "autocolor"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:360
+#: templates/edit.matter.nat.tmpl:371
 msgid "automatic"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:508
+#: templates/edit.matter.nat.tmpl:519
 #, fuzzy
 msgid "backgrounds"
 msgstr "反向连结"
@@ -3797,23 +3825,23 @@ msgstr "反向连结"
 msgid "base language"
 msgstr "改变语言"
 
-#: templates/edit.nat.tmpl:200
+#: templates/edit.nat.tmpl:204
 msgid "bordered"
 msgstr ""
 
-#: templates/edit.nat.tmpl:263
+#: templates/edit.nat.tmpl:267
 msgid "both"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:509
+#: templates/edit.matter.nat.tmpl:520
 msgid "buildings"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:510
+#: templates/edit.matter.nat.tmpl:521
 msgid "business"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:192
+#: templates/edit.matter.nat.tmpl:194
 msgid "center"
 msgstr ""
 
@@ -3822,70 +3850,71 @@ msgstr ""
 msgid "changes"
 msgstr "(变更)"
 
-#: templates/edit.nat.tmpl:424
+#: templates/edit.nat.tmpl:425
 #, fuzzy
 msgid "closed"
 msgstr "关闭"
 
-#: templates/edit.matter.nat.tmpl:511
+#: templates/edit.matter.nat.tmpl:522
 msgid "computer"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:560
+#: templates/edit.matter.nat.tmpl:571
 msgid "coverflow"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:561
+#: templates/edit.matter.nat.tmpl:572
 msgid "cube"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:274
+#: templates/edit.matter.nat.tmpl:276
 msgid "dark"
 msgstr ""
 
-#: templates/history.nat.tmpl:44
+#: templates/history.nat.tmpl:37
 msgid "debug"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:105 templates/edit.matter.nat.tmpl:135
-#: templates/edit.matter.nat.tmpl:150 templates/edit.matter.nat.tmpl:161
-#: templates/edit.matter.nat.tmpl:176 templates/edit.matter.nat.tmpl:184
-#: templates/edit.matter.nat.tmpl:190 templates/edit.matter.nat.tmpl:200
-#: templates/edit.matter.nat.tmpl:213 templates/edit.matter.nat.tmpl:223
-#: templates/edit.matter.nat.tmpl:234 templates/edit.matter.nat.tmpl:243
-#: templates/edit.matter.nat.tmpl:246 templates/edit.matter.nat.tmpl:272
-#: templates/edit.matter.nat.tmpl:280 templates/edit.matter.nat.tmpl:286
-#: templates/edit.matter.nat.tmpl:292 templates/edit.matter.nat.tmpl:294
-#: templates/edit.matter.nat.tmpl:300 templates/edit.matter.nat.tmpl:306
-#: templates/edit.matter.nat.tmpl:312 templates/edit.matter.nat.tmpl:321
-#: templates/edit.matter.nat.tmpl:332 templates/edit.matter.nat.tmpl:341
-#: templates/edit.matter.nat.tmpl:350 templates/edit.matter.nat.tmpl:379
-#: templates/edit.matter.nat.tmpl:388 templates/edit.matter.nat.tmpl:399
-#: templates/edit.matter.nat.tmpl:407 templates/edit.matter.nat.tmpl:413
-#: templates/edit.matter.nat.tmpl:421 templates/edit.matter.nat.tmpl:427
-#: templates/edit.matter.nat.tmpl:433 templates/edit.matter.nat.tmpl:456
-#: templates/edit.matter.nat.tmpl:467 templates/edit.matter.nat.tmpl:473
-#: templates/edit.matter.nat.tmpl:485 templates/edit.matter.nat.tmpl:496
-#: templates/edit.matter.nat.tmpl:506 templates/edit.matter.nat.tmpl:533
-#: templates/edit.matter.nat.tmpl:541 templates/edit.matter.nat.tmpl:547
-#: templates/edit.matter.nat.tmpl:559 templates/edit.matter.nat.tmpl:571
-#: templates/edit.matter.nat.tmpl:577 templates/edit.matter.nat.tmpl:583
-#: templates/edit.matter.nat.tmpl:592 templates/edit.matter.nat.tmpl:602
-#: templates/edit.nat.tmpl:111 templates/edit.nat.tmpl:131
-#: templates/edit.nat.tmpl:177 templates/edit.nat.tmpl:197
-#: templates/edit.nat.tmpl:222 templates/edit.nat.tmpl:236
-#: templates/edit.nat.tmpl:251 templates/edit.nat.tmpl:274
-#: templates/edit.nat.tmpl:289 templates/edit.nat.tmpl:303
-#: templates/edit.nat.tmpl:317 templates/edit.nat.tmpl:331
-#: templates/edit.nat.tmpl:345 templates/edit.nat.tmpl:359
-#: templates/edit.nat.tmpl:373 templates/edit.nat.tmpl:387
-#: templates/edit.nat.tmpl:418 templates/edit.nat.tmpl:430
-#: templates/edit.nat.tmpl:442 templates/edit.nat.tmpl:96
+#: templates/edit.matter.nat.tmpl:107 templates/edit.matter.nat.tmpl:137
+#: templates/edit.matter.nat.tmpl:152 templates/edit.matter.nat.tmpl:163
+#: templates/edit.matter.nat.tmpl:178 templates/edit.matter.nat.tmpl:186
+#: templates/edit.matter.nat.tmpl:192 templates/edit.matter.nat.tmpl:202
+#: templates/edit.matter.nat.tmpl:215 templates/edit.matter.nat.tmpl:225
+#: templates/edit.matter.nat.tmpl:236 templates/edit.matter.nat.tmpl:245
+#: templates/edit.matter.nat.tmpl:248 templates/edit.matter.nat.tmpl:274
+#: templates/edit.matter.nat.tmpl:282 templates/edit.matter.nat.tmpl:288
+#: templates/edit.matter.nat.tmpl:294 templates/edit.matter.nat.tmpl:296
+#: templates/edit.matter.nat.tmpl:302 templates/edit.matter.nat.tmpl:308
+#: templates/edit.matter.nat.tmpl:314 templates/edit.matter.nat.tmpl:323
+#: templates/edit.matter.nat.tmpl:334 templates/edit.matter.nat.tmpl:343
+#: templates/edit.matter.nat.tmpl:352 templates/edit.matter.nat.tmpl:361
+#: templates/edit.matter.nat.tmpl:390 templates/edit.matter.nat.tmpl:399
+#: templates/edit.matter.nat.tmpl:410 templates/edit.matter.nat.tmpl:418
+#: templates/edit.matter.nat.tmpl:424 templates/edit.matter.nat.tmpl:432
+#: templates/edit.matter.nat.tmpl:438 templates/edit.matter.nat.tmpl:444
+#: templates/edit.matter.nat.tmpl:467 templates/edit.matter.nat.tmpl:478
+#: templates/edit.matter.nat.tmpl:484 templates/edit.matter.nat.tmpl:496
+#: templates/edit.matter.nat.tmpl:507 templates/edit.matter.nat.tmpl:517
+#: templates/edit.matter.nat.tmpl:544 templates/edit.matter.nat.tmpl:552
+#: templates/edit.matter.nat.tmpl:558 templates/edit.matter.nat.tmpl:570
+#: templates/edit.matter.nat.tmpl:582 templates/edit.matter.nat.tmpl:588
+#: templates/edit.matter.nat.tmpl:594 templates/edit.matter.nat.tmpl:603
+#: templates/edit.matter.nat.tmpl:613 templates/edit.nat.tmpl:113
+#: templates/edit.nat.tmpl:133 templates/edit.nat.tmpl:181
+#: templates/edit.nat.tmpl:201 templates/edit.nat.tmpl:226
+#: templates/edit.nat.tmpl:240 templates/edit.nat.tmpl:255
+#: templates/edit.nat.tmpl:278 templates/edit.nat.tmpl:292
+#: templates/edit.nat.tmpl:306 templates/edit.nat.tmpl:320
+#: templates/edit.nat.tmpl:334 templates/edit.nat.tmpl:348
+#: templates/edit.nat.tmpl:362 templates/edit.nat.tmpl:376
+#: templates/edit.nat.tmpl:390 templates/edit.nat.tmpl:419
+#: templates/edit.nat.tmpl:431 templates/edit.nat.tmpl:443
+#: templates/edit.nat.tmpl:98
 #, fuzzy
 msgid "default"
 msgstr "预设范本"
 
-#: templates/newtopic.nat.tmpl:102
+#: templates/newtopic.nat.tmpl:106
 msgid "default template for the selected topic type"
 msgstr ""
 
@@ -3898,48 +3927,48 @@ msgstr "编辑"
 msgid "edit form"
 msgstr "(编辑表单)"
 
-#: templates/edit.matter.nat.tmpl:512
+#: templates/edit.matter.nat.tmpl:523
 #, fuzzy
 msgid "education"
 msgstr "功能"
 
-#: templates/edit.matter.nat.tmpl:562
+#: templates/edit.matter.nat.tmpl:573
 msgid "fade"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:513
+#: templates/edit.matter.nat.tmpl:524
 msgid "fashion"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:514
+#: templates/edit.matter.nat.tmpl:525
 msgid "feelings"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:497
+#: templates/edit.matter.nat.tmpl:508
 msgid "film"
 msgstr ""
 
-#: templates/edit.nat.tmpl:198
+#: templates/edit.nat.tmpl:202
 msgid "fixed"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:563
+#: templates/edit.matter.nat.tmpl:574
 msgid "flip"
 msgstr ""
 
-#: templates/edit.nat.tmpl:199
+#: templates/edit.nat.tmpl:203
 msgid "fluid"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:515
+#: templates/edit.matter.nat.tmpl:526
 msgid "food"
 msgstr ""
 
-#: templates/edit.nat.tmpl:201
+#: templates/edit.nat.tmpl:205
 msgid "fullscreen"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:115
+#: templates/edit.matter.nat.tmpl:117
 msgid "geo pattern"
 msgstr ""
 
@@ -3948,7 +3977,7 @@ msgstr ""
 msgid "go back to %1"
 msgstr "返回"
 
-#: templates/edit.matter.nat.tmpl:112
+#: templates/edit.matter.nat.tmpl:114
 msgid "gradient"
 msgstr ""
 
@@ -3961,24 +3990,24 @@ msgstr ""
 msgid "group"
 msgstr "群组"
 
-#: templates/edit.matter.nat.tmpl:516
+#: templates/edit.matter.nat.tmpl:527
 msgid "health"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:603
+#: templates/edit.matter.nat.tmpl:614
 msgid "horizontal"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:486
+#: templates/edit.matter.nat.tmpl:497
 #, fuzzy
 msgid "illustration"
 msgstr "注册"
 
-#: templates/edit.matter.nat.tmpl:113
+#: templates/edit.matter.nat.tmpl:115
 msgid "image"
 msgstr ""
 
-#: templates/email.nat.tmpl:25
+#: templates/email.nat.tmpl:24
 #, fuzzy
 msgid "include attachments"
 msgstr "主题附件"
@@ -3987,19 +4016,19 @@ msgstr "主题附件"
 msgid "indicates mandatory fields"
 msgstr "指出必填栏位"
 
-#: templates/edit.matter.nat.tmpl:517
+#: templates/edit.matter.nat.tmpl:528
 msgid "industry"
 msgstr ""
 
-#: templates/print.nat.tmpl:66
+#: templates/print.nat.tmpl:72
 msgid "inline"
 msgstr ""
 
-#: templates/history.nat.tmpl:42
+#: templates/history.nat.tmpl:35
 msgid "interweave"
 msgstr ""
 
-#: templates/print.nat.tmpl:55
+#: templates/print.nat.tmpl:61
 msgid "landscape"
 msgstr ""
 
@@ -4007,15 +4036,15 @@ msgstr ""
 msgid "leave unchecked to copy all"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:191 templates/edit.nat.tmpl:257
+#: templates/edit.matter.nat.tmpl:193 templates/edit.nat.tmpl:261
 msgid "left"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:273
+#: templates/edit.matter.nat.tmpl:275
 msgid "light"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:323
+#: templates/edit.matter.nat.tmpl:325
 msgid "linear"
 msgstr ""
 
@@ -4023,60 +4052,60 @@ msgstr ""
 msgid "maximum number of hits per web"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:111
+#: templates/edit.matter.nat.tmpl:113
 msgid "monochrome"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:518
+#: templates/edit.matter.nat.tmpl:529
 msgid "music"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:519
+#: templates/edit.matter.nat.tmpl:530
 msgid "nature"
 msgstr ""
 
-#: templates/print.nat.tmpl:52
+#: templates/print.nat.tmpl:58
 #, fuzzy
 msgid "none"
 msgstr "(无)"
 
-#: templates/backlinks.nat.tmpl:126 templates/backlinks.nat.tmpl:147
-#: templates/backlinks.nat.tmpl:56 templates/backlinks.nat.tmpl:74
-#: templates/backlinks.nat.tmpl:99
+#: templates/backlinks.nat.tmpl:100 templates/backlinks.nat.tmpl:128
+#: templates/backlinks.nat.tmpl:149 templates/backlinks.nat.tmpl:56
+#: templates/backlinks.nat.tmpl:74
 msgid "nothing found"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:106 templates/edit.matter.nat.tmpl:151
-#: templates/edit.matter.nat.tmpl:201 templates/edit.matter.nat.tmpl:225
-#: templates/edit.matter.nat.tmpl:245 templates/edit.matter.nat.tmpl:390
-#: templates/edit.matter.nat.tmpl:401 templates/edit.matter.nat.tmpl:415
-#: templates/edit.matter.nat.tmpl:458 templates/edit.matter.nat.tmpl:475
-#: templates/edit.matter.nat.tmpl:535 templates/edit.matter.nat.tmpl:549
-#: templates/edit.matter.nat.tmpl:585 templates/edit.nat.tmpl:113
-#: templates/edit.nat.tmpl:133 templates/edit.nat.tmpl:228
-#: templates/edit.nat.tmpl:242 templates/edit.nat.tmpl:266
-#: templates/edit.nat.tmpl:280 templates/edit.nat.tmpl:295
-#: templates/edit.nat.tmpl:309 templates/edit.nat.tmpl:323
-#: templates/edit.nat.tmpl:337 templates/edit.nat.tmpl:351
-#: templates/edit.nat.tmpl:365 templates/edit.nat.tmpl:379
-#: templates/edit.nat.tmpl:393 templates/edit.nat.tmpl:436
-#: templates/edit.nat.tmpl:448
+#: templates/edit.matter.nat.tmpl:108 templates/edit.matter.nat.tmpl:153
+#: templates/edit.matter.nat.tmpl:203 templates/edit.matter.nat.tmpl:227
+#: templates/edit.matter.nat.tmpl:247 templates/edit.matter.nat.tmpl:401
+#: templates/edit.matter.nat.tmpl:412 templates/edit.matter.nat.tmpl:426
+#: templates/edit.matter.nat.tmpl:469 templates/edit.matter.nat.tmpl:486
+#: templates/edit.matter.nat.tmpl:546 templates/edit.matter.nat.tmpl:560
+#: templates/edit.matter.nat.tmpl:596 templates/edit.nat.tmpl:115
+#: templates/edit.nat.tmpl:135 templates/edit.nat.tmpl:232
+#: templates/edit.nat.tmpl:246 templates/edit.nat.tmpl:270
+#: templates/edit.nat.tmpl:284 templates/edit.nat.tmpl:298
+#: templates/edit.nat.tmpl:312 templates/edit.nat.tmpl:326
+#: templates/edit.nat.tmpl:340 templates/edit.nat.tmpl:354
+#: templates/edit.nat.tmpl:368 templates/edit.nat.tmpl:382
+#: templates/edit.nat.tmpl:396 templates/edit.nat.tmpl:437
+#: templates/edit.nat.tmpl:449
 msgid "off"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:224 templates/edit.matter.nat.tmpl:244
-#: templates/edit.matter.nat.tmpl:389 templates/edit.matter.nat.tmpl:400
-#: templates/edit.matter.nat.tmpl:414 templates/edit.matter.nat.tmpl:457
-#: templates/edit.matter.nat.tmpl:474 templates/edit.matter.nat.tmpl:534
-#: templates/edit.matter.nat.tmpl:548 templates/edit.matter.nat.tmpl:584
-#: templates/edit.nat.tmpl:112 templates/edit.nat.tmpl:132
-#: templates/edit.nat.tmpl:225 templates/edit.nat.tmpl:239
-#: templates/edit.nat.tmpl:254 templates/edit.nat.tmpl:277
-#: templates/edit.nat.tmpl:292 templates/edit.nat.tmpl:306
-#: templates/edit.nat.tmpl:320 templates/edit.nat.tmpl:334
-#: templates/edit.nat.tmpl:348 templates/edit.nat.tmpl:362
-#: templates/edit.nat.tmpl:376 templates/edit.nat.tmpl:390
-#: templates/edit.nat.tmpl:433 templates/edit.nat.tmpl:445
+#: templates/edit.matter.nat.tmpl:226 templates/edit.matter.nat.tmpl:246
+#: templates/edit.matter.nat.tmpl:400 templates/edit.matter.nat.tmpl:411
+#: templates/edit.matter.nat.tmpl:425 templates/edit.matter.nat.tmpl:468
+#: templates/edit.matter.nat.tmpl:485 templates/edit.matter.nat.tmpl:545
+#: templates/edit.matter.nat.tmpl:559 templates/edit.matter.nat.tmpl:595
+#: templates/edit.nat.tmpl:114 templates/edit.nat.tmpl:134
+#: templates/edit.nat.tmpl:229 templates/edit.nat.tmpl:243
+#: templates/edit.nat.tmpl:258 templates/edit.nat.tmpl:281
+#: templates/edit.nat.tmpl:295 templates/edit.nat.tmpl:309
+#: templates/edit.nat.tmpl:323 templates/edit.nat.tmpl:337
+#: templates/edit.nat.tmpl:351 templates/edit.nat.tmpl:365
+#: templates/edit.nat.tmpl:379 templates/edit.nat.tmpl:393
+#: templates/edit.nat.tmpl:434 templates/edit.nat.tmpl:446
 msgid "on"
 msgstr ""
 
@@ -4084,40 +4113,40 @@ msgstr ""
 msgid "oops"
 msgstr ""
 
-#: templates/edit.nat.tmpl:421
+#: templates/edit.nat.tmpl:422
 msgid "open"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:361
+#: templates/edit.matter.nat.tmpl:372
 msgid "palette"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:520
+#: templates/edit.matter.nat.tmpl:531
 msgid "people"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:487
+#: templates/edit.matter.nat.tmpl:498
 msgid "photo"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:521
+#: templates/edit.matter.nat.tmpl:532
 msgid "places"
 msgstr ""
 
-#: templates/print.nat.tmpl:54
+#: templates/print.nat.tmpl:60
 msgid "portrait"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:322
+#: templates/edit.matter.nat.tmpl:324
 msgid "radial"
 msgstr ""
 
-#: templates/print.nat.tmpl:65
+#: templates/print.nat.tmpl:71
 #, fuzzy
 msgid "redirect"
 msgstr "版本历史"
 
-#: templates/edit.matter.nat.tmpl:522
+#: templates/edit.matter.nat.tmpl:533
 msgid "religion"
 msgstr ""
 
@@ -4126,7 +4155,7 @@ msgstr ""
 msgid "remove current form"
 msgstr "加一列"
 
-#: templates/changeform.nat.tmpl:131 templates/changeform.nat.tmpl:86
+#: templates/changeform.nat.tmpl:86
 msgid "remove the current form (caution: possible data loss)"
 msgstr ""
 
@@ -4135,15 +4164,15 @@ msgstr ""
 msgid "rename web"
 msgstr "(更名)"
 
-#: templates/edit.matter.nat.tmpl:193 templates/edit.nat.tmpl:260
+#: templates/edit.matter.nat.tmpl:195 templates/edit.nat.tmpl:264
 msgid "right"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:523
+#: templates/edit.matter.nat.tmpl:534
 msgid "science"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:33 templates/searchbase.nat.tmpl:5
+#: templates/newtopic.nat.tmpl:34 templates/searchbase.nat.tmpl:5
 #: templates/searchbox.nat.tmpl:11
 #, fuzzy
 msgid "search"
@@ -4154,12 +4183,12 @@ msgstr "搜寻"
 msgid "search in all webs"
 msgstr "搜寻所有子网"
 
-#: templates/edit.matter.nat.tmpl:107
+#: templates/edit.matter.nat.tmpl:109
 #, fuzzy
 msgid "section"
 msgstr "功能"
 
-#: templates/newtopic.nat.tmpl:136
+#: templates/newtopic.nat.tmpl:141
 #, fuzzy
 msgid "see all"
 msgstr "设定所有"
@@ -4169,12 +4198,12 @@ msgstr "设定所有"
 msgid "select all"
 msgstr "设定所有"
 
-#: templates/backlinks.nat.tmpl:119 templates/backlinks.nat.tmpl:92
-#: templates/childtopics.nat.tmpl:94
+#: templates/backlinks.nat.tmpl:121 templates/backlinks.nat.tmpl:93
+#: templates/childtopics.nat.tmpl:95
 msgid "showing only %1"
 msgstr ""
 
-#: templates/history.nat.tmpl:43
+#: templates/history.nat.tmpl:36
 #, fuzzy
 msgid "side by side"
 msgstr "并列"
@@ -4189,20 +4218,20 @@ msgstr "(单字元名字)"
 msgid "single character last name"
 msgstr "(单字元姓氏)"
 
-#: templates/edit.matter.nat.tmpl:564
+#: templates/edit.matter.nat.tmpl:575
 msgid "slide"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:118
+#: templates/edit.matter.nat.tmpl:120
 #, fuzzy
 msgid "slideshow"
 msgstr "版本"
 
-#: templates/edit.matter.nat.tmpl:524
+#: templates/edit.matter.nat.tmpl:535
 msgid "sports"
 msgstr ""
 
-#: templates/edit.nat.tmpl:202
+#: templates/edit.nat.tmpl:206
 msgid "sticky"
 msgstr ""
 
@@ -4210,16 +4239,16 @@ msgstr ""
 msgid "submit the query"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:525
+#: templates/edit.matter.nat.tmpl:536
 #, fuzzy
 msgid "transportation"
 msgstr "组织连结:"
 
-#: templates/edit.matter.nat.tmpl:526
+#: templates/edit.matter.nat.tmpl:537
 msgid "travel"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:116
+#: templates/edit.matter.nat.tmpl:118
 msgid "trianglify"
 msgstr ""
 
@@ -4227,22 +4256,34 @@ msgstr ""
 msgid "up one folder"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:254
+#: templates/edit.matter.nat.tmpl:256
 msgid "usefull resources to generate nice looking backgrounds:"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:488
+#: templates/edit.matter.nat.tmpl:499
 #, fuzzy
 msgid "vector"
 msgstr "历史(&H)"
 
-#: templates/edit.matter.nat.tmpl:604
+#: templates/edit.matter.nat.tmpl:615
 msgid "vertical"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:114
+#: templates/edit.matter.nat.tmpl:116
 msgid "video"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Edit Raw"
+#~ msgstr "编辑"
+
+#, fuzzy
+#~ msgid "Pagination"
+#~ msgstr "版本"
+
+#, fuzzy
+#~ msgid "Redirect from %1"
+#~ msgstr "%1 子网中的结果"
 
 #~ msgid "Backlinks to %1 in all Webs"
 #~ msgstr "所有子网中指向 %1 的反向连结"

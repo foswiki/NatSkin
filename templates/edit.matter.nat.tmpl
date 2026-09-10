@@ -40,6 +40,7 @@
 <input type='hidden' name='Default+NATSKIN_BANNERPALETTE' value='' />
 <input type='hidden' name='Default+NATSKIN_BANNERSEED' value='' />
 <input type='hidden' name='Default+NATSKIN_BANNERCELLSIZE' value='' />
+<input type='hidden' name='Default+NATSKIN_BANNERVARIANCE' value='' />
 <input type='hidden' name='Default+NATSKIN_BANNERANIMATIONENABLED' value='' />
 <input type='hidden' name='Default+NATSKIN_BANNERPARTICLESENABLED' value='' />
 <input type='hidden' name='Default+NATSKIN_BANNERPARALLAXENABLED' value='' />
@@ -87,6 +88,7 @@
 %TMPL:P{"bannersettings::mode::gradient::position"}%
 %TMPL:P{"bannersettings::mode::image"}%
 %TMPL:P{"bannersettings::mode::cellsize"}%
+%TMPL:P{"bannersettings::mode::variance"}%
 %TMPL:P{"bannersettings::mode::palette"}%
 %TMPL:P{"bannersettings::mode::video"}%
 %TMPL:P{"bannersettings::mode::particles"}%
@@ -243,7 +245,7 @@
       <label><input type="radio" class="foswikiRadioButton" name="Local+NATSKIN_BANNERCSSENABLED" value="" %IF{"preferences[name='NATSKIN_BANNERCSSENABLED'].value=''" then="checked"}% />%MAKETEXT{"default"}%</label>
       <label><input type="radio" class="foswikiRadioButton" name="Local+NATSKIN_BANNERCSSENABLED" value="on" %IF{"preferences[name='NATSKIN_BANNERCSSENABLED'].value='on'" then="checked"}% />%MAKETEXT{"on"}%</label>
       <label><input type="radio" class="foswikiRadioButton" name="Local+NATSKIN_BANNERCSSENABLED" value="off" %IF{"preferences[name='NATSKIN_BANNERCSSENABLED'].value='off'" then="checked"}% />%MAKETEXT{"off"}%</label>
-<textarea class="foswikiTextArea foswikiFullWidth natBannerCssSettings" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="%TMPL:P{"textarea::spellcheck"}%" placeholder="%MAKETEXT{"default"}%" name="Local+NATSKIN_BANNERCSS" rows="15" cols="80">%ENCODE{"%QUERY{"preferences[name='NATSKIN_BANNERCSS'].value"}%" type="safe"}%</textarea>
+<textarea class="foswikiTextArea foswikiFullWidth natBannerCssSettings" autocomplete="off" autocorrect="off" autocapitalize="off"  placeholder="%MAKETEXT{"default"}%" name="Local+NATSKIN_BANNERCSS" rows="15" cols="80">%ENCODE{"%QUERY{"preferences[name='NATSKIN_BANNERCSS'].value"}%" type="safe"}%</textarea>
       %TMPL:P{"bannersettings::help"}%
     </td>
   </tr>
@@ -348,6 +350,15 @@
     <th>%MAKETEXT{"Cell Size"}%</th>
     <td>
       <input type="text" class="foswikiInputField" placeholder="%MAKETEXT{"default"}%" name="Local+NATSKIN_BANNERCELLSIZE" size="20" value="%QUERY{"preferences[name='NATSKIN_BANNERCELLSIZE'].value"}%" />
+    </td>
+  </tr>
+%{}%%TMPL:END%
+
+%TMPL:DEF{"bannersettings::mode::variance"}%%{}%
+  <tr class="natBannerSettings show_on_trianglify" style="display:none">
+    <th>%MAKETEXT{"Variance"}%</th>
+    <td>
+      <input type="text" class="foswikiInputField" placeholder="%MAKETEXT{"default"}%" name="Local+NATSKIN_BANNERVARIANCE" size="20" value="%QUERY{"preferences[name='NATSKIN_BANNERVARIANCE'].value"}%" />
     </td>
   </tr>
 %{}%%TMPL:END%

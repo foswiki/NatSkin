@@ -5,10 +5,10 @@
 }%%TMPL:END%
 %TMPL:DEF{"banner::mode"}%%NATSKIN_BANNERMODE{default="none"}%%TMPL:END%
 
-%TMPL:DEF{"banner::inlinestyle"}%style='background-color:%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR{default="#000"}%"}%;%TMPL:P{"banner::height"}%'%TMPL:END%
+%TMPL:DEF{"banner::inlinestyle"}%style='%TMPL:P{"banner::height"}%'%TMPL:END%
 %TMPL:DEF{"banner::cssvars"}%<style>
 :root {
-  --nat-bannercolor:%NATSKIN_BANNERCOLOR{default="rgb(0 0 0 / 50%)"}%;
+  --nat-bannercolor:%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR{default="rgb(0 0 0 / 50%)"}%"}%;
 }
 </style>%TMPL:END%
 %TMPL:DEF{"banner::height"}%%IF{"'%NATSKIN_BANNERHEIGHT{default=""}%'!=''" then="$percntTMPL:P{\"banner::height::%NATSKIN_BANNERHEIGHT%\"}$percnt" }%%TMPL:END%
@@ -142,11 +142,17 @@
 %TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::editor"}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%
 </div>%TMPL:END%
 
-%TMPL:DEF{"banner::mode::geopattern"}%<div class='natBanner natBannerGeopPattern %TMPL:P{"banner::class"}% jqGeoPattern' style='%TMPL:P{"banner::height"}%' data-color='%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR{default="#000"}%"}%' data-seed='%NATSKIN_BANNERSEED{default=""}%'>
+%TMPL:DEF{"banner::mode::geopattern"}%<div class='natBanner natBannerGeopPattern %TMPL:P{"banner::class"}% jqGeoPattern' style='%TMPL:P{"banner::height"}%' \
+  data-color='%NATSKIN_BANNERCOLOR{default="%WEBBGCOLOR{default="#000"}%"}%' \
+  data-seed='%NATSKIN_BANNERSEED{default=""}%'>
 %TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::geopattern"}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%
 </div>%TMPL:END%
 
-%TMPL:DEF{"banner::mode::trianglify"}%<div class='natBanner natBannerTrianglify %TMPL:P{"banner::class"}% jqTrianglify' style='%TMPL:P{"banner::height"}%' data-cell-size='%NATSKIN_BANNERCELLSIZE{default="30"}%' data-palette='%NATSKIN_BANNERPALETTE{default="random"}%' data-variance="%NATSKIN_BANNERVARIANCE{default="0.75"}%" data-seed="%NATSKIN_BANNERSEED{default=""}%">
+%TMPL:DEF{"banner::mode::trianglify"}%<div class='natBanner natBannerTrianglify %TMPL:P{"banner::class"}% jqTrianglify' style='%TMPL:P{"banner::height"}%' \
+  data-cell-size='%NATSKIN_BANNERCELLSIZE{default="30"}%' \
+  data-palette='%NATSKIN_BANNERPALETTE{default="random"}%' \
+  data-variance="%NATSKIN_BANNERVARIANCE{default="0.75"}%" \
+  data-seed="%NATSKIN_BANNERSEED{default=""}%">
 %TMPL:P{"banner::content"}%%TMPL:P{"banner::javascript::trianglify"}%%TMPL:P{"banner::javascript"}%%TMPL:P{"banner::style"}%
 </div>%TMPL:END%
 
@@ -164,7 +170,7 @@
   }% \
   data-prevent-clicks="false" \
   data-centered-slides="true" \
-  data-auto-height="true" \
+  data-auto-height="false" \
   data-loop="true" \
   data-watch-overflow="true" \
   data-effect="%NATSKIN_BANNERSLIDESHOWEFFECT{default="fade"}%" \
@@ -219,7 +225,11 @@
     requires=\"NATSKIN\"
     text=\"<style>$dollarpercntNATSKIN_BANNERCSS{default=\\"\\"}$dollarpercnt</style>\"
   }$percnt"
-}%%TMPL:P{"banner::cssvars"}%%TMPL:END%
+}%%ADDTOZONE{"skincss"
+  id="BANNERCSS::VARS"
+  requires="BANNERCSS"
+  text="$percntTMPL:P{\"banner::cssvars\"}$percnt"
+}%%TMPL:END%
 
 %TMPL:DEF{"banner::javascript"}%%TMPL:P{"banner::javascript::texteffect"}%%TMPL:P{"banner::javascript::parallax"}%%TMPL:END%
 

@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="micha" comment="reprev" date="1725367137" format="1.1" reprev="9" version="14"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1789038739" format="1.1"  version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 
@@ -50,28 +50,25 @@ In general only colors differ in dark and light mode but you may change other se
 
 <div class="foswikiFlatTable foswikiStripes">
 ---++ Named colors
-<!--
-   * Set COLORTILE = <span style='display:inline-block;width:1em;height:1em;background:%DEFAULT{default="#fff"}%'></span>
--->
 
 | *CSS Variable* | *Description* |
-| --color-yellow | %COLORTILE{"#ffff00"}% |
-| --color-orange | %COLORTILE{"#ff6600"}% |
-| --color-red | %COLORTILE{"#ff0000"}% |
-| --color-pink | %COLORTILE{"#ff00ff"}% |
-| --color-purple | %COLORTILE{"#800080"}% |
-| --color-navy | %COLORTILE{"#000080"}% |
-| --color-blue | %COLORTILE{"#0000ff"}% |
-| --color-teal | %COLORTILE{"#008080"}% |
-| --color-aqua | %COLORTILE{"#00ffff"}% |
-| --color-lime | %COLORTILE{"#00ff00"}% | 
-| --color-green | %COLORTILE{"#008000"}% |
-| --color-olive | %COLORTILE{"#808000"}% |
-| --color-maroon | %COLORTILE{"#800000"}% |
-| --color-brown | %COLORTILE{"#996633"}% |
-| --color-black | %COLORTILE{"#000000"}% |
-| --color-silver | %COLORTILE{"#c0c0c0"}% |
-| --color-white | %COLORTILE{"#ffffff"}% |
+| --color-yellow | %COLORTILE{"var(--color-yellow)"}% |
+| --color-orange | %COLORTILE{"var(--color-orange)"}% |
+| --color-red | %COLORTILE{"var(--color-red)"}% |
+| --color-pink | %COLORTILE{"var(--color-pink)"}% |
+| --color-purple | %COLORTILE{"var(--color-purple)"}% |
+| --color-navy | %COLORTILE{"var(--color-navy)"}% |
+| --color-blue | %COLORTILE{"var(--color-blue)"}% |
+| --color-teal | %COLORTILE{"var(--color-teal)"}% |
+| --color-aqua | %COLORTILE{"var(--color-aqua)"}% |
+| --color-lime | %COLORTILE{"var(--color-lime)"}% | 
+| --color-green | %COLORTILE{"var(--color-green)"}% |
+| --color-olive | %COLORTILE{"var(--color-olive)"}% |
+| --color-maroon | %COLORTILE{"var(--color-maroon)"}% |
+| --color-brown | %COLORTILE{"var(--color-brown)"}% |
+| --color-black | %COLORTILE{"var(--color-black)"}% |
+| --color-silver | %COLORTILE{"var(--color-silver)"}% |
+| --color-white | %COLORTILE{"var(--color-white)"}% |
 
 ---++ Gray tones
 | *CSS Variable* | *Description* |
@@ -85,7 +82,7 @@ In general only colors differ in dark and light mode but you may change other se
 | --color-gray-7 | %COLORTILE{"hsl(0,0%,84%)"}% |
 | --color-gray-8 | %COLORTILE{"hsl(0,0%,90%)"}% |
 | --color-gray-9 | %COLORTILE{"hsl(0,0%,93%)"}% |
-| --color-gray-10 |%COLORTILE{"#f4f4f4"}% |
+| --color-gray-10 | %COLORTILE{"var(--color-gray-10)"}% |
 
 ---++ Black tones
 | *CSS Variable* | *Description* |
@@ -98,20 +95,20 @@ In general only colors differ in dark and light mode but you may change other se
 | --color-black-7 | %COLORTILE{"hsl(0,0%,30%)"}% |
 | --color-black-8 | %COLORTILE{"hsl(0,0%,35%)"}% |
 | --color-black-9 | %COLORTILE{"hsl(0,0%,40%)"}% |
-| --color-black-10 |%COLORTILE{" hsl(0,0%,45%)"}% |
+| --color-black-10 | %COLORTILE{" hsl(0,0%,45%)"}% |
 
 ---++ Alpha tones
-| *CSS Variable* | *Description* |
-| --color-alpha-1 | %COLORTILE{"hsl(0, 100%, 100%, 0.10)"}% |
-| --color-alpha-2 | %COLORTILE{"hsl(0, 100%, 100%, 0.20)"}% |
-| --color-alpha-3 | %COLORTILE{"hsl(0, 100%, 100%, 0.30)"}% |
-| --color-alpha-4 | %COLORTILE{"hsl(0, 100%, 100%, 0.40)"}% |
-| --color-alpha-5 | %COLORTILE{"hsl(0, 100%, 100%, 0.50)"}% |
-| --color-alpha-6 | %COLORTILE{"hsl(0, 100%, 100%, 0.60)"}% |
-| --color-alpha-7 | %COLORTILE{"hsl(0, 100%, 100%, 0.70)"}% |
-| --color-alpha-8 | %COLORTILE{"hsl(0, 100%, 100%, 0.80)"}% |
-| --color-alpha-9 | %COLORTILE{"hsl(0, 100%, 100%, 0.90)"}% |
-| --color-alpha-10 |%COLORTILE{"hsl(0, 100%, 100%, 1.00)"}% |
+| *CSS Variable*   | *Description*                           |
+| --color-alpha-1  | %COLORTILE{"hsl(0, 100%, 100%, 0.10)"}% |
+| --color-alpha-2  | %COLORTILE{"hsl(0, 100%, 100%, 0.20)"}% |
+| --color-alpha-3  | %COLORTILE{"hsl(0, 100%, 100%, 0.30)"}% |
+| --color-alpha-4  | %COLORTILE{"hsl(0, 100%, 100%, 0.40)"}% |
+| --color-alpha-5  | %COLORTILE{"hsl(0, 100%, 100%, 0.50)"}% |
+| --color-alpha-6  | %COLORTILE{"hsl(0, 100%, 100%, 0.60)"}% |
+| --color-alpha-7  | %COLORTILE{"hsl(0, 100%, 100%, 0.70)"}% |
+| --color-alpha-8  | %COLORTILE{"hsl(0, 100%, 100%, 0.80)"}% |
+| --color-alpha-9  | %COLORTILE{"hsl(0, 100%, 100%, 0.90)"}% |
+| --color-alpha-10 | %COLORTILE{"hsl(0, 100%, 100%, 1.00)"}% |
 
 ---++ Theme colors
 
@@ -121,7 +118,7 @@ In general only colors differ in dark and light mode but you may change other se
 | --color-primary-lightness | 54% | 
 | --color-primary | %COLORTILE{"var(--color-primary)"}% hls value created from --color-primary-hue, --color-primary-lightness and --color-primary-saturation |
 | --color-secondary-hue-offset | -110 (relative to --color-primary-hue) |
-| --color-secondary-saturation |80% |
+| --color-secondary-saturation | 80% |
 | --color-secondary-lightness | 40% |
 | --color-secondary-hue | computed based on --color-secondary-hue-offset |
 | --color-secondary | %COLORTILE{"var(--color-secondary)"}% hls value created from --color-secondary-hue, --color-secondary-lightness and --color-secondary-saturation |
@@ -457,5 +454,8 @@ used.
 
 </div>
 %ADDTOZONE{"head" id="%TOPIC%" text="<style>.foswikiTableCol0 { min-width:20em; }</style>"}%
+<!--
+   * Set COLORTILE = <span style='display:inline-block;width:1em;height:1em;background:%DEFAULT{default="#fff"}%'></span>
+-->
 
 %META:PREFERENCE{name="TOPICTITLE" title="TOPICTITLE" type="local" value="NatSkin CSS-Variables"}%

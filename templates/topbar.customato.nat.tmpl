@@ -40,7 +40,7 @@
 
 %{################################################################################ }%
 %TMPL:DEF{"topbar::authenticated"}%<div class='natUserAction natPanelToggle'>
-%TMPL:P{"icon::account"}%<a><nop>%GETTOPICTITLE{"%WIKIUSERNAME%"}%</a>
+%TMPL:P{"icon::account"}%<a><nop>%GETTOPICTITLE{"%USERINFO{format="$wikiusername"}%"}%</a>
 </div>%TMPL:END%
 
 %{################################################################################ }%
@@ -66,7 +66,7 @@
 %BEGINROW{class="%TMPL:P{"toppanel::bulletsclass"}%"}%
 %BEGINCOL{"4"}%
 <h3 >My <nop>%WIKITOOLNAME%</h3>
-   * [[%%WIKIUSERNAME%][%MAKETEXT{"My Profile"}%]]
+   * [[%%USERINFO{format="$wikiusername"}%][%MAKETEXT{"My Profile"}%]]
    * [[%SYSTEMWEB%.ChangeEmailAddress][%MAKETEXT{"Change email address"}%]]
    * [[%SYSTEMWEB%.ChangePassword][%MAKETEXT{"Change password"}%]] %IF{"$ LOGOUT" then="
    * [[%SCRIPTURLPATH{"view" topic="%BASEWEB%.%BASETOPIC%" logout="1"}%][%MAKETEXT{"Log out"}%]]"}%

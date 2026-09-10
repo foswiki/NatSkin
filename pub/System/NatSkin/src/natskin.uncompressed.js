@@ -1,7 +1,7 @@
 /*
  * NatSkin
  *
- * (c)opyright 2006-2024 Michael Daum http://michaeldaumconsulting.com
+ * (c)opyright 2006-2026 Michael Daum http://michaeldaumconsulting.com
  *
  * Licensed under the GPL license http://www.gnu.org/licenses/gpl.html
  *
@@ -538,7 +538,7 @@
    * init verbatim elements adding a copy-to-clipboard button
    */
   function initVerbatim() {
-    $(".natViewBody .natMainContents pre:not(.CodeMirror-line), .clipboard").livequery(function() {
+    $(".natViewBody .natMainContents pre:not([class*=CodeMirror]), .clipboard").livequery(function() {
       var $this = $(this),
           opts = $.extend({
             showButton: true,
@@ -574,7 +574,7 @@
         if (val !== '') {
           navigator.clipboard.writeText(val);
           $.pnotify({
-            "text": "<span class='i18n'>Content copied to clipboard</span>",
+            "text": $.i18n("Content copied to clipboard"),
             "type": "info",
             "delay": 500
           });

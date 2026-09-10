@@ -16,6 +16,11 @@ msgstr ""
 "X-Poedit-Country: GREECE\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+#: templates/view.nat.tmpl:228
+#, fuzzy
+msgid "$title"
+msgstr "Τίτλος θέματος"
+
 #: templates/oopsgeneric.nat.tmpl:5 templates/oopsgeneric.nat.tmpl:7
 #: templates/oopsgeneric.nat.tmpl:9
 msgid "%1"
@@ -29,7 +34,7 @@ msgstr "Αυτοματοποιημένη κοινοποίηση των τροπ�
 #: templates/mailresetpassword.nat.tmpl:3
 #: templates/passwordresetmail.nat.tmpl:3
 #, fuzzy
-msgid "%1 - New passwort for %2"
+msgid "%1 - New password for %2"
 msgstr "Νέος κωδικός πρόσβασης"
 
 #: templates/opensearch.nat.tmpl:34
@@ -43,16 +48,16 @@ msgid "%1 Person Search"
 msgstr "Αναζήτηση μέσω Ερωτήματος"
 
 #: templates/backlinks.nat.tmpl:51 templates/backlinks.nat.tmpl:69
-#: templates/backlinks.nat.tmpl:90
+#: templates/backlinks.nat.tmpl:91
 msgid "%1 backlink(s) found"
 msgstr ""
 
-#: templates/backlinks.nat.tmpl:117 templates/backlinks.nat.tmpl:142
+#: templates/backlinks.nat.tmpl:119 templates/backlinks.nat.tmpl:144
 #, fuzzy
 msgid "%1 backlink(s) found in all webs"
 msgstr "(εισερχόμενοι σύνδεσμοι σε όλους τους Ιστούς)"
 
-#: templates/validate.nat.tmpl:21
+#: templates/validate.nat.tmpl:19
 msgid "%1 has received a suspicious change request from your browser."
 msgstr "%1 έχει δεχθεί ένα ύποπτο αίτημα αλλαγής από τον φυλομετρητή σου."
 
@@ -84,7 +89,7 @@ msgstr "Το θέμα %1 δεν υπάρχει"
 
 #: data/System/NatSkinWebSearchViewTemplate.txt:155
 #: templates/childtopics.nat.tmpl:51 templates/childtopics.nat.tmpl:69
-#: templates/childtopics.nat.tmpl:92 templates/search.nat.tmpl:19
+#: templates/childtopics.nat.tmpl:93 templates/search.nat.tmpl:19
 #, fuzzy
 msgid "%1 topic(s) found"
 msgstr "No child topics"
@@ -103,7 +108,7 @@ msgstr ""
 msgid "%1 vs. %2"
 msgstr "(%1 έναντι %2)"
 
-#: templates/view.matter.nat.tmpl:192
+#: templates/view.matter.nat.tmpl:198
 msgid "%NATSKIN_BANNERSUBTITLE{default="
 msgstr ""
 
@@ -139,7 +144,7 @@ msgstr ""
 msgid "Abandon changes and exit"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:22 templates/newtopic.old.tmpl:70
+#: templates/newtopic.nat.tmpl:23 templates/newtopic.old.tmpl:70
 #: templates/newtopic.old.tmpl:77 templates/oops.nat.tmpl:25
 msgid "Abort"
 msgstr ""
@@ -164,7 +169,7 @@ msgstr "Δεν επιτρέπεται η πρόσβαση"
 msgid "Access denied"
 msgstr "Δεν επιτρέπεται η πρόσβαση"
 
-#: templates/user.nat.tmpl:187
+#: templates/user.nat.tmpl:208
 msgid "Account has been removed"
 msgstr ""
 
@@ -172,7 +177,7 @@ msgstr ""
 msgid "Account settings"
 msgstr ""
 
-#: templates/history.nat.tmpl:75
+#: templates/history.nat.tmpl:65
 msgid "Action"
 msgstr "Ενέργεια"
 
@@ -180,7 +185,7 @@ msgstr "Ενέργεια"
 msgid "Add member"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:313 templates/foswiki.nat.tmpl:318
+#: templates/foswiki.nat.tmpl:321 templates/foswiki.nat.tmpl:326
 #, fuzzy
 msgid "Add to favorites"
 msgstr "Στο μενού μου"
@@ -190,7 +195,7 @@ msgstr "Στο μενού μου"
 msgid "Add users or groups to this group"
 msgstr "Επεξεργαστείτε τις ρυθμίσεις για αυτό το θέμα"
 
-#: data/System/SiteMenu.txt:71
+#: data/System/SiteMenu.txt:69
 msgid "Admin"
 msgstr ""
 
@@ -204,7 +209,7 @@ msgstr "Ταυτοποίηση Χρήστη Διαχειριστή του Foswik
 msgid "Admin Tools"
 msgstr "Εργαλεία"
 
-#: data/System/SiteMenu.txt:52
+#: data/System/SiteMenu.txt:50
 msgid "Admin docs"
 msgstr ""
 
@@ -253,7 +258,7 @@ msgstr ""
 "Μια σελίδα λάθους θα εμφανιστεί εάν κάποια από τα θέματα είναι κλειδωμένο "
 "από άλλο χρήστη."
 
-#: templates/edit.matter.nat.tmpl:419
+#: templates/edit.matter.nat.tmpl:430
 #, fuzzy
 msgid "Animation Speed"
 msgstr "Ενέργεια"
@@ -265,12 +270,12 @@ msgstr ""
 "Οι όποιες αλλαγές κάνατε στο θέμα πριν επισκεφθείτε αυτή τη σελίδα θα "
 "διατηρηθούν."
 
-#: data/System/SiteMenu.txt:75
+#: data/System/SiteMenu.txt:73
 #, fuzzy
 msgid "Applications"
 msgstr "Ενέργεια"
 
-#: templates/foswiki.nat.tmpl:224 templates/foswiki.nat.tmpl:225
+#: templates/foswiki.nat.tmpl:229 templates/foswiki.nat.tmpl:230
 msgid "Archive"
 msgstr ""
 
@@ -279,23 +284,28 @@ msgstr ""
 msgid "Archive Topic"
 msgstr "Επαναφορά"
 
-#: templates/renametopicarchive.nat.tmpl:11
+#: templates/renametopicarchive.nat.tmpl:13
 #, fuzzy
 msgid "Are you sure that you want to archive %1?"
 msgstr "Εάν θέλετε να δημιουργήσετε το θέμα"
 
-#: templates/renametopicdelete.nat.tmpl:12
-#: templates/renamewebdelete.nat.tmpl:13
+#: templates/renametopicdelete.nat.tmpl:17
+#: templates/renamewebdelete.nat.tmpl:14
 #, fuzzy
 msgid "Are you sure that you want to delete %1?"
 msgstr "Εάν θέλετε να δημιουργήσετε το θέμα"
 
-#: templates/user.nat.tmpl:166
+#: templates/renametopicdelete.nat.tmpl:34
+#, fuzzy
+msgid "Are you sure that you want to finally delete %1?"
+msgstr "Εάν θέλετε να δημιουργήσετε το θέμα"
+
+#: templates/user.nat.tmpl:187
 #, fuzzy
 msgid "Are you sure that you want to remove this user account:"
 msgstr "Εάν θέλετε να δημιουργήσετε το θέμα"
 
-#: templates/restoretopic.nat.tmpl:9
+#: templates/restoretopic.nat.tmpl:10
 #, fuzzy
 msgid "Are you sure that you want to restore %1 to revision %2?"
 msgstr "Εάν θέλετε να δημιουργήσετε το θέμα"
@@ -313,9 +323,9 @@ msgid "Attachment move failed"
 msgstr "Η μετακίνηση του συννημένου απέτυχε"
 
 #: templates/attach.nat.tmpl:4 templates/attach.nat.tmpl:9
-#: templates/copytopic.nat.tmpl:60 templates/edit.matter.nat.tmpl:155
-#: templates/edit.matter.nat.tmpl:206 templates/edit.nat.tmpl:301
-#: templates/foswiki.nat.tmpl:128 templates/foswiki.nat.tmpl:129
+#: templates/copytopic.nat.tmpl:60 templates/edit.matter.nat.tmpl:157
+#: templates/edit.matter.nat.tmpl:208 templates/edit.nat.tmpl:318
+#: templates/foswiki.nat.tmpl:133 templates/foswiki.nat.tmpl:134
 msgid "Attachments"
 msgstr "Συννημένα"
 
@@ -328,41 +338,41 @@ msgstr "Συννημένα του %1"
 msgid "Attention"
 msgstr "Προσοχή"
 
-#: templates/history.nat.tmpl:73
+#: templates/history.nat.tmpl:63
 msgid "Author"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:290
+#: templates/edit.matter.nat.tmpl:292
 msgid "Autocolor Hue"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:304
+#: templates/edit.matter.nat.tmpl:306
 msgid "Autocolor Lightness"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:298
+#: templates/edit.matter.nat.tmpl:300
 msgid "Autocolor Saturation"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:310
+#: templates/edit.matter.nat.tmpl:312
 msgid "Autocolor Seed"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:20
+#: templates/newtopic.nat.tmpl:21
 #, fuzzy
 msgid "Back one step"
 msgstr "Επιστροφή στο θέμα"
 
-#: templates/view.nat.tmpl:200
+#: templates/view.nat.tmpl:214
 #, fuzzy
 msgid "Back to view mode"
 msgstr "Επιστροφή στο θέμα"
 
-#: templates/edit.matter.nat.tmpl:278 templates/edit.matter.nat.tmpl:284
+#: templates/edit.matter.nat.tmpl:280 templates/edit.matter.nat.tmpl:286
 msgid "Background Color"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:101
+#: templates/foswiki.nat.tmpl:106
 msgid "Backlinks"
 msgstr "Εισερχόμενοι σύνδεσμοι"
 
@@ -379,7 +389,7 @@ msgstr ""
 msgid "Banner"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:102
+#: templates/edit.matter.nat.tmpl:104
 #, fuzzy
 msgid "Banner Mode"
 msgstr "Όνομα Σύνδεσης %1"
@@ -410,19 +420,19 @@ msgstr ""
 msgid "Both"
 msgstr ""
 
-#: templates/edit.nat.tmpl:371
+#: templates/edit.nat.tmpl:374
 msgid "Breadcrumbs navigation"
 msgstr ""
 
-#: data/System/SiteMenu.txt:63
+#: data/System/SiteMenu.txt:61
 msgid "Bugreport"
 msgstr ""
 
-#: templates/edit.nat.tmpl:38
+#: templates/edit.nat.tmpl:40
 msgid "Bulgarian"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:593
+#: templates/edit.matter.nat.tmpl:604
 msgid "Bullets"
 msgstr ""
 
@@ -437,14 +447,14 @@ msgstr "Άκυρη διεύθυνση e-mail"
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:103
 #: data/System/NatSkinChangePasswordViewTemplate.txt:45
-#: data/System/NatSkinResetPasswordViewTemplate.txt:77
+#: data/System/NatSkinResetPasswordViewTemplate.txt:78
 #: templates/actionform.nat.tmpl:15 templates/changeform.nat.tmpl:39
-#: templates/copytopic.nat.tmpl:81 templates/email.nat.tmpl:31
-#: templates/languageselector.nat.tmpl:22 templates/loginbase.nat.tmpl:61
+#: templates/copytopic.nat.tmpl:81 templates/email.nat.tmpl:30
+#: templates/languageselector.nat.tmpl:22 templates/loginbase.nat.tmpl:56
 #: templates/managetags.nat.tmpl:31 templates/messages.nat.tmpl:274
 #: templates/moveattachment.nat.tmpl:65 templates/newweb.nat.tmpl:28
-#: templates/newweb.nat.tmpl:34 templates/oopsleaseconflict.nat.tmpl:50
-#: templates/print.nat.tmpl:28 templates/renamebase.nat.tmpl:19
+#: templates/newweb.nat.tmpl:34 templates/oopsleaseconflict.nat.tmpl:41
+#: templates/print.nat.tmpl:34 templates/renamebase.nat.tmpl:19
 #: templates/renameconfirm.nat.tmpl:7 templates/renamedelete.nat.tmpl:14
 #: templates/renamewebbase.nat.tmpl:19 templates/renamewebconfirm.nat.tmpl:7
 #: templates/search.nat.tmpl:27 templates/translatetopic.nat.tmpl:193
@@ -468,11 +478,11 @@ msgstr "Δεν μπορώ να μετονομάσω το %1 σε %2 γιατί �
 msgid "Categories"
 msgstr "Κατηγορίες"
 
-#: templates/edit.matter.nat.tmpl:348
+#: templates/edit.matter.nat.tmpl:350
 msgid "Cell Size"
 msgstr ""
 
-#: data/System/SiteTopicActions.txt:46
+#: data/System/SiteTopicActions.txt:47
 #, fuzzy
 msgid "Change"
 msgstr "Τροποποιήθηκε:"
@@ -484,12 +494,12 @@ msgstr "Τροποποιήθηκε:"
 msgid "Change e-mail address"
 msgstr "Άκυρη διεύθυνση e-mail"
 
-#: templates/foswiki.nat.tmpl:268
+#: templates/foswiki.nat.tmpl:274
 #, fuzzy
 msgid "Change email"
 msgstr "Άκυρη διεύθυνση e-mail"
 
-#: templates/foswiki.nat.tmpl:269 templates/topbar.customato.nat.tmpl:70
+#: templates/foswiki.nat.tmpl:275 templates/topbar.customato.nat.tmpl:70
 #: templates/topbar.customato.nat.tmpl:99
 #, fuzzy
 msgid "Change email address"
@@ -502,12 +512,12 @@ msgstr "Αλλαγή γλώσσας"
 
 #: data/System/NatSkinChangePasswordViewTemplate.txt:35
 #: data/System/NatSkinChangePasswordViewTemplate.txt:5
-#: templates/foswiki.nat.tmpl:264 templates/topbar.customato.nat.tmpl:100
+#: templates/foswiki.nat.tmpl:270 templates/topbar.customato.nat.tmpl:100
 #: templates/topbar.customato.nat.tmpl:71
 msgid "Change password"
 msgstr "Αλλαγή κωδικού πρόσβασης"
 
-#: templates/foswiki.nat.tmpl:231
+#: templates/foswiki.nat.tmpl:236
 #, fuzzy
 msgid "Change the name and/or the location of this topic"
 msgstr "Επεξεργαστείτε τις ρυθμίσεις για αυτό το θέμα"
@@ -548,11 +558,11 @@ msgstr ""
 "automatic linking may not work. Οι χαρακτήρες που δεν επιτρέπονται στα "
 "ονόματα θεμάτων, όπως κενά, θα διαγραφούν αυτόματα."
 
-#: templates/foswiki.nat.tmpl:172
+#: templates/foswiki.nat.tmpl:177
 msgid "Chat"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:173
+#: templates/foswiki.nat.tmpl:178
 #, fuzzy
 msgid "Chat about this topic"
 msgstr "Δημιουργήστε αυτό το θέμα"
@@ -567,11 +577,11 @@ msgstr "Child topics in %1 web"
 msgid "Child topics of %1"
 msgstr "Child topics in %1 web"
 
-#: templates/foswiki.nat.tmpl:135
+#: templates/foswiki.nat.tmpl:140
 msgid "Children"
 msgstr ""
 
-#: templates/edit.nat.tmpl:39
+#: templates/edit.nat.tmpl:41
 msgid "Chinese"
 msgstr ""
 
@@ -615,23 +625,24 @@ msgstr ""
 msgid "Clear selection"
 msgstr "Ενέργεια"
 
-#: templates/foswiki.nat.tmpl:168
+#: templates/foswiki.nat.tmpl:173
 #, fuzzy
 msgid "Click to like/unlike this topic"
 msgstr "Δημιουργήστε αυτό το θέμα"
 
 #: templates/backlinks.nat.tmpl:24 templates/childtopics.nat.tmpl:16
 #: templates/childtopics.nat.tmpl:32 templates/contributors.nat.tmpl:5
-#: templates/foswiki.nat.tmpl:252 templates/history.nat.tmpl:51
-#: templates/oopsmore.nat.tmpl:9 templates/topbar.matter.nat.tmpl:16
+#: templates/foswiki.nat.tmpl:258 templates/history.nat.tmpl:43
+#: templates/oopsmore.nat.tmpl:9 templates/qmhistory.nat.tmpl:67
+#: templates/topbar.matter.nat.tmpl:16
 msgid "Close"
 msgstr "Κλείσε"
 
-#: templates/view.nat.tmpl:312
+#: templates/view.nat.tmpl:334
 msgid "Close broadcast message"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:253 templates/foswiki.nat.tmpl:255
+#: templates/foswiki.nat.tmpl:259 templates/foswiki.nat.tmpl:261
 msgid "Close this dialog"
 msgstr ""
 
@@ -643,39 +654,39 @@ msgstr ""
 msgid "Color %1 has an invalid format"
 msgstr "Το χρώμα %1 έχει μη-έγκυρη μορφή"
 
-#: templates/edit.matter.nat.tmpl:357
+#: templates/edit.matter.nat.tmpl:368
 msgid "Colors"
 msgstr ""
 
-#: templates/history.nat.tmpl:74
+#: templates/history.nat.tmpl:64
 msgid "Comment"
 msgstr "Σχόλιο"
 
-#: templates/edit.nat.tmpl:407
+#: templates/edit.nat.tmpl:409
 #, fuzzy
 msgid "Comment settings"
 msgstr "Σχόλια:"
 
-#: templates/copytopic.nat.tmpl:64 templates/edit.nat.tmpl:329
+#: templates/copytopic.nat.tmpl:64 templates/edit.nat.tmpl:332
 #: templates/sidebar.nat.tmpl:58
 #, fuzzy
 msgid "Comments"
 msgstr "Σχόλια:"
 
-#: templates/compare.nat.tmpl:16 templates/history.nat.tmpl:50
+#: templates/compare.nat.tmpl:16 templates/history.nat.tmpl:42
 msgid "Compare"
 msgstr ""
 
-#: templates/print.nat.tmpl:75
+#: templates/print.nat.tmpl:81
 #, fuzzy
 msgid "Confidential"
 msgstr "Σύγκρουση"
 
-#: data/System/SiteMenu.txt:97
+#: data/System/SiteMenu.txt:95
 msgid "Configure Foswiki"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:333 templates/foswiki.nat.tmpl:346
+#: templates/foswiki.nat.tmpl:341 templates/foswiki.nat.tmpl:354
 #, fuzzy
 msgid "Configure e-mail notifications for this topic"
 msgstr "Ειδοποιηθείτε εάν αλλάξει αυτό το θέμα"
@@ -688,7 +699,7 @@ msgstr "Επιβεβαιώστε τη μετονομασία ή μετακίνη
 msgid "Conflict"
 msgstr "Σύγκρουση"
 
-#: templates/edit.matter.nat.tmpl:411
+#: templates/edit.matter.nat.tmpl:422
 msgid "Connect Particles"
 msgstr ""
 
@@ -701,12 +712,12 @@ msgid ""
 "Contact <a href='%1'>the site administrator</a> for any further questions."
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:148
+#: templates/edit.matter.nat.tmpl:150
 #, fuzzy
 msgid "Content"
 msgstr "Αλλαγή γλώσσας"
 
-#: templates/edit.nat.tmpl:92
+#: templates/edit.nat.tmpl:94
 #, fuzzy
 msgid "Content language"
 msgstr "Αλλαγή γλώσσας"
@@ -715,7 +726,7 @@ msgstr "Αλλαγή γλώσσας"
 msgid "Continue and try to rename web?"
 msgstr "Να συνεχίσω και να προσπαθήσω να μετονομάσω τον ιστό;"
 
-#: templates/foswiki.nat.tmpl:239 templates/foswiki.nat.tmpl:240
+#: templates/foswiki.nat.tmpl:244 templates/foswiki.nat.tmpl:245
 msgid "Contributors"
 msgstr ""
 
@@ -724,8 +735,8 @@ msgstr ""
 msgid "Contributors to this topic"
 msgstr "Δημιουργήστε αυτό το θέμα"
 
-#: templates/copytopic.nat.tmpl:80 templates/foswiki.nat.tmpl:408
-#: templates/foswiki.nat.tmpl:409
+#: templates/copytopic.nat.tmpl:80 templates/foswiki.nat.tmpl:416
+#: templates/foswiki.nat.tmpl:417
 msgid "Copy"
 msgstr ""
 
@@ -747,17 +758,17 @@ msgstr "Δεν είναι δυνατή η αποθήκευση του αρχεί
 msgid "Country"
 msgstr "Χώρα:"
 
-#: templates/404.nat.tmpl:46 templates/newtopic.nat.tmpl:23
+#: templates/404.nat.tmpl:45 templates/newtopic.nat.tmpl:24
 #: templates/newtopic.old.tmpl:69 templates/newtopic.old.tmpl:76
 #, fuzzy
 msgid "Create"
 msgstr "Δημιουργία νέου θέματος"
 
-#: templates/foswiki.nat.tmpl:410
+#: templates/foswiki.nat.tmpl:418
 msgid "Create a copy of this topic under a new name"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:285
+#: templates/foswiki.nat.tmpl:291
 msgid "Create a new topic serving as a translation for this topic"
 msgstr ""
 
@@ -766,7 +777,7 @@ msgstr ""
 msgid "Create a new translation"
 msgstr "Δημιουργήστε ένα νέο έγγραφο με βάση το όνομα:"
 
-#: data/System/SiteMenu.txt:111 data/System/SiteMenu.txt:112
+#: data/System/SiteMenu.txt:109 data/System/SiteMenu.txt:110
 #: data/System/WebCreateNewWeb.txt:3 templates/newweb.nat.tmpl:8
 #, fuzzy
 msgid "Create a new web"
@@ -792,12 +803,12 @@ msgstr "Δημιουργήστε το θέμα"
 msgid "Create web"
 msgstr "(μετονομασία)"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:119
+#: data/System/NatSkinChangePasswordViewTemplate.txt:120
 #, fuzzy
 msgid "Current password"
 msgstr "Τρέχοντας κωδικό πρόσβασης"
 
-#: templates/view.nat.tmpl:184
+#: templates/view.nat.tmpl:186
 #, fuzzy
 msgid "Current translation is %1"
 msgstr "Δημιουργήστε ένα νέο έγγραφο με βάση το όνομα:"
@@ -806,24 +817,24 @@ msgstr "Δημιουργήστε ένα νέο έγγραφο με βάση το
 msgid "Currently being edited"
 msgstr ""
 
-#: templates/print.nat.tmpl:76
+#: templates/print.nat.tmpl:82
 msgid "Custom"
 msgstr ""
 
-#: templates/edit.nat.tmpl:40
+#: templates/edit.nat.tmpl:42
 msgid "Czech"
 msgstr ""
 
-#: templates/edit.nat.tmpl:41
+#: templates/edit.nat.tmpl:43
 msgid "Danish"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:123
+#: templates/foswiki.nat.tmpl:128
 #, fuzzy
 msgid "Dark Mode"
 msgstr "Όνομα Σύνδεσης %1"
 
-#: templates/edit.nat.tmpl:287
+#: templates/edit.nat.tmpl:304
 #, fuzzy
 msgid "Data form"
 msgstr "(επεξεργασία φόρμας)"
@@ -832,7 +843,7 @@ msgstr "(επεξεργασία φόρμας)"
 msgid "DataForm"
 msgstr ""
 
-#: templates/history.nat.tmpl:72
+#: templates/history.nat.tmpl:62
 msgid "Date"
 msgstr "Ημερομηνία"
 
@@ -840,8 +851,8 @@ msgstr "Ημερομηνία"
 msgid "Dear %1"
 msgstr ""
 
-#: templates/languageselector.nat.tmpl:14 templates/newtopic.nat.tmpl:100
-#: templates/newtopic.nat.tmpl:243 templates/newtopic.nat.tmpl:56
+#: templates/languageselector.nat.tmpl:14 templates/newtopic.nat.tmpl:104
+#: templates/newtopic.nat.tmpl:253 templates/newtopic.nat.tmpl:58
 #: templates/newtopic.old.tmpl:116
 #, fuzzy
 msgid "Default"
@@ -852,12 +863,12 @@ msgstr "Προεπιλεγμένο πρότυπο"
 msgid "Default topic as defined in WebTopicEditTemplate"
 msgstr "The form should be defined in the topic %1"
 
-#: templates/newtopic.nat.tmpl:213 templates/newtopic.nat.tmpl:58
+#: templates/newtopic.nat.tmpl:223 templates/newtopic.nat.tmpl:60
 #, fuzzy
 msgid "Default wiki content"
 msgstr "Διαγραφή αυτού του θέματος"
 
-#: templates/foswiki.nat.tmpl:219 templates/foswiki.nat.tmpl:220
+#: templates/foswiki.nat.tmpl:224 templates/foswiki.nat.tmpl:225
 #: templates/renamedelete.nat.tmpl:13 templates/renamedelete.nat.tmpl:4
 #: templates/renamedelete.nat.tmpl:6
 msgid "Delete"
@@ -868,7 +879,7 @@ msgstr "Διαγραφή"
 msgid "Delete %1"
 msgstr "Διαγραφή"
 
-#: templates/renametopicdelete.nat.tmpl:1
+#: templates/renametopicdelete.nat.tmpl:6
 #, fuzzy
 msgid "Delete Topic"
 msgstr "Διαγραφή αυτού του θέματος"
@@ -883,7 +894,7 @@ msgstr "Διαγραφή"
 msgid "Delete attachment '%1'"
 msgstr "Διαγραφή συνημμένου"
 
-#: data/System/SiteMenu.txt:114
+#: data/System/SiteMenu.txt:112
 #, fuzzy
 msgid "Delete this web"
 msgstr "Διαγραφή αυτού του θέματος"
@@ -911,11 +922,11 @@ msgstr ""
 msgid "Destination"
 msgstr "Εγγραφή"
 
-#: data/System/SiteMenu.txt:53
+#: data/System/SiteMenu.txt:51
 msgid "Developer docs"
 msgstr ""
 
-#: templates/loginbase.nat.tmpl:67
+#: templates/loginbase.nat.tmpl:62
 #, fuzzy
 msgid "Did you forget your password?"
 msgstr "Ξεχάσατε τον κωδικό σας;"
@@ -924,7 +935,7 @@ msgstr "Ξεχάσατε τον κωδικό σας;"
 msgid "Did you want to [[%1][reset %2's password]]?"
 msgstr "Θα ήθελες να  [[%1][επανατάξης τον κωδικό του %2]];"
 
-#: templates/diffview.nat.tmpl:14 templates/foswiki.nat.tmpl:403
+#: templates/diffview.nat.tmpl:14 templates/foswiki.nat.tmpl:411
 msgid "Diff"
 msgstr ""
 
@@ -939,53 +950,53 @@ msgstr "Διαφορά:"
 msgid "Differences"
 msgstr "Διαφορά:"
 
-#: templates/foswiki.nat.tmpl:357
+#: templates/foswiki.nat.tmpl:365
 msgid "Disable 2FA"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:64 templates/foswiki.nat.tmpl:65
+#: templates/foswiki.nat.tmpl:69 templates/foswiki.nat.tmpl:70
 msgid "Disable admin rights"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:361
+#: templates/foswiki.nat.tmpl:369
 #, fuzzy
 msgid "Disable two-factor authentication"
 msgstr "Ταυτοποίηση Χρήστη Διαχειριστή του Foswiki"
 
-#: templates/edit.nat.tmpl:147
+#: templates/edit.nat.tmpl:149
 msgid "Display settings"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:405
+#: templates/foswiki.nat.tmpl:413
 #, fuzzy
 msgid "Display the most recent change of this topic"
 msgstr ""
 "title='Εκτυπώσιμη έκδοση αυτού του θέματος' accesskey='p'>&Print version"
 
-#: templates/foswiki.nat.tmpl:309
+#: templates/foswiki.nat.tmpl:315
 msgid "Display this topic in PDF format"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:142
+#: templates/foswiki.nat.tmpl:147
 msgid "Display this topic in a printer-friendly manner"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:148
+#: templates/foswiki.nat.tmpl:153
 msgid "Display this topic in a reduced manner"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:120
+#: templates/foswiki.nat.tmpl:125
 #, fuzzy
 msgid "Display this version of the topic"
 msgstr ""
 "title='Εκτυπώσιμη έκδοση αυτού του θέματος' accesskey='p'>&Print version"
 
-#: templates/print.nat.tmpl:63
+#: templates/print.nat.tmpl:69
 #, fuzzy
 msgid "Disposition"
 msgstr "Εγγραφή"
 
-#: templates/loginbase.nat.tmpl:71
+#: templates/loginbase.nat.tmpl:66
 msgid "Do you want to become a registered user?"
 msgstr ""
 
@@ -994,19 +1005,19 @@ msgstr ""
 msgid "Don't forget to check your topic settings."
 msgstr "Μην ξεχάσετε να ελέγξετε τις Ρυθμίσεις του Θέματος σας"
 
-#: templates/foswiki.nat.tmpl:372
+#: templates/foswiki.nat.tmpl:380
 msgid "Download"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:374
+#: templates/foswiki.nat.tmpl:382
 msgid "Download assets from an external url and upload them to this topic"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:373
+#: templates/foswiki.nat.tmpl:381
 msgid "Download external resource"
 msgstr ""
 
-#: templates/print.nat.tmpl:74
+#: templates/print.nat.tmpl:80
 msgid "Draft"
 msgstr ""
 
@@ -1055,80 +1066,75 @@ msgstr ""
 "During save of %1 an error was found by the version control system. "
 "Παρακαλούμε να ειδοποιήσετε τον %2 διαχειριστή σας."
 
-#: templates/edit.nat.tmpl:42
+#: templates/edit.nat.tmpl:44
 msgid "Dutch"
 msgstr ""
 
-#: templates/edit.nat.tmpl:13 templates/foswiki.nat.tmpl:194
+#: templates/edit.nat.tmpl:13 templates/foswiki.nat.tmpl:199
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: templates/foswiki.nat.tmpl:189
-#, fuzzy
-msgid "Edit Raw"
-msgstr "Επεξεργασία"
-
-#: templates/oopsleaseconflict.nat.tmpl:39
+#: templates/oopsleaseconflict.nat.tmpl:34
 #, fuzzy
 msgid "Edit anyway"
 msgstr "Επεξεργασία όπως και να έχει"
 
-#: templates/foswiki.nat.tmpl:199
+#: templates/foswiki.nat.tmpl:204
 #, fuzzy
 msgid "Edit form"
 msgstr "(επεξεργασία φόρμας)"
 
-#: templates/foswiki.nat.tmpl:200
+#: templates/foswiki.nat.tmpl:205
 #, fuzzy
 msgid "Edit form data"
 msgstr "(επεξεργασία φόρμας)"
 
-#: templates/foswiki.nat.tmpl:211
+#: templates/foswiki.nat.tmpl:216
 #, fuzzy
 msgid "Edit hidden preference settings of this topic"
 msgstr "Επεξεργαστείτε τις ρυθμίσεις προτίμησων του θέματος"
 
-#: templates/foswiki.nat.tmpl:210
+#: templates/foswiki.nat.tmpl:194 templates/foswiki.nat.tmpl:195
+#, fuzzy
+msgid "Edit markup"
+msgstr "Δημιουργία νέου θέματος"
+
+#: templates/foswiki.nat.tmpl:215
 #, fuzzy
 msgid "Edit preferences"
 msgstr "(ορισμός προτιμήσεων)"
 
 #: templates/edittext.nat.tmpl:2 templates/edittext.nat.tmpl:3
-#: templates/foswiki.nat.tmpl:204
+#: templates/foswiki.nat.tmpl:209
 msgid "Edit text"
 msgstr "Επεξεργασία κειμένου"
 
-#: templates/foswiki.nat.tmpl:205
+#: templates/foswiki.nat.tmpl:210
 #, fuzzy
 msgid "Edit text data"
 msgstr "Επεξεργασία κειμένου"
 
-#: templates/foswiki.nat.tmpl:201
+#: templates/foswiki.nat.tmpl:206
 #, fuzzy
 msgid "Edit the form data of this topic"
 msgstr "Επεξεργαστείτε τις ρυθμίσεις για αυτό το θέμα"
 
-#: templates/foswiki.nat.tmpl:191
+#: templates/foswiki.nat.tmpl:196
 #, fuzzy
 msgid "Edit the raw text of this topic"
 msgstr "Επεξεργαστείτε τις ρυθμίσεις για αυτό το θέμα"
 
-#: templates/foswiki.nat.tmpl:206
+#: templates/foswiki.nat.tmpl:211
 #, fuzzy
 msgid "Edit the text data of this topic"
 msgstr "Επεξεργαστείτε τις ρυθμίσεις για αυτό το θέμα"
 
-#: templates/foswiki.nat.tmpl:195 templates/foswiki.nat.tmpl:196
+#: templates/foswiki.nat.tmpl:200 templates/foswiki.nat.tmpl:201
 #, fuzzy
 msgid "Edit this topic"
 msgstr "Επεξεργασία αυτού του κειμένου του θέματος"
 
-#: templates/foswiki.nat.tmpl:190
-#, fuzzy
-msgid "Edit wiki markup"
-msgstr "Δημιουργία νέου θέματος"
-
-#: templates/edit.nat.tmpl:118
+#: templates/edit.nat.tmpl:120
 #, fuzzy
 msgid "Editor settings"
 msgstr "Επεξεργασία κειμένου"
@@ -1138,35 +1144,35 @@ msgstr "Επεξεργασία κειμένου"
 msgid "Email"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:274
+#: templates/foswiki.nat.tmpl:280
 #, fuzzy
 msgid "Email this topic"
 msgstr "Επεξεργασία αυτού του κειμένου του θέματος"
 
-#: templates/foswiki.nat.tmpl:273
+#: templates/foswiki.nat.tmpl:279
 #, fuzzy
 msgid "Email topic"
 msgstr "Child topics in %1 web"
 
-#: templates/foswiki.nat.tmpl:358
+#: templates/foswiki.nat.tmpl:366
 msgid "Enable 2FA"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:362
+#: templates/foswiki.nat.tmpl:370
 #, fuzzy
 msgid "Enable two-factor authentication"
 msgstr "Ταυτοποίηση Χρήστη Διαχειριστή του Foswiki"
 
-#: templates/edit.nat.tmpl:43
+#: templates/edit.nat.tmpl:45
 msgid "English"
 msgstr ""
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:86
+#: data/System/NatSkinChangePasswordViewTemplate.txt:87
 #, fuzzy
 msgid "Enter a new password"
 msgstr "Πληκτρολογήστε ξανά το νέο κωδικό πρόσβασης"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:131
+#: data/System/NatSkinChangePasswordViewTemplate.txt:132
 msgid ""
 "Enter a new password. Please don't use a trivial password that could easily "
 "be guessed."
@@ -1183,17 +1189,17 @@ msgstr ""
 msgid "Enter the %WIKITOOLNAME% administrator user or login as set in %1"
 msgstr "Enter the Wiki Administrator user or login as set in %1"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:122
+#: data/System/NatSkinChangePasswordViewTemplate.txt:123
 msgid "Enter the current password for the given !LoginName."
 msgstr ""
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:95
+#: data/System/NatSkinChangePasswordViewTemplate.txt:96
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:62
 #, fuzzy
 msgid "Enter the same password as above"
 msgstr "Παρακαλώ εισάγετε τον κωδικό πρόσβασης του διαχειριστή του Wiki"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:83
+#: data/System/NatSkinChangePasswordViewTemplate.txt:84
 #, fuzzy
 msgid "Enter your current password"
 msgstr "Τρέχοντας κωδικό πρόσβασης"
@@ -1225,7 +1231,7 @@ msgstr "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
 msgid "Errors"
 msgstr "Σφάλματα"
 
-#: templates/print.nat.tmpl:27
+#: templates/print.nat.tmpl:33
 msgid "Export"
 msgstr ""
 
@@ -1233,7 +1239,7 @@ msgstr ""
 msgid "Export to PDF"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:308
+#: templates/foswiki.nat.tmpl:314
 msgid "Export topic to PDF"
 msgstr ""
 
@@ -1241,7 +1247,7 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:312
+#: templates/foswiki.nat.tmpl:320
 msgid "Favorite"
 msgstr ""
 
@@ -1258,21 +1264,26 @@ msgstr "Το αρχείο έχει μεταφορτωθεί με διαφορε�
 msgid "Filter"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:102
+#: templates/renametopicdelete.nat.tmpl:22
+#, fuzzy
+msgid "Finally Delete Topic"
+msgstr "Διαγραφή αυτού του θέματος"
+
+#: templates/foswiki.nat.tmpl:107
 #, fuzzy
 msgid "Find backlinks"
 msgstr "Εισερχόμενοι σύνδεσμοι"
 
-#: templates/foswiki.nat.tmpl:136
+#: templates/foswiki.nat.tmpl:141
 #, fuzzy
 msgid "Find child topics"
 msgstr "Βρείτε παρόμοια θέματα"
 
-#: templates/edit.nat.tmpl:44
+#: templates/edit.nat.tmpl:46
 msgid "Finnish"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:383
+#: templates/foswiki.nat.tmpl:391
 #, fuzzy
 msgid "First"
 msgstr "Μικρό Όνομα:"
@@ -1294,7 +1305,7 @@ msgstr ""
 msgid "Force a new revision"
 msgstr "Εξαναγκασμός νέας αναθεώρησης"
 
-#: templates/edit.matter.nat.tmpl:270
+#: templates/edit.matter.nat.tmpl:272
 msgid "Foreground Color"
 msgstr ""
 
@@ -1306,7 +1317,7 @@ msgstr ""
 msgid "Form-based input"
 msgstr ""
 
-#: data/System/SiteMenu.txt:61
+#: data/System/SiteMenu.txt:59
 msgid "Foswiki FAQ"
 msgstr ""
 
@@ -1315,7 +1326,7 @@ msgstr ""
 msgid "Foswiki Two Factor Authentication"
 msgstr "Ταυτοποίηση Χρήστη Διαχειριστή του Foswiki"
 
-#: templates/edit.matter.nat.tmpl:595
+#: templates/edit.matter.nat.tmpl:606
 #, fuzzy
 msgid "Fraction"
 msgstr "Ενέργεια"
@@ -1326,7 +1337,7 @@ msgid ""
 "automatically."
 msgstr ""
 
-#: templates/edit.nat.tmpl:45
+#: templates/edit.nat.tmpl:47
 msgid "French"
 msgstr ""
 
@@ -1343,19 +1354,19 @@ msgstr ""
 msgid "From Version"
 msgstr "Αναθεωρήσεις"
 
-#: templates/edit.matter.nat.tmpl:141
+#: templates/edit.matter.nat.tmpl:143
 msgid "Full"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:64 templates/foswiki.nat.tmpl:65
+#: templates/foswiki.nat.tmpl:69 templates/foswiki.nat.tmpl:70
 msgid "Gain admin rights"
 msgstr ""
 
-#: templates/edit.nat.tmpl:46
+#: templates/edit.nat.tmpl:48
 msgid "German"
 msgstr ""
 
-#: templates/body.nat.tmpl:85
+#: templates/body.nat.tmpl:84
 msgid "Get a fresh version <a href='%1' rel='nofollow'>here</a>."
 msgstr ""
 
@@ -1386,13 +1397,13 @@ msgstr ""
 "Πηγαίνετε πίσω με το φυλομετρητή σας και να αποθηκεύστε τις αλλαγές σας σε "
 "τοπικό επίπεδο."
 
-#: templates/foswiki.nat.tmpl:390
+#: templates/foswiki.nat.tmpl:398
 #, fuzzy
 msgid "Go to the following version of this topic"
 msgstr ""
 "title='Εκτυπώσιμη έκδοση αυτού του θέματος' accesskey='p'>&Print version"
 
-#: templates/foswiki.nat.tmpl:395
+#: templates/foswiki.nat.tmpl:403
 #, fuzzy
 msgid "Go to the previous version of this topic"
 msgstr ""
@@ -1403,16 +1414,16 @@ msgstr ""
 msgid "Good examples"
 msgstr "Καλά παραδείγματα:"
 
-#: templates/edit.matter.nat.tmpl:330
+#: templates/edit.matter.nat.tmpl:332
 msgid "Gradient Degree"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:339
+#: templates/edit.matter.nat.tmpl:341
 #, fuzzy
 msgid "Gradient Position"
 msgstr "Υφιστάμενη τοποθεσία:"
 
-#: templates/edit.matter.nat.tmpl:319
+#: templates/edit.matter.nat.tmpl:321
 msgid "Gradient Style"
 msgstr ""
 
@@ -1425,15 +1436,15 @@ msgstr "Ονομασία θέματος"
 msgid "Groups"
 msgstr "Ομάδες"
 
-#: templates/edit.matter.nat.tmpl:139
+#: templates/edit.matter.nat.tmpl:141
 msgid "Half"
 msgstr ""
 
-#: templates/404.nat.tmpl:42
+#: templates/404.nat.tmpl:41
 msgid "Have a look at the list of all pages in this web."
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:133
+#: templates/edit.matter.nat.tmpl:135
 msgid "Height"
 msgstr ""
 
@@ -1442,8 +1453,8 @@ msgstr ""
 msgid "Hello"
 msgstr ""
 
-#: data/System/SiteMenu.txt:48 templates/changeform.nat.tmpl:4
-#: templates/foswiki.nat.tmpl:303 templates/moveattachment.nat.tmpl:3
+#: data/System/SiteMenu.txt:46 templates/changeform.nat.tmpl:4
+#: templates/foswiki.nat.tmpl:309 templates/moveattachment.nat.tmpl:3
 #: templates/renamesidebar.nat.tmpl:1 templates/renamewebbase.nat.tmpl:4
 #: templates/topbar.customato.nat.tmpl:80
 msgid "Help"
@@ -1454,7 +1465,7 @@ msgstr "Βοήθεια"
 msgid "Hiding attachments"
 msgstr "Μετακίνηση ή διαγραφή συνημμένου"
 
-#: data/System/SiteTopicActions.txt:56 templates/foswiki.nat.tmpl:234
+#: data/System/SiteTopicActions.txt:57 templates/foswiki.nat.tmpl:239
 #: templates/oopshistory.nat.tmpl:4 templates/oopshistory.nat.tmpl:6
 msgid "History"
 msgstr "Ιστορικό"
@@ -1467,22 +1478,22 @@ msgstr ""
 "Ωστόσο, το όνομα του αρχείου έχει αλλάξει από %1 σε %2. Παρακαλώ σημειώστε "
 "το."
 
-#: templates/404.nat.tmpl:23
+#: templates/404.nat.tmpl:22
 msgid "I am afraid this page slipped between the cracks."
 msgstr ""
 
-#: templates/oopsleaseconflict.nat.tmpl:32
+#: templates/oopsleaseconflict.nat.tmpl:28
 msgid "If unsure, click 'Cancel'."
 msgstr ""
 
-#: templates/validate.nat.tmpl:28
+#: templates/validate.nat.tmpl:27
 msgid ""
 "If you are unsure what this means, read <a href='%1' "
 "class='foswikiPopUp'>why you are being asked to confirm</a>"
 msgstr ""
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:66
-#: data/System/NatSkinChangePasswordViewTemplate.txt:103
+#: data/System/NatSkinChangePasswordViewTemplate.txt:104
 msgid "If you have any questions, please contact %1"
 msgstr "Αν έχετε οποιεσδήποτε απορίες, παρακαλώ επικοινωνήστε με %1"
 
@@ -1502,7 +1513,7 @@ msgstr "Εάν θέλετε να δημιουργήσετε το θέμα"
 msgid "If you want to create the topic then [[%1][click here]]."
 msgstr "Εάν θέλετε να δημιουργήσετε το θέμα"
 
-#: templates/edit.matter.nat.tmpl:371
+#: templates/edit.matter.nat.tmpl:382
 msgid "Image"
 msgstr ""
 
@@ -1523,7 +1534,7 @@ msgstr ""
 "Σε συγκεκριμένες περιπτώσεις, το σύστημα αλλάζει το όνομα του αρχείου για να "
 "το κάνει ασφαλές και προσβάσιμο από όλα τα συστήματα:"
 
-#: templates/foswiki.nat.tmpl:45
+#: templates/foswiki.nat.tmpl:50
 msgid "Inbox"
 msgstr ""
 
@@ -1536,7 +1547,7 @@ msgstr "Εσφαλμένο %1"
 msgid "Incorrect Password"
 msgstr "Εσφαλμένος κωδικός"
 
-#: templates/404.nat.tmpl:41 templates/sidebar.nat.tmpl:55
+#: templates/404.nat.tmpl:40 templates/sidebar.nat.tmpl:55
 msgid "Index"
 msgstr "Κατάλογος"
 
@@ -1549,11 +1560,11 @@ msgstr "Καθαρισμός όλων"
 msgid "Installation Error"
 msgstr ""
 
-#: data/System/SiteMenu.txt:55
+#: data/System/SiteMenu.txt:53
 msgid "Installed plugins"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:279 templates/languageselector.nat.tmpl:4
+#: templates/foswiki.nat.tmpl:285 templates/languageselector.nat.tmpl:4
 #, fuzzy
 msgid "Interface language"
 msgstr "Αλλαγή γλώσσας"
@@ -1583,21 +1594,21 @@ msgid ""
 "check with [[%1]] first."
 msgstr ""
 
-#: templates/edit.nat.tmpl:47
+#: templates/edit.nat.tmpl:49
 msgid "Italian"
 msgstr ""
 
-#: templates/edit.nat.tmpl:48
+#: templates/edit.nat.tmpl:50
 msgid "Japanese"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:385
+#: templates/foswiki.nat.tmpl:393
 #, fuzzy
 msgid "Jump to the first version of this topic"
 msgstr ""
 "title='Εκτυπώσιμη έκδοση αυτού του θέματος' accesskey='p'>&Print version"
 
-#: templates/foswiki.nat.tmpl:400
+#: templates/foswiki.nat.tmpl:408
 #, fuzzy
 msgid "Jump to the most recent version of this topic"
 msgstr ""
@@ -1607,24 +1618,24 @@ msgstr ""
 msgid "Just start from the beginning."
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:386
+#: templates/edit.matter.nat.tmpl:397
 msgid "Kenburns Effect"
 msgstr ""
 
-#: templates/edit.nat.tmpl:49
+#: templates/edit.nat.tmpl:51
 msgid "Korean"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:278 templates/languageselector.nat.tmpl:12
+#: templates/foswiki.nat.tmpl:284 templates/languageselector.nat.tmpl:12
 #, fuzzy
 msgid "Language"
 msgstr "Ελληνικά"
 
-#: templates/foswiki.nat.tmpl:398
+#: templates/foswiki.nat.tmpl:406
 msgid "Last"
 msgstr ""
 
-#: data/System/NatSkinStyleBrowser.txt:34 templates/edit.nat.tmpl:194
+#: data/System/NatSkinStyleBrowser.txt:34 templates/edit.nat.tmpl:198
 msgid "Layout"
 msgstr ""
 
@@ -1632,20 +1643,20 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:157
+#: templates/foswiki.nat.tmpl:162
 msgid "Like"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:158
+#: templates/foswiki.nat.tmpl:163
 #, fuzzy
 msgid "Like this topic"
 msgstr "Δημιουργήστε αυτό το θέμα"
 
-#: templates/foswiki.nat.tmpl:159
+#: templates/foswiki.nat.tmpl:164
 msgid "Liked"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:160
+#: templates/foswiki.nat.tmpl:165
 #, fuzzy
 msgid "Liked this topic"
 msgstr "Δημιουργήστε αυτό το θέμα"
@@ -1655,12 +1666,12 @@ msgstr "Δημιουργήστε αυτό το θέμα"
 msgid "Linking to attachments"
 msgstr "Μετακίνηση ή διαγραφή συνημμένου"
 
-#: templates/foswiki.nat.tmpl:103
+#: templates/foswiki.nat.tmpl:108
 #, fuzzy
 msgid "List other topics linking to this topic"
 msgstr "Επεξεργαστείτε τις ρυθμίσεις για αυτό το θέμα"
 
-#: templates/foswiki.nat.tmpl:137
+#: templates/foswiki.nat.tmpl:142
 #, fuzzy
 msgid "List topics that branch off this topic"
 msgstr "Λίστα θεμάτων που ξεκινούν με το γράμμα:"
@@ -1670,17 +1681,17 @@ msgstr "Λίστα θεμάτων που ξεκινούν με το γράμμα
 msgid "Locked topics"
 msgstr "Στο θέμα:"
 
-#: templates/foswiki.nat.tmpl:49 templates/loginbase.nat.tmpl:60
+#: templates/foswiki.nat.tmpl:54 templates/loginbase.nat.tmpl:55
 #: templates/topbar.customato.nat.tmpl:118
 msgid "Log in"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:50
+#: templates/foswiki.nat.tmpl:55
 #, fuzzy
 msgid "Log in to %1."
 msgstr "Επιστροφή στο %1."
 
-#: templates/foswiki.nat.tmpl:54 templates/foswiki.nat.tmpl:55
+#: templates/foswiki.nat.tmpl:59 templates/foswiki.nat.tmpl:60
 #: templates/topbar.customato.nat.tmpl:72
 msgid "Log out"
 msgstr ""
@@ -1728,7 +1739,7 @@ msgstr ""
 msgid "Manage bookmarks"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:379
+#: templates/foswiki.nat.tmpl:387
 #, fuzzy
 msgid "Manage tags in this web"
 msgstr "Αναζήτησε περισσότερα θέματα σε αυτόν τον ιστό"
@@ -1742,21 +1753,21 @@ msgstr "Τροποποίηση θέματος"
 msgid "Managing webs"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:425
+#: templates/edit.matter.nat.tmpl:436
 msgid "Maximum Particles"
 msgstr ""
 
-#: templates/404.nat.tmpl:24
+#: templates/404.nat.tmpl:23
 msgid ""
 "Maybe you simply got here by accident. Then move back in your browser and "
 "try something else."
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:137
+#: templates/edit.matter.nat.tmpl:139
 msgid "Medium"
 msgstr ""
 
-#: data/System/NatSkinStyleBrowser.txt:47 templates/edit.nat.tmpl:220
+#: data/System/NatSkinStyleBrowser.txt:47 templates/edit.nat.tmpl:224
 msgid "Menu"
 msgstr ""
 
@@ -1772,21 +1783,21 @@ msgstr ""
 msgid "Missing or illegal web name"
 msgstr ""
 
-#: templates/edit.nat.tmpl:428
+#: templates/edit.nat.tmpl:429
 #, fuzzy
 msgid "Moderation"
 msgstr "Κοινοποιήσεις"
 
-#: templates/edit.nat.tmpl:50
+#: templates/edit.nat.tmpl:52
 msgid "Modern Greek"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:288
+#: templates/foswiki.nat.tmpl:294
 #, fuzzy
 msgid "More"
 msgstr "Περισσότερα ..."
 
-#: templates/foswiki.nat.tmpl:229
+#: templates/foswiki.nat.tmpl:234
 msgid "Move"
 msgstr "Μετακίνηση"
 
@@ -1805,17 +1816,17 @@ msgstr "Μετακίνηση συννημένου"
 msgid "Move this topic into the %1 web"
 msgstr "Μετακινήστε το θέμα στον ιστό:"
 
-#: templates/foswiki.nat.tmpl:226
+#: templates/foswiki.nat.tmpl:231
 #, fuzzy
 msgid "Move this topic to the archive"
 msgstr "Μετακινήστε το θέμα στον ιστό:"
 
-#: templates/foswiki.nat.tmpl:221
+#: templates/foswiki.nat.tmpl:226
 #, fuzzy
 msgid "Move this topic to the trash"
 msgstr "Μετακινήστε το θέμα στον ιστό:"
 
-#: data/System/SiteMenu.txt:114
+#: data/System/SiteMenu.txt:112
 #, fuzzy
 msgid "Move this web to the trash"
 msgstr "Μετακινήστε το θέμα στον ιστό:"
@@ -1825,7 +1836,7 @@ msgstr "Μετακινήστε το θέμα στον ιστό:"
 msgid "Moving attachments"
 msgstr "Συνημμένα θέματος"
 
-#: templates/foswiki.nat.tmpl:84 templates/foswiki.nat.tmpl:85
+#: templates/foswiki.nat.tmpl:89 templates/foswiki.nat.tmpl:90
 msgid "My Account"
 msgstr ""
 
@@ -1852,7 +1863,7 @@ msgstr "Ονομασία θέματος"
 msgid "Name of new web is missing"
 msgstr "Λείπει το όνομα του νέου ιστού"
 
-#: templates/foswiki.nat.tmpl:298
+#: templates/foswiki.nat.tmpl:304
 #, fuzzy
 msgid "New"
 msgstr "Νέο"
@@ -1877,12 +1888,12 @@ msgstr "Νέα ή αλλαγμένα θέματα στο %1, από την %2:"
 msgid "New parent web"
 msgstr "Νέος γονεϊκός ιστός:"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:127
+#: data/System/NatSkinChangePasswordViewTemplate.txt:128
 #, fuzzy
 msgid "New password"
 msgstr "Νέος κωδικός πρόσβασης"
 
-#: templates/foswiki.nat.tmpl:299 templates/foswiki.nat.tmpl:300
+#: templates/foswiki.nat.tmpl:305 templates/foswiki.nat.tmpl:306
 #: templates/newtopic.nat.tmpl:4 templates/translatetopic.nat.tmpl:139
 #, fuzzy
 msgid "New topic"
@@ -1897,11 +1908,11 @@ msgstr "Το νέο όνομα %1 του θέματος δεν είναι %2"
 msgid "New web name"
 msgstr "Νέο όνομα ιστού:"
 
-#: templates/foswiki.nat.tmpl:388
+#: templates/foswiki.nat.tmpl:396
 msgid "Next"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:21
+#: templates/newtopic.nat.tmpl:22
 msgid "Next step"
 msgstr ""
 
@@ -1909,7 +1920,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: templates/childtopics.nat.tmpl:102 templates/childtopics.nat.tmpl:56
+#: templates/childtopics.nat.tmpl:103 templates/childtopics.nat.tmpl:56
 #: templates/childtopics.nat.tmpl:76
 #, fuzzy
 msgid "No child topics"
@@ -1920,10 +1931,11 @@ msgstr "No child topics"
 msgid "No permission"
 msgstr "Αναθεωρήσεις"
 
-#: templates/renametopicarchive.nat.tmpl:13
-#: templates/renametopicdelete.nat.tmpl:14
-#: templates/renamewebdelete.nat.tmpl:15 templates/restoretopic.nat.tmpl:14
-#: templates/user.nat.tmpl:176
+#: templates/renametopicarchive.nat.tmpl:15
+#: templates/renametopicdelete.nat.tmpl:19
+#: templates/renametopicdelete.nat.tmpl:37
+#: templates/renamewebdelete.nat.tmpl:16 templates/restoretopic.nat.tmpl:15
+#: templates/user.nat.tmpl:197
 msgid "No, thanks"
 msgstr ""
 
@@ -1931,11 +1943,11 @@ msgstr ""
 msgid "Nobody contributed to this topic."
 msgstr ""
 
-#: templates/print.nat.tmpl:73
+#: templates/print.nat.tmpl:79
 msgid "None"
 msgstr ""
 
-#: templates/edit.nat.tmpl:51
+#: templates/edit.nat.tmpl:53
 msgid "Norwegian"
 msgstr ""
 
@@ -1952,6 +1964,10 @@ msgstr ""
 "Σημειώστε ότι οι όποιες διευθύνσεις URL που αναφέρονται στο συνημμένο θα "
 "διαταραχθούν μετά από αυτή την κίνηση."
 
+#: templates/renametopicdelete.nat.tmpl:35
+msgid "Note that this action cannot be undone."
+msgstr ""
+
 #: templates/renamebase.nat.tmpl:76
 msgid "Note that you may change the title from within the editor as well."
 msgstr ""
@@ -1967,7 +1983,7 @@ msgstr "Το θέμα %1 δεν υπάρχει"
 msgid "Notes"
 msgstr "Σημειώσεις:"
 
-#: templates/foswiki.nat.tmpl:413
+#: templates/foswiki.nat.tmpl:421
 msgid "Nothing found. Try again!"
 msgstr ""
 
@@ -1977,7 +1993,7 @@ msgstr "Κοινοποιήσεις"
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:97
 #: data/System/NatSkinChangePasswordViewTemplate.txt:39
-#: data/System/NatSkinResetPasswordViewTemplate.txt:71
+#: data/System/NatSkinResetPasswordViewTemplate.txt:72
 #: data/System/NatSkinStyleBrowser.txt:54 templates/changeform.nat.tmpl:38
 #: templates/messages.nat.tmpl:101 templates/messages.nat.tmpl:253
 #: templates/messages.nat.tmpl:273 templates/moveattachment.nat.tmpl:64
@@ -1995,7 +2011,7 @@ msgstr ""
 msgid "On"
 msgstr ""
 
-#: data/System/SiteMenu.txt:60
+#: data/System/SiteMenu.txt:58
 msgid "Online support forum"
 msgstr ""
 
@@ -2003,7 +2019,7 @@ msgstr ""
 msgid "Only members of the %1 are allowed to perform this action."
 msgstr "Μόνο μέλη του %1 επιτρέπεται να εκτελέσουν αυτή την ενέργεια."
 
-#: templates/foswiki.nat.tmpl:175
+#: templates/foswiki.nat.tmpl:180
 #, fuzzy
 msgid "Open a channel to talk about this topic"
 msgstr "Εκτύπωση αυτού του θέματος"
@@ -2014,16 +2030,16 @@ msgid "Optional information"
 msgstr "Διαθέσιμες πληροφορίες"
 
 #: data/System/NatSkinRemoveUserViewTemplate.txt:32
-#: templates/copytopic.nat.tmpl:72 templates/email.nat.tmpl:21
+#: templates/copytopic.nat.tmpl:72 templates/email.nat.tmpl:20
 #, fuzzy
 msgid "Options"
 msgstr "Ενέργεια"
 
-#: templates/404.nat.tmpl:57
+#: templates/404.nat.tmpl:56
 msgid "Or just start from the beginning."
 msgstr ""
 
-#: templates/404.nat.tmpl:25
+#: templates/404.nat.tmpl:24
 msgid "Or you'd like to proceed as follows:"
 msgstr ""
 
@@ -2037,7 +2053,7 @@ msgstr "Ονομασία οργανισμού:"
 msgid "Organisation URL"
 msgstr "URL του οργανισμού:"
 
-#: templates/print.nat.tmpl:50
+#: templates/print.nat.tmpl:56
 #, fuzzy
 msgid "Orientation"
 msgstr "Υφιστάμενη τοποθεσία:"
@@ -2046,28 +2062,23 @@ msgstr "Υφιστάμενη τοποθεσία:"
 msgid "Others"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:307
+#: templates/foswiki.nat.tmpl:313
 msgid "PDF"
 msgstr ""
 
-#: templates/edit.nat.tmpl:109
+#: templates/edit.nat.tmpl:111
 msgid "Page Caching"
 msgstr ""
 
-#: templates/404.nat.tmpl:20 templates/404.nat.tmpl:4
+#: templates/404.nat.tmpl:19 templates/404.nat.tmpl:4
 msgid "Page not found"
 msgstr ""
 
-#: templates/print.nat.tmpl:32
+#: templates/print.nat.tmpl:38
 msgid "Page size"
 msgstr ""
 
-#: templates/edit.nat.tmpl:315
-#, fuzzy
-msgid "Pagination"
-msgstr "Εγγραφή"
-
-#: templates/edit.matter.nat.tmpl:221
+#: templates/edit.matter.nat.tmpl:223
 msgid "Parallax Effect"
 msgstr ""
 
@@ -2075,16 +2086,16 @@ msgstr ""
 msgid "Parent"
 msgstr ""
 
-#: templates/edit.nat.tmpl:85
+#: templates/edit.nat.tmpl:87
 #, fuzzy
 msgid "Parent topic"
 msgstr "Τροποποίηση θέματος"
 
-#: templates/edit.matter.nat.tmpl:405
+#: templates/edit.matter.nat.tmpl:416
 msgid "Particle Color"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:397
+#: templates/edit.matter.nat.tmpl:408
 msgid "Particles"
 msgstr ""
 
@@ -2094,7 +2105,7 @@ msgstr ""
 
 #: data/Main/WebLinks.txt:11
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:88
-#: templates/foswiki.nat.tmpl:263 templates/loginbase.nat.tmpl:43
+#: templates/foswiki.nat.tmpl:269 templates/loginbase.nat.tmpl:38
 #: templates/mailresetpassword.nat.tmpl:16
 #: templates/topbar.customato.nat.tmpl:148
 msgid "Password"
@@ -2109,7 +2120,7 @@ msgstr "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
 msgid "Password changed successfully!"
 msgstr "Ο κωδικός πρόσβασης άλλαξε με επιτυχία!"
 
-#: data/System/SiteMenu.txt:58
+#: data/System/SiteMenu.txt:56
 #, fuzzy
 msgid "Password forgotten"
 msgstr "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
@@ -2127,21 +2138,21 @@ msgstr ""
 msgid "Passwords do not match"
 msgstr "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
 
-#: templates/edit.matter.nat.tmpl:124
+#: templates/edit.matter.nat.tmpl:126
 #, fuzzy
 msgid "Pexels Image"
 msgstr "Κατηγορίες"
 
-#: templates/edit.matter.nat.tmpl:471
+#: templates/edit.matter.nat.tmpl:482
 msgid "Pexels Random"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:465
+#: templates/edit.matter.nat.tmpl:476
 #, fuzzy
 msgid "Pexels Search"
 msgstr "Αναζήτηση μέσω Ερωτήματος"
 
-#: templates/edit.matter.nat.tmpl:125
+#: templates/edit.matter.nat.tmpl:127
 #, fuzzy
 msgid "Pexels Video"
 msgstr "Κατηγορίες"
@@ -2150,44 +2161,44 @@ msgstr "Κατηγορίες"
 msgid "Pick one of the %1."
 msgstr "Διαλέξτε έναν από τα %1."
 
-#: templates/edit.matter.nat.tmpl:503
+#: templates/edit.matter.nat.tmpl:514
 #, fuzzy
 msgid "Pixabay Category"
 msgstr "Κατηγορίες"
 
-#: templates/edit.matter.nat.tmpl:531
+#: templates/edit.matter.nat.tmpl:542
 #, fuzzy
 msgid "Pixabay Editor's Choice"
 msgstr "Επεξεργασία αυτού του κειμένου του θέματος"
 
-#: templates/edit.matter.nat.tmpl:121
+#: templates/edit.matter.nat.tmpl:123
 #, fuzzy
 msgid "Pixabay Image"
 msgstr "Κατηγορίες"
 
-#: templates/edit.matter.nat.tmpl:545
+#: templates/edit.matter.nat.tmpl:556
 msgid "Pixabay Random"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:539
+#: templates/edit.matter.nat.tmpl:550
 #, fuzzy
 msgid "Pixabay Search"
 msgstr "Αναζήτηση"
 
-#: templates/edit.matter.nat.tmpl:482 templates/edit.matter.nat.tmpl:493
+#: templates/edit.matter.nat.tmpl:493 templates/edit.matter.nat.tmpl:504
 msgid "Pixabay Type"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:122
+#: templates/edit.matter.nat.tmpl:124
 #, fuzzy
 msgid "Pixabay Video"
 msgstr "Κατηγορίες"
 
-#: templates/foswiki.nat.tmpl:146
+#: templates/foswiki.nat.tmpl:151
 msgid "Plain"
 msgstr ""
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:91
+#: data/System/NatSkinChangePasswordViewTemplate.txt:92
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:58
 #, fuzzy
 msgid "Please add at least one special character"
@@ -2205,7 +2216,7 @@ msgstr ""
 msgid "Please enter a valid e-mail address"
 msgstr "Άκυρη διεύθυνση e-mail"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:87
+#: data/System/NatSkinChangePasswordViewTemplate.txt:88
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:44
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:54
 #, fuzzy
@@ -2250,7 +2261,7 @@ msgstr ""
 "Ένα μήνυμα ηλεκτρονικού ταχυδρομείου δεν μπόρεσε να παραδοθεί. Παρακαλώ "
 "ενημερώστε τον διαχειριστή %1, %2"
 
-#: templates/newtopic.nat.tmpl:118
+#: templates/newtopic.nat.tmpl:123
 #, fuzzy
 msgid "Please select a Template"
 msgstr "Προεπιλεγμένο πρότυπο"
@@ -2259,7 +2270,7 @@ msgstr "Προεπιλεγμένο πρότυπο"
 msgid "Please select the groups you want to join."
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:85
+#: templates/newtopic.nat.tmpl:89
 msgid "Please select the type of content you'd like to create"
 msgstr ""
 
@@ -2273,21 +2284,21 @@ msgstr "Παρακαλώ εισάγετε τον κωδικό πρόσβασης
 msgid "Please use a valid WikiWord"
 msgstr "Άκυρη διεύθυνση e-mail"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:88
+#: data/System/NatSkinChangePasswordViewTemplate.txt:89
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:55
 #, fuzzy
 msgid "Please use at least one digit"
 msgstr ""
 "Αυτό το site αυτό απαιτεί κωδικούς πρόσβασης με τουλάχιστον %1 χαρακτήρες"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:90
+#: data/System/NatSkinChangePasswordViewTemplate.txt:91
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:57
 #, fuzzy
 msgid "Please use lower case characters"
 msgstr ""
 "Αυτό το site αυτό απαιτεί κωδικούς πρόσβασης με τουλάχιστον %1 χαρακτήρες"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:89
+#: data/System/NatSkinChangePasswordViewTemplate.txt:90
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:56
 #, fuzzy
 msgid "Please use upper case characters"
@@ -2299,20 +2310,20 @@ msgid ""
 "Please visit %1 to change your password to something more memorable for you."
 msgstr ""
 
-#: templates/edit.nat.tmpl:52
+#: templates/edit.nat.tmpl:54
 msgid "Polish"
 msgstr ""
 
-#: templates/edit.nat.tmpl:53
+#: templates/edit.nat.tmpl:55
 msgid "Portuguese"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:448
+#: templates/foswiki.nat.tmpl:456
 #, fuzzy
 msgid "Powered by Foswiki"
 msgstr "Αυτή η ιστοσελίδα λειτουργεί από το Foswiki"
 
-#: templates/copytopic.nat.tmpl:61 templates/foswiki.nat.tmpl:209
+#: templates/copytopic.nat.tmpl:61 templates/foswiki.nat.tmpl:214
 #: templates/sidebar.nat.tmpl:62
 msgid "Preferences"
 msgstr "Προτιμήσεις"
@@ -2327,19 +2338,19 @@ msgstr "Προτιμήσεις"
 msgid "Preserver author and revision information"
 msgstr "Διαθέσιμες πληροφορίες"
 
-#: templates/validate.nat.tmpl:26
+#: templates/validate.nat.tmpl:24
 msgid "Press Cancel otherwise."
 msgstr "Ειδάλως πιέστε Ακύρωση."
 
-#: templates/validate.nat.tmpl:25
+#: templates/validate.nat.tmpl:23
 msgid "Press OK to confirm that this change was intentional."
 msgstr "Πατήστε ΟΚ για να επιβεβαιώσετε ότι η αλλαγή αυτή ήταν εσκεμμένη."
 
-#: templates/foswiki.nat.tmpl:393
+#: templates/foswiki.nat.tmpl:401
 msgid "Previous"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:140
+#: templates/foswiki.nat.tmpl:145
 msgid "Print"
 msgstr "Εκτύπωση"
 
@@ -2347,7 +2358,7 @@ msgstr "Εκτύπωση"
 msgid "Processing ..."
 msgstr ""
 
-#: data/System/SiteMenu.txt:62
+#: data/System/SiteMenu.txt:60
 msgid "Professional help"
 msgstr ""
 
@@ -2356,25 +2367,25 @@ msgstr ""
 msgid "Profile Page"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:594
+#: templates/edit.matter.nat.tmpl:605
 msgid "Progress Bar"
 msgstr ""
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:129
+#: data/System/NatSkinChangePasswordViewTemplate.txt:130
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:131
 #, fuzzy
 msgid "Random password"
 msgstr "Κακός κωδικός"
 
-#: templates/foswiki.nat.tmpl:179
+#: templates/foswiki.nat.tmpl:184
 msgid "Raw"
 msgstr "Αδιαμόρφωτο"
 
-#: templates/edit.matter.nat.tmpl:241
+#: templates/edit.matter.nat.tmpl:243
 msgid "Raw CSS"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:184 templates/foswiki.nat.tmpl:185
+#: templates/foswiki.nat.tmpl:189 templates/foswiki.nat.tmpl:190
 msgid "Raw data"
 msgstr ""
 
@@ -2388,27 +2399,27 @@ msgstr "Επανάταξη Κωδικού Πρόσβασης"
 msgid "Recent Changes"
 msgstr "Πρόσφατα τροποποιημένα θέματα"
 
-#: templates/email.nat.tmpl:15
+#: templates/email.nat.tmpl:14
 msgid "Recipient"
 msgstr ""
-
-#: templates/view.nat.tmpl:201
-#, fuzzy
-msgid "Redirect from %1"
-msgstr "Αποτελέσματα από ιστό %1"
 
 #: data/System/WebLinks.txt:10 templates/topbar.customato.nat.tmpl:84
 #, fuzzy
 msgid "Reference Manual"
 msgstr "User Reference"
 
-#: data/System/SiteMenu.txt:54
+#: data/System/SiteMenu.txt:52
 #, fuzzy
 msgid "Reference manual"
 msgstr "User Reference"
 
+#: templates/edit.nat.tmpl:290
+#, fuzzy
+msgid "References"
+msgstr "Προτιμήσεις"
+
 #: data/System/NatSkinUserRegistrationViewTemplate.txt:77
-#: templates/foswiki.nat.tmpl:59
+#: templates/foswiki.nat.tmpl:64
 msgid "Register"
 msgstr "Εγγραφή"
 
@@ -2417,7 +2428,7 @@ msgstr "Εγγραφή"
 msgid "Registration"
 msgstr "Εγγραφή"
 
-#: templates/loginbase.nat.tmpl:54 templates/topbar.customato.nat.tmpl:160
+#: templates/loginbase.nat.tmpl:49 templates/topbar.customato.nat.tmpl:160
 msgid "Remember me on this computer"
 msgstr "Να με θυμάσαι σε αυτόν τον υπολογιστή"
 
@@ -2430,7 +2441,7 @@ msgstr "Θυμάστε τον κωδικό σας;"
 msgid "Remove"
 msgstr "Μετονομάσετε ή μετακινήστε το θέμα"
 
-#: templates/foswiki.nat.tmpl:321 templates/foswiki.nat.tmpl:328
+#: templates/foswiki.nat.tmpl:329 templates/foswiki.nat.tmpl:336
 #, fuzzy
 msgid "Remove from favorites"
 msgstr "Στο μενού μου"
@@ -2444,12 +2455,12 @@ msgstr ""
 msgid "Remove this topic from bookmarks"
 msgstr "Μετακινήστε το θέμα στον ιστό:"
 
-#: templates/foswiki.nat.tmpl:258
+#: templates/foswiki.nat.tmpl:264
 msgid "Remove user"
 msgstr ""
 
 #: data/System/NatSkinRemoveUserViewTemplate.txt:47
-#: templates/foswiki.nat.tmpl:259 templates/user.nat.tmpl:156
+#: templates/foswiki.nat.tmpl:265 templates/user.nat.tmpl:177
 #, fuzzy
 msgid "Remove user account"
 msgstr "Στο μενού μου"
@@ -2459,7 +2470,7 @@ msgstr "Στο μενού μου"
 msgid "Remove user account?"
 msgstr "Στο μενού μου"
 
-#: templates/user.nat.tmpl:160
+#: templates/user.nat.tmpl:181
 msgid "Removing ..."
 msgstr ""
 
@@ -2473,7 +2484,7 @@ msgstr "Μετονομασία"
 msgid "Rename failed"
 msgstr "Η μετονομασία απέτυχε"
 
-#: templates/foswiki.nat.tmpl:230
+#: templates/foswiki.nat.tmpl:235
 #, fuzzy
 msgid "Rename or move"
 msgstr "Μετονομάσετε ή μετακινήστε το θέμα"
@@ -2488,7 +2499,7 @@ msgstr "Μετονομάσετε ή μετακινήστε το θέμα"
 msgid "Rename the %1 web"
 msgstr "Καλώς ήλθατε στον ιστό %1"
 
-#: data/System/SiteMenu.txt:115
+#: data/System/SiteMenu.txt:113
 #, fuzzy
 msgid "Rename this web"
 msgstr "Καλώς ήλθατε στον ιστό %1"
@@ -2498,12 +2509,12 @@ msgstr "Καλώς ήλθατε στον ιστό %1"
 msgid "Rename, merge or delete tags"
 msgstr "Μετονομασία, μετακίνηση ή διαγραφή αυτού του ιστού:"
 
-#: templates/foswiki.nat.tmpl:380
+#: templates/foswiki.nat.tmpl:388
 #, fuzzy
 msgid "Rename, merge or delete tags being used in this web"
 msgstr "Μετονομασία, μετακίνηση ή διαγραφή αυτού του ιστού:"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:94
+#: data/System/NatSkinChangePasswordViewTemplate.txt:95
 #, fuzzy
 msgid "Repeat your new password"
 msgstr "Πληκτρολογήστε ξανά το νέο κωδικό πρόσβασης"
@@ -2528,13 +2539,13 @@ msgstr ""
 msgid "Reset password"
 msgstr "Επανάταξη Κωδικού Πρόσβασης"
 
-#: templates/403.nat.tmpl:16 templates/404.nat.tmpl:51
+#: templates/403.nat.tmpl:16 templates/404.nat.tmpl:50
 #, fuzzy
 msgid "Restart"
 msgstr "Επαναφορά"
 
-#: templates/edit.nat.tmpl:13 templates/foswiki.nat.tmpl:214
-#: templates/history.nat.tmpl:95
+#: templates/edit.nat.tmpl:13 templates/foswiki.nat.tmpl:219
+#: templates/history.nat.tmpl:85
 msgid "Restore"
 msgstr "Επαναφορά"
 
@@ -2543,7 +2554,7 @@ msgstr "Επαναφορά"
 msgid "Restore Topic"
 msgstr "Επαναφορά"
 
-#: templates/history.nat.tmpl:94
+#: templates/history.nat.tmpl:84
 #, fuzzy
 msgid "Restore revision %1"
 msgstr "(αναθεώρηση %1)"
@@ -2553,7 +2564,7 @@ msgstr "(αναθεώρηση %1)"
 msgid "Restore topic"
 msgstr "Επαναφορά"
 
-#: templates/foswiki.nat.tmpl:215
+#: templates/foswiki.nat.tmpl:220
 #, fuzzy
 msgid "Restore version"
 msgstr "Επαναφορά θέματος σε αναθεώρηση:"
@@ -2571,7 +2582,7 @@ msgstr "Αποτελέσματα από ιστό %1"
 msgid "Retry"
 msgstr ""
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:135
+#: data/System/NatSkinChangePasswordViewTemplate.txt:136
 #, fuzzy
 msgid "Retype new password"
 msgstr "Πληκτρολογήστε ξανά το νέο κωδικό πρόσβασης"
@@ -2581,21 +2592,21 @@ msgstr "Πληκτρολογήστε ξανά το νέο κωδικό πρόσ�
 msgid "Review recent changes in %1"
 msgstr "Επισκόπηση των πρόσφατων αλλαγών σε:"
 
-#: templates/history.nat.tmpl:71 templates/rdiff.nat.tmpl:41
+#: templates/history.nat.tmpl:61 templates/rdiff.nat.tmpl:41
 msgid "Revision"
 msgstr "Αναθεώρηση"
 
-#: templates/foswiki.nat.tmpl:235
+#: templates/foswiki.nat.tmpl:240
 #, fuzzy
 msgid "Revision History"
 msgstr "Ιστορικό έκδοσης του %1"
 
-#: templates/history.nat.tmpl:15
+#: templates/history.nat.tmpl:13
 #, fuzzy
 msgid "Revision history of %1"
 msgstr "Ιστορικό έκδοσης του %1"
 
-#: templates/edit.nat.tmpl:357
+#: templates/edit.nat.tmpl:360
 #, fuzzy
 msgid "Revision information"
 msgstr "Διαθέσιμες πληροφορίες"
@@ -2604,11 +2615,11 @@ msgstr "Διαθέσιμες πληροφορίες"
 msgid "Right"
 msgstr ""
 
-#: templates/edit.nat.tmpl:54
+#: templates/edit.nat.tmpl:56
 msgid "Russian"
 msgstr ""
 
-#: data/System/SiteMenu.txt:57
+#: data/System/SiteMenu.txt:55
 msgid "Sandbox"
 msgstr ""
 
@@ -2621,7 +2632,7 @@ msgstr "Αποθήκευση στο:"
 msgid "Scroll to top"
 msgstr ""
 
-#: data/System/NatSkinWebSearchViewTemplate.txt:64 templates/404.nat.tmpl:36
+#: data/System/NatSkinWebSearchViewTemplate.txt:64 templates/404.nat.tmpl:35
 #: templates/search.nat.tmpl:26 templates/searchbox.matter.nat.tmpl:4
 #: templates/searchbox.nat.tmpl:3 templates/topbar.matter.nat.tmpl:15
 msgid "Search"
@@ -2654,12 +2665,12 @@ msgstr "Αναζήτηση σε όλους τους ιστούς"
 msgid "Search result for %1"
 msgstr "(αναζήτηση αποτελέσματος)"
 
-#: templates/edit.matter.nat.tmpl:182 templates/view.nat.tmpl:11
+#: templates/edit.matter.nat.tmpl:184 templates/view.nat.tmpl:11
 #, fuzzy
 msgid "Section"
 msgstr "Ενέργεια"
 
-#: templates/foswiki.nat.tmpl:106
+#: templates/foswiki.nat.tmpl:111
 #, fuzzy
 msgid "Sections"
 msgstr "Ενέργεια"
@@ -2669,7 +2680,7 @@ msgstr "Ενέργεια"
 msgid "See also"
 msgstr "Βλέπε επίσης:"
 
-#: templates/edit.matter.nat.tmpl:232
+#: templates/edit.matter.nat.tmpl:234
 msgid "Seed"
 msgstr ""
 
@@ -2683,8 +2694,8 @@ msgid ""
 "browser."
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:280
-msgid "Select a different language for the wiki interface"
+#: templates/foswiki.nat.tmpl:286
+msgid "Select a different language for the user interface"
 msgstr ""
 
 #: templates/renamebase.nat.tmpl:83 templates/renamewebbase.nat.tmpl:68
@@ -2719,15 +2730,15 @@ msgid ""
 "them."
 msgstr ""
 
-#: templates/view.nat.tmpl:185
+#: templates/view.nat.tmpl:187
 msgid "Select translation in %1"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:248 templates/newtopic.old.tmpl:128
+#: templates/newtopic.nat.tmpl:259 templates/newtopic.old.tmpl:128
 msgid "Select which template to use while creating this topic."
 msgstr ""
 
-#: templates/email.nat.tmpl:30
+#: templates/email.nat.tmpl:29
 msgid "Send"
 msgstr ""
 
@@ -2739,30 +2750,30 @@ msgstr ""
 msgid "Set all"
 msgstr "Ορισμός όλων"
 
-#: templates/edit.nat.tmpl:67
+#: templates/edit.nat.tmpl:69
 msgid "Settings"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:152
+#: templates/foswiki.nat.tmpl:157
 msgid "Share"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:153
+#: templates/foswiki.nat.tmpl:158
 #, fuzzy
 msgid "Share this topic"
 msgstr "Τροποποίηση θέματος"
 
-#: templates/foswiki.nat.tmpl:154
+#: templates/foswiki.nat.tmpl:159
 #, fuzzy
 msgid "Share this topic with others"
 msgstr "Τροποποίηση θέματος"
 
-#: data/System/NatSkinStyleBrowser.txt:40 templates/edit.nat.tmpl:249
+#: data/System/NatSkinStyleBrowser.txt:40 templates/edit.nat.tmpl:253
 #, fuzzy
 msgid "Sidebar"
 msgstr "Προσωπικό Μενού"
 
-#: templates/foswiki.nat.tmpl:60
+#: templates/foswiki.nat.tmpl:65
 #, fuzzy
 msgid "Sign on to %1."
 msgstr "Διαλέξτε έναν από τα %1."
@@ -2772,58 +2783,58 @@ msgstr "Διαλέξτε έναν από τα %1."
 msgid "Site Tools"
 msgstr "Εργαλεία"
 
-#: data/System/SiteMenu.txt:96
+#: data/System/SiteMenu.txt:94
 #, fuzzy
 msgid "Site permissions"
 msgstr "Αναθεωρήσεις"
 
-#: data/System/SiteMenu.txt:81
+#: data/System/SiteMenu.txt:79
 #, fuzzy
 msgid "Site preferences"
 msgstr "(ορισμός προτιμήσεων)"
 
-#: templates/edit.matter.nat.tmpl:431
+#: templates/edit.matter.nat.tmpl:442
 #, fuzzy
 msgid "Size Variation"
 msgstr "Εγγραφή"
 
-#: templates/edit.nat.tmpl:168
+#: templates/edit.nat.tmpl:172
 msgid "Skin settings"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:569
+#: templates/edit.matter.nat.tmpl:580
 msgid "Slideshow Delay"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:600
+#: templates/edit.matter.nat.tmpl:611
 #, fuzzy
 msgid "Slideshow Direction"
 msgstr "Εγγραφή"
 
-#: templates/edit.matter.nat.tmpl:581
+#: templates/edit.matter.nat.tmpl:592
 #, fuzzy
 msgid "Slideshow Navigation"
 msgstr "Εγγραφή"
 
-#: templates/edit.matter.nat.tmpl:589
+#: templates/edit.matter.nat.tmpl:600
 #, fuzzy
 msgid "Slideshow Pagination"
 msgstr "Εγγραφή"
 
-#: templates/edit.matter.nat.tmpl:575
+#: templates/edit.matter.nat.tmpl:586
 msgid "Slideshow Speed"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:556
+#: templates/edit.matter.nat.tmpl:567
 #, fuzzy
 msgid "Slideshow Transition"
 msgstr "Εγγραφή"
 
-#: templates/edit.matter.nat.tmpl:136
+#: templates/edit.matter.nat.tmpl:138
 msgid "Small"
 msgstr ""
 
-#: data/System/SiteTopicActions.txt:40
+#: data/System/SiteTopicActions.txt:41
 msgid "Social"
 msgstr ""
 
@@ -2865,7 +2876,7 @@ msgstr "Αλλαγή γλώσσας"
 msgid "Spaces are replaced by underscores"
 msgstr "Τα κενά αντικαθίστανται από underscores"
 
-#: templates/edit.nat.tmpl:55
+#: templates/edit.nat.tmpl:57
 msgid "Spanish"
 msgstr ""
 
@@ -2877,7 +2888,7 @@ msgstr ""
 msgid "Specify one or more space separated emails."
 msgstr ""
 
-#: templates/edit.nat.tmpl:416
+#: templates/edit.nat.tmpl:417
 msgid "State"
 msgstr ""
 
@@ -2885,11 +2896,11 @@ msgstr ""
 msgid "Statistics"
 msgstr "Στατιστικά χρήσης"
 
-#: data/System/NatSkinStyleBrowser.txt:18 templates/edit.nat.tmpl:173
+#: data/System/NatSkinStyleBrowser.txt:18 templates/edit.nat.tmpl:177
 msgid "Style"
 msgstr ""
 
-#: templates/email.nat.tmpl:9
+#: templates/email.nat.tmpl:8
 msgid "Subject"
 msgstr ""
 
@@ -2903,7 +2914,7 @@ msgstr ""
 msgid "Submit"
 msgstr "Υποβολή"
 
-#: templates/foswiki.nat.tmpl:353
+#: templates/foswiki.nat.tmpl:361
 #, fuzzy
 msgid "Subscribe"
 msgstr "Εκτύπωση αυτού του θέματος"
@@ -2912,7 +2923,7 @@ msgstr "Εκτύπωση αυτού του θέματος"
 msgid "Subscribe / Unsubscribe in:"
 msgstr "Συνδρομή / Διαγφραφή Συνδρομής σε:"
 
-#: templates/user.nat.tmpl:186
+#: templates/user.nat.tmpl:207
 msgid "Success"
 msgstr ""
 
@@ -2926,15 +2937,15 @@ msgstr "(%1 σύνδεση)"
 msgid "Summary"
 msgstr "Περιλήψεις"
 
-#: templates/edit.nat.tmpl:56
+#: templates/edit.nat.tmpl:58
 msgid "Swedish"
 msgstr ""
 
-#: templates/edit.nat.tmpl:272 templates/sidebar.nat.tmpl:78
+#: templates/edit.nat.tmpl:276 templates/sidebar.nat.tmpl:78
 msgid "Table of Contents"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:378 templates/sidebar.nat.tmpl:56
+#: templates/foswiki.nat.tmpl:386 templates/sidebar.nat.tmpl:56
 msgid "Tags"
 msgstr ""
 
@@ -2943,7 +2954,7 @@ msgstr ""
 msgid "Target language"
 msgstr "Αλλαγή γλώσσας"
 
-#: templates/newtopic.nat.tmpl:254 templates/newtopic.old.tmpl:112
+#: templates/newtopic.nat.tmpl:265 templates/newtopic.old.tmpl:112
 #, fuzzy
 msgid "Template"
 msgstr "Χρησιμοποιήστε το πρότυπο:"
@@ -2956,17 +2967,17 @@ msgstr "Το Πρότυπο %1 δεν υπάρχει"
 msgid "Template web"
 msgstr ""
 
-#: templates/copytopic.nat.tmpl:59 templates/edit.matter.nat.tmpl:153
-#: templates/edit.matter.nat.tmpl:159
+#: templates/copytopic.nat.tmpl:59 templates/edit.matter.nat.tmpl:155
+#: templates/edit.matter.nat.tmpl:161
 #, fuzzy
 msgid "Text"
 msgstr "Σώμα κειμένου"
 
-#: templates/edit.matter.nat.tmpl:188
+#: templates/edit.matter.nat.tmpl:190
 msgid "Text Alignment"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:197
+#: templates/edit.matter.nat.tmpl:199
 msgid "Text Effect"
 msgstr ""
 
@@ -2978,7 +2989,7 @@ msgstr "Σας ευχαριστούμε για την εγγραφή"
 msgid "Thanks you for participating in this workflow."
 msgstr ""
 
-#: templates/body.nat.tmpl:97
+#: templates/body.nat.tmpl:96
 msgid "That's Fine"
 msgstr ""
 
@@ -3020,9 +3031,10 @@ msgid ""
 msgstr ""
 
 #: templates/oopsleaseconflict.nat.tmpl:17
+#, fuzzy
 msgid ""
-"The chances are good that %1 has simply navigated away from the edit page "
-"without saving."
+"The chances are good that [[%1]] has simply navigated away from the edit "
+"page without saving."
 msgstr ""
 "Οι πιθανότητες είναι ότι ο %1 έχει απλώς πλοηγηθεί μακριά από την σελίδα "
 "επεξεργασίας χωρίς να το αποθηκεύσει."
@@ -3054,12 +3066,12 @@ msgstr ""
 msgid "The new topic chosen must already exist."
 msgstr "Το νέο θέμα που επελέγη πρέπει να υπάρχει ήδη."
 
-#: templates/404.nat.tmpl:37
+#: templates/404.nat.tmpl:36
 #, fuzzy
 msgid "The page might be here under a different name."
 msgstr "Μπορείτε να δώσετε διαφορετικό όνομα σε αυτό τον ιστό."
 
-#: templates/404.nat.tmpl:47
+#: templates/404.nat.tmpl:46
 msgid "The page might be missing but it shouldn't."
 msgstr ""
 
@@ -3098,7 +3110,7 @@ msgstr "Υπάρχουν προβλήματα με τη μετονομασία �
 msgid "There has been a problem adding your user id to the Password system."
 msgstr "There has been a problem adding your user id to the Password system."
 
-#: templates/validate.nat.tmpl:22
+#: templates/validate.nat.tmpl:20
 msgid ""
 "There is a risk that someone may be trying to use your identity to change "
 "content on %1 without your knowledge."
@@ -3110,11 +3122,11 @@ msgstr ""
 msgid "There's a similar page called %1."
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:138
+#: templates/edit.matter.nat.tmpl:140
 msgid "Third"
 msgstr ""
 
-#: data/System/NatSkinUserViewTemplate.txt:61
+#: data/System/NatSkinUserViewTemplate.txt:62
 #, fuzzy
 msgid "This account is inactive."
 msgstr "Διαθέσιμες πληροφορίες"
@@ -3123,11 +3135,11 @@ msgstr "Διαθέσιμες πληροφορίες"
 msgid "This link will only be valid for a brief time nd can only be used once!"
 msgstr ""
 
-#: templates/body.nat.tmpl:83
+#: templates/body.nat.tmpl:82
 msgid "This page was cached on %1."
 msgstr ""
 
-#: templates/body.nat.tmpl:96
+#: templates/body.nat.tmpl:95
 #, fuzzy
 msgid ""
 "This website is using cookies. <a href='%1' target='_blank'>More info</a>."
@@ -3135,7 +3147,7 @@ msgstr ""
 "Get help on <a target='ManagingTopics' class='foswikiPopUp' href='%1' "
 "rel='nofollow'>Renaming and moving topics</a>."
 
-#: templates/edit.matter.nat.tmpl:152 templates/newtopic.nat.tmpl:181
+#: templates/edit.matter.nat.tmpl:154 templates/newtopic.nat.tmpl:185
 #: templates/newtopic.old.tmpl:57 templates/renamebase.nat.tmpl:71
 #: templates/translatetopic.nat.tmpl:135
 #, fuzzy
@@ -3161,12 +3173,12 @@ msgstr "Συνημμένα θέματος"
 msgid "To delete an attachment move it to the %1 topic."
 msgstr "The file has been uploaded and attached properly to the %1 topic."
 
-#: templates/oopsleaseconflict.nat.tmpl:30
+#: templates/oopsleaseconflict.nat.tmpl:26
 #, fuzzy
 msgid "To edit the topic anyway, hit 'Edit Anyway'."
 msgstr "Για να επεξεργαστείτε το θέμα, έτσι κι αλλιώς κάντε κλικ στο κουμπί "
 
-#: templates/oopsleaseconflict.nat.tmpl:31
+#: templates/oopsleaseconflict.nat.tmpl:27
 #, fuzzy
 msgid "To see if they have finished their edit yet, click 'Try Again'"
 msgstr ""
@@ -3183,11 +3195,11 @@ msgstr "Στο θέμα:"
 msgid "To web"
 msgstr "Στον ιστό:"
 
-#: templates/foswiki.nat.tmpl:124 templates/foswiki.nat.tmpl:125
+#: templates/foswiki.nat.tmpl:129 templates/foswiki.nat.tmpl:130
 msgid "Toggle Dark Mode"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:27
+#: templates/newtopic.nat.tmpl:28
 msgid "Toggle layout"
 msgstr ""
 
@@ -3196,28 +3208,28 @@ msgstr ""
 msgid "Toggle sidebar navigation"
 msgstr "Εγγραφή"
 
-#: data/System/SiteTopicActions.txt:22 templates/sidebar.nat.tmpl:54
+#: data/System/SiteTopicActions.txt:23 templates/sidebar.nat.tmpl:54
 #: templates/topbar.customato.nat.tmpl:74
 msgid "Tools"
 msgstr "Εργαλεία"
 
-#: templates/edit.nat.tmpl:234
+#: templates/edit.nat.tmpl:238
 msgid "Top bar"
 msgstr ""
 
 #: templates/changes.nat.tmpl:9 templates/copytopic.nat.tmpl:37
-#: templates/edit.matter.nat.tmpl:154 templates/edit.matter.nat.tmpl:168
+#: templates/edit.matter.nat.tmpl:156 templates/edit.matter.nat.tmpl:170
 #: templates/renamebase.nat.tmpl:65 templates/translatetopic.nat.tmpl:116
 #, fuzzy
 msgid "Topic"
 msgstr "Στο θέμα:"
 
-#: templates/edit.nat.tmpl:385
+#: templates/edit.nat.tmpl:388
 #, fuzzy
 msgid "Topic Title"
 msgstr "Τίτλος θέματος"
 
-#: templates/edit.nat.tmpl:343
+#: templates/edit.nat.tmpl:346
 #, fuzzy
 msgid "Topic actions"
 msgstr "Λοιπές ενέργειες θέματος ..."
@@ -3231,7 +3243,7 @@ msgstr "Ονομασία θέματος"
 msgid "Topic save error"
 msgstr "Σφάλμα αποθήκευσης θέματος"
 
-#: templates/edit.nat.tmpl:82
+#: templates/edit.nat.tmpl:84
 #, fuzzy
 msgid "Topic settings"
 msgstr "Συνημμένα θέματος"
@@ -3240,7 +3252,7 @@ msgstr "Συνημμένα θέματος"
 msgid "Topics per web"
 msgstr "Θέματα ανά ιστό"
 
-#: templates/foswiki.nat.tmpl:283 templates/translatetopic.nat.tmpl:146
+#: templates/foswiki.nat.tmpl:289 templates/translatetopic.nat.tmpl:146
 #: templates/translatetopic.nat.tmpl:8
 msgid "Translate"
 msgstr ""
@@ -3254,21 +3266,21 @@ msgstr ""
 msgid "Translate formfields"
 msgstr "Δημιουργήστε αυτό το θέμα"
 
-#: templates/foswiki.nat.tmpl:284
+#: templates/foswiki.nat.tmpl:290
 #, fuzzy
 msgid "Translate this topic"
 msgstr "Δημιουργήστε αυτό το θέμα"
 
-#: data/System/SiteMenu.txt:79
+#: data/System/SiteMenu.txt:77
 msgid "Trash"
 msgstr ""
 
-#: templates/oopsleaseconflict.nat.tmpl:45
+#: templates/oopsleaseconflict.nat.tmpl:38
 #, fuzzy
 msgid "Try again"
 msgstr "Προσπαθήστε πάλι"
 
-#: templates/edit.nat.tmpl:57
+#: templates/edit.nat.tmpl:59
 msgid "Turkish"
 msgstr ""
 
@@ -3276,7 +3288,7 @@ msgstr ""
 msgid "Tutorial"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:140
+#: templates/edit.matter.nat.tmpl:142
 msgid "Two Third"
 msgstr ""
 
@@ -3285,17 +3297,17 @@ msgstr ""
 msgid "Two-factor authentication"
 msgstr "Ταυτοποίηση Χρήστη Διαχειριστή του Foswiki"
 
-#: templates/edit.nat.tmpl:58
+#: templates/edit.nat.tmpl:60
 msgid "Ukrainian"
 msgstr ""
 
-#: templates/foswiki.nat.tmpl:216
+#: templates/foswiki.nat.tmpl:221
 #, fuzzy
 msgid "Undo changes to this topic"
 msgstr ""
 "title='Εκτυπώσιμη έκδοση αυτού του θέματος' accesskey='p'>&Print version"
 
-#: templates/foswiki.nat.tmpl:327
+#: templates/foswiki.nat.tmpl:335
 #, fuzzy
 msgid "Unfavorite"
 msgstr "Στο μενού μου"
@@ -3317,7 +3329,7 @@ msgstr "Μη-αναγνωρίσιμος χρήστης και / ή κωδικό�
 msgid "Unrecognized action command %1"
 msgstr "Unrecognized action command %1"
 
-#: templates/foswiki.nat.tmpl:354
+#: templates/foswiki.nat.tmpl:362
 #, fuzzy
 msgid "Unsubscribe"
 msgstr "Εκτύπωση αυτού του θέματος"
@@ -3338,12 +3350,12 @@ msgstr "(εισερχόμενοι σύνδεσμοι σε όλους τους Ι
 msgid "Update links in the '%1' web"
 msgstr "Child topics in %1 web"
 
-#: templates/foswiki.nat.tmpl:94
+#: templates/foswiki.nat.tmpl:99
 #, fuzzy
 msgid "Upload"
 msgstr "Το μεταφορτωμένο αρχείο είναι πολύ μεγάλο"
 
-#: templates/foswiki.nat.tmpl:95
+#: templates/foswiki.nat.tmpl:100
 #, fuzzy
 msgid "Upload files"
 msgstr "Το μεταφορτωμένο αρχείο είναι πολύ μεγάλο"
@@ -3371,7 +3383,7 @@ msgstr "Στατιστικά χρήσης"
 msgid "Use %1 instead."
 msgstr "Χρησιμοποιήστε %1 αντ 'αυτού."
 
-#: data/System/SiteMenu.txt:94
+#: data/System/SiteMenu.txt:92
 #, fuzzy
 msgid "User Management"
 msgstr "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
@@ -3392,7 +3404,7 @@ msgstr "User Account %1 Deleted"
 msgid "User account information"
 msgstr "Διαθέσιμες πληροφορίες"
 
-#: data/System/SiteMenu.txt:51
+#: data/System/SiteMenu.txt:49
 #, fuzzy
 msgid "User docs"
 msgstr "Χρήστες"
@@ -3402,19 +3414,19 @@ msgid "User's guide"
 msgstr ""
 
 #: data/System/NatSkinChangeEmailAddressViewTemplate.txt:76
-#: data/System/NatSkinChangePasswordViewTemplate.txt:108
+#: data/System/NatSkinChangePasswordViewTemplate.txt:109
 #: data/System/NatSkinRemoveUserViewTemplate.txt:21
-#: data/System/NatSkinResetPasswordViewTemplate.txt:63
-#: templates/loginbase.nat.tmpl:34 templates/topbar.customato.nat.tmpl:139
+#: data/System/NatSkinResetPasswordViewTemplate.txt:64
+#: templates/loginbase.nat.tmpl:29 templates/topbar.customato.nat.tmpl:139
 msgid "Username"
 msgstr "Όνομα Χρήστη"
 
-#: data/System/NatSkinResetPasswordViewTemplate.txt:62
+#: data/System/NatSkinResetPasswordViewTemplate.txt:63
 #, fuzzy
 msgid "Username or email address"
 msgstr "Άκυρη διεύθυνση e-mail"
 
-#: data/Main/WebLinks.txt:9 templates/foswiki.nat.tmpl:75
+#: data/Main/WebLinks.txt:9 templates/foswiki.nat.tmpl:80
 msgid "Users"
 msgstr "Χρήστες"
 
@@ -3423,7 +3435,7 @@ msgstr "Χρήστες"
 msgid "Users Guide"
 msgstr "Χρήστες"
 
-#: templates/foswiki.nat.tmpl:76
+#: templates/foswiki.nat.tmpl:81
 #, fuzzy
 msgid "Users directory"
 msgstr "Ιστορικό έκδοσης"
@@ -3442,122 +3454,128 @@ msgstr ""
 msgid "Variables"
 msgstr ""
 
-#: data/System/NatSkinStyleBrowser.txt:29 templates/edit.nat.tmpl:187
+#: templates/edit.matter.nat.tmpl:359
+#, fuzzy
+msgid "Variance"
+msgstr "Εγγραφή"
+
+#: data/System/NatSkinStyleBrowser.txt:29 templates/edit.nat.tmpl:191
 #, fuzzy
 msgid "Variation"
 msgstr "Εγγραφή"
 
-#: templates/view.nat.tmpl:268
+#: templates/view.nat.tmpl:290
 #, fuzzy
 msgid "Version %1"
 msgstr "Έκδοση"
 
-#: templates/edit.matter.nat.tmpl:440
+#: templates/edit.matter.nat.tmpl:451
 msgid "Video"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:454
+#: templates/edit.matter.nat.tmpl:465
 msgid "Video Loop"
 msgstr ""
 
-#: data/System/SiteTopicActions.txt:29 templates/foswiki.nat.tmpl:118
-#: templates/history.nat.tmpl:92 templates/view.nat.tmpl:200
+#: data/System/SiteTopicActions.txt:30 templates/foswiki.nat.tmpl:123
+#: templates/history.nat.tmpl:82 templates/view.nat.tmpl:214
 msgid "View"
 msgstr "Προβολή"
 
-#: templates/foswiki.nat.tmpl:131
+#: templates/foswiki.nat.tmpl:136
 #, fuzzy
 msgid "View files uploaded to this topic"
 msgstr "Δημιουργήστε αυτό το θέμα"
 
-#: templates/foswiki.nat.tmpl:384
+#: templates/foswiki.nat.tmpl:392
 #, fuzzy
 msgid "View first revision"
 msgstr "Προβολή αναθεώρησης:"
 
-#: templates/foswiki.nat.tmpl:119
+#: templates/foswiki.nat.tmpl:124
 #, fuzzy
 msgid "View formatted topic"
 msgstr "Προβολή θέματος"
 
-#: templates/foswiki.nat.tmpl:404
+#: templates/foswiki.nat.tmpl:412
 #, fuzzy
 msgid "View last change"
 msgstr "(αλλαγές)"
 
-#: templates/foswiki.nat.tmpl:399
+#: templates/foswiki.nat.tmpl:407
 #, fuzzy
 msgid "View last revision"
 msgstr "Προβολή αναθεώρησης:"
 
-#: templates/foswiki.nat.tmpl:389
+#: templates/foswiki.nat.tmpl:185
+#, fuzzy
+msgid "View markup"
+msgstr "Δημιουργία νέου θέματος"
+
+#: templates/foswiki.nat.tmpl:397
 #, fuzzy
 msgid "View next revision"
 msgstr "Προβολή αναθεώρησης:"
 
-#: templates/foswiki.nat.tmpl:147
+#: templates/foswiki.nat.tmpl:152
 #, fuzzy
 msgid "View plain version"
 msgstr "Προβολή αναθεώρησης:"
 
-#: templates/foswiki.nat.tmpl:394
+#: templates/foswiki.nat.tmpl:402
 #, fuzzy
 msgid "View previous revision"
 msgstr "Επισκόπηση προηγούμενης αναθεώρησης θέματος"
 
-#: templates/foswiki.nat.tmpl:141
+#: templates/foswiki.nat.tmpl:146
 #, fuzzy
 msgid "View printable version"
 msgstr "Προβολή αναθεώρησης:"
 
-#: templates/foswiki.nat.tmpl:89 templates/foswiki.nat.tmpl:90
+#: templates/foswiki.nat.tmpl:94 templates/foswiki.nat.tmpl:95
 msgid "View profile"
 msgstr ""
 
-#: templates/history.nat.tmpl:91
+#: templates/history.nat.tmpl:81
 #, fuzzy
 msgid "View revision %1"
 msgstr "Προβολή αναθεώρησης:"
 
-#: templates/foswiki.nat.tmpl:107
+#: templates/foswiki.nat.tmpl:112
 #, fuzzy
 msgid "View sections"
 msgstr "Προβολή αναθεώρησης:"
 
-#: templates/foswiki.nat.tmpl:186
+#: templates/foswiki.nat.tmpl:191
 #, fuzzy
 msgid "View the data of this topic"
 msgstr "Δημιουργήστε αυτό το θέμα"
 
-#: templates/foswiki.nat.tmpl:241
+#: templates/foswiki.nat.tmpl:246
 #, fuzzy
 msgid "View the list of people that contributed to this topic"
 msgstr "Αναζήτηση στον ιστό %1για θέματα που παραπέμπουν εδώ"
 
-#: templates/foswiki.nat.tmpl:181
+#: templates/foswiki.nat.tmpl:186
 #, fuzzy
 msgid "View the raw text of this topic"
 msgstr "Δημιουργήστε αυτό το θέμα"
 
-#: templates/foswiki.nat.tmpl:236
+#: templates/foswiki.nat.tmpl:241
 #, fuzzy
 msgid "View the revision history of all changes to this topic"
 msgstr "Αναζήτηση στον ιστό %1για θέματα που παραπέμπουν εδώ"
 
-#: templates/foswiki.nat.tmpl:248
+#: templates/foswiki.nat.tmpl:253 templates/foswiki.nat.tmpl:254
 #, fuzzy
 msgid "View the workflow history of this topic"
 msgstr "Δημιουργήστε αυτό το θέμα"
 
-#: templates/foswiki.nat.tmpl:180
-msgid "View wiki markup"
-msgstr ""
-
-#: templates/edit.nat.tmpl:440
+#: templates/edit.nat.tmpl:441
 msgid "Voting"
 msgstr ""
 
-#: templates/print.nat.tmpl:71
+#: templates/print.nat.tmpl:77
 msgid "Watermark"
 msgstr ""
 
@@ -3572,7 +3590,7 @@ msgstr ""
 msgid "Web"
 msgstr "Ιστοί"
 
-#: data/System/SiteMenu.txt:99
+#: data/System/SiteMenu.txt:97
 #, fuzzy
 msgid "Web preferences"
 msgstr "(ορισμός προτιμήσεων)"
@@ -3582,7 +3600,7 @@ msgstr "(ορισμός προτιμήσεων)"
 msgid "WebDAV Directory"
 msgstr "Ιστορικό"
 
-#: data/Main/WebLinks.txt:7 data/System/SiteMenu.txt:50
+#: data/Main/WebLinks.txt:7 data/System/SiteMenu.txt:48
 #: templates/topbar.customato.nat.tmpl:93
 msgid "Welcome"
 msgstr ""
@@ -3613,13 +3631,13 @@ msgstr "Αυτός ο χρήστης έχει ήδη ενεργοποιηθεί 
 msgid "WikiWord"
 msgstr ""
 
-#: templates/qmhistory.nat.tmpl:9
+#: templates/qmhistory.nat.tmpl:21
 #, fuzzy
 msgid "Workflow"
 msgstr "Ιστορικό"
 
-#: templates/foswiki.nat.tmpl:244 templates/foswiki.nat.tmpl:245
-#: templates/qmhistory.nat.tmpl:10 templates/qmhistory.nat.tmpl:13
+#: templates/foswiki.nat.tmpl:249 templates/foswiki.nat.tmpl:250
+#: templates/qmhistory.nat.tmpl:22 templates/qmhistory.nat.tmpl:23
 #, fuzzy
 msgid "Workflow History"
 msgstr "Ιστορικό"
@@ -3629,7 +3647,7 @@ msgstr "Ιστορικό"
 msgid "Write access for this group:"
 msgstr "Επεξεργαστείτε τις ρυθμίσεις για αυτό το θέμα"
 
-#: templates/edit.nat.tmpl:129
+#: templates/edit.nat.tmpl:131
 msgid "Wysiwyg"
 msgstr ""
 
@@ -3637,23 +3655,24 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: templates/renametopicarchive.nat.tmpl:12
+#: templates/renametopicarchive.nat.tmpl:14
 #, fuzzy
 msgid "Yes, archive"
 msgstr "(διαγραφή)"
 
-#: templates/renametopicdelete.nat.tmpl:13
-#: templates/renamewebdelete.nat.tmpl:14
+#: templates/renametopicdelete.nat.tmpl:18
+#: templates/renametopicdelete.nat.tmpl:36
+#: templates/renamewebdelete.nat.tmpl:15
 #, fuzzy
 msgid "Yes, delete"
 msgstr "(διαγραφή)"
 
-#: templates/user.nat.tmpl:175
+#: templates/user.nat.tmpl:196
 #, fuzzy
 msgid "Yes, remove"
 msgstr "(διαγραφή)"
 
-#: templates/restoretopic.nat.tmpl:13
+#: templates/restoretopic.nat.tmpl:14
 #, fuzzy
 msgid "Yes, restore"
 msgstr "(διαγραφή)"
@@ -3679,7 +3698,16 @@ msgstr "Έχετε ήδη εγγραφεί"
 msgid "You are also listed in the %1 topic"
 msgstr "You are also listed in the %1 topic"
 
-#: templates/foswiki.nat.tmpl:417
+#: templates/oopsleaseconflict.nat.tmpl:19
+msgid ""
+"You are encouraged to go ahead and edit - unless you intend to change data "
+"in a form attached to the topic. If [[%1]] actually _does_ save while you "
+"are editing, your changes will be merged, and nothing will be lost. Form "
+"data cannot easily be merged though, so in this case you are recommended to "
+"check with [[%1]] first."
+msgstr ""
+
+#: templates/foswiki.nat.tmpl:425
 #, fuzzy
 msgid "You are here"
 msgstr "Είστε εδώ:"
@@ -3797,7 +3825,7 @@ msgstr ""
 msgid "Your last name"
 msgstr "Επώνυμο:"
 
-#: data/System/NatSkinChangePasswordViewTemplate.txt:111
+#: data/System/NatSkinChangePasswordViewTemplate.txt:112
 #, fuzzy
 msgid ""
 "Your login name. Note, you can't change your login name. Contact the "
@@ -3833,28 +3861,28 @@ msgstr ""
 msgid "[[%1]] is editing [[%2]]."
 msgstr "Ο %1 διορθώνει το %2."
 
-#: templates/edit.matter.nat.tmpl:507
+#: templates/edit.matter.nat.tmpl:518
 msgid "animals"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:498
+#: templates/edit.matter.nat.tmpl:509
 #, fuzzy
 msgid "animation"
 msgstr "Ενέργεια"
 
-#: templates/print.nat.tmpl:53
+#: templates/print.nat.tmpl:59
 msgid "auto"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:109
+#: templates/edit.matter.nat.tmpl:111
 msgid "autocolor"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:360
+#: templates/edit.matter.nat.tmpl:371
 msgid "automatic"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:508
+#: templates/edit.matter.nat.tmpl:519
 #, fuzzy
 msgid "backgrounds"
 msgstr "Εισερχόμενοι σύνδεσμοι"
@@ -3864,23 +3892,23 @@ msgstr "Εισερχόμενοι σύνδεσμοι"
 msgid "base language"
 msgstr "Αλλαγή γλώσσας"
 
-#: templates/edit.nat.tmpl:200
+#: templates/edit.nat.tmpl:204
 msgid "bordered"
 msgstr ""
 
-#: templates/edit.nat.tmpl:263
+#: templates/edit.nat.tmpl:267
 msgid "both"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:509
+#: templates/edit.matter.nat.tmpl:520
 msgid "buildings"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:510
+#: templates/edit.matter.nat.tmpl:521
 msgid "business"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:192
+#: templates/edit.matter.nat.tmpl:194
 msgid "center"
 msgstr ""
 
@@ -3889,70 +3917,71 @@ msgstr ""
 msgid "changes"
 msgstr "(αλλαγές)"
 
-#: templates/edit.nat.tmpl:424
+#: templates/edit.nat.tmpl:425
 #, fuzzy
 msgid "closed"
 msgstr "Κλείσε"
 
-#: templates/edit.matter.nat.tmpl:511
+#: templates/edit.matter.nat.tmpl:522
 msgid "computer"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:560
+#: templates/edit.matter.nat.tmpl:571
 msgid "coverflow"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:561
+#: templates/edit.matter.nat.tmpl:572
 msgid "cube"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:274
+#: templates/edit.matter.nat.tmpl:276
 msgid "dark"
 msgstr ""
 
-#: templates/history.nat.tmpl:44
+#: templates/history.nat.tmpl:37
 msgid "debug"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:105 templates/edit.matter.nat.tmpl:135
-#: templates/edit.matter.nat.tmpl:150 templates/edit.matter.nat.tmpl:161
-#: templates/edit.matter.nat.tmpl:176 templates/edit.matter.nat.tmpl:184
-#: templates/edit.matter.nat.tmpl:190 templates/edit.matter.nat.tmpl:200
-#: templates/edit.matter.nat.tmpl:213 templates/edit.matter.nat.tmpl:223
-#: templates/edit.matter.nat.tmpl:234 templates/edit.matter.nat.tmpl:243
-#: templates/edit.matter.nat.tmpl:246 templates/edit.matter.nat.tmpl:272
-#: templates/edit.matter.nat.tmpl:280 templates/edit.matter.nat.tmpl:286
-#: templates/edit.matter.nat.tmpl:292 templates/edit.matter.nat.tmpl:294
-#: templates/edit.matter.nat.tmpl:300 templates/edit.matter.nat.tmpl:306
-#: templates/edit.matter.nat.tmpl:312 templates/edit.matter.nat.tmpl:321
-#: templates/edit.matter.nat.tmpl:332 templates/edit.matter.nat.tmpl:341
-#: templates/edit.matter.nat.tmpl:350 templates/edit.matter.nat.tmpl:379
-#: templates/edit.matter.nat.tmpl:388 templates/edit.matter.nat.tmpl:399
-#: templates/edit.matter.nat.tmpl:407 templates/edit.matter.nat.tmpl:413
-#: templates/edit.matter.nat.tmpl:421 templates/edit.matter.nat.tmpl:427
-#: templates/edit.matter.nat.tmpl:433 templates/edit.matter.nat.tmpl:456
-#: templates/edit.matter.nat.tmpl:467 templates/edit.matter.nat.tmpl:473
-#: templates/edit.matter.nat.tmpl:485 templates/edit.matter.nat.tmpl:496
-#: templates/edit.matter.nat.tmpl:506 templates/edit.matter.nat.tmpl:533
-#: templates/edit.matter.nat.tmpl:541 templates/edit.matter.nat.tmpl:547
-#: templates/edit.matter.nat.tmpl:559 templates/edit.matter.nat.tmpl:571
-#: templates/edit.matter.nat.tmpl:577 templates/edit.matter.nat.tmpl:583
-#: templates/edit.matter.nat.tmpl:592 templates/edit.matter.nat.tmpl:602
-#: templates/edit.nat.tmpl:111 templates/edit.nat.tmpl:131
-#: templates/edit.nat.tmpl:177 templates/edit.nat.tmpl:197
-#: templates/edit.nat.tmpl:222 templates/edit.nat.tmpl:236
-#: templates/edit.nat.tmpl:251 templates/edit.nat.tmpl:274
-#: templates/edit.nat.tmpl:289 templates/edit.nat.tmpl:303
-#: templates/edit.nat.tmpl:317 templates/edit.nat.tmpl:331
-#: templates/edit.nat.tmpl:345 templates/edit.nat.tmpl:359
-#: templates/edit.nat.tmpl:373 templates/edit.nat.tmpl:387
-#: templates/edit.nat.tmpl:418 templates/edit.nat.tmpl:430
-#: templates/edit.nat.tmpl:442 templates/edit.nat.tmpl:96
+#: templates/edit.matter.nat.tmpl:107 templates/edit.matter.nat.tmpl:137
+#: templates/edit.matter.nat.tmpl:152 templates/edit.matter.nat.tmpl:163
+#: templates/edit.matter.nat.tmpl:178 templates/edit.matter.nat.tmpl:186
+#: templates/edit.matter.nat.tmpl:192 templates/edit.matter.nat.tmpl:202
+#: templates/edit.matter.nat.tmpl:215 templates/edit.matter.nat.tmpl:225
+#: templates/edit.matter.nat.tmpl:236 templates/edit.matter.nat.tmpl:245
+#: templates/edit.matter.nat.tmpl:248 templates/edit.matter.nat.tmpl:274
+#: templates/edit.matter.nat.tmpl:282 templates/edit.matter.nat.tmpl:288
+#: templates/edit.matter.nat.tmpl:294 templates/edit.matter.nat.tmpl:296
+#: templates/edit.matter.nat.tmpl:302 templates/edit.matter.nat.tmpl:308
+#: templates/edit.matter.nat.tmpl:314 templates/edit.matter.nat.tmpl:323
+#: templates/edit.matter.nat.tmpl:334 templates/edit.matter.nat.tmpl:343
+#: templates/edit.matter.nat.tmpl:352 templates/edit.matter.nat.tmpl:361
+#: templates/edit.matter.nat.tmpl:390 templates/edit.matter.nat.tmpl:399
+#: templates/edit.matter.nat.tmpl:410 templates/edit.matter.nat.tmpl:418
+#: templates/edit.matter.nat.tmpl:424 templates/edit.matter.nat.tmpl:432
+#: templates/edit.matter.nat.tmpl:438 templates/edit.matter.nat.tmpl:444
+#: templates/edit.matter.nat.tmpl:467 templates/edit.matter.nat.tmpl:478
+#: templates/edit.matter.nat.tmpl:484 templates/edit.matter.nat.tmpl:496
+#: templates/edit.matter.nat.tmpl:507 templates/edit.matter.nat.tmpl:517
+#: templates/edit.matter.nat.tmpl:544 templates/edit.matter.nat.tmpl:552
+#: templates/edit.matter.nat.tmpl:558 templates/edit.matter.nat.tmpl:570
+#: templates/edit.matter.nat.tmpl:582 templates/edit.matter.nat.tmpl:588
+#: templates/edit.matter.nat.tmpl:594 templates/edit.matter.nat.tmpl:603
+#: templates/edit.matter.nat.tmpl:613 templates/edit.nat.tmpl:113
+#: templates/edit.nat.tmpl:133 templates/edit.nat.tmpl:181
+#: templates/edit.nat.tmpl:201 templates/edit.nat.tmpl:226
+#: templates/edit.nat.tmpl:240 templates/edit.nat.tmpl:255
+#: templates/edit.nat.tmpl:278 templates/edit.nat.tmpl:292
+#: templates/edit.nat.tmpl:306 templates/edit.nat.tmpl:320
+#: templates/edit.nat.tmpl:334 templates/edit.nat.tmpl:348
+#: templates/edit.nat.tmpl:362 templates/edit.nat.tmpl:376
+#: templates/edit.nat.tmpl:390 templates/edit.nat.tmpl:419
+#: templates/edit.nat.tmpl:431 templates/edit.nat.tmpl:443
+#: templates/edit.nat.tmpl:98
 #, fuzzy
 msgid "default"
 msgstr "Προεπιλεγμένο πρότυπο"
 
-#: templates/newtopic.nat.tmpl:102
+#: templates/newtopic.nat.tmpl:106
 msgid "default template for the selected topic type"
 msgstr ""
 
@@ -3965,48 +3994,48 @@ msgstr "Επεξεργασία"
 msgid "edit form"
 msgstr "(επεξεργασία φόρμας)"
 
-#: templates/edit.matter.nat.tmpl:512
+#: templates/edit.matter.nat.tmpl:523
 #, fuzzy
 msgid "education"
 msgstr "Ενέργεια"
 
-#: templates/edit.matter.nat.tmpl:562
+#: templates/edit.matter.nat.tmpl:573
 msgid "fade"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:513
+#: templates/edit.matter.nat.tmpl:524
 msgid "fashion"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:514
+#: templates/edit.matter.nat.tmpl:525
 msgid "feelings"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:497
+#: templates/edit.matter.nat.tmpl:508
 msgid "film"
 msgstr ""
 
-#: templates/edit.nat.tmpl:198
+#: templates/edit.nat.tmpl:202
 msgid "fixed"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:563
+#: templates/edit.matter.nat.tmpl:574
 msgid "flip"
 msgstr ""
 
-#: templates/edit.nat.tmpl:199
+#: templates/edit.nat.tmpl:203
 msgid "fluid"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:515
+#: templates/edit.matter.nat.tmpl:526
 msgid "food"
 msgstr ""
 
-#: templates/edit.nat.tmpl:201
+#: templates/edit.nat.tmpl:205
 msgid "fullscreen"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:115
+#: templates/edit.matter.nat.tmpl:117
 msgid "geo pattern"
 msgstr ""
 
@@ -4015,7 +4044,7 @@ msgstr ""
 msgid "go back to %1"
 msgstr "Πηγαίνετε πίσω"
 
-#: templates/edit.matter.nat.tmpl:112
+#: templates/edit.matter.nat.tmpl:114
 msgid "gradient"
 msgstr ""
 
@@ -4028,24 +4057,24 @@ msgstr ""
 msgid "group"
 msgstr "Ομάδες"
 
-#: templates/edit.matter.nat.tmpl:516
+#: templates/edit.matter.nat.tmpl:527
 msgid "health"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:603
+#: templates/edit.matter.nat.tmpl:614
 msgid "horizontal"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:486
+#: templates/edit.matter.nat.tmpl:497
 #, fuzzy
 msgid "illustration"
 msgstr "Εγγραφή"
 
-#: templates/edit.matter.nat.tmpl:113
+#: templates/edit.matter.nat.tmpl:115
 msgid "image"
 msgstr ""
 
-#: templates/email.nat.tmpl:25
+#: templates/email.nat.tmpl:24
 #, fuzzy
 msgid "include attachments"
 msgstr "Συνημμένα θέματος"
@@ -4054,19 +4083,19 @@ msgstr "Συνημμένα θέματος"
 msgid "indicates mandatory fields"
 msgstr "δηλώνει υποχρεωτικά πεδία"
 
-#: templates/edit.matter.nat.tmpl:517
+#: templates/edit.matter.nat.tmpl:528
 msgid "industry"
 msgstr ""
 
-#: templates/print.nat.tmpl:66
+#: templates/print.nat.tmpl:72
 msgid "inline"
 msgstr ""
 
-#: templates/history.nat.tmpl:42
+#: templates/history.nat.tmpl:35
 msgid "interweave"
 msgstr ""
 
-#: templates/print.nat.tmpl:55
+#: templates/print.nat.tmpl:61
 msgid "landscape"
 msgstr ""
 
@@ -4074,15 +4103,15 @@ msgstr ""
 msgid "leave unchecked to copy all"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:191 templates/edit.nat.tmpl:257
+#: templates/edit.matter.nat.tmpl:193 templates/edit.nat.tmpl:261
 msgid "left"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:273
+#: templates/edit.matter.nat.tmpl:275
 msgid "light"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:323
+#: templates/edit.matter.nat.tmpl:325
 msgid "linear"
 msgstr ""
 
@@ -4090,60 +4119,60 @@ msgstr ""
 msgid "maximum number of hits per web"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:111
+#: templates/edit.matter.nat.tmpl:113
 msgid "monochrome"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:518
+#: templates/edit.matter.nat.tmpl:529
 msgid "music"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:519
+#: templates/edit.matter.nat.tmpl:530
 msgid "nature"
 msgstr ""
 
-#: templates/print.nat.tmpl:52
+#: templates/print.nat.tmpl:58
 #, fuzzy
 msgid "none"
 msgstr "(καμία)"
 
-#: templates/backlinks.nat.tmpl:126 templates/backlinks.nat.tmpl:147
-#: templates/backlinks.nat.tmpl:56 templates/backlinks.nat.tmpl:74
-#: templates/backlinks.nat.tmpl:99
+#: templates/backlinks.nat.tmpl:100 templates/backlinks.nat.tmpl:128
+#: templates/backlinks.nat.tmpl:149 templates/backlinks.nat.tmpl:56
+#: templates/backlinks.nat.tmpl:74
 msgid "nothing found"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:106 templates/edit.matter.nat.tmpl:151
-#: templates/edit.matter.nat.tmpl:201 templates/edit.matter.nat.tmpl:225
-#: templates/edit.matter.nat.tmpl:245 templates/edit.matter.nat.tmpl:390
-#: templates/edit.matter.nat.tmpl:401 templates/edit.matter.nat.tmpl:415
-#: templates/edit.matter.nat.tmpl:458 templates/edit.matter.nat.tmpl:475
-#: templates/edit.matter.nat.tmpl:535 templates/edit.matter.nat.tmpl:549
-#: templates/edit.matter.nat.tmpl:585 templates/edit.nat.tmpl:113
-#: templates/edit.nat.tmpl:133 templates/edit.nat.tmpl:228
-#: templates/edit.nat.tmpl:242 templates/edit.nat.tmpl:266
-#: templates/edit.nat.tmpl:280 templates/edit.nat.tmpl:295
-#: templates/edit.nat.tmpl:309 templates/edit.nat.tmpl:323
-#: templates/edit.nat.tmpl:337 templates/edit.nat.tmpl:351
-#: templates/edit.nat.tmpl:365 templates/edit.nat.tmpl:379
-#: templates/edit.nat.tmpl:393 templates/edit.nat.tmpl:436
-#: templates/edit.nat.tmpl:448
+#: templates/edit.matter.nat.tmpl:108 templates/edit.matter.nat.tmpl:153
+#: templates/edit.matter.nat.tmpl:203 templates/edit.matter.nat.tmpl:227
+#: templates/edit.matter.nat.tmpl:247 templates/edit.matter.nat.tmpl:401
+#: templates/edit.matter.nat.tmpl:412 templates/edit.matter.nat.tmpl:426
+#: templates/edit.matter.nat.tmpl:469 templates/edit.matter.nat.tmpl:486
+#: templates/edit.matter.nat.tmpl:546 templates/edit.matter.nat.tmpl:560
+#: templates/edit.matter.nat.tmpl:596 templates/edit.nat.tmpl:115
+#: templates/edit.nat.tmpl:135 templates/edit.nat.tmpl:232
+#: templates/edit.nat.tmpl:246 templates/edit.nat.tmpl:270
+#: templates/edit.nat.tmpl:284 templates/edit.nat.tmpl:298
+#: templates/edit.nat.tmpl:312 templates/edit.nat.tmpl:326
+#: templates/edit.nat.tmpl:340 templates/edit.nat.tmpl:354
+#: templates/edit.nat.tmpl:368 templates/edit.nat.tmpl:382
+#: templates/edit.nat.tmpl:396 templates/edit.nat.tmpl:437
+#: templates/edit.nat.tmpl:449
 msgid "off"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:224 templates/edit.matter.nat.tmpl:244
-#: templates/edit.matter.nat.tmpl:389 templates/edit.matter.nat.tmpl:400
-#: templates/edit.matter.nat.tmpl:414 templates/edit.matter.nat.tmpl:457
-#: templates/edit.matter.nat.tmpl:474 templates/edit.matter.nat.tmpl:534
-#: templates/edit.matter.nat.tmpl:548 templates/edit.matter.nat.tmpl:584
-#: templates/edit.nat.tmpl:112 templates/edit.nat.tmpl:132
-#: templates/edit.nat.tmpl:225 templates/edit.nat.tmpl:239
-#: templates/edit.nat.tmpl:254 templates/edit.nat.tmpl:277
-#: templates/edit.nat.tmpl:292 templates/edit.nat.tmpl:306
-#: templates/edit.nat.tmpl:320 templates/edit.nat.tmpl:334
-#: templates/edit.nat.tmpl:348 templates/edit.nat.tmpl:362
-#: templates/edit.nat.tmpl:376 templates/edit.nat.tmpl:390
-#: templates/edit.nat.tmpl:433 templates/edit.nat.tmpl:445
+#: templates/edit.matter.nat.tmpl:226 templates/edit.matter.nat.tmpl:246
+#: templates/edit.matter.nat.tmpl:400 templates/edit.matter.nat.tmpl:411
+#: templates/edit.matter.nat.tmpl:425 templates/edit.matter.nat.tmpl:468
+#: templates/edit.matter.nat.tmpl:485 templates/edit.matter.nat.tmpl:545
+#: templates/edit.matter.nat.tmpl:559 templates/edit.matter.nat.tmpl:595
+#: templates/edit.nat.tmpl:114 templates/edit.nat.tmpl:134
+#: templates/edit.nat.tmpl:229 templates/edit.nat.tmpl:243
+#: templates/edit.nat.tmpl:258 templates/edit.nat.tmpl:281
+#: templates/edit.nat.tmpl:295 templates/edit.nat.tmpl:309
+#: templates/edit.nat.tmpl:323 templates/edit.nat.tmpl:337
+#: templates/edit.nat.tmpl:351 templates/edit.nat.tmpl:365
+#: templates/edit.nat.tmpl:379 templates/edit.nat.tmpl:393
+#: templates/edit.nat.tmpl:434 templates/edit.nat.tmpl:446
 msgid "on"
 msgstr ""
 
@@ -4151,40 +4180,40 @@ msgstr ""
 msgid "oops"
 msgstr ""
 
-#: templates/edit.nat.tmpl:421
+#: templates/edit.nat.tmpl:422
 msgid "open"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:361
+#: templates/edit.matter.nat.tmpl:372
 msgid "palette"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:520
+#: templates/edit.matter.nat.tmpl:531
 msgid "people"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:487
+#: templates/edit.matter.nat.tmpl:498
 msgid "photo"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:521
+#: templates/edit.matter.nat.tmpl:532
 msgid "places"
 msgstr ""
 
-#: templates/print.nat.tmpl:54
+#: templates/print.nat.tmpl:60
 msgid "portrait"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:322
+#: templates/edit.matter.nat.tmpl:324
 msgid "radial"
 msgstr ""
 
-#: templates/print.nat.tmpl:65
+#: templates/print.nat.tmpl:71
 #, fuzzy
 msgid "redirect"
 msgstr "Ιστορικό έκδοσης"
 
-#: templates/edit.matter.nat.tmpl:522
+#: templates/edit.matter.nat.tmpl:533
 msgid "religion"
 msgstr ""
 
@@ -4192,7 +4221,7 @@ msgstr ""
 msgid "remove current form"
 msgstr ""
 
-#: templates/changeform.nat.tmpl:131 templates/changeform.nat.tmpl:86
+#: templates/changeform.nat.tmpl:86
 msgid "remove the current form (caution: possible data loss)"
 msgstr ""
 
@@ -4201,15 +4230,15 @@ msgstr ""
 msgid "rename web"
 msgstr "(μετονομασία)"
 
-#: templates/edit.matter.nat.tmpl:193 templates/edit.nat.tmpl:260
+#: templates/edit.matter.nat.tmpl:195 templates/edit.nat.tmpl:264
 msgid "right"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:523
+#: templates/edit.matter.nat.tmpl:534
 msgid "science"
 msgstr ""
 
-#: templates/newtopic.nat.tmpl:33 templates/searchbase.nat.tmpl:5
+#: templates/newtopic.nat.tmpl:34 templates/searchbase.nat.tmpl:5
 #: templates/searchbox.nat.tmpl:11
 #, fuzzy
 msgid "search"
@@ -4220,12 +4249,12 @@ msgstr "Αναζήτηση"
 msgid "search in all webs"
 msgstr "Αναζήτηση σε όλους τους ιστούς"
 
-#: templates/edit.matter.nat.tmpl:107
+#: templates/edit.matter.nat.tmpl:109
 #, fuzzy
 msgid "section"
 msgstr "Ενέργεια"
 
-#: templates/newtopic.nat.tmpl:136
+#: templates/newtopic.nat.tmpl:141
 #, fuzzy
 msgid "see all"
 msgstr "Ορισμός όλων"
@@ -4235,12 +4264,12 @@ msgstr "Ορισμός όλων"
 msgid "select all"
 msgstr "Ορισμός όλων"
 
-#: templates/backlinks.nat.tmpl:119 templates/backlinks.nat.tmpl:92
-#: templates/childtopics.nat.tmpl:94
+#: templates/backlinks.nat.tmpl:121 templates/backlinks.nat.tmpl:93
+#: templates/childtopics.nat.tmpl:95
 msgid "showing only %1"
 msgstr ""
 
-#: templates/history.nat.tmpl:43
+#: templates/history.nat.tmpl:36
 #, fuzzy
 msgid "side by side"
 msgstr "Δίπλα-δίπλα"
@@ -4255,20 +4284,20 @@ msgstr "(μονός χαρακτήρας μικρού ονόματος)"
 msgid "single character last name"
 msgstr "(μονός χαρακτήρας επιθέτου)"
 
-#: templates/edit.matter.nat.tmpl:564
+#: templates/edit.matter.nat.tmpl:575
 msgid "slide"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:118
+#: templates/edit.matter.nat.tmpl:120
 #, fuzzy
 msgid "slideshow"
 msgstr "Εγγραφή"
 
-#: templates/edit.matter.nat.tmpl:524
+#: templates/edit.matter.nat.tmpl:535
 msgid "sports"
 msgstr ""
 
-#: templates/edit.nat.tmpl:202
+#: templates/edit.nat.tmpl:206
 msgid "sticky"
 msgstr ""
 
@@ -4276,16 +4305,16 @@ msgstr ""
 msgid "submit the query"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:525
+#: templates/edit.matter.nat.tmpl:536
 #, fuzzy
 msgid "transportation"
 msgstr "URL του οργανισμού:"
 
-#: templates/edit.matter.nat.tmpl:526
+#: templates/edit.matter.nat.tmpl:537
 msgid "travel"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:116
+#: templates/edit.matter.nat.tmpl:118
 msgid "trianglify"
 msgstr ""
 
@@ -4293,22 +4322,34 @@ msgstr ""
 msgid "up one folder"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:254
+#: templates/edit.matter.nat.tmpl:256
 msgid "usefull resources to generate nice looking backgrounds:"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:488
+#: templates/edit.matter.nat.tmpl:499
 #, fuzzy
 msgid "vector"
 msgstr "Ιστορικό"
 
-#: templates/edit.matter.nat.tmpl:604
+#: templates/edit.matter.nat.tmpl:615
 msgid "vertical"
 msgstr ""
 
-#: templates/edit.matter.nat.tmpl:114
+#: templates/edit.matter.nat.tmpl:116
 msgid "video"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Edit Raw"
+#~ msgstr "Επεξεργασία"
+
+#, fuzzy
+#~ msgid "Pagination"
+#~ msgstr "Εγγραφή"
+
+#, fuzzy
+#~ msgid "Redirect from %1"
+#~ msgstr "Αποτελέσματα από ιστό %1"
 
 #~ msgid "Backlinks to %1 in all Webs"
 #~ msgstr "Εισερχόμενοι σύνδεσμοι για το %1 σε όλους τους Ιστούς"

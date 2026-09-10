@@ -3,13 +3,30 @@
 .foswikiFormSteps,
 .foswikiPageForm {
   padding:var(--margin);
-  margin:var(--margin) 0 0; 
+  margin:var(--margin) 0; 
   border-top:1px solid;
   border-bottom:1px solid;
   border-color:var(--color-border);
   background-color:#FAF8F7; /* SMELL */
 }
 
+.foswikiDialog.foswikiFlatForm,
+.foswikiPageForm.foswikiFlatForm,
+.foswikiFormSteps.foswikiFlatForm {
+  background:transparent;
+  padding:0;
+  border:0;
+  margin:0;
+  box-shadow:none;
+}
+
+.foswikiDialog.foswikiFlatForm .hr, 
+.foswikiDialog.foswikiFlatForm hr, 
+.foswikiFormSteps.foswikiFlatForm .hr, 
+.foswikiFormSteps.foswikiFlatForm hr {
+  margin-left:0;
+  margin-right:0;
+}
 
 .natMainContents > .foswikiFormSteps:first-child,
 .natMainContents > .foswikiPageForm:first-child {
@@ -17,7 +34,7 @@
 }
 
 .foswikiFormStep {
-  margin:0 0 var(--margin) 0;
+  margin:0 0 var(--margin-half) 0;
 }
 .foswikiLast,
 .foswikiFormStep:last-child {
@@ -31,8 +48,8 @@
 .foswikiDialog hr,
 .foswikiFormSteps .hr,
 .foswikiFormSteps hr {
-  margin-left: -1.3076em;
-  margin-right: -1.3076em;
+  margin-left: calc(var(--margin-half) * -1);
+  margin-right: calc(var(--margin-half) * -1);
 }
 .foswikiDialog table .hr,
 .foswikiDialog table hr,
@@ -54,6 +71,8 @@ h2.marked.foswikiRight {
   margin-bottom:0;
 }
 
+.foswikiHelp h2:first-of-type,
+.foswikiHelp h2 a,
 .foswikiDialog h2:first-of-type,
 .foswikiDialogForm h2 a,
 .foswikiPageForm h2:first-of-type,
@@ -62,10 +81,14 @@ h2.marked.foswikiRight {
 .foswikiFormSteps h2 a {
   margin-top:0;
 }
+.foswikiHelp h3:first-of-type,
+.foswikiHelp h3 a,
 .foswikiFormSteps h3:first-of-type,
 .foswikiFormSteps h3 a,
 .foswikiPageForm h3:first-of-type,
 .foswikiPageForm h3 a,
+.foswikiHelp h4:first-of-type,
+.foswikiHelp h4 a,
 .foswikiFormSteps h4:first-of-type,
 .foswikiFormSteps h4 a,
 .foswikiPageForm h4:first-of-type,
@@ -116,7 +139,7 @@ select,
 .foswikiSelect,
 .foswikiTextarea, textarea {
   margin: 0;
-  border:1px solid #bbb;
+  border:1px solid var(--input-border);
   background-color: var(--color-background);
   padding:4px;
   font-size:var(--input-font-size);
@@ -125,7 +148,6 @@ select,
   padding:0.4em 0.5em;
   color: var(--input-foreground);
   background-color: var(--input-background); 
-  border: var(--input-border);
   box-shadow: var(--input-box-shadow);
 }
 
@@ -281,39 +303,9 @@ textarea:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.inlineTitleEditor form {
-  display:flex;
-  align-items:center;
-}
-.inlineTitleEditor form input[type=text] {
-  flex-grow:1;
-  margin-right:0.5rem;
-  max-width:calc(100% - 6rem);
-}
-.inlineTitleEditor .TopicTitle input[type=text] {
-  font-size:var(--font-size-h3);
-}
-.inlineTitleEditor .inlineEditButtonBox {
-  display:flex;
-  gap:5px;
-}
-.inlineTitleEditor .inlineEditButtonBox button {
-  margin:0;
-}
-.inlineTitleEditor .inlineEditButton {
-  line-height:1;
-}
-.inlineTitleEditor .inlineEditButton .foswikiIcon {
-  font-size:var(--font-size-normal);
-}
-.inlineTitleEditor.inlineEditorLocked .foswikiTopicPrefix,
-.inlineTitleEditor.inlineEditorLocked .foswikiTopicExtra,
-.inlineTitleEditor.inlineEditorLocked .foswikiFormDescription {
+.foswikiRevision > .inlineEditor:first-child > .inlineEditValueContainer:first-child .foswikiRevisionSep,
+.foswikiRevision > .foswikiRevisionSep:first-child {
   display:none;
-}
-.foswikiRevision .inlineEditorLocked .inlineEditValueContainer {
-  margin:var(--margin) 0;
-  transition:none;
 }
 .foswikiRevisionSep {
   margin:0 0.25em;

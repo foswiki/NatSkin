@@ -81,6 +81,9 @@
   background: #fff;
   transform: scale(0.5);
 }
+.foswikiCheckboxGroup label {
+  white-space:nowrap;
+}
 
 .foswikiCheckboxGroup label,
 .foswikiRadioButtonGroup label,

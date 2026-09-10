@@ -16,7 +16,7 @@
 <th>%BUTTON{"%MAKETEXT{"Restart"}%" class="simple" icon="fa-home" target="%IF{
     "'%BASEWEB%.%HOMETOPIC%' allows 'view'" 
     then="%BASEWEB%.%HOMETOPIC%" 
-    else="%USERSWEB%.%WIKINAME%"
+    else="%USERINFO{format="$wikiusername"}%"
   }%"
 }%</th>
 <td>%MAKETEXT{"Just start from the beginning."}%</td>

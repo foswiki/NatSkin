@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1789038739" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 %TOC%
@@ -21,14 +21,15 @@ persistent.
 
 This is the list of variables to configure the skin style:
 
-| *Name%BR%(url param)*  | *Values* | *Description* | *Default* |
-| NATSKIN_DARKMODE | on, off, auto | switch on/off the dark mode; if left undefined or set to 'auto' the user's system settings take effect; there is a dark mode toggle button as well which sets a cookie with the preferences; note that you need to enable the =$Foswiki::cfg{NatSkin}{DarkModeFeature}=  | |
+| *Name%BR%(url param)* | *Values* | *Description* | *Default* |
+| NATSKIN_DARKMODE | on, off, auto | switch on/off the dark mode; if left undefined or set to 'auto' the user's system settings take effect; there is a dark mode toggle button as well which sets a cookie with the preferences; note that you need to enable the =$Foswiki::cfg{NatSkin}{DarkModeFeature}= | |
 | NATSKIN_LAYOUT (skinlayout) | fixed, fluid, bordered, fullscreen, sticky | select a page layout | fixed |
-| NATSKIN_MENU (skinmenu) | on, off  | switch on/off the horizontal menu above the topic area | on |
-| NATSKIN_SIDEBAR (skinsidebar) | left, right, both, off, toggle  | configure where to display the sidebar | right |
-| NATSKIN_STYLE (style) | <noautolink>%KNOWNSTYLES%</noautolink>  | select a predefined style | matter |
+| NATSKIN_MENU (skinmenu) | on, off | switch on/off the horizontal menu above the topic area | on |
+| NATSKIN_SIDEBAR (skinsidebar) | left, right, both, off, toggle | configure where to display the sidebar | right |
+| NATSKIN_STYLE (style) | <noautolink>%KNOWNSTYLES%</noautolink> | select a predefined style | matter |
 | NATSKIN_TOPBAR | on, off | switch on/off the top bar, the one that normally contains the logo and the horizontal menu | on |
-| NATSKIN_VARIATION (skinvariation) | <noautolink>%KNOWNVARIATIONS%</noautolink>  | select a style variation | none |
+| NATSKIN_VARIATION (skinvariation) | <noautolink>%KNOWNVARIATIONS%</noautolink> | select a style variation | none |
+| NATSKIN_TOPICACTIONS | see [[NatSkinPlugin#USERACTIONS]] | actions to be displayed at the top right corner of a topic | =$new$edit$menu= |
 
 There are a couple of special url parameters:
    * =style=reset=: switch back to the user and server settings by reverting any 

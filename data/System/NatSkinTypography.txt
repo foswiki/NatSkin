@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1789038739" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPICTITLE%
 
@@ -25,7 +25,6 @@ $Foswiki::cfg{NatSkin}{FixTypograpghy} = 1;
    * (c) copyright
    * (r) registered
    * (tm) trademark
-   * ... ellipsis
    * <- arrow left
    * -> arrow right
    * <-> arrow left-right
@@ -76,7 +75,7 @@ __bold italic text__
 
 <u>underlined text</u>
 
-<strike>strike through text</strike>
+<s>strike through text</s>
 
 <del>deleted text</del>
 
@@ -114,10 +113,10 @@ euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
 </blockquote>
 </div>
 ---++ Code
-Use Foswiki ML to add =inline code= or wrap it into HTML =&lt;code>= …. =&lt;/code>=
+Use Foswiki ML to add =inline code= or wrap it into HTML =&lt;code>= ... =&lt;/code>=
 
 Blocks of code are marked up using =&lt;verbatim>= … =&lt;/verbatim>= to make sure content inside is
-not executed by Foswiki and proper escaping is performed. Compare this to the normal =&lt;pre>= … =&lt;/pre>=
+not executed by Foswiki and proper escaping is performed. Compare this to the normal =&lt;pre>= ... =&lt;/pre>=
 HTML where macros are still executed whereas results are formatted as code.
 
 <verbatim>
@@ -550,7 +549,7 @@ unordered
 input, textarea, select, check boxes, radio boxes, buttons, form steps, horizontal, vertical
 
 <form>
-<div class="foswikiFormSteps" style="width:25em;margin:0 auto">
+<div class="foswikiFormSteps" style="width:30em;margin:0 auto">
 <div class="foswikiFormStep">
 ---++!! Username
 <input type="text" name="username" class="foswikiInputField" style="width:100%" />
@@ -571,6 +570,7 @@ input, textarea, select, check boxes, radio boxes, buttons, form steps, horizont
    <input type="checkbox" name="groups" class="foswikiCheckbox"  /> Community Group
 </label> 
 </div>
+<div class="foswikiFormStep">
 ---++!! Level
 <label>
    <input type="radio" name="level" class="foswikiRadioButton"  /> Low
@@ -581,6 +581,11 @@ input, textarea, select, check boxes, radio boxes, buttons, form steps, horizont
 <label>
    <input type="radio" name="level" class="foswikiRadioButton"  /> High
 </label> 
+</div>
+<div class="foswikiFormStep">
+---++!! Comments
+<textarea rows="10" cols="120" style="width:100%"></textarea>
+</div>
 ---
 <div class="foswkiFormStep">
 %BUTTON{"Login" icon="fa-sign-in" type="submit"}%

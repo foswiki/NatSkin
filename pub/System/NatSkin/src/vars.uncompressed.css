@@ -6,7 +6,7 @@
 
   /* named colors */
   --color-yellow: #ffff00;
-  --color-orange: #ff6600;
+  --color-orange: #ffa500;
   --color-red: #ff0000;
   --color-pink: #ff00ff;
   --color-purple: #800080;
@@ -334,7 +334,7 @@
   --font-size-h5: 1.2rem;
   --font-size-h6: 1.1rem;
 
-  --line-height-h1: calc(var(--line-height) * 0.8);
+  --line-height-h1: calc(var(--line-height) * 0.7);
   --line-height-h2: calc(var(--line-height) * 0.9);
   --line-height-h3: calc(var(--line-height) * 0.9);
   --line-height-h4: calc(var(--line-height) * 0.9);
@@ -350,7 +350,7 @@
   --font-size-huge: 2rem;
   --font-size-monospace: calc(1em - 1px);
 
-  --top-bar-height: auto; /* will be set by javascript */
+  --top-bar-height: 0; /* will be set by javascript */
 
   /* components */
   --newlink-background: #eee;
@@ -378,6 +378,7 @@
   --input-focus-color: #16beef;
   --input-box-shadow: inset 2px 2px 4px var(--color-gray-9);
   --input-font-size: calc((var(--font-size) - 1) *1px);
+  --input-font-family: Arial, "Liberation Sans", FreeSans, sans-serif;
 
   --checkbox-active: var(--color-primary);
   --checkbox-active-inner: #fff;
@@ -503,18 +504,19 @@
   --codemirror-line-height:1.4;
   --codemirror-background: var(--editor-background);
   --codemirror-foreground: var(--editor-foreground);
+  --codemirror-gutter-background: #e6e6e6;
   --codemirror-border: var(--editor-border);
   --codemirror-focus-border: var(--editor-focus-border);
-  --codemirror-atom-foreground: blue; 
+  --codemirror-atom-foreground: var(--color-blue); 
   --codemirror-error-foreground: var(--color-red);
-  --codemirror-attribute-foreground: #00c;
+  --codemirror-attribute-foreground: var(--color-navy);
   --codemirror-bracket-foreground: #997;
-  --codemirror-builtin-foreground: #30a;
-  --codemirror-comment-foreground: #a50;
+  --codemirror-builtin-foreground: var(--color-blue);
+  --codemirror-comment-foreground: var(--color-brown);
   --codemirror-cursor-background: #7e7;
   --codemirror-cursor-border: var(--input-foreground);
-  --codemirror-def-foreground: #00f;
-  --codemirror-error: #f00;
+  --codemirror-def-foreground:var(--color-blue);
+  --codemirror-error: var(--color-red);
   --codemirror-header-foreground: #333;
   --codemirror-hr-foreground: #708; 
   --codemirror-keyword-foreground: #708;
@@ -532,6 +534,7 @@
   --codemirror-variable-2-foreground: #05a;
   --codemirror-variable-3-foreground: #085;
   --codemirror-variable-foreground: black;
+  --codemirror-sticky-background: #f6f6f6;
   --codemirror-verbatim-background: #f6f6f6;
   --codemirror-selected-background: var(--color-primary-alpha-7, #c7c7c7);
   --codemirror-searching-background: var(--color-primary-alpha-5);
@@ -539,7 +542,7 @@
   --codemirror-placeholder-foreground: #747474;
 
   --tinymce-font-size: var(--font-size-normal);
-  --tinymce-line-height: var(--line-normal);
+  --tinymce-line-height: 1.4;
   --tinymce-font-family: var(--font-family-regular);
   --tinymce-foreground: var(--editor-foreground);
   --tinymce-background: var(--editor-background);
@@ -551,6 +554,12 @@
   --tinymce-placeholder-foreground: #747474;
 
   --swiper-theme-color:var(--color-primary);
+
+  /* ref notes */
+  --refnotes-foreground:var(--color-primary);
+
+  /* thumbnails */
+  --thumbnail-border-radius:0;
 }
 
 :root[data-theme='dark'] {
@@ -589,7 +598,9 @@
   --editor-foreground: var(--color-gray-6);
   --editor-focus-border: var(--color-primary-darker-1);
 
+  --codemirror-gutter-background: var(--alt-background);
   --codemirror-verbatim-background: #202020;
+  --codemirror-sticky-background: #202020;
   --codemirror-tag-foreground: #98c379; /* green */
   --codemirror-attribute-foreground: #61afef; /*blue */
   --codemirror-string-foreground: #d4527b; /* red */

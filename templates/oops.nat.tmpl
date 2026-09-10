@@ -20,7 +20,7 @@
 %TMPL:DEF{"goback"}%%{}%
 %MAKETEXT{"Please go back in your browser and try again."}%
 
-<form class="natOopsButtons" name="ButtonBox" action="%WIKILOGOURL%">
+<form name="ButtonBox" action="%WIKILOGOURL%">
   %BUTTON{"%MAKETEXT{"Retry"}%" icon="%TMPL:P{"icon::ok::name"}%" onclick="history.back()"}%
   %BUTTON{"%MAKETEXT{"Abort"}%" target="%IF{"not '%target%' ~ '%*'" then="%target%" else="%WIKILOGOURL%"}%" icon="%TMPL:P{"icon::cancel::name"}%"}%
 </form>%TMPL:END%

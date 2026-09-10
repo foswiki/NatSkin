@@ -1,0 +1,137 @@
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1789038739" format="1.1"  version="1"}%
+%META:TOPICPARENT{name="NatSkin"}%
+---+!! %TOPIC%
+
+%TOC%
+
+Flexbox is a layout model for arranging items (horizontally or vertically) within a container, in a flexible and responsive way.
+Flexbox makes it easy to design a flexible and responsive layout, without using float or positioning.
+
+There is a set of CSS classes part of NatSkin to help with [[https://css-tricks.com/snippets/css/a-guide-to-flexbox/][CSS Flexbox Layouts]]. Note that all classes use the =foswikiFlex...= prefix
+as they are of general use not restricted to NatSkin.
+
+A flexbox layout consists of a container and its items. There are classes to be used on a container and some that only make
+sense for child items within that container:
+
+---++ Container Classes
+
+| *Name* | *Description* |
+| =foswikiFlex= | activates flexbox layout for all contained items |
+| =foswikiInlineFlex= | same but container is an inline-block |
+| *Gap* ||
+| =foswikiFlexNoGap= | no gap between items (default) |
+| =foswikiFlexGap= | margin between items using a factor 0.2 of =--margin= |
+| =foswikiFlexGap2= | margin factor 0.4 |
+| =foswikiFlexGap3= | margin factor 0.6 |
+| =foswikiFlexGap4= | margin factor 0.8 |
+| =foswikiFlexGap5= | margin factor 1 |
+| *Direction* ||
+| =foswikiFlexRow= | horizontal axis along which items float left to right (default) |
+| =foswikiFlexRowReverse= | horizontal axis, right to left |
+| =foswikiFlexColumn= | vertical axis, top down |
+| =foswikiFlexColumnReverse= | vertical axis, bottom up |
+| *Wrap* ||
+| =foswikiFlexWrap= | wrap items at the end of their axis |
+| =foswikiFlexNoWrap= | don't wrap items (default) |
+| =foswikiFlexWrapReverse= | wrap items bottom up |
+| *Justify* ||
+| =foswikiFlexJustifyStart= | items are aligned left (default) |
+| =foswikiFlexJustifyEnd= | items are aligned right, extra before them |
+| =foswikiFlexJustifyCenter= | center items, extra space at start and end |
+| =foswikiFlexJustifyArround= | distribute extra space around items |
+| =foswikiFlexJustifyBetween= | between items |
+| *Align Items* ||
+| =foswikiFlexItemsStart= | align items at the start of the cross axis |
+| =foswikiFlexItemsEnd= | align items at the end |
+| =foswikiFlexItemsCenter= | center items |
+| =foswikiFlexItemsBaseline= | align items to the text's baseline |
+| =foswikiFlexItemsStretch= | stretch all items (default) |
+| *Align Content* ||
+| =foswikiFlexContentStart= | pack items to the start, similar to =foswikiFlexJustifyStart= |
+| =foswikiFlexContentEnd= | pack items to the end |
+| =foswikiFlexContentCenter= | center items |
+| =foswikiFlexContentBetween= | put space between items |
+| =foswikiFlexContentAround= | put space around items |
+| =foswikiFlexContentStretch= | stretch items to take up the remaining space |
+
+---++ Item Classes
+
+| *Name* | *Description* |
+| =foswikiFlexStretch= | grow the current item and create a new flexbox for its own child items |
+| *Base* ||
+| =foswikiFlexBase2= | item's default size is 50% of container witdth |
+| =foswikiFlexBase3= | 33% of container width |
+| =foswikiFlexBase4= | 25% |
+| =foswikiFlexBase5= | 20% |
+| *Grow/Shring* ||
+| =foswikiFlexGrow= | defines the ability of the item to grow if necessary |
+| =foswikiFlexShrink= | shrink the element if necessary |
+| =foswikiFlexAuto= | automatically grow the item |
+| =foswikiFlexNoGrow= | don't grow the item |
+| =foswikiFlexNoShrink= | dont' shrink the item |
+| *Align Self* ||
+| =foswikiFlexSelfStart= | override alignment specified by the container by aligning it to start |
+| =foswikiFlexSelfEnd= | align item to end |
+| =foswikiFlexSelfCenter= | center item |
+| =foswikiFlexSelfBaseline= | align item to the text's baseline |
+| =foswikiFlexSelfStretch= | stretch item |
+| =foswikiFlexSelfAuto= | use default alignment as specified by the container |
+| *Order* ||
+| =foswikiFlexNoOrder= | items are laid out by its source order |
+| =foswikiFlexOrder1= | order 1 |
+| =foswikiFlexOrder2= | order 2 |
+| =foswikiFlexOrder3= | ... |
+| =foswikiFlexOrder4= | ... |
+| =foswikiFlexOrder5= | ... |
+| =foswikiFlexOrder6= | ... |
+| =foswikiFlexOrder7= | ... |
+| =foswikiFlexOrder8= | ... |
+| =foswikiFlexOrder9= | ... |
+| =foswikiFlexOrder10= | ... |
+| =foswikiFlexOrderLast= | order item to the end |
+
+---++ Examples
+
+You type:
+
+<verbatim>
+<div class='foswikiFlex foswikiFlexWrap foswikiFlexGap alt'>
+   <div class='foswikiFlexBase2'>hello world</div>
+   <div class='foswikiFlexBase2'>hello world</div>
+   <div class='foswikiFlexBase3'>hello world</div>
+   <div class='foswikiFlexBase3'>hello world</div>
+   <div class='foswikiFlexBase3'>hello world</div>
+   <div class='foswikiFlexBase4'>hello world</div>
+   <div class='foswikiFlexBase4'>hello world</div>
+   <div class='foswikiFlexBase4'>hello world</div>
+   <div class='foswikiFlexBase4'>hello world</div>
+   <div class='foswikiFlexBase5'>hello world</div>
+   <div class='foswikiFlexBase5'>hello world</div>
+   <div class='foswikiFlexBase5'>hello world</div>
+   <div class='foswikiFlexBase5'>hello world</div>
+   <div class='foswikiFlexBase5'>hello world</div>
+</div>
+</verbatim>
+
+You get:
+
+<div class='foswikiFlex foswikiFlexWrap foswikiFlexGap alt'>
+   <div class='foswikiFlexBase2'>hello world</div>
+   <div class='foswikiFlexBase2'>hello world</div>
+   <div class='foswikiFlexBase3'>hello world</div>
+   <div class='foswikiFlexBase3'>hello world</div>
+   <div class='foswikiFlexBase3'>hello world</div>
+   <div class='foswikiFlexBase4'>hello world</div>
+   <div class='foswikiFlexBase4'>hello world</div>
+   <div class='foswikiFlexBase4'>hello world</div>
+   <div class='foswikiFlexBase4'>hello world</div>
+   <div class='foswikiFlexBase5'>hello world</div>
+   <div class='foswikiFlexBase5'>hello world</div>
+   <div class='foswikiFlexBase5'>hello world</div>
+   <div class='foswikiFlexBase5'>hello world</div>
+   <div class='foswikiFlexBase5'>hello world</div>
+</div>
+
+%META:TOPICMOVED{by="micha" date="1763575399" from="System.NatSkinCSSFlexBox" to="System.NatSkinFlexbox"}%
+%META:PREFERENCE{name="CREATED_WITH_TEMPLATETOPIC" title="CREATED_WITH_TEMPLATETOPIC" type="Local" value="System.WebTopicEditTemplate"}%
+%META:PREFERENCE{name="TOPICTITLE" title="TOPICTITLE" type="Local" value="NatSkin Flexbox"}%

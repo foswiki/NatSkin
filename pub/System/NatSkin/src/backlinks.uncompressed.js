@@ -1,7 +1,7 @@
 /*
  * Backlinks
  *
- * (c)opyright 2006-2023 Michael Daum http://michaeldaumconsulting.com
+ * (c)opyright 2006-2025 Michael Daum http://michaeldaumconsulting.com
  *
  * Licensed under the GPL license http://www.gnu.org/licenses/gpl.html
  *
@@ -12,7 +12,7 @@ jQuery(function($) {
 
   $(".natBacklinksContainer").livequery(function() {
     var $container = $(this),
-        $searchAllWebs = $container.find(".natBacklinksSearchAll");
+        $searchAllWebs = $container.parent().find(".natBacklinksSearchAll");
 
     function updateContainer() {
       var expand;

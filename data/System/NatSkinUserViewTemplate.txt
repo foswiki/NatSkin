@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1739795603" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1789038739" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 %TMPL:INCLUDE{"view"}%
 
@@ -13,7 +13,10 @@
 %TMPL:DEF{"DELETE_ACTION"}%%TMPL:END%
 %TMPL:DEF{"COPY_TOPIC_ACTION"}%%TMPL:END%
 
-%TMPL:DEF{"banner::mode"}%%NATSKIN_BANNERMODE{default="autocolor"}%%TMPL:END%
+%TMPL:DEF{"banner::mode"}%%IF{"'%USERINFO{"%BASETOPIC%" format="$username"}%'=''"
+   then="off"
+   else="%NATSKIN_BANNERMODE{default="autocolor"}%"
+}%%TMPL:END%
 %TMPL:DEF{"banner::mode::autocolor::property"}%radial-gradient%TMPL:END%
 %TMPL:DEF{"banner::mode::autocolor::text"}%%TOPICTITLE%%TMPL:END%
 %TMPL:DEF{"banner::inlinestyle"}%style='%TMPL:P{"banner::height"}%'%TMPL:END%
@@ -51,7 +54,7 @@
   text="<link rel='stylesheet' href='%PUBURLPATH%/%SYSTEMWEB%/MatterTheme/build/profile.css' type='text/css' media='all' />"
 }%%TMPL:END%
 
-%TMPL:DEF{"beforetext"}%%IF{"({AntiSpam}{HideUserDetails}=1 or context isadmin) and '%USERINFO{"%BASETOPIC%" format="$username"}%'=''"
+%TMPL:DEF{"beforetext"}%%IF{"'%USERINFO{"%BASETOPIC%" format="$username"}%'=''"
   then="$percntTMPL:P{\"userinfo::disabled\"}$percnt"
   else="$percntTMPL:P{\"userinfo\"}$percnt"
 }%%TMPL:END%
@@ -98,14 +101,16 @@
    footer="</table></div>"
    Address_format="<tr>
     <th>$title:</th>
-    <td class='inlineEditValue' data-formfields='$name'>
-       <ul class='foswikiNoBullets inlineEditValue' data-formfield='$name' data-view-def='renderAddressView'>
+    <td class='inlineEditValue foswikiNoBullets foswikiFlex' data-formfield='$name' data-view-def='renderAddressView'>
+       <ul>
          $percntFORMATLIST{\"$value\" 
            separator=\"$n\" 
            format=\"<li> $1 </li>\"
          }$percnt 
        </ul>
+       <div style='position:relative'>$editicon</div>
     </td></tr>"
+    %TMPL:P{"userinfo::table::params"}%
 }%%TMPL:END%
 
 %TMPL:DEF{"renderAddressView"}%%RENDERFORDISPLAY{
@@ -117,14 +122,12 @@
     then="value=\"%URLPARAM{"value"}%\""
   }%
   %URLPARAM{"formfield" default="NoSuchThing"}%_default="%URLPARAM{"default"}%"
-  format="<div>
-    <ul class='inlineEditValue' data-formfield='$name' data-view-def='renderAddressView'>
+  format="<ul>
       $percntFORMATLIST{\"$value\" 
         separator=\"$n\" 
         format=\"<li> $1 </li>\"
       }$percnt 
-    </ul>
-    </div>"
+    </ul><div style='position:relative'>$editicon</div>"
 }%%TMPL:END%
 
 %META:PREFERENCE{name="PERMSET_VIEW" title="PERMSET_VIEW" type="Local" value="everybody"}%

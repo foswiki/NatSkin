@@ -180,12 +180,6 @@ table.foswikiStripes > tbody > tr:nth-child(2n+1) > td {
 }
 
 /* tables in forms */
-.foswikiPageForm th,
-.foswikiPageForm td,
-.foswikiFormSteps th,
-.foswikiFormSteps td {
-  padding:2px 7px 2px 0;
-}
 .foswikiPageForm .foswikiTable td,
 .foswikiFormSteps .foswikiTable td,
 .foswikiPageForm .foswikiTable th,
@@ -214,9 +208,9 @@ table.foswikiStripes > tbody > tr:nth-child(2n+1) > td {
 }
 
 .foswikiCheckboxGroup > table,
-.foswikiRadioGroup > table,
+.foswikiRadioButtonGroup > table,
 .foswikiCheckboxGroup > table > tbody > tr > td,
-.foswikiRadioGroup > table > tbody > tr > td {
+.foswikiRadioButtonGroup > table > tbody > tr > td {
   background-color:transparent;
   width:auto;
   margin:0;
@@ -224,14 +218,14 @@ table.foswikiStripes > tbody > tr:nth-child(2n+1) > td {
   border:0;
 }
 .foswikiCheckboxGroup > table > tbody > tr > td,
-.foswikiRadioGroup > table > tbody > tr > td {
+.foswikiRadioButtonGroup > table > tbody > tr > td {
   padding:0 0.2em 0.2em 0;
 }
 
 .erp-form {
-  position:absolute;
+  /*position:absolute;
   top:0;
-  left:0;
+  left:0;*/
   width:100%;
   background-color:var(--color-background);
   z-index:999;

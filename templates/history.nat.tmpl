@@ -1,7 +1,6 @@
 %TMPL:INCLUDE{"oops"}%%{}%
 %TMPL:INCLUDE{"diff"}%%{}%
 
-%{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
 <div class="jqUIDialog foswikiFormSteps" data-modal="true" data-draggable="true" data-width="auto" title="%TMPL:P{"heading"}%">
 %TMPL:P{"formstart"}%%{}%
@@ -11,32 +10,26 @@
 </div>
 </noautolink>%TMPL:END%
 
-%{ ################################################################################ }%
 %TMPL:DEF{"heading"}%%MAKETEXT{"Revision history of [_1]" args="%GETTOPICTITLE{"%BASEWEB%.%BASETOPIC%" encode="entity"}%"}%%TMPL:END%
 
-%{ ################################################################################ }%
 %TMPL:DEF{"formstart"}%%TMPL:P{context="DiffPluginEnabled" then="formstart_diff" else="formstart_else"}%%TMPL:END%
 %TMPL:DEF{"formstart_else"}%%TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="formstart_compare" else="formstart_rdiff"}%%TMPL:END%
 
-%{ ################################################################################ }%
 %TMPL:DEF{"formstart_diff"}%%{}%
 <form name="main" action="%SCRIPTURLPATH{"diff"}%/%BASEWEB%/%BASETOPIC%">
 <input type="hidden" name="context" value="2" />
 %{}%%TMPL:END%
 
-%{ ################################################################################ }%
 %TMPL:DEF{"formstart_compare"}%%{}%
 <form name="main" action="%SCRIPTURLPATH{"compare"}%/%BASEWEB%/%BASETOPIC%">
 <input type="hidden" name="context" value="1" />
 %{}%%TMPL:END%
 
-%{ ################################################################################ }%
 %TMPL:DEF{"formstart_rdiff"}%%{}%
 <form name="main" action="%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%">
 <input type="hidden" name="render" value="%DIFFRENDERSTYLE{default="sequential"}%" />
 %{}%%TMPL:END%
 
-%{ ################################################################################ }%
 %TMPL:DEF{"options"}%%TMPL:P{context="DiffPluginEnabled" else="options_else"}%%TMPL:END%
 %TMPL:DEF{"options_else"}%<div class="foswikiRight">
 <label><input type="radio" name="render" value="interweave" checked class="foswikiRadioButton"> %MAKETEXT{"interweave"}%</label>
@@ -44,14 +37,12 @@
 <label><input type="radio" name="render" value="debug" class="foswikiRadioButton"> %MAKETEXT{"debug"}%</label>
 </div>%TMPL:END%
 
-%{ ################################################################################ }%
 %TMPL:DEF{"formend"}%%{}%
 <!-- input type="hidden" name="render" value="interweave" -->
   <a class="jqUIDialogButton jqUIDialogSubmit jqUIDialogClose" data-icon="ui-icon-clock">%MAKETEXT{"Compare"}%</a>
   <a class="jqUIDialogButton jqUIDialogDestroy" data-icon="ui-icon-cancel">%MAKETEXT{"Close"}%</a>
 </form>%TMPL:END%
 
-%{ ################################################################################ }%
 %TMPL:DEF{"historyjavascript"}%%{}%
 %ADDTOZONE{
   "script"
@@ -61,7 +52,6 @@
 }%%TMPL:END%
 %TMPL:DEF{"historyscript"}%<script src='%PUBURLPATH%/%SYSTEMWEB%/NatSkin/build/history.js'></script>%TMPL:END%
 
-%{ ################################################################################ }%
 %TMPL:DEF{"revtable"}%<div class="natHistoryTable">
 %HISTORY{
   rev2="%URLPARAM{"rev"}%" 
@@ -103,17 +93,17 @@
         then=\"<a href='%SCRIPTURLPATH{oops}%/%BASEWEB%/%BASETOPIC%?template=oopshistory' class='natHistoryNavi'>
             $percntTMPL:P{\"diff::control::start::icon\"}$percnt
           </a>
-          <a href='%SCRIPTURLPATH{oops}%/%BASEWEB%/%BASETOPIC%?template=oopshistory;rev=$next{$rev2}' class='natHistoryNavi' data-rev='$next{$rev2}}'>
+          <a href='%SCRIPTURLPATH{oops}%/%BASEWEB%/%BASETOPIC%?template=oopshistory;rev=$next{$rev2}' class='natHistoryNavi' data-rev='$next{$rev2}'>
             $percntTMPL:P{\"diff::control::prev::icon\"}$percnt
           </a>\"
         else=\"<a class='natHistoryNavi natDisabledTopicAction'>$percntTMPL:P{\"diff::control::start::disabled::icon\"}$percnt</a>
                <a class='natHistoryNavi natDisabledTopicAction'>$percntTMPL:P{\"diff::control::prev::disabled::icon\"}$percnt</a>\"
       }$percnt
       $percntIF{\"'$previous{'test'}'='test'\"
-        then=\"<a href='%SCRIPTURLPATH{oops}%/%BASEWEB%/%BASETOPIC%?template=oopshistory;rev=$previous{$rev2}' class='natHistoryNavi' data-rev='$previous{$rev2}}'>
+        then=\"<a href='%SCRIPTURLPATH{oops}%/%BASEWEB%/%BASETOPIC%?template=oopshistory;rev=$previous{$rev2}' class='natHistoryNavi' data-rev='$previous{$rev2}'>
             $percntTMPL:P{\"diff::control::next::icon\"}$percnt
           </a>
-          <a href='%SCRIPTURLPATH{oops}%/%BASEWEB%/%BASETOPIC%?template=oopshistory;rev=$previous{$nrev}' class='natHistoryNavi' data-rev='$previous{$nrev}}'>
+          <a href='%SCRIPTURLPATH{oops}%/%BASEWEB%/%BASETOPIC%?template=oopshistory;rev=$previous{$nrev}' class='natHistoryNavi' data-rev='$previous{$nrev}'>
             $percntTMPL:P{\"diff::control::end::icon\"}$percnt
           </a>\"
         else=\"<a class='natHistoryNavi natDisabledTopicAction'>$percntTMPL:P{\"diff::control::next::disabled::icon\"}$percnt</a>

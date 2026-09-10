@@ -1,6 +1,5 @@
 /* page layout */
 @page {
-  size: a4; 
   margin:2cm 2cm 2cm 2cm;
 
   @top-left-corner {
@@ -61,14 +60,14 @@
     content: none;
   }
   @bottom-left {
-    content: string(date) string(revisionid) string(author);
+    content: string(date) string(revisionid) string(author); 
   }
 }
 
 h1:first-of-type { 
   string-set: title content(); 
 }
-h1:first-of-type > a { 
+h1:first-of-type .TopicTitle { 
   string-set: title content(); 
 }
 h1:first-of-type .foswikiTopicSummary {
@@ -114,6 +113,7 @@ body {
 /* color */
 h1, h2, h3, h4, h5, h6, 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, 
+.foswikiTocTitle,
 body {
   color:#000;
 }
@@ -121,11 +121,24 @@ body {
 /* pagination */
 h1, h2, h3, h4, h5, h6 {
   page-break-after:avoid;
-  page-break-inside:avoid;
 }
+/* hack to avoid page break after */
+h1::after,
+h2::after,
+h3::after,
+h4::after,
+h5::after,
+h6::after {
+    content: "";
+    display: block;
+    height: 100px;
+    margin-bottom: -100px;
+}
+
 ul, ol, dl {
   page-break-before:avoid;
 }
+
 .natMainContents table {
   page-break-before:avoid;
 }
@@ -204,8 +217,13 @@ p {
   margin: 0.5em 0em;
   text-indent: 0;
   text-align:justify;
-  orphans:4;
-  widows:2;
+  widows:4;
+  orphans:3;
+}
+
+div {
+  widows:4;
+  orphans:3;
 }
 
 .imageSimple,
@@ -280,6 +298,10 @@ pre {
 }
 
 /* toc */
+.foswikiTocTitle {
+  border-bottom:1pt solid #d0d0d0;
+  margin: 48px 0 0;
+}
 .foswikiToc ul {
   border:0 !important;
   padding:0 !important;
@@ -330,8 +352,8 @@ pre {
   --font-size-normal: 13px; /* calc(var(--font-size) * 1px); */
   --font-size-small: 11.3855px; /* calc(var(--font-size) * 0.7692 * 1px); */
   --font-size-smallish: 12.116px; /*calc(var(--font-size) * 0.932 * 1px); */
-  --font-size-large: 18px /* calc(var(--font-size) * 1.3846 * 1px); */
-  --font-size-huge: 24px /* calc(var(--font-size) * 1.8461 * 1px); */
+  --font-size-large: 18px; /* calc(var(--font-size) * 1.3846 * 1px); */
+  --font-size-huge: 24px; /* calc(var(--font-size) * 1.8461 * 1px); */
 
   --margin: 1.5385em; /* calc(var(--line-height) * 1rem); */
 
@@ -344,6 +366,7 @@ h1 {
   border-bottom:1pt solid #d0d0d0;
   margin: 4.6155em 0 10px;
 }
+span.foswikiTocTitle,
 h2 { 
   border-bottom:1pt solid #d0d0d0;
   margin: 48px 0 15px;

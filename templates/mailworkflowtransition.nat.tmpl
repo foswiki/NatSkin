@@ -7,7 +7,7 @@ Content-Type: text/plain
 
 %MAKETEXT{"Hello"}%,
 
-%MAKETEXT{"We would like to inform you that the topic [_1] has been transitioned to the state [_2] by [_3]." args="%GETTOPICTITLE{"%WEB%.%TOPIC%"}%, %TARGET_STATE%, %GETTOPICTITLE{"%USERSWEB%.%WIKINAME%"}%"}%
+%MAKETEXT{"We would like to inform you that the topic [_1] has been transitioned to the state [_2] by [_3]." args="%GETTOPICTITLE{"%WEB%.%TOPIC%"}%, %TARGET_STATE%, %GETTOPICTITLE{"%USERINFO{format="$wikiusername"}%"}%"}%
 
 %MAKETEXT{"You can review the topic at [_1]." args="%SCRIPTURL{"view" topic="%WEB%.%TOPIC%"}%"}%
 

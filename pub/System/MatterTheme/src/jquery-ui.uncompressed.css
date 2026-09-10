@@ -2,6 +2,15 @@
   border-radius:0;
   line-height: var(--line-height);
 }
+.ui-button.ui-state-error {
+  color:#fff;
+  border-color:#b20000;
+  background:linear-gradient(#f76f6f 0,#b20000 100%);
+}
+.ui-button.ui-state-highlight {
+  border-color:var(--color-selected-foreground);
+  box-shadow:0 0 0.5em var(--color-selected-foreground);
+}
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-left,
@@ -35,6 +44,11 @@
 .ui-dialog .ui-dialog-content, 
 .ui-dialog .ui-dialog-buttonpane {
   padding:1.5em 1.3em;
+}
+.ui-dialog-content .hr, 
+.ui-dialog-content hr {
+  margin-left:-1.3em;
+  margin-right:-1.3em;
 }
 .ui-dialog .ui-dialog-titlebar-close {
   right:1.3em;

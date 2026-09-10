@@ -1,5 +1,7 @@
 %TMPL:INCLUDE{"page"}%%{ template: changeform.nat.tmpl }%
 
+%TMPL:DEF{"banner"}%%TMPL:END%
+
 %TMPL:DEF{"sidebar"}%%{}%
 <nop><h2>%MAKETEXT{"Help"}%</h2>
    * <a href="%SCRIPTURLPATH{"view" topic="%SYSTEMWEB%.DataForms"}%" target="_blank">%MAKETEXT{"Form-based input"}%</a>
@@ -116,22 +118,3 @@
 }
 </style>
 </literal>%TMPL:END%
-
-%TMPL:DEF{"formlist_old"}%<table cellspacing="5" class="natChangeForm">
-%NATFORMLIST{
-  separator="$n"
-  format="<tr>
-      <td>
-        <input type='radio' name='formtemplate' id='formtemplateelem$index' $checked value='$name' />
-      </td>
-      <td style='padding-right:10px'>
-        <label for='formtemplateelem$index'><nop>$formTopic</label>
-      </td>
-      <td>$percntIF{\"'$name'='none'\" 
-          then=\"%MAKETEXT{"remove the current form (caution: possible data loss)"}%\" 
-          else=\"$percntFORMFIELD{\"Summary\" topic=\"$formWeb.$formTopic\"}$percnt (<a href='$percntSCRIPTURLPATH{\"view\" topic=\"$formWeb.$formTopic\"}$percnt' target='_blank'>?</a>)\"
-        }$percnt
-      </td>
-    </tr>"
-}%
-</table>%TMPL:END%

@@ -10,7 +10,7 @@
 }
 
 /* flex stretch */
-.foswikiStretch {
+.foswikiFlexStretch {
   flex-grow:1;
   display:flex;
   flex-direction:column;
@@ -23,33 +23,56 @@
 .foswikiFlexBase5 { flex-basis: 20%; }
 
 /* gap */
-.foswikiFlexNoGap { gap: 0;}
-.foswikiFlexGap   { gap: calc(var(--margin) * 0.2); }
 .foswikiFlex,
-.foswikiFlexGap2  { gap: calc(var(--margin) * 0.4); }
-.foswikiFlexGap3  { gap: calc(var(--margin) * 0.6); }
-.foswikiFlexGap4  { gap: calc(var(--margin) * 0.8); }
-.foswikiFlexGap5  { gap: var(--margin) };
+.foswikiFlexNoGap { gap: 0;}
+.foswikiFlexGap   { gap: calc(var(--margin) * 0.25); }
+.foswikiFlexGap2  { gap: calc(var(--margin) * 0.5); }
+.foswikiFlexGap3  { gap: calc(var(--margin) * 0.6666); }
+.foswikiFlexGap4  { gap: calc(var(--margin) * 0.75); }
+.foswikiFlexGap5  { gap: var(--margin); }
+
+.foswikiFlexGap .foswikiFlexBase2 { flex-basis: calc(50% - var(--margin) * 0.2); }
+.foswikiFlexGap .foswikiFlexBase3 { flex-basis: calc(33% - var(--margin) * 0.2); }
+.foswikiFlexGap .foswikiFlexBase4 { flex-basis: calc(25% - var(--margin) * 0.2); }
+.foswikiFlexGap .foswikiFlexBase5 { flex-basis: calc(20% - var(--margin) * 0.2); }
+
+.foswikiFlexGap2 .foswikiFlexBase2 { flex-basis: calc(50% - var(--margin) * 0.4); }
+.foswikiFlexGap2 .foswikiFlexBase3 { flex-basis: calc(33% - var(--margin) * 0.4); }
+.foswikiFlexGap2 .foswikiFlexBase4 { flex-basis: calc(25% - var(--margin) * 0.4); }
+.foswikiFlexGap2 .foswikiFlexBase5 { flex-basis: calc(20% - var(--margin) * 0.4); }
+
+.foswikiFlexGap3 .foswikiFlexBase2 { flex-basis: calc(50% - var(--margin) * 0.6); }
+.foswikiFlexGap3 .foswikiFlexBase3 { flex-basis: calc(33% - var(--margin) * 0.6); }
+.foswikiFlexGap3 .foswikiFlexBase4 { flex-basis: calc(25% - var(--margin) * 0.6); }
+.foswikiFlexGap3 .foswikiFlexBase5 { flex-basis: calc(20% - var(--margin) * 0.6); }
+
+.foswikiFlexGap4 .foswikiFlexBase2 { flex-basis: calc(50% - var(--margin) * 0.8); }
+.foswikiFlexGap4 .foswikiFlexBase3 { flex-basis: calc(33% - var(--margin) * 0.8); }
+.foswikiFlexGap4 .foswikiFlexBase4 { flex-basis: calc(25% - var(--margin) * 0.8); }
+.foswikiFlexGap4 .foswikiFlexBase5 { flex-basis: calc(20% - var(--margin) * 0.8); }
+
+.foswikiFlexGap5 .foswikiFlexBase2 { flex-basis: calc(50% - var(--margin)); }
+.foswikiFlexGap5 .foswikiFlexBase3 { flex-basis: calc(33% - var(--margin)); }
+.foswikiFlexGap5 .foswikiFlexBase4 { flex-basis: calc(25% - var(--margin)); }
+.foswikiFlexGap5 .foswikiFlexBase5 { flex-basis: calc(20% - var(--margin)); }
 
 /* flex direction */
 .foswikiFlexRow            { flex-direction: row; }
-.foswikiFlexRow-reverse    { flex-direction: row-reverse; }
+.foswikiFlexRowReverse    { flex-direction: row-reverse; }
 .foswikiFlexColumn         { flex-direction: column; }
-.foswikiFlexColumn-reverse { flex-direction: column-reverse; }
+.foswikiFlexColumnReverse { flex-direction: column-reverse; }
 
 /* wrap */
 .foswikiFlexWrap        { flex-wrap: wrap; }
-.foswikiFlexNowrap      { flex-wrap: nowrap; }
+.foswikiFlexNoWrap      { flex-wrap: nowrap; }
 .foswikiFlexWrapReverse { flex-wrap: wrap-reverse; }
 
 /* justify */
+.foswikiFlexJustifyStart    { justify-content: start; }
+.foswikiFlexJustifyEnd      { justify-content: end; }
+.foswikiFlexJustifyCenter   { justify-content: center; }
 .foswikiFlexJustifyAround   { justify-content: space-around; }
 .foswikiFlexJustifyBetween  { justify-content: space-between; }
-.foswikiFlexJustifyCenter   { justify-content: center; }
-.foswikiFlexJustifyEnd      { justify-content: end; }
-.foswikiFlexJustifyNormal   { justify-content: normal; }
-.foswikiFlexJustifyStart    { justify-content: start; }
-.foswikiFlexJustifyStretch  { justify-content: stretch; }
 
 /* align items */
 .foswikiFlexItemsStart      { align-items: flex-start; }
@@ -68,6 +91,7 @@
 
 /* flex grow and shring */
 .foswikiFlexGrow     { flex-grow: 1; }
+.foswikiFlexShrink   { flex-shrink: 1; }
 .foswikiFlexAuto     { flex-grow: auto; }
 .foswikiFlexNoGrow   { flex-grow: 0; }
 .foswikiFlexNoShrink { flex-shrink: 0; } 
@@ -93,3 +117,4 @@
 .foswikiFlexOrder9    { order: 9; }
 .foswikiFlexOrder10   { order: 10; }
 .foswikiFlexOrderLast { order: 9999; }
+

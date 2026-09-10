@@ -9,7 +9,7 @@
   --color-primary-hue: 210;
   --color-primary-saturation: 63%; 
   --color-primary-lightness: 54%; 
-  --color-border: var(--color-gray-6);
+  --color-border: var(--color-gray-7);
 
   --scrollbar-background: var(--color-gray-8);
   --scrollbar-thumb-background: var(--color-gray-3);
@@ -24,8 +24,8 @@
   --topbar-border: var(--color-border);
   --topbar-backdrop-filter: blur(6px);
   --bottombar-background: var(--color-gray-10);
-  --bottombar-foreground: var(--topbar-foreground);
-  --bottombar-border: var(--topbar-border);
+  --bottombar-foreground: var(--color-gray-1);
+  --bottombar-border: var(--color-gray-8);
 
   --toppanel-background: #636363;
   --toppanel-foreground: #fff;
@@ -78,7 +78,7 @@
   --ui-menu-hover-foreground: var(--ui-menu-forground);
 
   /*--alt-border: #bdbec5;*/
-  --alt-border: var(--color-gray-6);
+  --alt-border: var(--color-gray-7);
   --alt-background: var(--color-gray-10);
   --alt-background-gradient: linear-gradient(to bottom, var(--color-background) 0%, var(--alt-background) 100%); 
   --alt-header-foreground: var(--color-primary);
@@ -112,11 +112,12 @@
   --button-active-background-gradient: linear-gradient(var(--button-active-background) 0%, var(--color-background) 100%);
   --button-active-foreground: var(--color-active-foreground);
 
-  --table-border: #e4e4e4;
+  --table-border: #d6d6d6;
   --table-foreground: var(--color-foreground);
 
   --topbar-anchor: var(--color-anchor);
   --topbar-sticky-box-shadow: 0 2px 10px -2px rgba(0,0,0,.25);
+  --topbar-sticky-background:rgba(255, 255, 255, 0.7);
 
   --ui-widget-background: var(--color-background);
   --ui-widget-foreground: var(--color-foreground);
@@ -134,7 +135,7 @@
   --ui-dialog-title-foreground: var(--color-text);
   --ui-dialog-title-border: var(--color-border);
 
-  --tabpane-border-color: var(--color-gray-5, #bdbec5);
+  --tabpane-border-color: var(--color-gray-6, #bdbec5);
   --tabpane-foreground: var(--color-foreground);
   --tabpane-background: #ececec;
   --tabpane-background-gradient: linear-gradient(var(--color-background) 0%, var(--tabpane-background) 100%); 
@@ -157,18 +158,6 @@
 
 }
 
-@media screen and (max-width:1260px) {
-  :root {
-    --font-size:14;
-  }
-}
-
-@media screen and (max-width:1024px) {
-  :root {
-    --font-size:13;
-  }
-}
-
 /*****************************/
 
 :root[data-theme='dark'] {
@@ -176,7 +165,7 @@
   --color-green: #98c379; 
   --color-blue: #61afef; 
 
-  --color-h1: var(--color-primary);
+  --color-h1: #e2e2e2;
   --color-foreground: #fff;
   /*--color-background: #2a2a2a;*/
   --color-background:#212121;
@@ -200,10 +189,12 @@
   --topbar-background:rgba(17, 18, 19, 0.8);
   --topbar-border: transparent;
   --topbar-sticky-box-shadow: none;
+  --topbar-sticky-background:rgba(17, 18, 19, 0.7);
 
   --toppanel-background: #373939;
   --bottombar-background: #191a1b;
   --bottombar-border: var(--bottombar-background);
+  --bottombar-foreground: var(--color-gray-1);
 
   --newlink-background: var(--color-selected-background);
   --newlink-foreground: var(--color-selected-foreground);
@@ -218,8 +209,8 @@
   --alt-inner-border: var(--color-primary-darker-3);
   --alt-shadow: var(--color-primary-darker-5);
   --alt-background: var(--color-primary-darker-5);
-  --alt-background-gradient: linear-gradient(to bottom, var(--color-primary-darker-4) 0%, var(--alt-background) 100%); 
   --alt-header-foreground: var(--color-foreground);
+  --alt-background-gradient: linear-gradient(to bottom, var(--color-background) 0%, #1a1a1a 100%); 
 */
   --alt-border: #555;
   --alt-inner-border: var(--alt-border);

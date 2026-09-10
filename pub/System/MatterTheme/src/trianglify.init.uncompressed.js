@@ -1,7 +1,7 @@
 /*
 Foswiki - The Free and Open Source Wiki, http://foswiki.org/
 
-Copyright (C) 2018-2023 Foswiki Contributors. Foswiki Contributors
+Copyright (C) 2018-2026 Foswiki Contributors. Foswiki Contributors
 are listed in the AUTHORS file in the root of this distribution.
 NOTE: Please extend that file, not this notice.
 
@@ -54,7 +54,7 @@ jQuery(function($) {
       opts.height = $this.height();
     }
 
-    opts.seed = $this.text() + (opts.seed || '');
+    opts.seed = ($this.text() + (opts.seed || '')).trim();
 
     //console.log("opts=",opts);
 

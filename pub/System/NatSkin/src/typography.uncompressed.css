@@ -34,6 +34,10 @@ pre, pre i, code, textarea {
   font-family: var(--font-family-monospace);
   font-size:var(--font-size-monospace);
 }
+input {
+  font-family: var(--input-font-family);
+  font-size:var(--input-font-size);
+}
 
 pre.foswikiInlinePre,
 code {
@@ -60,6 +64,7 @@ ins a {
 address {
   font-style:normal;
   white-space:pre-line;
+  line-height:calc(var(--line-height) * 0.9);
 }
 code b,
 dt, th, 
@@ -69,13 +74,13 @@ address:first-line {
 
 p {
   font-size: var(--font-size-normal);
-  margin: var(--margin) 0;
+  margin: var(--margin-half) 0;
 }
 
 blockquote {
   border-left:4px solid var(--color-border);
   margin: var(--margin) 0;
-  padding:0 0 0 var(--margin); /* 18px */
+  padding:0 0 0 var(--margin); 
 }
 
 .alt blockquote {
@@ -154,6 +159,9 @@ h6 a {
   color:var(--color-h6);
   text-decoration:none !important;
 }
+.foswikiNoDecoration {
+  text-decoration:none !important;
+}
 
 h1 { 
   font-size: var(--font-size-h1);
@@ -161,8 +169,8 @@ h1 {
   font-family: var(--font-family-h1);
   font-weight: var(--font-weight-h1);
   border-bottom:1px solid var(--color-border);
-  margin: calc(var(--font-baseline) * 3 * 1px) 0 
-          calc(var(--font-baseline) * 3 * 1px - var(--line-height-h1) * var(--font-size-h1));
+  margin: calc(var(--font-baseline) * 3px) 0 
+          calc(max(var(--font-baseline) * 3px - var(--line-height-h1) * var(--font-size-h1), 0px));
 }
 
 body > h1:first-of-type,
@@ -172,17 +180,18 @@ body > h1:first-of-type,
 .foswikiProfileInfo h1,
 .natMainContents > h1:first-of-type {
   margin-top:0;
-  margin-bottom:calc(var(--font-baseline) * 2 * 1px - var(--line-height-h1) * var(--font-size-h1));
+  margin-bottom:calc(var(--font-baseline) * 2px - var(--line-height-h1) * var(--font-size-h1));
 }
 
+.foswikiTocTitle,
 h2 { 
   font-size: var(--font-size-h2);
   line-height: var(--line-height-h2);
   font-family: var(--font-family-h2);
   font-weight: var(--font-weight-h2);
   border-bottom:1px solid var(--color-border);
-  margin: calc(var(--font-baseline) * 2 * 1px) 0 
-          calc(var(--font-baseline) * 2 * 1px - var(--line-height-h2) * var(--font-size-h2));
+  margin: calc(var(--font-baseline) * 2px) 0 
+          calc(max(var(--font-baseline) * 2px - var(--line-height-h2) * var(--font-size-h2), 0px));
 }
 
 .natMainContents > h2:first-child {
@@ -194,8 +203,8 @@ h3 {
   line-height: var(--line-height-h3);
   font-family: var(--font-family-h3);
   font-weight: var(--font-weight-h3);
-  margin: calc(var(--font-baseline) * 2 * 1px) 0 
-          calc(var(--font-baseline) * 2 * 1px - var(--line-height-h3) * var(--font-size-h3));
+  margin: calc(var(--font-baseline) * 2px) 0 
+          calc(max(var(--font-baseline) * 2px - var(--line-height-h3) * var(--font-size-h3), 0px));
 }
 h4 { 
   font-size: var(--font-size-h4);
@@ -203,7 +212,7 @@ h4 {
   font-family: var(--font-family-h4);
   font-weight: var(--font-weight-h4);
   margin: calc(var(--font-baseline) * 1px) 0
-          calc(var(--font-baseline) * 2 * 1px - var(--line-height-h4) * var(--font-size-h4));
+          calc(max(var(--font-baseline) * 1px - var(--line-height-h4) * var(--font-size-h4), 0px));
 }
 h5 { 
   font-size: var(--font-size-h5);
@@ -211,7 +220,7 @@ h5 {
   font-family: var(--font-family-h5);
   font-weight: var(--font-weight-h5);
   margin: calc(var(--font-baseline) * 1px) 0 
-          calc(var(--font-baseline) * 2 * 1px - var(--line-height-h5) * var(--font-size-h5));
+          calc(max(var(--font-baseline) * 1px - var(--line-height-h5) * var(--font-size-h5), 0px));
 }
 h6 { 
   font-size: var(--font-size-h6);
@@ -225,6 +234,11 @@ h5 + p,
 h6 + p { 
   margin-top: 0; 
 }
+
+.foswikiNoWrap { white-space:nowrap; }
+.foswikiPre { white-space:pre; }
+.foswikiPreLine { white-space:pre-line; }
+.foswikiPreWrap { white-space:pre-wrap; }
 
 .foswikiNormal,
 .foswikiNormal * {
@@ -281,4 +295,15 @@ h6 + p {
 .foswikiExtraBlack {
   font-weight:var(--font-weight-extra-black);
 }
-
+.foswikiAlignLeft,
+.foswikiAlignLeft * {
+  text-align:left;
+}
+.foswikiAlignRight,
+.foswikiAlignRight * {
+  text-align:right;
+}
+.foswikiAlignJustify,
+.foswikiAlignJustify * {
+  text-align:justify;
+}

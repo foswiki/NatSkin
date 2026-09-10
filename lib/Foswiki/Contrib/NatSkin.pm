@@ -1,6 +1,6 @@
 # NatSkin
 #
-# Copyright (C) 2003-2025 MichaelDaum http://michaeldaumconsulting.com
+# Copyright (C) 2003-2026 MichaelDaum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -26,7 +26,7 @@ contains version and release information
 use strict;
 use warnings;
 
-our $VERSION = '7.32';
+our $VERSION = '8.00';
 our $RELEASE = '%$RELEASE%';
 our $SHORTDESCRIPTION = 'Userfriendly Foswiki skin providing a flexible theming engine for professional webdesigns';
 our $LICENSECODE = '%$LICENSECODE%';

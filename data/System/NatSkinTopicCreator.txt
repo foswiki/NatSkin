@@ -1,11 +1,11 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1737980765" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1789038739" format="1.1" version="1"}%
 %META:TOPICPARENT{name="NatSkin"}%
 ---+!! %TOPIC%
 
 %TOC%
 
 ---++ Description
-The NatSkin !TopicCreator is a unified way to create topics in your wiki. It especially is tailored towards the [[Foswiki:Extensions/WikiWorkbenchContrib][WikiWorkbench framework]] of wiki applications and !TopicTypes.
+The NatSkin !TopicCreator is a unified way to create topics in your wiki. It especially is tailored towards the [[https://foswiki.org/Extensions/WikiWorkbenchContrib][WikiWorkbench framework]] of wiki applications and !TopicTypes.
 The !TopicCreator automatically lets you choose the type of content as well as templates for it once deployed from within your wiki application.
 The !TopicCreator opens up in a modal dialog when clicking on the "New" button available on every page.
 
@@ -55,17 +55,6 @@ on your system.
 
 Depending on the actual implementation of the !TopicType will the final step offer a form to specify the initial properties of the topic. Most importantly will it ask for a !TopicTitle and derive a !WikiWord from it.
 
----++ Configuring the "new link" foramt
-
-Foswiki allows to create new topic for UnknownWikiWords by rendering a specific "new topic" link as defined in the =NEWLINKFORMAT= preference settings that are best customized in your %LOCALSITEPREFS%.
-
-<verbatim class="tml">
-   * Set NEWLINKFORMAT = <a href='#newtopic' class='foswikiNewLink foswikiDialogLink' data-topictitle='%ENCODE{"$text"}%'>$text</a>
-</verbatim>
-
-Above settings will pop up the !TopicCreator dialog whenever clicking on an unknown !WikiWord
-(given that auto-linking is enabled as well and _not_ disabled using the =NOAUTOLINK= setting).
-
 ---++ Configuring the !TopicCreator steps
 
 There are a couple of preference settings that let you control which !TopicTypes and !TopicTemplates are available in the !TopicCreator dialog, besides the actual settings of the !TopicType itself.
@@ -110,10 +99,10 @@ Here's a list of all settings with their defaults:
    * Set TOPICCREATOR_DEFAULT_EXCLUDE_TEMPLATE =
 </verbatim>
 
-%META:FILEATTACHMENT{name="standard_mode.png" attachment="standard_mode.png" attr="" comment="" date="1737980765" size="28045" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="topictype_mode.png" attachment="topictype_mode.png" attr="" comment="" date="1737980765" size="59000" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="topictype_mode_2.png" attachment="topictype_mode_2.png" attr="" comment="" date="1737980765" size="75174" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="topictemplate_step.png" attachment="topictemplate_step.png" attr="" comment="" date="1737980765" size="48700" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="create_step.png" attachment="create_step.png" attr="" comment="" date="1737980765" size="34754" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="create_step_2.png" attachment="create_step_2.png" attr="" comment="" date="1737980765" size="44085" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="standard_mode.png" attachment="standard_mode.png" attr="" comment="" date="1789038739" size="28045" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="topictype_mode.png" attachment="topictype_mode.png" attr="" comment="" date="1789038739" size="59000" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="topictype_mode_2.png" attachment="topictype_mode_2.png" attr="" comment="" date="1789038739" size="75174" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="topictemplate_step.png" attachment="topictemplate_step.png" attr="" comment="" date="1789038739" size="48700" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="create_step.png" attachment="create_step.png" attr="" comment="" date="1789038739" size="34754" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="create_step_2.png" attachment="create_step_2.png" attr="" comment="" date="1789038739" size="44085" user="ProjectContributor" version="1"}%
 %META:PREFERENCE{name="TOPICTITLE" title="TOPICTITLE" type="Local" value="NatSkin TopicCreator"}%
